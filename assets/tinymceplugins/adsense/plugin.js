@@ -1,7 +1,7 @@
 /**
  * Plugin Name: TinyMCE Adsense Plugin
  * Plugin URI: http:www.xidipity.com
- * Version: 80704.1
+ * Build: 81010
  * Author: John Baer
  * Description: A TinyMCE Plugin to add templates / snippets to the MCE Visual Editor
  * License: GPL2
@@ -12,7 +12,7 @@
       editor.addButton( 'adsense', {
         title: 'Adsense',
         icon: 'mce-adsense',
-        image: '/wp-content/themes/xidipity/assets/tinymceplugins/adsense/mce-adsense.svg',
+        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTEuOCAxMC45Yy0yLjI3LS41OS0z%0D%0ALTEuMi0zLTIuMTUgMC0xLjA5IDEuMDEtMS44NSAyLjctMS44NSAxLjc4IDAgMi40NC44NSAyLjUg%0D%0AMi4xaDIuMjFjLS4wNy0xLjcyLTEuMTItMy4zLTMuMjEtMy44MVYzaC0zdjIuMTZjLTEuOTQuNDIt%0D%0AMy41IDEuNjgtMy41IDMuNjEgMCAyLjMxIDEuOTEgMy40NiA0LjcgNC4xMyAyLjUuNiAzIDEuNDgg%0D%0AMyAyLjQxIDAgLjY5LS40OSAxLjc5LTIuNyAxLjc5LTIuMDYgMC0yLjg3LS45Mi0yLjk4LTIuMWgt%0D%0AMi4yYy4xMiAyLjE5IDEuNzYgMy40MiAzLjY4IDMuODNWMjFoM3YtMi4xNWMxLjk1LS4zNyAzLjUt%0D%0AMS41IDMuNS0zLjU1IDAtMi44NC0yLjQzLTMuODEtNC43LTQuNHoiLz48cGF0aCBkPSJNMCAwaDI0%0D%0AdjI0SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+',
         onclick: function() {
           editor.windowManager.open({
             name: 'adsense',
