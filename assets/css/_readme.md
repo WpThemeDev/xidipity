@@ -1,0 +1,1 @@
+xidipity/assets/ css folder
