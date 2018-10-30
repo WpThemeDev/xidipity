@@ -1,0 +1,49 @@
+/*!
+Theme Name:   Xidipity
+Theme URI:    https://www.xidipity.com
+Author:       John Baer
+Author URI:
+Description:  Xidipity is a meticulously crafted responsive multi-purpose WordPress theme which offers a beautiful sophisticated design supporting a wide range of blog solutions. Xidipity includes an enhanced version of the classic editor which gives you the power to create compelling content using the tool you already know in a visual environment.  Editor features include greater control over text formatting, a wide range of colors, enhanced lists, horizontal rules which include icons and/or text, enhanced tables, two column support, custom excerpts, font awesome icons, Google material design icons, Google adsense enabled, gallery/catalog support, and extensive video support. To ensure a positive user experience, Xidipity leverages the latest web technologies to deliver fast performance which include the use of the Cloudflare content delivery network  and compressed local resource files. For those who like to customize the details of their blog design Xidity includes the Tailwind CSS framework. Sidebar, no sidebar, custom menus, translation ready, and SEO friendly. See it in action at "Xidipity.com".
+Version:      0.9
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  xidipity
+Tags:         blog,custom-background,custom-colors,custom-header,custom-logo,custom-menu,editor-style,featured-images,food-and-drink,footer-widgets,front-page-post-form,full-width-template,grid-layout,news,one column,post-formats,right-sidebar,rtl-language-support,sticky-post,theme-options,threaded-comments,two-columns
+
+Recommended plugins: Akismet Anti-Spam, Yoast SEO
+
+Attribution (licensed under the GPL v2 or later)
+
+- WordPress - (C) 2012-2017 Automattic, Inc. | https://wordpress.com/
+
+- Underscores theme - Automattic, Inc. | https://underscores.me/
+
+- Tailwinds CSS framework | https://tailwindcss.com/
+
+- Normalize CSS | https://necolas.github.io/normalize.css/
+
+- Font Awesome Icons | http://fontawesome.io/
+
+- Google Material Design | https://material.io/
+
+- Sweet Alerts | https://sweetalert.js.org
+
+- Clipboard JS | https://clipboardjs.com/
+
+CSS File Directory
+
+  The min versions compressed for speed using https://cssminifier.com/
+
+  File                                Comment
+  ---------------------------------   -----------------------------------------
+  /assets/css/blog-var.css            CSS variables
+  
+  CDN/tailwind-preflight              Init tailwind
+  CDN/tailwind-base                   Common tailwind
+  CDN/tailwind-utilities              Utilities tailwind
+
+  /assets/css/blog-base.min.css       Screen
+  /assets/css/blog-print.min.css      Print
+  /assets/css/editor-style.min.css    Editor
+
+*/
