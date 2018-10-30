@@ -1,0 +1,2 @@
+# xidipity
+WordPress Theme
