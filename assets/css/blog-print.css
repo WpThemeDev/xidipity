@@ -1,0 +1,663 @@
+/*
+Theme Name: Xidipity
+Description: Used to style theme.
+
+File        - blog-print.css
+Modified    - 81021
+Programmer  - John Baer
+Purpose     - Support file for Xidipity Wordpress Theme
+License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
+Comments    - Base CSS classes as modified
+
+Print Grayscale
+
+  gainsboro         #DCDCDC
+  lightgray         #D3D3D3
+  silver            #C0C0C0
+  darkgray          #A9A9A9
+  gray              #808080
+  dimgray           #696969
+  black             #000000
+
+*/
+
+/* import css theme variables*/
+
+@import "blog-var.css";
+
+/**
+ * HIDE certain elements completely
+ */
+
+.comment-respond,
+.comments-area,
+.do-not-print,
+.entry-meta,
+.excerpt-template,
+.main-navigation,
+.post-navigation,
+.screen-reader-text,
+.sidebar-widget-area,
+.site-navigation,
+.toc-menu,
+.toggle-menu-wrapper {
+  display: none;
+}
+
+body {
+  background: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12pt;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.site-content {
+  background-color: white;
+}
+
+.hentry {
+  background: white;
+  border: 0;
+}
+
+.site-title a {
+  color: black;
+  font-family: var(--title-font-fam);
+  font-size: var(--title-font-size);
+  font-style: var(--title-font-style);
+  font-weight: var(--title-font-wgt);
+  letter-spacing: var(--title-font-spacing);
+}
+
+.site-description {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--descr-font-size);
+  font-style: var(--descr-font-style);
+  font-weight: var(--descr-font-wgt);
+  letter-spacing: var(--descr-font-spacing);
+}
+
+.site-description,
+.site-footer,
+.site-title {
+  text-align:center;
+}
+
+.site-footer,
+.site-footer a {
+  font-size: 10.5pt !important;
+  color: lightgray;
+}
+
+
+/*  # HTML
+   ## Table
+ ---------------------------------------------------------------------------*/
+
+/* Table Styles */
+
+table {
+  table-layout: fixed;
+  background-color: transparent;
+  border: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 11pt 0 11pt 0;
+}
+
+table caption {
+  margin-bottom: 11pt;
+}
+
+table th,
+table td {
+  padding: 3pt;
+}
+
+table thead th {
+  background: linear-gradient(#eeeeee, #f5f5f5);
+  color: black;
+}
+
+table thead th:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+table tr:not(:last-child) td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr td:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+/*  # HTML
+   ## Multi Column
+ ---------------------------------------------------------------------------*/
+
+table.twocolumn {
+  margin: 0;
+  width: 100%;
+}
+
+table.twocolumn tr td {
+  border: 0 !important;
+  text-align: left;
+  padding:0;
+  vertical-align: top;
+  width: 50%;
+}
+
+table.twocolumn tr td:first-child {
+  padding-right: 8px;
+}
+
+table.twocolumn tr td:last-child {
+  padding-left: 8px;
+}
+
+table.twocolumn tr td img {
+  width: 100%;
+  height: auto;
+}
+
+table.twocolumn tr td figure.wp-caption {
+  max-width: 92.5%;
+  height: auto;
+}
+
+table.twocolumn tr td figcaption {
+  text-align: center;
+}
+
+/* embedded table in twocolumn table */
+
+table.twocolumn table {
+  table-layout: fixed;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 11pt 0 11pt 0;
+  width: 100%;
+}
+
+table.twocolumn table caption {
+  margin-bottom: 11pt;
+}
+
+table.twocolumn table th,
+table.twocolumn table td {
+  padding: 4px;
+}
+
+table.twocolumn table thead th {
+  background: linear-gradient(#eeeeee, #f5f5f5);
+  color: black;
+  font-weight: 500;
+}
+
+table.twocolumn table thead th:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+table.twocolumn table tr:not(:last-child) td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table.twocolumn table tr td:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+/*  annotate  ----------------------- */
+table.annotate {
+  background-color: gainsboro;
+  border: 1px solid transparent;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.annotate tr td:not(:last-child) {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 70px;
+  vertical-align: middle;
+}
+
+table.annotate tr td:last-child {
+  color: gray;
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+/*  # HTML
+## Media Elements
+### Image Alignments
+---------------------------------------------------------------------------*/
+
+img {
+  height: auto;     /* Make sure images are scaled correctly. */
+  width: inherit;   /* Make images fill their parent's space. Solves IE8. */
+  max-width: 100%;  /* Adhere to container width. */
+}
+
+img[class*="aligncenter"] {
+  display: block;
+  margin: 10px auto 10px auto !important;
+}
+
+img[class*="alignleft"] {
+  display: block;
+  margin: 10px auto 10px auto !important;
+}
+
+img[class*="alignright"] {
+  display: block;
+  margin: 10px auto 10px auto !important;
+}
+
+/* video containers */
+.video-alignright,
+.video-alignleft,
+.video-aligncenter {
+  clear: both;
+  border: 0;
+  height: auto;
+  width: 100%;
+}
+
+/*  # HTML
+   ## Typography
+  ### Headings
+ ---------------------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+h1 {
+  color: black;
+  font-family: var(--h1-font);
+  font-size: var(--h1-size);
+  font-style: var(--h1-style);
+  font-weight: var(--h1-wgt);
+}
+
+h2 {
+  color: black;
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
+  font-style: var(--h2-style);
+  font-weight: var(--h2-wgt);
+}
+
+h3 {
+  color: black;
+  font-family: var(--h3-font);
+  font-size: var(--h3-size);
+  font-style: var(--h3-style);
+  font-weight: var(--h3-wgt);
+}
+
+h4 {
+  color: black;
+  font-family: var(--h4-font);
+  font-size: var(--h4-size);
+  font-style: var(--h4-style);
+  font-weight: var(--h4-wgt);
+}
+
+h5 {
+  color: black;
+  font-family: var(--h5-font);
+  font-size: var(--h5-size);
+  font-style: var(--h5-style);
+  font-weight: var(--h5-wgt);
+}
+
+h6 {
+  color: black;
+  font-family: var(--h6-font);
+  font-size: var(--h6-size);
+  font-style: var(--h6-style);
+  font-weight: var(--h6-wgt);
+}
+
+h1 img {
+  display: inline;
+  height: 34px;
+  padding-right: 7px;
+  width:auto;
+}
+
+h2 img {
+  display: inline;
+  height: 30px;
+  padding-right: 6px;
+  width:auto;
+}
+
+h3 img {
+  display: inline;
+  height: 24px;
+  padding-right: 5px;
+  width:auto;
+}
+
+h4 img {
+  display: inline;
+  height: 20px;
+  padding-right: 4px;
+  width:auto;
+}
+
+h5 img,
+h6 img {
+  display: inline;
+  height: 18px;
+  padding-right: 3px;
+  width:auto;
+}
+
+/*  # HTML
+   ## Typography
+  ### Paragraph
+ ---------------------------------------------------------------------------*/
+
+p {
+  margin: 0 0 2px;
+}
+
+p + p {
+  margin: 2px 0 2px;
+}
+
+/*  # Wordpress
+   ## Blockquote
+      wp-block-quote - gutenburg
+ ---------------------------------------------------------------------------*/
+
+/*- blockquote -*/
+.wp-block-quote,
+blockquote {
+  color: darkgray;
+  border-left: 6px solid lightgray !important;
+  font-weight: 300;
+  margin-top: 16px;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-bottom: 16px;
+  margin-bottom: 1em;
+  margin-left: 3%;
+  padding: 16px;
+  padding: 1em;
+  position: relative;
+}
+
+.wp-block-quote cite,
+cite {
+  font-size: 87.5%;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*- note -*/
+.note {
+  color: darkgray;
+  font-size: 87.5%;
+  font-weight: 300;
+}
+
+.note hr {
+  background-color: transparent;
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: silver;
+  height: 1px;
+  margin: 16px auto 16px 0;
+  margin: 1em auto 1em 0;
+  width: 25%;
+}
+
+/*  # HTML
+   ## Typography
+  ### Blank line spacers
+ ---------------------------------------------------------------------------*/
+
+.spacer-1\/2 {
+  background-color: transparent;
+  color: transparent;
+  font-size: 4px;
+  font-size: 0.25rem;
+  width: 100%;
+}
+.spacer-3\/4 {
+  background-color: transparent;
+  color: transparent;
+  font-size: 10px;
+  font-size: 0.6rem;
+  width: 100%;
+}
+.spacer-single {
+  background-color: transparent;
+  color: transparent;
+  font-size: 16px;
+  font-size: 1rem;
+  width: 100%;
+}
+.spacer-double {
+  background-color: transparent;
+  color: transparent;
+  font-size: 34px;
+  font-size: 2.1rem;
+  width: 100%;
+}
+.spacer-triple {
+  background-color: transparent;
+  color: transparent;
+  font-size: 51px;
+  font-size: 3.2rem;
+  width: 100%;
+}
+
+/*  # HTML
+   ## Horizonal Rules (HR)
+ ---------------------------------------------------------------------------*/
+
+/* standard */
+hr {
+  background-color: transparent;
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: silver;
+  height: 1px;
+  margin: 12px auto 13px auto;
+  width: 80%;
+}
+/* double */
+hr.double {
+  background-color: transparent;
+  border: 0;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: silver;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: silver;
+  height: 4px;
+  margin: 10px auto 11px auto;
+  width: 80%;
+}
+/* gradient */
+hr.gradient {
+  background-image: -webkit-linear-gradient(left, gainsboro, silver, gainsboro);
+  background-image: -moz-linear-gradient(left, gainsboro, silver, gainsboro);
+  background-image: -ms-linear-gradient(left, gainsboro, silver, gainsboro);
+  background-image: -o-linear-gradient(left, gainsboro, silver, gainsboro);
+  border: 0;
+  height: 1px;
+  margin: 12px auto 13px auto;
+  width: 80%;
+}
+/* font awesome centered hr */
+.hr-emblem {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.center-emblem-item:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.center-emblem-item:nth-child(2) {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+}
+
+.center-emblem-item:nth-child(3) {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.left-emblem-item:nth-child(1) {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+}
+
+.left-emblem-item:nth-child(2) {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.right-emblem-item:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.right-emblem-item:nth-child(2) {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+}
+
+/*  hide print specific item */
+.print\:hidden {
+  display: none;
+}
+
+pre {
+  background: gainsboro;
+  border: solid lightgray 1px;
+  border-radius: 3px;
+  color: darkgray;
+  font-family: var(--sys-fnt-mono);
+  font-size: 13px;
+  margin: 15px 0 10px 0;
+  overflow: auto;
+  padding: 15px;
+}
+
+/*  # HTML
+   ## Typography
+  ### print page break
+ ---------------------------------------------------------------------------*/
+
+.page-break {
+  display: block;
+  page-break-before: always;
+}
+
+/*  # eof
+ ---------------------------------------------------------------------------
+  print-style
+ ---------------------------------------------------------------------------*/
