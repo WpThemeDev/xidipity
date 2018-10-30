@@ -1,14 +1,14 @@
 /**
    * Plugin Name: TinyMCE font weight Plugin
    * Plugin URI: http:www.xidipity.com
-   * Version: 80906.1
+   * Build: 81030
    * Author: John Baer
    * Description: A TinyMCE Plugin to add font weight to selected text in the MCE Visual Editor
    * License: GPL2
    * Comment: Available font weights are not verified.
    */
    
-  var imgbold = '/wp-content/themes/xidipity/assets/tinymceplugins/fntwgt/dft400.svg';
+  var imgbold = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGQ9Ik0xNS42IDEwLjc5Yy45Ny0u%0D%0ANjcgMS42NS0xLjc3IDEuNjUtMi43OSAwLTIuMjYtMS43NS00LTQtNEg3djE0aDcuMDRjMi4wOSAw%0D%0AIDMuNzEtMS43IDMuNzEtMy43OSAwLTEuNTItLjg2LTIuODItMi4xNS0zLjQyek0xMCA2LjVoM2Mu%0D%0AODMgMCAxLjUuNjcgMS41IDEuNXMtLjY3IDEuNS0xLjUgMS41aC0zdi0zem0zLjUgOUgxMHYtM2gz%0D%0ALjVjLjgzIDAgMS41LjY3IDEuNSAxLjVzLS42NyAxLjUtMS41IDEuNXoiLz4KICAgIDxwYXRoIGQ9%0D%0AIk0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==';
 
   (function() {
     tinymce.PluginManager.add('fntwgt', function(editor, url) {
