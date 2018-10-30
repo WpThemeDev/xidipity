@@ -1,3 +1,12 @@
+/**
+   * Plugin Name: TinyMCE Table Plugin
+   * Plugin URI: http:www.xidipity.com
+   * Build: 81030
+   * Author: John Baer
+   * Description: A TinyMCE Plugin to add horizonal rules to the MCE Visual Editor
+   * License: GPL2
+   */
+
 ! function() {
   "use strict";
   var n, e, t, r, o, i, u = tinymce.util.Tools.resolve("tinymce.PluginManager"),
@@ -6685,7 +6694,7 @@
         type: "menubutton",
         title: "Table",
         icon: 'mce-table',
-        image: '/wp-content/themes/xidipity/assets/tinymceplugins/table/mce-table.svg',
+        image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAg%0D%0AMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgc3R5bGU9IiIg%0D%0AdHJhbnNmb3JtPSJtYXRyaXgoMC41ODU1MTcsIDAsIDAsIDAuNTg1NTE3LCAtMi4wNTI0MDgsIC0y%0D%0ALjA1MjQwOCkiPgogICAgPHJlY3Qgd2lkdGg9IjI4IiBoZWlnaHQ9IjgiIHg9IjEwIiB5PSIxMCIg%0D%0Ac3R5bGU9Im9wYWNpdHk6IDE7IGZpbGwtb3BhY2l0eTogMTsgc3Ryb2tlOiBub25lOyBmaWxsOiBy%0D%0AZ2IoMzMsIDMzLCAzMyk7Ii8+CiAgICA8cmVjdCB3aWR0aD0iMjgiIGhlaWdodD0iOCIgeD0iMTAi%0D%0AIHk9IjIwIiBzdHlsZT0iZmlsbDojY2VjZWNlO29wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJv%0D%0Aa2U6bm9uZSIvPgogICAgPHBhdGggZD0iTSA4IDggQyA4IDE4LjY2NyA4IDI5LjMzMyA4IDQwIEMg%0D%0AMTguNjY3IDQwIDI5LjMzMyA0MCA0MCA0MCBDIDQwIDI5LjMzMyA0MCAxOC42NjcgNDAgOCBDIDI5%0D%0ALjMzMyA4IDE4LjY2NyA4IDggOCBNIDEwIDEwIEwgMTggMTAgTCAxOCAxOCBMIDEwIDE4IFogTSAy%0D%0AMCAxMCBMIDI4IDEwIEwgMjggMTggTCAyMCAxOCBaIE0gMzAgMTAgTCAzOCAxMCBMIDM4IDE4IEwg%0D%0AMzAgMTggWiBNIDEwIDIwIEwgMTggMjAgTCAxOCAyOCBMIDEwIDI4IFogTSAyMCAyMCBMIDI4IDIw%0D%0AIEwgMjggMjggTCAyMCAyOCBaIE0gMzAgMjAgTCAzOCAyMCBMIDM4IDI4IEwgMzAgMjggWiBNIDEw%0D%0AIDMwIEwgMTggMzAgTCAxOCAzOCBMIDEwIDM4IFogTSAyMCAzMCBMIDI4IDMwIEwgMjggMzggTCAy%0D%0AMCAzOCBaIE0gMzAgMzAgTCAzOCAzMCBMIDM4IDM4IEwgMzAgMzggWiIgc3R5bGU9ImZpbGw6Izg4%0D%0AODtvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm8i%0D%0ALz4KICA8L2c+Cjwvc3ZnPg==',
         menu: t
       }), e.addButton("tableprops", {
         title: "Table properties",
