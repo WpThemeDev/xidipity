@@ -1,7 +1,7 @@
 /**
  * Plugin Name: TinyMCE Embed Plugin
  * Plugin URI: http:www.xidipity.com
- * Version: 1.0
+ * Build: 81010
  * Author: John Baer
  * Description: A TinyMCE Plugin to add templates / snippets to the MCE Visual Editor
  * License: GPL2
@@ -12,7 +12,7 @@
         editor.addButton( 'embed', {
             title: 'Embed',
             icon: 'mce-embed',
-            image: '/wp-content/themes/xidipity/assets/tinymceplugins/embed/mce-embed.svg',
+            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgMTJ2N0g1di03SDN2N2MwIDEu%0D%0AMS45IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0ydi03aC0yem0tNiAuNjdsMi41OS0yLjU4TDE3IDEx%0D%0ALjVsLTUgNS01LTUgMS40MS0xLjQxTDExIDEyLjY3VjNoMnoiLz48cGF0aCBmaWxsPSJub25lIiBk%0D%0APSJNMCAwaDI0djI0SDB6Ii8+PC9zdmc+',
             onclick: function() {
               editor.windowManager.open({
                 name: 'embed',
