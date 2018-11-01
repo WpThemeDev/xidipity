@@ -133,7 +133,7 @@ function xidipity_scripts() {
    */
 
   // Enquire
-  wp_enqueue_script( 'enquire', get_template_directory_uri() . '/assets/js/enquire.js', array( 'jquery' ), '2.1.2', true );
+  // wp_enqueue_script( 'enquire', get_template_directory_uri() . '/assets/js/enquire.js', array( 'jquery' ), '2.1.2', true );
 
   // Comment Reply
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
