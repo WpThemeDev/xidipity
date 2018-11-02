@@ -13,7 +13,7 @@
       editor.addButton('formats', {
         type: 'splitbutton',
         title: 'Underline (Ctrl+U)',
-        image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhl%0D%0AaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIw%0D%0AMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGgg%0D%0AZD0iTTEyIDE3YzMuMzEgMCA2LTIuNjkgNi02VjNoLTIuNXY4YzAgMS45My0xLjU3IDMuNS0zLjUg%0D%0AMy41UzguNSAxMi45MyA4LjUgMTFWM0g2djhjMCAzLjMxIDIuNjkgNiA2IDZ6bS03IDJ2MmgxNHYt%0D%0AMkg1eiIgc3R5bGU9ImZpbGw6IHJnYigzMywgMzMsIDMzKTsiLz4KICA8cmVjdCB4PSI0Ljk4NSIg%0D%0AeT0iMTguOTc3IiB3aWR0aD0iMTQuMDEzIiBoZWlnaHQ9IjIuMDM4IiBzdHlsZT0iZmlsbDogcmdi%0D%0AKDExNywgMTE3LCAxMTcpOyIvPgo8L3N2Zz4=',
+        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJu%0D%0Ab25lIi8+PHBhdGggZD0iTTEyIDE3YzMuMzEgMCA2LTIuNjkgNi02VjNoLTIuNXY4YzAgMS45My0x%0D%0ALjU3IDMuNS0zLjUgMy41UzguNSAxMi45MyA4LjUgMTFWM0g2djhjMCAzLjMxIDIuNjkgNiA2IDZ6%0D%0AbS03IDJ2MmgxNHYtMkg1eiIvPjwvc3ZnPg==',
         onclick: function(e) {
           tinymce.execCommand(this.value);
         },
