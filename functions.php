@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * version: 81012
+ * build: 81103
  *
  * @package xidipity
  */
@@ -131,9 +131,6 @@ function xidipity_scripts() {
   /**
    * Enqueue JS files
    */
-
-  // Enquire
-  // wp_enqueue_script( 'enquire', get_template_directory_uri() . '/assets/js/enquire.js', array( 'jquery' ), '2.1.2', true );
 
   // Comment Reply
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

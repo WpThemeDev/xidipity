@@ -1,1 +1,0 @@
-xidipity/assets/ js folder
