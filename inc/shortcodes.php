@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Modified    - 81018
+  Modified    - 81108
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -170,7 +170,7 @@ function xidipity_gallery_shortcode($atts, $category_list) {
  *
  * lst_pages
  *
- * syntax - [lst_pages class="" before_item="" after_item="" depth=0 pid=0 xclude=""]
+ * syntax - [lst_pages class="" before_item="" after_item="" depth=0 pid=0 xclude=0]
  *
  */
 
@@ -187,7 +187,7 @@ function lst_pages_shortcode($atts) {
       'after_item'    => '',
       'depth'         => 0,
       'pid'           => 0,
-      'xclude'        => ''
+      'xclude'        => 0
     );
 
   } else {
@@ -223,7 +223,7 @@ function lst_pages_shortcode($atts) {
     'after_item'    => '',
     'depth'         => 0,
     'pid'           => 0,
-    'xclude'        => ''
+    'xclude'        => 0
   );
 
   $sc_arg = wp_parse_args( $atts, $defaults );
@@ -259,7 +259,7 @@ function lst_pages_shortcode($atts) {
  *
  * lst_posts
  *
- * syntax - [lst_posts class="" before_item="" after_item="" order_by="" order="" cat="" xclude=""]
+ * syntax - [lst_posts class="" before_item="" after_item="" order_by="" order="" cat="" xclude=0]
  *
  */
 
@@ -277,7 +277,7 @@ function lst_posts_shortcode($atts) {
       'order_by'      => 'post_title',
       'order'         => 'ASC',
       'cat'           => '',
-      'xclude'        => ''
+      'xclude'        => 0
     );
 
   } else {
@@ -318,7 +318,7 @@ function lst_posts_shortcode($atts) {
     'order_by'      => 'post_title',
     'order'         => 'ASC',
     'cat'           => '',
-    'xclude'        => ''
+    'xclude'        => 0
   );
 
   $sc_arg = wp_parse_args( $atts, $defaults );
@@ -375,7 +375,7 @@ function lst_posts_shortcode($atts) {
  *
  * lst_cats
  *
- * syntax - [lst_cats style="" active=0 depth=0 pid=0 cnt=0 xclude=""]
+ * syntax - [lst_cats style="" active=0 depth=0 pid=0 cnt=0 xclude=0]
  *
  */
 
@@ -392,7 +392,7 @@ function lst_cats_shortcode($atts) {
       'depth'         => 0,
       'pid'           => 0,
       'cnt'           => 0,
-      'xclude'        => ''
+      'xclude'        => 0
     );
 
   } else {
@@ -424,7 +424,7 @@ function lst_cats_shortcode($atts) {
     'depth'         => 0,
     'pid'           => 0,
     'cnt'           => 0,
-    'xclude'        => ''
+    'xclude'        => 0
   );
 
   $sc_arg = wp_parse_args( $atts, $defaults );
