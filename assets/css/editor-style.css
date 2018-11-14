@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Modified - 801021
+  Build    - 81112.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -391,113 +391,16 @@ hr.gradient {
   margin: 12px auto 13px auto;
   width: 80%;
 }
-/* font awesome centered hr */
-.hr-emblem {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+/* Emblem wrapper */
+.hr-wrapper {
+  display: block;
+  background-color: transparent;
+  margin: 0 auto 0 auto;
 }
-
-.center-emblem-item:nth-child(1) {
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.center-emblem-item:nth-child(2) {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  text-align: center;
-}
-
-.center-emblem-item:nth-child(3) {
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.left-emblem-item:nth-child(1) {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  text-align: center;
-}
-
-.left-emblem-item:nth-child(2) {
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.right-emblem-item:nth-child(1) {
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.right-emblem-item:nth-child(2) {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  text-align: center;
+.hr-wrapper:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 /* # multi column  -----------------------------------------------------------*/
@@ -1201,6 +1104,7 @@ object {
 }
 
 .flex-card-image {
+  background-color: var(--bg-bas-200);
   height: 285px;
   text-align:center;
   overflow: hidden;
@@ -1219,6 +1123,7 @@ object {
   margin: 0;
   overflow: hidden;
   text-align: left;
+  vertical-align: top;
   width: 100%;
 }
 
