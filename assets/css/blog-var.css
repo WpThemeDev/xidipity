@@ -1,6 +1,6 @@
 /*
 File        - blog-var.css
-Modified    - 81023
+Build       - 81106.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -190,6 +190,9 @@ dropdown menu  (var:hexcode)
   --mnu-bg-alt-color:#eeeeee;           > dropdown toolbar background color
   --mnu-bg-hover-alt-color:#f5f5f5;     > dropdown toolbar background hover color
 
+printer page
+  --prnt-page:letter;
+
 ----------------------------------------------------------------------------*/
 /*  font imports
  ---------------------------------------------------------------------------*/
@@ -356,5 +359,7 @@ dropdown menu  (var:hexcode)
   --sys-fnt-mono:'Roboto Mono', monospace;
   --sys-fnt-serif:'Roboto Slab', serif;
   --sys-fnt-cursive:'Kalam', cursive;
+
+  --prnt-page:letter;
 
 }
