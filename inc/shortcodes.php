@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Modified    - 81108
+  Build       - 81108.1
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)

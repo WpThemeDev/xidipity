@@ -1,7 +1,7 @@
 /**
    * Plugin Name: TinyMCE Horizonal Rule Plugin
    * Plugin URI: http:www.xidipity.com
-   * Build: 81030
+   * Build: 81106.1
    * Author: John Baer
    * Description: A TinyMCE Plugin to add horizonal rules to the MCE Visual Editor
    * License: GPL2
@@ -55,18 +55,14 @@
             text: '• Emblem',
             icon: false,
             onclick: function() {
-              editor.insertContent('<div class="hr-emblem w-4/5 mx-auto"><hr class="center-emblem-item" />' + String.fromCharCode(13) +
-'<div class="center-emblem-item px-4 text-purple-dark">§</div>' + String.fromCharCode(13) +
-'<hr class="center-emblem-item" /></div>');
+              editor.insertContent('<div class="hr-wrapper" style="width: 80%;"><hr style="width: 45%; float: left;"/><div style="width: 10%; float: left; text-align: center; color: #9575cd;">§</div><hr style="width: 45%; float: left;"/></div>');
             }
           },
           {
             text: '• Emblem Wide',
             icon: false,
             onclick: function() {
-              editor.insertContent('<div class="hr-emblem w-full mx-auto"><hr class="center-emblem-item" />' + String.fromCharCode(13) +
-'<div class="center-emblem-item px-4 text-purple-dark">§</div>' + String.fromCharCode(13) +
-'<hr class="center-emblem-item" /></div>');
+              editor.insertContent('<div class="hr-wrapper"><hr style="width: 45%; float: left;"/><div style="width: 10%; float: left; text-align: center; color: #9575cd;">§</div><hr style="width: 45%; float: left;"/></div>');
             }
           }
         ],
