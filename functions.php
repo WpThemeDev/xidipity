@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 81115.1
+ * build: 81116.1
  *
  * @package xidipity
  */
@@ -143,7 +143,7 @@ function xidipity_scripts() {
   }
 
   // Custom Scripts
-  wp_enqueue_script( 'xidipity-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), '1.0', false );
+  wp_enqueue_script( 'xidipity-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), '1.0', true );
 
   // Codemirror
   /*
@@ -157,31 +157,46 @@ function xidipity_scripts() {
   */
   
   // Clipboard Js
-  wp_enqueue_script( 'xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', '2.01', false );
+  wp_enqueue_script( 'xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', '2.01', true );
 
   // Sweet Alert Js
-  wp_enqueue_script( 'xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js', '2.1', false );
+  wp_enqueue_script( 'xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js', '2.1', true );
 
   // Enqueue CSS files
-  wp_enqueue_style( 'tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/preflight.min.css', '6.5', false, 'screen' );
-  wp_enqueue_style( 'tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.min.css', '6.5', false, 'screen' );
-  wp_enqueue_style( 'tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/utilities.min.css', '6.5', false, 'screen' );
-  wp_enqueue_style( 'xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css', '', false, 'screen' );
+  wp_enqueue_style( 'tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/preflight.min.css', '6.5', false, 'screen');
+  wp_enqueue_style( 'tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.min.css', '6.5', false, 'screen');
+  wp_enqueue_style( 'tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/utilities.min.css', '6.5', false, 'screen');
+  wp_enqueue_style( 'xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css#asyncload', '', false, 'screen');
   wp_enqueue_style( 'xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', '', false, 'print' );
 
   // Fontawesome
-  wp_enqueue_style( 'xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', '', false, 'all' );
+  wp_enqueue_style( 'xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', '', true, 'all');
 
   // codemirror
-  wp_enqueue_style( 'xidipity-codemirror', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/codemirror.css', false, '5.38', 'screen' );
+  // wp_enqueue_style( 'xidipity-codemirror', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/codemirror.css#asyncload', false, '5.38', 'screen');
 
   // Google Material Design Icons
-  wp_enqueue_style( 'xidipity-md-icons','https://fonts.googleapis.com/icon?family=Material+Icons' );
+  wp_enqueue_style( 'xidipity-md-icons','https://fonts.googleapis.com/icon?family=Material+Icons', '', true, 'all' );
 
   // Theme Stylesheet
   wp_enqueue_style( 'xidipity-style', get_stylesheet_uri() );
 
 }
+
+/**
+ * Load scripts async
+ */
+function xidipity_async_scripts($url)
+{
+    if ( strpos( $url, '#asyncload') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncload', '', $url );
+    else
+	return str_replace( '#asyncload', '', $url )."' async='async";
+    }
+add_filter( 'clean_url', 'xidipity_async_scripts', 11, 1 );
+
 /**
  * Add Categories for Attachments
  */
