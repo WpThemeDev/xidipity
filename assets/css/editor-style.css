@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81112.1
+  Build    - 81120.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -403,7 +403,9 @@ hr.gradient {
   clear: both;
 }
 
-/* # multi column  -----------------------------------------------------------*/
+/*  # HTML
+   ## Two Column
+ ---------------------------------------------------------------------------*/
 
 table.twocolumn {
   margin: 0;
