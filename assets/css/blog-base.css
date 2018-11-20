@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81107.1
+Build       - 81120.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -789,8 +789,10 @@ table.twocolumn tr td:after {
 
 table.twocolumn tr td img,
 table.twocolumn tr td figure {
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: auto;
+/*  margin-left: auto;
+  margin-right: auto; */
 }
 
 /* large & extra large devices */
