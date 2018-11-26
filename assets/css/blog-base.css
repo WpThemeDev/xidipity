@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81120.2
+Build       - 81125.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1889,7 +1889,9 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  bottom: -2px;
+  /*  bottom: -2px; */
+  opacity: 0.7;
+  filter: Alpha(opacity=70);
 }
 
 input[type="text"],
