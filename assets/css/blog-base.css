@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81125.1
+Build       - 81128.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -517,6 +517,12 @@ ul li ul li ul li ul li ul > li::before {
   color: var(--fg-bas-600);
   display: inline-block;
   width: 1.1em;
+}
+
+/*- font awesome -*/
+ul li i {
+	margin-left: -23px;
+	padding-right: 10px;
 }
 
 /*-   Horizonal List   -*/
