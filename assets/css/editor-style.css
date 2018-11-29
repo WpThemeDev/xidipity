@@ -536,7 +536,7 @@ ul li ul li ul li ul li ul > li::before {
 }
 
 /*- font awesome -*/
-ul li i {
+ul.fa li i {
 	margin-left: -23px;
 	padding-right: 10px;
 }
