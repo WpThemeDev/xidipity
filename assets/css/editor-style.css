@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81128.2
+  Build    - 81128.3
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -536,15 +536,15 @@ ul li ul li ul li ul li ul > li::before {
 }
 
 /*- font awesome -*/
-.fa-ul {
+ul.fa-ul {
   margin-left: 0;
 }
 
-.fa-ul li i {
+ul.fa-ul li i {
   margin-right: 10px;
 }
 
-.fa-ul li:before {
+ul.fa-ul li:before {
   content: "\2012";
   color: transparent;
   display: inline-block;
