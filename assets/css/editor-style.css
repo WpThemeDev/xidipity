@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81112.1
+  Build    - 81128.3
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -403,7 +403,9 @@ hr.gradient {
   clear: both;
 }
 
-/* # multi column  -----------------------------------------------------------*/
+/*  # HTML
+   ## Two Column
+ ---------------------------------------------------------------------------*/
 
 table.twocolumn {
   margin: 0;
@@ -529,6 +531,22 @@ ul.style-text li::before {
 ul li ul li ul li ul li ul > li::before {
   content: "\2025";
   color: var(--fg-bas-600);
+  display: inline-block;
+  width: 1.1em;
+}
+
+/*- font awesome -*/
+ul.fa-ul {
+  margin-left: 0;
+}
+
+ul.fa-ul li i {
+  margin-right: 10px;
+}
+
+ul.fa-ul li:before {
+  content: "\2012";
+  color: transparent;
   display: inline-block;
   width: 1.1em;
 }
