@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81128.3
+  Build    - 81206.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -868,7 +868,7 @@ object {
   max-width: 100%;
   text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 0 0 8px 0;
 }
 
 .wp-caption.alignleft {
