@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81128.4
+Build       - 81208.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -3640,14 +3640,16 @@ span.post-title:hover {
 
 /* read more */
 
-.rm-tbl {
+table.rm-tbl,
+table table.rm-tbl {
   border-collapse: collapse;
   font-size: 14px;
   font-size: 0.875rem;
   width: 100%;
 }
 
-.rm-td-left {
+table td.rm-td-left,
+table table td.rm-td-left {
   color: var(--fg-pri-300);
   text-align: center;
   height: 30px;
@@ -3655,11 +3657,13 @@ span.post-title:hover {
   width: 40px;
 }
 
-.rm-td-right {
+table td.rm-td-right,
+table table td.rm-td-right {
   color: var(--fg-bas-800);
   height: 30px;
   padding-left: 10px;
   text-align: left;
+  vertical-align: middle;
   width: calc(100%-40px);
 }
 
