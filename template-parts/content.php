@@ -44,8 +44,8 @@
       <table class="rm-tbl" border="1">
         <tbody>
           <tr>
-            <td class="rm-td-left"><i class="material-icons">message</i></td>
-            <td class="rm-td-right"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></td>
+            <td style="color: var(--fg-pri-300); width: 50px; padding: 5px 0 5px 0; text-align: center; font-size: 1.2rem;"><i class="far fa-comment-alt"></i></td>
+            <td style="width: 100%; vertical-align: middle; font-size: 0.875rem; padding-left: 10px;"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></td>
           </tr>
         </tbody>
       </table><!-- .more-link-table -->
