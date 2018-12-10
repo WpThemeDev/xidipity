@@ -525,7 +525,7 @@ function google_adsense_shortcode($atts) {
  */
 function disp_error ($msg) {
   
-  return '<table class="annotate"> <tbody> <tr> <td><i class="material-icons" style="color: #e53935; font-size: 1.875rem;">notification_important</i></td><td>' . $msg . '</td></tr></tbody></table>';
+  return '<table><tbody><tr><td style="background-color: #b71c1c; border-right: 0; color: white; font-size: 1.5rem; padding: 5px; text-align: center; width: 50px;"><span class="far-glyph"></span></td><td style="background-color: var(--bg-bas-050); font-size: 0.9375rem; padding: 5px 5px 5px 10px; vertical-align: middle; width: 100%;">' . $msg . '</td></tr></tbody></table>';
 
 }
 
