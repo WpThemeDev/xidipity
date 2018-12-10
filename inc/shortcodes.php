@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Build       - 81210.2
+  Build       - 81210.3
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -525,7 +525,7 @@ function google_adsense_shortcode($atts) {
  */
 function disp_error ($msg) {
   
-  return '<table><tbody><tr><td style="background-color: #b71c1c; border-right: 0; color: white; font-size: 1.5rem; padding: 5px; text-align: center; width: 50px;"><span class="far-glyph"></span></td><td style="background-color: var(--bg-bas-050); font-size: 0.9375rem; padding: 5px 5px 5px 10px; vertical-align: middle; width: 100%;">' . $msg . '</td></tr></tbody></table>';
+  return '<div style="background-color: #f7f7f7; border-left: 5px solid #d32f2f; padding: 10px; width: 100%;">' . $msg . '</div>';
 
 }
 
