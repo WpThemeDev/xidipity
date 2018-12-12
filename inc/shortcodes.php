@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Build       - 81210.3
+  Build       - 81212.1
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -513,6 +513,145 @@ function google_adsense_shortcode($atts) {
 
   return $html;
   
+}
+
+/**
+ * Short code
+ *
+ * xidipity_blogs
+ *
+ * syntax - [xidipity_blogs orderby='' order='' posts=0]category 1,category 2, etc[/xidipity_blogs]
+ *
+ *  orderby (field name)
+ *    post_date
+ *    post_title
+ *    post_author
+ *
+ *  order (acending / decending)
+ *    asc
+ *    desc
+ *
+ *  posts (#)
+ *
+ *
+ */
+
+add_shortcode('xidipity_blogs', 'xidipity_blogs_shortcode');
+
+function xidipity_blogs_shortcode($atts, $category_list) {
+
+  // check for & fix missing arguments
+  
+  if (!is_array($atts)) {
+    $atts = array(
+      'orderby' => 'post_date',
+      'order'   => 'ASC',
+      'posts'   => 5,
+    );
+
+  } else {
+
+    if (!isset($atts['orderby'])) {
+      $atts['orderby'] = 'post_date';
+    }
+    
+    if (!isset($atts['order'])) {
+      $atts['order'] = 'ASC';
+    }
+    
+    if (!isset($atts['posts'])) {
+      $atts['posts'] = 5;
+    }
+  }
+
+  if ( empty ( trim($category_list) ) ) {
+    $html = disp_error ('Xidipity Blogs Shortcode - no category specified.');
+  } else {
+    $array = explode( ',', $category_list );
+    $items = array_filter($array, create_function('$a','return trim($a)!=="";'));
+    $cat_items = '';
+    foreach ( $items as $item ) {
+      $cat_items .= $item . ',';
+    }
+    $categories = substr( $cat_items, 0, -1 );
+
+    if ( empty ( trim($atts['orderby']) ) ) { $atts['orderby'] = 'post_date'; }
+    if (!$atts['order'] == 'desc') { $atts['order'] = 'ASC'; }
+    if ( $atts['posts'] == 0 ) { $atts['posts'] = 5; }
+    
+    $defaults = array(
+      'orderby' => 'post_date',
+      'order'   => 'ASC',
+      'posts'   => 5,
+    );
+  
+    $sc_arg = wp_parse_args( $atts, $defaults );
+
+    // Set up initial query for post
+    $args = array(
+      'category_name'       => $category_list,
+      'order'               => $sc_arg['order'],
+      'orderby'             => $sc_arg['orderby'],
+      'perm'                => 'readable',
+      'post_type'           => 'post',
+      'posts_per_page'      => $sc_arg['posts'],
+    );
+     
+    $query_rslt = new WP_Query( apply_filters( 'xidipity_blogs_shortcode_args', $args ) );
+
+    if ( ! $query_rslt->have_posts() ) {
+      /**
+       * Filter content to display if no posts match the current query.
+       *
+       * @since 1.8
+       *
+       * @param string $no_posts_message Content to display, returned via {@see wpautop()}.
+       */
+       return disp_error ('Xidipity Blogs Shortcode - no posts assigned to (' . $categories . ').');
+    }
+    
+    $i = 0;
+    $html = '';
+    $image_size = 'large';
+
+    while ( $query_rslt->have_posts() ): $query_rslt->the_post(); global $post;
+    
+      $i++;
+      $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), $image_size ) . '</a>';
+      $title = '<h3><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
+      $excerpt = get_the_excerpt();
+    
+      $html .= '<table id="twocol" class="twocolumn">';
+      $html .= '<tbody>';
+      $html .= '<tr>';
+      $html .= '<td>';
+      $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+      $html .= '</td>';
+      $html .= '<td>';
+      $html .= $title;
+      $html .= '<p>' . $excerpt . '</p>';
+      $html .= '<p>&nbsp;</p>';
+      $html .= '<div style="width: 100%;">';
+      $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+      $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">Read more …</a></div>';
+      $html .= '</div>';
+      $html .= '</td>';
+      $html .= '</tr>';
+      $html .= '</tbody>';
+      $html .= '</table>';
+      $html .= '<p>&nbsp;</p>';
+
+    endwhile;
+
+    if ( $i < 1 ) {
+      $html = disp_error ('Xidipity Blogs Shortcode - no posts assigned to (' . $categories . ').');
+    }
+    
+    wp_reset_postdata();
+  }
+  
+  return $html;
+
 }
 
 /**
