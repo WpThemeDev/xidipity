@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81212.1
+Build       - 81213.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1659,19 +1659,6 @@ div#respond #cancel-comment-reply-link {
   padding: 0;
 }
 
-/* middle dot */
-.entry-meta ul>li::before {
-  /*
-  color: var(--fg-bas-900);
-  content: "\00b7";
-  font-family: "Font Awesome 5 Free";
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 900;
-  padding: 0 4px;
-  */
-}
-
 .entry-meta ul>li:first-child::before {
   display: none;
 }
@@ -1696,16 +1683,22 @@ div#respond #cancel-comment-reply-link {
 }
 
 .entry-meta .posted-on a,
-.entry-meta .posted-on a:visited {
-  color: var(--fg-sec-500);
+.entry-meta .byline a,
+.entry-meta .posted-on a:visited,
+.entry-meta .byline a:visited {
+  color: var(--fg-bas-900);
   font-weight:300;
   letter-spacing: 0.8px;
+  padding-bottom: 4px;
 }
 
 .entry-meta .posted-on a:hover,
+.entry-meta .byline a:hover,
 .entry-meta .posted-on a:focus,
-.entry-meta .posted-on a:active {
-  color: var(--fg-pri-500);
+.entry-meta .byline a:focus,
+.entry-meta .posted-on a:active,
+.entry-meta .byline a:active {
+  color: var(--fg-bas-900);
 }
 
 /* Entry Meta Header */
