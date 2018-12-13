@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Build       - 81212.1
+  Build       - 81212.2
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -519,6 +519,7 @@ function google_adsense_shortcode($atts) {
  * Short code
  *
  * xidipity_blogs
+ * build: 81212.1
  *
  * syntax - [xidipity_blogs orderby='' order='' posts=0]category 1,category 2, etc[/xidipity_blogs]
  *
@@ -587,40 +588,41 @@ function xidipity_blogs_shortcode($atts, $category_list) {
   
     $sc_arg = wp_parse_args( $atts, $defaults );
 
-    // Set up initial query for post
-    $args = array(
-      'category_name'       => $category_list,
-      'order'               => $sc_arg['order'],
-      'orderby'             => $sc_arg['orderby'],
-      'perm'                => 'readable',
-      'post_type'           => 'post',
-      'posts_per_page'      => $sc_arg['posts'],
-    );
+  	// Set up initial query for post
+  	$args = array(
+  		'category_name'       => $category_list,
+  		'order'               => $sc_arg['order'],
+  		'orderby'             => $sc_arg['orderby'],
+  		'perm'                => 'readable',
+  		'post_type'           => 'post',
+  		'posts_per_page'      => $sc_arg['posts'],
+  	);
      
-    $query_rslt = new WP_Query( apply_filters( 'xidipity_blogs_shortcode_args', $args ) );
+	  $query_rslt = new WP_Query( apply_filters( 'xidipity_blogs_shortcode_args', $args ) );
 
-    if ( ! $query_rslt->have_posts() ) {
-      /**
-       * Filter content to display if no posts match the current query.
-       *
-       * @since 1.8
-       *
-       * @param string $no_posts_message Content to display, returned via {@see wpautop()}.
-       */
-       return disp_error ('Xidipity Blogs Shortcode - no posts assigned to (' . $categories . ').');
-    }
+  	if ( ! $query_rslt->have_posts() ) {
+  		/**
+  		 * Filter content to display if no posts match the current query.
+  		 *
+  		 * @since 1.8
+  		 *
+  		 * @param string $no_posts_message Content to display, returned via {@see wpautop()}.
+  		 */
+  		 return disp_error ('Xidipity Blogs Shortcode - no posts assigned to (' . $categories . ').');
+  	}
     
     $i = 0;
     $html = '';
     $image_size = 'large';
 
-    while ( $query_rslt->have_posts() ): $query_rslt->the_post(); global $post;
+	  while ( $query_rslt->have_posts() ): $query_rslt->the_post(); global $post;
     
       $i++;
       $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), $image_size ) . '</a>';
-      $title = '<h3><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
-      $excerpt = get_the_excerpt();
-    
+			$title = '<h3><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
+      $excerpt = '<p>' . get_the_excerpt() . '</p>';
+      $stamp = '<p style="font-size: 80%;">' . get_the_modified_date(). ' | ' . get_the_author() . '</p>';
+
       $html .= '<table id="twocol" class="twocolumn">';
       $html .= '<tbody>';
       $html .= '<tr>';
@@ -629,7 +631,9 @@ function xidipity_blogs_shortcode($atts, $category_list) {
       $html .= '</td>';
       $html .= '<td>';
       $html .= $title;
-      $html .= '<p>' . $excerpt . '</p>';
+      $html .= $stamp;
+      $html .= '<p>&nbsp;</p>';
+      $html .= $excerpt;
       $html .= '<p>&nbsp;</p>';
       $html .= '<div style="width: 100%;">';
       $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
