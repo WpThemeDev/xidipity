@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Build       - 81211.1
+  Build       - 81213.2
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -519,7 +519,7 @@ function google_adsense_shortcode($atts) {
  * Short code
  *
  * xidipity_blogs
- * build: 81212.1
+ * build: 81213.2
  *
  * syntax - [xidipity_blogs orderby='' order='' posts=0]category 1,category 2, etc[/xidipity_blogs]
  *
@@ -619,7 +619,7 @@ function xidipity_blogs_shortcode($atts, $category_list) {
     
       $i++;
       $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), $image_size ) . '</a>';
-			$title = '<h3 class="page-title"><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
+	  $title = '<h3 class="page-title"><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
       $excerpt = '<p>' . get_the_excerpt() . '</p>';
       $stamp = '<p class="posted-on" style="font-size: 85%; padding-top: 15px;">' . get_the_modified_date(). ' | By ' . get_the_author() . '</p>';
 
