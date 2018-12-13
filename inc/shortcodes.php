@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
   file        - shortcodes.php
-  Build       - 81212.2
+  Build       - 81212.3
   Programmer  - John Baer
   Purpose     - Support file for Xidipity Wordpress Theme
   License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -621,7 +621,7 @@ function xidipity_blogs_shortcode($atts, $category_list) {
       $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail( get_the_ID(), $image_size ) . '</a>';
 			$title = '<h3><a href="' . apply_filters( 'the_permalink', get_permalink() ) . '">' . get_the_title() . '</a></h3>';
       $excerpt = '<p>' . get_the_excerpt() . '</p>';
-      $stamp = '<p style="font-size: 80%;">' . get_the_modified_date(). ' | ' . get_the_author() . '</p>';
+      $stamp = '<p style="font-size: 80%;">' . get_the_modified_date(). ' | By ' . get_the_author() . '</p>';
 
       $html .= '<table id="twocol" class="twocolumn">';
       $html .= '<tbody>';
