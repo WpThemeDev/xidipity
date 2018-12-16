@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81213.1
+Build       - 81216.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -3648,19 +3648,13 @@ table td.rm-td-right {
 }
 
 /*  # Wordpress
-   ## Site Branding
+   ## Site Branding Logo
  ---------------------------------------------------------------------------*/
 
+/*- mobile & defaults devices -*/
 .header-banner {
   background-color: var(--sys-hdr-bg-color);
-/*
-  background: #eeeeee;
-  background: -moz-linear-gradient(top, #eeeeee 0%, #bdbdbd 100%);
-  background: -webkit-linear-gradient(top, #eeeeee 0%,#bdbdbd 100%);
-  background: linear-gradient(to bottom, #eeeeee 0%,#bdbdbd 100%);
-  border-bottom: 2px solid var(--fg-bas-200);
-*/
-  height: 100%;
+  height: 70px;
   overflow: hidden;
   padding-left:2em;
   padding-right:2em;
@@ -3668,44 +3662,30 @@ table td.rm-td-right {
   width:100%;
 }
 
-/*- small devices -*/
-@media screen and (min-width: 320px) {
-  img.header-logo {
-    height: auto;
-    min-width: 150%;
-  }
-}
-
 /*- medium devices -*/
 @media screen and (min-width: 768px) {
-  img.header-logo {
-    height: auto;
-    min-width: 100%;
+  .header-banner {
+    height: 80px;
   }
 }
 
 /*- large devices -*/
 @media screen and (min-width:992px) {
-  img.header-logo {
-    height: auto;
-    min-width: 100%;
+  .header-banner {
+    height: 90px;
   }
 }
 
 /*- x-large devices -*/
 @media screen and (min-width:1200px) {
-  img.header-logo {
-    height: auto;
-    min-width: 100%;
+  .header-banner {
+    height: 100px;
   }
 }
 
-/*- xx-large devices -*/
-@media screen and (min-width:1440px) {
-  img.header-logo {
-    height: auto;
-    min-width: 100%;
-  }
+img.header-logo {
+  height: 100%;
+  width: auto;
 }
 
 /*  # Wordpress
