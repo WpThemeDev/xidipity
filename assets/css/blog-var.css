@@ -1,6 +1,6 @@
 /*
 File        - blog-var.css
-Build       - 81204.1
+Build       - 81216.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -150,19 +150,25 @@ site-title  (var:hexcode)
   --title-align:center;
   --title-color:#5e35b1;
   --title-font-fam:'Kaushan Script', cursive;
-  --title-font-size:3.1875em;
+  --title-font-size-xs:1.5em;     mobile
+  --title-font-size-sm:1.875em;   small tablet
+  --title-font-size-md:2.1875em;  large tablet
+  --title-font-size-lg:2.625em;   desktop
   --title-font-spacing:0.0625em;
   --title-font-style:normal;
   --title-font-wgt:400;
 
 site-description  (var:hexcode)
-  --descr-color:#424242;
+  --descr-color:#212121;
   --descr-font-fam:'Roboto', sans-serif;
-  --descr-font-size:1em;
+  --descr-font-size-xs:0.625em;     mobile
+  --descr-font-size-sm:0.8125em;    small tablet
+  --descr-font-size-md:0.9375em;    large tablet
+  --descr-font-size-lg:1em;         desktop
   --descr-font-spacing:0.5em;
   --descr-font-style:normal;
   --descr-font-wgt:300;
-  
+
 system  (var:hexcode)
   --sys-bg-color:#fafafa;               > body background
   --sys-hdr-bg-color:#fafafa;           > header background
@@ -330,16 +336,22 @@ print
   --title-align:center;
   --title-color:#5e35b1;
   --title-font-fam:'Kaushan Script', cursive;
-  --title-font-size:3.1875em;
-  --title-font-style:normal;
+  --title-font-size-xs:1.5em;
+  --title-font-size-sm:1.875em;
+  --title-font-size-md:2.1875em;
+  --title-font-size-lg:2.625em;
   --title-font-spacing:0.0625em;
+  --title-font-style:normal;
   --title-font-wgt:400;
 
   --descr-color:#212121;
   --descr-font-fam:'Roboto', sans-serif;
-  --descr-font-size:1em;
-  --descr-font-style:normal;
+  --descr-font-size-xs:0.625em;
+  --descr-font-size-sm:0.8125em;
+  --descr-font-size-md:0.9375em;
+  --descr-font-size-lg:1em;
   --descr-font-spacing:0.5em;
+  --descr-font-style:normal;
   --descr-font-wgt:300;
 
   --mnu-fg-color:#616161;
@@ -383,4 +395,3 @@ print
 
   }
 }
-
