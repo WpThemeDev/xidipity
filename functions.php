@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 81116.1
+ * build: 81217.1
  *
  * @package xidipity
  */
@@ -42,8 +42,8 @@ function xidipity_setup() {
    * @see https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
    */
   add_theme_support( 'custom-logo', array(
-    'height'      => 400,
-    'width'       => 560,
+    'height'      => 100,
+    'width'       => 360,
     'flex-height' => true,
     'flex-width'  => true,
     'header-text' => array( 'site-title', 'site-description' ),
