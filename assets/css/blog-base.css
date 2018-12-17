@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81217.1
+Build       - 81217.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -3646,6 +3646,7 @@ table td.rm-td-right {
   margin: 0;
   position: relative;
 }
+
 /*  # Wordpress
    ## Site Branding
   ### Site Title & Description
@@ -3655,48 +3656,24 @@ table td.rm-td-right {
 .site-title a:visited {
   color: var(--title-color);
   font-family: var(--title-font-fam);
+  font-size: var(--title-font-size);
   font-style: var(--title-font-style);
   font-weight: var(--title-font-wgt);
   letter-spacing: var(--title-font-spacing);
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-top: 6px;
 }
 
 .site-description {
   color: var(--descr-color);
   font-family: var(--descr-font-fam);
+  font-size: var(--descr-font-size);
   font-style: var(--descr-font-style);
   font-weight: var(--descr-font-wgt);
   letter-spacing: var(--descr-font-spacing);
-  /*margin-top: -15px;*/
-  padding-bottom: 15px;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-bottom: 10px;
 }
 
 .site-title a:hover {
-  color: var(--fg-pri-500);
-}
-
-.img-site-title a,
-.img-site-title a:visited {
-/*  color: var(--fg-bas-700); */
-  font-family: var(--title-font-fam);
-  font-weight: 400;
-  font-size: 51px;
-  font-size: 3.1875rem;
-}
-
-.img-site-description {
-  color: var(--fg-bas-700);
-  font-weight: 300;
-  letter-spacing: 8px;
-  letter-spacing: 0.5rem;
-  margin-top: -15px;
-  padding-bottom: 15px;
-}
-
-.img-site-title a:hover {
   color: var(--fg-pri-500);
 }
 
@@ -3707,64 +3684,57 @@ table td.rm-td-right {
 /*- mobile devices -*/
 .header-banner {
   background-color: var(--sys-hdr-bg-color);
-  height: 50px;
+  min-height: 30px;
   overflow: hidden;
   text-align: var(--title-align);
   width:100%;
 }
 
 .site-title {
-  font-size: var(--title-font-size-xs);
+  padding-bottom: 10px;
+  padding-top: 4px;
 }
 .site-description  {
   display: none;
-/*  font-size: var(--descr-font-size-xs); */
 }
 
 /*- medium devices -*/
 @media screen and (min-width: 768px) {
-  .header-banner {
-    height: 80px;
-  }
   .site-title {
-    font-size: var(--title-font-size-sm);
+    padding-bottom: 3px;
+    padding-top: 4px;
   }
   .site-description  {
     display: block;
-    font-size: var(--descr-font-size-sm);
   }
 }
 
 /*- large devices -*/
 @media screen and (min-width:992px) {
-  .header-banner {
-    height: 90px;
-  }
   .site-title {
-    font-size: var(--title-font-size-md);
+    padding-bottom: 4px;
+    padding-top: 4px;
   }
   .site-description  {
     display: block;
-    font-size: var(--descr-font-size-md);
   }
 }
 
 /*- x-large devices -*/
 @media screen and (min-width:1200px) {
-  .header-banner {
-    height: 100px;
-  }
   .site-title {
-    font-size: var(--title-font-size-lg);
+    padding-bottom: 4px;
+    padding-top: 4px;
   }
   .site-description  {
     display: block;
-    font-size: var(--descr-font-size-lg);
   }
 }
 
 img.header-logo {
   height: 100%;
+  object-fit: contain;
+  padding-top: 5px;
   width: auto;
 }
 
