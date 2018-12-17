@@ -2,7 +2,7 @@
 /**
  * Sample implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
- * build: 81216.1
+ * build: 81217.1
  *
  * @package xidipity
  */
@@ -17,8 +17,8 @@
 function xidipity_custom_header_setup() {
   add_theme_support( 'custom-header', apply_filters( 'xidipity_custom_header_args', array(
     'default-text-color' => '#212121',
-    'width'              => 2560,
-    'height'             => 360,
+    'width'              => 1165,
+    'height'             => 100,
     'flex-height'        => true,
     'wp-head-callback'   => 'xidipity_header_style',
   ) ) );
