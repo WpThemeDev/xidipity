@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 81218.1
+ Build       - 81218.2
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -640,7 +640,7 @@ function lst_blogs_shortcode($atts, $category_list)
       /**
        * Return if no posts match the current query.
        */
-      return disp_error('Xidipity Blogs Shortcode - no posts assigned to (' . $categories . ').');
+      return disp_error('List Blogs Shortcode - no posts assigned to (' . $categories . ').');
     }
     
     $html       = '';
