@@ -1,1 +1,0 @@
-xidipity/ languages folder
