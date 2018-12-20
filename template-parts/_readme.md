@@ -1,1 +1,0 @@
-xidipity/ template-parts folder
