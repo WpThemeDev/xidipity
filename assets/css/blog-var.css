@@ -1,6 +1,6 @@
 /*
 File        - blog-var.css
-Build       - 81106.1
+Build       - 81217.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -150,19 +150,19 @@ site-title  (var:hexcode)
   --title-align:center;
   --title-color:#5e35b1;
   --title-font-fam:'Kaushan Script', cursive;
-  --title-font-size:3.1875em;
+--title-font-size:3em;          desktop
   --title-font-spacing:0.0625em;
   --title-font-style:normal;
   --title-font-wgt:400;
 
 site-description  (var:hexcode)
-  --descr-color:#424242;
+  --descr-color:#212121;
   --descr-font-fam:'Roboto', sans-serif;
-  --descr-font-size:1em;
+  --descr-font-size:1em;        desktop
   --descr-font-spacing:0.5em;
   --descr-font-style:normal;
   --descr-font-wgt:300;
-  
+
 system  (var:hexcode)
   --sys-bg-color:#fafafa;               > body background
   --sys-hdr-bg-color:#fafafa;           > header background
@@ -190,8 +190,16 @@ dropdown menu  (var:hexcode)
   --mnu-bg-alt-color:#eeeeee;           > dropdown toolbar background color
   --mnu-bg-hover-alt-color:#f5f5f5;     > dropdown toolbar background hover color
 
-printer page
+print
+  @page
   --prnt-page:letter;
+
+  fonts
+  --sys-fnt-sans: sans-serif;
+  --sys-fnt-condensed: sans-serif;
+  --sys-fnt-mono: monospace;
+  --sys-fnt-serif: serif;
+  --sys-fnt-cursive: cursive;
 
 ----------------------------------------------------------------------------*/
 /*  font imports
@@ -322,16 +330,16 @@ printer page
   --title-align:center;
   --title-color:#5e35b1;
   --title-font-fam:'Kaushan Script', cursive;
-  --title-font-size:3.1875em;
-  --title-font-style:normal;
+  --title-font-size:3em;
   --title-font-spacing:0.0625em;
+  --title-font-style:normal;
   --title-font-wgt:400;
 
   --descr-color:#212121;
   --descr-font-fam:'Roboto', sans-serif;
   --descr-font-size:1em;
-  --descr-font-style:normal;
   --descr-font-spacing:0.5em;
+  --descr-font-style:normal;
   --descr-font-wgt:300;
 
   --mnu-fg-color:#616161;
@@ -360,6 +368,18 @@ printer page
   --sys-fnt-serif:'Roboto Slab', serif;
   --sys-fnt-cursive:'Kalam', cursive;
 
-  --prnt-page:letter;
+}
 
+@media print {
+  :root {
+    
+    --sys-fnt-sans: sans-serif;
+    --sys-fnt-condensed: sans-serif;
+    --sys-fnt-mono: monospace;
+    --sys-fnt-serif: serif;
+    --sys-fnt-cursive: cursive;
+
+    --prnt-page:letter;
+
+  }
 }
