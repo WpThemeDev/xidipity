@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 81218.1
+ * build: 81221.1
  *
  * @package xidipity
  */
@@ -664,7 +664,7 @@ function xidipity_theme_customize_register($wp_customize) {
   // option from theme customizer
   //=============================================================
   $wp_customize->remove_section("colors");
-  // $wp_customize->remove_section("background_image");
+  $wp_customize->remove_section("background_image");
   // $wp_customize->remove_section("static_front_page");
 }
 
