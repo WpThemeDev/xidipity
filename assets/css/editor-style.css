@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81218.1
+  Build    - 81224.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -366,6 +366,7 @@ hr {
   margin: 12px auto 13px auto;
   width: 80%;
 }
+
 /* double */
 hr.double {
   background-color: transparent;
@@ -380,6 +381,7 @@ hr.double {
   margin: 10px auto 11px auto;
   width: 80%;
 }
+
 /* gradient */
 hr.gradient {
   background-image: -webkit-linear-gradient(left, #F0F0F0, #BDBDBD, #F0F0F0);
@@ -407,77 +409,39 @@ hr.gradient {
    ## Two Column
  ---------------------------------------------------------------------------*/
 
-table.twocolumn {
+table.twocolumn,
+table.twocolumn table.twocolumn {
   margin: 0;
   width: 100%;
 }
 
-table.twocolumn tr td {
-  text-align: left;
-  padding: 0;
-  vertical-align: top;
+table.twocolumn tr td,
+table.twocolumn tr td table.twocolumn tr td {
+  float: none;
   width: 50%;
 }
 
-table.twocolumn tr td:first-child {
+table.twocolumn tr td:first-child,
+table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
   padding-right: 8px;
+  vertical-align: top;
 }
 
-table.twocolumn tr td:last-child {
+table.twocolumn tr td:last-child,
+table.twocolumn tr td:last-child table.twocolumn tr td:last-child {
   padding-left: 8px;
+  vertical-align: top;
 }
 
 table.twocolumn tr td img,
-table.twocolumn tr td figure {
+table.twocolumn tr td figure,
+table.twocolumn tr td table.twocolumn tr td img,
+table.twocolumn tr td table.twocolumn tr td figure {
   width: 100%;
   height: auto;
 }
 
-/* embedded table in twocolumn table */
-
-table.twocolumn table {
-  table-layout: fixed;
-  background-color: transparent;
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin: 15px 0 15px 0;
-  width: 100%;
-}
-
-table.twocolumn table caption {
-  margin-bottom: 15px;
-}
-
-table.twocolumn table th,
-table.twocolumn table td {
-  padding: 4px;
-}
-
-table.twocolumn table td {
-  text-align: left;
-  vertical-align: top;
-}
-
-table.twocolumn table thead th {
-  background: linear-gradient(#EEEEEE, #F5F5F5);
-  color: var(--fg-blk);
-  font-weight: 500;
-}
-
-table.twocolumn table thead th:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-table.twocolumn table tr:not(:last-child) td {
-  border-bottom: 1px solid var(--fg-bas-300);
-}
-
-table.twocolumn table tr td:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
 /* # List          -----------------------------------------------------------*/
-
 
 /**   Unordered List    **/
 
