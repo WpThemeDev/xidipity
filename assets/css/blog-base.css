@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81224.2
+Build       - 81224.3
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -5072,69 +5072,6 @@ figure.post-thumbnail:hover img {
 /*  # Misc
    ## Other
  ---------------------------------------------------------------------------*/
-
-/* : Hide blocks by @media    ------- */
-/* : xs - hidden              ------- */
-.xs\:hidden {
-  display: none;
-}
-.sm\:hidden {
-  display: block;
-}
-.md\:hidden {
-  display: block;
-}
-.lg\:hidden {
-  display: block;
-}
-
-/* : sm - hidden              ------- */
-@media screen and (min-width:768px) {
-  .xs\:hidden {
-    display: block;
-  }
-  .sm\:hidden {
-    display: none;
-  }
-  .md\:hidden {
-    display: block;
-  }
-  .lg\:hidden {
-    display: block;
-  }
-}
-
-/* : md - hidden              ------- */
-@media screen and (min-width:992px) {
-  .xs\:hidden {
-    display: block;
-  }
-  .sm\:hidden {
-    display: block;
-  }
-  .md\:hidden {
-    display: none;
-  }
-  .lg\:hidden {
-    display: block;
-  }
-}
-
-/* : lg - hidden              ------- */
-@media screen and (min-width:1200px) {
-  .xs\:hidden {
-    display: block;
-  }
-  .sm\:hidden {
-    display: block;
-  }
-  .md\:hidden {
-    display: block;
-  }
-  .lg\:hidden {
-    display: none;
-  }
-}
 
 /* grid container */
 
