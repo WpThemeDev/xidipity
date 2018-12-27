@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 81221.1
+ * build: 812271.1
  *
  * @package xidipity
  */
@@ -633,7 +633,7 @@ add_filter("tiny_mce_before_init", function($in, $editor_id) {
   $in['tadv_noautop']            = false;
   $in['apply_source_formatting'] = true;
   $in['menubar']                 = '';
-  $in['toolbar1']                = 'undo,redo,|,formatselect,fontsizeselect,|,fntwgt,italic,formats,|,indent,outdent,|,forecolor,backcolor,|,bullist,numlist,|,link,unlink,|,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
+  $in['toolbar1']                = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
   $in['toolbar2']                = '';
   $in['toolbar3']                = '';
   $in['toolbar4']                = '';
