@@ -8,7 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * build: 81229.2
+ * build: 81229.3
+ *
  * @package xidipity
  */
 
@@ -22,15 +23,10 @@ get_header(); ?>
           $sp  = count( get_option( 'sticky_posts' ) ); // # sticky posts
           $ppp = get_option( 'posts_per_page' ); // posts per page
           $pfp  = $ppp - $sp; // posts front page
-          $cat = array(get_category_by_slug('archive'),get_category_by_slug('post-sticky'),get_category_by_slug('post-featured')); // xclude categories
+          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-sticky') ); // xclude
           $cnt_posts = wp_count_posts();
           $tot_posts = $cnt_posts->publish;
           $max_pg = $tot_posts / $ppp;
-          
-//          echo 'Page # ' . $paged;
-//          echo ' | Sticky Posts: ' . $sp;
-//          echo ' | Posts / page: ' . $ppp;
-//          echo ' | Total posts: ' . $tot_posts;
           
           if ($paged == 1 ) {
             if ( empty($cat[0]) ) {
@@ -41,7 +37,7 @@ get_header(); ?>
             } else {
               $args = array (
                 'showposts' => $pfp,
-                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id),
+                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id,$cat[2]->term_id),
                 'paged' => $paged
               );
             }
@@ -54,7 +50,7 @@ get_header(); ?>
             } else {
               $args = array (
                 'showposts' => $ppp,
-                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id),
+                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id,$cat[2]->term_id),
                 'paged' => $paged
               );
             }
