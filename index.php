@@ -8,6 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * build: 81229.1
  * @package xidipity
  */
 
@@ -21,7 +22,7 @@ get_header(); ?>
           $sp  = count( get_option( 'sticky_posts' ) ); // # sticky posts
           $ppp = get_option( 'posts_per_page' ); // posts per page
           $pfp  = $ppp - $sp; // posts front page
-          $cat = array(get_category_by_slug('archive'),get_category_by_slug('sticky')); // xclude categories
+          $cat = array(get_category_by_slug('archive'),get_category_by_slug('post-sticky'),,get_category_by_slug('post-featured')); // xclude categories
           $cnt_posts = wp_count_posts();
           $tot_posts = $cnt_posts->publish;
           $max_pg = $tot_posts / $ppp;
