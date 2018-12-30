@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * build: 81229.3
+ * build: 81229.4
  *
  * @package xidipity
  */
@@ -23,13 +23,21 @@ get_header(); ?>
           $sp  = count( get_option( 'sticky_posts' ) ); // # sticky posts
           $ppp = get_option( 'posts_per_page' ); // posts per page
           $pfp  = $ppp - $sp; // posts front page
-          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-sticky') ); // xclude
           $cnt_posts = wp_count_posts();
           $tot_posts = $cnt_posts->publish;
           $max_pg = $tot_posts / $ppp;
+
+          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-sticky') );
+          $cat0 = $cat[0]->term_id;
+          $cat1 = $cat[1]->term_id;
+          $cat2 = $cat[2]->term_id;
           
+          if (is_null($cat0)) {$cat0 = '';} else {$cat0 = '-'.$cat0;}
+          if (is_null($cat1)) {$cat1 = '';} else {$cat1 = '-'.$cat1;}
+          if (is_null($cat2)) {$cat2 = '';} else {$cat2 = '-'.$cat2;}
+
           if ($paged == 1 ) {
-            if ( empty($cat[0]) ) {
+            if ( empty($cat0) and empty($cat1) and empty($cat2) ) {
               $args = array (
                 'showposts' => $pfp,
                 'paged' => $paged
@@ -37,12 +45,12 @@ get_header(); ?>
             } else {
               $args = array (
                 'showposts' => $pfp,
-                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id,$cat[2]->term_id),
+                'cat' => array($cat0,$cat1,$cat2),
                 'paged' => $paged
               );
             }
           } else {
-            if ( empty($cat[0]) ) {
+            if ( empty($cat0) and empty($cat1) and empty($cat2) ) {
               $args = array (
                 'showposts' => $ppp,
                 'paged' => $paged
@@ -50,7 +58,7 @@ get_header(); ?>
             } else {
               $args = array (
                 'showposts' => $ppp,
-                'category__not_in' => array($cat[0]->term_id,$cat[1]->term_id,$cat[2]->term_id),
+                'cat' => array($cat0,$cat1,$cat2),
                 'paged' => $paged
               );
             }
