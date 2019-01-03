@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90101.1
+ Build       - 90103.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -384,8 +384,9 @@ function lst_posts_shortcode($atts)
  * Short code
  *
  * lst_cats
+ * build: 90103.1
  *
- * syntax - [lst_cats style="" active=0 depth=0 pid=0 cnt=0 xclude=0]
+ * syntax - [lst_cats class="" active='0/1' depth=0 pid=0 show_cnt='0/1' xclude=""]
  *
  */
 
@@ -398,30 +399,30 @@ function lst_cats_shortcode($atts)
   
   if (!is_array($atts)) {
     $atts = array(
-      'style' => '',
-      'active' => 1,
+      'class' => '',
+      'active' => false,
       'depth' => 0,
       'pid' => 0,
-      'cnt' => 0,
-      'xclude' => 0
+      'show_cnt' => false,
+      'xclude' => ''
     );
     
   } else {
     
-    if (!isset($atts['style'])) {
-      $atts['style'] = 'dbl-spaced';
+    if (!isset($atts['class'])) {
+      $atts['class'] = 'qtr-spaced';
     }
     
     if (!isset($atts['active'])) {
-      $atts['active'] = 1;
+      $atts['active'] = false;
     }
     
     if (!isset($atts['pid'])) {
       $atts['pid'] = 0;
     }
     
-    if (!isset($atts['cnt'])) {
-      $atts['cnt'] = 0;
+    if (!isset($atts['show_cnt'])) {
+      $atts['show_cnt'] = false;
     }
     
     if (!isset($atts['xclude'])) {
@@ -430,12 +431,12 @@ function lst_cats_shortcode($atts)
   }
   
   $defaults = array(
-    'style' => '',
-    'active' => 1,
+    'class' => '',
+    'active' => false,
     'depth' => 0,
     'pid' => 0,
-    'cnt' => 0,
-    'xclude' => 0
+    'show_cnt' => false,
+    'xclude' => ''
   );
   
   $sc_arg = wp_parse_args($atts, $defaults);
@@ -444,7 +445,7 @@ function lst_cats_shortcode($atts)
     'child_of' => $sc_arg['pid'],
     'current_category' => 0,
     'depth' => $sc_arg['depth'],
-    'echo' => 0,
+    'echo' => false,
     'exclude' => $sc_arg['xclude'],
     'exclude_tree' => '',
     'feed' => '',
@@ -456,7 +457,7 @@ function lst_cats_shortcode($atts)
     'order' => 'ASC',
     'orderby' => 'name',
     'separator' => '<br />',
-    'show_count' => $sc_arg['cnt'],
+    'show_count' => $sc_arg['show_cnt'],
     'show_option_all' => '',
     'show_option_none' => __('No categories', 'xidipity'),
     'style' => 'list',
@@ -466,11 +467,12 @@ function lst_cats_shortcode($atts)
   );
   
   $html = '<ul>';
-  if (!empty($sc_arg['style'])) {
-    $html = '<ul class="' . $sc_arg['style'] . '">';
+  if (!empty($sc_arg['class'])) {
+    $html = '<ul class="' . $sc_arg['class'] . '">';
   }
   $html .= wp_list_categories($query_args);
   $html .= '</ul>';
+  
   wp_reset_postdata();
   
   return $html;
