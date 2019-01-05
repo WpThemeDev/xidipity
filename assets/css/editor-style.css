@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 81224.1
+  Build    - 90105.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -27,7 +27,7 @@ Import key css files
  */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/utilities.css");
-@import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "blog-var.css";
 
