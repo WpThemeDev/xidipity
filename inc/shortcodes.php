@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90103.1
+ Build       - 90105.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -176,6 +176,8 @@ function xidipity_gallery_shortcode($atts, $category_list)
  *
  * lst_pages
  *
+ * build: 90105.1
+ *
  * syntax - [lst_pages class="" before_item="" after_item="" depth=0 pid=0 xclude=0]
  *
  */
@@ -200,7 +202,7 @@ function lst_pages_shortcode($atts)
   } else {
     
     if (!isset($atts['class'])) {
-      $atts['class'] = 'dbl-spaced';
+      $atts['class'] = 'qtr-spaced';
     }
     
     if (!isset($atts['before_item'])) {
@@ -224,6 +226,12 @@ function lst_pages_shortcode($atts)
     }
   }
   
+  // remove xidipity template defaults
+  if ( $atts['class'] == 'CLASS' ) { $atts['class'] = ''; }
+  if ( $atts['before_item'] == 'STYLE' ) { $atts['before_item'] = ''; }
+  if ( $atts['after_item'] == 'STYLE' ) { $atts['after_item'] = ''; }
+  if ( $atts['xclude'] == 'IDs' ) { $atts['xclude'] = ''; }
+
   $defaults = array(
     'class' => '',
     'before_item' => '',
@@ -268,6 +276,8 @@ function lst_pages_shortcode($atts)
  *
  * lst_posts
  *
+ * build: 90105.1
+ *
  * syntax - [lst_posts class="" before_item="" after_item="" order_by="" order="" cat="" xclude=0]
  *
  */
@@ -293,7 +303,7 @@ function lst_posts_shortcode($atts)
   } else {
     
     if (!isset($atts['class'])) {
-      $atts['class'] = 'dbl-spaced';
+      $atts['class'] = 'qtr-spaced';
     }
     
     if (!isset($atts['before_item'])) {
@@ -321,6 +331,13 @@ function lst_posts_shortcode($atts)
     }
   }
   
+  // remove xidipity template defaults
+  if ( $atts['class'] == 'CLASS' ) { $atts['class'] = ''; }
+  if ( $atts['before_item'] == 'STYLE' ) { $atts['before_item'] = ''; }
+  if ( $atts['after_item'] == 'STYLE' ) { $atts['after_item'] = ''; }
+  if ( $atts['cat'] == 'NAMEs' ) { $atts['cat'] = ''; }
+  if ( $atts['xclude'] == 'IDs' ) { $atts['xclude'] = ''; }
+
   $defaults = array(
     'class' => '',
     'before_item' => '',
