@@ -7,4 +7,7 @@ To ensure a positive user experience, Xidipity leverages the latest web technolo
 
 For those who like to customize the details of their blog design Xidity includes the Tailwind CSS framework. Options include sidebar, no sidebar, custom menus, translation ready, and SEO friendly.  
 
-See it in action at "[Xidipity.com](https://www.xidipity.com/)".
+See it in action at: 
+- [Xidipity.com](https://www.xidipity.com/)
+- [My Google Site](https://mygooglesite.com/)
+- [The Google Shop](https://thegoogleshop.com/)

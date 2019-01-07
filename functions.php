@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 81218.1
+ * build: 90105.1
  *
  * @package xidipity
  */
@@ -154,17 +154,6 @@ function xidipity_scripts() {
     'jquery'
   ), '1.0', true);
   
-  // Codemirror
-  /*
-  wp_enqueue_script( 'xidipity-codemirror-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/codemirror.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-placeholder', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/addon/display/placeholder.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-active-line', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/addon/selection/active-line.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-xml', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/mode/xml/xml.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-css', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/mode/css/css.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-javascript', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/mode/javascript/javascript.js', '5.38', false );
-  wp_enqueue_script( 'xidipity-codemirror-html-mixed', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/mode/htmlmixed/htmlmixed.js', '5.38', false );
-  */
-  
   // Clipboard Js
   wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', '2.01', true);
   
@@ -179,7 +168,7 @@ function xidipity_scripts() {
   wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', '', false, 'print');
   
   // Fontawesome
-  wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', '', true, 'all');
+  wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', '', true, 'all');
   
   // codemirror
   // wp_enqueue_style( 'xidipity-codemirror', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.38.0/codemirror.css#asyncload', false, '5.38', 'screen');
@@ -633,7 +622,7 @@ add_filter("tiny_mce_before_init", function($in, $editor_id) {
   $in['tadv_noautop']            = false;
   $in['apply_source_formatting'] = true;
   $in['menubar']                 = '';
-  $in['toolbar1']                = 'undo,redo,|,formatselect,fontsizeselect,|,fntwgt,italic,formats,|,indent,outdent,|,forecolor,backcolor,|,bullist,numlist,|,link,unlink,|,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
+  $in['toolbar1']                = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
   $in['toolbar2']                = '';
   $in['toolbar3']                = '';
   $in['toolbar4']                = '';
@@ -664,7 +653,7 @@ function xidipity_theme_customize_register($wp_customize) {
   // option from theme customizer
   //=============================================================
   $wp_customize->remove_section("colors");
-  // $wp_customize->remove_section("background_image");
+  $wp_customize->remove_section("background_image");
   // $wp_customize->remove_section("static_front_page");
 }
 
