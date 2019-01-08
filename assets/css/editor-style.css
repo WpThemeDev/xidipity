@@ -25,8 +25,8 @@ Programmer - John Baer
   
 Import key css files
  */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/utilities.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.3/tailwind.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.3/utilities.css");
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "blog-var.css";
