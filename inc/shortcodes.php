@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90105.1
+ Build       - 90108.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -552,7 +552,7 @@ function google_adsense_shortcode($atts)
  * Short code
  *
  * lst_blogs
- * build: 90101.1
+ * build: 90108.1
  *
  * syntax - [lst_blogs orderby='' order='' fmt=0 cnt=0 xclude='']category 1,category 2, etc[/lst_blogs]
  *
@@ -686,8 +686,11 @@ function lst_blogs_shortcode($atts, $category_list)
         $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
         $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
         $excerpt = '<p>' . get_the_excerpt() . '</p>';
-        $stamp   = '<p class="posted-on" style="font-size: 85%; padding-top: 15px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-        
+        if ( $sc_arg['order'] == 'modified') {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+        } else {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+        }
         if ($pane == 'L') {
           $pane = 'R';
           $html .= '<table id="twocol" class="twocolumn">';
@@ -729,7 +732,11 @@ function lst_blogs_shortcode($atts, $category_list)
         $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
         $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
         $excerpt = '<p>' . get_the_excerpt() . '</p>';
-        $stamp   = '<p class="posted-on" style="font-size: 85%; padding-top: 15px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+        if ( $sc_arg['order'] == 'modified') {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+        } else {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+        }
         
         $html .= '<table id="twocol" class="twocolumn">';
         $html .= '<tbody>';
@@ -756,7 +763,11 @@ function lst_blogs_shortcode($atts, $category_list)
         $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
         $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
         $excerpt = '<p>' . get_the_excerpt() . '</p>';
-        $stamp   = '<p class="posted-on" style="font-size: 85%; padding-top: 15px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+        if ( $sc_arg['order'] == 'modified') {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+        } else {
+          $stamp   = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+        }
         
         $html .= '<table id="twocol" class="twocolumn">';
         $html .= '<tbody>';
