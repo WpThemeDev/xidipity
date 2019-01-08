@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81224.3
+Build       - 90108.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -4281,7 +4281,7 @@ ul.sbwidget {
 
 .widget li,
 .widget li.hentry {
-  padding: 0 0 15px;
+  padding: 0 0 5px;
   position: relative;
 }
 
