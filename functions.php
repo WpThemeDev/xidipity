@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 90105.1
+ * build: 90107.1
  *
  * @package xidipity
  */
@@ -161,9 +161,9 @@ function xidipity_scripts() {
   wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js', '2.1', true);
   
   // Enqueue CSS files
-  wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/preflight.min.css', '6.5', false, 'screen');
-  wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/tailwind.min.css', '6.5', false, 'screen');
-  wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.5/utilities.min.css', '6.5', false, 'screen');
+  wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.3/preflight.min.css', '7.3', false, 'screen');
+  wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.3/tailwind.min.css', '7.3', false, 'screen');
+  wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.3/utilities.min.css', '7.3', false, 'screen');
   wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css#asyncload', '', false, 'screen');
   wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', '', false, 'print');
   
