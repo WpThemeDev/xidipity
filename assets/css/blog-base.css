@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90108.1
+Build       - 90111.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -4224,7 +4224,7 @@ img.header-logo {
   letter-spacing: 0.8px;
   letter-spacing: 0.05rem;
   margin: 0 0 22px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .widget a,
