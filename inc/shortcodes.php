@@ -722,7 +722,7 @@ function lst_blogs_shortcode($atts, $category_list)
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
                     $html .= '<div style="width: 100%;">';
-                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
                     $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
@@ -736,7 +736,7 @@ function lst_blogs_shortcode($atts, $category_list)
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
                     $html .= '<div style="width: 100%;">';
-                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
                     $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
@@ -765,7 +765,7 @@ function lst_blogs_shortcode($atts, $category_list)
                 $html .= $excerpt;
                 $html .= '<p>&nbsp;</p>';
                 $html .= '<div style="width: 100%;">';
-                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
                 $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                 $html .= '</div>';
                 $html .= '</td>';
@@ -799,7 +799,7 @@ function lst_blogs_shortcode($atts, $category_list)
                 $html .= $excerpt;
                 $html .= '<p>&nbsp;</p>';
                 $html .= '<div style="width: 100%;">';
-                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
                 $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                 $html .= '</div>';
                 $html .= '</td>';
