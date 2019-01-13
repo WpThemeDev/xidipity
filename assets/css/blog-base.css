@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90113.1
+Build       - 90113.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1719,8 +1719,8 @@ div#respond #cancel-comment-reply-link {
 .entry-meta .byline a,
 .entry-meta .posted-on a:visited,
 .entry-meta .byline a:visited {
-  color: var(--sys-lnk-pri-color);
-  font-weight: 300;
+  color: var(--fg-pri-500);
+  font-weight: 400;
   letter-spacing: 0.8px;
   padding-bottom: 4px;
 }
