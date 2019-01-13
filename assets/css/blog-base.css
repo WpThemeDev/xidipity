@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90111.1
+Build       - 90113.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1542,7 +1542,7 @@ cite {
 .comment-list .comment-author .fn a:hover,
 .comment-list .comment-author .fn a:focus,
 .comment-list .comment-author .fn a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 .comment-list .says {
@@ -1649,7 +1649,7 @@ div#respond #cancel-comment-reply-link {
 .credits a:hover,
 .credits a:focus,
 .credits a:active {
-  color: var(--fg-pri-500) !important;
+  color: var(--sys-lnk-sec-color) !important;
 }
 
 .credits .copyright {
@@ -1712,14 +1712,14 @@ div#respond #cancel-comment-reply-link {
 .entry-meta a:hover,
 .entry-meta a:focus,
 .entry-meta a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 .entry-meta .posted-on a,
 .entry-meta .byline a,
 .entry-meta .posted-on a:visited,
 .entry-meta .byline a:visited {
-  color: var(--fg-bas-900);
+  color: var(--sys-lnk-pri-color);
   font-weight: 300;
   letter-spacing: 0.8px;
   padding-bottom: 4px;
@@ -1731,7 +1731,7 @@ div#respond #cancel-comment-reply-link {
 .entry-meta .byline a:focus,
 .entry-meta .posted-on a:active,
 .entry-meta .byline a:active {
-  color: var(--fg-bas-900);
+  color: var(--sys-lnk-sec-color);
 }
 
 /* Entry Meta Header */
@@ -2133,7 +2133,7 @@ pre#textarea {
 .page-title a:hover,
 .page-title a:focus,
 .page-title a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 /* image attachment page */
@@ -3167,7 +3167,7 @@ video.wp-video-shortcode {
 .image-navigation .nav-next a:hover,
 .image-navigation .nav-next a:focus,
 .image-navigation .nav-next a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 .comment-navigation .nav-previous .meta-nav,
@@ -3600,7 +3600,7 @@ a.ab-item:active {
   background: transparent;
 }
 span.post-title:hover {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 .meta-nav
 .meta-nav {
@@ -3645,7 +3645,7 @@ span.post-title:hover {
   ### Post Pagination
  ---------------------------------------------------------------------------*/
 
-/* read more */
+/* read more
 
 table.rm-tbl {
   border-collapse: collapse;
@@ -3670,6 +3670,7 @@ table td.rm-td-right {
   vertical-align: middle;
   width: calc(100%-40px);
 }
+*/
 
 /*  # Wordpress
    ## Sidebar
@@ -3707,7 +3708,7 @@ table td.rm-td-right {
 }
 
 .site-title a:hover {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 /*  # Wordpress
@@ -4231,7 +4232,7 @@ img.header-logo {
 .widget a:visited,
 a.sbwidget,
 a.sbwidget:visited {
-  color: var(--fg-sec-500);
+  color: var(--sys-lnk-pri-color);
 }
 
 .widget a:hover,
@@ -4240,7 +4241,7 @@ a.sbwidget:visited {
 a.sbwidget:hover,
 a.sbwidget:focus,
 a.sbwidget:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
 }
 
 ul.sbwidget {
