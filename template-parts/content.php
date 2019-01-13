@@ -1,7 +1,7 @@
 <?php
 /**
  * The default template for displaying content
- * Build: 90113.1
+ * Build: 90113.2
  *
  * @package xidipity
  */
@@ -30,7 +30,7 @@
         </header><!-- .entry-header -->
         <?php if ( 'post' == get_post_type() ) : // For Posts ?>
         <div class="entry-meta entry-meta-header-after">
-          <ul class="hz-list">
+          <ul class="hz-list" style="margin-top: -4px; padding-bottom:10px;">
             <li><?php xidipity_posted_on(); ?></li>
             <li><?php xidipity_posted_by(); ?></li>
           </ul>
