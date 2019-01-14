@@ -1,6 +1,6 @@
 /*
 File        - blog-var.css
-Build       - 90113.1
+Build       - 90113.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -172,7 +172,7 @@ system  (var:hexcode)
   --sys-font-size:16px;                 > font size (in pixels)
   --sys-font-wgt:300;                   > text weight
   --sys-lnk-pri-color:#673ab7;          > link color
-  --sys-lnk-sec-color:#ff5722;          > link hover color
+  --sys-lnk-sec-color:#f4511e;          > link hover color
   --sys-lnk-bak-color:transparent;      > link hover background color
   --sys-lnk-wgt:400;                    > link weight
   
@@ -360,7 +360,7 @@ print
   --sys-font-size:1rem;
   --sys-font-wgt:300;
   --sys-lnk-pri-color:#673ab7;
-  --sys-lnk-sec-color:#ff5722;
+  --sys-lnk-sec-color:#f4511e;
   --sys-lnk-bak-color:transparent;
   --sys-lnk-wgt:400;
 
