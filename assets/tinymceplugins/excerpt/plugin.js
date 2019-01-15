@@ -1,7 +1,7 @@
 /**
  * Plugin Name: TinyMCE Excerpt Plugin
  * Plugin URI: http:www.xidipity.com
- * Build: 90115.1
+ * Build: 90115.2
  * Author: John Baer
  * Description: A TinyMCE Plugin to add excerpt template to the MCE Visual Editor
  * License: GPL2
@@ -16,8 +16,8 @@
             onclick: function() {
               var html = '<!-- Template: excerpt -->' + String.fromCharCode(13) +
               '<p class="excerpt-template">Place excerpt here ...<span class="hidden"><!--more--></span></p>' + String.fromCharCode(13) +
-              '<p>&nbsp;</p>' + String.fromCharCode(13) +
-              '<!-- End Template -->';
+              '<!-- End Template -->' + String.fromCharCode(13) +
+              '<p>&nbsp;</p>';
               editor.insertContent(html);
             }
         });
