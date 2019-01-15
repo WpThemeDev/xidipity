@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90114.2
+Build         - 90115.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -171,7 +171,7 @@ system  (var:hexcode)
   --sys-hdr-bg-color:#fafafa;           > header background
   --sys-ft-bg-color:#fafafa;            > footer background
   --sys-line-hght:1.4;                  > content line height
-  --sys-font-color:#212121;             > text color
+  --sys-font-color:#000000;             > text color
   --sys-font-size:16px;                 > font size (in pixels)
   --sys-font-wgt:300;                   > text weight
   --sys-lnk-pri-color:#673ab7;          > link color
@@ -359,7 +359,7 @@ print
   --sys-ft-bg-color:#fafafa;
   
   --sys-line-hght:1.4;
-  --sys-font-color:#212121;
+  --sys-font-color:#000000;
   --sys-font-size:1rem;
   --sys-font-wgt:300;
   --sys-lnk-pri-color:#673ab7;
