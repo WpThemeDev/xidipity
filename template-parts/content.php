@@ -1,7 +1,7 @@
 <?php
 /**
  * The default template for displaying content
- * Build: 81212.1
+ * Build: 90113.2
  *
  * @package xidipity
  */
@@ -30,7 +30,7 @@
         </header><!-- .entry-header -->
         <?php if ( 'post' == get_post_type() ) : // For Posts ?>
         <div class="entry-meta entry-meta-header-after">
-          <ul class="hz-list">
+          <ul class="hz-list" style="margin-top: -4px; padding-bottom:10px;">
             <li><?php xidipity_posted_on(); ?></li>
             <li><?php xidipity_posted_by(); ?></li>
           </ul>
@@ -43,7 +43,7 @@
       </div><!-- .entry-summary -->
       <?php endif; ?>
       <div style="width: 100%;">
-          <div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>
+          <div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>
           <div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></div>
       </div>
     </div><!-- .entry-data-wrapper -->

@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 81224.3
+Build       - 90113.5
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -456,6 +456,7 @@ a:hover,
 a:focus,
 a:active {
   color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
   font-weight: var(--sys-lnk-wgt);
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1542,7 +1543,8 @@ cite {
 .comment-list .comment-author .fn a:hover,
 .comment-list .comment-author .fn a:focus,
 .comment-list .comment-author .fn a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 .comment-list .says {
@@ -1649,7 +1651,8 @@ div#respond #cancel-comment-reply-link {
 .credits a:hover,
 .credits a:focus,
 .credits a:active {
-  color: var(--fg-pri-500) !important;
+  color: var(--sys-lnk-sec-color) !important;
+  background-color: var(--sys-lnk-bak-color) !important;
 }
 
 .credits .copyright {
@@ -1712,15 +1715,16 @@ div#respond #cancel-comment-reply-link {
 .entry-meta a:hover,
 .entry-meta a:focus,
 .entry-meta a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 .entry-meta .posted-on a,
 .entry-meta .byline a,
 .entry-meta .posted-on a:visited,
 .entry-meta .byline a:visited {
-  color: var(--fg-bas-900);
-  font-weight: 300;
+  color: var(--fg-sec-900);
+  font-weight: 400;
   letter-spacing: 0.8px;
   padding-bottom: 4px;
 }
@@ -1731,7 +1735,8 @@ div#respond #cancel-comment-reply-link {
 .entry-meta .byline a:focus,
 .entry-meta .posted-on a:active,
 .entry-meta .byline a:active {
-  color: var(--fg-bas-900);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 /* Entry Meta Header */
@@ -2133,13 +2138,13 @@ pre#textarea {
 .page-title a:hover,
 .page-title a:focus,
 .page-title a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 /* image attachment page */
 h1.attachment-entry-title {
   color: var(--fg-blk);
-  ;
   font-size: 20px;
   font-size: 1.25rem;
 }
@@ -3167,7 +3172,8 @@ video.wp-video-shortcode {
 .image-navigation .nav-next a:hover,
 .image-navigation .nav-next a:focus,
 .image-navigation .nav-next a:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 .comment-navigation .nav-previous .meta-nav,
@@ -3356,7 +3362,7 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   }
   
   .main-navigation ul {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--sys-fnt-sans);
     font-weight: 300;
     list-style: none;
     margin: 0;
@@ -3396,6 +3402,8 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   }
 
   .main-navigation ul li:hover,
+  .main-navigation ul li a:hover,
+  .main-navigation ul li ul li a:hover,
   .main-navigation ul li ul li:hover {
     background-color: var(--mnu-bg-hover-std-color) !important;
   }
@@ -3412,10 +3420,12 @@ input#menu-toggle[type=checkbox]:checked ~ div {
 
   .main-navigation .menu ul li a:hover {
     color: var(--mnu-fg-hover-std-color) !important;
+    background-color: var(--mnu-bg-hover-alt-color) !important;
   }
 
   .main-navigation .menu ul li ul li a:hover {
     color: var(--mnu-fg-hover-alt-color) !important;
+    background-color: var(--mnu-bg-hover-alt-color) !important;
   }
 
   .main-navigation ul ul {
@@ -3437,6 +3447,7 @@ input#menu-toggle[type=checkbox]:checked ~ div {
     
   .main-navigation ul ul li a:hover {
     color: var(--mnu-fg-hover-alt-color) !important;
+    background-color: var(--mnu-bg-hover-alt-color) !important;
   }
   
   .main-navigation ul ul li {
@@ -3600,7 +3611,8 @@ a.ab-item:active {
   background: transparent;
 }
 span.post-title:hover {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 .meta-nav
 .meta-nav {
@@ -3645,7 +3657,7 @@ span.post-title:hover {
   ### Post Pagination
  ---------------------------------------------------------------------------*/
 
-/* read more */
+/* read more
 
 table.rm-tbl {
   border-collapse: collapse;
@@ -3670,6 +3682,7 @@ table td.rm-td-right {
   vertical-align: middle;
   width: calc(100%-40px);
 }
+*/
 
 /*  # Wordpress
    ## Sidebar
@@ -3707,7 +3720,8 @@ table td.rm-td-right {
 }
 
 .site-title a:hover {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color:transparent;
 }
 
 /*  # Wordpress
@@ -4224,14 +4238,14 @@ img.header-logo {
   letter-spacing: 0.8px;
   letter-spacing: 0.05rem;
   margin: 0 0 22px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .widget a,
 .widget a:visited,
 a.sbwidget,
 a.sbwidget:visited {
-  color: var(--fg-sec-500);
+  color: var(--sys-lnk-pri-color);
 }
 
 .widget a:hover,
@@ -4240,7 +4254,8 @@ a.sbwidget:visited {
 a.sbwidget:hover,
 a.sbwidget:focus,
 a.sbwidget:active {
-  color: var(--fg-pri-500);
+  color: var(--sys-lnk-sec-color);
+  background-color: var(--sys-lnk-bak-color);
 }
 
 ul.sbwidget {
@@ -4281,7 +4296,7 @@ ul.sbwidget {
 
 .widget li,
 .widget li.hentry {
-  padding: 0 0 15px;
+  padding: 0 0 5px;
   position: relative;
 }
 
