@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90113.5
+Build       - 90119.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -803,11 +803,17 @@ table.twocolumn table.twocolumn {
 
 table.twocolumn tr td,
 table.twocolumn tr td table.twocolumn tr td {
+  display: block;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+/*
   float: left;
   text-align: left;
   padding: 0;
   vertical-align: top;
   width: 100%;
+*/
 }
 
 table.twocolumn tr td:first-child,
@@ -821,7 +827,8 @@ table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
 
   table.twocolumn tr td,
   table.twocolumn tr td table.twocolumn tr td {
-    float: none;
+    display: table-cell;
+    /* float: none; */
     width: 50%;
   }
 
@@ -860,6 +867,10 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 15px 0 15px 0;
+}
+
+table:before {
+  overflow: auto;
 }
 
 table caption {
