@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90119.2
+Build       - 90120.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -21,9 +21,8 @@ Comments    - Base CSS classes as modified
   ## HTML5 Elements
   ## Links
   ## List
-  ## Print
-  ## Two Column
   ## Table
+  ## Two Column
   ## Typography
     ### Blank line spacers
     ### Font Awesome
@@ -790,71 +789,6 @@ ul.dbl-spaced > li:last-child {
 }
 
 /*  # HTML
-   ## Two Column
- ---------------------------------------------------------------------------*/
-
-table.twocolumn,
-table.twocolumn table.twocolumn {
-  margin: 0;
-  width: 100%;
-}
-
-/*- mobile devices --*/
-
-table.twocolumn tr td,
-table.twocolumn tr td table.twocolumn tr td {
-  display: block;
-  padding: 0;
-  vertical-align: top;
-  width: 100%;
-/*
-  float: left;
-  text-align: left;
-  padding: 0;
-  vertical-align: top;
-  width: 100%;
-*/
-}
-
-table.twocolumn tr td:first-child,
-table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
-  border-right: 0;
-}
-
-/*- everything else -*/
-
-@media screen and (min-width: 992px) {
-
-  table.twocolumn tr td,
-  table.twocolumn tr td table.twocolumn tr td {
-    display: table-cell;
-    /* float: none; */
-    width: 50%;
-  }
-
-  table.twocolumn tr td:first-child,
-  table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
-    padding-right: 8px;
-    vertical-align: top;
-  }
-
-
-  table.twocolumn tr td:last-child,
-  table.twocolumn tr td:last-child table.twocolumn tr td:last-child {
-    padding-left: 8px;
-    vertical-align: top;
-  }
-}
-
-table.twocolumn tr td img,
-table.twocolumn tr td figure,
-table.twocolumn tr td table.twocolumn tr td img,
-table.twocolumn tr td table.twocolumn tr td figure {
-  width: 100%;
-  height: auto;
-}
-
-/*  # HTML
    ## Table
  ---------------------------------------------------------------------------*/
 
@@ -900,106 +834,101 @@ table tr td:not(:last-child) {
   border-right: 1px solid var(--fg-bas-300);
 }
 
-/* embedded table in twocolumn table */
+/*  # HTML
+   ## Two Column
+ ---------------------------------------------------------------------------*/
 
-table.twocolumn table {
-  table-layout: fixed;
-  background-color: transparent;
-  border-spacing: 0;
-  border-collapse: collapse;
-  margin: 15px 0 15px 0;
+table#twocol {
+  border:0;
+  margin:0;
+  padding:0;
   width: 100%;
 }
 
-table.twocolumn table caption {
-  margin-bottom: 15px;
+table#twocol tr td,
+table#twocol tr td table#twocol tr td {
+  border:0;
+  display: block;
+  width: 100%;
 }
 
-table.twocolumn table th,
-table.twocolumn table td {
-  padding: 4px;
+/*	embedded twocolumn	*/
+table#twocol tr td table#twocol tr td {
+  border:0;
 }
 
-table.twocolumn table td {
-  text-align: left;
-  vertical-align: top;
+/*	embedded table	*/
+table#twocol table {
+  padding:0;
+  margin:0;
 }
 
-table.twocolumn table thead th {
-  background: linear-gradient(#EEEEEE, #F5F5F5);
-  color: var(--fg-blk);
-  font-weight: 500;
-}
-
-table.twocolumn table thead th:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-table.twocolumn table tr:not(:last-child) td {
+table#twocol tr tr:not(:last-child) td {
   border-bottom: 1px solid var(--fg-bas-300);
+  display: table-cell;
 }
 
-table.twocolumn table tr td:not(:last-child) {
+table#twocol tr tr td:not(:last-child) {
   border-right: 1px solid var(--fg-bas-300);
+  display: table-cell;
 }
 
-/*  annotate  ----------------------- */
-/*  mobile    ----------------------- */
-table.annotate {
-  background-color: var(--bg-bas-050);
-  border: 1px solid transparent;
-  border-collapse: collapse;
+table#twocol tr td figure,
+table#twocol:first-child tr td figure {
+  height: auto;
+  margin-bottom: -8px;
   width: 100%;
 }
 
-table.annotate tr td:not(:last-child) {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 50px;
-  vertical-align: middle;
-}
-
-table.annotate tr td:last-child {
-  font-size: 14px;
-  line-height: 1.25;
-  padding: 5px 10px;
+table#twocol tr td img,
+table#twocol:first-child tr td img {
+  height: auto;
+  margin-bottom: -6px;
   width: 100%;
 }
 
-/*  small     ----------------------- */
-@media screen and (min-width: 576px) {
-  table.annotate tr td:not(:last-child) {
-    width: 50px;
-  }
-}
-
-/*  medium    ----------------------- */
-@media screen and (min-width: 768px) {
-  table.annotate tr td:not(:last-child) {
-    width: 70px;
-  }
-}
-
-/*  large     ----------------------- */
+/*	tablet & desktop	*/
 @media screen and (min-width: 992px) {
-  table.annotate tr td:not(:last-child) {
-    width: 70px;
+  table#twocol tr td,
+  table#twocol tr td table#twocol tr td {
+    display: table-cell;
+    width: 50%;
   }
-}
 
-/*  x large   ----------------------- */
-@media screen and (min-width: 1200px) {
-  table.annotate tr td:not(:last-child) {
-    width: 70px;
+  table#twocol tr td:first-child {
+	padding-right: 8px;
+    vertical-align: top;
   }
-}
 
-/*  xx large  ----------------------- */
-@media screen and (min-width: 1440px) {
-  table.annotate tr td:not(:last-child) {
-    width: 70px;
+  table#twocol tr td:not(:first-child) {
+	padding-left: 8px;
+    vertical-align: top;
   }
+
+  /*	embedded twocolumn	*/
+  table#twocol:first-child tr td:first-child {
+	padding-right: 4px;
+    vertical-align: top;
+  }
+
+  table#twocol:first-child tr td:not(:first-child) {
+	padding-left: 4px;
+    vertical-align: top;
+  }
+
+  table#twocol tr td table#twocol tr td {
+    border:0;
+  }
+
+  /*	embedded table	*/
+  table#twocol tr tr:not(:last-child) td {
+    border-bottom: 1px solid var(--fg-bas-300);
+  }
+
+  table#twocol tr tr td:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300);
+  }
+	
 }
 
 /*  # HTML
