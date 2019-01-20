@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90105.1
+  Build    - 90120.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -404,43 +404,6 @@ hr.gradient {
   display: block;
   clear: both;
 }
-
-/*  # HTML
-   ## Two Column
- ---------------------------------------------------------------------------*/
-
-table.twocolumn,
-table.twocolumn table.twocolumn {
-  margin: 0;
-  width: 100%;
-}
-
-table.twocolumn tr td,
-table.twocolumn tr td table.twocolumn tr td {
-  float: none;
-  width: 50%;
-}
-
-table.twocolumn tr td:first-child,
-table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
-  padding-right: 8px;
-  vertical-align: top;
-}
-
-table.twocolumn tr td:last-child,
-table.twocolumn tr td:last-child table.twocolumn tr td:last-child {
-  padding-left: 8px;
-  vertical-align: top;
-}
-
-table.twocolumn tr td img,
-table.twocolumn tr td figure,
-table.twocolumn tr td table.twocolumn tr td img,
-table.twocolumn tr td table.twocolumn tr td figure {
-  width: 100%;
-  height: auto;
-}
-
 /* # List          -----------------------------------------------------------*/
 
 /**   Unordered List    **/
@@ -684,71 +647,6 @@ ul.dbl-spaced > li:last-child {
   display:block;
   height:150px;
   width:150px;
-}
-
-/* # HTML
-  ## Table -----------------------------------------------------------*/
-
-/* Table Styles */
-
-table {
-  table-layout: fixed;
-  background-color: transparent;
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 15px 0 15px 0;
-  margin: 0.9375rem 0 0.9375rem 0;
-}
-
-table caption {
-  margin-bottom: 15px;
-  margin-bottom: 0.9375rem;
-}
-
-table th, table td {
-  padding: 4px;
-  padding: 0.25rem;
-}
-
-table thead th {
-  background: linear-gradient(#EEEEEE, #F5F5F5);
-  color: var(--fg-blk);
-}
-
-table thead th:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-table tr:not(:last-child) td {
-  border-bottom: 1px solid var(--fg-bas-300);
-}
-
-table tr td:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-/*  annotate  ----------------------- */
-table.annotate {
-  background-color: var(--bg-bas-050);
-  border: 1px solid transparent;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table.annotate tr td:not(:last-child) {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 70px;
-  vertical-align: middle;
-}
-
-table.annotate tr td:last-child {
-  font-size: 14px;
-  line-height: 1.25;
-  padding: 5px 10px;
-  width: 100%;
 }
 
 a,
@@ -1889,6 +1787,151 @@ table table td.rm-td-right {
   .xl\:font-cursive {
     font-family: var(--sys-fnt-cursive);
   }
+}
+
+/*  # eof
+ ---------------------------------------------------------------------------
+  editor-style
+ ---------------------------------------------------------------------------*/
+ 
+/*  # HTML
+   ## Table
+ ---------------------------------------------------------------------------*/
+
+/* Table Styles */
+
+table {
+  table-layout: fixed;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+
+table:before {
+  content: "";
+  overflow: auto;
+}
+
+table caption {
+  margin-bottom: 15px;
+}
+
+table th,
+table td {
+  padding: 4px;
+}
+
+table thead th {
+  background: linear-gradient(#EEEEEE, #F5F5F5);
+  color: var(--fg-blk);
+}
+
+table thead th:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+/*  # HTML
+   ## Two Column
+ ---------------------------------------------------------------------------*/
+
+table#twocol {
+  border:1px;
+  border-collapse: separate;
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+
+/*  embedded twocolumn  */
+table#twocol table#twocol {
+  border:dashed 1px #f48fb1;
+  border-collapse: separate;
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+
+table#twocol tr td table#twocol tr td:not(:last-child) {
+  border-right:dashed 1px #f48fb1;
+}
+
+/*  embedded table  */
+table#twocol table {
+  padding:0;
+  margin:0;
+}
+
+table#twocol tr tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table#twocol tr tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+/* figures & images */
+table#twocol tr td figure,
+table#twocol:first-child tr td figure {
+  height: auto;
+  margin-bottom: -8px;
+  width: 100%;
+}
+
+table#twocol tr td img,
+table#twocol:first-child tr td img {
+  height: auto;
+  margin-bottom: -6px;
+  width: 100%;
+}
+
+/*  set columns */
+table#twocol tr td,
+table#twocol tr td table#twocol tr td {
+  width: 50%;
+}
+
+/*  set column padding  */
+table#twocol tr td:first-child {
+padding-right: 8px;
+  vertical-align: top;
+}
+
+table#twocol tr td:not(:first-child) {
+padding-left: 8px;
+  vertical-align: top;
+}
+
+table#twocol:first-child tr td:first-child {
+padding-right: 4px;
+  vertical-align: top;
+}
+
+table#twocol:first-child tr td:not(:first-child) {
+padding-left: 4px;
+  vertical-align: top;
+}
+
+table#twocol tr td table#twocol tr td {
+  border:0;
+}
+
+/*  embedded table  */
+table#twocol tr tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table#twocol tr tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
 }
 
 /*  # eof
