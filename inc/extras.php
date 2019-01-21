@@ -2,6 +2,8 @@
 /**
  * Custom functions that act independently of the theme templates
  *
+ * build: 90121.1
+ *
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package xidipity
@@ -294,11 +296,11 @@ add_action( 'xidipity_credits', 'xidipity_copyright' );
 function xidipity_designer() {
 	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>',
 		esc_url( 'https://www.xidipity.com' ),
-		esc_attr( 'xidipity Theme' ),
-		esc_html( 'xidipity Theme' ),
-		esc_html__( 'Powered by', 'xidipity' ),
+		esc_attr( 'Xidipity Theme' ),
+		esc_html( 'Xidipity Theme' ),
+		esc_html__( 'Powered by', 'Xidipity' ),
 		esc_url( 'https://wordpress.org' ),
-		esc_attr( 'WordPress', 'xidipity' ),
+		esc_attr( 'WordPress', 'Xidipity' ),
 		esc_html( 'WordPress' )
 	);
 
