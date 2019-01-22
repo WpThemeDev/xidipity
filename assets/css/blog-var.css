@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90115.2
+Build         - 90121.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -8,11 +8,20 @@ Sources       - Google Material Design (https://material.io/)
 Comments      - Xidipity variables which includes fonts, foreground colors, & background colors.
 Tags          - System: configuration / css
 
-Color Scheme  - base / deep purple / deep orange
-Google Fonts  - Roboto / Roboto condensed / Roboto mono / Roboto slab / Kalam
+Color Scheme    https://xidipity.com/authoring-tools/style/color-palette/
+         base - grey
+      primary - deep orange
+    secondary - deep purple
+    
+Google Fonts    https://fonts.google.com/
+   sans serif - Roboto
+    condensed - Roboto condensed
+   monospaced - Roboto mono
+        serif - Roboto slab
+      cursive - Kalam
 
 -----------------------------------------------------------------------------
-# TABLE OF CONTENTS:
+DOCUMENTATION
 -----------------------------------------------------------------------------
 
 google font imports
@@ -30,7 +39,7 @@ Kalam
 Kaushan (Site Title)
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
-foreground (var:hexcode)
+foreground
   black & white
   --fg-blk:     #000000;
   --fg-wht:     #ffffff;
@@ -71,7 +80,7 @@ foreground (var:hexcode)
   --fg-sec-100:#d1c4e9;
   --fg-sec-050:#ede7f6;
 
-background  (var:hexcode)
+background
   black & white
   --bg-blk:     #000000;
   --bg-wht:     #ffffff;
@@ -112,88 +121,116 @@ background  (var:hexcode)
   --bg-sec-100:#d1c4e9;
   --bg-sec-050:#ede7f6;
 
-headers  (var:hexcode)
-  black
-  --h1-color:#000000;
-  --h1-font:'Roboto', sans-serif;
-  --h1-size:2.125em;
-  --h1-style:normal;
-  --h1-wgt:400;
+headers
+  --h1-color:#000000;                                 > font color
+  --h1-font:'Roboto', sans-serif;                     > font family
+  --h1-size:2.125em;                                  > font size
+  --h1-style:normal;                                  > font style
+  --h1-weight:400;                                    > font weight
 
-  --h2-color:#000000;
-  --h2-font:'Roboto', sans-serif;
-  --h2-size:1.875em;
-  --h2-style:normal;
-  --h2-wgt:400;
+  --h2-color:#000000;                                 > font color
+  --h2-font:'Roboto', sans-serif;                     > font family
+  --h2-size:1.875em;                                  > font size
+  --h2-style:normal;                                  > font style
+  --h2-weight:400;                                    > font weight
 
-  --h3-color:#000000;
-  --h3-font:'Roboto', sans-serif;
-  --h3-size:1.5em;
-  --h3-style:normal;
-  --h3-wgt:400;
+  --h3-color:#000000;                                 > font color
+  --h3-font:'Roboto', sans-serif;                     > font family
+  --h3-size:1.5em;                                    > font size
+  --h3-style:normal;                                  > font style
+  --h3-weight:400;                                    > font weight
 
-  --h4-color:#000000;
-  --h4-font:'Roboto', sans-serif;
-  --h4-size:1.25em;
-  --h4-style:normal;
-  --h4-wgt:400;
+  --h4-color:#000000;                                 > font color
+  --h4-font:'Roboto', sans-serif;                     > font family
+  --h4-size:1.25em;                                   > font size
+  --h4-style:normal;                                  > font style
+  --h4-weight:400;                                    > font weight
 
-  --h5-color:#000000;
-  --h5-font:'Roboto', sans-serif;
-  --h5-size:1.125em;
-  --h5-style:normal;
-  --h5-wgt:400;
+  --h5-color:#000000;                                 > font color
+  --h5-font:'Roboto', sans-serif;                     > font family
+  --h5-size:1.125em;                                  > font size
+  --h5-style:normal;                                  > font style
+  --h5-weight:400;                                    > font weight
 
-  --h6-color:#000000;
-  --h6-font:'Roboto', sans-serif;
-  --h6-size:1.125em;
-  --h6-style:italic;
-  --h6-wgt:400;
+  --h6-color:#000000;                                 > font color
+  --h6-font:'Roboto', sans-serif;                     > font family
+  --h6-size:1.125em;                                  > font size
+  --h6-style:italic;                                  > font style
+  --h6-weight:400;                                    > font weight
 
-site-title  (var:hexcode)
-  --title-align:center;
-  --title-color:#5e35b1;
-  --title-font-fam:'Kaushan Script', cursive;
-  --title-font-size:3em;
-  --title-font-spacing:0.0625em;
-  --title-font-style:normal;
-  --title-font-wgt:400;
+site-header
+  --sys-hdr-bg-color:#fafafa;                         > header background color
+  --sys-hdr-align:center;                             > header alignment
+  site-title
+  --title-color:#5e35b1;                              > font color
+  --title-font-family:'Kaushan Script', cursive;      > font family
+  --title-font-size:3em;                              > font size
+  --title-font-spacing:0.0625em;                      > font character spacing
+  --title-font-style:normal;                          > font style
+  --title-font-weight:400;                            > font weight
 
-site-description  (var:hexcode)
-  --descr-color:#212121;
-  --descr-font-fam:'Roboto', sans-serif;
-  --descr-font-size:1em;
-  --descr-font-spacing:0.5em;
-  --descr-font-style:normal;
-  --descr-font-wgt:300;
+  site-description
+  --descr-align:center;                               > font alignment
+  --descr-color:#212121;                              > font color
+  --descr-font-family:'Roboto', sans-serif;           > font family
+  --descr-font-size:1em;                              > font size
+  --descr-font-spacing:0.5em;                         > font character spacing
+  --descr-font-style:normal;                          > font style
+  --descr-font-weight:300;                            > font weight
 
-system  (var:hexcode)
-  --sys-bg-color:#fafafa;               > body background
-  --sys-hdr-bg-color:#fafafa;           > header background
-  --sys-ft-bg-color:#fafafa;            > footer background
-  --sys-line-hght:1.4;                  > content line height
-  --sys-font-color:#000000;             > text color
-  --sys-font-size:16px;                 > font size (in pixels)
-  --sys-font-wgt:300;                   > text weight
-  --sys-lnk-pri-color:#673ab7;          > link color
-  --sys-lnk-sec-color:#f4511e;          > link hover color
-  --sys-lnk-bak-color:transparent;      > link hover background color
-  --sys-lnk-wgt:400;                    > link weight
-  
-  --sys-fnt-sans:'Roboto', sans-serif;
-  --sys-fnt-condensed:'Roboto Condensed', sans-serif;
-  --sys-fnt-mono:'Roboto Mono', monospace;
-  --sys-fnt-serif:'Roboto Slab', serif;
-  --sys-fnt-cursive:'Kalam', cursive;
+site-footer
+  --sys-ft-bg-color:#fafafa;                          > footer background color
+  --sys-ft-align:center;                              > font horizontal alignment
+  site-copyright
+  --copyright-line-height:inherit;                    > font line height
+  --copyright-font-color:#455a64;                     > font color
+  --copyright-lnk-pri-color:#455a64;                  > font link color
+  --copyright-lnk-sec-color:#f4511e;                  > font hover link color
+  --copyright-lnk-sec-bg-color:transparent;           > font hover link background color
+  --copyright-font-family:'Roboto', sans-serif;       > font family
+  --copyright-font-size:0.75em;                       > font size
+  --copyright-font-spacing:normal;                    > font character spacing
+  --copyright-font-style:normal;                      > font style
+  --copyright-font-weight:300;                        > font weight
 
-dropdown menu  (var:hexcode)
-  --mnu-fg-color:#616161;               > main toolbar text color
-  --mnu-fg-hover-std-color:#000000;     > main toolbar text hover color
-  --mnu-bg-hover-std-color:#eeeeee;     > main toolbar background hover color
-  --mnu-fg-alt-color:#616161;           > dropdown toolbar text color
-  --mnu-fg-hover-alt-color:#000000;     > dropdown toolbar hover text color
-  --mnu-bg-alt-color:#eeeeee;           > dropdown toolbar background color
-  --mnu-bg-hover-alt-color:#f5f5f5;     > dropdown toolbar background hover color
+  site-designer
+  --designer-line-height:inherit;                     > font line height
+  --designer-font-color:#455a64;                      > font color
+  --designer-lnk-pri-color:#455a64;                   > font link color
+  --designer-lnk-sec-color:#f4511e;                   > font hover link color
+  --designer-font-family:'Roboto', sans-serif;        > font family
+  --designer-font-size:0.75em;                        > font size
+  --designer-font-spacing:normal;                     > font character spacing
+  --designer-font-style:normal;                       > font style
+  --designer-font-weight:300;                         > font weight
+
+site
+  --sys-bg-color:#fafafa;                             > body background
+  --sys-line-height:1.4;                              > content line height
+  --sys-font-color:#000000;                           > font color
+  --sys-font-size:16px;                               > font size (in pixels)
+  --sys-font-weight:300;                              > font weight
+  --sys-font-spacing:normal;                          > font character spacing
+  --sys-lnk-pri-color:#673ab7;                        > font link color
+  --sys-lnk-sec-color:#f4511e;                        > font link hover color
+  --sys-lnk-sec-bg-color:transparent;                 > font link hover background color
+  --sys-lnk-weight:400;                               > font link weight
+
+  --sys-fnt-sans:'Roboto', sans-serif;                > sans serif font family
+  --sys-fnt-condensed:'Roboto Condensed', sans-serif; > condensed font family
+  --sys-fnt-mono:'Roboto Mono', monospace;            > monospace font family
+  --sys-fnt-serif:'Roboto Slab', serif;               > serif font family
+  --sys-fnt-cursive:'Kalam', cursive;                 > cursive font family
+
+dropdown menu
+  --mnu-fg-color:#616161;                             > main toolbar text color
+  --mnu-bg-color:#f5f5f5;                             > main toolbar background color
+  --mnu-fg-hover-std-color:#000000;                   > main toolbar text hover color
+  --mnu-bg-hover-std-color:#eeeeee;                   > main toolbar background hover color
+  --mnu-fg-alt-color:#616161;                         > dropdown toolbar text color
+  --mnu-fg-hover-alt-color:#000000;                   > dropdown toolbar hover text color
+  --mnu-bg-alt-color:#eeeeee;                         > dropdown toolbar background color
+  --mnu-bg-hover-alt-color:#f5f5f5;                   > dropdown toolbar background hover color
 
 print
   @page
@@ -217,13 +254,17 @@ print
 @import url('https://fonts.googleapis.com/css?family=Kalam:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
-/*  # root
+/*  root
  ---------------------------------------------------------------------------*/
 
 :root {
   
+/* base font size    ------------------------------------------------------ */
+
   font-size: 16px;
   
+/* foreground colors    --------------------------------------------------- */
+
   --fg-blk:     #000000;
   --fg-wht:     #ffffff;
 
@@ -259,6 +300,8 @@ print
   --fg-sec-200:#b39ddb;
   --fg-sec-100:#d1c4e9;
   --fg-sec-050:#ede7f6;
+
+/* background colors    --------------------------------------------------- */
 
   --bg-blk:     #000000;
   --bg-wht:     #ffffff;
@@ -296,58 +339,68 @@ print
   --bg-sec-100:#d1c4e9;
   --bg-sec-050:#ede7f6;
 
+/* headers    ------------------------------------------------------------- */
+
   --h1-color:#000000;
   --h1-font:'Roboto', sans-serif;
   --h1-size:2.125em;
   --h1-style:normal;
-  --h1-wgt:400;
+  --h1-weight:400;
 
   --h2-color:#000000;
   --h2-font:'Roboto', sans-serif;
   --h2-size:1.875em;
   --h2-style:normal;
-  --h2-wgt:400;
+  --h2-weight:400;
 
   --h3-color:#000000;
   --h3-font:'Roboto', sans-serif;
   --h3-size:1.5em;
   --h3-style:normal;
-  --h3-wgt:400;
+  --h3-weight:400;
 
   --h4-color:#000000;
   --h4-font:'Roboto', sans-serif;
   --h4-size:1.25em;
   --h4-style:normal;
-  --h4-wgt:400;
+  --h4-weight:400;
 
   --h5-color:#000000;
   --h5-font:'Roboto', sans-serif;
   --h5-size:1.125em;
   --h5-style:normal;
-  --h5-wgt:400;
+  --h5-weight:400;
 
   --h6-color:#000000;
   --h6-font:'Roboto', sans-serif;
   --h6-size:1.125em;
   --h6-style:italic;
-  --h6-wgt:400;
+  --h6-weight:400;
 
-  --title-align:center;
+/* sys header ------------------------------------------------------------- */
+
+  --sys-hdr-bg-color:#f5f5f5;
+  --sys-hdr-align:center;
+  
   --title-color:#5e35b1;
-  --title-font-fam:'Kaushan Script', cursive;
+  --title-font-family:'Kaushan Script', cursive;
   --title-font-size:3em;
   --title-font-spacing:0.0625em;
   --title-font-style:normal;
-  --title-font-wgt:400;
+  --title-font-weight:400;
 
   --descr-color:#212121;
-  --descr-font-fam:'Roboto', sans-serif;
+  --descr-font-family:'Roboto', sans-serif;
   --descr-font-size:1em;
   --descr-font-spacing:0.5em;
   --descr-font-style:normal;
-  --descr-font-wgt:300;
+  --descr-font-weight:300;
+
+/* sys menu   ------------------------------------------------------------- */
 
   --mnu-fg-color:#616161;
+  --mnu-bg-color:#f5f5f5;
+  
   --mnu-fg-hover-std-color:#000000;
   --mnu-bg-hover-std-color:#eeeeee;
   --mnu-fg-alt-color:#616161;
@@ -355,18 +408,44 @@ print
   --mnu-bg-alt-color:#eeeeee;
   --mnu-bg-hover-alt-color:#f5f5f5;
 
-  --sys-bg-color:#fafafa;
-  --sys-hdr-bg-color:#fafafa;
+/* sys footer ------------------------------------------------------------- */
+
   --sys-ft-bg-color:#fafafa;
+  --sys-ft-align:center;
   
-  --sys-line-hght:1.4;
+  --copyright-line-height:inherit;
+  --copyright-font-color:#455a64;
+  --copyright-lnk-pri-color:#455a64;
+  --copyright-lnk-sec-color:#f4511e;
+  --copyright-lnk-sec-bg-color:transparent;
+  --copyright-font-family:'Roboto', sans-serif;
+  --copyright-font-size:0.75em;
+  --copyright-font-spacing:normal;
+  --copyright-font-style:normal;
+  --copyright-font-weight:300;
+
+  --designer-line-height:inherit;
+  --designer-font-color:#455a64;
+  --designer-lnk-pri-color:#455a64;
+  --designer-lnk-sec-color:#f4511e;
+  --designer-font-family:'Roboto', sans-serif;
+  --designer-font-size:0.75em;
+  --designer-font-spacing:normal;
+  --designer-font-style:normal;
+  --designer-font-weight:300;
+
+/* system     ------------------------------------------------------------- */
+
+  --sys-bg-color:#fafafa;
+  --sys-line-height:1.4;
   --sys-font-color:#000000;
   --sys-font-size:1rem;
-  --sys-font-wgt:300;
+  --sys-font-weight:300;
+  --sys-font-spacing:normal;
   --sys-lnk-pri-color:#673ab7;
   --sys-lnk-sec-color:#f4511e;
-  --sys-lnk-bak-color:transparent;
-  --sys-lnk-wgt:400;
+  --sys-lnk-sec-bg-color:transparent;
+  --sys-lnk-weight:400;
 
   --sys-fnt-sans:'Roboto', sans-serif;
   --sys-fnt-condensed:'Roboto Condensed', sans-serif;
@@ -375,6 +454,8 @@ print
   --sys-fnt-cursive:'Kalam', cursive;
 
 }
+
+/* print     -------------------------------------------------------------- */
 
 @media print {
   :root {
