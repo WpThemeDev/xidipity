@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90122.2
+  Build    - 90122.3
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -105,7 +105,7 @@ h1 {
   font-family: var(--h1-font);
   font-size: var(--h1-size);
   font-style: var(--h1-style);
-  font-weight: var(--h1-wgt);
+  font-weight: var(--h1-weight);
 }
 
 h2 {
@@ -113,7 +113,7 @@ h2 {
   font-family: var(--h2-font);
   font-size: var(--h2-size);
   font-style: var(--h2-style);
-  font-weight: var(--h2-wgt);
+  font-weight: var(--h2-weight);
 }
 
 h3 {
@@ -121,7 +121,7 @@ h3 {
   font-family: var(--h3-font);
   font-size: var(--h3-size);
   font-style: var(--h3-style);
-  font-weight: var(--h3-wgt);
+  font-weight: var(--h3-weight);
 }
 
 h4 {
@@ -129,7 +129,7 @@ h4 {
   font-family: var(--h4-font);
   font-size: var(--h4-size);
   font-style: var(--h4-style);
-  font-weight: var(--h4-wgt);
+  font-weight: var(--h4-weight);
 }
 
 h5 {
@@ -137,7 +137,7 @@ h5 {
   font-family: var(--h5-font);
   font-size: var(--h5-size);
   font-style: var(--h5-style);
-  font-weight: var(--h5-wgt);
+  font-weight: var(--h5-weight);
 }
 
 h6 {
@@ -145,7 +145,7 @@ h6 {
   font-family: var(--h6-font);
   font-size: var(--h6-size);
   font-style: var(--h6-style);
-  font-weight: var(--h6-wgt);
+  font-weight: var(--h6-weight);
 }
 
 h1 img {
@@ -610,7 +610,7 @@ ul.dbl-spaced > li:last-child {
 a,
 a:visited {
   color: var(--sys-lnk-pri-color);
-  font-weight: var(--sys-lnk-wgt);
+  font-weight: var(--sys-lnk-weight);
   text-decoration: none;
 }
 
@@ -618,7 +618,7 @@ a:hover,
 a:focus,
 a:active {
   color: var(--sys-lnk-sec-color);
-  font-weight: var(--sys-lnk-wgt);
+  font-weight: var(--sys-lnk-weight);
 }
 
 /* Fixes linked images */
