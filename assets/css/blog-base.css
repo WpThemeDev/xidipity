@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90120.1
+Build       - 90121.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -66,6 +66,8 @@ Comments    - Base CSS classes as modified
 # Misc
   ## CodeMirror
   ## Tailwind
+  ## GitHub Gist
+  ## Other
 
 This stylesheet uses rem values with a pixel fallback. The rem
 values (and line heights) are calculated using two variables:
@@ -3359,8 +3361,8 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   }
 
   .main-navigation ul li:hover,
-  .main-navigation ul li a:hover,
-  .main-navigation ul li ul li a:hover,
+/*  .main-navigation ul li a:hover,
+  .main-navigation ul li ul li a:hover, */
   .main-navigation ul li ul li:hover {
     background-color: var(--mnu-bg-hover-std-color) !important;
   }
@@ -3374,12 +3376,12 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   .main-navigation .sub-menu ul li ul li:hover {
     background-color: var(--mnu-bg-hover-alt-color) !important;
   }
-
+/*
   .main-navigation .menu ul li a:hover {
     color: var(--mnu-fg-hover-std-color) !important;
     background-color: transparent !important;
   }
-
+*/
   .main-navigation .menu ul li ul li a:hover {
     color: var(--mnu-fg-hover-alt-color) !important;
     background-color: transparent !important;
@@ -5046,6 +5048,34 @@ figure.post-thumbnail:hover img {
   .xl\:font-cursive {
     font-family: var(--sys-fnt-cursive);
   }
+}
+
+/*  # Misc
+   ## GitHub Gist
+ ---------------------------------------------------------------------------*/
+
+.gist .line,.gist .line span {
+  word-wrap: normal!important;
+}
+
+.gist table {
+  margin-bottom: 0!important;
+  table-layout: auto!important;
+}
+
+.gist .line-numbers {
+  width: 4em!important;
+}
+
+.gist .line,.gist .line-number {
+  font-size: 12px!important;
+  height: 18px!important;
+  line-height: 18px!important;
+}
+
+.gist .line {
+  white-space: pre!important;
+  width: auto!important;
 }
 
 /*  # Misc
