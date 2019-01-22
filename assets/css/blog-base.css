@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90121.2
+Build       - 90122.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -16,7 +16,7 @@ Comments    - Base CSS classes as modified
 
 # HTML
   ## Accessibility
-  ## Clearings
+  ## Clearings (deprecated)
   ## Horizonal Rules (HR)
   ## HTML5 Elements
   ## Links
@@ -297,7 +297,7 @@ pre:last-child {
 /*  # HTML
    ## Clearings (CSS3 syntax)
  ---------------------------------------------------------------------------*/
-
+/*
 .clear::before,
 .clear::after,
 .site-wrapper::before,
@@ -367,7 +367,7 @@ pre:last-child {
 .comment-content::after {
   clear: both;
 }
-
+*/
 /*  # HTML
    ## Horizonal Rules (HR)
  ---------------------------------------------------------------------------*/
@@ -803,12 +803,12 @@ table {
   width: 100%;
   margin: 15px 0 15px 0;
 }
-
+/*
 table:before {
   content: "";
   overflow: auto;
 }
-
+*/
 table caption {
   margin-bottom: 15px;
 }
@@ -5051,7 +5051,7 @@ figure.post-thumbnail:hover img {
 }
 
 /*  # Misc
-   ## GitHub Gist
+   ## GIST
  ---------------------------------------------------------------------------*/
 
 .gist .line,.gist .line span {
