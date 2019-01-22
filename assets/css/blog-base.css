@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90122.1
+Build       - 90122.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -107,7 +107,7 @@ https://caniuse.com/#feat=flexbox
 body {
   background-color: var(--sys-bg-color);
   color: var(--sys-font-color);
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--sys-font-family);
   font-size: var(--sys-font-size);
   font-weight: var(--sys-font-weight);
   line-height: var(--sys-line-height);
@@ -175,7 +175,7 @@ kbd,
 samp,
 tt,
 var {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
 }
@@ -203,7 +203,7 @@ pre {
   border: solid var(--fg-bas-300) 1px;
   border-radius: 3px;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-size: 0.8125rem;
   margin: 15px 0 10px 0;
@@ -587,7 +587,7 @@ ol li::before {
   color: var(--fg-bas-600);
   display: inline-block;
   font-size: 95%;
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
@@ -1051,14 +1051,14 @@ h5,
 h6 {
   clear: both;
   display: block;
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   line-height: 1.4;
   margin: 5px 0;
 }
 
 h1 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 34px;
   font-size: 2.125em;
   font-style: normal;
@@ -1073,7 +1073,7 @@ h1 {
 
 h2 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 30px;
   font-size: 1.875em;
   font-style: normal;
@@ -1088,7 +1088,7 @@ h2 {
 
 h3 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 24px;
   font-size: 1.5em;
   font-style: normal;
@@ -1103,7 +1103,7 @@ h3 {
 
 h4 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 20px;
   font-size: 1.25em;
   font-style: normal;
@@ -1118,7 +1118,7 @@ h4 {
 
 h5 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 18px;
   font-size: 1.125em;
   font-style: normal;
@@ -1133,7 +1133,7 @@ h5 {
 
 h6 {
 /*defaults
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   font-size: 18px;
   font-size: 1.125em;
   font-style: italic;
@@ -1929,7 +1929,7 @@ pre#textarea {
   box-shadow: none;
   border: 0;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px !important;
   font-size: 0.875rem !important;
   padding: 0;
@@ -3244,7 +3244,7 @@ input#menu-toggle[type=checkbox] ~ label {
   color: var(--fg-blk);
   cursor: pointer;
   display: block;
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   padding: 10px 0 3px 0;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -3261,7 +3261,7 @@ input#menu-toggle[type=checkbox]:checked ~ label {
   background-color: var(--sys-hdr-bg-color);
   color: var(--fg-pri-500);
   display: block;
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
   padding: 10px 0 10px 0;
   text-decoration: none;
   text-align: center;
@@ -3275,7 +3275,7 @@ input#menu-toggle[type=checkbox]:checked ~ div {
 /* style mobile drop down */
 .main-navigation {
   background-color: var(--sys-hdr-bg-color);
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   padding-bottom: 0;
   width: 100%;
 }
@@ -3320,7 +3320,7 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   }
   
   .main-navigation ul {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
     font-weight: 300;
     list-style: none;
     margin: 0;
@@ -3585,7 +3585,7 @@ span.post-title:hover {
 .post-title {
   color:var(--fg-bas-600);
   display:block;
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   font-size: 14px;
 }
 .nav-previous .meta-nav::before {
@@ -4460,7 +4460,7 @@ figure.post-thumbnail:hover img {
   border-radius: 3px;
   box-sizing: border-box;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
   padding: 12px 20px;
@@ -4476,7 +4476,7 @@ figure.post-thumbnail:hover img {
   border-radius: 6px;
   box-sizing: border-box;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
   padding: 12px 20px;
@@ -4499,7 +4499,7 @@ figure.post-thumbnail:hover img {
 }
 
 .CodeMirror {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   border-top: solid var(--fg-bas-300) 4px;
   border-bottom: solid var(--fg-bas-300) 4px;
   height: 415px;
@@ -4619,23 +4619,23 @@ figure.post-thumbnail:hover img {
 /*- Tailwind Xidipity Font Families -*/
 
 .font-sans {
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
 }
 
 .font-serif {
-  font-family: var(--sys-fnt-serif);
+  font-family: var(--font-serif);
 }
 
 .font-mono {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
 }
 
 .font-condensed {
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
 }
 
 .font-cursive {
-  font-family: var(--sys-fnt-cursive);
+  font-family: var(--font-cursive);
 }
 
 @media screen and (min-width:576px) {
@@ -4721,23 +4721,23 @@ figure.post-thumbnail:hover img {
   /*- Tailwind Xidipity Font Families -*/
   
   .sm\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .sm\:font-serif {
-    font-family: var(--sys-fnt-serif);
+    font-family: var(--font-serif);
   }
   
   .sm\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .sm\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .sm\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -4824,23 +4824,23 @@ figure.post-thumbnail:hover img {
   /*- Tailwind Xidipity Font Families -*/
   
   .md\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .md\:font-serif {
-    font-family: var(--sys-fnt-serif);
+    font-family: var(--font-serif);
   }
   
   .md\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .md\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .md\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -4927,23 +4927,23 @@ figure.post-thumbnail:hover img {
   /*- Tailwind Xidipity Font Families -*/
   
   .lg\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .lg\:font-serif {
-    font-family: var(--sys-fnt-serif);
+    font-family: var(--font-serif);
   }
   
   .lg\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .lg\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .lg\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -5030,23 +5030,23 @@ figure.post-thumbnail:hover img {
   /*- Tailwind Xidipity Font Families -*/
   
   .xl\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .xl\:font-serif {
-    font-family: var(--sys-fnt-serif);
+    font-family: var(--font-serif);
   }
   
   .xl\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .xl\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .xl\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -5123,7 +5123,7 @@ figure.post-thumbnail:hover img {
   border-radius: 3px;
   cursor: pointer;
   display: block;
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 400;
