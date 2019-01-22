@@ -1,6 +1,6 @@
 /*
+Build         - 90122.1
 File          - blog-var.css
-Build         - 90121.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -9,7 +9,7 @@ Comments      - Xidipity variables which includes fonts, foreground colors, & ba
 Tags          - System: configuration / css
 
 Color Scheme    https://xidipity.com/authoring-tools/style/color-palette/
-         base - grey
+         base - gray
       primary - deep orange
     secondary - deep purple
     
@@ -207,6 +207,7 @@ site-footer
 site
   --sys-bg-color:#fafafa;                             > body background
   --sys-line-height:1.4;                              > content line height
+  --sys-font-family:'Roboto', sans-serif;             > default font family
   --sys-font-color:#000000;                           > font color
   --sys-font-size:16px;                               > font size (in pixels)
   --sys-font-weight:300;                              > font weight
@@ -216,11 +217,11 @@ site
   --sys-lnk-sec-bg-color:transparent;                 > font link hover background color
   --sys-lnk-weight:400;                               > font link weight
 
-  --sys-fnt-sans:'Roboto', sans-serif;                > sans serif font family
-  --sys-fnt-condensed:'Roboto Condensed', sans-serif; > condensed font family
-  --sys-fnt-mono:'Roboto Mono', monospace;            > monospace font family
-  --sys-fnt-serif:'Roboto Slab', serif;               > serif font family
-  --sys-fnt-cursive:'Kalam', cursive;                 > cursive font family
+  --font-sans:'Roboto', sans-serif;                   > sans serif font family
+  --font-condensed:'Roboto Condensed', sans-serif;    > condensed font family
+  --font-mono:'Roboto Mono', monospace;               > monospace font family
+  --font-serif:'Roboto Slab', serif;                  > serif font family
+  --font-cursive:'Kalam', cursive;                    > cursive font family
 
 dropdown menu
   --mnu-fg-color:#616161;                             > main toolbar text color
@@ -237,11 +238,11 @@ print
   --prnt-page:letter;
 
   fonts
-  --sys-fnt-sans: sans-serif;
-  --sys-fnt-condensed: sans-serif;
-  --sys-fnt-mono: monospace;
-  --sys-fnt-serif: serif;
-  --sys-fnt-cursive: cursive;
+  --font-sans: sans-serif;
+  --font-condensed: sans-serif;
+  --font-mono: monospace;
+  --font-serif: serif;
+  --font-cursive: cursive;
 
 ----------------------------------------------------------------------------*/
 /*  font imports
@@ -438,6 +439,7 @@ print
 
   --sys-bg-color:#fafafa;
   --sys-line-height:1.4;
+  --sys-font-family:'Roboto', sans-serif;
   --sys-font-color:#000000;
   --sys-font-size:1rem;
   --sys-font-weight:300;
@@ -447,11 +449,11 @@ print
   --sys-lnk-sec-bg-color:transparent;
   --sys-lnk-weight:400;
 
-  --sys-fnt-sans:'Roboto', sans-serif;
-  --sys-fnt-condensed:'Roboto Condensed', sans-serif;
-  --sys-fnt-mono:'Roboto Mono', monospace;
-  --sys-fnt-serif:'Roboto Slab', serif;
-  --sys-fnt-cursive:'Kalam', cursive;
+  --font-sans:'Roboto', sans-serif;
+  --font-condensed:'Roboto Condensed', sans-serif;
+  --font-mono:'Roboto Mono', monospace;
+  --font-serif:'Roboto Slab', serif;
+  --font-cursive:'Kalam', cursive;
 
 }
 
@@ -460,11 +462,11 @@ print
 @media print {
   :root {
     
-    --sys-fnt-sans: sans-serif;
-    --sys-fnt-condensed: sans-serif;
-    --sys-fnt-mono: monospace;
-    --sys-fnt-serif: serif;
-    --sys-fnt-cursive: cursive;
+    --font-sans: sans-serif;
+    --font-condensed: sans-serif;
+    --font-mono: monospace;
+    --font-serif: serif;
+    --font-cursive: cursive;
 
     --prnt-page:letter;
 
