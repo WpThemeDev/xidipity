@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90120.1
+  Build    - 90122.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -1808,12 +1808,12 @@ table {
   width: 100%;
   margin: 15px 0 15px 0;
 }
-
+/*
 table:before {
   content: "";
   overflow: auto;
 }
-
+*/
 table caption {
   margin-bottom: 15px;
 }
