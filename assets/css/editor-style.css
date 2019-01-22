@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90122.1
+  Build    - 90122.2
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -39,10 +39,10 @@ Import key css files
 body {
   background: var(--bg-wht);
   color: var(--sys-font-color);
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--sys-font-family);
   font-size: var(--sys-font-size);
-  font-weight: var(--sys-font-wgt);
-  line-height: var(--sys-line-hght);
+  font-weight: var(--sys-font-weight);
+  line-height: var(--sys-line-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*- specific to editor  -*/
@@ -58,7 +58,7 @@ button,
 input,
 select,
 textarea {
-  font-family: var(--sys-font-fam);
+  font-family: var(--sys-font-familyily);
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400;
@@ -70,7 +70,7 @@ textarea {
   border: solid var(--fg-bas-300) 1px;
   border-radius: 3px;
   color: var(--fg-blk);
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   font-size: 13px;
   font-size: 0.8125em;
   line-height: 1.25;
@@ -95,19 +95,12 @@ h5,
 h6 {
   clear: both;
   display: block;
-  font-family: var(--sys-font-fam);
+  font-family: var(--sys-font-family);
   line-height: 1.4;
   margin: 5px 0;
 }
 
 h1 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 34px;
-  font-size: 2.125em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h1-color);
   font-family: var(--h1-font);
   font-size: var(--h1-size);
@@ -116,13 +109,6 @@ h1 {
 }
 
 h2 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 30px;
-  font-size: 1.875em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h2-color);
   font-family: var(--h2-font);
   font-size: var(--h2-size);
@@ -131,13 +117,6 @@ h2 {
 }
 
 h3 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 24px;
-  font-size: 1.5em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h3-color);
   font-family: var(--h3-font);
   font-size: var(--h3-size);
@@ -146,13 +125,6 @@ h3 {
 }
 
 h4 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 20px;
-  font-size: 1.25em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h4-color);
   font-family: var(--h4-font);
   font-size: var(--h4-size);
@@ -161,13 +133,6 @@ h4 {
 }
 
 h5 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 18px;
-  font-size: 1.125em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h5-color);
   font-family: var(--h5-font);
   font-size: var(--h5-size);
@@ -176,13 +141,6 @@ h5 {
 }
 
 h6 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 18px;
-  font-size: 1.125em;
-  font-style: italic;
-  font-weight: 400;
-*/
   color: var(--h6-color);
   font-family: var(--h6-font);
   font-size: var(--h6-size);
@@ -303,7 +261,7 @@ pre {
   border: solid var(--fg-bas-300) 1px;
   border-radius: 3px;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-size: 0.8125rem;
   margin: 15px 10px 10px 10px;
@@ -319,7 +277,7 @@ code,
 kbd,
 tt,
 var {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-size: 0.8125rem;
 }
@@ -511,7 +469,7 @@ ol li::before {
   color: var(--fg-bas-600);
   display: inline-block;
   font-size: 95%;
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
@@ -1206,7 +1164,7 @@ object {
   border-radius: 3px;
   cursor: pointer;
   display: block;
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1358,23 +1316,23 @@ table table td.rm-td-right {
 /*- Tailwind Xidipity Font Families -*/
 
 .font-sans {
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
 }
 
 .font-serif {
-  font-family: var(--sys-fnt-serif);
+  font-family: var(--font-serif);
 }
 
 .font-mono {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
 }
 
 .font-condensed {
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
 }
 
 .font-cursive {
-  font-family: var(--sys-fnt-cursive);
+  font-family: var(--font-cursive);
 }
 
 @media screen and (min-width:576px) {
@@ -1460,7 +1418,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .sm\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .sm\:font-serif {
@@ -1468,15 +1426,15 @@ table table td.rm-td-right {
   }
   
   .sm\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .sm\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .sm\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1563,7 +1521,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .md\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .md\:font-serif {
@@ -1571,15 +1529,15 @@ table table td.rm-td-right {
   }
   
   .md\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .md\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .md\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1666,7 +1624,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .lg\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .lg\:font-serif {
@@ -1674,15 +1632,15 @@ table table td.rm-td-right {
   }
   
   .lg\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .lg\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .lg\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1769,7 +1727,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .xl\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .xl\:font-serif {
@@ -1777,15 +1735,15 @@ table table td.rm-td-right {
   }
   
   .xl\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .xl\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .xl\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
