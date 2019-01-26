@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90125.1
+Build       - 90125.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2910,8 +2910,35 @@ img.shadow {
 
 /* : tint video background    ------- */
 
-.tint-frame iframe {
+.iframe-tint\@050 iframe {
+  background-color: var(--bg-bas-050);
+}
+.iframe-tint\@100 iframe {
+  background-color: var(--bg-bas-100);
+}
+.iframe-tint\@200 iframe {
+  background-color: var(--bg-bas-200);
+}
+.iframe-tint\@300 iframe {
   background-color: var(--bg-bas-300);
+}
+.iframe-tint\@400 iframe {
+  background-color: var(--bg-bas-400);
+}
+.iframe-tint\@500 iframe {
+  background-color: var(--bg-bas-500);
+}
+.iframe-tint\@600 iframe {
+  background-color: var(--bg-bas-600);
+}
+.iframe-tint\@700 iframe {
+  background-color: var(--bg-bas-700);
+}
+.iframe-tint\@800 iframe {
+  background-color: var(--bg-bas-800);
+}
+.iframe-tint\@900 iframe {
+  background-color: var(--bg-bas-900);
 }
 
 /* : embedded containers      ------- */
