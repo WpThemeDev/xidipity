@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90129.1
+Build       - 90129.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -3363,9 +3363,6 @@ input#menu-toggle[type=checkbox]:checked ~ div {
     background-color: var(--mnu-bg-color);
   }
   
-  /* New File ====================================================
-  ------------------------------------------------------------- */
-
   /* toolbar settings         ------------------- */
   
   nav#site-navigation {
@@ -3432,11 +3429,13 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   /* level 2 ul               ------------------- */
   
   ul.menu ul {
+    background-color: var(--mnu-sec-bg-color);
     display: none;
     left: 0;
     padding: 0;
     position: absolute;
     top: 100%;
+    z-index: 10;
   }
   
   ul.menu ul ul {
@@ -3446,11 +3445,6 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   
   ul.menu ul li {
     width: 200px;
-  }
-  
-  ul.sub-menu {
-    background-color: var(--mnu-sec-bg-color);
-    z-index: 10;
   }
   
   ul.sub-menu li:nth-child(n+1) a {
