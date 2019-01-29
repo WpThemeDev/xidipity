@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90127.2
+Build       - 90129.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -3362,18 +3362,28 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   nav#site-navigation {
     background-color: var(--mnu-bg-color);
   }
+  
+  /* New File ====================================================
+  ------------------------------------------------------------- */
 
-  .main-navigation {
+  /* toolbar settings         ------------------- */
+  
+  nav#site-navigation {
+    background-color: var(--mnu-pri-bg-color);
     clear: both;
     display: block;
-    height: 2.75em;
     height: 3em;
     width: 100%;
   }
   
-  .main-navigation ul {
+  /* global settings          ------------------- */
+
+  nav.main-navigation ul {
+    background-color: inherit;
     font-family: var(--font-sans);
+    font-size: 0.875rem;
     font-weight: 300;
+    line-height: 1.4;
     list-style: none;
     margin: 0;
     padding-left: 10px;
@@ -3381,116 +3391,91 @@ input#menu-toggle[type=checkbox]:checked ~ div {
     position: relative;
     text-align: var(--sys-hdr-align);
   }
-  
-  .main-navigation ul a {
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 1.4;
-    padding: 0 15px;
-  }
-  
-  .main-navigation ul li {
+
+  #primary-menu li.menu-item {
     display: inline-block;
-    position: relative;
     padding: 14px 0 14px 0;
+    position: relative;
     text-align: left;
   }
-
-  .main-navigation ul li::before {
-    display:none;
+  
+  #primary-menu li.menu-item::before {
+    display: none;
   }
   
-  .menu ul.sub-menu,
-  .menu ul.children {
-    z-index: 999999;
+  /* level 1 ul               ------------------- */
+  
+  ul.menu li.menu-item:hover,
+  ul.menu li.menu-item a:hover {
+    background-color: var(--mnu-pri-hov-bg-color);
+    color: var(--mnu-pri-hov-fg-color);
+    font-weight: var(--mnu-pri-hov-font-weight);
   }
   
-  .menu ul li a,
-  .menu ul li.menu_item a,
-  .menu ul li.page_item a {
-    color: var(--mnu-fg-color);
+  ul.menu li:nth-child(n+1) a {
+    color: var(--mnu-pri-fg-color);
+    padding: 0 15px;
+    text-decoration: none;
   }
-
-  .main-navigation ul li:hover,
-/*  .main-navigation ul li a:hover,
-  .main-navigation ul li ul li a:hover, */
-  .main-navigation ul li ul li:hover {
-    background-color: var(--mnu-bg-hover-std-color) !important;
+  
+  ul.menu li:hover > ul {
+    display: block;
   }
-
-  .main-navigation .menu ul li:hover {
-    background-color: var(--mnu-bg-hover-std-color) !important;
+  
+  ul.menu li:nth-child(n+1).menu-item-has-children > a::after,
+  ul.menu li:nth-child(n+1).page_item_has_children > a::after {
+    content: "▾";
+    font-weight: 900;
+    padding-left: 5px;
   }
-
-  .main-navigation ul.sub-menu li.menu-item:hover,
-  .main-navigation .menu ul li ul li:hover,
-  .main-navigation .sub-menu ul li ul li:hover {
-    background-color: var(--mnu-bg-hover-alt-color) !important;
-  }
-/*
-  .main-navigation .menu ul li a:hover {
-    color: var(--mnu-fg-hover-std-color) !important;
-    background-color: transparent !important;
-  }
-*/
-  .main-navigation .menu ul li ul li a:hover {
-    color: var(--mnu-fg-hover-alt-color) !important;
-    background-color: transparent !important;
-  }
-
-  .main-navigation ul ul {
-    background: var(--sys-hdr-bg-color);
+  
+  /* level 2 ul               ------------------- */
+  
+  ul.menu ul {
     display: none;
     left: 0;
     padding: 0;
     position: absolute;
     top: 100%;
   }
-
-  .main-navigation ul ul {
-    background: var(--mnu-bg-alt-color);
-  }
-
-  .main-navigation ul ul li a {
-    color: var(--mnu-fg-alt-color) !important;
-  }
-    
-  .main-navigation ul ul li a:hover {
-    color: var(--mnu-fg-hover-alt-color) !important;
-    background-color: var(--mnu-bg-hover-alt-color) !important;
-  }
   
-  .main-navigation ul ul li {
-    float: none;
-    width: 200px;
-  }
-  .main-navigation ul ul ul {
+  ul.menu ul ul {
     top: 0;
     left: 100%;
   }
   
-  .main-navigation ul li:hover > ul {
-    display: block;
+  ul.menu ul li {
+    width: 200px;
   }
   
-  ul li:nth-child(n+1).menu-item-has-children > a::after,
-  ul li:nth-child(n+1).page_item_has_children > a::after {
-    content: "▾";
-    padding-left: 5px;
+  ul.sub-menu {
+    background-color: var(--mnu-sec-bg-color);
+    z-index: 10;
+  }
+  
+  ul.sub-menu li:nth-child(n+1) a {
+    color: var(--mnu-sec-fg-color);
+  }
+  
+  ul.sub-menu li:nth-child(n+1).menu-item {
+    display: block;
+    text-align: left;
+  }
+  
+  ul.sub-menu li:nth-child(n+1).menu-item:hover,
+  ul.sub-menu li:nth-child(n+1).menu-item a:hover {
+    background-color: var(--mnu-sec-hov-bg-color);
+    color: var(--mnu-sec-hov-fg-color);
+    font-weight: var(--mnu-sec-hov-font-weight);
+  }
+  
+  ul.sub-menu li:nth-child(n+1).menu-item-has-children > a::after,
+  ul.sub-menu li:nth-child(n+1).page_item_has_children > a::after {
+    content: "▸";
+    font-weight: 900;
+    padding-left: 10px;
   }
     
-  ul li ul li:nth-child(n+1).menu-item-has-children > a::after,
-  ul li ul li:nth-child(n+1).page_item_has_children > a::after {
-    content: "▸";
-    padding-left: 10px;
-  }
-
-  ul li ul li ul li:nth-child(n+1).menu-item-has-children > a::after,
-  ul li ul li ul li:nth-child(n+1).menu-item-has-children > a::after {
-    content: "▸";
-    padding-left: 10px;
-  }
 }
 
 /* admin menu bar - override defaults */
