@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90130.1.1
+Build         - 90130.1.2
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -121,7 +121,7 @@ background
   --bg-sec-100:#d1c4e9;
   --bg-sec-050:#ede7f6;
 
-headers
+content headers
   --h1-color:#000000;                                 > font color
   --h1-font:'Roboto', sans-serif;                     > font family
   --h1-size:2.125em;                                  > font size
@@ -146,27 +146,29 @@ headers
   --h4-style:normal;                                  > font style
   --h4-weight:400;                                    > font weight
 
-  --h5-color:#000000;                                 > font color
+  --h5-color:#311b92;                                 > font color
   --h5-font:'Roboto', sans-serif;                     > font family
   --h5-size:1.125em;                                  > font size
   --h5-style:normal;                                  > font style
   --h5-weight:400;                                    > font weight
 
-  --h6-color:#000000;                                 > font color
+  --h6-color:#311b92;                                 > font color
   --h6-font:'Roboto', sans-serif;                     > font family
   --h6-size:1.125em;                                  > font size
   --h6-style:italic;                                  > font style
   --h6-weight:400;                                    > font weight
 
-site-header
-  --sys-hdr-bg-color:#fafafa;                         > header background color
-  --sys-hdr-align:center;                             > header horizontal alignment
+page header
   --sys-pg-banner-fg-color-left:#ffffff;              > blog page banner foreground color left
   --sys-pg-banner-bg-color-left:#ff8a65;              > blog page banner background color left
   --sys-pg-banner-fg-color-right:#212121;             > blog page banner background color right
   --sys-pg-banner-bg-color-right:#fafafa;             > blog page banner background color right
   --sys-pg-banner-font-family:'Roboto Slab', serif;   > blog page banner font family
   --sys-pg-banner-font-weight:300;                    > blog page banner font weight
+
+site-header
+  --sys-hdr-bg-color:#fafafa;                         > header background color
+  --sys-hdr-align:center;                             > header horizontal alignment
   site-title
   --title-font-color:#5e35b1;                         > font color
   --title-font-color-hov:#f4511e;                     > font hover color
@@ -231,7 +233,6 @@ site
   --font-cursive:'Kalam', cursive;                    > cursive font family
 
 system menu
-
   --mnu-pri-fg-color:#424242;                         > toolbar font color
   --mnu-pri-bg-color:#fafafa;                         > toolbar background color
   --mnu-pri-fg-color-hov:#000000;                     > toolbar font hover color
@@ -379,13 +380,13 @@ print
   --h4-style:normal;
   --h4-weight:400;
 
-  --h5-color:#000000;
+  --h5-color:#bf360c;
   --h5-font:'Roboto', sans-serif;
   --h5-size:1.125em;
   --h5-style:normal;
   --h5-weight:400;
 
-  --h6-color:#000000;
+  --h6-color:#bf360c;
   --h6-font:'Roboto', sans-serif;
   --h6-size:1.125em;
   --h6-style:italic;
