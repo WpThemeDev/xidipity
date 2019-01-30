@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90129.3
+Build       - 90130.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1352,7 +1352,7 @@ cite {
  ---------------------------------------------------------------------------*/
 
 .blg-pg-hd-wrapper {
-  font-family: var(--font-serif);
+  font-family: var(--sys-pg-banner-font-family);
   font-size: 30px;
   line-height: 1.8;
   margin-top: 9px;
@@ -1360,9 +1360,9 @@ cite {
 }
 
 .blg-pg-hd-icon {
-  background-color: var(--bg-pri-300);
-  border-right: solid 3px var(--fg-pri-300);
-  color: var(--fg-wht);
+  background-color: var(--sys-pg-banner-bg-color-left);
+  border-right: solid 3px var(--sys-pg-banner-bg-color-left);
+  color: var(--sys-pg-banner-fg-color-left);
   font-weight: 400;
   float: left;
   text-align: center;
@@ -1370,10 +1370,10 @@ cite {
 }
 
 .blg-pg-hd-text {
-  background-color: var(--bg-bas-100);
-  color: var(--fg-bas-900);
+  background-color: var(--sys-pg-banner-bg-color-right);
+  color: var(--sys-pg-banner-fg-color-right);
   float: left;
-  font-weight: 300;
+  font-weight: var(--sys-pg-banner-font-weight);
   padding-left: 15px;
   width: calc(100% - 60px);
 }
@@ -3408,9 +3408,9 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   
   ul.menu li.menu-item:hover,
   ul.menu li.menu-item a:hover {
-    background-color: var(--mnu-pri-hov-bg-color);
-    color: var(--mnu-pri-hov-fg-color);
-    font-weight: var(--mnu-pri-hov-font-weight);
+    background-color: var(--mnu-pri-bg-color-hov);
+    color: var(--mnu-pri-fg-color-hov);
+    font-weight: var(--mnu-pri-fg-weight-hov);
   }
   
   ul.menu li:nth-child(n+1) a {
@@ -3464,9 +3464,9 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   
   ul.sub-menu li:nth-child(n+1).menu-item:hover,
   ul.sub-menu li:nth-child(n+1).menu-item a:hover {
-    background-color: var(--mnu-sec-hov-bg-color);
-    color: var(--mnu-sec-hov-fg-color);
-    font-weight: var(--mnu-sec-hov-font-weight);
+    background-color: var(--mnu-sec-bg-color-hov);
+    color: var(--mnu-sec-fg-color-hov);
+    font-weight: var(--mnu-sec-fg-weight-hov);
   }
   
   ul.sub-menu li:nth-child(n+1).menu-item-has-children > a::after,
@@ -3696,7 +3696,7 @@ table td.rm-td-right {
 
 .site-title a,
 .site-title a:visited {
-  color: var(--title-color);
+  color: var(--title-font-color);
   font-family: var(--title-font-family);
   font-size: var(--title-font-size);
   font-style: var(--title-font-style);
@@ -3704,18 +3704,18 @@ table td.rm-td-right {
   letter-spacing: var(--title-font-spacing);
 }
 
+.site-title a:hover {
+  color: var(--title-font-color-hov);
+  background-color:transparent;
+}
+
 .site-description {
-  color: var(--descr-color);
+  color: var(--descr-font-color);
   font-family: var(--descr-font-family);
   font-size: var(--descr-font-size);
   font-style: var(--descr-font-style);
   font-weight: var(--descr-font-weight);
   letter-spacing: var(--descr-font-spacing);
-}
-
-.site-title a:hover {
-  color: var(--sys-lnk-sec-color);
-  background-color:transparent;
 }
 
 /*  # Wordpress
@@ -4325,9 +4325,9 @@ ul.sbwidget {
 /* Search Form Animation */
 
 .search-frm-container {
-  background: var(--bg-bas-100);
+  background: var(--bg-bas-050);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-100);
+  border: 1px solid var(--fg-bas-050);
   width: 100%;
 }
 
@@ -4338,9 +4338,9 @@ ul.sbwidget {
 }
 
 .search-frm .search-fld {
-  background: var(--bg-bas-100);
+  background: var(--bg-bas-050);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-100);
+  border: 1px solid var(--fg-bas-050);
   height: 50px;
   padding: 0 10px;
   text-align: left;
@@ -4349,9 +4349,9 @@ ul.sbwidget {
 }
 
 .search-frm .search-sub {
-  background: var(--bg-bas-100);
+  background: var(--bg-bas-050);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-100);
+  border: 1px solid var(--fg-bas-050);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
   display: inline-block;
