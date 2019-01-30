@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90130.1
+Build         - 90130.1.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -41,20 +41,20 @@ Kaushan (Site Title)
 
 foreground
   black & white
-  --fg-blk:     #000000;
-  --fg-wht:     #ffffff;
+  --fg-blk:    #000000;
+  --fg-wht:    #ffffff;
 
   base - grey
-  --fg-bas-900: #212121;
-  --fg-bas-800: #424242;
-  --fg-bas-700: #616161;
-  --fg-bas-600: #757575;
-  --fg-bas-500: #9e9e9e;
-  --fg-bas-400: #bdbdbd;
-  --fg-bas-300: #e0e0e0;
-  --fg-bas-200: #eeeeee;
-  --fg-bas-100: #f5f5f5;
-  --fg-bas-050: #fafafa;
+  --fg-bas-900:#212121;
+  --fg-bas-800:#424242;
+  --fg-bas-700:#616161;
+  --fg-bas-600:#757575;
+  --fg-bas-500:#9e9e9e;
+  --fg-bas-400:#bdbdbd;
+  --fg-bas-300:#e0e0e0;
+  --fg-bas-200:#eeeeee;
+  --fg-bas-100:#f5f5f5;
+  --fg-bas-050:#fafafa;
   
   primary - deep orange
   --fg-pri-900:#bf360c;
@@ -82,20 +82,20 @@ foreground
 
 background
   black & white
-  --bg-blk:     #000000;
-  --bg-wht:     #ffffff;
+  --bg-blk:    #000000;
+  --bg-wht:    #ffffff;
 
   base - grey
-  --bg-bas-900: #212121;
-  --bg-bas-800: #424242;
-  --bg-bas-700: #616161;
-  --bg-bas-600: #757575;
-  --bg-bas-500: #9e9e9e;
-  --bg-bas-400: #bdbdbd;
-  --bg-bas-300: #e0e0e0;
-  --bg-bas-200: #eeeeee;
-  --bg-bas-100: #f5f5f5;
-  --bg-bas-050: #fafafa;
+  --bg-bas-900:#212121;
+  --bg-bas-800:#424242;
+  --bg-bas-700:#616161;
+  --bg-bas-600:#757575;
+  --bg-bas-500:#9e9e9e;
+  --bg-bas-400:#bdbdbd;
+  --bg-bas-300:#e0e0e0;
+  --bg-bas-200:#eeeeee;
+  --bg-bas-100:#f5f5f5;
+  --bg-bas-050:#fafafa;
 
   primary - deep orange
   --bg-pri-900:#bf360c;
@@ -161,8 +161,15 @@ headers
 site-header
   --sys-hdr-bg-color:#fafafa;                         > header background color
   --sys-hdr-align:center;                             > header horizontal alignment
+  --sys-pg-banner-fg-color-left:#ffffff;              > blog page banner foreground color left
+  --sys-pg-banner-bg-color-left:#ff8a65;              > blog page banner background color left
+  --sys-pg-banner-fg-color-right:#212121;             > blog page banner background color right
+  --sys-pg-banner-bg-color-right:#fafafa;             > blog page banner background color right
+  --sys-pg-banner-font-family:'Roboto Slab', serif;   > blog page banner font family
+  --sys-pg-banner-font-weight:300;                    > blog page banner font weight
   site-title
-  --title-color:#5e35b1;                              > font color
+  --title-font-color:#5e35b1;                         > font color
+  --title-font-color-hov:#f4511e;                     > font hover color
   --title-font-family:'Kaushan Script', cursive;      > font family
   --title-font-size:3em;                              > font size
   --title-font-spacing:0.0625em;                      > font character spacing
@@ -171,7 +178,7 @@ site-header
 
   site-description
   --descr-align:center;                               > font alignment
-  --descr-color:#212121;                              > font color
+  --descr-font-color:#212121;                         > font color
   --descr-font-family:'Roboto', sans-serif;           > font family
   --descr-font-size:1em;                              > font size
   --descr-font-spacing:0.5em;                         > font character spacing
@@ -224,18 +231,18 @@ site
   --font-cursive:'Kalam', cursive;                    > cursive font family
 
 system menu
-                                                      
-  --mnu-pri-fg-color: #424242;                        > toolbar font color
-  --mnu-pri-bg-color: #f5f5f5;                        > toolbar background color
-  --mnu-pri-hov-fg-color: #000000;                    > toolbar font hover color
-  --mnu-pri-hov-bg-color: #ede7f6;                    > toolbar background hover color
-  --mnu-pri-hov-font-weight: 400;                     > toolbar font hover weight
+
+  --mnu-pri-fg-color:#424242;                         > toolbar font color
+  --mnu-pri-bg-color:#fafafa;                         > toolbar background color
+  --mnu-pri-fg-color-hov:#000000;                     > toolbar font hover color
+  --mnu-pri-bg-color-hov:#ede7f6;                     > toolbar background hover color
+  --mnu-pri-fg-weight-hov:400;                        > toolbar font hover weight
   
-  --mnu-sec-fg-color: #424242;                        > dropdown font color
-  --mnu-sec-bg-color: #e0e0e0;                        > dropdown background color
-  --mnu-sec-hov-fg-color: #000000;                    > dropdown font hover color
-  --mnu-sec-hov-bg-color: #d1c4e9;                    > dropdown background hover color
-  --mnu-sec-hov-font-weight: 400;                     > dropdown font hover weight
+  --mnu-sec-fg-color:#424242;                         > dropdown font color
+  --mnu-sec-bg-color:#e0e0e0;                         > dropdown background color
+  --mnu-sec-fg-color-hov:#000000;                     > dropdown font hover color
+  --mnu-sec-bg-color-hov:#d1c4e9;                     > dropdown background hover color
+  --mnu-sec-fg-weight-hov:400;                        > dropdown font hover weight
 
 print
   @page
@@ -247,6 +254,8 @@ print
   --font-mono: monospace;
   --font-serif: serif;
   --font-cursive: cursive;
+  
+  --title-font (branding)
 
 ----------------------------------------------------------------------------*/
 /*  font imports
@@ -263,27 +272,27 @@ print
  ---------------------------------------------------------------------------*/
 
 :root {
-  
+
 /* base font size    ------------------------------------------------------ */
 
   font-size: 16px;
-  
+
 /* foreground colors    --------------------------------------------------- */
 
-  --fg-blk:     #000000;
-  --fg-wht:     #ffffff;
+  --fg-blk:    #000000;
+  --fg-wht:    #ffffff;
 
-  --fg-bas-900: #212121;
-  --fg-bas-800: #424242;
-  --fg-bas-700: #616161;
-  --fg-bas-600: #757575;
-  --fg-bas-500: #9e9e9e;
-  --fg-bas-400: #bdbdbd;
-  --fg-bas-300: #e0e0e0;
-  --fg-bas-200: #eeeeee;
-  --fg-bas-100: #f5f5f5;
-  --fg-bas-050: #fafafa;
-  
+  --fg-bas-900:#212121;
+  --fg-bas-800:#424242;
+  --fg-bas-700:#616161;
+  --fg-bas-600:#757575;
+  --fg-bas-500:#9e9e9e;
+  --fg-bas-400:#bdbdbd;
+  --fg-bas-300:#e0e0e0;
+  --fg-bas-200:#eeeeee;
+  --fg-bas-100:#f5f5f5;
+  --fg-bas-050:#fafafa;
+
   --fg-pri-900:#bf360c;
   --fg-pri-800:#d84315;
   --fg-pri-700:#e64a19;
@@ -308,19 +317,19 @@ print
 
 /* background colors    --------------------------------------------------- */
 
-  --bg-blk:     #000000;
-  --bg-wht:     #ffffff;
+  --bg-blk:    #000000;
+  --bg-wht:    #ffffff;
 
-  --bg-bas-900: #212121;
-  --bg-bas-800: #424242;
-  --bg-bas-700: #616161;
-  --bg-bas-600: #757575;
-  --bg-bas-500: #9e9e9e;
-  --bg-bas-400: #bdbdbd;
-  --bg-bas-300: #e0e0e0;
-  --bg-bas-200: #eeeeee;
-  --bg-bas-100: #f5f5f5;
-  --bg-bas-050: #fafafa;
+  --bg-bas-900:#212121;
+  --bg-bas-800:#424242;
+  --bg-bas-700:#616161;
+  --bg-bas-600:#757575;
+  --bg-bas-500:#9e9e9e;
+  --bg-bas-400:#bdbdbd;
+  --bg-bas-300:#e0e0e0;
+  --bg-bas-200:#eeeeee;
+  --bg-bas-100:#f5f5f5;
+  --bg-bas-050:#fafafa;
 
   --bg-pri-900:#bf360c;
   --bg-pri-800:#d84315;
@@ -384,17 +393,24 @@ print
 
 /* sys header ------------------------------------------------------------- */
 
-  --sys-hdr-bg-color:#f5f5f5;
+  --sys-hdr-bg-color:#fafafa;
   --sys-hdr-align:center;
-  
-  --title-color:#5e35b1;
+  --sys-pg-banner-fg-color-left:#ffffff;
+  --sys-pg-banner-bg-color-left:#ff8a65;
+  --sys-pg-banner-fg-color-right:#212121;
+  --sys-pg-banner-bg-color-right:#fafafa;
+  --sys-pg-banner-font-family:'Roboto Slab', serif;
+  --sys-pg-banner-font-weight:300;
+
+  --title-font-color:#5e35b1;
+  --title-font-color-hov:#f4511e;
   --title-font-family:'Kaushan Script', cursive;
   --title-font-size:3em;
   --title-font-spacing:0.0625em;
   --title-font-style:normal;
   --title-font-weight:400;
 
-  --descr-color:#212121;
+  --descr-font-color:#212121;
   --descr-font-family:'Roboto', sans-serif;
   --descr-font-size:1em;
   --descr-font-spacing:0.5em;
@@ -403,23 +419,23 @@ print
 
 /* sys menu   ------------------------------------------------------------- */
 
-  --mnu-pri-fg-color: #424242;
-  --mnu-pri-bg-color: #f5f5f5;
-  --mnu-pri-hov-fg-color: #000000;
-  --mnu-pri-hov-bg-color: #ede7f6;
-  --mnu-pri-hov-font-weight: 400;
+  --mnu-pri-fg-color:#424242;
+  --mnu-pri-bg-color:#fafafa;
+  --mnu-pri-fg-color-hov:#000000;
+  --mnu-pri-bg-color-hov:#ede7f6;
+  --mnu-pri-fg-weight-hov:400;
 
-  --mnu-sec-fg-color: #616161;
-  --mnu-sec-bg-color: #e0e0e0;
-  --mnu-sec-hov-fg-color: #000000;
-  --mnu-sec-hov-bg-color: #d1c4e9;
-  --mnu-sec-hov-font-weight: 400;
+  --mnu-sec-fg-color:#616161;
+  --mnu-sec-bg-color:#e0e0e0;
+  --mnu-sec-fg-color-hov:#000000;
+  --mnu-sec-bg-color-hov:#d1c4e9;
+  --mnu-sec-fg-weight-hov:400;
 
 /* sys footer ------------------------------------------------------------- */
 
   --sys-ft-bg-color:#fafafa;
   --sys-ft-align:center;
-  
+
   --copyright-line-height:inherit;
   --copyright-font-color:#455a64;
   --copyright-lnk-pri-color:#455a64;
@@ -443,7 +459,7 @@ print
 
 /* system     ------------------------------------------------------------- */
 
-  --sys-bg-color:#fafafa;
+  --sys-bg-color:#ffffff;
   --sys-line-height:1.4;
   --sys-font-family:'Roboto', sans-serif;
   --sys-font-color:#000000;
@@ -467,12 +483,12 @@ print
 
 @media print {
   :root {
-    
-    --font-sans: sans-serif;
-    --font-condensed: sans-serif;
-    --font-mono: monospace;
-    --font-serif: serif;
-    --font-cursive: cursive;
+
+    --font-sans:sans-serif;
+    --font-condensed:sans-serif;
+    --font-mono:monospace;
+    --font-serif:serif;
+    --font-cursive:cursive;
 
     --prnt-page:letter;
 
