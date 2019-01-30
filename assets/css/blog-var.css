@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90129.2
+Build         - 90129.3
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -224,16 +224,16 @@ site
   --font-cursive:'Kalam', cursive;                    > cursive font family
 
 system menu
-  --mnu-pri-fg-color: #616161;                        > primary font color
+  --mnu-pri-fg-color: #424242;                        > primary font color
   --mnu-pri-bg-color: #f5f5f5;                        > primary background color
-  --mnu-pri-hov-fg-color: #616161;                    > primary font hover color
-  --mnu-pri-hov-bg-color: #eeeeee;                    > primary background hover color
+  --mnu-pri-hov-fg-color: #000000;                    > primary font hover color
+  --mnu-pri-hov-bg-color: #ede7f6;                    > primary background hover color
   --mnu-pri-hov-font-weight: 400;                     > primary font hover weight
   
-  --mnu-sec-fg-color: #616161;                        > secondary font color
+  --mnu-sec-fg-color: #424242;                        > secondary font color
   --mnu-sec-bg-color: #e0e0e0;                        > secondary background color
-  --mnu-sec-hov-fg-color: #616161;                    > secondary font hover color
-  --mnu-sec-hov-bg-color: #ede7f6;                    > secondary background hover color
+  --mnu-sec-hov-fg-color: #000000;                    > secondary font hover color
+  --mnu-sec-hov-bg-color: #d1c4e9;                    > secondary background hover color
   --mnu-sec-hov-font-weight: 400;                     > secondary font hover weight
 
 print
@@ -402,16 +402,16 @@ print
 
 /* sys menu   ------------------------------------------------------------- */
 
-  --mnu-pri-fg-color: #616161;
+  --mnu-pri-fg-color: #424242;
   --mnu-pri-bg-color: #f5f5f5;
-  --mnu-pri-hov-fg-color: #616161;
-  --mnu-pri-hov-bg-color: #eeeeee;
+  --mnu-pri-hov-fg-color: #000000;
+  --mnu-pri-hov-bg-color: #ede7f6;
   --mnu-pri-hov-font-weight: 400;
 
   --mnu-sec-fg-color: #616161;
   --mnu-sec-bg-color: #e0e0e0;
-  --mnu-sec-hov-fg-color: #616161;
-  --mnu-sec-hov-bg-color: #ede7f6;
+  --mnu-sec-hov-fg-color: #000000;
+  --mnu-sec-hov-bg-color: #d1c4e9;
   --mnu-sec-hov-font-weight: 400;
 
 /* sys footer ------------------------------------------------------------- */
