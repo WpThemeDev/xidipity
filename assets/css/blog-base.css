@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90131.1
+Build       - 90131.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2154,6 +2154,7 @@ h1.attachment-entry-title:before {
 /* Entry Content */
 
 .entry-content {
+  background-color: var(--sys-content-bg-color);
   margin: 0;
   padding: 0;
   word-wrap: break-word;
