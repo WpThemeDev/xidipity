@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * build: 90127.1
+ * build: 90201.1
  *
  * @package xidipity
  */
@@ -40,6 +40,11 @@ get_header(); ?>
           $query_featured = new WP_Query( $args_featured );
           $posts_featured = $query_featured->post_count;
 
+          // posts spotlight
+          $args_spotlight = array('category_name' => 'post-spotlight');
+          $query_spotlight = new WP_Query( $args_spotlight );
+          $posts_spotlight = $query_spotlight->post_count;
+
           // posts / page
           $posts_page = get_option( 'posts_per_page' );
 
@@ -47,10 +52,10 @@ get_header(); ?>
           $posts_fp = $posts_page - $sticky_cnt;
 
           // number of pages (fractions to next whole number)
-          $pages_max = ceil(($posts_published - $posts_archive - $sticky_cnt) / $posts_page);
+          $pages_max = ceil(($posts_published - ( $posts_archive + $posts_featured + $posts_spotlight + $sticky_cnt ) ) / $posts_page);
 
           // post category slugs to exclude from blog page
-          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-hidden') );
+          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-spotlight') );
           $cat0 = $cat[0]->term_id;
           $cat1 = $cat[1]->term_id;
           $cat2 = $cat[2]->term_id;
