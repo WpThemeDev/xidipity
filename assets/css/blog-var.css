@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90131.2
+Build         - 90202.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -227,6 +227,8 @@ Google Fonts    https://fonts.google.com/
 
   --sys-bg-color:#fafafa;
   --sys-content-bg-color:#ffffff;
+  --sys-content-tl-border-color:#eeeeee;
+  --sys-content-br-border-color:#e0e0e0;
   --sys-line-height:1.4;
   --sys-font-family:'Roboto', sans-serif;
   --sys-font-color:#000000;
