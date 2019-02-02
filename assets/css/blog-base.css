@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90131.2
+Build       - 90202.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2001,24 +2001,41 @@ pre#textarea {
 
 .hentry {
   background: var(--bg-wht);
-  border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+	display: block;
   margin-bottom: 15px;
+	min-height:295px;
   padding-bottom: 15px;
   position: relative;
 }
 
-@media screen and (min-width: 768px),screen and (min-width:992px),screen and (min-width:1200px),screen and (min-width:1440px) {
+@media screen and (min-width:768px) {
+
   .hentry {
-    border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid var(--sys-content-tl-border-color);
+    border-left: 1px solid var(--sys-content-tl-border-color);
+    border-bottom: 1px solid var(--sys-content-br-border-color);
+    border-right: 1px solid var(--sys-content-br-border-color);
+	  min-height:275px;
   }
+  
 }
 
-.sidebar-widget-area .hentry {
-  border: none;
-  margin: 0;
-  padding: 0;
+@media screen and (min-width:992px) {
+  article.format-standard {
+	  min-height:300px;
+  }
+
+}
+
+@media screen and (min-width:1200px) {
+  article.format-standard {
+	  min-height:280px;
+  }
+
 }
 
 /* Entry Image Wrapper Archive */
@@ -4220,13 +4237,27 @@ img.header-logo {
  ---------------------------------------------------------------------------*/
 
 .widget {
-  background: var(--bg-wht);
-  border: solid var(--fg-bas-300);
-  border-width: 0 1px 1px 0;
+  background: var(--sys-content-bg-color);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+	display: block;
   margin: 0 0 15px;
   padding: 30px;
   position: relative;
   word-wrap: break-word;
+}
+
+@media screen and (min-width:768px) {
+
+  .widget {
+    border-top: 1px solid var(--sys-content-tl-border-color);
+    border-left: 1px solid var(--sys-content-tl-border-color);
+    border-bottom: 1px solid var(--sys-content-br-border-color);
+    border-right: 1px solid var(--sys-content-br-border-color);
+  }
+  
 }
 
 .widget:last-child {
