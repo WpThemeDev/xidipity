@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90202.1
+Build       - 90202.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2012,6 +2012,18 @@ pre#textarea {
   position: relative;
 }
 
+.page-header {
+  background: var(--bg-wht);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+	display: block;
+  margin: 0 0 15px;
+  padding: 30px;
+  position: relative;
+}
+
 @media screen and (min-width:768px) {
 
   .hentry {
@@ -2022,6 +2034,13 @@ pre#textarea {
 	  min-height:275px;
   }
   
+  .page-header {
+    border-top: 1px solid var(--sys-content-tl-border-color);
+    border-left: 1px solid var(--sys-content-tl-border-color);
+    border-bottom: 1px solid var(--sys-content-br-border-color);
+    border-right: 1px solid var(--sys-content-br-border-color);
+  }
+
 }
 
 @media screen and (min-width:992px) {
@@ -2088,16 +2107,7 @@ pre#textarea {
   word-wrap: break-word;
 }
 
-/* Page Header & Title */
-
-.page-header {
-  background: var(--bg-wht);
-  border: solid var(--fg-bas-300);
-  border-width: 0 1px 1px 0;
-  margin: 0 0 15px;
-  padding: 30px;
-  position: relative;
-}
+/* Page Title */
 
 .page-title {
   clear: none;
@@ -3311,11 +3321,11 @@ input#menu-toggle[type=checkbox] {
 /* unchecked label style */
 input#menu-toggle[type=checkbox] ~ label {
   background-color: var(--sys-hdr-bg-color);
-  color: var(--fg-blk);
+  color: var(--mnu-pri-fg-color);
   cursor: pointer;
   display: block;
   font-family: var(--font-sans);
-  padding: 10px 0 3px 0;
+  padding: 10px 0 10px 0;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   text-align: center;
@@ -3329,7 +3339,7 @@ input#menu-toggle[type=checkbox] ~ div {
 /* checked label style */
 input#menu-toggle[type=checkbox]:checked ~ label {
   background-color: var(--sys-hdr-bg-color);
-  color: var(--fg-pri-500);
+  color: var(--mnu-pri-fg-color);
   display: block;
   font-family: var(--font-sans);
   padding: 10px 0 10px 0;
@@ -3344,7 +3354,8 @@ input#menu-toggle[type=checkbox]:checked ~ div {
 
 /* style mobile drop down */
 .main-navigation {
-  background-color: var(--sys-hdr-bg-color);
+  background-color: var(--mnu-sec-bg-color);
+  color: var(--mnu-sec-fg-color);
   font-family: var(--font-condensed);
   padding-bottom: 0;
   width: 100%;
@@ -3356,12 +3367,12 @@ input#menu-toggle[type=checkbox]:checked ~ div {
   text-align: left;
 }
 .main-navigation ul li a {
-  color: var(--fg-bas-800);
+  color: var(--mnu-sec-fg-color-hov);
   text-decoration: none;
 }
 .main-navigation ul li a:focus,
 .main-navigation ul li a:active {
-  color: var(--fg-pri-500);
+  color: var(--mnu-sec-fg-color);
 }
 
 /* large / xtra large devices */
