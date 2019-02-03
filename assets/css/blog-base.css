@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90203.1
+Build       - 90203.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1825,14 +1825,6 @@ input:focus,
 textarea:focus {
   outline: 0;
 }
-
-/*
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-
-This may not be supported in some browers
-*/
 
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: searchfield-cancel-button;
@@ -4381,9 +4373,8 @@ ul.sbwidget {
 /* Search Form Animation */
 
 .search-frm-container {
-  background: var(--bg-bas-050);
+  background-color: var(--sys-pg-banner-bg-color-right);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-050);
   width: 100%;
 }
 
@@ -4394,9 +4385,9 @@ ul.sbwidget {
 }
 
 .search-frm .search-fld {
-  background: var(--bg-bas-050);
+  background-color: var(--sys-pg-banner-bg-color-right);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-050);
+  border: 1px solid transparent;
   height: 50px;
   padding: 0 10px;
   text-align: left;
@@ -4405,10 +4396,10 @@ ul.sbwidget {
 }
 
 .search-frm .search-sub {
-  background: var(--bg-bas-050);
+  background-color: var(--sys-pg-banner-bg-color-right);
   border-radius: 3px;
-  border: 1px solid var(--fg-bas-050);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  border: 1px solid transparent;
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
   position: relative;
   display: inline-block;
   float: right;
