@@ -1,6 +1,6 @@
 /*
 File          - blog-var.css
-Build         - 90202.1
+Build         - 90203.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -157,16 +157,21 @@ Google Fonts    https://fonts.google.com/
   --h6-style:italic;
   --h6-weight:400;
 
+/* sys page banner -------------------------------------------------------- */
+
+  --sys-pg-banner-tl-border-color:#eeeeee;
+  --sys-pg-banner-br-border-color:#e0e0e0;
+  --sys-pg-banner-fg-color-left:#ffffff;
+  --sys-pg-banner-bg-color-left:#ff8a65;
+  --sys-pg-banner-fg-color-right:#212121;
+  --sys-pg-banner-bg-color-right:#ffffff;
+  --sys-pg-banner-font-family:'Roboto Slab', serif;
+  --sys-pg-banner-font-weight:300;
+
 /* sys header ------------------------------------------------------------- */
 
   --sys-hdr-bg-color:#fafafa;
   --sys-hdr-align:center;
-  --sys-pg-banner-fg-color-left:#ffffff;
-  --sys-pg-banner-bg-color-left:#ff8a65;
-  --sys-pg-banner-fg-color-right:#212121;
-  --sys-pg-banner-bg-color-right:#fafafa;
-  --sys-pg-banner-font-family:'Roboto Slab', serif;
-  --sys-pg-banner-font-weight:300;
 
   --title-lnk-pri-color:#5e35b1;
   --title-lnk-sec-color:#f4511e;
