@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90105.1
+  Build    - 90122.3
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -39,10 +39,10 @@ Import key css files
 body {
   background: var(--bg-wht);
   color: var(--sys-font-color);
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--sys-font-family);
   font-size: var(--sys-font-size);
-  font-weight: var(--sys-font-wgt);
-  line-height: var(--sys-line-hght);
+  font-weight: var(--sys-font-weight);
+  line-height: var(--sys-line-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*- specific to editor  -*/
@@ -58,7 +58,7 @@ button,
 input,
 select,
 textarea {
-  font-family: var(--sys-font-fam);
+  font-family: var(--sys-font-familyily);
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400;
@@ -70,7 +70,7 @@ textarea {
   border: solid var(--fg-bas-300) 1px;
   border-radius: 3px;
   color: var(--fg-blk);
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   font-size: 13px;
   font-size: 0.8125em;
   line-height: 1.25;
@@ -95,99 +95,57 @@ h5,
 h6 {
   clear: both;
   display: block;
-  font-family: var(--sys-font-fam);
+  font-family: var(--sys-font-family);
   line-height: 1.4;
   margin: 5px 0;
 }
 
 h1 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 34px;
-  font-size: 2.125em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h1-color);
   font-family: var(--h1-font);
   font-size: var(--h1-size);
   font-style: var(--h1-style);
-  font-weight: var(--h1-wgt);
+  font-weight: var(--h1-weight);
 }
 
 h2 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 30px;
-  font-size: 1.875em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h2-color);
   font-family: var(--h2-font);
   font-size: var(--h2-size);
   font-style: var(--h2-style);
-  font-weight: var(--h2-wgt);
+  font-weight: var(--h2-weight);
 }
 
 h3 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 24px;
-  font-size: 1.5em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h3-color);
   font-family: var(--h3-font);
   font-size: var(--h3-size);
   font-style: var(--h3-style);
-  font-weight: var(--h3-wgt);
+  font-weight: var(--h3-weight);
 }
 
 h4 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 20px;
-  font-size: 1.25em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h4-color);
   font-family: var(--h4-font);
   font-size: var(--h4-size);
   font-style: var(--h4-style);
-  font-weight: var(--h4-wgt);
+  font-weight: var(--h4-weight);
 }
 
 h5 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 18px;
-  font-size: 1.125em;
-  font-style: normal;
-  font-weight: 400;
-*/
   color: var(--h5-color);
   font-family: var(--h5-font);
   font-size: var(--h5-size);
   font-style: var(--h5-style);
-  font-weight: var(--h5-wgt);
+  font-weight: var(--h5-weight);
 }
 
 h6 {
-/*defaults
-  font-family: var(--sys-font-fam);
-  font-size: 18px;
-  font-size: 1.125em;
-  font-style: italic;
-  font-weight: 400;
-*/
   color: var(--h6-color);
   font-family: var(--h6-font);
   font-size: var(--h6-size);
   font-style: var(--h6-style);
-  font-weight: var(--h6-wgt);
+  font-weight: var(--h6-weight);
 }
 
 h1 img {
@@ -303,7 +261,7 @@ pre {
   border: solid var(--fg-bas-300) 1px;
   border-radius: 3px;
   color: var(--fg-bas-900);
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-size: 0.8125rem;
   margin: 15px 10px 10px 10px;
@@ -319,7 +277,7 @@ code,
 kbd,
 tt,
 var {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 13px;
   font-size: 0.8125rem;
 }
@@ -404,43 +362,6 @@ hr.gradient {
   display: block;
   clear: both;
 }
-
-/*  # HTML
-   ## Two Column
- ---------------------------------------------------------------------------*/
-
-table.twocolumn,
-table.twocolumn table.twocolumn {
-  margin: 0;
-  width: 100%;
-}
-
-table.twocolumn tr td,
-table.twocolumn tr td table.twocolumn tr td {
-  float: none;
-  width: 50%;
-}
-
-table.twocolumn tr td:first-child,
-table.twocolumn tr td:first-child table.twocolumn tr td:first-child {
-  padding-right: 8px;
-  vertical-align: top;
-}
-
-table.twocolumn tr td:last-child,
-table.twocolumn tr td:last-child table.twocolumn tr td:last-child {
-  padding-left: 8px;
-  vertical-align: top;
-}
-
-table.twocolumn tr td img,
-table.twocolumn tr td figure,
-table.twocolumn tr td table.twocolumn tr td img,
-table.twocolumn tr td table.twocolumn tr td figure {
-  width: 100%;
-  height: auto;
-}
-
 /* # List          -----------------------------------------------------------*/
 
 /**   Unordered List    **/
@@ -548,7 +469,7 @@ ol li::before {
   color: var(--fg-bas-600);
   display: inline-block;
   font-size: 95%;
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
@@ -686,75 +607,10 @@ ul.dbl-spaced > li:last-child {
   width:150px;
 }
 
-/* # HTML
-  ## Table -----------------------------------------------------------*/
-
-/* Table Styles */
-
-table {
-  table-layout: fixed;
-  background-color: transparent;
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 15px 0 15px 0;
-  margin: 0.9375rem 0 0.9375rem 0;
-}
-
-table caption {
-  margin-bottom: 15px;
-  margin-bottom: 0.9375rem;
-}
-
-table th, table td {
-  padding: 4px;
-  padding: 0.25rem;
-}
-
-table thead th {
-  background: linear-gradient(#EEEEEE, #F5F5F5);
-  color: var(--fg-blk);
-}
-
-table thead th:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-table tr:not(:last-child) td {
-  border-bottom: 1px solid var(--fg-bas-300);
-}
-
-table tr td:not(:last-child) {
-  border-right: 1px solid var(--fg-bas-300);
-}
-
-/*  annotate  ----------------------- */
-table.annotate {
-  background-color: var(--bg-bas-050);
-  border: 1px solid transparent;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table.annotate tr td:not(:last-child) {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 70px;
-  vertical-align: middle;
-}
-
-table.annotate tr td:last-child {
-  font-size: 14px;
-  line-height: 1.25;
-  padding: 5px 10px;
-  width: 100%;
-}
-
 a,
 a:visited {
   color: var(--sys-lnk-pri-color);
-  font-weight: var(--sys-lnk-wgt);
+  font-weight: var(--sys-lnk-weight);
   text-decoration: none;
 }
 
@@ -762,7 +618,7 @@ a:hover,
 a:focus,
 a:active {
   color: var(--sys-lnk-sec-color);
-  font-weight: var(--sys-lnk-wgt);
+  font-weight: var(--sys-lnk-weight);
 }
 
 /* Fixes linked images */
@@ -1308,7 +1164,7 @@ object {
   border-radius: 3px;
   cursor: pointer;
   display: block;
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1460,23 +1316,23 @@ table table td.rm-td-right {
 /*- Tailwind Xidipity Font Families -*/
 
 .font-sans {
-  font-family: var(--sys-fnt-sans);
+  font-family: var(--font-sans);
 }
 
 .font-serif {
-  font-family: var(--sys-fnt-serif);
+  font-family: var(--font-serif);
 }
 
 .font-mono {
-  font-family: var(--sys-fnt-mono);
+  font-family: var(--font-mono);
 }
 
 .font-condensed {
-  font-family: var(--sys-fnt-condensed);
+  font-family: var(--font-condensed);
 }
 
 .font-cursive {
-  font-family: var(--sys-fnt-cursive);
+  font-family: var(--font-cursive);
 }
 
 @media screen and (min-width:576px) {
@@ -1562,7 +1418,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .sm\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .sm\:font-serif {
@@ -1570,15 +1426,15 @@ table table td.rm-td-right {
   }
   
   .sm\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .sm\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .sm\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1665,7 +1521,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .md\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .md\:font-serif {
@@ -1673,15 +1529,15 @@ table table td.rm-td-right {
   }
   
   .md\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .md\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .md\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1768,7 +1624,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .lg\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .lg\:font-serif {
@@ -1776,15 +1632,15 @@ table table td.rm-td-right {
   }
   
   .lg\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .lg\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .lg\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
 }
 
@@ -1871,7 +1727,7 @@ table table td.rm-td-right {
   /*- Tailwind Xidipity Font Families -*/
   
   .xl\:font-sans {
-    font-family: var(--sys-fnt-sans);
+    font-family: var(--font-sans);
   }
   
   .xl\:font-serif {
@@ -1879,16 +1735,161 @@ table table td.rm-td-right {
   }
   
   .xl\:font-mono {
-    font-family: var(--sys-fnt-mono);
+    font-family: var(--font-mono);
   }
   
   .xl\:font-condensed {
-    font-family: var(--sys-fnt-condensed);
+    font-family: var(--font-condensed);
   }
   
   .xl\:font-cursive {
-    font-family: var(--sys-fnt-cursive);
+    font-family: var(--font-cursive);
   }
+}
+
+/*  # eof
+ ---------------------------------------------------------------------------
+  editor-style
+ ---------------------------------------------------------------------------*/
+ 
+/*  # HTML
+   ## Table
+ ---------------------------------------------------------------------------*/
+
+/* Table Styles */
+
+table {
+  table-layout: fixed;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+/*
+table:before {
+  content: "";
+  overflow: auto;
+}
+*/
+table caption {
+  margin-bottom: 15px;
+}
+
+table th,
+table td {
+  padding: 4px;
+}
+
+table thead th {
+  background: linear-gradient(#EEEEEE, #F5F5F5);
+  color: var(--fg-blk);
+}
+
+table thead th:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+/*  # HTML
+   ## Two Column
+ ---------------------------------------------------------------------------*/
+
+table#twocol {
+  border:1px;
+  border-collapse: separate;
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+
+/*  embedded twocolumn  */
+table#twocol table#twocol {
+  border:dashed 1px #f48fb1;
+  border-collapse: separate;
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+
+table#twocol tr td table#twocol tr td:not(:last-child) {
+  border-right:dashed 1px #f48fb1;
+}
+
+/*  embedded table  */
+table#twocol table {
+  padding:0;
+  margin:0;
+}
+
+table#twocol tr tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table#twocol tr tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
+}
+
+/* figures & images */
+table#twocol tr td figure,
+table#twocol:first-child tr td figure {
+  height: auto;
+  margin-bottom: -8px;
+  width: 100%;
+}
+
+table#twocol tr td img,
+table#twocol:first-child tr td img {
+  height: auto;
+  margin-bottom: -6px;
+  width: 100%;
+}
+
+/*  set columns */
+table#twocol tr td,
+table#twocol tr td table#twocol tr td {
+  width: 50%;
+}
+
+/*  set column padding  */
+table#twocol tr td:first-child {
+padding-right: 8px;
+  vertical-align: top;
+}
+
+table#twocol tr td:not(:first-child) {
+padding-left: 8px;
+  vertical-align: top;
+}
+
+table#twocol:first-child tr td:first-child {
+padding-right: 4px;
+  vertical-align: top;
+}
+
+table#twocol:first-child tr td:not(:first-child) {
+padding-left: 4px;
+  vertical-align: top;
+}
+
+table#twocol tr td table#twocol tr td {
+  border:0;
+}
+
+/*  embedded table  */
+table#twocol tr tr:not(:last-child) td {
+  border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table#twocol tr tr td:not(:last-child) {
+  border-right: 1px solid var(--fg-bas-300);
 }
 
 /*  # eof
