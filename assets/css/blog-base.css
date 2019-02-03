@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90202.2
+Build       - 90203.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1348,15 +1348,28 @@ cite {
 }
 
 /*  # Wordpress
-   ## Blog Page Header
+   ## Blog Page Banner
  ---------------------------------------------------------------------------*/
 
 .blg-pg-hd-wrapper {
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
   font-family: var(--sys-pg-banner-font-family);
   font-size: 30px;
   line-height: 1.8;
   margin-top: 9px;
   width: 100%;
+}
+
+@media screen and (min-width:768px) {
+  .blg-pg-hd-wrapper {
+    border-top: 1px solid var(--sys-pg-banner-tl-border-color);
+    border-left: 1px solid var(--sys-pg-banner-tl-border-color);
+    border-bottom: 1px solid var(--sys-pg-banner-br-border-color);
+    border-right: 1px solid var(--sys-pg-banner-br-border-color);
+  }
 }
 
 .blg-pg-hd-icon {
@@ -3372,7 +3385,7 @@ input#menu-toggle[type=checkbox]:checked ~ div {
 }
 .main-navigation ul li a:focus,
 .main-navigation ul li a:active {
-  color: var(--mnu-sec-fg-color);
+  color: var(--sys-lnk-sec-color);
 }
 
 /* large / xtra large devices */
