@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-print.css
-Build       - 90207.1
+Build       - 90207.1.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -18,7 +18,7 @@ Print Grayscale - blog-print-var.css
  * set page size
  */
 @page {
-	size: auto;
+	size: var(--prnt-page);
 }
 /**
  * HIDE certain elements completely
