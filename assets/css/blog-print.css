@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-print.css
-Build       - 90207.1.1
+Build       - 90209.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -17,6 +17,7 @@ Print Grayscale - blog-print-var.css
 /**
  * set page size
  */
+
 @page {
 	size: var(--prnt-page);
 }
@@ -38,6 +39,16 @@ Print Grayscale - blog-print-var.css
 .toc-menu,
 .toggle-menu-wrapper {
 	display: none;
+}
+/**
+ * Tailwind syntax
+ */
+
+.print\:hidden {
+	display: none;
+}
+.print\:display {
+	display: block;
 }
 /**
  * Global defaults
@@ -69,7 +80,87 @@ table#twocol tr td:not(:first-child) {
 	padding-left: 8px;
 	vertical-align: top;
 }
-	
+/**
+ *   # Wordpress
+ *  ## Media Elements
+ * ### Category Galleries
+ */
+.xidipity-gallery {
+  display: block;
+  width: 100%;
+}
+.xidipity-gallery:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.xidipity-gallery-itm-fu {
+  display: block;
+	height: auto;
+  margin: 5px;
+  width: 1920px;
+}
+.xidipity-gallery-itm-lg {
+  display: block;
+  float: left;
+	height: auto;
+  margin: 5px;
+  width: 600px;
+}
+.xidipity-gallery-itm-md {
+  display: block;
+  float: left;
+	height: auto;
+  margin: 5px;
+  width: 350px;
+}
+.xidipity-gallery-itm-sm {
+  display: block;
+  float: left;
+	height: auto;
+  margin: 5px;
+  width: 230px;
+}
+.xidipity-gallery-itm img {
+	height: auto;
+	max-width: 100%;
+}
+/*  # HTML
+##  Media Elements
+### Image Transformations
+---------------------------------------------------------------------------*/
+
+img.shadow {
+	border: 0;
+	-webkit-box-shadow: 0;
+	-moz-box-shadow: 0;
+	box-shadow: none;
+}
+/*  # HTML
+   ## Responsive Table
+---------------------------------------------------------------------------*/
+
+table#responsive {
+	table-layout: fixed;
+	background-color: transparent;
+	border: 0;
+	width: 100%;
+}
+table#responsive tr {
+	width: 100%;
+}
+table#responsive td {
+	display: table-cell;
+	margin: 15px 0 15px 0;
+	padding: 15px 5px 15px 5px;
+	vertical-align: top;
+	width: 100%;
+}
+table#responsive td img {
+	height: auto;
+	width: 100%;
+}
+
 /*  # eof
  ---------------------------------------------------------------------------
   print-style
