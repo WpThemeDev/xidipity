@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90208.1
+Build       - 90209.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -22,7 +22,9 @@ Comments    - Base CSS classes as modified
   ## Links
   ## List
   ## Table
-  ## Two Column
+    ### Native
+    ### Two Column
+    ### Responsive
   ## Typography
     ### Blank line spacers
     ### Font Awesome
@@ -744,9 +746,8 @@ ul.dbl-spaced > li:last-child {
 @media screen and (min-width: 1440px) {}
 /*  # HTML
    ## Table
+  ### Native
  ---------------------------------------------------------------------------*/
-
-/* Table Styles */
 
 table {
 	table-layout:fixed;
@@ -777,7 +778,8 @@ table tr td:not(:last-child) {
 	border-right: 1px solid var(--fg-bas-300);
 }
 /*  # HTML
-   ## Two Column
+   ## Table
+  ### Two Column
  ---------------------------------------------------------------------------*/
 
 table#twocol {
@@ -860,7 +862,8 @@ table#twocol:first-child tr td img {
 	}
 }
 /*  # HTML
-   ## Responsive Table
+   ## Table
+  ### Responsive Table
 ---------------------------------------------------------------------------*/
 
 table#responsive {
@@ -2189,6 +2192,14 @@ img.zoom:hover {
 	-webkit-transform: scale(1.02);
 	transform: scale(1.02);
 }
+img.shadow {
+	border-bottom: 1px solid #BDBDBD;
+	border-right: 1px solid #BDBDBD;
+	-webkit-box-shadow: 2px 2px 15px 0px #BDBDBD;
+	-moz-box-shadow: 2px 2px 15px 0px #BDBDBD;
+	box-shadow: 2px 2px 15px 0px #BDBDBD;
+}
+
 /*  # Wordpress
 ## Media Elements
 ### Captions
@@ -2305,12 +2316,6 @@ img.zoom:hover {
 .xidipity-gallery-itm img {
 	margin: 5px;
 	max-width: 100%;
-}
-img.shadow {
-	border: 1px solid #BDBDBD;
-	-webkit-box-shadow: 2px 2px 15px 0px rgba(189, 189, 189, 1);
-	-moz-box-shadow: 2px 2px 15px 0px rgba(189, 189, 189, 1);
-	box-shadow: 2px 2px 15px 0px rgba(189, 189, 189, 1);
 }
 /*- small devices -*/
 
