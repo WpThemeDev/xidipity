@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90203.1
+ Build       - 90210.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -13,7 +13,7 @@
 /**
  * Short code
  *
- * xidipity_gallery
+ * xidipity_gallery (deprecated)
  *
  * syntax - [xidipity_gallery orderby='' order='' opt=0 fmt=0 sdw=0]category 1,category 2, etc[/xidipity_gallery]
  *
@@ -906,6 +906,238 @@ function lst_theme_shortcode($atts)
 }
 
 /**
+ * Short code
+ *
+ * img_gallery
+ *
+ * build: 90210.1
+ *
+ * syntax - [img_gallery orderby='' order='' opt=0 col=0 cap=0 sdw=0]category 1,category 2, etc[/img_gallery]
+ *
+ *  orderby (field name)
+ *    date (default)
+ *    post_title
+ *    post_author
+ *
+ *  order (acending / decending)
+ *    asc
+ *    desc (default)
+ *
+ *  opt (display options)
+ *    0 – do not display captions or descriptions (default)
+ *    1 – display captions
+ *    2 – display descriptions
+ *    3 – display both captions and descriptions
+ *
+ *  col
+ *    1 - 1 column
+ *    2 - 2 column (default)
+ *    3 - 3 column
+ *    4 - 4 column
+ *
+ *  cap
+ *    0 - caption left (default)
+ *    1 - caption center
+ *    2 - caption right
+ *
+ *  sdw
+ *    0 - no image shadow (default)
+ *    1 - image shadow
+ */
+
+add_shortcode('img_gallery', 'img_gallery_shortcode');
+
+function img_gallery_shortcode($atts, $category_list) {
+    // done if no categories
+    $categories = valid_categories($category_list);
+    if ($categories == '') {
+        $html = disp_error('Image Gallery Template - missing media category.');
+    } else {
+        // check for & fix missing arguments
+        if (!is_array($atts)) {
+            $atts = array(
+                'orderby' => 'date',
+                'order' => 'desc',
+                'opt' => 1,
+                'col' => 2,
+                'cap' => 0,
+                'sdw' => 0
+            );
+        } else {
+            if (!isset($atts['orderby'])) {
+                $atts['orderby'] = 'date';
+            }
+            if (!isset($atts['order'])) {
+                $atts['order'] = 'desc';
+            }
+            if (!isset($atts['opt'])) {
+                $atts['opt'] = 1;
+            }
+            if (!isset($atts['col'])) {
+                $atts['col'] = 2;
+            }
+            if (!isset($atts['cap'])) {
+                $atts['cap'] = 0;
+            }
+            if (!isset($atts['sdw'])) {
+                $atts['sdw'] = 0;
+            }
+        }
+        // sanitized working variables
+        $orderby = valid_orderby($atts['orderby']);
+        $order = strtolower($atts['order']);
+        if (!$order == 'desc') {
+            $order = 'asc';
+        }
+        $val = $atts['opt'];
+        switch ($val) {
+          case !is_numeric($val):
+            $opt = 0;
+            break;
+          case ($val > 3):
+            $opt = 0;
+            break;
+          default:
+            $opt = $val;
+        }
+        $val = $atts['col'];
+        switch ($val) {
+          case !is_numeric($val):
+            $max_col = 2;
+            break;
+          case ($val > 4):
+            $max_col = 2;
+            break;
+          default:
+            $max_col = $val;
+        }
+        $val = $atts['cap'];
+        switch ($val) {
+          case !is_numeric($val):
+            $cap = 1;
+            $cap_style = 'style="text-align:left;"';
+            if ($max_col > 2) {
+              $cap_style = 'style="text-align:left;font-size:smaller;"';
+            }
+            break;
+          case ($val == 0):
+            $cap = 1;
+            $cap_style = 'style="text-align:left;"';
+            if ($max_col > 2) {
+              $cap_style = 'style="text-align:left;font-size:smaller;"';
+            }
+            break;
+          case ($val == 1):
+            $cap = 2;
+            $cap_style = 'style="text-align:center;"';
+            if ($max_col > 2) {
+              $cap_style = 'style="text-align:center;font-size:smaller;"';
+            }
+            break;
+          case ($val == 2):
+            $cap = 3;
+            $cap_style = 'style="text-align:right;"';
+            if ($max_col > 2) {
+              $cap_style = 'style="text-align:right;font-size:smaller;"';
+            }
+            break;
+          default:
+            $cap = 1;
+            $cap_style = 'style="text-align:left;"';
+            if ($max_col > 2) {
+              $cap_style = 'style="text-align:left;font-size:smaller;"';
+            }
+        }
+        $val = $atts['sdw'];
+        switch ($val) {
+          case !is_numeric($val):
+            $sdw = 0;
+            $sdw_class = '';
+            break;
+          case ($val > 0):
+            $sdw = 1;
+            $sdw_class = 'class="shadow"';
+            break;
+          default:
+            $sdw = 0;
+            $sdw_class = '';
+        }
+
+        // run query
+        $qry = array(
+            'post_type' => 'attachment',
+            'post_mime_type' => 'image',
+            'orderby' => $orderby,
+            'order' => $order,
+            'posts_per_page' => '30',
+            'post_status' => 'inherit',
+            'category_name' => $categories
+        );
+        $qry_rslt = new WP_Query($qry);
+
+        if ($qry_rslt->have_posts()) {
+            // working variables
+            $new_row = true;
+            $cur_col = 1;
+            $html    = '<!-- 900208.1 Template: general / table / responsive -->';
+            $html   .= '<table id="responsive">';
+            $html   .= '<tbody>';
+
+            while ($qry_rslt->have_posts()):
+                $qry_rslt->the_post();
+                $image  = wp_get_attachment_image_src(get_the_ID(), 'full'); // Full sized image
+                $thumb  = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'thumbnail'); // Thumbnail size
+                $img_id = get_post(get_post_thumbnail_id());
+                
+                if ( $new_row ) {
+                  $html .= '<tr>';
+                }
+                $html .= '<td>';
+                $html .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $sdw_class  . ' src="' . $image[0] . '"></a>';
+
+                if ( $opt == 1 || $opt == 3 ) {
+                    $html .= '<div ' . $cap_style . '>' . $qry_rslt->post->post_excerpt . '</div>';
+                }
+                if ( $opt == 2 || $opt == 3 ) {
+                    $html .= '<p>' . $qry_rslt->post->post_content . '</p>';
+                }
+                $html .= '</td>';
+    
+                $cur_col++;
+                $new_row = ($cur_col > $max_col);
+
+                if ( $new_row ) {
+                  $html .= '</tr>';
+                  $cur_col = 1;
+                }
+
+            endwhile;
+                    
+            if ( !$new_row ) {
+                $html .= '</tr>';
+            }
+            $html .= '</tbody>';
+            $html .= '</table>';
+
+        } else {
+
+            $html = disp_error('Image Gallery Template - no images found assigned to (' . $categories . ').');
+
+        }
+        
+        wp_reset_postdata();
+            
+    }
+    
+    return $html;
+    
+}
+
+/* -------------------------------------------------------------------------------------/
+ * functions
+** ----------------------------------------------------------------------------------- */
+
+/**
  * function
  *
  * disp_error
@@ -918,6 +1150,67 @@ function disp_error($msg)
     
     return '<div style="background-color: #f7f7f7; border-left: 5px solid #d32f2f; padding: 10px; width: 100%;">' . $msg . '</div>';
     
+}
+
+/**
+ * function
+ *
+ * valid_categories
+ *
+ * return sanitized list of include/exclude categories separated by a comma
+ *
+ * syntax - valid_categories ( $category_lst, $category_opt )
+ *
+ *  $category_lst = comma separated category list
+ *  $category_opt = (i) categories to include  (default)
+ *                  (x) categories to exclude
+ *
+ */
+
+function valid_categories($category_lst,$category_opt='i') {
+  if (empty(trim($category_lst))) {
+      return '';
+  } else {
+      $category_opt = strtolower($category_opt);
+      $opt_chr = '';
+      if ( $category_opt == 'x' ) $opt_chr = '-';
+      $category_lst = str_replace(' ',',',$category_lst);
+      $category_lst = str_replace('.',',',$category_lst);
+      $category_lst = str_replace('/',',',$category_lst);
+      $cat_array = explode(',', $category_lst);
+      $lst_items = array_filter($cat_array);
+      $cat_lst   = '';
+      foreach ($lst_items as $lst_item) {
+          $cat_lst .= $opt_chr . $lst_item . ',';
+      }
+      return substr($cat_lst, 0, -1);
+  }
+}
+
+/**
+ * function
+ *
+ * valid_orderby
+ *
+ * return sanitized orderby variable
+ *
+ * syntax - valid_orderby ( $arg )
+ *
+ *  $arg = orderby variable to validate
+ *
+ */
+
+function valid_orderby($arg) {
+  $ret_val = 'none';
+  if (!empty(trim($arg))) {
+      $valid_opts = array('none','id','author','title','name','date','post_date','modified','parent','rand','comment_count','menu_order');
+      if (in_array(strtolower($arg), $valid_opts)) {
+        $ret_val = strtolower($arg);
+        if ( $ret_val == 'id' ) { $ret_val = 'ID'; }
+        if ( $ret_val == 'post_date' ) { $ret_val = 'date'; }
+      }
+  }
+  return $ret_val;
 }
 
 ?>
