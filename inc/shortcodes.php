@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90210.1
+ Build       - 90210.2
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -96,7 +96,7 @@ function xidipity_gallery_shortcode($atts, $category_list)
         if (empty(trim($atts['orderby']))) {
             $atts['orderby'] = 'post_date';
         }
-        if (!$atts['order'] == 'desc') {
+        if (!$atts['order'] == 'DESC') {
             $atts['order'] = 'ASC';
         }
         
@@ -174,7 +174,7 @@ function xidipity_gallery_shortcode($atts, $category_list)
 /**
  * Short code
  *
- * lst_pages
+ * lst_pages (deprecate)
  *
  * build: 90105.1
  *
@@ -282,7 +282,110 @@ function lst_pages_shortcode($atts)
 /**
  * Short code
  *
- * lst_posts
+ * page_list
+ *
+ * build: 90210.1
+ *
+ * syntax - [page_list class="" style_before="" style_after="" depth=0 pid=0 xclude='']
+ *
+ */
+
+add_shortcode('page_list', 'page_list_shortcode');
+
+function page_list_shortcode($atts) {
+    
+    // check for & fix missing arguments
+    
+    if (!is_array($atts)) {
+        $atts = array(
+            'class' => 'qtr-spaced',
+            'style_before' => '',
+            'style_after' => '',
+            'depth' => 0,
+            'pid' => 0,
+            'xclude' => ''
+        );
+        
+    } else {
+        
+        if (!isset($atts['class'])) {
+            $atts['class'] = 'qtr-spaced';
+        }
+        
+        if (!isset($atts['style_before'])) {
+            $atts['style_before'] = '';
+        }
+        
+        if (!isset($atts['style_after'])) {
+            $atts['style_after'] = '';
+        }
+        
+        if (!isset($atts['depth'])) {
+            $atts['depth'] = 0;
+        }
+        
+        if (!isset($atts['pid'])) {
+            $atts['pid'] = 0;
+        }
+        
+        if (!isset($atts['xclude'])) {
+            $atts['xclude'] = '';
+        }
+    }
+    
+    // sanitized working variables
+    $class = trim($atts['class']);
+    $style_before = trim($atts['style_before']);
+    $style_after = trim($atts['style_after']);
+    $depth = $atts['depth'];
+    $pid = $atts['pid'];
+    $xclude = $atts['xclude'];
+
+    // remove template defaults
+    if (strtoupper($class) == 'CLASS') {
+        $class = '';
+    }
+    if (strtoupper($style_before) == 'STYLE') {
+        $style_before = '';
+    }
+    if (strtoupper($style_after) == 'STYLE') {
+        $style_after = '';
+    }
+    if (strtoupper($xclude) == 'IDs') {
+        $xclude = '';
+    }
+    
+    $qry = array(
+        'depth' => $depth,
+        'date_format' => get_option('date_format'),
+        'child_of' => $pid,
+        'exclude' => $xclude,
+        'echo' => false,
+        'sort_column' => 'post_title',
+        'link_before' => $style_before,
+        'link_after' => $style_after,
+        'item_spacing' => 'discard',
+        'title_li'    => '',
+        'walker' => ''
+    );
+    
+    $html = '<ul>';
+    if (!empty($class)) {
+        $html = '<ul class="' . $class . '">';
+    }
+    $html .= wp_list_pages($qry);
+    $html .= '</ul>';
+
+    wp_reset_postdata();
+    
+    return $html;
+    
+}
+
+/**
+ * Short code
+ *
+ * lst_posts (deprecate)
  *
  * build: 90105.1
  *
@@ -418,7 +521,130 @@ function lst_posts_shortcode($atts)
 /**
  * Short code
  *
+ * blog_list
+ *
+ * build: 90210.1
+ *
+ * syntax - [blog_list class="" style_before="" style_after="" order_by="" order="" filter=0]category 1,category 2, etc[/blog_list]
+ *
+ */
+
+add_shortcode('blog_list', 'blog_list_shortcode');
+
+function blog_list_shortcode($atts, $category_list) {
+    
+    // check for & fix missing arguments
+    
+    if (!is_array($atts)) {
+        $atts = array(
+            'class' => 'qtr-spaced',
+            'style_before' => '',
+            'style_after' => '',
+            'order_by' => 'title',
+            'order' => 'DESC',
+            'filter' => 0
+        );
+        
+    } else {
+        
+        if (!isset($atts['class'])) {
+            $atts['class'] = 'qtr-spaced';
+        }
+        
+        if (!isset($atts['style_before'])) {
+            $atts['style_before'] = '';
+        }
+        
+        if (!isset($atts['style_after'])) {
+            $atts['style_after'] = '';
+        }
+        
+        if (!isset($atts['order_by'])) {
+            $atts['order_by'] = 'title';
+        }
+        
+        if (!isset($atts['order'])) {
+            $atts['order'] = 'DESC';
+        }
+        
+        if (!isset($atts['filter'])) {
+            $atts['filter'] = 0;
+        }
+    }
+
+    // sanitized working variables
+    $class = trim($atts['class']);
+    $style_before = trim($atts['style_before']);
+    $style_after = trim($atts['style_after']);
+    
+    $orderby = valid_orderby($atts['orderby']);
+    $order = strtolower($atts['order']);
+    if (!$order == 'DESC') {
+        $order = 'ASC';
+    }
+    
+    // remove template defaults
+    if (strtoupper($class) == 'CLASS') {
+        $class = '';
+    }
+    if (strtoupper($style_before) == 'STYLE') {
+        $style_before = '';
+    }
+    if (strtoupper($style_after) == 'STYLE') {
+        $style_after = '';
+    }
+
+    $filter = 'i';
+    if ($atts['filter'] == 1) {$filter = 'x';}
+    $categories = valid_categories($category_list,$filter);
+
+    if (!empty($categories)) {
+        $qry = array(
+            'posts_per_page' => -1,
+            'offset' => 0,
+            'cat' => $categories,
+            'orderby' => $orderby,
+            'order' => $order,
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'suppress_filters' => true
+        );
+        
+        if (!empty($class)) {
+            $html = '<ul class="' . $class . '">';
+        } else {
+            $html = '<ul>';
+        }
+        
+        $posts = get_posts($qry);
+        $cnt = 0;
+        foreach ($posts as $post) {
+            $cnt++;
+            $html .= '<li><a href="' . get_permalink($post) . '">';
+            $html .=  $style_before . $post->post_title . $style_after;
+            $html .= '</a></li>';
+        }
+        $html .= '</ul>';
+    
+        if ($cnt == 0) {
+          $html = disp_error('Blog List Template - no posts found assigned to (' . $category_list . ').');
+        }
+        
+        wp_reset_postdata();
+        
+    } else {
+      $html = disp_error('Blog List Template - missing valid category.');
+    }
+    
+    return $html;
+    
+}
+
+/**
+ * Short code
+ *
  * lst_cats
+ *
  * build: 90103.1
  *
  * syntax - [lst_cats class="" active='0/1' depth=0 pid=0 show_cnt='0/1' xclude=""]
@@ -569,15 +795,16 @@ function google_adsense_shortcode($atts)
 /**
  * Short code
  *
- * lst_blogs
- * build: 90108.1
+ * lst_blogs (deprecate)
  *
- * syntax - [lst_blogs orderby='' order='' fmt=0 cnt=0 xclude='']category 1,category 2, etc[/lst_blogs]
+ * build: 90210.1
+ *
+ * syntax - [lst_blogs orderby='' order='' fmt=0 cnt=0 filter=0]category 1,category 2, etc[/lst_blogs]
  *
  *  orderby (field name)
- *    post_date
- *    post_title
- *    post_author
+ *    date
+ *    title
+ *    author
  *
  *  order (acending / decending)
  *    asc
@@ -585,13 +812,14 @@ function google_adsense_shortcode($atts)
  *
  *  fmt (format)
  *    0 = featured image left
- *    1 = featured image center
+ *    1 = featured image center (default)
  *    2 = featured image right
  *
- *  cnt (#)
+ * filter
+ *    0 = inclusive
+ *    1 = exclusive
  *
- * xclude
- *    ? = list of category ids to exclude
+ *  cnt (#)
  *
  * Note: if the category argument is missing, all non sticky posts will be returned
  *
@@ -599,124 +827,161 @@ function google_adsense_shortcode($atts)
 
 add_shortcode('lst_blogs', 'lst_blogs_shortcode');
 
-function lst_blogs_shortcode($atts, $category_list)
-{
+function lst_blogs_shortcode($atts, $category_list) {
     
     // check for & fix missing arguments
     
     if (!is_array($atts)) {
         $atts = array(
-            'orderby' => 'post_date',
-            'order' => 'ASC',
-            'fmt' => 0,
-            'cnt' => 5,
-            'xclude' => ''
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'fmt' => 1,
+            'cnt' => 4,
+            'filter' => 0
         );
         
     } else {
         
         if (!isset($atts['orderby'])) {
-            $atts['orderby'] = 'post_date';
+            $atts['orderby'] = 'date';
         }
         
         if (!isset($atts['order'])) {
-            $atts['order'] = 'ASC';
+            $atts['order'] = 'DESC';
         }
         
         if (!isset($atts['fmt'])) {
-            $atts['fmt'] = 0;
+            $atts['fmt'] = 1;
         }
         
         if (!isset($atts['cnt'])) {
-            $atts['cnt'] = 5;
+            $atts['cnt'] = 4;
         }
         
-        if (!isset($atts['xclude'])) {
-            $atts['xclude'] = '';
+        if (!isset($atts['filter'])) {
+            $atts['filter'] = 0;
         }
         
     }
     
-    $array     = explode(',', $category_list);
-    $items     = array_filter($array, create_function('$a', 'return trim($a)!=="";'));
-    $cat_items = '';
-    foreach ($items as $item) {
-        $cat_items .= $item . ',';
+    // sanitized working variables
+    $filter = 'i';
+    if ($atts['filter'] == 1) {$filter = 'x';}
+    $categories = valid_categories($category_list,$filter);
+    $orderby = valid_orderby($atts['orderby']);
+    $order = strtoupper($atts['order']);
+    if (!$order == 'ASC') {
+        $order = 'DESC';
     }
-    $categories = substr($cat_items, 0, -1);
-    
-    // sanitize arguments
-    if (empty(trim($atts['orderby']))) {
-        $atts['orderby'] = 'post_date';
+
+    $val = $atts['fmt'];
+    switch ($val) {
+      case 0:
+        $fmt = 0;
+        break;
+      case 2:
+        $fmt = 2;
+        break;
+      default:
+        $fmt = 1;
     }
-    if (!$atts['order'] == 'desc') {
-        $atts['order'] = 'ASC';
+    $val = $atts['cnt'];
+    switch ($val) {
+      case !is_numeric($val):
+        $post_cnt = 4;
+        break;
+      case ($val < 1):
+        $post_cnt = 4;
+        break;
+      default:
+        $post_cnt = $val;
     }
-    if ($atts['fmt'] > 2) {
-        $atts['fmt'] = 0;
-    }
-    if ($atts['cnt'] == 0) {
-        $atts['cnt'] = 5;
-    }
-    
-    $defaults = array(
-        'orderby' => 'post_date',
-        'order' => 'ASC',
-        'fmt' => 0,
-        'cnt' => 5,
-        'xclude' => ''
-    );
-    
-    $sc_arg = wp_parse_args($atts, $defaults);
-    
+
     // Set up initial query for post
-    $args = array(
-        'category_name' => $category_list,
-        'category__not_in' => $sc_arg['xclude'],
+    $qry = array(
+        'cat' => $categories,
         'ignore_sticky_posts' => true,
-        'order' => $sc_arg['order'],
-        'orderby' => $sc_arg['orderby'],
+        'order' => $order,
+        'orderby' => $orderby,
         'perm' => 'readable',
         'post_type' => 'post',
-        'posts_per_page' => $sc_arg['cnt']
+        'posts_per_page' => $post_cnt
     );
     
-    $query_rslt = new WP_Query(apply_filters('lst_blogs_shortcode_args', $args));
+    $qry_rslt = new WP_Query($qry);
     
-    if (!$query_rslt->have_posts()) {
-        /**
-         * Return if no posts match the current query.
-         */
-        return disp_error('List Blogs Shortcode - no posts assigned to (' . $categories . ').');
-    }
+    if ($qry_rslt->have_posts()) {
     
-    $html       = '';
-    $pane       = 'L';
-    $image_size = 'large';
-    
-    while ($query_rslt->have_posts()):
-        $query_rslt->the_post();
-        global $post;
+        $html       = '';
+        $pane       = 'L';
+        $image_size = 'large';
         
-        $i++;
-        switch ($atts['fmt']) {
-            case (1):
-                $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
-                $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
-                $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($sc_arg['order'] == 'modified') {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                } else {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                }
-                if ($pane == 'L') {
-                    $pane = 'R';
+        while ($qry_rslt->have_posts()):
+            $qry_rslt->the_post();
+            global $post;
+            
+            $i++;
+            switch ($fmt) {
+                case 1:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    if ($pane == 'L') {
+                        $pane = 'R';
+                        $html .= '<table id="twocol" class="twocolumn">';
+                        $html .= '<tbody>';
+                        $html .= '<tr>';
+                        $html .= '<td>';
+                        $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= $title;
+                        $html .= $stamp;
+                        $html .= $excerpt;
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= '<div style="height:40px; width: 100%;">';
+                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '</div>';
+                        $html .= '</td>';
+                    } else {
+                        $pane = 'L';
+                        $html .= '<td>';
+                        $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= $title;
+                        $html .= $stamp;
+                        $html .= $excerpt;
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= '<div style="height:40px; width: 100%;">';
+                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '</div>';
+                        $html .= '</td>';
+                        $html .= '</tr>';
+                        $html .= '</tbody>';
+                        $html .= '</table>';
+                        $html .= '<p>&nbsp;</p>';
+                    }
+                    break;
+                case 2:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    
                     $html .= '<table id="twocol" class="twocolumn">';
                     $html .= '<tbody>';
                     $html .= '<tr>';
                     $html .= '<td>';
-                    $html .= '<p>' . $image . '</p> <!-- Display Image -->';
-                    $html .= '<p>&nbsp;</p>';
                     $html .= $title;
                     $html .= $stamp;
                     $html .= $excerpt;
@@ -726,11 +991,31 @@ function lst_blogs_shortcode($atts, $category_list)
                     $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
-                } else {
-                    $pane = 'L';
                     $html .= '<td>';
                     $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                    $html .= '</td>';
+                    $html .= '</tr>';
+                    $html .= '</tbody>';
+                    $html .= '</table>';
                     $html .= '<p>&nbsp;</p>';
+                    break;
+                default:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    
+                    $html .= '<table id="twocol" class="twocolumn">';
+                    $html .= '<tbody>';
+                    $html .= '<tr>';
+                    $html .= '<td>';
+                    $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                    $html .= '</td>';
+                    $html .= '<td>';
                     $html .= $title;
                     $html .= $stamp;
                     $html .= $excerpt;
@@ -744,82 +1029,25 @@ function lst_blogs_shortcode($atts, $category_list)
                     $html .= '</tbody>';
                     $html .= '</table>';
                     $html .= '<p>&nbsp;</p>';
-                }
-                break;
-            case (2):
-                $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
-                $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
-                $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($sc_arg['order'] == 'modified') {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                } else {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                }
-                
-                $html .= '<table id="twocol" class="twocolumn">';
-                $html .= '<tbody>';
-                $html .= '<tr>';
-                $html .= '<td>';
-                $html .= $title;
-                $html .= $stamp;
-                $html .= $excerpt;
-                $html .= '<p>&nbsp;</p>';
-                $html .= '<div style="height:40px; width: 100%;">';
-                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                $html .= '</div>';
-                $html .= '</td>';
-                $html .= '<td>';
-                $html .= '<p>' . $image . '</p> <!-- Display Image -->';
-                $html .= '</td>';
-                $html .= '</tr>';
-                $html .= '</tbody>';
-                $html .= '</table>';
-                $html .= '<p>&nbsp;</p>';
-                break;
-            default:
-                $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
-                $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
-                $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($sc_arg['order'] == 'modified') {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                } else {
-                    $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                }
-                
-                $html .= '<table id="twocol" class="twocolumn">';
-                $html .= '<tbody>';
-                $html .= '<tr>';
-                $html .= '<td>';
-                $html .= '<p>' . $image . '</p> <!-- Display Image -->';
-                $html .= '</td>';
-                $html .= '<td>';
-                $html .= $title;
-                $html .= $stamp;
-                $html .= $excerpt;
-                $html .= '<p>&nbsp;</p>';
-                $html .= '<div style="height:40px; width: 100%;">';
-                $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                $html .= '</div>';
-                $html .= '</td>';
-                $html .= '</tr>';
-                $html .= '</tbody>';
-                $html .= '</table>';
-                $html .= '<p>&nbsp;</p>';
+            }
+        endwhile;
+        
+        if ($fmt == 1 && $pane == 'R') {
+            $html .= '<td>';
+            $html .= '<p>&nbsp;</p>';
+            $html .= '</td>';
+            $html .= '</tr>';
+            $html .= '</tbody>';
+            $html .= '</table>';
+            $html .= '<p>&nbsp;</p>';
         }
-    endwhile;
     
-    if ($atts['fmt'] == 1 && $pane == 'R') {
-        $html .= '<td>';
-        $html .= '<p>&nbsp;</p>';
-        $html .= '</td>';
-        $html .= '</tr>';
-        $html .= '</tbody>';
-        $html .= '</table>';
-        $html .= '<p>&nbsp;</p>';
+    } else {
+
+        $html = disp_error('List Blogs Template - no posts assigned to (' . $category_list . ').');
+
     }
-    
+      
     wp_reset_postdata();
     
     return $html;
@@ -829,80 +1057,263 @@ function lst_blogs_shortcode($atts, $category_list)
 /**
  * Short code
  *
- * lst_theme
+ * blog_summary
  *
- * build: 90108.1
+ * build: 90210.1
  *
- * syntax - [lst_theme property="" label=""]
+ * syntax - [blog_summary orderby='' order='' fmt=0 cnt=0 filter=0]category 1,category 2, etc[/blog_summary]
  *
- *  property values include
- *    Name
- *    ThemeURI
- *    Description
- *    Author
- *    Version
- *    Status
- *    Tags
+ *  orderby (field name)
+ *    date
+ *    title
+ *    author
+ *
+ *  order (acending / decending)
+ *    asc
+ *    desc
+ *
+ *  fmt (format)
+ *    0 = featured image left
+ *    1 = featured image center (default)
+ *    2 = featured image right
+ *
+ * filter
+ *    0 = inclusive
+ *    1 = exclusive
+ *
+ *  cnt (#)
+ *
+ * Note: if the category argument is missing, all non sticky posts will be returned
  *
  */
 
-add_shortcode('lst_theme', 'lst_theme_shortcode');
+add_shortcode('blog_summary', 'blog_summary_shortcode');
 
-function lst_theme_shortcode($atts)
-{
+function blog_summary_shortcode($atts, $category_list) {
     
     // check for & fix missing arguments
     
     if (!is_array($atts)) {
         $atts = array(
-            'property' => 'Name',
-            'label' => ''
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'fmt' => 1,
+            'cnt' => 4,
+            'filter' => 0
         );
         
     } else {
         
-        if (empty($atts['property'])) {
-            $atts['property'] = 'Name';
+        if (!isset($atts['orderby'])) {
+            $atts['orderby'] = 'date';
+        }
+        
+        if (!isset($atts['order'])) {
+            $atts['order'] = 'DESC';
+        }
+        
+        if (!isset($atts['fmt'])) {
+            $atts['fmt'] = 1;
+        }
+        
+        if (!isset($atts['cnt'])) {
+            $atts['cnt'] = 4;
+        }
+        
+        if (!isset($atts['filter'])) {
+            $atts['filter'] = 0;
         }
         
     }
     
-    // sanitize inputs
-    $args = strtoupper($atts['property']);
-    switch ($args) {
-        case 'NAME':
-            $opt = 'Name';
-            break;
-        case 'THEMEURI':
-            $opt = 'ThemeURI';
-            break;
-        case 'DESCRIPTION':
-            $opt = 'Description';
-            break;
-        case 'AUTHOR':
-            $opt = 'Author';
-            break;
-        case 'VERSION':
-            $opt = 'Version';
-            break;
-        case 'STATUS':
-            $opt = 'Status';
-            break;
-        case 'TAGS':
-            $opt = 'Tags';
-            break;
-        default:
-            $opt           = 'Name';
-            $atts['label'] = '<sup><i class="fas fa-map-marker" style="color:#c62828;">&#x200B;</i></sup>';
+    // sanitized working variables
+    $filter = 'i';
+    if ($atts['filter'] == 1) {$filter = 'x';}
+    $categories = valid_categories($category_list,$filter);
+    $orderby = valid_orderby($atts['orderby']);
+    $order = strtoupper($atts['order']);
+    if (!$order == 'ASC') {
+        $order = 'DESC';
     }
+
+    $val = $atts['fmt'];
+    switch ($val) {
+      case 0:
+        $fmt = 0;
+        break;
+      case 2:
+        $fmt = 2;
+        break;
+      default:
+        $fmt = 1;
+    }
+    $val = $atts['cnt'];
+    switch ($val) {
+      case !is_numeric($val):
+        $post_cnt = 4;
+        break;
+      case ($val < 1):
+        $post_cnt = 4;
+        break;
+      default:
+        $post_cnt = $val;
+    }
+
+    // Set up initial query for post
+    $qry = array(
+        'cat' => $categories,
+        'ignore_sticky_posts' => true,
+        'order' => $order,
+        'orderby' => $orderby,
+        'perm' => 'readable',
+        'post_type' => 'post',
+        'posts_per_page' => $post_cnt
+    );
     
-    $my_theme = wp_get_theme();
+    $qry_rslt = new WP_Query($qry);
     
-    if (empty($atts['label'])) {
-        return $my_theme->get($opt);
+    if ($qry_rslt->have_posts()) {
+    
+        $html       = '';
+        $pane       = 'L';
+        $image_size = 'large';
+        
+        while ($qry_rslt->have_posts()):
+            $qry_rslt->the_post();
+            global $post;
+            
+            $i++;
+            switch ($fmt) {
+                case 1:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    if ($pane == 'L') {
+                        $pane = 'R';
+                        $html .= '<table id="twocol" class="twocolumn">';
+                        $html .= '<tbody>';
+                        $html .= '<tr>';
+                        $html .= '<td>';
+                        $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= $title;
+                        $html .= $stamp;
+                        $html .= $excerpt;
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= '<div style="height:40px; width: 100%;">';
+                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '</div>';
+                        $html .= '</td>';
+                    } else {
+                        $pane = 'L';
+                        $html .= '<td>';
+                        $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= $title;
+                        $html .= $stamp;
+                        $html .= $excerpt;
+                        $html .= '<p>&nbsp;</p>';
+                        $html .= '<div style="height:40px; width: 100%;">';
+                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '</div>';
+                        $html .= '</td>';
+                        $html .= '</tr>';
+                        $html .= '</tbody>';
+                        $html .= '</table>';
+                        $html .= '<p>&nbsp;</p>';
+                    }
+                    break;
+                case 2:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    
+                    $html .= '<table id="twocol" class="twocolumn">';
+                    $html .= '<tbody>';
+                    $html .= '<tr>';
+                    $html .= '<td>';
+                    $html .= $title;
+                    $html .= $stamp;
+                    $html .= $excerpt;
+                    $html .= '<p>&nbsp;</p>';
+                    $html .= '<div style="height:40px; width: 100%;">';
+                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '</div>';
+                    $html .= '</td>';
+                    $html .= '<td>';
+                    $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                    $html .= '</td>';
+                    $html .= '</tr>';
+                    $html .= '</tbody>';
+                    $html .= '</table>';
+                    $html .= '<p>&nbsp;</p>';
+                    break;
+                default:
+                    $image   = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), $image_size) . '</a>';
+                    $title   = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
+                    $excerpt = '<p>' . get_the_excerpt() . '</p>';
+                    if ($order == 'modified') {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
+                    } else {
+                        $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
+                    }
+                    
+                    $html .= '<table id="twocol" class="twocolumn">';
+                    $html .= '<tbody>';
+                    $html .= '<tr>';
+                    $html .= '<td>';
+                    $html .= '<p>' . $image . '</p> <!-- Display Image -->';
+                    $html .= '</td>';
+                    $html .= '<td>';
+                    $html .= $title;
+                    $html .= $stamp;
+                    $html .= $excerpt;
+                    $html .= '<p>&nbsp;</p>';
+                    $html .= '<div style="height:40px; width: 100%;">';
+                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
+                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '</div>';
+                    $html .= '</td>';
+                    $html .= '</tr>';
+                    $html .= '</tbody>';
+                    $html .= '</table>';
+                    $html .= '<p>&nbsp;</p>';
+            }
+        endwhile;
+        
+        if ($fmt == 1 && $pane == 'R') {
+            $html .= '<td>';
+            $html .= '<p>&nbsp;</p>';
+            $html .= '</td>';
+            $html .= '</tr>';
+            $html .= '</tbody>';
+            $html .= '</table>';
+            $html .= '<p>&nbsp;</p>';
+        }
+    
     } else {
-        return $my_theme->get($opt) . ' ' . $atts['label'];
+
+        $html = disp_error('Blog Summary Template - no blog posts assigned to (' . $category_list . ').');
+
     }
+      
+    wp_reset_postdata();
+    
+    return $html;
+    
 }
 
 /**
@@ -912,7 +1323,7 @@ function lst_theme_shortcode($atts)
  *
  * build: 90210.1
  *
- * syntax - [img_gallery orderby='' order='' opt=0 col=0 cap=0 sdw=0]category 1,category 2, etc[/img_gallery]
+ * syntax - [img_gallery orderby='' order='' opt=0 col=0 cap=0 sdw=0 filter=0]category 1,category 2, etc[/img_gallery]
  *
  *  orderby (field name)
  *    date (default)
@@ -943,32 +1354,37 @@ function lst_theme_shortcode($atts)
  *  sdw
  *    0 - no image shadow (default)
  *    1 - image shadow
+ *
+ * filter
+ *    0 = inclusive
+ *    1 = exclusive
+ *
  */
 
 add_shortcode('img_gallery', 'img_gallery_shortcode');
 
 function img_gallery_shortcode($atts, $category_list) {
     // done if no categories
-    $categories = valid_categories($category_list);
-    if ($categories == '') {
+    if (empty(trim($category_list))) {
         $html = disp_error('Image Gallery Template - missing media category.');
     } else {
         // check for & fix missing arguments
         if (!is_array($atts)) {
             $atts = array(
                 'orderby' => 'date',
-                'order' => 'desc',
+                'order' => 'DESC',
                 'opt' => 1,
                 'col' => 2,
                 'cap' => 0,
-                'sdw' => 0
+                'sdw' => 0,
+                'filter' => 0
             );
         } else {
             if (!isset($atts['orderby'])) {
                 $atts['orderby'] = 'date';
             }
             if (!isset($atts['order'])) {
-                $atts['order'] = 'desc';
+                $atts['order'] = 'DESC';
             }
             if (!isset($atts['opt'])) {
                 $atts['opt'] = 1;
@@ -982,12 +1398,15 @@ function img_gallery_shortcode($atts, $category_list) {
             if (!isset($atts['sdw'])) {
                 $atts['sdw'] = 0;
             }
+            if (!isset($atts['filter'])) {
+                $atts['filter'] = 0;
+            }
         }
         // sanitized working variables
         $orderby = valid_orderby($atts['orderby']);
         $order = strtolower($atts['order']);
-        if (!$order == 'desc') {
-            $order = 'asc';
+        if (!$order == 'DESC') {
+            $order = 'ASC';
         }
         $val = $atts['opt'];
         switch ($val) {
@@ -1063,6 +1482,10 @@ function img_gallery_shortcode($atts, $category_list) {
             $sdw_class = '';
         }
 
+        $filter = 'i';
+        if ($atts['filter'] == 1) {$filter = 'x';}
+        $categories = valid_categories($category_list,$filter);
+
         // run query
         $qry = array(
             'post_type' => 'attachment',
@@ -1071,7 +1494,7 @@ function img_gallery_shortcode($atts, $category_list) {
             'order' => $order,
             'posts_per_page' => '30',
             'post_status' => 'inherit',
-            'category_name' => $categories
+            'cat' => $categories
         );
         $qry_rslt = new WP_Query($qry);
 
@@ -1121,7 +1544,7 @@ function img_gallery_shortcode($atts, $category_list) {
 
         } else {
 
-            $html = disp_error('Image Gallery Template - no images found assigned to (' . $categories . ').');
+            $html = disp_error('Image Gallery Template - no images found assigned to (' . $category_list . ').');
 
         }
         
@@ -1131,6 +1554,84 @@ function img_gallery_shortcode($atts, $category_list) {
     
     return $html;
     
+}
+
+/**
+ * Short code
+ *
+ * lst_theme
+ *
+ * build: 90108.1
+ *
+ * syntax - [lst_theme property="" label=""]
+ *
+ *  property values include
+ *    Name
+ *    ThemeURI
+ *    Description
+ *    Author
+ *    Version
+ *    Status
+ *    Tags
+ *
+ */
+
+add_shortcode('lst_theme', 'lst_theme_shortcode');
+
+function lst_theme_shortcode($atts) {
+    
+    // check for & fix missing arguments
+    
+    if (!is_array($atts)) {
+        $atts = array(
+            'property' => 'Name',
+            'label' => ''
+        );
+        
+    } else {
+        
+        if (empty($atts['property'])) {
+            $atts['property'] = 'Name';
+        }
+        
+    }
+    
+    // sanitize inputs
+    $args = strtoupper($atts['property']);
+    switch ($args) {
+        case 'NAME':
+            $opt = 'Name';
+            break;
+        case 'THEMEURI':
+            $opt = 'ThemeURI';
+            break;
+        case 'DESCRIPTION':
+            $opt = 'Description';
+            break;
+        case 'AUTHOR':
+            $opt = 'Author';
+            break;
+        case 'VERSION':
+            $opt = 'Version';
+            break;
+        case 'STATUS':
+            $opt = 'Status';
+            break;
+        case 'TAGS':
+            $opt = 'Tags';
+            break;
+        default:
+            $opt           = 'Name';
+            $atts['label'] = '<sup><i class="fas fa-map-marker" style="color:#c62828;">&#x200B;</i></sup>';
+    }
+    
+    $my_theme = wp_get_theme();
+    
+    if (empty($atts['label'])) {
+        return $my_theme->get($opt);
+    } else {
+        return $my_theme->get($opt) . ' ' . $atts['label'];
+    }
 }
 
 /* -------------------------------------------------------------------------------------/
@@ -1157,7 +1658,7 @@ function disp_error($msg)
  *
  * valid_categories
  *
- * return sanitized list of include/exclude categories separated by a comma
+ * return sanitized list of include/exclude categories id's separated by a comma
  *
  * syntax - valid_categories ( $category_lst, $category_opt )
  *
@@ -1168,9 +1669,8 @@ function disp_error($msg)
  */
 
 function valid_categories($category_lst,$category_opt='i') {
-  if (empty(trim($category_lst))) {
-      return '';
-  } else {
+  $retval = '';
+  if (!empty(trim($category_lst))) {
       $category_opt = strtolower($category_opt);
       $opt_chr = '';
       if ( $category_opt == 'x' ) $opt_chr = '-';
@@ -1181,10 +1681,14 @@ function valid_categories($category_lst,$category_opt='i') {
       $lst_items = array_filter($cat_array);
       $cat_lst   = '';
       foreach ($lst_items as $lst_item) {
-          $cat_lst .= $opt_chr . $lst_item . ',';
+          $objCat = get_category_by_slug($lst_item);
+          if ( $objCat instanceof WP_Term ) {
+            $cat_lst .= $opt_chr . $objCat->term_id . ',';
+          }
       }
-      return substr($cat_lst, 0, -1);
+      $retval = substr($cat_lst, 0, -1);
   }
+  return $retval;
 }
 
 /**
@@ -1203,11 +1707,13 @@ function valid_categories($category_lst,$category_opt='i') {
 function valid_orderby($arg) {
   $ret_val = 'none';
   if (!empty(trim($arg))) {
-      $valid_opts = array('none','id','author','title','name','date','post_date','modified','parent','rand','comment_count','menu_order');
+      $valid_opts = array('none','id','author','title','post_title','name','date','post_date','modified','post_modified','parent','post_parent','rand','comment_count','menu_order','relevance');
       if (in_array(strtolower($arg), $valid_opts)) {
         $ret_val = strtolower($arg);
         if ( $ret_val == 'id' ) { $ret_val = 'ID'; }
-        if ( $ret_val == 'post_date' ) { $ret_val = 'date'; }
+        if ( substr($ret_val, 0, 5) == 'post_') {
+          $ret_val = substr_replace($ret_val, '', 0, 5);
+        }
       }
   }
   return $ret_val;
