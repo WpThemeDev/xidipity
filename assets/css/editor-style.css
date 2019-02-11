@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90209.1
+  Build    - 90211.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -179,6 +179,27 @@ em,
 i {
 	font-style: italic;
 }
+/*  # HTML
+   ## Typography
+  ### Definition
+ ---------------------------------------------------------------------------*/
+
+.font-sans {
+	font-family: var(--font-sans);
+}
+.font-serif {
+	font-family: var(--font-serif);
+}
+.font-mono {
+	font-family: var(--font-mono);
+}
+.font-condensed {
+	font-family: var(--font-condensed);
+}
+.font-cursive {
+	font-family: var(--font-cursive);
+}
+
 /*- blockquote -*/
 
 .wp-block-quote,
@@ -1124,392 +1145,6 @@ table table td.rm-td-right {
 	width: calc(100%-40px);
 }
 /*  # HTML
-   ## Misc
- ---------------------------------------------------------------------------*/
-
-/*- @media screen and (min-width:320px) -*/
-
-/*- Tailwind Width Extensions -*/
-
-.w-1\/7 {
-	width: 14.28571%;
-}
-.w-1\/8 {
-	width: 12.5%;
-}
-.w-1\/9 {
-	width: 11.11111%;
-}
-.w-1\/10 {
-	width: 10%;
-}
-.w-1\/11 {
-	width: 9.09091%;
-}
-.w-1\/12 {
-	width: 8.33333%;
-}
-.w-1\/13 {
-	width: 7.69231%;
-}
-.w-1\/14 {
-	width: 7.14286%;
-}
-.w-1\/15 {
-	width: 6.66666%;
-}
-.w-1\/16 {
-	width: 6.25000%;
-}
-.w-1\/17 {
-	width: 5.88235%;
-}
-.w-1\/18 {
-	width: 5.55556%;
-}
-.w-1\/19 {
-	width: 5.26316%;
-}
-.w-1\/20 {
-	width: 5%;
-}
-.w-1\/21 {
-	width: 4.76190%;
-}
-.w-1\/22 {
-	width: 4.54545%;
-}
-.w-1\/23 {
-	width: 4.34783%;
-}
-.w-1\/24 {
-	width: 4.16667%;
-}
-.w-1\/25 {
-	width: 4%;
-}
-/*- Tailwind Xidipity Font Families -*/
-
-.font-sans {
-	font-family: var(--font-sans);
-}
-.font-serif {
-	font-family: var(--font-serif);
-}
-.font-mono {
-	font-family: var(--font-mono);
-}
-.font-condensed {
-	font-family: var(--font-condensed);
-}
-.font-cursive {
-	font-family: var(--font-cursive);
-}
-@media screen and (min-width: 576px) {
-	/*- Tailwind Width Extensions -*/
-	.sm\:w-1\/7 {
-		width: 14.28571%;
-	}
-	.sm\:w-1\/8 {
-		width: 12.5%;
-	}
-	.sm\:w-1\/9 {
-		width: 11.11111%;
-	}
-	.sm\:w-1\/10 {
-		width: 10%;
-	}
-	.sm\:w-1\/11 {
-		width: 9.09091%;
-	}
-	.sm\:w-1\/12 {
-		width: 8.33333%;
-	}
-	.sm\:w-1\/13 {
-		width: 7.69231%;
-	}
-	.sm\:w-1\/14 {
-		width: 7.14286%;
-	}
-	.sm\:w-1\/15 {
-		width: 6.66666%;
-	}
-	.sm\:w-1\/16 {
-		width: 6.25000%;
-	}
-	.sm\:w-1\/17 {
-		width: 5.88235%;
-	}
-	.sm\:w-1\/18 {
-		width: 5.55556%;
-	}
-	.sm\:w-1\/19 {
-		width: 5.26316%;
-	}
-	.sm\:w-1\/20 {
-		width: 5%;
-	}
-	.sm\:w-1\/21 {
-		width: 4.76190%;
-	}
-	.sm\:w-1\/22 {
-		width: 4.54545%;
-	}
-	.sm\:w-1\/23 {
-		width: 4.34783%;
-	}
-	.sm\:w-1\/24 {
-		width: 4.16667%;
-	}
-	.sm\:w-1\/25 {
-		width: 4%;
-	}
-	/*- Tailwind Xidipity Font Families -*/
-	.sm\:font-sans {
-		font-family: var(--font-sans);
-	}
-	.sm\:font-serif {
-		font-family: 'Cormorant', serif;
-	}
-	.sm\:font-mono {
-		font-family: var(--font-mono);
-	}
-	.sm\:font-condensed {
-		font-family: var(--font-condensed);
-	}
-	.sm\:font-cursive {
-		font-family: var(--font-cursive);
-	}
-}
-@media screen and (min-width: 768px) {
-	/*- Tailwind Width Extensions -*/
-	.md\:w-1\/7 {
-		width: 14.28571%;
-	}
-	.md\:w-1\/8 {
-		width: 12.5%;
-	}
-	.md\:w-1\/9 {
-		width: 11.11111%;
-	}
-	.md\:w-1\/10 {
-		width: 10%;
-	}
-	.md\:w-1\/11 {
-		width: 9.09091%;
-	}
-	.md\:w-1\/12 {
-		width: 8.33333%;
-	}
-	.md\:w-1\/13 {
-		width: 7.69231%;
-	}
-	.md\:w-1\/14 {
-		width: 7.14286%;
-	}
-	.md\:w-1\/15 {
-		width: 6.66666%;
-	}
-	.md\:w-1\/16 {
-		width: 6.25000%;
-	}
-	.md\:w-1\/17 {
-		width: 5.88235%;
-	}
-	.md\:w-1\/18 {
-		width: 5.55556%;
-	}
-	.md\:w-1\/19 {
-		width: 5.26316%;
-	}
-	.md\:w-1\/20 {
-		width: 5%;
-	}
-	.md\:w-1\/21 {
-		width: 4.76190%;
-	}
-	.md\:w-1\/22 {
-		width: 4.54545%;
-	}
-	.md\:w-1\/23 {
-		width: 4.34783%;
-	}
-	.md\:w-1\/24 {
-		width: 4.16667%;
-	}
-	.md\:w-1\/25 {
-		width: 4%;
-	}
-	/*- Tailwind Xidipity Font Families -*/
-	.md\:font-sans {
-		font-family: var(--font-sans);
-	}
-	.md\:font-serif {
-		font-family: 'Cormorant', serif;
-	}
-	.md\:font-mono {
-		font-family: var(--font-mono);
-	}
-	.md\:font-condensed {
-		font-family: var(--font-condensed);
-	}
-	.md\:font-cursive {
-		font-family: var(--font-cursive);
-	}
-}
-@media screen and (min-width: 992px) {
-	/*- Tailwind Width Extensions -*/
-	.lg\:w-1\/7 {
-		width: 14.28571%;
-	}
-	.lg\:w-1\/8 {
-		width: 12.5%;
-	}
-	.lg\:w-1\/9 {
-		width: 11.11111%;
-	}
-	.lg\:w-1\/10 {
-		width: 10%;
-	}
-	.lg\:w-1\/11 {
-		width: 9.09091%;
-	}
-	.lg\:w-1\/12 {
-		width: 8.33333%;
-	}
-	.lg\:w-1\/13 {
-		width: 7.69231%;
-	}
-	.lg\:w-1\/14 {
-		width: 7.14286%;
-	}
-	.lg\:w-1\/15 {
-		width: 6.66666%;
-	}
-	.lg\:w-1\/16 {
-		width: 6.25000%;
-	}
-	.lg\:w-1\/17 {
-		width: 5.88235%;
-	}
-	.lg\:w-1\/18 {
-		width: 5.55556%;
-	}
-	.lg\:w-1\/19 {
-		width: 5.26316%;
-	}
-	.lg\:w-1\/20 {
-		width: 5%;
-	}
-	.lg\:w-1\/21 {
-		width: 4.76190%;
-	}
-	.lg\:w-1\/22 {
-		width: 4.54545%;
-	}
-	.lg\:w-1\/23 {
-		width: 4.34783%;
-	}
-	.lg\:w-1\/24 {
-		width: 4.16667%;
-	}
-	.lg\:w-1\/25 {
-		width: 4%;
-	}
-	/*- Tailwind Xidipity Font Families -*/
-	.lg\:font-sans {
-		font-family: var(--font-sans);
-	}
-	.lg\:font-serif {
-		font-family: 'Cormorant', serif;
-	}
-	.lg\:font-mono {
-		font-family: var(--font-mono);
-	}
-	.lg\:font-condensed {
-		font-family: var(--font-condensed);
-	}
-	.lg\:font-cursive {
-		font-family: var(--font-cursive);
-	}
-}
-@media screen and (min-width: 1200px) {
-	/*- Tailwind Width Extensions -*/
-	.xl\:w-1\/7 {
-		width: 14.28571%;
-	}
-	.xl\:w-1\/8 {
-		width: 12.5%;
-	}
-	.xl\:w-1\/9 {
-		width: 11.11111%;
-	}
-	.xl\:w-1\/10 {
-		width: 10%;
-	}
-	.xl\:w-1\/11 {
-		width: 9.09091%;
-	}
-	.xl\:w-1\/12 {
-		width: 8.33333%;
-	}
-	.xl\:w-1\/13 {
-		width: 7.69231%;
-	}
-	.xl\:w-1\/14 {
-		width: 7.14286%;
-	}
-	.xl\:w-1\/15 {
-		width: 6.66666%;
-	}
-	.xl\:w-1\/16 {
-		width: 6.25000%;
-	}
-	.xl\:w-1\/17 {
-		width: 5.88235%;
-	}
-	.xl\:w-1\/18 {
-		width: 5.55556%;
-	}
-	.xl\:w-1\/19 {
-		width: 5.26316%;
-	}
-	.xl\:w-1\/20 {
-		width: 5%;
-	}
-	.xl\:w-1\/21 {
-		width: 4.76190%;
-	}
-	.xl\:w-1\/22 {
-		width: 4.54545%;
-	}
-	.xl\:w-1\/23 {
-		width: 4.34783%;
-	}
-	.xl\:w-1\/24 {
-		width: 4.16667%;
-	}
-	.xl\:w-1\/25 {
-		width: 4%;
-	}
-	/*- Tailwind Xidipity Font Families -*/
-	.xl\:font-sans {
-		font-family: var(--font-sans);
-	}
-	.xl\:font-serif {
-		font-family: 'Cormorant', serif;
-	}
-	.xl\:font-mono {
-		font-family: var(--font-mono);
-	}
-	.xl\:font-condensed {
-		font-family: var(--font-condensed);
-	}
-	.xl\:font-cursive {
-		font-family: var(--font-cursive);
-	}
-}
-/*  # HTML
    ## Table
  ---------------------------------------------------------------------------*/
 
@@ -1676,6 +1311,266 @@ img.shadow {
 	box-shadow: 2px 2px 15px 0px #BDBDBD;
 }
 
+/*  # Misc
+   ## Color Palette Classes
+ ---------------------------------------------------------------------------*/
+.fg-blk,
+.hover\:fg-blk:hover,
+.focus\:fg-blk:focus { color: var(--fg-blk); }
+
+.fg-wht,
+.hover\:fg-wht:hover,
+.focus\:fg-wht:focus { color: var(--fg-wht); }
+
+.fg-bas-900,
+.hover\:fg-bas-900:hover,
+.focus\:fg-bas-900:focus { color: var(--fg-bas-900); }
+
+.fg-bas-800,
+.hover\:fg-bas-800:hover,
+.focus\:fg-bas-800:focus { color: var(--fg-bas-800); }
+
+.fg-bas-700,
+.hover\:fg-bas-700:hover,
+.focus\:fg-bas-700:focus { color: var(--fg-bas-700); }
+
+.fg-bas-600,
+.hover\:fg-bas-600:hover,
+.focus\:fg-bas-600:focus { color: var(--fg-bas-600); }
+
+.fg-bas-500,
+.hover\:fg-bas-500:hover,
+.focus\:fg-bas-500:focus { color: var(--fg-bas-500); }
+
+.fg-bas-400,
+.hover\:fg-bas-400:hover,
+.focus\:fg-bas-400:focus { color: var(--fg-bas-400); }
+
+.fg-bas-300,
+.hover\:fg-bas-300:hover,
+.focus\:fg-bas-300:focus { color: var(--fg-bas-300); }
+
+.fg-bas-200,
+.hover\:fg-bas-200:hover,
+.focus\:fg-bas-200:focus { color: var(--fg-bas-200); }
+
+.fg-bas-100,
+.hover\:fg-bas-100:hover,
+.focus\:fg-bas-100:focus { color: var(--fg-bas-100); }
+
+.fg-bas-050,
+.hover\:fg-bas-050:hover,
+.focus\:fg-bas-050:focus { color: var(--fg-bas-050); }
+
+.fg-pri-900,
+.hover\:fg-pri-900:hover,
+.focus\:fg-pri-900:focus { color: var(--fg-pri-900); }
+
+.fg-pri-800,
+.hover\:fg-pri-800:hover,
+.focus\:fg-pri-800:focus { color: var(--fg-pri-800); }
+
+.fg-pri-700,
+.hover\:fg-pri-700:hover,
+.focus\:fg-pri-700:focus { color: var(--fg-pri-700); }
+
+.fg-pri-600,
+.hover\:fg-pri-600:hover,
+.focus\:fg-pri-600:focus { color: var(--fg-pri-600); }
+
+.fg-pri-500,
+.hover\:fg-pri-500:hover,
+.focus\:fg-pri-500:focus { color: var(--fg-pri-500); }
+
+.fg-pri-400,
+.hover\:fg-pri-400:hover,
+.focus\:fg-pri-400:focus { color: var(--fg-pri-400); }
+
+.fg-pri-300,
+.hover\:fg-pri-300:hover,
+.focus\:fg-pri-300:focus { color: var(--fg-pri-300); }
+
+.fg-pri-200,
+.hover\:fg-pri-200:hover,
+.focus\:fg-pri-200:focus { color: var(--fg-pri-200); }
+
+.fg-pri-100,
+.hover\:fg-pri-100:hover,
+.focus\:fg-pri-100:focus { color: var(--fg-pri-100); }
+
+.fg-pri-050,
+.hover\:fg-pri-050:hover,
+.focus\:fg-pri-050:focus { color: var(--fg-pri-050); }
+
+.fg-sec-900,
+.hover\:fg-sec-900:hover,
+.focus\:fg-sec-900:focus { color: var(--fg-sec-900); }
+
+.fg-sec-800,
+.hover\:fg-sec-800:hover,
+.focus\:fg-sec-800:focus { color: var(--fg-sec-800); }
+
+.fg-sec-700,
+.hover\:fg-sec-700:hover,
+.focus\:fg-sec-700:focus { color: var(--fg-sec-700); }
+
+.fg-sec-600,
+.hover\:fg-sec-600:hover,
+.focus\:fg-sec-600:focus { color: var(--fg-sec-600); }
+
+.fg-sec-500,
+.hover\:fg-sec-500:hover,
+.focus\:fg-sec-500:focus { color: var(--fg-sec-500); }
+
+.fg-sec-400,
+.hover\:fg-sec-400:hover,
+.focus\:fg-sec-400:focus { color: var(--fg-sec-400); }
+
+.fg-sec-300,
+.hover\:fg-sec-300:hover,
+.focus\:fg-sec-300:focus { color: var(--fg-sec-300); }
+
+.fg-sec-200,
+.hover\:fg-sec-200:hover,
+.focus\:fg-sec-200:focus { color: var(--fg-sec-200); }
+
+.fg-sec-100,
+.hover\:fg-sec-100:hover,
+.focus\:fg-sec-100:focus { color: var(--fg-sec-100); }
+
+.fg-sec-050,
+.hover\:fg-sec-050:hover,
+.focus\:fg-sec-050:focus { color: var(--fg-sec-050); }
+
+/* background colors    --------------------------------------------------- */
+
+.bg-blk,
+.hover\:bg-blk:hover,
+.focus\:bg-blk:focus { background-color: var(--bg-blk); }
+
+.bg-wht,
+.hover\:bg-wht:hover,
+.focus\:bg-wht:focus { background-color: var(--bg-wht); }
+
+.bg-bas-900,
+.hover\:bg-bas-900:hover,
+.focus\:bg-bas-900:focus { background-color: var(--bg-bas-900); }
+
+.bg-bas-800,
+.hover\:bg-bas-800:hover,
+.focus\:bg-bas-800:focus { background-color: var(--bg-bas-800); }
+
+.bg-bas-700,
+.hover\:bg-bas-700:hover,
+.focus\:bg-bas-700:focus { background-color: var(--bg-bas-700); }
+
+.bg-bas-600,
+.hover\:bg-bas-600:hover,
+.focus\:bg-bas-600:focus { background-color: var(--bg-bas-600); }
+
+.bg-bas-500,
+.hover\:bg-bas-500:hover,
+.focus\:bg-bas-500:focus { background-color: var(--bg-bas-500); }
+
+.bg-bas-400,
+.hover\:bg-bas-400:hover,
+.focus\:bg-bas-400:focus { background-color: var(--bg-bas-400); }
+
+.bg-bas-300,
+.hover\:bg-bas-300:hover,
+.focus\:bg-bas-300:focus { background-color: var(--bg-bas-300); }
+
+.bg-bas-200,
+.hover\:bg-bas-200:hover,
+.focus\:bg-bas-200:focus { background-color: var(--bg-bas-200); }
+
+.bg-bas-100,
+.hover\:bg-bas-100:hover,
+.focus\:bg-bas-100:focus { background-color: var(--bg-bas-100); }
+
+.bg-bas-050,
+.hover\:bg-bas-050:hover,
+.focus\:bg-bas-050:focus { background-color: var(--bg-bas-050); }
+
+.bg-pri-900,
+.hover\:bg-pri-900:hover,
+.focus\:bg-pri-900:focus { background-color: var(--bg-pri-900); }
+
+.bg-pri-800,
+.hover\:bg-pri-800:hover,
+.focus\:bg-pri-800:focus { background-color: var(--bg-pri-800); }
+
+.bg-pri-700,
+.hover\:bg-pri-700:hover,
+.focus\:bg-pri-700:focus { background-color: var(--bg-pri-700); }
+
+.bg-pri-600,
+.hover\:bg-pri-600:hover,
+.focus\:bg-pri-600:focus { background-color: var(--bg-pri-600); }
+
+.bg-pri-500,
+.hover\:bg-pri-500:hover,
+.focus\:bg-pri-500:focus { background-color: var(--bg-pri-500); }
+
+.bg-pri-400,
+.hover\:bg-pri-400:hover,
+.focus\:bg-pri-400:focus { background-color: var(--bg-pri-400); }
+
+.bg-pri-300,
+.hover\:bg-pri-300:hover,
+.focus\:bg-pri-300:focus { background-color: var(--bg-pri-300); }
+
+.bg-pri-200,
+.hover\:bg-pri-200:hover,
+.focus\:bg-pri-200:focus { background-color: var(--bg-pri-200); }
+
+.bg-pri-100,
+.hover\:bg-pri-100:hover,
+.focus\:bg-pri-100:focus { background-color: var(--bg-pri-100); }
+
+.bg-pri-050,
+.hover\:bg-pri-050:hover,
+.focus\:bg-pri-050:focus { background-color: var(--bg-pri-050); }
+
+.bg-sec-900,
+.hover\:bg-sec-900:hover,
+.focus\:bg-sec-900:focus { background-color: var(--bg-sec-900); }
+
+.bg-sec-800,
+.hover\:bg-sec-800:hover,
+.focus\:bg-sec-800:focus { background-color: var(--bg-sec-800); }
+
+.bg-sec-700,
+.hover\:bg-sec-700:hover,
+.focus\:bg-sec-700:focus { background-color: var(--bg-sec-700); }
+
+.bg-sec-600,
+.hover\:bg-sec-600:hover,
+.focus\:bg-sec-600:focus { background-color: var(--bg-sec-600); }
+
+.bg-sec-500,
+.hover\:bg-sec-500:hover,
+.focus\:bg-sec-500:focus { background-color: var(--bg-sec-500); }
+
+.bg-sec-400,
+.hover\:bg-sec-400:hover,
+.focus\:bg-sec-400:focus { background-color: var(--bg-sec-400); }
+
+.bg-sec-300,
+.hover\:bg-sec-300:hover,
+.focus\:bg-sec-300:focus { background-color: var(--bg-sec-300); }
+
+.bg-sec-200,
+.hover\:bg-sec-200:hover,
+.focus\:bg-sec-200:focus { background-color: var(--bg-sec-200); }
+
+.bg-sec-100,
+.hover\:bg-sec-100:hover,
+.focus\:bg-sec-100:focus { background-color: var(--bg-sec-100); }
+
+.bg-sec-050,
+.hover\:bg-sec-050:hover,
+.focus\:bg-sec-050:focus { background-color: var(--bg-sec-050); }
 /*  # eof
  ---------------------------------------------------------------------------
   editor-style
