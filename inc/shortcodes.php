@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90212.1
+ Build       - 90212.2
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -284,15 +284,21 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90212.1
+ * build: 90212.2
  *
  * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page[/page_list]
+ *
+ *  class = ur class
+ *  style_before = style before title
+ *  style_afer = stle after title
+ *  depth = number of hierarchies to display
+ *  xclude = page ids of pages to exclude
  *
  */
 
 add_shortcode('page_list', 'page_list_shortcode');
 
-function page_list_shortcode($atts,$page_slug) {
+function page_list_shortcode($atts,$page_title) {
     
     // check for & fix missing arguments
     
@@ -331,11 +337,11 @@ function page_list_shortcode($atts,$page_slug) {
     // get starting page id
     $pid = 0;
     $page_err = false;
-    if (!isset($page_slug)) {
-        $page_slug = '';
+    if (!isset($page_title)) {
+        $page_title = '';
     }
-    if (!empty($page_slug)) {
-        $page = get_page_by_path($page_slug);
+    if (!empty($page_title)) {
+        $page = get_page_by_title($page_title);
         if ($page) {
           $pid = $page->ID;
         } else {
@@ -386,7 +392,7 @@ function page_list_shortcode($atts,$page_slug) {
         $html .= wp_list_pages($qry);
         $html .= '</ul>';
     } else {
-        $html = disp_error('Page List Template - (' . $page_slug . ') page slug not found.');
+        $html = disp_error('Page List Template - (' . $page_title . ') page slug not found.');
     }
 
     wp_reset_postdata();
