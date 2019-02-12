@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90210.2
+ Build       - 90211.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -284,15 +284,15 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90210.1
+ * build: 90211.1
  *
- * syntax - [page_list class="" style_before="" style_after="" depth=0 pid=0 xclude='']
+ * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page[/page_list]
  *
  */
 
 add_shortcode('page_list', 'page_list_shortcode');
 
-function page_list_shortcode($atts) {
+function page_list_shortcode($atts,$page_slug) {
     
     // check for & fix missing arguments
     
@@ -302,7 +302,6 @@ function page_list_shortcode($atts) {
             'style_before' => '',
             'style_after' => '',
             'depth' => 0,
-            'pid' => 0,
             'xclude' => ''
         );
         
@@ -324,12 +323,20 @@ function page_list_shortcode($atts) {
             $atts['depth'] = 0;
         }
         
-        if (!isset($atts['pid'])) {
-            $atts['pid'] = 0;
-        }
-        
         if (!isset($atts['xclude'])) {
             $atts['xclude'] = '';
+        }
+    }
+    
+    // get starting page id
+    $pid = 0;
+    if (!isset($page_slug)) {
+        $page_slug = '';
+    }
+    if (!empty($page_slug)) {
+        $page = get_page_by_path($page_slug);
+        if ($page) {
+            $pid = $page->ID;
         }
     }
     
@@ -338,7 +345,6 @@ function page_list_shortcode($atts) {
     $style_before = trim($atts['style_before']);
     $style_after = trim($atts['style_after']);
     $depth = $atts['depth'];
-    $pid = $atts['pid'];
     $xclude = $atts['xclude'];
 
     // remove template defaults
