@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90212.2
+ Build       - 90212.3
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -284,7 +284,7 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90212.2
+ * build: 90212.3
  *
  * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page[/page_list]
  *
@@ -392,7 +392,7 @@ function page_list_shortcode($atts,$page_title) {
         $html .= wp_list_pages($qry);
         $html .= '</ul>';
     } else {
-        $html = disp_error('Page List Template - (' . $page_title . ') page slug not found.');
+        $html = disp_error('Page List Template - (' . $page_title . ') page title not found.');
     }
 
     wp_reset_postdata();
