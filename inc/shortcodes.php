@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90211.1
+ Build       - 90211.2
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -284,7 +284,7 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90211.1
+ * build: 90211.2
  *
  * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page[/page_list]
  *
@@ -330,57 +330,64 @@ function page_list_shortcode($atts,$page_slug) {
     
     // get starting page id
     $pid = 0;
+    $page_err = false;
     if (!isset($page_slug)) {
         $page_slug = '';
     }
     if (!empty($page_slug)) {
         $page = get_page_by_path($page_slug);
         if ($page) {
-            $pid = $page->ID;
+          $pid = $page->ID;
+        } else {
+          $page_err = true;
         }
     }
     
-    // sanitized working variables
-    $class = trim($atts['class']);
-    $style_before = trim($atts['style_before']);
-    $style_after = trim($atts['style_after']);
-    $depth = $atts['depth'];
-    $xclude = $atts['xclude'];
-
-    // remove template defaults
-    if (strtoupper($class) == 'CLASS') {
-        $class = '';
-    }
-    if (strtoupper($style_before) == 'STYLE') {
-        $style_before = '';
-    }
-    if (strtoupper($style_after) == 'STYLE') {
-        $style_after = '';
-    }
-    if (strtoupper($xclude) == 'IDs') {
-        $xclude = '';
-    }
+    if (!$page_err) {
+        // sanitized working variables
+        $class = trim($atts['class']);
+        $style_before = trim($atts['style_before']);
+        $style_after = trim($atts['style_after']);
+        $depth = $atts['depth'];
+        $xclude = $atts['xclude'];
     
-    $qry = array(
-        'depth' => $depth,
-        'date_format' => get_option('date_format'),
-        'child_of' => $pid,
-        'exclude' => $xclude,
-        'echo' => false,
-        'sort_column' => 'post_title',
-        'link_before' => $style_before,
-        'link_after' => $style_after,
-        'item_spacing' => 'discard',
-        'title_li'    => '',
-        'walker' => ''
-    );
-    
-    $html = '<ul>';
-    if (!empty($class)) {
-        $html = '<ul class="' . $class . '">';
+        // remove template defaults
+        if (strtoupper($class) == 'CLASS') {
+            $class = '';
+        }
+        if (strtoupper($style_before) == 'STYLE') {
+            $style_before = '';
+        }
+        if (strtoupper($style_after) == 'STYLE') {
+            $style_after = '';
+        }
+        if (strtoupper($xclude) == 'IDs') {
+            $xclude = '';
+        }
+        
+        $qry = array(
+            'depth' => $depth,
+            'date_format' => get_option('date_format'),
+            'child_of' => $pid,
+            'exclude' => $xclude,
+            'echo' => false,
+            'sort_column' => 'post_title',
+            'link_before' => $style_before,
+            'link_after' => $style_after,
+            'item_spacing' => 'discard',
+            'title_li'    => '',
+            'walker' => ''
+        );
+        
+        $html = '<ul>';
+        if (!empty($class)) {
+            $html = '<ul class="' . $class . '">';
+        }
+        $html .= wp_list_pages($qry);
+        $html .= '</ul>';
+    } else {
+        $html = disp_error('List Blogs Template - (' . $page_slug . ') page slug not found.');
     }
-    $html .= wp_list_pages($qry);
-    $html .= '</ul>';
 
     wp_reset_postdata();
     
