@@ -593,9 +593,9 @@ function blog_list_shortcode($atts, $category_list) {
     
     $filter = 'i';
     if ($atts['filter'] == 1) {$filter = 'x';}
-    $categories = valid_categories($category_list,$filter);
 
-    if (!empty($categories)) {
+    if (!empty(ck_categories($category_list))) {
+        $categories = valid_categories($category_list,$filter);
         $qry = array(
             'posts_per_page' => -1,
             'offset' => 0,
@@ -1126,7 +1126,9 @@ function blog_summary_shortcode($atts, $category_list) {
     // sanitized working variables
     $filter = 'i';
     if ($atts['filter'] == 1) {$filter = 'x';}
-    $categories = valid_categories($category_list,$filter);
+    
+    $sanitized_list = ck_categories($category_list);
+    $categories = valid_categories($sanitized_list,$filter);
     $orderby = valid_orderby($atts['orderby']);
     $order = strtoupper($atts['order']);
     if (!$order == 'ASC') {
@@ -1358,7 +1360,8 @@ add_shortcode('img_gallery', 'img_gallery_shortcode');
 
 function img_gallery_shortcode($atts, $category_list) {
     // done if no categories
-    if (empty(trim($category_list))) {
+    $sanitized_list = ck_categories($category_list);
+    if (empty($sanitized_list)) {
         $html = disp_error('Image Gallery Template - missing media category.');
     } else {
         // check for & fix missing arguments
@@ -1477,7 +1480,7 @@ function img_gallery_shortcode($atts, $category_list) {
 
         $filter = 'i';
         if ($atts['filter'] == 1) {$filter = 'x';}
-        $categories = valid_categories($category_list,$filter);
+        $categories = valid_categories($sanitized_list,$filter);
 
         // run query
         $qry = array(
@@ -1743,6 +1746,36 @@ function ck_prm($arg) {
 
   return $ret_val;
   
+}
+
+/**
+ * function
+ *
+ * ck_categories
+ *
+ * remove template default if present
+ *
+ * syntax - ck_categories( $arg )
+ *
+ *  $arg = category variables to validate
+ *
+ *  test = two args of category + one arg of etc.
+ *
+ */
+
+function ck_categories($category_lst) {
+  $retval = '';
+  if (!empty(trim($category_lst))) {
+      $tst_val = rtrim(strtolower($category_lst));
+      if ( substr_count($tst_val,'category') == 2 ) {
+        if ( substr($tst_val, -3) !== 'etc' ) {
+          $retval = rtrim($category_lst);
+        }
+      } else {
+        $retval = rtrim($category_lst);
+      }
+  }
+  return $retval;
 }
 
 ?>
