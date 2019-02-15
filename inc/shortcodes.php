@@ -2,12 +2,12 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90214.1
+ Build       - 90215.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  Sources     - https://codex.wordpress.org/Shortcode_API
- Comments    -
+ Comments    - These shortcodes are called from templates which are embedded in content.
  **/
 
 /**
@@ -227,10 +227,10 @@ function lst_pages_shortcode($atts)
     }
     
     // remove xidipity template defaults
-    $atts['class'] == ck_prm($atts['class']);
-    $atts['before_item'] == ck_prm($atts['before_item']);
-    $atts['after_item'] == ck_prm($atts['after_item']);
-    $atts['xclude'] == ck_prm($atts['xclude']);
+    $atts['class']  = ck_prm($atts['class']);
+    $atts['before_item']  = ck_prm($atts['before_item']);
+    $atts['after_item']  = ck_prm($atts['after_item']);
+    $atts['xclude']  = ck_prm($atts['xclude']);
 
     $defaults = array(
         'class' => '',
@@ -586,7 +586,7 @@ function blog_list_shortcode($atts, $category_list) {
     $style_after = ck_prm($atts['style_after']);
     
     $orderby = valid_orderby($atts['orderby']);
-    $order = strtolower($atts['order']);
+    $order = strtoupper($atts['order']);
     if (!$order == 'DESC') {
         $order = 'ASC';
     }
@@ -1322,10 +1322,11 @@ function blog_summary_shortcode($atts, $category_list) {
  *
  * build: 90210.1
  *
- * syntax - [img_gallery orderby='' order='' opt=0 col=0 cap=0 sdw=0 filter=0]category 1,category 2, etc[/img_gallery]
+ * syntax - [img_gallery orderby='' order='' class=''  opt=0 col=0 cap=0 filter=0]category 1,category 2, etc[/img_gallery]
  *
  *    orderby = db sort order column
  *    order = ascending / descending
+ *    class = image class
  *
  *    opt (display options)
  *      0 – do not display captions or descriptions (default)
@@ -1343,10 +1344,6 @@ function blog_summary_shortcode($atts, $category_list) {
  *      0 - caption left (default)
  *      1 - caption center
  *      2 - caption right
- *
- *    sdw
- *      0 - no image shadow (default)
- *      1 - image shadow
  *
  *    filter
  *      0 = inclusive
@@ -1369,10 +1366,10 @@ function img_gallery_shortcode($atts, $category_list) {
             $atts = array(
                 'orderby' => 'date',
                 'order' => 'DESC',
+                'class' => '',
                 'opt' => 1,
                 'col' => 2,
                 'cap' => 0,
-                'sdw' => 0,
                 'filter' => 0
             );
         } else {
@@ -1381,6 +1378,9 @@ function img_gallery_shortcode($atts, $category_list) {
             }
             if (!isset($atts['order'])) {
                 $atts['order'] = 'DESC';
+            }
+            if (!isset($atts['class'])) {
+                $atts['class'] = '';
             }
             if (!isset($atts['opt'])) {
                 $atts['opt'] = 1;
@@ -1391,16 +1391,13 @@ function img_gallery_shortcode($atts, $category_list) {
             if (!isset($atts['cap'])) {
                 $atts['cap'] = 0;
             }
-            if (!isset($atts['sdw'])) {
-                $atts['sdw'] = 0;
-            }
             if (!isset($atts['filter'])) {
                 $atts['filter'] = 0;
             }
         }
         // sanitized working variables
         $orderby = valid_orderby($atts['orderby']);
-        $order = strtolower($atts['order']);
+        $order = strtoupper($atts['order']);
         if (!$order == 'DESC') {
             $order = 'ASC';
         }
@@ -1463,19 +1460,11 @@ function img_gallery_shortcode($atts, $category_list) {
               $cap_style = 'style="text-align:left;font-size:smaller;"';
             }
         }
-        $val = $atts['sdw'];
-        switch ($val) {
-          case !is_numeric($val):
-            $sdw = 0;
-            $sdw_class = '';
-            break;
-          case ($val > 0):
-            $sdw = 1;
-            $sdw_class = 'class="shadow"';
-            break;
-          default:
-            $sdw = 0;
-            $sdw_class = '';
+        $val = ck_prm($atts['class']);
+        if (!empty($val)) {
+          $class = 'class="' . strtolower($val) . '"';
+        } else {
+          $class = $val;
         }
 
         $filter = 'i';
@@ -1512,7 +1501,7 @@ function img_gallery_shortcode($atts, $category_list) {
                   $html .= '<tr>';
                 }
                 $html .= '<td>';
-                $html .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $sdw_class  . ' src="' . $image[0] . '"></a>';
+                $html .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a>';
 
                 if ( $opt == 1 || $opt == 3 ) {
                     $html .= '<div ' . $cap_style . '>' . $qry_rslt->post->post_excerpt . '</div>';
@@ -1741,7 +1730,7 @@ function ck_prm($arg) {
         $ret_val = '';
       break;
       default:
-        $ret_val = $arg;
+        $ret_val = $val;
   }
 
   return $ret_val;
