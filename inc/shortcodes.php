@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90215.1
+ Build       - 90215.2
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1462,7 +1462,7 @@ function img_gallery_shortcode($atts, $category_list) {
         }
         $val = ck_prm($atts['class']);
         if (!empty($val)) {
-          $class = 'class="' . strtolower($val) . '"';
+          $class = 'class="' . $val . '"';
         } else {
           $class = $val;
         }
@@ -1730,7 +1730,7 @@ function ck_prm($arg) {
         $ret_val = '';
       break;
       default:
-        $ret_val = $val;
+        $ret_val = rtrim($arg);
   }
 
   return $ret_val;
