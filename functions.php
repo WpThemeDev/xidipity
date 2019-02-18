@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 90216.1
+ * build: 90217.1
  *
  * @package xidipity
  */
@@ -154,10 +154,10 @@ function xidipity_scripts() {
   */
   
   // Clipboard Js
-  wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array(), '2.0.1', true);
+  wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array(), '2.0.1', false);
 
   // Sweet Alert Js
-  wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', array(), '2.1.2', true);
+  wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', array(), '2.1.2', false);
 
   // Tailwind CSS files
   wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/preflight.min.css', array(), '7.3', 'all');
