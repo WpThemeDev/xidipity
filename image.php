@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments
  *
- * build: 90218.2
+ * build: 90218.3
  *
  * @package xidipity
  */
@@ -47,5 +47,5 @@
         </main><!-- #main -->
       </section><!-- #primary -->
     </div><!-- .row -->
-  </div><!-- .container -->
+  <!-- .container -->
   <?php get_footer(); ?>
