@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments
  *
- * build: 90218.1
+ * build: 90218.2
  *
  * @package xidipity
  */
@@ -17,7 +17,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>
+<body <?php body_class(); ?>>
 <div id="page" class="site">
   <div class="container">
     <div class="row">
