@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90215.1
+  Build    - 90220.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -597,34 +597,95 @@ a img {
 	-webkit-box-shadow: 0 0 0 6px #fff;
 	box-shadow: 0 0 0 6px #fff;
 }
-/**
- * - Aspect Ratios
- */
+/*  # HTML
+   ## Media Elements
+  ### Aspect Ratios
+       1 x 1
+       4 x 3
+       6 x 4
+       7 x 5
+      16 x 10
+      16 x 9
+      21 x 9
 
-/*
-[style*="--aspect-ratio"] > :first-child {
+---------------------------------------------------------------------------*/
+
+.ratio-container {
+  height: auto;
   width: 100%;
 }
-[style*="--aspect-ratio"] > img {
-  height: auto;
+.ratio\@1x1,
+.ratio\@4x3,
+.ratio\@6x4,
+.ratio\@7x5,
+.ratio\@16x10,
+.ratio\@16x9,
+.ratio\@21x9 {
+  height: 0;
+  overflow: hidden;
+  background: white;
+  position: relative;
 }
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
-    position: relative;
-  }
-  [style*="--aspect-ratio"]::before {
-    content: "";
-    display: block;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
-  }
-  [style*="--aspect-ratio"] > :first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
+.ratio\@1x1 {
+  padding-top: 100%;
 }
-*/
+.ratio\@4x3 {
+  padding-top: calc(720 / 960 * 100%);
+}
+.ratio\@6x4 {
+  padding-top: calc(640 / 960 * 100%);
+}
+.ratio\@7x5 {
+  padding-top: calc(686 / 960 * 100%);
+}
+.ratio\@16x10 {
+  padding-top: calc(600 / 960 * 100%);
+}
+.ratio\@16x9 {
+  padding-top: calc(540 / 960 * 100%);
+}
+.ratio\@21x9 {
+  padding-top: calc(411 / 960 * 100%);
+}
+.selected-ratio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+  zoom image in confinded space ------------------------------------------ */
+
+.ratio\@1x1 img,
+.ratio\@4x3 img,
+.ratio\@6x4 img,
+.ratio\@7x5 img,
+.ratio\@16x10 img,
+.ratio\@16x9 img,
+.ratio\@21x9 img {
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.ratio\@1x1 img:focus,
+.ratio\@4x3 img:focus,
+.ratio\@6x4 img:focus,
+.ratio\@7x5 img:focus,
+.ratio\@16x10 img:focus,
+.ratio\@16x9 img:focus,
+.ratio\@21x9 img:focus,
+.ratio\@1x1 img:hover,
+.ratio\@4x3 img:hover,
+.ratio\@6x4 img:hover,
+.ratio\@7x5 img:hover,
+.ratio\@16x10 img:hover,
+.ratio\@16x9 img:hover,
+.ratio\@21x9 img:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 /**
  * - Alignment
