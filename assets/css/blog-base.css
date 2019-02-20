@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90220.1
+Build       - 90220.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2189,38 +2189,6 @@ h1.attachment-entry-title:before {
   width: 100%;
   height: 100%;
 }
-/*
-  zoom image in confinded space ------------------------------------------ */
-
-.ratio\@1x1 img,
-.ratio\@4x3 img,
-.ratio\@6x4 img,
-.ratio\@7x5 img,
-.ratio\@16x10 img,
-.ratio\@16x9 img,
-.ratio\@21x9 img {
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.ratio\@1x1 img:focus,
-.ratio\@4x3 img:focus,
-.ratio\@6x4 img:focus,
-.ratio\@7x5 img:focus,
-.ratio\@16x10 img:focus,
-.ratio\@16x9 img:focus,
-.ratio\@21x9 img:focus,
-.ratio\@1x1 img:hover,
-.ratio\@4x3 img:hover,
-.ratio\@6x4 img:hover,
-.ratio\@7x5 img:hover,
-.ratio\@16x10 img:hover,
-.ratio\@16x9 img:hover,
-.ratio\@21x9 img:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
 
 /*  # HTML
 ## Media Elements
@@ -2301,19 +2269,23 @@ img {
 ### Image Transformations
 ---------------------------------------------------------------------------*/
 
+/*
+  zoom image in confinded space ------------------------------------------ */
+
 img.zoom {
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	-webkit-transition-duration: 0.6s;
-	transition-duration: 0.6s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 img.zoom:focus,
 img.zoom:hover {
-	-webkit-transform: scale(1.02);
-	transform: scale(1.02);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
+/*
+  add shadow ------------------------------------------------------------- */
+
 img.shadow {
 	border-bottom: 1px solid #BDBDBD;
 	border-right: 1px solid #BDBDBD;
@@ -2321,6 +2293,9 @@ img.shadow {
 	-moz-box-shadow: 2px 2px 15px 0px #BDBDBD;
 	box-shadow: 2px 2px 15px 0px #BDBDBD;
 }
+/*
+  grayscale -------------------------------------------------------------- */
+
 img.grayscale {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
@@ -2332,6 +2307,9 @@ img.grayscale:hover {
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
+/*
+  focalpoint ------------------------------------------------------------- */
+
 img.focalpoint {
   opacity: 0.8;
 	filter: alpha(opacity=80);
