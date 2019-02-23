@@ -2359,7 +2359,7 @@ text-align: right;
 /* Standard Image Caption */
 .wp-caption .wp-caption-text {
 	margin: 8px 0;
-	text-align: left;
+	text-align: center;
 }
 
 /* Attachment Page Caption */
