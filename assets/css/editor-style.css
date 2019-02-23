@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90222.1
+  Build    - 90223.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -1311,9 +1311,9 @@ img.zoom {
 }
 img.zoom:focus,
 img.zoom:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -moz-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
+  transform: scale(1.075);
 }
 /*
   add shadow ------------------------------------------------------------- */
