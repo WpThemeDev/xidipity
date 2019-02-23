@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90222.1
+ Build       - 90223.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1300,7 +1300,7 @@ function blog_summary_shortcode($atts, $category_list) {
  *
  * img_gallery
  *
- * build: 90222.1
+ * build: 90223.1
  *
  * syntax - [img_gallery orderby='' order='' class='' ratio=0 opt=0 col=0 cap=0 filter=0]category 1,category 2, etc[/img_gallery]
  *
@@ -1313,19 +1313,20 @@ function blog_summary_shortcode($atts, $category_list) {
  *      zoom
  *
  *    ratio
- *      0 -  1 x 1
- *      1 -  4 x 3  (default)
- *      2 -  6 x 4
- *      3 -  7 x 5
- *      4 - 16 x 10
- *      5 - 16 x 9
- *      6 - 21 x 9
+ *      0 -  custom
+ *      1 -  1 x 1
+ *      2 -  4 x 3  (default)
+ *      3 -  6 x 4
+ *      4 -  7 x 5
+ *      5 - 16 x 10
+ *      6 - 16 x 9
+ *      7 - 21 x 9
  *
  *    opt (display options)
  *      0 – do not display captions or descriptions (default)
  *      1 – display captions
  *      2 – display descriptions
- *      3 – display both captions and descriptions
+ *      3 – display captions and descriptions
  *
  *    col
  *      1 - 1 column
@@ -1360,7 +1361,7 @@ function img_gallery_shortcode($atts, $category_list) {
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'class' => '',
-                'ratio' => 1,
+                'ratio' => 0,
                 'opt' => 1,
                 'col' => 2,
                 'cap' => 1,
@@ -1377,7 +1378,7 @@ function img_gallery_shortcode($atts, $category_list) {
                 $atts['class'] = '';
             }
             if (!isset($atts['ratio'])) {
-                $atts['ratio'] = 1;
+                $atts['ratio'] = 0;
             }
             if (!isset($atts['opt'])) {
                 $atts['opt'] = 1;
@@ -1400,26 +1401,29 @@ function img_gallery_shortcode($atts, $category_list) {
         }
         $val = abs($atts['ratio']);
         switch ($val) {
-          case 0:
+          case 1:
             $ratio = 'ratio@1x1';
             break;
           case 2:
-            $ratio = 'ratio@6x4';
+            $ratio = 'ratio@4x3';
             break;
           case 3:
-            $ratio = 'ratio@7x5';
+            $ratio = 'ratio@6x4';
             break;
           case 4:
-            $ratio = 'ratio@16x10';
+            $ratio = 'ratio@7x5';
             break;
           case 5:
-            $ratio = 'ratio@16x9';
+            $ratio = 'ratio@16x10';
             break;
           case 6:
+            $ratio = 'ratio@16x9';
+            break;
+          case 7:
             $ratio = 'ratio@21x9';
             break;
           default:
-            $ratio = 'ratio@4x3';
+            $ratio = 'custom';
         }
         $val = abs($atts['opt']);
         if ($val > 3) {
@@ -1455,9 +1459,17 @@ function img_gallery_shortcode($atts, $category_list) {
         }
         $val = ck_prm($atts['class']);
         if (!empty($val)) {
-          $class = 'class="' . $val . ' selected-ratio"';
+          if ($ratio == 'custom') {
+            $class = 'class="' . $val . '"';
+          } else {
+            $class = 'class="' . $val . ' selected-ratio"';
+          }
         } else {
-          $class = 'class="selected-ratio"';
+          if ($ratio == 'custom') {
+            $class = '';
+          } else {
+            $class = 'class="selected-ratio"';
+          }
         }
 
         $filter = 'i';
@@ -1494,10 +1506,15 @@ function img_gallery_shortcode($atts, $category_list) {
                   $html .= '<tr>';
                 }
                 $html .= '<td>';
-                $html .= '<!-- 900220.1 Template: xtras / constrained / image -->';
-                $html .= '<div class="ratio-container">';
-                $html .= '<div class="' . $ratio . '"><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a></div>';
-                $html .= '</div>';
+
+                if ($ratio == 'custom') {
+                  $html .= '<div><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a></div>';
+                } else {
+                  $html .= '<!-- 900220.1 Template: xtras / constrained / image -->';
+                  $html .= '<div class="ratio-container">';
+                  $html .= '<div class="' . $ratio . '"><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a></div>';
+                  $html .= '</div>';
+                }
 
                 if ( $opt == 1 || $opt == 3 ) {
                     $html .= '<div ' . $cap_style . '>' . $qry_rslt->post->post_excerpt . '</div>';
