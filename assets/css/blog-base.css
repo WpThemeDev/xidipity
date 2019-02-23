@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90220.2
+Build       - 90223.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1320,11 +1320,11 @@ cite {
 }
 .post-thumbnail img:focus,
 .post-thumbnail img:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  opacity: 1;
+  -moz-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
 	filter: alpha(opacity=100);
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.075);
 }
 
 /*  # Wordpress
@@ -2149,6 +2149,9 @@ h1.attachment-entry-title:before {
   height: auto;
   width: 100%;
 }
+td .ratio-container {
+  padding-top: 2px;
+}
 .ratio\@1x1,
 .ratio\@4x3,
 .ratio\@6x4,
@@ -2279,19 +2282,20 @@ img.zoom {
 }
 img.zoom:focus,
 img.zoom:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -moz-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
+  transform: scale(1.075);
 }
 /*
   add shadow ------------------------------------------------------------- */
 
 img.shadow {
-	border-bottom: 1px solid #BDBDBD;
-	border-right: 1px solid #BDBDBD;
-	-webkit-box-shadow: 2px 2px 15px 0px #BDBDBD;
-	-moz-box-shadow: 2px 2px 15px 0px #BDBDBD;
-	box-shadow: 2px 2px 15px 0px #BDBDBD;
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
 }
 /*
   grayscale -------------------------------------------------------------- */
@@ -2327,9 +2331,8 @@ img.focalpoint:hover {
 ### Captions
 ---------------------------------------------------------------------------*/
 
-/* WP Caption */
-
-.wp-caption {
+.wp-caption,
+.img-caption {
 	background-color: var(--bg-wht);
 	color: var(--fg-bas-600);
 	font-size: 13px;
@@ -2338,49 +2341,27 @@ img.focalpoint:hover {
 	max-width: 100%;
 	text-align: center;
 	margin: 0;
-	padding: 0;
+	padding: 2px 0;
 }
-@media screen and (min-width: 320px) {
-	.wp-caption.alignleft {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.wp-caption.alignright {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.wp-caption.aligncenter {
-		margin-left: auto;
-		margin-right: auto;
-	}
+.wp-caption.align-left,
+.img-caption.align-left {
+text-align: left;
 }
-@media screen and (min-width: 768px) {
-	.wp-caption.alignleft {
-		float: left;
-		max-width: 50% !important;
-		padding: 0 16px 0 0;
-	}
-	.wp-caption.alignright {
-		float: right;
-		max-width: 50% !important;
-		padding: 0 0 0 16px;
-	}
-	.wp-caption.aligncenter {
-		clear: both;
-		margin-left: auto;
-		margin-right: auto;
-	}
+.wp-caption.align-right,
+.img-caption.align-right {
+text-align: right;
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+/* Standard Image Caption */
 .wp-caption .wp-caption-text {
-	background-color: var(--bg-wht);
 	margin: 8px 0;
 	text-align: center;
 }
+
 /* Attachment Page Caption */
 
 .entry-caption {

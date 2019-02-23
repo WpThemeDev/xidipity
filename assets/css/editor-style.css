@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90220.2
+  Build    - 90223.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -288,6 +288,7 @@ ins {
 }
 figure {
 	margin: 0;
+	padding: 0 0 8px 0;
 }
 big {
 	font-size: 125%;
@@ -590,13 +591,6 @@ a:active {
 	color: var(--sys-lnk-sec-color);
 	font-weight: var(--sys-lnk-weight);
 }
-/* Fixes linked images */
-
-a img {
-	background: var(--bg-wht);
-	-webkit-box-shadow: 0 0 0 6px #fff;
-	box-shadow: 0 0 0 6px #fff;
-}
 /*  # HTML
    ## Media Elements
   ### Aspect Ratios
@@ -667,6 +661,7 @@ img {
 	max-width: 100%;
 	/* Adhere to container width. */
 }
+
 embed,
 iframe,
 object {
@@ -677,55 +672,42 @@ object {
  * 5.0 - Caption
  */
 
-/* WP Caption */
+/*  # Wordpress
+## Media Elements
+### Captions
+---------------------------------------------------------------------------*/
 
-.wp-caption {
-	background-color: var(--bg-wht);
-	color: var(--fg-bas-700);
+.img-caption {
+	color: var(--fg-bas-600);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 300;
+	line-height: 1.8;
 	max-width: 100%;
 	text-align: center;
-	margin: 0;
-	padding: 0 0 8px 0;
+	margin:0 ;
+	padding: 0;
 }
-.wp-caption.alignleft {
-	padding: 0 16px 0;
-	padding: 0 1rem 0;
+.wp-caption {
+	color: var(--fg-bas-600);
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: 300;
+	line-height: 0.7;
+	max-width: 100%;
+	text-align: center;
+	margin:0 ;
+	padding: 0;
 }
-.wp-caption.alignright {
-	padding: 0 0 0 16px;
-	padding: 0 0 0 1rem;
+.wp-caption.align-left,
+.img-caption.align-left {
+text-align: left;
 }
-.wp-caption.aligncenter {
-	margin-left: auto;
-	margin-right: auto;
+.wp-caption.align-right,
+.img-caption.align-right {
+text-align: right;
 }
-.aligncenter {
-	clear: both;
-	margin-left: auto;
-	margin-right: auto;
-}
-.alignleft {
-	max-width: 50% !important;
-	padding-right: 10px;
-	padding-right: 0.625rem;
-}
-.alignright {
-	max-width: 50% !important;
-	padding-left: 10px;
-	padding-left: 0.625rem;
-}
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.wp-caption .wp-caption-text {
-	margin: 8px 0;
-	margin: 0.5rem 0;
-}
+
 /**
  * 6.0 - Galleries
  */
@@ -1242,7 +1224,6 @@ table#twocol tr tr:not(:last-child) td {
 table#twocol tr tr td:not(:last-child) {
 	border-right: 1px solid var(--fg-bas-300);
 }
-/* figures & images */
 
 table#twocol tr td figure,
 table#twocol:first-child tr td figure {
@@ -1330,19 +1311,20 @@ img.zoom {
 }
 img.zoom:focus,
 img.zoom:hover {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -moz-transform: scale(1.075);
+  -webkit-transform: scale(1.075);
+  transform: scale(1.075);
 }
 /*
   add shadow ------------------------------------------------------------- */
 
 img.shadow {
-	border-bottom: 1px solid #BDBDBD;
-	border-right: 1px solid #BDBDBD;
-	-webkit-box-shadow: 2px 2px 15px 0px #BDBDBD;
-	-moz-box-shadow: 2px 2px 15px 0px #BDBDBD;
-	box-shadow: 2px 2px 15px 0px #BDBDBD;
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
 }
 /*
   grayscale -------------------------------------------------------------- */

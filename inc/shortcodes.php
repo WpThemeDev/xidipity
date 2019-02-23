@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90215.3
+ Build       - 90223.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -131,14 +131,14 @@ function xidipity_gallery_shortcode($atts, $category_list)
             $img_id      = get_post(get_post_thumbnail_id());
             $caption_css = 'text-center';
             
-            switch ($sc_arg['fmt']) {
-                case (1):
+            switch (abs($sc_arg['fmt'])) {
+                case 1:
                     $image_css = 'xidipity-gallery-itm-lg';
                     break;
-                case (2):
+                case 2:
                     $image_css = 'xidipity-gallery-itm-md';
                     break;
-                case (3):
+                case 3:
                     $image_css = 'xidipity-gallery-itm-sm';
                     break;
                 default:
@@ -871,26 +871,16 @@ function lst_blogs_shortcode($atts, $category_list) {
         $order = 'DESC';
     }
 
-    $val = $atts['fmt'];
-    switch ($val) {
-      case 0:
-        $fmt = 0;
-        break;
-      case 2:
+    $val = abs($atts['fmt']);
+    if ($val > 2) {
         $fmt = 2;
-        break;
-      default:
-        $fmt = 1;
+    } else {
+        $fmt = $val;
     }
-    $val = $atts['cnt'];
-    switch ($val) {
-      case !is_numeric($val):
+    $val = abs($atts['cnt']);
+    if ($val == 0 || $val > 4) {
         $post_cnt = 4;
-        break;
-      case ($val < 1):
-        $post_cnt = 4;
-        break;
-      default:
+    } else {
         $post_cnt = $val;
     }
 
@@ -1135,26 +1125,16 @@ function blog_summary_shortcode($atts, $category_list) {
         $order = 'DESC';
     }
 
-    $val = $atts['fmt'];
-    switch ($val) {
-      case 0:
-        $fmt = 0;
-        break;
-      case 2:
+    $val = abs($atts['fmt']);
+    if ($val > 2) {
         $fmt = 2;
-        break;
-      default:
-        $fmt = 1;
+    } else {
+        $fmt = $val;
     }
-    $val = $atts['cnt'];
-    switch ($val) {
-      case !is_numeric($val):
+    $val = abs($atts['cnt']);
+    if ($val == 0 || $val > 4) {
         $post_cnt = 4;
-        break;
-      case ($val < 1):
-        $post_cnt = 4;
-        break;
-      default:
+    } else {
         $post_cnt = $val;
     }
 
@@ -1320,19 +1300,33 @@ function blog_summary_shortcode($atts, $category_list) {
  *
  * img_gallery
  *
- * build: 90210.1
+ * build: 90223.1
  *
- * syntax - [img_gallery orderby='' order='' class=''  opt=0 col=0 cap=0 filter=0]category 1,category 2, etc[/img_gallery]
+ * syntax - [img_gallery orderby='' order='' class='' ratio=0 opt=0 col=0 cap=0 filter=0]category 1,category 2, etc[/img_gallery]
  *
  *    orderby = db sort order column
  *    order = ascending / descending
  *    class = image class
+ *      focalpoint
+ *      graypoint
+ *      shadow
+ *      zoom
+ *
+ *    ratio
+ *      0 -  custom
+ *      1 -  1 x 1
+ *      2 -  4 x 3  (default)
+ *      3 -  6 x 4
+ *      4 -  7 x 5
+ *      5 - 16 x 10
+ *      6 - 16 x 9
+ *      7 - 21 x 9
  *
  *    opt (display options)
  *      0 – do not display captions or descriptions (default)
  *      1 – display captions
  *      2 – display descriptions
- *      3 – display both captions and descriptions
+ *      3 – display captions and descriptions
  *
  *    col
  *      1 - 1 column
@@ -1341,8 +1335,8 @@ function blog_summary_shortcode($atts, $category_list) {
  *      4 - 4 column
  *
  *    cap
- *      0 - caption left (default)
- *      1 - caption center
+ *      0 - caption left
+ *      1 - caption center (default)
  *      2 - caption right
  *
  *    filter
@@ -1367,9 +1361,10 @@ function img_gallery_shortcode($atts, $category_list) {
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'class' => '',
+                'ratio' => 0,
                 'opt' => 1,
                 'col' => 2,
-                'cap' => 0,
+                'cap' => 1,
                 'filter' => 0
             );
         } else {
@@ -1382,6 +1377,9 @@ function img_gallery_shortcode($atts, $category_list) {
             if (!isset($atts['class'])) {
                 $atts['class'] = '';
             }
+            if (!isset($atts['ratio'])) {
+                $atts['ratio'] = 0;
+            }
             if (!isset($atts['opt'])) {
                 $atts['opt'] = 1;
             }
@@ -1389,7 +1387,7 @@ function img_gallery_shortcode($atts, $category_list) {
                 $atts['col'] = 2;
             }
             if (!isset($atts['cap'])) {
-                $atts['cap'] = 0;
+                $atts['cap'] = 1;
             }
             if (!isset($atts['filter'])) {
                 $atts['filter'] = 0;
@@ -1401,70 +1399,77 @@ function img_gallery_shortcode($atts, $category_list) {
         if (!$order == 'DESC') {
             $order = 'ASC';
         }
-        $val = $atts['opt'];
+        $val = abs($atts['ratio']);
         switch ($val) {
-          case !is_numeric($val):
-            $opt = 0;
+          case 1:
+            $ratio = 'ratio@1x1';
             break;
-          case ($val > 3):
-            $opt = 0;
+          case 2:
+            $ratio = 'ratio@4x3';
+            break;
+          case 3:
+            $ratio = 'ratio@6x4';
+            break;
+          case 4:
+            $ratio = 'ratio@7x5';
+            break;
+          case 5:
+            $ratio = 'ratio@16x10';
+            break;
+          case 6:
+            $ratio = 'ratio@16x9';
+            break;
+          case 7:
+            $ratio = 'ratio@21x9';
             break;
           default:
-            $opt = $val;
+            $ratio = 'custom';
         }
-        $val = $atts['col'];
-        switch ($val) {
-          case !is_numeric($val):
-            $max_col = 2;
-            break;
-          case ($val > 4):
-            $max_col = 2;
-            break;
-          default:
-            $max_col = $val;
+        $val = abs($atts['opt']);
+        if ($val > 3) {
+          $opt = 0;
+        } else {
+          $opt = $val;
         }
-        $val = $atts['cap'];
+        $val = abs($atts['col']);
+        if ($val == 0 || $val > 4 ) {
+          $max_col = 2;
+        } else {
+          $max_col = $val;
+        }
+        $val = abs($atts['cap']);
         switch ($val) {
-          case !is_numeric($val):
-            $cap = 1;
-            $cap_style = 'style="text-align:left;"';
+          case 0:
+            $cap_style = 'class="img-caption align-left"';
             if ($max_col > 2) {
-              $cap_style = 'style="text-align:left;font-size:smaller;"';
+              $cap_style = 'class="img-caption align-left text-sm"';
             }
             break;
-          case ($val == 0):
-            $cap = 1;
-            $cap_style = 'style="text-align:left;"';
+          case 2:
+            $cap_style = 'class="img-caption align-right"';
             if ($max_col > 2) {
-              $cap_style = 'style="text-align:left;font-size:smaller;"';
-            }
-            break;
-          case ($val == 1):
-            $cap = 2;
-            $cap_style = 'style="text-align:center;"';
-            if ($max_col > 2) {
-              $cap_style = 'style="text-align:center;font-size:smaller;"';
-            }
-            break;
-          case ($val == 2):
-            $cap = 3;
-            $cap_style = 'style="text-align:right;"';
-            if ($max_col > 2) {
-              $cap_style = 'style="text-align:right;font-size:smaller;"';
+              $cap_style = 'class="img-caption align-right text-sm"';
             }
             break;
           default:
-            $cap = 1;
-            $cap_style = 'style="text-align:left;"';
+            $cap_style = 'class="img-caption"';
             if ($max_col > 2) {
-              $cap_style = 'style="text-align:left;font-size:smaller;"';
+              $cap_style = 'class="img-caption text-sm"';
             }
         }
         $val = ck_prm($atts['class']);
         if (!empty($val)) {
-          $class = 'class="' . $val . '"';
+          if ($ratio == 'custom') {
+            $class = 'class="' . $val . '"';
+          } else {
+            $class = 'class="' . $val . ' selected-ratio"';
+          }
         } else {
-          $class = $val;
+          if ($ratio == 'custom') {
+            $class = '';
+          } else {
+            $class = 'class="selected-ratio"';
+          }
         }
 
         $filter = 'i';
@@ -1501,7 +1506,15 @@ function img_gallery_shortcode($atts, $category_list) {
                   $html .= '<tr>';
                 }
                 $html .= '<td>';
-                $html .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a>';
+
+                if ($ratio == 'custom') {
+                  $html .= '<div><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a></div>';
+                } else {
+                  $html .= '<!-- 900220.1 Template: xtras / constrained / image -->';
+                  $html .= '<div class="ratio-container">';
+                  $html .= '<div class="' . $ratio . '"><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class  . ' src="' . $image[0] . '"></a></div>';
+                  $html .= '</div>';
+                }
 
                 if ( $opt == 1 || $opt == 3 ) {
                     $html .= '<div ' . $cap_style . '>' . $qry_rslt->post->post_excerpt . '</div>';
