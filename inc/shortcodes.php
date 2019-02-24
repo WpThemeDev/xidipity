@@ -276,17 +276,21 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90212.3
+ * build: 90224.1
  *
- * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page[/page_list]
+ * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page title[/page_list]
  *
- *    class = ul class
+ *    class = ul class(es)
+ *
  *    style_before = style before list item
+ *
  *    style_after = style after list item
+ *
  *    depth = number of hierarchies to display
+ *
  *    xclude = page ids of pages to exclude
  *
- *    page = parent page (blank for all)
+ *    page title = parent page title (blank for all)
  *
  */
 
