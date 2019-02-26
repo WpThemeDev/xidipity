@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90225.1
+  Build    - 90225.2
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -1342,12 +1342,9 @@ img.zoom:hover {
   add shadow ------------------------------------------------------------- */
 
 img.shadow {
-  -moz-transform: scale(0.975);
-  -webkit-transform: scale(0.975);
-  transform: scale(0.975);
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  -webkit-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  -moz-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  box-shadow: 0 10px 6px -6px var(--fg-bas-400);
 }
 /*
   grayscale -------------------------------------------------------------- */
