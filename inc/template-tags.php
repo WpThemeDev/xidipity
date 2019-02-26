@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * build: 90216.1
+ * build: 90226.1
  *
  * @package xidipity
  */
@@ -296,7 +296,7 @@ if (!function_exists('xidipity_post_thumbnail')):
 
             // Post Thumbnail HTML
 
-            $html = sprintf('<div class="entry-image-wrapper entry-image-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>', esc_attr(esc_url(get_the_permalink())) , $post_thumbnail);
+            $html = sprintf('<div class="post-thumbnail-wrapper post-thumbnail-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>', esc_attr(esc_url(get_the_permalink())) , $post_thumbnail);
         }
 
         /**
