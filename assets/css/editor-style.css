@@ -3,7 +3,7 @@
 Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
-  Build    - 90224.1
+  Build    - 90225.2
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -679,25 +679,23 @@ object {
 
 .img-caption {
 	color: var(--fg-bas-600);
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 300;
-	line-height: 1.8;
 	max-width: 100%;
 	text-align: center;
 	margin:0 ;
-	padding: 0;
+	padding-top: 10px;
 }
 .wp-caption {
 	color: var(--fg-bas-600);
-	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 300;
-	line-height: 0.7;
 	max-width: 100%;
 	text-align: center;
 	margin:0 ;
-	padding: 0;
+	padding:0;
 }
 .wp-caption.align-left,
 .img-caption.align-left {
@@ -728,6 +726,9 @@ img.aligncenter,
   clear: both;
   margin-left: auto;
   margin-right: auto;
+}
+.wp-caption {
+  /* line-height:107.5%; */
 }
 
 /**
@@ -1333,20 +1334,17 @@ img.zoom {
 }
 img.zoom:focus,
 img.zoom:hover {
-  -moz-transform: scale(1.075);
-  -webkit-transform: scale(1.075);
-  transform: scale(1.075);
+  -moz-transform: scale(1.025);
+  -webkit-transform: scale(1.025);
+  transform: scale(1.025);
 }
 /*
   add shadow ------------------------------------------------------------- */
 
 img.shadow {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  transform: scale(0.95);
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  -webkit-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  -moz-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  box-shadow: 0 10px 6px -6px var(--fg-bas-400);
 }
 /*
   grayscale -------------------------------------------------------------- */
