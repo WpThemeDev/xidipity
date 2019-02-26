@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 90225.1
+ * build: 90226.1
  *
  * @package xidipity
  */
@@ -171,7 +171,7 @@ function xidipity_scripts() {
   wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array(), wp_get_theme()->get( 'Version' ), 'print');
 
   // Fontawesome
-  wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', array(), '5.6.3', 'all');
+  wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all');
 
   // Google Material Design Icons
   wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), wp_get_theme()->get( 'Version' ), 'all');
