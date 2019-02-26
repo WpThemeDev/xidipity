@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90225.1
+Build       - 90225.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -2285,12 +2285,9 @@ img.zoom:hover {
   add shadow ------------------------------------------------------------- */
 
 img.shadow {
-  -moz-transform: scale(0.975);
-  -webkit-transform: scale(0.975);
-  transform: scale(0.975);
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
-  box-shadow: 5px 5px 5px 0px rgba(224,224,224,1);
+  -webkit-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  -moz-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
+  box-shadow: 0 10px 6px -6px var(--fg-bas-400);
 }
 /*
   grayscale -------------------------------------------------------------- */
@@ -2330,8 +2327,8 @@ img.focalpoint:hover {
 .img-caption {
   background-color: var(--bg-wht);
   color: var(--fg-bas-600);
-	font-size: 14px;
-	font-size: 0.875rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   max-width: 100%;
   text-align: center;
