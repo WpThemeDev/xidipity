@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 90217.1
+ * build: 90225.1
  *
  * @package xidipity
  */
@@ -59,7 +59,7 @@ if (!function_exists('xidipity_setup')): /**
     add_theme_support('post-thumbnails');
     
     // Theme Image Sizes
-    add_image_size('xidipity-featured', 754, 566, true);
+    add_image_size('xidipity-featured', 960, 720, true);
     
     // This theme uses wp_nav_menu() in four locations.
     register_nav_menus(array(
