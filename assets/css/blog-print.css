@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-print.css
-Build       - 90227.1
+Build       - 90227.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -134,18 +134,26 @@ hr.gradient {
    ## Borders
  ---------------------------------------------------------------------------*/
 
-.print\:border-1 {
-  border: solid var(--fg-bas-500) 1px;
-}
 .print\:border,
+.print\:border-1 {
+  border-color: var(--fg-bas-500);
+  border-style: solid;
+  border-width: 1px;
+}
 .print\:border-2 {
-  border: solid var(--fg-bas-500) 2px;
+  border-color: var(--fg-bas-500);
+  border-style: solid;
+  border-width: 2px;
 }
 .print\:border-3 {
-  border: solid var(--fg-bas-500) 3px;
+  border-color: var(--fg-bas-500);
+  border-style: solid;
+  border-width: 3px;
 }
 .print\:border-4 {
-  border: solid var(--fg-bas-500) 4px;
+  border-color: var(--fg-bas-500);
+  border-style: solid;
+  border-width: 4px;
 }
 /*  # eof
  ---------------------------------------------------------------------------
