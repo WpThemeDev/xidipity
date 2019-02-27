@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-print.css
-Build       - 90210.1
+Build       - 90226.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -114,6 +114,20 @@ img.shadow {
 	-webkit-box-shadow: 0;
 	-moz-box-shadow: 0;
 	box-shadow: none;
+}
+/*  # HTML
+   ## Horizonal Rules (HR)
+ ---------------------------------------------------------------------------*/
+
+hr.gradient {
+	background-color: transparent;
+	border: 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--fg-bas-400);
+	height: 1px;
+	margin: 12px auto 13px auto;
+	width: 80%;
 }
 
 /*  # eof
