@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90223.1
+ Build       - 90228.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -934,9 +934,9 @@ function lst_blogs_shortcode($atts, $category_list) {
                         $html .= $stamp;
                         $html .= $excerpt;
                         $html .= '<p>&nbsp;</p>';
-                        $html .= '<div style="height:40px; width: 100%;">';
-                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                        $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                        $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                         $html .= '</div>';
                         $html .= '</td>';
                     } else {
@@ -948,9 +948,9 @@ function lst_blogs_shortcode($atts, $category_list) {
                         $html .= $stamp;
                         $html .= $excerpt;
                         $html .= '<p>&nbsp;</p>';
-                        $html .= '<div style="height:40px; width: 100%;">';
-                        $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                        $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                        $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                         $html .= '</div>';
                         $html .= '</td>';
                         $html .= '</tr>';
@@ -977,9 +977,9 @@ function lst_blogs_shortcode($atts, $category_list) {
                     $html .= $stamp;
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
-                    $html .= '<div style="height:40px; width: 100%;">';
-                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                    $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
                     $html .= '<td>';
@@ -1011,9 +1011,9 @@ function lst_blogs_shortcode($atts, $category_list) {
                     $html .= $stamp;
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
-                    $html .= '<div style="height:40px; width: 100%;">';
-                    $html .= '<div style="border-right: solid 1px #e0e0e0; color: var(--fg-pri-900); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><span class="far-glyph"></span></div>';
-                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                    $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
                     $html .= '</tr>';
@@ -1188,9 +1188,9 @@ function blog_summary_shortcode($atts, $category_list) {
                         $html .= $stamp;
                         $html .= $excerpt;
                         $html .= '<p>&nbsp;</p>';
-                        $html .= '<div class="clearfix w-full">';
-                        $html .= '<div style="border-right: solid 1px var(--fg-bas-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><i class="far fa-comment-alt fg-pri-300">&#x200B;</i></div>';
-                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                        $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                        $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                         $html .= '</div>';
                         $html .= '</td>';
                     } else {
@@ -1202,9 +1202,9 @@ function blog_summary_shortcode($atts, $category_list) {
                         $html .= $stamp;
                         $html .= $excerpt;
                         $html .= '<p>&nbsp;</p>';
-                        $html .= '<div class="clearfix w-full">';
-                        $html .= '<div style="border-right: solid 1px var(--fg-bas-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><i class="far fa-comment-alt fg-pri-300">&#x200B;</i></div>';
-                        $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                        $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                        $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                        $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                         $html .= '</div>';
                         $html .= '</td>';
                         $html .= '</tr>';
@@ -1231,9 +1231,9 @@ function blog_summary_shortcode($atts, $category_list) {
                     $html .= $stamp;
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
-                    $html .= '<div class="clearfix w-full">';
-                    $html .= '<div style="border-right: solid 1px var(--fg-bas-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><i class="far fa-comment-alt fg-pri-300">&#x200B;</i></div>';
-                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                    $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
                     $html .= '<td>';
@@ -1265,9 +1265,9 @@ function blog_summary_shortcode($atts, $category_list) {
                     $html .= $stamp;
                     $html .= $excerpt;
                     $html .= '<p>&nbsp;</p>';
-                    $html .= '<div class="clearfix w-full">';
-                    $html .= '<div style="border-right: solid 1px var(--fg-bas-300); float: left; font-size: 1.2rem; line-height: 1.8; text-align: center; width: 40px;"><i class="far fa-comment-alt fg-pri-300">&#x200B;</i></div>';
-                    $html .= '<div style="float: left; font-size: 0.9375rem; line-height: 2.45; padding-left: 10px;"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
+                    $html .= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html .= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
+                    $html .= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html .= '</div>';
                     $html .= '</td>';
                     $html .= '</tr>';
