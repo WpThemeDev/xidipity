@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-print.css
-Build       - 90228.1
+Build       - 90228.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -12,18 +12,18 @@ Comments    - Base CSS classes as modified
 
 Print Grayscale - blog-print-var.css
 
-*/
+---------------------------------------------------------------------------*/
 
 /**
  * set page size
- */
+---------------------------------------------------------------------------*/
 
 @page {
   size: var(--prnt-page);
 }
 /**
  * HIDE certain elements completely
- */
+---------------------------------------------------------------------------*/
 
 .simplesocialbuttons-inline-no-animation,
 .comment-respond,
@@ -42,7 +42,7 @@ Print Grayscale - blog-print-var.css
 }
 /**
  * Tailwind syntax
- */
+---------------------------------------------------------------------------*/
 
 .print\:hidden {
   display: none;
@@ -52,7 +52,7 @@ Print Grayscale - blog-print-var.css
 }
 /**
  * Global defaults
- */
+---------------------------------------------------------------------------*/
 
 body {
   -webkit-print-color-adjust: exact;
@@ -66,7 +66,7 @@ body {
 /**
  *  # HTML
  * ## Two Column
- */
+---------------------------------------------------------------------------*/
 
 table#twocol tr td,
 table#twocol tr td table#twocol tr td {
@@ -107,82 +107,59 @@ table#responsive td img {
 }
 /*  # HTML
    ## Print Specific Borders
+      This solution displays a flux border inside the outer edge.
  ---------------------------------------------------------------------------*/
 
 .print\:border,
 .print\:border-1 {
-  border-color: var(--fg-bas-500);
-  border-style: solid;
-  border-width: 1px;
+  -webkit-box-shadow:inset 0px 0px 0px 1px var(--fg-bas-500);
+  -moz-box-shadow:inset 0px 0px 0px 1px var(--fg-bas-500);
+  box-shadow:inset 0px 0px 0px 1px var(--fg-bas-500);
 }
 .print\:border-2 {
-  border-color: var(--fg-bas-500);
-  border-style: solid;
-  border-width: 2px;
+  -webkit-box-shadow:inset 0px 0px 0px 2px var(--fg-bas-500);
+  -moz-box-shadow:inset 0px 0px 0px 2px var(--fg-bas-500);
+  box-shadow:inset 0px 0px 0px 2px var(--fg-bas-500);
 }
 .print\:border-3 {
-  border-color: var(--fg-bas-500);
-  border-style: solid;
-  border-width: 3px;
+  -webkit-box-shadow:inset 0px 0px 0px 3px var(--fg-bas-500);
+  -moz-box-shadow:inset 0px 0px 0px 3px var(--fg-bas-500);
+  box-shadow:inset 0px 0px 0px 3px var(--fg-bas-500);
 }
 .print\:border-4 {
-  border-color: var(--fg-bas-500);
-  border-style: solid;
-  border-width: 4px;
+  -webkit-box-shadow:inset 0px 0px 0px 4px var(--fg-bas-500);
+  -moz-box-shadow:inset 0px 0px 0px 4px var(--fg-bas-500);
+  box-shadow:inset 0px 0px 0px 4px var(--fg-bas-500);
 }
 /*  # HTML
    ## Print Specific Palette
+      !important to overrule any other styling.
  ---------------------------------------------------------------------------*/
 
-.print\:bg-blk { background-color: var(--bg-blk); }
-
-.print\:bg-wht { background-color: var(--bg-wht); }
-
-.print\:bg-bas-900 { background-color: var(--bg-bas-900); }
-
-.print\:bg-bas-800 { background-color: var(--bg-bas-800); }
-
-.print\:bg-bas-700 { background-color: var(--bg-bas-700); }
-
-.print\:bg-bas-600 { background-color: var(--bg-bas-600); }
-
-.print\:bg-bas-500 { background-color: var(--bg-bas-500); }
-
-.print\:bg-bas-400 { background-color: var(--bg-bas-400); }
-
-.print\:bg-bas-300 { background-color: var(--bg-bas-300); }
-
-.print\:bg-bas-200 { background-color: var(--bg-bas-200); }
-
-.print\:bg-bas-100 { background-color: var(--bg-bas-100); }
-
-.print\:bg-bas-050 { background-color: var(--bg-bas-050); }
-
-.print\:fg-blk { color: var(--fg-blk); }
-
-.print\:fg-wht { color: var(--fg-wht); }
-
-.print\:fg-bas-900 { color: var(--fg-bas-900); }
-
-.print\:fg-bas-800 { color: var(--fg-bas-800); }
-
-.print\:fg-bas-700 { color: var(--fg-bas-700); }
-
-.print\:fg-bas-600 { color: var(--fg-bas-600); }
-
-.print\:fg-bas-500 { color: var(--fg-bas-500); }
-
-.print\:fg-bas-400 { color: var(--fg-bas-400); }
-
-.print\:fg-bas-300 { color: var(--fg-bas-300); }
-
-.print\:fg-bas-200 { color: var(--fg-bas-200); }
-
-.print\:fg-bas-100 { color: var(--fg-bas-100); }
-
-.print\:fg-bas-050 { color: var(--fg-bas-050); }
-
+.print\:fg-blk { color: var(--fg-blk) !important; }
+.print\:fg-wht { color: var(--fg-wht) !important; }
+.print\:bg-blk { background-color: var(--bg-blk) !important; }
+.print\:bg-wht { background-color: var(--bg-wht) !important; }
+.print\:fg-bas-900 { color: var(--fg-bas-900) !important; }
+.print\:fg-bas-800 { color: var(--fg-bas-800) !important; }
+.print\:fg-bas-700 { color: var(--fg-bas-700) !important; }
+.print\:fg-bas-600 { color: var(--fg-bas-600) !important; }
+.print\:fg-bas-500 { color: var(--fg-bas-500) !important; }
+.print\:fg-bas-400 { color: var(--fg-bas-400) !important; }
+.print\:fg-bas-300 { color: var(--fg-bas-300) !important; }
+.print\:fg-bas-200 { color: var(--fg-bas-200) !important; }
+.print\:fg-bas-100 { color: var(--fg-bas-100) !important; }
+.print\:fg-bas-050 { color: var(--fg-bas-050) !important; }
+.print\:bg-bas-900 { background-color: var(--bg-bas-900) !important; }
+.print\:bg-bas-800 { background-color: var(--bg-bas-800) !important; }
+.print\:bg-bas-700 { background-color: var(--bg-bas-700) !important; }
+.print\:bg-bas-600 { background-color: var(--bg-bas-600) !important; }
+.print\:bg-bas-500 { background-color: var(--bg-bas-500) !important; }
+.print\:bg-bas-400 { background-color: var(--bg-bas-400) !important; }
+.print\:bg-bas-300 { background-color: var(--bg-bas-300) !important; }
+.print\:bg-bas-200 { background-color: var(--bg-bas-200) !important; }
+.print\:bg-bas-100 { background-color: var(--bg-bas-100) !important; }
+.print\:bg-bas-050 { background-color: var(--bg-bas-050) !important; }
 /*  # eof
- ---------------------------------------------------------------------------
-  print-style
- ---------------------------------------------------------------------------*/
+    print-style
+---------------------------------------------------------------------------*/
