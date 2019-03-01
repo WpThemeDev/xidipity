@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90228.1
+ Build       - 90301.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -276,7 +276,7 @@ function lst_pages_shortcode($atts)
  *
  * page_list
  *
- * build: 90224.1
+ * build: 90301.1
  *
  * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page title[/page_list]
  *
@@ -336,6 +336,9 @@ function page_list_shortcode($atts,$page_title) {
     $pid = 0;
     $page_err = false;
     if (!isset($page_title)) {
+        $page_title = '';
+    }
+    if ($page_title == 'page title') {
         $page_title = '';
     }
     if (!empty($page_title)) {
