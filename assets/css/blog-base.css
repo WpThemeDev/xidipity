@@ -3,7 +3,7 @@ Theme Name: Xidipity
 Description: Used to style theme.
 
 File        - blog-base.css
-Build       - 90226.2
+Build       - 90302.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -4720,11 +4720,128 @@ img[id*="botd"] {
 .bg-sec-050,
 .hover\:bg-sec-050:hover,
 .focus\:bg-sec-050:focus { background-color: var(--bg-sec-050); }
+
+/* palette colors       --------------------------------------------------- */
+
+.fg-red {
+  color: #F44336;
+}
+.bg-red {
+  background-color: #F44336;
+}
+.fg-pink {
+  color: #E91E63;
+}
+.bg-pink {
+  background-color: #E91E63;
+}
+.fg-purple {
+  color: #9C27B0;
+}
+.bg-purple {
+  background-color: #9C27B0;
+}
+.fg-deep-purple {
+  color: #673AB7;
+}
+.bg-deep-purple {
+  background-color: #673AB7;
+}
+.fg-indigo {
+  color: #3F51B5;
+}
+.bg-indigo {
+  background-color: #3F51B5;
+}
+.fg-blue {
+  color: #2196F3;
+}
+.bg-blue {
+  background-color: #2196F3;
+}
+.fg-light-blue {
+  color: #03A9F4;
+}
+.bg-light-blue {
+  background-color: #03A9F4;
+}
+.fg-cyan {
+  color: #00BCD4;
+}
+.bg-cyan {
+  background-color: #00BCD4;
+}
+.fg-teal {
+  color: #009688;
+}
+.bg-teal {
+  background-color: #009688;
+}
+.fg-green {
+  color: #4CAF50;
+}
+.bg-green {
+  background-color: #4CAF50;
+}
+.fg-light-green {
+  color: #8BC34A;
+}
+.bg-light-green {
+  background-color: #8BC34A;
+}
+.fg-lime {
+  color: #CDDC39;
+}
+.bg-lime {
+  background-color: #CDDC39;
+}
+.fg-yellow {
+  color: #FFEB3B;
+}
+.bg-yellow {
+  background-color: #FFEB3B;
+}
+.fg-amber {
+  color: #FFC107;
+}
+.bg-amber {
+  background-color: #FFC107;
+}
+.fg-orange {
+  color: #FF9800;
+}
+.bg-orange {
+  background-color: #FF9800;
+}
+.fg-deep-orange {
+  color: #FF5722;
+}
+.bg-deep-orange {
+  background-color: #FF5722;
+}
+.fg-brown {
+  color: #795548;
+}
+.bg-brown {
+  background-color: #795548;
+}
+.fg-gray {
+  color: #9E9E9E;
+}
+.bg-gray {
+  background-color: #9E9E9E;
+}
+.fg-blue-gray {
+  color: #607D8B;
+}
+.bg-blue-gray {
+  background-color: #607D8B;
+}
 /*  # Misc
    ## Other
  ---------------------------------------------------------------------------*/
 
-/* grid container */
+/* grid container (deprecated) */
 
 .xgrid {
   display: -ms-flexbox;
@@ -4830,6 +4947,5 @@ screen and (min-width: 1440px) {
   width: 100% !important;
 }
 /*  # eof
- ---------------------------------------------------------------------------
-  blog-base
- ---------------------------------------------------------------------------*/
+    blog-base
+---------------------------------------------------------------------------*/
