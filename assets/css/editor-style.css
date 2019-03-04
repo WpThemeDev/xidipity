@@ -4,7 +4,7 @@ Description: Used to style the TinyMCE editor.
 
       File - editor-style.css
       
-     Build - 90303.1
+     Build - 90304.1
 Programmer - John Baer
    Purpose - Support file for Xidipity Wordpress Theme
    License - GNU General Public License v2 or later
@@ -1377,6 +1377,14 @@ img.focalpoint:hover {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+/*
+  print page break  ------------------------------------------------------ */
+
+.print\:page-break::after {
+  content: " ¶";
+  color: var(--fg-pri-500);
+}
+
 /*  # eof
     editor-style
 ---------------------------------------------------------------------------*/
