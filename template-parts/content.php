@@ -2,7 +2,7 @@
 /**
  * The default template for displaying content
  *
- * Build: 90218.1
+ * Build: 90306.1
  *
  * @package xidipity
  */
@@ -43,10 +43,10 @@
         <?php the_excerpt(); ?>
       </div><!-- .entry-summary -->
       <?php endif; ?>
-      <!-- 90228.1 Template: read more / link -->
-      <div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">
-          <div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>
-          <div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></div>
+      <!-- 90306.1 Template: annotation / read more / link -->
+      <div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">
+          <div style="border-right: solid 1px var(--bg-bas-300); display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>
+          <div style="display: table-cell; font-size: 0.85rem; padding-left: 10px; width: calc(100% - 40px);"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></div>
       </div>
       <!-- End Template -->
     </div><!-- .entry-data-wrapper -->
