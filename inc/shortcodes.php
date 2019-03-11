@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90301.1
+ Build       - 90311.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -529,7 +529,7 @@ function lst_posts_shortcode($atts)
  *
  * blog_list
  *
- * build: 90214.1
+ * build: 90311.1
  *
  * syntax - [blog_list class="" style_before="" style_after="" orderby="" order="" filter=0]category 1,category 2, etc[/blog_list]
  *
@@ -601,45 +601,40 @@ function blog_list_shortcode($atts, $category_list) {
     $filter = 'i';
     if ($atts['filter'] == 1) {$filter = 'x';}
 
-    if (!empty(ck_categories($category_list))) {
-        $categories = valid_categories($category_list,$filter);
-        $qry = array(
-            'posts_per_page' => -1,
-            'offset' => 0,
-            'cat' => $categories,
-            'orderby' => $orderby,
-            'order' => $order,
-            'post_type' => 'post',
-            'post_status' => 'publish',
-            'suppress_filters' => true
-        );
-        
-        if (!empty($class)) {
-            $html = '<ul class="' . $class . '">';
-        } else {
-            $html = '<ul>';
-        }
-        
-        $posts = get_posts($qry);
-        $cnt = 0;
-        foreach ($posts as $post) {
-            $cnt++;
-            $html .= '<li><a href="' . get_permalink($post) . '">';
-            $html .=  $style_before . $post->post_title . $style_after;
-            $html .= '</a></li>';
-        }
-        $html .= '</ul>';
+    $categories = valid_categories($category_list,$filter);
+    $qry = array(
+        'posts_per_page' => -1,
+        'offset' => 0,
+        'cat' => $categories,
+        'orderby' => $orderby,
+        'order' => $order,
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'suppress_filters' => true
+    );
     
-        if ($cnt == 0) {
-          $html = disp_error('Blog List Template - no posts found assigned to (' . $category_list . ').');
-        }
-        
-        wp_reset_postdata();
-        
+    if (!empty($class)) {
+        $html = '<ul class="' . $class . '">';
     } else {
-      $html = disp_error('Blog List Template - missing valid category.');
+        $html = '<ul>';
     }
     
+    $posts = get_posts($qry);
+    $cnt = 0;
+    foreach ($posts as $post) {
+        $cnt++;
+        $html .= '<li><a href="' . get_permalink($post) . '">';
+        $html .=  $style_before . $post->post_title . $style_after;
+        $html .= '</a></li>';
+    }
+    $html .= '</ul>';
+
+    if ($cnt == 0) {
+      $html = disp_error('Blog List Template - no posts found assigned to (' . $category_list . ').');
+    }
+    
+    wp_reset_postdata();
+        
     return $html;
     
 }
@@ -1786,5 +1781,4 @@ function ck_categories($category_lst) {
   }
   return $retval;
 }
-
 ?>
