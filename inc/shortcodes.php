@@ -2,7 +2,7 @@
 /**
  * ------------------------- Xidipity Short Codes -------------------------
  file        - shortcodes.php
- Build       - 90311.1
+ Build       - 90314.1
  Programmer  - John Baer
  Purpose     - Support file for Xidipity Wordpress Theme
  License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -642,7 +642,7 @@ function blog_list_shortcode($atts, $category_list) {
 /**
  * Short code
  *
- * lst_cats
+ * lst_cats (deprecated)
  *
  * build: 90103.1
  *
@@ -733,6 +733,135 @@ function lst_cats_shortcode($atts)
     $html .= wp_list_categories($query_args);
     $html .= '</ul>';
     
+    wp_reset_postdata();
+    
+    return $html;
+    
+}
+
+/**
+ * Short code
+ *
+ * cat_list
+ *
+ * build: 90314.1
+ *
+ * syntax - [cat_list class="" active='0/1' depth=0 show_cnt='0/1' xclude=""]category title[/cat_list]
+ *
+ *    class = ul class
+ *
+ *    active = hide empty (0=false/1=true)
+ *
+ *    depth = number of hierarchies to display
+ *
+ *    show_cnt = show category count (0=false/1=true)
+ *
+ *    xclude = page ids of pages to exclude
+ *
+ *    category title = parent category title (blank for all)
+ */
+
+add_shortcode('cat_list', 'cat_list_shortcode');
+
+function cat_list_shortcode($atts,$category_title)
+{
+    
+    // check for & fix missing arguments
+    
+    if (!isset($atts['class'])) {
+        $class = 'qtr-spaced';
+    } else {
+        $class = ck_prm($atts['class']);
+    }
+    
+    if (!isset($atts['active'])) {
+        $active = false;
+    } else {
+        if ( $atts['active'] == 1 ) {
+          $active = true;
+        } else {
+          $active = false;
+        }
+    }
+    
+    if (!isset($atts['depth'])) {
+        $depth = 0;
+    } else {
+        $depth = abs($atts['depth']);
+    }
+
+    if (!isset($atts['show_cnt'])) {
+        $show_cnt = false;
+    } else {
+        if ( $atts['show_cnt'] == 1 ) {
+          $show_cnt = true;
+        } else {
+          $show_cnt = false;
+        }
+    }
+    
+    if (!isset($atts['xclude'])) {
+        $xclude = '';
+    } else {
+        $xclude = ck_prm($atts['xclude']);
+    }
+
+    // get starting category id
+    $pid = 0;
+    $cat_err = false;
+    if (!isset($category_title)) {
+        $category_title = '';
+    }
+    if ($category_title == 'category title') {
+        $category_title = '';
+    }
+    if (!empty($category_title)) {
+        $cat = get_cat_ID($category_title);
+        if ($cat == 0) {
+          $cat_err = true;
+        } else {
+          $pid = $cat;
+        }
+    }
+
+    if (!$cat_err) {
+      
+      $query_args = array(
+        'child_of' => $pid,
+        'current_category' => 0,
+        'depth' => $depth,
+        'echo' => false,
+        'exclude' => $xclude,
+        'exclude_tree' => '',
+        'feed' => '',
+        'feed_image' => '',
+        'feed_type' => '',
+        'hide_empty' => $active,
+        'hide_title_if_empty' => false,
+        'hierarchical' => true,
+        'order' => 'ASC',
+        'orderby' => 'name',
+        'separator' => '<br />',
+        'show_count' => $show_cnt,
+        'show_option_all' => '',
+        'show_option_none' => __('No categories', 'xidipity'),
+        'style' => 'list',
+        'taxonomy' => 'category',
+        'title_li' => '',
+        'use_desc_for_title' => 0
+      );
+      
+      $html = '<ul>';
+      if (!empty($class)) {
+          $html = '<ul class="' . $class . '">';
+      }
+      $html .= wp_list_categories($query_args);
+      $html .= '</ul>';
+    
+    } else {
+        $html = disp_error('Category List Template - (' . $category_title . ') category title not found.');
+    }
+  
     wp_reset_postdata();
     
     return $html;
