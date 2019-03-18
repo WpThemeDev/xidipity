@@ -2,7 +2,7 @@
 /**
  * xidipity functions and definitions
  *
- * build: 90303.1
+ * build: 90317.1
  *
  * @package xidipity
  */
@@ -168,6 +168,7 @@ function xidipity_scripts() {
   wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css#asyncload', array(), wp_get_theme()->get( 'Version' ), 'all');
   wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css#asyncload', array(), wp_get_theme()->get( 'Version' ), 'print');
   wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css#asyncload', array(), wp_get_theme()->get( 'Version' ), 'all');
+  wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css#asyncload', array(), wp_get_theme()->get( 'Version' ), 'all');
   wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array(), wp_get_theme()->get( 'Version' ), 'print');
   wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/blog-palette.min.css', array(), wp_get_theme()->get( 'Version' ), 'all');
 
