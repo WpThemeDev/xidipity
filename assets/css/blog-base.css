@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90318.1
+Build       - 90319.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1533,101 +1533,44 @@ a.ab-item:active {
 -- */
 
 .post-navigation {
-    width: 100%;
-}
-.nav-links {
     background-color: var(--sys-content-bg-color);
     border-top: 1px solid var(--sys-content-tl-border-color);
     border-left: 1px solid var(--sys-content-tl-border-color);
     border-bottom: 1px solid var(--sys-content-br-border-color);
     border-right: 1px solid var(--sys-content-br-border-color);
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: space-around;
-    justify-content: space-around;
-    align-content: stretch;
+    display: table;
     width: 100%;
+}
+.nav-links {
+    display: table-row;
+    width: 100%;
+}
+.nav-next,
+.nav-previous {
+  display: table-cell;
+  padding:10px;
+  vertical-align: middle;
+  width: 50%;
+}
+.meta-nav {
+  font-size: smaller;
 }
 .nav-previous {
-    align-items: flex-start;
-    flex-grow: 1;
-    text-align: left;
-    font-size: 0.9375rem;
-    margin: 0 2% 0 2%;
-    min-height: 50px;
-    order: 1;
-    padding: 5px;
-    width: 250px;
+  text-align: left;
 }
 .nav-next {
-    align-items: flex-start;
-    flex-grow: 1;
-    text-align: right;
-    font-size: 0.9375rem;
-    margin: 0 2% 0 2%;
-    min-height: 50px;
-    order: 2;
-    padding: 5px;
-    width: 250px;
-}
-.nav-next>a,
-.nav-previous>a {
-    text-decoration: none;
-    color: var(--fg-bas-900);
-}
-.nav-next:active,
-.nav-next:focus,
-.nav-previous:focus,
-.nav-previous:active {
-    background: transparent;
-}
-span.post-title:hover {
-    color: var(--sys-lnk-sec-color);
-    background-color: var(--sys-lnk-sec-bg-color);
-}
-.meta-nav .meta-nav {
-    color: var(--fg-bas-700);
-    display: block;
-    font-weight: 700;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    width: 100%;
-}
-.post-title {
-    color: var(--fg-bas-600);
-    display: block;
-    font-family: var(--font-condensed);
-    font-size: 0.875rem;
-}
-.nav-previous .meta-nav::before {
-    color: var(--fg-bas-500);
-    content: "⊲";
-    padding-right: 5px;
-}
-.nav-next .meta-nav::after {
-    color: var(--fg-bas-500);
-    content: "⊳";
-    padding-left: 5px;
+  text-align: right;
 }
 /* other media formats     ------------
 -- */
 
 @media (min-width: 576px) {
+    .meta-nav {
+      font-size: larger;
+    }
     .nav-next,
     .nav-previous {
-        font-size: 1.125rem;
-    }
-    .post-title a {
-        color: var(--fg-bas-700);
-        font-size: 1rem;
+      padding:20px 10px;
     }
 }
 /*  # WordPress
