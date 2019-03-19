@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * build: 90319.1
+ * build: 90319.2
  *
  * @package xidipity
  */
@@ -47,8 +47,8 @@ if (!function_exists('xidipity_the_post_navigation')):
         // Previous/next post navigation @since 4.1.0.
 
         the_post_navigation(array(
-            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right"></i></span> ' ),
-            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left"></i> ' . esc_html__('%title', 'xidipity') . '</span> ' ),
+            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ' ),
+            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ' ),
         ));
     }
 
