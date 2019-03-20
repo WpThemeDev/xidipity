@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments
  *
- * build: 90218.3
+ * build: 90319.1
  *
  * @package xidipity
  */
@@ -31,10 +31,16 @@
 
               <nav id="image-navigation" class="navigation image-navigation">
                 <div class="nav-links">
-                  <div class="previous-image nav-previous"><?php previous_image_link( false, esc_html__( 'Previous Image', 'xidipity' ) ); ?></div>
-                  <div class="next-image nav-next"><?php next_image_link( false, esc_html__( 'Next Image', 'xidipity' ) ); ?></div>
-                </div><!-- .nav-links -->
-              </nav><!-- #image-navigation -->
+                  <div class="nav-previous">
+                    <div class="meta-nav"><?php previous_image_link('thumbnail'); ?></div>
+                    <div class="fg-bas-600">previous</div>
+                  </div>
+                  <div class="nav-next">
+                    <div class="meta-nav"><?php next_image_link('thumbnail'); ?></div>
+                    <div class="fg-bas-600">next</div>
+                  </div>
+                </div>
+              </nav>
 
               <?php
                 // If comments are open or we have at least one comment, load up the comment template
