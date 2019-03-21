@@ -1,14 +1,17 @@
 <?php
-/**
- * Custom template tags for this theme.
+/*
+ *        file: template-tags.php
+ *       build: 90321.1
+ * description: Core WordPress extensions
+ *      github: https://github.com/WpThemeDev/xidipity
+ *    comments:
  *
- * Eventually, some of the functionality here could be replaced by core features.
+ * @package WordPress
+ * @subpackage Xidipity
+ * @since 5.0.0
  *
- * build: 90319.2
- *
- * @package xidipity
- */
-
+ ***/
+ 
 if (!function_exists('xidipity_the_posts_pagination')):
     /**
      * Display navigation to next/previous set of posts when applicable.
@@ -47,8 +50,8 @@ if (!function_exists('xidipity_the_post_navigation')):
         // Previous/next post navigation @since 4.1.0.
 
         the_post_navigation(array(
-            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ' ),
-            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ' ),
+            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ') ,
+            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
         ));
     }
 
