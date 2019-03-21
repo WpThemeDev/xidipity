@@ -1,14 +1,12 @@
 /*
-Theme Name  - Xidipity
-Description - Cascading Style Sheet
-
-File        - blog-base.css
-Build       - 90319.1
-Programmer  - John Baer
-Purpose     - Support file for Xidipity Wordpress Theme
-License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
-Comments    - Only CSS classes which are unique to the web are here.
+ *
+ *        file: blog-base.css
+ *       build: 90321.1
+ * description: Cascading Style Sheet
+ *      github: https://github.com/WpThemeDev/xidipity
+ *    comments: Only CSS classes which are unique to the web are here.
+ *
+ ***
 
 -- Table Of Contents       ------------
 --
@@ -1136,18 +1134,68 @@ video.wp-video-shortcode {
    ## Navigation
  ----------------------------------------------------------------------------*/
 
-/* attachments             ----------------------------------------------------
+/* post navigation     ----------------------------------------------------
 -- */
 
-.image-navigation {
-    background: var(--bg-wht);
-    border: solid var(--fg-bas-300);
-    border-width: 0 1px 1px 0;
-    margin: 15px 0 0;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+.post-navigation,
+.image-navigation,
+.comment-navigation {
+    background-color: var(--sys-content-bg-color);
+    border-top: 1px solid var(--sys-content-tl-border-color);
+    border-left: 1px solid var(--sys-content-tl-border-color);
+    border-bottom: 1px solid var(--sys-content-br-border-color);
+    border-right: 1px solid var(--sys-content-br-border-color);
+    display: table;
+    width: 100%;
+}
+.post-navigation .nav-links,
+.image-navigation .nav-links {
+    display: table-row;
+    width: 100%;
+}
+.post-navigation .nav-next,
+.image-navigation .nav-next,
+.post-navigation .nav-previous,
+.image-navigation .nav-previous {
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+    width: 50%;
+}
+.image-navigation .nav-next,
+.image-navigation .nav-previous {
+    vertical-align: bottom;
+}
+.post-navigation .meta-nav,
+.image-navigation .meta-nav {
+    font-size: smaller;
+}
+.post-navigation .nav-previous,
+.image-navigation .nav-previous {
+    text-align: left;
+}
+.post-navigation .nav-next,
+.image-navigation .nav-next {
+    text-align: right;
+}
+.post-edit-link::before {
+    color: var(--fas-bas-800);
+    content:" | ";
+}
+/* other media formats     ------------
+-- */
+
+@media (min-width: 576px) {
+    .post-navigation .meta-nav,
+    .image-navigation .meta-nav {
+        font-size: larger;
+    }
+    .post-navigation .nav-next,
+    .image-navigation .nav-next,
+    .post-navigation .nav-previous,
+    .image-navigation .nav-previous {
+        padding: 20px 10px;
+    }
 }
 /* comments                ----------------------------------------------------
 -- */
@@ -1162,22 +1210,21 @@ video.wp-video-shortcode {
     margin: 15px 0 0;
     padding: 0;
 }
-.comment-navigation .nav-previous,
-.comment-navigation .nav-next,
 .image-navigation .nav-previous,
-.image-navigation .nav-next {
+.image-navigation .nav-next,
+.comment-navigation .nav-previous,
+.comment-navigation .nav-next {
     display: inline-block;
     margin: 0 1px;
     padding: 0;
 }
-.comment-navigation .nav-previous a,
-.comment-navigation .nav-previous a:visited,
-.comment-navigation .nav-next a,
-.comment-navigation .nav-next a:visited,
 .image-navigation .nav-previous a,
 .image-navigation .nav-previous a:visited,
 .image-navigation .nav-next a,
-.image-navigation .nav-next a:visited {
+.image-navigation .nav-next a:visited .comment-navigation .nav-previous a,
+.comment-navigation .nav-previous a:visited,
+.comment-navigation .nav-next a,
+.comment-navigation .nav-next a:visited {
     color: var(--fg-bas-600);
     display: block;
     font-size: 13px;
@@ -1186,25 +1233,25 @@ video.wp-video-shortcode {
     padding: 0;
     text-transform: uppercase;
 }
-.comment-navigation .nav-previous a:hover,
-.comment-navigation .nav-previous a:focus,
-.comment-navigation .nav-previous a:active,
-.comment-navigation .nav-next a:hover,
-.comment-navigation .nav-next a:focus,
-.comment-navigation .nav-next a:active,
 .image-navigation .nav-previous a:hover,
 .image-navigation .nav-previous a:focus,
 .image-navigation .nav-previous a:active,
 .image-navigation .nav-next a:hover,
 .image-navigation .nav-next a:focus,
-.image-navigation .nav-next a:active {
+.image-navigation .nav-next a:active,
+.comment-navigation .nav-previous a:hover,
+.comment-navigation .nav-previous a:focus,
+.comment-navigation .nav-previous a:active,
+.comment-navigation .nav-next a:hover,
+.comment-navigation .nav-next a:focus,
+.comment-navigation .nav-next a:active {
     color: var(--sys-lnk-sec-color);
     background-color: var(--sys-lnk-sec-bg-color);
 }
-.comment-navigation .nav-previous .meta-nav,
-.comment-navigation .nav-next .meta-nav,
 .image-navigation .nav-previous .meta-nav,
-.image-navigation .nav-next .meta-nav {
+.image-navigation .nav-next .meta-nav,
+.comment-navigation .nav-previous .meta-nav,
+.comment-navigation .nav-next .meta-nav {
     display: none;
 }
 .comment-navigation .nav-previous a::before,
@@ -1266,10 +1313,10 @@ video.wp-video-shortcode {
     font-weight: 500;
 }
 .page-numbers.prev::after {
-    content: "⊲";
+    content: "⮜";
 }
 .page-numbers.next::before {
-    content: "⊳";
+    content: "⮞";
 }
 a.page-numbers,
 a.page-numbers:visited {
@@ -1528,50 +1575,6 @@ a.ab-item:active {
     font-size: 0.875rem;
     margin: 0;
     padding: 0 7px 0 0;
-}
-/* post pagination     ----------------------------------------------------
--- */
-
-.post-navigation {
-    background-color: var(--sys-content-bg-color);
-    border-top: 1px solid var(--sys-content-tl-border-color);
-    border-left: 1px solid var(--sys-content-tl-border-color);
-    border-bottom: 1px solid var(--sys-content-br-border-color);
-    border-right: 1px solid var(--sys-content-br-border-color);
-    display: table;
-    width: 100%;
-}
-.nav-links {
-    display: table-row;
-    width: 100%;
-}
-.nav-next,
-.nav-previous {
-  display: table-cell;
-  padding:10px;
-  vertical-align: middle;
-  width: 50%;
-}
-.meta-nav {
-  font-size: smaller;
-}
-.nav-previous {
-  text-align: left;
-}
-.nav-next {
-  text-align: right;
-}
-/* other media formats     ------------
--- */
-
-@media (min-width: 576px) {
-    .meta-nav {
-      font-size: larger;
-    }
-    .nav-next,
-    .nav-previous {
-      padding:20px 10px;
-    }
 }
 /*  # WordPress
    ## Site Title & Description
