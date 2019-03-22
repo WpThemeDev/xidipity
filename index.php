@@ -1,19 +1,18 @@
 <?php
-/**
- * The main template file.
+/*
+ *        file: index.php
+ *       build: 90322.1
+ * description: Template for displaying posts.
+ *      github: https://github.com/WpThemeDev/xidipity
+ *    comments:
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @package WordPress
+ * @subpackage Xidipity
+ * @since 5.0.0
  *
- * build: 90201.1
- *
- * @package xidipity
- */
+ ***/ ?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
     <div class="content-area-container">
       <div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
@@ -77,14 +76,10 @@ get_header(); ?>
   
                 $wp_query = new WP_Query( $args );
                 if ( $wp_query->have_posts() ) : ?>
-                  <p>&nbsp;</p>
-                  <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                  <div class="clearfix blg-pg-hd-wrapper">
-                      <div class="blg-pg-hd-icon"><i class="fas fa-comment-alt">​</i></div>
-                      <div class="blg-pg-hd-text">featured posts</div>
+                  <div class="blg-pg-recent-wrapper">
+                      <h2><span class="blg-pg-featured-title"></span></h2>
+                      <div class="taxonomy-description"><p class="blg-pg-featured-descrip"></p></div>
                   </div>
-                  <!-- End Template -->
-                  <p>&nbsp;</p>
                   <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
                   <?php
                     while ( $wp_query->have_posts() ) : $wp_query->the_post();
@@ -106,17 +101,12 @@ get_header(); ?>
                 'paged' => $paged
               );
               
-
               $wp_query = new WP_Query( $args );
               if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
+                <div class="blg-pg-recent-wrapper">
+                    <h2><span class="blg-pg-recent-title"></span></h2>
+                    <div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>
                 </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
                 <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
                 <?php
                   while ( $wp_query->have_posts() ) : $wp_query->the_post();
@@ -140,14 +130,10 @@ get_header(); ?>
 
               $wp_query = new WP_Query( $args );
               if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
+                <div class="blg-pg-recent-wrapper">
+                    <h2><span class="blg-pg-recent-title"></span></h2>
+                    <div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>
                 </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
                 <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
                 <?php
                   while ( $wp_query->have_posts() ) : $wp_query->the_post();
@@ -162,10 +148,10 @@ get_header(); ?>
           }
         
         ?>
-        </main><!-- #main -->
-      </div><!-- #primary -->
+        </main>
+      </div>
       <?php get_sidebar(); ?>
-    </div><!-- # column wrapper -->
+    </div>
 
 <?php
 // Restore original Post Data
