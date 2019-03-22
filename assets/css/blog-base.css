@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90321.1
+ *       build: 90322.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -317,44 +317,59 @@ body {
 /* mobile media format     ------------
 -- */
 
-.blg-pg-hd-wrapper {
+.blg-pg-featured-wrapper {
     border-top: 1px solid transparent;
     border-left: 1px solid transparent;
     border-bottom: 1px solid transparent;
     border-right: 1px solid transparent;
-    font-family: var(--sys-pg-banner-font-family);
-    font-size: 30px;
-    line-height: 1.8;
-    margin-top: 9px;
+    background-color: var(--sys-pg-banner-featured-bg-color);
+    color: var(--sys-pg-banner-featured-fg-color);
+    display: var(--sys-pg-banner-featured-display);
+    margin-bottom: 15px;
+    padding: 21px;
+    text-align: left;
+    width: 100%;
+}
+.blg-pg-recent-wrapper {
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
+    background-color: var(--sys-pg-banner-recent-bg-color);
+    display: var(--sys-pg-banner-recent-display);
+    margin-bottom: 15px;
+    padding: 21px;
+    text-align: left;
     width: 100%;
 }
 /* other media formats     ------------
 -- */
 
 @media (min-width: 576px) {
-    .blg-pg-hd-wrapper {
+
+    .blg-pg-recent-wrapper,
+    .blg-pg-featured-wrapper {
         border-top: 1px solid var(--sys-pg-banner-tl-border-color);
         border-left: 1px solid var(--sys-pg-banner-tl-border-color);
         border-bottom: 1px solid var(--sys-pg-banner-br-border-color);
         border-right: 1px solid var(--sys-pg-banner-br-border-color);
     }
 }
-.blg-pg-hd-icon {
-    background-color: var(--sys-pg-banner-bg-color-left);
-    border-right: solid 3px var(--sys-pg-banner-bg-color-left);
-    color: var(--sys-pg-banner-fg-color-left);
-    font-weight: 400;
-    float: left;
-    text-align: center;
-    width: 60px;
+.blg-pg-featured-title::before {
+    color: var(--sys-pg-banner-featured-title-fg-color);
+    content: var(--sys-pg-banner-featured-title);
 }
-.blg-pg-hd-text {
-    background-color: var(--sys-pg-banner-bg-color-right);
-    color: var(--sys-pg-banner-fg-color-right);
-    float: left;
-    font-weight: var(--sys-pg-banner-font-weight);
-    padding-left: 15px;
-    width: calc(100% - 60px);
+.blg-pg-featured-descrip::before {
+    color: var(--sys-pg-banner-featured-descrip-fg-color);
+    content: var(--sys-pg-banner-featured-descrip);
+}
+.blg-pg-recent-title::before {
+    color: var(--sys-pg-banner-recent-title-fg-color);
+    content: var(--sys-pg-banner-recent-title);
+}
+.blg-pg-recent-descrip::before {
+    color: var(--sys-pg-banner-recent-descrip-fg-color);
+    content: var(--sys-pg-banner-recent-descrip);
 }
 /*  # WordPress
    ## Comments
@@ -709,8 +724,8 @@ div#respond #cancel-comment-reply-link {
 /* sticky                  ------------
 -- */
 
-.is-sticky {
-    color: var(--fg-pri-200);
+.post-label-featured {
+    margin-left: -10px;
 }
 /* tags                    ------------
 -- */
@@ -766,8 +781,8 @@ div#respond #cancel-comment-reply-link {
     border-bottom: 1px solid transparent;
     border-right: 1px solid transparent;
     display: block;
-    margin: 0 0 15px;
-    padding: 30px;
+    margin: 0 0 16px;
+    padding: 26px;
     position: relative;
 }
 /* other media formats     ------------
@@ -856,7 +871,6 @@ div#respond #cancel-comment-reply-link {
 }
 .taxonomy-description {
     color: var(--fg-bas-900);
-    font-size: 14px;
     font-size: 0.875rem;
     margin: 5px 0 0;
 }
