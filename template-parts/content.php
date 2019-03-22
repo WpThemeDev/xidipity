@@ -1,12 +1,17 @@
 <?php
-/**
- * The default template for displaying content
+/*
+ *        file: content.php
+ *       build: 90322.1
+ * description: Template for displaying blog summary card.
+ *      github: https://github.com/WpThemeDev/xidipity
+ *    comments:
  *
- * Build: 90306.1
+ * @package WordPress
+ * @subpackage Xidipity
+ * @since 5.0.0
  *
- * @package xidipity
- */
-?>
+ ***/ ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="post-content-wrapper post-content-wrapper-archive">
     <?php xidipity_post_thumbnail(); ?>
@@ -19,7 +24,7 @@
             <?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
             <li>
               <span class="post-label post-label-featured">
-                <i class="is-sticky material-icons" style="vertical-align: sub; font-size: 120%;">star_border</i><span class="screen-reader-text"><?php esc_html_e( 'Featured', 'xidipity' ); ?></span>
+                <sup><i class="far fa-star fg-pri-300"></i></sup><span class="screen-reader-text"><?php esc_html_e( 'Featured', 'xidipity' ); ?></span>
               </span>
             </li>
             <?php endif; ?>
@@ -49,6 +54,6 @@
           <div style="display: table-cell; font-size: 0.85rem; padding-left: 10px; width: calc(100% - 40px);"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read more&nbsp;&#8230;', 'xidipity' ); ?></a></div>
       </div>
       <!-- End Template -->
-    </div><!-- .entry-data-wrapper -->
-  </div><!-- .post-content-wrapper -->
-</article><!-- #post-## -->
+    </div>
+  </div>
+</article>
