@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: image.php
- *       build: 90321.1
+ *       build: 90322.1
  * description: Template for displaying image attachments
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -13,42 +13,43 @@
  ***/ ?>
 <?php get_header(); ?>
 
-<section id="primary" class="content-area">
-<main id="main" class="site-main">
+<div class="content-area-container">
+  <div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
 
 <?php
 
-// Start the loop.
+$pgtitle = the_title('', '', false);
 
-while (have_posts()):
+if (strpos( $pgtitle,'.') > 1) {
+    $pgtitle = substr($pgtitle, 1, strpos( $pgtitle,'.')-1);
+}
+
+if (have_posts()) {
     the_post();
 ?>
 
-<article id="post-<?php
-    the_ID(); ?>" <?php
-    post_class(); ?>>
+<article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
 
-<header class="entry-header">
+<div>
 <?php
-    the_title('<h1 class="entry-title">', '</h1>'); ?>
-</header><!-- .entry-header -->
+    echo '<h1 style="margin: 15px;"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h1>';
+?>
+</div>
 
 <div class="entry-content">
 
 <figure class="entry-attachment wp-block-image">
-<?php
-    /**
-     * Filter the default Xidipity image attachment size.
-     *               *
-     * @param string $image_size Image size. Default 'large'.
-     */
-    $image_size = apply_filters('Xidipity_attachment_size', 'full');
-    echo wp_get_attachment_image(get_the_ID() , $image_size);
-?>
-
-<figcaption class="wp-caption-text"><?php
-    the_excerpt(); ?></figcaption>
-
+    <?php
+        /**
+         * Filter the default Xidipity image attachment size.
+         *               *
+         * @param string $image_size Image size. Default 'large'.
+         */
+        $image_size = apply_filters('Xidipity_attachment_size', 'full');
+        echo wp_get_attachment_image(get_the_ID() , $image_size);
+    ?>
+    
+    <figcaption class="wp-caption-text"><?php the_excerpt(); ?></figcaption>
 </figure><!-- .entry-attachment -->
 
 <?php
@@ -102,11 +103,10 @@ while (have_posts()):
 
     // End the loop.
 
-endwhile;
+}
 ?>
+  </div>
+  <?php get_sidebar(); ?>
+</div>
 
-</main><!-- .site-main -->
-</section><!-- .content-area -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>
