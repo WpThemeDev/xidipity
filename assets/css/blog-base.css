@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90322.1
+ *       build: 90323.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -725,11 +725,10 @@ div#respond #cancel-comment-reply-link {
 -- */
 
 .post-label-featured {
-    margin-left: -10px;
+    margin-left: -11px;
 }
 /* tags                    ------------
 -- */
-
 .tags-links::before,
 .edit-link::before {
     content: " \2022 ";
@@ -1589,6 +1588,15 @@ a.ab-item:active {
     font-size: 0.875rem;
     margin: 0;
     padding: 0 7px 0 0;
+}
+/* horizontal lists    ----------------------------------------------------
+-- */
+
+ul.hz-list li::before {
+    content: "";
+    color: transparent;
+    display: inline-block;
+    width: 1.1em;
 }
 /*  # WordPress
    ## Site Title & Description
