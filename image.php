@@ -1,58 +1,44 @@
 <?php
 /*
- *        file: image.php
- *       build: 90322.1
- * description: Template for displaying image attachments
- *      github: https://github.com/WpThemeDev/xidipity
- *    comments:
- *
- * @package WordPress
- * @subpackage Xidipity
- * @since 5.0.0
- *
- ***/ ?>
-<?php get_header(); ?>
-
-<div class="content-area-container">
-  <div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
-
-<?php
-
+*        file: image.php
+*       build: 90323.1
+* description: Template for displaying image attachments
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
+/* display page header     ------------
+-- */
+get_header();
+echo '<div class="content-area-container">' . "\n";
+echo '<div id="primary" class="content-area <' . xidipity_layout_class('content') . '">' . "\n";
 $pgtitle = the_title('', '', false);
 
-if (strpos( $pgtitle,'.') > 1) {
-    $pgtitle = substr($pgtitle, 1, strpos( $pgtitle,'.')-1);
+if (strpos($pgtitle, '.') > 1) {
+    $pgtitle = substr($pgtitle, 0, strpos($pgtitle, '.'));
 }
 
 if (have_posts()) {
-    the_post();
-?>
-
-<article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
-
-<div>
-<?php
-    echo '<h1 style="margin: 15px;"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h1>';
-?>
-</div>
-
-<div class="entry-content">
-
-<figure class="entry-attachment wp-block-image">
-    <?php
-        /**
-         * Filter the default Xidipity image attachment size.
-         *               *
-         * @param string $image_size Image size. Default 'large'.
-         */
-        $image_size = apply_filters('Xidipity_attachment_size', 'full');
-        echo wp_get_attachment_image(get_the_ID() , $image_size);
-    ?>
-    
-    <figcaption class="wp-caption-text"><?php the_excerpt(); ?></figcaption>
-</figure><!-- .entry-attachment -->
-
-<?php
+    // the_post();
+    echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
+    echo '<div>' . "\n";
+    echo '<h2 style="margin: 15px;"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
+    echo '</div>' . "\n";
+    echo '<div class="entry-content">' . "\n";
+    echo '<figure class="entry-attachment wp-block-image">' . "\n";
+    /**
+     * Filter the default Xidipity image attachment size.
+     *               *
+     * @param string $image_size Image size. Default 'large'.
+     */
+    $image_size = apply_filters('Xidipity_attachment_size', 'full');
+    echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
+    echo '<figcaption class="wp-caption-text">' . get_the_excerpt(get_the_ID()) . '</figcaption>' . "\n";
+    echo '</figure>' . "\n";
     the_content();
     wp_link_pages(array(
         'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'Xidipity') . '</span>',
@@ -62,28 +48,19 @@ if (have_posts()) {
         'pagelink' => '<span class="screen-reader-text">' . __('Page', 'Xidipity') . ' </span>%',
         'separator' => '<span class="screen-reader-text">, </span>',
     ));
-?>
-</div><!-- .entry-content -->
-
-<footer class="entry-footer">
-<?php
+    echo '</div>' . "\n";
+    echo '<footer class="entry-footer">' . "\n";
 
     // Retrieve attachment metadata.
 
     $metadata = wp_get_attachment_metadata();
     if ($metadata) {
-        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><a style="padding-left:10px;" href="%2$s">%3$s &times; %4$s</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height']));
+        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><a style="padding-left:10px;" href="%2$s">%3$s &times; %4$s</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height'])) . "\n";
     }
 
-?>
-
-<?php
-    Xidipity_entry_footer(); ?>
-
-</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
-
-<?php
+    Xidipity_entry_footer();
+    echo '</footer>' . "\n";
+    echo '</article>' . "\n";
 
     // Parent post navigation.
 
@@ -101,12 +78,17 @@ if (have_posts()) {
         comments_template();
     }
 
-    // End the loop.
-
 }
-?>
-  </div>
-  <?php get_sidebar(); ?>
-</div>
 
-<?php get_footer(); ?>
+echo '</div>' . "\n";
+/* display sidebar         ------------
+-- */
+get_sidebar();
+echo '</div>' . "\n";
+/* display footer          ------------
+-- */
+get_footer();
+/*  # eof
+    image.php
+-------------------------------------*/
+?>
