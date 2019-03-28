@@ -760,5 +760,7 @@ function xidipity_theme_customize_register($wp_customize)
     // $wp_customize->remove_section("static_front_page");
 
 }
-
+/*  # eof
+    functions.php
+-------------------------------------*/
 ?>
