@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: comments.php
-*       build: 90325.1
+*       build: 90325.1.1
 * description: Template for displaying posts assigned to category.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: Login required.
@@ -75,7 +75,7 @@ if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_p
 endif;
 /* display comment form    ------------
 -- */
-comment_form();
+comment_form(array('title_reply'=>'<i class="far fa-comments fg-pri-300"></i> Got Something To Say?','logged_in_as' =>'') );
 echo '</div>' . "\n";
 /*  # eof
     comments.php
