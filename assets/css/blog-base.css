@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90323.1
+ *       build: 90327.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -402,16 +402,22 @@ body {
 -- */
 
 .comments-title {
-    color: var(--fg-bas-900);
-    font-size: 23px;
-    font-size: 1.4375rem;
+    color: var(--fg-bas-700);
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 /* comment list            ------------
 -- */
-
+ol.comment-list li::before {
+    color: var(--fg-pri-600);
+    font-size: 200%;
+    font-family: var(--sys-font-family);
+    font-weight: bold;
+    maring-left: 0;
+    text-align: left;
+    width: 2em;
+}
 .comment-list {
     list-style: none;
     margin: 15px 0 0;
@@ -727,12 +733,22 @@ div#respond #cancel-comment-reply-link {
 .post-label-featured {
     margin-left: -11px;
 }
+/* categories              ------------
+-- */
+
+.cat-links {
+}
+.cat-links::after {
+    color: var(--fg-bas-700);
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
+}
 /* tags                    ------------
 -- */
-.tags-links::before,
-.edit-link::before {
-    content: " \2022 ";
-    padding: 0 6px;
+
+.tags-links {
+  padding-left: 10px;
 }
 /* edit link              ------------
 -- */
@@ -857,13 +873,6 @@ div#respond #cancel-comment-reply-link {
 -- */
 
 .page-title {
-    clear: none;
-    font-size: 26px;
-    font-size: 1.625rem;
-    line-height: 1.2;
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word;
 }
 .page-title span {
     color: var(--fg-sec-500);
@@ -1191,9 +1200,8 @@ video.wp-video-shortcode {
 .image-navigation .nav-next {
     text-align: right;
 }
-.post-edit-link::before {
-    color: var(--fas-bas-800);
-    content:" | ";
+.post-edit-link {
+    color: var(--fg-sec-400);
 }
 /* other media formats     ------------
 -- */
@@ -2016,7 +2024,6 @@ ul.sbwidget {
 -- */
 
 .search-frm-container {
-    background-color: var(--sys-pg-banner-bg-color-right);
     border-radius: .25rem;
     width: 100%;
 }
@@ -2026,9 +2033,8 @@ ul.sbwidget {
     position: relative;
 }
 .search-frm .search-fld {
-    background-color: var(--sys-pg-banner-bg-color-right);
     border-radius: .25rem;
-    border: 1px solid transparent;
+    border: 1px solid var(--sys-content-tl-border-color);
     height: 50px;
     padding: 0 10px;
     text-align: left;
@@ -2036,10 +2042,9 @@ ul.sbwidget {
     width: calc(100% - 60px);
 }
 .search-frm .search-sub {
-    background-color: var(--sys-pg-banner-bg-color-right);
+    background-color: var(--sys-content-bg-color);
     border-radius: .25rem;
     border: 1px solid transparent;
-    /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
     position: relative;
     display: inline-block;
     float: right;

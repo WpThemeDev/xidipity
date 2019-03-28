@@ -5,7 +5,7 @@
       Author: John Baer
   Author URI: https://github.com/WpThemeDev
  Description: 📝 Xidipity is a meticulously crafted multi-purpose theme which brings new power to the classic editor and offers a beautiful sophisticated design supporting a wide range of solutions. Content in the new classic editor is created visually the way it will be displayed on the web and supports many popular features such as an extensive color palette, font awesome icons, two columns, a robust table design, expanded HR designs, extensive video support, and Google adsense ads. To ensure a positive user experience Xidipity leverages the latest web technologies to deliver fast performance which includes the use of Content Delivery Networks and compressed local resources. For those who like to customize the details of their content design Xidity supports the Tailwind CSS framework. See this exciting theme at "https://xidipity.com/".
-     Version: 1.0.0 beta b90323
+     Version: 1.0.0 beta b90328
      License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: xidipity
@@ -16,11 +16,11 @@
 
 CSS files are aggragated by function and are loaded from the
 "functions.php" file to improve performance. Exceptions to this
-rule include files imported within the "editor-style.css" file and
+rule include files imported within "editor-style.css" and
 fonts imported within the "blog-var.css" file. The "blog-common.css"
 file contains CSS classes shared by the editor and the web. The "min"
-file versions are compressed for speed using a program like
-"https://cssminifier.com/".
+file versions are compressed for speed using the program cssminifier
+("https://cssminifier.com/").
 
 -- Suggested Plugins       ------------
 --
