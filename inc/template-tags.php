@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90327.1
+*       build: 90327.1.1
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -167,13 +167,14 @@ if (!function_exists('xidipity_post_first_category')) {
 
             if (!empty($category_display)) {
                 if ($useCatLink == true && !empty($category_link)) {
-                    echo '<span class="post-category">';
-                    echo '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
-                    echo '</span>';
+                    $html = '<span class="post-category">';
+                    $html .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
+                    $html .= '</span>';
                 }
                 else {
-                    echo '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
+                    $html = '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
                 }
+                return $html;
             }
         }
     }
@@ -192,7 +193,8 @@ if (!function_exists('xidipity_entry_footer')) {
             /* translators: used between list items, there is a space after the comma */
             $categories_list = get_the_category_list(esc_html__(' | ', 'xidipity'));
             if ($categories_list && xidipity_categorized_blog()) {
-                printf('<span class="cat-links">' . esc_html__('Posted in: %1$s', 'xidipity') . '</span>', $categories_list); // WPCS: XSS OK.
+                //printf('<span class="cat-links">' . esc_html__('Posted in: %1$s', 'xidipity') . '</span>', $categories_list); // WPCS: XSS OK.
+                echo '<span class="font-normal">Category:</span> ' . xidipity_post_first_category() . '<span class="px-2">|</span>';
             }
 
             /* translators: used between list items, there is a space after the comma */
