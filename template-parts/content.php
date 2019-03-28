@@ -22,13 +22,15 @@ echo '<div class="entry-header-wrapper entry-header-wrapper-archive">' . "\n";
 if ('post' == get_post_type()) {
     echo '<div class="entry-meta entry-meta-header-before">' . "\n";
     echo '<ul class="hz-list">' . "\n";
-    echo '<li>' . rtrim(xidipity_post_first_category()) . "\n";
+    echo '<li>' . xidipity_post_first_category() . '</li>' . "\n";
     if (is_sticky() && is_home() && !is_paged()) {
+        echo '<li>' . "\n";
         echo '<span class="post-label post-label-featured">' . "\n";
         echo '<sup><i class="far fa-star fg-pri-300"></i></sup><span class="screen-reader-text">' . __('Featured', 'xidipity') . '</span>' . "\n";
         echo '</span>' . "\n";
+        echo '</li>' . "\n";
     }
-    echo '</li>' . "\n";
+
     echo '</ul>' . "\n";
 }
 
