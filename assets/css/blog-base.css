@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90327.1
+ *       build: 90327.1.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -715,6 +715,9 @@ div#respond #cancel-comment-reply-link {
 /* footer container        ------------
 -- */
 
+.entry-footer {
+    margin-top: 10px;
+}
 .entry-meta-footer {
     margin: 26px 0 0;
 }
