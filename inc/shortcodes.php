@@ -1,18 +1,17 @@
 <?php
 /*
- *        file: shortcodes.php
- *       build: 90321.1
- * description: PHP support for Xidipity theme
- *      github: https://github.com/WpThemeDev/xidipity
- *              https://codex.wordpress.org/Shortcode_API
- *    comments: Shortcodes are called from templates which are embedded in content.
- *
- * @package WordPress
- * @subpackage Xidipity
- * @since 5.0.0
- *
- ***/
-
+*        file: shortcodes.php
+*       build: 90326.1
+* description: PHP support for Xidipity theme
+*      github: https://github.com/WpThemeDev/xidipity
+*              https://codex.wordpress.org/Shortcode_API
+*    comments: Shortcodes are called from templates which are embedded in content.
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
 /**
  * Short code
  *
@@ -38,12 +37,11 @@
 add_shortcode('page_list', 'page_list_shortcode');
 
 function page_list_shortcode($atts, $page_title)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!is_array($atts))
-      {
+    if (!is_array($atts)) {
         $atts = array(
             'class' => 'qtr-spaced',
             'style_before' => '',
@@ -51,64 +49,52 @@ function page_list_shortcode($atts, $page_title)
             'depth' => 0,
             'xclude' => ''
         );
-      }
-    else
-      {
-        if (!isset($atts['class']))
-          {
+    }
+    else {
+        if (!isset($atts['class'])) {
             $atts['class'] = 'qtr-spaced';
-          }
+        }
 
-        if (!isset($atts['style_before']))
-          {
+        if (!isset($atts['style_before'])) {
             $atts['style_before'] = '';
-          }
+        }
 
-        if (!isset($atts['style_after']))
-          {
+        if (!isset($atts['style_after'])) {
             $atts['style_after'] = '';
-          }
+        }
 
-        if (!isset($atts['depth']))
-          {
+        if (!isset($atts['depth'])) {
             $atts['depth'] = 0;
-          }
+        }
 
-        if (!isset($atts['xclude']))
-          {
+        if (!isset($atts['xclude'])) {
             $atts['xclude'] = '';
-          }
-      }
+        }
+    }
 
     // get starting page id
 
     $pid = 0;
     $page_err = false;
-    if (!isset($page_title))
-      {
+    if (!isset($page_title)) {
         $page_title = '';
-      }
+    }
 
-    if ($page_title == 'page title')
-      {
+    if ($page_title == 'page title') {
         $page_title = '';
-      }
+    }
 
-    if (!empty($page_title))
-      {
+    if (!empty($page_title)) {
         $page = get_page_by_title($page_title);
-        if ($page)
-          {
+        if ($page) {
             $pid = $page->ID;
-          }
-        else
-          {
+        }
+        else {
             $page_err = true;
-          }
-      }
+        }
+    }
 
-    if (!$page_err)
-      {
+    if (!$page_err) {
 
         // sanitized working variables
 
@@ -131,22 +117,20 @@ function page_list_shortcode($atts, $page_title)
             'walker' => ''
         );
         $html = '<ul>';
-        if (!empty($class))
-          {
+        if (!empty($class)) {
             $html = '<ul class="' . $class . '">';
-          }
+        }
 
         $html.= wp_list_pages($qry);
         $html.= '</ul>';
-      }
-    else
-      {
+    }
+    else {
         $html = disp_error('Page List Template - (' . $page_title . ') page title not found.');
-      }
+    }
 
     wp_reset_postdata();
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -170,12 +154,11 @@ function page_list_shortcode($atts, $page_title)
 add_shortcode('blog_list', 'blog_list_shortcode');
 
 function blog_list_shortcode($atts, $category_list)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!is_array($atts))
-      {
+    if (!is_array($atts)) {
         $atts = array(
             'class' => 'qtr-spaced',
             'style_before' => '',
@@ -184,39 +167,32 @@ function blog_list_shortcode($atts, $category_list)
             'order' => 'DESC',
             'filter' => 0
         );
-      }
-    else
-      {
-        if (!isset($atts['class']))
-          {
+    }
+    else {
+        if (!isset($atts['class'])) {
             $atts['class'] = 'qtr-spaced';
-          }
+        }
 
-        if (!isset($atts['style_before']))
-          {
+        if (!isset($atts['style_before'])) {
             $atts['style_before'] = '';
-          }
+        }
 
-        if (!isset($atts['style_after']))
-          {
+        if (!isset($atts['style_after'])) {
             $atts['style_after'] = '';
-          }
+        }
 
-        if (!isset($atts['orderby']))
-          {
+        if (!isset($atts['orderby'])) {
             $atts['orderby'] = 'title';
-          }
+        }
 
-        if (!isset($atts['order']))
-          {
+        if (!isset($atts['order'])) {
             $atts['order'] = 'DESC';
-          }
+        }
 
-        if (!isset($atts['filter']))
-          {
+        if (!isset($atts['filter'])) {
             $atts['filter'] = 0;
-          }
-      }
+        }
+    }
 
     // sanitized working variables
 
@@ -225,16 +201,14 @@ function blog_list_shortcode($atts, $category_list)
     $style_after = ck_prm($atts['style_after']);
     $orderby = valid_orderby($atts['orderby']);
     $order = strtoupper($atts['order']);
-    if (!$order == 'DESC')
-      {
+    if (!$order == 'DESC') {
         $order = 'ASC';
-      }
+    }
 
     $filter = 'i';
-    if ($atts['filter'] == 1)
-      {
+    if ($atts['filter'] == 1) {
         $filter = 'x';
-      }
+    }
 
     $categories = valid_categories($category_list, $filter);
     $qry = array(
@@ -247,34 +221,30 @@ function blog_list_shortcode($atts, $category_list)
         'post_status' => 'publish',
         'suppress_filters' => true
     );
-    if (!empty($class))
-      {
+    if (!empty($class)) {
         $html = '<ul class="' . $class . '">';
-      }
-    else
-      {
+    }
+    else {
         $html = '<ul>';
-      }
+    }
 
     $posts = get_posts($qry);
     $cnt = 0;
-    foreach($posts as $post)
-      {
+    foreach($posts as $post) {
         $cnt++;
         $html.= '<li><a href="' . get_permalink($post) . '">';
         $html.= $style_before . $post->post_title . $style_after;
         $html.= '</a></li>';
-      }
+    }
 
     $html.= '</ul>';
-    if ($cnt == 0)
-      {
+    if ($cnt == 0) {
         $html = disp_error('Blog List Template - no posts found assigned to (' . $category_list . ').');
-      }
+    }
 
     wp_reset_postdata();
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -300,98 +270,78 @@ function blog_list_shortcode($atts, $category_list)
 add_shortcode('cat_list', 'cat_list_shortcode');
 
 function cat_list_shortcode($atts, $category_title)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!isset($atts['class']))
-      {
+    if (!isset($atts['class'])) {
         $class = 'qtr-spaced';
-      }
-    else
-      {
+    }
+    else {
         $class = ck_prm($atts['class']);
-      }
+    }
 
-    if (!isset($atts['active']))
-      {
+    if (!isset($atts['active'])) {
         $active = false;
-      }
-    else
-      {
-        if ($atts['active'] == 1)
-          {
+    }
+    else {
+        if ($atts['active'] == 1) {
             $active = true;
-          }
-        else
-          {
+        }
+        else {
             $active = false;
-          }
-      }
+        }
+    }
 
-    if (!isset($atts['depth']))
-      {
+    if (!isset($atts['depth'])) {
         $depth = 0;
-      }
-    else
-      {
+    }
+    else {
         $depth = abs($atts['depth']);
-      }
+    }
 
-    if (!isset($atts['show_cnt']))
-      {
+    if (!isset($atts['show_cnt'])) {
         $show_cnt = false;
-      }
-    else
-      {
-        if ($atts['show_cnt'] == 1)
-          {
+    }
+    else {
+        if ($atts['show_cnt'] == 1) {
             $show_cnt = true;
-          }
-        else
-          {
+        }
+        else {
             $show_cnt = false;
-          }
-      }
+        }
+    }
 
-    if (!isset($atts['xclude']))
-      {
+    if (!isset($atts['xclude'])) {
         $xclude = '';
-      }
-    else
-      {
+    }
+    else {
         $xclude = ck_prm($atts['xclude']);
-      }
+    }
 
     // get starting category id
 
     $pid = 0;
     $cat_err = false;
-    if (!isset($category_title))
-      {
+    if (!isset($category_title)) {
         $category_title = '';
-      }
+    }
 
-    if ($category_title == 'category title')
-      {
+    if ($category_title == 'category title') {
         $category_title = '';
-      }
+    }
 
-    if (!empty($category_title))
-      {
+    if (!empty($category_title)) {
         $cat = get_cat_ID($category_title);
-        if ($cat == 0)
-          {
+        if ($cat == 0) {
             $cat_err = true;
-          }
-        else
-          {
+        }
+        else {
             $pid = $cat;
-          }
-      }
+        }
+    }
 
-    if (!$cat_err)
-      {
+    if (!$cat_err) {
         $query_args = array(
             'child_of' => $pid,
             'current_category' => 0,
@@ -417,22 +367,20 @@ function cat_list_shortcode($atts, $category_title)
             'use_desc_for_title' => 0
         );
         $html = '<ul>';
-        if (!empty($class))
-          {
+        if (!empty($class)) {
             $html = '<ul class="' . $class . '">';
-          }
+        }
 
         $html.= wp_list_categories($query_args);
         $html.= '</ul>';
-      }
-    else
-      {
+    }
+    else {
         $html = disp_error('Category List Template - (' . $category_title . ') category title not found.');
-      }
+    }
 
     wp_reset_postdata();
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -445,50 +393,43 @@ function cat_list_shortcode($atts, $category_title)
 add_shortcode('google_adsense', 'google_adsense_shortcode');
 
 function google_adsense_shortcode($atts)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!is_array($atts))
-      {
+    if (!is_array($atts)) {
         $atts = array(
             'client' => '',
             'slot' => ''
         );
-      }
-    else
-      {
-        if (!isset($atts['client']))
-          {
+    }
+    else {
+        if (!isset($atts['client'])) {
             $atts['client'] = '';
-          }
+        }
 
-        if (!isset($atts['slot']))
-          {
+        if (!isset($atts['slot'])) {
             $atts['slot'] = '';
-          }
-      }
+        }
+    }
 
     $defaults = array(
         'client' => '',
         'slot' => ''
     );
     $sc_arg = wp_parse_args($atts, $defaults);
-    if (empty($sc_arg['client']))
-      {
+    if (empty($sc_arg['client'])) {
         $html = disp_error('Xidipity Adsense Shortcode - missing data-ad-client data.');
-      }
-    elseif (empty($sc_arg['slot']))
-      {
+    }
+    elseif (empty($sc_arg['slot'])) {
         $html = disp_error('Xidipity Adsense Shortcode - missing data-ad-slot data.');
-      }
-    else
-      {
+    }
+    else {
         $html = '<p class="mce:hidden"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Responsive --> <ins class="adsbygoogle" style="display: block;" data-ad-client="' . $sc_arg['client'] . '" data-ad-slot="' . $sc_arg['slot'] . '" data-ad-format="auto" data-full-width-responsive="false"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></p>';
-      }
+    }
 
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -525,12 +466,11 @@ function google_adsense_shortcode($atts)
 add_shortcode('blog_summary', 'blog_summary_shortcode');
 
 function blog_summary_shortcode($atts, $category_list)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!is_array($atts))
-      {
+    if (!is_array($atts)) {
         $atts = array(
             'orderby' => 'date',
             'order' => 'DESC',
@@ -538,71 +478,59 @@ function blog_summary_shortcode($atts, $category_list)
             'cnt' => 4,
             'filter' => 0
         );
-      }
-    else
-      {
-        if (!isset($atts['orderby']))
-          {
+    }
+    else {
+        if (!isset($atts['orderby'])) {
             $atts['orderby'] = 'date';
-          }
+        }
 
-        if (!isset($atts['order']))
-          {
+        if (!isset($atts['order'])) {
             $atts['order'] = 'DESC';
-          }
+        }
 
-        if (!isset($atts['fmt']))
-          {
+        if (!isset($atts['fmt'])) {
             $atts['fmt'] = 1;
-          }
+        }
 
-        if (!isset($atts['cnt']))
-          {
+        if (!isset($atts['cnt'])) {
             $atts['cnt'] = 4;
-          }
+        }
 
-        if (!isset($atts['filter']))
-          {
+        if (!isset($atts['filter'])) {
             $atts['filter'] = 0;
-          }
-      }
+        }
+    }
 
     // sanitized working variables
 
     $filter = 'i';
-    if ($atts['filter'] == 1)
-      {
+    if ($atts['filter'] == 1) {
         $filter = 'x';
-      }
+    }
 
     $sanitized_list = ck_categories($category_list);
     $categories = valid_categories($sanitized_list, $filter);
     $orderby = valid_orderby($atts['orderby']);
     $order = strtoupper($atts['order']);
-    if (!$order == 'ASC')
-      {
+    if (!$order == 'ASC') {
         $order = 'DESC';
-      }
+    }
 
     $val = abs($atts['fmt']);
-    if ($val > 2)
-      {
+    if ($val > 2) {
         $fmt = 2;
-      }
-    else
-      {
+    }
+    else {
         $fmt = $val;
-      }
+    }
 
     $val = abs($atts['cnt']);
-    if ($val == 0 || $val > 4)
-      {
+    if ($val == 0 || $val > 4) {
         $post_cnt = 4;
-      }
-    else
-      {
+    }
+    else {
         $post_cnt = $val;
-      }
+    }
 
     // Set up initial query for post
 
@@ -616,8 +544,7 @@ function blog_summary_shortcode($atts, $category_list)
         'posts_per_page' => $post_cnt
     );
     $qry_rslt = new WP_Query($qry);
-    if ($qry_rslt->have_posts())
-      {
+    if ($qry_rslt->have_posts()) {
         $html = '';
         $pane = 'L';
         $image_size = 'large';
@@ -625,23 +552,19 @@ function blog_summary_shortcode($atts, $category_list)
             $qry_rslt->the_post();
             global $post;
             $i++;
-            switch ($fmt)
-              {
+            switch ($fmt) {
             case 1:
                 $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID() , $image_size) . '</a>';
                 $title = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
                 $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($order == 'modified')
-                  {
+                if ($order == 'modified') {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                  }
-                else
-                  {
+                }
+                else {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                  }
+                }
 
-                if ($pane == 'L')
-                  {
+                if ($pane == 'L') {
                     $pane = 'R';
                     $html.= '<table id="twocol" class="twocolumn">';
                     $html.= '<tbody>';
@@ -655,12 +578,11 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= '<p>&nbsp;</p>';
                     $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more â€¦</a></div>';
+                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
                     $html.= '</div>';
                     $html.= '</td>';
-                  }
-                else
-                  {
+                }
+                else {
                     $pane = 'L';
                     $html.= '<td>';
                     $html.= '<p>' . $image . '</p> <!-- Display Image -->';
@@ -671,14 +593,14 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= '<p>&nbsp;</p>';
                     $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more â€¦</a></div>';
+                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
                     $html.= '</div>';
                     $html.= '</td>';
                     $html.= '</tr>';
                     $html.= '</tbody>';
                     $html.= '</table>';
                     $html.= '<p>&nbsp;</p>';
-                  }
+                }
 
                 break;
 
@@ -686,14 +608,12 @@ function blog_summary_shortcode($atts, $category_list)
                 $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID() , $image_size) . '</a>';
                 $title = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
                 $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($order == 'modified')
-                  {
+                if ($order == 'modified') {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                  }
-                else
-                  {
+                }
+                else {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                  }
+                }
 
                 $html.= '<table id="twocol" class="twocolumn">';
                 $html.= '<tbody>';
@@ -705,7 +625,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= '<p>&nbsp;</p>';
                 $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more â€¦</a></div>';
+                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
                 $html.= '</div>';
                 $html.= '</td>';
                 $html.= '<td>';
@@ -721,14 +641,12 @@ function blog_summary_shortcode($atts, $category_list)
                 $image = '<a style="width:100%;height:100%;" href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID() , $image_size) . '</a>';
                 $title = '<h3 class="page-title"><a href="' . apply_filters('the_permalink', get_permalink()) . '">' . get_the_title() . '</a></h3>';
                 $excerpt = '<p>' . get_the_excerpt() . '</p>';
-                if ($order == 'modified')
-                  {
+                if ($order == 'modified') {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_modified_date() . ' | By ' . get_the_author() . '</p>';
-                  }
-                else
-                  {
+                }
+                else {
                     $stamp = '<p class="posted-on" style="font-size: 85%; padding-bottom: 5px; padding-top: 5px;">' . get_the_date() . ' | By ' . get_the_author() . '</p>';
-                  }
+                }
 
                 $html.= '<table id="twocol" class="twocolumn">';
                 $html.= '<tbody>';
@@ -743,18 +661,17 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= '<p>&nbsp;</p>';
                 $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more â€¦</a></div>';
+                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
                 $html.= '</div>';
                 $html.= '</td>';
                 $html.= '</tr>';
                 $html.= '</tbody>';
                 $html.= '</table>';
                 $html.= '<p>&nbsp;</p>';
-              }
+            }
 
         endwhile;
-        if ($fmt == 1 && $pane == 'R')
-          {
+        if ($fmt == 1 && $pane == 'R') {
             $html.= '<td>';
             $html.= '<p>&nbsp;</p>';
             $html.= '</td>';
@@ -762,16 +679,15 @@ function blog_summary_shortcode($atts, $category_list)
             $html.= '</tbody>';
             $html.= '</table>';
             $html.= '<p>&nbsp;</p>';
-          }
-      }
-    else
-      {
+        }
+    }
+    else {
         $html = disp_error('Blog Summary Template - no blog posts assigned to (' . $category_list . ').');
-      }
+    }
 
     wp_reset_postdata();
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -801,10 +717,10 @@ function blog_summary_shortcode($atts, $category_list)
  *      7 - 21 x 9
  *
  *    opt (display options)
- *      0 â€“ do not display captions or descriptions (default)
- *      1 â€“ display captions
- *      2 â€“ display descriptions
- *      3 â€“ display captions and descriptions
+ *      0 Ã¢â‚¬â€œ do not display captions or descriptions (default)
+ *      1 Ã¢â‚¬â€œ display captions
+ *      2 Ã¢â‚¬â€œ display descriptions
+ *      3 Ã¢â‚¬â€œ display captions and descriptions
  *
  *    col
  *      1 - 1 column
@@ -827,22 +743,19 @@ function blog_summary_shortcode($atts, $category_list)
 add_shortcode('img_gallery', 'img_gallery_shortcode');
 
 function img_gallery_shortcode($atts, $category_list)
-  {
+{
 
     // done if no categories
 
     $sanitized_list = ck_categories($category_list);
-    if (empty($sanitized_list))
-      {
+    if (empty($sanitized_list)) {
         $html = disp_error('Image Gallery Template - missing media category.');
-      }
-    else
-      {
+    }
+    else {
 
         // check for & fix missing arguments
 
-        if (!is_array($atts))
-          {
+        if (!is_array($atts)) {
             $atts = array(
                 'orderby' => 'date',
                 'order' => 'DESC',
@@ -853,62 +766,51 @@ function img_gallery_shortcode($atts, $category_list)
                 'cap' => 1,
                 'filter' => 0
             );
-          }
-        else
-          {
-            if (!isset($atts['orderby']))
-              {
+        }
+        else {
+            if (!isset($atts['orderby'])) {
                 $atts['orderby'] = 'date';
-              }
+            }
 
-            if (!isset($atts['order']))
-              {
+            if (!isset($atts['order'])) {
                 $atts['order'] = 'DESC';
-              }
+            }
 
-            if (!isset($atts['class']))
-              {
+            if (!isset($atts['class'])) {
                 $atts['class'] = '';
-              }
+            }
 
-            if (!isset($atts['ratio']))
-              {
+            if (!isset($atts['ratio'])) {
                 $atts['ratio'] = 0;
-              }
+            }
 
-            if (!isset($atts['opt']))
-              {
+            if (!isset($atts['opt'])) {
                 $atts['opt'] = 1;
-              }
+            }
 
-            if (!isset($atts['col']))
-              {
+            if (!isset($atts['col'])) {
                 $atts['col'] = 2;
-              }
+            }
 
-            if (!isset($atts['cap']))
-              {
+            if (!isset($atts['cap'])) {
                 $atts['cap'] = 1;
-              }
+            }
 
-            if (!isset($atts['filter']))
-              {
+            if (!isset($atts['filter'])) {
                 $atts['filter'] = 0;
-              }
-          }
+            }
+        }
 
         // sanitized working variables
 
         $orderby = valid_orderby($atts['orderby']);
         $order = strtoupper($atts['order']);
-        if (!$order == 'DESC')
-          {
+        if (!$order == 'DESC') {
             $order = 'ASC';
-          }
+        }
 
         $val = abs($atts['ratio']);
-        switch ($val)
-          {
+        switch ($val) {
         case 1:
             $ratio = 'ratio@1x1';
             break;
@@ -939,86 +841,71 @@ function img_gallery_shortcode($atts, $category_list)
 
         default:
             $ratio = 'custom';
-          }
+        }
 
         $val = abs($atts['opt']);
-        if ($val > 3)
-          {
+        if ($val > 3) {
             $opt = 0;
-          }
-        else
-          {
+        }
+        else {
             $opt = $val;
-          }
+        }
 
         $val = abs($atts['col']);
-        if ($val == 0 || $val > 4)
-          {
+        if ($val == 0 || $val > 4) {
             $max_col = 2;
-          }
-        else
-          {
+        }
+        else {
             $max_col = $val;
-          }
+        }
 
         $val = abs($atts['cap']);
-        switch ($val)
-          {
+        switch ($val) {
         case 0:
             $cap_style = 'class="img-caption align-left"';
-            if ($max_col > 2)
-              {
+            if ($max_col > 2) {
                 $cap_style = 'class="img-caption align-left text-sm"';
-              }
+            }
 
             break;
 
         case 2:
             $cap_style = 'class="img-caption align-right"';
-            if ($max_col > 2)
-              {
+            if ($max_col > 2) {
                 $cap_style = 'class="img-caption align-right text-sm"';
-              }
+            }
 
             break;
 
         default:
             $cap_style = 'class="img-caption"';
-            if ($max_col > 2)
-              {
+            if ($max_col > 2) {
                 $cap_style = 'class="img-caption text-sm"';
-              }
-          }
+            }
+        }
 
         $val = ck_prm($atts['class']);
-        if (!empty($val))
-          {
-            if ($ratio == 'custom')
-              {
+        if (!empty($val)) {
+            if ($ratio == 'custom') {
                 $class = 'class="' . $val . '"';
-              }
-            else
-              {
+            }
+            else {
                 $class = 'class="' . $val . ' selected-ratio"';
-              }
-          }
-        else
-          {
-            if ($ratio == 'custom')
-              {
+            }
+        }
+        else {
+            if ($ratio == 'custom') {
                 $class = '';
-              }
-            else
-              {
+            }
+            else {
                 $class = 'class="selected-ratio"';
-              }
-          }
+            }
+        }
 
         $filter = 'i';
-        if ($atts['filter'] == 1)
-          {
+        if ($atts['filter'] == 1) {
             $filter = 'x';
-          }
+        }
 
         $categories = valid_categories($sanitized_list, $filter);
 
@@ -1034,8 +921,7 @@ function img_gallery_shortcode($atts, $category_list)
             'cat' => $categories
         );
         $qry_rslt = new WP_Query($qry);
-        if ($qry_rslt->have_posts())
-          {
+        if ($qry_rslt->have_posts()) {
 
             // working variables
 
@@ -1049,62 +935,54 @@ function img_gallery_shortcode($atts, $category_list)
                 $image = wp_get_attachment_image_src(get_the_ID() , 'full'); // Full sized image
                 $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()) , 'thumbnail'); // Thumbnail size
                 $img_id = get_post(get_post_thumbnail_id());
-                if ($new_row)
-                  {
+                if ($new_row) {
                     $html.= '<tr>';
-                  }
+                }
 
                 $html.= '<td>';
-                if ($ratio == 'custom')
-                  {
+                if ($ratio == 'custom') {
                     $html.= '<div><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class . ' src="' . $image[0] . '"></a></div>';
-                  }
-                else
-                  {
+                }
+                else {
                     $html.= '<!-- 900220.1 Template: xtras / constrained / image -->';
                     $html.= '<div class="ratio-container">';
                     $html.= '<div class="' . $ratio . '"><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img ' . $class . ' src="' . $image[0] . '"></a></div>';
                     $html.= '</div>';
-                  }
+                }
 
-                if ($opt == 1 || $opt == 3)
-                  {
+                if ($opt == 1 || $opt == 3) {
                     $html.= '<div ' . $cap_style . '>' . $qry_rslt->post->post_excerpt . '</div>';
-                  }
+                }
 
-                if ($opt == 2 || $opt == 3)
-                  {
+                if ($opt == 2 || $opt == 3) {
                     $html.= '<p>' . $qry_rslt->post->post_content . '</p>';
-                  }
+                }
 
                 $html.= '</td>';
                 $cur_col++;
                 $new_row = ($cur_col > $max_col);
-                if ($new_row)
-                  {
+                if ($new_row) {
                     $html.= '</tr>';
                     $cur_col = 1;
-                  }
+                }
 
             endwhile;
-            if (!$new_row)
-              {
+            if (!$new_row) {
                 $html.= '</tr>';
-              }
+            }
 
             $html.= '</tbody>';
             $html.= '</table>';
-          }
-        else
-          {
+        }
+        else {
             $html = disp_error('Image Gallery Template - no images found assigned to (' . $category_list . ').');
-          }
+        }
 
         wp_reset_postdata();
-      }
+    }
 
     return $html;
-  }
+}
 
 /**
  * Short code
@@ -1128,30 +1006,26 @@ function img_gallery_shortcode($atts, $category_list)
 add_shortcode('lst_theme', 'lst_theme_shortcode');
 
 function lst_theme_shortcode($atts)
-  {
+{
 
     // check for & fix missing arguments
 
-    if (!is_array($atts))
-      {
+    if (!is_array($atts)) {
         $atts = array(
             'property' => 'Name',
             'label' => ''
         );
-      }
-    else
-      {
-        if (empty($atts['property']))
-          {
+    }
+    else {
+        if (empty($atts['property'])) {
             $atts['property'] = 'Name';
-          }
-      }
+        }
+    }
 
     // sanitize inputs
 
     $args = strtoupper($atts['property']);
-    switch ($args)
-      {
+    switch ($args) {
     case 'NAME':
         $opt = 'Name';
         break;
@@ -1183,18 +1057,16 @@ function lst_theme_shortcode($atts)
     default:
         $opt = 'Name';
         $atts['label'] = '<sup><i class="fas fa-map-marker" style="color:#c62828;">&#x200B;</i></sup>';
-      }
+    }
 
     $my_theme = wp_get_theme();
-    if (empty($atts['label']))
-      {
+    if (empty($atts['label'])) {
         return $my_theme->get($opt);
-      }
-    else
-      {
+    }
+    else {
         return $my_theme->get($opt) . ' ' . $atts['label'];
-      }
-  }
+    }
+}
 
 /* -------------------------------------------------------------------------------------/
 * functions
@@ -1209,9 +1081,9 @@ function lst_theme_shortcode($atts)
  */
 
 function disp_error($msg)
-  {
+{
     return '<div style="background-color: #f7f7f7; border-left: 5px solid #d32f2f; padding: 10px; width: 100%;">' . $msg . '</div>';
-  }
+}
 
 /**
  * function
@@ -1229,10 +1101,9 @@ function disp_error($msg)
  */
 
 function valid_categories($category_lst, $category_opt = 'i')
-  {
+{
     $retval = '';
-    if (!empty(trim($category_lst)))
-      {
+    if (!empty(trim($category_lst))) {
         $category_opt = strtolower($category_opt);
         $opt_chr = '';
         if ($category_opt == 'x') $opt_chr = '-';
@@ -1242,20 +1113,18 @@ function valid_categories($category_lst, $category_opt = 'i')
         $cat_array = explode(',', $category_lst);
         $lst_items = array_filter($cat_array);
         $cat_lst = '';
-        foreach($lst_items as $lst_item)
-          {
+        foreach($lst_items as $lst_item) {
             $objCat = get_category_by_slug($lst_item);
-            if ($objCat instanceof WP_Term)
-              {
+            if ($objCat instanceof WP_Term) {
                 $cat_lst.= $opt_chr . $objCat->term_id . ',';
-              }
-          }
+            }
+        }
 
         $retval = substr($cat_lst, 0, -1);
-      }
+    }
 
     return $retval;
-  }
+}
 
 /**
  * function
@@ -1271,10 +1140,9 @@ function valid_categories($category_lst, $category_opt = 'i')
  */
 
 function valid_orderby($arg)
-  {
+{
     $ret_val = 'none';
-    if (!empty(trim($arg)))
-      {
+    if (!empty(trim($arg))) {
         $valid_opts = array(
             'none',
             'id',
@@ -1293,23 +1161,20 @@ function valid_orderby($arg)
             'menu_order',
             'relevance'
         );
-        if (in_array(strtolower($arg) , $valid_opts))
-          {
+        if (in_array(strtolower($arg) , $valid_opts)) {
             $ret_val = strtolower($arg);
-            if ($ret_val == 'id')
-              {
+            if ($ret_val == 'id') {
                 $ret_val = 'ID';
-              }
+            }
 
-            if (substr($ret_val, 0, 5) == 'post_')
-              {
+            if (substr($ret_val, 0, 5) == 'post_') {
                 $ret_val = substr_replace($ret_val, '', 0, 5);
-              }
-          }
-      }
+            }
+        }
+    }
 
     return $ret_val;
-  }
+}
 
 /**
  * function
@@ -1325,10 +1190,9 @@ function valid_orderby($arg)
  */
 
 function ck_prm($arg)
-  {
+{
     $val = rtrim(strtoupper($arg));
-    switch ($val)
-      {
+    switch ($val) {
     case 'STYLE':
         $ret_val = '';
         break;
@@ -1343,10 +1207,10 @@ function ck_prm($arg)
 
     default:
         $ret_val = rtrim($arg);
-      }
+    }
 
     return $ret_val;
-  }
+}
 
 /**
  * function
@@ -1364,25 +1228,23 @@ function ck_prm($arg)
  */
 
 function ck_categories($category_lst)
-  {
+{
     $retval = '';
-    if (!empty(trim($category_lst)))
-      {
+    if (!empty(trim($category_lst))) {
         $tst_val = rtrim(strtolower($category_lst));
-        if (substr_count($tst_val, 'category') == 2)
-          {
-            if (substr($tst_val, -3) !== 'etc')
-              {
+        if (substr_count($tst_val, 'category') == 2) {
+            if (substr($tst_val, -3) !== 'etc') {
                 $retval = rtrim($category_lst);
-              }
-          }
-        else
-          {
+            }
+        }
+        else {
             $retval = rtrim($category_lst);
-          }
-      }
+        }
+    }
 
     return $retval;
-  }
-
+}
+/*  # eof
+shortcodes.php
+-------------------------------------*/
 ?>
