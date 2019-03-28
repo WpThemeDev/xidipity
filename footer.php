@@ -1,23 +1,31 @@
 <?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after
- *
- * @package xidipity
- */
+/*
+*        file: footer.php
+*       build: 90327.1
+* description: The template for displaying the footer
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
+echo '</div>' . "\n";
+echo '<footer id="colophon" class="site-footer">' . "\n";
+echo '<div class="site-info">' . "\n";
+echo '<div class="site-info-inside">' . "\n";
+echo '<div class="credits">' . "\n";
+do_action( 'xidipity_credits' );
+echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '</footer>' . "\n";
+echo '</div>' . "\n";
+wp_footer();
+echo '</body>' . "\n";
+echo '</html>' . "\n";
+/*  # eof
+footer.php
+-------------------------------------*/
 ?>
-	</div><!-- #content -->
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<div class="site-info-inside">
-				<div class="credits">
-					<?php do_action( 'xidipity_credits' ); ?>
-				</div><!-- .credits -->
-			</div><!-- .site-info-inside -->
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page .site-wrapper -->
-<?php wp_footer(); ?>
-</body>
-</html>
