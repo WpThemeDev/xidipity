@@ -27,7 +27,7 @@ echo '<header class="entry-header">' . "\n";
 the_title('<h1 class="entry-title">', '</h1>');
 echo '</header>' . "\n";
 echo '</div>' . "\n";
-echo '</div class="entry-content">' . "\n";
+echo '<div class="entry-content">' . "\n";
 /* display content         ------------
 -- */
 the_content();
