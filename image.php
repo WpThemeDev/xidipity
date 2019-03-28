@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90323.1
+*       build: 90327.1
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -15,19 +15,26 @@
 -- */
 get_header();
 echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="content-area <' . xidipity_layout_class('content') . '">' . "\n";
-$pgtitle = the_title('', '', false);
+echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
 
+/* get page title          ------------
+-- */
+$pgtitle = get_the_title();
 if (strpos($pgtitle, '.') > 1) {
     $pgtitle = substr($pgtitle, 0, strpos($pgtitle, '.'));
 }
 
+/* have attachment         ------------
+-- */
 if (have_posts()) {
+    /* get attachment metadata ------------
+    -- */
+    $metadata = wp_get_attachment_metadata();
     // the_post();
     echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
-    echo '<div>' . "\n";
     echo '<h2 style="margin: 15px;"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
-    echo '</div>' . "\n";
+    echo '<p style="margin-left:15px;">Dimensions: ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
+    echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
     echo '<figure class="entry-attachment wp-block-image">' . "\n";
     /**
@@ -51,11 +58,8 @@ if (have_posts()) {
     echo '</div>' . "\n";
     echo '<footer class="entry-footer">' . "\n";
 
-    // Retrieve attachment metadata.
-
-    $metadata = wp_get_attachment_metadata();
     if ($metadata) {
-        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><a style="padding-left:10px;" href="%2$s">%3$s &times; %4$s</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height'])) . "\n";
+        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a class="cat-links" href="%2$s">View</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height'])) . "\n";
     }
 
     Xidipity_entry_footer();
