@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90329.1
+ *       build: 90329.2
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -933,8 +933,7 @@ h1.attachment-entry-title:before {
     word-wrap: break-word;
 }
 .entry-attachment {
-    border-top: 1px solid var(--fg-bas-300);
-    margin: 2px 0 30px 0;
+    margin: 0;
     padding-top: 5px;
 }
 /*  # WordPress
