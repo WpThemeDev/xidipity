@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: shortcodes.php
-*       build: 90326.1
+*       build: 90329.1
 * description: PHP support for Xidipity theme
 *      github: https://github.com/WpThemeDev/xidipity
 *              https://codex.wordpress.org/Shortcode_API
@@ -578,7 +578,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= '<p>&nbsp;</p>';
                     $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
+                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</a></div>';
                     $html.= '</div>';
                     $html.= '</td>';
                 }
@@ -593,7 +593,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= '<p>&nbsp;</p>';
                     $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
+                    $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</a></div>';
                     $html.= '</div>';
                     $html.= '</td>';
                     $html.= '</tr>';
@@ -625,7 +625,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= '<p>&nbsp;</p>';
                 $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
+                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</a></div>';
                 $html.= '</div>';
                 $html.= '</td>';
                 $html.= '<td>';
@@ -661,7 +661,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= '<p>&nbsp;</p>';
                 $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more Ã¢â‚¬Â¦</a></div>';
+                $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</a></div>';
                 $html.= '</div>';
                 $html.= '</td>';
                 $html.= '</tr>';
@@ -717,10 +717,10 @@ function blog_summary_shortcode($atts, $category_list)
  *      7 - 21 x 9
  *
  *    opt (display options)
- *      0 Ã¢â‚¬â€œ do not display captions or descriptions (default)
- *      1 Ã¢â‚¬â€œ display captions
- *      2 Ã¢â‚¬â€œ display descriptions
- *      3 Ã¢â‚¬â€œ display captions and descriptions
+ *      0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ do not display captions or descriptions (default)
+ *      1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display captions
+ *      2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display descriptions
+ *      3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display captions and descriptions
  *
  *    col
  *      1 - 1 column
@@ -1068,6 +1068,23 @@ function lst_theme_shortcode($atts)
     }
 }
 
+/**
+ * Short code
+ *
+ * wp_ver
+ *
+ * build: 90329.1
+ *
+ * syntax - [wp_ver]
+ *
+ */
+add_shortcode('wp_ver', 'wp_ver_shortcode');
+
+function wp_ver_shortcode($atts)
+{
+    return get_bloginfo( 'version' );
+}
+
 /* -------------------------------------------------------------------------------------/
 * functions
 ** ----------------------------------------------------------------------------------- */
@@ -1244,6 +1261,7 @@ function ck_categories($category_lst)
 
     return $retval;
 }
+
 /*  # eof
 shortcodes.php
 -------------------------------------*/
