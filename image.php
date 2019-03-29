@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90327.1
+*       build: 90329.1
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -68,11 +68,11 @@ if (have_posts()) {
 
     // Parent post navigation.
 
-    $title = the_title('', '', false);
+    $title = get_the_title();
     $parent = get_the_title($post->post_parent);
     if ($title !== $parent) {
         the_post_navigation(array(
-            'prev_text' => _x('<span class="meta-nav">Published in</span><br /><span class="post-title">%title</span>', 'Parent post link', 'Xidipity') ,
+            'prev_text' => _x('<h4><i class="far fa-bookmark fg-pri-300 pr-2"></i>Published in</h4><span class="post-title">%title</span>', 'Parent post link', 'Xidipity') ,
         ));
     }
 
