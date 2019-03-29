@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90327.1.1
+ *       build: 90329.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -750,8 +750,11 @@ div#respond #cancel-comment-reply-link {
 /* tags                    ------------
 -- */
 
-.tags-links {
-  padding-left: 10px;
+.tags-links::after {
+    color: var(--fg-bas-700);
+    content: "|";
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* edit link              ------------
 -- */
