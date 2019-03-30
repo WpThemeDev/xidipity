@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90327.1.1
+*       build: 90330.1
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -190,23 +190,20 @@ if (!function_exists('xidipity_entry_footer')) {
         // Hide category and tag text for pages.
 
         if ('post' === get_post_type()) {
-            /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__(' | ', 'xidipity'));
+            $categories_list = __(get_the_category_list(esc_html__(' | ', 'xidipity')));
             if ($categories_list && xidipity_categorized_blog()) {
-                //printf('<span class="cat-links">' . esc_html__('Posted in: %1$s', 'xidipity') . '</span>', $categories_list); // WPCS: XSS OK.
-                echo '<span class="font-normal">Category:</span> ' . xidipity_post_first_category() . '<span class="px-2">|</span>';
+                echo '<span class="font-normal">Category:</span>&nbsp;' . xidipity_post_first_category();
             }
-
-            /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html__(', ', 'xidipity'));
+            $tags_list = __(get_the_tag_list('', ', ', ''));
             if ($tags_list) {
-                printf('<span class="tags-links">' . esc_html__('Tagged: %1$s', 'xidipity') . '</span>', $tags_list); // WPCS: XSS OK.
+                echo '<span class="px-2">|</span><span class="font-normal">Tagged:<span>&nbsp;' . $tags_list;
             }
         }
-
-        edit_post_link(sprintf(
-        /* translators: %s: Name of current post */
-        '<i class="far fa-edit post-edit-link"></i>&nbsp;' . esc_html__('Edit %s', 'xidipity') , the_title('<span class="screen-reader-text">"', '"</span>', false)) , '<span class="edit-link">', '</span>');
+        /* show on login           ------------
+        -- */
+        if (get_edit_post_link()) {
+            echo '<span class="px-2">|</span><i class="far fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>';
+        }
     }
 }
 
