@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90330.1
+*       build: 90330.2
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -192,17 +192,17 @@ if (!function_exists('xidipity_entry_footer')) {
         if ('post' === get_post_type()) {
             $categories_list = __(get_the_category_list(esc_html__(' | ', 'xidipity')));
             if ($categories_list && xidipity_categorized_blog()) {
-                echo '<span class="font-normal">Category:</span>&nbsp;' . xidipity_post_first_category();
+                echo '<span class="font-normal">Category:</span>&nbsp;' . xidipity_post_first_category() . "\n";
             }
             $tags_list = __(get_the_tag_list('', ', ', ''));
             if ($tags_list) {
-                echo '<span class="px-2">|</span><span class="font-normal">Tagged:<span>&nbsp;' . $tags_list;
+                echo '<span class="px-2">|</span><span class="font-normal">Tagged:<span>&nbsp;' . $tags_list . "\n";
             }
         }
         /* show on login           ------------
         -- */
         if (get_edit_post_link()) {
-            echo '<span class="px-2">|</span><i class="far fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>';
+            echo '<span class="px-2">|</span><i class="far fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
         }
     }
 }
