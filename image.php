@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90330.3
+*       build: 90330.4
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -32,8 +32,8 @@ if (have_posts()) {
     $metadata = wp_get_attachment_metadata();
     // the_post();
     echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
-    echo '<h2 style="margin: 15px;"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
-    echo '<p style="margin-left:15px;">Dimensions: ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
+    echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
+    echo '<p class="pl-4">Dimensions: ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
     echo '<figure class="entry-attachment wp-block-image">' . "\n";
@@ -46,7 +46,7 @@ if (have_posts()) {
     echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
     echo '<figcaption class="wp-caption-text">' . get_the_excerpt(get_the_ID()) . '</figcaption>' . "\n";
     echo '</figure>' . "\n";
-    the_content();
+    echo '<p class="pb-2 pl-4 pr-4"' . get_the_content() . '</p>';
     wp_link_pages(array(
         'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'Xidipity') . '</span>',
         'after' => '</div>',
