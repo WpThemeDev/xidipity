@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90330.2
+*       build: 90330.3
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -59,7 +59,7 @@ if (have_posts()) {
     echo '<footer class="text-sm">' . "\n";
 
     if ($metadata) {
-        echo '<i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a style="margin-right:-2px;" href="' . esc_url(wp_get_attachment_url()) . '">Raw</a>';
+        echo '<i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a href="' . esc_url(wp_get_attachment_url()) . '">Raw</a>';
     }
 
     Xidipity_entry_footer();
