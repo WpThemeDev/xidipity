@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90329.3
+ *       build: 90330.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -741,28 +741,21 @@ div#respond #cancel-comment-reply-link {
 
 .cat-links {
 }
-.cat-links::after {
-    color: var(--fg-bas-700);
-    content: "|";
-    padding-left: 10px;
-    padding-right: 10px;
-}
 /* tags                    ------------
 -- */
 
-.tags-links::after {
-    color: var(--fg-bas-700);
-    content: "|";
-    padding-left: 10px;
-    padding-right: 10px;
+.tags-links {
 }
 /* edit link              ------------
 -- */
-
+.post-edit-link {
+}
+/*
 .page .edit-link::before,
 .attachment .edit-link::before {
     display: none;
 }
+*/
 /*  # WordPress
    ## All Things Header
  ----------------------------------------------------------------------------*/
@@ -1204,9 +1197,6 @@ video.wp-video-shortcode {
 .post-navigation .nav-next,
 .image-navigation .nav-next {
     text-align: right;
-}
-.post-edit-link {
-    color: var(--fg-sec-400);
 }
 /* other media formats     ------------
 -- */
