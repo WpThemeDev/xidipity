@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90330.4
+*       build: 90330.5
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -46,7 +46,7 @@ if (have_posts()) {
     echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
     echo '<figcaption class="wp-caption-text">' . get_the_excerpt(get_the_ID()) . '</figcaption>' . "\n";
     echo '</figure>' . "\n";
-    echo '<p class="pb-2 pl-4 pr-4"' . get_the_content() . '</p>';
+    echo '<p class="pb-2 pl-4 pr-4">' . get_the_content() . '</p>';
     wp_link_pages(array(
         'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'Xidipity') . '</span>',
         'after' => '</div>',
