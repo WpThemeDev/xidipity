@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90330.2
+*       build: 90330.3
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -202,7 +202,7 @@ if (!function_exists('xidipity_entry_footer')) {
         /* show on login           ------------
         -- */
         if (get_edit_post_link()) {
-            echo '<span class="px-2">|</span><i class="far fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
+            echo '<span class="pl-2 pr-3">|</span><i class="far fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
         }
     }
 }
