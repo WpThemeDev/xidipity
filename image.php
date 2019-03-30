@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90329.1
+*       build: 90330.1
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -59,7 +59,7 @@ if (have_posts()) {
     echo '<footer class="entry-footer">' . "\n";
 
     if ($metadata) {
-        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a class="cat-links" href="%2$s">View</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height'])) . "\n";
+        printf('<span class="full-size-link"><span class="screen-reader-text">%1$s</span><i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a class="cat-links" href="%2$s">Raw</a></span>', _x('Full size', 'Used before full size attachment link.', 'Xidipity') , esc_url(wp_get_attachment_url()) , absint($metadata['width']) , absint($metadata['height'])) . "\n";
     }
 
     Xidipity_entry_footer();
