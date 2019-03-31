@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90325.1
+*       build: 90331.1
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -25,10 +25,12 @@ if (is_home() && current_user_can('publish_posts')) {
     )) , esc_url(admin_url('post-new.php'))) . '</p>' . "\n";
 }
 elseif (is_search()) {
-    echo '<p>' . esc_html_e('Sorry, but nothing matched your search terms. Please try again with different keywords.', 'xidipity') . '</p>' . "\n";
+    $message = wpautop('Sorry, but nothing matched your search terms.') . "\n";
+    echo __($message) . "\n";
 }
 else {
-    echo '<p>' . esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'xidipity') . '</p>' . "\n";
+    $message = wpautop('The item selected was not found. If it is a category the most likely reasons are:<ul><li>no posts are assigned to it,</li><li>it is assigned to a media item.</li></ul>') . "\n";
+    echo __($message) . "\n";
 }
 
 echo '</div>' . "\n";
