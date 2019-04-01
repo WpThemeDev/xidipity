@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90330.6
+*       build: 90401.1
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -30,10 +30,39 @@ if (have_posts()) {
     /* get attachment metadata ------------
     -- */
     $metadata = wp_get_attachment_metadata();
+    $ratio = round(absint($metadata['height']) / absint($metadata['width']),4);
+    switch ($ratio) {
+      case 1:
+        $ar_msg = '1x1';
+        break;
+      case 0.75:
+        $ar_msg = '4x3';
+        break;
+      case 0.6667:
+        $ar_msg = '6x4 (classic film)';
+        break;
+      case 0.7146:
+        $ar_msg = '7x5';
+        break;
+      case 0.625:
+        $ar_msg = '16x10';
+        break;
+      case 0.5625:
+        $ar_msg = '16x9 (high definition)';
+        break;
+      case 0.4281:
+        $ar_msg = '21x9 (cinemascope)';
+        break;
+      default:
+        $ar_msg = '';
+    }
     // the_post();
     echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
     echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
-    echo '<p class="pl-4">Dimensions: ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
+    echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
+    if ($ar_msg !== '') {
+      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ration:</span> ' . $ar_msg . '</p>' . "\n";
+    }
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
     echo '<figure class="entry-attachment wp-block-image">' . "\n";
