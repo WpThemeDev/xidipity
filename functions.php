@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90321.1
+ *       build: 90331.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -191,7 +191,7 @@ function xidipity_scripts()
 
     // Fontawesome
 
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array() , '5.7.2', 'all');
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', array() , '5.8.1', 'all');
 
     // Google Material Design Icons
 
