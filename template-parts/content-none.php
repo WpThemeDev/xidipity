@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90331.1
+*       build: 90331.2
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -29,7 +29,7 @@ elseif (is_search()) {
     echo __($message) . "\n";
 }
 else {
-    $message = wpautop('The item selected was not found. If it is a category the most likely reasons are:<ul><li>no posts are assigned to it,</li><li>it is assigned to a media item.</li></ul>') . "\n";
+    $message = wpautop('The item selected was not found. If the item is a category the most likely reasons are:<ul><li>no assigned posts,</li><li>media category.</li></ul>') . "\n";
     echo __($message) . "\n";
 }
 
