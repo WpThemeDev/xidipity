@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90401.2
+*       build: 90401.3
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -33,35 +33,40 @@ if (have_posts()) {
     $ratio = round(absint($metadata['height']) / absint($metadata['width']),4);
     switch ($ratio) {
       case 1:
-        $ar_msg = '1x1';
+        $ar = '1x1';
         break;
       case 0.75:
-        $ar_msg = '4x3';
+        $ar = '4x3';
         break;
       case 0.6667:
-        $ar_msg = '6x4 (classic film)';
+        $ar = '6x4 (classic film)';
         break;
       case 0.7146:
-        $ar_msg = '7x5';
+        $ar = '7x5';
         break;
       case 0.625:
-        $ar_msg = '16x10';
+        $ar = '16x10';
         break;
       case 0.5625:
-        $ar_msg = '16x9 (high definition)';
+        $ar = '16x9 (high definition)';
         break;
       case 0.4281:
-        $ar_msg = '21x9 (cinemascope)';
+        $ar = '21x9 (cinemascope)';
         break;
       default:
-        $ar_msg = '';
+        $ar = '';
     }
-    // the_post();
+    $post_categories = get_the_category_list('<span class="px-2">|</span>', '', get_the_ID() );
+    if ($post_categories !== 'Uncategorized') {
+      $cat = $post_categories;
+    } else {
+      $cat = '';
+    }
     echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
     echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
     echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
-    if ($ar_msg !== '') {
-      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ratio:</span> ' . $ar_msg . '</p>' . "\n";
+    if ($ar !== '') {
+      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ratio:</span> ' . $ar . '</p>' . "\n";
     }
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
@@ -86,7 +91,9 @@ if (have_posts()) {
     ));
     echo '</div>' . "\n";
     echo '<footer class="text-sm">' . "\n";
-
+    if ($cat !== '') {
+      echo '<p class="pl-4"><span class="font-normal">Filed under:</span> ' . $cat . '</p>' . "\n";
+    }
     if ($metadata) {
         echo '<i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a href="' . esc_url(wp_get_attachment_url()) . '">Raw</a>';
     }
