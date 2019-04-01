@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90401.1
+*       build: 90401.2
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -61,7 +61,7 @@ if (have_posts()) {
     echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
     echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
     if ($ar_msg !== '') {
-      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ration:</span> ' . $ar_msg . '</p>' . "\n";
+      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ratio:</span> ' . $ar_msg . '</p>' . "\n";
     }
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
