@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90404.1
+*       build: 90404.2
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: At this point the search as failed. Check to see if it is an
@@ -30,7 +30,7 @@ if (in_array("category", $url_items)) {
     echo '</header>' . "\n";
     echo '<div class="page-content">' . "\n";
     if ($cat_id == 0) {
-        $html = disp_error('Media Gallery - missing/invalid media category.');
+        $html = disp_error('Media Library - missing/invalid media category.');
     }
     else {
         /* query defaults          ------------
@@ -43,7 +43,7 @@ if (in_array("category", $url_items)) {
             'post_mime_type' => 'image',
             'orderby' => $orderby,
             'order' => $order,
-            'posts_per_page' => '30',
+            'posts_per_page' => -1,
             'post_status' => 'inherit',
             'cat' => $cat_id
         );
@@ -95,7 +95,7 @@ if (in_array("category", $url_items)) {
             $html.= '</table>';
         }
         else {
-            $html = disp_error('Media Gallery - no images found assigned to (' . $category . ').');
+            $html = disp_error('Media Library - no images found assigned to (' . $category . ').');
         }
 
         wp_reset_postdata();
