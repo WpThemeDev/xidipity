@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90330.1
+ *       build: 90404.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -877,9 +877,7 @@ div#respond #cancel-comment-reply-link {
     color: var(--fg-sec-500);
 }
 .taxonomy-description {
-    color: var(--fg-bas-900);
-    font-size: 0.875rem;
-    margin: 5px 0 0;
+    margin-top: 5px;
 }
 .entry-title a,
 .entry-title a:visited,
