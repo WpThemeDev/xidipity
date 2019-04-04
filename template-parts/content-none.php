@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90404.2
+*       build: 90404.3
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: At this point the search as failed. Check to see if it is an
@@ -24,9 +24,13 @@ if (in_array("category", $url_items)) {
     $cat_obj = get_category_by_slug($slug);
     $cat_id = $cat_obj->term_id;
     $category = get_cat_name($cat_id);
+    $cat_descrip = category_description($cat_id);
     echo '<section class="no-results not-found">' . "\n";
     echo '<header class="page-header">' . "\n";
     echo '<h1 class="page-title"><i class="fas fa-images fg-pri-300 pr-4"></i>Category: ' . $category . '</h1>' . "\n";
+    if (!empty($cat_descrip)) {
+        echo '<div class="taxonomy-description">' . __($cat_descrip, 'xidipity') . '</div>' . "\n";
+    }
     echo '</header>' . "\n";
     echo '<div class="page-content">' . "\n";
     if ($cat_id == 0) {
