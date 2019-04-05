@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90331.1
+*       build: 90405.1
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -49,8 +49,10 @@ if (!function_exists('xidipity_the_post_navigation')) {
         // Previous/next post navigation @since 4.1.0.
 
         the_post_navigation(array(
-            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ') ,
-            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
+            // 'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ') ,
+            'next_text' => __('<span class="meta-nav pr-4">Next Post<i class="fas fa-angle-right pl-2"></i></span>') ,
+            // 'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
+            'prev_text' => __('<span class="meta-nav pl-4"><i class="fas fa-angle-left pr-2"></i>Prev Post</span>') ,
         ));
     }
 }
