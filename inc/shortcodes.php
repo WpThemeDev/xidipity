@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: shortcodes.php
-*       build: 90330.1
+*       build: 90405.1
 * description: PHP support for Xidipity theme
 *      github: https://github.com/WpThemeDev/xidipity
 *              https://codex.wordpress.org/Shortcode_API
@@ -717,10 +717,10 @@ function blog_summary_shortcode($atts, $category_list)
  *      7 - 21 x 9
  *
  *    opt (display options)
- *      0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ do not display captions or descriptions (default)
- *      1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display captions
- *      2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display descriptions
- *      3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ display captions and descriptions
+ *      0 - do not display captions or descriptions (default)
+ *      1 - display captions
+ *      2 - display descriptions
+ *      3 - display captions and descriptions
  *
  *    col
  *      1 - 1 column
