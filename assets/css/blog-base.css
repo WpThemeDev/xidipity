@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-base.css
- *       build: 90404.1
+ *       build: 90405.1
  * description: Cascading Style Sheet
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Only CSS classes which are unique to the web are here.
@@ -1327,10 +1327,15 @@ video.wp-video-shortcode {
     font-weight: 500;
 }
 .page-numbers.prev::after {
-    content: "⮜";
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    
 }
 .page-numbers.next::before {
-    content: "⮞";
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 a.page-numbers,
 a.page-numbers:visited {
