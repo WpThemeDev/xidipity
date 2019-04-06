@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90404.3
+*       build: 90406.1
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: At this point the search as failed. Check to see if it is an
@@ -20,6 +20,7 @@ $url = add_query_arg(array() , $wp->request);
 $url_items = explode("/", $url);
 
 if (in_array("category", $url_items)) {
+    $err = false;
     $slug = end($url_items);
     $cat_obj = get_category_by_slug($slug);
     $cat_id = $cat_obj->term_id;
@@ -27,14 +28,14 @@ if (in_array("category", $url_items)) {
     $cat_descrip = category_description($cat_id);
     echo '<section class="no-results not-found">' . "\n";
     echo '<header class="page-header">' . "\n";
-    echo '<h1 class="page-title"><i class="fas fa-images fg-pri-300 pr-4"></i>Category: ' . $category . '</h1>' . "\n";
+    echo '<h1 class="page-title">Category: ' . $category . '</h1>' . "\n";
     if (!empty($cat_descrip)) {
         echo '<div class="taxonomy-description">' . __($cat_descrip, 'xidipity') . '</div>' . "\n";
     }
     echo '</header>' . "\n";
     echo '<div class="page-content">' . "\n";
     if ($cat_id == 0) {
-        $html = disp_error('Media Library - missing/invalid media category.');
+        $err = true;
     }
     else {
         /* query defaults          ------------
@@ -99,7 +100,7 @@ if (in_array("category", $url_items)) {
             $html.= '</table>';
         }
         else {
-            $html = disp_error('Media Library - no images found assigned to (' . $category . ').');
+            $err = true;
         }
 
         wp_reset_postdata();
@@ -107,6 +108,10 @@ if (in_array("category", $url_items)) {
 
     /* display result          ------------
     -- */
+    if ($err) {
+        $message = wpautop('The category selected does not have any content or images associated with it.') . "\n";
+        $html = __($message);
+    }
     echo $html . "\n";
 }
 else {
