@@ -1,173 +1,214 @@
 <?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * build: 90201.1
- *
- * @package xidipity
- */
+/*
+*        file: index.php
+*       build: 90323.1
+* description: Template for displaying posts.
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
+/* display page header     ------------
+-- */
+get_header();
 
-get_header(); ?>
+// current pagination number
 
-    <div class="content-area-container">
-      <div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
-        <main id="main" class="site-main">
-        <?php
-          // current pagination number
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-          // sticky posts
-          $posts_sticky  = get_option( 'sticky_posts' );
-          $sticky_cnt  = count( $posts_sticky );
+// sticky posts
 
-          // posts published
-          $posts_cnt = wp_count_posts();
-          $posts_published = $posts_cnt->publish;
+$posts_sticky = get_option('sticky_posts');
+$sticky_cnt = count($posts_sticky);
 
-          // posts archived
-          $args_archive = array('category_name' => 'archive');
-          $query_archive = new WP_Query( $args_archive );
-          $posts_archive = $query_archive->post_count;
+// posts published
 
-          // posts featured
-          $args_featured = array('category_name' => 'post-featured');
-          $query_featured = new WP_Query( $args_featured );
-          $posts_featured = $query_featured->post_count;
+$posts_cnt = wp_count_posts();
+$posts_published = $posts_cnt->publish;
 
-          // posts spotlight
-          $args_spotlight = array('category_name' => 'post-spotlight');
-          $query_spotlight = new WP_Query( $args_spotlight );
-          $posts_spotlight = $query_spotlight->post_count;
+// posts archived
 
-          // posts / page
-          $posts_page = get_option( 'posts_per_page' );
+$args_archive = array(
+    'category_name' => 'archive'
+);
+$query_archive = new WP_Query($args_archive);
+$posts_archive = $query_archive->post_count;
 
-          // posts front page (not used)
-          $posts_fp = $posts_page - $sticky_cnt;
+// posts featured
 
-          // number of pages (fractions to next whole number)
-          $pages_max = ceil(($posts_published - ( $posts_archive + $posts_featured + $posts_spotlight + $sticky_cnt ) ) / $posts_page);
+$args_featured = array(
+    'category_name' => 'post-featured'
+);
+$query_featured = new WP_Query($args_featured);
+$posts_featured = $query_featured->post_count;
 
-          // post category slugs to exclude from blog page
-          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-spotlight') );
-          $cat0 = $cat[0]->term_id;
-          $cat1 = $cat[1]->term_id;
-          $cat2 = $cat[2]->term_id;
-          
-          if (is_null($cat0)) {$cat0 = '';} else {$cat0 = '-' . $cat0;}
-          if (is_null($cat1)) {$cat1 = '';} else {$cat1 = '-' . $cat1;}
-          if (is_null($cat2)) {$cat2 = '';} else {$cat2 = '-' . $cat2;}
+// posts spotlight
 
-          if ($paged == 1 ) {
-            
-              if ( $sticky_cnt > 0 ) {
-            
-                $args = array (
-                  'post__in' => $posts_sticky,
-                  'posts_per_page' => $sticky_cnt,
-                  'cat' => array($cat0,$cat1,$cat2),
-                  'paged' => $paged
-                );
-  
-                $wp_query = new WP_Query( $args );
-                if ( $wp_query->have_posts() ) : ?>
-                  <p>&nbsp;</p>
-                  <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                  <div class="clearfix blg-pg-hd-wrapper">
-                      <div class="blg-pg-hd-icon"><i class="fas fa-comment-alt">​</i></div>
-                      <div class="blg-pg-hd-text">featured posts</div>
-                  </div>
-                  <!-- End Template -->
-                  <p>&nbsp;</p>
-                  <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                  <?php
-                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                      get_template_part( 'template-parts/content', get_post_format() );
-                    endwhile; ?>
-                  </div><!-- .post-wrapper -->
-                  <?php
-                  xidipity_the_posts_pagination( $pages_max );
-                else :
-                  get_template_part( 'template-parts/content', 'none' );
-                endif;
+$args_spotlight = array(
+    'category_name' => 'post-spotlight'
+);
+$query_spotlight = new WP_Query($args_spotlight);
+$posts_spotlight = $query_spotlight->post_count;
 
-              }
+// posts / page
 
-              $args = array (
-                'post__not_in' => $posts_sticky,
-                'posts_per_page' => $posts_page,
-                'cat' => array($cat0,$cat1,$cat2),
-                'paged' => $paged
-              );
-              
+$posts_page = get_option('posts_per_page');
 
-              $wp_query = new WP_Query( $args );
-              if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
-                </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
-                <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                <?php
-                  while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                    get_template_part( 'template-parts/content', get_post_format() );
-                  endwhile; ?>
-                </div><!-- .post-wrapper -->
-                <?php
-                xidipity_the_posts_pagination( $pages_max );
-              else :
-                get_template_part( 'template-parts/content', 'none' );
-              endif;
+// posts front page (not used)
 
-          } else {
+$posts_fp = $posts_page - $sticky_cnt;
 
-              $args = array (
-                'post__not_in' => $posts_sticky,
-                'posts_per_page' => $posts_page,
-                'cat' => array($cat0,$cat1,$cat2),
-                'paged' => $paged
-              );
+// number of pages (fractions to next whole number)
 
-              $wp_query = new WP_Query( $args );
-              if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
-                </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
-                <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                <?php
-                  while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                    get_template_part( 'template-parts/content', get_post_format() );
-                  endwhile; ?>
-                </div><!-- .post-wrapper -->
-                <?php
-                xidipity_the_posts_pagination( $pages_max );
-              else :
-                get_template_part( 'template-parts/content', 'none' );
-              endif;
-          }
-        
-        ?>
-        </main><!-- #main -->
-      </div><!-- #primary -->
-      <?php get_sidebar(); ?>
-    </div><!-- # column wrapper -->
+$pages_max = ceil(($posts_published - ($posts_archive + $posts_featured + $posts_spotlight + $sticky_cnt)) / $posts_page);
 
-<?php
-// Restore original Post Data
+// post category slugs to exclude from blog page
+
+$cat = array(
+    get_category_by_slug('archive') ,
+    get_category_by_slug('post-featured') ,
+    get_category_by_slug('post-spotlight')
+);
+$cat0 = $cat[0]->term_id;
+$cat1 = $cat[1]->term_id;
+$cat2 = $cat[2]->term_id;
+
+if (is_null($cat0)) {
+    $cat0 = '';
+}
+else {
+    $cat0 = '-' . $cat0;
+}
+
+if (is_null($cat1)) {
+    $cat1 = '';
+}
+else {
+    $cat1 = '-' . $cat1;
+}
+
+if (is_null($cat2)) {
+    $cat2 = '';
+}
+else {
+    $cat2 = '-' . $cat2;
+}
+
+echo '<div class="content-area-container">' . "\n";
+echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
+echo '<main id="main" class="site-main">' . "\n";
+
+if ($paged == 1) {
+    if ($sticky_cnt > 0) {
+        $args = array(
+            'post__in' => $posts_sticky,
+            'posts_per_page' => $sticky_cnt,
+            'cat' => array(
+                $cat0,
+                $cat1,
+                $cat2
+            ) ,
+            'paged' => $paged
+        );
+        $wp_query = new WP_Query($args);
+        if ($wp_query->have_posts()) {
+            /* featured blog header    ------------
+            values are pulled from blog-var.css
+            -- */
+            echo '<div class="blg-pg-featured-wrapper">' . "\n";
+            echo '<h2><span class="blg-pg-featured-title"></span></h2>' . "\n";
+            echo '<div class="taxonomy-description"><p class="blg-pg-featured-descrip"></p></div>' . "\n";
+            echo '</div>' . "\n";
+            echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+            while ($wp_query->have_posts()) {
+                $wp_query->the_post();
+                get_template_part('template-parts/content', get_post_format());
+            }
+            echo '</div>' . "\n";
+            xidipity_the_posts_pagination($pages_max);
+        } else {
+            get_template_part('template-parts/content', 'none');
+        }
+    }
+
+    $args = array(
+        'post__not_in' => $posts_sticky,
+        'posts_per_page' => $posts_page,
+        'cat' => array(
+            $cat0,
+            $cat1,
+            $cat2
+        ) ,
+        'paged' => $paged
+    );
+    $wp_query = new WP_Query($args);
+    if ($wp_query->have_posts()) {
+        /* recent blog header      ------------
+        values are pulled from blog-var.css
+        -- */
+        echo '<div class="blg-pg-recent-wrapper">' . "\n";
+        echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
+        echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
+        echo '</div>' . "\n";
+        echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+        while ($wp_query->have_posts()) {
+            $wp_query->the_post();
+            get_template_part('template-parts/content', get_post_format());
+        }
+        echo '</div>' . "\n";
+        xidipity_the_posts_pagination($pages_max);
+    } else {
+        get_template_part('template-parts/content', 'none');
+    }
+}
+else {
+    $args = array(
+        'post__not_in' => $posts_sticky,
+        'posts_per_page' => $posts_page,
+        'cat' => array(
+            $cat0,
+            $cat1,
+            $cat2
+        ) ,
+        'paged' => $paged
+    );
+    $wp_query = new WP_Query($args);
+    if ($wp_query->have_posts()) {
+        /* recent blog header      ------------
+        values are pulled from blog-var.css
+        -- */
+        echo '<div class="blg-pg-recent-wrapper">' . "\n";
+        echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
+        echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
+        echo '</div>' . "\n";
+        echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+        while ($wp_query->have_posts()) {
+            $wp_query->the_post();
+            get_template_part('template-parts/content', get_post_format());
+        }
+        echo '</div>' . "\n";
+        xidipity_the_posts_pagination($pages_max);
+    } else {
+        get_template_part('template-parts/content', 'none');
+    }
+}
+
+echo '</main>' . "\n";
+echo '</div>' . "\n";
+/* display sidebar         ------------
+-- */
+get_sidebar();
+echo '</div>' . "\n";
+/* reset post data         ------------
+-- */
 wp_reset_postdata();
-get_footer(); ?>
+/* display footer          ------------
+-- */
+get_footer();
+/*  # eof
+    index.php
+-------------------------------------*/
+?>

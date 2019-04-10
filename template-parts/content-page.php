@@ -1,34 +1,44 @@
 <?php
-/**
- * The template used for displaying page content in page.php
- *
- * @package xidipity
- */
+/*
+*        file: content-page.php
+*       build: 90327.1
+* description: The template used for displaying page content in page.php
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
+echo '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class()) . '">' . "\n";
+echo '<div class="post-content-wrapper post-content-wrapper-single">' . "\n";
+echo '<div class="entry-data-wrapper entry-data-wrapper-single">' . "\n";
+echo '<div class="entry-header-wrapper">' . "\n";
+echo '<header class="entry-header">' . "\n";
+the_title('<h1 class="entry-title">', '</h1>');
+echo '</header>' . "\n";
+echo '</div>' . "\n";
+echo '<div class="entry-content">' . "\n";
+the_content();
+wp_link_pages(array(
+    'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'xidipity') . '</span>',
+    'after' => '</div>',
+    'link_before' => '<span>',
+    'link_after' => '</span>',
+));
+echo '</div>' . "\n";
+
+if ('' != get_edit_post_link()) {
+    echo '<footer class="entry-meta entry-meta-footer">' . "\n";
+    xidipity_entry_footer();
+    echo '</footer>' . "\n";
+}
+
+echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '</article>' . "\n";
+/*  # eof
+content-page.php
+-------------------------------------*/
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-content-wrapper post-content-wrapper-single">
-		<div class="entry-data-wrapper entry-data-wrapper-single">
-			<div class="entry-header-wrapper">
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
-			</div><!-- .entry-header-wrapper -->
-			<div class="entry-content">
-				<?php the_content(); ?>
-				<?php
-					wp_link_pages( array(
-						'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'xidipity' ) . '</span>',
-						'after'       => '</div>',
-						'link_before' => '<span>',
-						'link_after'  => '</span>',
-					) );
-				?>
-			</div><!-- .entry-content -->
-			<?php if ( '' != get_edit_post_link() ) : ?>
-			<footer class="entry-meta entry-meta-footer">
-				<?php xidipity_entry_footer(); ?>
-			</footer><!-- .entry-meta -->
-			<?php endif; ?>
-		</div><!-- .entry-data-wrapper -->
-	</div><!-- .post-content-wrapper -->
-</article><!-- #post-## -->

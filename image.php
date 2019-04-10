@@ -1,51 +1,134 @@
 <?php
-/**
- * The template for displaying image attachments
- *
- * build: 90218.3
- *
- * @package xidipity
- */
+/*
+*        file: image.php
+*       build: 90401.3
+* description: Template for displaying image attachments
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
+/* display page header     ------------
+-- */
+get_header();
+echo '<div class="content-area-container">' . "\n";
+echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
+
+/* get page title          ------------
+-- */
+$pgtitle = get_the_title();
+if (strpos($pgtitle, '.') > 1) {
+    $pgtitle = substr($pgtitle, 0, strpos($pgtitle, '.'));
+}
+
+/* have attachment         ------------
+-- */
+if (have_posts()) {
+    /* get attachment metadata ------------
+    -- */
+    $metadata = wp_get_attachment_metadata();
+    $ratio = round(absint($metadata['height']) / absint($metadata['width']),4);
+    switch ($ratio) {
+      case 1:
+        $ar = '1x1';
+        break;
+      case 0.75:
+        $ar = '4x3';
+        break;
+      case 0.6667:
+        $ar = '6x4 (classic film)';
+        break;
+      case 0.7146:
+        $ar = '7x5';
+        break;
+      case 0.625:
+        $ar = '16x10';
+        break;
+      case 0.5625:
+        $ar = '16x9 (high definition)';
+        break;
+      case 0.4281:
+        $ar = '21x9 (cinemascope)';
+        break;
+      default:
+        $ar = '';
+    }
+    $post_categories = get_the_category_list('<span class="px-2">|</span>', '', get_the_ID() );
+    if ($post_categories !== 'Uncategorized') {
+      $cat = $post_categories;
+    } else {
+      $cat = '';
+    }
+    echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
+    echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
+    echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
+    if ($ar !== '') {
+      echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ratio:</span> ' . $ar . '</p>' . "\n";
+    }
+    echo '<p>&nbsp;</p>' . "\n";
+    echo '<div class="entry-content">' . "\n";
+    echo '<figure class="entry-attachment wp-block-image">' . "\n";
+    /**
+     * Filter the default Xidipity image attachment size.
+     *               *
+     * @param string $image_size Image size. Default 'large'.
+     */
+    $image_size = apply_filters('Xidipity_attachment_size', 'full');
+    echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
+    echo '<figcaption class="wp-caption-text">' . get_the_excerpt(get_the_ID()) . '</figcaption>' . "\n";
+    echo '</figure>' . "\n";
+    echo '<div class="pb-2 pl-4 pr-4">' . get_the_content() . '</div>' . "\n";
+    wp_link_pages(array(
+        'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'Xidipity') . '</span>',
+        'after' => '</div>',
+        'link_before' => '<span>',
+        'link_after' => '</span>',
+        'pagelink' => '<span class="screen-reader-text">' . __('Page', 'Xidipity') . ' </span>%',
+        'separator' => '<span class="screen-reader-text">, </span>',
+    ));
+    echo '</div>' . "\n";
+    echo '<footer class="text-sm">' . "\n";
+    if ($cat !== '') {
+      echo '<p class="pl-4"><span class="font-normal">Filed under:</span> ' . $cat . '</p>' . "\n";
+    }
+    if ($metadata) {
+        echo '<i class="far fa-eye fg-sec-300 pl-4 pr-1"></i><a href="' . esc_url(wp_get_attachment_url()) . '">Raw</a>';
+    }
+
+    Xidipity_entry_footer();
+    echo '</footer>' . "\n";
+    echo '</article>' . "\n";
+
+    // Parent post navigation.
+
+    $title = get_the_title();
+    $parent = get_the_title($post->post_parent);
+    if ($title !== $parent) {
+        the_post_navigation(array(
+            'prev_text' => _x('<h4><i class="far fa-bookmark fg-pri-300 pr-2"></i>Published in</h4><span class="post-title">%title</span>', 'Parent post link', 'Xidipity') ,
+        ));
+    }
+
+    // If comments are open or we have at least one comment, load up the comment template.
+
+    if (comments_open() || get_comments_number()) {
+        comments_template();
+    }
+
+}
+
+echo '</div>' . "\n";
+/* display sidebar         ------------
+-- */
+get_sidebar();
+echo '</div>' . "\n";
+/* display footer          ------------
+-- */
+get_footer();
+/*  # eof
+    image.php
+-------------------------------------*/
 ?>
-
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="profile" href="http://gmpg.org/xfn/11">
-  <?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-  <div class="container">
-    <div class="row">
-      <section id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
-        <main id="main" class="site-main">
-          <div id="post-wrapper" class="post-wrapper post-wrapper-single">
-            <?php /* Start the Loop */ ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-
-              <?php get_template_part( 'template-parts/content', 'image-attachment' ); ?>
-
-              <nav id="image-navigation" class="navigation image-navigation">
-                <div class="nav-links">
-                  <div class="previous-image nav-previous"><?php previous_image_link( false, esc_html__( 'Previous Image', 'xidipity' ) ); ?></div>
-                  <div class="next-image nav-next"><?php next_image_link( false, esc_html__( 'Next Image', 'xidipity' ) ); ?></div>
-                </div><!-- .nav-links -->
-              </nav><!-- #image-navigation -->
-
-              <?php
-                // If comments are open or we have at least one comment, load up the comment template
-                if ( comments_open() || '0' != get_comments_number() ) :
-                  comments_template();
-                endif;
-              ?>
-            <?php endwhile; // end of the loop. ?>
-          </div><!-- .post-wrapper -->
-        </main><!-- #main -->
-      </section><!-- #primary -->
-    </div><!-- .row -->
-  <!-- .container -->
-  <?php get_footer(); ?>

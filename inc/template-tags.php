@@ -1,15 +1,18 @@
 <?php
-/**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * build: 90226.1
- *
- * @package xidipity
- */
+/*
+*        file: template-tags.php
+*       build: 90405.2
+* description: Core WordPress extensions
+*      github: https://github.com/WpThemeDev/xidipity
+*    comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+***/
 
-if (!function_exists('xidipity_the_posts_pagination')):
+if (!function_exists('xidipity_the_posts_pagination')) {
     /**
      * Display navigation to next/previous set of posts when applicable.
      *
@@ -31,10 +34,9 @@ if (!function_exists('xidipity_the_posts_pagination')):
 
         ));
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_the_post_navigation')):
+if (!function_exists('xidipity_the_post_navigation')) {
     /**
      * Previous/next post navigation.
      *
@@ -47,14 +49,15 @@ if (!function_exists('xidipity_the_post_navigation')):
         // Previous/next post navigation @since 4.1.0.
 
         the_post_navigation(array(
-            'next_text' => '<span class="meta-nav">' . esc_html__('Next', 'xidipity') . '</span> ' . '<span class="post-title">%title</span>',
-            'prev_text' => '<span class="meta-nav">' . esc_html__('Prev', 'xidipity') . '</span> ' . '<span class="post-title">%title</span>',
+            // 'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ') ,
+            'next_text' => __('<span class="meta-nav pr-4">Next Post<i class="fas fa-angle-right pl-2"></i></span>') ,
+            // 'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
+            'prev_text' => __('<span class="meta-nav pl-4"><i class="fas fa-angle-left pr-2"></i>Prev Post</span>') ,
         ));
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_posted_on')):
+if (!function_exists('xidipity_posted_on')) {
     /**
      * Prints HTML with meta information for the current post-date/time and author.
      */
@@ -79,10 +82,9 @@ if (!function_exists('xidipity_posted_on')):
         $html = apply_filters('xidipity_posted_on_html', $html);
         echo $html; // WPCS: XSS OK.
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_posted_by')):
+if (!function_exists('xidipity_posted_by')) {
     /**
      * Prints author.
      */
@@ -99,7 +101,7 @@ if (!function_exists('xidipity_posted_by')):
 
         // Byline
 
-        $byline = sprintf(esc_html_x('by %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('display_name', $post_author_id)) . '</a></span>');
+        $byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
 
         // Posted By HTML
 
@@ -112,10 +114,9 @@ if (!function_exists('xidipity_posted_by')):
         $html = apply_filters('xidipity_posted_by_html', $html);
         echo $html; // WPCS: XSS OK.
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_post_first_category')):
+if (!function_exists('xidipity_post_first_category')) {
     /**
      * Prints first category for the current post.
      *
@@ -168,20 +169,20 @@ if (!function_exists('xidipity_post_first_category')):
 
             if (!empty($category_display)) {
                 if ($useCatLink == true && !empty($category_link)) {
-                    echo '<span class="post-category">';
-                    echo '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
-                    echo '</span>';
+                    $html = '<span class="post-category">';
+                    $html .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
+                    $html .= '</span>';
                 }
                 else {
-                    echo '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
+                    $html = '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
                 }
+                return $html;
             }
         }
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_entry_footer')):
+if (!function_exists('xidipity_entry_footer')) {
     /**
      * Prints HTML with meta information for the categories, tags and comments.
      */
@@ -191,25 +192,27 @@ if (!function_exists('xidipity_entry_footer')):
         // Hide category and tag text for pages.
 
         if ('post' === get_post_type()) {
-            /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__(', ', 'xidipity'));
+            $categories_list = __(get_the_category_list(esc_html__(' | ', 'xidipity')));
             if ($categories_list && xidipity_categorized_blog()) {
-                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'xidipity') . '</span>', $categories_list); // WPCS: XSS OK.
+                echo '<span class="font-normal">Category:</span>&nbsp;' . xidipity_post_first_category() . "\n";
             }
-
-            /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html__(', ', 'xidipity'));
+            $tags_list = __(get_the_tag_list('', ', ', ''));
             if ($tags_list) {
-                printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'xidipity') . '</span>', $tags_list); // WPCS: XSS OK.
+                echo '<span class="px-2">|</span><span class="font-normal">Tagged:<span>&nbsp;' . $tags_list . "\n";
             }
         }
-
-        edit_post_link(sprintf(
-        /* translators: %s: Name of current post */
-        esc_html__('Edit %s', 'xidipity') , the_title('<span class="screen-reader-text">"', '"</span>', false)) , '<span class="edit-link">', '</span>');
+        /* show on login           ------------
+        -- */
+        if (get_edit_post_link()) {
+            if (get_post_type( get_the_ID() ) == 'page') {
+                echo '<i class="fas fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
+            } else {
+                echo '<span class="pl-2 pr-3">|</span><i class="fas fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
+            }
+        }
     }
+}
 
-endif;
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -269,7 +272,7 @@ function xidipity_category_transient_flusher()
 add_action('edit_category', 'xidipity_category_transient_flusher');
 add_action('save_post', 'xidipity_category_transient_flusher');
 
-if (!function_exists('xidipity_post_thumbnail')):
+if (!function_exists('xidipity_post_thumbnail')) {
     /**
      * Display an optional post thumbnail.
      *
@@ -312,10 +315,9 @@ if (!function_exists('xidipity_post_thumbnail')):
             echo $html; // WPCS: XSS OK.
         }
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_the_custom_logo')):
+if (!function_exists('xidipity_the_custom_logo')) {
     /**
      * Displays the optional custom logo.
      *
@@ -327,8 +329,8 @@ if (!function_exists('xidipity_the_custom_logo')):
             the_custom_logo();
         }
     }
+}
 
-endif;
 /**
  * A helper conditional function.
  * Theme has Excerpt or Not
@@ -427,5 +429,10 @@ function xidipity_layout_class($section = 'content')
         $layout_classes = ('sidebar' === $section) ? $layout_skeleton['content-sidebar']['sidebar'] : $layout_skeleton['content-sidebar']['content'];
     }
 
-    echo esc_attr($layout_classes);
+    return esc_attr($layout_classes);
 }
+
+/*  # eof
+template-tags.php
+-------------------------------------*/
+?>

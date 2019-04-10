@@ -1,6 +1,6 @@
 /*
 File          - blog-print-var.css
-Build         - 90228.1
+Build         - 90331.1
 Programmer    - John Baer
 Purpose       - Support file for Xidipity Wordpress Theme
 License       - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -15,15 +15,18 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
          base - gray
       primary - gray
     secondary - gray
-*/
 
-/*  root
- -----------------------------------------------------------------------------*/
+-- */
+
+/*  root                     --------------------------------------------------
+-- */
 
 :root {
-  /* base font size    ------------------------------------------------------ */
+  /* base font size          ----------
+  -- */
   font-size: 16px;
-  /* foreground colors    --------------------------------------------------- */
+  /* foreground colors       ----------
+  -- */
   --fg-blk: #000000;
   --fg-wht: #ffffff;
   --fg-bas-900: #212121;
@@ -56,7 +59,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --fg-sec-200: #eeeeee;
   --fg-sec-100: #f5f5f5;
   --fg-sec-050: #fafafa;
-  /* background colors    --------------------------------------------------- */
+  /* background colors       ----------
+  -- */
   --bg-blk: #000000;
   --bg-wht: #ffffff;
   --bg-bas-900: #212121;
@@ -89,7 +93,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --bg-sec-200: #eeeeee;
   --bg-sec-100: #f5f5f5;
   --bg-sec-050: #fafafa;
-  /* headers    ------------------------------------------------------------- */
+  /* headers                 ----------
+  -- */
   --h1-color: #000000;
   --h1-font: sans-serif;
   --h1-size: 2.125em;
@@ -120,7 +125,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --h6-size: 1.125em;
   --h6-style: italic;
   --h6-weight: 400;
-  /* sys page banner -------------------------------------------------------- */
+  /* sys page banner         ----------
+  -- */
   --sys-pg-banner-tl-border-color: #fafafa;
   --sys-pg-banner-br-border-color: #fafafa;
   --sys-pg-banner-fg-color-left: #ffffff;
@@ -129,7 +135,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --sys-pg-banner-bg-color-right: #f5f5f5;
   --sys-pg-banner-font-family: serif;
   --sys-pg-banner-font-weight: 300;
-  /* sys header ------------------------------------------------------------- */
+  /* sys header              ----------
+  -- */
   --sys-hdr-bg-color: #ffffff;
   --sys-hdr-align: center;
   --title-lnk-pri-color: #757575;
@@ -145,7 +152,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --descr-font-spacing: 0.5em;
   --descr-font-style: normal;
   --descr-font-weight: 300;
-  /* sys menu   ------------------------------------------------------------- */
+  /* sys menu                ----------
+  -- */
   --mnu-pri-fg-color: #424242;
   --mnu-pri-bg-color: #fafafa;
   --mnu-pri-fg-color-hov: #000000;
@@ -156,7 +164,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --mnu-sec-fg-color-hov: #000000;
   --mnu-sec-bg-color-hov: #f5f5f5;
   --mnu-sec-fg-weight-hov: 400;
-  /* sys footer ------------------------------------------------------------- */
+  /* sys footer              ----------
+  -- */
   --sys-ft-bg-color: #ffffff;
   --sys-ft-align: center;
   --copyright-line-height: inherit;
@@ -178,7 +187,8 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
   --designer-font-spacing: normal;
   --designer-font-style: normal;
   --designer-font-weight: 300;
-  /* system     ------------------------------------------------------------- */
+  /* system                  ----------
+  -- */
   --sys-bg-color: #fafafa;
   --sys-content-bg-color: #ffffff;
   --sys-content-tl-border-color: #eeeeee;
@@ -202,4 +212,4 @@ Color Scheme  - https://xidipity.com/authoring-tools/style/color-palette/
 }
 /*  # eof
     blog-print-var
----------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------*/
