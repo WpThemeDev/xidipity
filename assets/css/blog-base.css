@@ -1,12 +1,17 @@
 /*
- *
- *        file: blog-base.css
- *       build: 90405.1
- * description: Cascading Style Sheet
- *      github: https://github.com/WpThemeDev/xidipity
- *    comments: Only CSS classes which are unique to the web are here.
- *
- ***
+Theme Name  - Xidipity
+Description - Cascading Style Sheet
+
+File        - blog-base.css
+Build       - 90413.1
+Description - Cascading Style Sheet
+Programmer  - John Baer
+Purpose     - Support file for Xidipity Wordpress Theme
+License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
+Comments    - Only CSS classes which are unique to the web are here.
+
+Github      - https://github.com/WpThemeDev/xidipity
 
 -- Table Of Contents       ------------
 --
@@ -196,6 +201,17 @@ body {
 .adsbygoogle {
     background-color: transparent;
 }
+/* blank line spacers      ----------------------------------------------------
+-- */
+
+.spacer-triple,
+.spacer-double,
+.spacer-single,
+.spacer-3\/4,
+.spacer-1\/2 {
+    visibility: hidden;
+}
+
 /*  # WordPress
    ## Author Info
  ----------------------------------------------------------------------------*/
