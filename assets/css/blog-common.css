@@ -3,12 +3,14 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90318.1
+Build       - 90413.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
 Comments    - Only CSS classes which are shared with the editor and web are here.
+
+Github      - https://github.com/WpThemeDev/xidipity
 
 -- Table Of Contents       ------------
 --
@@ -578,37 +580,32 @@ table#responsive td img {
 -- */
 
 .spacer-1\/2 {
-    background-color: transparent;
+    background-color: var(--fg-bas-100);
     color: transparent;
-    font-size: 4px;
     font-size: 0.25rem;
     width: 100%;
 }
 .spacer-3\/4 {
-    background-color: transparent;
+    background-color: var(--fg-bas-100);
     color: transparent;
-    font-size: 10px;
     font-size: 0.6rem;
     width: 100%;
 }
 .spacer-single {
-    background-color: transparent;
+    background-color: var(--fg-bas-100);
     color: transparent;
-    font-size: 16px;
     font-size: 1rem;
     width: 100%;
 }
 .spacer-double {
-    background-color: transparent;
+    background-color: var(--fg-bas-100);
     color: transparent;
-    font-size: 34px;
     font-size: 2.1rem;
     width: 100%;
 }
 .spacer-triple {
-    background-color: transparent;
+    background-color: var(--fg-bas-100);
     color: transparent;
-    font-size: 51px;
     font-size: 3.2rem;
     width: 100%;
 }
