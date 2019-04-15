@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - editor-style.css
-Build       - 90318.1
+Build       - 90415.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later
@@ -12,7 +12,7 @@ Sources     - TinyMCE editor (https://www.tinymce.com/) (wp-content.css)
               Automattic, Inc. (https://automattic.com/)
 Comments    - Only CSS classes which are unique to the editor are here.
 
-Import dependant css files
+Import dependent css files
 
 -- */
 
@@ -30,7 +30,7 @@ Import dependant css files
 
 body,
 .mce-content-body {
-    background-color: bg-wht;
+    background-color: var(--bg-wht);
     color: var(--sys-font-color);
     font-family: var(--sys-font-family);
     font-size: var(--sys-font-size);
@@ -86,6 +86,25 @@ acronym {
     padding: 15px;
     white-space: pre-wrap;
 }
+/* 2 column outline        ------------
+-- */
+
+table#responsive tr td,
+table#twocol tr td,
+table#twocol tr td table#twocol tr td {
+    border: 1px dashed var(--fg-sec-100);
+}
+/* blank line spacers      ------------
+-- */
+
+.spacer-triple,
+.spacer-double,
+.spacer-single,
+.spacer-3\/4,
+.spacer-1\/2 {
+    background-color: var(--fg-sec-050);
+}
+
 /*  # eof
     editor-style
 ---------------------------------------------------------------------------*/
