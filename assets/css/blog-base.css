@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90414.1
+Build       - 90415.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -199,6 +199,16 @@ body {
 -- */
 
 .adsbygoogle {
+    background-color: transparent;
+}
+/* blank line spacers      ------------
+-- */
+
+.spacer-triple,
+.spacer-double,
+.spacer-single,
+.spacer-3\/4,
+.spacer-1\/2 {
     background-color: transparent;
 }
 
