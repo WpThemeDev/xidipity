@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90415.1
+Build       - 90416.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -595,7 +595,7 @@ table#responsive td img {
 }
 .spacer-triple {
     color: transparent;
-    font-size: 3.2rem;
+    font-size: 3.1875rem;
     width: 100%;
 }
 /* font awesome            ----------------------------------------------------
