@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90415.1
+Build       - 90419.2
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -704,7 +704,7 @@ div#respond #cancel-comment-reply-link {
 .entry-meta .byline a,
 .entry-meta .posted-on a:visited,
 .entry-meta .byline a:visited {
-    color: var(--fg-sec-900);
+    color: var(--sys-lnk-pri-color);
     font-weight: 400;
     letter-spacing: 0.8px;
     padding-bottom: 4px;
@@ -1654,21 +1654,16 @@ ul.hz-list li::before {
 
 .header-banner {
     background-color: var(--sys-hdr-bg-color);
-    min-height: 30px;
+    height: 100px;
     overflow: hidden;
     text-align: var(--sys-hdr-align);
     width: 100%;
 }
 .site-title {
-    padding-bottom: 10px;
-    padding-top: 4px;
-    padding: 4px 4px 10px 4px;
+    padding: 0 10px 0 10px;
 }
 .site-description {
-    display: none;
-    padding-bottom: 10px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0 10px 0 10px;
 }
 /* other media formats     ------------
 -- */
@@ -1678,15 +1673,13 @@ ul.hz-list li::before {
         padding: 4px 10px 4px 10px;
     }
     .site-description {
-        display: block;
         padding-left: 10px;
         padding-right: 10px;
     }
 }
 img.header-logo {
-    height: 100%;
-    object-fit: contain;
-    padding-top: 5px;
+    height: 100px;
+    object-fit: cover;
     width: auto;
 }
 /*  # WordPress

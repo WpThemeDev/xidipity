@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: custom-header.php
-*       build: 90327.1
+*       build: 90419.1
 * description: Implementation of the Custom Header feature
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -37,16 +37,19 @@ if (!function_exists('xidipity_header_style')) {
      */
     function xidipity_header_style()
     {
-        if (get_header_image()) {
+        if (has_header_image()) {
+            $img = get_header_image();
             echo '<style type="text/css">' . "\n";
             echo '.header-banner {' . "\n";
-            echo 'background-image: url("' . header_image() . '");' . "\n";
+            echo 'background-image: url("' . esc_url($img) . '");' . "\n";
             echo 'background-repeat: no-repeat;' . "\n";
-            echo 'background-position: top center;' . "\n";
+            echo 'background-position: center center;' . "\n";
             echo '-webkit-background-size: cover;' . "\n";
             echo '-moz-background-size: cover;' . "\n";
             echo '-o-background-size: cover;' . "\n";
             echo 'background-size: cover;' . "\n";
+            echo 'height: 100px;' . "\n";
+            echo 'width: auto;' . "\n";
             echo '}' . "\n";
             echo '</style>' . "\n";
         }
