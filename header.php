@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: header.php
-*       build: 90323.1
+*       build: 90420.1
 * description: Template for page headers.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: This is the template that displays all of the <head> section and everything up until <div id="content">
@@ -76,9 +76,11 @@ else {
     echo '</nav>' . "\n";
 }
 
-wp_reset_postdata();
 echo '</header>' . "\n";
 echo '<div id="content" class="site-content">' . "\n";
+/* reset post data         ------------
+-- */
+wp_reset_postdata();
 /*  # eof
     header.php
 -------------------------------------*/
