@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90331.1
+ *       build: 90423.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -760,6 +760,68 @@ function xidipity_theme_customize_register($wp_customize)
     // $wp_customize->remove_section("static_front_page");
 
 }
+
+/**
+ * Use tinymce to edit category descriptions
+ *
+ */
+if (class_exists('WPSEO_Meta')) {
+    return;
+}
+/**
+ * Allows HTML in descriptions.
+ */
+function custom_category_descriptions_allow_html() {
+    $filters = array(
+        'pre_term_description',
+        'pre_link_description',
+        'pre_link_notes',
+        'pre_user_description'
+    );
+    
+    foreach ($filters as $filter) {
+        remove_filter($filter, 'wp_filter_kses');
+    }
+    remove_filter('term_description', 'wp_kses_data');
+}
+
+add_filter('edit_category_form_fields', 'cat_description');
+function cat_description($tag) {
+    
+    echo '<table class="form-table">' . "\n";
+    echo '<tr class="form-field">' . "\n";
+    echo '<th scope="row" valign="top"><label for="description">' . _ex('Description', 'Taxonomy Description') . '</label></th>' . "\n";
+    echo '<td>' . "\n";
+    $settings = array(
+        'wpautop' => true,
+        'media_buttons' => true,
+        'quicktags' => true,
+        'textarea_rows' => '15',
+        'textarea_name' => 'description'
+    );
+    wp_editor(wp_kses_post($tag->description, ENT_QUOTES, 'UTF-8'), 'cat_description', $settings);
+    echo '<br />' . "\n";
+    echo '<span class="description">' . _e('The description is not prominent by default; however, some themes may show it.') . '</span>' . "\n";
+    echo '</td>' . "\n";
+    echo '</tr>' . "\n";
+    echo '</table>' . "\n";
+    
+}
+
+add_action('admin_head', 'remove_default_category_description');
+function remove_default_category_description() {
+    global $current_screen;
+    if ($current_screen->id == 'edit-category') {
+?>
+<script type="text/javascript">
+jQuery(function($) {
+$('textarea#description').closest('tr.form-field').remove();
+});
+</script>
+<?php
+    }
+}
+
 /*  # eof
     functions.php
 -------------------------------------*/
