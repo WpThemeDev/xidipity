@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90427.1
+*       build: 90427.2
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -191,9 +191,10 @@ if (!function_exists('xidipity_entry_footer')) {
 
         /* show categories         ------------
         -- */
-        $category_list = get_the_category_list(', ', '', get_the_ID() );
-        echo '<span class="font-normal pr-1">Category:</span>' . $category_list . "\n";
-
+        if ( is_single() ) {
+            $category_list = get_the_category_list(', ', '', get_the_ID() );
+            echo '<span class="font-normal pr-1">Category:</span>' . $category_list . "\n";
+        }
         /* show tags               ------------
         -- */
         $tags_list = get_the_tag_list( '', __( ', ', 'Xidipity' ) );
