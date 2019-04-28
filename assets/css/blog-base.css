@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90427.1
+Build       - 90428.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -1550,12 +1550,6 @@ input#menu-toggle[type=checkbox]:checked~div {
         font-weight: 900;
         padding-left: 10px;
     }
-}
-/* new install hack        ------------
--- */
-
-li.current_page_item {
-    visibility: hidden;
 }
 /* admin menu bar      ----------------------------------------------------
 -- */
