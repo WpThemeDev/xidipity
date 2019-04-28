@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-none.php
-*       build: 90406.1
+*       build: 90428.1
 * description: The template for displaying search forms.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: At this point the search as failed. Check to see if it is an
@@ -121,11 +121,7 @@ else {
     echo '</header>' . "\n";
     echo '<div class="page-content">' . "\n";
     if (is_home() && current_user_can('publish_posts')) {
-        echo '<p>' . printf(wp_kses(__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'xidipity') , array(
-            'a' => array(
-                'href' => array()
-            )
-        )) , esc_url(admin_url('post-new.php'))) . '</p>' . "\n";
+        echo '<p>' . __('Ready to publish your first post? <a href="' . esc_url(admin_url('post-new.php')) . '">Get started here</a>.', 'xidipity') . '</p>' . "\n";
     }
     elseif (is_search()) {
         $message = wpautop('Sorry, but nothing matched your search terms.') . "\n";
