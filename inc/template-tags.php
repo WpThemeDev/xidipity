@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90405.2
+*       build: 90427.2
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -184,30 +184,31 @@ if (!function_exists('xidipity_post_first_category')) {
 
 if (!function_exists('xidipity_entry_footer')) {
     /**
-     * Prints HTML with meta information for the categories, tags and comments.
+     * Display HTML with meta information for the categories, tags and comments.
      */
     function xidipity_entry_footer()
     {
 
-        // Hide category and tag text for pages.
-
-        if ('post' === get_post_type()) {
-            $categories_list = __(get_the_category_list(esc_html__(' | ', 'xidipity')));
-            if ($categories_list && xidipity_categorized_blog()) {
-                echo '<span class="font-normal">Category:</span>&nbsp;' . xidipity_post_first_category() . "\n";
-            }
-            $tags_list = __(get_the_tag_list('', ', ', ''));
-            if ($tags_list) {
-                echo '<span class="px-2">|</span><span class="font-normal">Tagged:<span>&nbsp;' . $tags_list . "\n";
-            }
+        /* show categories         ------------
+        -- */
+        if ( is_single() ) {
+            $category_list = get_the_category_list(', ', '', get_the_ID() );
+            echo '<span class="font-normal pr-1">Category:</span>' . $category_list . "\n";
         }
+        /* show tags               ------------
+        -- */
+        $tags_list = get_the_tag_list( '', __( ', ', 'Xidipity' ) );
+        if ($tags_list) {
+            echo '<span class="font-normal pl-3 pr-1">Tagged:<span>&nbsp;' . $tags_list . "\n";
+        }
+
         /* show on login           ------------
         -- */
         if (get_edit_post_link()) {
             if (get_post_type( get_the_ID() ) == 'page') {
                 echo '<i class="fas fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
             } else {
-                echo '<span class="pl-2 pr-3">|</span><i class="fas fa-edit fg-sec-300"></i>&nbsp;<a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
+                echo ' <i class="fas fa-edit fg-sec-300 pl-3 pr-1"></i><a href="' . get_edit_post_link() . '">Edit</a>' . "\n";
             }
         }
     }
