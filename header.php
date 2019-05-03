@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: header.php
-*       build: 90420.1
+*       build: 90428.1
 * description: Template for page headers.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: This is the template that displays all of the <head> section and everything up until <div id="content">
@@ -54,28 +54,33 @@ if ($description || is_customize_preview()) {
 echo '</div>' . "\n";
 $page = get_page_by_path('table-of-contents');
 
-if ($page) {
-    echo '<div class="toc-menu">';
-    if ($page->ID == get_queried_object_id()) {
-        echo '<a class="toc-btn" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
+/* need primary menu       ------------
+-- */
+$menuLocations = get_nav_menu_locations();
+$menuID = $menuLocations['primary'];
+if ($menuID > 0 Or $page) {
+    if ($page) {
+        echo '<div class="toc-menu">';
+        if ($page->ID == get_queried_object_id()) {
+            echo '<a class="toc-btn" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
+        }
+        else {
+            echo '<a class="toc-btn" href="' . get_permalink($page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
+        }
+    
+        echo '</div>' . "\n";
     }
     else {
-        echo '<a class="toc-btn" href="' . get_permalink($page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
+        echo '<nav id="site-navigation" class="main-navigation">' . "\n";
+        echo '<input type="checkbox" id="menu-toggle">' . "\n";
+        echo '<label for="menu-toggle"><i class="fas fa-bars"></i></label>' . "\n";
+        wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'menu_id' => 'primary-menu',
+        ));
+        echo '</nav>' . "\n";
     }
-
-    echo '</div>' . "\n";
 }
-else {
-    echo '<nav id="site-navigation" class="main-navigation">' . "\n";
-    echo '<input type="checkbox" id="menu-toggle">' . "\n";
-    echo '<label for="menu-toggle"><i class="fas fa-bars"></i></label>' . "\n";
-    wp_nav_menu(array(
-        'theme_location' => 'primary',
-        'menu_id' => 'primary-menu',
-    ));
-    echo '</nav>' . "\n";
-}
-
 echo '</header>' . "\n";
 echo '<div id="content" class="site-content">' . "\n";
 /* reset post data         ------------
