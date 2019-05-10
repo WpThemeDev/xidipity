@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90424.1
+ *       build: 90510.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -360,7 +360,8 @@ function register_mce_twocol_button($buttons)
 /**
  * Add the TinyMCE excerpt Plugin.
  *
- */
+ * deprecated
+ *
 add_action('admin_head', 'mce_add_excerpt_button');
 
 function mce_add_excerpt_button()
@@ -387,6 +388,7 @@ function mce_add_excerpt_button()
         add_filter('mce_buttons', 'register_mce_excerpt_button');
     }
 }
+ */
 
 function add_tinymce_excerpt_plugin($plugin_array)
 {
@@ -716,7 +718,8 @@ function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
+//    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,adsense,xscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -812,7 +815,58 @@ function remove_default_category_description()
     }
 }
 
+/* post / page notes         ----------
+   build: 90510.1
+-- */
+
+/* meta_box                  ----------
+-- */
+function add_notes_meta_box() {
+    add_meta_box(
+        'Notes', // $id
+        'Notes', // $title
+        'notes_meta_box_callback', // $callback
+        '', // $screen
+        'normal', // $context
+        'high' // $priority
+    );
+}
+
+add_action( 'add_meta_boxes', 'add_notes_meta_box' );
+
+/* callback                  ----------
+ * @param WP_Post $post Current post object.
+-- */
+function notes_meta_box_callback( $post ) {
+    // Add a nonce field so we can check for it later.
+    wp_nonce_field( 'notes_nonce', 'notes_nonce' );
+    
+    global $post;
+    $content = get_post_meta( $post->ID, 'notes_meta_box', true );
+    $editor_id = 'note_editor';
+ 
+    wp_editor( $content, $editor_id );
+
+}
+
+/* save content              ----------
+-- */
+function save_meta_box_notes(){
+
+    // Check if our nonce is set.
+    if ( isset( $_POST['notes_nonce'] ) ) {
+
+        // Verify that the nonce is valid.
+        if ( wp_verify_nonce( $_POST['notes_nonce'], 'notes_nonce' ) ) {
+            global $post;
+            update_post_meta($post->ID, 'notes_meta_box', $_POST['note_editor'] );
+        }
+    }
+}
+add_action( 'save_post', 'save_meta_box_notes' );
+
 /*  # eof
     functions.php
 -------------------------------------*/
+
 ?>
