@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: comments.php
-*       build: 90325.1.1
+*       build: 90518.1
 * description: Template for displaying posts assigned to category.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: Login required.
@@ -58,8 +58,8 @@ if (have_comments()):
         echo '<nav id="comment-nav-below" class="navigation comment-navigation comment-navigation-below" role="navigation">' . "\n";
         echo '<h1 class="screen-reader-text">' . esc_html_e('Comment navigation', 'xidipity') . '</h1>' . "\n";
         echo '<div class="nav-links">' . "\n";
-        echo '<div class="nav-previous">' . previous_comments_link(esc_html__('Older Comments', 'xidipity')) . '</div>' . "\n";
-        echo '<div class="nav-next">' . next_comments_link(esc_html__('Newer Comments', 'xidipity')) . '</div>' . "\n";
+        echo '<div class="nav-previous">' . previous_comments_link(esc_html_e('Older Comments', 'xidipity')) . '</div>' . "\n";
+        echo '<div class="nav-next">' . next_comments_link(esc_html_e('Newer Comments', 'xidipity')) . '</div>' . "\n";
         echo '</div>' . "\n";
         echo '</nav>' . "\n";
     endif;
