@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90510.1
+ *       build: 90518.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -819,31 +819,32 @@ function remove_default_category_description()
    build: 90510.1
 -- */
 
-/* meta_box                  ----------
+/* meta_box (mb)             ----------
 -- */
-function add_notes_meta_box() {
+function add_notes_mb() {
     add_meta_box(
-        'Notes', // $id
-        'Notes', // $title
-        'notes_meta_box_callback', // $callback
-        '', // $screen
-        'normal', // $context
-        'high' // $priority
+        'Notes',
+        __('Notes'),
+        'callback_notes_mb',
+        null,
+        'normal',
+        'low',
+        array( '__back_compat_meta_box' => true, '__block_editor_compatible_meta_box' => true )
     );
 }
 
-add_action( 'add_meta_boxes', 'add_notes_meta_box' );
+add_action( 'add_meta_boxes', 'add_notes_mb' );
 
 /* callback                  ----------
  * @param WP_Post $post Current post object.
 -- */
-function notes_meta_box_callback( $post ) {
+function callback_notes_mb( $post ) {
     // Add a nonce field so we can check for it later.
     wp_nonce_field( 'notes_nonce', 'notes_nonce' );
     
     global $post;
-    $content = get_post_meta( $post->ID, 'notes_meta_box', true );
-    $editor_id = 'note_editor';
+    $content = get_post_meta( $post->ID, 'notes_mb', true );
+    $editor_id = 'notes_editor';
  
     wp_editor( $content, $editor_id );
 
@@ -851,7 +852,7 @@ function notes_meta_box_callback( $post ) {
 
 /* save content              ----------
 -- */
-function save_meta_box_notes(){
+function save_notes_mb() {
 
     // Check if our nonce is set.
     if ( isset( $_POST['notes_nonce'] ) ) {
@@ -859,11 +860,11 @@ function save_meta_box_notes(){
         // Verify that the nonce is valid.
         if ( wp_verify_nonce( $_POST['notes_nonce'], 'notes_nonce' ) ) {
             global $post;
-            update_post_meta($post->ID, 'notes_meta_box', $_POST['note_editor'] );
+            update_post_meta($post->ID, 'notes_mb', $_POST['notes_editor'] );
         }
     }
 }
-add_action( 'save_post', 'save_meta_box_notes' );
+add_action( 'save_post', 'save_notes_mb' );
 
 /*  # eof
     functions.php
