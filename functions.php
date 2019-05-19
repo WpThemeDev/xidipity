@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90518.1
+ *       build: 90519.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -815,17 +815,19 @@ function remove_default_category_description()
     }
 }
 
-/* post / page notes         ----------
-   build: 90510.1
+/* sandbox editor            ----------
+   build: 90519.1
+   comment: this is a beta. the functionality works but there is
+            probably a better way to code it.
 -- */
 
 /* meta_box (mb)             ----------
 -- */
-function add_notes_mb() {
+function add_sandbox_mb() {
     add_meta_box(
-        'Notes',
-        __('Notes'),
-        'callback_notes_mb',
+        'sandbox',
+        __('Sandbox Editor'),
+        'callback_sandbox_mb',
         null,
         'normal',
         'low',
@@ -833,38 +835,58 @@ function add_notes_mb() {
     );
 }
 
-add_action( 'add_meta_boxes', 'add_notes_mb' );
+add_action( 'add_meta_boxes', 'add_sandbox_mb' );
 
 /* callback                  ----------
  * @param WP_Post $post Current post object.
 -- */
-function callback_notes_mb( $post ) {
+function callback_sandbox_mb( $post ) {
     // Add a nonce field so we can check for it later.
-    wp_nonce_field( 'notes_nonce', 'notes_nonce' );
+    wp_nonce_field( 'sandbox_nonce', 'sandbox_nonce' );
     
     global $post;
-    $content = get_post_meta( $post->ID, 'notes_mb', true );
-    $editor_id = 'notes_editor';
- 
-    wp_editor( $content, $editor_id );
+    $content = get_post_meta( $post->ID, 'sandbox_mb', true );
+    $editor_height = 400;
+    
+    echo '<link rel="stylesheet" id="codemirror-css"  href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.css?ver=5.38" async="async" type="text/css" media="screen" />' . "\n";
+    echo '<style>.entry-title{display:none}.CodeMirror-activeline-background{background-color:var(--bg-alt2-050)}.CodeMirror{height:' . $editor_height .'px}</style>' . "\n";
+    echo '<form><textarea id="sandbox_editor" name="sandbox_editor" placeholder="Sandbox - paste template code here.">' . esc_textarea( $content ) . '</textarea></form>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/display/placeholder.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/selection/active-line.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/xml/xml.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/css/css.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/javascript/javascript.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/htmlmixed/htmlmixed.js"></script>' . "\n";
+    echo '<script>' . "\n";
+    echo 'CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";' . "\n";
+    echo 'CodeMirror.keyMap.default["Tab"] = "indentMore";' . "\n";
+    echo 'var editor = CodeMirror.fromTextArea(sandbox_editor, {' . "\n";
+    echo 'mode: "text/html",' . "\n";
+    echo 'lineNumbers: true,' . "\n";
+    echo 'styleActiveLine: true,' . "\n";
+    echo 'tabSize: 4,' . "\n";
+    echo 'autofocus: true,' . "\n";
+    echo '});' . "\n";
+    echo '</script>' . "\n";
 
 }
 
 /* save content              ----------
 -- */
-function save_notes_mb() {
+function save_sandbox_mb() {
 
     // Check if our nonce is set.
-    if ( isset( $_POST['notes_nonce'] ) ) {
+    if ( isset( $_POST['sandbox_nonce'] ) ) {
 
         // Verify that the nonce is valid.
-        if ( wp_verify_nonce( $_POST['notes_nonce'], 'notes_nonce' ) ) {
+        if ( wp_verify_nonce( $_POST['sandbox_nonce'], 'sandbox_nonce' ) ) {
             global $post;
-            update_post_meta($post->ID, 'notes_mb', $_POST['notes_editor'] );
+            update_post_meta($post->ID, 'sandbox_mb', $_POST['sandbox_editor'] );
         }
     }
 }
-add_action( 'save_post', 'save_notes_mb' );
+add_action( 'save_post', 'save_sandbox_mb' );
 
 /*  # eof
     functions.php
