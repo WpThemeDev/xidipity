@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: header.php
-*       build: 90518.1
+*       build: 90428.1
 * description: Template for page headers.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: This is the template that displays all of the <head> section and everything up until <div id="content">
@@ -26,7 +26,7 @@ do_action('wp_head');
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<div id="page" class="site">' . "\n";
-echo '<a class="skip-link screen-reader-text" href="#content">' . esc_html_e('Skip to content') . '</a>' . "\n";
+echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 echo '<header id="masthead" class="site-header">' . "\n";
 echo '<div class="header-banner">' . "\n";
 /* custom logo             ------------
@@ -39,16 +39,16 @@ if (has_custom_logo()) {
 }
 
 if (is_front_page() && is_home()) {
-    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_html_e(get_bloginfo('name')) . '</a></p>' . "\n";
+    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 }
 else {
-    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_html_e(get_bloginfo('name')) . '</a></p>' . "\n";
+    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 }
 
 $description = get_bloginfo('description', 'display');
 
 if ($description || is_customize_preview()) {
-    echo '<p class="site-description">' . esc_html_e($description) . '</p>' . "\n";
+    echo '<p class="site-description">' . $description . '</p>' . "\n";
 }
 
 echo '</div>' . "\n";
