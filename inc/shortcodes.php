@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: shortcodes.php
-*       build: 90405.1
+*       build: 90522.1
 * description: PHP support for Xidipity theme
 *      github: https://github.com/WpThemeDev/xidipity
 *              https://codex.wordpress.org/Shortcode_API
@@ -525,8 +525,8 @@ function blog_summary_shortcode($atts, $category_list)
     }
 
     $val = abs($atts['cnt']);
-    if ($val == 0 || $val > 4) {
-        $post_cnt = 4;
+    if ($val == 0 || $val > 20) {
+        $post_cnt = 10;
     }
     else {
         $post_cnt = $val;
@@ -576,7 +576,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= $stamp;
                     $html.= $excerpt;
                     $html.= '<p>&nbsp;</p>';
-                    $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
                     $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html.= '</div>';
@@ -591,7 +591,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= $stamp;
                     $html.= $excerpt;
                     $html.= '<p>&nbsp;</p>';
-                    $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                    $html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
                     $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
                     $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                     $html.= '</div>';
@@ -623,7 +623,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= $stamp;
                 $html.= $excerpt;
                 $html.= '<p>&nbsp;</p>';
-                $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                $html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
                 $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                 $html.= '</div>';
@@ -659,7 +659,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= $stamp;
                 $html.= $excerpt;
                 $html.= '<p>&nbsp;</p>';
-                $html.= '<div style="display: table; background-color: var(--bg-wht); border-right: solid 1px var(--bg-bas-300); padding: 15px 0; width: 100%;">';
+                $html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
                 $html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
                 $html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
                 $html.= '</div>';
