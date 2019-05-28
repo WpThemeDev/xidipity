@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90428.1
+Build       - 90528.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -2080,7 +2080,7 @@ ul.sbwidget {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg-sec-500);
+    background-color: var(--bg-sec-500);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -2095,11 +2095,7 @@ ul.sbwidget {
 .search-frm .search-sub:focus,
 .search-frm .search-sub:active {
     color: var(--fg-wht);
-}
-.search-frm .search-fld:hover,
-.search-frm .search-fld:focus,
-.search-frm .search-fld:active {
-    background-color: vr(--fg-wht);
+    box-shadow: none;
 }
 .search-frm .search-sub:hover:before,
 .search-frm .search-sub:focus:before,
