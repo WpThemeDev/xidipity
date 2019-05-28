@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90416.1
+Build       - 90527.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -771,49 +771,134 @@ legend {
 :-ms-input-placeholder {
     color: var(--fg-bas-600);
 }
-/* form styles             ------------
+/* button styles           ------------
 -- */
 
+/* default                 --------- */
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-    background: var(--bg-wht);
-    border: 1px solid var(--fg-pri-500);
-    border-radius: .25rem;
-    color: var(--fg-bas-900);
-    cursor: pointer;
-    display: inline-block;
-    font-size: 0.75rem;
-    line-height: normal;
-    padding: 12px 24px;
-    text-transform: uppercase;
-    text-decoration: none;
-    -webkit-appearance: button;
+input[type="submit"],
+button.btn-solid,
+button.btn-solid input[type="button"],
+button.btn-solid input[type="reset"],
+button.btn-solid input[type="submit"],
+button.btn-outline,
+button.btn-outline input[type="button"],
+button.btn-outline input[type="reset"],
+button.btn-outline input[type="submit"] {
+  background-color: var(--sys-content-bg-color);
+  border: 1px solid var(--fg-bas-400);
+  border-radius: .25rem;
+  color: var(--fg-bas-700);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  text-transform: none;
+  -webkit-appearance: button;
 }
+
+/* solid                   --------- */
+button.btn-solid,
+button.btn-solid input[type="button"],
+button.btn-solid input[type="reset"],
+button.btn-solid input[type="submit"] {
+  background-color: var(--bg-pri-500);
+  border: 1px solid var(--fg-pri-500);
+  color: var(--fg-bas-050);
+}
+
+/* outline                 --------- */
+button.btn-outline,
+button.btn-outline input[type="button"],
+button.btn-outline input[type="reset"],
+button.btn-outline input[type="submit"] {
+  background-color: var(--sys-content-bg-color);
+  border: 1px solid var(--fg-pri-400);
+  color: var(--fg-bas-700);
+}
+
+button a,
+input[type="button"] a,
+input[type="reset"] a,
+input[type="submit"] a {
+  color: var(--fg-bas-700);
+}
+
+button.btn-solid a,
+button.btn-solid input[type="button"] a,
+button.btn-solid input[type="reset"] a,
+button.btn-solid input[type="submit"] a {
+  color: var(--fg-wht);
+}
+
+button.btn-outline a,
+button.btn-outline input[type="button"] a,
+button.btn-outline input[type="reset"] a,
+button.btn-outline input[type="submit"] a {
+  color: var(--fg-bas-700);
+  color: blue;
+}
+
 button:hover,
-button:focus,
-button:active,
 input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="button"]:active,
 input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--bg-bas-050);
+  color: var(--bg-blk);
+  outline: none;
+}
+
+button.btn-solid:hover,
+button.btn-solid input[type="button"]:hover,
+button.btn-solid input[type="reset"]:hover,
+button.btn-solid input[type="submit"]:hover {
+  background-color: var(--bg-pri-600);
+  border-color: transparent;
+  color: var(--fg-wht);
+  outline: none;
+}
+
+button.btn-outline:hover,
+button.btn-outline input[type="button"]:hover,
+button.btn-outline input[type="reset"]:hover,
+button.btn-outline input[type="submit"]:hover {
+  background-color: var(--bg-bas-050);
+  color: var(--fg-blk);
+  outline: none;
+}
+
+button:focus,
+input[type="button"]:focus,
 input[type="reset"]:focus,
-input[type="reset"]:active,
-input[type="submit"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:active {
-    background: var(--fg-pri-500);
-    color: var(--fg-wht);
-    outline: none;
+input[type="submit"]:focus {
+  border: 1px solid var(--fg-bas-050);
+  box-shadow: 0 0 3px 4px var(--fg-bas-400);
 }
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-    opacity: 0.7;
-    filter: Alpha(opacity=70);
+
+button.btn-solid:focus,
+button.btn-solid input[type="button"]:focus,
+button.btn-solid input[type="reset"]:focus,
+button.btn-solid input[type="submit"]:focus {
+  border: 1px solid var(--fg-pri-050);
+  box-shadow: 0 0 3px 4px var(--fg-pri-100);
 }
+
+button.btn-outline:focus,
+button.btn-outline input[type="button"]:focus,
+button.btn-outline input[type="reset"]:focus,
+button.btn-outline input[type="submit"]:focus {
+  border: 1px solid var(--fg-pri-050);
+  box-shadow: 0 0 3px 4px var(--fg-pri-300);
+}
+/* form styles             ------------
+-- */
+
 input[type="text"],
 input[type="number"],
 input[type="email"],
