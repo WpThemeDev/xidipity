@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90528.1
+Build       - 90602.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -453,7 +453,10 @@ table#twocol tr td table#twocol tr td {
     width: 100%;
 }
 /* embedded table          ------------
--- */
+this code will preserve table format
+commenting it out table order to single
+column
+--
 
 table#twocol table {
     padding: 0;
@@ -479,10 +482,11 @@ table#twocol:first-child tr td img {
     margin-bottom: -6px;
     width: 100%;
 }
+*/
 /* tablet media format     ------------
 -- */
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
     table#twocol tr td,
     table#twocol tr td table#twocol tr td {
         display: table-cell;
@@ -495,25 +499,6 @@ table#twocol:first-child tr td img {
     table#twocol tr td:not(:first-child) {
         padding-left: 8px;
         vertical-align: top;
-    }
-    /*  embedded twocolumn  */
-    table#twocol:first-child tr td:first-child {
-        padding-right: 4px;
-        vertical-align: top;
-    }
-    table#twocol:first-child tr td:not(:first-child) {
-        padding-left: 4px;
-        vertical-align: top;
-    }
-    table#twocol tr td table#twocol tr td {
-        border: 0;
-    }
-    /*  embedded table  */
-    table#twocol tr tr:not(:last-child) td {
-        border-bottom: 1px solid var(--fg-bas-300);
-    }
-    table#twocol tr tr td:not(:last-child) {
-        border-right: 1px solid var(--fg-bas-300);
     }
 }
 /* responsive              ----------------------------------------------------
