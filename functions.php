@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90520.1
+ *       build: 90601.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -723,7 +723,7 @@ function ($in, $editor_id)
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
-    $in['fontsize_formats'] = '12px 14px 16px 18px 20px 24px 30px 36px';
+    $in['fontsize_formats'] = '12px 14px 16px 19px 22px 25px 28px 31px 34px';
     $in['fontsize'] = '16px';
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
