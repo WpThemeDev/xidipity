@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90602.1
+Build       - 90603.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -483,6 +483,7 @@ table#twocol:first-child tr td img {
     width: 100%;
 }
 */
+
 /* tablet media format     ------------
 -- */
 
@@ -1246,6 +1247,200 @@ img.focalpoint:hover {
 .btn-emoji:hover,
 .btn-emoji:focus {
     background-color: var(--bg-bas-100);
+}
+/*  # Annotation styles
+ ----------------------------------------------------------------------------*/
+
+/* readmore                ------------
+-- */
+
+/* default                 --------- */
+
+table.readmore {
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    width: 100%;
+}
+table.readmore tr {
+    width: 100%;
+}
+table.readmore td:first-child {
+    vertical-align: middle;
+    background-color: transparent;
+    border-right: 1px solid var(--fg-bas-300);
+    padding: .75rem 0;
+    text-align: center;
+    width: 48px;
+}
+table.readmore td:nth-child(2) {
+    padding: .75rem;
+    font-size: .75rem;
+}
+table.readmore td:nth-child(2) a {
+    text-decoration: none;
+}
+table#twocol td table.readmore {
+    background-color: transparent;
+    border-left: 4px solid transparent;
+    display: table;
+    width: 100%;
+}
+table#twocol td table.readmore tr {
+    display: table-row;
+    width: 100%;
+}
+table#twocol td table.readmore td:first-child {
+    vertical-align: middle;
+    background-color: transparent;
+    border-right: 1px solid var(--fg-bas-300);
+    display: table-cell;
+    padding: .75rem 0;
+    text-align: center;
+    width: 48px;
+}
+table#twocol td table.readmore td:nth-child(2) {
+    display: table-cell;
+    padding: .75rem;
+    font-size: .75rem;
+}
+/* tablet & larger         --------- */
+
+@media (min-width: 576px) {
+    table.readmore td:first-child {
+        background-color: transparent;
+        padding: auto;
+        width: 48px;
+    }
+    table.readmore td:nth-child(2) {
+        padding: 1rem .75rem;
+        font-size: .875rem;
+    }
+    table#twocol td table.readmore {
+        background-color: transparent;
+        border-left: 4px solid transparent;
+        width: 100%;
+    }
+    table#twocol td table.readmore tr {
+        width: 100%;
+    }
+    table#twocol td table.readmore {
+        background-color: transparent;
+        border-left: 4px solid transparent;
+        width: 100%;
+    }
+    table#twocol td table.readmore tr {
+        width: 100%;
+    }
+    table#twocol td table.readmore td:first-child {
+        vertical-align: middle;
+        background-color: transparent;
+        border-right: 1px solid var(--fg-bas-300);
+        padding: 1rem 0;
+        text-align: center;
+        width: 30px;
+    }
+    table#twocol td table.readmore td:nth-child(2) {
+        background-color: transparent;
+        padding: 1rem .75rem;
+        font-size: .875rem;
+    }
+}
+/* general                 ------------
+-- */
+
+/* default                 --------- */
+
+table.annotation {
+    background-color: transparent;
+    border-left: 4px solid var(--fg-bas-400);
+    width: 100%;
+}
+table.annotation tr {
+    width: 100%;
+}
+table.annotation td:first-child {
+    vertical-align: middle;
+    background-color: transparent;
+    border-right: 1px solid var(--fg-bas-300);
+    padding: .75rem 0;
+    text-align: center;
+    width: 48px;
+}
+table.annotation td:nth-child(2) {
+    background-color: var(--fg-bas-050);
+    padding: .75rem;
+    font-size: .75rem;
+}
+table.annotation td:nth-child(2) a {
+    text-decoration: none;
+}
+table#twocol td table.annotation {
+    background-color: transparent;
+    border-left: 4px solid var(--fg-bas-400);
+    display: table;
+    width: 100%;
+}
+table#twocol td table.annotation tr {
+    display: table-row;
+    width: 100%;
+}
+table#twocol td table.annotation td:first-child {
+    vertical-align: middle;
+    background-color: transparent;
+    border-right: 1px solid var(--fg-bas-300);
+    display: table-cell;
+    padding: .75rem 0;
+    text-align: center;
+    width: 48px;
+}
+table#twocol td table.annotation td:nth-child(2) {
+    background-color: var(--fg-bas-050);
+    display: table-cell;
+    padding: .75rem;
+    font-size: .75rem;
+}
+/* tablet & larger         --------- */
+
+@media (min-width: 576px) {
+    table.annotation td:first-child {
+        background-color: transparent;
+        padding: auto;
+        width: 48px;
+    }
+    table.annotation td:nth-child(2) {
+        background-color: var(--fg-bas-050);
+        padding: 1rem .75rem;
+        font-size: .875rem;
+    }
+    table#twocol td table.annotation {
+        background-color: transparent;
+        border-left: 4px solid var(--fg-bas-400);
+        width: 100%;
+    }
+    table#twocol td table.annotation tr {
+        width: 100%;
+    }
+    table#twocol td table.annotation {
+        background-color: transparent;
+        border-left: 4px solid var(--fg-bas-400);
+        width: 100%;
+    }
+    table#twocol td table.annotation tr {
+        width: 100%;
+    }
+    table#twocol td table.annotation td:first-child {
+        vertical-align: middle;
+        background-color: transparent;
+        border-right: 1px solid var(--fg-bas-300);
+        padding: 1rem 0;
+        text-align: center;
+        width: 30px;
+    }
+    table#twocol td table.annotation td:nth-child(2) {
+        background-color: var(--fg-bas-050);
+        padding: 1rem .75rem;
+        font-size: .875rem;
+    }
 }
 /*  # eof
     blog-common.css
