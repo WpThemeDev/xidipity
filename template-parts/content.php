@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content.php
-*       build: 90323.1
+*       build: 90604.1
 * description: Template for displaying blog summary card.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -56,16 +56,12 @@ if (xidipity_has_excerpt()) {
 }
 
 /* template                ------------
-version - 90306.1
+version - 90604.1
 annotation / read more / link
 -- */
-echo '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">' . "\n";
-echo '<div style="border-right: solid 1px var(--bg-bas-300); display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>' . "\n";
-echo '<div style="display: table-cell; font-size: 0.85rem; padding-left: 10px; width: calc(100% - 40px);"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">Read more&nbsp;&#8230;</a></div>' . "\n";
-echo '</div>' . "\n";
-echo '</div>' . "\n";
-echo '</div>' . "\n";
+echo get_readmore(esc_url(apply_filters('xidipity_the_permalink', get_permalink())));
 echo '</article>' . "\n";
+
 /*  # eof
     content.php
 -------------------------------------*/

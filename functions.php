@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90601.1
+ *       build: 90604.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -898,8 +898,55 @@ function save_sandbox_mb() {
 }
 add_action( 'save_post', 'save_sandbox_mb' );
 
+/**
+ * function
+ *
+ * disp_error
+ *   build: 90520.1
+ * comment: Return formatted error message
+ *
+ *  syntax: disp_error($msg);
+ *
+ */
+
+function disp_error($msg)
+{
+      return  '<div style="background-color: #f7f7f7; border-left: 5px solid #d32f2f; padding: 10px; width: 100%;">' . __($msg) . '</div>';
+}
+
+/**
+ * function
+ *
+ * get_readmore
+ *   build: 90604.1
+ * comment: Return formatted read more link
+ *
+ * syntax - get_readmore($link);
+ *
+ */
+
+function get_readmore($link)
+{
+  if (empty($link))
+  {
+    $val = disp_error('Missing get_readmore argument $link');
+  } else {
+    $val = '<p><!-- xt:annotation/readmore --></p>';
+    $val.= '<table class="readmore">';
+    $val.= '<tbody>';
+    $val.= '<tr>';
+    $val.= '<td><i class="fas fa-book-reader fg-pri-300 text-lg sm:text-xl">​</i></td>';
+    $val.= '<td><a href="' . $link . '">Read more …</a></td>';
+    $val.= '</tr>';
+    $val.= '</tbody>';
+    $val.= '</table>';
+    $val.= '<p><!-- /xt:annotation/readmore --></p>';
+    $val.= '<p>&nbsp;</p>';
+    return $val;
+  }
+}
+
 /*  # eof
     functions.php
 -------------------------------------*/
-
 ?>
