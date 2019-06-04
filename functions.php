@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90604.1
+ *       build: 90604.2
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -911,7 +911,22 @@ add_action( 'save_post', 'save_sandbox_mb' );
 
 function disp_error($msg)
 {
-      return  '<div style="background-color: #f7f7f7; border-left: 5px solid #d32f2f; padding: 10px; width: 100%;">' . __($msg) . '</div>';
+  if (empty($msg))
+  {
+    $msg = 'Error was detected without a message';
+  }
+  
+  $val = '<p>&nbsp;</p>';
+  $val.= '<p><!-- xt:annotation/warning --></p>';
+  $val.= '<table class="annotation">';
+  $val.= '<tr>';
+  $val.= '<td><i class="fas fa-bell text-red-dark text-lg sm:text-xl">&#x200B;</i></td>';
+  $val.= '<td>' . __($msg) . '</td>';
+  $val.= '</tr>';
+  $val.= '</table>';
+  $val.= '<p><!-- /xt:annotation/warning --></p>';
+  $val.= '<p>&nbsp;</p>';
+  return  $val;
 }
 
 /**
