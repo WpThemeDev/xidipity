@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90603.1
+Build       - 90606.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -646,6 +646,17 @@ h6 {
     font-size: var(--h6-size);
     font-style: var(--h6-style);
     font-weight: var(--h6-weight);
+}
+/* underline               ------------
+-- */
+
+h1#underline,
+h2#underline,
+h3#underline,
+h4#underline {
+    border-bottom: 1px solid var(--fg-bas-300);
+    margin-bottom: 1rem;
+    padding-bottom: 0.375rem;
 }
 /* paragraph tags          ----------------------------------------------------
 -- */
