@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90606.1
+Build       - 90614.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -125,14 +125,15 @@ hr.double {
     width: 80%;
 }
 /* gradient                ------------
+   variables do not work :(
 -- */
 
 hr.gradient {
-    background-image: -webkit-linear-gradient(left, var(--bg-bas-050), var(--bg-bas-600), var(--bg-bas-050));
-    background-image: -webkit-linear-gradient(left, var(--bg-bas-050), var(--bg-bas-600), var(--bg-bas-050));
-    background-image: -moz-linear-gradient(left, var(--bg-bas-050), var(--bg-bas-600), var(--bg-bas-050));
-    background-image: -ms-linear-gradient(left, var(--bg-bas-050), var(--bg-bas-600), var(--bg-bas-050));
-    background-image: -o-linear-gradient(left, var(--bg-bas-050), var(--bg-bas-600), var(--bg-bas-050));
+    background-image: -webkit-linear-gradient(left, #fafafa, #9E9E9E, #fafafa);
+    background-image: -webkit-linear-gradient(left, #fafafa, #9E9E9E, #fafafa);
+    background-image: -moz-linear-gradient(left, #fafafa, #9E9E9E, #fafafa);
+    background-image: -ms-linear-gradient(left, #fafafa, #9E9E9E, #fafafa);
+    background-image: -o-linear-gradient(left, #fafafa, #9E9E9E, #fafafa);
     border: 0;
     height: 1px;
     margin: 12px auto 13px auto;
