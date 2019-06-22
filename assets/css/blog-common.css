@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90620.1
+Build       - 90622.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -287,20 +287,13 @@ ul li ul li ul li ul li ul>li::before {
 -- */
 
 ul.fa-ul {
-    margin-left: 0;
+  padding-left: 0.25em;
 }
 
-ul.fa-ul li i {
-    margin-right: 10px;
+ul.fa-ul li::before {
+  content: "";
+  width: 0;
 }
-
-ul.fa-ul li:before {
-    content: "\2012";
-    color: transparent;
-    display: inline-block;
-    width: 1.1em;
-}
-
 
 /* ordered list            ----------------------------------------------------
 -- */
