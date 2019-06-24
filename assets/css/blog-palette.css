@@ -3,7 +3,7 @@ Theme Name:  Xidipity
 Description: Used to style theme.
 
 File        - blog-palette.css
-Build       - 90311.2
+Build       - 90623.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -15,596 +15,752 @@ Comments    - Palette classes as modified
 .fg-blk,
 .hover\:fg-blk:hover,
 .focus\:fg-blk:focus {
-  color: var(--fg-blk);
+    color: var(--fg-blk);
 }
+
 .fg-wht,
 .hover\:fg-wht:hover,
 .focus\:fg-wht:focus {
-  color: var(--fg-wht);
+    color: var(--fg-wht);
 }
+
 .fg-bas-900,
 .hover\:fg-bas-900:hover,
 .focus\:fg-bas-900:focus {
-  color: var(--fg-bas-900);
+    color: var(--fg-bas-900);
 }
+
 .fg-bas-800,
 .hover\:fg-bas-800:hover,
 .focus\:fg-bas-800:focus {
-  color: var(--fg-bas-800);
+    color: var(--fg-bas-800);
 }
+
 .fg-bas-700,
 .hover\:fg-bas-700:hover,
 .focus\:fg-bas-700:focus {
-  color: var(--fg-bas-700);
+    color: var(--fg-bas-700);
 }
+
 .fg-bas-600,
 .hover\:fg-bas-600:hover,
 .focus\:fg-bas-600:focus {
-  color: var(--fg-bas-600);
+    color: var(--fg-bas-600);
 }
+
 .fg-bas-500,
 .hover\:fg-bas-500:hover,
 .focus\:fg-bas-500:focus {
-  color: var(--fg-bas-500);
+    color: var(--fg-bas-500);
 }
+
 .fg-bas-400,
 .hover\:fg-bas-400:hover,
 .focus\:fg-bas-400:focus {
-  color: var(--fg-bas-400);
+    color: var(--fg-bas-400);
 }
+
 .fg-bas-300,
 .hover\:fg-bas-300:hover,
 .focus\:fg-bas-300:focus {
-  color: var(--fg-bas-300);
+    color: var(--fg-bas-300);
 }
+
 .fg-bas-200,
 .hover\:fg-bas-200:hover,
 .focus\:fg-bas-200:focus {
-  color: var(--fg-bas-200);
+    color: var(--fg-bas-200);
 }
+
 .fg-bas-100,
 .hover\:fg-bas-100:hover,
 .focus\:fg-bas-100:focus {
-  color: var(--fg-bas-100);
+    color: var(--fg-bas-100);
 }
+
 .fg-bas-050,
 .hover\:fg-bas-050:hover,
 .focus\:fg-bas-050:focus {
-  color: var(--fg-bas-050);
+    color: var(--fg-bas-050);
 }
+
 .fg-pri-900,
 .hover\:fg-pri-900:hover,
 .focus\:fg-pri-900:focus {
-  color: var(--fg-pri-900);
+    color: var(--fg-pri-900);
 }
+
 .fg-pri-800,
 .hover\:fg-pri-800:hover,
 .focus\:fg-pri-800:focus {
-  color: var(--fg-pri-800);
+    color: var(--fg-pri-800);
 }
+
 .fg-pri-700,
 .hover\:fg-pri-700:hover,
 .focus\:fg-pri-700:focus {
-  color: var(--fg-pri-700);
+    color: var(--fg-pri-700);
 }
+
 .fg-pri-600,
 .hover\:fg-pri-600:hover,
 .focus\:fg-pri-600:focus {
-  color: var(--fg-pri-600);
+    color: var(--fg-pri-600);
 }
+
 .fg-pri-500,
 .hover\:fg-pri-500:hover,
 .focus\:fg-pri-500:focus {
-  color: var(--fg-pri-500);
+    color: var(--fg-pri-500);
 }
+
 .fg-pri-400,
 .hover\:fg-pri-400:hover,
 .focus\:fg-pri-400:focus {
-  color: var(--fg-pri-400);
+    color: var(--fg-pri-400);
 }
+
 .fg-pri-300,
 .hover\:fg-pri-300:hover,
 .focus\:fg-pri-300:focus {
-  color: var(--fg-pri-300);
+    color: var(--fg-pri-300);
 }
+
 .fg-pri-200,
 .hover\:fg-pri-200:hover,
 .focus\:fg-pri-200:focus {
-  color: var(--fg-pri-200);
+    color: var(--fg-pri-200);
 }
+
 .fg-pri-100,
 .hover\:fg-pri-100:hover,
 .focus\:fg-pri-100:focus {
-  color: var(--fg-pri-100);
+    color: var(--fg-pri-100);
 }
+
 .fg-pri-050,
 .hover\:fg-pri-050:hover,
 .focus\:fg-pri-050:focus {
-  color: var(--fg-pri-050);
+    color: var(--fg-pri-050);
 }
+
 .fg-sec-900,
 .hover\:fg-sec-900:hover,
 .focus\:fg-sec-900:focus {
-  color: var(--fg-sec-900);
+    color: var(--fg-sec-900);
 }
+
 .fg-sec-800,
 .hover\:fg-sec-800:hover,
 .focus\:fg-sec-800:focus {
-  color: var(--fg-sec-800);
+    color: var(--fg-sec-800);
 }
+
 .fg-sec-700,
 .hover\:fg-sec-700:hover,
 .focus\:fg-sec-700:focus {
-  color: var(--fg-sec-700);
+    color: var(--fg-sec-700);
 }
+
 .fg-sec-600,
 .hover\:fg-sec-600:hover,
 .focus\:fg-sec-600:focus {
-  color: var(--fg-sec-600);
+    color: var(--fg-sec-600);
 }
+
 .fg-sec-500,
 .hover\:fg-sec-500:hover,
 .focus\:fg-sec-500:focus {
-  color: var(--fg-sec-500);
+    color: var(--fg-sec-500);
 }
+
 .fg-sec-400,
 .hover\:fg-sec-400:hover,
 .focus\:fg-sec-400:focus {
-  color: var(--fg-sec-400);
+    color: var(--fg-sec-400);
 }
+
 .fg-sec-300,
 .hover\:fg-sec-300:hover,
 .focus\:fg-sec-300:focus {
-  color: var(--fg-sec-300);
+    color: var(--fg-sec-300);
 }
+
 .fg-sec-200,
 .hover\:fg-sec-200:hover,
 .focus\:fg-sec-200:focus {
-  color: var(--fg-sec-200);
+    color: var(--fg-sec-200);
 }
+
 .fg-sec-100,
 .hover\:fg-sec-100:hover,
 .focus\:fg-sec-100:focus {
-  color: var(--fg-sec-100);
+    color: var(--fg-sec-100);
 }
+
 .fg-sec-050,
 .hover\:fg-sec-050:hover,
 .focus\:fg-sec-050:focus {
-  color: var(--fg-sec-050);
+    color: var(--fg-sec-050);
 }
+
+
 /* background colors    --------------------------------------------------- */
 
 .bg-blk,
 .hover\:bg-blk:hover,
 .focus\:bg-blk:focus {
-  background-color: var(--bg-blk);
+    background-color: var(--bg-blk);
 }
+
 .bg-wht,
 .hover\:bg-wht:hover,
 .focus\:bg-wht:focus {
-  background-color: var(--bg-wht);
+    background-color: var(--bg-wht);
 }
+
 .bg-bas-900,
 .hover\:bg-bas-900:hover,
 .focus\:bg-bas-900:focus {
-  background-color: var(--bg-bas-900);
+    background-color: var(--bg-bas-900);
 }
+
 .bg-bas-800,
 .hover\:bg-bas-800:hover,
 .focus\:bg-bas-800:focus {
-  background-color: var(--bg-bas-800);
+    background-color: var(--bg-bas-800);
 }
+
 .bg-bas-700,
 .hover\:bg-bas-700:hover,
 .focus\:bg-bas-700:focus {
-  background-color: var(--bg-bas-700);
+    background-color: var(--bg-bas-700);
 }
+
 .bg-bas-600,
 .hover\:bg-bas-600:hover,
 .focus\:bg-bas-600:focus {
-  background-color: var(--bg-bas-600);
+    background-color: var(--bg-bas-600);
 }
+
 .bg-bas-500,
 .hover\:bg-bas-500:hover,
 .focus\:bg-bas-500:focus {
-  background-color: var(--bg-bas-500);
+    background-color: var(--bg-bas-500);
 }
+
 .bg-bas-400,
 .hover\:bg-bas-400:hover,
 .focus\:bg-bas-400:focus {
-  background-color: var(--bg-bas-400);
+    background-color: var(--bg-bas-400);
 }
+
 .bg-bas-300,
 .hover\:bg-bas-300:hover,
 .focus\:bg-bas-300:focus {
-  background-color: var(--bg-bas-300);
+    background-color: var(--bg-bas-300);
 }
+
 .bg-bas-200,
 .hover\:bg-bas-200:hover,
 .focus\:bg-bas-200:focus {
-  background-color: var(--bg-bas-200);
+    background-color: var(--bg-bas-200);
 }
+
 .bg-bas-100,
 .hover\:bg-bas-100:hover,
 .focus\:bg-bas-100:focus {
-  background-color: var(--bg-bas-100);
+    background-color: var(--bg-bas-100);
 }
+
 .bg-bas-050,
 .hover\:bg-bas-050:hover,
 .focus\:bg-bas-050:focus {
-  background-color: var(--bg-bas-050);
+    background-color: var(--bg-bas-050);
 }
+
 .bg-pri-900,
 .hover\:bg-pri-900:hover,
 .focus\:bg-pri-900:focus {
-  background-color: var(--bg-pri-900);
+    background-color: var(--bg-pri-900);
 }
+
 .bg-pri-800,
 .hover\:bg-pri-800:hover,
 .focus\:bg-pri-800:focus {
-  background-color: var(--bg-pri-800);
+    background-color: var(--bg-pri-800);
 }
+
 .bg-pri-700,
 .hover\:bg-pri-700:hover,
 .focus\:bg-pri-700:focus {
-  background-color: var(--bg-pri-700);
+    background-color: var(--bg-pri-700);
 }
+
 .bg-pri-600,
 .hover\:bg-pri-600:hover,
 .focus\:bg-pri-600:focus {
-  background-color: var(--bg-pri-600);
+    background-color: var(--bg-pri-600);
 }
+
 .bg-pri-500,
 .hover\:bg-pri-500:hover,
 .focus\:bg-pri-500:focus {
-  background-color: var(--bg-pri-500);
+    background-color: var(--bg-pri-500);
 }
+
 .bg-pri-400,
 .hover\:bg-pri-400:hover,
 .focus\:bg-pri-400:focus {
-  background-color: var(--bg-pri-400);
+    background-color: var(--bg-pri-400);
 }
+
 .bg-pri-300,
 .hover\:bg-pri-300:hover,
 .focus\:bg-pri-300:focus {
-  background-color: var(--bg-pri-300);
+    background-color: var(--bg-pri-300);
 }
+
 .bg-pri-200,
 .hover\:bg-pri-200:hover,
 .focus\:bg-pri-200:focus {
-  background-color: var(--bg-pri-200);
+    background-color: var(--bg-pri-200);
 }
+
 .bg-pri-100,
 .hover\:bg-pri-100:hover,
 .focus\:bg-pri-100:focus {
-  background-color: var(--bg-pri-100);
+    background-color: var(--bg-pri-100);
 }
+
 .bg-pri-050,
 .hover\:bg-pri-050:hover,
 .focus\:bg-pri-050:focus {
-  background-color: var(--bg-pri-050);
+    background-color: var(--bg-pri-050);
 }
+
 .bg-sec-900,
 .hover\:bg-sec-900:hover,
 .focus\:bg-sec-900:focus {
-  background-color: var(--bg-sec-900);
+    background-color: var(--bg-sec-900);
 }
+
 .bg-sec-800,
 .hover\:bg-sec-800:hover,
 .focus\:bg-sec-800:focus {
-  background-color: var(--bg-sec-800);
+    background-color: var(--bg-sec-800);
 }
+
 .bg-sec-700,
 .hover\:bg-sec-700:hover,
 .focus\:bg-sec-700:focus {
-  background-color: var(--bg-sec-700);
+    background-color: var(--bg-sec-700);
 }
+
 .bg-sec-600,
 .hover\:bg-sec-600:hover,
 .focus\:bg-sec-600:focus {
-  background-color: var(--bg-sec-600);
+    background-color: var(--bg-sec-600);
 }
+
 .bg-sec-500,
 .hover\:bg-sec-500:hover,
 .focus\:bg-sec-500:focus {
-  background-color: var(--bg-sec-500);
+    background-color: var(--bg-sec-500);
 }
+
 .bg-sec-400,
 .hover\:bg-sec-400:hover,
 .focus\:bg-sec-400:focus {
-  background-color: var(--bg-sec-400);
+    background-color: var(--bg-sec-400);
 }
+
 .bg-sec-300,
 .hover\:bg-sec-300:hover,
 .focus\:bg-sec-300:focus {
-  background-color: var(--bg-sec-300);
+    background-color: var(--bg-sec-300);
 }
+
 .bg-sec-200,
 .hover\:bg-sec-200:hover,
 .focus\:bg-sec-200:focus {
-  background-color: var(--bg-sec-200);
+    background-color: var(--bg-sec-200);
 }
+
 .bg-sec-100,
 .hover\:bg-sec-100:hover,
 .focus\:bg-sec-100:focus {
-  background-color: var(--bg-sec-100);
+    background-color: var(--bg-sec-100);
 }
+
 .bg-sec-050,
 .hover\:bg-sec-050:hover,
 .focus\:bg-sec-050:focus {
-  background-color: var(--bg-sec-050);
+    background-color: var(--bg-sec-050);
 }
+
+
 /* palette colors       --------------------------------------------------- */
 
 .fg-red {
-  color: #F44336;
+    color: #F44336;
 }
+
 .bg-red {
-  background-color: #F44336;
+    background-color: #F44336;
 }
+
 .fg-pink {
-  color: #E91E63;
+    color: #E91E63;
 }
+
 .bg-pink {
-  background-color: #E91E63;
+    background-color: #E91E63;
 }
+
 .fg-purple {
-  color: #9C27B0;
+    color: #9C27B0;
 }
+
 .bg-purple {
-  background-color: #9C27B0;
+    background-color: #9C27B0;
 }
+
 .fg-deep-purple {
-  color: #673AB7;
+    color: #673AB7;
 }
+
 .bg-deep-purple {
-  background-color: #673AB7;
+    background-color: #673AB7;
 }
+
 .fg-indigo {
-  color: #3F51B5;
+    color: #3F51B5;
 }
+
 .bg-indigo {
-  background-color: #3F51B5;
+    background-color: #3F51B5;
 }
+
 .fg-blue {
-  color: #2196F3;
+    color: #2196F3;
 }
+
 .bg-blue {
-  background-color: #2196F3;
+    background-color: #2196F3;
 }
+
 .fg-light-blue {
-  color: #03A9F4;
+    color: #03A9F4;
 }
+
 .bg-light-blue {
-  background-color: #03A9F4;
+    background-color: #03A9F4;
 }
+
 .fg-cyan {
-  color: #00BCD4;
+    color: #00BCD4;
 }
+
 .bg-cyan {
-  background-color: #00BCD4;
+    background-color: #00BCD4;
 }
+
 .fg-teal {
-  color: #009688;
+    color: #009688;
 }
+
 .bg-teal {
-  background-color: #009688;
+    background-color: #009688;
 }
+
 .fg-green {
-  color: #4CAF50;
+    color: #4CAF50;
 }
+
 .bg-green {
-  background-color: #4CAF50;
+    background-color: #4CAF50;
 }
+
 .fg-light-green {
-  color: #8BC34A;
+    color: #8BC34A;
 }
+
 .bg-light-green {
-  background-color: #8BC34A;
+    background-color: #8BC34A;
 }
+
 .fg-lime {
-  color: #CDDC39;
+    color: #CDDC39;
 }
+
 .bg-lime {
-  background-color: #CDDC39;
+    background-color: #CDDC39;
 }
+
 .fg-yellow {
-  color: #FFEB3B;
+    color: #FFEB3B;
 }
+
 .bg-yellow {
-  background-color: #FFEB3B;
+    background-color: #FFEB3B;
 }
+
 .fg-amber {
-  color: #FFC107;
+    color: #FFC107;
 }
+
 .bg-amber {
-  background-color: #FFC107;
+    background-color: #FFC107;
 }
+
 .fg-orange {
-  color: #FF9800;
+    color: #FF9800;
 }
+
 .bg-orange {
-  background-color: #FF9800;
+    background-color: #FF9800;
 }
+
 .fg-deep-orange {
-  color: #FF5722;
+    color: #FF5722;
 }
+
 .bg-deep-orange {
-  background-color: #FF5722;
+    background-color: #FF5722;
 }
+
 .fg-brown {
-  color: #795548;
+    color: #795548;
 }
+
 .bg-brown {
-  background-color: #795548;
+    background-color: #795548;
 }
+
 .fg-gray {
-  color: #9E9E9E;
+    color: #9E9E9E;
 }
+
 .bg-gray {
-  background-color: #9E9E9E;
+    background-color: #9E9E9E;
 }
+
 .fg-blue-gray {
-  color: #607D8B;
+    color: #607D8B;
 }
+
 .bg-blue-gray {
-  background-color: #607D8B;
+    background-color: #607D8B;
 }
+
+
 /* border colors        --------------------------------------------------- */
 
 .border\:bd-blk {
-  border-color: var(--fg-blk);
+    border-color: var(--fg-blk) !important;
 }
+
 .border\:bd-wht {
-  border-color: var(--fg-wht);
+    border-color: var(--fg-wht) !important;
 }
+
 .border\:bd-bas-900 {
-  border-color: var(--fg-bas-900);
+    border-color: var(--fg-bas-900) !important;
 }
+
 .border\:bd-bas-800 {
-  border-color: var(--fg-bas-800);
+    border-color: var(--fg-bas-800) !important;
 }
+
 .border\:bd-bas-700 {
-  border-color: var(--fg-bas-700);
+    border-color: var(--fg-bas-700) !important;
 }
+
 .border\:bd-bas-600 {
-  border-color: var(--fg-bas-600);
+    border-color: var(--fg-bas-600) !important;
 }
+
 .border\:bd-bas-500 {
-  border-color: var(--fg-bas-500);
+    border-color: var(--fg-bas-500) !important;
 }
+
 .border\:bd-bas-400 {
-  border-color: var(--fg-bas-400);
+    border-color: var(--fg-bas-400) !important;
 }
+
 .border\:bd-bas-300 {
-  border-color: var(--fg-bas-300);
+    border-color: var(--fg-bas-300) !important;
 }
+
 .border\:bd-bas-200 {
-  border-color: var(--fg-bas-200);
+    border-color: var(--fg-bas-200) !important;
 }
+
 .border\:bd-bas-100 {
-  border-color: var(--fg-bas-100);
+    border-color: var(--fg-bas-100) !important;
 }
+
 .border\:bd-bas-050 {
-  border-color: var(--fg-bas-050);
+    border-color: var(--fg-bas-050) !important;
 }
+
 .border\:bd-pri-900 {
-  border-color: var(--fg-pri-900);
+    border-color: var(--fg-pri-900) !important;
 }
+
 .border\:bd-pri-800 {
-  border-color: var(--fg-pri-800);
+    border-color: var(--fg-pri-800) !important;
 }
+
 .border\:bd-pri-700 {
-  border-color: var(--fg-pri-700);
+    border-color: var(--fg-pri-700) !important;
 }
+
 .border\:bd-pri-600 {
-  border-color: var(--fg-pri-600);
+    border-color: var(--fg-pri-600) !important;
 }
+
 .border\:bd-pri-500 {
-  border-color: var(--fg-pri-500);
+    border-color: var(--fg-pri-500) !important;
 }
+
 .border\:bd-pri-400 {
-  border-color: var(--fg-pri-400);
+    border-color: var(--fg-pri-400) !important;
 }
+
 .border\:bd-pri-300 {
-  border-color: var(--fg-pri-300);
+    border-color: var(--fg-pri-300) !important;
 }
+
 .border\:bd-pri-200 {
-  border-color: var(--fg-pri-200);
+    border-color: var(--fg-pri-200) !important;
 }
+
 .border\:bd-pri-100 {
-  border-color: var(--fg-pri-100);
+    border-color: var(--fg-pri-100) !important;
 }
+
 .border\:bd-pri-050 {
-  border-color: var(--fg-pri-050);
+    border-color: var(--fg-pri-050) !important;
 }
+
 .border\:bd-sec-900 {
-  border-color: var(--fg-sec-900);
+    border-color: var(--fg-sec-900) !important;
 }
+
 .border\:bd-sec-800 {
-  border-color: var(--fg-sec-800);
+    border-color: var(--fg-sec-800) !important;
 }
+
 .border\:bd-sec-700 {
-  border-color: var(--fg-sec-700);
+    border-color: var(--fg-sec-700) !important;
 }
+
 .border\:bd-sec-600 {
-  border-color: var(--fg-sec-600);
+    border-color: var(--fg-sec-600) !important;
 }
+
 .border\:bd-sec-500 {
-  border-color: var(--fg-sec-500);
+    border-color: var(--fg-sec-500) !important;
 }
+
 .border\:bd-sec-400 {
-  border-color: var(--fg-sec-400);
+    border-color: var(--fg-sec-400) !important;
 }
+
 .border\:bd-sec-300 {
-  border-color: var(--fg-sec-300);
+    border-color: var(--fg-sec-300) !important;
 }
+
 .border\:bd-sec-200 {
-  border-color: var(--fg-sec-200);
+    border-color: var(--fg-sec-200) !important;
 }
+
 .border\:bd-sec-100 {
-  border-color: var(--fg-sec-100);
+    border-color: var(--fg-sec-100) !important;
 }
+
 .border\:bd-sec-050 {
-  border-color: var(--fg-sec-050);
+    border-color: var(--fg-sec-050) !important;
 }
+
 .border\:bd-red {
-  border-color: #F44336;
+    border-color: #F44336 !important;
 }
+
 .border\:bd-pink {
-  border-color: #E91E63;
+    border-color: #E91E63 !important;
 }
+
 .border\:bd-purple {
-  border-color: #9C27B0;
+    border-color: #9C27B0 !important;
 }
+
 .border\:bd-deep-purple {
-  border-color: #673AB7;
+    border-color: #673AB7 !important;
 }
+
 .border\:bd-indigo {
-  border-color: #3F51B5;
+    border-color: #3F51B5 !important;
 }
+
 .border\:bd-blue {
-  border-color: #2196F3;
+    border-color: #2196F3 !important;
 }
+
 .border\:bd-light-blue {
-  border-color: #03A9F4;
+    border-color: #03A9F4 !important;
 }
+
 .border\:bd-cyan {
-  border-color: #00BCD4;
+    border-color: #00BCD4 !important;
 }
+
 .border\:bd-teal {
-  border-color: #009688;
+    border-color: #009688 !important;
 }
+
 .border\:bd-green {
-  border-color: #4CAF50;
+    border-color: #4CAF50 !important;
 }
+
 .border\:bd-light-green {
-  border-color: #8BC34A;
+    border-color: #8BC34A !important;
 }
+
 .border\:bd-lime {
-  border-color: #CDDC39;
+    border-color: #CDDC39 !important;
 }
+
 .border\:bd-yellow {
-  border-color: #FFEB3B;
+    border-color: #FFEB3B !important;
 }
+
 .border\:bd-amber {
-  border-color: #FFC107;
+    border-color: #FFC107 !important;
 }
+
 .border\:bd-orange {
-  border-color: #FF9800;
+    border-color: #FF9800 !important;
 }
+
 .border\:bd-deep-orange {
-  border-color: #FF5722;
+    border-color: #FF5722 !important;
 }
+
 .border\:bd-brown {
-  border-color: #795548;
+    border-color: #795548 !important;
 }
+
 .border\:bd-gray {
-  border-color: #9E9E9E;
+    border-color: #9E9E9E !important;
 }
+
 .border\:bd-blue-gray {
-  border-color: #607D8B;
+    border-color: #607D8B !important;
 }
+
 
 /*  # eof
     blog-palette
