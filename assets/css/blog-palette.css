@@ -3,7 +3,7 @@ Theme Name:  Xidipity
 Description: Used to style theme.
 
 File        - blog-palette.css
-Build       - 90623.1
+Build       - 90624.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -552,6 +552,17 @@ Comments    - Palette classes as modified
 
 .bg-blue-gray {
     background-color: #607D8B;
+}
+
+
+/* system colors        --------------------------------------------------- */
+
+.sys\:fg-content {
+    color: var(--sys-font-color);
+}
+
+.sys\:bg-content {
+    background-color: var(--sys-content-bg-color);
 }
 
 
