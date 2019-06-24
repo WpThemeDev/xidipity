@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90623.1
+Build       - 90624.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -161,29 +161,34 @@ hr.gradient {
 
 
 /* emblem rule             ------------
-   std / 1x / 2x height
+std / 1x / 2x height
 -- */
 
 
 /* std height      ------*/
 
 .xhr-0x {
-    height: 1.8rem;
+    height: 2rem;
+    margin: 0 0 2px 0;
     position: relative;
     width: 100%;
 }
 
 .xhr-0x-chld1 {
-    height: 1.8rem;
+    height: 2rem;
     left: 0;
+    margin: 0;
+    padding-top: 3px;
     position: absolute;
     top: 0;
     width: 100%;
 }
 
 .xhr-0x-chld2 {
-    height: 1.8rem;
+    height: 2rem;
     left: 0;
+    margin: 0;
+    padding-top: 5px;
     position: absolute;
     top: 0;
     width: 100%;
@@ -193,14 +198,17 @@ hr.gradient {
 /* 1x (h6) height  ------*/
 
 .xhr-1x {
-    height: 1.9rem;
+    height: 2.125rem;
+    margin: 0 0 2px 0;
     position: relative;
     width: 100%;
 }
 
 .xhr-1x-chld1 {
-    height: 1.9rem;
+    height: 2.125rem;
     left: 0;
+    margin: 0;
+    padding-top: 4px;
     position: absolute;
     top: 0;
     width: 100%;
@@ -210,27 +218,31 @@ hr.gradient {
     color: var(--h6-color);
     font-family: var(--h6-font);
     font-size: var(--h6-size);
-    font-style: var(--h6-style);
     font-weight: var(--h6-weight);
-    height: 1.9rem;
+    height: 2.125rem;
     left: 0;
+    margin: 0;
+    padding-top: 4px;
     position: absolute;
-    top: 0;
+    top: 1px;
     width: 100%;
 }
 
 
-/* 2x (h6) height  ------*/
+/* 2x (h5) height  ------*/
 
 .xhr-2x {
-    min-height: 2rem;
+    height: 2.5rem;
+    margin: 0 0 2px 0;
     position: relative;
     width: 100%;
 }
 
 .xhr-2x-chld1 {
+    height: 2.5rem;
     left: 0;
-    min-height: 2rem;
+    margin: 0;
+    padding-top: 7px;
     position: absolute;
     top: 0;
     width: 100%;
@@ -240,10 +252,11 @@ hr.gradient {
     color: var(--h5-color);
     font-family: var(--h5-font);
     font-size: var(--h5-size);
-    font-style: var(--h5-style);
     font-weight: var(--h5-weight);
-    height: 2rem;
+    height: 2.5rem;
     left: 0;
+    margin: 0;
+    padding-top: 5px;
     position: absolute;
     top: 0;
     width: 100%;
