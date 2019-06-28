@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-page.php
-*       build: 90327.1
+*       build: 90627.1
 * description: The template used for displaying page content in page.php
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -20,7 +20,19 @@ the_title('<h1 class="entry-title">', '</h1>');
 echo '</header>' . "\n";
 echo '</div>' . "\n";
 echo '<div class="entry-content">' . "\n";
+
+/* yoast breadcrumbs       ------------
+-- */
+
+if ( function_exists('yoast_breadcrumb') ) {
+  yoast_breadcrumb( '<p id="breadcrumbs" class="seo-breadcrumbs">','</p>' );
+}
+
+/* display content         ------------
+-- */
+
 the_content();
+
 wp_link_pages(array(
     'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'xidipity') . '</span>',
     'after' => '</div>',
