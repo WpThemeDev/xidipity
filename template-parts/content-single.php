@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-single.php
-*       build: 90327.1
+*       build: 90627.1
 * description: Template part for displaying single posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -28,9 +28,18 @@ the_title('<h1 class="entry-title">', '</h1>');
 echo '</header>' . "\n";
 echo '</div>' . "\n";
 echo '<div class="entry-content">' . "\n";
+
+/* yoast breadcrumbs       ------------
+-- */
+
+if ( function_exists('yoast_breadcrumb') ) {
+  yoast_breadcrumb( '<p id="breadcrumbs" class="seo-breadcrumbs">','</p>' );
+}
+
 /* display content         ------------
 -- */
 the_content();
+
 /* content footer          ------------
 -- */
 wp_link_pages(array(
