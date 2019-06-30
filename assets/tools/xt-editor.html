@@ -3,7 +3,8 @@
 
 <head>
     <title>Xidipity Template Editor</title>
-    <link rel='stylesheet' id='codemirror-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.css?ver=5.42.2' async='async' type='text/css' media='screen' />
+    <link rel='stylesheet' id='codemirror-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/codemirror.css?ver=5.48.0' async='async' type='text/css' media='screen' />
+    <link rel='stylesheet' id='dialog-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/dialog/dialog.min.css?ver=5.48.0' async='async' type='text/css' media='screen' />
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Mono|Roboto:300,400&display=swap" rel="stylesheet">
     <meta name="description" content="Xidipity includes an enhanced sandbox editor with syntax highlighter to aid in adapting templates to meet the specific requirements of the author." />
 </head>
@@ -30,13 +31,16 @@
         <textarea id="mySandbox" name="mySandbox" placeholder="Sandbox - paste template code here."></textarea>
     </form>
 
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/display/placeholder.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/selection/active-line.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/xml/xml.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/css/css.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/javascript/javascript.js'></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/htmlmixed/htmlmixed.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/codemirror.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/display/placeholder.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/selection/active-line.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/mode/xml/xml.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/mode/css/css.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/mode/javascript/javascript.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/mode/htmlmixed/htmlmixed.js'></script>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/dialog/dialog.min.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/search/search.min.js'></script>
 
     <script type='text/javascript'>
         CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
