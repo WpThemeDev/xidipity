@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: shortcodes.php
-*       build: 90604.1
+*       build: 90629.1
 * description: PHP support for Xidipity theme
 *      github: https://github.com/WpThemeDev/xidipity
 *              https://codex.wordpress.org/Shortcode_API
@@ -15,11 +15,11 @@
 /**
  * Short code
  *
- * page_list
+ * pag_dir (page directory)
  *
- * build: 90301.1
+ * build: 90629.1
  *
- * syntax - [page_list class="" style_before="" style_after="" depth=0 xclude='']page title[/page_list]
+ * syntax - [pag_dir class="" style_before="" style_after="" depth=0 xclude='']page title[/pag_dir]
  *
  *    class = ul class(es)
  *
@@ -34,9 +34,9 @@
  *    page title = parent page title (blank for all)
  *
  */
-add_shortcode('page_list', 'page_list_shortcode');
+add_shortcode('pag_dir', 'pag_dir_shortcode');
 
-function page_list_shortcode($atts, $page_title)
+function pag_dir_shortcode($atts, $page_title)
 {
 
     // check for & fix missing arguments
@@ -135,11 +135,11 @@ function page_list_shortcode($atts, $page_title)
 /**
  * Short code
  *
- * blog_list
+ * pst_dir (blog post directory)
  *
- * build: 90311.1
+ * build: 90629.1
  *
- * syntax - [blog_list class="" style_before="" style_after="" orderby="" order="" filter=0]category 1,category 2, etc[/blog_list]
+ * syntax - [pst_dir class="" style_before="" style_after="" orderby="" order="" filter=0]category 1,category 2, etc[/pst_dir]
  *
  *    class = ul class
  *    style_before = style before list item
@@ -151,9 +151,9 @@ function page_list_shortcode($atts, $page_title)
  *      1 = exclusinve
  *
  */
-add_shortcode('blog_list', 'blog_list_shortcode');
+add_shortcode('pst_dir', 'pst_dir_shortcode');
 
-function blog_list_shortcode($atts, $category_list)
+function pst_dir_shortcode($atts, $category_list)
 {
 
     // check for & fix missing arguments

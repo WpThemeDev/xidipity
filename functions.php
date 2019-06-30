@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90604.2
+ *       build: 90630.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -814,89 +814,6 @@ function remove_default_category_description()
     <?php
     }
 }
-
-/* sandbox editor            ----------
-   build: 90520.1
-   comment: The functionality works but there are
-            other ways to code it.
--- */
-
-/* meta_box (mb)             ----------
--- */
-function add_sandbox_mb() {
-    add_meta_box(
-        'sandbox',
-        __('Sandbox Editor'),
-        'callback_sandbox_mb',
-        null,
-        'normal',
-        'low',
-        array( '__back_compat_meta_box' => true, '__block_editor_compatible_meta_box' => true )
-    );
-}
-
-add_action( 'add_meta_boxes', 'add_sandbox_mb' );
-
-function codemirror_scripts_mb() {
-
-    // Enqueue scripts
-    // wp_enqueue_script( string $handle, string $src = '', array $deps = array(), string|bool|null $ver = false, bool $in_footer = false )
-
-    wp_enqueue_style ( 'codemirror-css', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.css', array() , '5.42.2', 'all');
-    wp_enqueue_script ( 'codemirror-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'placeholder-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/display/placeholder.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'active-line.js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/selection/active-line.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'xml-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/xml/xml.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'css-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/css/css.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'javascript-js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/javascript/javascript.js', array(), '5.42.2', false );
-    wp_enqueue_script ( 'htmlmixed.js', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/htmlmixed/htmlmixed.js', array(), '5.42.2', false );
-
-}
-
-add_action( 'admin_enqueue_scripts', 'codemirror_scripts_mb' );
-
-/* callback                  ----------
- * @param WP_Post $post Current post object.
--- */
-function callback_sandbox_mb( $post ) {
-    // Add a nonce field so we can check for it later.
-    wp_nonce_field( 'sandbox_nonce', 'sandbox_nonce' );
-    
-    global $post;
-    $content = get_post_meta( $post->ID, 'sandbox_mb', true );
-    $editor_height = 350;
-
-    echo '<style>.entry-title{display:none}.CodeMirror-activeline-background{background-color:var(--bg-alt2-050)}.CodeMirror{height:' . $editor_height .'px}</style>' . "\n";
-    echo '<form><textarea id="sandbox_editor" name="sandbox_editor" placeholder="Paste template here.">' . esc_textarea( $content ) . '</textarea></form>' . "\n";
-    echo '<script>' . "\n";
-    echo 'CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";' . "\n";
-    echo 'CodeMirror.keyMap.default["Tab"] = "indentMore";' . "\n";
-    echo 'var editor = CodeMirror.fromTextArea(sandbox_editor, {' . "\n";
-    echo 'mode: "text/html",' . "\n";
-    echo 'lineNumbers: true,' . "\n";
-    echo 'styleActiveLine: true,' . "\n";
-    echo 'tabSize: 4,' . "\n";
-    echo 'autofocus: true,' . "\n";
-    echo '});' . "\n";
-    echo '</script>' . "\n";
-
-}
-
-/* save content              ----------
--- */
-function save_sandbox_mb() {
-
-    // Check if our nonce is set.
-    if ( isset( $_POST['sandbox_nonce'] ) ) {
-
-        // Verify that the nonce is valid.
-        if ( wp_verify_nonce( $_POST['sandbox_nonce'], 'sandbox_nonce' ) ) {
-            global $post;
-            update_post_meta($post->ID, 'sandbox_mb', $_POST['sandbox_editor'] );
-        }
-    }
-}
-add_action( 'save_post', 'save_sandbox_mb' );
 
 /**
  * function

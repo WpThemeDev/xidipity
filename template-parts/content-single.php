@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-single.php
-*       build: 90627.1
+*       build: 90629.1
 * description: Template part for displaying single posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -33,7 +33,7 @@ echo '<div class="entry-content">' . "\n";
 -- */
 
 if ( function_exists('yoast_breadcrumb') ) {
-  yoast_breadcrumb( '<p id="breadcrumbs" class="seo-breadcrumbs">','</p>' );
+  yoast_breadcrumb( '<p id="breadcrumbs" class="seo-pst-breadcrumbs">','</p>' );
 }
 
 /* display content         ------------
