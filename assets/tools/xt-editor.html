@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Xidipity Template Editor</title>
+    <link rel='stylesheet' id='codemirror-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.css?ver=5.42.2' async='async' type='text/css' media='screen' />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Mono|Roboto:300,400&display=swap" rel="stylesheet">
+    <meta name="description" content="Xidipity includes an enhanced sandbox editor with syntax highlighter to aid in adapting templates to meet the specific requirements of the author." />
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+        }
+        
+        .CodeMirror-activeline-background {
+            background-color: lightyellow;
+        }
+        
+        .CodeMirror {
+            font-family: 'Roboto Mono', monospace;
+            height: calc(100vh - 125px);
+        }
+    </style>
+    <p style="font-family: 'Kaushan Script', cursive; font-size: 300%; margin-top: -5px;">Xidipity</p>
+    <p style="font-size: 14px; font-weight: 300; margin-top: -40px; letter-spacing: 3px;">template editor</p>
+    <form>
+        <textarea id="mySandbox" name="mySandbox" placeholder="Sandbox - paste template code here."></textarea>
+    </form>
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/codemirror.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/display/placeholder.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/addon/selection/active-line.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/xml/xml.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/css/css.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/javascript/javascript.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.42.2/mode/htmlmixed/htmlmixed.js'></script>
+
+    <script type='text/javascript'>
+        CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
+        CodeMirror.keyMap.default["Tab"] = "indentMore";
+        var editor = CodeMirror.fromTextArea(mySandbox, {
+            mode: "text/html",
+            lineNumbers: true,
+            styleActiveLine: true,
+            tabSize: 2,
+            autofocus: true,
+        });
+        window.addEventListener("beforeunload", function(event) {
+            // Cancel the event as stated by the standard.
+            event.preventDefault();
+            // Chrome requires returnValue to be set.
+            event.returnValue = '';
+        });
+    </script>
+</body>
+
+</html>
