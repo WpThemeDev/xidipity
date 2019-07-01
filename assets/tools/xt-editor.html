@@ -3,9 +3,19 @@
 
 <head>
     <title>Xidipity Template Editor</title>
+    <link rel="icon" href="https://xidipity.com/wp-content/uploads/2018/03/site-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://xidipity.com/wp-content/uploads/2018/03/site-favicon-32x32.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="https://xidipity.com/wp-content/uploads/2018/03/site-favicon-32x32.png" />
+    <meta name="msapplication-TileImage" content="https://xidipity.com/wp-content/uploads/2018/03/site-favicon-32x32.png" />
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Mono|Roboto:300,400&display=swap" rel="stylesheet">
+
     <link rel='stylesheet' id='codemirror-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/codemirror.css?ver=5.48.0' async='async' type='text/css' media='screen' />
     <link rel='stylesheet' id='dialog-css' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/dialog/dialog.min.css?ver=5.48.0' async='async' type='text/css' media='screen' />
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Mono|Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel='stylesheet' id='tailwind-preflight-css' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/preflight.min.css?ver=7.3' type='text/css' media='screen' />
+    <link rel='stylesheet' id='tailwind-base-css' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.min.css?ver=7.3' type='text/css' media='screen' />
+    <link rel='stylesheet' id='tailwind-utilities-css' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.min.css?ver=7.3' type='text/css' media='screen' />
+    <link rel='stylesheet' id='xidipity-font-awesome-css' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css?ver=5.8.1' type='text/css' media='screen' />
+
     <meta name="description" content="Xidipity includes an enhanced sandbox editor with syntax highlighter to aid in adapting templates to meet the specific requirements of the author." />
 </head>
 
@@ -16,21 +26,74 @@
             line-height: 1.4;
         }
         
+        .font-cursive {
+            font-family: 'Kaushan Script', cursive;
+        }
+        
+        hr {
+            background-color: transparent;
+            border: 0;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #e0e0e0;
+            height: 1px;
+            margin: 12px auto 13px auto;
+            width: 80%;
+        }
+        
         .CodeMirror-activeline-background {
             background-color: lightyellow;
         }
         
         .CodeMirror {
+            border: 1px solid #e0e0e0;
             font-family: 'Roboto Mono', monospace;
-            height: calc(100vh - 125px);
+            font-size: 14px;
+            height: calc(100vh - 120px);
+            overflow: auto;
         }
     </style>
-    <p style="font-family: 'Kaushan Script', cursive; font-size: 300%; margin-top: -5px;">Xidipity</p>
-    <p style="font-size: 14px; font-weight: 300; margin-top: -40px; letter-spacing: 3px;">template editor</p>
-    <form>
-        <textarea id="mySandbox" name="mySandbox" placeholder="Sandbox - paste template code here."></textarea>
-    </form>
-
+    <p class="font-cursive ml-2 text-5xl">Xidipity</p>
+    <p class="font-light mb-1 ml-2 text-sm tracking-wide">template editor</p>
+    <div class="h-screen w-full">
+        <div class="clearfix w-full">
+            <div class="float-left w-4/5">
+                <form>
+                    <textarea id="mySandbox" name="mySandbox" placeholder="Sandbox - paste template code here."></textarea>
+                </form>
+            </div>
+            <div class="float-left p-1 w-1/5">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Responsive -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3773234116666593"
+                     data-ad-slot="3797865743"
+                     data-ad-format="rectangle, vertical"
+                     data-full-width-responsive="false"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <p>&nbsp;</p>
+                <hr />
+                <p class="pt-3">Keyboard Shortcuts</p>
+                <ul class="list-reset pl-4 text-sm">
+                    <li>ctrl-a - select all</li>
+                    <li>ctrl-c - copy selected</li>
+                    <li>ctrl-f - find</li>
+                    <li>ctrl-v - paste from clipboard</li>
+                    <li>[tab] - indent out</li>
+                    <li>shift-[tab] - indent in</li>
+                </ul>
+                <p>&nbsp;</p>
+                <hr />
+                <p class="pt-3"><i class="fas fa-bell pr-2 text-base" style="color:#C62828;"></i><span class="text-sm">Changes are not saved when the browser tab/window is closed.</span></p>
+                <p>&nbsp;</p>
+                <hr />
+                <p class="pt-3 text-center text-sm w-full"><a class="no-underline hover:text-orange-dark" href="https://xidipity.com" alt="Xidipity WordPress Theme"><i class="fas fa-home pr-2"></i>Xidipity</a></p>
+            </div>
+        </div>
+    </div>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/codemirror.js'></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/display/placeholder.js'></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.0/addon/selection/active-line.js'></script>
@@ -45,13 +108,18 @@
     <script type='text/javascript'>
         CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
         CodeMirror.keyMap.default["Tab"] = "indentMore";
+
+
         var editor = CodeMirror.fromTextArea(mySandbox, {
             mode: "text/html",
             lineNumbers: true,
             styleActiveLine: true,
             tabSize: 2,
             autofocus: true,
+            lineWrapping: false,
         });
+        //editor.setSize(950, null);
+
         window.addEventListener("beforeunload", function(event) {
             // Cancel the event as stated by the standard.
             event.preventDefault();
