@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90630.1
+ *       build: 90630.2
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -176,9 +176,9 @@ function xidipity_scripts()
 
     // Tailwind CSS files
 
-    wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/preflight.min.css', array() , '7.3', 'all');
-    wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.min.css', array() , '7.3', 'all');
-    wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.min.css', array() , '7.3', 'all');
+    wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/preflight.min.css', array() , '1.0.4', 'all');
+    wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
+    wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
 
     // Xidipity CSS files
 
@@ -191,7 +191,7 @@ function xidipity_scripts()
 
     // Fontawesome
 
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', array() , '5.8.1', 'all');
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
 
     // Google Material Design Icons
 
