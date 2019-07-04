@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90427.2
+*       build: 90704.1
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -80,7 +80,8 @@ if (!function_exists('xidipity_posted_on')) {
          * @param string $html Posted On HTML.
          */
         $html = apply_filters('xidipity_posted_on_html', $html);
-        echo $html; // WPCS: XSS OK.
+        // echo $html; // WPCS: XSS OK.
+        return $html; // WPCS: XSS OK.
     }
 }
 
@@ -112,7 +113,8 @@ if (!function_exists('xidipity_posted_by')) {
          * @param string $html Posted By HTML.
          */
         $html = apply_filters('xidipity_posted_by_html', $html);
-        echo $html; // WPCS: XSS OK.
+        // echo $html; // WPCS: XSS OK.
+        return $html; // WPCS: XSS OK.
     }
 }
 
