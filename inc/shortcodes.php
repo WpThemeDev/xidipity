@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: shortcodes.php
-*       build: 90629.1
+*       build: 90704.1
 * description: PHP support for Xidipity theme
 *      github: https://github.com/WpThemeDev/xidipity
 *              https://codex.wordpress.org/Shortcode_API
@@ -575,12 +575,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= $title;
                     $html.= $stamp;
                     $html.= $excerpt;
-                    $html.= get_readmore(apply_filters('the_permalink', get_permalink()));
-                    //$html.= '<p>&nbsp;</p>';
-                    //$html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
-                    //$html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    //$html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                    //$html.= '</div>';
+                    $html.= get_readmore(get_permalink());
                     $html.= '</td>';
                 }
                 else {
@@ -591,12 +586,7 @@ function blog_summary_shortcode($atts, $category_list)
                     $html.= $title;
                     $html.= $stamp;
                     $html.= $excerpt;
-                    $html.= get_readmore(apply_filters('the_permalink', get_permalink()));
-                    //$html.= '<p>&nbsp;</p>';
-                    //$html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
-                    //$html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                    //$html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                    //$html.= '</div>';
+                    $html.= get_readmore(get_permalink());
                     $html.= '</td>';
                     $html.= '</tr>';
                     $html.= '</tbody>';
@@ -624,13 +614,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= $title;
                 $html.= $stamp;
                 $html.= $excerpt;
-                $html.= get_readmore(apply_filters('the_permalink', get_permalink()));
-                //$html.= '<p>&nbsp;</p>';
-                //$html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
-                //$html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                //$html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                //$html.= '</div>';
-                //$html.= '</td>';
+                $html.= get_readmore(get_permalink());
                 $html.= '<td>';
                 $html.= '<p>' . $image . '</p> <!-- Display Image -->';
                 $html.= '</td>';
@@ -661,12 +645,7 @@ function blog_summary_shortcode($atts, $category_list)
                 $html.= $title;
                 $html.= $stamp;
                 $html.= $excerpt;
-                $html.= get_readmore(apply_filters('the_permalink', get_permalink()));
-                //$html.= '<p>&nbsp;</p>';
-                //$html.= '<div style="display: table; background-color: var(--bg-wht); padding: 15px 0; width: 100%;">';
-                //$html.= '<div style="display: table-cell; text-align: center; vertical-align: middle; width: 40px;"><i class="far fa-comment-alt fg-pri-300" style="font-size: 1.2rem;">&#x200B;</i></div>';
-                //$html.= '<div style="display: table-cell; font-size: 0.85rem; width: calc(100% - 40px);"><a href="' . apply_filters('the_permalink', get_permalink()) . '">Read more …</a></div>';
-                //$html.= '</div>';
+                $html.= get_readmore(get_permalink());
                 $html.= '</td>';
                 $html.= '</tr>';
                 $html.= '</tbody>';
