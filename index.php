@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: index.php
-*       build: 90323.1
+*       build: 90704.1
 * description: Template for displaying posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -149,10 +149,10 @@ if ($paged == 1) {
         /* recent blog header      ------------
         values are pulled from blog-var.css
         -- */
-        echo '<div class="blg-pg-recent-wrapper">' . "\n";
-        echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
-        echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
-        echo '</div>' . "\n";
+        // echo '<div class="blg-pg-recent-wrapper">' . "\n";
+        // echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
+        // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
+        // echo '</div>' . "\n";
         echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
         while ($wp_query->have_posts()) {
             $wp_query->the_post();
