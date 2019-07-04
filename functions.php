@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90630.2
+ *       build: 90704.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -182,10 +182,10 @@ function xidipity_scripts()
 
     // Xidipity CSS files
 
-    wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css#asyncload', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css#asyncload', array() , wp_get_theme()->get('Version') , 'print');
-    wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css#asyncload', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css#asyncload', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css', array() , wp_get_theme()->get('Version') , 'print');
+    wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css', array() , wp_get_theme()->get('Version') , 'all');
     wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array() , wp_get_theme()->get('Version') , 'print');
     wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/blog-palette.min.css', array() , wp_get_theme()->get('Version') , 'all');
 
@@ -202,19 +202,6 @@ function xidipity_scripts()
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 }
 
-/**
- * Load scripts async
- */
-
-function xidipity_async_scripts($url)
-{
-    if (strpos($url, '#asyncload') === false) return $url;
-    else
-    if (is_admin()) return str_replace('#asyncload', '', $url);
-    else return str_replace('#asyncload', '', $url) . "' async='async";
-}
-
-add_filter('clean_url', 'xidipity_async_scripts', 11, 1);
 /**
  * Add Categories for Attachments
  */
@@ -719,7 +706,7 @@ function ($in, $editor_id)
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
 //    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,adsense,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,xscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -861,19 +848,18 @@ function get_readmore($link)
 {
   if (empty($link))
   {
-    $val = disp_error('Missing get_readmore argument $link');
+    $val = disp_error('Missing get_readmore link argument');
   } else {
-    $val = '<p><!-- xt:annotation/readmore --></p>';
+    $val = '<!-- xt:annotation/readmore -->';
     $val.= '<table class="readmore">';
     $val.= '<tbody>';
     $val.= '<tr>';
-    $val.= '<td><i class="fas fa-book-reader fg-pri-300 text-lg sm:text-xl">​</i></td>';
+    $val.= '<td><i class="fas fa-book-reader fg-pri-300 text-lg sm:text-xl"></i></td>';
     $val.= '<td><a href="' . $link . '">Read more …</a></td>';
     $val.= '</tr>';
     $val.= '</tbody>';
     $val.= '</table>';
-    $val.= '<p><!-- /xt:annotation/readmore --></p>';
-    $val.= '<p>&nbsp;</p>';
+    $val.= '<!-- /xt:annotation/readmore -->';
     return $val;
   }
 }
