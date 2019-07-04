@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content.php
-*       build: 90604.1
+*       build: 90704.1
 * description: Template for displaying blog summary card.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -60,6 +60,9 @@ version - 90604.1
 annotation / read more / link
 -- */
 echo get_readmore(esc_url(apply_filters('xidipity_the_permalink', get_permalink())));
+echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '</div>' . "\n";
 echo '</article>' . "\n";
 
 /*  # eof
