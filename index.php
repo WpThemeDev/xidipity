@@ -97,6 +97,7 @@ else {
     $cat2 = '-' . $cat2;
 }
 
+echo '<!-- xwpt:90704.1/index.php           -->' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
 echo '<main id="main" class="site-main">' . "\n";
@@ -198,6 +199,7 @@ else {
 
 echo '</main>' . "\n";
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90704.1/index.php          -->' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
