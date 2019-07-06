@@ -16,6 +16,7 @@ echo '' . "\n";
 /* display page header     ------------
 -- */
 get_header();
+echo '<!-- xwpt:90327.1/no-sidebar.php      -->' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<div id="primary" class="content-area no-sidebar">' . "\n";
 echo '<main id="main" class="site-main">' . "\n";
@@ -38,6 +39,7 @@ echo '</div>' . "\n";
 echo '</main>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90327.1/no-sidebar.php     -->' . "\n";
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
