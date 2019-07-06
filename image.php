@@ -14,6 +14,7 @@
 /* display page header     ------------
 -- */
 get_header();
+echo '<!-- xwpt:90427.1/image.php           -->' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
 
@@ -116,6 +117,7 @@ echo '</div>' . "\n";
 -- */
 get_sidebar();
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90427.1/image.php          -->' . "\n";
 /* display footer          ------------
 -- */
 get_footer();
