@@ -14,12 +14,13 @@
 if ( ! xidipity_has_sidebar() ) {
   return;
 }
+echo '<!-- xwpt:90325.1/sidebar.php         -->' . "\n";
 echo '<div id="site-sidebar" class="' . xidipity_layout_class('sidebar') . '">' . "\n";
 echo '<div id="secondary">' . "\n";
 dynamic_sidebar( 'sidebar-1' );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-
+echo '<!-- /xwpt:90325.1/sidebar.php        -->' . "\n";
 /*  # eof
 sidebar.php
 -------------------------------------*/
