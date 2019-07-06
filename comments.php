@@ -16,6 +16,7 @@ if (post_password_required()) {
     return;
 }
 
+echo '<!-- xwpt:90518.1/comments.php        -->' . "\n";
 echo '<div id="comments" class="comments-area">' . "\n";
 
 if (have_comments()):
@@ -77,6 +78,7 @@ endif;
 -- */
 comment_form(array('title_reply'=>'<i class="far fa-comments fg-pri-300"></i> Got Something To Say?','logged_in_as' =>'') );
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90518.1/comments.php       -->' . "\n";
 /*  # eof
     comments.php
 -------------------------------------*/
