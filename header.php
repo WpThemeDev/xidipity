@@ -16,6 +16,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
+echo '<!-- xwpt:90428.1/header.php       -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -82,7 +83,9 @@ if ($menuID > 0 Or $page) {
     }
 }
 echo '</header>' . "\n";
+echo '<!-- /xwpt:90428.1/header.php      -->' . "\n";
 echo '<div id="content" class="site-content">' . "\n";
+
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
