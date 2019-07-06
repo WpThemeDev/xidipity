@@ -11,6 +11,7 @@
 * @since 5.0.0
 *
 ***/
+echo '<!-- xwpt:90325.1/searchform.php      -->' . "\n";
 echo '<div class="search-frm-container">' . "\n";
 echo '<form role="search" method="get" class="search-frm" action="' . esc_url( home_url( '/' ) ) . '">' . "\n";
 echo '<label>' . "\n";
@@ -20,6 +21,7 @@ echo '</label>' . "\n";
 echo '<button type="submit" class="search-sub"><span class="screen-reader-text">' . esc_html_x( 'Search', 'submit button', 'xidipity' ) . '</span><i class="fas fa-search"></i></button>' . "\n";
 echo '</form>' . "\n";
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90325.1/searchform.php     -->' . "\n";
 /*  # eof
 searchform.php
 -------------------------------------*/
