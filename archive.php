@@ -14,6 +14,7 @@
 /* display page header     ------------
 -- */
 get_header();
+echo '<!-- xwpt:90324.1/archive.php         -->' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<section id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
 echo '<main id="main" class="site-main">' . "\n";
@@ -50,6 +51,7 @@ echo '</section>' . "\n";
 -- */
 get_sidebar();
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90324.1/archive.php        -->' . "\n";
 /* display footer          ------------
 -- */
 get_footer();
