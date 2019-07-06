@@ -11,6 +11,7 @@
 * @since 5.0.0
 *
 ***/
+echo '<!-- xwpt:90327.1/footer.php          -->' . "\n";
 echo '</div>' . "\n";
 echo '<footer id="colophon" class="site-footer">' . "\n";
 echo '<div class="site-info">' . "\n";
@@ -21,10 +22,12 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</footer>' . "\n";
+echo '<!-- /xwpt:90327.1/footer.php         -->' . "\n";
 echo '</div>' . "\n";
 wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
+
 /*  # eof
 footer.php
 -------------------------------------*/
