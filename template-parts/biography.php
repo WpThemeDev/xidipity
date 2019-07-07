@@ -12,6 +12,7 @@
 * @since 5.0.0
 *
 ***/
+echo '<!-- xwpt:90327.1/biography.php       -->' . "\n";
 echo '<div class="post-navigation">' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
@@ -32,6 +33,7 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<p>&nbsp;</p>' . "\n";
+echo '<!-- /xwpt:90327.1/biography.php      -->' . "\n";
 /*  # eof
 biography.php
 -------------------------------------*/
