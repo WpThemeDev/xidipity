@@ -11,6 +11,7 @@
 * @since 5.0.0
 *
 ***/
+echo '<!-- xwpt:90704.1/content.php         -->' . "\n";
 echo '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class()) . '">' . "\n";
 echo '<div class="post-content-wrapper post-content-wrapper-archive">' . "\n";
 /* display featured image  ------------
@@ -64,7 +65,7 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-
+echo '<!-- /xwpt:90704.1/content.php        -->' . "\n";
 /*  # eof
     content.php
 -------------------------------------*/
