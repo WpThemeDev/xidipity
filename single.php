@@ -14,6 +14,7 @@
 /* display page header     ------------
 -- */
 get_header();
+echo '<!-- xwpt:90325.1/single.php          -->' . "\n";
 echo '<div class="content-area-container">' . "\n";
 echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
 echo '<main id="main" class="site-main">' . "\n";
@@ -42,6 +43,7 @@ echo '</div>' . "\n";
 -- */
 get_sidebar();
 echo '</div>' . "\n";
+echo '<!-- /xwpt:90325.1/single.php         -->' . "\n";
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
