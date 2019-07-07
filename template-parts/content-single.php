@@ -11,6 +11,7 @@
 * @since 5.0.0
 *
 ***/
+echo '<!-- xwpt:90629.1/content-single.php  -->' . "\n";
 echo '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class()) . '">' . "\n";
 echo '<div class="post-content-wrapper post-content-wrapper-single">' . "\n";
 echo '<div class="entry-data-wrapper entry-data-wrapper-single">' . "\n";
@@ -55,6 +56,7 @@ echo '</footer>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
+echo '<!-- /xwpt:90629.1/content-single.php -->' . "\n";
 /*  # eof
 content-single.php
 -------------------------------------*/
