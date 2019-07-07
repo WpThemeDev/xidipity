@@ -15,6 +15,7 @@
 ***/
 /* ck for category in url  ------------
 -- */
+echo '<!-- xwpt:90428.1/content-none.php    -->' . "\n";
 global $wp;
 $url = add_query_arg(array() , $wp->request);
 $url_items = explode("/", $url);
@@ -135,6 +136,7 @@ else {
 
 echo '</div>' . "\n";
 echo '</section>' . "\n";
+echo '<!-- /xwpt:90428.1/content-none.php   -->' . "\n";
 /*  # eof
 content-none.php
 -------------------------------------*/
