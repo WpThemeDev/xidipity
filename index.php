@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: index.php
-*       build: 90704.1
+*       build: 90708.1
 * description: Template for displaying posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -97,11 +97,11 @@ else {
     $cat2 = '-' . $cat2;
 }
 
-echo '<!-- xwpt:90704.1/index.php           -->' . "\n";
-echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
-echo '<main id="main" class="site-main">' . "\n";
-
+echo '<!-- xwpt:90708.1/index.php           -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
+echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
+echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 if ($paged == 1) {
     if ($sticky_cnt > 0) {
         $args = array(
@@ -119,9 +119,10 @@ if ($paged == 1) {
             /* featured blog header    ------------
             values are pulled from blog-var.css
             -- */
-            echo '<div class="blg-pg-featured-wrapper">' . "\n";
-            echo '<h2><span class="blg-pg-featured-title"></span></h2>' . "\n";
-            echo '<div class="taxonomy-description"><p class="blg-pg-featured-descrip"></p></div>' . "\n";
+            echo '<div class="xwtAddShadow xwtAddPadContent">' . "\n";
+            echo '<h2><span class="xwtFeaturedTitle"></span></h2>' . "\n";
+            // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
+            echo '<div class="xwtFeaturedDescrip"></div>' . "\n";
             echo '</div>' . "\n";
             echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
             while ($wp_query->have_posts()) {
@@ -154,12 +155,12 @@ if ($paged == 1) {
         // echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
         // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
         // echo '</div>' . "\n";
-        echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+        // echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
         while ($wp_query->have_posts()) {
             $wp_query->the_post();
             get_template_part('template-parts/content', get_post_format());
         }
-        echo '</div>' . "\n";
+        // echo '</div>' . "\n";
         xidipity_the_posts_pagination($pages_max);
     } else {
         get_template_part('template-parts/content', 'none');
@@ -181,10 +182,11 @@ else {
         /* recent blog header      ------------
         values are pulled from blog-var.css
         -- */
-        echo '<div class="blg-pg-recent-wrapper">' . "\n";
-        echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
-        echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
-        echo '</div>' . "\n";
+        echo '<div class="xwtAddShadow xwtAddPadContent">' . "\n";
+        echo '<h2><span class="xwtRecentTitle"></span></h2>' . "\n";
+        // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
+            echo '<div class="xwtRecentDescrip"></div>' . "\n";
+    echo '</div>' . "\n";
         echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
         while ($wp_query->have_posts()) {
             $wp_query->the_post();
@@ -197,9 +199,10 @@ else {
     }
 }
 
-echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90704.1/index.php          -->' . "\n";
+echo '</main>' . "\n";
+// echo '</div>' . "\n";
+echo '<!-- /xwpt:90708.1/index.php          -->' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
