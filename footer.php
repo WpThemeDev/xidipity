@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: footer.php
-*       build: 90327.1
+*       build: 90708.1
 * description: The template for displaying the footer
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -11,19 +11,20 @@
 * @since 5.0.0
 *
 ***/
-echo '<!-- xwpt:90327.1/footer.php          -->' . "\n";
+// closing div from header
 echo '</div>' . "\n";
-echo '<footer id="colophon" class="site-footer">' . "\n";
-echo '<div class="site-info">' . "\n";
-echo '<div class="site-info-inside">' . "\n";
-echo '<div class="credits">' . "\n";
+echo '<!-- xwpt:90708.1/footer.php          -->' . "\n";
+echo '<footer id="xwtBkFoot" class="xwtBkFootOpts">' . "\n";
+//echo '<div class="xwtBkFootInfo">' . "\n";
+// echo '<div class="site-info-inside">' . "\n";
+// echo '<div class="credits">' . "\n";
 do_action( 'xidipity_credits' );
-echo '</div>' . "\n";
-echo '</div>' . "\n";
-echo '</div>' . "\n";
+// echo '</div>' . "\n";
+// echo '</div>' . "\n";
+//echo '</div>' . "\n";
 echo '</footer>' . "\n";
-echo '<!-- /xwpt:90327.1/footer.php         -->' . "\n";
-echo '</div>' . "\n";
+echo '<!-- /xwpt:90708.1/footer.php         -->' . "\n";
+// echo '</div>' . "\n";
 wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
