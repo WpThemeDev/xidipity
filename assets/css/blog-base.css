@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90629.1
+Build       - 90708.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -374,6 +374,8 @@ body {
 /* mobile media format     ------------
 -- */
 
+
+/* delete
 .blg-pg-featured-wrapper {
     border-top: 1px solid transparent;
     border-left: 1px solid transparent;
@@ -400,11 +402,14 @@ body {
     text-align: left;
     width: 100%;
 }
+*/
 
 
 /* other media formats     ------------
 -- */
 
+
+/*
 @media (min-width: 576px) {
     .blg-pg-recent-wrapper,
     .blg-pg-featured-wrapper {
@@ -414,7 +419,10 @@ body {
         border-right: 1px solid var(--sys-pg-banner-br-border-color);
     }
 }
+*/
 
+
+/* delete
 .blg-pg-featured-title::before {
     color: var(--sys-pg-banner-featured-title-fg-color);
     content: var(--sys-pg-banner-featured-title);
@@ -424,6 +432,7 @@ body {
     color: var(--sys-pg-banner-featured-descrip-fg-color);
     content: var(--sys-pg-banner-featured-descrip);
 }
+*/
 
 .blg-pg-recent-title::before {
     color: var(--sys-pg-banner-recent-title-fg-color);
@@ -686,6 +695,8 @@ div#respond #cancel-comment-reply-link {
 /* footer container        ------------
 -- */
 
+
+/* delete
 .site-footer {
     background-color: var(--sys-ft-bg-color);
     position: relative;
@@ -696,11 +707,14 @@ div#respond #cancel-comment-reply-link {
     text-align: var(--sys-ft-align);
     width: 100%;
 }
+*/
 
 
 /* footer credits/copyright------------
 -- */
 
+
+/* delete
 .copyright {
     color: var(--copyright-font-color);
     font-family: var(--copyright-font-family);
@@ -723,11 +737,14 @@ div#respond #cancel-comment-reply-link {
     color: var(--copyright-lnk-sec-color) !important;
     background-color: var(--copyright-lnk-sec-bg-color) !important;
 }
+*/
 
 
 /* footer credits/design   ------------
 -- */
 
+
+/*
 .designer {
     color: var(--designer-font-color);
     font-family: var(--designer-font-family);
@@ -749,6 +766,7 @@ div#respond #cancel-comment-reply-link {
     color: var(--designer-lnk-sec-color) !important;
     background-color: var(--designer-lnk-sec-bg-color) !important;
 }
+*/
 
 
 /*  # WordPress
@@ -901,23 +919,27 @@ div#respond #cancel-comment-reply-link {
 
 .post-category a {
     color: var(--fg-bas-600) !important;
+    font-size: 0.875rem;
     padding: 2px 4px;
 }
 
 .post-category a:before {
     color: var(--fg-bas-400) !important;
-    content: "\f068";
+    content: "\f022";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     padding-right: .5rem;
 }
 
+
+/*
 .post-category a:hover:before {
     color: var(--sys-lnk-sec-color) !important;
     content: "\f00e";
     font-weight: 900;
     padding-right: .425rem;
 }
+*/
 
 .post-category a:hover {
     color: var(--sys-lnk-sec-color) !important;
@@ -929,8 +951,8 @@ div#respond #cancel-comment-reply-link {
  ----------------------------------------------------------------------------*/
 
 
-/* background color        ------------
--- */
+/* delete me
+background color        ------------
 
 .site-header {
     background: var(--bg-bas-100);
@@ -939,6 +961,7 @@ div#respond #cancel-comment-reply-link {
     position: relative;
     width: 100%;
 }
+-- */
 
 
 /* header items (hentry)   ----------------------------------------------------
@@ -1044,17 +1067,23 @@ div#respond #cancel-comment-reply-link {
     padding-top: 15px;
 }
 
+
+/* delete
 .entry-header {
     margin: 0 0 10px;
     padding: 0;
 }
+*/
 
+
+/* delete
 .entry-title {
     clear: none;
     margin: 0;
     padding: 0;
     word-wrap: break-word;
 }
+*/
 
 
 /* post title              ------------
@@ -1066,9 +1095,12 @@ div#respond #cancel-comment-reply-link {
     color: var(--fg-sec-500);
 }
 
+
+/*
 .taxonomy-description {
     margin-top: 5px;
 }
+*/
 
 .entry-title a,
 .entry-title a:visited,
@@ -1730,13 +1762,16 @@ input#menu-toggle[type=checkbox]:checked~div {
     /* menu toolbar            --------*/
     nav#site-navigation {
         background-color: var(--mnu-bg-color);
+        background-color: lightblue;
     }
     /* toolbar settings        --------*/
     nav#site-navigation {
         background-color: var(--mnu-pri-bg-color);
         clear: both;
         display: block;
-        height: 3em;
+        height: 3rem;
+        height: 2.75rem;
+        margin-top: 4px;
         width: 100%;
     }
     /* global settings         --------*/
@@ -1998,10 +2033,13 @@ img.header-logo {
 /* mobile media format     ------------
 -- */
 
+
+/* delete
 .site-content {
     background-color: var(--sys-bg-color);
     padding: 0 5px 0 5px;
 }
+*/
 
 .toc-menu {
     background-color: var(--sys-hdr-bg-color);
@@ -2038,10 +2076,11 @@ img.header-logo {
 -- */
 
 @media (min-width: 576px) {
+    /* delete
     .site-content {
         background-color: var(--sys-bg-color);
         padding: 0;
-    }
+    }*/
     .toc-menu {
         padding: 0.3125em 2em 0.3125em 2em;
         text-align: var(--sys-hdr-align);
@@ -2264,6 +2303,7 @@ img.header-logo {
 
 
 /* sidebar                 ----------------------------------------------------
+delete after validation
 -- */
 
 .widget {
@@ -2384,6 +2424,7 @@ ul.sbwidget {
 
 .search-frm-container {
     border-radius: .25rem;
+    margin: 5px 0 5px 5px;
     width: 100%;
 }
 
@@ -2607,6 +2648,434 @@ img[id*="botd"] {
 
 .seo-pst-breadcrumbs {
     display: var(--pst-breadcrumb-dsp);
+}
+
+
+/*  # System
+   ## 90708.1
+
+xwt = xidipity wordpress theme
+bk  = block
+fx  = flexbox
+
+ ------------------------------------------------------------------------------
+ */
+
+
+/*  php:header
+ */
+
+#xwtBkPage {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+#xwtBkHead {
+    min-height: 100px;
+    width: 100%;
+}
+
+.xwtBkHeadOpts {
+    background-color: var(--sys-bg-color);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.site-content {
+    background-color: var(--sys-bg-color);
+    padding: 0 5px 0 5px;
+}
+
+
+/*/ php:header
+ */
+
+
+/*  php:header
+    php:index
+ */
+
+#xwtFxRowItems {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxRowItems {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        margin: .375% 0 .375% 1%;
+    }
+}
+
+.xwtFxRowItemsOpts {
+    background-color: var(--sys-bg-color);
+    padding: 0 5px 0 5px;
+}
+
+@media (min-width: 576px) {
+    .xwtFxRowItemsOpts {
+        padding: 0;
+    }
+}
+
+
+/*/ php:header
+    php:index
+ */
+
+
+/*  php:index
+ */
+
+#xwtFxRowItem {
+    display: block;
+    margin: 2% 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxRowItem:nth-child(1) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 67.25%;
+        -ms-flex: 0 1 67.25%;
+        flex: 0 1 67.25%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin-bottom: .45%;
+        margin-top: .23%;
+        margin-right: 1.5%;
+    }
+    #xwtFxRowItem:nth-child(2) {
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-flex: 0 1 28.5%;
+        -ms-flex: 0 1 28.5%;
+        flex: 0 1 28.5%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin-right: 2.5%;
+        margin-top: .325%;
+    }
+}
+
+
+/*/ php:index
+ */
+
+
+/*  php:index/content
+ */
+
+#xwtFxRowFullItem {
+    display: block;
+    margin: 2% 0;
+    min-height: 200px;
+    padding: 2%;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxRowFullItem {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 99%;
+        -ms-flex: 0 1 99%;
+        flex: 0 1 99%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin: .5%;
+        padding: 0;
+    }
+}
+
+#xwtFxRowHalfItem {
+    display: block;
+    margin: 2% 0;
+    min-height: 200px;
+    padding: 2%;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxRowHalfItem {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 49%;
+        -ms-flex: 0 1 49%;
+        flex: 0 1 49%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin: .5%;
+        padding: 0;
+    }
+}
+
+#xwtFxRowThirdItem {
+    display: block;
+    margin: 2% 0;
+    min-height: 200px;
+    padding: 2%;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxRowThirdItem {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 33%;
+        -ms-flex: 0 1 33%;
+        flex: 0 1 33%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        margin: .5%;
+        padding: 0;
+    }
+}
+
+#xwtEntryHeader {
+    margin: 0 0 6px;
+    padding: 0;
+}
+
+
+/*/ php:index/content
+ */
+
+
+/*  php:footer
+ */
+
+#xwtBkFoot {
+    min-height: 125px;
+    width: 100%;
+}
+
+
+/*/ php:footer
+ */
+
+
+/*  xwt:classes
+ */
+
+.xwtBkFootOpts {
+    background-color: var(--sys-ft-bg-color);
+    font-size: var(--sys-ft-font-size);
+    padding: 30px 10px;
+    text-align: var(--sys-ft-align);
+    width: 100%;
+}
+
+
+/*
+.xwtBkFootInfo {}
+
+.xwtBkFootCopyright a,
+.xwtBkFootCopyright a:visited {
+    color: var(--copyright-lnk-pri-color) !important;
+}
+
+.xwtBkFootCopyright a:hover,
+.xwtBkFootCopyright a:focus,
+.xwtBkFootCopyright a:active {
+    color: var(--copyright-lnk-sec-color) !important;
+    background-color: var(--copyright-lnk-sec-bg-color) !important;
+}
+
+.xwtBkFootCredits a,
+.xwtBkFootCredits a:visited {
+    color: var(--designer-lnk-pri-color) !important;
+}
+
+.xwtBkFootCredits a:hover,
+.xwtBkFootCredits a:focus,
+.xwtBkFootCredits a:active {
+    color: var(--designer-lnk-sec-color) !important;
+    background-color: var(--designer-lnk-sec-bg-color) !important;
+}
+*/
+
+.xwtFxRowItemOpts {}
+
+.xwtFeaturedTitle::before {
+    color: var(--sys-pg-banner-featured-title-fg-color);
+    content: var(--sys-pg-banner-featured-title);
+}
+
+.xwtFeaturedDescrip::before {
+    color: var(--sys-pg-banner-featured-descrip-fg-color);
+    content: var(--sys-pg-banner-featured-descrip);
+    margin-top: 5px;
+}
+
+.xwtFeaturedDescrip {
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.xwtRecentTitle::before {
+    color: var(--sys-pg-banner-recent-title-fg-color);
+    content: var(--sys-pg-banner-recent-title);
+}
+
+.xwtRecentDescrip::before {
+    color: var(--sys-pg-banner-recent-descrip-fg-color);
+    content: var(--sys-pg-banner-recent-descrip);
+}
+
+.xwtRecentDescrip {
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.xwtAddBorder {
+    border-bottom: 1px solid var(--sys-pg-banner-br-border-color);
+    border-left: 1px solid var(--sys-pg-banner-tl-border-color);
+    border-right: 1px solid var(--sys-pg-banner-br-border-color);
+    border-top: 1px solid var(--sys-pg-banner-tl-border-color);
+}
+
+.xwtAddShadow {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.14);
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.14);
+}
+
+.xwtAddPadContent {
+    padding: 10px;
+}
+
+.xwtAdsenseWidget {
+    padding: 0;
+    text-align: center;
+}
+
+.xwtAddPadSidebar {
+    padding: 16px;
+}
+
+.xwtEntryTitle {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+.align-left {
+    margin: 0 auto 0 0;
+}
+
+.align-center {
+    margin: 0 auto;
+}
+
+.align-right {
+    margin: 0 0 0 auto;
+}
+
+
+/*/ xwt:classes
+ */
+
+
+/*  php:sidebar
+ */
+
+#xwtFxColItems {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxColItems {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+}
+
+#xwtFxColItem {
+    display: block;
+    margin: 2% 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 100%;
+}
+
+#xwtFxColItem img {
+    height: auto;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xwtFxColItem {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        margin: 1.4%;
+    }
+}
+
+.xwtFxColItemTitle {
+    color: var(--fg-bas-600);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    margin: 0 0 4px;
 }
 
 
