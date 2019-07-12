@@ -1,10 +1,10 @@
 <?php
 /*
 *        file: header.php
-*       build: 90428.1
+*       build: 90708.1
 * description: Template for page headers.
 *      github: https://github.com/WpThemeDev/xidipity
-*    comments: This is the template that displays all of the <head> section and everything up until <div id="content">
+*    comments: This template displays the page header and opens the page flexbox container
 *
 * @package WordPress
 * @subpackage Xidipity
@@ -16,7 +16,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt:90428.1/header.php       -->' . "\n";
+echo '<!-- xwpt:90708.1/header.php       -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -26,9 +26,9 @@ echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . "\n";
 do_action('wp_head');
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
-echo '<div id="page" class="site">' . "\n";
+echo '<div id="xwtBkPage" class="site">' . "\n";
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
-echo '<header id="masthead" class="site-header">' . "\n";
+echo '<header id="xwtBkHead" class="xwtBkHeadOpts">' . "\n";
 echo '<div class="header-banner">' . "\n";
 /* custom logo             ------------
 -- */
@@ -83,8 +83,10 @@ if ($menuID > 0 Or $page) {
     }
 }
 echo '</header>' . "\n";
-echo '<!-- /xwpt:90428.1/header.php      -->' . "\n";
-echo '<div id="content" class="site-content">' . "\n";
+echo '<!-- /xwpt:90708.1/header.php      -->' . "\n";
+// This is closed in the footer.php
+//echo '<div id="content" class="site-content">' . "\n";
+echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
 
 /* reset post data         ------------
 -- */
