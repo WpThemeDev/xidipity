@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content.php
-*       build: 90708.1
+*       build: 90712.1
 * description: Template for displaying blog summary card.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -11,14 +11,14 @@
 * @since 5.0.0
 *
 ***/
-echo '<!-- xwpt:90708.1/content.php         -->' . "\n";
+echo '<!-- xwpt:90712.1/content.php         -->' . "\n";
 echo '<article id="xwtFxRowHalfItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
 // echo '<div class="post-content-wrapper post-content-wrapper-archive">' . "\n";
 /* display featured image  ------------
 -- */
 xidipity_post_thumbnail();
 // echo '<div class="entry-data-wrapper entry-data-wrapper-archive">' . "\n";
-echo '<div class="xwtAddPadContent entry-header-wrapper entry-header-wrapper-archive">' . "\n";
+echo '<div class="xwtAddPadPost entry-header-wrapper entry-header-wrapper-archive">' . "\n";
 
 if ('post' == get_post_type()) {
     echo '<div class="entry-meta entry-meta-header-before">' . "\n";
@@ -70,7 +70,7 @@ echo '</div>' . "\n";
 // echo '</div>' . "\n";
 // echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt:90708.1/content.php        -->' . "\n";
+echo '<!-- /xwpt:90712.1/content.php        -->' . "\n";
 /*  # eof
     content.php
 -------------------------------------*/
