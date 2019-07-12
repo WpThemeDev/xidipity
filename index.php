@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: index.php
-*       build: 90708.1
+*       build: 90712.1
 * description: Template for displaying posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -97,7 +97,7 @@ else {
     $cat2 = '-' . $cat2;
 }
 
-echo '<!-- xwpt:90708.1/index.php           -->' . "\n";
+echo '<!-- xwpt:90712.1/index.php           -->' . "\n";
 //echo '<div class="content-area-container">' . "\n";
 //echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
@@ -119,7 +119,7 @@ if ($paged == 1) {
             /* featured blog header    ------------
             values are pulled from blog-var.css
             -- */
-            echo '<div class="xwtAddShadow xwtAddPadContent">' . "\n";
+            echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
             echo '<h2><span class="xwtFeaturedTitle"></span></h2>' . "\n";
             // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
             echo '<div class="xwtFeaturedDescrip"></div>' . "\n";
@@ -182,7 +182,7 @@ else {
         /* recent blog header      ------------
         values are pulled from blog-var.css
         -- */
-        echo '<div class="xwtAddShadow xwtAddPadContent">' . "\n";
+        echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
         echo '<h2><span class="xwtRecentTitle"></span></h2>' . "\n";
         // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
             echo '<div class="xwtRecentDescrip"></div>' . "\n";
@@ -202,7 +202,7 @@ else {
 echo '</div>' . "\n";
 echo '</main>' . "\n";
 // echo '</div>' . "\n";
-echo '<!-- /xwpt:90708.1/index.php          -->' . "\n";
+echo '<!-- /xwpt:90712.1/index.php          -->' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
