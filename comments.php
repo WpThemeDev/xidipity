@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: comments.php
-*       build: 90518.1
+*       build: 90712.1
 * description: Template for displaying posts assigned to category.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: Login required.
@@ -16,11 +16,12 @@ if (post_password_required()) {
     return;
 }
 
-echo '<!-- xwpt:90518.1/comments.php        -->' . "\n";
-echo '<div id="comments" class="comments-area">' . "\n";
+echo '<!-- xwpt:90712.1/comments.php        -->' . "\n";
+//echo '<div id="xcomments" class="w-full xcomments-area">' . "\n";
+echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
 
 if (have_comments()):
-    echo '<div class="comments-area-wrapper">' . "\n";
+    echo '<div class="xwtAddPadPost xcomments-area-wrapper">' . "\n";
     echo '<h2 class="comments-title">' . "\n";
     $comments_number = get_comments_number();
     if ('1' === $comments_number) {
@@ -70,15 +71,16 @@ endif;
 -- */
 
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments')):
-    echo '<div class="no-comments-wrapper">' . "\n";
-    echo '<p class="no-comments">' . esc_html_e('Comments are closed.', 'xidipity') . '</p>' . "\n";
+    echo '<div class="xwtNoComment">' . "\n";
+    //echo '<div class="no-comments-wrapper">' . "\n";
+    echo '<p>' . __('<i class="far fa-comment-alt fg-pri-400 pr-2"></i>Comments are closed.', 'xidipity') . '</p>' . "\n";
     echo '</div>' . "\n";
 endif;
 /* display comment form    ------------
 -- */
 comment_form(array('title_reply'=>'<i class="far fa-comments fg-pri-300"></i> Got Something To Say?','logged_in_as' =>'') );
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90518.1/comments.php       -->' . "\n";
+echo '<!-- /xwpt:90712.1/comments.php       -->' . "\n";
 /*  # eof
     comments.php
 -------------------------------------*/
