@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: template-tags.php
-*       build: 90704.1
+*       build: 90712.1
 * description: Core WordPress extensions
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -172,11 +172,11 @@ if (!function_exists('xidipity_post_first_category')) {
             if (!empty($category_display)) {
                 if ($useCatLink == true && !empty($category_link)) {
                     $html = '<span class="post-category">';
-                    $html .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
+                    $html .= '<a href="' . $category_link . '"><i class="far fa-sticky-note pr-2"></i>' . htmlspecialchars($category_display) . '</a>';
                     $html .= '</span>';
                 }
                 else {
-                    $html = '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
+                    $html = '<span class="post-category"><i class="fas fa-exclamation-circle pr-2"></i>' . htmlspecialchars($category_display) . '</span>';
                 }
                 return $html;
             }
