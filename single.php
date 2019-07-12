@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: single.php
-*       build: 90325.1
+*       build: 90712.1
 * description: The Template for displaying all single posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -14,11 +14,11 @@
 /* display page header     ------------
 -- */
 get_header();
-echo '<!-- xwpt:90325.1/single.php          -->' . "\n";
-echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
-echo '<main id="main" class="site-main">' . "\n";
-echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
+echo '<!-- xwpt:90712.1/single.php          -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
+echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
+echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 
 while (have_posts()) {
     the_post();
@@ -26,8 +26,9 @@ while (have_posts()) {
     if ('' !== get_the_author_meta('description')) {
         get_template_part('template-parts/biography');
     }
-
+    echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
     xidipity_the_post_navigation();
+    echo '</div>' . "\n";
 
     // If comments are open or we have at least one comment, load up the comment template
 
@@ -38,12 +39,12 @@ while (have_posts()) {
 
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '</div>' . "\n";
+//echo '</div>' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90325.1/single.php         -->' . "\n";
+echo '<!-- /xwpt:90712.1/single.php         -->' . "\n";
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
