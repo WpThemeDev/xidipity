@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: extras.php
-*       build: 90327.1
+*       build: 90708.1
 * description: Custom functions that act independently of the theme templates
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -303,7 +303,7 @@ add_action('template_redirect', 'xidipity_template_redirect_content_width');
 
 function xidipity_copyright()
 {
-    $html = '<div class="copyright xidipity-copyright">' . xidipity_mod('xidipity_copyright') . '</div>';
+    $html = '<div class="xwtBkFootCopyright">' . xidipity_mod('xidipity_copyright') . '</div>';
     /**
      * Filters the Blog Copyright HTML.
      *
@@ -322,11 +322,11 @@ add_action('xidipity_credits', 'xidipity_copyright');
 
 function xidipity_designer()
 {
-    $designer_string = sprintf('<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>', esc_url('https://www.xidipity.com') , esc_attr('Xidipity Theme') , esc_html('Xidipity Theme') , esc_html__('Powered by', 'Xidipity') , esc_url('https://wordpress.org') , esc_attr('WordPress', 'Xidipity') , esc_html('WordPress'));
+    $designer_string = sprintf('<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>', esc_url('https://www.xidipity.com') , esc_attr('Xidipity Theme Footer') , esc_html('Xidipity Theme') , esc_html__('Powered by', 'Xidipity') , esc_url('https://wordpress.org') , esc_attr('WordPress', 'Xidipity') , esc_html('WordPress'));
 
     // Designer HTML
 
-    $html = '<div class="designer xidipity-designer">' . $designer_string . '</div>';
+    $html = '<div class="xwtBkFootCredits">' . $designer_string . '</div>';
     /**
      * Filters the Designer HTML.
      *
