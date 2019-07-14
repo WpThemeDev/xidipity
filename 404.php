@@ -1,55 +1,57 @@
 <?php
 /*
-*        file: 404.php
-*       build: 90323.1
-* description: Template for displaying 404 image.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
+* Template Name: 404
+*          file: 404.php
+*         build: 90714.1
+*   description: The template for displaying 404 page
+*        github: https://github.com/WpThemeDev/xidipity
+*      comments:
 *
 * @package WordPress
 * @subpackage Xidipity
 * @since 5.0.0
 *
+echo '' . "\n";
 ***/
-echo '<!doctype html>' . "\n";
-?>
-<html <?php
-language_attributes(); ?> >
-<?php
-echo '<head>' . "\n";
-echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
-echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
-echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . "\n";
-/* load wordpress meta     ------------
+/* display page header     ------------
 -- */
-do_action('wp_head');
-echo '</head>' . "\n";
-echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
-echo '<div id="page" class="pl-4">' . "\n";
-echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
-echo '</a>' . "\n";
-echo '<header id="masthead" class="site-header">' . "\n";
-echo '<div class="entry-header-wrapper bg-bas-050">' . "\n";
-echo '<p class="site-title">' . "\n";
-echo '<a href="' . esc_url(home_url('/')) . '" rel="home">' . "\n";
-echo get_bloginfo('name') . "\n";
-echo '</a>' . "\n";
-echo '</p>' . "\n";
-echo '<p class="site-description mb-4">' . "\n";
-echo get_bloginfo('description') . "\n";
-echo '</p>' . "\n";
+get_header('404');
+echo '<!-- xwpt:90714.1/404.php      -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="content-area 404">' . "\n";
+echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
+//echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+//echo '<main id="main" class="site-main">' . "\n";
+//echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
+/* run database query      ------------
+-- */
+
+
+//if ($wp_query->have_posts()) {
+//    while ($wp_query->have_posts()) {
+//        the_post();
+        get_template_part('template-parts/content-page-404', 'page');
+
+        // If comments are open or we have at least one comment, load up the comment template
+
+        //if (comments_open() || '0' != get_comments_number()) {
+        //    comments_template();
+        //}
+//    }
+//}
+//echo '</div>' . "\n";
+echo '</main>' . "\n";
+// exclude call to get_sidebar()
+// echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '</header>' . "\n";
-echo '<h1><i class="fas fa-search-minus fg-pri-300 pr-4"></i>' . __('404 Error', 'xidipity') . '</h1>' . "\n";
-echo '<h5 class="fg-bas-700">' . __('Unable to locate requested page.', 'xidipity') . '</h5>' . "\n";
-echo '<p>&nbsp;</p>' . "\n";
-echo '<a href="' . esc_url(home_url('/')) . '" rel="home">' . "\n";
-echo '<i class="fas fa-home fg-pri-300"></i>' . "\n";
-echo '  Home Page</a>' . "\n";
-echo '</div>' . "\n";
-echo '</div>' . "\n";
-echo '</body>' . "\n";
+echo '<!-- /xwpt:90714.1/404.php     -->' . "\n";
+/* reset post data         ------------
+-- */
+wp_reset_postdata();
+/* display footer          ------------
+-- */
+get_footer();
 /*  # eof
-    404.php
+404.php
 -------------------------------------*/
 ?>
