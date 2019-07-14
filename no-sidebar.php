@@ -2,7 +2,7 @@
 /*
 * Template Name: No Sidebar
 *          file: no-sidebar.php
-*         build: 90327.1
+*         build: 90714.1
 *   description: The template for displaying pages without the sidebar
 *        github: https://github.com/WpThemeDev/xidipity
 *      comments:
@@ -16,17 +16,19 @@ echo '' . "\n";
 /* display page header     ------------
 -- */
 get_header();
-echo '<!-- xwpt:90327.1/no-sidebar.php      -->' . "\n";
-echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="content-area no-sidebar">' . "\n";
-echo '<main id="main" class="site-main">' . "\n";
-echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
+echo '<!-- xwpt:90714.1/no-sidebar.php      -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="content-area no-sidebar">' . "\n";
+echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
+//echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+//echo '<main id="main" class="site-main">' . "\n";
+//echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
 /* run database query      ------------
 -- */
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
-        get_template_part('template-parts/content', 'page');
+        get_template_part('template-parts/content-page-alt', 'page');
 
         // If comments are open or we have at least one comment, load up the comment template
 
@@ -35,11 +37,12 @@ if ($wp_query->have_posts()) {
         }
     }
 }
-echo '</div>' . "\n";
+//echo '</div>' . "\n";
 echo '</main>' . "\n";
+// exclude call to get_sidebar()
+// echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '</div>' . "\n";
-echo '<!-- /xwpt:90327.1/no-sidebar.php     -->' . "\n";
+echo '<!-- /xwpt:90714.1/no-sidebar.php     -->' . "\n";
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
