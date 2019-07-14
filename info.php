@@ -1,0 +1,55 @@
+<?php
+/*
+* Template Name: Info
+*          file: info.php
+*         build: 90714.1
+*   description: The template for displaying pages without the sidebar
+*        github: https://github.com/WpThemeDev/xidipity
+*      comments:
+*
+* @package WordPress
+* @subpackage Xidipity
+* @since 5.0.0
+*
+echo '' . "\n";
+***/
+/* display page header     ------------
+-- */
+get_header('alt');
+echo '<!-- xwpt:90714.1/info.php      -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="content-area info">' . "\n";
+echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
+//echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+//echo '<main id="main" class="site-main">' . "\n";
+//echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
+/* run database query      ------------
+-- */
+if ($wp_query->have_posts()) {
+    while ($wp_query->have_posts()) {
+        the_post();
+        get_template_part('template-parts/content-page-info', 'page');
+
+        // If comments are open or we have at least one comment, load up the comment template
+
+        //if (comments_open() || '0' != get_comments_number()) {
+        //    comments_template();
+        //}
+    }
+}
+//echo '</div>' . "\n";
+echo '</main>' . "\n";
+// exclude call to get_sidebar()
+// echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /xwpt:90714.1/info.php     -->' . "\n";
+/* reset post data         ------------
+-- */
+wp_reset_postdata();
+/* display footer          ------------
+-- */
+get_footer();
+/*  # eof
+info.php
+-------------------------------------*/
+?>
