@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: index.php
-*       build: 90712.1
+*       build: 90713.1
 * description: Template for displaying posts.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -97,7 +97,7 @@ else {
     $cat2 = '-' . $cat2;
 }
 
-echo '<!-- xwpt:90712.1/index.php           -->' . "\n";
+echo '<!-- xwpt:90713.1/index.php           -->' . "\n";
 //echo '<div class="content-area-container">' . "\n";
 //echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
@@ -119,17 +119,21 @@ if ($paged == 1) {
             /* featured blog header    ------------
             values are pulled from blog-var.css
             -- */
-            echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
-            echo '<h2><span class="xwtFeaturedTitle"></span></h2>' . "\n";
+            echo '<div id="xwtFxRowFullItem" class="xwtAddShadow xwtDisplayFeaturedBanner">' . "\n";
+            echo '<header class="xwtAddPadExcerpt">' . "\n";
+            //echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
+            echo '<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i><span class="xwtFeaturedTitle"></span></h2>' . "\n";
             // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
             echo '<div class="xwtFeaturedDescrip"></div>' . "\n";
+            echo '</header>' . "\n";
             echo '</div>' . "\n";
-            echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+            // echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+            // echo '<div id="xwtFxRowHalfItem">' . "\n";
             while ($wp_query->have_posts()) {
                 $wp_query->the_post();
                 get_template_part('template-parts/content', get_post_format());
             }
-            echo '</div>' . "\n";
+            // echo '</div>' . "\n";
             xidipity_the_posts_pagination($pages_max);
         } else {
             get_template_part('template-parts/content', 'none');
@@ -156,11 +160,20 @@ if ($paged == 1) {
         // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
         // echo '</div>' . "\n";
         // echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+        echo '<div id="xwtFxRowFullItem" class="xwtAddShadow xwtDisplayRecentBanner">' . "\n";
+        echo '<header class="xwtAddPadExcerpt">' . "\n";
+        //echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
+        echo '<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i><span class="xwtRecentTitle"></span></h2>' . "\n";
+        // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
+        echo '<div class="xwtRecentDescrip"></div>' . "\n";
+        echo '</header>' . "\n";
+        echo '</div>' . "\n";
+        //echo '<div id="xwtFxRowHalfItem">' . "\n";
         while ($wp_query->have_posts()) {
             $wp_query->the_post();
             get_template_part('template-parts/content', get_post_format());
         }
-        // echo '</div>' . "\n";
+        //echo '</div>' . "\n";
         xidipity_the_posts_pagination($pages_max);
     } else {
         get_template_part('template-parts/content', 'none');
@@ -187,7 +200,7 @@ else {
         // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
             echo '<div class="xwtRecentDescrip"></div>' . "\n";
     echo '</div>' . "\n";
-        echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
+        echo '<div id="xwtFxRowHalfItem">' . "\n";
         while ($wp_query->have_posts()) {
             $wp_query->the_post();
             get_template_part('template-parts/content', get_post_format());
@@ -202,7 +215,7 @@ else {
 echo '</div>' . "\n";
 echo '</main>' . "\n";
 // echo '</div>' . "\n";
-echo '<!-- /xwpt:90712.1/index.php          -->' . "\n";
+echo '<!-- /xwpt:90713.1/index.php          -->' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
