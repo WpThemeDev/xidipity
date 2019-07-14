@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: page.php
-*       build: 90712.1
+*       build: 90714.1
 * description: This is the template that displays all pages by default.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -14,7 +14,7 @@
 /* display page header     ------------
 -- */
 get_header();
-echo '<!-- xwpt:90712.1/page.php            -->' . "\n";
+echo '<!-- xwpt:90714.1/page.php            -->' . "\n";
 //echo '<div class="content-area-container">' . "\n";
 //echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
@@ -26,7 +26,7 @@ echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
-        get_template_part('template-parts/content', 'page');
+        get_template_part('template-parts/content-page', 'page');
 
         // If comments are open or we have at least one comment, load up the comment template
 
@@ -43,7 +43,7 @@ echo '</main>' . "\n";
 -- */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90712.1/page.php           -->' . "\n";
+echo '<!-- /xwpt:90714.1/page.php           -->' . "\n";
 /* reset post data         ------------
 -- */
 wp_reset_postdata();
