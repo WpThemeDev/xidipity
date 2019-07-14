@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: comments.php
-*       build: 90712.1
+*       build: 90713.1
 * description: Template for displaying posts assigned to category.
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments: Login required.
@@ -16,7 +16,7 @@ if (post_password_required()) {
     return;
 }
 
-echo '<!-- xwpt:90712.1/comments.php        -->' . "\n";
+echo '<!-- xwpt:90713.1/comments.php        -->' . "\n";
 //echo '<div id="xcomments" class="w-full xcomments-area">' . "\n";
 echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
 
@@ -78,9 +78,14 @@ if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_p
 endif;
 /* display comment form    ------------
 -- */
-comment_form(array('title_reply'=>'<i class="far fa-comments fg-pri-300"></i> Got Something To Say?','logged_in_as' =>'') );
+echo '<div class="xwtAddPadPost">' . "\n";
+comment_form(array(
+    'title_reply'=>'<i class="far fa-comments fg-pri-300 pr-2"></i>Got Something To Say?',
+    'logged_in_as' =>''
+    ) );
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90712.1/comments.php       -->' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /xwpt:90713.1/comments.php       -->' . "\n";
 /*  # eof
     comments.php
 -------------------------------------*/
