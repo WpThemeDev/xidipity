@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90712.1
+Build       - 90713.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -448,6 +448,8 @@ body {
 /*  # WordPress
    ## Comments
  ----------------------------------------------------------------------------*/
+
+
 /* delete
 #xwtComments {
     margin: 0 auto;
@@ -475,11 +477,14 @@ body {
 }
 */
 
+
 /* comments title          ------------
 -- */
 
 .comments-title {
     color: var(--fg-bas-700);
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
     margin: 0;
     padding: 0;
     /* text-transform: uppercase; */
@@ -489,14 +494,20 @@ body {
 /* comment list            ------------
 -- */
 
+ol.comment-list li {
+    margin-top: 14px;
+}
+
 ol.comment-list li::before {
     color: var(--fg-pri-600);
-    font-size: 200%;
-    font-family: var(--sys-font-family);
-    font-weight: bold;
+    content: "Comment: " counter(comment);
+    font-size: var(--h5-size);
+    font-family: var(--font-sans);
+    font-weight: var(--h5-weight);
+    counter-increment: comment;
     maring-left: 0;
     text-align: left;
-    width: 2em;
+    width: 6.25em;
 }
 
 .comment-list {
@@ -613,23 +624,23 @@ ol.comment-list li::before {
 /* comment form            ------------
 -- */
 
-div#respond {
-    background: var(--bg-wht);
-    border: solid var(--fg-bas-300);
+#respond {
+    background-color: var(--sys-content-bg-color);
+    background-color: transparent;
+    /*border: solid var(--fg-bas-300);
     border-width: 0 1px 1px 0;
-    margin: 15px 0 0;
-    padding: 30px;
-    position: relative;
+    margin: 15px 0 0;*/
+    padding: 15px;
 }
 
-.comment-list div#respond {
+.comment-list #respond {
     background: var(--bg-bas-100);
     margin: 15px 0;
     padding: 15px;
     position: relative;
 }
 
-div#respond .comment-reply-title {
+#respond .comment-reply-title {
     color: var(--fg-bas-900);
     font-size: 23px;
     font-size: 1.4375rem;
@@ -637,27 +648,27 @@ div#respond .comment-reply-title {
     margin: 0 0 15px;
 }
 
-div#respond .comment-notes,
-div#respond .logged-in-as,
-div#respond .form-allowed-tags,
-div#respond .form-allowed-tags code {
+#respond .comment-notes,
+#respond .logged-in-as,
+#respond .form-allowed-tags,
+#respond .form-allowed-tags code {
     font-size: 13px;
     font-size: 0.8125rem;
 }
 
-div#respond .comment-form label {
+#respond .comment-form label {
     display: block;
 }
 
-div#respond .form-submit {
-    margin: 0;
+#respond .form-submit {
+    margin-top: 14px;
 }
 
-div#respond .required {
+#respond .required {
     color: var(--fg-pri-900);
 }
 
-div#respond #cancel-comment-reply-link {
+#respond #cancel-comment-reply-link {
     color: var(--fg-pri-900);
     font-size: 12px;
     font-size: 0.75rem;
@@ -683,6 +694,11 @@ div#respond #cancel-comment-reply-link {
 
 .comment-subscription-form+.comment-subscription-form {
     margin: 8px 0 0;
+}
+
+.akismet_comment_form_privacy_notice {
+    font-size: 0.875rem;
+    text-align: center;
 }
 
 
@@ -921,6 +937,7 @@ div#respond #cancel-comment-reply-link {
     font-size: 0.875rem;
     padding: 2px 4px;
 }
+
 
 /* delete
 .post-category a:before {
@@ -2927,6 +2944,10 @@ fx  = flexbox
 
 .xwtFxRowItemOpts {}
 
+.xwtDisplayFeaturedBanner {
+    display: var(--sys-pg-banner-featured-display) !important;
+}
+
 .xwtFeaturedTitle::before {
     color: var(--sys-pg-banner-featured-title-fg-color);
     content: var(--sys-pg-banner-featured-title);
@@ -2941,6 +2962,10 @@ fx  = flexbox
 .xwtFeaturedDescrip {
     font-size: 0.875rem;
     margin-top: 5px;
+}
+
+.xwtDisplayRecentBanner {
+    display: var(--sys-pg-banner-recent-display) !important;
 }
 
 .xwtRecentTitle::before {
@@ -2972,20 +2997,24 @@ fx  = flexbox
 }
 
 .xwtAddPadExcerpt {
+    background-color: var(--sys-content-bg-color);
     padding: 10px;
 }
 
 .xwtAddPadPage,
 .xwtAddPadPost {
+    background-color: var(--sys-content-bg-color);
     padding: 18px 10px;
 }
 
 .xwtAdsenseWidget {
+    background-color: var(--sys-bg-color);
     padding: 0;
     text-align: center;
 }
 
 .xwtAddPadSidebar {
+    background-color: var(--sys-bg-color);
     padding: 16px;
 }
 
