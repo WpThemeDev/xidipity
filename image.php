@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: image.php
-*       build: 90427.1
+*       build: 90713.1
 * description: Template for displaying image attachments
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -14,9 +14,11 @@
 /* display page header     ------------
 -- */
 get_header();
-echo '<!-- xwpt:90427.1/image.php           -->' . "\n";
-echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
+echo '<!-- xwpt:90713.1/image.php           -->' . "\n";
+//echo '<div class="content-area-container">' . "\n";
+//echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
+echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
+echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 
 /* get page title          ------------
 -- */
@@ -57,7 +59,9 @@ if (have_posts()) {
       default:
         $ar = '';
     }
-    echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
+    //echo '<article id="post-' . get_the_ID() . '" class="post-459 attachment type-attachment status-inherit hentry">' . "\n";
+    echo '<article  id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
+    echo '<div class="xwtAddPadPost">' . "\n";
     echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $pgtitle . '</h2>' . "\n";
     echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($metadata['width']) . '&times;' . absint($metadata['height']) . 'px' . "\n";
     if ($ar !== '') {
@@ -73,9 +77,9 @@ if (have_posts()) {
      */
     $image_size = apply_filters('Xidipity_attachment_size', 'full');
     echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
-    echo '<figcaption class="wp-caption-text">' . get_the_excerpt(get_the_ID()) . '</figcaption>' . "\n";
+    echo '<figcaption class="wp-caption-text">' . wp_get_attachment_caption(get_the_ID()) . '</figcaption>' . "\n";
     echo '</figure>' . "\n";
-    echo '<div class="pb-2 pl-4 pr-4">' . get_the_content() . '</div>' . "\n";
+    echo get_the_content() . "\n";
     wp_link_pages(array(
         'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'Xidipity') . '</span>',
         'after' => '</div>',
@@ -85,13 +89,14 @@ if (have_posts()) {
         'separator' => '<span class="screen-reader-text">, </span>',
     ));
     echo '</div>' . "\n";
-    echo '<footer class="text-sm">' . "\n";
+    echo '<footer class="xwtContentFoot">' . "\n";
     if ($metadata) {
         echo '<i class="far fa-eye fg-sec-300 pl-3 pr-1"></i><a class="pr-3" href="' . esc_url(wp_get_attachment_url()) . '">View</a>';
     }
 
     Xidipity_entry_footer();
     echo '</footer>' . "\n";
+    echo '</div>' . "\n";
     echo '</article>' . "\n";
 
     // Parent post navigation.
@@ -113,11 +118,12 @@ if (have_posts()) {
 }
 
 echo '</div>' . "\n";
+echo '</main>' . "\n";
 /* display sidebar         ------------
 -- */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90427.1/image.php          -->' . "\n";
+echo '<!-- /xwpt:90713.1/image.php          -->' . "\n";
 /* display footer          ------------
 -- */
 get_footer();
