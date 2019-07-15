@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90714.3
+Build       - 90714.4
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -2845,8 +2845,23 @@ fx  = flexbox
 /*  php:index/content
  */
 
+#xwtFxRowFullItem,
+#xwtFxRowFullItemAlt {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    margin: 1.4%;
+}
+
 @media (min-width: 576px) {
-    #xwtFxRowFullItem {
+    #xwtFxRowFullItem,
+    #xwtFxRowFullItemAlt {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
@@ -2858,6 +2873,11 @@ fx  = flexbox
         align-self: stretch;
         margin: .5%;
         padding: 0;
+    }
+    #xwtFxRowFullItemAlt {
+        -webkit-flex: 0 1 97.5%;
+        -ms-flex: 0 1 97.5%;
+        flex: 0 1 97.5%;
     }
 }
 
