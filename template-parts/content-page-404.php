@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: content-page-404.php
-*       build: 90714.1
+*       build: 90714.2
 * description: The template used for displaying basic page content in info.php
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -34,7 +34,7 @@ echo '<article class="w-full">' . "\n";
 
 /* display content         ------------
 -- */
-$page = get_page_by_path('404');
+$page = get_page_by_path('404-error');
 
 if ($page) {
     // custom page
