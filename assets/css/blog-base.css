@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90714.2
+Build       - 90714.3
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -2670,7 +2670,7 @@ img[id*="botd"] {
 .seo-pag-breadcrumbs,
 .seo-pst-breadcrumbs {
     font-size: 0.875rem;
-    margin: -10px 0 10px 0;
+    margin: -6px 0 10px 0;
 }
 
 .seo-pag-breadcrumbs {
