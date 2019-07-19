@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90624.1
+Build       - 90717.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -306,180 +306,209 @@ a:active {
 
 
 /*  # Common
-   ## List
+   ## Lists
  ----------------------------------------------------------------------------*/
 
 
-/* unordered list          ----------------------------------------------------
--- */
+/* unordered list                      --------------------
+ */
 
-ul {
-    list-style: none;
-    margin-left: 1.5em;
-    padding-left: 0;
+ul,
+#CircleBullet,
+#DiscBullet,
+#MixedBullet,
+#SquareBullet {
+    padding-left: 2.5rem;
+}
+
+ul li,
+#CircleBullet li,
+#DiscBullet li,
+#MixedBullet li,
+#SquareBullet li {
+    padding-left: 0.15rem;
 }
 
 
-/* disc                   -------------
--- */
+/* default                -------------
+ */
 
-ul li::before {
-    content: "\2022";
-    color: var(--fg-bas-600);
-    display: inline-block;
-    width: 1.1em;
+ul {
+    list-style-type: disc;
 }
 
 
 /* circle                 -------------
--- */
+ */
 
-ul li ul li::before {
-    content: "\25E6";
-    color: var(--fg-blk);
-    display: inline-block;
-    width: 1.1em;
+#CircleBullet,
+#CircleBullet ul:nth-of-type(1) {
+    list-style-type: circle;
 }
 
 
 /* square                 -------------
--- */
+ */
 
-ul li ul li ul li::before {
-    content: "\25AA";
-    color: var(--fg-bas-600);
-    display: inline-block;
-    width: 1.1em;
+#SquareBullet,
+#SquareBullet ul:nth-of-type(1) {
+    list-style-type: square;
+}
+
+
+/* mixed                  -------------
+ */
+
+#MixedBullet {
+    list-style-type: disc;
+}
+
+
+/* circle                 -------------
+ */
+
+#MixedBullet ul {
+    list-style-type: circle;
+}
+
+
+/* square                 -------------
+ */
+
+#MixedBullet ul ul {
+    list-style-type: square;
 }
 
 
 /* dash                   -------------
--- */
+ */
 
-ul li ul li ul li ul li::before {
-    content: "\2012";
-    color: var(--fg-bas-600);
-    display: inline-block;
-    width: 1.1em;
+#MixedBullet ul ul ul {
+    list-style: disc outside url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 -4 24 24'%3E%3Cpath d='M20 9H4v2h16V9zM4 15h16v-2H4v2z'/%3E%3C/svg%3E");
 }
 
 
-/* text only              -------------
--- */
+/* bookmark               -------------
+ */
 
-ul.style-text li::before {
-    content: "\2012";
-    color: transparent;
-    display: inline-block;
-    width: 1.1em;
+#MixedBullet ul ul ul ul {
+    list-style: circle outside url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 -4 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath d='M19 3H5v18l7-3 7 3V3zm-2 15l-5-2.18L7 18V5h10v13z'/%3E%3C/svg%3E");
 }
 
 
-/* very deep indent        ------------
--- */
+/* ordered list                        --------------------
+ */
 
-ul li ul li ul li ul li ul>li::before {
-    content: "\2025";
-    color: var(--fg-bas-600);
-    display: inline-block;
-    width: 1.1em;
+ol,
+#AlphaBullet,
+#OutlineBullet,
+#RomanBullet,
+#ZeroDecBullet {
+    padding-left: 2.5rem;
+}
+
+ol li,
+#AlphaBullet li,
+#OutlineBullet li,
+#RomanBullet li,
+#ZeroDecBullet li {
+    padding-left: 0.15rem;
+}
+
+
+/* default                -------------
+ */
+
+ol {
+    list-style-type: decimal;
+}
+
+
+/* alpha                  -------------
+ */
+
+#AlphaBullet,
+#AlphaBullet ol:nth-of-type(1) {
+    list-style-type: lower-alpha;
+}
+
+
+/* leading zero decimal   -------------
+ */
+
+#ZeroDecBullet,
+#ZeroDecBullet ol:nth-of-type(1) {
+    list-style-type: decimal-leading-zero;
+}
+
+
+/* roman                  -------------
+ */
+
+#RomanBullet,
+#RomanBullet ol:nth-of-type(1) {
+    list-style-type: upper-roman;
+}
+
+
+/* Outline                -------------
+ */
+
+#OutlineBullet {
+    list-style-type: upper-roman;
+}
+
+#OutlineBullet ol {
+    list-style-type: upper-alpha;
+}
+
+
+/* decimal                -------------
+ */
+
+#OutlineBullet ol ol {
+    list-style-type: decimal;
+}
+
+
+/* alpha                  -------------
+ */
+
+#OutlineBullet ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+
+/* decimal                -------------
+ */
+
+#OutlineBullet ol ol ol ol {
+    list-style-type: decimal-leading-zero;
+}
+
+
+/* no bullet(s)           ------------
+ */
+
+.no-bullet,
+.no-bullet ul,
+.no-bullet ul ul,
+.no-bullet ul ul ul,
+.no-bullet ul ul ul ul {
+    list-style-type: none;
 }
 
 
 /* font awesome            ------------
--- */
+   order is important
+ */
 
-ul.fa-ul {
-    padding-left: 0.25em;
-}
-
-ul.fa-ul li::before {
-    content: "";
-    width: 0;
-}
-
-
-/* ordered list            ----------------------------------------------------
--- */
-
-ol {
-    list-style: none;
-    margin-left: 1em;
+.fa-ul:nth-of-type(-n+4) {
     padding-left: 0;
-    counter-reset: level-1 calc(var(--start) - 1);
 }
 
-ol ol {
-    margin-left: 1.7em;
-}
-
-ol li {
-    counter-increment: level-1;
-}
-
-ol li ol li {
-    counter-increment: level-2;
-}
-
-ol li ol li ol li {
-    counter-increment: level-3;
-}
-
-ol li ol li ol li ol li {
-    counter-increment: level-4;
-}
-
-ol li::before {
-    content: "." counter(level-1, decimal);
-    color: var(--fg-bas-600);
-    display: inline-block;
-    font-size: 95%;
-    font-family: var(--font-condensed);
-    margin-right: 0.5em;
-    text-align: right;
-    direction: rtl;
-    width: 1.3em;
-}
-
-ol li ol li::before {
-    content: "." counter(level-2, lower-alpha);
-    color: var(--fg-bas-600);
-    display: inline-block;
-    margin-right: 0.5em;
-    text-align: right;
-    direction: rtl;
-    width: 1.3em;
-}
-
-ol li ol li ol li::before {
-    content: "." counter(level-3, lower-roman);
-    color: var(--fg-bas-600);
-    display: inline-block;
-    margin-right: 0.5em;
-    text-align: right;
-    direction: rtl;
-    width: 1.3em;
-}
-
-ol li ol li ol li ol li::before {
-    content: "." counter(level-4, lower-greek);
-    color: var(--fg-bas-600);
-    display: inline-block;
-    margin-right: 0.8em;
-    text-align: right;
-    direction: rtl;
-    width: 1.3em;
-}
-
-
-/* very deep indent        ------------
--- */
-
-ol li ol li ol li ol li ol>li::before {
-    content: "\2025";
-    color: var(--fg-bas-600);
-    display: inline-block;
-    width: 1.3em;
+.fa-ul {
+    padding-left: 0.8125rem;
 }
 
 
