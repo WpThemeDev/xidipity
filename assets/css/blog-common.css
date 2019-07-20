@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90717.1
+Build       - 90718.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -490,11 +490,15 @@ ol {
 /* no bullet(s)           ------------
  */
 
-.no-bullet,
-.no-bullet ul,
-.no-bullet ul ul,
-.no-bullet ul ul ul,
-.no-bullet ul ul ul ul {
+.no-bullet {
+    list-style-type: none;
+}
+
+.no-bullets,
+.no-bullets ul,
+.no-bullets ul ul,
+.no-bullets ul ul ul,
+.no-bullets ul ul ul ul {
     list-style-type: none;
 }
 
@@ -520,24 +524,16 @@ dt {
     margin-bottom: 5px;
 }
 
-dd,
-dd.card {
-    margin-bottom: 10px;
+dd {
     margin-bottom: 0.625em;
-    margin-top: 10px;
     margin-top: 0.625em;
-    margin-left: 16px;
-    margin-left: 1em;
-    padding-left: 0;
+    margin-left: 0;
 }
 
-
-/* mobile default          ------------
--- */
-
-dd.card {
-    margin-left: 0;
-    padding-left: 0;
+@media (min-width: 576px) {
+    dd {
+        margin-left: 2.25rem;
+    }
 }
 
 
