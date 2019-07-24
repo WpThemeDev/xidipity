@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90718.1
+Build       - 90723.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -23,7 +23,7 @@ Github      - https://github.com/WpThemeDev/xidipity
 ## HTML tags
 ## HTML5 Elements
 ## Links
-## List
+## Lists
 ## Media Elements
 ## Native gallery
 ## Tables
@@ -103,7 +103,6 @@ pre {
     overflow: auto;
     padding: 15px;
 }
-
 
 /*  # Common
    ## Horizonal Rules <hr />
@@ -310,22 +309,22 @@ a:active {
  ----------------------------------------------------------------------------*/
 
 
-/* unordered list                      --------------------
+/* unordered list         ---------------------------------
  */
 
 ul,
-#CircleBullet,
-#DiscBullet,
-#MixedBullet,
-#SquareBullet {
-    padding-left: 2.5rem;
+#ulCircle,
+#ulDash,
+#ulMixed,
+#ulSquare {
+    padding-left: 1.75rem;
 }
 
 ul li,
-#CircleBullet li,
-#DiscBullet li,
-#MixedBullet li,
-#SquareBullet li {
+#ulCircle li,
+#ulDash li,
+#ulMixed li,
+#ulSquare li {
     padding-left: 0.15rem;
 }
 
@@ -341,17 +340,25 @@ ul {
 /* circle                 -------------
  */
 
-#CircleBullet,
-#CircleBullet ul:nth-of-type(1) {
+#ulCircle,
+#ulCircle ul:nth-of-type(1) {
     list-style-type: circle;
 }
 
 
+/* dash                   -------------
+ */
+
+#ulDash,
+#ulDash ul:nth-of-type(1) {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
+}
+
 /* square                 -------------
  */
 
-#SquareBullet,
-#SquareBullet ul:nth-of-type(1) {
+#ulSquare,
+#ulSquare ul:nth-of-type(1) {
     list-style-type: square;
 }
 
@@ -359,59 +366,59 @@ ul {
 /* mixed                  -------------
  */
 
-#MixedBullet {
+#ulMixed {
     list-style-type: disc;
 }
 
 
-/* circle                 -------------
+/* mixed/circle           -------------
  */
 
-#MixedBullet ul {
+#ulMixed ul {
     list-style-type: circle;
 }
 
 
-/* square                 -------------
+/* mixed/square           -------------
  */
 
-#MixedBullet ul ul {
+#ulMixed ul ul {
     list-style-type: square;
 }
 
 
-/* dash                   -------------
+/* mixed/dash             -------------
  */
 
-#MixedBullet ul ul ul {
-    list-style: disc outside url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 -4 24 24'%3E%3Cpath d='M20 9H4v2h16V9zM4 15h16v-2H4v2z'/%3E%3C/svg%3E");
+#ulMixed ul ul ul {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
 }
 
 
-/* bookmark               -------------
+/* mixed/ellipsis         -------------
  */
 
-#MixedBullet ul ul ul ul {
-    list-style: circle outside url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 -4 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath d='M19 3H5v18l7-3 7 3V3zm-2 15l-5-2.18L7 18V5h10v13z'/%3E%3C/svg%3E");
+#ulMixed ul ul ul ul {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -2 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Ccircle style='' cx='6.37' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='12' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='17.37' cy='21.39' r='1.349'/%3E%3C/svg%3E");
 }
 
 
-/* ordered list                        --------------------
+/* ordered list           ---------------------------------
  */
 
 ol,
-#AlphaBullet,
-#OutlineBullet,
-#RomanBullet,
-#ZeroDecBullet {
-    padding-left: 2.5rem;
+#olAlpha,
+#olAlphaAlt,
+#olOutline,
+#olRoman {
+    padding-left: 1.75rem;
 }
 
 ol li,
-#AlphaBullet li,
-#OutlineBullet li,
-#RomanBullet li,
-#ZeroDecBullet li {
+#olAlpha li,
+#olAlphaAlt li,
+#olOutline li,
+#olRoman li {
     padding-left: 0.15rem;
 }
 
@@ -427,67 +434,91 @@ ol {
 /* alpha                  -------------
  */
 
-#AlphaBullet,
-#AlphaBullet ol:nth-of-type(1) {
+#olAlpha,
+#olAlpha ol:nth-of-type(1) {
     list-style-type: lower-alpha;
 }
 
-
-/* leading zero decimal   -------------
+/* alpha alt              -------------
  */
 
-#ZeroDecBullet,
-#ZeroDecBullet ol:nth-of-type(1) {
-    list-style-type: decimal-leading-zero;
+#olAlphaAlt,
+#olAlphaAlt ol:nth-of-type(1) {
+    list-style-type: upper-alpha;
 }
-
 
 /* roman                  -------------
  */
 
-#RomanBullet,
-#RomanBullet ol:nth-of-type(1) {
+#olRoman,
+#olRoman ol:nth-of-type(1) {
     list-style-type: upper-roman;
 }
 
 
-/* Outline                -------------
+/* outline/roman          -------------
  */
 
-#OutlineBullet {
+#olOutline {
     list-style-type: upper-roman;
 }
 
-#OutlineBullet ol {
+/* outline/alpha          -------------
+ */
+
+#olOutline ol {
     list-style-type: upper-alpha;
 }
 
-
-/* decimal                -------------
+/* outline/decimal        -------------
  */
 
-#OutlineBullet ol ol {
+#olOutline ol ol {
     list-style-type: decimal;
 }
 
 
-/* alpha                  -------------
+/* outline/alpha          -------------
  */
 
-#OutlineBullet ol ol ol {
+#olOutline ol ol ol {
     list-style-type: lower-alpha;
 }
 
 
-/* decimal                -------------
+/* outline/decimal alt    -------------
  */
 
-#OutlineBullet ol ol ol ol {
-    list-style-type: decimal-leading-zero;
+#olOutline ol ol ol ol {
+    counter-reset: list;
+}
+
+#olOutline ol ol ol ol>li {
+    list-style: none;
+}
+
+#olOutline ol ol ol ol>li:before {
+    content: counter(list, decimal) ") ";
+    counter-increment: list;
+    padding-left: 1.5em;
+    margin-left: -2.9em;
+    margin-right: 0.25em;
 }
 
 
-/* no bullet(s)           ------------
+/* font awesome           ---------------------------------
+   order is important
+ */
+
+.fa-ul:nth-of-type(-n+4) {
+    padding-left: 0;
+}
+
+.fa-ul {
+    padding-left: 0.8125rem;
+}
+
+/* no bullet(s)           ---------------------------------
  */
 
 .no-bullet {
@@ -502,21 +533,7 @@ ol {
     list-style-type: none;
 }
 
-
-/* font awesome            ------------
-   order is important
- */
-
-.fa-ul:nth-of-type(-n+4) {
-    padding-left: 0;
-}
-
-.fa-ul {
-    padding-left: 0.8125rem;
-}
-
-
-/* definition list         ----------------------------------------------------
+/* definition list           --------------------------------------------------
 -- */
 
 dt {
@@ -537,7 +554,7 @@ dd {
 }
 
 
-/* other media formats     ------------
+/* other media formats       ---------------
 -- */
 
 @media (min-width: 768px) {
