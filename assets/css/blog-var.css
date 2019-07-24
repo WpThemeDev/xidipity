@@ -1,7 +1,7 @@
 /*
  *
  *        file: blog-var.css
- *       build: 90714.1
+ *       build: 90723.1
  * description: Cascading Style Sheet Variables
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments: Xidipity variables which includes fonts, foreground colors, & background colors.
@@ -226,6 +226,8 @@ Google Fonts    https://fonts.google.com/
     --sys-lnk-sec-color: #f4511e;
     --sys-lnk-sec-bg-color: transparent;
     --sys-lnk-weight: 400;
+    --sys-content-order: 0;
+    --sys-sidebar-order: 1;
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
     --font-mono: "Roboto Mono", monospace;
