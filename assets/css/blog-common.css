@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90723.1
+Build       - 90724.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -313,18 +313,18 @@ a:active {
  */
 
 ul,
-#ulCircle,
-#ulDash,
-#ulMixed,
-#ulSquare {
+ul.circle,
+ul.dash,
+ul.mixed,
+ul.square {
     padding-left: 1.75rem;
 }
 
 ul li,
-#ulCircle li,
-#ulDash li,
-#ulMixed li,
-#ulSquare li {
+ul.circle li,
+ul.dash li,
+ul.mixed li,
+ul.square li {
     padding-left: 0.15rem;
 }
 
@@ -340,8 +340,8 @@ ul {
 /* circle                 -------------
  */
 
-#ulCircle,
-#ulCircle ul:nth-of-type(1) {
+ul.circle,
+ul.circle ul:nth-of-type(1) {
     list-style-type: circle;
 }
 
@@ -349,16 +349,16 @@ ul {
 /* dash                   -------------
  */
 
-#ulDash,
-#ulDash ul:nth-of-type(1) {
+ul.dash,
+ul.dash ul:nth-of-type(1) {
     list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
 }
 
 /* square                 -------------
  */
 
-#ulSquare,
-#ulSquare ul:nth-of-type(1) {
+ul.square,
+ul.square ul:nth-of-type(1) {
     list-style-type: square;
 }
 
@@ -366,7 +366,7 @@ ul {
 /* mixed                  -------------
  */
 
-#ulMixed {
+ul.mixed {
     list-style-type: disc;
 }
 
@@ -374,7 +374,7 @@ ul {
 /* mixed/circle           -------------
  */
 
-#ulMixed ul {
+ul.mixed ul {
     list-style-type: circle;
 }
 
@@ -382,7 +382,7 @@ ul {
 /* mixed/square           -------------
  */
 
-#ulMixed ul ul {
+ul.mixed ul ul {
     list-style-type: square;
 }
 
@@ -390,7 +390,7 @@ ul {
 /* mixed/dash             -------------
  */
 
-#ulMixed ul ul ul {
+ul.mixed ul ul ul {
     list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
 }
 
@@ -398,7 +398,7 @@ ul {
 /* mixed/ellipsis         -------------
  */
 
-#ulMixed ul ul ul ul {
+ul.mixed ul ul ul ul {
     list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -2 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Ccircle style='' cx='6.37' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='12' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='17.37' cy='21.39' r='1.349'/%3E%3C/svg%3E");
 }
 
@@ -407,18 +407,18 @@ ul {
  */
 
 ol,
-#olAlpha,
-#olAlphaAlt,
-#olOutline,
-#olRoman {
+ol.alpha,
+ol.alpha-alt,
+ol.outline,
+ol.roman {
     padding-left: 1.75rem;
 }
 
 ol li,
-#olAlpha li,
-#olAlphaAlt li,
-#olOutline li,
-#olRoman li {
+ol.alpha li,
+ol.alpha-alt li,
+ol.outline li,
+ol.roman li {
     padding-left: 0.15rem;
 }
 
@@ -434,24 +434,24 @@ ol {
 /* alpha                  -------------
  */
 
-#olAlpha,
-#olAlpha ol:nth-of-type(1) {
+ol.alpha,
+ol.alpha ol:nth-of-type(1) {
     list-style-type: lower-alpha;
 }
 
 /* alpha alt              -------------
  */
 
-#olAlphaAlt,
-#olAlphaAlt ol:nth-of-type(1) {
+ol.alpha-alt,
+ol.alpha-alt ol:nth-of-type(1) {
     list-style-type: upper-alpha;
 }
 
 /* roman                  -------------
  */
 
-#olRoman,
-#olRoman ol:nth-of-type(1) {
+ol.roman,
+ol.roman ol:nth-of-type(1) {
     list-style-type: upper-roman;
 }
 
@@ -459,21 +459,21 @@ ol {
 /* outline/roman          -------------
  */
 
-#olOutline {
+ol.outline {
     list-style-type: upper-roman;
 }
 
 /* outline/alpha          -------------
  */
 
-#olOutline ol {
+ol.outline ol {
     list-style-type: upper-alpha;
 }
 
 /* outline/decimal        -------------
  */
 
-#olOutline ol ol {
+ol.outline ol ol {
     list-style-type: decimal;
 }
 
@@ -481,7 +481,7 @@ ol {
 /* outline/alpha          -------------
  */
 
-#olOutline ol ol ol {
+ol.outline ol ol ol {
     list-style-type: lower-alpha;
 }
 
@@ -489,15 +489,15 @@ ol {
 /* outline/decimal alt    -------------
  */
 
-#olOutline ol ol ol ol {
+ol.outline ol ol ol ol {
     counter-reset: list;
 }
 
-#olOutline ol ol ol ol>li {
+ol.outline ol ol ol ol>li {
     list-style: none;
 }
 
-#olOutline ol ol ol ol>li:before {
+ol.outline ol ol ol ol>li:before {
     content: counter(list, decimal) ") ";
     counter-increment: list;
     padding-left: 1.5em;
