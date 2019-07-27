@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90724.1
+Build       - 90726.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -103,6 +103,7 @@ pre {
     overflow: auto;
     padding: 15px;
 }
+
 
 /*  # Common
    ## Horizonal Rules <hr />
@@ -354,6 +355,7 @@ ul.dash ul:nth-of-type(1) {
     list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
 }
 
+
 /* square                 -------------
  */
 
@@ -439,6 +441,7 @@ ol.alpha ol:nth-of-type(1) {
     list-style-type: lower-alpha;
 }
 
+
 /* alpha alt              -------------
  */
 
@@ -446,6 +449,7 @@ ol.alpha-alt,
 ol.alpha-alt ol:nth-of-type(1) {
     list-style-type: upper-alpha;
 }
+
 
 /* roman                  -------------
  */
@@ -463,12 +467,14 @@ ol.outline {
     list-style-type: upper-roman;
 }
 
+
 /* outline/alpha          -------------
  */
 
 ol.outline ol {
     list-style-type: upper-alpha;
 }
+
 
 /* outline/decimal        -------------
  */
@@ -518,6 +524,7 @@ ol.outline ol ol ol ol>li:before {
     padding-left: 0.8125rem;
 }
 
+
 /* no bullet(s)           ---------------------------------
  */
 
@@ -532,6 +539,7 @@ ol.outline ol ol ol ol>li:before {
 .no-bullets ul ul ul ul {
     list-style-type: none;
 }
+
 
 /* definition list           --------------------------------------------------
 -- */
@@ -1846,6 +1854,34 @@ table#twocol td table.annotation td:nth-child(2) {
         padding: 1rem 0.75rem;
         font-size: 0.875rem;
     }
+}
+
+
+/* misc                    ----------------------------------------------------
+-- */
+
+
+/* template conntainer     ------------
+-- */
+
+#Temp {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.temp-head {
+    border-left: 1px solid var(--fg-bas-600);
+    border-right: 1px solid var(--fg-bas-600);
+    border-radius: 0.875rem;
+    margin: 0.75rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.temp-foot {
+    width: 100%;
 }
 
 
