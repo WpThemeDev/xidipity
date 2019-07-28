@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - editor-style.css
-Build       - 90415.1
+Build       - 90727.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later
@@ -43,6 +43,8 @@ body,
     word-wrap: break-word;
     /* Old syntax */
 }
+
+
 /* required                ----------------------------------------------------
 -- */
 
@@ -50,13 +52,17 @@ body.webkit strong,
 body.webkit b {
     font-weight: bolder !important;
 }
+
 abbr,
 acronym {
     font-weight: bolder !important;
 }
+
+
 /*  # TinyMCE
    ## Editor Only
  ----------------------------------------------------------------------------*/
+
 
 /* hide mce specific item  ------------
 -- */
@@ -64,6 +70,8 @@ acronym {
 .mce\:hidden {
     display: none;
 }
+
+
 /* page break symbol       ------------
 -- */
 
@@ -71,6 +79,8 @@ acronym {
     content: " ¶";
     color: var(--fg-pri-500);
 }
+
+
 /* excerpt template        ------------
 -- */
 
@@ -86,6 +96,8 @@ acronym {
     padding: 15px;
     white-space: pre-wrap;
 }
+
+
 /* 2 column outline        ------------
 -- */
 
@@ -94,6 +106,8 @@ table#twocol tr td,
 table#twocol tr td table#twocol tr td {
     border: 1px dashed var(--fg-sec-100);
 }
+
+
 /* blank line spacers      ------------
 -- */
 
@@ -104,6 +118,33 @@ table#twocol tr td table#twocol tr td {
 .spacer-1\/2 {
     background-color: var(--fg-sec-050);
 }
+
+
+/* misc                    ----------------------------------------------------
+-- */
+
+
+/* template conntainer     ------------
+-- */
+
+#Tmp {
+    width: 100%;
+}
+
+#Tmp div:first-child {
+    border-left: 6px solid var(--fg-bas-300);
+    margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-left: 3%;
+    padding: 1em;
+    width: 100%;
+}
+
+#Tmp div:last-child {
+    display: none;
+}
+
 
 /*  # eof
     editor-style
