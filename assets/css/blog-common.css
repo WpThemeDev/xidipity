@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90726.1
+Build       - 90727.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -958,13 +958,10 @@ blockquote {
     color: var(--fg-bas-900);
     border-left: 6px solid var(--fg-pri-100);
     font-weight: 300;
-    margin-top: 16px;
     margin-top: 1em;
     margin-right: auto;
-    margin-bottom: 16px;
     margin-bottom: 1em;
     margin-left: 3%;
-    padding: 16px;
     padding: 1em;
     position: relative;
 }
@@ -1862,26 +1859,25 @@ table#twocol td table.annotation td:nth-child(2) {
 
 
 /* template conntainer     ------------
+   used to display template header
 -- */
 
-#Temp {
-    margin: 0;
-    padding: 0;
-    text-align: left;
+#TmpDemo {
     width: 100%;
 }
 
-.temp-head {
-    border-left: 1px solid var(--fg-bas-600);
-    border-right: 1px solid var(--fg-bas-600);
-    border-radius: 0.875rem;
-    margin: 0.75rem 0;
-    padding: 1rem 2rem;
+#TmpDemo div:first-child {
+    border-left: 6px solid var(--fg-bas-300);
+    margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-left: 3%;
+    padding: 1em;
     width: 100%;
 }
 
-.temp-foot {
-    width: 100%;
+#TmpDemo div:last-child {
+    display: none;
 }
 
 
