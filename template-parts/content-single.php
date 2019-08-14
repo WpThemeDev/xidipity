@@ -1,66 +1,89 @@
 <?php
 /*
-*        file: content-single.php
-*       build: 990712.1
-* description: Template part for displaying single posts.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-echo '<!-- xwpt:990712.1/content-single.php  -->' . "\n";
-//echo '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class()) . '">' . "\n";
+ *  Xidipity WordPress Theme
+ *
+ *  file:   content-single.php
+ *  build:  90728.1
+ *  descrp: content / single
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    system variables
+*/
+$wp_author = __(get_the_author_meta('nickname'));
+$wp_author_id = get_the_author_meta('ID');
+$wp_post_date = get_the_date();
+$wp_tags = get_the_tags();
+/*
+    local variables
+*/
+$v_cat = '';
+$v_meta_list = '';
+echo '<!-- xwpt:90728.1/content-single.php  -->' . "\n";
 echo '<article id="xwtFxRowFullItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
-//echo '<div class="post-content-wrapper post-content-wrapper-single">' . "\n";
-echo '<div class="xwtAddPadPage entry-header-wrapper entry-header-wrapper-archive">' . "\n";
+echo '<div class="xwtAddPadPage">' . "\n";
 
-//echo '<div class="entry-data-wrapper entry-data-wrapper-single">' . "\n";
-//echo '<div class="entry-header-wrapper">' . "\n";
-echo '<div class="entry-meta entry-meta-header-before">' . "\n";
-echo '<ul class="hz-list">' . "\n";
-echo '<li>' . xidipity_posted_on() . '</li>' . "\n";
-echo '<li>' . xidipity_posted_by() . '</li>' . "\n";
-echo '</ul>' . "\n";
-echo '</div>' . "\n";
-/* content title           ------------
--- */
-echo '<header class="entry-header">' . "\n";
-the_title('<h1 class="entry-title">', '</h1>');
+$v_meta_list .= $wp_post_date . ',' . 'Author -' . ',' . '<a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a>';
+echo xidipity_metalinks(explode(',', $v_meta_list));
+/*
+    content title
+*/
+echo '<header id="xwtEntryHeader">' . "\n";
+the_title('<h1 class="xwtEntryTitle">', '</h1>');
 echo '</header>' . "\n";
-//echo '</div>' . "\n";
-echo '<div class="entry-content">' . "\n";
-
-/* yoast breadcrumbs       ------------
--- */
-
+echo '<div id="xwtEntryContent">' . "\n";
+/*
+    yoast breadcrumbs
+*/
 if ( function_exists('yoast_breadcrumb') ) {
   yoast_breadcrumb( '<p id="breadcrumbs" class="seo-pst-breadcrumbs">','</p>' );
 }
-
-/* display content         ------------
--- */
+/*
+    content
+*/
 the_content();
 
-/* content footer          ------------
--- */
-wp_link_pages(array(
-    'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'xidipity') . '</span>',
-    'after' => '</div>',
-    'link_before' => '<span>',
-    'link_after' => '</span>',
-));
+/*
+    content footer
+*/
+$v_meta_list = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    $v_meta_list .= xidipity_icon_edit() . ',';
+    $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
+}
+/*: category :*/
+$v_cat = xidipity_first_category();
+if (!empty($v_cat))
+{
+    $v_meta_list .=  xidipity_icon_cat() . ',';
+    $v_meta_list .=  $v_cat . ',';
+}
+/*: tags :*/
+if ($wp_tags)
+{
+    $v_meta_list .=  xidipity_icon_tags() . ',';
+    if ( $wp_tags ) {
+        foreach( $wp_tags as $wp_tag ) {
+            $v_meta_list .= $wp_tag->name . ', ';
+        }
+    }
+}
+if (!empty($v_meta_list))
+{
+    echo xidipity_metalinks(explode(',', $v_meta_list));
+}
 echo '</div>' . "\n";
-echo '<footer class="xwtContentFoot">' . "\n";
-xidipity_entry_footer();
-echo '</footer>' . "\n";
-//echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt:990712.1/content-single.php -->' . "\n";
-/*  # eof
-content-single.php
--------------------------------------*/
+echo '<!-- /xwpt:90728.1/content-single.php -->' . "\n";
+/*
+    eof:content-single.php
+*/
 ?>
