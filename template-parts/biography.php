@@ -1,46 +1,43 @@
 <?php
 /*
-*        file: biography.php
-*       build: 90712.1
-* description: The template part for displaying an Author biography
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*   reference: https://developer.wordpress.org/reference/functions/get_the_author_meta/
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-echo '<!-- xwpt:90712.1/biography.php       -->' . "\n";
-//echo '<div class="post-navigation">' . "\n";
+ *  Xidipity WordPress Theme
+ *
+ *  file:   biography.php
+ *  build:  90728.1
+ *  descrp: biography snippet
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    system variables
+*/
+$wp_author = __(get_the_author_meta('nickname'));
+$wp_author_id = get_the_author_meta('ID');
+$wp_bio = get_the_author_meta('description');
+$wp_permalink = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
+/*
+    local variables
+*/
+$v_biography  = '';
+$v_biography .= '<h5>About: <a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a></h5>';
+$v_biography .= '<p>' . $wp_bio . '</p>';
+$v_img = '<img src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
+$v_meta_list = '';
+echo '<!-- xwpt: 90728.1/biography.php       -->' . "\n";
 echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
-//echo '<div class="content-area-container">' . "\n";
 echo '<div class="xwtAddPadPost">' . "\n";
-//echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
-echo '<main id="main" class="site-main">' . "\n";
-// '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
-//echo '<p>&nbsp;</p>' . "\n";
-$avatar = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
-echo '<div class="table w-full">' . "\n";
-echo '<div class="table-row">' . "\n";
-echo '<div class="table-cell text-left pr-3 xwtAvatar">' . "\n";
-echo '<img class="h-auto w-full" src="' . $avatar . '" alt="Xidipity Theme Avatar" />' . "\n";
-echo '</div>' . "\n";
-echo '<div class="table-cell align-top">' . "\n";
-echo '<h5>About: ' . get_the_author_meta('nickname') . '</h5>' . "\n";
-echo '<p class="text-sm">' . get_the_author_meta('description') . '</p>' . "\n";
+echo '<div id="xwtBioData">' . "\n";
+echo '<div class="bio-item">' . $v_img . '</div>';
+echo '<div class="bio-item">' . $v_biography . '</div>';
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '</div>' . "\n";//echo '<p>&nbsp;</p>' . "\n";
-//echo '</div>' . "\n";
-echo '</main>' . "\n";
-//echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '</div>' . "\n";
-//echo '<p>&nbsp;</p>' . "\n";
-echo '<!-- /xwpt:90712.1/biography.php      -->' . "\n";
-/*  # eof
-biography.php
--------------------------------------*/
+echo '<!-- /xwpt: 90728.1/biography.php      -->' . "\n";
+/*
+    eof:biography.php
+*/
 ?>
