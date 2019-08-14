@@ -1,77 +1,80 @@
 <?php
 /*
-*        file: content.php
-*       build: 90712.1
-* description: Template for displaying blog summary card.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-echo '<!-- xwpt:90712.1/content.php         -->' . "\n";
+ *  Xidipity WordPress Theme
+ *
+ *  file:   content.php
+ *  build:  90728.1
+ *  descrp: content / index
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    local variables
+*/
+$v_icon = '';
+$v_link = '';
+$v_meta_list = '';
+echo '<!-- xwpt: 90728.1/content.php         -->' . "\n";
 echo '<article id="xwtFxRowHalfItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
-// echo '<div class="post-content-wrapper post-content-wrapper-archive">' . "\n";
-/* display featured image  ------------
--- */
-xidipity_post_thumbnail();
-// echo '<div class="entry-data-wrapper entry-data-wrapper-archive">' . "\n";
-echo '<div class="xwtAddPadPost entry-header-wrapper entry-header-wrapper-archive">' . "\n";
-
-if ('post' == get_post_type()) {
-    echo '<div class="entry-meta entry-meta-header-before">' . "\n";
-    echo '<ul class="hz-list">' . "\n";
-    echo '<li>' . xidipity_post_first_category() . '</li>' . "\n";
-    if (is_sticky() && is_home() && !is_paged()) {
-        echo '<li>' . "\n";
-        echo '<span class="post-label post-label-featured">' . "\n";
-        echo '<sup><i class="far fa-star fg-pri-300"></i></sup><span class="screen-reader-text">' . __('Featured', 'xidipity') . '</span>' . "\n";
-        echo '</span>' . "\n";
-        echo '</li>' . "\n";
-    }
-
-    echo '</ul>' . "\n";
+/*
+    featured image
+*/
+$wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'img-full'));
+if ($wp_img)
+{
+    /*: post thumbnail :*/
+    echo $wp_img;
 }
-
+echo '<div class="xwtAddPadPost">' . "\n";
+if ('post' == get_post_type())
+{
+    if (is_sticky())
+    {
+        $v_icon = xidipity_icon_star();
+    }
+    else
+    {
+        $v_icon = xidipity_icon_cat();
+    }
+    $v_meta_list  = '';
+    $v_meta_list .=  $v_icon . ',';
+    $v_meta_list .=  xidipity_first_category() . ',';
+    echo xidipity_metalinks(explode(',', $v_meta_list));
+}
 echo '<header id="xwtEntryHeader">' . "\n";
 the_title('<h1 class="xwtEntryTitle"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '" rel="bookmark">', '</a></h1>');
 echo '</header>' . "\n";
-
-// ! Important
-// This needs more work. After validation test check classes.
-//
-
-if ('post' == get_post_type()) {
-    echo '<div class="entry-meta entry-meta-header-after">' . "\n";
-    echo '<ul class="hz-list" style="padding-bottom: 10px;">' . "\n";
-    echo '<li>' . xidipity_posted_on() . '</li>' . "\n";
-    echo '<li>' . xidipity_posted_by() . '</li>' . "\n";
-    echo '</ul>' . "\n";
-    echo '</div>' . "\n";
+if ('post' == get_post_type())
+{
+    $v_meta_list  = '';
+    $v_meta_list .=  xidipity_posted_on() . ',';
+    $v_meta_list .=  xidipity_posted_by() . ',';
+    echo xidipity_metalinks(explode(',', $v_meta_list));
 }
-
-echo '</div>' . "\n";
-
-// ! Important
-// This needs more work. After validation test check classes.
-//
-if (xidipity_has_excerpt()) {
-    echo '<div class="entry-summary">' . "\n";
+if (xidipity_has_excerpt())
+{
+    echo '<div class="txt-blk-rg">' . "\n";
     the_excerpt();
     echo '</div>' . "\n";
 }
+/*
+    readmore
+*/
+$v_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
-/* xt:annotation/readmore  ------------
- */
-echo get_readmore(esc_url(apply_filters('xidipity_the_permalink', get_permalink())));
+$v_meta_list  = '';
+$v_meta_list .=  xidipity_icon_rm() . ',';
+$v_meta_list .=  '<a href="' . $v_link . '">Read more …</a>' . ',';
+echo xidipity_metalinks(explode(',', $v_meta_list));
+echo '<p>&nbsp;</p>' . "\n";
 echo '</div>' . "\n";
-// echo '</div>' . "\n";
-// echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt:90712.1/content.php        -->' . "\n";
-/*  # eof
-    content.php
--------------------------------------*/
+echo '<!-- /xwpt: 90728.1/content.php        -->' . "\n";
+/*
+    eof:content.php
+*/
 ?>
