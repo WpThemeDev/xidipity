@@ -1,73 +1,104 @@
 <?php
 /*
-*        file: author.php
-*       build: 90327.1
-* description: The template part for displaying an Author biography
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*   reference: https://developer.wordpress.org/reference/functions/get_the_author_meta/
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-/* display page header     ------------
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   author.php
+ *  build:  90728.1
+ *  descrp: author template
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+ **/
+/*
+    system variables
+*/
+$wp_author = __(get_the_author_meta('nickname'));
+$wp_author_id = get_the_author_meta('ID');
+$wp_bio = get_the_author_meta('description');
+$wp_permalink = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
+$wp_thumbnail = get_image_sizes('thumbnail');
+/*
+    local variables
+*/
+$v_biography = '';
+$v_biography .= '<h1>' . $wp_author . '</h1>';
+$v_biography .= '<p>' . $wp_bio . '</p>';
+$v_img = '<img src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
+$v_meta_list = '';
+$v_post = '';
+$v_thumbnail_x = abs($wp_thumbnail['width']);
+/*: sanitize   :*/
+if ($v_thumbnail_x == 0)
+{
+    $v_thumbnail_x = 150;
+}
+/*
+    display header
+*/
 get_header();
-echo '<!-- xwpt:90327.1/author.php          -->' . "\n";
-echo '<div class="content-area-container">' . "\n";
-echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
-echo '<main id="main" class="site-main">' . "\n";
-echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
-echo '<p>&nbsp;</p>' . "\n";
-echo '<!-- 90224.1 Template: miscellaneous / speciality / header / h4 -->' . "\n";
-echo '<div style="display: table; font-family: var(--font-sans); width: 100%;">' . "\n";
-$avatar = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
-echo '<div style="background-color: var(--sys-content-bg-color); border-right: solid 3px var(--fg-sec-100); display: table-cell; padding: 8px 10px 0 10px; width: 84px; vertical-align: middle;"><img src="' . $avatar . '" class="rounded-full" alt="avatar" /></div>' . "\n";
-echo '<div style="background-color: var(--bg-bas-050); color: var(--fg-bas-900); display: table-cell; padding-left: 15px; width: calc(100% - 84px); vertical-align: top;"><h5>About: ' . get_the_author_meta('nickname') . '</h5><p class="text-sm">' . get_the_author_meta('description', $post->post_author) . '</p></div>' . "\n";
+echo '<!-- xwpt: 90714.1/author.php            -->' . "\n";
+echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
+echo '<div id="xwtFxRowItems">' . "\n";
+/*
+    content
+*/
+echo '<!-- xwpt: 90728.1/biography.php       -->' . "\n";
+echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
+echo '<div class="xwtAddPadPost">' . "\n";
+echo '<div id="xwtBioData">' . "\n";
+echo '<div class="bio-item">' . $v_img . '</div>';
+echo '<div class="bio-item">' . $v_biography . '</div>';
 echo '</div>' . "\n";
-echo '<!-- End Template -->' . "\n";
-echo '<p>&nbsp;</p>' . "\n";
-$qry = array(
-    'author' => $post->post_author ,
+echo '<hr /' . "\n";
+echo '<h5>Other Posts</h5>' . "\n";
+$wp_qry = array(
+    'author' => $wp_author_id,
     'orderby' => 'post_date',
     'order' => 'DESC',
-    'posts_per_page' => - 1,
+    'posts_per_page' => 10,
     'post_type' => 'post',
     'post_status' => 'publish',
     'suppress_filters' => true
 );
-$posts = get_posts($qry);
-echo '<h5>Posts by The Author</h5>' . "\n";
-echo '<ul class="style-text">' . "\n";
-echo '<li class="font-normal"><span style="padding-left: 3px; padding-right: 38px;">Posted</span>| Title</li>' . "\n";
-echo '</ul>' . "\n";
-$html = '<ol class="qtr-spaced">';
+$wp_posts = get_posts($wp_qry);
+foreach ($wp_posts as $wp_post)
+{
+    $v_post  = '';
+    $v_post .= '<a href="' . get_permalink($wp_post) . '">' . $wp_post->post_title . '</a>';
+    $v_post .= '<p>' . get_the_excerpt($wp_post) . '</p>';
 
-foreach($posts as $post) {
-    $html.= '<li><a href="' . get_permalink($post) . '">';
-    $html.= get_the_date('m/d/Y') . ' | ' . $post->post_title;
-    $html.= '</a></li>';
+    $wp_image = wp_get_attachment_image(get_post_thumbnail_id($wp_post));
+    echo '<div id="xwtBioData">' . "\n";
+    if ($wp_image)
+    {
+        echo '<div class="bio-item" style="min-width:' . $v_thumbnail_x . 'px;">' . $wp_image . '</div>';
+    }
+    else
+    {
+        echo '<div class="bio-item" style="min-width:' . $v_thumbnail_x . 'px;"><img style="height:auto; width:' . $v_thumbnail_x . 'px;" src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="Xidipity WordPress Theme"></div>';
+    }
+    echo '<div class="bio-item">' . get_the_date('m/d/Y') . '</div>';
+    echo '<div class="bio-item">' . $v_post . '</div>';
+    echo '</div>' . "\n";
 }
-
-$html.= '</ol>';
-echo $html;
+echo '</div>' . "\n";
+echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '</div>' . "\n";
-/* display sidebar         ------------
--- */
+/*
+    display sidebar
+*/
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90327.1/author.php         -->' . "\n";
-/* reset post data         ------------
--- */
-wp_reset_postdata();
-/* display footer          ------------
--- */
+echo '<!-- /xwpt: 90714.1/author.php           -->' . "\n";
+/*
+    display footer
+*/
 get_footer();
-/*  # eof
-author.php
--------------------------------------*/
+/*
+    eof:author.php
+*/
 ?>
