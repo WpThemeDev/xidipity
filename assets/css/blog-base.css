@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90727.1
+Build       - 90728.1
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -804,7 +804,6 @@ ol.comment-list li::before {
 
 .entry-meta {
     color: var(--fg-bas-900);
-    font-size: 14px;
     font-size: 0.875rem;
     text-transform: capitalize;
 }
@@ -930,13 +929,14 @@ ol.comment-list li::before {
 
 
 /* category search        ------------
--- */
+--
 
 .post-category a {
     color: var(--fg-bas-600) !important;
     font-size: 0.875rem;
     padding: 2px 4px;
 }
+*/
 
 
 /* delete
@@ -1078,9 +1078,12 @@ background color        ------------
 /* post header             ------------
 -- */
 
+
+/* delete
 .entry-header-wrapper {
     padding-top: 15px;
 }
+*/
 
 
 /* delete
@@ -1115,6 +1118,9 @@ background color        ------------
 .taxonomy-description {
     margin-top: 5px;
 }
+
+entry-title & page-title will become xwtTxTitle
+
 */
 
 .entry-title a,
@@ -1122,8 +1128,8 @@ background color        ------------
 .page-title a,
 .page-title a:visited {
     color: var(--h1-color);
-    font-size: 26px;
-    font-size: 1.625rem;
+    /*font-size: 26px;
+    font-size: 1.625rem;*/
 }
 
 .entry-title a:hover,
@@ -1160,6 +1166,9 @@ h1.attachment-entry-title:before {
     padding: 0;
     word-wrap: break-word;
 }
+
+
+/* deprecate */
 
 .entry-content {
     background-color: var(--sys-content-bg-color);
@@ -1224,7 +1233,6 @@ h1.attachment-entry-title:before {
     border: 1px solid var(--fg-bas-300);
     color: var(--fg-bas-600);
     display: block;
-    font-size: 14px;
     font-size: .875rem;
     padding: 10px;
     text-align: center;
@@ -1596,7 +1604,6 @@ video.wp-video-shortcode {
 
 
 /* page                    ----------------------------------------------------
--- */
 
 .nav-links {
     display: -ms-flexbox;
@@ -1672,6 +1679,7 @@ a.page-numbers:active {
     border-color: var(--fg-bas-300);
     color: var(--bg-wht);
 }
+-- */
 
 
 /* dropdown menus          ----------------------------------------------------
@@ -2629,16 +2637,18 @@ img[id*="botd"] {
 /* template conntainer     ------------
 -- */
 
-#Tmp {
-    display: 100%;
+#TPL {
+    display: block;
+    width: 100%;
 }
 
-#Tmp div:first-child {
+.tpl-head {
     display: none;
 }
 
-#Tmp div:last-child {
-    width: 100%;
+.tpl-foot {
+    display: block;
+    width: 63.325vw;
 }
 
 
@@ -2951,6 +2961,13 @@ fx  = flexbox
     padding: 0;
 }
 
+#xwtEntryContent {
+    background-color: var(--sys-content-bg-color);
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
 
 /*/ php:index/content
  */
@@ -3091,6 +3108,13 @@ fx  = flexbox
     word-wrap: break-word;
 }
 
+.xwtEntryTitle a:active,
+.xwtEntryTitle a:focus,
+.xwtEntryTitle a:visited,
+.xwtEntryTitle a {
+    color: var(--h1-color);
+}
+
 .align-left {
     margin: 0 auto 0 0;
 }
@@ -3197,6 +3221,9 @@ fx  = flexbox
     margin: 0 0 4px;
 }
 
+
+/* may not need? */
+
 .xwtContentFoot {
     font-size: 0.875rem;
     padding-top: 8px;
@@ -3216,6 +3243,394 @@ fx  = flexbox
 }
 
 
-/*  # eof
-    blog-base
------------------------------------------------------------------------------*/
+/*  # General formatting
+   ## 90728.1
+ ------------------------------------------------------------------------------
+ */
+
+.xwtMinY-275 {
+    min-height: 275px;
+}
+
+
+/*  # Blog Excerpt Short Code (Bexc)
+   ## 90728.1
+ ------------------------------------------------------------------------------
+ */
+
+#xscBExc {
+    display: block;
+    margin: .5rem auto;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xscBExc {
+        display: table;
+    }
+}
+
+#xscBExc div.xsc-sum-cards {
+    display: block;
+    padding: 0.25rem auto;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xscBExc div.xsc-sum-cards {
+        display: table-row;
+    }
+}
+
+#xscBExc div.xsc-card-center {
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xscBExc div.xsc-card-center {
+        display: table-cell;
+        vertical-align: top;
+        width: 100%;
+    }
+}
+
+#xscBExc div.xsc-card-left {
+    display: block;
+    padding-top: 0.25rem;
+    text-align: left;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xscBExc div.xsc-card-left {
+        display: table-cell;
+        padding-right: 0.25rem;
+        padding-top: 0;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+#xscBExc div.xsc-card-right {
+    display: block;
+    padding-top: 0.25rem;
+    text-align: left;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    #xscBExc div.xsc-card-right {
+        display: table-cell;
+        padding-left: 0.25rem;
+        padding-top: 0;
+        vertical-align: top;
+        width: 50%;
+    }
+}
+
+
+/*  # Flexbox
+   ## 90728.1
+ ------------------------------------------------------------------------------
+ */
+
+
+/*  # Image Gallery Shortcode (img_gal)
+   ## 90728.1
+ --------------------------------------------------------*/
+
+#xwtGimgItems {
+    -ms-flex-align: stretch;
+    -ms-flex-direction: column;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: start;
+    -ms-flex-wrap: nowrap;
+    -webkit-align-content: stretch;
+    -webkit-align-items: stretch;
+    -webkit-flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    #xwtGimgItems {
+        -ms-flex-align: start;
+        -ms-flex-direction: row;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: start;
+        -ms-flex-wrap: wrap;
+        -webkit-align-content: stretch;
+        -webkit-align-items: flex-start;
+        -webkit-flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -webkit-justify-content: flex-start;
+        align-content: stretch;
+        align-items: flex-start;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: .375% 0 .375% 1%;
+    }
+}
+
+.xwtGimgItem {
+    -ms-flex-item-align: auto;
+    -ms-flex-order: 0;
+    -ms-flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -webkit-flex: 0 1 auto;
+    -webkit-order: 0;
+    align-self: auto;
+    flex: 0 1 auto;
+    margin: 1.4%;
+    order: 0;
+    text-align: left;
+}
+
+.xwtGimgItem img {
+    height: auto;
+    width: 100%;
+}
+
+.xwtGimgItem .cap-n {
+    display: none;
+}
+
+.xwtGimgItem .cap-l {
+    padding-top: 2px;
+    text-align: left;
+    width: 100%;
+}
+
+.xwtGimgItem .cap-c {
+    padding-top: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+.xwtGimgItem .cap-r {
+    padding-top: 2px;
+    text-align: right;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .xwtGimgItem {
+        -ms-flex-item-align: stretch;
+        -ms-flex-order: 0;
+        -ms-flex: 0 1 48%;
+        -webkit-align-self: stretch;
+        -webkit-flex: 0 1 48%;
+        -webkit-order: 0;
+        align-self: stretch;
+        flex: 0 1 48%;
+        margin: .5%;
+        order: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .xwtGimgItem {
+        -ms-flex: 0 1 32%;
+        -webkit-flex: 0 1 32%;
+        flex: 0 1 32%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .xwtGimgItem {
+        -ms-flex: 0 1 23.5%;
+        -webkit-flex: 0 1 23.5%;
+        flex: 0 1 23.5%;
+    }
+}
+
+
+/*  # Flexbox pagination control
+    # 90728.1
+    # Includes wordperfect syntac (paginate_links)
+   ----------------------------------------------------  */
+
+#xwtPgNav {
+    -ms-flex-align: start;
+    -ms-flex-direction: row;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: justify;
+    -ms-flex-wrap: nowrap;
+    -webkit-align-content: stretch;
+    -webkit-align-items: flex-start;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    align-content: stretch;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: .25rem;
+}
+
+.page-numbers {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    text-align: center;
+    margin: 0 10px;
+    padding: 15px 20px;
+}
+
+.page-numbers:hover {
+    background-color: var(--bg-bas-100);
+}
+
+a.page-numbers,
+a.page-numbers:visited {
+    color: var(--sys-font-color);
+    text-decoration: none;
+}
+
+a.page-numbers:hover {
+    color: var(--sys-lnk-sec-color);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a.page-numbers:focus,
+a.page-numbers:active {
+    background-color: var(--bg-pri-100);
+    border-radius: .25rem;
+    color: var(--fg-blk);
+}
+
+
+/*  # Flexbox Meta Data
+    # 90728.1
+    # Single wrapped horizonital row
+   ----------------------------------------------------  */
+
+#xwtMetaData {
+    -ms-flex-align: start;
+    -ms-flex-direction: row;
+    -ms-flex-line-pack: start;
+    -ms-flex-pack: start;
+    -ms-flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: .25rem;
+}
+
+.meta-item {
+    -ms-flex-item-align: auto;
+    -ms-flex-order: 0;
+    -ms-flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -webkit-flex: 0 1 auto;
+    -webkit-order: 0;
+    align-self: auto;
+    flex: 0 1 auto;
+    order: 0;
+    margin-right: 8px;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+a.meta-item,
+a.meta-item:visited {
+    color: var(--sys-font-color);
+    text-decoration: none;
+}
+
+a.meta-item:hover,
+a.meta-item:focus,
+a.meta-item:active {
+    color: var(--sys-lnk-sec-color);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*  # Flexbox Bio Data
+    # 90728.1
+    # Single nonwrapped horizonital row
+   ----------------------------------------------------  */
+
+#xwtBioData {
+    -ms-flex-align: start;
+    -ms-flex-direction: row;
+    -ms-flex-line-pack: start;
+    -ms-flex-pack: start;
+    -ms-flex-wrap: nowrap;
+    -webkit-align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: .25rem;
+}
+
+.bio-item {
+    -ms-flex-item-align: auto;
+    -ms-flex-order: 0;
+    -ms-flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -webkit-flex: 0 1 auto;
+    -webkit-order: 0;
+    align-self: auto;
+    flex: 0 1 auto;
+    order: 0;
+    margin-right: 8px;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+
+/*
+    eof:blog-base
+*/
