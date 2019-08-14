@@ -1,61 +1,65 @@
 <?php
 /*
-*        file: content-page.php
-*       build: 90712.1
-* description: The template used for displaying page content in page.php
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-echo '<!-- xwpt:90712.1/content-page.php    -->' . "\n";
-//echo '<article id="post-' . get_the_ID() . '" class="' . implode(' ', get_post_class()) . '">' . "\n";
+ *  Xidipity WordPress Theme
+ *
+ *  file:   content-page.php
+ *  build:  90728.1
+ *  descrp: content / page
+ *  ref:    URL
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    local variables
+*/
+$v_cat = '';
+$v_meta_list = '';
+
+echo '<!-- xwpt: 90728.1/content-page.php    -->' . "\n";
 echo '<article id="xwtFxRowFullItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
-//echo '<div class="post-content-wrapper post-content-wrapper-single">' . "\n";
 echo '<div class="xwtAddPadPage post-content-wrapper post-content-wrapper-single">' . "\n";
-
-//echo '<div class="entry-data-wrapper entry-data-wrapper-single">' . "\n";
-//echo '<div class="entry-header-wrapper">' . "\n";
-echo '<header class="entry-header">' . "\n";
-the_title('<h1 class="entry-title">', '</h1>');
+/*
+    content title
+*/
+echo '<header id="xwtEntryHeader">' . "\n";
+the_title('<h1 class="xwtEntryTitle">', '</h1>');
 echo '</header>' . "\n";
-//echo '</div>' . "\n";
 echo '<div class="entry-content">' . "\n";
-
-/* yoast breadcrumbs       ------------
--- */
-
+/*
+    yoast breadcrumbs
+*/
 if ( function_exists('yoast_breadcrumb') ) {
   yoast_breadcrumb( '<p id="breadcrumbs" class="seo-pag-breadcrumbs">','</p>' );
 }
-
-/* display content         ------------
--- */
-
+/*
+    content
+    * set min height to keep meta @ bottom
+*/
+echo '<div class="xwtMinY-275">' . "\n";
 the_content();
-
-wp_link_pages(array(
-    'before' => '<div class="page-links"><span class="page-links-title">' . esc_html__('Pages:', 'xidipity') . '</span>',
-    'after' => '</div>',
-    'link_before' => '<span>',
-    'link_after' => '</span>',
-));
 echo '</div>' . "\n";
-
-if ('' != get_edit_post_link()) {
-    echo '<footer class="xwtContentFoot">' . "\n";
-    xidipity_entry_footer();
-    echo '</footer>' . "\n";
+/*
+    page footer
+*/
+$v_meta_list = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    $v_meta_list .= xidipity_icon_edit() . ',';
+    $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
 }
-
-//echo '</div>' . "\n";
+/*: date :*/
+$v_meta_list .= xidipity_icon_date() . ',';
+$v_meta_list .= get_the_date() . ',';
+echo xidipity_metalinks(explode(',', $v_meta_list));
+echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt:90712.1/content-page.php   -->' . "\n";
-/*  # eof
-content-page.php
--------------------------------------*/
+echo '<!-- /xwpt: 90728.1/content-page.php   -->' . "\n";
+/*
+    eof:content-page.php
+*/
 ?>
