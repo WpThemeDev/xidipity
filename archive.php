@@ -1,65 +1,69 @@
 <?php
 /*
-*        file: archive.php
-*       build: 90713.1
-* description: Template for displaying posts assigned to category.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments: This file displays all categories searches.
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-/* display page header     ------------
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   archive.php
+ *  build:  90728.1
+ *  descrp: Display archive excerpts
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+ ****/
+/*
+    display header
+*/
 get_header();
-echo '<!-- xwpt:90713.1/archive.php         -->' . "\n";
-//echo '<div class="content-area-container">' . "\n";
-//echo '<section id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
-//echo '<main id="main" class="site-main">' . "\n";
+echo '<!-- xwpt: 90713.1/archive.php         -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
-
-if (have_posts()) {
-    //echo '<header class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
-    //the_archive_title('<h2 class="xwtRecentTitle">', '</h2>');
-    //the_archive_description('<div class="taxonomy-description">', '</div>');
-    //echo '</header>' . "\n";
-    //echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
-    echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
-    echo '<header class="xwtAddPadExcerpt">' . "\n";
-    the_archive_title('<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i>', '</h2>');
-    the_archive_description('<div class="taxonomy-description">', '</div>');
-    echo '</header>' . "\n";
-    echo '</div>' . "\n";
-    while (have_posts()) {
+if (have_posts())
+{
+    /*
+        display excerpt banner
+    */
+    echo xidipity_excerpt_banner(array(
+        'cat' => 'Archive',
+        'icon' => '<i class="far fa-file-alt fg-bas-400 pr-2"></i>',
+    ));
+    while (have_posts())
+    {
         the_post();
-        /* Include the Post-Format-specific template for the content.
-        * If you want to override this in a child theme, then include a file
-        * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-        */
         get_template_part('template-parts/content', get_post_format());
     }
-
-    //echo '</div>' . "\n";
-    xidipity_the_posts_pagination($pages_max);
+    /*
+        display pagination
+    */
+    $v_pages = $wp_query->max_num_pages;
+    if ($v_pages > 1)
+    {
+        $v_cur_page = max(1, get_query_var('paged'));
+        echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
+    }
 }
-else {
+else
+{
     get_template_part('template-parts/content', 'none');
 }
-
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-/* display sidebar         ------------
--- */
+/*
+    display sidebar
+*/
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90713.1/archive.php        -->' . "\n";
-/* display footer          ------------
--- */
+echo '<!-- /xwpt: 90713.1/archive.php        -->' . "\n";
+/*
+    reset post data
+*/
+wp_reset_postdata();
+/*
+    display footer
+*/
 get_footer();
-/*  # eof
-archive.php
--------------------------------------*/
+/*
+    eof:archive.php
+*/
 ?>
