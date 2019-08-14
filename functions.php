@@ -1,16 +1,295 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90708.1
+ *       build: 90728.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
  *
  * @package WordPress
  * @subpackage Xidipity
- * @since 5.0.0
+ * @since 0.9.0
  *
  ***/
+
+/**
+ *  name: c_walker
+ *  build: 90728.1
+ *  description: category walker extension to support font awesome icons
+ *  functions:
+ *      $atts - array
+ *  doc: https://xidipity.com/reference/source-code/shortcodes/c_walker/
+ *
+ */
+class c_walker extends Walker
+{
+    public $tree_type = 'category';
+    public $db_fields = array(
+        'parent' => 'parent',
+        'id' => 'term_id'
+    );
+    public function start_lvl(&$output, $depth = 0, $args = array())
+    {
+        $output .= '<ul class="' . $args['class'] . '">' . "\n";
+    }
+    public function end_lvl(&$output, $depth = 0, $args = array())
+    {
+        $output .= '</ul>' . "\n";
+    }
+    public function start_el(&$output, $category, $depth = 0, $args = array() , $current_object_id = 0)
+    {
+        $output .= '<li>' . $args['link_before'] . $category->name . "\n";
+    }
+    public function end_el(&$output, $category, $depth = 0, $args = array())
+    {
+        $output .= $args['link_after'] . '</li>' . "\n";
+    }
+}
+
+/**
+ *  name: p_walker
+ *  build: 90728.1
+ *  description: page list walker extension to support font awesome icons
+ *  functions:
+ *      $args - array
+ *    $output - html
+ *     $depth - numeric
+ *  doc: https://xidipity.com/reference/source-code/shortcodes/p_walker/
+ *
+ */
+class p_walker extends Walker
+{
+    /**
+     * What the class handles.
+     *
+     * @since 2.1.0
+     * @var string
+     *
+     * @see Walker::$tree_type
+     */
+    public $tree_type = 'page';
+    /**
+     * Database fields to use.
+     *
+     * @since 2.1.0
+     * @var array
+     *
+     * @see Walker::$db_fields
+     * @todo Decouple this.
+     */
+    public $db_fields = array(
+        'parent' => 'post_parent',
+        'id' => 'ID',
+    );
+    /**
+     * Outputs the beginning of the current level in the tree before elements are output.
+     *
+     * @since 2.1.0
+     *
+     * @see Walker::start_lvl()
+     *
+     * @param string $output Used to append additional content (passed by reference).
+     * @param int    $depth  Optional. Depth of page. Used for padding. Default 0.
+     * @param array  $args   Optional. Arguments for outputting the next level.
+     *                       Default empty array.
+     */
+    public function start_lvl(&$output, $depth = 0, $args = array())
+    {
+        if (isset($args['item_spacing']) && 'preserve' === $args['item_spacing'])
+        {
+            $t = "\t";
+            $n = "\n";
+        }
+        else
+        {
+            $t = '';
+            $n = '';
+        }
+        $indent = str_repeat($t, $depth);
+        $output .= "{$n}{$indent}<ul class='children " . $args['class'] . "'>{$n}";
+    }
+    /**
+     * Outputs the end of the current level in the tree after elements are output.
+     *
+     * @since 2.1.0
+     *
+     * @see Walker::end_lvl()
+     *
+     * @param string $output Used to append additional content (passed by reference).
+     * @param int    $depth  Optional. Depth of page. Used for padding. Default 0.
+     * @param array  $args   Optional. Arguments for outputting the end of the current level.
+     *                       Default empty array.
+     */
+    public function end_lvl(&$output, $depth = 0, $args = array())
+    {
+        if (isset($args['item_spacing']) && 'preserve' === $args['item_spacing'])
+        {
+            $t = "\t";
+            $n = "\n";
+        }
+        else
+        {
+            $t = '';
+            $n = '';
+        }
+        $indent = str_repeat($t, $depth);
+        $output .= "{$indent}</ul>{$n}";
+    }
+    /**
+     * Outputs the beginning of the current element in the tree.
+     *
+     * @see Walker::start_el()
+     * @since 2.1.0
+     *
+     * @param string  $output       Used to append additional content. Passed by reference.
+     * @param WP_Post $page         Page data object.
+     * @param int     $depth        Optional. Depth of page. Used for padding. Default 0.
+     * @param array   $args         Optional. Array of arguments. Default empty array.
+     * @param int     $current_page Optional. Page ID. Default 0.
+     */
+    public function start_el(&$output, $page, $depth = 0, $args = array() , $current_page = 0)
+    {
+        if (isset($args['item_spacing']) && 'preserve' === $args['item_spacing'])
+        {
+            $t = "\t";
+            $n = "\n";
+        }
+        else
+        {
+            $t = '';
+            $n = '';
+        }
+        if ($depth)
+        {
+            $indent = str_repeat($t, $depth);
+        }
+        else
+        {
+            $indent = '';
+        }
+        $css_class = array(
+            'page_item',
+            'page-item-' . $page->ID
+        );
+        if (isset($args['pages_with_children'][$page->ID]))
+        {
+            $css_class[] = 'page_item_has_children';
+        }
+        if (!empty($current_page))
+        {
+            $_current_page = get_post($current_page);
+            if ($_current_page && in_array($page->ID, $_current_page->ancestors))
+            {
+                $css_class[] = 'current_page_ancestor';
+            }
+            if ($page->ID == $current_page)
+            {
+                $css_class[] = 'current_page_item';
+            }
+            elseif ($_current_page && $page->ID == $_current_page->post_parent)
+            {
+                $css_class[] = 'current_page_parent';
+            }
+        }
+        elseif ($page->ID == get_option('page_for_posts'))
+        {
+            $css_class[] = 'current_page_parent';
+        }
+        /**
+         * Filters the list of CSS classes to include with each page item in the list.
+         *
+         * @since 2.8.0
+         *
+         * @see wp_list_pages()
+         *
+         * @param string[] $css_class    An array of CSS classes to be applied to each list item.
+         * @param WP_Post  $page         Page data object.
+         * @param int      $depth        Depth of page, used for padding.
+         * @param array    $args         An array of arguments.
+         * @param int      $current_page ID of the current page.
+         */
+        $css_classes = implode(' ', apply_filters('page_css_class', $css_class, $page, $depth, $args, $current_page));
+        $css_classes = $css_classes ? ' class="' . esc_attr($css_classes) . '"' : '';
+        if ('' === $page->post_title)
+        {
+            /* translators: %d: ID of a post */
+            $page->post_title = sprintf(__('#%d (no title)') , $page->ID);
+        }
+        $args['link_before'] = empty($args['link_before']) ? '' : $args['link_before'];
+        $args['link_after'] = empty($args['link_after']) ? '' : $args['link_after'];
+        $atts = array();
+        $atts['href'] = get_permalink($page->ID);
+        $atts['aria-current'] = ($page->ID == $current_page) ? 'page' : '';
+        /**
+         * Filters the HTML attributes applied to a page menu item's anchor element.
+         *
+         * @since 4.8.0
+         *
+         * @param array $atts {
+         *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
+         *
+         *     @type string $href         The href attribute.
+         *     @type string $aria_current The aria-current attribute.
+         * }
+         * @param WP_Post $page         Page data object.
+         * @param int     $depth        Depth of page, used for padding.
+         * @param array   $args         An array of arguments.
+         * @param int     $current_page ID of the current page.
+         */
+        $atts = apply_filters('page_menu_link_attributes', $atts, $page, $depth, $args, $current_page);
+        $attributes = '';
+        foreach ($atts as $attr => $value)
+        {
+            if (!empty($value))
+            {
+                $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
+                $attributes .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
+        $output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $attributes, $args['link_before'],
+        /** This filter is documented in wp-includes/post-template.php */
+        apply_filters('the_title', $page->post_title, $page->ID) , $args['link_after']);
+        if (!empty($args['show_date']))
+        {
+            if ('modified' == $args['show_date'])
+            {
+                $time = $page->post_modified;
+            }
+            else
+            {
+                $time = $page->post_date;
+            }
+            $date_format = empty($args['date_format']) ? '' : $args['date_format'];
+            $output .= ' ' . mysql2date($date_format, $time);
+        }
+    }
+    /**
+     * Outputs the end of the current element in the tree.
+     *
+     * @since 2.1.0
+     *
+     * @see Walker::end_el()
+     *
+     * @param string  $output Used to append additional content. Passed by reference.
+     * @param WP_Post $page   Page data object. Not used.
+     * @param int     $depth  Optional. Depth of page. Default 0 (unused).
+     * @param array   $args   Optional. Array of arguments. Default empty array.
+     */
+    public function end_el(&$output, $page, $depth = 0, $args = array())
+    {
+        if (isset($args['item_spacing']) && 'preserve' === $args['item_spacing'])
+        {
+            $t = "\t";
+            $n = "\n";
+        }
+        else
+        {
+            $t = '';
+            $n = '';
+        }
+        $output .= "</li>{$n}";
+    }
+}
 
 if (!function_exists('xidipity_setup')):
     /**
@@ -718,6 +997,46 @@ function remove_default_category_description() {
 }
 
 /**
+ *  name: dsp_err
+ *  build: 90728.1
+ *  description: Return properly formatted error message
+ *  attributes:
+ *      $att - string
+ *  doc: https://xidipity.com/reference/source-code/functions/dsp_err/
+ *
+ */
+
+function dsp_err($att) {
+    // system
+    $html_retval = '';
+    // variables
+    $v_msg = '';
+    // atributes
+    $a_msg = trim($att);
+    if (empty($a_msg)) {
+        $v_msg = 'Error detected without a message';
+    }
+    else
+    {
+        $v_msg = $a_msg;
+    }
+    $html_retval .= '<p><!-- xt: fn/error --></p>';
+    $html_retval .= '<table class="annotation py-3">';
+    $html_retval .= '<tr>';
+    $html_retval .= '<td><svg class="mx-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill="none" d="M0 0h24v24H0V0z"/>
+  <path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/>
+</svg></td>';
+    $html_retval .= '<td>' . __($v_msg) . '</td>';
+    $html_retval .= '</tr>';
+    $html_retval .= '</table>';
+    $html_retval .= '<p><!-- /xt: fn/error --></p>';
+    // return html
+    return $html_retval;
+}
+
+/**
+ * ### deprecate ###
  * function
  *
  * disp_error
@@ -747,6 +1066,7 @@ function disp_error($msg) {
 }
 
 /**
+ * ### deprecate ###
  * function
  *
  * get_readmore
@@ -775,8 +1095,194 @@ function get_readmore($link) {
         return $val;
     }
 }
+/**
+ * ### deprecate ###
+ *  name: rd_mor
+ *  build: 90728.1
+ *  description: Display properly formatted readmore tag
+ *  attributes:
+ *      $att - string
+ *  doc: https://xidipity.com/reference/source-code/functions/rd_mor/
+ *
+ */
+function rd_mor($att)
+{
+    // system
+    $html_retval = '';
+    // atributes
+    $a_lnk = trim($att);
+    $html_retval .= '<!-- xt: fnt/readmore -->';
+    $html_retval .= '<ul class="fa-ul pt-2 text-sm">';
+    if (empty($a_lnk)) {
+        $html_retval .= '<li><span class="fa-li"><i class="fas fa-exclamation-circle fg-bas-300"></i></span>Read more …</li>';
+    }
+    else {
+        $html_retval .= '<li><span class="fa-li"><i class="fas fa-share-square fg-pri-300"></i></span><a href="' . $a_lnk . '">Read more …</a></li>';
+    }
+    $html_retval .= '</ul>';
+    $html_retval .= '<!-- /xt: fnt/readmore -->';
+    // return string
+    return $html_retval;
+}
+/**
+ *  name: val_cat
+ *  build: 90728.1
+ *  description: Validate one or more wordpress categories
+ *  attributes:
+ *      $att_list - array
+ *      $att_opt - numeric
+ *  doc: https://xidipity.com/reference/source-code/functions/val_cat/
+ *
+ */
+function val_cat($att_list, $att_opt)
+{
+    // system
+    $str_retval = '';
+    // variables
+    $v_cat_lst = '';
+    $v_cat_opt = '';
+    $v_cat_sep = array(
+        ".",
+        "/",
+        ":",
+        ";",
+        "|"
+    );
+    $v_lst_item = '';
+    $v_lst_items = array();
+    $v_tmp = '';
+    // attributes
+    $a_cat_lst = trim($att_list);
+    $a_cat_opt = abs($att_opt);
+    if (!empty($a_cat_lst))
+    {
+        if ($a_cat_opt == 1)
+        {
+            $v_cat_opt = '-';
+        }
+        $v_tmp = str_replace($v_cat_sep, ",", $a_cat_lst);
+        // save to array
+        $v_lst_items = explode(',', $v_tmp);
+        foreach ($v_lst_items as $v_lst_item)
+        {
+            // alpha, numbers, _
+            $v_tmp = preg_replace("/[^0-9a-zA-Z ]/", "", $v_lst_item);
+            $wp_term = term_exists($v_tmp);
+            if (0 !== $wp_term && null !== $wp_term)
+            {
+                $v_cat_lst .= $v_cat_opt . $wp_term . ',';
+            }
+        }
+        $str_retval = substr($v_cat_lst, 0, -1);
+    }
+    // return string
+    return $str_retval;
+}
 
-/*  # eof
-    functions.php
--------------------------------------*/
+/**
+ *  name: val_orby
+ *  build: 90728.1
+ *  description: Validate orderby database argument
+ *  attributes:
+ *      $att - string
+ *  doc: https://xidipity.com/reference/source-code/functions/val_orby/
+ *
+ */
+function val_orby($att)
+{
+    // system
+    $str_retval = 'none';
+    // variables
+    $v_list = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
+    $v_orderby = '';
+    // arguments
+    $a_orderby = trim($att);
+    // sanitize attributes
+    $v_orderby = strtolower($a_orderby);
+    if (!empty($v_orderby))
+    {
+        if (strpos($v_list, $v_orderby) === false)
+        {
+            $str_retval = 'none';
+        }
+        else
+        {
+            $str_retval = $a_orderby;
+            if ($str_retval == 'id')
+            {
+                $str_retval = 'ID';
+            }
+        }
+    }
+    // return string
+    return $str_retval;
+}
+/**
+ *  name: tpl_prg
+ *  build: 90728.1
+ *  description: Purge template default values (#?#)
+ *  attributes:
+ *      $att - string
+ *  doc: https://xidipity.com/reference/source-code/functions/tpl_prg/
+ *
+ */
+function tpl_prg($att)
+{
+    // system
+    $str_retval = '';
+    // atributes
+    $a_prm = trim($att);
+    if (!empty($a_prm))
+    {
+        // No #?#
+        if (substr_count($a_prm, '#') < 2)
+        {
+            $str_retval = $a_prm;
+        }
+    }
+    // return string
+    return $str_retval;
+}
+/**
+ *  name: get_image_sizes
+ *  build: 90728.1
+ *  description: return reg image demensions
+ *
+ */
+function get_image_sizes( $size = '' ) {
+ 
+    global $_wp_additional_image_sizes;
+ 
+    $sizes = array();
+    $get_intermediate_image_sizes = get_intermediate_image_sizes();
+ 
+    // Create the full array with sizes and crop info
+    foreach( $get_intermediate_image_sizes as $_size ) {
+        if ( in_array( $_size, array( 'thumbnail', 'medium', 'large' ) ) ) {
+            $sizes[ $_size ]['width'] = get_option( $_size . '_size_w' );
+            $sizes[ $_size ]['height'] = get_option( $_size . '_size_h' );
+            $sizes[ $_size ]['crop'] = (bool) get_option( $_size . '_crop' );
+        } elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+            $sizes[ $_size ] = array(
+                'width' => $_wp_additional_image_sizes[ $_size ]['width'],
+                'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+                'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
+            );
+        }
+    }
+ 
+    // Get only 1 size if found
+    if ( $size ) {
+        if( isset( $sizes[ $size ] ) ) {
+            return $sizes[ $size ];
+        } else {
+            return false;
+        }
+    }
+    return $sizes;
+}
+
+/*
+    eof:functions.php
+*/
 ?>
