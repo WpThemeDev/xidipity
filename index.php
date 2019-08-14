@@ -1,232 +1,95 @@
 <?php
 /*
-*        file: index.php
-*       build: 90713.1
-* description: Template for displaying posts.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-/* display page header     ------------
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   index.php
+ *  build:  90728.1
+ *  descrp: Display blog excerpts
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+ **/
+/*
+    system variables
+*/
+global $wp_query;
+/* current pagination number */
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/* posts per page */
+$wp_ppp = get_option('posts_per_page');
+/*
+    local variables
+*/
+$v_cat_lst = '';
+$v_cur_page = 0;
+$v_pages = 0;
+/*
+    parameters
+*/
+/* categories to exclude */
+$p_cat_lst = 'archive,featured post,spotlight post';
+/* categories to exclude */
+/*
+    sanitize variables
+*/
+$v_cat_lst = val_cat($p_cat_lst, 1);
+$v_cur_page = $wp_paged;
+/*
+    display header
+*/
 get_header();
-
-// current pagination number
-
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-// sticky posts
-
-$posts_sticky = get_option('sticky_posts');
-$sticky_cnt = count($posts_sticky);
-
-// posts published
-
-$posts_cnt = wp_count_posts();
-$posts_published = $posts_cnt->publish;
-
-// posts archived
-
-$args_archive = array(
-    'category_name' => 'archive'
-);
-$query_archive = new WP_Query($args_archive);
-$posts_archive = $query_archive->post_count;
-
-// posts featured
-
-$args_featured = array(
-    'category_name' => 'post-featured'
-);
-$query_featured = new WP_Query($args_featured);
-$posts_featured = $query_featured->post_count;
-
-// posts spotlight
-
-$args_spotlight = array(
-    'category_name' => 'post-spotlight'
-);
-$query_spotlight = new WP_Query($args_spotlight);
-$posts_spotlight = $query_spotlight->post_count;
-
-// posts / page
-
-$posts_page = get_option('posts_per_page');
-
-// posts front page (not used)
-
-$posts_fp = $posts_page - $sticky_cnt;
-
-// number of pages (fractions to next whole number)
-
-$pages_max = ceil(($posts_published - ($posts_archive + $posts_featured + $posts_spotlight + $sticky_cnt)) / $posts_page);
-
-// post category slugs to exclude from blog page
-
-$cat = array(
-    get_category_by_slug('archive') ,
-    get_category_by_slug('post-featured') ,
-    get_category_by_slug('post-spotlight')
-);
-$cat0 = $cat[0]->term_id;
-$cat1 = $cat[1]->term_id;
-$cat2 = $cat[2]->term_id;
-
-if (is_null($cat0)) {
-    $cat0 = '';
-}
-else {
-    $cat0 = '-' . $cat0;
-}
-
-if (is_null($cat1)) {
-    $cat1 = '';
-}
-else {
-    $cat1 = '-' . $cat1;
-}
-
-if (is_null($cat2)) {
-    $cat2 = '';
-}
-else {
-    $cat2 = '-' . $cat2;
-}
-
-echo '<!-- xwpt:90713.1/index.php           -->' . "\n";
-//echo '<div class="content-area-container">' . "\n";
-//echo '<div id="primary" class="' . rtrim('content-area ' . xidipity_layout_class('content')) . '">' . "\n";
+echo '<!-- xwpt: 90728.1/index.php           -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
-if ($paged == 1) {
-    if ($sticky_cnt > 0) {
-        $args = array(
-            'post__in' => $posts_sticky,
-            'posts_per_page' => $sticky_cnt,
-            'cat' => array(
-                $cat0,
-                $cat1,
-                $cat2
-            ) ,
-            'paged' => $paged
-        );
-        $wp_query = new WP_Query($args);
-        if ($wp_query->have_posts()) {
-            /* featured blog header    ------------
-            values are pulled from blog-var.css
-            -- */
-            echo '<div id="xwtFxRowFullItem" class="xwtAddShadow xwtDisplayFeaturedBanner">' . "\n";
-            echo '<header class="xwtAddPadExcerpt">' . "\n";
-            //echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
-            echo '<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i><span class="xwtFeaturedTitle"></span></h2>' . "\n";
-            // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
-            echo '<div class="xwtFeaturedDescrip"></div>' . "\n";
-            echo '</header>' . "\n";
-            echo '</div>' . "\n";
-            // echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
-            // echo '<div id="xwtFxRowHalfItem">' . "\n";
-            while ($wp_query->have_posts()) {
-                $wp_query->the_post();
-                get_template_part('template-parts/content', get_post_format());
-            }
-            // echo '</div>' . "\n";
-            xidipity_the_posts_pagination($pages_max);
-        } else {
-            get_template_part('template-parts/content', 'none');
-        }
+$qry_prms = array(
+    'cat' => $v_cat_lst,
+    'order' => 'DESC',
+    'orderby' => 'date',
+    'paged' => $v_cur_page,
+    'posts_per_page' => $wp_ppp,
+);
+query_posts($qry_prms);
+if (have_posts())
+{
+    while (have_posts())
+    {
+        the_post();
+        get_template_part('template-parts/content', get_post_format());
     }
-
-    $args = array(
-        'post__not_in' => $posts_sticky,
-        'posts_per_page' => $posts_page,
-        'cat' => array(
-            $cat0,
-            $cat1,
-            $cat2
-        ) ,
-        'paged' => $paged
-    );
-    $wp_query = new WP_Query($args);
-    if ($wp_query->have_posts()) {
-        /* recent blog header      ------------
-        values are pulled from blog-var.css
-        -- */
-        // echo '<div class="blg-pg-recent-wrapper">' . "\n";
-        // echo '<h2><span class="blg-pg-recent-title"></span></h2>' . "\n";
-        // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
-        // echo '</div>' . "\n";
-        // echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
-        echo '<div id="xwtFxRowFullItem" class="xwtAddShadow xwtDisplayRecentBanner">' . "\n";
-        echo '<header class="xwtAddPadExcerpt">' . "\n";
-        //echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
-        echo '<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i><span class="xwtRecentTitle"></span></h2>' . "\n";
-        // echo '<div class="taxonomy-description"><p class="xwtFeaturedDescrip"></p></div>' . "\n";
-        echo '<div class="xwtRecentDescrip"></div>' . "\n";
-        echo '</header>' . "\n";
-        echo '</div>' . "\n";
-        //echo '<div id="xwtFxRowHalfItem">' . "\n";
-        while ($wp_query->have_posts()) {
-            $wp_query->the_post();
-            get_template_part('template-parts/content', get_post_format());
-        }
-        //echo '</div>' . "\n";
-        xidipity_the_posts_pagination($pages_max);
-    } else {
-        get_template_part('template-parts/content', 'none');
+    /*
+        display pagination
+    */
+    $v_pages = $wp_query->max_num_pages;
+    if ($v_pages > 1)
+    {
+        $v_cur_page = max(1, get_query_var('paged'));
+        echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
     }
 }
-else {
-    $args = array(
-        'post__not_in' => $posts_sticky,
-        'posts_per_page' => $posts_page,
-        'cat' => array(
-            $cat0,
-            $cat1,
-            $cat2
-        ) ,
-        'paged' => $paged
-    );
-    $wp_query = new WP_Query($args);
-    if ($wp_query->have_posts()) {
-        /* recent blog header      ------------
-        values are pulled from blog-var.css
-        -- */
-        echo '<div class="xwtAddShadow xwtAddPadExcerpt">' . "\n";
-        echo '<h2><span class="xwtRecentTitle"></span></h2>' . "\n";
-        // echo '<div class="taxonomy-description"><p class="blg-pg-recent-descrip"></p></div>' . "\n";
-            echo '<div class="xwtRecentDescrip"></div>' . "\n";
-    echo '</div>' . "\n";
-        echo '<div id="xwtFxRowHalfItem">' . "\n";
-        while ($wp_query->have_posts()) {
-            $wp_query->the_post();
-            get_template_part('template-parts/content', get_post_format());
-        }
-        echo '</div>' . "\n";
-        xidipity_the_posts_pagination($pages_max);
-    } else {
-        get_template_part('template-parts/content', 'none');
-    }
+else
+{
+    get_template_part('template-parts/content', 'none');
 }
-
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-// echo '</div>' . "\n";
-echo '<!-- /xwpt:90713.1/index.php          -->' . "\n";
-/* display sidebar         ------------
--- */
+echo '<!-- /xwpt: 90728.1/index.php          -->' . "\n";
+/*
+    display sidebar
+*/
 get_sidebar();
 echo '</div>' . "\n";
-/* reset post data         ------------
--- */
+/*
+    reset post data
+*/
 wp_reset_postdata();
-/* display footer          ------------
--- */
+/*
+    display footer
+*/
 get_footer();
-/*  # eof
-    index.php
--------------------------------------*/
+/*
+    eof:index.php
+*/
 ?>
