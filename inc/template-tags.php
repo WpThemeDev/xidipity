@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90728.1
+ *  build:  90816.1
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -208,18 +208,18 @@ if (!function_exists('xidipity_excerpt_banner'))
         $v_title = trim($a_title);
         if (!empty($v_cat))
         {
-            $v_cat_id = val_cat($v_cat, 0);
+            $v_cat_id = get_cat_ID($v_cat);
         }
-        /*: go / nogo logic :*/
-        if (!empty($v_cal_id))
+        if (!empty($v_cat_id))
         {
-            $v_hdr_title = trim($v_cat);
+            $v_hdr_title = $v_cat;
             $v_hdr_descr = category_description($v_cat_id);
         }
         if (empty($v_hdr_title))
         {
             $v_hdr_title = $v_title;
         }
+        /*: go / nogo logic :*/
         if (!empty($v_hdr_title))
         {
             $html_retval .= '<div id="xwtFxRowFullItem" class="xwtAddShadow">';
@@ -274,7 +274,12 @@ if (!function_exists('xidipity_paginate_links'))
             $v_pages = $a_pages;
         }
         /*: check url for search argument :*/
-        if (strpos($v_url, 's=') >1)
+        $wp_search = false;
+        if (!empty($v_url))
+        {
+            $wp_search = (abs(strpos($v_url, 's=')) !== 0);
+        }
+        if ($wp_search)
         {
             $html_retval .= '<nav id="xwtPgNav" class="xwtAddShadow">';
             $html_retval .=  paginate_links(array(
