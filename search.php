@@ -1,65 +1,95 @@
 <?php
 /*
-*        file: search.php
-*       build: 90713.1
-* description: Template for displaying page content.
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments: The template for displaying search results pages.
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
-/* display page header     ------------
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   search.php
+ *  build:  90816.1
+ *  descrp: Display archive excerpts
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+ ****/
+/*
+    system variables
+*/
+global $wp_query;
+/* current pagination number */
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*
+    local variables
+*/
+$v_cur_page = 0;
+$v_pages = 0;
+/*
+    sanitize variables
+*/
+$v_cur_page = $wp_paged;
+/*
+    display header
+*/
 get_header();
-echo '<!-- xwpt:90713.1/search.php          -->' . "\n";
-//echo '<div class="content-area-container">' . "\n";
-//echo '<div id="primary" class="content-area ' . xidipity_layout_class('content') . '">' . "\n";
-//echo '<main id="main" class="site-main">' . "\n";
+echo '<!-- xwpt: 90816.1/search.php          -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
-
-if (have_posts()) {
-    //echo '<header class="page-header">' . "\n";
-    //echo '</header>' . "\n";
-    //echo '<div id="post-wrapper" class="post-wrapper post-wrapper-archive">' . "\n";
-    echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
-    echo '<header class="xwtAddPadExcerpt">' . "\n";
-    //echo '<h2><i class="far fa-file-alt fg-bas-300 pr-2"></i>Results:&nbsp;<span>' . get_search_query() . '</span></h2>' . "\n";
-    echo '<h2><i class="far fa-file-alt fg-bas-400 pr-2"></i>Search Results</h2>' . "\n";
-    echo '</header>' . "\n";
-    echo '</div>' . "\n";
-    $max_pg = 0;
-    while (have_posts()) {
+if (have_posts())
+{
+    /*
+        display excerpt banner
+    */
+    $wp_cnt = $wp_query->found_posts;
+    if ($wp_cnt  == 1)
+    {
+        echo xidipity_excerpt_banner(array(
+            'icon' => '<i class="far fa-comment-alt fg-pri-400 pr-0.75"></i>',
+            'title' => $wp_query->found_posts . ' Item found',
+        ));
+    }
+    else
+    {
+        echo xidipity_excerpt_banner(array(
+            'icon' => '<i class="far fa-comment-alt fg-pri-400 pr-0.75"></i>',
+            'title' => $wp_query->found_posts . ' Items found',
+        ));
+    }
+    while (have_posts())
+    {
         the_post();
-        /* Include the Post-Format-specific template for the content.
-        * If you want to override this in a child theme, then include a file
-        * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-        */
-        $max_pg++;
         get_template_part('template-parts/content', get_post_format());
     }
-    //echo '</div>' . "\n";
-    xidipity_the_posts_pagination($max_pg);
-} else {
+    /*
+        display pagination
+    */
+    $v_pages = $wp_query->max_num_pages;
+    if ($v_pages > 1)
+    {
+        $v_cur_page = max(1, get_query_var('paged'));
+        echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
+    }
+}
+else
+{
     get_template_part('template-parts/content', 'none');
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-/* display sidebar         ------------
--- */
+/*
+    display sidebar
+*/
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90713.1/search.php         -->' . "\n";
-/* reset post data         ------------
--- */
+echo '<!-- /xwpt: 90816.1/search.php         -->' . "\n";
+/*
+    reset post data
+*/
 wp_reset_postdata();
-/* display footer          ------------
--- */
+/*
+    display footer
+*/
 get_footer();
-/*  # eof
-search.php
--------------------------------------*/
+/*
+    eof:search.php
+*/
 ?>
