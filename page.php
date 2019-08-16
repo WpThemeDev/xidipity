@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   page.php
- *  build:  90728.1
+ *  build:  90728.2
  *  descrp: Page template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -12,6 +12,10 @@
  *  @since 0.9.0
  *
 **/
+/*
+    save name to db
+*/
+update_option('current_page_template','page');
 /*
     system variables
 */
@@ -29,9 +33,9 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90714.1/page.php            -->' . "\n";
+echo '<!-- xwpt: 90728.1/page            -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+echo '<div id="xwtFxRowItems">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
@@ -54,7 +58,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90714.1/page.php           -->' . "\n";
+echo '<!-- /xwpt: 90728.1/page           -->' . "\n";
 /*
     reset post data
 */
