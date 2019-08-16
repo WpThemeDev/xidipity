@@ -1,55 +1,77 @@
 <?php
 /*
-* Template Name: No Sidebar
-*          file: no-sidebar.php
-*         build: 90714.1
-*   description: The template for displaying pages without the sidebar
-*        github: https://github.com/WpThemeDev/xidipity
-*      comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-echo '' . "\n";
-***/
-/* display page header     ------------
--- */
+ *  Template Name: No Sidebar
+ *
+ *  Xidipity WordPress Theme
+ *
+ *  file:   no-sidebar.php
+ *  build:  90728.1
+ *  descrp: no-sidebar template
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    save name to db
+*/
+update_option('current_page_template','no sidebar');
+/*
+    system variables
+*/
+global $wp_query;
+/* current pagination number */
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/* posts per page */
+$wp_ppp = get_option('posts_per_page');
+/*
+    local variables
+*/
+$v_cur_page = 0;
+$v_pages = 0;
+/*
+    display header
+*/
 get_header();
-echo '<!-- xwpt:90714.1/no-sidebar.php      -->' . "\n";
-//echo '<div class="content-area-container">' . "\n";
-//echo '<div id="primary" class="content-area no-sidebar">' . "\n";
+echo '<!-- xwpt: 90728.1/no-sidebar            -->' . "\n";
+/*
+    set flexbox to full width
+*/
 echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
-//echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
-//echo '<main id="main" class="site-main">' . "\n";
-//echo '<div id="post-wrapper" class="post-wrapper post-wrapper-single">' . "\n";
-/* run database query      ------------
--- */
+//echo '<div id="xwtFxRowItems">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
-        get_template_part('template-parts/content-page-alt', 'page');
-
-        // If comments are open or we have at least one comment, load up the comment template
-
-        if (comments_open() || '0' != get_comments_number()) {
-            comments_template();
+        get_template_part('template-parts/content-page', 'page');
+        /*
+            pagination
+        */
+        $v_pages = $wp_query->max_num_pages;
+        if ($v_pages > 1)
+        {
+            $v_cur_page = max(1, get_query_var('paged'));
+            echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
         }
     }
 }
 //echo '</div>' . "\n";
 echo '</main>' . "\n";
-// exclude call to get_sidebar()
-// echo '</div>' . "\n";
+/*
+    no sidebar
+*/
 echo '</div>' . "\n";
-echo '<!-- /xwpt:90714.1/no-sidebar.php     -->' . "\n";
-/* reset post data         ------------
--- */
+echo '<!-- /xwpt: 90728.1/no-sidebar           -->' . "\n";
+/*
+    reset post data
+*/
 wp_reset_postdata();
-/* display footer          ------------
--- */
+/*
+    display footer
+*/
 get_footer();
-/*  # eof
-no-sidebar.php
--------------------------------------*/
+/*
+    eof:no-sidebar.php
+*/
 ?>
