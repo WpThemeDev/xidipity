@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt:90708.1/header.php       -->' . "\n";
+echo '<!-- xwpt: 90728.2/header       -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -55,9 +55,12 @@ if ($description || is_customize_preview())
     echo '<p class="site-description">' . $description . '</p>' . "\n";
 }
 echo '</div>' . "\n";
-
+/*
+    menu exceptions
+*/
 $wp_tmpl = get_option('current_page_template');
-if ($wp_tmpl !== 'misc')
+$wp_xmenu = itm_exists('misc,naked',$wp_tmpl);
+if (!$wp_xmenu)
 {
     /*
         primary menu
@@ -94,11 +97,21 @@ if ($wp_tmpl !== 'misc')
     }
 }
 echo '</header>' . "\n";
-echo '<!-- /xwpt:90708.1/header.php      -->' . "\n";
+echo '<!-- /xwpt: 90728.2/header      -->' . "\n";
 /*
-    content flexbox container
+    body options
 */
-echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
+$wp_tmpl = get_option('current_page_template');
+if ($wp_tmpl == 'naked')
+{
+    /*: block container :*/
+    echo '<div id="xwtBkRowItems" class="xwtBkRowItemsOpts">' . "\n";
+}
+else
+{
+    /*: flex container :*/
+    echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
+}
 /*
     eof:header.php
 */
