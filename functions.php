@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90728.1
+ *       build: 90728.2
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -1281,7 +1281,36 @@ function get_image_sizes( $size = '' ) {
     }
     return $sizes;
 }
-
+/*  # itm_exists
+    # 90728.1
+    # find the position of the first occurrence of a substring in a string
+    # returns 0 for none / position
+    # https://www.php.net/manual/en/function.strpos.php
+**/
+function itm_exists($att1 = '', $att2 = '')
+{
+    /*
+        local variables
+    */
+    $bool_retval = false;
+    $v_item = '';
+    $v_list = '';
+    if (!empty($att1))
+    {
+        /*: add offset :*/
+        $v_list = '#' . $att1;
+    }
+    if (!empty($att2))
+    {
+        $v_item = $att2;
+    }
+    if (!empty($v_list) && !empty($v_item))
+    {
+        $bool_retval = (abs(strpos($v_list, $v_item)) !== 0);
+    }
+    /*: return boolean :*/
+    return $bool_retval;
+}
 /*
     eof:functions.php
 */
