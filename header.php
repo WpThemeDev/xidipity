@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90728.2
+ *  build:  90816.1
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90728.2/header       -->' . "\n";
+echo '<!-- xwpt: 90816.1/header       -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -58,17 +58,21 @@ echo '</div>' . "\n";
 /*
     menu exceptions
 */
+$wp_mnu_disp = true;
 $wp_tmpl = get_option('current_page_template');
-$wp_xmenu = itm_exists('misc,naked',$wp_tmpl);
-if (!$wp_xmenu)
+if (!empty($wp_tmpl))
+{
+    $wp_mnu_disp = (abs(strpos('#,misc,naked', $wp_tmpl)) == 0);
+}
+if ($wp_mnu_disp)
 {
     /*
         primary menu
     */
     $wp_page = get_page_by_path('table-of-contents');
-    $wp_mnuLoc = get_nav_menu_locations();
-    $wp_mnuID = $wp_mnuLoc['primary'];
-    if ($wp_mnuID > 0 or $wp_page)
+    $wp_menus = get_nav_menu_locations();
+    $wp_menu = (abs($wp_menus['primary']) !== 0);
+    if ($wp_menu || $wp_page)
     {
         if ($wp_page)
         {
@@ -97,7 +101,7 @@ if (!$wp_xmenu)
     }
 }
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90728.2/header      -->' . "\n";
+echo '<!-- /xwpt: 90816.1/header      -->' . "\n";
 /*
     body options
 */
