@@ -3,9 +3,9 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-page.php
- *  build:  90728.1
+ *  build:  90728.2
  *  descrp: content / page
- *  ref:    URL
+ *  ref:    https://github.com/WpThemeDev/xidipity
  *
  *  @package WordPress
  *  @subpackage Xidipity
@@ -28,11 +28,16 @@ echo '<header id="xwtEntryHeader">' . "\n";
 the_title('<h1 class="xwtEntryTitle">', '</h1>');
 echo '</header>' . "\n";
 echo '<div class="entry-content">' . "\n";
-/*
-    yoast breadcrumbs
-*/
-if ( function_exists('yoast_breadcrumb') ) {
-  yoast_breadcrumb( '<p id="breadcrumbs" class="seo-pag-breadcrumbs">','</p>' );
+
+$wp_tmpl = get_option('current_page_template');
+if ($wp_tmpl !== 'misc')
+    {
+    /*
+        yoast breadcrumbs
+    */
+    if ( function_exists('yoast_breadcrumb') ) {
+      yoast_breadcrumb( '<p id="breadcrumbs" class="seo-pag-breadcrumbs">','</p>' );
+    }
 }
 /*
     content
