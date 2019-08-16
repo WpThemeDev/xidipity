@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   archive.php
- *  build:  90728.1
+ *  build:  90816.1
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -13,10 +13,25 @@
  *
  ****/
 /*
+    system variables
+*/
+global $wp_query;
+/* current pagination number */
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*
+    local variables
+*/
+$v_cur_page = 0;
+$v_pages = 0;
+/*
+    sanitize variables
+*/
+$v_cur_page = $wp_paged;
+/*
     display header
 */
 get_header();
-echo '<!-- xwpt: 90713.1/archive.php         -->' . "\n";
+echo '<!-- xwpt: 90816.1/archive.php         -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 if (have_posts())
@@ -26,7 +41,7 @@ if (have_posts())
     */
     echo xidipity_excerpt_banner(array(
         'cat' => 'Archive',
-        'icon' => '<i class="far fa-file-alt fg-bas-400 pr-2"></i>',
+        'icon' => '<i class="far fa-file-alt fg-bas-400 pr-0.5"></i>',
     ));
     while (have_posts())
     {
@@ -54,7 +69,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90713.1/archive.php        -->' . "\n";
+echo '<!-- /xwpt: 90816.1/archive.php        -->' . "\n";
 /*
     reset post data
 */
