@@ -1,12 +1,16 @@
-/**
-   * Plugin Name: TinyMCE Table Plugin
-   * Plugin URI: http:www.xidipity.com
-   * Build: 81102
-   * Author: John Baer
-   * Description: A TinyMCE Plugin to add horizonal rules to the MCE Visual Editor
-   * License: GPL2
-   */
-
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  file:   plugin.js
+ *  build:  90817.1
+ *  descrp: table plugin
+ *  ref:    https://www.tiny.cloud/
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 ! function() {
   "use strict";
   var n, e, t, r, o, i, u = tinymce.util.Tools.resolve("tinymce.PluginManager"),
