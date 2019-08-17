@@ -1,7 +1,7 @@
 <?php
 /*
  *        file: functions.php
- *       build: 90816.1
+ *       build: 90817.1
  * description: Theme functions
  *      github: https://github.com/WpThemeDev/xidipity
  *    comments:
@@ -598,9 +598,9 @@ function register_mce_twocol_button($buttons) {
 /**
  * Add the TinyMCE excerpt Plugin.
  *
- * deprecated
  *
- add_action('admin_head', 'mce_add_excerpt_button');
+ */
+add_action('admin_head', 'mce_add_excerpt_button');
  function mce_add_excerpt_button()
  {
  global $typenow;
@@ -619,8 +619,7 @@ function register_mce_twocol_button($buttons) {
  add_filter('mce_buttons', 'register_mce_excerpt_button');
  }
  }
- */
-
+ 
 function add_tinymce_excerpt_plugin($plugin_array) {
     $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/excerpt/plugin.min.js';
     return $plugin_array;
@@ -707,8 +706,8 @@ function register_mce_hrule_button($buttons) {
 
 /**
  * Add the TinyMCE Adsense Plugin.
+ * deprecated
  *
- */
 add_action('admin_head', 'mce_add_adsense_button');
 
 function mce_add_adsense_button() {
@@ -731,6 +730,7 @@ function mce_add_adsense_button() {
         add_filter('mce_buttons', 'register_mce_adsense_button');
     }
 }
+ */
 
 function add_tinymce_adsense_plugin($plugin_array) {
     $plugin_array['adsense'] = get_template_directory_uri() . '/assets/tinymceplugins/adsense/plugin.min.js';
@@ -904,7 +904,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id) {
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
     //    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,xscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
