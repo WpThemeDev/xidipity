@@ -1,12 +1,16 @@
-/**
- * Plugin Name: TinyMCE Embed Plugin
- * Plugin URI: http:www.xidipity.com
- * Build: 81010
- * Author: John Baer
- * Description: A TinyMCE Plugin to add templates / snippets to the MCE Visual Editor
- * License: GPL2
- */
-
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  file:   plugin.js
+ *  build:  90817.1
+ *  descrp: embed plugin
+ *  ref:    https://www.tiny.cloud/
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 (function() {
     tinymce.PluginManager.add('embed', function( editor, url ) {
         editor.addButton( 'embed', {
@@ -30,7 +34,7 @@
                   minHeight: window.innerHeight * .61,
                   style: "direction: ltr; text-align: left; height: 100%; font-family: 'Roboto Mono', monospace; color: #212121; border: 1px solid #f5f5f5;" },
                 onSubmit: function() {
-                  var html = document.getElementsByClassName("mce-textbox")[0].value;
+                  var html = '<!-- mce: embed -->' + String.fromCharCode(13) + document.getElementsByClassName("mce-textbox")[0].value + '<!-- /mce: embed -->';
                   editor.insertContent(html);
                 }
               }, {
