@@ -1,12 +1,16 @@
-/**
- * Plugin Name: TinyMCE Full Screen Plugin
- * Plugin URI: http:www.xidipity.com
- * Build: 81030
- * Author: John Baer
- * Description: A TinyMCE Plugin to toggle editor to and from full screen mode
- * License: GPL2
- */
-
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  file:   plugin.js
+ *  build:  90817.1
+ *  descrp: full screen plugin
+ *  ref:    https://www.tiny.cloud/
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 (function() {
     tinymce.PluginManager.add('xscreen', function( editor, url ) {
         editor.addButton( 'xscreen', {
