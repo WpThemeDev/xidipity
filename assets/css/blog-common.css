@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90816.1
+Build       - 90817.1
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1917,9 +1917,7 @@ table#twocol td table.annotation td:nth-child(2) {
 **/
 
 
-/*
-    padding (rem)
-*/
+/*: padding (rem) :*/
 
 .pr-0\.5 {
     padding-right: 0.5rem;
@@ -1927,6 +1925,20 @@ table#twocol td table.annotation td:nth-child(2) {
 
 .pr-0\.75 {
     padding-right: 0.75rem;
+}
+
+
+/*: text-align (center) :*/
+
+.txt-center {
+    text-align: center;
+}
+
+
+/*: width (100%) :*/
+
+.w-100\% {
+    width: 100%;
 }
 
 
