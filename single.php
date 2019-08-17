@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   single.php
- *  build:  90728.1
+ *  build:  90817.1
  *  descrp: Single post template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,7 +31,7 @@ $v_pages = 0;
 get_header();
 echo '<!-- xwpt: 90728.1/single.php          -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
 while (have_posts())
 {
     the_post();
