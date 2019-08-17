@@ -1,20 +1,19 @@
 /*
-Theme Name  - Xidipity
-Description - Cascading Style Sheet
-
-File        - editor-style.css
-Build       - 90727.1
-Programmer  - John Baer
-Purpose     - Support file for Xidipity Wordpress Theme
-License     - GNU General Public License v2 or later
-              (http://www.gnu.org/licenses/gpl-2.0.html)
-Sources     - TinyMCE editor (https://www.tinymce.com/) (wp-content.css)
-              Automattic, Inc. (https://automattic.com/)
-Comments    - Only CSS classes which are unique to the editor are here.
-
-Import dependent css files
-
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   editor-style.css
+ *  build:  90817.1
+ *  descrp: mce css
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
+    import dependencies
+*/
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.css") screen;
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.css") screen;
@@ -127,25 +126,48 @@ table#twocol tr td table#twocol tr td {
 /* template conntainer     ------------
 -- */
 
-#Tmp {
+#TPL {
+    display: block;
     width: 100%;
 }
 
-#Tmp div:first-child {
-    border-left: 6px solid var(--fg-bas-300);
-    margin-top: 1em;
-    margin-right: auto;
-    margin-bottom: 1em;
-    margin-left: 3%;
-    padding: 1em;
-    width: 100%;
+.tpl-head {
+    display: block;
 }
 
-#Tmp div:last-child {
+.tpl-foot {
     display: none;
 }
 
+/* excerpt                 ------------
+-- */
 
-/*  # eof
-    editor-style
----------------------------------------------------------------------------*/
+#excerpt {
+    display: table;
+    width: 100%;
+}
+
+.excerpt-tr {
+    display: table-row;
+    width: 100%;
+}
+
+.excerpt-td {
+    background-color: var(--bg-bas-050);
+    border-radius: 0.25em;
+    border: 1px solid var(--fg-bas-300);
+    display: table-cell;
+    font-size: 0.875rem;
+    overflow: auto;
+    padding: 10px 8px;
+    white-space: pre-wrap;
+    width: 100%;
+}
+
+.excerpt-td-wp {
+    display: none;
+}
+
+/*
+    eof:editor-style
+*/
