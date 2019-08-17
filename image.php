@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90728.1
+ *  build:  90816.1
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -15,17 +15,16 @@
 /*
     system variables
 */
-$wp_attach_id = get_queried_object()->ID;
+$wp_attm = get_queried_object();
+$wp_attm_permalink = get_permalink( $wp_attm->post_parent );
+$wp_attm_title = get_post( $wp_attm->post_parent )->post_title;
+$wp_attm_title_lnk = '<a href="' . $wp_attm_permalink  . '"  title="' . $wp_attm_title . '">' . $wp_attm_title . '</a>';
 $wp_metadata = wp_get_attachment_metadata();
-$wp_parent_id = wp_get_post_parent_id($wp_attach_id);
-$wp_parent_permalink = get_permalink( $wp_parent_id );
-$wp_parent_title = get_the_title( $wp_parent_id );
 /*
     local variables
 */
 $v_aspect_ratio = '';
 $v_meta_list = '';
-$v_ptitle = '';
 $v_ratio = 0;
 $v_title = '';
 
@@ -33,7 +32,7 @@ $v_title = '';
     display page header
 */
 get_header();
-echo '<!-- xwpt: 90728.1/image.php           -->' . "\n";
+echo '<!-- xwpt: 90816.1/image           -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 /* get page title          ------------
@@ -43,13 +42,13 @@ if (strpos($v_title, '.') > 1)
 {
     $v_title = substr($v_title, 0, strpos($v_title, '.'));
 }
-/* have attachment         ------------
+/* have attm         ------------
  -- */
 if (have_posts())
 {
-    /* get attachment metadata ------------
+    /* get attm metadata ------------
      -- */
-    //$wp_metadata = wp_get_attachment_metadata();
+    //$wp_metadata = wp_get_attm_metadata();
     $v_ratio = round(absint($wp_metadata['height']) / absint($wp_metadata['width']) , 4);
     switch ($v_ratio)
     {
@@ -87,12 +86,12 @@ if (have_posts())
     }
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="entry-content">' . "\n";
-    echo '<figure class="entry-attachment wp-block-image">' . "\n";
+    echo '<figure class="entry-attm wp-block-image">' . "\n";
     /*
-    Filter the default Xidipity image attachment size
+    Filter the default Xidipity image attm size
     @param string $image_size Image size. Default = 'large'
     */
-    $image_size = apply_filters('Xidipity_attachment_size', 'full');
+    $image_size = apply_filters('Xidipity_attm_size', 'full');
     $wp_image = wp_get_attachment_image(get_the_ID() , $image_size);
     echo wp_get_attachment_image(get_the_ID() , $image_size) . "\n";
     echo '<figcaption class="wp-caption-text">' . wp_get_attachment_caption(get_the_ID()) . '</figcaption>' . "\n";
@@ -114,12 +113,12 @@ if (have_posts())
         $v_meta_list .= ',' . '<a href="' . get_edit_post_link() . '">Edit</a>';
     }
     /*
-        attachment parent
+        attm parent
     */
-    if ($wp_parent_id >0) {
+    if (!empty($wp_attm_title)) {
 
         $v_meta_list .= ',' . '<p>Published in:</p>';
-        $v_meta_list .= ',' . '<a href="' . $wp_parent_permalink . '">' . $wp_parent_title . '</a>';
+        $v_meta_list .= ',' . $wp_attm_title_lnk;
     }
     if (!empty($v_meta_list))
     {
@@ -143,7 +142,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90728.1/image.php          -->' . "\n";
+echo '<!-- /xwpt: 90816.1/image          -->' . "\n";
 /*
     reset post data
 */
