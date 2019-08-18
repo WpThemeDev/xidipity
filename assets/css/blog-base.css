@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-base.css
-Build       - 90817.1
+Build       - 90817.2
 Description - Cascading Style Sheet
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
@@ -3257,6 +3257,9 @@ fx  = flexbox
     min-height: 275px;
 }
 
+.xwtMinY-455 {
+    min-height: 455px;
+}
 
 /*  # Blog Excerpt Short Code (Bexc)
    ## 90728.1
