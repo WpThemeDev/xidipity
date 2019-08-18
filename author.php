@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90728.1
+ *  build:  90818.1
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -45,14 +45,14 @@ echo '<div id="xwtFxRowItems">' . "\n";
 /*
     content
 */
-echo '<!-- xwpt: 90728.1/biography.php       -->' . "\n";
+echo '<!-- xwpt: 90818.1/biography.php       -->' . "\n";
 echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
 echo '<div class="xwtAddPadPost">' . "\n";
 echo '<div id="xwtBioData">' . "\n";
 echo '<div class="bio-item">' . $v_img . '</div>';
 echo '<div class="bio-item">' . $v_biography . '</div>';
 echo '</div>' . "\n";
-echo '<hr /' . "\n";
+echo '<hr />' . "\n";
 echo '<h5>Other Posts</h5>' . "\n";
 $wp_qry = array(
     'author' => $wp_author_id,
