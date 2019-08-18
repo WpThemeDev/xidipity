@@ -3,7 +3,7 @@ Theme Name  - Xidipity
 Description - Cascading Style Sheet
 
 File        - blog-common.css
-Build       - 90817.1
+Build       - 90817.2
 Programmer  - John Baer
 Purpose     - Support file for Xidipity Wordpress Theme
 License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -1938,7 +1938,7 @@ table#twocol td table.annotation td:nth-child(2) {
 /*: width (100%) :*/
 
 .w-100\% {
-    width: 100%;
+    width: 100% !important;
 }
 
 
