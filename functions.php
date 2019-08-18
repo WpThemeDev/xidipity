@@ -1,17 +1,17 @@
 <?php
 /*
- *        file: functions.php
- *       build: 90817.1
- * description: Theme functions
- *      github: https://github.com/WpThemeDev/xidipity
- *    comments:
+ *  Xidipity WordPress Theme
  *
- * @package WordPress
- * @subpackage Xidipity
- * @since 0.9.0
+ *  file:   functions.php
+ *  build:  90818.1
+ *  descrp: functions
+ *  ref:    https://github.com/WpThemeDev/xidipity
  *
- ***/
-
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 /**
  *  name: c_walker
  *  build: 90728.1
@@ -1021,7 +1021,7 @@ function dsp_err($att) {
         $v_msg = $a_msg;
     }
     $html_retval .= '<p><!-- xt: fn/error --></p>';
-    $html_retval .= '<table class="annotation py-3">';
+    $html_retval .= '<table class="annotation py-0.75">';
     $html_retval .= '<tr>';
     $html_retval .= '<td><svg class="mx-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path fill="none" d="M0 0h24v24H0V0z"/>
@@ -1112,7 +1112,7 @@ function rd_mor($att)
     // atributes
     $a_lnk = trim($att);
     $html_retval .= '<!-- xt: fnt/readmore -->';
-    $html_retval .= '<ul class="fa-ul pt-2 text-sm">';
+    $html_retval .= '<ul class="fa-ul pt-0.5 text-sm">';
     if (empty($a_lnk)) {
         $html_retval .= '<li><span class="fa-li"><i class="fas fa-exclamation-circle fg-bas-300"></i></span>Read more …</li>';
     }
