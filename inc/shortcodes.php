@@ -1,23 +1,27 @@
 <?php
 /*
- *        file: shortcodes.php
- *       build: 90728.1
- * description: PHP support for Xidipity theme
- *      github: https://github.com/WpThemeDev/xidipity
- *              https://codex.wordpress.org/Shortcode_API
- *    comments: Shortcodes are called from templates which are embedded in content.
+ *  Xidipity WordPress Theme
  *
- *   @package WordPress
- *   @subpackage Xidipity
- *   @since 1.0.0
+ *  file:   shortcodes.php
+ *  build:  90818.1
+ *  descrp: shortcodes
+ *  ref:    https://codex.wordpress.org/Shortcode_API
+ *          https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+/*
  *
  *   TOC
  *   --------------  ---------------------------------------
- *   bexc / 90728.1  blog excerpts
- *   blst / 90728.1  blog list
- *   clst / 90728.1  category list
- *   gimg / 90728.1  gallary images
- *   plst / 90728.1  page list
+ *   bexc / 90818.1  blog excerpts
+ *   blst / 90818.1  blog list
+ *   clst / 90818.1  category list
+ *   gimg / 90818.1  gallary images
+ *   plst / 90818.1  page list
  *
  *   Utilities
  *   --------------  ---------------------------------------
@@ -30,7 +34,7 @@
  *  Xidipity WordPress Theme
  *
  *  name:   bexc
- *  build:  90728.1
+ *  build:  90818.1
  *  descrp: display blog excerpt(s)
  *  attributes:
  *      $atts - array
@@ -238,7 +242,7 @@ function bexc_shortcode($atts, $prms)
                     {
                         $html_retval .= '<div class="xsc-sum-cards">';
                         $html_retval .= '<!-- card content only -->';
-                        $html_retval .= '<div class="xsc-card-center pt-2">';
+                        $html_retval .= '<div class="xsc-card-center pt-0.5">';
                         $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
                         $html_retval .= $v_html_title;
                         $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
@@ -271,7 +275,7 @@ function bexc_shortcode($atts, $prms)
                     {
                         $html_retval .= '<div class="xsc-sum-cards">';
                         $html_retval .= '<!-- card content only -->';
-                        $html_retval .= '<div class="xsc-card-center pt-2">';
+                        $html_retval .= '<div class="xsc-card-center pt-0.5">';
                         $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
                         $html_retval .= $v_html_title;
                         $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
@@ -294,7 +298,7 @@ function bexc_shortcode($atts, $prms)
                     }
                     $html_retval .= '<div class="xsc-sum-cards">';
                     $html_retval .= '<!-- content bottom -->';
-                    $html_retval .= '<div class="xsc-card-center pt-2">';
+                    $html_retval .= '<div class="xsc-card-center pt-0.5">';
                     $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
                     $html_retval .= $v_html_title;
                     $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
@@ -331,7 +335,7 @@ function bexc_shortcode($atts, $prms)
 }
 /*
  *  name: blst
- *  build: 90728.1
+ *  build: 90818.1
  *  description: Unordered list of blog links
  *  attributes:
  *      $atts - array
@@ -448,7 +452,7 @@ function blst_shortcode($atts, $prms)
 }
 /**
  *  name: clst
- *  build: 90728.1
+ *  build: 90818.1
  *  description: Unordered hierarchical list of category links
  *  attributes:
  *      $atts - array
@@ -574,7 +578,7 @@ function clst_shortcode($atts = array(), $prm = string)
 }
 /**
  *  name: gimg
- *  build: 90728.1
+ *  build: 90818.1
  *  description: Gallery images by category
  *  attributes:
  *      $atts - array
@@ -724,7 +728,7 @@ function gimg_shortcode($atts = array() , $prms = string)
 }
 /**
  *  name: plst
- *  build: 90728.1
+ *  build: 90818.1
  *  description: Unordered hierarchical list of page links
  *  attributes:
  *      $atts - array
@@ -829,7 +833,7 @@ function plst_shortcode($atts = array(), $prm = string)
  */
  /**
  *  name: tst
- *  build: 90728.1
+ *  build: 90818.1
  *  description: test php code
  *
  */
@@ -846,7 +850,7 @@ function tst_shortcode($atts, $prm)
 }
 /**
  *  name: xt_info
- *  build: 90728.1
+ *  build: 90818.1
  *  description: theme information
  *  attributes:
  *      $att - string
@@ -901,7 +905,7 @@ function xt_info_shortcode($atts = array(), $prm = string)
 }
 /**
  *  name: wp_ver
- *  build: 90728.1
+ *  build: 90818.1
  *  description: wp version
  *  doc: https://xidipity.com/reference/source-code/shortcodes/wp_ver/
  *
@@ -928,7 +932,7 @@ function wp_ver_shortcode()
 /**
  * ### deprecate ###
  *  name: pag_dir
- *  build: 90728.1
+ *  build: 90818.1
  *  description: Display hierarchical list of page links
  *  attributes:
  *      $atts - array
