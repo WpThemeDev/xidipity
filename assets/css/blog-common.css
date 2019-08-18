@@ -1,36 +1,16 @@
 /*
-Theme Name  - Xidipity
-Description - Cascading Style Sheet
-
-File        - blog-common.css
-Build       - 90817.2
-Programmer  - John Baer
-Purpose     - Support file for Xidipity Wordpress Theme
-License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
-Comments    - Only CSS classes which are shared with the editor and web are here.
-
-Github      - https://github.com/WpThemeDev/xidipity
-
--- Table Of Contents       ------------
---
-
-## Blockquote / quote / citation / note
-## Captions
-## Emoji icon
-## Forms
-## Horizonal Rules <hr />
-## HTML tags
-## HTML5 Elements
-## Links
-## Lists
-## Media Elements
-## Native gallery
-## Tables
-## Typography
-
--- */
-
+ *  Xidipity WordPress Theme
+ *
+ *  file:   blog-common.css
+ *  build:  90818.1
+ *  descrp: shared css
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 
 /*  # Common
    ## HTML tags
@@ -1927,11 +1907,48 @@ table#twocol td table.annotation td:nth-child(2) {
     padding-right: 0.75rem;
 }
 
+.px-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-0\.75 {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.pt-0\.5 {
+    padding-top: .5rem;
+}
+
+
+/*: margin (x=horz) :*/
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /*: text-align (center) :*/
 
 .txt-center {
     text-align: center;
+}
+
+
+/*: align (lcr) :*/
+
+.align-left {
+    margin: 0 auto 0 0;
+}
+
+.align-center {
+    margin: 0 auto;
+}
+
+.align-right {
+    margin: 0 0 0 auto;
 }
 
 
