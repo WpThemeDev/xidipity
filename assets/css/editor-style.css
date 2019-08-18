@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   editor-style.css
- *  build:  90817.1
+ *  build:  90817.2
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -164,7 +164,7 @@ table#twocol tr td table#twocol tr td {
     width: 100%;
 }
 
-.excerpt-td-wp {
+.excerpt-wp {
     display: none;
 }
 
