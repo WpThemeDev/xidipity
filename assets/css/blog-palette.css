@@ -1,16 +1,16 @@
 /*
-Theme Name:  Xidipity
-Description: Used to style theme.
-
-File        - blog-palette.css
-Build       - 90624.1
-Programmer  - John Baer
-Purpose     - Support file for Xidipity Wordpress Theme
-License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
-Comments    - Palette classes as modified
-
-----------------------------------------------------------------------------*/
+ *  Xidipity WordPress Theme
+ *
+ *  file:   blog-palette.css
+ *  build:  90819.a1
+ *  descrp: theme palette
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 
 .fg-blk,
 .hover\:fg-blk:hover,
@@ -568,211 +568,211 @@ Comments    - Palette classes as modified
 
 /* border colors        --------------------------------------------------- */
 
-.border\:bd-blk {
+.bd-blk {
     border-color: var(--fg-blk) !important;
 }
 
-.border\:bd-wht {
+.bd-wht {
     border-color: var(--fg-wht) !important;
 }
 
-.border\:bd-bas-900 {
+.bd-bas-900 {
     border-color: var(--fg-bas-900) !important;
 }
 
-.border\:bd-bas-800 {
+.bd-bas-800 {
     border-color: var(--fg-bas-800) !important;
 }
 
-.border\:bd-bas-700 {
+.bd-bas-700 {
     border-color: var(--fg-bas-700) !important;
 }
 
-.border\:bd-bas-600 {
+.bd-bas-600 {
     border-color: var(--fg-bas-600) !important;
 }
 
-.border\:bd-bas-500 {
+.bd-bas-500 {
     border-color: var(--fg-bas-500) !important;
 }
 
-.border\:bd-bas-400 {
+.bd-bas-400 {
     border-color: var(--fg-bas-400) !important;
 }
 
-.border\:bd-bas-300 {
+.bd-bas-300 {
     border-color: var(--fg-bas-300) !important;
 }
 
-.border\:bd-bas-200 {
+.bd-bas-200 {
     border-color: var(--fg-bas-200) !important;
 }
 
-.border\:bd-bas-100 {
+.bd-bas-100 {
     border-color: var(--fg-bas-100) !important;
 }
 
-.border\:bd-bas-050 {
+.bd-bas-050 {
     border-color: var(--fg-bas-050) !important;
 }
 
-.border\:bd-pri-900 {
+.bd-pri-900 {
     border-color: var(--fg-pri-900) !important;
 }
 
-.border\:bd-pri-800 {
+.bd-pri-800 {
     border-color: var(--fg-pri-800) !important;
 }
 
-.border\:bd-pri-700 {
+.bd-pri-700 {
     border-color: var(--fg-pri-700) !important;
 }
 
-.border\:bd-pri-600 {
+.bd-pri-600 {
     border-color: var(--fg-pri-600) !important;
 }
 
-.border\:bd-pri-500 {
+.bd-pri-500 {
     border-color: var(--fg-pri-500) !important;
 }
 
-.border\:bd-pri-400 {
+.bd-pri-400 {
     border-color: var(--fg-pri-400) !important;
 }
 
-.border\:bd-pri-300 {
+.bd-pri-300 {
     border-color: var(--fg-pri-300) !important;
 }
 
-.border\:bd-pri-200 {
+.bd-pri-200 {
     border-color: var(--fg-pri-200) !important;
 }
 
-.border\:bd-pri-100 {
+.bd-pri-100 {
     border-color: var(--fg-pri-100) !important;
 }
 
-.border\:bd-pri-050 {
+.bd-pri-050 {
     border-color: var(--fg-pri-050) !important;
 }
 
-.border\:bd-sec-900 {
+.bd-sec-900 {
     border-color: var(--fg-sec-900) !important;
 }
 
-.border\:bd-sec-800 {
+.bd-sec-800 {
     border-color: var(--fg-sec-800) !important;
 }
 
-.border\:bd-sec-700 {
+.bd-sec-700 {
     border-color: var(--fg-sec-700) !important;
 }
 
-.border\:bd-sec-600 {
+.bd-sec-600 {
     border-color: var(--fg-sec-600) !important;
 }
 
-.border\:bd-sec-500 {
+.bd-sec-500 {
     border-color: var(--fg-sec-500) !important;
 }
 
-.border\:bd-sec-400 {
+.bd-sec-400 {
     border-color: var(--fg-sec-400) !important;
 }
 
-.border\:bd-sec-300 {
+.bd-sec-300 {
     border-color: var(--fg-sec-300) !important;
 }
 
-.border\:bd-sec-200 {
+.bd-sec-200 {
     border-color: var(--fg-sec-200) !important;
 }
 
-.border\:bd-sec-100 {
+.bd-sec-100 {
     border-color: var(--fg-sec-100) !important;
 }
 
-.border\:bd-sec-050 {
+.bd-sec-050 {
     border-color: var(--fg-sec-050) !important;
 }
 
-.border\:bd-red {
+.bd-red {
     border-color: #F44336 !important;
 }
 
-.border\:bd-pink {
+.bd-pink {
     border-color: #E91E63 !important;
 }
 
-.border\:bd-purple {
+.bd-purple {
     border-color: #9C27B0 !important;
 }
 
-.border\:bd-deep-purple {
+.bd-deep-purple {
     border-color: #673AB7 !important;
 }
 
-.border\:bd-indigo {
+.bd-indigo {
     border-color: #3F51B5 !important;
 }
 
-.border\:bd-blue {
+.bd-blue {
     border-color: #2196F3 !important;
 }
 
-.border\:bd-light-blue {
+.bd-light-blue {
     border-color: #03A9F4 !important;
 }
 
-.border\:bd-cyan {
+.bd-cyan {
     border-color: #00BCD4 !important;
 }
 
-.border\:bd-teal {
+.bd-teal {
     border-color: #009688 !important;
 }
 
-.border\:bd-green {
+.bd-green {
     border-color: #4CAF50 !important;
 }
 
-.border\:bd-light-green {
+.bd-light-green {
     border-color: #8BC34A !important;
 }
 
-.border\:bd-lime {
+.bd-lime {
     border-color: #CDDC39 !important;
 }
 
-.border\:bd-yellow {
+.bd-yellow {
     border-color: #FFEB3B !important;
 }
 
-.border\:bd-amber {
+.bd-amber {
     border-color: #FFC107 !important;
 }
 
-.border\:bd-orange {
+.bd-orange {
     border-color: #FF9800 !important;
 }
 
-.border\:bd-deep-orange {
+.bd-deep-orange {
     border-color: #FF5722 !important;
 }
 
-.border\:bd-brown {
+.bd-brown {
     border-color: #795548 !important;
 }
 
-.border\:bd-gray {
+.bd-gray {
     border-color: #9E9E9E !important;
 }
 
-.border\:bd-blue-gray {
+.bd-blue-gray {
     border-color: #607D8B !important;
 }
 
 
-/*  # eof
-    blog-palette
-----------------------------------------------------------------------------*/
+/*
+    eof:blog-palette
+*/
