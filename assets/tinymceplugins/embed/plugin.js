@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90817.1
+ *  build:  90819.1a
  *  descrp: embed plugin
  *  ref:    https://www.tiny.cloud/
  *
