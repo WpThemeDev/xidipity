@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   search.php
- *  build:  90817.1
+ *  build:  90819.1a
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,7 +31,7 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90817.1/search.php          -->' . "\n";
+echo '<!-- xwpt: 90819.1/search.php          -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems">' . "\n";
 if (have_posts())
@@ -43,14 +43,14 @@ if (have_posts())
     if ($wp_cnt  == 1)
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<i class="far fa-comment-alt fg-pri-400 pr-0.75"></i>',
+            'icon' => '<i class="far fa-comment-alt fg-pri-400 pad:right-0.75"></i>',
             'title' => $wp_query->found_posts . ' Item found',
         ));
     }
     else
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<i class="far fa-comment-alt fg-pri-400 pr-0.75"></i>',
+            'icon' => '<i class="far fa-comment-alt fg-pri-400 pad:right-0.75"></i>',
             'title' => $wp_query->found_posts . ' Items found',
         ));
     }
@@ -80,7 +80,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90817.1/search.php         -->' . "\n";
+echo '<!-- /xwpt: 90819.1/search.php         -->' . "\n";
 /*
     reset post data
 */
