@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content.php
- *  build:  90817.2
+ *  build:  90819.a
  *  descrp: content / index
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -18,12 +18,12 @@
 $v_icon = '';
 $v_link = '';
 $v_meta_list = '';
-echo '<!-- xwpt: 90817.2/content         -->' . "\n";
+echo '<!-- xwpt: 90819.1/content         -->' . "\n";
 echo '<article id="xwtFxRowHalfItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
 /*
     featured image
 */
-$wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'img-full'));
+$wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'ht:auto wd:100%'));
 if ($wp_img)
 {
     /*: post thumbnail :*/
@@ -77,7 +77,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '<p>&nbsp;</p>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt: 90817.2/content        -->' . "\n";
+echo '<!-- /xwpt: 90819.1/content        -->' . "\n";
 /*
     eof:content.php
 */
