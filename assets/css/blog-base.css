@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   blog-base.css
- *  build:  90818.1
+ *  build:  90819.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -190,6 +190,7 @@ body {
    ## Author Info
  ----------------------------------------------------------------------------*/
 
+/* deprecated
 .author-info {
     background: var(--bg-wht);
     border: solid var(--fg-bas-300);
@@ -199,33 +200,43 @@ body {
     padding: 30px;
     position: relative;
 }
+*/
 
+/* deprecated
 .author-info .author-avatar {
     margin: 0 0 15px;
     padding: 0;
 }
+*/
 
+/* deprecated
 .author-info .avatar {
     border: 1px solid var(--fg-bas-400);
     padding: 2px;
 }
+*/
 
+/* deprecated
 .author-info .author-description {
     font-size: 15px;
     font-size: 0.9375rem;
     line-height: 1.4;
 }
+*/
 
+/* deprecated
 .author-info .author-description .author-title {
     margin: 0 0 20px;
     padding: 0;
 }
+*/
 
 
 /*  # WordPress
    ## Blog Featured Image
  ----------------------------------------------------------------------------*/
 
+/* deprecated
 .post-thumbnail-wrapper {
     border-radius: .25rem;
     height: auto;
@@ -313,17 +324,13 @@ body {
     }
 }
 
+*/
 
 /*  # WordPress
    ## Blog Page Banner
  ----------------------------------------------------------------------------*/
 
-
-/* mobile media format     ------------
--- */
-
-
-/* delete
+/* deprecated
 .blg-pg-featured-wrapper {
     border-top: 1px solid transparent;
     border-left: 1px solid transparent;
@@ -350,14 +357,7 @@ body {
     text-align: left;
     width: 100%;
 }
-*/
 
-
-/* other media formats     ------------
--- */
-
-
-/*
 @media (min-width: 576px) {
     .blg-pg-recent-wrapper,
     .blg-pg-featured-wrapper {
@@ -367,10 +367,6 @@ body {
         border-right: 1px solid var(--sys-pg-banner-br-border-color);
     }
 }
-*/
-
-
-/* delete
 .blg-pg-featured-title::before {
     color: var(--sys-pg-banner-featured-title-fg-color);
     content: var(--sys-pg-banner-featured-title);
@@ -380,8 +376,6 @@ body {
     color: var(--sys-pg-banner-featured-descrip-fg-color);
     content: var(--sys-pg-banner-featured-descrip);
 }
-*/
-
 .blg-pg-recent-title::before {
     color: var(--sys-pg-banner-recent-title-fg-color);
     content: var(--sys-pg-banner-recent-title);
@@ -391,10 +385,12 @@ body {
     color: var(--sys-pg-banner-recent-descrip-fg-color);
     content: var(--sys-pg-banner-recent-descrip);
 }
+*/
 
 
 /*  # WordPress
    ## Comments
+   skip section in 819.1a
  ----------------------------------------------------------------------------*/
 
 
@@ -649,17 +645,11 @@ ol.comment-list li::before {
     text-align: center;
 }
 
-
 /*  # WordPress
    ## Footer
  ----------------------------------------------------------------------------*/
 
-
-/* footer container        ------------
--- */
-
-
-/* delete
+/* deprecated
 .site-footer {
     background-color: var(--sys-ft-bg-color);
     position: relative;
@@ -670,14 +660,6 @@ ol.comment-list li::before {
     text-align: var(--sys-ft-align);
     width: 100%;
 }
-*/
-
-
-/* footer credits/copyright------------
--- */
-
-
-/* delete
 .copyright {
     color: var(--copyright-font-color);
     font-family: var(--copyright-font-family);
@@ -700,14 +682,6 @@ ol.comment-list li::before {
     color: var(--copyright-lnk-sec-color) !important;
     background-color: var(--copyright-lnk-sec-bg-color) !important;
 }
-*/
-
-
-/* footer credits/design   ------------
--- */
-
-
-/*
 .designer {
     color: var(--designer-font-color);
     font-family: var(--designer-font-family);
@@ -731,11 +705,11 @@ ol.comment-list li::before {
 }
 */
 
-
 /*  # WordPress
    ## Smilies (https://codex.wordpress.org/Using_Smilies)
  ----------------------------------------------------------------------------*/
 
+/* deprecated
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -744,12 +718,13 @@ ol.comment-list li::before {
     margin-top: 0;
     padding: 0;
 }
-
+*/
 
 /*  # WordPress
    ## Entry Meta (author / date / category / etc.)
  ----------------------------------------------------------------------------*/
 
+/* deprecated
 .entry-meta {
     color: var(--fg-bas-900);
     font-size: 0.875rem;
@@ -811,11 +786,9 @@ ol.comment-list li::before {
     color: var(--sys-lnk-sec-color);
     background-color: var(--sys-lnk-sec-bg-color);
 }
+*/
 
-
-/* header container        ------------
--- */
-
+/* deprecated
 .entry-meta-header-before {
     margin: 0 0 5px;
 }
@@ -824,11 +797,13 @@ ol.comment-list li::before {
     font-weight: 300;
     letter-spacing: 0.8px;
 }
+*/
 
 
 /* footer container        ------------
 -- */
 
+/* deprecated
 .entry-footer {
     margin-top: 10px;
 }
@@ -836,7 +811,7 @@ ol.comment-list li::before {
 .entry-meta-footer {
     margin: 26px 0 0;
 }
-
+*/
 
 /* elements                ----------------------------------------------------
 -- */
@@ -850,44 +825,24 @@ ol.comment-list li::before {
 }
 
 
-/* sticky                  ------------
--- */
-
+/* deprecated
 .post-label-featured {
     margin-left: -11px;
 }
+*/
 
-
-/* categories              ------------
--- */
-
+/* deprecated
 .cat-links {}
-
-
-/* tags                    ------------
--- */
-
 .tags-links {}
-
-
-/* edit link              ------------
--- */
-
 .post-edit-link {}
+*/
 
-
-/* category search        ------------
---
-
+/* deprecated
 .post-category a {
     color: var(--fg-bas-600) !important;
     font-size: 0.875rem;
     padding: 2px 4px;
 }
-*/
-
-
-/* delete
 .post-category a:before {
     color: var(--fg-bas-400) !important;
     content: "\f022";
@@ -902,21 +857,16 @@ ol.comment-list li::before {
     font-weight: 900;
     padding-right: .425rem;
 }
-*/
-
 .post-category a:hover {
     color: var(--sys-lnk-sec-color) !important;
 }
-
+*/
 
 /*  # WordPress
    ## All Things Header
  ----------------------------------------------------------------------------*/
 
-
-/* delete me
-background color        ------------
-
+/* deprecated
 .site-header {
     background: var(--bg-bas-100);
     margin: 0;
@@ -924,16 +874,12 @@ background color        ------------
     position: relative;
     width: 100%;
 }
--- */
-
+*/
 
 /* header items (hentry)   ----------------------------------------------------
 -- */
 
-
-/* mobile media format     ------------
--- */
-
+/* deprecated
 .hentry {
     background: var(--bg-wht);
     border-top: 1px solid transparent;
@@ -946,7 +892,6 @@ background color        ------------
     padding-bottom: 15px;
     position: relative;
 }
-
 .page-header {
     background: var(--bg-wht);
     border-top: 1px solid transparent;
@@ -958,11 +903,9 @@ background color        ------------
     padding: 26px;
     position: relative;
 }
+*/
 
-
-/* other media formats     ------------
--- */
-
+/* deprecated
 @media (min-width: 576px) {
     .hentry {
         border-top: 1px solid var(--sys-content-tl-border-color);
@@ -978,7 +921,9 @@ background color        ------------
         border-right: 1px solid var(--sys-content-br-border-color);
     }
 }
+*/
 
+/* deprecated
 @media (min-width: 992px) {
     article.format-standard {
         min-height: 300px;
@@ -990,11 +935,12 @@ background color        ------------
         min-height: 280px;
     }
 }
-
+*/
 
 /* image container         ------------
 -- */
 
+/* deprecated
 .post-thumbnail-wrapper-archive {
     overflow: hidden;
 }
@@ -1002,16 +948,17 @@ background color        ------------
 .post-thumbnail-wrapper-archive img {
     margin: 0 auto;
 }
-
 .entry-data-wrapper-archive,
 .entry-data-wrapper-single {
     padding: 0 5px 0 5px;
 }
 
+*/
 
 /* page content block      ------------
 -- */
 
+/* deprecated
 .page-content {
     background: var(--bg-wht);
     border: solid var(--fg-bas-300);
@@ -1021,28 +968,19 @@ background color        ------------
     position: relative;
     word-wrap: break-word;
 }
-
+*/
 
 /* post header             ------------
 -- */
 
-
-/* delete
+/* deprecated
 .entry-header-wrapper {
     padding-top: 15px;
 }
-*/
-
-
-/* delete
 .entry-header {
     margin: 0 0 10px;
     padding: 0;
 }
-*/
-
-
-/* delete
 .entry-title {
     clear: none;
     margin: 0;
@@ -1051,33 +989,26 @@ background color        ------------
 }
 */
 
-
 /* post title              ------------
 -- */
 
+/* deprecated
 .page-title {}
 
 .page-title span {
     color: var(--fg-sec-500);
 }
-
-
-/*
 .taxonomy-description {
     margin-top: 5px;
 }
 
 entry-title & page-title will become xwtTxTitle
 
-*/
-
 .entry-title a,
 .entry-title a:visited,
 .page-title a,
 .page-title a:visited {
     color: var(--h1-color);
-    /*font-size: 26px;
-    font-size: 1.625rem;*/
 }
 
 .entry-title a:hover,
@@ -1090,10 +1021,12 @@ entry-title & page-title will become xwtTxTitle
     background-color: var(--sys-lnk-sec-bg-color);
 }
 
+*/
 
 /* image attachment page   ------------
 -- */
 
+/* deprecated
 h1.attachment-entry-title {
     color: var(--fg-blk);
     font-size: 20px;
@@ -1107,7 +1040,9 @@ h1.attachment-entry-title:before {
     font-weight: 900;
     margin-right: 6px;
 }
+*/
 
+/* deprecated
 .entry-summary,
 .entry-summary p {
     margin: 0 0 30px;
@@ -1115,9 +1050,9 @@ h1.attachment-entry-title:before {
     word-wrap: break-word;
 }
 
+*/
 
-/* deprecate */
-
+/* deprecated
 .entry-content {
     background-color: var(--sys-content-bg-color);
     margin: 0;
@@ -1129,7 +1064,9 @@ h1.attachment-entry-title:before {
     margin: 0;
     padding: 0;
 }
+*/
 
+/*: ### MARKER ### :*/
 
 /*  # WordPress
    ## Media Elements
