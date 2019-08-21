@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90816.1
+ *  build:  90819.1a
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -27,28 +27,22 @@ $v_aspect_ratio = '';
 $v_meta_list = '';
 $v_ratio = 0;
 $v_title = '';
-
 /*
     display page header
 */
 get_header();
-echo '<!-- xwpt: 90816.1/image           -->' . "\n";
+echo '<!-- xwpt: 90819.1/image           -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
-/* get page title          ------------
- -- */
+/*: get page title :*/
 $v_title = get_the_title();
 if (strpos($v_title, '.') > 1)
 {
     $v_title = substr($v_title, 0, strpos($v_title, '.'));
 }
-/* have attm         ------------
- -- */
+/*: has attm :*/
 if (have_posts())
 {
-    /* get attm metadata ------------
-     -- */
-    //$wp_metadata = wp_get_attm_metadata();
     $v_ratio = round(absint($wp_metadata['height']) / absint($wp_metadata['width']) , 4);
     switch ($v_ratio)
     {
@@ -78,18 +72,18 @@ if (have_posts())
     }
     echo '<article  id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
     echo '<div class="xwtAddPadPost">' . "\n";
-    echo '<h2 class="p-4"><i class="far fa-image fg-pri-300"></i> ' . $v_title . '</h2>' . "\n";
-    echo '<p class="pl-4 text-sm"><span class="font-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
+    echo '<h2 class="pad:xy-1"><i class="far fa-image fg-pri-300"></i> ' . $v_title . '</h2>' . "\n";
+    echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
     if (!empty($v_aspect_ratio))
     {
-        echo '<p class="pl-4 text-sm"><span class="font-normal">Aspect Ratio:</span> ' . $v_aspect_ratio . '</p>' . "\n";
+        echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Aspect Ratio:</span> ' . $v_aspect_ratio . '</p>' . "\n";
     }
     echo '<p>&nbsp;</p>' . "\n";
-    echo '<div class="entry-content">' . "\n";
+    echo '<div class="wd:100%">' . "\n";
     echo '<figure class="entry-attm wp-block-image">' . "\n";
     /*
-    Filter the default Xidipity image attm size
-    @param string $image_size Image size. Default = 'large'
+        Filter the default Xidipity image attm size
+        @param string $image_size Image size. Default = 'large'
     */
     $image_size = apply_filters('Xidipity_attm_size', 'full');
     $wp_image = wp_get_attachment_image(get_the_ID() , $image_size);
@@ -142,7 +136,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90816.1/image          -->' . "\n";
+echo '<!-- /xwpt: 90819.1/image          -->' . "\n";
 /*
     reset post data
 */
