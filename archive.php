@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   archive
- *  build:  90816.2
+ *  build:  90819.1a
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,7 +31,7 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90816.1/archive         -->' . "\n";
+echo '<!-- xwpt: 90819.1/archive         -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
 echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
 if (have_posts())
@@ -41,7 +41,7 @@ if (have_posts())
     */
     echo xidipity_excerpt_banner(array(
         'cat' => single_cat_title('', false),
-        'icon' => '<i class="far fa-file-alt fg-bas-400 pr-0.5"></i>',
+        'icon' => '<i class="far fa-file-alt fg-bas-400 pad:right-0.5"></i>',
     ));
     while (have_posts())
     {
@@ -69,7 +69,7 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90816.1/archive        -->' . "\n";
+echo '<!-- /xwpt: 90819.1/archive        -->' . "\n";
 /*
     reset post data
 */
