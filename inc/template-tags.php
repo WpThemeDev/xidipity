@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90816.1
+ *  build:  90819.1a
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -634,16 +634,9 @@ function xidipity_category_transient_flusher()
 add_action('edit_category', 'xidipity_category_transient_flusher');
 add_action('save_post', 'xidipity_category_transient_flusher');
 
+/* deprecated
 if (!function_exists('xidipity_post_thumbnail'))
 {
-    /**
-     * ### deprecated ###
-     * Display an optional post thumbnail.
-     *
-     * Wraps the post thumbnail in an anchor element.
-     *
-     * @return void
-     */
     function xidipity_post_thumbnail()
     {
         // Post Thumbnail HTML
@@ -658,11 +651,6 @@ if (!function_exists('xidipity_post_thumbnail'))
             // Post Thumbnail HTML
             $html = sprintf('<div class="post-thumbnail-wrapper post-thumbnail-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>', esc_attr(esc_url(get_the_permalink())) , $post_thumbnail);
         }
-        /**
-         * Filters the Post Thumbnail HTML.
-         *
-         * @param string $html Post Thumbnail HTML.
-         */
         $html = apply_filters('xidipity_post_thumbnail_html', $html);
         // Print HTML
         if (!empty($html))
@@ -672,6 +660,7 @@ if (!function_exists('xidipity_post_thumbnail'))
         }
     }
 }
+*/
 if (!function_exists('xidipity_the_custom_logo'))
 {
     /**
