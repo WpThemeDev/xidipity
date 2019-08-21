@@ -1,28 +1,16 @@
 /*
-Theme Name  - Xidipity
-Description - Cascading Style Sheet
-
-File        - blog-print.css
-Build       - 90727.1
-Programmer  - John Baer
-Purpose     - Support file for Xidipity Wordpress Theme
-License     - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-Sources     - Underscores theme - Automattic, Inc. (https://underscores.me/)
-Comments    - Only CSS classes which are unique to print are here.
-
--- Table Of Contents       ------------
---
-
-## Force multi columns responsive table
-## Force multi columns two columns table
-## Global defaults
-## Hidden elements
-## Page break
-## Page size
-## Print Specific Borders
-## Print Specific Palette
-
--- */
+ *  Xidipity WordPress Theme
+ *
+ *  file:   blog-print.css
+ *  build:  90819.1a
+ *  descrp: blog print
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 
 
 /*  # Print
@@ -53,13 +41,12 @@ body {
    ## Hidden elements
  ----------------------------------------------------------------------------*/
 
+#excerpt,
 .xwtContentFoot,
 .simplesocialbuttons-inline-no-animation,
 .comment-respond,
 .comments-area,
 .do-not-print,
-.entry-meta,
-.excerpt-template,
 .main-navigation,
 .post-navigation,
 .screen-reader-text,
@@ -315,6 +302,6 @@ table#responsive td img {
 }
 
 
-/*  # eof
-    print-style
------------------------------------------------------------------------------*/
+/*
+    eof:print-style
+*/
