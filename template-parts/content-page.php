@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-page.php
- *  build:  90728.3
+ *  build:  90819.1b
  *  descrp: content / page
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -24,13 +24,13 @@ if ($wp_tmpl == 'naked')
     content
     * set min height to keep meta @ bottom
     */
-    echo '<div class="xwtMinY-275">' . "\n";
+    echo '<div class="ht:min-275px">' . "\n";
     the_content();
     echo '</div>' . "\n";
 }
 else
 {
-    echo '<!-- xwpt: 90728.1/content-page.php    -->' . "\n";
+    echo '<!-- xwpt: 90819.1/content-page.php    -->' . "\n";
     echo '<article id="xwtFxRowFullItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
     echo '<div class="xwtAddPadPage post-content-wrapper post-content-wrapper-single">' . "\n";
     /*
@@ -55,7 +55,7 @@ else
     content
     * set min height to keep meta @ bottom
     */
-    echo '<div class="xwtMinY-275">' . "\n";
+    echo '<div class="ht:min-275px">' . "\n";
     the_content();
     echo '</div>' . "\n";
     /*
@@ -76,7 +76,7 @@ else
     echo '</div>' . "\n";
     echo '</article>' . "\n";
 }
-echo '<!-- /xwpt: 90728.1/content-page.php   -->' . "\n";
+echo '<!-- /xwpt: 90819.1/content-page.php   -->' . "\n";
 /*
     eof:content-page.php
 */
