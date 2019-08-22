@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   blog-common.css
- *  build:  90819.1b
+ *  build:  90819.1c
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -143,12 +143,13 @@ hr.gradient {
 
 /* emblem rule             ------------
 std / 1x / 2x height
-### deprecate ###
 -- */
 
 
 /* std height      ------*/
 
+
+/* deprecated
 .xhr-0x {
     height: 2rem;
     margin: 0 0 2px 0;
@@ -175,10 +176,13 @@ std / 1x / 2x height
     top: 0;
     width: 100%;
 }
+*/
 
 
 /* 1x (h6) height  ------*/
 
+
+/* deprecated
 .xhr-1x {
     height: 2.125rem;
     margin: 0 0 2px 0;
@@ -209,10 +213,13 @@ std / 1x / 2x height
     top: 1px;
     width: 100%;
 }
+*/
 
 
 /* 2x (h5) height  ------*/
 
+
+/* deprecated
 .xhr-2x {
     height: 2.5rem;
     margin: 0 0 2px 0;
@@ -243,6 +250,7 @@ std / 1x / 2x height
     top: 0;
     width: 100%;
 }
+*/
 
 
 /*  # Common
@@ -543,10 +551,6 @@ dd {
     }
 }
 
-
-/* other media formats       ---------------
--- */
-
 @media (min-width: 768px) {
     dd.card {
         margin-left: 1em;
@@ -556,13 +560,14 @@ dd {
 
 
 /* list vertical formats   ----------------------------------------------------
-### deprecate ###
 -- */
 
 
 /* quarter spaced          ------------
 -- */
 
+
+/* deprecated
 ol.qtr-spaced>li:first-child,
 ol.qtr-spaced>li li:first-child,
 ul.qtr-spaced>li:first-child,
@@ -582,11 +587,14 @@ ol.qtr-spaced>li:last-child,
 ul.qtr-spaced>li:last-child {
     margin-top: 4px;
 }
+*/
 
 
 /* double spaced           ------------
 -- */
 
+
+/* deprecated
 ol.dbl-spaced>li:first-child,
 ol.dbl-spaced>li li:first-child,
 ul.dbl-spaced>li:first-child,
@@ -606,6 +614,7 @@ ol.dbl-spaced>li:last-child,
 ul.dbl-spaced>li:last-child {
     margin-top: 8px;
 }
+*/
 
 
 /*  # Common
@@ -675,7 +684,10 @@ this code will preserve table format
 commenting it out table order to single
 column
 --
+*/
 
+
+/* deprecated
 table#twocol table {
     padding: 0;
     margin: 0;
@@ -774,6 +786,8 @@ table#responsive td img {
 /* fonts                   --------
  -- */
 
+
+/* deprecated
 .fnt-sans {
     font-family: var(--font-sans);
 }
@@ -798,10 +812,14 @@ table#responsive td img {
     font-family: var(--font-fancy);
 }
 
+*/
+
 
 /* text blocks             --------
  -- */
 
+
+/* deprecated
 .txt-blk-sm {
     font-size: 0.875rem;
     width: 100%;
@@ -816,11 +834,14 @@ table#responsive td img {
     font-size: 1.125rem;
     width: 100%;
 }
+*/
 
 
 /* blank line spacers      ----------------------------------------------------
 -- */
 
+
+/* deprecated
 .spacer-1\/2 {
     color: transparent;
     font-size: 0.25rem;
@@ -850,6 +871,7 @@ table#responsive td img {
     font-size: 3.1875rem;
     width: 100%;
 }
+*/
 
 
 /* font awesome            ----------------------------------------------------
@@ -859,6 +881,8 @@ table#responsive td img {
 /* glyphs                  ------------
 -- */
 
+
+/* deprecated
 .fab-glyph {
     font-family: "Font Awesome 5 Brands";
     font-weight: 400;
@@ -873,6 +897,7 @@ table#responsive td img {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
+*/
 
 
 /* content headings        ----------------------------------------------------
@@ -1648,7 +1673,9 @@ img.focalpoint:hover {
 
 
 /*  # Annotation styles
- ----------------------------------------------------------------------------*/
+ ----------------------------------------------------------------------------
+ deprecate all
+ */
 
 
 /* readmore                ------------
@@ -1941,6 +1968,35 @@ table#twocol td table.annotation td:nth-child(2) {
 
 
 /*
+    font family
+*/
+
+.fnt\:family-sans {
+    font-family: var(--font-sans);
+}
+
+.fnt\:family-serif {
+    font-family: var(--font-serif);
+}
+
+.fnt\:family-mono {
+    font-family: var(--font-mono);
+}
+
+.fnt\:family-condensed {
+    font-family: var(--font-condensed);
+}
+
+.fnt\:family-cursive {
+    font-family: var(--font-cursive);
+}
+
+.fnt\:family-fancy {
+    font-family: var(--font-fancy);
+}
+
+
+/*
     font size (rem)
 */
 
@@ -2144,26 +2200,6 @@ table#twocol td table.annotation td:nth-child(2) {
 
 
 /*
-    align horizonal
-*/
-
-.alx\:center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.alx\:left {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-.alx\:right {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-
-/*
     height
 */
 
@@ -2310,6 +2346,61 @@ ul.li\:dbl-spaced li:not(:last-child) {
 ol.li\:tpl-spaced li:not(:last-child),
 ul.li\:tpl-spaced li:not(:last-child) {
     margin-bottom: 12px;
+}
+
+
+/*
+    horizonal align
+*/
+
+.horz\:align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horz\:align-left {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.horz\:align-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+/*
+    vertical spacing
+*/
+
+.vert\:spacer-1\/2 {
+    color: transparent;
+    font-size: 0.25rem;
+    width: 100%;
+}
+
+.vert\:spacer-3\/4 {
+    color: transparent;
+    font-size: 0.6rem;
+    width: 100%;
+}
+
+.vert\:spacer-single {
+    color: transparent;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.vert\:spacer-double {
+    color: transparent;
+    font-size: 2.1rem;
+    width: 100%;
+}
+
+.vert\:spacer-triple {
+    color: transparent;
+    font-size: 3.1875rem;
+    width: 100%;
 }
 
 
@@ -2486,6 +2577,62 @@ ul.li\:tpl-spaced li:not(:last-child) {
     -ms-er-center-itm-align: auto;
     align-self: auto;
     margin-left: 8px;
+}
+
+
+/*
+    content comments / annotations
+*/
+
+#anFxLeft {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--bg-bas-050);
+}
+
+.anfx-left:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-er-center-itm-align: auto;
+    align-self: auto;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.anfx-left:nth-child(2) {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-er-center-itm-align: auto;
+    align-self: auto;
+    margin-left: 0.5rem;
+    border-left: 2px solid var(--fg-bas-400);
+    padding: 0.5rem 0.5rem;
 }
 
 
