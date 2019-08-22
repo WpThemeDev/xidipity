@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   shortcodes.php
- *  build:  90819.1a
+ *  build:  90819.1b
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -1744,21 +1744,21 @@ function img_gallery_shortcode($atts, $category_list)
                 $cap_style = 'class="img-caption alx:left"';
                 if ($max_col > 2)
                 {
-                    $cap_style = 'class="img-caption alx:left fnt:small"';
+                    $cap_style = 'class="img-caption alx:left fnt:size-sm"';
                 }
             break;
             case 2:
                 $cap_style = 'class="img-caption alx:right"';
                 if ($max_col > 2)
                 {
-                    $cap_style = 'class="img-caption alx:right fnt:small"';
+                    $cap_style = 'class="img-caption alx:right fnt:size-sm"';
                 }
             break;
             default:
                 $cap_style = 'class="img-caption"';
                 if ($max_col > 2)
                 {
-                    $cap_style = 'class="img-caption fnt:small"';
+                    $cap_style = 'class="img-caption fnt:size-sm"';
                 }
         }
         $val = ck_prm($atts['class']);
