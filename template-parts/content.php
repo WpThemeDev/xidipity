@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content.php
- *  build:  90819.a
+ *  build:  90819.b
  *  descrp: content / index
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -32,7 +32,7 @@ if ($wp_img)
 }
 else
 {
-    echo '<div class="xwtAddPadPost xwtMinY-455">' . "\n";
+    echo '<div class="xwtAddPadPost ht:min-455px">' . "\n";
 }
 if ('post' == get_post_type())
 {
