@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90819.1a
+ *  build:  90819.1c
  *  descrp: horizonal rule plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -59,7 +59,7 @@
                     text: '• Emblem',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<div id="erFxCenter"><div class="erfx-center wd:100%"><hr class="alx:right" /></div><div class="erfx-center"><p><i class="fas fa-square fg-bas-400">&#x200B;</i></p></div><div class="erfx-center wd:100%"><hr class="alx:left" /></div></div>');
+                        editor.insertContent('<div id="erFxCenter"><div class="erfx-center wd:100%"><hr class="horz:align-right" /></div><div class="erfx-center"><p><i class="fas fa-square fg-bas-400">&#x200B;</i></p></div><div class="erfx-center wd:100%"><hr class="horz:align-left" /></div></div>');
                     }
                 },
                 {
