@@ -1,0 +1,1240 @@
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  file:   blog-toolkit.css
+ *  build:  90819.1d
+ *  descrp: shared css
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
+
+.tst {
+    background-color: green;
+}
+
+
+/*: smartphone portrait :*/
+
+@media (min-width: 640px) {
+    .dv1\/tst {
+        background-color: purple;
+    }
+}
+
+
+/*: smartphone landscape :*/
+
+@media (min-width: 768px) {
+    .dv2\/tst {
+        background-color: blue;
+    }
+}
+
+
+/*: tablet :*/
+
+@media (min-width: 1024px) {
+    .dv3\/tst {
+        background-color: black;
+    }
+}
+
+
+/*: desktop :*/
+
+@media (min-width: 1280px) {
+    .dv4\/tst {
+        background-color: red;
+    }
+}
+
+
+/*
+    border (rem)
+*/
+
+.bdr\:radius-0\.25 {
+    border-radius: 0.25rem;
+}
+
+.bdr\:radius-0\.5 {
+    border-radius: 0.5rem;
+}
+
+.bdr\:radius-0\.75 {
+    border-radius: 0.75rem;
+}
+
+.bdr\:none {
+    border-style: none;
+}
+
+.bdr\:wd-0 {
+    border-width: 0;
+}
+
+.bdr\:wd-1px {
+    border-width: 1px;
+}
+
+.bdr\:wd-2px {
+    border-width: 2px;
+}
+
+.bdr\:wd-3px {
+    border-width: 3px;
+}
+
+
+/*
+    font family
+*/
+
+.fnt\:family-sans {
+    font-family: var(--font-sans);
+}
+
+.fnt\:family-serif {
+    font-family: var(--font-serif);
+}
+
+.fnt\:family-mono {
+    font-family: var(--font-mono);
+}
+
+.fnt\:family-condensed {
+    font-family: var(--font-condensed);
+}
+
+.fnt\:family-cursive {
+    font-family: var(--font-cursive);
+}
+
+.fnt\:family-fancy {
+    font-family: var(--font-fancy);
+}
+
+
+/*
+    font size (rem)
+*/
+
+.fnt\:size-larger {
+    font-size: 112.5%;
+}
+
+.fnt\:size-lg {
+    font-size: 1.125rem;
+}
+
+.fnt\:size-sm {
+    font-size: 0.875rem;
+}
+
+.fnt\:size-smaller {
+    font-size: 87.5%;
+}
+
+.fnt\:size-std {
+    font-size: 1rem;
+}
+
+.fnt\:size-xlg {
+    font-size: 1.25rem;
+}
+
+.fnt\:size-xsm {
+    font-size: 0.75rem;
+}
+
+
+/*: smartphone portrait :*/
+
+@media (min-width: 640px) {
+    .dv1\/fnt\:size-larger {
+        font-size: 112.5%;
+    }
+    .dv1\/fnt\:size-lg {
+        font-size: 1.125rem;
+    }
+    .dv1\/fnt\:size-sm {
+        font-size: 0.875rem;
+    }
+    .dv1\/fnt\:size-smaller {
+        font-size: 87.5%;
+    }
+    .dv1\/fnt\:size-std {
+        font-size: 1rem;
+    }
+    .dv1\/fnt\:size-xlg {
+        font-size: 1.25rem;
+    }
+    .dv1\/fnt\:size-xsm {
+        font-size: 0.75rem;
+    }
+}
+
+
+/*: smartphone landscape :*/
+
+@media (min-width: 768px) {
+    .dv2\/fnt\:size-larger {
+        font-size: 112.5%;
+    }
+    .dv2\/fnt\:size-lg {
+        font-size: 1.125rem;
+    }
+    .dv2\/fnt\:size-sm {
+        font-size: 0.875rem;
+    }
+    .dv2\/fnt\:size-smaller {
+        font-size: 87.5%;
+    }
+    .dv2\/fnt\:size-std {
+        font-size: 1rem;
+    }
+    .dv2\/fnt\:size-xlg {
+        font-size: 1.25rem;
+    }
+    .dv2\/fnt\:size-xsm {
+        font-size: 0.75rem;
+    }
+}
+
+
+/*: tablet :*/
+
+@media (min-width: 1024px) {
+    .dv3\/fnt\:size-larger {
+        font-size: 112.5%;
+    }
+    .dv3\/fnt\:size-lg {
+        font-size: 1.125rem;
+    }
+    .dv3\/fnt\:size-sm {
+        font-size: 0.875rem;
+    }
+    .dv3\/fnt\:size-smaller {
+        font-size: 87.5%;
+    }
+    .dv3\/fnt\:size-std {
+        font-size: 1rem;
+    }
+    .dv3\/fnt\:size-xlg {
+        font-size: 1.25rem;
+    }
+    .dv3\/fnt\:size-xsm {
+        font-size: 0.75rem;
+    }
+}
+
+
+/*: desktop :*/
+
+@media (min-width: 1280px) {
+    .dv4\/fnt\:size-larger {
+        font-size: 112.5%;
+    }
+    .dv4\/fnt\:size-lg {
+        font-size: 1.125rem;
+    }
+    .dv4\/fnt\:size-sm {
+        font-size: 0.875rem;
+    }
+    .dv4\/fnt\:size-smaller {
+        font-size: 87.5%;
+    }
+    .dv4\/.fnt\:size-std {
+        font-size: 1rem;
+    }
+    .dv4\/.fnt\:size-xlg {
+        font-size: 1.25rem;
+    }
+    .dv4\/.fnt\:size-xsm {
+        font-size: 0.75rem;
+    }
+}
+
+
+/*
+    font style
+*/
+
+.fnt\:style-italic {
+    font-style: italic;
+}
+
+.fnt\:style-normal {
+    font-style: normal;
+}
+
+.fnt\:style-oblique {
+    font-style: oblique;
+}
+
+
+/*
+    font weight
+*/
+
+.fnt\:weight-100 {
+    font-weight: 100;
+}
+
+.fnt\:weight-200 {
+    font-weight: 200;
+}
+
+.fnt\:weight-300 {
+    font-weight: 300;
+}
+
+.fnt\:weight-400 {
+    font-weight: 400;
+}
+
+.fnt\:weight-500 {
+    font-weight: 500;
+}
+
+.fnt\:weight-600 {
+    font-weight: 600;
+}
+
+.fnt\:weight-700 {
+    font-weight: 700;
+}
+
+.fnt\:weight-800 {
+    font-weight: 800;
+}
+
+.fnt\:weight-900 {
+    font-weight: 900;
+}
+
+.fnt\:weight-bolder {
+    font-weight: bolder;
+}
+
+.fnt\:weight-lighter {
+    font-weight: lighter;
+}
+
+
+/*
+    padding (rem)
+*/
+
+.pad\:all-0\.125 {
+    padding: 0.125rem;
+}
+
+.pad\:all-0\.25 {
+    padding: 0.25rem;
+}
+
+.pad\:all-0\.375 {
+    padding: 0.375rem;
+}
+
+.pad\:all-0\.5 {
+    padding: 0.5rem;
+}
+
+.pad\:all-0\.625 {
+    padding: 0.625rem;
+}
+
+.pad\:horz-0\.25 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.pad\:horz-0\.5 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pad\:horz-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.pad\:left-0\.5 {
+    padding-left: 0.5rem;
+}
+
+.pad\:left-0\.75 {
+    padding-left: 0.75rem;
+}
+
+.pad\:left-1 {
+    padding-left: 1rem;
+}
+
+.pad\:right-0\.5 {
+    padding-right: 0.5rem;
+}
+
+.pad\:right-0\.75 {
+    padding-right: 0.75rem;
+}
+
+.pad\:right-1 {
+    padding-right: 1rem;
+}
+
+.pad\:top-0\.3125 {
+    padding-top: 0.3125rem;
+}
+
+.pad\:top-0\.5 {
+    padding-top: .5rem;
+}
+
+.pad\:vert-0\.75 {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+
+/*: smartphone portrait :*/
+
+@media (min-width: 640px) {
+    .dv1\/pad\:all-0\.125 {
+        padding: 0.125rem;
+    }
+    .dv1\/pad\:all-0\.25 {
+        padding: 0.25rem;
+    }
+    .dv1\/pad\:all-0\.375 {
+        padding: 0.375rem;
+    }
+    .dv1\/pad\:all-0\.5 {
+        padding: 0.5rem;
+    }
+    .dv1\/pad\:all-0\.625 {
+        padding: 0.625rem;
+    }
+    .dv1\/pad\:horz-0\.25 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    .dv1\/pad\:horz-0\.5 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .dv1\/pad\:horz-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .dv1\/pad\:left-0\.5 {
+        padding-left: 0.5rem;
+    }
+    .dv1\/pad\:left-0\.75 {
+        padding-left: 0.75rem;
+    }
+    .dv1\/pad\:left-1 {
+        padding-left: 1rem;
+    }
+    .dv1\/pad\:right-0\.5 {
+        padding-right: 0.5rem;
+    }
+    .dv1\/pad\:right-0\.75 {
+        padding-right: 0.75rem;
+    }
+    .dv1\/pad\:right-1 {
+        padding-right: 1rem;
+    }
+    .dv1\/pad\:top-0\.3125 {
+        padding-top: 0.3125rem;
+    }
+    .dv1\/pad\:top-0\.5 {
+        padding-top: .5rem;
+    }
+    .dv1\/pad\:vert-0\.75 {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+}
+
+
+/*: smartphone landscape :*/
+
+@media (min-width: 768px) {
+    .dv2\/pad\:all-0\.125 {
+        padding: 0.125rem;
+    }
+    .dv2\/pad\:all-0\.25 {
+        padding: 0.25rem;
+    }
+    .dv2\/pad\:all-0\.375 {
+        padding: 0.375rem;
+    }
+    .dv2\/pad\:all-0\.5 {
+        padding: 0.5rem;
+    }
+    .dv2\/pad\:all-0\.625 {
+        padding: 0.625rem;
+    }
+    .dv2\/pad\:horz-0\.25 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    .dv2\/pad\:horz-0\.5 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .dv2\/pad\:horz-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .dv2\/pad\:left-0\.5 {
+        padding-left: 0.5rem;
+    }
+    .dv2\/pad\:left-0\.75 {
+        padding-left: 0.75rem;
+    }
+    .dv2\/pad\:left-1 {
+        padding-left: 1rem;
+    }
+    .dv2\/pad\:right-0\.5 {
+        padding-right: 0.5rem;
+    }
+    .dv2\/pad\:right-0\.75 {
+        padding-right: 0.75rem;
+    }
+    .dv2\/pad\:right-1 {
+        padding-right: 1rem;
+    }
+    .dv2\/pad\:top-0\.3125 {
+        padding-top: 0.3125rem;
+    }
+    .dv2\/pad\:top-0\.5 {
+        padding-top: .5rem;
+    }
+    .dv2\/pad\:vert-0\.75 {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+}
+
+
+/*: tablet :*/
+
+@media (min-width: 1024px) {
+    .dv3\/pad\:all-0\.125 {
+        padding: 0.125rem;
+    }
+    .dv3\/pad\:all-0\.25 {
+        padding: 0.25rem;
+    }
+    .dv3\/pad\:all-0\.375 {
+        padding: 0.375rem;
+    }
+    .dv3\/pad\:all-0\.5 {
+        padding: 0.5rem;
+    }
+    .dv3\/pad\:all-0\.625 {
+        padding: 0.625rem;
+    }
+    .dv3\/pad\:horz-0\.25 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    .dv3\/pad\:horz-0\.5 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .dv3\/pad\:horz-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .dv3\/pad\:left-0\.5 {
+        padding-left: 0.5rem;
+    }
+    .dv3\/pad\:left-0\.75 {
+        padding-left: 0.75rem;
+    }
+    .dv3\/pad\:left-1 {
+        padding-left: 1rem;
+    }
+    .dv3\/pad\:right-0\.5 {
+        padding-right: 0.5rem;
+    }
+    .dv3\/pad\:right-0\.75 {
+        padding-right: 0.75rem;
+    }
+    .dv3\/pad\:right-1 {
+        padding-right: 1rem;
+    }
+    .dv3\/pad\:top-0\.3125 {
+        padding-top: 0.3125rem;
+    }
+    .dv3\/pad\:top-0\.5 {
+        padding-top: .5rem;
+    }
+    .dv3\/pad\:vert-0\.75 {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+}
+
+
+/*: desktop :*/
+
+@media (min-width: 1280px) {
+    .dv4\/pad\:all-0\.125 {
+        padding: 0.125rem;
+    }
+    .dv4\/pad\:all-0\.25 {
+        padding: 0.25rem;
+    }
+    .dv4\/pad\:all-0\.375 {
+        padding: 0.375rem;
+    }
+    .dv4\/pad\:all-0\.5 {
+        padding: 0.5rem;
+    }
+    .dv4\/pad\:all-0\.625 {
+        padding: 0.625rem;
+    }
+    .dv4\/pad\:horz-0\.25 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+    .dv4\/pad\:horz-0\.5 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .dv4\/pad\:horz-1 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .dv4\/pad\:left-0\.5 {
+        padding-left: 0.5rem;
+    }
+    .dv4\/pad\:left-0\.75 {
+        padding-left: 0.75rem;
+    }
+    .dv4\/pad\:left-1 {
+        padding-left: 1rem;
+    }
+    .dv4\/pad\:right-0\.5 {
+        padding-right: 0.5rem;
+    }
+    .dv4\/pad\:right-0\.75 {
+        padding-right: 0.75rem;
+    }
+    .dv4\/pad\:right-1 {
+        padding-right: 1rem;
+    }
+    .dv4\/pad\:top-0\.3125 {
+        padding-top: 0.3125rem;
+    }
+    .dv4\/pad\:top-0\.5 {
+        padding-top: .5rem;
+    }
+    .dv4\/pad\:vert-0\.75 {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+}
+
+
+/*
+    margins (rem)
+*/
+
+.mar\:horz-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mar\:left-0 {
+    margin-left: 0;
+}
+
+.mar\:right-0 {
+    margin-right: 0;
+}
+
+
+/*
+    text align
+*/
+
+.txt\:center {
+    text-align: center;
+}
+
+.txt\:left {
+    text-align: left;
+}
+
+.txt\:right {
+    text-align: right;
+}
+
+
+/*
+    height
+*/
+
+.ht\:auto {
+    height: auto !important;
+}
+
+.ht\:min-275px {
+    min-height: 275px;
+}
+
+.ht\:min-455px {
+    min-height: 455px;
+}
+
+
+/*
+    width
+*/
+
+.wd\:10\% {
+    width: 10% !important;
+}
+
+.wd\:15\% {
+    width: 15% !important;
+}
+
+.wd\:20\% {
+    width: 20% !important;
+}
+
+.wd\:25\% {
+    width: 25% !important;
+}
+
+.wd\:30\% {
+    width: 30% !important;
+}
+
+.wd\:35\% {
+    width: 35% !important;
+}
+
+.wd\:40\% {
+    width: 40% !important;
+}
+
+.wd\:45\% {
+    width: 45% !important;
+}
+
+.wd\:50\% {
+    width: 50% !important;
+}
+
+.wd\:60\% {
+    width: 60% !important;
+}
+
+.wd\:70\% {
+    width: 70% !important;
+}
+
+.wd\:80\% {
+    width: 80% !important;
+}
+
+.wd\:90\% {
+    width: 90% !important;
+}
+
+.wd\:auto {
+    width: auto !important;
+}
+
+.wd\:100\% {
+    width: 100% !important;
+}
+
+.wd\:25px {
+    width: 25px !important;
+}
+
+.wd\:50px {
+    width: 50px !important;
+}
+
+.wd\:75px {
+    width: 75px !important;
+}
+
+.wd\:100px {
+    width: 100px !important;
+}
+
+.wd\:125px {
+    width: 125px !important;
+}
+
+.wd\:150px {
+    width: 150px !important;
+}
+
+.wd\:175px {
+    width: 175px !important;
+}
+
+.wd\:200px {
+    width: 200px !important;
+}
+
+.wd\:225px {
+    width: 225px !important;
+}
+
+.wd\:250px {
+    width: 250px !important;
+}
+
+.wd\:275px {
+    width: 275px !important;
+}
+
+.wd\:300px {
+    width: 300px !important;
+}
+
+
+/*: smartphone portrait :*/
+
+@media (min-width: 640px) {
+    .dv1\/wd\:10\% {
+        width: 10% !important;
+    }
+    .dv1\/wd\:15\% {
+        width: 15% !important;
+    }
+    .dv1\/wd\:20\% {
+        width: 20% !important;
+    }
+    .dv1\/wd\:25\% {
+        width: 25% !important;
+    }
+    .dv1\/wd\:30\% {
+        width: 30% !important;
+    }
+    .dv1\/wd\:35\% {
+        width: 35% !important;
+    }
+    .dv1\/wd\:40\% {
+        width: 40% !important;
+    }
+    .dv1\/wd\:45\% {
+        width: 45% !important;
+    }
+    .dv1\/wd\:50\% {
+        width: 50% !important;
+    }
+    .dv1\/wd\:60\% {
+        width: 60% !important;
+    }
+    .dv1\/wd\:70\% {
+        width: 70% !important;
+    }
+    .dv1\/wd\:80\% {
+        width: 80% !important;
+    }
+    .dv1\/wd\:90\% {
+        width: 90% !important;
+    }
+    .dv1\/wd\:auto {
+        width: auto !important;
+    }
+    .dv1\/wd\:100\% {
+        width: 100% !important;
+    }
+    .dv1\/wd\:25px {
+        width: 25px !important;
+    }
+    .dv1\/wd\:50px {
+        width: 50px !important;
+    }
+    .dv1\/wd\:75px {
+        width: 75px !important;
+    }
+    .dv1\/wd\:100px {
+        width: 100px !important;
+    }
+    .dv1\/wd\:125px {
+        width: 125px !important;
+    }
+    .dv1\/wd\:150px {
+        width: 150px !important;
+    }
+    .dv1\/wd\:175px {
+        width: 175px !important;
+    }
+    .dv1\/wd\:200px {
+        width: 200px !important;
+    }
+    .dv1\/wd\:225px {
+        width: 225px !important;
+    }
+    .dv1\/wd\:250px {
+        width: 250px !important;
+    }
+    .dv1\/wd\:275px {
+        width: 275px !important;
+    }
+    .dv1\/wd\:300px {
+        width: 300px !important;
+    }
+}
+
+
+/*: smartphone landscape :*/
+
+@media (min-width: 768px) {
+    .dv2\/wd\:10\% {
+        width: 10% !important;
+    }
+    .dv2\/wd\:15\% {
+        width: 15% !important;
+    }
+    .dv2\/wd\:20\% {
+        width: 20% !important;
+    }
+    .dv2\/wd\:25\% {
+        width: 25% !important;
+    }
+    .dv2\/wd\:30\% {
+        width: 30% !important;
+    }
+    .dv2\/wd\:35\% {
+        width: 35% !important;
+    }
+    .dv2\/wd\:40\% {
+        width: 40% !important;
+    }
+    .dv2\/wd\:45\% {
+        width: 45% !important;
+    }
+    .dv2\/wd\:50\% {
+        width: 50% !important;
+    }
+    .dv2\/wd\:60\% {
+        width: 60% !important;
+    }
+    .dv2\/wd\:70\% {
+        width: 70% !important;
+    }
+    .dv2\/wd\:80\% {
+        width: 80% !important;
+    }
+    .dv2\/wd\:90\% {
+        width: 90% !important;
+    }
+    .dv2\/wd\:auto {
+        width: auto !important;
+    }
+    .dv2\/wd\:100\% {
+        width: 100% !important;
+    }
+    .dv2\/wd\:25px {
+        width: 25px !important;
+    }
+    .dv2\/wd\:50px {
+        width: 50px !important;
+    }
+    .dv2\/wd\:75px {
+        width: 75px !important;
+    }
+    .dv2\/wd\:100px {
+        width: 100px !important;
+    }
+    .dv2\/wd\:125px {
+        width: 125px !important;
+    }
+    .dv2\/wd\:150px {
+        width: 150px !important;
+    }
+    .dv2\/wd\:175px {
+        width: 175px !important;
+    }
+    .dv2\/wd\:200px {
+        width: 200px !important;
+    }
+    .dv2\/wd\:225px {
+        width: 225px !important;
+    }
+    .dv2\/wd\:250px {
+        width: 250px !important;
+    }
+    .dv2\/wd\:275px {
+        width: 275px !important;
+    }
+    .dv2\/wd\:300px {
+        width: 300px !important;
+    }
+}
+
+
+/*: tablet :*/
+
+@media (min-width: 1024px) {
+    .dv3\/wd\:10\% {
+        width: 10% !important;
+    }
+    .dv3\/wd\:15\% {
+        width: 15% !important;
+    }
+    .dv3\/wd\:20\% {
+        width: 20% !important;
+    }
+    .dv3\/wd\:25\% {
+        width: 25% !important;
+    }
+    .dv3\/wd\:30\% {
+        width: 30% !important;
+    }
+    .dv3\/wd\:35\% {
+        width: 35% !important;
+    }
+    .dv3\/wd\:40\% {
+        width: 40% !important;
+    }
+    .dv3\/wd\:45\% {
+        width: 45% !important;
+    }
+    .dv3\/wd\:50\% {
+        width: 50% !important;
+    }
+    .dv3\/wd\:60\% {
+        width: 60% !important;
+    }
+    .dv3\/wd\:70\% {
+        width: 70% !important;
+    }
+    .dv3\/wd\:80\% {
+        width: 80% !important;
+    }
+    .dv3\/wd\:90\% {
+        width: 90% !important;
+    }
+    .dv3\/wd\:auto {
+        width: auto !important;
+    }
+    .dv3\/wd\:100\% {
+        width: 100% !important;
+    }
+    .dv3\/wd\:25px {
+        width: 25px !important;
+    }
+    .dv3\/wd\:50px {
+        width: 50px !important;
+    }
+    .dv3\/wd\:75px {
+        width: 75px !important;
+    }
+    .dv3\/wd\:100px {
+        width: 100px !important;
+    }
+    .dv3\/wd\:125px {
+        width: 125px !important;
+    }
+    .dv3\/wd\:150px {
+        width: 150px !important;
+    }
+    .dv3\/wd\:175px {
+        width: 175px !important;
+    }
+    .dv3\/wd\:200px {
+        width: 200px !important;
+    }
+    .dv3\/wd\:225px {
+        width: 225px !important;
+    }
+    .dv3\/wd\:250px {
+        width: 250px !important;
+    }
+    .dv3\/wd\:275px {
+        width: 275px !important;
+    }
+    .dv3\/wd\:300px {
+        width: 300px !important;
+    }
+}
+
+
+/*: desktop :*/
+
+@media (min-width: 1280px) {
+    .dv4\/wd\:10\% {
+        width: 10% !important;
+    }
+    .dv4\/wd\:15\% {
+        width: 15% !important;
+    }
+    .dv4\/wd\:20\% {
+        width: 20% !important;
+    }
+    .dv4\/wd\:25\% {
+        width: 25% !important;
+    }
+    .dv4\/wd\:30\% {
+        width: 30% !important;
+    }
+    .dv4\/wd\:35\% {
+        width: 35% !important;
+    }
+    .dv4\/wd\:40\% {
+        width: 40% !important;
+    }
+    .dv4\/wd\:45\% {
+        width: 45% !important;
+    }
+    .dv4\/wd\:50\% {
+        width: 50% !important;
+    }
+    .dv4\/wd\:60\% {
+        width: 60% !important;
+    }
+    .dv4\/wd\:70\% {
+        width: 70% !important;
+    }
+    .dv4\/wd\:80\% {
+        width: 80% !important;
+    }
+    .dv4\/wd\:90\% {
+        width: 90% !important;
+    }
+    .dv4\/wd\:auto {
+        width: auto !important;
+    }
+    .dv4\/wd\:100\% {
+        width: 100% !important;
+    }
+    .dv4\/wd\:25px {
+        width: 25px !important;
+    }
+    .dv4\/wd\:50px {
+        width: 50px !important;
+    }
+    .dv4\/wd\:75px {
+        width: 75px !important;
+    }
+    .dv4\/wd\:100px {
+        width: 100px !important;
+    }
+    .dv4\/wd\:125px {
+        width: 125px !important;
+    }
+    .dv4\/wd\:150px {
+        width: 150px !important;
+    }
+    .dv4\/wd\:175px {
+        width: 175px !important;
+    }
+    .dv4\/wd\:200px {
+        width: 200px !important;
+    }
+    .dv4\/wd\:225px {
+        width: 225px !important;
+    }
+    .dv4\/wd\:250px {
+        width: 250px !important;
+    }
+    .dv4\/wd\:275px {
+        width: 275px !important;
+    }
+    .dv4\/wd\:300px {
+        width: 300px !important;
+    }
+}
+
+
+/*
+    list spacing
+*/
+
+ol.li\:qtr-spaced li:not(:last-child),
+ul.li\:qtr-spaced li:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+ol.li\:dbl-spaced li:not(:last-child),
+ul.li\:dbl-spaced li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+ol.li\:tpl-spaced li:not(:last-child),
+ul.li\:tpl-spaced li:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+
+/*
+    horizonal align
+*/
+
+.horz\:align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horz\:align-left {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.horz\:align-right {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+/*
+    vertical spacing
+*/
+
+.vert\:spacer-1\/2 {
+    color: transparent;
+    font-size: 0.25rem;
+    width: 100%;
+}
+
+.vert\:spacer-3\/4 {
+    color: transparent;
+    font-size: 0.6rem;
+    width: 100%;
+}
+
+.vert\:spacer-single {
+    color: transparent;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.vert\:spacer-double {
+    color: transparent;
+    font-size: 2.1rem;
+    width: 100%;
+}
+
+.vert\:spacer-triple {
+    color: transparent;
+    font-size: 3.1875rem;
+    width: 100%;
+}
+
+
+/*
+    eof: blog-toolkit.css
+*/
