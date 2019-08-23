@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90819.1b
+ *  build:  90819.1d
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -413,60 +413,51 @@ add_action('widgets_init', 'xidipity_widgets_init');
  */
 
 function xidipity_scripts() {
-    /**
-     * Enqueue JS files
-     */
 
-    // Comment Reply
+    /*: style.css :*/
+    wp_enqueue_style('xidipity-style', get_stylesheet_uri());
+
+    /*: tailwind css :*/
+    // wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/preflight.min.css', array() , '1.0.4', 'all');
+    wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
+    wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
+
+    /*: xidipity css :*/
+    wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css', array() , wp_get_theme()->get('Version') , 'print');
+    wp_enqueue_style('xidipity-toolkit', get_stylesheet_directory_uri() . '/assets/css/blog-toolkit.min.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array() , wp_get_theme()->get('Version') , 'print');
+    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/blog-palette.min.css', array() , wp_get_theme()->get('Version') , 'all');
+
+    /*: fontawesome css :*/
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
+
+    /*: google material design icons :*/
+    wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
+        ->get('Version') , 'all');
+
+    /*: clipboard js :*/
+    wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array() , '2.0.1', false);
+
+    /*: sweet alert js :*/
+    wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', array() , '2.1.2', false);
+
+    /*: comment reply ? :*/
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
 
-    // Keyboard image navigation support
+    /*: keyboard image navigation ? :*/
     if (is_singular() && wp_attachment_is_image()) {
         wp_enqueue_script('xidipity-keyboard-image-navigation', get_template_directory_uri() . '/assets/js/keyboard-image-navigation.js', array(
             'jquery'
         ) , '20140127', true);
     }
-
-    /*
-     * Custom Scripts
-    */
-
-    // Clipboard Js
-    wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array() , '2.0.1', false);
-
-    // Sweet Alert Js
-    wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', array() , '2.1.2', false);
-
-    // Tailwind CSS files
-    wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/preflight.min.css', array() , '1.0.4', 'all');
-    wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
-    wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
-
-    // Xidipity CSS files
-    wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css', array() , wp_get_theme()
-        ->get('Version') , 'print');
-    wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array() , wp_get_theme()
-        ->get('Version') , 'print');
-    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/blog-palette.min.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
-
-    // Fontawesome
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
-
-    // Google Material Design Icons
-    wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
-        ->get('Version') , 'all');
-
-    // Theme Stylesheet
-    wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 }
+
+add_action('wp_enqueue_scripts', 'xidipity_scripts');
 
 /**
  * Add Categories for Attachments
@@ -477,7 +468,7 @@ function add_categories_for_attachments() {
 }
 
 add_action('init', 'add_categories_for_attachments');
-add_action('wp_enqueue_scripts', 'xidipity_scripts');
+
 /**
  * Custom functions that act independently of the theme templates.
  */
