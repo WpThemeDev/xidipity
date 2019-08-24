@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   editor-style.css
- *  build:  90819.1d
+ *  build:  90819.1e
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,6 +11,8 @@
  *  @since 0.9.0
  *
 **/
+
+
 /*
     import dependencies
 */
@@ -140,6 +142,7 @@ table#twocol tr td table#twocol tr td {
     display: none;
 }
 
+
 /* excerpt                 ------------
 -- */
 
@@ -168,6 +171,16 @@ table#twocol tr td table#twocol tr td {
 .excerpt-wp {
     display: none;
 }
+
+
+/*
+    flex two columns
+*/
+
+.fx2col-item {
+    border: 1px dashed var(--fg-bas-300);
+}
+
 
 /*
     eof: editor-style
