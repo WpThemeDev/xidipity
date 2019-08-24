@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90819.1d
+ *  build:  90819.1e
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -414,11 +414,12 @@ add_action('widgets_init', 'xidipity_widgets_init');
 
 function xidipity_scripts() {
 
+    /*: googlefonts.css :*/
+    wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap', array() , wp_get_theme()->get('Version') , 'all');
     /*: style.css :*/
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 
     /*: tailwind css :*/
-    // wp_enqueue_style('tailwind-preflight', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/preflight.min.css', array() , '1.0.4', 'all');
     wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
     wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
 
@@ -435,8 +436,7 @@ function xidipity_scripts() {
     wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
 
     /*: google material design icons :*/
-    wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
-        ->get('Version') , 'all');
+    wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()->get('Version') , 'all');
 
     /*: clipboard js :*/
     wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array() , '2.0.1', false);
