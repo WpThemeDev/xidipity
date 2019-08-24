@@ -2,7 +2,8 @@
  *  Xidipity WordPress Theme
  *
  *  file:   blog-base.css
- *  build:  90819.1b
+ *          web-style.css
+ *  build:  90819.1e
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -2731,6 +2732,7 @@ fx  = flexbox
         -ms-flex-item-align: stretch;
         align-self: stretch;
         margin: .23% 1.5% .45% 0;
+        max-width: 67.25%;
     }
     #xwtFxRowItem:nth-child(2) {
         -webkit-order: var(--sys-sidebar-order);
@@ -2743,6 +2745,7 @@ fx  = flexbox
         -ms-flex-item-align: stretch;
         align-self: stretch;
         margin: .325% 2.5% .45% 0;
+        max-width: 28.5%;
     }
 }
 
@@ -2782,11 +2785,13 @@ fx  = flexbox
         align-self: stretch;
         margin: .5%;
         padding: 0;
+        max-width: 99%;
     }
     #xwtFxRowFullItemAlt {
         -webkit-flex: 0 1 97.5%;
         -ms-flex: 0 1 97.5%;
         flex: 0 1 97.5%;
+        max-width: 97.5%;
     }
 }
 
@@ -2803,6 +2808,7 @@ fx  = flexbox
         align-self: stretch;
         margin: .5%;
         padding: 0;
+        max-width: 49%;
     }
 }
 
@@ -2819,6 +2825,7 @@ fx  = flexbox
         align-self: stretch;
         margin: .5%;
         padding: 0;
+        max-width: 33%;
     }
 }
 
