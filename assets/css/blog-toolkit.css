@@ -2,7 +2,8 @@
  *  Xidipity WordPress Theme
  *
  *  file:   blog-toolkit.css
- *  build:  90819.1d
+ *          toolkit-style.css
+ *  build:  90819.1e
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -57,6 +58,18 @@
     border (rem)
 */
 
+.bdr\:style-dashed {
+    border-style: dashed;
+}
+
+.bdr\:style-none {
+    border-style: none;
+}
+
+.bdr\:style-solid {
+    border-style: solid;
+}
+
 .bdr\:radius-0\.25 {
     border-radius: 0.25rem;
 }
@@ -67,10 +80,6 @@
 
 .bdr\:radius-0\.75 {
     border-radius: 0.75rem;
-}
-
-.bdr\:none {
-    border-style: none;
 }
 
 .bdr\:wd-0 {
@@ -330,6 +339,10 @@
     padding (rem)
 */
 
+.pad\:all-0 {
+    padding: 0;
+}
+
 .pad\:all-0\.125 {
     padding: 0.125rem;
 }
@@ -394,12 +407,12 @@
 }
 
 .pad\:top-0\.5 {
-    padding-top: .5rem;
+    padding-top: 0.5rem;
 }
 
 .pad\:vert-0\.75 {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 
 
@@ -455,11 +468,11 @@
         padding-top: 0.3125rem;
     }
     .dv1\/pad\:top-0\.5 {
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
     .dv1\/pad\:vert-0\.75 {
-        padding-top: .75rem;
-        padding-bottom: .75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -516,11 +529,11 @@
         padding-top: 0.3125rem;
     }
     .dv2\/pad\:top-0\.5 {
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
     .dv2\/pad\:vert-0\.75 {
-        padding-top: .75rem;
-        padding-bottom: .75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -577,11 +590,11 @@
         padding-top: 0.3125rem;
     }
     .dv3\/pad\:top-0\.5 {
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
     .dv3\/pad\:vert-0\.75 {
-        padding-top: .75rem;
-        padding-bottom: .75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -638,11 +651,11 @@
         padding-top: 0.3125rem;
     }
     .dv4\/pad\:top-0\.5 {
-        padding-top: .5rem;
+        padding-top: 0.5rem;
     }
     .dv4\/pad\:vert-0\.75 {
-        padding-top: .75rem;
-        padding-bottom: .75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 
@@ -651,17 +664,124 @@
     margins (rem)
 */
 
-.mar\:horz-auto {
-    margin-left: auto;
-    margin-right: auto;
+.mar\:all-0 {
+    margin: 0;
+}
+
+.mar\:all-0\.125 {
+    margin: 0.125rem;
+}
+
+.mar\:all-0\.25 {
+    margin: 0.25rem;
+}
+
+.mar\:all-0\.375 {
+    margin: 0.375rem;
+}
+
+.mar\:all-0\.5 {
+    margin: 0.5rem;
+}
+
+.mar\:all-0\.625 {
+    margin: 0.625rem;
+}
+
+.mar\:bottom-0 {
+    margin-bottom: 0;
+}
+
+.mar\:bottom-0\.125 {
+    margin-bottom: 0.125rem;
+}
+
+.mar\:bottom-0\.25 {
+    margin-bottom: 0.25rem;
+}
+
+.mar\:bottom-0\.375 {
+    margin-bottom: 0.375rem;
+}
+
+.mar\:bottom-0\.5 {
+    margin-bottom: 0.5rem;
+}
+
+.mar\:bottom-0\.625 {
+    margin-bottom: 0.625rem;
 }
 
 .mar\:left-0 {
     margin-left: 0;
 }
 
+.mar\:left-0\.125 {
+    margin-left: 0.125rem;
+}
+
+.mar\:left-0\.25 {
+    margin-left: 0.25rem;
+}
+
+.mar\:left-0\.375 {
+    margin-left: 0.375rem;
+}
+
+.mar\:left-0\.5 {
+    margin-left: 0.5rem;
+}
+
+.mar\:left-0\.625 {
+    margin-left: 0.625rem;
+}
+
 .mar\:right-0 {
     margin-right: 0;
+}
+
+.mar\:right-0\.125 {
+    margin-right: 0.125rem;
+}
+
+.mar\:right-0\.25 {
+    margin-right: 0.25rem;
+}
+
+.mar\:right-0\.375 {
+    margin-right: 0.375rem;
+}
+
+.mar\:right-0\.5 {
+    margin-right: 0.5rem;
+}
+
+.mar\:right-0\.625 {
+    margin-right: 0.625rem;
+}
+
+.mar\:top-0 {
+    margin-top: 0;
+}
+
+.mar\:top-0\.125 {
+    margin-top: 0.125rem;
+}
+
+.mar\:top-0\.25 {
+    margin-top: 0.25rem;
+}
+
+.mar\:top-0\.375 {
+    margin-top: 0.375rem;
+}
+
+.mar\:top-0\.5 {
+    margin-top: 0.5rem;
+}
+
+.mar\:top-0\.625 {
+    margin-top: 0.625rem;
 }
 
 
