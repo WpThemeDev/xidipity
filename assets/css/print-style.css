@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   blog-print.css
- *  build:  90819.1a
+ *  file:   print-style.css
+ *  build:  90824.1a
  *  descrp: blog print
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -48,7 +48,7 @@ body {
 .comments-area,
 .do-not-print,
 .main-navigation,
-.post-navigation,
+/*.post-navigation, deprecated */
 .screen-reader-text,
 .site-navigation,
 .toc-menu,
@@ -303,5 +303,5 @@ table#responsive td img {
 
 
 /*
-    eof:print-style
+    eof: print-style.css
 */
