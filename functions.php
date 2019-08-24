@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90819.1e
+ *  build:  90824.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -351,7 +351,7 @@ if (!function_exists('xidipity_setup')):
          * https://developer.wordpress.org/reference/functions/add_editor_style/
         */
         function wpdocs_theme_add_editor_styles() {
-            add_editor_style('assets/css/editor-style.min.css');
+            add_editor_style('assets/css/editor-style.css');
         }
 
         add_action('admin_init', 'wpdocs_theme_add_editor_styles');
@@ -424,13 +424,13 @@ function xidipity_scripts() {
     wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
 
     /*: xidipity css :*/
-    wp_enqueue_style('xidipity-var', get_stylesheet_directory_uri() . '/assets/css/blog-var.css', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/blog-print-var.css', array() , wp_get_theme()->get('Version') , 'print');
-    wp_enqueue_style('xidipity-toolkit', get_stylesheet_directory_uri() . '/assets/css/blog-toolkit.min.css', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-base', get_stylesheet_directory_uri() . '/assets/css/blog-base.min.css', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/blog-common.min.css', array() , wp_get_theme()->get('Version') , 'all');
-    wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/blog-print.min.css', array() , wp_get_theme()->get('Version') , 'print');
-    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/blog-palette.min.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-comm-var', get_stylesheet_directory_uri() . '/assets/css/common-style-var.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-comm', get_stylesheet_directory_uri() . '/assets/css/common-style.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/palette-style.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/print-style-var.css', array() , wp_get_theme()->get('Version') , 'print');
+    wp_enqueue_style('xidipity-prt', get_stylesheet_directory_uri() . '/assets/css/print-style.css', array() , wp_get_theme()->get('Version') , 'print');
+    wp_enqueue_style('xidipity-toolkit', get_stylesheet_directory_uri() . '/assets/css/toolkit-style.css', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/web-style.css', array() , wp_get_theme()->get('Version') , 'all');
 
     /*: fontawesome css :*/
     wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
@@ -507,7 +507,7 @@ function add_the_table_button($buttons) {
 add_filter('mce_buttons', 'add_the_table_button');
 
 function add_the_table_plugin($plugins) {
-    $plugins['table'] = get_template_directory_uri() . '/assets/tinymceplugins/table/plugin.min.js';
+    $plugins['table'] = get_template_directory_uri() . '/assets/tinymceplugins/table/plugin.js';
     return $plugins;
 }
 
@@ -540,7 +540,7 @@ function mce_add_embed_button() {
 }
 
 function add_tinymce_embed_plugin($plugin_array) {
-    $plugin_array['embed'] = get_template_directory_uri() . '/assets/tinymceplugins/embed/plugin.min.js';
+    $plugin_array['embed'] = get_template_directory_uri() . '/assets/tinymceplugins/embed/plugin.js';
     return $plugin_array;
 }
 
@@ -577,7 +577,7 @@ function mce_add_twocol_button() {
 }
 
 function add_tinymce_twocol_plugin($plugin_array) {
-    $plugin_array['twocolumn'] = get_template_directory_uri() . '/assets/tinymceplugins/twocolumn/plugin.min.js';
+    $plugin_array['twocolumn'] = get_template_directory_uri() . '/assets/tinymceplugins/twocolumn/plugin.js';
     return $plugin_array;
 }
 
@@ -612,7 +612,7 @@ add_action('admin_head', 'mce_add_excerpt_button');
  }
  
 function add_tinymce_excerpt_plugin($plugin_array) {
-    $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/excerpt/plugin.min.js';
+    $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/excerpt/plugin.js';
     return $plugin_array;
 }
 
@@ -649,7 +649,7 @@ function mce_add_vspacer_button() {
 }
 
 function add_tinymce_vspacer_plugin($plugin_array) {
-    $plugin_array['vspacer'] = get_template_directory_uri() . '/assets/tinymceplugins/vertspacers/plugin.min.js';
+    $plugin_array['vspacer'] = get_template_directory_uri() . '/assets/tinymceplugins/vertspacers/plugin.js';
     return $plugin_array;
 }
 
@@ -686,7 +686,7 @@ function mce_add_hrule_button() {
 }
 
 function add_tinymce_hrule_plugin($plugin_array) {
-    $plugin_array['hrule'] = get_template_directory_uri() . '/assets/tinymceplugins/horzrule/plugin.min.js';
+    $plugin_array['hrule'] = get_template_directory_uri() . '/assets/tinymceplugins/horzrule/plugin.js';
     return $plugin_array;
 }
 
@@ -724,7 +724,7 @@ function mce_add_adsense_button() {
  */
 
 function add_tinymce_adsense_plugin($plugin_array) {
-    $plugin_array['adsense'] = get_template_directory_uri() . '/assets/tinymceplugins/adsense/plugin.min.js';
+    $plugin_array['adsense'] = get_template_directory_uri() . '/assets/tinymceplugins/adsense/plugin.js';
     return $plugin_array;
 }
 
@@ -761,7 +761,7 @@ function mce_add_txtalign_button() {
 }
 
 function add_tinymce_txtalign_plugin($plugin_array) {
-    $plugin_array['txtalign'] = get_template_directory_uri() . '/assets/tinymceplugins/align/plugin.min.js';
+    $plugin_array['txtalign'] = get_template_directory_uri() . '/assets/tinymceplugins/align/plugin.js';
     return $plugin_array;
 }
 
@@ -798,7 +798,7 @@ function mce_add_formats_button() {
 }
 
 function add_tinymce_formats_plugin($plugin_array) {
-    $plugin_array['formats'] = get_template_directory_uri() . '/assets/tinymceplugins/formats/plugin.min.js';
+    $plugin_array['formats'] = get_template_directory_uri() . '/assets/tinymceplugins/formats/plugin.js';
     return $plugin_array;
 }
 
@@ -835,7 +835,7 @@ function mce_add_fntwgt_button() {
 }
 
 function add_tinymce_fntwgt_plugin($plugin_array) {
-    $plugin_array['fntwgt'] = get_template_directory_uri() . '/assets/tinymceplugins/fntwgt/plugin.min.js';
+    $plugin_array['fntwgt'] = get_template_directory_uri() . '/assets/tinymceplugins/fntwgt/plugin.js';
     return $plugin_array;
 }
 
@@ -872,7 +872,7 @@ function mce_add_xscreen_button() {
 }
 
 function add_tinymce_xscreen_plugin($plugin_array) {
-    $plugin_array['xscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/fullscreen/plugin.min.js';
+    $plugin_array['xscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/fullscreen/plugin.js';
     return $plugin_array;
 }
 
