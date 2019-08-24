@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   editor-style.css
- *  build:  90819.1e
+ *  build:  90824.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -21,10 +21,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.css") screen;
 @import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css") screen;
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons") screen;
-@import "blog-toolkit.min.css" screen;
-@import "blog-palette.min.css" screen;
-@import "blog-common.min.css" screen;
-@import "blog-var.css" screen;
+@import "common-style-var.css" screen;
+@import "common-style.min.css" screen;
+@import "palette-style.css" screen;
+@import "toolkit-style.css" screen;
 
 /*  # TinyMCE
    ## Body
@@ -183,5 +183,5 @@ table#twocol tr td table#twocol tr td {
 
 
 /*
-    eof: editor-style
+    eof: editor-style.css
 */
