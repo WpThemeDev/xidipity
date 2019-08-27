@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90818.1
+ *  build:  90824.1b
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -39,16 +39,16 @@ if ($v_thumbnail_x == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90714.1/author.php            -->' . "\n";
+echo '<!-- xwpt: 90824.1b/author.php            -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems">' . "\n";
+echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
 /*
     content
 */
 echo '<!-- xwpt: 90818.1/biography.php       -->' . "\n";
 echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
 echo '<div class="xwtAddPadPost">' . "\n";
-echo '<div id="xwtBioData">' . "\n";
+echo '<div class="fx:row fx:nowrap fx:opt-000">' . "\n";
 echo '<div class="bio-item">' . $v_img . '</div>';
 echo '<div class="bio-item">' . $v_biography . '</div>';
 echo '</div>' . "\n";
@@ -71,7 +71,7 @@ foreach ($wp_posts as $wp_post)
     $v_post .= '<p>' . get_the_excerpt($wp_post) . '</p>';
 
     $wp_image = wp_get_attachment_image(get_post_thumbnail_id($wp_post));
-    echo '<div id="xwtBioData">' . "\n";
+    echo '<div class="fx:col dv1/fx:row dv1/fx:nowrap fx:opt-000">' . "\n";
     if ($wp_image)
     {
         echo '<div class="bio-item" style="min-width:' . $v_thumbnail_x . 'px;">' . $wp_image . '</div>';
@@ -93,12 +93,12 @@ echo '</main>' . "\n";
 */
 get_sidebar();
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90714.1/author.php           -->' . "\n";
+echo '<!-- /xwpt: 90824.1b/author.php           -->' . "\n";
 /*
     display footer
 */
 get_footer();
 /*
-    eof:author.php
+    eof: author.php
 */
 ?>
