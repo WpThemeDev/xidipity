@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90816.1
+ *  build:  90824.1b
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90816.1/header       -->' . "\n";
+echo '<!-- xwpt: 90824.1b/header       -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -101,7 +101,7 @@ if ($wp_mnu_disp)
     }
 }
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90816.1/header      -->' . "\n";
+echo '<!-- /xwpt: 90824.1b/header      -->' . "\n";
 /*
     body options
 */
@@ -109,14 +109,14 @@ $wp_tmpl = get_option('current_page_template');
 if ($wp_tmpl == 'naked')
 {
     /*: block container :*/
-    echo '<div id="xwtBkRowItems" class="xwtBkRowItemsOpts">' . "\n";
+    echo '<div class="pad:all-0.5 wd:100%">' . "\n";
 }
 else
 {
     /*: flex container :*/
-    echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
+    echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
 }
 /*
-    eof:header.php
+    eof: header.php
 */
 ?>
