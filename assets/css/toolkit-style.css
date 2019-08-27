@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   toolkit-style.css
- *  build:  90824.1a
+ *  build:  90824.1b
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1325,32 +1325,468 @@ ul.li\:tpl-spaced li:not(:last-child) {
 
 .vert\:spacer-1\/2 {
     color: transparent;
-    font-size: 0.25rem;
+    line-height: 0.5;
     width: 100%;
 }
 
 .vert\:spacer-3\/4 {
     color: transparent;
-    font-size: 0.6rem;
+    line-height: 0.75;
     width: 100%;
 }
 
 .vert\:spacer-single {
     color: transparent;
-    font-size: 1rem;
+    line-height: normal;
     width: 100%;
 }
 
 .vert\:spacer-double {
     color: transparent;
-    font-size: 2.1rem;
+    line-height: 2.0;
     width: 100%;
 }
 
 .vert\:spacer-triple {
     color: transparent;
-    font-size: 3.1875rem;
+    line-height: 3.0;
     width: 100%;
+}
+
+
+/*  # flexbox components
+    # 90825.1b
+    # classes to build flexbox
+    # https://the-echoplex.net/flexyboxes/
+        justify content
+            0-flex-start
+            1-flex-end
+            2-space-between
+            3-space-around
+        
+        align items
+            0-flex-start
+            1-flex-end
+            2-center
+            3-baseline
+            4-stretch
+        
+        align content
+            0-flex-start
+            1-flex-end
+            2-center
+            3-space-between
+            4-space-around
+            5-stretch
+**/
+
+
+/*
+    default media
+*/
+
+
+/*: display :*/
+
+.fx-col {
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fx-row {
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/*: turn off wrap :*/
+
+.fx\:nowrap {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+
+/*: start / stretch / stretch :*/
+
+.fx\:opt-045 {
+    -ms-flex-align: stretch;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: start;
+    -webkit-align-content: stretch;
+    -webkit-align-items: stretch;
+    -webkit-justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+
+/*: between / stretch / stretch :*/
+
+.fx\:opt-245 {
+    -ms-flex-align: stretch;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: justify;
+    -webkit-align-content: stretch;
+    -webkit-align-items: stretch;
+    -webkit-justify-content: space-between;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+
+/*: start / start / start :*/
+
+.fx\:opt-000 {
+    -ms-flex-align: start;
+    -ms-flex-line-pack: start;
+    -ms-flex-pack: start;
+    -webkit-align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+/*: bet / start / stretch :*/
+
+.fx\:opt-205 {
+    -ms-flex-align: start;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: justify;
+    -webkit-align-content: stretch;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: space-between;
+    align-content: stretch;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+/*
+    smartphone portrait & greater
+*/
+
+@media (min-width:640px) {
+    /*: display :*/
+    #dv1\/fxCol {
+        -ms-flex-direction: column;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #dv1\/fxRow {
+        -ms-flex-direction: row;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /*: turn off wrap :*/
+    .dv1\/fx\:nowrap {
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    /*: start / stretch / stretch :*/
+    .dv1\/fx\:opt-045 {
+        -ms-flex-align: stretch;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: start;
+        -webkit-align-content: stretch;
+        -webkit-align-items: stretch;
+        -webkit-justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+    /*: between / stretch / stretch :*/
+    .dv1\/fx\:opt-245 {
+        -ms-flex-align: stretch;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: justify;
+        -webkit-align-content: stretch;
+        -webkit-align-items: stretch;
+        -webkit-justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    /*: start / start / start :*/
+    .dv1\/fx\:opt-000 {
+        -ms-flex-align: start;
+        -ms-flex-line-pack: start;
+        -ms-flex-pack: start;
+        -webkit-align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    /*: bet / start / stretch :*/
+    .dv1\/fx\:opt-205 {
+        -ms-flex-align: start;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: justify;
+        -webkit-align-content: stretch;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: space-between;
+        align-content: stretch;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+
+/*  # flexbox components
+    # 90825.1b
+    # classes to build flexbox
+    # https://the-echoplex.net/flexyboxes/
+        justify content
+            0-flex-start
+            1-flex-end
+            2-space-between
+            3-space-around
+        
+        align items
+            0-flex-start
+            1-flex-end
+            2-center
+            3-baseline
+            4-stretch
+        
+        align content
+            0-flex-start
+            1-flex-end
+            2-center
+            3-space-between
+            4-space-around
+            5-stretch
+**/
+
+
+/*: column vs row :*/
+
+.fx\:col {
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fx\:row {
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/*: turn off wrap :*/
+
+.fx\:nowrap {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+
+/*: start / stretch / stretch :*/
+
+.fx\:opt-045 {
+    -ms-flex-align: stretch;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: start;
+    -webkit-align-content: stretch;
+    -webkit-align-items: stretch;
+    -webkit-justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+
+/*: between / stretch / stretch :*/
+
+.fx\:opt-245 {
+    -ms-flex-align: stretch;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: justify;
+    -webkit-align-content: stretch;
+    -webkit-align-items: stretch;
+    -webkit-justify-content: space-between;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+
+/*: start / start / start :*/
+
+.fx\:opt-000 {
+    -ms-flex-align: start;
+    -ms-flex-line-pack: start;
+    -ms-flex-pack: start;
+    -webkit-align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+/*: bet / start / center :*/
+
+.fx\:opt-202 {
+    -ms-flex-align: start;
+    -ms-flex-line-pack: center;
+    -ms-flex-pack: justify;
+    -webkit-align-content: center;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+/*: bet / start / stretch :*/
+
+.fx\:opt-205 {
+    -ms-flex-align: start;
+    -ms-flex-line-pack: stretch;
+    -ms-flex-pack: justify;
+    -webkit-align-content: stretch;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: space-between;
+    align-content: stretch;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+/*
+    smartphone portrait & greater
+*/
+
+@media (min-width:640px) {
+    /*: display :*/
+    .dv1\/fx\:col {
+        -ms-flex-direction: column;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .dv1\/fx\:row {
+        -ms-flex-direction: row;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /*: turn off wrap :*/
+    .dv1\/fx\:nowrap {
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    /*: start / stretch / stretch :*/
+    .dv1\/fx\:opt-045 {
+        -ms-flex-align: stretch;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: start;
+        -webkit-align-content: stretch;
+        -webkit-align-items: stretch;
+        -webkit-justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+    /*: between / stretch / stretch :*/
+    .dv1\/fx\:opt-245 {
+        -ms-flex-align: stretch;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: justify;
+        -webkit-align-content: stretch;
+        -webkit-align-items: stretch;
+        -webkit-justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    /*: start / start / start :*/
+    .dv1\/fx\:opt-000 {
+        -ms-flex-align: start;
+        -ms-flex-line-pack: start;
+        -ms-flex-pack: start;
+        -webkit-align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    /*: bet / start / stretch :*/
+    .dv1\/fx\:opt-205 {
+        -ms-flex-align: start;
+        -ms-flex-line-pack: stretch;
+        -ms-flex-pack: justify;
+        -webkit-align-content: stretch;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: space-between;
+        align-content: stretch;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 }
 
 
