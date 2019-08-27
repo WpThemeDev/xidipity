@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90817.1
+ *  build:  90824.1b
  *  descrp: vertical Space plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -21,38 +21,41 @@ tinymce.PluginManager.add('vspacer', function(editor, url) {
         text: '• 1/2 Height',
         icon: false,
         onclick: function() {
-          editor.insertContent('<p class="spacer-1/2">½×</p>');
+          editor.insertContent('<p class="vert:spacer-1/2">½×</p>');
         }
       },
       {
         text: '• 3/4 Height',
         icon: false,
         onclick: function() {
-          editor.insertContent('<p class="spacer-3/4">¾×</p>');
+          editor.insertContent('<p class="vert:spacer-3/4">¾×</p>');
         }
       },
       {
         text: '• Single Height',
         icon: false,
         onclick: function() {
-          editor.insertContent('<p class="spacer-single">1×</p>');
+          editor.insertContent('<p class="vert:spacer-single">1×</p>');
         }
       },
       {
         text: '• Double Height',
         icon: false,
         onclick: function() {
-          editor.insertContent('<p class="spacer-double">2×</p>');
+          editor.insertContent('<p class="vert:spacer-double">2×</p>');
         }
       },
       {
         text: '• Triple Height',
         icon: false,
         onclick: function() {
-          editor.insertContent('<p class="spacer-triple">3×</p>');
+          editor.insertContent('<p class="vert:spacer-triple">3×</p>');
         }
       }
     ]
   });
 });
 })();
+/*
+    eof: vertspaces/plugin.js
+*/
