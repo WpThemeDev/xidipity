@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   page.php
- *  build:  90728.2
+ *  build:  90824.1b
  *  descrp: Page template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -35,7 +35,7 @@ $v_pages = 0;
 get_header();
 echo '<!-- xwpt: 90728.1/page            -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems">' . "\n";
+echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
@@ -68,6 +68,6 @@ wp_reset_postdata();
 */
 get_footer();
 /*
-    eof:page.php
+    eof: page.php
 */
 ?>
