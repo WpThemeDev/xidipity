@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   single.php
- *  build:  90817.1
+ *  build:  90824.1b
  *  descrp: Single post template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -29,9 +29,9 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90728.1/single.php          -->' . "\n";
+echo '<!-- xwpt: 90824.1b/single.php          -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems" class="xwtFxRowItemsOpts">' . "\n";
+echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
 while (have_posts())
 {
     the_post();
@@ -62,7 +62,7 @@ while (have_posts())
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90728.1/single.php          -->' . "\n";
+echo '<!-- /xwpt: 90824.1b/single.php          -->' . "\n";
 /*
     display sidebar
 */
@@ -77,6 +77,6 @@ wp_reset_postdata();
 */
 get_footer();
 /*
-    eof:single.php
+    eof: single.php
 */
 ?>
