@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90819.1a
+ *  build:  90824.1b
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -279,35 +279,35 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
+        $html_retval .= '<div class="fx:row fx:nowrap fx:opt-205 pg-nav-opts xwtAddShadow">';
         if ($wp_search)
         {
-            $html_retval .= '<nav id="xwtPgNav" class="xwtAddShadow">';
+            
             $html_retval .=  paginate_links(array(
-                'after_page_number' => '',
+                'after_page_number' => '</div>',
                 'base' => '%_%',
-                'before_page_number' => '',
+                'before_page_number' => '<div class="pg-nav">',
                 'current' => $a_page,
                 'format' => '?paged=%#%',
-                'next_text' => '<i class="fas fa-angle-right"></i>',
-                'prev_text' => '<i class="fas fa-angle-left"></i>',
+                'next_text' => '<div class="pg-nav">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="pg-nav">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
         else
         {
-            $html_retval .= '<nav id="xwtPgNav" class="xwtAddShadow">';
             $html_retval .=  paginate_links(array(
-                'after_page_number' => '',
+                'after_page_number' => '</div>',
                 'base' => get_pagenum_link(1) . '%_%',
-                'before_page_number' => '',
+                'before_page_number' => '<div class="pg-nav">',
                 'current' => $a_page,
                 'format' => 'page/%#%',
-                'next_text' => xidipity_icon_caret_right(),
-                'prev_text' => xidipity_icon_caret_left(),
+                'next_text' => '<div class="pg-nav">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="pg-nav">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
-        $html_retval .= '</nav>';
+        $html_retval .= '</div>';
         /*: return html :*/
         return $html_retval;
     }
@@ -327,7 +327,7 @@ if (!function_exists('xidipity_metalinks'))
         /*: go / no go  :*/
         if ($v_cnt >0)
         {
-            $html_retval .= '<div id="xwtMetaData">';
+            $html_retval .= '<div class="fx:row fx:opt-000">';
             foreach ($atts as $att)
             {
                 $html_retval .= '<div class="meta-item">' . $att . '</div>';
@@ -763,6 +763,6 @@ function xidipity_layout_class($section = 'content')
     return esc_attr($layout_classes);
 }
 /*
-    eof:template-tags.php
+    eof: template-tags.php
 */
 ?>
