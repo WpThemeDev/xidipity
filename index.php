@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   index.php
- *  build:  90728.1
+ *  build:  90824.1b
  *  descrp: Display blog excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -41,9 +41,9 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90728.1/index.php           -->' . "\n";
+echo '<!-- xwpt: 90824.1b/index.php           -->' . "\n";
 echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div id="xwtFxRowItems" class="xpost-wrapper xpost-wrapper-archive">' . "\n";
+echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
 $qry_prms = array(
     'cat' => $v_cat_lst,
     'order' => 'DESC',
@@ -59,6 +59,7 @@ if (have_posts())
         the_post();
         get_template_part('template-parts/content', get_post_format());
     }
+    echo '</div>' . "\n";
     /*
         display pagination
     */
@@ -72,10 +73,10 @@ if (have_posts())
 else
 {
     get_template_part('template-parts/content', 'none');
+    echo '</div>' . "\n";
 }
-echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90728.1/index.php          -->' . "\n";
+echo '<!-- /xwpt: 90824.1b/index.php          -->' . "\n";
 /*
     display sidebar
 */
@@ -90,6 +91,6 @@ wp_reset_postdata();
 */
 get_footer();
 /*
-    eof:index.php
+    eof: index.php
 */
 ?>
