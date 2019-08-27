@@ -5,61 +5,49 @@
       Author: John Baer
   Author URI: https://github.com/WpThemeDev
  Description: Xidipity is a meticulously crafted multi-purpose theme which brings new power to the classic editor and offers a beautiful sophisticated design supporting a wide range of solutions. Content in the new classic editor is created visually the way it will be displayed on the web and supports many popular features such as an extensive color palette, font awesome icons, two columns, a robust table design, expanded HR designs, extensive video support, and Google adsense ads. To ensure a positive user experience Xidipity leverages the latest web technologies to deliver fast performance which includes the use of Content Delivery Networks and compressed local resources. For those who like to customize the details of their content design Xidity supports the Tailwind CSS framework. See this exciting theme at "https://xidipity.com/".
-     Version: 1.0 beta v7 b90824.1a
+     Version: 1.0 beta v7 b90824.1b
      License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: xidipity
         Tags: blog,custom-background,custom-colors,custom-header,custom-logo,custom-menu,editor-style,featured-images,food-and-drink,front-page-post-form,full-width-template,grid-layout,news,one column,post-formats,right-sidebar,sticky-post,theme-options,threaded-comments,two-columns
 
--- Comments                ------------
---
-
-CSS files are aggragated by function and are loaded from the
-"functions.php" file to improve performance. Exceptions to this
-rule include files imported within "editor-style.css" and
-fonts imported within the "blog-var.css" file. The "blog-common.css"
-file contains CSS classes shared by the editor and the web. The "min"
-file versions are compressed for speed using the program cssminifier
-("https://cssminifier.com/").
 
 -- Suggested Plugins       ------------
 --
 
-- Classic Editor           https://wordpress.org/plugins/classic-editor/
-- Akismet Anti-Spam        https://wordpress.org/plugins/akismet/
-- Yoast SEO                https://yoast.com/
-- Smart Slider 3           https://smartslider3.com/
+    Classic Editor                      https://wordpress.org/plugins/classic-editor/
+    Akismet Anti-Spam                   https://wordpress.org/plugins/akismet/
+    Yoast SEO                           https://yoast.com/
+    Smart Slider 3                      https://smartslider3.com/
 
 -- Attribution             ------------
 --
 
-- WordPress - (C) 2012-2019 Automattic, Inc. | https://wordpress.com/
-- Underscores theme - Automattic, Inc. | https://underscores.me/
-- Tailwinds CSS framework | https://tailwindcss.com/
-- Font Awesome Icons | http://fontawesome.io/
-- Google Material Design | https://material.io/
-- Sweet Alerts | https://sweetalert.js.org
-- Clipboard JS | https://clipboardjs.com/
+    WordPress - (C) 2012-2019 Automattic, Inc. | https://wordpress.com/
+    Underscores theme - Automattic, Inc. | https://underscores.me/
+    Font Awesome Icons | http://fontawesome.io/
+    Google Material Design | https://material.io/
+    Sweet Alerts | https://sweetalert.js.org
+    Clipboard JS | https://clipboardjs.com/
 
 -- CSS File Directory      ------------
 --
 
-Source/File                         Comment
----------------------------------   -----------------------------------------
-CDN/preflight.css                   Tailwind init CSS classes
-CDN/tailwind.css                    Tailwind common CSS classes
-CDN/utilities.css                   Tailwind utility CSS classes
+Local CSS files are loaded from the "functions.php"
 
-CDN/releases/v?.?.?/css/all.css     Font awesome css class
+    Source/File                         Comment
+    ---------------------------------   -----------------------------------------
 
-/assets/css/blog-var.css            CSS variables shared with editor and web
-/assets/css/print-var.css           CSS variables unique to print
+    CDN/releases/v?.?.?/css/all.css     Font awesome css class
 
-/assets/css/blog-toolkit.min.css    CSS classes unique to xidipity
-/assets/css/blog-base.min.css       CSS classes unique to the web
-/assets/css/blog-common.min.css     CSS classes shared with editor and web
-/assets/css/blog-print.min.css      CSS classes unique to print
-/assets/css/editor-style.min.css    CSS classes unique to the editor
+    /assets/css/common-style-var.css    class variables shared by all environments
+    /assets/css/common-style.css        classes shared by all environments
+    /assets/css/editor-style.css        classes specific to editor
+    /assets/css/palette-style.css       color palette classes
+    /assets/css/print-style-var.css     print version of common-style-var.css
+    /assets/css/print-style.css         print classes
+    /assets/css/toolkit-style.css       enhanced classes available to all environments
+    /assets/css/web-style.css           classes specific to the web
 
 **/
 
