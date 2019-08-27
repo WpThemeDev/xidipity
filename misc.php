@@ -5,7 +5,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   misc.php
- *  build:  90728.1
+ *  build:  90824.1b
  *  descrp: miscellancious page template (no menu / sidebar)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -35,12 +35,11 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90728.1/misc            -->' . "\n";
+echo '<!-- xwpt: 90824.1b/misc            -->' . "\n";
 /*
     set flexbox to full width
 */
 echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
-//echo '<div id="xwtFxRowItems">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
@@ -56,13 +55,12 @@ if ($wp_query->have_posts()) {
         }
     }
 }
-//echo '</div>' . "\n";
 echo '</main>' . "\n";
 /*
     no sidebar
 */
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90728.1/misc           -->' . "\n";
+echo '<!-- /xwpt: 90824.1b/misc           -->' . "\n";
 /*
     reset post data
 */
@@ -72,6 +70,6 @@ wp_reset_postdata();
 */
 get_footer();
 /*
-    eof:misc.php
+    eof: misc.php
 */
 ?>
