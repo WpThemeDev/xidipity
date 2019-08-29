@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   toolkit-style.css
- *  build:  90824.1b
+ *  build:  90824.1c
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -687,6 +687,42 @@
     margin: 0.625rem;
 }
 
+.mar\:all-0\.75 {
+    margin: 0.75rem;
+}
+
+.mar\:all-0\.8125 {
+    margin: 0.8125rem;
+}
+
+.mar\:all-0\.875 {
+    margin: 0.875rem;
+}
+
+.mar\:all-0\.9375 {
+    margin: 0.9375rem;
+}
+
+.mar\:all-1 {
+    margin: 1rem;
+}
+
+.mar\:all-1\.25 {
+    margin: 1.25rem;
+}
+
+.mar\:all-1\.5 {
+    margin: 1.5rem;
+}
+
+.mar\:all-1\.75 {
+    margin: 1.75rem;
+}
+
+.mar\:all-2 {
+    margin: 2rem;
+}
+
 .mar\:bottom-0 {
     margin-bottom: 0;
 }
@@ -709,6 +745,42 @@
 
 .mar\:bottom-0\.625 {
     margin-bottom: 0.625rem;
+}
+
+.mar\:bottom-0\.75 {
+    margin: 0.75rem;
+}
+
+.mar\:bottom-0\.8125 {
+    margin: 0.8125rem;
+}
+
+.mar\:bottom-0\.875 {
+    margin: 0.875rem;
+}
+
+.mar\:bottom-0\.9375 {
+    margin: 0.9375rem;
+}
+
+.mar\:bottom-1 {
+    margin: 1rem;
+}
+
+.mar\:bottom-1\.25 {
+    margin: 1.25rem;
+}
+
+.mar\:bottom-1\.5 {
+    margin: 1.5rem;
+}
+
+.mar\:bottom-1\.75 {
+    margin: 1.75rem;
+}
+
+.mar\:bottom-2 {
+    margin: 2rem;
 }
 
 .mar\:left-0 {
@@ -735,6 +807,42 @@
     margin-left: 0.625rem;
 }
 
+.mar\:left-0\.75 {
+    margin: 0.75rem;
+}
+
+.mar\:left-0\.8125 {
+    margin: 0.8125rem;
+}
+
+.mar\:left-0\.875 {
+    margin: 0.875rem;
+}
+
+.mar\:left-0\.9375 {
+    margin: 0.9375rem;
+}
+
+.mar\:left-1 {
+    margin: 1rem;
+}
+
+.mar\:left-1\.25 {
+    margin: 1.25rem;
+}
+
+.mar\:left-1\.5 {
+    margin: 1.5rem;
+}
+
+.mar\:left-1\.75 {
+    margin: 1.75rem;
+}
+
+.mar\:left-2 {
+    margin: 2rem;
+}
+
 .mar\:right-0 {
     margin-right: 0;
 }
@@ -759,6 +867,42 @@
     margin-right: 0.625rem;
 }
 
+.mar\:right-0\.75 {
+    margin: 0.75rem;
+}
+
+.mar\:right-0\.8125 {
+    margin: 0.8125rem;
+}
+
+.mar\:right-0\.875 {
+    margin: 0.875rem;
+}
+
+.mar\:right-0\.9375 {
+    margin: 0.9375rem;
+}
+
+.mar\:right-1 {
+    margin: 1rem;
+}
+
+.mar\:right-1\.25 {
+    margin: 1.25rem;
+}
+
+.mar\:right-1\.5 {
+    margin: 1.5rem;
+}
+
+.mar\:right-1\.75 {
+    margin: 1.75rem;
+}
+
+.mar\:right-2 {
+    margin: 2rem;
+}
+
 .mar\:top-0 {
     margin-top: 0;
 }
@@ -781,6 +925,42 @@
 
 .mar\:top-0\.625 {
     margin-top: 0.625rem;
+}
+
+.mar\:top-0\.75 {
+    margin: 0.75rem;
+}
+
+.mar\:top-0\.8125 {
+    margin: 0.8125rem;
+}
+
+.mar\:top-0\.875 {
+    margin: 0.875rem;
+}
+
+.mar\:top-0\.9375 {
+    margin: 0.9375rem;
+}
+
+.mar\:top-1 {
+    margin: 1rem;
+}
+
+.mar\:top-1\.25 {
+    margin: 1.25rem;
+}
+
+.mar\:top-1\.5 {
+    margin: 1.5rem;
+}
+
+.mar\:top-1\.75 {
+    margin: 1.75rem;
+}
+
+.mar\:top-2 {
+    margin: 2rem;
 }
 
 
@@ -1354,7 +1534,32 @@ ul.li\:tpl-spaced li:not(:last-child) {
 }
 
 
-/*  # flexbox components
+/*
+    image
+*/
+
+img\:25\% {
+    height: auto !important;
+    width: 25% !important;
+}
+
+img\:50\% {
+    height: auto !important;
+    width: 50% !important;
+}
+
+img\:75\% {
+    height: auto !important;
+    width: 75% !important;
+}
+
+img\:100\% {
+    height: auto !important;
+    width: 100% !important;
+}
+
+
+/*  # DIY flexbox components
     # 90825.1b
     # classes to build flexbox
     # https://the-echoplex.net/flexyboxes/
@@ -1565,33 +1770,6 @@ ul.li\:tpl-spaced li:not(:last-child) {
         justify-content: space-between;
     }
 }
-
-
-/*  # flexbox components
-    # 90825.1b
-    # classes to build flexbox
-    # https://the-echoplex.net/flexyboxes/
-        justify content
-            0-flex-start
-            1-flex-end
-            2-space-between
-            3-space-around
-        
-        align items
-            0-flex-start
-            1-flex-end
-            2-center
-            3-baseline
-            4-stretch
-        
-        align content
-            0-flex-start
-            1-flex-end
-            2-center
-            3-space-between
-            4-space-around
-            5-stretch
-**/
 
 
 /*: column vs row :*/
