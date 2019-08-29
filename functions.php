@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90824.1b
+ *  build:  90824.1c
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -412,13 +412,13 @@ function xidipity_scripts()
     wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
     wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
     /*: xidipity css :*/
-    wp_enqueue_style('xidipity-comm-var', get_stylesheet_directory_uri() . '/assets/css/common-style-var.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
+    wp_enqueue_style('xidipity-comm-var', get_stylesheet_directory_uri() . '/assets/css-var/screen-var.css', array() , wp_get_theme()
+        ->get('Version') , 'screen');
     wp_enqueue_style('xidipity-comm', get_stylesheet_directory_uri() . '/assets/css/common-style.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/palette-style.css', array() , wp_get_theme()
         ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css/print-style-var.css', array() , wp_get_theme()
+    wp_enqueue_style('xidipity-prt-var', get_stylesheet_directory_uri() . '/assets/css-var/print-var.css', array() , wp_get_theme()
         ->get('Version') , 'print');
     wp_enqueue_style('xidipity-prt', get_stylesheet_directory_uri() . '/assets/css/print-style.css', array() , wp_get_theme()
         ->get('Version') , 'print');
