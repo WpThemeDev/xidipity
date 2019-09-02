@@ -1,16 +1,17 @@
 <?php
 /*
-*        file: extras.php
-*       build: 90708.1
-* description: Custom functions that act independently of the theme templates
-*      github: https://github.com/WpThemeDev/xidipity
-*    comments:
-*
-* @package WordPress
-* @subpackage Xidipity
-* @since 5.0.0
-*
-***/
+ *  Xidipity WordPress Theme
+ *
+ *  file:   extras.php
+ *  build:  90828.1a
+ *  descrp: Custom functions that act independently of the theme templates
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.0
+ *
+**/
 /**
  * Theme Mod Defaults
  *
@@ -303,7 +304,7 @@ add_action('template_redirect', 'xidipity_template_redirect_content_width');
 
 function xidipity_copyright()
 {
-    $html = '<div class="xwtBkFootCopyright">' . xidipity_mod('xidipity_copyright') . '</div>';
+    $html = '<div class="blog:copyright">' . xidipity_mod('xidipity_copyright') . '</div>';
     /**
      * Filters the Blog Copyright HTML.
      *
@@ -326,7 +327,7 @@ function xidipity_designer()
 
     // Designer HTML
 
-    $html = '<div class="xwtBkFootCredits">' . $designer_string . '</div>';
+    $html = '<div class="blog:credits">' . $designer_string . '</div>';
     /**
      * Filters the Designer HTML.
      *
@@ -466,7 +467,7 @@ if (!function_exists('xidipity_the_attached_image')) {
     }
 
 }
-/*  # eof
-extras.php
--------------------------------------*/
+/*
+    eof: extras.php
+*/
 ?>
