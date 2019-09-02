@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,9 +31,9 @@ $v_title = '';
     display page header
 */
 get_header();
-echo '<!-- xwpt: 90824.1b/image           -->' . "\n";
-echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
+echo '<!-- xwpt: 90828.1a/image/php               -->' . "\n";
+echo '<main class="fx:pg-item">' . "\n";
+echo '<div class="fx:cn-container">' . "\n";
 /*: get page title :*/
 $v_title = get_the_title();
 if (strpos($v_title, '.') > 1)
@@ -70,8 +70,7 @@ if (have_posts())
         default:
             $v_aspect_ratio = '';
     }
-    echo '<article  id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
-    echo '<div class="xwtAddPadPost">' . "\n";
+    echo '<article class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
     echo '<h2 class="pad:xy-1"><i class="far fa-image fg-pri-300"></i> ' . $v_title . '</h2>' . "\n";
     echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
     if (!empty($v_aspect_ratio))
@@ -92,7 +91,7 @@ if (have_posts())
     echo '</figure>' . "\n";
     echo get_the_content() . "\n";
     echo '</div>' . "\n";
-    echo '<footer class="xwtContentFoot">' . "\n";
+    echo '<div class="pad:left-1">' . "\n";
     if ($wp_metadata)
     {
         $v_meta_list .= xidipity_icon_vw_img();
@@ -118,7 +117,6 @@ if (have_posts())
     {
         echo xidipity_metalinks(explode(',', $v_meta_list));
     }
-    echo '</footer>' . "\n";
     echo '</div>' . "\n";
     echo '</article>' . "\n";
     /*
@@ -131,12 +129,11 @@ if (have_posts())
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
+echo '<!-- /xwpt: 90828.1a/image/php              -->' . "\n";
 /*
     display sidebar
 */
 get_sidebar();
-echo '</div>' . "\n";
-echo '<!-- /xwpt: 90824.1b/image          -->' . "\n";
 /*
     reset post data
 */
