@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   print-style.css
- *  build:  90824.1a
+ *  build:  90828.1a
  *  descrp: blog print
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -42,13 +42,10 @@ body {
  ----------------------------------------------------------------------------*/
 
 #excerpt,
-.xwtContentFoot,
-.simplesocialbuttons-inline-no-animation,
 .comment-respond,
 .comments-area,
 .do-not-print,
 .main-navigation,
-/*.post-navigation, deprecated */
 .screen-reader-text,
 .site-navigation,
 .toc-menu,
@@ -259,26 +256,6 @@ table#responsive td img {
 
 .print\:bg-bas-050 {
     background-color: var(--bg-bas-050) !important;
-}
-
-#xwtFxRowItem:nth-child(2) {
-    display: none;
-}
-
-.xwtEntryHeader {
-    color: var(--fg-blk);
-}
-
-.xwtAddShadow {
-    background-color: var(--bg-wht) !important;
-    box-shadow: none;
-}
-
-.xwtAddPadExcerpt,
-.xwtAddPadPage,
-.xwtAddPadPost,
-.xwtAddPadSidebar {
-    background-color: var(--bg-wht) !important;
 }
 
 
