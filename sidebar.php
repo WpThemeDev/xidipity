@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90819.1b
+ *  build:  90828.1a
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -12,20 +12,21 @@
  *  @since 0.9.0
  *
 **/
-if ( ! xidipity_has_sidebar() ) {
-  return;
-}
-echo '<!-- xwpt: 90819.1/sidebar         -->' . "\n";
-echo '<div id="xwtFxRowItem">' . "\n";
-echo '<div id="xwtFxColItems">' . "\n";
+$wp_tmpl = get_option('current_page_template');
+echo '<!-- xwpt: 90828.1a/sidebar/php             -->' . "\n";
+echo '<div class="fx:pg-item">' . "\n";
+echo '<div class="fx:sb-container">' . "\n";
 /*
-    see functions.php (~131)
+    logic check
 */
-dynamic_sidebar( 'sidebar-1' );
+if ($wp_tmpl !== 'no-sidebar')
+{
+    dynamic_sidebar( 'sidebar-1' );
+}
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90819.1/sidebar        -->' . "\n";
+echo '<!-- /xwpt: 90828.1a/sidebar/php            -->' . "\n";
 /*
-    eof:sidebar.php
+    eof: sidebar.php
 */
 ?>
