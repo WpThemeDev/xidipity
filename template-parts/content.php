@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content.php
- *  build:  90819.b
+ *  build:  90828.1a
  *  descrp: content / index
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -18,21 +18,21 @@
 $v_icon = '';
 $v_link = '';
 $v_meta_list = '';
-echo '<!-- xwpt: 90819.1/content         -->' . "\n";
-echo '<article id="xwtFxRowHalfItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
+echo '<!-- xwpt: 90828.1a/content/php             -->' . "\n";
+echo '<article class="fx:half-cn-item fx:shadow">' . "\n";
 /*
     featured image
 */
-$wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'ht:auto wd:100%'));
+$wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'img:100%'));
 if ($wp_img)
 {
     /*: post thumbnail :*/
     echo $wp_img;
-    echo '<div class="xwtAddPadPost">' . "\n";
+    echo '<div class="pad:all-0.5">' . "\n";
 }
 else
 {
-    echo '<div class="xwtAddPadPost ht:min-455px">' . "\n";
+    echo '<div class="pad:all-0.5 ht:min-455px">' . "\n";
 }
 if ('post' == get_post_type())
 {
@@ -77,7 +77,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '<p>&nbsp;</p>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt: 90819.1/content        -->' . "\n";
+echo '<!-- /xwpt: 90828.1a/content/php            -->' . "\n";
 /*
     eof:content.php
 */
