@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90824.1b/header       -->' . "\n";
+echo '<!-- xwpt: 90828.1a/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -28,10 +28,15 @@ echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . "\n";
 do_action('wp_head');
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
-echo '<div id="xwtBkPage" class="site">' . "\n";
+echo '<div class="fx:pg-container">' . "\n";
+echo '<!-- xwpt: 90828.1a/header.php           -->' . "\n";
+echo '<header class="fx:pg-item">' . "\n";
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
-echo '<header id="xwtBkHead" class="xwtBkHeadOpts">' . "\n";
 echo '<div class="header-banner">' . "\n";
+/*
+    get current template
+*/
+$wp_tmpl = get_option('current_page_template');
 /*
     custom logo
 */
@@ -55,16 +60,20 @@ if ($description || is_customize_preview())
     echo '<p class="site-description">' . $description . '</p>' . "\n";
 }
 echo '</div>' . "\n";
+echo '</header>' . "\n";
+echo '<!-- /xwpt: 90828.1a/header/php             -->' . "\n";
+
 /*
     menu exceptions
 */
-$wp_mnu_disp = true;
-$wp_tmpl = get_option('current_page_template');
+$wp_disp_mnu = true;
 if (!empty($wp_tmpl))
 {
-    $wp_mnu_disp = (abs(strpos('#,misc,naked', $wp_tmpl)) == 0);
+    $wp_disp_mnu = (abs(strpos('#,naked', $wp_tmpl)) == 0);
 }
-if ($wp_mnu_disp)
+echo '<!-- xwpt: 90828.1a/header/php/nav          -->' . "\n";
+echo '<nav class="fx:pg-item txt:center">' . "\n";
+if ($wp_disp_mnu)
 {
     /*
         primary menu
@@ -76,7 +85,6 @@ if ($wp_mnu_disp)
     {
         if ($wp_page)
         {
-            echo '<div class="toc-menu">';
             if ($wp_page->ID == get_queried_object_id())
             {
                 echo '<a class="toc-btn" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
@@ -85,37 +93,20 @@ if ($wp_mnu_disp)
             {
                 echo '<a class="toc-btn" href="' . get_permalink($wp_page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
             }
-            echo '</div>' . "\n";
         }
         else
         {
-            echo '<nav id="site-navigation" class="main-navigation">' . "\n";
             echo '<input type="checkbox" id="menu-toggle">' . "\n";
             echo '<label for="menu-toggle"><i class="fas fa-bars"></i></label>' . "\n";
             wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'menu_id' => 'primary-menu',
             ));
-            echo '</nav>' . "\n";
         }
     }
 }
-echo '</header>' . "\n";
-echo '<!-- /xwpt: 90824.1b/header      -->' . "\n";
-/*
-    body options
-*/
-$wp_tmpl = get_option('current_page_template');
-if ($wp_tmpl == 'naked')
-{
-    /*: block container :*/
-    echo '<div class="pad:all-0.5 wd:100%">' . "\n";
-}
-else
-{
-    /*: flex container :*/
-    echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
-}
+echo '</nav>' . "\n";
+echo '<!-- /xwpt: 90828.1a/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
