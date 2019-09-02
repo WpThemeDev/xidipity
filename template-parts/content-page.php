@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-page.php
- *  build:  90819.1b
+ *  build:  90828.1a
  *  descrp: content / page
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -18,49 +18,50 @@
 $v_cat = '';
 $v_meta_list = '';
 $wp_tmpl = get_option('current_page_template');
+echo '<!-- xwpt: 90828.1a/content-page/php        -->' . "\n";
 if ($wp_tmpl == 'naked')
 {
     /*
     content
-    * set min height to keep meta @ bottom
     */
-    echo '<div class="ht:min-275px">' . "\n";
+    echo '<div class="fx:cn-item-container pad:all-1 wd:100%">' . "\n";
     the_content();
     echo '</div>' . "\n";
 }
 else
 {
-    echo '<!-- xwpt: 90819.1/content-page.php    -->' . "\n";
-    echo '<article id="xwtFxRowFullItem" class="xwtAddShadow ' . implode(' ', get_post_class()) . '">' . "\n";
-    echo '<div class="xwtAddPadPage post-content-wrapper post-content-wrapper-single">' . "\n";
+    echo '<div class="fx:full-cn-item bg:bas-050 fx:shadow">' . "\n";
     /*
     content title
     */
-    echo '<header id="xwtEntryHeader">' . "\n";
-    the_title('<h1 class="xwtEntryTitle">', '</h1>');
-    echo '</header>' . "\n";
-    echo '<div class="entry-content">' . "\n";
-    $wp_tmpl = get_option('current_page_template');
-    if ($wp_tmpl !== 'misc')
+    echo '<div class="pad:left-1">' . "\n";
+    echo '<header class="fx:cn-item-header">' . "\n";
+    if ($wp_tmpl !== 'no-title')
     {
-        /*
-        yoast breadcrumbs
-        */
+        the_title('<h1 class="fx:cn-item-title">', '</h1>');
+    }
+    echo '</header>' . "\n";
+    /*
+    yoast breadcrumbs
+    */
+    if ( !is_front_page() && !is_home() )
+    {
         if (function_exists('yoast_breadcrumb'))
         {
             yoast_breadcrumb('<p id="breadcrumbs" class="seo-pag-breadcrumbs">', '</p>');
         }
     }
+    echo '</div>' . "\n";
     /*
     content
-    * set min height to keep meta @ bottom
     */
-    echo '<div class="ht:min-275px">' . "\n";
+    echo '<div class="fx:cn-item-container pad:all-1">' . "\n";
     the_content();
     echo '</div>' . "\n";
     /*
     page footer
     */
+    echo '<div class="pad:left-1">' . "\n";
     $v_meta_list = '';
     /*: edit :*/
     if (get_edit_post_link())
@@ -74,10 +75,9 @@ else
     echo xidipity_metalinks(explode(',', $v_meta_list));
     echo '</div>' . "\n";
     echo '</div>' . "\n";
-    echo '</article>' . "\n";
 }
-echo '<!-- /xwpt: 90819.1/content-page.php   -->' . "\n";
+echo '<!-- /xwpt: 90828.1a/content-page/php       -->' . "\n";
 /*
-    eof:content-page.php
+    eof: content-page.php
 */
 ?>
