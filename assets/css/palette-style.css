@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   palette-style.css
- *  build:  90824.1a
+ *  build:  90828.1a
  *  descrp: theme palette
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -563,12 +563,12 @@
     system colors
 */
 
-.sys\:fg\:content {
+.sys\/fg\:content {
     color: var(--sys-font-color);
 }
 
-.sys\:bg\:content {
-    background-color: var(--sys-content-bg\:color);
+.sys\/bg\:content {
+    background-color: var(--sys-content-bg-color);
 }
 
 
