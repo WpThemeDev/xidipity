@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -19,41 +19,37 @@ $wp_author = __(get_the_author_meta('nickname'));
 $wp_author_id = get_the_author_meta('ID');
 $wp_bio = get_the_author_meta('description');
 $wp_permalink = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
-$wp_thumbnail = get_image_sizes('thumbnail');
+$wp_thumbnail = get_image_sizes('small');
 /*
     local variables
 */
-$v_biography = '';
-$v_biography .= '<h1>' . $wp_author . '</h1>';
-$v_biography .= '<p>' . $wp_bio . '</p>';
-$v_img = '<img src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
-$v_meta_list = '';
+$v_img_width = abs($wp_thumbnail['width']);
 $v_post = '';
-$v_thumbnail_x = abs($wp_thumbnail['width']);
 /*: sanitize   :*/
-if ($v_thumbnail_x == 0)
+if ($v_img_width == 0)
 {
-    $v_thumbnail_x = 150;
+    $v_img_width = 200;
 }
 /*
     display header
 */
 get_header();
-echo '<!-- xwpt: 90824.1b/author.php            -->' . "\n";
-echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
+echo '<!-- xwpt: 90828.1a/author/php              -->' . "\n";
+echo '<main class="fx:pg-item">' . "\n";
 /*
-    content
+    biography
 */
-echo '<!-- xwpt: 90818.1/biography.php       -->' . "\n";
-echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
-echo '<div class="xwtAddPadPost">' . "\n";
-echo '<div class="fx:row fx:nowrap fx:opt-000">' . "\n";
-echo '<div class="bio-item">' . $v_img . '</div>';
-echo '<div class="bio-item">' . $v_biography . '</div>';
+echo '<div class="fx:cn-container">' . "\n";
+get_template_part('template-parts/biography');
 echo '</div>' . "\n";
-echo '<hr />' . "\n";
-echo '<h5>Other Posts</h5>' . "\n";
+/*
+    history
+*/
+echo '<div class="fx:cn-container">' . "\n";
+echo '<div class="fx:full-cn-item bg:bas-050 fx:shadow">' . "\n";
+echo '<h4>Other posts by author:</h4>' . "\n";
+//echo '<p>&nbsp;</p>' . "\n";
+echo '<div class="sys/bg:content pad:all-1">' . "\n";
 $wp_qry = array(
     'author' => $wp_author_id,
     'orderby' => 'post_date',
@@ -71,29 +67,38 @@ foreach ($wp_posts as $wp_post)
     $v_post .= '<p>' . get_the_excerpt($wp_post) . '</p>';
 
     $wp_image = wp_get_attachment_image(get_post_thumbnail_id($wp_post));
-    echo '<div class="fx:col dv1/fx:row dv1/fx:nowrap fx:opt-000">' . "\n";
+    $wp_image_url = wp_get_attachment_image_url(get_post_thumbnail_id($wp_post));
+    echo '<div class="fx:author-container">' . "\n";
     if ($wp_image)
     {
-        echo '<div class="bio-item" style="min-width:' . $v_thumbnail_x . 'px;">' . $wp_image . '</div>';
+        echo '<div class="fx:author-item"><img style="min-width:' . $v_img_width . 'px;" src="' . $wp_image_url . '" alt="Xidipity WordPress Theme"></div>';
     }
     else
     {
-        echo '<div class="bio-item" style="min-width:' . $v_thumbnail_x . 'px;"><img style="height:auto; width:' . $v_thumbnail_x . 'px;" src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="Xidipity WordPress Theme"></div>';
+        echo '<div class="fx:author-item" style="min-width:' . $v_img_width . 'px;"><img style="height:auto; width:' . $v_img_width . 'px;" src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="Xidipity WordPress Theme"></div>';
     }
-    echo '<div class="bio-item">' . get_the_date('m/d/Y') . '</div>';
-    echo '<div class="bio-item">' . $v_post . '</div>';
+    echo '<div class="fx:author-item">' . get_the_date('m/d/Y') . '</div>';
+    echo '<div class="fx:author-item">' . $v_post . '</div>';
     echo '</div>' . "\n";
 }
 echo '</div>' . "\n";
+/*
+page footer
+*/
+echo '<div class="pad:left-1">' . "\n";
+$v_meta_list = '';
+/*: date :*/
+$v_meta_list .= xidipity_icon_date() . ',';
+$v_meta_list .= get_the_date() . ',';
+echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
+echo '<!-- /xwpt: 90828.1a/autor/php              -->' . "\n";
 /*
     display sidebar
 */
 get_sidebar();
-echo '</div>' . "\n";
-echo '<!-- /xwpt: 90824.1b/author.php           -->' . "\n";
 /*
     display footer
 */
