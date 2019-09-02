@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -23,7 +23,7 @@ if (!function_exists('xidipity_icon_date'))
 {
     function xidipity_icon_date()
     {
-            return '<i class="far fa-calendar-alt fg-bas-500"></i>';
+            return '<i class="far fa-calendar-alt fg:bas-500"></i>';
     }
 }
 
@@ -37,7 +37,7 @@ if (!function_exists('xidipity_icon_tags'))
 {
     function xidipity_icon_tags()
     {
-            return '<i class="fas fa-tags fg-bas-500"></i>';
+            return '<i class="fas fa-tags fg:bas-500"></i>';
     }
 }
 
@@ -51,7 +51,7 @@ if (!function_exists('xidipity_icon_cat'))
 {
     function xidipity_icon_cat()
     {
-            return '<i class="far fa-clone fg-bas-500"></i>';
+            return '<i class="far fa-clone fg:bas-500"></i>';
     }
 }
 
@@ -65,7 +65,7 @@ if (!function_exists('xidipity_icon_vw_img'))
 {
     function xidipity_icon_vw_img()
     {
-            return '<i class="far fa-file-image fg-bas-500"></i>';
+            return '<i class="far fa-file-image fg:bas-500"></i>';
     }
 }
 
@@ -79,7 +79,7 @@ if (!function_exists('xidipity_icon_edit'))
 {
     function xidipity_icon_edit()
     {
-        return '<i class="far fa-edit fg-bas-500"></i>';
+        return '<i class="far fa-edit fg:bas-500"></i>';
     }
 }
 
@@ -107,7 +107,7 @@ if (!function_exists('xidipity_icon_note'))
 {
     function xidipity_icon_note()
     {
-        return '<i class="far fa-sticky-note fg-bas-500"></i>';
+        return '<i class="far fa-sticky-note fg:bas-500"></i>';
     }
 }
 
@@ -121,7 +121,7 @@ if (!function_exists('xidipity_icon_star'))
 {
     function xidipity_icon_star()
     {
-        return '<i class="far fa-star fg-pri-300"></i>';
+        return '<i class="far fa-star fg:pri-300"></i>';
     }
 }
 
@@ -163,7 +163,7 @@ if (!function_exists('xidipity_icon_rm'))
 {
     function xidipity_icon_rm()
     {
-        return '<i class="fas fa-book-reader fg-pri-300"></i>';
+        return '<i class="fas fa-book-reader fg:pri-300"></i>';
     }
 }
 
@@ -222,12 +222,12 @@ if (!function_exists('xidipity_excerpt_banner'))
         /*: go / nogo logic :*/
         if (!empty($v_hdr_title))
         {
-            $html_retval .= '<div id="xwtFxRowFullItem" class="xwtAddShadow">';
-            $html_retval .= '<header class="xwtAddPadExcerpt">';
+            $html_retval .= '<div class="fx:full-cn-item fx:shadow pad:all-0.5">';
+            $html_retval .= '<header class="fx:cn-item-header">';
             $html_retval .= '<h2>' . $v_icon . $v_hdr_title . '</h2>';
             if (!empty($v_hdr_descr))
             {
-                $html_retval .= '<div class="txt-blk-sm">' . $v_hdr_descr . '</div>';
+                $html_retval .= '<div class="fnt:size-smaller">' . $v_hdr_descr . '</div>';
             }
             $html_retval .= '</header>';
             $html_retval .= '</div>';
@@ -279,18 +279,18 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
-        $html_retval .= '<div class="fx:row fx:nowrap fx:opt-205 pg-nav-opts xwtAddShadow">';
+        $html_retval .= '<div class="fx:pg-nav-container bg:bas-200 bdr:radius-0.25 mar:vert-1">';
         if ($wp_search)
         {
             
             $html_retval .=  paginate_links(array(
                 'after_page_number' => '</div>',
                 'base' => '%_%',
-                'before_page_number' => '<div class="pg-nav">',
+                'before_page_number' => '<div class="fx:pg-nav-item">',
                 'current' => $a_page,
                 'format' => '?paged=%#%',
-                'next_text' => '<div class="pg-nav">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="pg-nav">' . xidipity_icon_caret_left() . '</div>',
+                'next_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
@@ -299,22 +299,23 @@ if (!function_exists('xidipity_paginate_links'))
             $html_retval .=  paginate_links(array(
                 'after_page_number' => '</div>',
                 'base' => get_pagenum_link(1) . '%_%',
-                'before_page_number' => '<div class="pg-nav">',
+                'before_page_number' => '<div class="fx:pg-nav-item">',
                 'current' => $a_page,
                 'format' => 'page/%#%',
-                'next_text' => '<div class="pg-nav">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="pg-nav">' . xidipity_icon_caret_left() . '</div>',
+                'next_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
         $html_retval .= '</div>';
         /*: return html :*/
-        return $html_retval;
+        
+        return str_replace('&hellip;','<i class="fas fa-exchange-alt fg:bas-500"></i>',$html_retval);
     }
 }
 
 /*  # xidipity_metalinks
-    # 90728.1
+    # 90828.1a
     # return flexbox of metadata links
 **/
 if (!function_exists('xidipity_metalinks'))
@@ -327,10 +328,10 @@ if (!function_exists('xidipity_metalinks'))
         /*: go / no go  :*/
         if ($v_cnt >0)
         {
-            $html_retval .= '<div class="fx:row fx:opt-000">';
+            $html_retval .= '<div class="fx:meta-container pad:vert-0.75">';
             foreach ($atts as $att)
             {
-                $html_retval .= '<div class="meta-item">' . $att . '</div>';
+                $html_retval .= '<div class="fx:meta-item">' . $att . '</div>';
             }
             $html_retval .= '</div>';
         }
@@ -388,9 +389,9 @@ if (!function_exists('xidipity_the_post_navigation'))
         //    'prev_text' => __('<div class="xwtNavItem"><i class="fas fa-angle-left"></i></div>') ,
         //));
         //        the_post_navigation(array(
-        //            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg-bas-600"></i></span> ') ,
+        //            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg:bas-600"></i></span> ') ,
         //            'next_text' => __('<span class="meta-nav pr-4">Next Post<i class="fas fa-angle-right pl-2"></i></span>') ,
-        //            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg-bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
+        //            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg:bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
         //            'prev_text' => __('<span class="meta-nav pl-4"><i class="fas fa-angle-left pr-2"></i>Prev Post</span>') ,
         //        ));
         
