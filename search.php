@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   search.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,33 +31,35 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90824.1b/search.php          -->' . "\n";
-echo '<main id="xwtFxRowItem" class="xwtFxRowItemOpts">' . "\n";
-echo '<div class="fx:col dv1/fx:row fx:nowrap fx:opt-045 dv1/fx:opt-205">' . "\n";
+echo '<!-- xwpt: 90828.1a/search/php              -->' . "\n";
+echo '<main class="fx:pg-item">' . "\n";
 if (have_posts())
 {
     /*
         display excerpt banner
     */
+    echo '<div class="fx:cn-container">' . "\n";
     $wp_cnt = $wp_query->found_posts;
     if ($wp_cnt  == 1)
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<i class="far fa-comment-alt fg-pri-400 pad:right-0.75"></i>',
+            'icon' => '<i class="far fa-comment-alt fg:pri-400 pad:right-0.75"></i>',
             'title' => $wp_query->found_posts . ' Item found',
         ));
     }
     else
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<i class="far fa-comment-alt fg-pri-400 pad:right-0.75"></i>',
+            'icon' => '<i class="far fa-comment-alt fg:pri-400 pad:right-0.75"></i>',
             'title' => $wp_query->found_posts . ' Items found',
         ));
     }
+    echo '</div>' . "\n";
+    echo '<div class="fx:cn-container">' . "\n";
     while (have_posts())
     {
         the_post();
-        get_template_part('template-parts/content', get_post_format());
+        get_template_part('template-parts/content-blog', get_post_format());
     }
     echo '</div>' . "\n";
     /*
@@ -66,22 +68,24 @@ if (have_posts())
     $v_pages = $wp_query->max_num_pages;
     if ($v_pages > 1)
     {
+        echo '<!-- xwpt: 90828.1a/search/php/pagination   -->' . "\n";
         $v_cur_page = max(1, get_query_var('paged'));
         echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
+        echo '<!-- /xwpt: 90828.1a/search/php/pagination  -->' . "\n";
     }
 }
 else
 {
+    echo '<div class="fx:cn-container">' . "\n";
     get_template_part('template-parts/content', 'none');
     echo '</div>' . "\n";
 }
 echo '</main>' . "\n";
+echo '<!-- /xwpt: 90828.1a/search/php             -->' . "\n";
 /*
     display sidebar
 */
 get_sidebar();
-echo '</div>' . "\n";
-echo '<!-- /xwpt: 90824.1b/search.php         -->' . "\n";
 /*
     reset post data
 */
