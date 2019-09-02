@@ -5,7 +5,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   naked.php
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: naked template ( full width no menu / sidebar)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -35,32 +35,35 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90824.1b/misc            -->' . "\n";
-/*
-    set flexbox to full width
-*/
-echo '<main id="xwtFxRowFullItemAlt" class="xwtFxRowItemOpts">' . "\n";
+echo '<!-- xwpt: 90828.1a/naked/php               -->' . "\n";
+echo '<main class="fx:nkpg-content">' . "\n";
+echo '<div class="fx:cn-container">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
-        get_template_part('template-parts/content-page', 'page');
+        get_template_part('template-parts/content', 'page');
+        echo '</div>' . "\n";
+
         /*
             pagination
         */
         $v_pages = $wp_query->max_num_pages;
         if ($v_pages > 1)
         {
+            echo '<!-- xwpt: 90828.1a/page/php/pagination     -->' . "\n";
             $v_cur_page = max(1, get_query_var('paged'));
             echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
+            echo '<!-- /xwpt: 90828.1a/page/php/pagination    -->' . "\n";
         }
     }
 }
+else
+{
+    get_template_part('template-parts/content', 'none');
+    echo '</div>' . "\n";
+}
 echo '</main>' . "\n";
-/*
-    no sidebar
-*/
-echo '</div>' . "\n";
-echo '<!-- /xwpt: 90824.1b/misc           -->' . "\n";
+echo '<!-- /xwpt: 90828.1a/naked/php              -->' . "\n";
 /*
     reset post data
 */
