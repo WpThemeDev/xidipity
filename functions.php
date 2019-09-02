@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90824.1c
+ *  build:  90828.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -392,9 +392,9 @@ function xidipity_widgets_init()
     register_sidebar(array(
         'name' => esc_html__('Main Sidebar', 'xidipity') ,
         'id' => 'sidebar-1',
-        'before_widget' => '<aside id="xwtFxColItem" class="xwtAddShadow"><div class="xwtAddPadSidebar">',
-        'after_widget' => '</div></aside>',
-        'before_title' => '<p class="xwtFxColItemTitle">',
+        'before_widget' => '<aside class="fx:sb-item fx:sb-item-padding fx:shadow">',
+        'after_widget' => '</aside>',
+        'before_title' => '<p class="fx:sb-item-title">',
         'after_title' => '</p>'
     ));
 }
