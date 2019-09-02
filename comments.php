@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   comments.php
- *  build:  90819.1a
+ *  build:  90828.1a
  *  descrp: comment template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -19,12 +19,12 @@ if (post_password_required()) {
     return;
 }
 
-echo '<!-- xwpt: 90819.1/comments        -->' . "\n";
-echo '<div id="xwtFxRowFullItem" class="xwtAddShadow">' . "\n";
+echo '<!-- xwpt: 90828.1a/comments/php            -->' . "\n";
+echo '<div class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
 
 if (have_comments()):
-    echo '<div class="xwtAddPadPost">' . "\n";
-    echo '<h2 class="comments-title">' . "\n";
+    echo '<div class="pad:all-1">' . "\n";
+    echo '<h2 class="com:title">' . "\n";
     $comments_number = get_comments_number();
     if ('1' === $comments_number) {
         /*
@@ -79,22 +79,22 @@ endif;
     closed comments
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments')):
-    echo '<div class="xwtNoComment">' . "\n";
+    echo '<div class="com:msg">' . "\n";
     echo '<p>' . __('<i class="far fa-comment-alt fg-pri-400 pad:right-0.5"></i>Comments are closed.', 'xidipity') . '</p>' . "\n";
     echo '</div>' . "\n";
 endif;
 /*
     display comment form
 */
-echo '<div class="xwtAddPadPost">' . "\n";
+echo '<div class="pad:all-1">' . "\n";
 comment_form(array(
     'title_reply'=>'<i class="far fa-comments fg-pri-300 pad:right-0.5"></i>Got Something To Say?',
     'logged_in_as' =>''
     ) );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90819.1/comments       -->' . "\n";
+echo '<!-- /xwpt: 90828.1a/comments/php           -->' . "\n";
 /*
-    eof:comments.php
+    eof: comments.php
 */
 ?>
