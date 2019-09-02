@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   editor-style.css
- *  build:  90824.2b
+ *  build:  90828.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -21,7 +21,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.css") screen;
 @import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css") screen;
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons") screen;
-@import "common-style-var.css" screen;
+@import "../css-var/screen-var.css" screen;
 @import "common-style.css" screen;
 @import "palette-style.css" screen;
 @import "toolkit-style.css" screen;
@@ -41,9 +41,6 @@ body,
     margin: 9px 10px;
     max-width: 100%;
     -webkit-font-smoothing: antialiased !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    /* Old syntax */
 }
 
 
