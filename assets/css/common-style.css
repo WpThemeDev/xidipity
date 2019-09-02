@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   common-style.css
- *  build:  90824.1b
+ *  build:  90828.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -804,6 +804,11 @@ img {
     max-width: 100%;
 }
 
+img.full-size {
+    height: auto;
+    width: 100%;
+}
+
 .video-aligncenter,
 .video-alignleft,
 .video-alignright {
@@ -1425,6 +1430,42 @@ table#twocol td table.annotation td:nth-child(2) {
     background-color: var(--bg-bas-050);
 }
 
+.fx\:an-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--bg-bas-050);
+}
+
+.fx\:an-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-er-center-itm-align: auto;
+    align-self: auto;
+    margin-left: 1rem;
+    margin-right: .5rem;
+}
+
 .anfx\:item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1437,6 +1478,24 @@ table#twocol td table.annotation td:nth-child(2) {
     align-self: auto;
     margin-left: 1rem;
     margin-right: .5rem;
+}
+
+.fx\:an-item:nth-child(2) {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-er-center-itm-align: auto;
+    align-self: auto;
+}
+
+.fx\:an-item-ops {
+    margin-left: .5rem;
+    border-left: 2px solid var(--fg-bas-400);
+    padding: .5rem .5rem;
 }
 
 .anfx\:item:nth-child(2) {
@@ -1484,6 +1543,41 @@ table#twocol td table.annotation td:nth-child(2) {
         vertical-align: top;
         width: 50%;
     }
+}
+
+
+/*
+    vertical spacing
+*/
+
+.vert\:spacer-1\/2 {
+    color: transparent;
+    line-height: 0.5;
+    width: 100%;
+}
+
+.vert\:spacer-3\/4 {
+    color: transparent;
+    line-height: 0.75;
+    width: 100%;
+}
+
+.vert\:spacer-single {
+    color: transparent;
+    line-height: normal;
+    width: 100%;
+}
+
+.vert\:spacer-double {
+    color: transparent;
+    line-height: 2.0;
+    width: 100%;
+}
+
+.vert\:spacer-triple {
+    color: transparent;
+    line-height: 3.0;
+    width: 100%;
 }
 
 
