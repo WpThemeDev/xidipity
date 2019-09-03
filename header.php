@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90828.1a
+ *  build:  90901.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90828.1a/header/php              -->' . "\n";
+echo '<!-- xwpt: 90901.1a/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -29,14 +29,14 @@ do_action('wp_head');
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<div class="fx:pg-container">' . "\n";
-echo '<!-- xwpt: 90828.1a/header.php           -->' . "\n";
+echo '<!-- xwpt: 90901.1a/header.php           -->' . "\n";
 echo '<header class="fx:pg-item">' . "\n";
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 echo '<div class="header-banner">' . "\n";
 /*
-    get current template
+    get page template
 */
-$wp_tmpl = get_option('current_page_template');
+$wp_tmpl = page_tmpl();
 /*
     custom logo
 */
@@ -61,7 +61,7 @@ if ($description || is_customize_preview())
 }
 echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90828.1a/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90901.1a/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -71,7 +71,7 @@ if (!empty($wp_tmpl))
 {
     $wp_disp_mnu = (abs(strpos('#,naked', $wp_tmpl)) == 0);
 }
-echo '<!-- xwpt: 90828.1a/header/php/nav          -->' . "\n";
+echo '<!-- xwpt: 90901.1a/header/php/nav          -->' . "\n";
 echo '<nav class="fx:pg-item txt:center">' . "\n";
 if ($wp_disp_mnu)
 {
@@ -106,7 +106,7 @@ if ($wp_disp_mnu)
     }
 }
 echo '</nav>' . "\n";
-echo '<!-- /xwpt: 90828.1a/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90901.1a/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
