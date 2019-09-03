@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90828.1a
+ *  build:  90901.1a
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,14 +34,24 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90828.1a/author/php              -->' . "\n";
+echo '<!-- xwpt: 90901.1a/author/php              -->' . "\n";
 echo '<main class="fx:pg-item">' . "\n";
 /*
     biography
 */
-echo '<div class="fx:cn-container">' . "\n";
-get_template_part('template-parts/biography');
-echo '</div>' . "\n";
+if (empty(locate_template('template-parts/biography.php')))
+{
+    err_msg('missing file "template-parts/biography.php"');
+    echo '<div class="fx:cn-container">' . "\n";
+    get_template_part('template-parts/content', 'none');
+    echo '</div>' . "\n";
+}
+else
+{
+    echo '<div class="fx:cn-container">' . "\n";
+    get_template_part('template-parts/biography');
+    echo '</div>' . "\n";
+}
 /*
     history
 */
@@ -94,7 +104,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90828.1a/autor/php              -->' . "\n";
+echo '<!-- /xwpt: 90901.1a/autor/php              -->' . "\n";
 /*
     display sidebar
 */
