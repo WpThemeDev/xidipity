@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-page.php
- *  build:  90828.1a
+ *  build:  90901.1a
  *  descrp: content / page
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,8 +17,11 @@
 */
 $v_cat = '';
 $v_meta_list = '';
-$wp_tmpl = get_option('current_page_template');
-echo '<!-- xwpt: 90828.1a/content-page/php        -->' . "\n";
+/*
+    get page template
+*/
+$wp_tmpl = page_tmpl();
+echo '<!-- xwpt: 90901.1a/content-page/php        -->' . "\n";
 if ($wp_tmpl == 'naked')
 {
     /*
@@ -35,20 +38,20 @@ else
     content title
     */
     echo '<div class="pad:left-1">' . "\n";
-    echo '<header class="fx:cn-item-header">' . "\n";
     if ($wp_tmpl !== 'no-title')
     {
+        echo '<header class="fx:cn-item-header">' . "\n";
         the_title('<h1 class="fx:cn-item-title">', '</h1>');
-    }
-    echo '</header>' . "\n";
-    /*
-    yoast breadcrumbs
-    */
-    if ( !is_front_page() && !is_home() )
-    {
-        if (function_exists('yoast_breadcrumb'))
+        echo '</header>' . "\n";
+        /*
+        yoast breadcrumbs
+        */
+        if ( !is_front_page() && !is_home() )
         {
-            yoast_breadcrumb('<p id="breadcrumbs" class="seo-pag-breadcrumbs">', '</p>');
+            if (function_exists('yoast_breadcrumb'))
+            {
+                yoast_breadcrumb('<p id="breadcrumbs" class="seo-pag-breadcrumbs">', '</p>');
+            }
         }
     }
     echo '</div>' . "\n";
@@ -76,7 +79,7 @@ else
     echo '</div>' . "\n";
     echo '</div>' . "\n";
 }
-echo '<!-- /xwpt: 90828.1a/content-page/php       -->' . "\n";
+echo '<!-- /xwpt: 90901.1a/content-page/php       -->' . "\n";
 /*
     eof: content-page.php
 */
