@@ -1,7 +1,7 @@
 <?php
 /*
 *        file: footer.php
-*       build: 90901.1a
+*       build: 90903.1a
 * description: The template for displaying the footer
 *      github: https://github.com/WpThemeDev/xidipity
 *    comments:
@@ -15,12 +15,8 @@
     get page template
 */
 $wp_tmpl = page_tmpl();
-if (empty($wp_tmpl))
-{
-    $wp_tmpl = 'no-wp-page-template';
-}
-echo '<!-- xwpt: 90901.1a/footer/php              -->' . "\n";
-if (abs(strpos('#,naked,no-sidebar', $wp_tmpl)) > 0)
+echo '<!-- xwpt: 90903.1a/footer/php              -->' . "\n";
+if (on_list($wp_tmpl,'naked,no-sidebar'))
 {
     echo '<footer class="fx:nspg-footer fnt:size-smaller mar:vert-0.75 txt:center">' . "\n";
 }
@@ -30,7 +26,7 @@ else
 }
 do_action( 'xidipity_credits' );
 echo '</footer>' . "\n";
-echo '<!-- /xwpt: 90901.1a/footer/php             -->' . "\n";
+echo '<!-- /xwpt: 90903.1a/footer/php             -->' . "\n";
 echo '</div>' . "\n";
 /*: wordpress code :*/
 wp_footer();
