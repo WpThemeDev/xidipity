@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   extras.php
- *  build:  90828.1a
+ *  build:  90904.1a
  *  descrp: Custom functions that act independently of the theme templates
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -264,15 +264,6 @@ function xidipity_body_classes($classes)
 
     if (get_background_image()) {
         $classes[] = 'has-custom-background-image';
-    }
-
-    // Sidebar Position Class
-
-    if (xidipity_has_sidebar()) {
-        $classes[] = 'has-' . esc_attr(xidipity_mod('xidipity_sidebar_position')) . '-sidebar';
-    }
-    else {
-        $classes[] = 'has-no-sidebar';
     }
 
     return $classes;
