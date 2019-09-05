@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90901.1a
+ *  build:  90903.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -69,6 +69,25 @@ function page_tmpl($attr='')
     return $v_retval;
 }
 
+/**
+ *  name: on_list
+ *  build: 90903.1a
+ *  description: is item on list
+ *  attributes:
+ *      $attr - string
+ *
+ */
+function on_list($itm='', $lst='')
+{
+    $v_lst = '#,' . $lst;
+    $v_item = $itm;
+    $v_retval = false;
+    if (!empty($v_item))
+    {
+        $v_retval = (abs(strpos($v_lst, $v_item)) > 0);
+    }
+    return $v_retval;
+}
 /**
  *  name: c_walker
  *  build: 90728.1
@@ -969,7 +988,7 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_err
- *  build: 90728.1
+ *  build: 90903.1a
  *  description: Return properly formatted error message
  *  attributes:
  *      $att - string
@@ -992,17 +1011,16 @@ function dsp_err($att)
     {
         $v_msg = $a_msg;
     }
-    $html_retval .= '<p><!-- xt: fn/error --></p>';
-    $html_retval .= '<table class="annotation pad:vert-0.75">';
-    $html_retval .= '<tr>';
-    $html_retval .= '<td><svg class="mar:horz-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path fill="none" d="M0 0h24v24H0V0z"/>
-  <path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/>
-</svg></td>';
-    $html_retval .= '<td>' . __($v_msg) . '</td>';
-    $html_retval .= '</tr>';
-    $html_retval .= '</table>';
-    $html_retval .= '<p><!-- /xt: fn/error --></p>';
+    $html_retval .= '<!-- xwpt: 90903.1a/fnt/dsp/err             -->';
+    $html_retval .= '<div class="fx:an-cn bg:bas-100 pad:all-0.5">';
+    $html_retval .= '<div class="fx:an-cn-item">';
+    $html_retval .= '<svg class="mar:horz-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/></svg>';
+    $html_retval .= '</div>';
+    $html_retval .= '<div class="fx:an-cn-item bdr:left-0.125 bdr:style-solid bdr:bas-300 fnt:size-smaller">';
+    $html_retval .= '<p>' . __($v_msg) . '</p>';
+    $html_retval .= '</div>';
+    $html_retval .= '</div>';
+    $html_retval .= '<!-- /xwpt: 90903.1a/fnt/dsp/err            -->';
     // return html
     return $html_retval;
 }
