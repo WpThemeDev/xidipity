@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   toolkit-style.css
- *  build:  90903.1a
+ *  build:  90904.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -77,9 +77,29 @@
     border-radius: 0.25rem !important;
 }
 
+
+/*: wordpress friendly :*/
+
+.bdr-radius-025rm {
+    border-radius: 0.25rem !important;
+}
+
+
+/*-*/
+
 .bdr\:radius-0\.5 {
     border-radius: 0.5rem !important;
 }
+
+
+/*: wordpress friendly :*/
+
+.bdr-radius-05rm {
+    border-radius: 0.5rem !important;
+}
+
+
+/*-*/
 
 .bdr\:radius-0\.75 {
     border-radius: 0.75rem !important;
@@ -1945,6 +1965,14 @@ ul.li\:tpl-spaced li:not(:last-child) {
 }
 
 .img\:100\% {
+    height: auto !important;
+    width: 100% !important;
+}
+
+
+/*: wordpress friendly :*/
+
+.img-100pc {
     height: auto !important;
     width: 100% !important;
 }
