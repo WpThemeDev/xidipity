@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   web-style.css
- *  build:  90828.1a
+ *  build:  90903.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -927,10 +927,6 @@ img.header-logo {
     width: auto!important;
 }
 
-.simplesocialbuttons-inline-no-animation {
-    width: 100%!important;
-}
-
 .seo-pag-breadcrumbs,
 .seo-pst-breadcrumbs {
     font-size: .875rem;
@@ -945,15 +941,6 @@ img.header-logo {
     display: var(--pst-breadcrumb-dsp);
 }
 
-
-/* deprecated
-@media (min-width:768px) {
-    pre {
-        max-width: 63.4vw;
-    }
-}
-*/
-
 .com\:msg {
     font-size: .875rem;
     padding: 10px;
@@ -962,278 +949,8 @@ img.header-logo {
 }
 
 
-/*  # bexc
-    # 90828.1a
-    # blog excerpt shortcode
-    # https://github.com/WpThemeDev/xidipity
-    ### needs to be re-designed with flexbox ###
-**/
-
-.xsc\:bexc {
-    display: block;
-    margin: .5rem auto;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    .xsc\:bexc {
-        display: table;
-    }
-}
-
-#xscBExc div.xsc-sum-cards {
-    display: block;
-    padding: .25rem auto;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    #xscBExc div.xsc-sum-cards {
-        display: table-row;
-    }
-}
-
-#xscBExc div.xsc-card-center {
-    display: block;
-    text-align: left;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    #xscBExc div.xsc-card-center {
-        display: table-cell;
-        vertical-align: top;
-        width: 100%;
-    }
-}
-
-#xscBExc div.xsc-card-left {
-    display: block;
-    padding-top: .25rem;
-    text-align: left;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    #xscBExc div.xsc-card-left {
-        display: table-cell;
-        padding-right: .25rem;
-        padding-top: 0;
-        vertical-align: top;
-        width: 50%;
-    }
-}
-
-#xscBExc div.xsc-card-right {
-    display: block;
-    padding-top: .25rem;
-    text-align: left;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    #xscBExc div.xsc-card-right {
-        display: table-cell;
-        padding-left: .25rem;
-        padding-top: 0;
-        vertical-align: top;
-        width: 50%;
-    }
-}
-
-
-/* deprecated
-#xwtGimgItems {
-    -ms-flex-align: stretch;
-    -ms-flex-direction: column;
-    -ms-flex-line-pack: stretch;
-    -ms-flex-pack: start;
-    -ms-flex-wrap: nowrap;
-    -webkit-align-content: stretch;
-    -webkit-align-items: stretch;
-    -webkit-flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    align-content: stretch;
-    align-items: stretch;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: 100%
-}
-@media (min-width:768px) {
-    #xwtGimgItems {
-        -ms-flex-align: start;
-        -ms-flex-direction: row;
-        -ms-flex-line-pack: stretch;
-        -ms-flex-pack: start;
-        -ms-flex-wrap: wrap;
-        -webkit-align-content: stretch;
-        -webkit-align-items: flex-start;
-        -webkit-flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -webkit-justify-content: flex-start;
-        align-content: stretch;
-        align-items: flex-start;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin: .375% 0 .375% 1%
-    }
-}
-*/
-
-.gimg-item {
-    -ms-flex-item-align: auto;
-    -ms-flex-order: 0;
-    -ms-flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -webkit-flex: 0 1 auto;
-    -webkit-order: 0;
-    align-self: auto;
-    flex: 0 1 auto;
-    margin: 1.4%;
-    order: 0;
-    text-align: left;
-}
-
-.gimg-item img {
-    height: auto;
-    width: 100%;
-}
-
-.gimg-item .cap-n {
-    display: none;
-}
-
-.gimg-item .cap-l {
-    padding-top: 2px;
-    text-align: left;
-    width: 100%;
-}
-
-.gimg-item .cap-c {
-    padding-top: 2px;
-    text-align: center;
-    width: 100%;
-}
-
-.gimg-item .cap-r {
-    padding-top: 2px;
-    text-align: right;
-    width: 100%;
-}
-
-@media (min-width:768px) {
-    .gimg-item {
-        -ms-flex-item-align: stretch;
-        -ms-flex-order: 0;
-        -ms-flex: 0 1 48%;
-        -webkit-align-self: stretch;
-        -webkit-flex: 0 1 48%;
-        -webkit-order: 0;
-        align-self: stretch;
-        flex: 0 1 48%;
-        margin: .5%;
-        order: 0;
-        padding: 0;
-    }
-}
-
-@media (min-width:1200px) {
-    .gimg-item {
-        -ms-flex: 0 1 32%;
-        -webkit-flex: 0 1 32%;
-        flex: 0 1 32%;
-    }
-}
-
-@media (min-width:1440px) {
-    .gimg-item {
-        -ms-flex: 0 1 23.5%;
-        -webkit-flex: 0 1 23.5%;
-        flex: 0 1 23.5%;
-    }
-}
-
-
 /*
     page navigation
-*/
-
-
-/* deprecated
-#xwtPgNav {
-    -ms-flex-align: start;
-    -ms-flex-direction: row;
-    -ms-flex-line-pack: stretch;
-    -ms-flex-pack: justify;
-    -ms-flex-wrap: nowrap;
-    -webkit-align-content: stretch;
-    -webkit-align-items: flex-start;
-    -webkit-flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -webkit-justify-content: space-between;
-    align-content: stretch;
-    align-items: flex-start;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-    border: 1px solid #eee;
-    border-radius: .25rem
-}
-
-.pg-nav-opts {
-    margin: .5% 1.5% .5% 1.5%;
-}
-
-@media (min-width:640px) {
-    .pg-nav-opts {
-        margin: .375% .5% .375% .5%;
-    }
-}
-
-.pg-nav {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    text-align: center;
-    margin: 0;
-    padding: 15px 20px;
-}
-
-@media (min-width:640px) {
-    .pg-nav {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-        text-align: center;
-        margin: 0 10px;
-        padding: 15px 20px;
-    }
-}
 */
 
 .dots {
@@ -1250,26 +967,6 @@ img.header-logo {
     margin: 0;
     padding: 15px 20px;
 }
-
-
-/* deprecated
-@media (min-width:640px) {
-    .dots {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-        text-align: center;
-        margin: 0 10px;
-        padding: 15px 20px;
-    }
-}
-*/
 
 a.page-numbers,
 a.page-numbers:visited {
@@ -1288,66 +985,6 @@ a.page-numbers:focus {
     background-color: var(--bg-pri-100);
     border-radius: .25rem;
     color: var(--fg-blk);
-}
-
-
-/*
-    meta data flexbox
-*/
-
-
-/* deprecated
-#xwtMetaData {
-    -ms-flex-align: start;
-    -ms-flex-direction: row;
-    -ms-flex-line-pack: start;
-    -ms-flex-pack: start;
-    -ms-flex-wrap: wrap;
-    -webkit-align-content: flex-start;
-    -webkit-align-items: flex-start;
-    -webkit-flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -webkit-justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    border-radius: .25rem
-}
-*/
-
-.meta-item {
-    -ms-flex-item-align: auto;
-    -ms-flex-order: 0;
-    -ms-flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -webkit-flex: 0 1 auto;
-    -webkit-order: 0;
-    align-self: auto;
-    flex: 0 1 auto;
-    order: 0;
-    margin-right: 8px;
-    padding: 8px 0;
-    text-decoration: none;
-    font-size: .875rem;
-}
-
-a.meta-item,
-a.meta-item:visited {
-    color: var(--sys-font-color);
-    text-decoration: none;
-}
-
-a.meta-item:active,
-a.meta-item:focus,
-a.meta-item:hover {
-    color: var(--sys-lnk-sec-color);
-    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -2009,6 +1646,11 @@ a.meta-item:hover {
     color: var(--h1-color);
 }
 
+.fx\:cn-item-title a:hover {
+    color: var(--sys-lnk-sec-color);
+    background-color: var(--sys-lnk-sec-bg-color);
+}
+
 .fx\:cn-item-excerpt {
     background-color: var(--sys-content-bg-color);
     margin: 0;
@@ -2161,6 +1803,258 @@ a.meta-item:hover {
     align-self: stretch;
     margin-bottom: 8px;
     width: 100%;
+}
+
+
+/*  # bexc-container
+    # 90903.1a
+    # supports blog excerpts shortcode
+      all fx containers begin life as columns to support mobile
+    # https://the-echoplex.net/flexyboxes/
+**/
+
+
+/*: blog excerpts container :*/
+
+.fx\:bexc-cn-img-left,
+.fx\:bexc-cn-img-none,
+.fx\:bexc-cn-img-right {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+@media (min-width:640px) {
+    .fx\:bexc-cn-img-none {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    .fx\:bexc-cn-img-left {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    .fx\:bexc-cn-img-right {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+}
+
+
+/*: blog excerpts items :*/
+
+.fx\:bexc-cn-img-item,
+.fx\:bexc-cn-img-none-item {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+@media (min-width:640px) {
+    .fx\:bexc-cn-img-none-item {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+    .fx\:bexc-cn-img-item:nth-child(1) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 40%;
+        -ms-flex: 0 1 40%;
+        flex: 0 1 40%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        max-width: 40%;
+    }
+    .fx\:bexc-cn-img-item:nth-child(2) {
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-flex: 0 1 60%;
+        -ms-flex: 0 1 60%;
+        flex: 0 1 60%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        padding: 1rem;
+        max-width: 60%;
+    }
+}
+
+
+/*  # fx gimg
+    # 90903.1a
+    # supports gallery image shortcode
+      all fx containers begin life as columns to support mobile
+    # https://the-echoplex.net/flexyboxes/
+**/
+
+.fx\:gimg-cn {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+@media (min-width:640px) {
+    .fx\:gimg-cn {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
+
+.fx\:gimg-cn-item {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    margin-top: 0.5rem;
+}
+
+.fx\:gimg-cn-item:last-child {
+    margin-bottom: 0.5rem;
+}
+
+
+/*: smartphone portrait :*/
+
+@media (min-width: 640px) {
+    .fx\:gimg-cn-item {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 45%;
+        -ms-flex: 0 1 45%;
+        flex: 0 1 45%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        width: 45%;
+        margin: 1rem;
+    }
+}
+
+
+/*: desktop :*/
+
+@media (min-width: 1280px) {
+    .fx\:gimg-cn-item {
+        -webkit-flex: 0 1 30%;
+        -ms-flex: 0 1 30%;
+        flex: 0 1 30%;
+        width: 30%;
+    }
 }
 
 
