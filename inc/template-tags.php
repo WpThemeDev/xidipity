@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90828.1a
+ *  build:  90904.1a
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -170,7 +170,6 @@ if (!function_exists('xidipity_icon_rm'))
 /*  # xidipity_excerpt_banner
     # 90728.1
     # return excerpt banner
-    @return html
 **/
 
 if (!function_exists('xidipity_excerpt_banner'))
@@ -339,64 +338,11 @@ if (!function_exists('xidipity_metalinks'))
         return $html_retval;
     }
 }
-
-if (!function_exists('xidipity_entry_footer'))
-{
-    /**
-     * ### deprecate ###
-     * Display HTML with meta information for the categories, tags and comments.
-     */
-    function xidipity_entry_footer()
-    {
-        echo 'xidipity_entry_footer deprecated' . "\n";
-    }
-}
-
-if (!function_exists('xidipity_the_posts_pagination'))
-{
-    /**
-     * ### deprecate ###
-     * Display navigation to next/previous set of posts when applicable.
-     *
-     * @see https://codex.wordpress.org/Function_Reference/the_posts_pagination
-     * @return void
-     */
-    function xidipity_the_posts_pagination($max_pg)
-    {
-        // Previous/next posts navigation @since 4.1.0
-        //the_posts_pagination(array(
-        //    'mid_size' => 4,
-        //    'total' => $max_pg,
-        //    'prev_text' => '<div class="xwtNavItem"><i class="fas fa-angle-left"></i></div>',
-        //    'next_text' => '<div class="xwtNavItem"><i class="fas fa-angle-right"></i></div>',
-        //    'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'xidipity' ) . ' </span>',
-        //));
-    }
-}
-if (!function_exists('xidipity_the_post_navigation'))
-{
-    /**
-     * Previous/next post navigation.
-     *
-     * @see https://developer.wordpress.org/reference/functions/the_post_navigation/
-     * @return void
-     */
-    function xidipity_the_post_navigation()
-    {
-        // Previous/next post navigation @since 4.1.0.
-        //the_post_navigation(array(
-        //    'next_text' => __('<div class="xwtNavItem"><i class="fas fa-angle-right"></i></div>') ,
-        //    'prev_text' => __('<div class="xwtNavItem"><i class="fas fa-angle-left"></i></div>') ,
-        //));
-        //        the_post_navigation(array(
-        //            'next_text' => __('<span class="meta-nav">' . esc_html__('%title', 'xidipity') . ' <i class="fas fa-arrow-circle-right fg:bas-600"></i></span> ') ,
-        //            'next_text' => __('<span class="meta-nav pr-4">Next Post<i class="fas fa-angle-right pl-2"></i></span>') ,
-        //            'prev_text' => __('<span class="meta-nav"><i class="fas fa-arrow-circle-left fg:bas-600"></i> ' . esc_html__('%title', 'xidipity') . '</span> ') ,
-        //            'prev_text' => __('<span class="meta-nav pl-4"><i class="fas fa-angle-left pr-2"></i>Prev Post</span>') ,
-        //        ));
-        
-    }
-}
+/*  # posted_on
+    # 90904.1a
+    # core wp function
+    # return posted on date
+**/
 if (!function_exists('xidipity_posted_on'))
 {
     /**
@@ -425,6 +371,11 @@ if (!function_exists('xidipity_posted_on'))
         
     }
 }
+/*  # posted_by
+    # 90904.1a
+    # core wp function
+    # return posted author
+**/
 if (!function_exists('xidipity_posted_by'))
 {
     /**
@@ -528,140 +479,10 @@ if (!function_exists('xidipity_first_category'))
     }
 }
 
-if (!function_exists('xidipity_post_first_category'))
-{
-    /**
-     * ### deprecate ###
-     * Prints first category for the current post.
-     *
-     * @return void
-     */
-    function xidipity_post_first_category()
-    {
-        // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
-        $category = get_the_category();
-        $useCatLink = true;
-        $html_retval = '';
-
-        // If post has a category assigned.
-        if ($category)
-        {
-            $category_display = '';
-            $category_link = '';
-            if (class_exists('WPSEO_Primary_Term'))
-            {
-                // Show the post's 'Primary' category, if this Yoast feature is available, & one is set
-                $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
-                $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
-                $term = get_term($wpseo_primary_term);
-                if (is_wp_error($term))
-                {
-                    // Default to first category (not Yoast) if an error is returned
-                    $category_display = $category[0]->name;
-                    $category_link = get_category_link($category[0]->term_id);
-                }
-                else
-                {
-                    // Yoast Primary category
-                    $category_display = $term->name;
-                    $category_link = get_category_link($term->term_id);
-                }
-            }
-            else
-            {
-                // Default, display the first category in WP's list of assigned categories
-                $category_display = $category[0]->name;
-                $category_link = get_category_link($category[0]->term_id);
-            }
-            // Display category
-            if (!empty($category_display))
-            {
-                if ($useCatLink == true && !empty($category_link))
-                {
-                    $html_retval .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
-                }
-                else
-                {
-                    $html_retval = htmlspecialchars($category_display);
-                }
-                return $html_retval;
-            }
-        }
-    }
-}
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function xidipity_categorized_blog()
-{
-    if (false === ($all_the_cool_cats = get_transient('xidipity_categories')))
-    {
-        // Create an array of all the categories that are attached to posts.
-        $all_the_cool_cats = get_categories(array(
-            'fields' => 'ids',
-            'hide_empty' => 1,
-            // We only need to know if there is more than one category.
-            'number' => 2,
-        ));
-        // Count the number of categories that are attached to the posts.
-        $all_the_cool_cats = count($all_the_cool_cats);
-        set_transient('xidipity_categories', $all_the_cool_cats);
-    }
-    if ($all_the_cool_cats > 1)
-    {
-        // This blog has more than 1 category so xidipity_categorized_blog should return true.
-        return true;
-    }
-    else
-    {
-        // This blog has only 1 category so xidipity_categorized_blog should return false.
-        return false;
-    }
-}
-/**
- * Flush out the transients used in xidipity_categorized_blog.
- */
-function xidipity_category_transient_flusher()
-{
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-    {
-        return;
-    }
-    // Like, beat it. Dig?
-    delete_transient('xidipity_categories');
-}
-add_action('edit_category', 'xidipity_category_transient_flusher');
-add_action('save_post', 'xidipity_category_transient_flusher');
-
-/* deprecated
-if (!function_exists('xidipity_post_thumbnail'))
-{
-    function xidipity_post_thumbnail()
-    {
-        // Post Thumbnail HTML
-        $html = '';
-        // Get Post Thumbnail
-        $post_thumbnail = get_the_post_thumbnail(null, 'xidipity-featured', array(
-            'class' => 'post-thumbnail-fmt'
-        ));
-        // Validation
-        if (!empty($post_thumbnail))
-        {
-            // Post Thumbnail HTML
-            $html = sprintf('<div class="post-thumbnail-wrapper post-thumbnail-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>', esc_attr(esc_url(get_the_permalink())) , $post_thumbnail);
-        }
-        $html = apply_filters('xidipity_post_thumbnail_html', $html);
-        // Print HTML
-        if (!empty($html))
-        {
-            echo $html; // WPCS: XSS OK.
-            
-        }
-    }
-}
-*/
+/*  # custom logo
+    # 90904.1a
+    # core wordpress process
+**/
 if (!function_exists('xidipity_the_custom_logo'))
 {
     /**
@@ -677,15 +498,11 @@ if (!function_exists('xidipity_the_custom_logo'))
         }
     }
 }
-/**
- * A helper conditional function.
- * Theme has Excerpt or Not
- *
- * https://codex.wordpress.org/Function_Reference/get_the_excerpt
- * This function must be used within The Loop.
- *
- * @return bool
- */
+/*  # does excerpt exist
+    # 90904.1a
+    # core wordpress process
+    # returns bool
+**/
 function xidipity_has_excerpt()
 {
     // Post Excerpt
@@ -696,72 +513,6 @@ function xidipity_has_excerpt()
      * @param bool
      */
     return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
-}
-/**
- * A helper conditional function.
- * Theme has Sidebar or Not
- *
- * @return bool
- */
-function xidipity_has_sidebar()
-{
-    /**
-     * Filters the theme has active sidebar.
-     *
-     * @param bool
-     */
-    return apply_filters('xidipity_has_sidebar', is_active_sidebar('sidebar-1'));
-}
-/**
- * Display the layout classes.
- *
- * @param string $section - Name of the section to retrieve the classes
- * @return void
- */
-function xidipity_layout_class($section = 'content')
-{
-    // Sidebar Position
-    $sidebar_position = xidipity_mod('xidipity_sidebar_position');
-    if (!xidipity_has_sidebar())
-    {
-        $sidebar_position = 'no';
-    }
-    // Layout Skeleton
-    $layout_skeleton = array(
-        'content' => array(
-            'content' => '',
-        ) ,
-        'content-sidebar' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-        'sidebar-content' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-        'sidebar-content-rtl' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-    );
-    // Layout Classes
-    switch ($sidebar_position)
-    {
-        case 'no':
-            $layout_classes = $layout_skeleton['content']['content'];
-        break;
-        case 'left':
-            $layout_classes = ('sidebar' === $section) ? $layout_skeleton['sidebar-content']['sidebar'] : $layout_skeleton['sidebar-content']['content'];
-            if (is_rtl())
-            {
-                $layout_classes = ('sidebar' === $section) ? $layout_skeleton['sidebar-content-rtl']['sidebar'] : $layout_skeleton['sidebar-content-rtl']['content'];
-            }
-        break;
-        case 'right':
-        default:
-            $layout_classes = ('sidebar' === $section) ? $layout_skeleton['content-sidebar']['sidebar'] : $layout_skeleton['content-sidebar']['content'];
-    }
-    return esc_attr($layout_classes);
 }
 /*
     eof: template-tags.php
