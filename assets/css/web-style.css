@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   web-style.css
- *  build:  90903.1a
+ *  build:  90904.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -659,6 +659,17 @@ input#menu-toggle[type=checkbox]:checked~div {
     }
 }
 
+.menu {
+    list-style: none;
+    text-align: left;
+}
+
+@media (min-width: 640px) {
+    .menu {
+        text-align: var(--mnu-align);
+    }
+}
+
 a.ab-item,
 a.ab-item:visited {
     color: var(--fg-bas-300)!important;
@@ -1234,9 +1245,9 @@ a.page-numbers:focus {
 /*: header :*/
 
 .fx\:pg-item:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1247,9 +1258,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:pg-item:nth-child(1) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
@@ -1263,9 +1274,9 @@ a.page-numbers:focus {
 /*: menu :*/
 
 .fx\:pg-item:nth-child(2) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1277,9 +1288,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:pg-item:nth-child(2) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
@@ -1293,9 +1304,9 @@ a.page-numbers:focus {
 /*: content :*/
 
 .fx\:pg-item:nth-child(3) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: var(--sys-content-order);
+    -ms-flex-order: var(--sys-content-order);
+    order: var(--sys-content-order);
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1307,9 +1318,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:pg-item:nth-child(3) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: var(--sys-content-order);
+        -ms-flex-order: var(--sys-content-order);
+        order: var(--sys-content-order);
         -webkit-flex: 0 1 69.2%;
         -ms-flex: 0 1 69.2%;
         flex: 0 1 69.2%;
@@ -1322,9 +1333,9 @@ a.page-numbers:focus {
 
 @media (min-width: 768px) {
     .fx\:pg-item:nth-child(3) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: var(--sys-content-order);
+        -ms-flex-order: var(--sys-content-order);
+        order: var(--sys-content-order);
         -webkit-flex: 0 1 69.5%;
         -ms-flex: 0 1 69.5%;
         flex: 0 1 69.5%;
@@ -1337,9 +1348,9 @@ a.page-numbers:focus {
 
 @media (min-width: 1024px) {
     .fx\:pg-item:nth-child(3) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: var(--sys-content-order);
+        -ms-flex-order: var(--sys-content-order);
+        order: var(--sys-content-order);
         -webkit-flex: 0 1 70%;
         -ms-flex: 0 1 70%;
         flex: 0 1 70%;
@@ -1352,9 +1363,9 @@ a.page-numbers:focus {
 
 @media (min-width: 1280px) {
     .fx\:pg-item:nth-child(3) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: var(--sys-content-order);
+        -ms-flex-order: var(--sys-content-order);
+        order: var(--sys-content-order);
         -webkit-flex: 0 1 70.3%;
         -ms-flex: 0 1 70.3%;
         flex: 0 1 70.3%;
@@ -1369,9 +1380,9 @@ a.page-numbers:focus {
 /*: sidebar :*/
 
 .fx\:pg-item:nth-child(4) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: var(--sys-sidebar-order);
+    -ms-flex-order: var(--sys-sidebar-order);
+    order: var(--sys-sidebar-order);
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1383,9 +1394,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:pg-item:nth-child(4) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: var(--sys-sidebar-order);
+        -ms-flex-order: var(--sys-sidebar-order);
+        order: var(--sys-sidebar-order);
         -webkit-flex: 1 1 28.5%;
         -ms-flex: 1 1 28.5%;
         flex: 1 1 28.5%;
@@ -1401,9 +1412,9 @@ a.page-numbers:focus {
 /*: footer :*/
 
 .fx\:pg-item:nth-child(5) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: 5;
+    -ms-flex-order: 5;
+    order: 5;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1414,9 +1425,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:pg-item:nth-child(5) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: 5;
+        -ms-flex-order: 5;
+        order: 5;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
