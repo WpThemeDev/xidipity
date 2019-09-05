@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   palette-style.css
- *  build:  90828.1a
+ *  build:  90903.1a
  *  descrp: theme palette
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -576,207 +576,207 @@
     border colors
 */
 
-.bd\:blk {
+.bdr\:blk {
     border-color: var(--fg-blk) !important;
 }
 
-.bd\:wht {
+.bdr\:wht {
     border-color: var(--fg-wht) !important;
 }
 
-.bd\:bas-900 {
+.bdr\:bas-900 {
     border-color: var(--fg-bas-900) !important;
 }
 
-.bd\:bas-800 {
+.bdr\:bas-800 {
     border-color: var(--fg-bas-800) !important;
 }
 
-.bd\:bas-700 {
+.bdr\:bas-700 {
     border-color: var(--fg-bas-700) !important;
 }
 
-.bd\:bas-600 {
+.bdr\:bas-600 {
     border-color: var(--fg-bas-600) !important;
 }
 
-.bd\:bas-500 {
+.bdr\:bas-500 {
     border-color: var(--fg-bas-500) !important;
 }
 
-.bd\:bas-400 {
+.bdr\:bas-400 {
     border-color: var(--fg-bas-400) !important;
 }
 
-.bd\:bas-300 {
+.bdr\:bas-300 {
     border-color: var(--fg-bas-300) !important;
 }
 
-.bd\:bas-200 {
+.bdr\:bas-200 {
     border-color: var(--fg-bas-200) !important;
 }
 
-.bd\:bas-100 {
+.bdr\:bas-100 {
     border-color: var(--fg-bas-100) !important;
 }
 
-.bd\:bas-050 {
+.bdr\:bas-050 {
     border-color: var(--fg-bas-050) !important;
 }
 
-.bd\:pri-900 {
+.bdr\:pri-900 {
     border-color: var(--fg-pri-900) !important;
 }
 
-.bd\:pri-800 {
+.bdr\:pri-800 {
     border-color: var(--fg-pri-800) !important;
 }
 
-.bd\:pri-700 {
+.bdr\:pri-700 {
     border-color: var(--fg-pri-700) !important;
 }
 
-.bd\:pri-600 {
+.bdr\:pri-600 {
     border-color: var(--fg-pri-600) !important;
 }
 
-.bd\:pri-500 {
+.bdr\:pri-500 {
     border-color: var(--fg-pri-500) !important;
 }
 
-.bd\:pri-400 {
+.bdr\:pri-400 {
     border-color: var(--fg-pri-400) !important;
 }
 
-.bd\:pri-300 {
+.bdr\:pri-300 {
     border-color: var(--fg-pri-300) !important;
 }
 
-.bd\:pri-200 {
+.bdr\:pri-200 {
     border-color: var(--fg-pri-200) !important;
 }
 
-.bd\:pri-100 {
+.bdr\:pri-100 {
     border-color: var(--fg-pri-100) !important;
 }
 
-.bd\:pri-050 {
+.bdr\:pri-050 {
     border-color: var(--fg-pri-050) !important;
 }
 
-.bd\:sec-900 {
+.bdr\:sec-900 {
     border-color: var(--fg-sec-900) !important;
 }
 
-.bd\:sec-800 {
+.bdr\:sec-800 {
     border-color: var(--fg-sec-800) !important;
 }
 
-.bd\:sec-700 {
+.bdr\:sec-700 {
     border-color: var(--fg-sec-700) !important;
 }
 
-.bd\:sec-600 {
+.bdr\:sec-600 {
     border-color: var(--fg-sec-600) !important;
 }
 
-.bd\:sec-500 {
+.bdr\:sec-500 {
     border-color: var(--fg-sec-500) !important;
 }
 
-.bd\:sec-400 {
+.bdr\:sec-400 {
     border-color: var(--fg-sec-400) !important;
 }
 
-.bd\:sec-300 {
+.bdr\:sec-300 {
     border-color: var(--fg-sec-300) !important;
 }
 
-.bd\:sec-200 {
+.bdr\:sec-200 {
     border-color: var(--fg-sec-200) !important;
 }
 
-.bd\:sec-100 {
+.bdr\:sec-100 {
     border-color: var(--fg-sec-100) !important;
 }
 
-.bd\:sec-050 {
+.bdr\:sec-050 {
     border-color: var(--fg-sec-050) !important;
 }
 
-.bd\:red {
+.bdr\:red {
     border-color: #F44336 !important;
 }
 
-.bd\:pink {
+.bdr\:pink {
     border-color: #E91E63 !important;
 }
 
-.bd\:purple {
+.bdr\:purple {
     border-color: #9C27B0 !important;
 }
 
-.bd\:deep-purple {
+.bdr\:deep-purple {
     border-color: #673AB7 !important;
 }
 
-.bd\:indigo {
+.bdr\:indigo {
     border-color: #3F51B5 !important;
 }
 
-.bd\:blue {
+.bdr\:blue {
     border-color: #2196F3 !important;
 }
 
-.bd\:light-blue {
+.bdr\:light-blue {
     border-color: #03A9F4 !important;
 }
 
-.bd\:cyan {
+.bdr\:cyan {
     border-color: #00BCD4 !important;
 }
 
-.bd\:teal {
+.bdr\:teal {
     border-color: #009688 !important;
 }
 
-.bd\:green {
+.bdr\:green {
     border-color: #4CAF50 !important;
 }
 
-.bd\:light-green {
+.bdr\:light-green {
     border-color: #8BC34A !important;
 }
 
-.bd\:lime {
+.bdr\:lime {
     border-color: #CDDC39 !important;
 }
 
-.bd\:yellow {
+.bdr\:yellow {
     border-color: #FFEB3B !important;
 }
 
-.bd\:amber {
+.bdr\:amber {
     border-color: #FFC107 !important;
 }
 
-.bd\:orange {
+.bdr\:orange {
     border-color: #FF9800 !important;
 }
 
-.bd\:deep-orange {
+.bdr\:deep-orange {
     border-color: #FF5722 !important;
 }
 
-.bd\:brown {
+.bdr\:brown {
     border-color: #795548 !important;
 }
 
-.bd\:gray {
+.bdr\:gray {
     border-color: #9E9E9E !important;
 }
 
-.bd\:blue-gray {
+.bdr\:blue-gray {
     border-color: #607D8B !important;
 }
 
