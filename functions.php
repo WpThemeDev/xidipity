@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90903.1a
+ *  build:  90904.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -484,9 +484,6 @@ function xidipity_scripts()
     wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap', array() , wp_get_theme()->get('Version') , 'all');
     /*: style.css :*/
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
-    /*: tailwind css :*/
-    wp_enqueue_style('tailwind-base', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/tailwind.min.css', array() , '1.0.4', 'all');
-    wp_enqueue_style('tailwind-utilities', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.4/utilities.min.css', array() , '1.0.4', 'all');
     /*: xidipity css :*/
     wp_enqueue_style('xidipity-screen-var', get_stylesheet_directory_uri() . '/assets/css-var/screen-var.css', array() , wp_get_theme()
         ->get('Version') , 'screen');
