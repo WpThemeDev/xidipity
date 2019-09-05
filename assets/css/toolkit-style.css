@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   toolkit-style.css
- *  build:  90901.1a
+ *  build:  90903.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -85,20 +85,96 @@
     border-radius: 0.75rem !important;
 }
 
-.bdr\:wd-0 {
+
+/*: border @ 0 :*/
+
+.bdr\:all-0px {
     border-width: 0 !important;
 }
 
-.bdr\:wd-1px {
-    border-width: 1px !important;
+.bdr\:top-0 {
+    border-top-width: 0 !important;
 }
 
-.bdr\:wd-2px {
-    border-width: 2px !important;
+.bdr\:right-0 {
+    border-left-width: 0 !important;
 }
 
-.bdr\:wd-3px {
-    border-width: 3px !important;
+.bdr\:bottom-0 {
+    border-bottom-width: 0 !important;
+}
+
+.bdr\:left-0 {
+    border-left-width: 0 !important;
+}
+
+
+/*: border @ 1px :*/
+
+.bdr\:all-0\.0625 {
+    border-width: 0.0625rem !important;
+}
+
+.bdr\:top-0\.0625 {
+    border-top-width: 0.0625rem !important;
+}
+
+.bdr\:right-0\.0625 {
+    border-left-width: 0.0625rem !important;
+}
+
+.bdr\:bottom-0\.0625 {
+    border-bottom-width: 0.0625rem !important;
+}
+
+.bdr\:left-0\.0625 {
+    border-left-width: 0.0625rem !important;
+}
+
+
+/*: border @ 2px :*/
+
+.bdr\:all-0\.125 {
+    border-width: 0.125rem !important;
+}
+
+.bdr\:top-0\.125 {
+    border-top-width: 0.125rem !important;
+}
+
+.bdr\:right-0\.125 {
+    border-left-width: 0.125rem !important;
+}
+
+.bdr\:bottom-0\.125 {
+    border-bottom-width: 0.125rem !important;
+}
+
+.bdr\:left-0\.125 {
+    border-left-width: 0.125rem !important;
+}
+
+
+/*: border @ 3px :*/
+
+.bdr\:all-0\.1875 {
+    border-width: 0.1875rem !important;
+}
+
+.bdr\:top-0\.1875 {
+    border-top-width: 0.1875rem !important;
+}
+
+.bdr\:right-0\.1875 {
+    border-left-width: 0.1875rem !important;
+}
+
+.bdr\:bottom-0\.1875 {
+    border-bottom-width: 0.1875rem !important;
+}
+
+.bdr\:left-0\.1875 {
+    border-left-width: 0.1875rem !important;
 }
 
 
@@ -1871,6 +1947,27 @@ ul.li\:tpl-spaced li:not(:last-child) {
 .img\:100\% {
     height: auto !important;
     width: 100% !important;
+}
+
+
+/*
+    display
+*/
+
+.disp\:none {
+    display: none;
+}
+
+.disp\:block {
+    display: block;
+}
+
+.disp\:inline {
+    display: inline;
+}
+
+.disp\:inline-block {
+    display: inline-block;
 }
 
 
