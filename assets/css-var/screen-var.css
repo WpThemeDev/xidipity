@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   screen-var.css
- *  build:  90824.1c
+ *  build:  90904.1a
  *  descrp: common-style variables
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -159,6 +159,7 @@
     --mnu-sec-fg-color-hov: #000000;
     --mnu-sec-bg-color-hov: #d1c4e9;
     --mnu-sec-fg-weight-hov: 400;
+    --mnu-align: center;
     /*: sys footer :*/
     --sys-ft-bg-color: #fafafa;
     --sys-ft-align: center;
@@ -197,8 +198,8 @@
     --sys-lnk-sec-color: #f4511e;
     --sys-lnk-sec-bg-color: transparent;
     --sys-lnk-weight: 400;
-    --sys-content-order: 0;
-    --sys-sidebar-order: 1;
+    --sys-content-order: 3;
+    --sys-sidebar-order: 4;
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
     --font-mono: "Roboto Mono", monospace;
