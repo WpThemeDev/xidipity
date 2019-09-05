@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   common-style.css
- *  build:  90828.1a
+ *  build:  90903.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -328,70 +328,6 @@ table tr:not(:last-child) td {
 
 table tr td:not(:last-child) {
     border-right: 1px solid var(--fg-bas-300);
-}
-
-
-/* deprecated
-table#twocol {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    width: 100%
-}
-
-table#twocol tr td,
-table#twocol tr td table#twocol tr td {
-    border: 0;
-    display: block;
-    width: 100%
-}
-
-@media (min-width:576px) {
-    table#twocol tr td,
-    table#twocol tr td table#twocol tr td {
-        display: table-cell;
-        width: 50%
-    }
-    table#twocol tr td:first-child {
-        padding-right: 8px;
-        vertical-align: top
-    }
-    table#twocol tr td:not(:first-child) {
-        padding-left: 8px;
-        vertical-align: top
-    }
-}
-*/
-
-table#responsive {
-    table-layout: fixed;
-    background-color: transparent;
-    border: 0;
-    width: 100%;
-}
-
-table#responsive tr {
-    width: 100%;
-}
-
-table#responsive td {
-    border: 0;
-    display: block;
-    margin: 15px 0 15px 0;
-    vertical-align: top;
-    width: 100%;
-}
-
-table#responsive td img {
-    height: auto;
-    width: 100%;
-}
-
-@media (min-width:768px) {
-    table#responsive td {
-        display: table-cell;
-        padding: 15px 5px 15px 5px;
-    }
 }
 
 h1 {
@@ -804,11 +740,6 @@ img {
     max-width: 100%;
 }
 
-img.full-size {
-    height: auto;
-    width: 100%;
-}
-
 .video-aligncenter,
 .video-alignleft,
 .video-alignright {
@@ -1030,216 +961,12 @@ img.focalpoint:hover {
     background-color: var(--bg-bas-100);
 }
 
-
-/* deprecated
-table.readmore {
-    background-color: transparent;
-    border-left: 4px solid transparent;
-    width: 100%
-}
-
-table.readmore tr {
-    width: 100%
-}
-
-table.readmore td:first-child {
-    vertical-align: middle;
-    background-color: transparent;
-    border-right: 1px solid var(--fg-bas-300);
-    padding: .75rem 0;
-    text-align: center;
-    width: 48px
-}
-
-table.readmore td:nth-child(2) {
-    padding: .75rem;
-    font-size: .75rem
-}
-
-table.readmore td:nth-child(2) a {
-    text-decoration: none
-}
-
-
-table#twocol td table.readmore {
-    background-color: transparent;
-    border-left: 4px solid transparent;
-    display: table;
-    width: 100%
-}
-
-table#twocol td table.readmore tr {
-    display: table-row;
-    width: 100%
-}
-
-table#twocol td table.readmore td:first-child {
-    vertical-align: middle;
-    background-color: transparent;
-    border-right: 1px solid var(--fg-bas-300);
-    display: table-cell;
-    padding: .75rem 0;
-    text-align: center;
-    width: 48px
-}
-
-table#twocol td table.readmore td:nth-child(2) {
-    display: table-cell;
-    padding: .75rem;
-    font-size: .75rem
-}
-
-@media (min-width:576px) {
-    table.readmore td:first-child {
-        background-color: transparent;
-        padding: auto;
-        width: 48px
-    }
-    table.readmore td:nth-child(2) {
-        padding: 1rem .75rem;
-        font-size: .875rem
-    }
-    table#twocol td table.readmore {
-        background-color: transparent;
-        border-left: 4px solid transparent;
-        width: 100%
-    }
-    table#twocol td table.readmore tr {
-        width: 100%
-    }
-    table#twocol td table.readmore {
-        background-color: transparent;
-        border-left: 4px solid transparent;
-        width: 100%
-    }
-    table#twocol td table.readmore tr {
-        width: 100%
-    }
-    table#twocol td table.readmore td:first-child {
-        vertical-align: middle;
-        background-color: transparent;
-        border-right: 1px solid var(--fg-bas-300);
-        padding: 1rem 0;
-        text-align: center;
-        width: 30px
-    }
-    table#twocol td table.readmore td:nth-child(2) {
-        background-color: transparent;
-        padding: 1rem .75rem;
-        font-size: .875rem
-    }
-}
-*/
-
-
-/* deprecated
-table.annotation {
-    background-color: transparent;
-    border-left: 4px solid var(--fg-bas-400);
-    width: 100%
-}
-
-table.annotation tr {
-    width: 100%
-}
-
-table.annotation td:first-child {
-    vertical-align: middle;
-    background-color: transparent;
-    border-right: 1px solid var(--fg-bas-300);
-    padding: .75rem 0;
-    text-align: center;
-    width: 48px
-}
-
-table.annotation td:nth-child(2) {
-    background-color: var(--fg-bas-050);
-    padding: .75rem;
-    font-size: .75rem
-}
-
-table.annotation td:nth-child(2) a {
-    text-decoration: none
-}
-
-table#twocol td table.annotation {
-    background-color: transparent;
-    border-left: 4px solid var(--fg-bas-400);
-    display: table;
-    width: 100%
-}
-
-table#twocol td table.annotation tr {
-    display: table-row;
-    width: 100%
-}
-
-table#twocol td table.annotation td:first-child {
-    vertical-align: middle;
-    background-color: transparent;
-    border-right: 1px solid var(--fg-bas-300);
-    display: table-cell;
-    padding: .75rem 0;
-    text-align: center;
-    width: 48px
-}
-
-table#twocol td table.annotation td:nth-child(2) {
-    background-color: var(--fg-bas-050);
-    display: table-cell;
-    padding: .75rem;
-    font-size: .75rem
-}
-
-@media (min-width:576px) {
-    table.annotation td:first-child {
-        background-color: transparent;
-        padding: auto;
-        width: 48px
-    }
-    table.annotation td:nth-child(2) {
-        background-color: var(--fg-bas-050);
-        padding: 1rem .75rem;
-        font-size: .875rem
-    }
-    table#twocol td table.annotation {
-        background-color: transparent;
-        border-left: 4px solid var(--fg-bas-400);
-        width: 100%
-    }
-    table#twocol td table.annotation tr {
-        width: 100%
-    }
-    table#twocol td table.annotation {
-        background-color: transparent;
-        border-left: 4px solid var(--fg-bas-400);
-        width: 100%
-    }
-    table#twocol td table.annotation tr {
-        width: 100%
-    }
-    table#twocol td table.annotation td:first-child {
-        vertical-align: middle;
-        background-color: transparent;
-        border-right: 1px solid var(--fg-bas-300);
-        padding: 1rem 0;
-        text-align: center;
-        width: 30px
-    }
-    table#twocol td table.annotation td:nth-child(2) {
-        background-color: var(--fg-bas-050);
-        padding: 1rem .75rem;
-        font-size: .875rem
-    }
-}
-*/
-
-#TPLDemo {
+.tmpl-demo {
     display: block;
     width: 100%;
 }
 
-.tlpdemo-head {
+.tmpl-demo-head {
     border-left: 6px solid var(--fg-bas-300);
     margin-top: 1em;
     margin-right: auto;
@@ -1249,11 +976,23 @@ table#twocol td table.annotation td:nth-child(2) {
     width: 100%;
 }
 
-.tlpdemo-foot {
+.tmpl-demo-foot {
     display: none;
 }
 
-#erFxCenter {
+
+/*  # fx erule-cn
+    # 90903.1a
+    # flexbox emblem rule template
+    # https://the-echoplex.net/flexyboxes/
+**/
+
+
+/*: emblem center :*/
+
+
+/* deprecated
+.fx\:erule-cn-center {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1274,7 +1013,7 @@ table#twocol td table.annotation td:nth-child(2) {
     align-items: center;
 }
 
-.erfx-center:nth-child(1) {
+.fx\:erule-cn-center-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1287,7 +1026,7 @@ table#twocol td table.annotation td:nth-child(2) {
     margin-right: 8px;
 }
 
-.erfx-center:nth-child(2) {
+.fx\:erule-cn-center-item:nth-child(2) {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -1301,7 +1040,7 @@ table#twocol td table.annotation td:nth-child(2) {
     margin-right: 8px;
 }
 
-.erfx-center:nth-child(3) {
+.fx\:erule-cn-center-item:nth-child(3) {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
@@ -1313,8 +1052,14 @@ table#twocol td table.annotation td:nth-child(2) {
     align-self: auto;
     margin-left: 8px;
 }
+*/
 
-#erFxLeft {
+
+/*: emblem left :*/
+
+
+/* deprecated
+.fx\:erule-cn-left {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1335,7 +1080,7 @@ table#twocol td table.annotation td:nth-child(2) {
     align-items: center;
 }
 
-.erfx-left:nth-child(1) {
+.fx\:erule-cn-left-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1348,7 +1093,7 @@ table#twocol td table.annotation td:nth-child(2) {
     margin-right: 8px;
 }
 
-.erfx-left:nth-child(2) {
+.fx\:erule-cn-left-item:nth-child(2) {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -1360,8 +1105,14 @@ table#twocol td table.annotation td:nth-child(2) {
     align-self: auto;
     margin-left: 8px;
 }
+*/
 
-#erFxRight {
+
+/*: emblem right :*/
+
+
+/* deprecated
+.fx\:erule-cn-right {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1382,7 +1133,7 @@ table#twocol td table.annotation td:nth-child(2) {
     align-items: center;
 }
 
-.erfx-right:nth-child(1) {
+.fx\:erule-cn-right-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1395,7 +1146,7 @@ table#twocol td table.annotation td:nth-child(2) {
     margin-right: 8px;
 }
 
-.erfx-right:nth-child(2) {
+.fx\:erule-cn-right-item:nth-child(2) {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -1407,8 +1158,69 @@ table#twocol td table.annotation td:nth-child(2) {
     align-self: auto;
     margin-left: 8px;
 }
+*/
 
-#anFx {
+
+/*  # fx an-cn
+    # 90903.1a
+    # flexbox annotation template
+    # https://the-echoplex.net/flexyboxes/
+**/
+
+.fx\:an-cn {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: #fafafa;
+}
+
+.fx\:an-cn-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.fx\:an-cn-item:nth-child(2) {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding-left: 0.5rem;
+    border-left: 2px solid #E0E0E0;
+}
+
+
+/*: emblem container :*/
+
+.fx\:erule-cn {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1427,32 +1239,24 @@ table#twocol td table.annotation td:nth-child(2) {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: var(--bg-bas-050);
 }
 
-.fx\:an-container {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: var(--bg-bas-050);
+
+/*: emblem center :*/
+
+.fx\:erule-cn-center-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
 }
 
-.fx\:an-item:nth-child(1) {
+.fx\:erule-cn-center-item:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1460,13 +1264,28 @@ table#twocol td table.annotation td:nth-child(2) {
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
+    -ms-flex-item-align: auto;
     align-self: auto;
     margin-left: 1rem;
-    margin-right: .5rem;
+    margin-right: 1rem;
 }
 
-.anfx\:item:nth-child(1) {
+.fx\:erule-cn-center-item:nth-child(3) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+
+/*: emblem left :*/
+
+.fx\:erule-cn-left-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1474,43 +1293,49 @@ table#twocol td table.annotation td:nth-child(2) {
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.fx\:erule-cn-left-item:nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
     align-self: auto;
     margin-left: 1rem;
-    margin-right: .5rem;
 }
 
-.fx\:an-item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
+
+/*: emblem right :*/
+
+.fx\:erule-cn-right-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.fx\:erule-cn-right-item:nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
+    -ms-flex-item-align: auto;
     align-self: auto;
-}
-
-.fx\:an-item-ops {
-    margin-left: .5rem;
-    border-left: 2px solid var(--fg-bas-400);
-    padding: .5rem .5rem;
-}
-
-.anfx\:item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-left: .5rem;
-    border-left: 2px solid var(--fg-bas-400);
-    padding: .5rem .5rem;
+    margin-left: 1rem;
 }
 
 
