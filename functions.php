@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90904.1a
+ *  build:  90905.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -12,7 +12,34 @@
  *  @since 0.9.0
  *
  **/
- 
+
+/**
+ *  name: fa_ver
+ *  build: 90905.1a
+ *  description: set / get font awesome version
+ *  attributes:
+ *      $attr - string
+ *
+ */
+function fa_ver($attr='')
+{
+    global $xwt_fa_ver;
+    $fn_val = '';
+    if (!isset($xwt_fa_ver))
+    {
+        $xwt_fa_ver = '';
+    }
+    if (empty($attr))
+    {
+        $fn_val = $xwt_fa_ver;
+    }
+    else
+    {
+        $xwt_fa_ver = $attr;
+    }
+    return $fn_val;
+}
+
 /**
  *  name: err_msg
  *  build: 90901.1a
@@ -24,14 +51,14 @@
 function err_msg($attr='')
 {
     global $xwt_err_msg;
-    $v_retval = '';
+    $fn_val = '';
     if (!isset($xwt_err_msg))
     {
         $xwt_err_msg = '';
     }
     if (empty($attr))
     {
-        $v_retval = $xwt_err_msg;
+        $fn_val = $xwt_err_msg;
         /*: report & clear :*/
         $xwt_err_msg = '';
     }
@@ -39,7 +66,7 @@ function err_msg($attr='')
     {
         $xwt_err_msg = $attr;
     }
-    return $v_retval;
+    return $fn_val;
 }
  
 /**
@@ -53,40 +80,50 @@ function err_msg($attr='')
 function page_tmpl($attr='')
 {
     global $xwt_cur_tmpl;
-    $v_retval = '';
+    $fn_val = '';
     if (!isset($xwt_cur_tmpl))
     {
         $xwt_cur_tmpl = '';
     }
     if (empty($attr))
     {
-        $v_retval = $xwt_cur_tmpl;
+        $fn_val = $xwt_cur_tmpl;
     }
     else
     {
         $xwt_cur_tmpl = $attr;
     }
-    return $v_retval;
+    return $fn_val;
 }
 
 /**
  *  name: on_list
- *  build: 90903.1a
+ *  build: 90905.1a
  *  description: is item on list
  *  attributes:
  *      $attr - string
+ *  returns
+ *      0 = no
+ *      1 = yes
+ *      2 = error
  *
  */
 function on_list($itm='', $lst='')
 {
-    $v_lst = '#,' . $lst;
-    $v_item = $itm;
-    $v_retval = false;
-    if (!empty($v_item))
+    $fn_val = 2;
+    if (!empty($itm) && !empty($lst))
     {
-        $v_retval = (abs(strpos($v_lst, $v_item)) > 0);
+      $lst_array = explode(",", $lst);
+      if (in_array($itm,$lst_array))
+      {
+        $fn_val = 1;
+      }
+      else
+      {
+        $fn_val = 0;
+      }
     }
-    return $v_retval;
+    return $fn_val;
 }
 /**
  *  name: c_walker
@@ -500,7 +537,8 @@ function xidipity_scripts()
     wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/web-style.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     /*: fontawesome css :*/
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array() , '5.9.0', 'all');
+    fa_ver('5.10.2');
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.10.2/css/all.css', array() , '5.10.2', 'all');
     /*: google material design icons :*/
     wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
         ->get('Version') , 'all');
