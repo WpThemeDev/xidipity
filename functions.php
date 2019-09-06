@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90905.1a
+ *  build:  90906.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
