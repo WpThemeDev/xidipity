@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   web-style.css
- *  build:  90904.1a
+ *  build:  90905.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -898,18 +898,22 @@ img.header-logo {
     transform: scale(2);
 }
 
-#TPL {
-    display: block;
+/*  # tmpl
+    # 90905.1a
+    # web template classes
+**/
+
+.tmpl {
     width: 100%;
 }
 
-.tpl-head {
+.tmpl-head {
     display: none;
 }
 
-.tpl-foot {
+.tmpl-foot {
     display: block;
-    width: 63.325vw;
+    width: 100%;
 }
 
 .gist .line,
@@ -1760,26 +1764,26 @@ a.page-numbers:focus {
 /*: content :*/
 
 .fx\:nspg-content {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+    -webkit-flex: 0 1 99.2%;
+    -ms-flex: 0 1 99.2%;
+    flex: 0 1 99.2%;
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
     margin-bottom: 8px;
-    width: 100%;
+    width: 99.2%;
 }
 
 
 /*: footer :*/
 
 .fx\:nspg-footer {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: 4;
+    -ms-flex-order: 4;
+    order: 4;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1790,9 +1794,9 @@ a.page-numbers:focus {
 
 @media (min-width:640px) {
     .fx\:nspg-footer {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+        -webkit-order: 4;
+        -ms-flex-order: 4;
+        order: 4;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
