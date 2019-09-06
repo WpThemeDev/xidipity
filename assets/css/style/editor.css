@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   editor-style.css
- *  build:  90905.1a
+ *  file:   /assets/css/style/editor.css
+ *  build:  90906.1b
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,14 +17,12 @@
     import dependencies
 */
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.css") screen;
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/utilities.css") screen;
-@import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css") screen;
+@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css") screen;
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons") screen;
 @import "../css-var/screen-var.css" screen;
-@import "common-style.css" screen;
-@import "palette-style.css" screen;
-@import "toolkit-style.css" screen;
+@import "advance.css" screen;
+@import "common.css" screen;
+@import "palette.css" screen;
 
 /*  # TinyMCE
    ## Body
@@ -167,5 +165,5 @@ acronym {
 
 
 /*
-    eof: editor-style.css
+    eof: /assets/css/style/editor.css
 */
