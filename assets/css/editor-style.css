@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   editor-style.css
- *  build:  90828.1a
+ *  build:  90905.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -113,19 +113,21 @@ acronym {
 -- */
 
 
-/* template conntainer     ------------
--- */
+/*  # tmpl
+    # 90905.1a
+    # editor template classes
+**/
 
-#TPL {
+.tmpl {
+    width: 100%;
+}
+
+.tmpl-head {
     display: block;
     width: 100%;
 }
 
-.tpl-head {
-    display: block;
-}
-
-.tpl-foot {
+.tmpl-foot {
     display: none;
 }
 
