@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   shortcodes.php
- *  build:  90903.1a
+ *  build:  90905.1a
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -802,14 +802,36 @@ function plst_shortcode($atts = array(), $prm = string)
  *  ---------------------------------------------------------------------------
  *
  */
-/*  # wp_ver
+
+/*  # x_pg_title
+    # 90905.1a
+    # get page title
+    # https://developer.wordpress.org/reference/functions/get_the_title/
+**/
+add_shortcode('x_pg_title', 'x_pg_title_shortcode');
+function x_pg_title_shortcode()
+{
+    return get_the_title();
+}
+
+/*  # x_fa_ver
+    # 90905.1a
+    # display font awesome version
+    # https://fontawesome.com/
+**/
+add_shortcode('x_fa_ver', 'x_fa_ver_shortcode');
+function x_fa_ver_shortcode()
+{
+    return fa_ver();
+}
+
+/*  # x_wp_ver
     # 90903.1a
     # display wordpress version
     # https://wordpress.org/
 **/
-add_shortcode('wp_ver', 'wp_ver_shortcode');
-
-function wp_ver_shortcode()
+add_shortcode('x_wp_ver', 'x_wp_ver_shortcode');
+function x_wp_ver_shortcode()
 {
     // system
     $html_retval = '';
@@ -818,6 +840,7 @@ function wp_ver_shortcode()
     // return html
     return $html_retval;
 }
+
 /*  # xidipity
     # 90903.1a
     # display theme property
