@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   web-style.css
- *  build:  90905.1a
+ *  build:  90906.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1807,9 +1807,9 @@ a.page-numbers:focus {
 }
 
 .fx\:nkpg-content {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
     -webkit-flex: 0 1 100%;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
@@ -1820,6 +1820,33 @@ a.page-numbers:focus {
     width: 100%;
 }
 
+/*: footer :*/
+
+.fx\:nkpg-footer {
+    -webkit-order: 3;
+    -ms-flex-order: ;
+    order: 3;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+@media (min-width:640px) {
+    .fx\:nkpg-footer {
+        -webkit-order: 3;
+        -ms-flex-order: 3;
+        order: 3;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+}
 
 /*  # bexc-container
     # 90903.1a
