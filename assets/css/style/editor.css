@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/editor.css
- *  build:  90906.1b1
+ *  build:  90906.1c
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,19 +11,6 @@
  *  @since 0.9.0
  *
 **/
-
-
-/*
-    import dependencies
-*/
-
-@import url("https://use.fontawesome.com/releases/v5.10.2/css/all.css") screen;
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons") screen;
-/*: css/style/ to css/media :*/
-@import "../media/screen.css" screen;
-@import "advance.css" screen;
-@import "common.css" screen;
-@import "palette.css" screen;
 
 /*  # TinyMCE
    ## Body
