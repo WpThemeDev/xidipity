@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90906.1c
+ *  build:  90906.1c.2
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -15,29 +15,13 @@
 
 /**
  *  name: fa_ver
- *  build: 90905.1a
+ *  build: 90906.1c
  *  description: set / get font awesome version
- *  attributes:
- *      $attr - string
  *
  */
-function fa_ver($attr='')
+function fa_ver()
 {
-    global $xwt_fa_ver;
-    $fn_val = '';
-    if (!isset($xwt_fa_ver))
-    {
-        $xwt_fa_ver = '';
-    }
-    if (empty($attr))
-    {
-        $fn_val = $xwt_fa_ver;
-    }
-    else
-    {
-        $xwt_fa_ver = $attr;
-    }
-    return $fn_val;
+    return '5.10.2';
 }
 
 /**
@@ -462,13 +446,13 @@ if (!function_exists('xidipity_setup')):
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
         
-        $ed_css1 = '/assets/css/style/palette.css';
-        $ed_css2 = '/assets/css/style/common.css';
-        $ed_css3 = '/assets/css/style/advance.css';
-        $ed_css4 = '/assets/css/media/screen.css';
-        $ed_css5 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-        $ed_css6 = 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
-        $ed_css7 = 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.css';
+        $ed_css1 = 'style.css';
+        $ed_css2 = '/assets/css/style/palette.css';
+        $ed_css3 = '/assets/css/style/common.css';
+        $ed_css4 = '/assets/css/style/advance.css';
+        $ed_css5 = '/assets/css/media/screen.css';
+        $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+        $ed_css7 = 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
         $ed_css8 = '/assets/css/style/editor.css';
 
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8 );
@@ -547,8 +531,8 @@ function xidipity_scripts()
     wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/style/web.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     /*: fontawesome css :*/
-    fa_ver('5.10.2');
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v5.10.2/css/all.css', array() , '5.10.2', 'all');
+    // version set @ fa_ver
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css', array() , fa_ver(), 'all');
     /*: google material design icons :*/
     wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
         ->get('Version') , 'all');
