@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90906.1b1
+ *  build:  90906.1c
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -459,11 +459,21 @@ if (!function_exists('xidipity_setup')):
          * Registers an editor stylesheet for the theme.
          * https://developer.wordpress.org/reference/functions/add_editor_style/
         */
-        function wpdocs_theme_add_editor_styles()
-        {
-            add_editor_style('/assets/css/style/editor.css');
-        }
-        add_action('admin_init', 'wpdocs_theme_add_editor_styles');
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+        
+        $ed_css1 = '/assets/css/style/palette.css';
+        $ed_css2 = '/assets/css/style/common.css';
+        $ed_css3 = '/assets/css/style/advance.css';
+        $ed_css4 = '/assets/css/media/screen.css';
+        $ed_css5 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+        $ed_css6 = 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
+        $ed_css7 = 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.css';
+        $ed_css8 = '/assets/css/style/editor.css';
+
+        $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8 );
+        add_editor_style( $ed_styles );
+
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
