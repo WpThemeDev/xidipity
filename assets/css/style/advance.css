@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/advance.css
- *  build:  90906.1b
+ *  build:  90907.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -104,6 +104,37 @@
 .bdr\:radius-0\.75 {
     border-radius: 0.75rem !important;
 }
+
+
+/*: wordpress friendly :*/
+
+.bdr-radius-075rm {
+    border-radius: 0.75rem !important;
+}
+
+
+/*-*/
+
+
+/*: container should be square :*/
+
+.bdr\:radius-circle {
+    border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+
+
+/*: wordpress friendly :*/
+
+.bdr-radius-circle {
+    border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+
+
+/*-*/
 
 
 /*: border @ 0 :*/
