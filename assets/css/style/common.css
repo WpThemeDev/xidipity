@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/common.css
- *  build:  90906.1b
+ *  build:  90907.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -972,186 +972,6 @@ img.focalpoint:hover {
 }
 
 
-/*  # fx erule-cn
-    # 90903.1a
-    # flexbox emblem rule template
-    # https://the-echoplex.net/flexyboxes/
-**/
-
-
-/*: emblem center :*/
-
-
-/* deprecated
-.fx\:erule-cn-center {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.fx\:erule-cn-center-item:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-right: 8px;
-}
-
-.fx\:erule-cn-center-item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-.fx\:erule-cn-center-item:nth-child(3) {
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-left: 8px;
-}
-*/
-
-
-/*: emblem left :*/
-
-
-/* deprecated
-.fx\:erule-cn-left {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.fx\:erule-cn-left-item:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-right: 8px;
-}
-
-.fx\:erule-cn-left-item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-left: 8px;
-}
-*/
-
-
-/*: emblem right :*/
-
-
-/* deprecated
-.fx\:erule-cn-right {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.fx\:erule-cn-right-item:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-right: 8px;
-}
-
-.fx\:erule-cn-right-item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-er-center-itm-align: auto;
-    align-self: auto;
-    margin-left: 8px;
-}
-*/
-
-
 /*  # fx an-cn
     # 90903.1a
     # flexbox annotation template
@@ -1207,6 +1027,13 @@ img.focalpoint:hover {
     padding-left: 0.5rem;
     border-left: 2px solid #E0E0E0;
 }
+
+
+/*  # fx erule-cn
+    # 90903.1a
+    # flexbox emblem rule template
+    # https://the-echoplex.net/flexyboxes/
+**/
 
 
 /*: emblem container :*/
