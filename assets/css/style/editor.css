@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/editor.css
- *  build:  90906.1c
+ *  build:  90907.1b
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,6 +11,7 @@
  *  @since 0.9.0
  *
 **/
+
 
 /*  # TinyMCE
    ## Body
@@ -149,6 +150,32 @@ acronym {
 
 .twocol-td:first-of-type {
     border-right: 1px dashed var(--bg-bas-400) !important;
+}
+
+
+/*
+    vertical spacing
+    tint for editing
+*/
+
+.vert\:spacer-1\/2 {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-3\/4 {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-single {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-double {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-triple {
+    background-color: var(--bg-sec-050);
 }
 
 
