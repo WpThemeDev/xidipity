@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90901.1a
+ *  build:  90907.1b
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,7 +34,7 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90901.1a/author/php              -->' . "\n";
+echo '<!-- xwpt: 90907.1b/author/php              -->' . "\n";
 echo '<main class="fx:pg-item">' . "\n";
 /*
     biography
@@ -59,7 +59,7 @@ echo '<div class="fx:cn-container">' . "\n";
 echo '<div class="fx:full-cn-item bg:bas-050 fx:shadow">' . "\n";
 echo '<h4>Other posts by author:</h4>' . "\n";
 //echo '<p>&nbsp;</p>' . "\n";
-echo '<div class="sys/bg:content pad:all-1">' . "\n";
+echo '<div class="sys:bg pad:all-1">' . "\n";
 $wp_qry = array(
     'author' => $wp_author_id,
     'orderby' => 'post_date',
@@ -104,7 +104,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90901.1a/autor/php              -->' . "\n";
+echo '<!-- /xwpt: 90907.1b/autor/php              -->' . "\n";
 /*
     display sidebar
 */
