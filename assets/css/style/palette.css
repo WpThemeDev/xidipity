@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/palette.css
- *  build:  90906.1b
+ *  build:  90907.1b
  *  descrp: theme palette
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -208,6 +208,10 @@
 /*
     background colors
 */
+
+.bg\:transparent {
+    background-color: transparent;
+}
 
 .bg\:blk,
 .hover\:bg\:blk:hover,
@@ -563,11 +567,11 @@
     system colors
 */
 
-.sys\/fg\:content {
+.sys\:fg {
     color: var(--sys-font-color);
 }
 
-.sys\/bg\:content {
+.sys\:bg {
     background-color: var(--sys-content-bg-color);
 }
 
@@ -778,6 +782,635 @@
 
 .bdr\:blue-gray {
     border-color: #607D8B !important;
+}
+
+
+/*  # sm
+    # 90907.1a
+    # screen width 640px or larger
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+**/
+
+@media (min-width: 640px) {
+    /*  # fg
+        # 90907.1b
+        # foreground color classes
+        #
+    */
+    .sm\(fg\: blk\), .sm\(hover\:fg\:blk:hover\), .sm\(focus\:fg\:blk:focus\) {
+        color: var(--fg-blk);
+    }
+    .sm\(fg\:wht\),
+    .sm\(hover\:fg\:wht:hover\),
+    .sm\(focus\:fg\:wht:focus\) {
+        color: var(--fg-wht);
+    }
+    .sm\(fg\:bas-900\),
+    .sm\(hover\:fg\:bas-900:hover\),
+    .sm\(focus\:fg\:bas-900:focus\) {
+        color: var(--fg-bas-900);
+    }
+    .sm\(fg\:bas-800\),
+    .sm\(hover\:fg\:bas-800:hover\),
+    .sm\(focus\:fg\:bas-800:focus\) {
+        color: var(--fg-bas-800);
+    }
+    .sm\(fg\:bas-700\),
+    .sm\(hover\:fg\:bas-700:hover\),
+    .sm\(focus\:fg\:bas-700:focus\) {
+        color: var(--fg-bas-700);
+    }
+    .sm\(fg\:bas-600\),
+    .sm\(hover\:fg\:bas-600:hover\),
+    .sm\(focus\:fg\:bas-600:focus\) {
+        color: var(--fg-bas-600);
+    }
+    .sm\(fg\:bas-500\),
+    .sm\(hover\:fg\:bas-500:hover\),
+    .sm\(focus\:fg\:bas-500:focus\) {
+        color: var(--fg-bas-500);
+    }
+    .sm\(fg\:bas-400\),
+    .sm\(hover\:fg\:bas-400:hover\),
+    .sm\(focus\:fg\:bas-400:focus\) {
+        color: var(--fg-bas-400);
+    }
+    .sm\(fg\:bas-300\),
+    .sm\(hover\:fg\:bas-300:hover\),
+    .sm\(focus\:fg\:bas-300:focus\) {
+        color: var(--fg-bas-300);
+    }
+    .sm\(fg\:bas-200\),
+    .sm\(hover\:fg\:bas-200:hover\),
+    .sm\(focus\:fg\:bas-200:focus\) {
+        color: var(--fg-bas-200);
+    }
+    .sm\(fg\:bas-100\),
+    .sm\(hover\:fg\:bas-100:hover\),
+    .sm\(focus\:fg\:bas-100:focus\) {
+        color: var(--fg-bas-100);
+    }
+    .sm\(fg\:bas-050\),
+    .sm\(hover\:fg\:bas-050:hover\),
+    .sm\(focus\:fg\:bas-050:focus\) {
+        color: var(--fg-bas-050);
+    }
+    .sm\(fg\:pri-900\),
+    .sm\(hover\:fg\:pri-900:hover\),
+    .sm\(focus\:fg\:pri-900:focus\) {
+        color: var(--fg-pri-900);
+    }
+    .sm\(fg\:pri-800\),
+    .sm\(hover\:fg\:pri-800:hover\),
+    .sm\(focus\:fg\:pri-800:focus\) {
+        color: var(--fg-pri-800);
+    }
+    .sm\(fg\:pri-700\),
+    .sm\(hover\:fg\:pri-700:hover\),
+    .sm\(focus\:fg\:pri-700:focus\) {
+        color: var(--fg-pri-700);
+    }
+    .sm\(fg\:pri-600\),
+    .sm\(hover\:fg\:pri-600:hover\),
+    .sm\(focus\:fg\:pri-600:focus\) {
+        color: var(--fg-pri-600);
+    }
+    .sm\(fg\:pri-500\),
+    .sm\(hover\:fg\:pri-500:hover\),
+    .sm\(focus\:fg\:pri-500:focus\) {
+        color: var(--fg-pri-500);
+    }
+    .sm\(fg\:pri-400\),
+    .sm\(hover\:fg\:pri-400:hover\),
+    .sm\(focus\:fg\:pri-400:focus\) {
+        color: var(--fg-pri-400);
+    }
+    .sm\(fg\:pri-300\),
+    .sm\(hover\:fg\:pri-300:hover\),
+    .sm\(focus\:fg\:pri-300:focus\) {
+        color: var(--fg-pri-300);
+    }
+    .sm\(fg\:pri-200\),
+    .sm\(hover\:fg\:pri-200:hover\),
+    .sm\(focus\:fg\:pri-200:focus\) {
+        color: var(--fg-pri-200);
+    }
+    .sm\(fg\:pri-100\),
+    .sm\(hover\:fg\:pri-100:hover\),
+    .sm\(focus\:fg\:pri-100:focus\) {
+        color: var(--fg-pri-100);
+    }
+    .sm\(fg\:pri-050\),
+    .sm\(hover\:fg\:pri-050:hover\),
+    .sm\(focus\:fg\:pri-050:focus\) {
+        color: var(--fg-pri-050);
+    }
+    .sm\(fg\:sec-900\),
+    .sm\(hover\:fg\:sec-900:hover\),
+    .sm\(focus\:fg\:sec-900:focus\) {
+        color: var(--fg-sec-900);
+    }
+    .sm\(fg\:sec-800\),
+    .sm\(hover\:fg\:sec-800:hover\),
+    .sm\(focus\:fg\:sec-800:focus\) {
+        color: var(--fg-sec-800);
+    }
+    .sm\(fg\:sec-700\),
+    .sm\(hover\:fg\:sec-700:hover\),
+    .sm\(focus\:fg\:sec-700:focus\) {
+        color: var(--fg-sec-700);
+    }
+    .sm\(fg\:sec-600\),
+    .sm\(hover\:fg\:sec-600:hover\),
+    .sm\(focus\:fg\:sec-600:focus\) {
+        color: var(--fg-sec-600);
+    }
+    .sm\(fg\:sec-500\),
+    .sm\(hover\:fg\:sec-500:hover\),
+    .sm\(focus\:fg\:sec-500:focus\) {
+        color: var(--fg-sec-500);
+    }
+    .sm\(fg\:sec-400\),
+    .sm\(hover\:fg\:sec-400:hover\),
+    .sm\(focus\:fg\:sec-400:focus\) {
+        color: var(--fg-sec-400);
+    }
+    .sm\(fg\:sec-300\),
+    .sm\(hover\:fg\:sec-300:hover\),
+    .sm\(focus\:fg\:sec-300:focus\) {
+        color: var(--fg-sec-300);
+    }
+    .sm\(fg\:sec-200\),
+    .sm\(hover\:fg\:sec-200:hover\),
+    .sm\(focus\:fg\:sec-200:focus\) {
+        color: var(--fg-sec-200);
+    }
+    .sm\(fg\:sec-100\),
+    .sm\(hover\:fg\:sec-100:hover\),
+    .sm\(focus\:fg\:sec-100:focus\) {
+        color: var(--fg-sec-100);
+    }
+    .sm\(fg\:sec-050\),
+    .sm\(hover\:fg\:sec-050:hover\),
+    .sm\(focus\:fg\:sec-050:focus\) {
+        color: var(--fg-sec-050);
+    }
+    /*  # bg
+        # 90907.1b
+        # background color classes
+        #
+    */
+    .sm\(bg\:transparent\) {
+        background-color: transparent;
+    }
+    .sm\(bg\:blk\),
+    .sm\(hover\:bg\:blk:hover\),
+    .sm\(focus\:bg\:blk:focus\) {
+        background-color: var(--bg-blk);
+    }
+    .sm\(bg\:wht\),
+    .sm\(hover\:bg\:wht:hover\),
+    .sm\(focus\:bg\:wht:focus\) {
+        background-color: var(--bg-wht);
+    }
+    .sm\(bg\:bas-900\),
+    .sm\(hover\:bg\:bas-900:hover\),
+    .sm\(focus\:bg\:bas-900:focus\) {
+        background-color: var(--bg-bas-900);
+    }
+    .sm\(bg\:bas-800\),
+    .sm\(hover\:bg\:bas-800:hover\),
+    .sm\(focus\:bg\:bas-800:focus\) {
+        background-color: var(--bg-bas-800);
+    }
+    .sm\(bg\:bas-700\),
+    .sm\(hover\:bg\:bas-700:hover\),
+    .sm\(focus\:bg\:bas-700:focus\) {
+        background-color: var(--bg-bas-700);
+    }
+    .sm\(bg\:bas-600\),
+    .sm\(hover\:bg\:bas-600:hover\),
+    .sm\(focus\:bg\:bas-600:focus\) {
+        background-color: var(--bg-bas-600);
+    }
+    .sm\(bg\:bas-500\),
+    .sm\(hover\:bg\:bas-500:hover\),
+    .sm\(focus\:bg\:bas-500:focus\) {
+        background-color: var(--bg-bas-500);
+    }
+    .sm\(bg\:bas-400\),
+    .sm\(hover\:bg\:bas-400:hover\),
+    .sm\(focus\:bg\:bas-400:focus\) {
+        background-color: var(--bg-bas-400);
+    }
+    .sm\(bg\:bas-300\),
+    .sm\(hover\:bg\:bas-300:hover\),
+    .sm\(focus\:bg\:bas-300:focus\) {
+        background-color: var(--bg-bas-300);
+    }
+    .sm\(bg\:bas-200\),
+    .sm\(hover\:bg\:bas-200:hover\),
+    .sm\(focus\:bg\:bas-200:focus\) {
+        background-color: var(--bg-bas-200);
+    }
+    .sm\(bg\:bas-100\),
+    .sm\(hover\:bg\:bas-100:hover\),
+    .sm\(focus\:bg\:bas-100:focus\) {
+        background-color: var(--bg-bas-100);
+    }
+    .sm\(bg\:bas-050\),
+    .sm\(hover\:bg\:bas-050:hover\),
+    .sm\(focus\:bg\:bas-050:focus\) {
+        background-color: var(--bg-bas-050);
+    }
+    .sm\(bg\:pri-900\),
+    .sm\(hover\:bg\:pri-900:hover\),
+    .sm\(focus\:bg\:pri-900:focus\) {
+        background-color: var(--bg-pri-900);
+    }
+    .sm\(bg\:pri-800\),
+    .sm\(hover\:bg\:pri-800:hover\),
+    .sm\(focus\:bg\:pri-800:focus\) {
+        background-color: var(--bg-pri-800);
+    }
+    .sm\(bg\:pri-700\),
+    .sm\(hover\:bg\:pri-700:hover\),
+    .sm\(focus\:bg\:pri-700:focus\) {
+        background-color: var(--bg-pri-700);
+    }
+    .sm\(bg\:pri-600\),
+    .sm\(hover\:bg\:pri-600:hover\),
+    .sm\(focus\:bg\:pri-600:focus\) {
+        background-color: var(--bg-pri-600);
+    }
+    .sm\(bg\:pri-500\),
+    .sm\(hover\:bg\:pri-500:hover\),
+    .sm\(focus\:bg\:pri-500:focus\) {
+        background-color: var(--bg-pri-500);
+    }
+    .sm\(bg\:pri-400\),
+    .sm\(hover\:bg\:pri-400:hover\),
+    .sm\(focus\:bg\:pri-400:focus\) {
+        background-color: var(--bg-pri-400);
+    }
+    .sm\(bg\:pri-300\),
+    .sm\(hover\:bg\:pri-300:hover\),
+    .sm\(focus\:bg\:pri-300:focus\) {
+        background-color: var(--bg-pri-300);
+    }
+    .sm\(bg\:pri-200\),
+    .sm\(hover\:bg\:pri-200:hover\),
+    .sm\(focus\:bg\:pri-200:focus\) {
+        background-color: var(--bg-pri-200);
+    }
+    .sm\(bg\:pri-100\),
+    .sm\(hover\:bg\:pri-100:hover\),
+    .sm\(focus\:bg\:pri-100:focus\) {
+        background-color: var(--bg-pri-100);
+    }
+    .sm\(bg\:pri-050\),
+    .sm\(hover\:bg\:pri-050:hover\),
+    .sm\(focus\:bg\:pri-050:focus\) {
+        background-color: var(--bg-pri-050);
+    }
+    .sm\(bg\:sec-900\),
+    .sm\(hover\:bg\:sec-900:hover\),
+    .sm\(focus\:bg\:sec-900:focus\) {
+        background-color: var(--bg-sec-900);
+    }
+    .sm\(bg\:sec-800\),
+    .sm\(hover\:bg\:sec-800:hover\),
+    .sm\(focus\:bg\:sec-800:focus\) {
+        background-color: var(--bg-sec-800);
+    }
+    .sm\(bg\:sec-700\),
+    .sm\(hover\:bg\:sec-700:hover\),
+    .sm\(focus\:bg\:sec-700:focus\) {
+        background-color: var(--bg-sec-700);
+    }
+    .sm\(bg\:sec-600\),
+    .sm\(hover\:bg\:sec-600:hover\),
+    .sm\(focus\:bg\:sec-600:focus\) {
+        background-color: var(--bg-sec-600);
+    }
+    .sm\(bg\:sec-500\),
+    .sm\(hover\:bg\:sec-500:hover\),
+    .sm\(focus\:bg\:sec-500:focus\) {
+        background-color: var(--bg-sec-500);
+    }
+    .sm\(bg\:sec-400\),
+    .sm\(hover\:bg\:sec-400:hover\),
+    .sm\(focus\:bg\:sec-400:focus\) {
+        background-color: var(--bg-sec-400);
+    }
+    .sm\(bg\:sec-300\),
+    .sm\(hover\:bg\:sec-300:hover\),
+    .sm\(focus\:bg\:sec-300:focus\) {
+        background-color: var(--bg-sec-300);
+    }
+    .sm\(bg\:sec-200\),
+    .sm\(hover\:bg\:sec-200:hover\),
+    .sm\(focus\:bg\:sec-200:focus\) {
+        background-color: var(--bg-sec-200);
+    }
+    .sm\(bg\:sec-100\),
+    .sm\(hover\:bg\:sec-100:hover\),
+    .sm\(focus\:bg\:sec-100:focus\) {
+        background-color: var(--bg-sec-100);
+    }
+    .sm\(bg\:sec-050\),
+    .sm\(hover\:bg\:sec-050:hover\),
+    .sm\(focus\:bg\:sec-050:focus\) {
+        background-color: var(--bg-sec-050);
+    }
+    /*  # fg / bg
+        # 90907.1b
+        # standard foreground / background color classes
+        #
+    */
+    .sm\(fg\:red\) {
+        color: #F44336;
+    }
+    .sm\(bg\:red\) {
+        background-color: #F44336;
+    }
+    .sm\(fg\:pink\) {
+        color: #E91E63;
+    }
+    .sm\(bg\:pink\) {
+        background-color: #E91E63;
+    }
+    .sm\(fg\:purple\) {
+        color: #9C27B0;
+    }
+    .sm\(bg\:purple\) {
+        background-color: #9C27B0;
+    }
+    .sm\(fg\:deep-purple\) {
+        color: #673AB7;
+    }
+    .sm\(bg\:deep-purple\) {
+        background-color: #673AB7;
+    }
+    .sm\(fg\:indigo\) {
+        color: #3F51B5;
+    }
+    .sm\(bg\:indigo\) {
+        background-color: #3F51B5;
+    }
+    .sm\(fg\:blue\) {
+        color: #2196F3;
+    }
+    .sm\(bg\:blue\) {
+        background-color: #2196F3;
+    }
+    .sm\(fg\:light-blue\) {
+        color: #03A9F4;
+    }
+    .sm\(bg\:light-blue\) {
+        background-color: #03A9F4;
+    }
+    .sm\(fg\:cyan\) {
+        color: #00BCD4;
+    }
+    .sm\(bg\:cyan\) {
+        background-color: #00BCD4;
+    }
+    .sm\(fg\:teal\) {
+        color: #009688;
+    }
+    .sm\(bg\:teal\) {
+        background-color: #009688;
+    }
+    .sm\(fg\:green\) {
+        color: #4CAF50;
+    }
+    .sm\(bg\:green\) {
+        background-color: #4CAF50;
+    }
+    .sm\(fg\:light-green\) {
+        color: #8BC34A;
+    }
+    .sm\(bg\:light-green\) {
+        background-color: #8BC34A;
+    }
+    .sm\(fg\:lime\) {
+        color: #CDDC39;
+    }
+    .sm\(bg\:lime\) {
+        background-color: #CDDC39;
+    }
+    .sm\(fg\:yellow\) {
+        color: #FFEB3B;
+    }
+    .sm\(bg\:yellow\) {
+        background-color: #FFEB3B;
+    }
+    .sm\(fg\:amber\) {
+        color: #FFC107;
+    }
+    .sm\(bg\:amber\) {
+        background-color: #FFC107;
+    }
+    .sm\(fg\:orange\) {
+        color: #FF9800;
+    }
+    .sm\(bg\:orange\) {
+        background-color: #FF9800;
+    }
+    .sm\(fg\:deep-orange\) {
+        color: #FF5722;
+    }
+    .sm\(bg\:deep-orange\) {
+        background-color: #FF5722;
+    }
+    .sm\(fg\:brown\) {
+        color: #795548;
+    }
+    .sm\(bg\:brown\) {
+        background-color: #795548;
+    }
+    .sm\(fg\:gray\) {
+        color: #9E9E9E;
+    }
+    .sm\(bg\:gray\) {
+        background-color: #9E9E9E;
+    }
+    .sm\(fg\:blue-gray\) {
+        color: #607D8B;
+    }
+    .sm\(bg\:blue-gray\) {
+        background-color: #607D8B;
+    }
+    /*  # sys
+        # 90907.1b
+        # system color classes
+        #
+    */
+    .sm\(sys\:fg\) {
+        color: var(--sys-font-color);
+    }
+    .sm\(sys\:bg\) {
+        background-color: var(--sys-content-bg-color);
+    }
+    /*  # bdr
+        # 90907.1b
+        # border color classes
+        #
+    */
+    .sm\(bdr\:blk\) {
+        border-color: var(--fg-blk) !important;
+    }
+    .sm\(bdr\:wht\) {
+        border-color: var(--fg-wht) !important;
+    }
+    .sm\(bdr\:bas-900\) {
+        border-color: var(--fg-bas-900) !important;
+    }
+    .sm\(bdr\:bas-800\) {
+        border-color: var(--fg-bas-800) !important;
+    }
+    .sm\(bdr\:bas-700\) {
+        border-color: var(--fg-bas-700) !important;
+    }
+    .sm\(bdr\:bas-600\) {
+        border-color: var(--fg-bas-600) !important;
+    }
+    .sm\(bdr\:bas-500\) {
+        border-color: var(--fg-bas-500) !important;
+    }
+    .sm\(bdr\:bas-400\) {
+        border-color: var(--fg-bas-400) !important;
+    }
+    .sm\(bdr\:bas-300\) {
+        border-color: var(--fg-bas-300) !important;
+    }
+    .sm\(bdr\:bas-200\) {
+        border-color: var(--fg-bas-200) !important;
+    }
+    .sm\(bdr\:bas-100\) {
+        border-color: var(--fg-bas-100) !important;
+    }
+    .sm\(bdr\:bas-050\) {
+        border-color: var(--fg-bas-050) !important;
+    }
+    .sm\(bdr\:pri-900\) {
+        border-color: var(--fg-pri-900) !important;
+    }
+    .sm\(bdr\:pri-800\) {
+        border-color: var(--fg-pri-800) !important;
+    }
+    .sm\(bdr\:pri-700\) {
+        border-color: var(--fg-pri-700) !important;
+    }
+    .sm\(bdr\:pri-600\) {
+        border-color: var(--fg-pri-600) !important;
+    }
+    .sm\(bdr\:pri-500\) {
+        border-color: var(--fg-pri-500) !important;
+    }
+    .sm\(bdr\:pri-400\) {
+        border-color: var(--fg-pri-400) !important;
+    }
+    .sm\(bdr\:pri-300\) {
+        border-color: var(--fg-pri-300) !important;
+    }
+    .sm\(bdr\:pri-200\) {
+        border-color: var(--fg-pri-200) !important;
+    }
+    .sm\(bdr\:pri-100\) {
+        border-color: var(--fg-pri-100) !important;
+    }
+    .sm\(bdr\:pri-050\) {
+        border-color: var(--fg-pri-050) !important;
+    }
+    .sm\(bdr\:sec-900\) {
+        border-color: var(--fg-sec-900) !important;
+    }
+    .sm\(bdr\:sec-800\) {
+        border-color: var(--fg-sec-800) !important;
+    }
+    .sm\(bdr\:sec-700\) {
+        border-color: var(--fg-sec-700) !important;
+    }
+    .sm\(bdr\:sec-600\) {
+        border-color: var(--fg-sec-600) !important;
+    }
+    .sm\(bdr\:sec-500\) {
+        border-color: var(--fg-sec-500) !important;
+    }
+    .sm\(bdr\:sec-400\) {
+        border-color: var(--fg-sec-400) !important;
+    }
+    .sm\(bdr\:sec-300\) {
+        border-color: var(--fg-sec-300) !important;
+    }
+    .sm\(bdr\:sec-200\) {
+        border-color: var(--fg-sec-200) !important;
+    }
+    .sm\(bdr\:sec-100\) {
+        border-color: var(--fg-sec-100) !important;
+    }
+    .sm\(bdr\:sec-050\) {
+        border-color: var(--fg-sec-050) !important;
+    }
+    .sm\(bdr\:red\) {
+        border-color: #F44336 !important;
+    }
+    .sm\(bdr\:pink\) {
+        border-color: #E91E63 !important;
+    }
+    .sm\(bdr\:purple\) {
+        border-color: #9C27B0 !important;
+    }
+    .sm\(bdr\:deep-purple\) {
+        border-color: #673AB7 !important;
+    }
+    .sm\(bdr\:indigo\) {
+        border-color: #3F51B5 !important;
+    }
+    .sm\(bdr\:blue\) {
+        border-color: #2196F3 !important;
+    }
+    .sm\(bdr\:light-blue\) {
+        border-color: #03A9F4 !important;
+    }
+    .sm\(bdr\:cyan\) {
+        border-color: #00BCD4 !important;
+    }
+    .sm\(bdr\:teal\) {
+        border-color: #009688 !important;
+    }
+    .sm\(bdr\:green\) {
+        border-color: #4CAF50 !important;
+    }
+    .sm\(bdr\:light-green\) {
+        border-color: #8BC34A !important;
+    }
+    .sm\(bdr\:lime\) {
+        border-color: #CDDC39 !important;
+    }
+    .sm\(bdr\:yellow\) {
+        border-color: #FFEB3B !important;
+    }
+    .sm\(bdr\:amber\) {
+        border-color: #FFC107 !important;
+    }
+    .sm\(bdr\:orange\) {
+        border-color: #FF9800 !important;
+    }
+    .sm\(bdr\:deep-orange\) {
+        border-color: #FF5722 !important;
+    }
+    .sm\(bdr\:brown\) {
+        border-color: #795548 !important;
+    }
+    .sm\(bdr\:gray\) {
+        border-color: #9E9E9E !important;
+    }
+    .sm\(bdr\:blue-gray\) {
+        border-color: #607D8B !important;
+    }
 }
 
 
