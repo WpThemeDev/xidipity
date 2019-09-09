@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90906.1c.2
+ *  build:  90907.1b
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -452,7 +452,7 @@ if (!function_exists('xidipity_setup')):
         $ed_css4 = '/assets/css/style/advance.css';
         $ed_css5 = '/assets/css/media/screen.css';
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-        $ed_css7 = 'https://use.fontawesome.com/releases/v5.10.2/css/all.css';
+        $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
         $ed_css8 = '/assets/css/style/editor.css';
 
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8 );
