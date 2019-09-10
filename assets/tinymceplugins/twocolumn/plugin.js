@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90824.1b
+ *  build:  90909.1a
  *  descrp: two column plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -18,7 +18,7 @@
             icon: 'mce-column',
             image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhl%0D%0AaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIw%0D%0AMDAvc3ZnIj4KICA8cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz4KICA8cGF0%0D%0AaCBkPSJNIDMgMTUgTCAxMSAxNSBMIDExIDEzIEwgMyAxMyBMIDMgMTUgWiBNIDMgMTkgTCAxMSAx%0D%0AOSBMIDExIDE3IEwgMyAxNyBMIDMgMTkgWiBNIDMgMTEgTCAxMSAxMSBMIDExIDkgTCAzIDkgTCAz%0D%0AIDExIFogTSAzIDUgTCAzIDcgTCAxMSA3IEwgMTEgNSBMIDMgNSBaIE0gMTMgNSBMIDIxIDUgTCAy%0D%0AMSAxOSBMIDEzIDE5IEwgMTMgNSBaIiBzdHlsZT0iZmlsbDogcmdiKDMzLCAzMywgMzMpOyIvPgog%0D%0AIDxyZWN0IHg9IjEyLjk1IiB5PSI0Ljk5OCIgd2lkdGg9IjguMDQyIiBoZWlnaHQ9IjE0LjAwMyIg%0D%0Ac3R5bGU9ImZpbGw6IHJnYigxMTcsIDExNywgMTE3KTsiLz4KPC9zdmc+',
             onclick: function() {
-                var html = '<p><!-- xwt: table/two column --></p><table class="twocol" cellspacing="0"><tr><td class="twocol-td"><p>&nbsp;</p></td><td class="twocol-td"><p>&nbsp;</p></td></tr></table><p><!-- /xwt: table/two column --></p>';
+                var html = '<!-- xwpt: 90909.1a/tmpl/two col            --><table class="twocol" cellspacing="0"><tr><td><p>&nbsp;</p></td><td><p>&nbsp;</p></td></tr></table><!-- /xwpt: 90909.1a/tmpl/two col           -->';
                 editor.insertContent(html);
             }
         });
