@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/common.css
- *  build:  90907.1a
+ *  build:  90909.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -973,7 +973,7 @@ img.focalpoint:hover {
 
 
 /*  # fx an-cn
-    # 90903.1a
+    # 90909.1a
     # flexbox annotation template
     # https://the-echoplex.net/flexyboxes/
 **/
@@ -1000,7 +1000,7 @@ img.focalpoint:hover {
     background-color: #fafafa;
 }
 
-.fx\:an-cn-item:nth-child(1) {
+.fx\:an-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1010,11 +1010,9 @@ img.focalpoint:hover {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
 }
 
-.fx\:an-cn-item:nth-child(2) {
+.fx\:an-item:nth-child(2) {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -1024,13 +1022,11 @@ img.focalpoint:hover {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
-    padding-left: 0.5rem;
-    border-left: 2px solid #E0E0E0;
 }
 
 
 /*  # fx erule-cn
-    # 90903.1a
+    # 90909.1a
     # flexbox emblem rule template
     # https://the-echoplex.net/flexyboxes/
 **/
@@ -1062,7 +1058,7 @@ img.focalpoint:hover {
 
 /*: emblem center :*/
 
-.fx\:erule-cn-center-item:nth-child(1) {
+.fx\:erule-item-center:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1074,7 +1070,7 @@ img.focalpoint:hover {
     align-self: auto;
 }
 
-.fx\:erule-cn-center-item:nth-child(2) {
+.fx\:erule-item-center:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1084,11 +1080,11 @@ img.focalpoint:hover {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.fx\:erule-cn-center-item:nth-child(3) {
+.fx\:erule-item-center:nth-child(3) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1103,7 +1099,7 @@ img.focalpoint:hover {
 
 /*: emblem left :*/
 
-.fx\:erule-cn-left-item:nth-child(1) {
+.fx\:erule-item-left:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1115,7 +1111,7 @@ img.focalpoint:hover {
     align-self: auto;
 }
 
-.fx\:erule-cn-left-item:nth-child(2) {
+.fx\:erule-item-left:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1125,13 +1121,13 @@ img.focalpoint:hover {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    margin-left: 1rem;
+    padding-right: 1rem;
 }
 
 
 /*: emblem right :*/
 
-.fx\:erule-cn-right-item:nth-child(1) {
+.fx\:erule-item-right:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1143,7 +1139,7 @@ img.focalpoint:hover {
     align-self: auto;
 }
 
-.fx\:erule-cn-right-item:nth-child(2) {
+.fx\:erule-item-right:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1153,21 +1149,27 @@ img.focalpoint:hover {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    margin-left: 1rem;
+    padding-left: 1rem;
 }
 
 
 /*  # two column table
-    # 90824.1b
+    # 90909.1a
     # table layout works best in editor
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 **/
 
-.twocol {
+table.twocol {
     display: block;
     width: 100%;
 }
 
-.twocol-td {
+.twocol tr {
+    display: block;
+    width: 100%;
+}
+
+.twocol td {
     border: none !important;
     display: block;
     padding: 0;
@@ -1175,16 +1177,25 @@ img.focalpoint:hover {
 }
 
 @media (min-width:640px) {
-    .twocol {
+    table.twocol {
         display: table;
         border-collapse: separate;
         width: 100%;
     }
-    .twocol-td {
+    .twocol tr {
+        display: table-row;
+        width: 100%;
+    }
+    .twocol td {
         display: table-cell;
-        padding: 8px;
         vertical-align: top;
         width: 50%;
+    }
+    .twocol td:first-child {
+        padding-right: 0.5rem;
+    }
+    .twocol td:last-child {
+        padding-left: 0.5rem;
     }
 }
 
