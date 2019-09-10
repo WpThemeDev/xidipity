@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/advance.css
- *  build:  90907.1b
+ *  build:  90909.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -24,12 +24,18 @@
 **/
 
 
-/*
-    border (rem)
+/*  # bdr:style
+    # 90909.1b
+    # border style named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 */
 
 .bdr\:style-dashed {
     border-style: dashed !important;
+}
+
+.bdr\:style-dotted {
+    border-style: dotted !important;
 }
 
 .bdr\:style-none {
@@ -39,6 +45,13 @@
 .bdr\:style-solid {
     border-style: solid !important;
 }
+
+
+/*  # bdr:radius
+    # 90909.1b
+    # predefined border radius classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+*/
 
 .bdr\:radius-0\.25 {
     border-radius: 0.25rem !important;
@@ -138,7 +151,7 @@
 }
 
 .bdr\:right-0\.0625 {
-    border-left-width: 0.0625rem !important;
+    border-right-width: 0.0625rem !important;
 }
 
 .bdr\:bottom-0\.0625 {
@@ -161,7 +174,7 @@
 }
 
 .bdr\:right-0\.125 {
-    border-left-width: 0.125rem !important;
+    border-right-width: 0.125rem !important;
 }
 
 .bdr\:bottom-0\.125 {
@@ -184,7 +197,7 @@
 }
 
 .bdr\:right-0\.1875 {
-    border-left-width: 0.1875rem !important;
+    border-right-width: 0.1875rem !important;
 }
 
 .bdr\:bottom-0\.1875 {
@@ -225,8 +238,10 @@
 }
 
 
-/*
-    font size (rem)
+/*  # fnt:size
+    # 90907.1b
+    # font size named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
 */
 
 .fnt\:size-xx-large {
@@ -266,8 +281,33 @@
 }
 
 
-/*
-    font style
+/*  # fnt:space
+    # 90907.1b
+    # predefined letter spacing classes
+    # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+*/
+
+.fnt\:spacing-tight {
+    letter-spacing: -0.05rem;
+}
+
+.fnt\:spacing-normal {
+    letter-spacing: 0;
+}
+
+.fnt\:spacing-loose {
+    letter-spacing: 0.1rem;
+}
+
+.fnt\:spacing-wide {
+    letter-spacing: 0.5rem;
+}
+
+
+/*  # fnt:style
+    # 90907.1b
+    # font style named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
 */
 
 .fnt\:style-italic {
@@ -283,44 +323,14 @@
 }
 
 
-/*
-    font weight
+/*  # fnt:weight
+    # 90907.1b
+    # font weight named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 */
 
-.fnt\:weight-100 {
-    font-weight: 100 !important;
-}
-
-.fnt\:weight-200 {
-    font-weight: 200 !important;
-}
-
-.fnt\:weight-300 {
-    font-weight: 300 !important;
-}
-
-.fnt\:weight-400 {
-    font-weight: 400 !important;
-}
-
-.fnt\:weight-500 {
-    font-weight: 500 !important;
-}
-
-.fnt\:weight-600 {
-    font-weight: 600 !important;
-}
-
-.fnt\:weight-700 {
-    font-weight: 700 !important;
-}
-
-.fnt\:weight-800 {
-    font-weight: 800 !important;
-}
-
-.fnt\:weight-900 {
-    font-weight: 900 !important;
+.fnt\:weight-bold {
+    font-weight: bold !important;
 }
 
 .fnt\:weight-bolder {
@@ -329,6 +339,10 @@
 
 .fnt\:weight-lighter {
     font-weight: lighter !important;
+}
+
+.fnt\:weight-normal {
+    font-weight: normal !important;
 }
 
 
@@ -1595,10 +1609,27 @@ ul.li\:tpl-spaced li:not(:last-child) {
         padding-top: 0.75rem !important;
         padding-bottom: 0.75rem !important;
     }
+    /*  # fnt:space
+        # 90907.1b
+        # predefined letter spacing classes
+        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+    */
+    .sm\(fnt\:spacing-tight\) {
+        letter-spacing: -0.05rem;
+    }
+    .sm\(fnt\:spacing-normal\) {
+        letter-spacing: 0;
+    }
+    .sm\(fnt\:spacing-loose\) {
+        letter-spacing: 0.1rem;
+    }
+    .sm\(fnt\:spacing-wide\) {
+        letter-spacing: 0.5rem;
+    }
     /*  # fnt:size
         # 90907.1b
-        # font size classes
-        #
+        # font size named classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
     */
     .sm\(fnt\:size-xx-large\) {
         font-size: xx-large !important;
