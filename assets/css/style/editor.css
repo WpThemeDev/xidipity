@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/editor.css
- *  build:  90907.1b
+ *  build:  90909.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -148,7 +148,7 @@ acronym {
     display: none;
 }
 
-.twocol-td:first-of-type {
+.twocol td:first-of-type {
     border-right: 1px dashed var(--bg-bas-400) !important;
 }
 
