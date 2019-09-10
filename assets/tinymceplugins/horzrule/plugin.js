@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90903.1a
+ *  build:  90909.1a
  *  descrp: horizonal rule plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -59,14 +59,14 @@
                     text: '• Emblem',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-cn-center-item"><hr class="horz:align-right" /></div><div class="fx:erule-cn-center-item mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-cn-center-item"><hr class="horz:align-left" /></div></div>');
+                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left" /></div></div>');
                     }
                 },
                 {
                     text: '• Emblem Wide',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-cn-center-item"><hr class="horz:align-right wd:100%" /></div><div class="fx:erule-cn-center-item mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-cn-center-item"><hr class="horz:align-left wd:100%" /></div></div>');
+                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right wd:100%" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left wd:100%" /></div></div>');
                     }
                 }
             ],
