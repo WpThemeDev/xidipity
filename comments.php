@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   comments.php
- *  build:  90828.1a
+ *  build:  90915.1a
  *  descrp: comment template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -19,11 +19,12 @@ if (post_password_required()) {
     return;
 }
 
-echo '<!-- xwpt: 90828.1a/comments/php            -->' . "\n";
-echo '<div class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
+echo '<!-- xwpt: 90915.1a/comments/php            -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
 
 if (have_comments()):
-    echo '<div class="pad:all-1">' . "\n";
+    echo '<div class="fx:ct-itm-opt">' . "\n";
     echo '<h2 class="com:title">' . "\n";
     $comments_number = get_comments_number();
     if ('1' === $comments_number) {
@@ -93,7 +94,7 @@ comment_form(array(
     ) );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90828.1a/comments/php           -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/comments/php           -->' . "\n";
 /*
     eof: comments.php
 */
