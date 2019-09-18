@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90907.1b
+ *  build:  90915.1a
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,29 +34,33 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90907.1b/author/php              -->' . "\n";
-echo '<main class="fx:pg-item">' . "\n";
+echo '<!-- xwpt: 90915.1a/author/php              -->' . "\n";
+echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
+echo '<main class="fx:pg-ct-itm">' . "\n";
 /*
     biography
 */
 if (empty(locate_template('template-parts/biography.php')))
 {
     err_msg('missing file "template-parts/biography.php"');
-    echo '<div class="fx:cn-container">' . "\n";
+    echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
+    echo '<div class="fx:cn-ct">' . "\n";
     get_template_part('template-parts/content', 'none');
     echo '</div>' . "\n";
 }
 else
 {
-    echo '<div class="fx:cn-container">' . "\n";
+    echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
+    echo '<div class="fx:cn-ct">' . "\n";
     get_template_part('template-parts/biography');
     echo '</div>' . "\n";
 }
 /*
     history
 */
-echo '<div class="fx:cn-container">' . "\n";
-echo '<div class="fx:full-cn-item bg:bas-050 fx:shadow">' . "\n";
+echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
+echo '<div class="fx:cn-ct">' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% bg:bas-050 fx:shadow">' . "\n";
 echo '<h4>Other posts by author:</h4>' . "\n";
 //echo '<p>&nbsp;</p>' . "\n";
 echo '<div class="sys:bg pad:all-1">' . "\n";
@@ -104,7 +108,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90907.1b/autor/php              -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/author/php             -->' . "\n";
 /*
     display sidebar
 */
