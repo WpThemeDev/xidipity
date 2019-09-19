@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   shortcodes.php
- *  build:  90905.1a
+ *  build:  90915.1a
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -222,14 +222,14 @@ function bexc_shortcode($atts, $prms)
             $v_html_img = '<img class="img:100%" src="' . $wp_html_img_url . '" alt="Xidipity Blog Excerpt Shortcode" >';
 
             /*: title :*/
-            $v_html_title = '<h1 class="fx:cn-item-title"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">' . get_the_title() . '</a></h1>';
+            $v_html_title = '<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">' . get_the_title() . '</a></h1>';
             
             if (!$v_img_exists)
             {
                 $html_retval .= '<div class="fx:bexc-cn-img-none">';
                 $html_retval .= '<div class="fx:bexc-cn-img-none-item">';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
-                $html_retval .= '<header class="fx:cn-item-header">';
+                $html_retval .= '<header class="fx:cn-itm-hd">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
@@ -246,7 +246,7 @@ function bexc_shortcode($atts, $prms)
                 $html_retval .= '</div>';
                 $html_retval .= '<div class="fx:bexc-cn-img-item pad:right-1">';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
-                $html_retval .= '<header class="fx:cn-item-header">';
+                $html_retval .= '<header class="fx:cn-itm-hd">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
@@ -263,7 +263,7 @@ function bexc_shortcode($atts, $prms)
                 $html_retval .= '</div>';
                 $html_retval .= '<div class="fx:bexc-cn-img-item pad:left-1">';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_cat));
-                $html_retval .= '<header class="fx:cn-item-header">';
+                $html_retval .= '<header class="fx:cn-itm-hd">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
                 $html_retval .= xidipity_metalinks(explode(',', $v_meta_list_byline));
