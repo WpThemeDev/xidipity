@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   biography.php
- *  build:  90828.1a
+ *  build:  90915.1a
  *  descrp: biography snippet
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -27,14 +27,15 @@ $v_biography .= '<h5>About: <a href="' . get_author_posts_url( $wp_author_id, $w
 $v_biography .= '<p>' . $wp_bio . '</p>';
 $v_img = '<img class="img:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
 $v_meta_list = '';
-echo '<!-- xwpt: 90828.1a/biography/php           -->' . "\n";
-echo '<div class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
+echo '<!-- xwpt: 90915.1a/biography/php           -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
 echo '<div class="fx:bio-container">' . "\n";
 echo '<div class="fx:bio-item">' . $v_img . '</div>';
 echo '<div class="fx:bio-item pad:left-0.5">' . $v_biography . '</div>';
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90828.1a/biography/php          -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/biography/php          -->' . "\n";
 /*
     eof: biography.php
 */
