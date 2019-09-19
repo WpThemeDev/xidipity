@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90828.1a
+ *  build:  90915.1a
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,9 +31,11 @@ $v_title = '';
     display page header
 */
 get_header();
-echo '<!-- xwpt: 90828.1a/image/php               -->' . "\n";
-echo '<main class="fx:pg-item">' . "\n";
-echo '<div class="fx:cn-container">' . "\n";
+echo '<!-- xwpt: 90915.1a/image/php               -->' . "\n";
+echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
+echo '<main class="fx:pg-ct-itm">' . "\n";
+echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
+echo '<div class="fx:cn-ct">' . "\n";
 /*: get page title :*/
 $v_title = get_the_title();
 if (strpos($v_title, '.') > 1)
@@ -70,7 +72,8 @@ if (have_posts())
         default:
             $v_aspect_ratio = '';
     }
-    echo '<article class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
+    echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+    echo '<article class="fx:cn-ct-itm fx:ct-itm-opt fx:basis-100% fx:shadow">' . "\n";
     echo '<h2 class="pad:xy-1"><i class="far fa-image fg-pri-300"></i> ' . $v_title . '</h2>' . "\n";
     echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
     if (!empty($v_aspect_ratio))
@@ -129,7 +132,7 @@ if (have_posts())
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90828.1a/image/php              -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/image/php              -->' . "\n";
 /*
     display sidebar
 */
