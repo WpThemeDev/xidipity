@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90904.1a
+ *  build:  90915.1a
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -221,8 +221,9 @@ if (!function_exists('xidipity_excerpt_banner'))
         /*: go / nogo logic :*/
         if (!empty($v_hdr_title))
         {
-            $html_retval .= '<div class="fx:full-cn-item fx:shadow pad:all-0.5">';
-            $html_retval .= '<header class="fx:cn-item-header">';
+            $html_retval .= '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:all-1">';
+            $html_retval .= '<header class="fx:cn-itm-hd">';
             $html_retval .= '<h2>' . $v_icon . $v_hdr_title . '</h2>';
             if (!empty($v_hdr_descr))
             {
@@ -278,18 +279,18 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
-        $html_retval .= '<div class="fx:pg-nav-container bg:bas-200 bdr:radius-0.25 mar:vert-1">';
+        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 bdr:radius-0.25 mar:vert-1">';
         if ($wp_search)
         {
             
             $html_retval .=  paginate_links(array(
                 'after_page_number' => '</div>',
                 'base' => '%_%',
-                'before_page_number' => '<div class="fx:pg-nav-item">',
+                'before_page_number' => '<div class="fx:ct-nav-itm">',
                 'current' => $a_page,
                 'format' => '?paged=%#%',
-                'next_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_left() . '</div>',
+                'next_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
@@ -298,11 +299,11 @@ if (!function_exists('xidipity_paginate_links'))
             $html_retval .=  paginate_links(array(
                 'after_page_number' => '</div>',
                 'base' => get_pagenum_link(1) . '%_%',
-                'before_page_number' => '<div class="fx:pg-nav-item">',
+                'before_page_number' => '<div class="fx:ct-nav-itm">',
                 'current' => $a_page,
                 'format' => 'page/%#%',
-                'next_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="fx:pg-nav-item">' . xidipity_icon_caret_left() . '</div>',
+                'next_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_right() . '</div>',
+                'prev_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_left() . '</div>',
                 'total' => $a_pages,
             ));
         }
@@ -327,10 +328,10 @@ if (!function_exists('xidipity_metalinks'))
         /*: go / no go  :*/
         if ($v_cnt >0)
         {
-            $html_retval .= '<div class="fx:meta-container pad:vert-0.75">';
+            $html_retval .= '<div class="fx:cn-ct-meta pad:vert-0.75">';
             foreach ($atts as $att)
             {
-                $html_retval .= '<div class="fx:meta-item">' . $att . '</div>';
+                $html_retval .= '<div class="fx:ct-meta-itm">' . $att . '</div>';
             }
             $html_retval .= '</div>';
         }
