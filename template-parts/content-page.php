@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-page.php
- *  build:  90901.1a
+ *  build:  90915.1a
  *  descrp: content / page
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -21,27 +21,28 @@ $v_meta_list = '';
     get page template
 */
 $wp_tmpl = page_tmpl();
-echo '<!-- xwpt: 90901.1a/content-page/php        -->' . "\n";
+echo '<!-- xwpt: 90915.1a/content-page/php        -->' . "\n";
 if ($wp_tmpl == 'naked')
 {
     /*
     content
     */
-    echo '<div class="fx:cn-item-container pad:all-1 wd:100%">' . "\n";
+    echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
+    echo '<div class="fx:cn-itm-wrapper pad:all-1">' . "\n";
     the_content();
     echo '</div>' . "\n";
 }
 else
 {
-    echo '<div class="fx:full-cn-item bg:bas-050 fx:shadow">' . "\n";
+    echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% bg:bas-050 fx:shadow">' . "\n";
     /*
     content title
     */
     echo '<div class="pad:left-1">' . "\n";
     if ($wp_tmpl !== 'no-title')
     {
-        echo '<header class="fx:cn-item-header">' . "\n";
-        the_title('<h1 class="fx:cn-item-title">', '</h1>');
+        echo '<header class="fx:cn-itm-hd">' . "\n";
+        the_title('<h1 class="fx:cn-itm-ti">', '</h1>');
         echo '</header>' . "\n";
         /*
         yoast breadcrumbs
@@ -58,7 +59,8 @@ else
     /*
     content
     */
-    echo '<div class="fx:cn-item-container pad:all-1">' . "\n";
+    echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
+    echo '<div class="fx:cn-itm-wrapper pad:all-1">' . "\n";
     the_content();
     echo '</div>' . "\n";
     /*
@@ -79,7 +81,7 @@ else
     echo '</div>' . "\n";
     echo '</div>' . "\n";
 }
-echo '<!-- /xwpt: 90901.1a/content-page/php       -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/content-page/php       -->' . "\n";
 /*
     eof: content-page.php
 */
