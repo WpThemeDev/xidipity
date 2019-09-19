@@ -827,8 +827,7 @@ img.header-logo {
 }
 
 .search-frm-container {
-    border-radius: .25rem;
-    margin: 5px 0 5px 5px;
+    margin: 0.5rem 0;
     width: 100%;
 }
 
@@ -1209,6 +1208,8 @@ a.page-numbers:focus {
     # https://the-echoplex.net/flexyboxes/
 **/
 
+
+/* deprecated
 .fx\:pg-container {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1252,10 +1253,13 @@ a.page-numbers:focus {
         align-items: flex-start;
     }
 }
+*/
 
 
 /*: header :*/
 
+
+/* deprecated
 .fx\:pg-item:nth-child(1) {
     -webkit-order: 1;
     -ms-flex-order: 1;
@@ -1281,10 +1285,13 @@ a.page-numbers:focus {
         align-self: stretch;
     }
 }
+*/
 
 
 /*: menu :*/
 
+
+/* deprecated
 .fx\:pg-item:nth-child(2) {
     -webkit-order: 2;
     -ms-flex-order: 2;
@@ -1311,10 +1318,13 @@ a.page-numbers:focus {
         align-self: stretch;
     }
 }
+*/
 
 
 /*: content :*/
 
+
+/* deprecated
 .fx\:pg-item:nth-child(3) {
     -webkit-order: var(--sys-content-order);
     -ms-flex-order: var(--sys-content-order);
@@ -1387,10 +1397,13 @@ a.page-numbers:focus {
         max-width: 70.3%;
     }
 }
+*/
 
 
 /*: sidebar :*/
 
+
+/* deprecated
 .fx\:pg-item:nth-child(4) {
     -webkit-order: var(--sys-sidebar-order);
     -ms-flex-order: var(--sys-sidebar-order);
@@ -1420,9 +1433,13 @@ a.page-numbers:focus {
     }
 }
 
+*/
+
 
 /*: footer :*/
 
+
+/* deprecated
 .fx\:pg-item:nth-child(5) {
     -webkit-order: 5;
     -ms-flex-order: 5;
@@ -1448,10 +1465,13 @@ a.page-numbers:focus {
         align-self: stretch;
     }
 }
+*/
 
 
 /*: content container :*/
 
+
+/* deprecated
 .fx\:cn-container {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1497,9 +1517,13 @@ a.page-numbers:focus {
     }
 }
 
+*/
+
 
 /*: full content panel :*/
 
+
+/* deprecated
 .fx\:full-cn-item {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1519,9 +1543,13 @@ a.page-numbers:focus {
     }
 }
 
+*/
+
 
 /*: half content :*/
 
+
+/* deprecated
 .fx\:half-cn-item {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1550,9 +1578,13 @@ a.page-numbers:focus {
     }
 }
 
+*/
+
 
 /*: third content :*/
 
+
+/* deprecated
 .fx\:third-cn-item {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1581,9 +1613,13 @@ a.page-numbers:focus {
     }
 }
 
+*/
+
 
 /*: sidebar container :*/
 
+
+/* deprecated
 .fx\:sb-container {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1605,9 +1641,13 @@ a.page-numbers:focus {
     align-items: flex-start;
 }
 
+*/
+
 
 /*: sidebar widget :*/
 
+
+/* deprecated
 .fx\:sb-item {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1629,9 +1669,10 @@ a.page-numbers:focus {
     margin: 0.25rem 0.25rem 0 0.25rem;
 }
 
+*/
 
-/*: support classes :*/
 
+/* deprecated
 .fx\:shadow {
     -webkit-box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .14);
     -moz-box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .14);
@@ -1641,7 +1682,6 @@ a.page-numbers:focus {
 .fx\:sb-item-padding {
     padding: 1rem 0.75rem;
 }
-
 .fx\:sb-item-title {
     color: var(--fg-bas-600);
     font-family: var(--font-sans);
@@ -1650,45 +1690,15 @@ a.page-numbers:focus {
     letter-spacing: .05rem;
     margin: 0 0 4px;
 }
+*/
 
-.fx\:cn-item-header {
-    margin: 0 0 6px;
-    padding: 0;
-}
 
-.fx\:cn-item-title {
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word;
-}
+/*: support classes :*/
 
-.fx\:cn-item-title a,
-.fx\:cn-item-title a:active,
-.fx\:cn-item-title a:focus,
-.fx\:cn-item-title a:visited {
-    color: var(--h1-color);
-}
 
-.fx\:cn-item-title a:hover {
-    color: var(--sys-lnk-sec-color);
-    background-color: var(--sys-lnk-sec-bg-color);
-}
+/*: content / container / navigation :*/
 
-.fx\:cn-item-excerpt {
-    background-color: var(--sys-content-bg-color);
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word;
-}
-
-.fx\:cn-item-container {
-    background-color: var(--sys-content-bg-color);
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word;
-}
-
-.fx\:pg-nav-container {
+.fx\:cn-ct-nav {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1709,7 +1719,10 @@ a.page-numbers:focus {
     align-items: center;
 }
 
-.fx\:pg-nav-item {
+
+/*: container / navigation / item :*/
+
+.fx\:ct-nav-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1724,7 +1737,10 @@ a.page-numbers:focus {
     padding: 15px 20px;
 }
 
-.fx\:meta-container {
+
+/*: content / container / meta :*/
+
+.fx\:cn-ct-meta {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1745,7 +1761,10 @@ a.page-numbers:focus {
     align-items: flex-start;
 }
 
-.fx\:meta-item {
+
+/*: container / meta / item :*/
+
+.fx\:ct-meta-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1771,6 +1790,8 @@ a.page-numbers:focus {
 
 /*: content :*/
 
+
+/* deprecated
 .fx\:nspg-content {
     -webkit-order: 3;
     -ms-flex-order: 3;
@@ -1785,9 +1806,27 @@ a.page-numbers:focus {
     width: 99.2%;
 }
 
+.fx\:nkpg-content {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+*/
+
 
 /*: footer :*/
 
+
+/* deprecated
 .fx\:nspg-footer {
     -webkit-order: 4;
     -ms-flex-order: 4;
@@ -1814,23 +1853,6 @@ a.page-numbers:focus {
     }
 }
 
-.fx\:nkpg-content {
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    margin-bottom: 8px;
-    width: 100%;
-}
-
-
-/*: footer :*/
-
 .fx\:nkpg-footer {
     -webkit-order: 3;
     -ms-flex-order: ;
@@ -1856,6 +1878,7 @@ a.page-numbers:focus {
         align-self: stretch;
     }
 }
+*/
 
 
 /*  # bexc-container
@@ -2107,6 +2130,538 @@ a.page-numbers:focus {
         flex: 0 1 30%;
         width: 30%;
     }
+}
+
+
+/*  # core flexbox classes
+            # 90910.1a
+            # classes which support core design elements
+            # pg    = page
+            # ct    = container
+            # itm   = page container item
+            # https://the-echoplex.net/flexyboxes/
+        **/
+
+
+/*: page container :*/
+
+.fx\:pg-ct {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+
+/*: (header) page container item :*/
+
+.fx\:pg-ct-itm:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+/*: (menu) page container item :*/
+
+.fx\:pg-ct-itm:nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+/*: (content) page container item :*/
+
+.fx\:pg-ct-itm:nth-child(3) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+/*: (sidebar) page container item :*/
+
+.fx\:pg-ct-itm:nth-child(4) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+/*: (footer) page container item :*/
+
+.fx\:pg-ct-itm:nth-child(5) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+/*  # core flexbox classes
+            # 90910.1a
+            # classes which support core design elements
+            # cn    = content
+            # ct    = container
+            # itm   = content container item
+            # https://the-echoplex.net/flexyboxes/
+        **/
+
+
+/*: content container :*/
+
+.fx\:cn-ct {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.fx\:cn-ct-itm {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-bottom: 0.75rem;
+}
+
+
+/*: default cn-itm-opt padding setting :*/
+
+.fx\:cn-itm-opt {
+    padding: 0;
+}
+
+
+/*: default cn-ct-itm padding setting :*/
+
+.fx\:cn-ct-opt {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/*: default cn-ct-itm image setting :*/
+
+.cn-ct-img {
+    height: auto;
+    width: 100%;
+}
+
+.fx\:cn-ct-itm img {
+    height: auto !important;
+    width: 100% !important;
+}
+
+
+/*  # core flexbox classes
+            # 90915.1a
+            # classes which support core design elements
+            # sb    = sidebar
+            # ct    = container
+            # itm   = sidebar container item
+            # https://the-echoplex.net/flexyboxes/
+        **/
+
+
+/*: sidebar container :*/
+
+.fx\:sb-ct {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.fx\:sb-ct-itm {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-bottom: 1rem;
+}
+
+.fx\:sb-ct-opt {
+    padding: 0.25rem;
+}
+
+.fx\:sb-itm-opt {
+    padding: 0;
+}
+
+.fx\:sb-ct-itm img {
+    height: auto;
+    width: 100%;
+}
+
+.fx\:basis-100\% {
+    flex-basis: 100% !important;
+}
+
+.fx\:basis-50\% {
+    flex-basis: 100% !important;
+}
+
+
+/*  # sb-widget
+            # 90915.1a
+            # flexbox sidebar widgets
+        **/
+
+
+/*: sidebar / widget / ad :*/
+
+.fx\:sb-widget-ad {
+    margin: 0.5rem auto;
+    width: 100%;
+}
+
+
+/*: sidebar / widget / title :*/
+
+.fx\:sb-widget-ti {
+    color: var(--fg-bas-600);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: .05rem;
+    margin: 0 0 4px;
+}
+
+
+/*  # sb-misc
+    # 90915.1a
+    # flexbox misc styling
+**/
+
+.fx\:shadow {
+    -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
+    -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
+}
+
+
+/*  # switch from column to row
+    # 90910.1a
+    # screen width 768px or larger
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+**/
+
+@media (min-width: 640px) {
+    .fx\:pg-ct {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .fx\:pg-ct-itm:nth-child(1) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    .fx\:pg-ct-itm:nth-child(2) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    .fx\:pg-ct-itm:nth-child(3) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 2 1 70%;
+        -ms-flex: 2 1 70%;
+        flex: 2 1 70%;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    .fx\:pg-ct-itm:nth-child(4) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 30%;
+        -ms-flex: 0 1 30%;
+        flex: 0 1 30%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+    .fx\:pg-ct-itm:nth-child(5) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    .fx\:cn-ct {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .fx\:cn-ct-itm {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+    .fx\:cn-itm-opt {
+        padding: 1rem;
+    }
+    .fx\:basis-50\% {
+        flex-basis: 49% !important;
+    }
+    .fx\:sb-ct {
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+    }
+    .fx\:sb-ct-opt {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .fx\:sb-itm-opt {
+        padding: 1.0625rem;
+    }
+    .fx\:sb-widget-ad {
+        margin: 0.5rem auto;
+        max-width: 19.375rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fx\:sb-widget-ad {
+        margin: 0.5rem auto;
+        max-width: 12rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .fx\:sb-widget-ad {
+        margin: 0.5rem auto;
+        max-width: 16rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .fx\:pg-ct-itm:nth-child(3) {
+        -webkit-flex: 2 1 75%;
+        -ms-flex: 2 1 75%;
+        flex: 2 1 75%;
+    }
+    .fx\:pg-ct-itm:nth-child(4) {
+        -webkit-flex: 0 1 25%;
+        -ms-flex: 0 1 25%;
+        flex: 0 1 25%;
+    }
+    .fx\:basis-50\% {
+        flex-basis: 32.67% !important;
+    }
+    .fx\:sb-widget-ad {
+        margin: 0.5rem auto;
+        max-width: 19.375rem;
+    }
+}
+
+
+/*  # fx misc
+    # 90915.1a
+    # misc classes
+**/
+
+/*: header alignment :*/
+
+.fx\:align-ct-itm-1 {
+    text-align: var(--sys-hdr-align);
+}
+
+/*: menu alignment :*/
+
+.fx\:align-ct-itm-2 {
+    text-align: var(--mnu-align);
+}
+
+/*: footer alignment :*/
+
+.fx\:align-ct-itm-5 {
+    text-align: var(--sys-ft-align);
+}
+
+/*: general purpose content wrapper :*/
+
+.fx\:cn-itm-wrapper {
+    background-color: var(--sys-content-bg-color);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* word-wrap: break-word; */
+}
+
+
+/*: verify margins :*/
+
+
+/*: content / item / header :*/
+
+.fx\:cn-itm-hd {
+    margin: 0 0 6px;
+    padding: 0;
+}
+
+
+/*: content / item / title :*/
+
+.fx\:cn-itm-ti {
+    margin: 0;
+    padding: 0;
+    /* word-wrap: break-word; */
+}
+
+.fx\:cn-itm-ti a,
+.fx\:cn-itm-ti a:active,
+.fx\:cn-itm-ti a:focus,
+.fx\:cn-itm-ti a:visited {
+    color: var(--h1-color);
+}
+
+.fx\:cn-itm-ti a:hover {
+    color: var(--sys-lnk-sec-color);
+    background-color: var(--sys-lnk-sec-bg-color);
 }
 
 
