@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90901.1a
+ *  build:  90915.1a
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -16,19 +16,25 @@
     get page template
 */
 $wp_tmpl = page_tmpl();
-echo '<!-- xwpt: 90901.1a/sidebar/php             -->' . "\n";
-echo '<div class="fx:pg-item">' . "\n";
-echo '<div class="fx:sb-container">' . "\n";
+echo '<!-- xwpt: 90915.1a/sidebar/php             -->' . "\n";
+echo '<!-- xwpt: flexbox/page/container/item-4    -->' . "\n";
 /*
     logic check
 */
-if ($wp_tmpl !== 'no-sidebar')
+if ($wp_tmpl == 'no-sidebar')
 {
-    dynamic_sidebar( 'sidebar-1' );
+    echo '<div class="fx:pg-ct-itm disp:none">' . "\n";
 }
+else
+{
+    echo '<div class="fx:pg-ct-itm">' . "\n";
+}
+echo '<!-- xwpt: flexbox/sidebar/container        -->' . "\n";
+echo '<div class="fx:sb-ct">' . "\n";
+dynamic_sidebar( 'sidebar-1' );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90901.1a/sidebar/php            -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/sidebar/php            -->' . "\n";
 /*
     eof: sidebar.php
 */
