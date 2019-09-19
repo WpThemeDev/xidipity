@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-excerpt.php
- *  build:  90901.1a
+ *  build:  90915.1a
  *  descrp: archive / index / search
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -18,8 +18,9 @@
 $v_icon = '';
 $v_link = '';
 $v_meta_list = '';
-echo '<!-- xwpt: 90901.1a/content/blog/php        -->' . "\n";
-echo '<article class="fx:half-cn-item fx:shadow">' . "\n";
+echo '<!-- xwpt: 90915.1a/content/blog/php        -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-50% fx:shadow">' . "\n";
 /*
     featured image
 */
@@ -49,8 +50,8 @@ if ('post' == get_post_type())
     $v_meta_list .=  xidipity_first_category() . ',';
     echo xidipity_metalinks(explode(',', $v_meta_list));
 }
-echo '<header class="fx:cn-item-header">' . "\n";
-the_title('<h1 class="fx:cn-item-title"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '" rel="bookmark">', '</a></h1>');
+echo '<header class="fx:cn-itm-hd">' . "\n";
+the_title('<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '" rel="bookmark">', '</a></h1>');
 echo '</header>' . "\n";
 if ('post' == get_post_type())
 {
@@ -75,7 +76,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '<p>&nbsp;</p>' . "\n";
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt: 90901.1a/content/blog/php       -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/content/blog/php       -->' . "\n";
 /*
     eof: content-excerpt.php
 */
