@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/editor.css
- *  build:  90909.1a
+ *  build:  90915.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -67,23 +67,6 @@ acronym {
 }
 
 
-/* excerpt template        ------------
--- */
-
-.excerpt-template {
-    background-color: var(--bg-bas-050);
-    border: solid var(--fg-bas-300) 1px;
-    border-radius: .25rem;
-    color: var(--fg-bas-700);
-    display: block;
-    font-size: 0.875rem;
-    margin-bottom: 10px;
-    overflow: auto;
-    padding: 15px;
-    white-space: pre-wrap;
-}
-
-
 /* blank line spacers      ------------
 -- */
 
@@ -119,16 +102,13 @@ acronym {
 }
 
 
-/* excerpt                 ------------
--- */
+/*  # excerpt
+    # 90910.1a
+    # optional post excerpt in table format
+    # https://wordpress.org/support/article/excerpt/
+**/
 
 #excerpt {
-    display: table;
-    width: 100%;
-}
-
-.excerpt-tr {
-    display: table-row;
     width: 100%;
 }
 
@@ -136,7 +116,6 @@ acronym {
     background-color: var(--bg-bas-050);
     border-radius: 0.25em;
     border: 1px solid var(--fg-bas-300);
-    display: table-cell;
     font-size: 0.875rem;
     overflow: auto;
     padding: 10px 8px;
@@ -147,6 +126,12 @@ acronym {
 .excerpt-wp {
     display: none;
 }
+
+/*  # twocol
+    # 90910.1a
+    # two column template
+    # add middle divider in editor
+**/
 
 .twocol td:first-of-type {
     border-right: 1px dashed var(--bg-bas-400) !important;
