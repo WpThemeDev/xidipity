@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-none.php
- *  build:  90901.1a
+ *  build:  90915.1a
  *  descrp: content none
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,12 +17,13 @@
 */
 global $post;
 $wp_err = '';
-echo '<!-- xwpt: 90901.1a/content/none/php        -->' . "\n";
-echo '<article class="fx:full-cn-item pad:all-1 fx:shadow">' . "\n";
+echo '<!-- xwpt: 90915.1a/content/none/php        -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
 /*
     no posts
 */
-echo '<!-- xwpt: 90901.1a/content/none/php/err    -->';
+echo '<!-- xwpt: 90915.1a/content/none/php/err    -->';
 if (is_home() && current_user_can('publish_posts'))
 {
     printf('<p>' . wp_kses(
@@ -32,7 +33,7 @@ if (is_home() && current_user_can('publish_posts'))
             'href' => array() ,
         ) ,
     )) . '</p>', esc_url(admin_url('post-new.php')));
-    echo '<!-- /xwpt: 90901.1a/content/none/php/err   -->';
+    echo '<!-- /xwpt: 90915.1a/content/none/php/err   -->';
 }
 elseif (is_search())
 {
@@ -70,9 +71,9 @@ else
     echo '<p>&nbsp;</p>' . "\n";
     echo '<p>Thank you</p>' . "\n";
 }
-echo '<!-- /xwpt: 90901.1a/content/none/php/err   -->';
+echo '<!-- /xwpt: 90915.1a/content/none/php/err   -->';
 echo '</article>' . "\n";
-echo '<!-- /xwpt: 90901.1a/content/none/php       -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/content/none/php       -->' . "\n";
 /*
     eof: content-none.php
 */
