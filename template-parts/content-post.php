@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   content-post.php
- *  build:  90828.1a
+ *  build:  90915.1a
  *  descrp: content / post
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -24,16 +24,17 @@ $wp_tags = get_the_tags();
 */
 $v_cat = '';
 $v_meta_list = '';
-echo '<!-- xwpt: 90828.1a/content-post/php        -->' . "\n";
-echo '<article class="fx:full-cn-item fx:shadow">' . "\n";
+echo '<!-- xwpt: 90915.1a/content-post/php        -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
 echo '<div class="pad:left-1">' . "\n";
 $v_meta_list .= $wp_post_date . ',' . 'Author -' . ',' . '<a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a>';
 echo xidipity_metalinks(explode(',', $v_meta_list));
 /*
     content title
 */
-echo '<header class="fx:cn-item-header">' . "\n";
-the_title('<h1 class="fx:cn-item-title">', '</h1>');
+echo '<header class="fx:cn-itm-hd">' . "\n";
+the_title('<h1 class="fx:cn-itm-ti">', '</h1>');
 echo '</header>' . "\n";
 /*
     yoast breadcrumbs
@@ -45,7 +46,7 @@ echo '</div>' . "\n";
 /*
     content
 */
-echo '<div class="fx:cn-item-container pad:all-1">' . "\n";
+echo '<div class="fx:cn-itm-wrapper pad:all-1">' . "\n";
 the_content();
 echo '</div>' . "\n";
 
@@ -83,7 +84,7 @@ if (!empty($v_meta_list))
 }
 echo '</div>' . "\n";
 echo '</article>' . "\n";
-echo '<!-- /xwpt: 90828.1a/content-post/php       -->' . "\n";
+echo '<!-- /xwpt: 90915.1a/content-post/php       -->' . "\n";
 /*
     eof: content-post.php
 */
