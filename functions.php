@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90915.1b
+ *  build:  90920.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -20,7 +20,6 @@
  */
 function theme_cfg() {
 
-    $fn_val = '';
     $xwt_file = get_template_directory() . '/xidipity.cfg';
     
     if (file_exists($xwt_file)) {
@@ -31,60 +30,42 @@ function theme_cfg() {
             $xwt_prm = trim($cfg_item);
             if (!has_match($xwt_prm,'*'))
             {
-                $cfg_key = substr($xwt_prm,0,strpos($xwt_prm, '/'));
-                $cfg_val = substr($xwt_prm,strpos($xwt_prm, '/')+1) . "\n";
+                $cfg_key = trim(substr($xwt_prm,0,strpos($xwt_prm, '/')));
+                $cfg_val = trim(substr($xwt_prm,strpos($xwt_prm, '/')+1));
                 switch ($cfg_key)
                 {
                     case 'fa-version':
-                        update_option('xwt_fa_ver',trim($cfg_val));
+                        update_option('xwt_fa_ver',$cfg_val);
                         break;
-                    case 'display-mnu':
-                        update_option('xwt_disp_menu',trim($cfg_val));
+                    case 'mnu-display':
+                        update_option('xwt_menu_disp',$cfg_val);
                         break;
-                    case 'display-sb':
-                        update_option('xwt_disp_sidebar',trim($cfg_val));
+                    case 'mnu-width':
+                        $cfg_val = 'fx:mnu-' . $cfg_val;
+                        update_option('xwt_menu_width',$cfg_val);
+                        break;
+                    case 'sb-display':
+                        update_option('xwt_sidebar_disp',$cfg_val);
+                        break;
+                    case 'sb-align':
+                        update_option('xwt_sidebar_align',$cfg_val);
                         break;
                 }
             }
         }
     }
-
-    return $fn_val;
+    return;
 }
 
 /**
  *  name: fa_ver
  *  build: 90915.1b
  *  description: get font awesome version
- *
  */
-function fa_ver($attr='')
+function fa_ver()
 {
-    $db_val = '';
-    $fn_val = '';
-    if (empty($attr))
-    {
-        /*: get value :*/
-        $db_val = get_option('xwt_fa_ver');
-        if (empty($db_val))
-        {
-            /*: set default :*/
-            update_option('xwt_fa_ver','5.10.2');
-            $fn_val = '5.10.2';
-        }
-        else
-        {
-            /*: get value :*/
-            $fn_val = $db_val;
-        }
-    }
-    else
-    {
-        /*: set value :*/
-        update_option('xwt_fa_ver',$attr);
-    }
-    /*: return value :*/
-    return $fn_val;
+    /*: return db value :*/
+    return get_option('xwt_fa_ver');
 }
 
 /**
@@ -99,13 +80,13 @@ function disp_menu($attr='')
 {
     $fn_val = '';
     /*: get value :*/
-    $db_val = get_option('xwt_disp_menu');
+    $db_val = get_option('xwt_menu_disp');
     if (empty($attr))
     {
         if (empty($db_val))
         {
             /*: set default :*/
-            update_option('xwt_disp_menu','yes');
+            update_option('xwt_menu_disp','yes');
             $fn_val = 'yes';
         }
         elseif ($db_val == 'dftno')
@@ -127,9 +108,10 @@ function disp_menu($attr='')
     else
     {
         $db_val = strwrap($db_val,'#');
-        if (!has_match($db_val,'dft')) {
+                if (!has_match($db_val,'dft') && has_match($db_val,'no,yes')) {
+
             /*: set value :*/
-            update_option('xwt_disp_menu',$attr);
+            update_option('xwt_menu_disp',$attr);
         }
     }
     return $fn_val;
@@ -147,13 +129,13 @@ function disp_sidebar($attr='')
 {
     $fn_val = '';
     /*: get value :*/
-    $db_val = get_option('xwt_disp_sidebar');
+    $db_val = get_option('xwt_sidebar_disp');
     if (empty($attr))
     {
         if (empty($db_val))
         {
             /*: set default :*/
-            update_option('xwt_disp_sidebar','yes');
+            update_option('xwt_sidebar_disp','yes');
             $fn_val = 'yes';
         }
         elseif ($db_val == 'dftno')
@@ -175,39 +157,61 @@ function disp_sidebar($attr='')
     else
     {
         $db_val = strwrap($db_val,'#');
-        if (!has_match($db_val,'dft')) {
+        if (!has_match($db_val,'dft') && has_match($db_val,'no,yes')) {
             /*: set value :*/
-            update_option('xwt_disp_sidebar',$attr);
+            update_option('xwt_sidebar_disp',$attr);
         }
     }
     return $fn_val;
 }
  
 /**
- *  name: mnu_width
+ *  name: align_sidebar
  *  build: 90915.1b
- *  description: set / get menu width
+ *  description: set / get sidebar alignment flag
  *  attributes:
  *      $attr - string
  *
  */
-function mnu_width($attr='')
+function align_sidebar($attr='')
 {
-    global $xwt_mnu_width;
     $fn_val = '';
-    if (!isset($xwt_mnu_width))
-    {
-        $xwt_mnu_width = '80%';
-    }
+    /*: get value :*/
+    $db_val = get_option('xwt_sidebar_align');
     if (empty($attr))
     {
-        $fn_val = $xwt_mnu_width;
+        if (empty($db_val))
+        {
+            /*: set default :*/
+            update_option('xwt_sidebar_align','right');
+            $fn_val = 'right';
+        }
+        else
+        {
+            /*: get value :*/
+            $fn_val = $db_val;
+        }
     }
     else
     {
-        $xwt_mnu_width = $attr;
+        $db_val = strwrap($db_val,'#');
+        if (has_match($db_val,'left,right')) {
+            /*: set value :*/
+            update_option('xwt_sidebar_align',$attr);
+        }
     }
     return $fn_val;
+}
+
+/**
+ *  name: mnu_width
+ *  build: 90920.1a
+ *  description: get menu width
+ */
+function mnu_width()
+{
+    /*: return db value :*/
+    return get_option('xwt_menu_width');
 }
  
 /**
