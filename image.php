@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90915.1a
+ *  build:  90915.1b
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,7 +31,7 @@ $v_title = '';
     display page header
 */
 get_header();
-echo '<!-- xwpt: 90915.1a/image/php               -->' . "\n";
+echo '<!-- xwpt: 90915.1b/image/php               -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
 echo '<main class="fx:pg-ct-itm">' . "\n";
 echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
@@ -132,7 +132,7 @@ if (have_posts())
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90915.1a/image/php              -->' . "\n";
+echo '<!-- /xwpt: 90915.1b/image/php              -->' . "\n";
 /*
     display sidebar
 */
