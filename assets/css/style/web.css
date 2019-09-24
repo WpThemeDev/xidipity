@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /css/style/web.css
- *  build:  90915.1b
+ *  build:  90920.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1949,6 +1949,7 @@ a.page-numbers:focus {
 /*: footer alignment :*/
 
 .fx\:align-ct-itm-5 {
+    background-color: var(--sys-ft-bg-color);
     text-align: var(--sys-ft-align);
 }
 
@@ -2015,6 +2016,18 @@ figure {
     width: 100%;
 }
 
+/*: menu bar width on mobile :*/
+
+.fx\:mnu-70\%,
+.fx\:mnu-75\%,
+.fx\:mnu-80\%,
+.fx\:mnu-85\%,
+.fx\:mnu-90\%,
+.fx\:mnu-95\%,
+.fx\:mnu-100\% {
+    width: 100%;
+}
+
 #nav {
     position: relative;
 }
@@ -2069,7 +2082,37 @@ figure {
 
 @media (min-width: 640px) {
     .fx\:mnu-wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+    }
+    /*: menu bar width on desktop :*/
+    .fx\:mnu-70\%,
+    .fx\:mnu-75\%,
+    .fx\:mnu-80\%,
+    .fx\:mnu-85\%,
+    .fx\:mnu-90\%,
+    .fx\:mnu-95\% {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .fx\:mnu-70\% {
+        width: 70%;
+    }
+    .fx\:mnu-75\% {
+        width: 75%;
+    }
+    .fx\:mnu-80\% {
         width: 80%;
+    }
+    .fx\:mnu-85\% {
+        width: 85%;
+    }
+    .fx\:mnu-90\% {
+        width: 90%;
+    }
+    .fx\:mnu-95\% {
+        width: 95%;
     }
 
     #nav input.trigger:checked~ul,
