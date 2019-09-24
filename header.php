@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90915.1b
+ *  build:  90920.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90915.1b/header/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1a/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -30,7 +30,7 @@ echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<!-- xwpt: flexbox/page/container           -->' . "\n";
 echo '<div class="fx:pg-ct">' . "\n";
-echo '<!-- xwpt: 90915.1b/header/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1a/header/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-1    -->' . "\n";
 echo '<header class="fx:pg-ct-itm fx:align-ct-itm-1">' . "\n";
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
@@ -59,7 +59,7 @@ if ($description || is_customize_preview())
 }
 echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90915.1b/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90920.1a/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -98,7 +98,7 @@ if ($wp_menu || $wp_page)
     else
     {
         /*: drop down menu :*/
-        echo '<div class="fx:mnu-wrapper">' . "\n";
+        echo '<div class="' . mnu_width() . '">' . "\n";
         echo '<nav role="navigation" id="nav">' . "\n";
         echo '<input class="trigger" type="checkbox" id="mainNavButton">' . "\n";
         echo '<label for="mainNavButton" onclick><i class="material-icons vert:align-bottom">menu</i></label>' . "\n";
@@ -112,7 +112,7 @@ if ($wp_menu || $wp_page)
     }
 }
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90915.1b/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90920.1a/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
