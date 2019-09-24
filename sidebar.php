@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90915.1a
+ *  build:  90915.1b
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -13,15 +13,14 @@
  *
 **/
 /*
-    get page template
+    get page options
 */
-$wp_tmpl = page_tmpl();
 echo '<!-- xwpt: 90915.1a/sidebar/php             -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-4    -->' . "\n";
 /*
     logic check
 */
-if ($wp_tmpl == 'no-sidebar')
+if (disp_sidebar() == 'no')
 {
     echo '<div class="fx:pg-ct-itm disp:none">' . "\n";
 }
