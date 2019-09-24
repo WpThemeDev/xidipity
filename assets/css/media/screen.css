@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /assets/css/media/screen.css
- *  build:  90906.1b
+ *  file:   /css/media/screen.css
+ *  build:  90915.1b
  *  descrp: common-style variables
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -117,21 +117,6 @@
     --h6-size: 1.1875em;
     --h6-style: italic;
     --h6-weight: 400;
-    /*: sys page banner :*/
-    --sys-pg-banner-tl-border-color: #eeeeee;
-    --sys-pg-banner-br-border-color: #e0e0e0;
-    --sys-pg-banner-featured-title-fg-color: #212121;
-    --sys-pg-banner-featured-descrip-fg-color: #424242;
-    --sys-pg-banner-featured-bg-color: #ffffff;
-    --sys-pg-banner-featured-display: inherit;
-    --sys-pg-banner-featured-title: "Sticky Posts";
-    --sys-pg-banner-featured-descrip: "Posts marked as sticky so they display first.";
-    --sys-pg-banner-recent-title-fg-color: #212121;
-    --sys-pg-banner-recent-descrip-fg-color: #424242;
-    --sys-pg-banner-recent-bg-color: #ffffff;
-    --sys-pg-banner-recent-display: inherit;
-    --sys-pg-banner-recent-title: "Recent Posts";
-    --sys-pg-banner-recent-descrip: "BLog posts ordered by date.";
     /*: sys header :*/
     --sys-hdr-bg-color: #fafafa;
     --sys-hdr-align: center;
@@ -149,40 +134,10 @@
     --descr-font-style: normal;
     --descr-font-weight: 300;
     /*: sys menu :*/
-    --mnu-pri-fg-color: #424242;
-    --mnu-pri-bg-color: #fafafa;
-    --mnu-pri-fg-color-hov: #000000;
-    --mnu-pri-bg-color-hov: #ede7f6;
-    --mnu-pri-fg-weight-hov: 400;
-    --mnu-sec-fg-color: #616161;
-    --mnu-sec-bg-color: #e0e0e0;
-    --mnu-sec-fg-color-hov: #000000;
-    --mnu-sec-bg-color-hov: #d1c4e9;
-    --mnu-sec-fg-weight-hov: 400;
-    --mnu-align: center;
-    /*: sys footer :*/
-    --sys-ft-bg-color: #fafafa;
-    --sys-ft-align: center;
-    --sys-ft-font-size: 0.75rem;
-    --copyright-line-height: inherit;
-    --copyright-font-color: #455a64;
-    --copyright-lnk-pri-color: #455a64;
-    --copyright-lnk-sec-color: #f4511e;
-    --copyright-lnk-sec-bg-color: transparent;
-    --copyright-font-family: "Roboto", sans-serif;
-    --copyright-font-size: 0.875rem;
-    --copyright-font-spacing: normal;
-    --copyright-font-style: normal;
-    --copyright-font-weight: 300;
-    --designer-line-height: inherit;
-    --designer-font-color: #455a64;
-    --designer-lnk-pri-color: #4527a0;
-    --designer-lnk-sec-color: #f4511e;
-    --designer-font-family: "Roboto", sans-serif;
-    --designer-font-size: 0.875rem;
-    --designer-font-spacing: normal;
-    --designer-font-style: normal;
-    --designer-font-weight: 300;
+    --mnu-bar-sm-bg: #e64a19;
+    --mnu-bar-sm-fg: #ffffff;
+    --mnu-bar-lg-bg: #fafafa;
+    --mnu-bar-lg-fg: #616161;
     /*: system :*/
     --sys-bg-color: #fafafa;
     --sys-content-bg-color: #ffffff;
@@ -213,5 +168,5 @@
 
 
 /*
-    eof: /assets/css/media/screen.css
+    eof: /css/media/screen.css
 */
