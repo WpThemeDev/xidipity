@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90915.1a
+ *  build:  90915.1b
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -12,18 +12,204 @@
  *  @since 0.9.0
  *
  **/
+/**
+ *  name: theme_cfg
+ *  build: 90915.1b
+ *  description: set global configuration defaults
+ *
+ */
+function theme_cfg() {
+
+    $fn_val = '';
+    $xwt_file = get_template_directory() . '/xidipity.cfg';
+    
+    if (file_exists($xwt_file)) {
+        $xwt_prms = file_get_contents($xwt_file);
+        $cfg_items = explode(',', $xwt_prms);
+        foreach ($cfg_items as $cfg_item)
+        {
+            $xwt_prm = trim($cfg_item);
+            if (!has_match($xwt_prm,'*'))
+            {
+                $cfg_key = substr($xwt_prm,0,strpos($xwt_prm, '/'));
+                $cfg_val = substr($xwt_prm,strpos($xwt_prm, '/')+1) . "\n";
+                switch ($cfg_key)
+                {
+                    case 'fa-version':
+                        update_option('xwt_fa_ver',trim($cfg_val));
+                        break;
+                    case 'display-mnu':
+                        update_option('xwt_disp_menu',trim($cfg_val));
+                        break;
+                    case 'display-sb':
+                        update_option('xwt_disp_sidebar',trim($cfg_val));
+                        break;
+                }
+            }
+        }
+    }
+
+    return $fn_val;
+}
 
 /**
  *  name: fa_ver
- *  build: 90906.1c
- *  description: set / get font awesome version
+ *  build: 90915.1b
+ *  description: get font awesome version
  *
  */
-function fa_ver()
+function fa_ver($attr='')
 {
-    return '5.10.2';
+    $db_val = '';
+    $fn_val = '';
+    if (empty($attr))
+    {
+        /*: get value :*/
+        $db_val = get_option('xwt_fa_ver');
+        if (empty($db_val))
+        {
+            /*: set default :*/
+            update_option('xwt_fa_ver','5.10.2');
+            $fn_val = '5.10.2';
+        }
+        else
+        {
+            /*: get value :*/
+            $fn_val = $db_val;
+        }
+    }
+    else
+    {
+        /*: set value :*/
+        update_option('xwt_fa_ver',$attr);
+    }
+    /*: return value :*/
+    return $fn_val;
 }
 
+/**
+ *  name: disp_menu
+ *  build: 90915.1b
+ *  description: set / get display menu flag
+ *  attributes:
+ *      $attr - string
+ *
+ */
+function disp_menu($attr='')
+{
+    $fn_val = '';
+    /*: get value :*/
+    $db_val = get_option('xwt_disp_menu');
+    if (empty($attr))
+    {
+        if (empty($db_val))
+        {
+            /*: set default :*/
+            update_option('xwt_disp_menu','yes');
+            $fn_val = 'yes';
+        }
+        elseif ($db_val == 'dftno')
+        {
+            /*: default override :*/
+            $fn_val = 'no';
+        }
+        elseif ($db_val == 'dftyes')
+        {
+            /*: default override :*/
+            $fn_val = 'yes';
+        }
+        else
+        {
+            /*: get value :*/
+            $fn_val = $db_val;
+        }
+    }
+    else
+    {
+        $db_val = strwrap($db_val,'#');
+        if (!has_match($db_val,'dft')) {
+            /*: set value :*/
+            update_option('xwt_disp_menu',$attr);
+        }
+    }
+    return $fn_val;
+}
+ 
+/**
+ *  name: disp_sidebar
+ *  build: 90915.1b
+ *  description: set / get display sidebar flag
+ *  attributes:
+ *      $attr - string
+ *
+ */
+function disp_sidebar($attr='')
+{
+    $fn_val = '';
+    /*: get value :*/
+    $db_val = get_option('xwt_disp_sidebar');
+    if (empty($attr))
+    {
+        if (empty($db_val))
+        {
+            /*: set default :*/
+            update_option('xwt_disp_sidebar','yes');
+            $fn_val = 'yes';
+        }
+        elseif ($db_val == 'dftno')
+        {
+            /*: default override :*/
+            $fn_val = 'no';
+        }
+        elseif ($db_val == 'dftyes')
+        {
+            /*: default override :*/
+            $fn_val = 'yes';
+        }
+        else
+        {
+            /*: get value :*/
+            $fn_val = $db_val;
+        }
+    }
+    else
+    {
+        $db_val = strwrap($db_val,'#');
+        if (!has_match($db_val,'dft')) {
+            /*: set value :*/
+            update_option('xwt_disp_sidebar',$attr);
+        }
+    }
+    return $fn_val;
+}
+ 
+/**
+ *  name: mnu_width
+ *  build: 90915.1b
+ *  description: set / get menu width
+ *  attributes:
+ *      $attr - string
+ *
+ */
+function mnu_width($attr='')
+{
+    global $xwt_mnu_width;
+    $fn_val = '';
+    if (!isset($xwt_mnu_width))
+    {
+        $xwt_mnu_width = '80%';
+    }
+    if (empty($attr))
+    {
+        $fn_val = $xwt_mnu_width;
+    }
+    else
+    {
+        $xwt_mnu_width = $attr;
+    }
+    return $fn_val;
+}
+ 
 /**
  *  name: err_msg
  *  build: 90901.1a
@@ -52,63 +238,66 @@ function err_msg($attr='')
     }
     return $fn_val;
 }
- 
+
 /**
- *  name: page_tmpl
- *  build: 90901.1a
- *  description: set / get current page template
+ *  name: has_match
+ *  build: 90915.1b
+ *  description: is needle in haystack
  *  attributes:
- *      $attr - string
- *
+ *      $haystack - string
+ *      $needle - string
+ *  returns:
+ *      nothing (error)
+ *      true / false
  */
-function page_tmpl($attr='')
+
+function has_match($haystack='', $needle='')
 {
-    global $xwt_cur_tmpl;
-    $fn_val = '';
-    if (!isset($xwt_cur_tmpl))
+    if (empty($haystack) || empty($needle))
     {
-        $xwt_cur_tmpl = '';
-    }
-    if (empty($attr))
-    {
-        $fn_val = $xwt_cur_tmpl;
+        $fn_val='';
     }
     else
     {
-        $xwt_cur_tmpl = $attr;
+        $fn_val=false;
+        $haystack = strwrap($haystack,'#');
+        if (strpos($haystack,$needle) > 0)
+        {
+            $fn_val=true;
+        }
     }
     return $fn_val;
 }
 
 /**
- *  name: on_list
- *  build: 90905.1a
- *  description: is item on list
+ *  name: strwrap
+ *  build: 90915.1b
+ *  description: add chr(s) to beginning & end of string
  *  attributes:
- *      $attr - string
- *  returns
- *      0 = no
- *      1 = yes
- *      2 = error
- *
+ *      $str - string
+ *      $wrap - string
+ *  returns:
+ *      string
  */
-function on_list($itm='', $lst='')
+function strwrap( $str='', $first='', $last='' )
 {
-    $fn_val = 2;
-    if (!empty($itm) && !empty($lst))
+    $fn_val = '';
+    if (!empty($str))
     {
-      $lst_array = explode(",", $lst);
-      if (in_array($itm,$lst_array))
-      {
-        $fn_val = 1;
-      }
-      else
-      {
-        $fn_val = 0;
-      }
+        if (empty($first) && empty($last))
+        {
+            $first = '"';
+            $last = '"';
+        }
+        elseif (empty($last))
+        {
+            $last = $first;
+        }
+        $fn_val = $first . trim($str) . $last;
     }
     return $fn_val;
 }
+
 /**
  *  name: c_walker
  *  build: 90728.1
@@ -473,6 +662,11 @@ if (!function_exists('xidipity_setup')):
             'default-color' => 'f2f2f0',
             'default-image' => ''
         )));
+        
+        /*
+         * read xidipity.cfg
+        */
+        theme_cfg();
     }
 endif; // xidipity_setup
 add_action('after_setup_theme', 'xidipity_setup');
@@ -499,8 +693,8 @@ function xidipity_widgets_init()
     register_sidebar(array(
         'name' => esc_html__('Main Sidebar', 'xidipity') ,
         'id' => 'sidebar-1',
-        'before_widget' => '<aside class="fx:sb-ct-itm fx:sb-ct-opt fx:shadow">',
-        'after_widget' => '</aside>',
+        'before_widget' => '<aside class="fx:sb-ct-itm fx:sb-ct-opt fx:shadow"><div class="fx:sb-itm-opt">',
+        'after_widget' => '</div></aside>',
         'before_title' => '<p class="fx:sb-widget-ti">',
         'after_title' => '</p>'
     ));
