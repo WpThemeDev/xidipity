@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90920.1a
+ *  build:  90920.1b
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -107,9 +107,8 @@ function disp_menu($attr='')
     }
     else
     {
-        $db_val = strwrap($db_val,'#');
-                if (!has_match($db_val,'dft') && has_match($db_val,'no,yes')) {
-
+        if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
+        {
             /*: set value :*/
             update_option('xwt_menu_disp',$attr);
         }
@@ -156,8 +155,8 @@ function disp_sidebar($attr='')
     }
     else
     {
-        $db_val = strwrap($db_val,'#');
-        if (!has_match($db_val,'dft') && has_match($db_val,'no,yes')) {
+        if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
+        {
             /*: set value :*/
             update_option('xwt_sidebar_disp',$attr);
         }
@@ -194,8 +193,7 @@ function align_sidebar($attr='')
     }
     else
     {
-        $db_val = strwrap($db_val,'#');
-        if (has_match($db_val,'left,right')) {
+        if (has_match('left,right',$db_val)) {
             /*: set value :*/
             update_option('xwt_sidebar_align',$attr);
         }
