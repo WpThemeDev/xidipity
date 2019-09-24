@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90915.1a
+ *  build:  90915.1b
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,33 +34,47 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90915.1a/author/php              -->' . "\n";
+echo '<!-- xwpt: 90915.1b/author/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
 echo '<main class="fx:pg-ct-itm">' . "\n";
 /*
     biography
 */
-if (empty(locate_template('template-parts/biography.php')))
+$wp_author = __(get_the_author_meta('nickname'));
+$wp_author_id = get_the_author_meta('ID');
+$wp_bio = get_the_author_meta('description');
+$wp_permalink = esc_url(get_avatar_url(get_the_author_meta('user_email') , 64));
+/*
+    local variables
+*/
+$v_biography  = '';
+$v_biography .= '<h5>About: <a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a></h5>';
+if ('' !== get_the_author_meta('description'))
 {
-    err_msg('missing file "template-parts/biography.php"');
-    echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
-    echo '<div class="fx:cn-ct">' . "\n";
-    get_template_part('template-parts/content', 'none');
-    echo '</div>' . "\n";
+    $v_biography .= '<p>' . $wp_bio . '</p>';
 }
 else
 {
-    echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
-    echo '<div class="fx:cn-ct">' . "\n";
-    get_template_part('template-parts/biography');
-    echo '</div>' . "\n";
+    $v_biography .= '<p>No information about the author is available at this time.</p>';
 }
+$v_img = '<img class="img:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
+$v_meta_list = '';
+echo '<!-- xwpt: 90915.1a/biography/php           -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
+echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
+echo '<div class="fx:bio-container">' . "\n";
+echo '<div class="fx:bio-item">' . $v_img . '</div>';
+echo '<div class="fx:bio-item pad:left-0.5">' . $v_biography . '</div>';
+echo '</div>' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /xwpt: 90915.1a/biography/php          -->' . "\n";
 /*
     history
 */
 echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
 echo '<div class="fx:cn-ct">' . "\n";
-echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% bg:bas-050 fx:shadow">' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
 echo '<h4>Other posts by author:</h4>' . "\n";
 //echo '<p>&nbsp;</p>' . "\n";
 echo '<div class="sys:bg pad:all-1">' . "\n";
@@ -99,8 +113,15 @@ echo '</div>' . "\n";
 /*
 page footer
 */
-echo '<div class="pad:left-1">' . "\n";
+echo '<div class="pad:left-1 fnt:size-smaller">' . "\n";
 $v_meta_list = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    $v_meta_list .= xidipity_icon_edit() . ',';
+    $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
+    $v_meta_list .= '&nbsp;,';
+}
 /*: date :*/
 $v_meta_list .= xidipity_icon_date() . ',';
 $v_meta_list .= get_the_date() . ',';
@@ -108,7 +129,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90915.1a/author/php             -->' . "\n";
+echo '<!-- /xwpt: 90915.1b/author/php             -->' . "\n";
 /*
     display sidebar
 */
