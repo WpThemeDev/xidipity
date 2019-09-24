@@ -2,8 +2,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   extras.php
- *  build:  90904.1a
+ *  file:   inc/extras.php
+ *  build:  90915.1b
  *  descrp: Custom functions that act independently of the theme templates
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -295,7 +295,7 @@ add_action('template_redirect', 'xidipity_template_redirect_content_width');
 
 function xidipity_copyright()
 {
-    $html = '<div class="blog:copyright">' . xidipity_mod('xidipity_copyright') . '</div>';
+    $html = '<p>' . xidipity_mod('xidipity_copyright') . '</p>';
     /**
      * Filters the Blog Copyright HTML.
      *
@@ -318,7 +318,7 @@ function xidipity_designer()
 
     // Designer HTML
 
-    $html = '<div class="blog:credits">' . $designer_string . '</div>';
+    $html = '<p>' . $designer_string . '</p>';
     /**
      * Filters the Designer HTML.
      *
@@ -459,6 +459,6 @@ if (!function_exists('xidipity_the_attached_image')) {
 
 }
 /*
-    eof: extras.php
+    eof: inc/extras.php
 */
 ?>
