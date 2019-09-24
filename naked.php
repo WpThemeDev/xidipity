@@ -5,8 +5,8 @@
  *  Xidipity WordPress Theme
  *
  *  file:   naked.php
- *  build:  90901.1a
- *  descrp: naked template ( full width no menu / sidebar)
+ *  build:  90915.1b
+ *  descrp: Page template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
  *  @package WordPress
@@ -15,55 +15,105 @@
  *
 **/
 /*
-    save page template
+    set page options
 */
-page_tmpl('naked');
+disp_sidebar('no');
+disp_menu('no');
 /*
     system variables
 */
 global $wp_query;
-/* current pagination number */
+/*: current pagination number :*/
 $wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-/* posts per page */
+/*: posts per page :*/
 $wp_ppp = get_option('posts_per_page');
 /*
     local variables
 */
 $v_cur_page = 0;
+$v_meta_list = '';
 $v_pages = 0;
 /*
     display header
 */
 get_header();
-echo '<!-- xwpt: 90901.1a/naked/php               -->' . "\n";
-echo '<main class="fx:nkpg-content">' . "\n";
-echo '<div class="fx:cn-container">' . "\n";
+echo '<!-- xwpt: 90915.1b/page/php                -->' . "\n";
+echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
+echo '<main class="fx:pg-ct-itm">' . "\n";
+echo '<div class="fx:cn-ct">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
-        get_template_part('template-parts/content', 'page');
-        echo '</div>' . "\n";
-
+        echo '<!-- xwpt: 90915.1a/content-page/php        -->' . "\n";
+        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
         /*
-            pagination
+        content title
         */
-        $v_pages = $wp_query->max_num_pages;
-        if ($v_pages > 1)
+        echo '<div class="pad:left-1" style="display:none;">' . "\n";
+        echo '<header class="fx:cn-itm-hd">' . "\n";
+        the_title('<h1 class="fx:cn-itm-ti">', '</h1>');
+        echo '</header>' . "\n";
+        /*
+        yoast breadcrumbs
+        */
+        if ( !is_front_page() && !is_home() )
         {
-            echo '<!-- xwpt: 90901.1a/page/php/pagination     -->' . "\n";
-            $v_cur_page = max(1, get_query_var('paged'));
-            echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-            echo '<!-- /xwpt: 90901.1a/page/php/pagination    -->' . "\n";
+            if (function_exists('yoast_breadcrumb'))
+            {
+                yoast_breadcrumb('<p id="breadcrumbs" class="seo-pag-breadcrumbs">', '</p>');
+            }
         }
+        echo '</div>' . "\n";
+        /*
+        content
+        */
+        echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
+        echo '<div class="fx:cn-itm-wrapper pad:all-1">' . "\n";
+        the_content();
+        echo '</div>' . "\n";
+        /*
+            page footer
+        */
+        echo '<div class="pad:left-1" style="display:none;">' . "\n";
+        $v_meta_list = '';
+        /*: edit :*/
+        if (get_edit_post_link())
+        {
+            $v_meta_list .= xidipity_icon_edit() . ',';
+            $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
+            $v_meta_list .= '&nbsp;,';
+        }
+        /*: date :*/
+        $v_meta_list .= xidipity_icon_date() . ',';
+        $v_meta_list .= get_the_date() . ',';
+        echo xidipity_metalinks(explode(',', $v_meta_list));
+        echo '</div>' . "\n";
+        echo '</div>' . "\n";
+    }
+    echo '<!-- /xwpt: 90915.1a/content-page/php       -->' . "\n";
+    /*
+        pagination
+    */
+    $v_pages = $wp_query->max_num_pages;
+    if ($v_pages > 1)
+    {
+        echo '<!-- xwpt: 90915.1b/page/php/pagination     -->' . "\n";
+        $v_cur_page = max(1, get_query_var('paged'));
+        echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
+        echo '<!-- /xwpt: 90915.1b/page/php/pagination    -->' . "\n";
     }
 }
 else
 {
     get_template_part('template-parts/content', 'none');
-    echo '</div>' . "\n";
 }
+echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90901.1a/naked/php              -->' . "\n";
+echo '<!-- /xwpt: 90915.1b/page/php               -->' . "\n";
+/*
+    display sidebar
+*/
+get_sidebar();
 /*
     reset post data
 */
