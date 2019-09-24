@@ -2,8 +2,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   shortcodes.php
- *  build:  90915.1a
+ *  file:   inc/shortcodes.php
+ *  build:  90915.1b
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -30,6 +30,19 @@
  *   wp-ver          wordpess version
  *
 **/
+/**
+ *  name: get_db
+ *  build: 90915.1b
+ *  description: display db value
+ *
+ */
+add_shortcode('get_db', 'get_db_shortcode');
+function get_db_shortcode($atts, $prms='')
+{
+    echo strwrap(get_option($prms),'<p>','</p>');
+    return;
+}
+
 /*
  *  Xidipity WordPress Theme
  *
@@ -911,6 +924,6 @@ function xidipity_shortcode($atts)
 }
 
 /*
-    eof: shortcodes.php
+    eof: inc/shortcodes.php
 */
 ?>
