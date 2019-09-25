@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90920.1c
+ *  build:  90920.1d
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -26,7 +26,14 @@ if (disp_sidebar() == 'no')
 }
 else
 {
-    echo '<div class="fx:pg-ct-itm-sbr">' . "\n";
+    if (align_sidebar() == 'left')
+    {
+        echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
+    }
+    else
+    {
+        echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+    }
 }
 echo '<!-- xwpt: flexbox/sidebar/container        -->' . "\n";
 echo '<div class="fx:sb-ct">' . "\n";
