@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90920.1c
+ *  build:  90920.1d
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90920.1c/header/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1d/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -30,9 +30,16 @@ echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<!-- xwpt: flexbox/page/container           -->' . "\n";
 echo '<div class="fx:pg-ct">' . "\n";
-echo '<!-- xwpt: 90920.1c/header/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1d/header/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-1    -->' . "\n";
-echo '<header class="fx:pg-ct-itm-sbr fx:align-ct-itm-1">' . "\n";
+if (align_sidebar() == 'left')
+{
+    echo '<header class="fx:pg-ct-itm-sbl fx:align-ct-itm-1">' . "\n";
+}
+else
+{
+    echo '<header class="fx:pg-ct-itm-sbr fx:align-ct-itm-1">' . "\n";
+}
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 echo '<div class="header-banner">' . "\n";
 /*
@@ -59,7 +66,7 @@ if ($description || is_customize_preview())
 }
 echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90920.1c/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90920.1d/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -68,11 +75,25 @@ echo '<!-- xwpt: 90828.1a/header/php/nav          -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-2    -->' . "\n";
 if ( disp_menu() == 'no' )
 {
-    echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+    if (align_sidebar() == 'left')
+    {
+        echo '<div class="fx:pg-ct-itm-sbl disp:none">' . "\n";
+    }
+    else
+    {
+        echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+    }
 }
 else
 {
-    echo '<div class="fx:pg-ct-itm-sbr">' . "\n";
+    if (align_sidebar() == 'left')
+    {
+        echo '<div class="fx:pg-ct-itm-sbl">' . "\n";
+    }
+    else
+    {
+        echo '<div class="fx:pg-ct-itm-sbr">' . "\n";
+    }
 }
 
 /*
@@ -112,7 +133,7 @@ if ($wp_menu || $wp_page)
     }
 }
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90920.1c/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90920.1d/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
