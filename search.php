@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   search.php
- *  build:  90915.1b
+ *  build:  90920.1c
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -36,9 +36,9 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90915.1b/search/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1c/search/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-echo '<main class="fx:pg-ct-itm">' . "\n";
+echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
 if (have_posts())
 {
     /*
@@ -67,7 +67,7 @@ if (have_posts())
     while (have_posts())
     {
         the_post();
-        echo '<!-- xwpt: 90915.1b/content/blog/php        -->' . "\n";
+        echo '<!-- xwpt: 90920.1c/content/blog/php        -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
         echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-50% fx:shadow">' . "\n";
         /*
@@ -125,7 +125,7 @@ if (have_posts())
         echo '<p>&nbsp;</p>' . "\n";
         echo '</div>' . "\n";
         echo '</article>' . "\n";
-        echo '<!-- /xwpt: 90915.1b/content/blog/php       -->' . "\n";
+        echo '<!-- /xwpt: 90920.1c/content/blog/php       -->' . "\n";
     }
     echo '</div>' . "\n";
     /*
@@ -134,10 +134,10 @@ if (have_posts())
     $v_pages = $wp_query->max_num_pages;
     if ($v_pages > 1)
     {
-        echo '<!-- xwpt: 90915.1b/search/php/pagination   -->' . "\n";
+        echo '<!-- xwpt: 90920.1c/search/php/pagination   -->' . "\n";
         $v_cur_page = max(1, get_query_var('paged'));
         echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-        echo '<!-- /xwpt: 90915.1b/search/php/pagination  -->' . "\n";
+        echo '<!-- /xwpt: 90920.1c/search/php/pagination  -->' . "\n";
     }
 }
 else
@@ -148,7 +148,7 @@ else
     echo '</div>' . "\n";
 }
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90915.1b/search/php             -->' . "\n";
+echo '<!-- /xwpt: 90920.1c/search/php             -->' . "\n";
 /*
     display sidebar
 */
