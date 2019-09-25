@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   single.php
- *  build:  90915.1b
+ *  build:  90920.1c
  *  descrp: Single post template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,9 +31,9 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90915.1b/single/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1c/single/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-echo '<main class="fx:pg-ct-itm">' . "\n";
+echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
 if ($wp_query->have_posts()) {
     the_post();
     echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
@@ -45,7 +45,7 @@ if ($wp_query->have_posts()) {
     $wp_author_id = get_the_author_meta('ID');
     $wp_post_date = get_the_date();
     $wp_tags = get_the_tags();
-    echo '<!-- xwpt: 90915.1b/content-post/php        -->' . "\n";
+    echo '<!-- xwpt: 90920.1c/content-post/php        -->' . "\n";
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
     echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
     echo '<div class="pad:left-1">' . "\n";
@@ -106,7 +106,7 @@ if ($wp_query->have_posts()) {
     }
     echo '</div>' . "\n";
     echo '</article>' . "\n";
-    echo '<!-- /xwpt: 90915.1b/content-post/php       -->' . "\n";
+    echo '<!-- /xwpt: 90920.1c/content-post/php       -->' . "\n";
 
     /*
         pagination
@@ -114,10 +114,10 @@ if ($wp_query->have_posts()) {
     $v_pages = $wp_query->max_num_pages;
     if ($v_pages > 1)
     {
-        echo '<!-- xwpt: 90915.1b/single/php/pagination   -->' . "\n";
+        echo '<!-- xwpt: 90920.1c/single/php/pagination   -->' . "\n";
         $v_cur_page = max(1, get_query_var('paged'));
         echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-        echo '<!-- /xwpt: 90915.1b/single/php/pagination  -->' . "\n";
+        echo '<!-- /xwpt: 90920.1c/single/php/pagination  -->' . "\n";
     }
     /*
         author
@@ -139,7 +139,7 @@ if ($wp_query->have_posts()) {
         $v_biography .= '<p>' . $wp_bio . '</p>';
         $v_img = '<img class="img:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
         $v_meta_list = '';
-        echo '<!-- xwpt: 90915.1b/biography/php           -->' . "\n";
+        echo '<!-- xwpt: 90920.1c/biography/php           -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
         echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
@@ -148,7 +148,7 @@ if ($wp_query->have_posts()) {
         echo '<div class="fx:bio-item pad:left-0.5">' . $v_biography . '</div>';
         echo '</div>' . "\n";
         echo '</div>' . "\n";
-        echo '<!-- /xwpt: 90915.1b/biography/php          -->' . "\n";
+        echo '<!-- /xwpt: 90920.1c/biography/php          -->' . "\n";
     }
     /*
         comments
@@ -167,7 +167,7 @@ else
     echo '</div>' . "\n";
 }
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90915.1b/single/php             -->' . "\n";
+echo '<!-- /xwpt: 90920.1c/single/php             -->' . "\n";
 /*
     display sidebar
 */
