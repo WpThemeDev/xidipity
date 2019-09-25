@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90920.1c
+ *  build:  90920.1d
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,9 +34,16 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90920.1c/author/php              -->' . "\n";
+echo '<!-- xwpt: 90920.1d/author/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+if (align_sidebar() == 'left')
+{
+    echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
+}
+else
+{
+    echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+}
 /*
     biography
 */
@@ -129,7 +136,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90920.1c/author/php             -->' . "\n";
+echo '<!-- /xwpt: 90920.1d/author/php             -->' . "\n";
 /*
     display sidebar
 */
