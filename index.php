@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   index.php
- *  build:  90920.1c
+ *  build:  90920.1d
  *  descrp: Display blog excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -49,9 +49,16 @@ $v_cur_page = $wp_paged;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90920.1c/index/php               -->' . "\n";
+echo '<!-- xwpt: 90920.1d/index/php               -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+if (align_sidebar() == 'left')
+{
+    echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
+}
+else
+{
+    echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+}
 $qry_prms = array(
     'cat' => $v_cat_lst,
     'order' => 'DESC',
@@ -67,7 +74,7 @@ if (have_posts())
     while (have_posts())
     {
         the_post();
-        echo '<!-- xwpt: 90920.1c/content/blog/php        -->' . "\n";
+        echo '<!-- xwpt: 90920.1d/content/blog/php        -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
         echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-50% fx:shadow">' . "\n";
         /*
@@ -125,7 +132,7 @@ if (have_posts())
         echo '<p>&nbsp;</p>' . "\n";
         echo '</div>' . "\n";
         echo '</article>' . "\n";
-        echo '<!-- /xwpt: 90920.1c/content/blog/php       -->' . "\n";
+        echo '<!-- /xwpt: 90920.1d/content/blog/php       -->' . "\n";
     }
     echo '</div>' . "\n";
     /*
@@ -135,9 +142,9 @@ if (have_posts())
     if ($v_pages > 1)
     {
         $v_cur_page = max(1, get_query_var('paged'));
-        echo '<!-- xwpt: 90920.1c/index/php/pagination    -->' . "\n";
+        echo '<!-- xwpt: 90920.1d/index/php/pagination    -->' . "\n";
         echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-        echo '<!-- /xwpt: 90920.1c/index/php/pagination   -->' . "\n";
+        echo '<!-- /xwpt: 90920.1d/index/php/pagination   -->' . "\n";
     }
 }
 else
@@ -148,7 +155,7 @@ else
     echo '</div>' . "\n";
 }
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90920.1c/index/php              -->' . "\n";
+echo '<!-- /xwpt: 90920.1d/index/php              -->' . "\n";
 /*
     display sidebar
 */
