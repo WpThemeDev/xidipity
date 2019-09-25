@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /css/style/web.css
- *  build:  90920.1a
+ *  build:  90920.1c
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1502,7 +1502,8 @@ a.page-numbers:focus {
 
 /*: (header) page container item :*/
 
-.fx\:pg-ct-itm:nth-child(1) {
+.fx\:pg-ct-itm-sbl:nth-child(1),
+.fx\:pg-ct-itm-sbr:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1518,7 +1519,8 @@ a.page-numbers:focus {
 
 /*: (menu) page container item :*/
 
-.fx\:pg-ct-itm:nth-child(2) {
+.fx\:pg-ct-itm-sbl:nth-child(2),
+.fx\:pg-ct-itm-sbr:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1533,7 +1535,8 @@ a.page-numbers:focus {
 
 /*: (content) page container item :*/
 
-.fx\:pg-ct-itm:nth-child(3) {
+.fx\:pg-ct-itm-sbl:nth-child(3),
+.fx\:pg-ct-itm-sbr:nth-child(3) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1548,7 +1551,8 @@ a.page-numbers:focus {
 
 /*: (sidebar) page container item :*/
 
-.fx\:pg-ct-itm:nth-child(4) {
+.fx\:pg-ct-itm-sbl:nth-child(4),
+.fx\:pg-ct-itm-sbr:nth-child(4) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1563,7 +1567,8 @@ a.page-numbers:focus {
 
 /*: (footer) page container item :*/
 
-.fx\:pg-ct-itm:nth-child(5) {
+.fx\:pg-ct-itm-sbl:nth-child(5),
+.fx\:pg-ct-itm-sbr:nth-child(5) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1788,7 +1793,8 @@ a.page-numbers:focus {
         -ms-flex-align: start;
         align-items: flex-start;
     }
-    .fx\:pg-ct-itm:nth-child(1) {
+    .fx\:pg-ct-itm-sbl:nth-child(1),
+    .fx\:pg-ct-itm-sbr:nth-child(1) {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
@@ -1799,10 +1805,11 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
-    .fx\:pg-ct-itm:nth-child(2) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+    .fx\:pg-ct-itm-sbl:nth-child(2),
+    .fx\:pg-ct-itm-sbr:nth-child(2) {
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
@@ -1810,10 +1817,10 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
-    .fx\:pg-ct-itm:nth-child(3) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+    .fx\:pg-ct-itm-sbl:nth-child(3) {
+        -webkit-order: 3;
+        -ms-flex-order: 3;
+        order: 3;
         -webkit-flex: 2 1 70%;
         -ms-flex: 2 1 70%;
         flex: 2 1 70%;
@@ -1821,10 +1828,21 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
-    .fx\:pg-ct-itm:nth-child(4) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+    .fx\:pg-ct-itm-sbr:nth-child(3) {
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
+        -webkit-flex: 2 1 70%;
+        -ms-flex: 2 1 70%;
+        flex: 2 1 70%;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    .fx\:pg-ct-itm-sbl:nth-child(4) {
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
         -webkit-flex: 0 1 30%;
         -ms-flex: 0 1 30%;
         flex: 0 1 30%;
@@ -1832,10 +1850,22 @@ a.page-numbers:focus {
         -ms-flex-item-align: stretch;
         align-self: stretch;
     }
-    .fx\:pg-ct-itm:nth-child(5) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
+    .fx\:pg-ct-itm-sbr:nth-child(4) {
+        -webkit-order: 3;
+        -ms-flex-order: 3;
+        order: 3;
+        -webkit-flex: 0 1 30%;
+        -ms-flex: 0 1 30%;
+        flex: 0 1 30%;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+    .fx\:pg-ct-itm-sbr:nth-child(5),
+    .fx\:pg-ct-itm-sbr:nth-child(5) {
+        -webkit-order: 4;
+        -ms-flex-order: 4;
+        order: 4;
         -webkit-flex: 0 1 100%;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%;
@@ -1915,12 +1945,12 @@ a.page-numbers:focus {
 }
 
 @media (min-width: 1440px) {
-    .fx\:pg-ct-itm:nth-child(3) {
+    .fx\:pg-ct-itm-sbr:nth-child(3) {
         -webkit-flex: 2 1 75%;
         -ms-flex: 2 1 75%;
         flex: 2 1 75%;
     }
-    .fx\:pg-ct-itm:nth-child(4) {
+    .fx\:pg-ct-itm-sbr:nth-child(4) {
         -webkit-flex: 0 1 25%;
         -ms-flex: 0 1 25%;
         flex: 0 1 25%;
