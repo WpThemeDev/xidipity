@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /css/style/web.css
- *  build:  90920.1d
+ *  build:  90925.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -26,7 +26,14 @@ body {
 
 /* needed for menu checkbox hack */
 
-@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+@-webkit-keyframes bugfix {
+    from {
+        padding: 0;
+    }
+    to {
+        padding: 0;
+    }
+}
 
 .screen-reader-text {
     border: 0;
@@ -502,6 +509,7 @@ ol.comment-list li::before {
     margin: 0 0 0 5px;
 }
 
+
 /* deprecated
 a.ab-item,
 a.ab-item:visited {
@@ -541,14 +549,6 @@ a.ab-item:hover {
     letter-spacing: var(--descr-font-spacing);
 }
 
-.header-banner {
-    background-color: var(--sys-hdr-bg-color);
-    height: 100px;
-    overflow: hidden;
-    text-align: var(--sys-hdr-align);
-    width: 100%;
-}
-
 .site-title {
     padding: 0 10px 0 10px;
 }
@@ -565,12 +565,6 @@ a.ab-item:hover {
         padding-left: 10px;
         padding-right: 10px;
     }
-}
-
-img.header-logo {
-    height: 100px;
-    object-fit: cover;
-    width: auto;
 }
 
 .toc-menu {
@@ -1514,6 +1508,7 @@ a.page-numbers:focus {
     -ms-flex-item-align: stretch;
     align-self: stretch;
     min-height: 100px;
+    background-color: var(--sys-hdr-bg-color);
 }
 
 
@@ -1578,6 +1573,7 @@ a.page-numbers:focus {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
+    background-color: var(--sys-ft-bg-color);
 }
 
 
@@ -1706,12 +1702,13 @@ a.page-numbers:focus {
 }
 
 .fx\:sb-ct-opt {
-    padding: 0.25rem;
+    width: 100%;
 }
 
 .fx\:sb-itm-opt {
     background-color: var(--sys-content-bg-color);
-    padding: 0;
+    max-width: 100% !important;
+    padding: 1rem;
 }
 
 .fx\:sb-ct-itm img {
@@ -1737,8 +1734,8 @@ a.page-numbers:focus {
 /*: sidebar / widget / ad :*/
 
 .fx\:sb-widget-ad {
-    margin: 0.5rem auto;
-    width: 100%;
+    max-width: 99%;
+    margin-left: 1%;
 }
 
 
@@ -1754,7 +1751,7 @@ a.page-numbers:focus {
 }
 
 
-/*  # sb-misc
+/*  # fx-misc
     # 90915.1a
     # flexbox misc styling
 **/
@@ -1919,28 +1916,10 @@ a.page-numbers:focus {
     .fx\:sb-ct-opt {
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
     }
     .fx\:sb-itm-opt {
-        padding: 1.0625rem;
-    }
-    .fx\:sb-widget-ad {
-        margin: 0.5rem auto;
-        max-width: 19.375rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .fx\:sb-widget-ad {
-        margin: 0.5rem auto;
-        max-width: 12rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .fx\:sb-widget-ad {
-        margin: 0.5rem auto;
-        max-width: 16rem;
+        max-width: 100% !important;
+        padding: 1rem;
     }
 }
 
@@ -1958,10 +1937,6 @@ a.page-numbers:focus {
     .fx\:basis-50\% {
         flex-basis: 32.67% !important;
     }
-    .fx\:sb-widget-ad {
-        margin: 0.5rem auto;
-        max-width: 19.375rem;
-    }
 }
 
 
@@ -1970,37 +1945,26 @@ a.page-numbers:focus {
     # misc classes
 **/
 
-/*: header alignment :*/
-
-.fx\:align-ct-itm-1 {
-    text-align: var(--sys-hdr-align);
-}
-
-/*: footer alignment :*/
-
-.fx\:align-ct-itm-5 {
-    background-color: var(--sys-ft-bg-color);
-    text-align: var(--sys-ft-align);
-}
 
 /*: general purpose content wrapper :*/
 
 .fx\:cn-itm-wrapper {
     background-color: var(--sys-content-bg-color);
-    border-bottom: 0.0625rem solid var(--fg-bas-300);
-    border-top: 0.0625rem solid var(--fg-bas-300);
+    border-bottom: 0.0625rem solid var(--sys-content-bt-border-color);
+    border-top: 0.0625rem solid var(--sys-content-tp-border-color);
     margin: 0;
     padding: 0;
     width: 100%;
-    /* word-wrap: break-word; */
 }
 
-/*: force figure to 100% to keep from blowing container :*/
+
+/*: force figure to 100% to keep from crashing container :*/
 
 figure {
     height: auto !important;
     width: 100% !important;
 }
+
 
 /*: verify margins :*/
 
@@ -2018,7 +1982,6 @@ figure {
 .fx\:cn-itm-ti {
     margin: 0;
     padding: 0;
-    /* word-wrap: break-word; */
 }
 
 .fx\:cn-itm-ti a,
@@ -2041,10 +2004,11 @@ figure {
 **/
 
 .fx\:mnu-wrapper {
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
 }
+
 
 /*: menu bar width on mobile :*/
 
@@ -2061,6 +2025,7 @@ figure {
 #nav {
     position: relative;
 }
+
 
 /*: display menu centered on mobile :*/
 
@@ -2117,34 +2082,24 @@ figure {
         width: 85%;
     }
     /*: menu bar width on desktop :*/
-    .fx\:mnu-70\%,
-    .fx\:mnu-75\%,
-    .fx\:mnu-80\%,
-    .fx\:mnu-85\%,
-    .fx\:mnu-90\%,
-    .fx\:mnu-95\% {
-        margin-left: auto;
-        margin-right: auto;
-    }
     .fx\:mnu-70\% {
-        width: 70%;
+        width: 70% !important;
     }
     .fx\:mnu-75\% {
-        width: 75%;
+        width: 75% !important;
     }
     .fx\:mnu-80\% {
-        width: 80%;
+        width: 80% !important;
     }
     .fx\:mnu-85\% {
-        width: 85%;
+        width: 85% !important;
     }
     .fx\:mnu-90\% {
-        width: 90%;
+        width: 90% !important;
     }
     .fx\:mnu-95\% {
-        width: 95%;
+        width: 95% !important;
     }
-
     #nav input.trigger:checked~ul,
     #nav input.trigger:checked~ul li ul {
         /* older flexbox */
@@ -2175,9 +2130,10 @@ figure {
     text-align: center;
 }
 
-#nav input.trigger:checked ~ label {
+#nav input.trigger:checked~label {
     filter: brightness(80%);
 }
+
 
 /* deprecated
 #nav label:after {
@@ -2243,6 +2199,101 @@ figure {
         display: none;
     }
 }
+
+
+/*  # area
+    # 90925.1a
+    # flexbox area classes
+    #
+**/
+
+
+/*: area center :*/
+
+.fx\:area-ct-center {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/*: area left :*/
+
+.fx\:area-ct-left {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/*: area right :*/
+
+.fx\:area-ct-right {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/*: area item :*/
+
+.fx\:area-ct-itm {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
 
 /*
     eof: /css/style/web.css
