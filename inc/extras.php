@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   inc/extras.php
- *  build:  90915.1b
+ *  build:  90925.1a
  *  descrp: Custom functions that act independently of the theme templates
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -21,15 +21,6 @@
 
 function xidipity_default($theme_mod = 'xidipity_sidebar_position')
 {
-    $xidipity_default = array(
-        'xidipity_sidebar_position' => 'right',
-        'xidipity_copyright' => sprintf('&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html(date_i18n(__('Y', 'xidipity'))) , esc_attr(esc_url(home_url('/'))) , esc_html(get_bloginfo('name'))) ,
-        'xidipity_credit' => true,
-    );
-    if (isset($xidipity_default[$theme_mod])) {
-        return $xidipity_default[$theme_mod];
-    }
-
     return '';
 }
 
@@ -287,48 +278,6 @@ function xidipity_template_redirect_content_width()
 }
 
 add_action('template_redirect', 'xidipity_template_redirect_content_width');
-/**
- * Blog Copyright.
- *
- * @return void
- */
-
-function xidipity_copyright()
-{
-    $html = '<p>' . xidipity_mod('xidipity_copyright') . '</p>';
-    /**
-     * Filters the Blog Copyright HTML.
-     *
-     * @param string $html Blog Copyright HTML.
-     */
-    $html = apply_filters('xidipity_copyright_html', $html);
-    echo convert_chars(convert_smilies(wptexturize(stripslashes(wp_filter_post_kses(addslashes($html)))))); // WPCS: XSS OK.
-}
-
-add_action('xidipity_credits', 'xidipity_copyright');
-/**
- * Designer Credits.
- *
- * @return void
- */
-
-function xidipity_designer()
-{
-    $designer_string = sprintf('<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>', esc_url('https://www.xidipity.com') , esc_attr('Xidipity Theme Footer') , esc_html('Xidipity Theme') , esc_html__('Powered by', 'Xidipity') , esc_url('https://wordpress.org') , esc_attr('WordPress', 'Xidipity') , esc_html('WordPress'));
-
-    // Designer HTML
-
-    $html = '<p>' . $designer_string . '</p>';
-    /**
-     * Filters the Designer HTML.
-     *
-     * @param string $html Designer HTML.
-     */
-    $html = apply_filters('xidipity_designer_html', $html);
-    echo $html; // WPCS: XSS OK.
-}
-
-add_action('xidipity_credits', 'xidipity_designer');
 /**
  * Enqueues front-end CSS to hide elements.
  *
