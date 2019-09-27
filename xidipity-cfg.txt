@@ -1,0 +1,35 @@
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  file:   xidipity-cfg.txt
+ *  build:  90925.1a
+ *  descrp: Configuration file
+ *  ref:    https://github.com/WpThemeDev/xidipity
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 0.9.9
+ *
+**/,
+/*: page header height :*/,
+hdr-height/100px,
+/*: page header image :*/,
+hdr-image/none,
+/*: page header logo :*/,
+hdr-logo/none,
+/*: page header align :*/,
+hdr-align/center,
+/*: page footer align :*/,
+ftr-align/center,
+/*: display menu default :*/,
+mnu-display/yes,
+/*: menu width :*/,
+mnu-width/80%,
+/*: menu align :*/,
+mnu-align/center,
+/*: display sidebar default :*/,
+sb-display/yes,
+/*: align sidebar default :*/,
+sb-align/right,
+/*: font awesome version :*/,
+fa-version/5.11.1
