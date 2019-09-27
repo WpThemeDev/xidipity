@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90920.1b
+ *  build:  90925.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -20,7 +20,7 @@
  */
 function theme_cfg() {
 
-    $xwt_file = get_template_directory() . '/xidipity.cfg';
+    $xwt_file = get_template_directory() . '/xidipity-cfg.txt';
     
     if (file_exists($xwt_file)) {
         $xwt_prms = file_get_contents($xwt_file);
@@ -37,12 +37,52 @@ function theme_cfg() {
                     case 'fa-version':
                         update_option('xwt_fa_ver',$cfg_val);
                         break;
+                    case 'hdr-height':
+                        update_option('xwt_hdr_hgt',$cfg_val);
+                        break;
+                    case 'hdr-image':
+                        $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
+                        if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
+                        {
+                            $cfg_val = 'none';
+                        }
+                        update_option('xwt_hdr_img',$cfg_val);
+                        break;
+                    case 'hdr-logo':
+                        $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
+                        if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
+                        {
+                            $cfg_val = 'none';
+                        }
+                        update_option('xwt_hdr_logo',$cfg_val);
+                        break;
+                    case 'hdr-align':
+                        if (has_match('left/center/right',$cfg_val))
+                        {
+                            update_option('xwt_hdr_align',$cfg_val);
+                        }
+                        break;
+                    case 'ftr-align':
+                        if (has_match('left/center/right',$cfg_val))
+                        {
+                            update_option('xwt_ftr_align',$cfg_val);
+                        }
+                        break;
                     case 'mnu-display':
                         update_option('xwt_menu_disp',$cfg_val);
                         break;
                     case 'mnu-width':
-                        $cfg_val = 'fx:mnu-' . $cfg_val;
                         update_option('xwt_menu_width',$cfg_val);
+                        break;
+                    case 'mnu-align':
+                        if (has_match('left/center/right',$cfg_val))
+                        {
+                            update_option('xwt_mnu_align',$cfg_val);
+                            if ($cfg_val !== 'center')
+                            {
+                                //update_option('xwt_menu_width','fx:mnu-100%');
+                            }
+                        }
                         break;
                     case 'sb-display':
                         update_option('xwt_sidebar_disp',$cfg_val);
@@ -68,6 +108,83 @@ function fa_ver()
     return get_option('xwt_fa_ver');
 }
 
+/**
+ *  name: hdr_hgt
+ *  build: 90925.1a
+ *  description: get page header height
+ */
+function hdr_hgt()
+{
+    /*: return db value :*/
+    return get_option('xwt_hdr_hgt');
+}
+
+/**
+ *  name: hdr_img
+ *  build: 90925.1a
+ *  description: get page header image
+ */
+function hdr_img()
+{
+    /*: return db value :*/
+    return get_option('xwt_hdr_img');
+}
+
+/**
+ *  name: hdr_logo
+ *  build: 90925.1a
+ *  description: get page header logo
+ */
+function hdr_logo()
+{
+    /*: return db value :*/
+    return get_option('xwt_hdr_logo');
+}
+
+/**
+ *  name: hdr_align
+ *  build: 90925.1a
+ *  description: get page header alignment
+ */
+function hdr_align()
+{
+    /*: return db value :*/
+    return get_option('xwt_hdr_align');
+}
+
+/**
+ *  name: ftr_align
+ *  build: 90925.1a
+ *  description: get page footer alignment
+ */
+function ftr_align()
+{
+    /*: return db value :*/
+    return get_option('xwt_ftr_align');
+}
+
+/**
+ *  name: mnu_width
+ *  build: 90920.1a
+ *  description: get menu width
+ */
+function mnu_width()
+{
+    /*: return db value :*/
+    return get_option('xwt_menu_width');
+}
+ 
+/**
+ *  name: mnu_align
+ *  build: 90920.1a
+ *  description: get menu alignment
+ */
+function mnu_align()
+{
+    /*: return db value :*/
+    return get_option('xwt_mnu_align');
+}
+ 
 /**
  *  name: disp_menu
  *  build: 90915.1b
@@ -202,17 +319,6 @@ function align_sidebar($attr='')
 }
 
 /**
- *  name: mnu_width
- *  build: 90920.1a
- *  description: get menu width
- */
-function mnu_width()
-{
-    /*: return db value :*/
-    return get_option('xwt_menu_width');
-}
- 
-/**
  *  name: err_msg
  *  build: 90901.1a
  *  description: set / get error message
@@ -296,6 +402,36 @@ function strwrap( $str='', $first='', $last='' )
             $last = $first;
         }
         $fn_val = $first . trim($str) . $last;
+    }
+    return $fn_val;
+}
+
+/**
+ *  name: blog_copyright
+ *  build: 90925.1a
+ *  description: return copyright
+ *
+ */
+function blog_copyright() {
+    global $wpdb;
+    $db_val = $wpdb->get_results("
+    SELECT
+        YEAR(min(post_date_gmt)) AS firstdate,
+        YEAR(max(post_date_gmt)) AS lastdate
+        FROM
+        $wpdb->posts
+    WHERE
+        post_status = 'publish'
+    ");
+    $fn_val = '';
+    if($db_val)
+    {
+        $fn_copyright = "&copy; " . $db_val[0]->firstdate;
+        if($db_val[0]->firstdate != $db_val[0]->lastdate)
+        {
+            $fn_copyright .= '-' . $db_val[0]->lastdate;
+        }
+        $fn_val = $fn_copyright;
     }
     return $fn_val;
 }
@@ -665,11 +801,24 @@ if (!function_exists('xidipity_setup')):
             'default-image' => ''
         )));
         
-        /*
-         * read xidipity.cfg
-        */
+        /**
+         *  name: customization
+         *  build: 90925.1a
+         *  description: remove customization menubar option
+         */
+        add_action( 'admin_bar_menu', 'remove_some_nodes_from_admin_top_bar_menu', 999 );
+        function remove_some_nodes_from_admin_top_bar_menu( $wp_admin_bar ) {
+            $wp_admin_bar->remove_menu( 'customize' );
+        }
+        
+        /**
+         *  name: configuration
+         *  build: 90925.1a
+         *  description: read configuration file
+         */
         theme_cfg();
     }
+    
 endif; // xidipity_setup
 add_action('after_setup_theme', 'xidipity_setup');
 /**
@@ -769,11 +918,11 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 /**
  * Short code additions.
  */
