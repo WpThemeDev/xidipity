@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90920.1d
+ *  build:  90925.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90920.1d/header/php              -->' . "\n";
+echo '<!-- xwpt: 90925.1a/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -26,47 +26,75 @@ echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . "\n";
     load wordpress meta
 */
 do_action('wp_head');
+
+if (hdr_img() !== 'none')
+{
+    echo '<!-- xwpt: header/background/image          -->' . "\n";
+    echo '<style type="text/css">' . "\n";
+    echo '.fx\:ct-itm-1-opt {' . "\n";
+    echo 'background-image: url("' . hdr_img() . '");' . "\n";
+    echo 'background-repeat: no-repeat;' . "\n";
+    echo 'background-position: center center;' . "\n";
+    echo '-webkit-background-size: cover;' . "\n";
+    echo '-moz-background-size: cover;' . "\n";
+    echo '-o-background-size: cover;' . "\n";
+    echo 'background-size: cover;' . "\n";
+    echo 'height: auto;' . "\n";
+    echo 'width: 100%;' . "\n";
+    echo '}' . "\n";
+    echo '</style>' . "\n";
+    echo '<!-- /xwpt: header/background/image         -->' . "\n";
+}
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<!-- xwpt: flexbox/page/container           -->' . "\n";
 echo '<div class="fx:pg-ct">' . "\n";
-echo '<!-- xwpt: 90920.1d/header/php              -->' . "\n";
+echo '<!-- xwpt: 90925.1a/header/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-1    -->' . "\n";
 if (align_sidebar() == 'left')
 {
-    echo '<header class="fx:pg-ct-itm-sbl fx:align-ct-itm-1">' . "\n";
+    echo '<header class="fx:pg-ct-itm-sbl fx:ct-itm-1-align">' . "\n";
 }
 else
 {
-    echo '<header class="fx:pg-ct-itm-sbr fx:align-ct-itm-1">' . "\n";
+    echo '<header class="fx:pg-ct-itm-sbr fx:ct-itm-1-align">' . "\n";
 }
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
-echo '<div class="header-banner">' . "\n";
+echo '<div class="fx:ct-itm-1-opt" style="min-height: ' . hdr_hgt() . '">' . "\n";
+
 /*
-    custom logo
+    header management
 */
-$custom_logo_id = get_theme_mod('custom_logo');
-$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
-if (has_custom_logo())
+echo '<div class="fx:area-ct-' . hdr_align() . '">' . "\n";
+if (hdr_logo() == 'none')
 {
-    echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img class="header-logo" src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '"></a>' . "\n";
-}
-if (is_front_page() && is_home())
-{
-    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
+    echo '<div class="fx:area-ct-itm pad:horz-0.5" style="text-align:' . hdr_align() . ';">' . "\n";
+    if (is_front_page() && is_home())
+    {
+        echo '<p class="site-title">' . get_bloginfo('name') . '</p>' . "\n";
+    }
+    else
+    {
+        echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>' . "\n";
+    }
+    echo '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>' . "\n";
+    echo '</div>' . "\n";
 }
 else
 {
-    echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
-}
-$description = get_bloginfo('description', 'display');
-if ($description || is_customize_preview())
-{
-    echo '<p class="site-description">' . $description . '</p>' . "\n";
+    if (is_front_page() || is_home())
+    {
+        echo '<img class="fx:area-ct-itm" src="' . hdr_logo() . '" alt="' . get_bloginfo('name') . ' Theme">' . "\n";
+    }
+    else
+    {
+        echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img class="fx:area-ct-itm" src="' . hdr_logo() . '" alt="' . get_bloginfo('name') . '"></a>' . "\n";
+    }
 }
 echo '</div>' . "\n";
+echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90920.1d/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90925.1a/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -119,7 +147,9 @@ if ($wp_menu || $wp_page)
     else
     {
         /*: drop down menu :*/
-        echo '<div class="' . mnu_width() . '">' . "\n";
+        echo '<div class="fx:area-ct-' . mnu_align() . '">' . "\n";
+        echo '<div class="fx:area-ct-itm pad:horz-0.5 fx:mnu-' . mnu_width() . '">' . "\n";
+        //echo '<div class="' . mnu_width() . '" style="text-align:' . mnu_align() . ';">' . "\n";
         echo '<nav role="navigation" id="nav">' . "\n";
         echo '<input class="trigger" type="checkbox" id="mainNavButton">' . "\n";
         echo '<label for="mainNavButton" onclick><i class="material-icons vert:align-bottom">menu</i></label>' . "\n";
@@ -130,10 +160,11 @@ if ($wp_menu || $wp_page)
         ));
         echo '</nav>' . "\n";
         echo '</div>' . "\n";
+        echo '</div>' . "\n";
     }
 }
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90920.1d/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90925.1a/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
