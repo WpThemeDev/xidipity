@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /css/media/screen.css
- *  build:  90920.1a
+ *  build:  90925.1a
  *  descrp: common-style variables
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -141,11 +141,12 @@
     --mnu-bar-sm-fg: #ffffff;
     --mnu-bar-lg-bg: #fafafa;
     --mnu-bar-lg-fg: #616161;
+    /*: sys content :*/
+    --sys-content-bg-color: #ffffff;
+    --sys-content-tp-border-color: #e0e0e0;
+    --sys-content-bt-border-color: #e0e0e0;
     /*: system :*/
     --sys-bg-color: #fafafa;
-    --sys-content-bg-color: #ffffff;
-    --sys-content-tl-border-color: #eeeeee;
-    --sys-content-br-border-color: #e0e0e0;
     --sys-line-height: 1.4;
     --sys-font-family: "Roboto", sans-serif;
     --sys-font-color: #000000;
