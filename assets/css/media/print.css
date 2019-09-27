@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   css/media/print.css
- *  build:  90915.1b
+ *  build:  90925.1a
  *  descrp: print media variables
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -118,42 +118,56 @@
     --h6-style: italic;
     --h6-weight: 400;
     /*: sys header :*/
-    --sys-hdr-bg-color: #ffffff;
+    --sys-hdr-bg-color: #fafafa;
     --sys-hdr-align: center;
-    --title-lnk-pri-color: #757575;
-    --title-lnk-sec-color: #757575;
-    --title-font-family: sans-serif;
+    --title-lnk-pri-color: #5e35b1;
+    --title-lnk-sec-color: #f4511e;
+    --title-font-family: "Kaushan Script", cursive;
     --title-font-size: 3em;
     --title-font-spacing: 0.0625em;
     --title-font-style: normal;
     --title-font-weight: 400;
     --descr-font-color: #212121;
-    --descr-font-family: sans-serif;
+    --descr-font-family: "Roboto", sans-serif;
     --descr-font-size: 1em;
     --descr-font-spacing: 0.5em;
     --descr-font-style: normal;
     --descr-font-weight: 300;
+    /*: sys footer :*/
+    --sys-ft-bg-color: #fafafa;
+    --sys-ft-align: center;
+    /*: sys menu :*/
+    --mnu-bar-sm-bg: #e64a19;
+    --mnu-bar-sm-fg: #ffffff;
+    --mnu-bar-lg-bg: #fafafa;
+    --mnu-bar-lg-fg: #616161;
+    /*: sys content :*/
+    --sys-content-bg-color: #ffffff;
+    --sys-content-tp-border-color: #e0e0e0;
+    --sys-content-bt-border-color: #e0e0e0;
     /*: system :*/
     --sys-bg-color: #fafafa;
-    --sys-content-bg-color: #ffffff;
-    --sys-content-tl-border-color: #eeeeee;
-    --sys-content-br-border-color: #e0e0e0;
     --sys-line-height: 1.4;
-    --sys-font-family: sans-serif;
+    --sys-font-family: "Roboto", sans-serif;
     --sys-font-color: #000000;
     --sys-font-size: 1rem;
     --sys-font-weight: 300;
     --sys-font-spacing: normal;
-    --sys-lnk-pri-color: #424242;
-    --sys-lnk-sec-color: #424242;
+    --sys-lnk-pri-color: #673ab7;
+    --sys-lnk-sec-color: #f4511e;
     --sys-lnk-sec-bg-color: transparent;
     --sys-lnk-weight: 400;
-    --font-sans: sans-serif;
-    --font-condensed: sans-serif;
-    --font-mono: monospace;
-    --font-serif: serif;
-    --font-cursive: cursive;
-    --prnt-page: auto;
+    --sys-content-order: 3;
+    --sys-sidebar-order: 4;
+    --font-sans: "Roboto", sans-serif;
+    --font-condensed: "Roboto Condensed", sans-serif;
+    --font-mono: "Roboto Mono", monospace;
+    --font-serif: "Roboto Slab", serif;
+    --font-cursive: "Kalam", cursive;
+    --font-fancy: "Kaushan Script", cursive;
+    /*: plugin :*/
+    --pag-breadcrumb-dsp: block;
+    --pst-breadcrumb-dsp: none;
 }
 
 
