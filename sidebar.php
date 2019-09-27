@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90920.1d
+ *  build:  90925.1a
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -22,21 +22,28 @@ echo '<!-- xwpt: flexbox/page/container/item-4    -->' . "\n";
 */
 if (disp_sidebar() == 'no')
 {
-    echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+    if (align_sidebar() == 'left')
+    {
+        echo '<div class="fx:pg-ct-itm-sbl disp:none">' . "\n";
+    }
+    else
+    {
+        echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+    }
 }
 else
 {
     if (align_sidebar() == 'left')
     {
-        echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbl">' . "\n";
     }
     else
     {
-        echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbr">' . "\n";
     }
 }
 echo '<!-- xwpt: flexbox/sidebar/container        -->' . "\n";
-echo '<div class="fx:sb-ct">' . "\n";
+echo '<div class="fx:sb-ct fx:sb-ct-opt">' . "\n";
 dynamic_sidebar( 'sidebar-1' );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
