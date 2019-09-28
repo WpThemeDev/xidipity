@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   plugin.js
- *  build:  90909.1a
+ *  file:   horzrule/plugin.js
+ *  build:  90927.1a
  *  descrp: horizonal rule plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -24,56 +24,56 @@
                     text: '• Single Wide',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<hr class="wd:100%" />');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr class="wd:100%" /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Double',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<hr class="double" />');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr class="double" /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Double Wide',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<hr class="double wd:100%" />');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr class="double wd:100%" /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Gradient',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<hr class="gradient" />');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr class="gradient" /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Gradient Wide',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<hr class="gradient wd:100%" />');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr class="gradient wd:100%" /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Emblem',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left" /></div></div>');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left" /></div></div><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 },
                 {
                     text: '• Emblem Wide',
                     icon: false,
                     onclick: function() {
-                        editor.insertContent('<div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right wd:100%" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left wd:100%" /></div></div>');
+                        editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><div class="fx:erule-cn"><div class="fx:erule-item-center"><hr class="horz:align-right wd:100%" /></div><div class="fx:erule-item-center mar:left-1 mar:right-1"><p><i class="fas fa-square fg:bas-400">&#x200B;</i></p></div><div class="fx:erule-item-center"><hr class="horz:align-left wd:100%" /></div></div><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->');
                     }
                 }
             ],
 
             onPostRender: function() {
                 // Select the first item by default
-                this.value = '<hr />';
+                this.value = '<!-- xwpt: 90927.1a/mce/toolbar/horzrule    --><hr /><!-- /xwpt: 90927.1a/mce/toolbar/horzrule   -->';
             }
 
         });
