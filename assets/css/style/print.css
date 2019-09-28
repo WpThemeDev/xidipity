@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /assets/css/style/print.css
- *  build:  90906.1b
+ *  file:   style/print.css
+ *  build:  90927.1a
  *  descrp: blog print
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -28,101 +28,82 @@ body {
 }
 
 
-/*  # Print
-   ## Page size
- ----------------------------------------------------------------------------*/
+/*
+    page elements
+*/
 
 @page {
-    size: var(--prnt-page);
+    /* auto is the initial value */
+    size: auto;
+    margin: 8%;
 }
 
 
-/*  # Print
-   ## Hidden elements
- ----------------------------------------------------------------------------*/
+/*
+    hidden elements
+*/
 
 #excerpt,
+#nav,
+#sidebar,
 .comment-respond,
 .comments-area,
-.do-not-print,
-.main-navigation,
-.screen-reader-text,
-.site-navigation,
-.toc-menu,
-.toggle-menu-wrapper {
+.do-not-print {
     display: none;
 }
 
 
-/* tailwind syntax         ------------
--- */
+/*: advance syntax :*/
 
-.print\:hidden {
+.prt\(dsp\:none\) {
     display: none;
 }
 
-.print\:display {
+.prt\(dsp\:block\) {
     display: block;
 }
 
 
-/*  # Print
-   ## Page break (do not combine with print:hidden)
- ----------------------------------------------------------------------------*/
+/*
+    Page break
+*/
 
-.print\:page-break {
-    display: block;
+.fx\:cn-ct-itm {
+    page-break-after: always;
+}
+
+.prt\(pg-break\:after-always\) {
     page-break-after: always;
 }
 
 
-/*  # Print
-   ## Force multi columns two columns table
- ----------------------------------------------------------------------------*/
+/*
+    Force multi columns
+*/
 
-table#twocol tr td,
-table#twocol tr td table#twocol tr td {
-    display: table-cell;
-    width: 50%;
-}
-
-table#twocol tr td:first-child {
-    padding-right: 8px;
-    vertical-align: top;
-}
-
-table#twocol tr td:not(:first-child) {
-    padding-left: 8px;
-    vertical-align: top;
-}
-
-
-/*  # Print
-   ## Force multi columns responsive table
- ----------------------------------------------------------------------------*/
-
-table#responsive {
-    table-layout: fixed;
-    background-color: transparent;
-    border: 0;
+table.cols\:auto,
+table.cols\:2,
+table.cols\:3,
+table.cols\:4 {
+    border: none !important;
     width: 100%;
 }
 
-table#responsive tr {
-    width: 100%;
+.cols\:auto td,
+.cols\:2 td {
+    column-count: 2;
+    column-gap: 2%;
+    page-break-inside: avoid;
 }
 
-table#responsive td {
-    display: table-cell;
-    margin: 15px 0 15px 0;
-    padding: 15px 5px 15px 5px;
-    vertical-align: top;
-    width: 100%;
+.cols\:3 td {
+    column-count: 3;
+    column-gap: 2%;
 }
 
-table#responsive td img {
-    height: auto;
-    width: 100%;
+.cols\:4 td {
+    column-count: 4;
+    column-gap: 2%;
 }
 
 
@@ -131,154 +112,133 @@ table#responsive td img {
       This solution displays a flux border inside the outer edge.
  ----------------------------------------------------------------------------*/
 
-.print\:border,
-.print\:border-1 {
+.prt\(border\),
+.prt\(border-1\) {
     -webkit-box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
     -moz-box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
     box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
 }
 
-.print\:border-2 {
+.prt\(border-2\) {
     -webkit-box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
     -moz-box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
     box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
 }
 
-.print\:border-3 {
+.prt\(border-3\) {
     -webkit-box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
     -moz-box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
     box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
 }
 
-.print\:border-4 {
+.prt\(border-4\) {
     -webkit-box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
     -moz-box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
     box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
 }
 
 
-/*  # Print
-   ## Print Specific Palette
-      !important to overrule any other styling.
- ----------------------------------------------------------------------------*/
+/*
+    Print exception palette
+*/
 
-.print\:fg-blk {
+.prt\(fg-blk\) {
     color: var(--fg-blk) !important;
 }
 
-.print\:fg-wht {
+.prt\(fg-wht\) {
     color: var(--fg-wht) !important;
 }
 
-.print\:bg-blk {
+.prt\(bg-blk\) {
     background-color: var(--bg-blk) !important;
 }
 
-.print\:bg-wht {
+.prt\(bg-wht\) {
     background-color: var(--bg-wht) !important;
 }
 
-.print\:fg-bas-900 {
+.prt\(fg-bas-900\) {
     color: var(--fg-bas-900) !important;
 }
 
-.print\:fg-bas-800 {
+.prt\(fg-bas-800\) {
     color: var(--fg-bas-800) !important;
 }
 
-.print\:fg-bas-700 {
+.prt\(fg-bas-700\) {
     color: var(--fg-bas-700) !important;
 }
 
-.print\:fg-bas-600 {
+.prt\(fg-bas-600\) {
     color: var(--fg-bas-600) !important;
 }
 
-.print\:fg-bas-500 {
+.prt\(fg-bas-500\) {
     color: var(--fg-bas-500) !important;
 }
 
-.print\:fg-bas-400 {
+.prt\(fg-bas-400\) {
     color: var(--fg-bas-400) !important;
 }
 
-.print\:fg-bas-300 {
+.prt\(fg-bas-300\) {
     color: var(--fg-bas-300) !important;
 }
 
-.print\:fg-bas-200 {
+.prt\(fg-bas-200\) {
     color: var(--fg-bas-200) !important;
 }
 
-.print\:fg-bas-100 {
+.prt\(fg-bas-100\) {
     color: var(--fg-bas-100) !important;
 }
 
-.print\:fg-bas-050 {
+.prt\(fg-bas-050\) {
     color: var(--fg-bas-050) !important;
 }
 
-.print\:bg-bas-900 {
+.prt\(bg-bas-900\) {
     background-color: var(--bg-bas-900) !important;
 }
 
-.print\:bg-bas-800 {
+.prt\(bg-bas-800\) {
     background-color: var(--bg-bas-800) !important;
 }
 
-.print\:bg-bas-700 {
+.prt\(bg-bas-700\) {
     background-color: var(--bg-bas-700) !important;
 }
 
-.print\:bg-bas-600 {
+.prt\(bg-bas-600\) {
     background-color: var(--bg-bas-600) !important;
 }
 
-.print\:bg-bas-500 {
+.prt\(bg-bas-500\) {
     background-color: var(--bg-bas-500) !important;
 }
 
-.print\:bg-bas-400 {
+.prt\(bg-bas-400\) {
     background-color: var(--bg-bas-400) !important;
 }
 
-.print\:bg-bas-300 {
+.prt\(bg-bas-300\) {
     background-color: var(--bg-bas-300) !important;
 }
 
-.print\:bg-bas-200 {
+.prt\(bg-bas-200\) {
     background-color: var(--bg-bas-200) !important;
 }
 
-.print\:bg-bas-100 {
+.prt\(bg-bas-100\) {
     background-color: var(--bg-bas-100) !important;
 }
 
-.print\:bg-bas-050 {
+.prt\(bg-bas-050\) {
     background-color: var(--bg-bas-050) !important;
 }
 
 
-/* misc                    ----------------------------------------------------
--- */
-
-
-/* template conntainer     ------------
--- */
-
-#Tmp {
-    display: 100%;
-}
-
-#Tmp div:first-child {
-    display: none;
-}
-
-#Tmp div:last-child {
-    width: 100%;
-}
-
-
 /*
-    eof: /assets/css/style/print.css
+    eof: style/print.css
 */
