@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   sidebar.php
- *  build:  90925.1a
+ *  build:  90927.1a
  *  descrp: sidebar (Flexbox column)
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -44,7 +44,10 @@ else
 }
 echo '<!-- xwpt: flexbox/sidebar/container        -->' . "\n";
 echo '<div class="fx:sb-ct fx:sb-ct-opt">' . "\n";
+/*: hook for print.css to hide sidebar :*/
+echo '<div id="sidebar">' . "\n";
 dynamic_sidebar( 'sidebar-1' );
+echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 90915.1a/sidebar/php            -->' . "\n";
