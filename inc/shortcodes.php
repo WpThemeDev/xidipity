@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   inc/shortcodes.php
- *  build:  90915.1b
+ *  build:  90927.1a
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -20,7 +20,7 @@
  *   bexc / 90903.1a blog excerpts
  *   blst / 90903.1a blog list
  *   clst / 90903.1a category list
- *   gimg / 90903.1a gallary images
+ *   gimg / 90927.1a gallary images
  *   plst / 90903.1a page list
  *
  *   Utilities
@@ -560,7 +560,7 @@ function clst_shortcode($atts = array(), $prm = string)
 }
 /**
  *  name: gimg
- *  build: 90903.1a
+ *  build: 90927.1a
  *  description: Gallery images by category
  *  attributes:
  *      $atts - array
@@ -674,12 +674,12 @@ function gimg_shortcode($atts = array() , $prms = string)
         if ($wp_query->have_posts())
         {
             $html_retval .= '<!-- xwpt: 90903.1a/xsc/gimg/php            -->';
-            $html_retval .= '<div class="fx:gimg-cn">';
+            $html_retval .= '<div class="fx:cn-ct-gimg">';
             while ($wp_query->have_posts())
             {
                 $wp_query->the_post();
                 $wp_img = wp_get_attachment_image_src(get_the_ID() , 'full');
-                $html_retval .= '<div class="fx:gimg-cn-item">';
+                $html_retval .= '<div class="fx:cn-gimg-itm">';
                 if (empty($v_class))
                 {
                     $html_retval .= '<div><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="img:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a></div>';
