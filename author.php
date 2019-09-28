@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90920.1d
+ *  build:  90927.1a
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -34,7 +34,7 @@ if ($v_img_width == 0)
     display header
 */
 get_header();
-echo '<!-- xwpt: 90920.1d/author/php              -->' . "\n";
+echo '<!-- xwpt: 90927.1a/author/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
 if (align_sidebar() == 'left')
 {
@@ -70,9 +70,9 @@ echo '<!-- xwpt: 90915.1a/biography/php           -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
 echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
-echo '<div class="fx:bio-container">' . "\n";
-echo '<div class="fx:bio-item">' . $v_img . '</div>';
-echo '<div class="fx:bio-item pad:left-0.5">' . $v_biography . '</div>';
+echo '<div class="fx:cn-ct-bio">' . "\n";
+echo '<div class="fx:ct-bio-itm">' . $v_img . '</div>';
+echo '<div class="fx:ct-bio-itm pad:left-0.5">' . $v_biography . '</div>';
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 90915.1a/biography/php          -->' . "\n";
@@ -136,7 +136,7 @@ echo xidipity_metalinks(explode(',', $v_meta_list));
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90920.1d/author/php             -->' . "\n";
+echo '<!-- /xwpt: 90927.1a/author/php             -->' . "\n";
 /*
     display sidebar
 */
