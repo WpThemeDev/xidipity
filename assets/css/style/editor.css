@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   /assets/css/style/editor.css
- *  build:  90915.1a
+ *  build:  90927.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -61,7 +61,7 @@ acronym {
 /* page break symbol       ------------
 -- */
 
-.print\:page-break::after {
+.prt\(pg-break\:after-always\)::after {
     content: " ¶";
     color: var(--fg-pri-500);
 }
@@ -127,6 +127,7 @@ acronym {
     display: none;
 }
 
+
 /*  # twocol
     # 90910.1a
     # two column template
@@ -134,7 +135,30 @@ acronym {
 **/
 
 .twocol td:first-of-type {
-    border-right: 1px dashed var(--bg-bas-400) !important;
+    border-right: 1px dashed var(--bg-sec-400) !important;
+}
+
+
+/*  # cols
+    # 90910.1a
+    # multi column template
+    # add border
+**/
+
+table.cols\:auto,
+table.cols\:2,
+table.cols\:3,
+table.cols\:4 {
+    width: 100%;
+}
+
+table.cols\:auto td,
+table.cols\:2 td,
+table.cols\:3 td,
+table.cols\:4 td {
+    border: 1px dashed var(--bg-bas-400);
+    padding: 1rem;
+    width: 100%;
 }
 
 
