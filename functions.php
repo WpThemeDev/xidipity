@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90925.1a
+ *  build:  90927.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -410,6 +410,7 @@ function strwrap( $str='', $first='', $last='' )
  *  name: blog_copyright
  *  build: 90925.1a
  *  description: return copyright
+ *  url: https://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
  */
 function blog_copyright() {
