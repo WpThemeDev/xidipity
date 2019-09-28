@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   plugin.js
- *  build:  90819.1a
+ *  file:   embed/plugin.js
+ *  build:  90927.1a
  *  descrp: embed plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -34,7 +34,7 @@
                   minHeight: window.innerHeight * .61,
                   style: "direction: ltr; text-align: left; height: 100%; font-family: 'Roboto Mono', monospace; color: #212121; border: 1px solid #f5f5f5;" },
                 onSubmit: function() {
-                  var html = '<!-- mce: embed -->' + String.fromCharCode(13) + document.getElementsByClassName("mce-textbox")[0].value + '<!-- /mce: embed -->';
+                  var html = '<!-- xwpt: 90927.1a/mce/toolbar/embed       -->' + String.fromCharCode(13) + document.getElementsByClassName("mce-textbox")[0].value + '<!-- /xwpt: 90927.1a/mce/toolbar/embed      -->';
                   editor.insertContent(html);
                 }
               }, {
@@ -43,3 +43,6 @@
         });
     });
 })();
+/*
+    eof: embed/plugin.js
+*/
