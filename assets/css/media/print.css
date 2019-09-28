@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   css/media/print.css
- *  build:  90925.1a
+ *  file:   media/print.css
+ *  build:  90927.1a
  *  descrp: print media variables
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -118,7 +118,7 @@
     --h6-style: italic;
     --h6-weight: 400;
     /*: sys header :*/
-    --sys-hdr-bg-color: #fafafa;
+    --sys-hdr-bg-color: #ffffff;
     --sys-hdr-align: center;
     --title-lnk-pri-color: #5e35b1;
     --title-lnk-sec-color: #f4511e;
@@ -134,7 +134,7 @@
     --descr-font-style: normal;
     --descr-font-weight: 300;
     /*: sys footer :*/
-    --sys-ft-bg-color: #fafafa;
+    --sys-ft-bg-color: #ffffff;
     --sys-ft-align: center;
     /*: sys menu :*/
     --mnu-bar-sm-bg: #e64a19;
@@ -172,5 +172,5 @@
 
 
 /*
-    eof: css/media/print.css
+    eof: media/print.css
 */
