@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /css/style/web.css
- *  build:  90925.1a
+ *  file:   style/web.css
+ *  build:  90927.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -360,6 +360,55 @@ ol.comment-list li::before {
     width: 100%;
 }
 
+
+/*  # web template support classes
+    # 90927.1a
+    # matching classes may be found in editor.css
+**/
+
+
+/*: multicolumn template :*/
+
+table.cols\:0,
+table.cols\:2,
+table.cols\:3,
+table.cols\:4 {
+    border: none !important;
+    width: 100%;
+}
+
+.cols\:auto td,
+.cols\:2 td,
+.cols\:3 td,
+.cols\:4 td {
+    border-color: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+@media (min-width:640px) {
+    .cols\:auto td,
+    .cols\:2 td {
+        column-count: 2;
+        column-gap: 2%;
+    }
+    .cols\:3 td {
+        column-count: 3;
+        column-gap: 2%;
+    }
+    .cols\:4 td {
+        column-count: 4;
+        column-gap: 2%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .cols\:auto td {
+        column-count: 3;
+        column-gap: 2%;
+    }
+}
+
 .youtube-embed iframe {
     height: 100%;
     overflow: hidden;
@@ -508,21 +557,6 @@ ol.comment-list li::before {
     content: "⊳";
     margin: 0 0 0 5px;
 }
-
-
-/* deprecated
-a.ab-item,
-a.ab-item:visited {
-    color: var(--fg-bas-300)!important;
-}
-
-a.ab-item:active,
-a.ab-item:focus,
-a.ab-item:hover {
-    color: var(--fg-wht)!important;
-    background-color: var(--bg-bas-800)!important;
-}
-*/
 
 .site-title a,
 .site-title a:visited {
@@ -941,7 +975,7 @@ a.page-numbers:focus {
     # https://the-echoplex.net/flexyboxes/
 **/
 
-.fx\:bio-container {
+.fx\:cn-ct-bio {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -963,7 +997,7 @@ a.page-numbers:focus {
 }
 
 @media (min-width:640px) {
-    .fx\:bio-container {
+    .fx\:cn-ct-bio {
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
@@ -985,7 +1019,7 @@ a.page-numbers:focus {
     }
 }
 
-.fx\:bio-item:nth-child(1) {
+.fx\:ct-bio-itm:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1001,13 +1035,13 @@ a.page-numbers:focus {
 }
 
 @media (min-width:640px) {
-    .fx\:bio-item:nth-child(1) {
+    .fx\:ct-bio-itm:nth-child(1) {
         margin-bottom: 0;
         width: 12rem;
     }
 }
 
-.fx\:bio-item:nth-child(2) {
+.fx\:ct-bio-itm:nth-child(2) {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -1367,7 +1401,7 @@ a.page-numbers:focus {
     # https://the-echoplex.net/flexyboxes/
 **/
 
-.fx\:gimg-cn {
+.fx\:cn-ct-gimg {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1389,7 +1423,7 @@ a.page-numbers:focus {
 }
 
 @media (min-width:640px) {
-    .fx\:gimg-cn {
+    .fx\:cn-ct-gimg {
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
@@ -1411,7 +1445,7 @@ a.page-numbers:focus {
     }
 }
 
-.fx\:gimg-cn-item {
+.fx\:ct-gimg-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1424,7 +1458,7 @@ a.page-numbers:focus {
     margin-top: 0.5rem;
 }
 
-.fx\:gimg-cn-item:last-child {
+.fx\:ct-gimg-itm:last-child {
     margin-bottom: 0.5rem;
 }
 
@@ -1432,7 +1466,7 @@ a.page-numbers:focus {
 /*: smartphone portrait :*/
 
 @media (min-width: 640px) {
-    .fx\:gimg-cn-item {
+    .fx\:ct-gimg-itm {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
@@ -1451,7 +1485,7 @@ a.page-numbers:focus {
 /*: desktop :*/
 
 @media (min-width: 1280px) {
-    .fx\:gimg-cn-item {
+    .fx\:ct-gimg-itm {
         -webkit-flex: 0 1 30%;
         -ms-flex: 0 1 30%;
         flex: 0 1 30%;
@@ -1507,7 +1541,6 @@ a.page-numbers:focus {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-    min-height: 100px;
     background-color: var(--sys-hdr-bg-color);
 }
 
@@ -2118,14 +2151,10 @@ figure {
 #nav label {
     position: relative;
     display: block;
-    /* min-height: 2rem;
-    padding: 0.45rem; */
     padding: 0.25rem 0.5rem;
-    /* font-size: 1.1rem; */
     margin: 0;
     cursor: pointer;
     background-color: var(--mnu-bar-sm-bg);
-    /* line-height: 2rem; */
     color: var(--mnu-bar-sm-fg);
     text-align: center;
 }
@@ -2133,18 +2162,6 @@ figure {
 #nav input.trigger:checked~label {
     filter: brightness(80%);
 }
-
-
-/* deprecated
-#nav label:after {
-    position: absolute;
-    right: 1rem;
-    top: 0.4rem;
-    content: "\2261";
-    font-size: 1.8rem;
-    color: var(--fg-wht);
-}
-*/
 
 @media (min-width: 640px) {
     #nav ul {
@@ -2296,5 +2313,5 @@ figure {
 
 
 /*
-    eof: /css/style/web.css
+    eof: style/web.css
 */
