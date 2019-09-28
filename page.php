@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   page.php
- *  build:  90920.1d
+ *  build:  90927.1a
  *  descrp: Page template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -35,7 +35,7 @@ $v_pages = 0;
     display header
 */
 get_header();
-echo '<!-- xwpt: 90920.1d/page/php                -->' . "\n";
+echo '<!-- xwpt: 90927.1a/page/php                -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
 if (align_sidebar() == 'left')
 {
@@ -79,7 +79,7 @@ if ($wp_query->have_posts()) {
         /*
             page footer
         */
-        echo '<div class="pad:left-1 fnt:size-smaller">' . "\n";
+        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
         $v_meta_list = '';
         /*: edit :*/
         if (get_edit_post_link())
@@ -102,10 +102,10 @@ if ($wp_query->have_posts()) {
     $v_pages = $wp_query->max_num_pages;
     if ($v_pages > 1)
     {
-        echo '<!-- xwpt: 90920.1d/page/php/pagination     -->' . "\n";
+        echo '<!-- xwpt: 90927.1a/page/php/pagination     -->' . "\n";
         $v_cur_page = max(1, get_query_var('paged'));
         echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-        echo '<!-- /xwpt: 90920.1d/page/php/pagination    -->' . "\n";
+        echo '<!-- /xwpt: 90927.1a/page/php/pagination    -->' . "\n";
     }
 }
 else
@@ -114,7 +114,7 @@ else
 }
 echo '</div>' . "\n";
 echo '</main>' . "\n";
-echo '<!-- /xwpt: 90920.1d/page/php               -->' . "\n";
+echo '<!-- /xwpt: 90927.1a/page/php               -->' . "\n";
 /*
     display sidebar
 */
