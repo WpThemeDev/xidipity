@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/web.css
- *  build:  90927.1a
+ *  build:  90927.1b
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -362,7 +362,7 @@ ol.comment-list li::before {
 
 
 /*  # web template support classes
-    # 90927.1a
+    # 90927.1b
     # matching classes may be found in editor.css
 **/
 
@@ -558,8 +558,7 @@ table.cols\:4 {
     margin: 0 0 0 5px;
 }
 
-.site-title a,
-.site-title a:visited {
+.site-title {
     color: var(--title-lnk-pri-color);
     font-family: var(--title-font-family);
     font-size: var(--title-font-size);
@@ -568,10 +567,13 @@ table.cols\:4 {
     letter-spacing: var(--title-font-spacing);
 }
 
+.site-title a,
+.site-title a:visited {
+    color: var(--title-lnk-pri-color);
+}
+
 .site-title a:hover {
-    background-color: transparent;
     color: var(--title-lnk-sec-color);
-    font-weight: var(--title-font-weight);
 }
 
 .site-description {
@@ -591,6 +593,8 @@ table.cols\:4 {
     padding: 0 10px 0 10px;
 }
 
+
+/* deprecated
 @media (min-width:640px) {
     .site-title {
         padding: 4px 10px 4px 10px;
@@ -600,6 +604,7 @@ table.cols\:4 {
         padding-right: 10px;
     }
 }
+*/
 
 .toc-menu {
     background-color: var(--sys-hdr-bg-color);
@@ -2036,12 +2041,6 @@ figure {
     # https://codepen.io/joe-watkins/pen/Emzxf
 **/
 
-.fx\:mnu-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
 
 /*: menu bar width on mobile :*/
 
@@ -2078,7 +2077,7 @@ figure {
     font-size: smaller;
     padding: 1rem;
     text-decoration: none;
-    /* border-right: 1px solid var(--fg-sec-200); */
+    transition: all 0.5s ease;
 }
 
 #nav ul li a:hover {
@@ -2109,11 +2108,6 @@ figure {
 }
 
 @media (min-width: 640px) {
-    .fx\:mnu-wrapper {
-        margin-left: auto;
-        margin-right: auto;
-        width: 85%;
-    }
     /*: menu bar width on desktop :*/
     .fx\:mnu-70\% {
         width: 70% !important;
@@ -2299,7 +2293,9 @@ figure {
 
 /*: area item :*/
 
-.fx\:area-ct-itm {
+.fx\:area-itm-center,
+.fx\:area-itm-left,
+.fx\:area-itm-right {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -2309,6 +2305,21 @@ figure {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
+}
+
+.fx\:area-itm-center {
+    padding: 0;
+    text-align: center;
+}
+
+.fx\:area-itm-left {
+    padding-left: 0.5rem;
+    text-align: left;
+}
+
+.fx\:area-itm-right {
+    padding-right: 0.5rem;
+    text-align: right;
 }
 
 
