@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90925.1a
+ *  build:  90927.1b
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90925.1a/header/php              -->' . "\n";
+echo '<!-- xwpt: 90927.1b/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -49,7 +49,7 @@ echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<!-- xwpt: flexbox/page/container           -->' . "\n";
 echo '<div class="fx:pg-ct">' . "\n";
-echo '<!-- xwpt: 90925.1a/header/php              -->' . "\n";
+echo '<!-- xwpt: 90927.1b/header/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-1    -->' . "\n";
 if (align_sidebar() == 'left')
 {
@@ -68,14 +68,14 @@ echo '<div class="fx:ct-itm-1-opt" style="min-height: ' . hdr_hgt() . '">' . "\n
 echo '<div class="fx:area-ct-' . hdr_align() . '">' . "\n";
 if (hdr_logo() == 'none')
 {
-    echo '<div class="fx:area-ct-itm pad:horz-0.5" style="text-align:' . hdr_align() . ';">' . "\n";
-    if (is_front_page() && is_home())
+    echo '<div class="fx:area-itm-' . hdr_align() .  '">' . "\n";
+    if (is_front_page() || is_home())
     {
         echo '<p class="site-title">' . get_bloginfo('name') . '</p>' . "\n";
     }
     else
     {
-        echo '<p class="site-title"><a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>' . "\n";
+        echo '<p><a class="site-title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>' . "\n";
     }
     echo '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>' . "\n";
     echo '</div>' . "\n";
@@ -94,7 +94,7 @@ else
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90925.1a/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90927.1b/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -148,7 +148,7 @@ if ($wp_menu || $wp_page)
     {
         /*: drop down menu :*/
         echo '<div class="fx:area-ct-' . mnu_align() . '">' . "\n";
-        echo '<div class="fx:area-ct-itm pad:horz-0.5 fx:mnu-' . mnu_width() . '">' . "\n";
+        echo '<div class="fx::area-itm-' . mnu_align() . ' fx:mnu-' . mnu_width() . '">' . "\n";
         //echo '<div class="' . mnu_width() . '" style="text-align:' . mnu_align() . ';">' . "\n";
         echo '<nav role="navigation" id="nav">' . "\n";
         echo '<input class="trigger" type="checkbox" id="mainNavButton">' . "\n";
@@ -164,7 +164,7 @@ if ($wp_menu || $wp_page)
     }
 }
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90925.1a/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90927.1b/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
