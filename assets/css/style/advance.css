@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /assets/css/style/advance.css
- *  build:  90915.1a
+ *  file:   style/advance.css
+ *  build:  90929.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -1534,21 +1534,21 @@ ul.li\:tpl-spaced li:not(:last-child) {
 **/
 
 @media (min-width: 640px) {
-    /*  # disp
+    /*  # dsp
         # 90907.1b
         # display
         # https://developer.mozilla.org/en-US/docs/Web/CSS/display
     */
-    .sm\(disp\:none\) {
+    .sm\(dsp\: none\) {
         display: none;
     }
-    .sm\(disp\:block\) {
+    .sm\(dsp\:block\) {
         display: block;
     }
-    .sm\(disp\:inline\) {
+    .sm\(dsp\:inline\) {
         display: inline;
     }
-    .sm\(disp\:inline-block\) {
+    .sm\(dsp\:inline-block\) {
         display: inline-block;
     }
     /*  # fnt:size
@@ -2355,12 +2355,830 @@ ul.li\:tpl-spaced li:not(:last-child) {
 
 
 /*  # md
-    # 90907.1a
+    # 90929.1a
     # screen width 768px or larger
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    /*  # dsp
+        # 90929.1a
+        # display
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    */
+    .md\(dsp\: none\) {
+        display: none;
+    }
+    .md\(dsp\:block\) {
+        display: block;
+    }
+    .md\(dsp\:inline\) {
+        display: inline;
+    }
+    .md\(dsp\:inline-block\) {
+        display: inline;
+    }
+    /*  # fnt:size
+        # 90929.1a
+        # font size named classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+    */
+    .md\(fnt\:size-xx-large\) {
+        font-size: xx-large !important;
+    }
+    .md\(fnt\:size-x-large\) {
+        font-size: x-large !important;
+    }
+    .md\(fnt\:size-large\) {
+        font-size: large !important;
+    }
+    .md\(fnt\:size-medium\) {
+        font-size: medium !important;
+    }
+    .md\(fnt\:size-small\) {
+        font-size: small !important;
+    }
+    .md\(fnt\:size-x-small\) {
+        font-size: x-small !important;
+    }
+    .md\(fnt\:size-xx-small\) {
+        font-size: xx-small !important;
+    }
+    .md\(fnt\:size-larger\) {
+        font-size: larger !important;
+    }
+    .md\(fnt\:size-smaller\) {
+        font-size: smaller !important;
+    }
+    /*  # fnt:space
+        # 90929.1a
+        # predefined letter spacing classes
+        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+    */
+    .md\(fnt\:spacing-tight\) {
+        letter-spacing: -0.05rem;
+    }
+    .md\(fnt\:spacing-normal\) {
+        letter-spacing: 0;
+    }
+    .md\(fnt\:spacing-loose\) {
+        letter-spacing: 0.1rem;
+    }
+    .md\(fnt\:spacing-wide\) {
+        letter-spacing: 0.5rem;
+    }
+    /*  # mar
+        # 90929.1a
+        # margins (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .md\(mar\:all-0\) {
+        margin: 0 !important;
+    }
+    .md\(mar\:all-0\.125\) {
+        margin: 0.125rem !important;
+    }
+    .md\(mar\:all-0\.25\) {
+        margin: 0.25rem !important;
+    }
+    .md\(mar\:all-0\.375\) {
+        margin: 0.375rem !important;
+    }
+    .md\(mar\:all-0\.5\) {
+        margin: 0.5rem !important;
+    }
+    .md\(mar\:all-0\.625\) {
+        margin: 0.625rem !important;
+    }
+    .md\(mar\:all-0\.75\) {
+        margin: 0.75rem !important;
+    }
+    .md\(mar\:all-0\.8125\) {
+        margin: 0.8125rem !important;
+    }
+    .md\(mar\:all-0\.875\) {
+        margin: 0.875rem !important;
+    }
+    .md\(mar\:all-0\.9375\) {
+        margin: 0.9375rem !important;
+    }
+    .md\(mar\:all-1\) {
+        margin: 1rem !important;
+    }
+    .md\(mar\:all-1\.25\) {
+        margin: 1.25rem !important;
+    }
+    .md\(mar\:all-1\.5\) {
+        margin: 1.5rem !important;
+    }
+    .md\(mar\:all-1\.75\) {
+        margin: 1.75rem !important;
+    }
+    .md\(mar\:all-2\) {
+        margin: 2rem !important;
+    }
+    .md\(mar\:bottom-0\) {
+        margin-bottom: 0 !important;
+    }
+    .md\(mar\:bottom-0\.125\) {
+        margin-bottom: 0.125rem !important;
+    }
+    .md\(mar\:bottom-0\.25\) {
+        margin-bottom: 0.25rem !important;
+    }
+    .md\(mar\:bottom-0\.375\) {
+        margin-bottom: 0.375rem !important;
+    }
+    .md\(mar\:bottom-0\.5\) {
+        margin-bottom: 0.5rem !important;
+    }
+    .md\(mar\:bottom-0\.625\) {
+        margin-bottom: 0.625rem !important;
+    }
+    .md\(mar\:bottom-0\.75\) {
+        margin-bottom: 0.75rem !important;
+    }
+    .md\(mar\:bottom-0\.8125\) {
+        margin-bottom: 0.8125rem !important;
+    }
+    .md\(mar\:bottom-0\.875\) {
+        margin-bottom: 0.875rem !important;
+    }
+    .md\(mar\:bottom-0\.9375\) {
+        margin-bottom: 0.9375rem !important;
+    }
+    .md\(mar\:bottom-1\) {
+        margin-bottom: 1rem !important;
+    }
+    .md\(mar\:bottom-1\.25\) {
+        margin-bottom: 1.25rem !important;
+    }
+    .md\(mar\:bottom-1\.5\) {
+        margin-bottom: 1.5rem !important;
+    }
+    .md\(mar\:bottom-1\.75\) {
+        margin-bottom: 1.75rem !important;
+    }
+    .md\(mar\:bottom-2\) {
+        margin-bottom: 2rem !important;
+    }
+    .md\(mar\:left-0\) {
+        margin-left: 0 !important;
+    }
+    .md\(mar\:left-0\.125\) {
+        margin-left: 0.125rem !important;
+    }
+    .md\(mar\:left-0\.25\) {
+        margin-left: 0.25rem !important;
+    }
+    .md\(mar\:left-0\.375\) {
+        margin-left: 0.375rem !important;
+    }
+    .md\(mar\:left-0\.5\) {
+        margin-left: 0.5rem !important;
+    }
+    .md\(mar\:left-0\.625\) {
+        margin-left: 0.625rem !important;
+    }
+    .md\(mar\:left-0\.75\) {
+        margin-left: 0.75rem !important;
+    }
+    .md\(mar\:left-0\.8125\) {
+        margin-left: 0.8125rem !important;
+    }
+    .md\(mar\:left-0\.875\) {
+        margin-left: 0.875rem !important;
+    }
+    .md\(mar\:left-0\.9375\) {
+        margin-left: 0.9375rem !important;
+    }
+    .md\(mar\:left-1\) {
+        margin-left: 1rem !important;
+    }
+    .md\(mar\:left-1\.25\) {
+        margin-left: 1.25rem !important;
+    }
+    .md\(mar\:left-1\.5\) {
+        margin-left: 1.5rem !important;
+    }
+    .md\(mar\:left-1\.75\) {
+        margin-left: 1.75rem !important;
+    }
+    .md\(mar\:left-2\) {
+        margin-left: 2rem !important;
+    }
+    .md\(mar\:right-0\) {
+        margin-right: 0 !important;
+    }
+    .md\(mar\:right-0\.125\) {
+        margin-right: 0.125rem !important;
+    }
+    .md\(mar\:right-0\.25\) {
+        margin-right: 0.25rem !important;
+    }
+    .md\(mar\:right-0\.375\) {
+        margin-right: 0.375rem !important;
+    }
+    .md\(mar\:right-0\.5\) {
+        margin-right: 0.5rem !important;
+    }
+    .md\(mar\:right-0\.625\) {
+        margin-right: 0.625rem !important;
+    }
+    .md\(mar\:right-0\.75\) {
+        margin-right: 0.75rem !important;
+    }
+    .md\(mar\:right-0\.8125\) {
+        margin-right: 0.8125rem !important;
+    }
+    .md\(mar\:right-0\.875\) {
+        margin-right: 0.875rem !important;
+    }
+    .md\(mar\:right-0\.9375\) {
+        margin-right: 0.9375rem !important;
+    }
+    .md\(mar\:right-1\) {
+        margin-right: 1rem !important;
+    }
+    .md\(mar\:right-1\.25\) {
+        margin-right: 1.25rem !important;
+    }
+    .md\(mar\:right-1\.5\) {
+        margin-right: 1.5rem !important;
+    }
+    .md\(mar\:right-1\.75\) {
+        margin-right: 1.75rem !important;
+    }
+    .md\(mar\:right-2\) {
+        margin-right: 2rem !important;
+    }
+    .md\(mar\:top-0\) {
+        margin-top: 0 !important;
+    }
+    .md\(mar\:top-0\.125\) {
+        margin-top: 0.125rem !important;
+    }
+    .md\(mar\:top-0\.25\) {
+        margin-top: 0.25rem !important;
+    }
+    .md\(mar\:top-0\.375\) {
+        margin-top: 0.375rem !important;
+    }
+    .md\(mar\:top-0\.5\) {
+        margin-top: 0.5rem !important;
+    }
+    .md\(mar\:top-0\.625\) {
+        margin-top: 0.625rem !important;
+    }
+    .md\(mar\:top-0\.75\) {
+        margin-top: 0.75rem !important;
+    }
+    .md\(mar\:top-0\.8125\) {
+        margin-top: 0.8125rem !important;
+    }
+    .md\(mar\:top-0\.875\) {
+        margin-top: 0.875rem !important;
+    }
+    .md\(mar\:top-0\.9375\) {
+        margin-top: 0.9375rem !important;
+    }
+    .md\(mar\:top-1\) {
+        margin-top: 1rem !important;
+    }
+    .md\(mar\:top-1\.25\) {
+        margin-top: 1.25rem !important;
+    }
+    .md\(mar\:top-1\.5\) {
+        margin-top: 1.5rem !important;
+    }
+    .md\(mar\:top-1\.75\) {
+        margin-top: 1.75rem !important;
+    }
+    .md\(mar\:top-2\) {
+        margin-top: 2rem !important;
+    }
+    .md\(mar\:horz-0\) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .md\(mar\:horz-0\.125\) {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+    .md\(mar\:horz-0\.25\) {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+    }
+    .md\(mar\:horz-0\.375\) {
+        margin-left: 0.375rem !important;
+        margin-right: 0.375rem !important;
+    }
+    .md\(mar\:horz-0\.625\) {
+        margin-left: 0.625rem !important;
+        margin-right: 0.625rem !important;
+    }
+    .md\(mar\:horz-0\.75\) {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+    .md\(mar\:horz-0\.8125\) {
+        margin-left: 0.8125rem !important;
+        margin-right: 0.8125rem !important;
+    }
+    .md\(mar\:horz-0\.875\) {
+        margin-left: 0.875rem !important;
+        margin-right: 0.875rem !important;
+    }
+    .md\(mar\:horz-0\.9375\) {
+        margin-left: 0.9375rem !important;
+        margin-right: 0.9375rem !important;
+    }
+    .md\(mar\:horz-1\) {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+    .md\(mar\:horz-1\.25\) {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
+    }
+    .md\(mar\:horz-1\.5\) {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    .md\(mar\:horz-1\.75\) {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
+    }
+    .md\(mar\:horz-2\) {
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+    .md\(mar\:vert-0\) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .md\(mar\:vert-0\.125\) {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+    .md\(mar\:vert-0\.25\) {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .md\(mar\:vert-0\.375\) {
+        margin-top: 0.375rem !important;
+        margin-bottom: 0.375rem !important;
+    }
+    .md\(mar\:vert-0\.625\) {
+        margin-top: 0.625rem !important;
+        margin-bottom: 0.625rem !important;
+    }
+    .md\(mar\:vert-0\.75\) {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    .md\(mar\:vert-0\.8125\) {
+        margin-top: 0.8125rem !important;
+        margin-bottom: 0.8125rem !important;
+    }
+    .md\(mar\:vert-0\.875\) {
+        margin-top: 0.875rem !important;
+        margin-bottom: 0.875rem !important;
+    }
+    .md\(mar\:vert-0\.9375\) {
+        margin-top: 0.9375rem !important;
+        margin-bottom: 0.9375rem !important;
+    }
+    .md\(mar\:vert-1\) {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .md\(mar\:vert-1\.25\) {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .md\(mar\:vert-1\.5\) {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .md\(mar\:vert-1\.75\) {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
+    }
+    .md\(mar\:vert-2\) {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    /*  # pad
+        # 90929.1a
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .md\(pad\:all-0\) {
+        padding: 0 !important;
+    }
+    .md\(pad\:all-0\.125\) {
+        padding: 0.125rem !important;
+    }
+    .md\(pad\:all-0\.25\) {
+        padding: 0.25rem !important;
+    }
+    .md\(pad\:all-0\.375\) {
+        padding: 0.375rem !important;
+    }
+    .md\(pad\:all-0\.5\) {
+        padding: 0.5rem !important;
+    }
+    .md\(pad\:all-0\.625\) {
+        padding: 0.625rem !important;
+    }
+    .md\(pad\:all-0\.75\) {
+        padding: 0.75rem !important;
+    }
+    .md\(pad\:all-0\.8125\) {
+        padding: 0.8125rem !important;
+    }
+    .md\(pad\:all-0\.875\) {
+        padding: 0.875rem !important;
+    }
+    .md\(pad\:all-0\.9375\) {
+        padding: 0.9375rem !important;
+    }
+    .md\(pad\:all-1\) {
+        padding: 1rem !important;
+    }
+    .md\(pad\:all-1\.25\) {
+        padding: 1.25rem !important;
+    }
+    .md\(pad\:all-1\.5\) {
+        padding: 1.5rem !important;
+    }
+    .md\(pad\:all-1\.75\) {
+        padding: 1.75rem !important;
+    }
+    .md\(pad\:all-2\) {
+        padding: 2rem !important;
+    }
+    .md\(pad\:horz-0\.25\) {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    .md\(pad\:horz-0\.5\) {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .md\(pad\:horz-0\.75\) {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .md\(pad\:horz-1\) {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    sm\(.pad\:left-0\.5\) {
+        padding-left: 0.5rem !important;
+    }
+    .md\(pad\:left-0\.75\) {
+        padding-left: 0.75rem !important;
+    }
+    .md\(pad\:left-1\) {
+        padding-left: 1rem !important;
+    }
+    .md\(pad\:right-0\.5\) {
+        padding-right: 0.5rem !important;
+    }
+    .md\(pad\:right-0\.75\) {
+        padding-right: 0.75rem !important;
+    }
+    .md\(pad\:right-1\) {
+        padding-right: 1rem !important;
+    }
+    .md\(pad\:top-0\.3125\) {
+        padding-top: 0.3125rem !important;
+    }
+    .md\(pad\:top-0\.5\) {
+        padding-top: 0.5rem !important;
+    }
+    .md\(pad\:vert-0\.25\) {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+    .md\(pad\:vert-0\.5\) {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .md\(pad\:vert-0\.75\) {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    .md\(pad\:vert-1\) {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    /*  # ht
+        # 90929.1a
+        # height
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    */
+    .md\(ht\:auto\) {
+        height: auto !important;
+    }
+    /*: 80px :*/
+    .md\(ht\:min-height-5\) {
+        min-height: 5rem !important;
+    }
+    /*: 160px :*/
+    .md\(ht\:min-height-10\) {
+        min-height: 10rem !important;
+    }
+    /*: 240px :*/
+    .md\(ht\:min-height-15\) {
+        min-height: 15rem !important;
+    }
+    /*: 320px :*/
+    .md\(ht\:min-height-20\) {
+        min-height: 20rem !important;
+    }
+    /*: 400px :*/
+    .md\(ht\:min-height-25\) {
+        min-height: 25rem !important;
+    }
+    /*: 480px :*/
+    .md\(ht\:min-height-30\) {
+        min-height: 30rem !important;
+    }
+    /*: 560px :*/
+    .md\(ht\:min-height-35\) {
+        min-height: 35rem !important;
+    }
+    /*: 640px :*/
+    .md\(ht\:min-height-40\) {
+        min-height: 40rem !important;
+    }
+    /*: 720px :*/
+    .md\(ht\:min-height-45\) {
+        min-height: 45rem !important;
+    }
+    /*: 800px :*/
+    .md\(ht\:min-height-50\) {
+        min-height: 50rem !important;
+    }
+    /*  # img
+        # 90929.1a
+        # set image width & height
+    */
+    .md\(img\:25\%\) {
+        height: auto !important;
+        width: 25% !important;
+    }
+    .md\(img\:50\%\) {
+        height: auto !important;
+        width: 50% !important;
+    }
+    .md\(img\:75\%\) {
+        height: auto !important;
+        width: 75% !important;
+    }
+    .md\(img\:100\%\) {
+        height: auto !important;
+        width: 100% !important;
+    }
+    /*  # wd
+        # 90929.1a
+        # width (rem & %)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .md\(wd\:10\%\) {
+        width: 10% !important;
+    }
+    .md\(wd\:15\%\) {
+        width: 15% !important;
+    }
+    .md\(wd\:20\%\) {
+        width: 20% !important;
+    }
+    .md\(wd\:25\%\) {
+        width: 25% !important;
+    }
+    .md\(wd\:30\%\) {
+        width: 30% !important;
+    }
+    .md\(wd\:35\%\) {
+        width: 35% !important;
+    }
+    .md\(wd\:40\%\) {
+        width: 40% !important;
+    }
+    .md\(wd\:45\%\) {
+        width: 45% !important;
+    }
+    .md\(wd\:50\%\) {
+        width: 50% !important;
+    }
+    .md\(wd\:55\%\) {
+        width: 55% !important;
+    }
+    .md\(wd\:60\%\) {
+        width: 60% !important;
+    }
+    .md\(wd\:65\%\) {
+        width: 65% !important;
+    }
+    .md\(wd\:70\%\) {
+        width: 70% !important;
+    }
+    .md\(wd\:75\%\) {
+        width: 75% !important;
+    }
+    .md\(wd\:80\%\) {
+        width: 80% !important;
+    }
+    .md\(wd\:85\%\) {
+        width: 85% !important;
+    }
+    .md\(wd\:90\%\) {
+        width: 90% !important;
+    }
+    .md\(wd\:95\%\) {
+        width: 95% !important;
+    }
+    .md\(wd\:auto\) {
+        width: auto !important;
+    }
+    .md\(wd\:100\%\) {
+        width: 100% !important;
+    }
+    /*: 25px :*/
+    .md\(wd\:1\.5625\) {
+        width: 1.5625rem !important;
+    }
+    /*: 50px :*/
+    .md\(wd\:3\.125\) {
+        width: 3.125rem !important;
+    }
+    /*: 75px :*/
+    .md\(wd\:4\.6875\) {
+        width: 4.6875rem !important;
+    }
+    /*: 100px :*/
+    .md\(wd\:6\.25\) {
+        width: 6.25rem !important;
+    }
+    /*: 125px :*/
+    .md\(wd\:7\.8125\) {
+        width: 7.8125rem !important;
+    }
+    /*: 150px :*/
+    .md\(wd\:9\.375\) {
+        width: 9.375rem !important;
+    }
+    /*: 175px :*/
+    .md\(wd\:10\.9375\) {
+        width: 10.9375rem !important;
+    }
+    /*: 200px :*/
+    .md\(wd\:12\.5\) {
+        width: 12.5rem !important;
+    }
+    /*: 225px :*/
+    .md\(wd\:14\.0625\) {
+        width: 14.0625rem !important;
+    }
+    /*: 250px :*/
+    .md\(wd\:15\.625\) {
+        width: 15.625rem !important;
+    }
+    /*: 275px :*/
+    .md\(wd\:17\.1875\) {
+        width: 17.1875rem !important;
+    }
+    /*: 300px :*/
+    .md\(wd\:18\.75\) {
+        width: 18.75rem !important;
+    }
+    /*  # DIY flexbox components (beta)
+        # 90929.1a
+        # classes to build flexbox
+        # https://the-echoplex.net/flexyboxes/
+    */
+    .md\(fx\:cn-col\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .md\(fx\:cn-row\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .md\(fx\:cn-wrap\) {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .md\(fx\:cn-jc-sta\) {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .md\(fx\:cn-jc-end\) {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    .md\(fx\:cn-jc-cen\) {
+        -webkit-justify-content: flex-center;
+        -ms-flex-pack: center;
+        justify-content: flex-center;
+    }
+    .md\(fx\:cn-jc-bet\) {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .md\(fx\:cn-jc-aro\) {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .md\(fx\:cn-ai-sta\) {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .md\(fx\:cn-ai-end\) {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    .md\(fx\:cn-ai-cen\) {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .md\(fx\:cn-ai-bas\) {
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+    .md\(fx\:cn-ai-str\) {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    .md\(fx\:cn-ac-sta\) {
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
+    .md\(fx\:cn-ac-end\) {
+        -webkit-align-content: flex-end;
+        -ms-flex-line-pack: end;
+        align-content: flex-end;
+    }
+    .md\(fx\:cn-ac-cen\) {
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+    .md\(fx\:cn-ac-bet\) {
+        -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+    }
+    .md\(fx\:cn-ac-aro\) {
+        -webkit-align-content: space-around;
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+    .md\(fx\:cn-ac-str\) {
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    }
+    .md\(fx\:itm-flex-01\) {
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+    .md\(fx\:itm-flex-11\) {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
 
 
 /*  # lg
@@ -2369,18 +3187,1654 @@ ul.li\:tpl-spaced li:not(:last-child) {
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    /*  # dsp
+        # 90929.1a
+        # display
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    */
+    .lg\(dsp\: none\) {
+        display: none;
+    }
+    .lg\(dsp\:block\) {
+        display: block;
+    }
+    .lg\(dsp\:inline\) {
+        display: inline;
+    }
+    .lg\(dsp\:inline-block\) {
+        display: inline;
+    }
+    /*  # fnt:size
+        # 90929.1a
+        # font size named classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+    */
+    .lg\(fnt\:size-xx-large\) {
+        font-size: xx-large !important;
+    }
+    .lg\(fnt\:size-x-large\) {
+        font-size: x-large !important;
+    }
+    .lg\(fnt\:size-large\) {
+        font-size: large !important;
+    }
+    .lg\(fnt\:size-medium\) {
+        font-size: medium !important;
+    }
+    .lg\(fnt\:size-small\) {
+        font-size: small !important;
+    }
+    .lg\(fnt\:size-x-small\) {
+        font-size: x-small !important;
+    }
+    .lg\(fnt\:size-xx-small\) {
+        font-size: xx-small !important;
+    }
+    .lg\(fnt\:size-larger\) {
+        font-size: larger !important;
+    }
+    .lg\(fnt\:size-smaller\) {
+        font-size: smaller !important;
+    }
+    /*  # fnt:space
+        # 90929.1a
+        # predefined letter spacing classes
+        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+    */
+    .lg\(fnt\:spacing-tight\) {
+        letter-spacing: -0.05rem;
+    }
+    .lg\(fnt\:spacing-normal\) {
+        letter-spacing: 0;
+    }
+    .lg\(fnt\:spacing-loose\) {
+        letter-spacing: 0.1rem;
+    }
+    .lg\(fnt\:spacing-wide\) {
+        letter-spacing: 0.5rem;
+    }
+    /*  # mar
+        # 90929.1a
+        # margins (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .lg\(mar\:all-0\) {
+        margin: 0 !important;
+    }
+    .lg\(mar\:all-0\.125\) {
+        margin: 0.125rem !important;
+    }
+    .lg\(mar\:all-0\.25\) {
+        margin: 0.25rem !important;
+    }
+    .lg\(mar\:all-0\.375\) {
+        margin: 0.375rem !important;
+    }
+    .lg\(mar\:all-0\.5\) {
+        margin: 0.5rem !important;
+    }
+    .lg\(mar\:all-0\.625\) {
+        margin: 0.625rem !important;
+    }
+    .lg\(mar\:all-0\.75\) {
+        margin: 0.75rem !important;
+    }
+    .lg\(mar\:all-0\.8125\) {
+        margin: 0.8125rem !important;
+    }
+    .lg\(mar\:all-0\.875\) {
+        margin: 0.875rem !important;
+    }
+    .lg\(mar\:all-0\.9375\) {
+        margin: 0.9375rem !important;
+    }
+    .lg\(mar\:all-1\) {
+        margin: 1rem !important;
+    }
+    .lg\(mar\:all-1\.25\) {
+        margin: 1.25rem !important;
+    }
+    .lg\(mar\:all-1\.5\) {
+        margin: 1.5rem !important;
+    }
+    .lg\(mar\:all-1\.75\) {
+        margin: 1.75rem !important;
+    }
+    .lg\(mar\:all-2\) {
+        margin: 2rem !important;
+    }
+    .lg\(mar\:bottom-0\) {
+        margin-bottom: 0 !important;
+    }
+    .lg\(mar\:bottom-0\.125\) {
+        margin-bottom: 0.125rem !important;
+    }
+    .lg\(mar\:bottom-0\.25\) {
+        margin-bottom: 0.25rem !important;
+    }
+    .lg\(mar\:bottom-0\.375\) {
+        margin-bottom: 0.375rem !important;
+    }
+    .lg\(mar\:bottom-0\.5\) {
+        margin-bottom: 0.5rem !important;
+    }
+    .lg\(mar\:bottom-0\.625\) {
+        margin-bottom: 0.625rem !important;
+    }
+    .lg\(mar\:bottom-0\.75\) {
+        margin-bottom: 0.75rem !important;
+    }
+    .lg\(mar\:bottom-0\.8125\) {
+        margin-bottom: 0.8125rem !important;
+    }
+    .lg\(mar\:bottom-0\.875\) {
+        margin-bottom: 0.875rem !important;
+    }
+    .lg\(mar\:bottom-0\.9375\) {
+        margin-bottom: 0.9375rem !important;
+    }
+    .lg\(mar\:bottom-1\) {
+        margin-bottom: 1rem !important;
+    }
+    .lg\(mar\:bottom-1\.25\) {
+        margin-bottom: 1.25rem !important;
+    }
+    .lg\(mar\:bottom-1\.5\) {
+        margin-bottom: 1.5rem !important;
+    }
+    .lg\(mar\:bottom-1\.75\) {
+        margin-bottom: 1.75rem !important;
+    }
+    .lg\(mar\:bottom-2\) {
+        margin-bottom: 2rem !important;
+    }
+    .lg\(mar\:left-0\) {
+        margin-left: 0 !important;
+    }
+    .lg\(mar\:left-0\.125\) {
+        margin-left: 0.125rem !important;
+    }
+    .lg\(mar\:left-0\.25\) {
+        margin-left: 0.25rem !important;
+    }
+    .lg\(mar\:left-0\.375\) {
+        margin-left: 0.375rem !important;
+    }
+    .lg\(mar\:left-0\.5\) {
+        margin-left: 0.5rem !important;
+    }
+    .lg\(mar\:left-0\.625\) {
+        margin-left: 0.625rem !important;
+    }
+    .lg\(mar\:left-0\.75\) {
+        margin-left: 0.75rem !important;
+    }
+    .lg\(mar\:left-0\.8125\) {
+        margin-left: 0.8125rem !important;
+    }
+    .lg\(mar\:left-0\.875\) {
+        margin-left: 0.875rem !important;
+    }
+    .lg\(mar\:left-0\.9375\) {
+        margin-left: 0.9375rem !important;
+    }
+    .lg\(mar\:left-1\) {
+        margin-left: 1rem !important;
+    }
+    .lg\(mar\:left-1\.25\) {
+        margin-left: 1.25rem !important;
+    }
+    .lg\(mar\:left-1\.5\) {
+        margin-left: 1.5rem !important;
+    }
+    .lg\(mar\:left-1\.75\) {
+        margin-left: 1.75rem !important;
+    }
+    .lg\(mar\:left-2\) {
+        margin-left: 2rem !important;
+    }
+    .lg\(mar\:right-0\) {
+        margin-right: 0 !important;
+    }
+    .lg\(mar\:right-0\.125\) {
+        margin-right: 0.125rem !important;
+    }
+    .lg\(mar\:right-0\.25\) {
+        margin-right: 0.25rem !important;
+    }
+    .lg\(mar\:right-0\.375\) {
+        margin-right: 0.375rem !important;
+    }
+    .lg\(mar\:right-0\.5\) {
+        margin-right: 0.5rem !important;
+    }
+    .lg\(mar\:right-0\.625\) {
+        margin-right: 0.625rem !important;
+    }
+    .lg\(mar\:right-0\.75\) {
+        margin-right: 0.75rem !important;
+    }
+    .lg\(mar\:right-0\.8125\) {
+        margin-right: 0.8125rem !important;
+    }
+    .lg\(mar\:right-0\.875\) {
+        margin-right: 0.875rem !important;
+    }
+    .lg\(mar\:right-0\.9375\) {
+        margin-right: 0.9375rem !important;
+    }
+    .lg\(mar\:right-1\) {
+        margin-right: 1rem !important;
+    }
+    .lg\(mar\:right-1\.25\) {
+        margin-right: 1.25rem !important;
+    }
+    .lg\(mar\:right-1\.5\) {
+        margin-right: 1.5rem !important;
+    }
+    .lg\(mar\:right-1\.75\) {
+        margin-right: 1.75rem !important;
+    }
+    .lg\(mar\:right-2\) {
+        margin-right: 2rem !important;
+    }
+    .lg\(mar\:top-0\) {
+        margin-top: 0 !important;
+    }
+    .lg\(mar\:top-0\.125\) {
+        margin-top: 0.125rem !important;
+    }
+    .lg\(mar\:top-0\.25\) {
+        margin-top: 0.25rem !important;
+    }
+    .lg\(mar\:top-0\.375\) {
+        margin-top: 0.375rem !important;
+    }
+    .lg\(mar\:top-0\.5\) {
+        margin-top: 0.5rem !important;
+    }
+    .lg\(mar\:top-0\.625\) {
+        margin-top: 0.625rem !important;
+    }
+    .lg\(mar\:top-0\.75\) {
+        margin-top: 0.75rem !important;
+    }
+    .lg\(mar\:top-0\.8125\) {
+        margin-top: 0.8125rem !important;
+    }
+    .lg\(mar\:top-0\.875\) {
+        margin-top: 0.875rem !important;
+    }
+    .lg\(mar\:top-0\.9375\) {
+        margin-top: 0.9375rem !important;
+    }
+    .lg\(mar\:top-1\) {
+        margin-top: 1rem !important;
+    }
+    .lg\(mar\:top-1\.25\) {
+        margin-top: 1.25rem !important;
+    }
+    .lg\(mar\:top-1\.5\) {
+        margin-top: 1.5rem !important;
+    }
+    .lg\(mar\:top-1\.75\) {
+        margin-top: 1.75rem !important;
+    }
+    .lg\(mar\:top-2\) {
+        margin-top: 2rem !important;
+    }
+    .lg\(mar\:horz-0\) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .lg\(mar\:horz-0\.125\) {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+    .lg\(mar\:horz-0\.25\) {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+    }
+    .lg\(mar\:horz-0\.375\) {
+        margin-left: 0.375rem !important;
+        margin-right: 0.375rem !important;
+    }
+    .lg\(mar\:horz-0\.625\) {
+        margin-left: 0.625rem !important;
+        margin-right: 0.625rem !important;
+    }
+    .lg\(mar\:horz-0\.75\) {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+    .lg\(mar\:horz-0\.8125\) {
+        margin-left: 0.8125rem !important;
+        margin-right: 0.8125rem !important;
+    }
+    .lg\(mar\:horz-0\.875\) {
+        margin-left: 0.875rem !important;
+        margin-right: 0.875rem !important;
+    }
+    .lg\(mar\:horz-0\.9375\) {
+        margin-left: 0.9375rem !important;
+        margin-right: 0.9375rem !important;
+    }
+    .lg\(mar\:horz-1\) {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+    .lg\(mar\:horz-1\.25\) {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
+    }
+    .lg\(mar\:horz-1\.5\) {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    .lg\(mar\:horz-1\.75\) {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
+    }
+    .lg\(mar\:horz-2\) {
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+    .lg\(mar\:vert-0\) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .lg\(mar\:vert-0\.125\) {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+    .lg\(mar\:vert-0\.25\) {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .lg\(mar\:vert-0\.375\) {
+        margin-top: 0.375rem !important;
+        margin-bottom: 0.375rem !important;
+    }
+    .lg\(mar\:vert-0\.625\) {
+        margin-top: 0.625rem !important;
+        margin-bottom: 0.625rem !important;
+    }
+    .lg\(mar\:vert-0\.75\) {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    .lg\(mar\:vert-0\.8125\) {
+        margin-top: 0.8125rem !important;
+        margin-bottom: 0.8125rem !important;
+    }
+    .lg\(mar\:vert-0\.875\) {
+        margin-top: 0.875rem !important;
+        margin-bottom: 0.875rem !important;
+    }
+    .lg\(mar\:vert-0\.9375\) {
+        margin-top: 0.9375rem !important;
+        margin-bottom: 0.9375rem !important;
+    }
+    .lg\(mar\:vert-1\) {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .lg\(mar\:vert-1\.25\) {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .lg\(mar\:vert-1\.5\) {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .lg\(mar\:vert-1\.75\) {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
+    }
+    .lg\(mar\:vert-2\) {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    /*  # pad
+        # 90929.1a
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .lg\(pad\:all-0\) {
+        padding: 0 !important;
+    }
+    .lg\(pad\:all-0\.125\) {
+        padding: 0.125rem !important;
+    }
+    .lg\(pad\:all-0\.25\) {
+        padding: 0.25rem !important;
+    }
+    .lg\(pad\:all-0\.375\) {
+        padding: 0.375rem !important;
+    }
+    .lg\(pad\:all-0\.5\) {
+        padding: 0.5rem !important;
+    }
+    .lg\(pad\:all-0\.625\) {
+        padding: 0.625rem !important;
+    }
+    .lg\(pad\:all-0\.75\) {
+        padding: 0.75rem !important;
+    }
+    .lg\(pad\:all-0\.8125\) {
+        padding: 0.8125rem !important;
+    }
+    .lg\(pad\:all-0\.875\) {
+        padding: 0.875rem !important;
+    }
+    .lg\(pad\:all-0\.9375\) {
+        padding: 0.9375rem !important;
+    }
+    .lg\(pad\:all-1\) {
+        padding: 1rem !important;
+    }
+    .lg\(pad\:all-1\.25\) {
+        padding: 1.25rem !important;
+    }
+    .lg\(pad\:all-1\.5\) {
+        padding: 1.5rem !important;
+    }
+    .lg\(pad\:all-1\.75\) {
+        padding: 1.75rem !important;
+    }
+    .lg\(pad\:all-2\) {
+        padding: 2rem !important;
+    }
+    .lg\(pad\:horz-0\.25\) {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    .lg\(pad\:horz-0\.5\) {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .lg\(pad\:horz-0\.75\) {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .lg\(pad\:horz-1\) {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    sm\(.pad\:left-0\.5\) {
+        padding-left: 0.5rem !important;
+    }
+    .lg\(pad\:left-0\.75\) {
+        padding-left: 0.75rem !important;
+    }
+    .lg\(pad\:left-1\) {
+        padding-left: 1rem !important;
+    }
+    .lg\(pad\:right-0\.5\) {
+        padding-right: 0.5rem !important;
+    }
+    .lg\(pad\:right-0\.75\) {
+        padding-right: 0.75rem !important;
+    }
+    .lg\(pad\:right-1\) {
+        padding-right: 1rem !important;
+    }
+    .lg\(pad\:top-0\.3125\) {
+        padding-top: 0.3125rem !important;
+    }
+    .lg\(pad\:top-0\.5\) {
+        padding-top: 0.5rem !important;
+    }
+    .lg\(pad\:vert-0\.25\) {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+    .lg\(pad\:vert-0\.5\) {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .lg\(pad\:vert-0\.75\) {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    .lg\(pad\:vert-1\) {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    /*  # ht
+        # 90929.1a
+        # height
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    */
+    .lg\(ht\:auto\) {
+        height: auto !important;
+    }
+    /*: 80px :*/
+    .lg\(ht\:min-height-5\) {
+        min-height: 5rem !important;
+    }
+    /*: 160px :*/
+    .lg\(ht\:min-height-10\) {
+        min-height: 10rem !important;
+    }
+    /*: 240px :*/
+    .lg\(ht\:min-height-15\) {
+        min-height: 15rem !important;
+    }
+    /*: 320px :*/
+    .lg\(ht\:min-height-20\) {
+        min-height: 20rem !important;
+    }
+    /*: 400px :*/
+    .lg\(ht\:min-height-25\) {
+        min-height: 25rem !important;
+    }
+    /*: 480px :*/
+    .lg\(ht\:min-height-30\) {
+        min-height: 30rem !important;
+    }
+    /*: 560px :*/
+    .lg\(ht\:min-height-35\) {
+        min-height: 35rem !important;
+    }
+    /*: 640px :*/
+    .lg\(ht\:min-height-40\) {
+        min-height: 40rem !important;
+    }
+    /*: 720px :*/
+    .lg\(ht\:min-height-45\) {
+        min-height: 45rem !important;
+    }
+    /*: 800px :*/
+    .lg\(ht\:min-height-50\) {
+        min-height: 50rem !important;
+    }
+    /*  # img
+        # 90929.1a
+        # set image width & height
+    */
+    .lg\(img\:25\%\) {
+        height: auto !important;
+        width: 25% !important;
+    }
+    .lg\(img\:50\%\) {
+        height: auto !important;
+        width: 50% !important;
+    }
+    .lg\(img\:75\%\) {
+        height: auto !important;
+        width: 75% !important;
+    }
+    .lg\(img\:100\%\) {
+        height: auto !important;
+        width: 100% !important;
+    }
+    /*  # wd
+        # 90929.1a
+        # width (rem & %)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .lg\(wd\:10\%\) {
+        width: 10% !important;
+    }
+    .lg\(wd\:15\%\) {
+        width: 15% !important;
+    }
+    .lg\(wd\:20\%\) {
+        width: 20% !important;
+    }
+    .lg\(wd\:25\%\) {
+        width: 25% !important;
+    }
+    .lg\(wd\:30\%\) {
+        width: 30% !important;
+    }
+    .lg\(wd\:35\%\) {
+        width: 35% !important;
+    }
+    .lg\(wd\:40\%\) {
+        width: 40% !important;
+    }
+    .lg\(wd\:45\%\) {
+        width: 45% !important;
+    }
+    .lg\(wd\:50\%\) {
+        width: 50% !important;
+    }
+    .lg\(wd\:55\%\) {
+        width: 55% !important;
+    }
+    .lg\(wd\:60\%\) {
+        width: 60% !important;
+    }
+    .lg\(wd\:65\%\) {
+        width: 65% !important;
+    }
+    .lg\(wd\:70\%\) {
+        width: 70% !important;
+    }
+    .lg\(wd\:75\%\) {
+        width: 75% !important;
+    }
+    .lg\(wd\:80\%\) {
+        width: 80% !important;
+    }
+    .lg\(wd\:85\%\) {
+        width: 85% !important;
+    }
+    .lg\(wd\:90\%\) {
+        width: 90% !important;
+    }
+    .lg\(wd\:95\%\) {
+        width: 95% !important;
+    }
+    .lg\(wd\:auto\) {
+        width: auto !important;
+    }
+    .lg\(wd\:100\%\) {
+        width: 100% !important;
+    }
+    /*: 25px :*/
+    .lg\(wd\:1\.5625\) {
+        width: 1.5625rem !important;
+    }
+    /*: 50px :*/
+    .lg\(wd\:3\.125\) {
+        width: 3.125rem !important;
+    }
+    /*: 75px :*/
+    .lg\(wd\:4\.6875\) {
+        width: 4.6875rem !important;
+    }
+    /*: 100px :*/
+    .lg\(wd\:6\.25\) {
+        width: 6.25rem !important;
+    }
+    /*: 125px :*/
+    .lg\(wd\:7\.8125\) {
+        width: 7.8125rem !important;
+    }
+    /*: 150px :*/
+    .lg\(wd\:9\.375\) {
+        width: 9.375rem !important;
+    }
+    /*: 175px :*/
+    .lg\(wd\:10\.9375\) {
+        width: 10.9375rem !important;
+    }
+    /*: 200px :*/
+    .lg\(wd\:12\.5\) {
+        width: 12.5rem !important;
+    }
+    /*: 225px :*/
+    .lg\(wd\:14\.0625\) {
+        width: 14.0625rem !important;
+    }
+    /*: 250px :*/
+    .lg\(wd\:15\.625\) {
+        width: 15.625rem !important;
+    }
+    /*: 275px :*/
+    .lg\(wd\:17\.1875\) {
+        width: 17.1875rem !important;
+    }
+    /*: 300px :*/
+    .lg\(wd\:18\.75\) {
+        width: 18.75rem !important;
+    }
+    /*  # DIY flexbox components (beta)
+        # 90929.1a
+        # classes to build flexbox
+        # https://the-echoplex.net/flexyboxes/
+    */
+    .lg\(fx\:cn-col\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .lg\(fx\:cn-row\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .lg\(fx\:cn-wrap\) {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .lg\(fx\:cn-jc-sta\) {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .lg\(fx\:cn-jc-end\) {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    .lg\(fx\:cn-jc-cen\) {
+        -webkit-justify-content: flex-center;
+        -ms-flex-pack: center;
+        justify-content: flex-center;
+    }
+    .lg\(fx\:cn-jc-bet\) {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .lg\(fx\:cn-jc-aro\) {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .lg\(fx\:cn-ai-sta\) {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .lg\(fx\:cn-ai-end\) {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    .lg\(fx\:cn-ai-cen\) {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .lg\(fx\:cn-ai-bas\) {
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+    .lg\(fx\:cn-ai-str\) {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    .lg\(fx\:cn-ac-sta\) {
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
+    .lg\(fx\:cn-ac-end\) {
+        -webkit-align-content: flex-end;
+        -ms-flex-line-pack: end;
+        align-content: flex-end;
+    }
+    .lg\(fx\:cn-ac-cen\) {
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+    .lg\(fx\:cn-ac-bet\) {
+        -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+    }
+    .lg\(fx\:cn-ac-aro\) {
+        -webkit-align-content: space-around;
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+    .lg\(fx\:cn-ac-str\) {
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    }
+    .lg\(fx\:itm-flex-01\) {
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+    .lg\(fx\:itm-flex-11\) {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
 
 
 /*  # xl
-    # 90907.1a
+    # 90929.1a
     # screen width 1280px or larger
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
 
-@media (min-width: 1280px) {}
+@media (min-width: 1280px) {
+    /*  # dsp
+        # 90929.1a
+        # display
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    */
+    .xl\(dsp\: none\) {
+        display: none;
+    }
+    .xl\(dsp\:block\) {
+        display: block;
+    }
+    .xl\(dsp\:inline\) {
+        display: inline;
+    }
+    .xl\(dsp\:inline-block\) {
+        display: inline;
+    }
+    /*  # fnt:size
+        # 90929.1a
+        # font size named classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+    */
+    .xl\(fnt\:size-xx-large\) {
+        font-size: xx-large !important;
+    }
+    .xl\(fnt\:size-x-large\) {
+        font-size: x-large !important;
+    }
+    .xl\(fnt\:size-large\) {
+        font-size: large !important;
+    }
+    .xl\(fnt\:size-medium\) {
+        font-size: medium !important;
+    }
+    .xl\(fnt\:size-small\) {
+        font-size: small !important;
+    }
+    .xl\(fnt\:size-x-small\) {
+        font-size: x-small !important;
+    }
+    .xl\(fnt\:size-xx-small\) {
+        font-size: xx-small !important;
+    }
+    .xl\(fnt\:size-larger\) {
+        font-size: larger !important;
+    }
+    .xl\(fnt\:size-smaller\) {
+        font-size: smaller !important;
+    }
+    /*  # fnt:space
+        # 90929.1a
+        # predefined letter spacing classes
+        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+    */
+    .xl\(fnt\:spacing-tight\) {
+        letter-spacing: -0.05rem;
+    }
+    .xl\(fnt\:spacing-normal\) {
+        letter-spacing: 0;
+    }
+    .xl\(fnt\:spacing-loose\) {
+        letter-spacing: 0.1rem;
+    }
+    .xl\(fnt\:spacing-wide\) {
+        letter-spacing: 0.5rem;
+    }
+    /*  # mar
+        # 90929.1a
+        # margins (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .xl\(mar\:all-0\) {
+        margin: 0 !important;
+    }
+    .xl\(mar\:all-0\.125\) {
+        margin: 0.125rem !important;
+    }
+    .xl\(mar\:all-0\.25\) {
+        margin: 0.25rem !important;
+    }
+    .xl\(mar\:all-0\.375\) {
+        margin: 0.375rem !important;
+    }
+    .xl\(mar\:all-0\.5\) {
+        margin: 0.5rem !important;
+    }
+    .xl\(mar\:all-0\.625\) {
+        margin: 0.625rem !important;
+    }
+    .xl\(mar\:all-0\.75\) {
+        margin: 0.75rem !important;
+    }
+    .xl\(mar\:all-0\.8125\) {
+        margin: 0.8125rem !important;
+    }
+    .xl\(mar\:all-0\.875\) {
+        margin: 0.875rem !important;
+    }
+    .xl\(mar\:all-0\.9375\) {
+        margin: 0.9375rem !important;
+    }
+    .xl\(mar\:all-1\) {
+        margin: 1rem !important;
+    }
+    .xl\(mar\:all-1\.25\) {
+        margin: 1.25rem !important;
+    }
+    .xl\(mar\:all-1\.5\) {
+        margin: 1.5rem !important;
+    }
+    .xl\(mar\:all-1\.75\) {
+        margin: 1.75rem !important;
+    }
+    .xl\(mar\:all-2\) {
+        margin: 2rem !important;
+    }
+    .xl\(mar\:bottom-0\) {
+        margin-bottom: 0 !important;
+    }
+    .xl\(mar\:bottom-0\.125\) {
+        margin-bottom: 0.125rem !important;
+    }
+    .xl\(mar\:bottom-0\.25\) {
+        margin-bottom: 0.25rem !important;
+    }
+    .xl\(mar\:bottom-0\.375\) {
+        margin-bottom: 0.375rem !important;
+    }
+    .xl\(mar\:bottom-0\.5\) {
+        margin-bottom: 0.5rem !important;
+    }
+    .xl\(mar\:bottom-0\.625\) {
+        margin-bottom: 0.625rem !important;
+    }
+    .xl\(mar\:bottom-0\.75\) {
+        margin-bottom: 0.75rem !important;
+    }
+    .xl\(mar\:bottom-0\.8125\) {
+        margin-bottom: 0.8125rem !important;
+    }
+    .xl\(mar\:bottom-0\.875\) {
+        margin-bottom: 0.875rem !important;
+    }
+    .xl\(mar\:bottom-0\.9375\) {
+        margin-bottom: 0.9375rem !important;
+    }
+    .xl\(mar\:bottom-1\) {
+        margin-bottom: 1rem !important;
+    }
+    .xl\(mar\:bottom-1\.25\) {
+        margin-bottom: 1.25rem !important;
+    }
+    .xl\(mar\:bottom-1\.5\) {
+        margin-bottom: 1.5rem !important;
+    }
+    .xl\(mar\:bottom-1\.75\) {
+        margin-bottom: 1.75rem !important;
+    }
+    .xl\(mar\:bottom-2\) {
+        margin-bottom: 2rem !important;
+    }
+    .xl\(mar\:left-0\) {
+        margin-left: 0 !important;
+    }
+    .xl\(mar\:left-0\.125\) {
+        margin-left: 0.125rem !important;
+    }
+    .xl\(mar\:left-0\.25\) {
+        margin-left: 0.25rem !important;
+    }
+    .xl\(mar\:left-0\.375\) {
+        margin-left: 0.375rem !important;
+    }
+    .xl\(mar\:left-0\.5\) {
+        margin-left: 0.5rem !important;
+    }
+    .xl\(mar\:left-0\.625\) {
+        margin-left: 0.625rem !important;
+    }
+    .xl\(mar\:left-0\.75\) {
+        margin-left: 0.75rem !important;
+    }
+    .xl\(mar\:left-0\.8125\) {
+        margin-left: 0.8125rem !important;
+    }
+    .xl\(mar\:left-0\.875\) {
+        margin-left: 0.875rem !important;
+    }
+    .xl\(mar\:left-0\.9375\) {
+        margin-left: 0.9375rem !important;
+    }
+    .xl\(mar\:left-1\) {
+        margin-left: 1rem !important;
+    }
+    .xl\(mar\:left-1\.25\) {
+        margin-left: 1.25rem !important;
+    }
+    .xl\(mar\:left-1\.5\) {
+        margin-left: 1.5rem !important;
+    }
+    .xl\(mar\:left-1\.75\) {
+        margin-left: 1.75rem !important;
+    }
+    .xl\(mar\:left-2\) {
+        margin-left: 2rem !important;
+    }
+    .xl\(mar\:right-0\) {
+        margin-right: 0 !important;
+    }
+    .xl\(mar\:right-0\.125\) {
+        margin-right: 0.125rem !important;
+    }
+    .xl\(mar\:right-0\.25\) {
+        margin-right: 0.25rem !important;
+    }
+    .xl\(mar\:right-0\.375\) {
+        margin-right: 0.375rem !important;
+    }
+    .xl\(mar\:right-0\.5\) {
+        margin-right: 0.5rem !important;
+    }
+    .xl\(mar\:right-0\.625\) {
+        margin-right: 0.625rem !important;
+    }
+    .xl\(mar\:right-0\.75\) {
+        margin-right: 0.75rem !important;
+    }
+    .xl\(mar\:right-0\.8125\) {
+        margin-right: 0.8125rem !important;
+    }
+    .xl\(mar\:right-0\.875\) {
+        margin-right: 0.875rem !important;
+    }
+    .xl\(mar\:right-0\.9375\) {
+        margin-right: 0.9375rem !important;
+    }
+    .xl\(mar\:right-1\) {
+        margin-right: 1rem !important;
+    }
+    .xl\(mar\:right-1\.25\) {
+        margin-right: 1.25rem !important;
+    }
+    .xl\(mar\:right-1\.5\) {
+        margin-right: 1.5rem !important;
+    }
+    .xl\(mar\:right-1\.75\) {
+        margin-right: 1.75rem !important;
+    }
+    .xl\(mar\:right-2\) {
+        margin-right: 2rem !important;
+    }
+    .xl\(mar\:top-0\) {
+        margin-top: 0 !important;
+    }
+    .xl\(mar\:top-0\.125\) {
+        margin-top: 0.125rem !important;
+    }
+    .xl\(mar\:top-0\.25\) {
+        margin-top: 0.25rem !important;
+    }
+    .xl\(mar\:top-0\.375\) {
+        margin-top: 0.375rem !important;
+    }
+    .xl\(mar\:top-0\.5\) {
+        margin-top: 0.5rem !important;
+    }
+    .xl\(mar\:top-0\.625\) {
+        margin-top: 0.625rem !important;
+    }
+    .xl\(mar\:top-0\.75\) {
+        margin-top: 0.75rem !important;
+    }
+    .xl\(mar\:top-0\.8125\) {
+        margin-top: 0.8125rem !important;
+    }
+    .xl\(mar\:top-0\.875\) {
+        margin-top: 0.875rem !important;
+    }
+    .xl\(mar\:top-0\.9375\) {
+        margin-top: 0.9375rem !important;
+    }
+    .xl\(mar\:top-1\) {
+        margin-top: 1rem !important;
+    }
+    .xl\(mar\:top-1\.25\) {
+        margin-top: 1.25rem !important;
+    }
+    .xl\(mar\:top-1\.5\) {
+        margin-top: 1.5rem !important;
+    }
+    .xl\(mar\:top-1\.75\) {
+        margin-top: 1.75rem !important;
+    }
+    .xl\(mar\:top-2\) {
+        margin-top: 2rem !important;
+    }
+    .xl\(mar\:horz-0\) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .xl\(mar\:horz-0\.125\) {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+    .xl\(mar\:horz-0\.25\) {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+    }
+    .xl\(mar\:horz-0\.375\) {
+        margin-left: 0.375rem !important;
+        margin-right: 0.375rem !important;
+    }
+    .xl\(mar\:horz-0\.625\) {
+        margin-left: 0.625rem !important;
+        margin-right: 0.625rem !important;
+    }
+    .xl\(mar\:horz-0\.75\) {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+    .xl\(mar\:horz-0\.8125\) {
+        margin-left: 0.8125rem !important;
+        margin-right: 0.8125rem !important;
+    }
+    .xl\(mar\:horz-0\.875\) {
+        margin-left: 0.875rem !important;
+        margin-right: 0.875rem !important;
+    }
+    .xl\(mar\:horz-0\.9375\) {
+        margin-left: 0.9375rem !important;
+        margin-right: 0.9375rem !important;
+    }
+    .xl\(mar\:horz-1\) {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+    .xl\(mar\:horz-1\.25\) {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
+    }
+    .xl\(mar\:horz-1\.5\) {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    .xl\(mar\:horz-1\.75\) {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
+    }
+    .xl\(mar\:horz-2\) {
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+    .xl\(mar\:vert-0\) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .xl\(mar\:vert-0\.125\) {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+    .xl\(mar\:vert-0\.25\) {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .xl\(mar\:vert-0\.375\) {
+        margin-top: 0.375rem !important;
+        margin-bottom: 0.375rem !important;
+    }
+    .xl\(mar\:vert-0\.625\) {
+        margin-top: 0.625rem !important;
+        margin-bottom: 0.625rem !important;
+    }
+    .xl\(mar\:vert-0\.75\) {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    .xl\(mar\:vert-0\.8125\) {
+        margin-top: 0.8125rem !important;
+        margin-bottom: 0.8125rem !important;
+    }
+    .xl\(mar\:vert-0\.875\) {
+        margin-top: 0.875rem !important;
+        margin-bottom: 0.875rem !important;
+    }
+    .xl\(mar\:vert-0\.9375\) {
+        margin-top: 0.9375rem !important;
+        margin-bottom: 0.9375rem !important;
+    }
+    .xl\(mar\:vert-1\) {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .xl\(mar\:vert-1\.25\) {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .xl\(mar\:vert-1\.5\) {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .xl\(mar\:vert-1\.75\) {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
+    }
+    .xl\(mar\:vert-2\) {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    /*  # pad
+        # 90929.1a
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .xl\(pad\:all-0\) {
+        padding: 0 !important;
+    }
+    .xl\(pad\:all-0\.125\) {
+        padding: 0.125rem !important;
+    }
+    .xl\(pad\:all-0\.25\) {
+        padding: 0.25rem !important;
+    }
+    .xl\(pad\:all-0\.375\) {
+        padding: 0.375rem !important;
+    }
+    .xl\(pad\:all-0\.5\) {
+        padding: 0.5rem !important;
+    }
+    .xl\(pad\:all-0\.625\) {
+        padding: 0.625rem !important;
+    }
+    .xl\(pad\:all-0\.75\) {
+        padding: 0.75rem !important;
+    }
+    .xl\(pad\:all-0\.8125\) {
+        padding: 0.8125rem !important;
+    }
+    .xl\(pad\:all-0\.875\) {
+        padding: 0.875rem !important;
+    }
+    .xl\(pad\:all-0\.9375\) {
+        padding: 0.9375rem !important;
+    }
+    .xl\(pad\:all-1\) {
+        padding: 1rem !important;
+    }
+    .xl\(pad\:all-1\.25\) {
+        padding: 1.25rem !important;
+    }
+    .xl\(pad\:all-1\.5\) {
+        padding: 1.5rem !important;
+    }
+    .xl\(pad\:all-1\.75\) {
+        padding: 1.75rem !important;
+    }
+    .xl\(pad\:all-2\) {
+        padding: 2rem !important;
+    }
+    .xl\(pad\:horz-0\.25\) {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    .xl\(pad\:horz-0\.5\) {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .xl\(pad\:horz-0\.75\) {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .xl\(pad\:horz-1\) {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    sm\(.pad\:left-0\.5\) {
+        padding-left: 0.5rem !important;
+    }
+    .xl\(pad\:left-0\.75\) {
+        padding-left: 0.75rem !important;
+    }
+    .xl\(pad\:left-1\) {
+        padding-left: 1rem !important;
+    }
+    .xl\(pad\:right-0\.5\) {
+        padding-right: 0.5rem !important;
+    }
+    .xl\(pad\:right-0\.75\) {
+        padding-right: 0.75rem !important;
+    }
+    .xl\(pad\:right-1\) {
+        padding-right: 1rem !important;
+    }
+    .xl\(pad\:top-0\.3125\) {
+        padding-top: 0.3125rem !important;
+    }
+    .xl\(pad\:top-0\.5\) {
+        padding-top: 0.5rem !important;
+    }
+    .xl\(pad\:vert-0\.25\) {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+    .xl\(pad\:vert-0\.5\) {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .xl\(pad\:vert-0\.75\) {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    .xl\(pad\:vert-1\) {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    /*  # ht
+        # 90929.1a
+        # height
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    */
+    .xl\(ht\:auto\) {
+        height: auto !important;
+    }
+    /*: 80px :*/
+    .xl\(ht\:min-height-5\) {
+        min-height: 5rem !important;
+    }
+    /*: 160px :*/
+    .xl\(ht\:min-height-10\) {
+        min-height: 10rem !important;
+    }
+    /*: 240px :*/
+    .xl\(ht\:min-height-15\) {
+        min-height: 15rem !important;
+    }
+    /*: 320px :*/
+    .xl\(ht\:min-height-20\) {
+        min-height: 20rem !important;
+    }
+    /*: 400px :*/
+    .xl\(ht\:min-height-25\) {
+        min-height: 25rem !important;
+    }
+    /*: 480px :*/
+    .xl\(ht\:min-height-30\) {
+        min-height: 30rem !important;
+    }
+    /*: 560px :*/
+    .xl\(ht\:min-height-35\) {
+        min-height: 35rem !important;
+    }
+    /*: 640px :*/
+    .xl\(ht\:min-height-40\) {
+        min-height: 40rem !important;
+    }
+    /*: 720px :*/
+    .xl\(ht\:min-height-45\) {
+        min-height: 45rem !important;
+    }
+    /*: 800px :*/
+    .xl\(ht\:min-height-50\) {
+        min-height: 50rem !important;
+    }
+    /*  # img
+        # 90929.1a
+        # set image width & height
+    */
+    .xl\(img\:25\%\) {
+        height: auto !important;
+        width: 25% !important;
+    }
+    .xl\(img\:50\%\) {
+        height: auto !important;
+        width: 50% !important;
+    }
+    .xl\(img\:75\%\) {
+        height: auto !important;
+        width: 75% !important;
+    }
+    .xl\(img\:100\%\) {
+        height: auto !important;
+        width: 100% !important;
+    }
+    /*  # wd
+        # 90929.1a
+        # width (rem & %)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .xl\(wd\:10\%\) {
+        width: 10% !important;
+    }
+    .xl\(wd\:15\%\) {
+        width: 15% !important;
+    }
+    .xl\(wd\:20\%\) {
+        width: 20% !important;
+    }
+    .xl\(wd\:25\%\) {
+        width: 25% !important;
+    }
+    .xl\(wd\:30\%\) {
+        width: 30% !important;
+    }
+    .xl\(wd\:35\%\) {
+        width: 35% !important;
+    }
+    .xl\(wd\:40\%\) {
+        width: 40% !important;
+    }
+    .xl\(wd\:45\%\) {
+        width: 45% !important;
+    }
+    .xl\(wd\:50\%\) {
+        width: 50% !important;
+    }
+    .xl\(wd\:55\%\) {
+        width: 55% !important;
+    }
+    .xl\(wd\:60\%\) {
+        width: 60% !important;
+    }
+    .xl\(wd\:65\%\) {
+        width: 65% !important;
+    }
+    .xl\(wd\:70\%\) {
+        width: 70% !important;
+    }
+    .xl\(wd\:75\%\) {
+        width: 75% !important;
+    }
+    .xl\(wd\:80\%\) {
+        width: 80% !important;
+    }
+    .xl\(wd\:85\%\) {
+        width: 85% !important;
+    }
+    .xl\(wd\:90\%\) {
+        width: 90% !important;
+    }
+    .xl\(wd\:95\%\) {
+        width: 95% !important;
+    }
+    .xl\(wd\:auto\) {
+        width: auto !important;
+    }
+    .xl\(wd\:100\%\) {
+        width: 100% !important;
+    }
+    /*: 25px :*/
+    .xl\(wd\:1\.5625\) {
+        width: 1.5625rem !important;
+    }
+    /*: 50px :*/
+    .xl\(wd\:3\.125\) {
+        width: 3.125rem !important;
+    }
+    /*: 75px :*/
+    .xl\(wd\:4\.6875\) {
+        width: 4.6875rem !important;
+    }
+    /*: 100px :*/
+    .xl\(wd\:6\.25\) {
+        width: 6.25rem !important;
+    }
+    /*: 125px :*/
+    .xl\(wd\:7\.8125\) {
+        width: 7.8125rem !important;
+    }
+    /*: 150px :*/
+    .xl\(wd\:9\.375\) {
+        width: 9.375rem !important;
+    }
+    /*: 175px :*/
+    .xl\(wd\:10\.9375\) {
+        width: 10.9375rem !important;
+    }
+    /*: 200px :*/
+    .xl\(wd\:12\.5\) {
+        width: 12.5rem !important;
+    }
+    /*: 225px :*/
+    .xl\(wd\:14\.0625\) {
+        width: 14.0625rem !important;
+    }
+    /*: 250px :*/
+    .xl\(wd\:15\.625\) {
+        width: 15.625rem !important;
+    }
+    /*: 275px :*/
+    .xl\(wd\:17\.1875\) {
+        width: 17.1875rem !important;
+    }
+    /*: 300px :*/
+    .xl\(wd\:18\.75\) {
+        width: 18.75rem !important;
+    }
+    /*  # DIY flexbox components (beta)
+        # 90929.1a
+        # classes to build flexbox
+        # https://the-echoplex.net/flexyboxes/
+    */
+    .xl\(fx\:cn-col\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .xl\(fx\:cn-row\) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .xl\(fx\:cn-wrap\) {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .xl\(fx\:cn-jc-sta\) {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .xl\(fx\:cn-jc-end\) {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    .xl\(fx\:cn-jc-cen\) {
+        -webkit-justify-content: flex-center;
+        -ms-flex-pack: center;
+        justify-content: flex-center;
+    }
+    .xl\(fx\:cn-jc-bet\) {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .xl\(fx\:cn-jc-aro\) {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .xl\(fx\:cn-ai-sta\) {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .xl\(fx\:cn-ai-end\) {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    .xl\(fx\:cn-ai-cen\) {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .xl\(fx\:cn-ai-bas\) {
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+    .xl\(fx\:cn-ai-str\) {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+    .xl\(fx\:cn-ac-sta\) {
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
+    .xl\(fx\:cn-ac-end\) {
+        -webkit-align-content: flex-end;
+        -ms-flex-line-pack: end;
+        align-content: flex-end;
+    }
+    .xl\(fx\:cn-ac-cen\) {
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+    .xl\(fx\:cn-ac-bet\) {
+        -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+    }
+    .xl\(fx\:cn-ac-aro\) {
+        -webkit-align-content: space-around;
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+    .xl\(fx\:cn-ac-str\) {
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    }
+    .xl\(fx\:itm-flex-01\) {
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+    .xl\(fx\:itm-flex-11\) {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
 
 
 /*
-    eof: /assets/css/style/advance.css
+    eof: style/advance.css
 */
