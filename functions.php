@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90927.1a
+ *  build:  90927.1b
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -30,8 +30,8 @@ function theme_cfg() {
             $xwt_prm = trim($cfg_item);
             if (!has_match($xwt_prm,'*'))
             {
-                $cfg_key = trim(substr($xwt_prm,0,strpos($xwt_prm, '/')));
-                $cfg_val = trim(substr($xwt_prm,strpos($xwt_prm, '/')+1));
+                $cfg_key = trim(substr($xwt_prm,0,strpos($xwt_prm, '=')));
+                $cfg_val = trim(substr($xwt_prm,strpos($xwt_prm, '=')+1));
                 switch ($cfg_key)
                 {
                     case 'fa-version':
@@ -57,37 +57,52 @@ function theme_cfg() {
                         update_option('xwt_hdr_logo',$cfg_val);
                         break;
                     case 'hdr-align':
-                        if (has_match('left/center/right',$cfg_val))
+                        if (!has_match('left/center/right',$cfg_val))
                         {
-                            update_option('xwt_hdr_align',$cfg_val);
+                            $cfg_val = 'center';
                         }
+                        update_option('xwt_hdr_align',$cfg_val);
                         break;
                     case 'ftr-align':
-                        if (has_match('left/center/right',$cfg_val))
+                        if (!has_match('left/center/right',$cfg_val))
                         {
-                            update_option('xwt_ftr_align',$cfg_val);
+                            $cfg_val = 'center';
                         }
+                        update_option('xwt_ftr_align',$cfg_val);
                         break;
                     case 'mnu-display':
+                        if (!has_match('no/yes',$cfg_val))
+                        {
+                            $cfg_val = 'yes';
+                        }
                         update_option('xwt_menu_disp',$cfg_val);
                         break;
                     case 'mnu-width':
+                        if (!has_match('70%/75%/80%/85%/90%/95%/100%',$cfg_val))
+                        {
+                            $cfg_val = '100%';
+                        }
                         update_option('xwt_menu_width',$cfg_val);
                         break;
                     case 'mnu-align':
-                        if (has_match('left/center/right',$cfg_val))
+                        if (!has_match('left/center/right',$cfg_val))
                         {
-                            update_option('xwt_mnu_align',$cfg_val);
-                            if ($cfg_val !== 'center')
-                            {
-                                //update_option('xwt_menu_width','fx:mnu-100%');
-                            }
+                            $cfg_val = 'center';
                         }
+                        update_option('xwt_mnu_align',$cfg_val);
                         break;
                     case 'sb-display':
+                        if (!has_match('no/yes',$cfg_val))
+                        {
+                            $cfg_val = 'yes';
+                        }
                         update_option('xwt_sidebar_disp',$cfg_val);
                         break;
                     case 'sb-align':
+                        if (!has_match('left/right',$cfg_val))
+                        {
+                            $cfg_val = 'right';
+                        }
                         update_option('xwt_sidebar_align',$cfg_val);
                         break;
                 }
