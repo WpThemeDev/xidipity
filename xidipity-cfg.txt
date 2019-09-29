@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   xidipity-cfg.txt
- *  build:  90925.1a
+ *  build:  90927.1b
  *  descrp: Configuration file
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -12,24 +12,24 @@
  *
 **/,
 /*: page header height :*/,
-hdr-height/100px,
+hdr-height=100px,
 /*: page header image :*/,
-hdr-image/none,
+hdr-image=none,
 /*: page header logo :*/,
-hdr-logo/none,
+hdr-logo=none,
 /*: page header align :*/,
-hdr-align/center,
+hdr-align=center,
 /*: page footer align :*/,
-ftr-align/center,
+ftr-align=center,
 /*: display menu default :*/,
-mnu-display/yes,
+mnu-display=yes,
 /*: menu width :*/,
-mnu-width/80%,
+mnu-width=80%,
 /*: menu align :*/,
-mnu-align/center,
+mnu-align=center,
 /*: display sidebar default :*/,
-sb-display/yes,
+sb-display=yes,
 /*: align sidebar default :*/,
-sb-align/right,
+sb-align=right,
 /*: font awesome version :*/,
-fa-version/5.11.1
+fa-version=5.11.1
