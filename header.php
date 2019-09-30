@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  90927.1b
+ *  build:  90929.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,7 +17,7 @@ echo '<!doctype html>' . "\n";
 <html <?php
 language_attributes(); ?> >
 <?php
-echo '<!-- xwpt: 90927.1b/header/php              -->' . "\n";
+echo '<!-- xwpt: 90929.1a/header/php              -->' . "\n";
 echo '<head>' . "\n";
 echo '<meta charset="' . get_bloginfo('charset') . '">' . "\n";
 echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . "\n";
@@ -45,11 +45,44 @@ if (hdr_img() !== 'none')
     echo '</style>' . "\n";
     echo '<!-- /xwpt: header/background/image         -->' . "\n";
 }
+/*
+    emoji support
+*/
+if (emoji_dsp() == 'yes')
+{
+    echo '<!-- xwpt: wp/emoji/image                   -->' . "\n";
+    echo '<style type="text/css">' . "\n";
+    echo 'img.wp-smiley,' . "\n";
+    echo 'img.emoji {' . "\n";
+    echo 'display: inline !important;' . "\n";
+    echo 'border: none !important;' . "\n";
+    echo 'box-shadow: none !important;' . "\n";
+    echo 'height: 1em !important;' . "\n";
+    echo 'width: 1em !important;' . "\n";
+    echo 'margin: 0 .07em !important;' . "\n";
+    echo 'vertical-align: -0.1em !important;' . "\n";
+    echo 'background: none !important;' . "\n";
+    echo 'padding: 0 !important;' . "\n";
+    echo '}' . "\n";
+    echo '</style>' . "\n";
+    echo '<!-- /xwpt: wp/emoji/image                  -->' . "\n";
+}
+else
+{
+    echo '<!-- xwpt: wp/emoji/image                   -->' . "\n";
+    echo '<style type="text/css">' . "\n";
+    echo 'img.wp-smiley,' . "\n";
+    echo 'img.emoji {' . "\n";
+    echo 'display: none !important;' . "\n";
+    echo '}' . "\n";
+    echo '</style>' . "\n";
+    echo '<!-- /xwpt: wp/emoji/image                  -->' . "\n";
+}
 echo '</head>' . "\n";
 echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
 echo '<!-- xwpt: flexbox/page/container           -->' . "\n";
 echo '<div class="fx:pg-ct">' . "\n";
-echo '<!-- xwpt: 90927.1b/header/php              -->' . "\n";
+echo '<!-- xwpt: 90929.1a/header/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-1    -->' . "\n";
 if (align_sidebar() == 'left')
 {
@@ -94,7 +127,7 @@ else
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</header>' . "\n";
-echo '<!-- /xwpt: 90927.1b/header/php             -->' . "\n";
+echo '<!-- /xwpt: 90929.1a/header/php             -->' . "\n";
 
 /*
     menu exceptions
@@ -164,7 +197,7 @@ if ($wp_menu || $wp_page)
     }
 }
 echo '</div>' . "\n";
-echo '<!-- /xwpt: 90927.1b/header/php/nav         -->' . "\n";
+echo '<!-- /xwpt: 90929.1a/header/php/nav         -->' . "\n";
 /*
     eof: header.php
 */
