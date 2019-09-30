@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/web.css
- *  build:  90927.1b
+ *  build:  90929.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -362,7 +362,7 @@ ol.comment-list li::before {
 
 
 /*  # web template support classes
-    # 90927.1b
+    # 90929.1a
     # matching classes may be found in editor.css
 **/
 
@@ -592,19 +592,6 @@ table.cols\:4 {
 .site-description {
     padding: 0 10px 0 10px;
 }
-
-
-/* deprecated
-@media (min-width:640px) {
-    .site-title {
-        padding: 4px 10px 4px 10px;
-    }
-    .site-description {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-*/
 
 .toc-menu {
     background-color: var(--sys-hdr-bg-color);
@@ -1154,99 +1141,6 @@ a.page-numbers:focus {
 **/
 
 
-/*: content :*/
-
-
-/* deprecated
-.fx\:nspg-content {
-    -webkit-order: 3;
-    -ms-flex-order: 3;
-    order: 3;
-    -webkit-flex: 0 1 99.2%;
-    -ms-flex: 0 1 99.2%;
-    flex: 0 1 99.2%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    margin-bottom: 8px;
-    width: 99.2%;
-}
-
-.fx\:nkpg-content {
-    -webkit-order: 2;
-    -ms-flex-order: 2;
-    order: 2;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    margin-bottom: 8px;
-    width: 100%;
-}
-
-*/
-
-
-/*: footer :*/
-
-
-/* deprecated
-.fx\:nspg-footer {
-    -webkit-order: 4;
-    -ms-flex-order: 4;
-    order: 4;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-}
-
-@media (min-width:640px) {
-    .fx\:nspg-footer {
-        -webkit-order: 4;
-        -ms-flex-order: 4;
-        order: 4;
-        -webkit-flex: 0 1 100%;
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%;
-        -webkit-align-self: stretch;
-        -ms-flex-item-align: stretch;
-        align-self: stretch;
-    }
-}
-
-.fx\:nkpg-footer {
-    -webkit-order: 3;
-    -ms-flex-order: ;
-    order: 3;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-}
-
-@media (min-width:640px) {
-    .fx\:nkpg-footer {
-        -webkit-order: 3;
-        -ms-flex-order: 3;
-        order: 3;
-        -webkit-flex: 0 1 100%;
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%;
-        -webkit-align-self: stretch;
-        -ms-flex-item-align: stretch;
-        align-self: stretch;
-    }
-}
-*/
-
-
 /*  # bexc-container
     # 90903.1a
     # supports blog excerpts shortcode
@@ -1406,7 +1300,7 @@ a.page-numbers:focus {
     # https://the-echoplex.net/flexyboxes/
 **/
 
-.fx\:cn-ct-gimg {
+.fx\:gimg-cn-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -1428,7 +1322,7 @@ a.page-numbers:focus {
 }
 
 @media (min-width:640px) {
-    .fx\:cn-ct-gimg {
+    .fx\:gimg-cn-ct {
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
@@ -1450,7 +1344,7 @@ a.page-numbers:focus {
     }
 }
 
-.fx\:ct-gimg-itm {
+.fx\:gimg-ct-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -1463,7 +1357,7 @@ a.page-numbers:focus {
     margin-top: 0.5rem;
 }
 
-.fx\:ct-gimg-itm:last-child {
+.fx\:gimg-ct-itm:last-child {
     margin-bottom: 0.5rem;
 }
 
@@ -1471,7 +1365,7 @@ a.page-numbers:focus {
 /*: smartphone portrait :*/
 
 @media (min-width: 640px) {
-    .fx\:ct-gimg-itm {
+    .fx\:gimg-ct-itm {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
@@ -1490,7 +1384,7 @@ a.page-numbers:focus {
 /*: desktop :*/
 
 @media (min-width: 1280px) {
-    .fx\:ct-gimg-itm {
+    .fx\:gimg-ct-itm {
         -webkit-flex: 0 1 30%;
         -ms-flex: 0 1 30%;
         flex: 0 1 30%;
