@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90927.1b
+ *  build:  90929.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -105,6 +105,13 @@ function theme_cfg() {
                         }
                         update_option('xwt_sidebar_align',$cfg_val);
                         break;
+                    case 'emoji-display':
+                        if (!has_match('no/yes',$cfg_val))
+                        {
+                            $cfg_val = 'yes';
+                        }
+                        update_option('xwt_emoji_dsp',$cfg_val);
+                        break;
                 }
             }
         }
@@ -190,6 +197,17 @@ function mnu_width()
 }
  
 /**
+ *  name: emoji_dsp
+ *  build: 90929.1a
+ *  description: get emoji display option
+ */
+function emoji_dsp()
+{
+    /*: return db value :*/
+    return get_option('xwt_emoji_dsp');
+}
+
+/**
  *  name: mnu_align
  *  build: 90920.1a
  *  description: get menu alignment
@@ -239,10 +257,11 @@ function disp_menu($attr='')
     }
     else
     {
+        $db_val = strtolower($attr);
         if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
         {
             /*: set value :*/
-            update_option('xwt_menu_disp',$attr);
+            update_option('xwt_menu_disp',$db_val);
         }
     }
     return $fn_val;
@@ -287,10 +306,11 @@ function disp_sidebar($attr='')
     }
     else
     {
+        $db_val = strtolower($attr);
         if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
         {
             /*: set value :*/
-            update_option('xwt_sidebar_disp',$attr);
+            update_option('xwt_sidebar_disp',$db_val);
         }
     }
     return $fn_val;
@@ -325,9 +345,10 @@ function align_sidebar($attr='')
     }
     else
     {
+        $db_val = strtolower($attr);
         if (has_match('left,right',$db_val)) {
             /*: set value :*/
-            update_option('xwt_sidebar_align',$attr);
+            update_option('xwt_sidebar_align',$db_val);
         }
     }
     return $fn_val;
@@ -833,6 +854,16 @@ if (!function_exists('xidipity_setup')):
          *  description: read configuration file
          */
         theme_cfg();
+        
+        /**
+         *  name: emoji_dsp
+         *  build: 90929.1a
+         *  description: disable emoji prefetch
+         */
+        if (emoji_dsp() == 'no')
+        {
+            add_filter( 'emoji_svg_url', '__return_false' );
+        }
     }
     
 endif; // xidipity_setup
