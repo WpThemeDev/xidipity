@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   xidipity-cfg.txt
- *  build:  90927.1b
+ *  build:  90929.1a
  *  descrp: Configuration file
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -31,5 +31,7 @@ mnu-align=center,
 sb-display=yes,
 /*: align sidebar default :*/,
 sb-align=right,
+/*: display emoji default :*/,
+emoji-display=yes,
 /*: font awesome version :*/,
 fa-version=5.11.1
