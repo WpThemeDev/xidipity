@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/web.css
- *  build:  90929.1a
+ *  build:  91001.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -96,7 +96,7 @@ body {
     z-index: 999999;
 }
 
-.web\:hidden {
+.web\:dsp-none {
     display: none;
 }
 
@@ -303,8 +303,7 @@ ol.comment-list li::before {
 #respond .form-allowed-tags,
 #respond .form-allowed-tags code,
 #respond .logged-in-as {
-    font-size: 13px;
-    font-size: .8125rem;
+    font-size: .875rem;
 }
 
 #respond .comment-form label {
@@ -749,25 +748,6 @@ table.cols\:4 {
 .search-frm .search-sub:hover:before {
     -webkit-transform: scale(2);
     transform: scale(2);
-}
-
-
-/*  # tmpl
-    # 90905.1a
-    # web template classes
-**/
-
-.tmpl {
-    width: 100%;
-}
-
-.tmpl-head {
-    display: none;
-}
-
-.tmpl-foot {
-    display: block;
-    width: 100%;
 }
 
 .gist .line,
@@ -1746,6 +1726,9 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+    /*
+        no-sidebar requires flex set to 2 1 70%,
+    */
     .fx\:pg-ct-itm-sbl:nth-child(3) {
         -webkit-order: 3;
         -ms-flex-order: 3;
@@ -1824,6 +1807,9 @@ a.page-numbers:focus {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
+    /*
+        setting width to 0 is required for overflow to work (?)
+    */
     .fx\:cn-ct-itm {
         -webkit-order: 0;
         -ms-flex-order: 0;
@@ -1834,6 +1820,7 @@ a.page-numbers:focus {
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
+        width: 0;
     }
     .fx\:cn-itm-opt {
         padding: 1rem;
@@ -2214,6 +2201,93 @@ figure {
 .fx\:area-itm-right {
     padding-right: 0.5rem;
     text-align: right;
+}
+
+
+/*  # pal
+    # 90903.1a
+    # fx palette container
+      all fx containers begin life as columns to support mobile
+    # https://the-echoplex.net/flexyboxes/
+**/
+
+.fx\:pal-cn-ct {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.fx\:pal-ct-itm {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    margin: 8px 0;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.fx\:pal-ct-itm:hover {
+    border: 1px solid var(--fg-bas-400);
+}
+
+@media (min-width: 640px) {
+    .fx\:pal-cn-ct {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .fx\:pal-ct-itm {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 20%;
+        -ms-flex: 0 1 20%;
+        flex: 0 1 20%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        margin: 8px;
+        padding: 5% 0;
+    }
 }
 
 
