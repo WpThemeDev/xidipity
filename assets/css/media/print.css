@@ -2,9 +2,9 @@
  *  Xidipity WordPress Theme
  *
  *  file:   media/print.css
- *  build:  90927.1a
- *  descrp: print media variables
- *  ref:    https://github.com/WpThemeDev/xidipity
+ *  build:  91001.1a
+ *  descrp: turn all colors to grey
+ *  ref:    https://material.io/design/
  *
  *  @package WordPress
  *  @subpackage Xidipity
@@ -86,88 +86,6 @@
     --bg-sec-200: #eeeeee;
     --bg-sec-100: #f5f5f5;
     --bg-sec-050: #fafafa;
-    /*: headers :*/
-    --h1-color: #000000;
-    --h1-font: sans-serif;
-    --h1-size: 2.125em;
-    --h1-style: normal;
-    --h1-weight: 400;
-    --h2-color: #000000;
-    --h2-font: sans-serif;
-    --h2-size: 1.875em;
-    --h2-style: normal;
-    --h2-weight: 400;
-    --h3-color: #000000;
-    --h3-font: sans-serif;
-    --h3-size: 1.5em;
-    --h3-style: normal;
-    --h3-weight: 400;
-    --h4-color: #000000;
-    --h4-font: sans-serif;
-    --h4-size: 1.25em;
-    --h4-style: normal;
-    --h4-weight: 400;
-    --h5-color: #212121;
-    --h5-font: sans-serif;
-    --h5-size: 1.125em;
-    --h5-style: normal;
-    --h5-weight: 400;
-    --h6-color: #212121;
-    --h6-font: sans-serif;
-    --h6-size: 1.125em;
-    --h6-style: italic;
-    --h6-weight: 400;
-    /*: sys header :*/
-    --sys-hdr-bg-color: #ffffff;
-    --sys-hdr-align: center;
-    --title-lnk-pri-color: #5e35b1;
-    --title-lnk-sec-color: #f4511e;
-    --title-font-family: "Kaushan Script", cursive;
-    --title-font-size: 3em;
-    --title-font-spacing: 0.0625em;
-    --title-font-style: normal;
-    --title-font-weight: 400;
-    --descr-font-color: #212121;
-    --descr-font-family: "Roboto", sans-serif;
-    --descr-font-size: 1em;
-    --descr-font-spacing: 0.5em;
-    --descr-font-style: normal;
-    --descr-font-weight: 300;
-    /*: sys footer :*/
-    --sys-ft-bg-color: #ffffff;
-    --sys-ft-align: center;
-    /*: sys menu :*/
-    --mnu-bar-sm-bg: #e64a19;
-    --mnu-bar-sm-fg: #ffffff;
-    --mnu-bar-lg-bg: #fafafa;
-    --mnu-bar-lg-fg: #616161;
-    /*: sys content :*/
-    --sys-content-bg-color: #ffffff;
-    --sys-content-tp-border-color: #e0e0e0;
-    --sys-content-bt-border-color: #e0e0e0;
-    /*: system :*/
-    --sys-bg-color: #fafafa;
-    --sys-line-height: 1.4;
-    --sys-font-family: "Roboto", sans-serif;
-    --sys-font-color: #000000;
-    --sys-font-size: 1rem;
-    --sys-font-weight: 300;
-    --sys-font-spacing: normal;
-    --sys-lnk-pri-color: #673ab7;
-    --sys-lnk-sec-color: #f4511e;
-    --sys-lnk-sec-bg-color: transparent;
-    --sys-lnk-weight: 400;
-    --sys-content-order: 3;
-    --sys-sidebar-order: 4;
-    --font-sans: "Roboto", sans-serif;
-    --font-condensed: "Roboto Condensed", sans-serif;
-    --font-mono: "Roboto Mono", monospace;
-    --font-serif: "Roboto Slab", serif;
-    --font-cursive: "Kalam", cursive;
-    --font-fancy: "Kaushan Script", cursive;
-    /*: plugin :*/
-    --pag-breadcrumb-dsp: block;
-    --pst-breadcrumb-dsp: none;
 }
 
 
