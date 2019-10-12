@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/print.css
- *  build:  90927.1a
+ *  build:  91001.1a
  *  descrp: blog print
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -74,6 +74,25 @@ body {
 
 .prt\(pg-break\:after-always\) {
     page-break-after: always;
+}
+
+table {
+    page-break-inside: auto
+}
+
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto
+}
+
+
+/*  # fx-misc
+    # 90915.1a
+    # flexbox misc styling
+**/
+
+.fx\:shadow {
+    box-shadow: none;
 }
 
 
