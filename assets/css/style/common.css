@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /assets/css/style/common.css
- *  build:  90915.1a
+ *  file:   style/common.css
+ *  build:  91001.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -58,13 +58,26 @@ pre {
     background: var(--bg-bas-050);
     border: solid 1px var(--fg-bas-300);
     border-radius: .25rem;
-    color: var(--fg-bas-900);
+    color: var(--fg-bas-800);
     font-family: var(--font-mono);
-    font-size: .875rem;
-    font-weight: 400;
-    margin: 0.9375rem 0 0.625rem 0;
-    overflow: auto;
-    padding: 0.9375rem;
+    font-size: smaller;
+    font-weight: normal;
+    padding: 1rem;
+    overflow-x: auto;
+    width: 100%;
+}
+
+pre.wrap {
+    background: var(--bg-bas-050);
+    border: solid 1px var(--fg-bas-300);
+    border-radius: .25rem;
+    color: var(--fg-bas-800);
+    font-family: var(--font-mono);
+    font-size: smaller;
+    font-weight: normal;
+    padding: 1rem;
+    white-space: pre-wrap;
+    width: 100%;
 }
 
 
@@ -310,34 +323,35 @@ dd {
     }
 }
 
-@media (min-width:768px) {
-    dd.card {
-        margin-left: 1em;
-        padding-left: 0;
-    }
-}
+
+/*  # table
+    # 91001.1a
+    # default table setting
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+**/
 
 table {
-    table-layout: fixed;
     background-color: transparent;
-    border-spacing: 0;
     border-collapse: collapse;
-    width: 100%;
-    margin: 15px 0 15px 0;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
 }
 
 table caption {
-    margin-bottom: 15px;
+    caption-side: bottom;
+    font-size: smaller;
 }
 
 table td,
 table th {
-    padding: 4px;
+    padding: 0.25rem 0.5rem;
 }
 
 table thead th {
-    background: linear-gradient(#eee, #f5f5f5);
+    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
     color: var(--fg-blk);
+    font-weight: bolder;
 }
 
 table thead th:not(:last-child) {
@@ -348,9 +362,119 @@ table tr:not(:last-child) td {
     border-bottom: 1px solid var(--fg-bas-300);
 }
 
-table tr td:not(:last-child) {
+table td:not(:last-child) {
     border-right: 1px solid var(--fg-bas-300);
 }
+
+
+/*  # no border table
+    # 91001.1a
+    # table without borders
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+**/
+
+table.no-borders {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+.no-borders caption {
+    caption-side: bottom;
+    font-size: smaller;
+}
+
+.no-borders td,
+.no-borders th {
+    border: none !important;
+    padding: 0.25rem 0.5rem;
+}
+
+.no-borders th {
+    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
+    color: var(--fg-blk);
+    font-weight: bolder;
+}
+
+
+/*  # resp table
+    # 91001.1a
+    # responsive table layout (block on mobile)
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+**/
+
+table.resp {
+    display: block;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.resp tr {
+    border: none !important;
+    display: block;
+    width: 100%;
+}
+
+.resp td {
+    border: none !important;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+}
+
+.resp th {
+    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
+    color: var(--fg-blk);
+    font-weight: bolder;
+}
+
+.resp td:nth-child(odd) {
+    background-color: var(--bg-bas-050);
+}
+
+@media (min-width:640px) {
+    table.resp {
+        display: table;
+        border-collapse: collapse;
+        table-layout: auto;
+        width: auto;
+    }
+    .resp tr {
+        display: table-row;
+        width: auto;
+    }
+    .resp td {
+        display: table-cell;
+        padding: 0.25rem 0.5rem;
+        vertical-align: top;
+        width: auto;
+    }
+    .resp th {
+        background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
+        color: var(--fg-blk);
+    }
+    .resp thead th:not(:last-child) {
+        border-right: 1px solid var(--fg-bas-300) !important;
+    }
+    .resp tr:not(:last-child) td {
+        border-bottom: 1px solid var(--fg-bas-300) !important;
+    }
+    .resp td:not(:last-child) {
+        border-right: 1px solid var(--fg-bas-300) !important;
+    }
+    .resp td:nth-child(odd) {
+        background-color: transparent;
+    }
+}
+
+
+/*  # <h1>–<h6>
+    # 91001.1a
+    # HTML Section Heading elements
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+**/
 
 h1 {
     color: var(--h1-color);
@@ -501,121 +625,6 @@ legend {
 
 :-ms-input-placeholder {
     color: var(--fg-bas-600);
-}
-
-button,
-button.btn-outline,
-button.btn-outline input[type=button],
-button.btn-outline input[type=reset],
-button.btn-outline input[type=submit],
-button.btn-solid,
-button.btn-solid input[type=button],
-button.btn-solid input[type=reset],
-button.btn-solid input[type=submit],
-input[type=button],
-input[type=reset],
-input[type=submit] {
-    background-color: var(--sys-content-bg-color);
-    border: 1px solid var(--fg-bas-400);
-    border-radius: .25rem;
-    color: var(--fg-bas-700);
-    cursor: pointer;
-    display: inline-block;
-    outline: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-decoration: none;
-    text-transform: none;
-    -webkit-appearance: button;
-}
-
-button.btn-solid,
-button.btn-solid input[type=button],
-button.btn-solid input[type=reset],
-button.btn-solid input[type=submit] {
-    background-color: var(--bg-pri-500);
-    border: 1px solid var(--fg-pri-500);
-    color: var(--fg-bas-050);
-}
-
-button.btn-outline,
-button.btn-outline input[type=button],
-button.btn-outline input[type=reset],
-button.btn-outline input[type=submit] {
-    background-color: var(--sys-content-bg-color);
-    border: 1px solid var(--fg-pri-400);
-    color: var(--fg-bas-700);
-}
-
-button a,
-input[type=button] a,
-input[type=reset] a,
-input[type=submit] a {
-    color: var(--fg-bas-700);
-}
-
-button.btn-solid a,
-button.btn-solid input[type=button] a,
-button.btn-solid input[type=reset] a,
-button.btn-solid input[type=submit] a {
-    color: var(--fg-wht);
-}
-
-button.btn-outline a,
-button.btn-outline input[type=button] a,
-button.btn-outline input[type=reset] a,
-button.btn-outline input[type=submit] a {
-    color: var(--fg-bas-700);
-}
-
-button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover {
-    background-color: var(--bg-bas-050);
-    border-color: var(--bg-bas-050);
-    box-shadow: 0 0 2px 2px var(--fg-bas-400);
-    color: var(--bg-blk);
-    outline: 0;
-}
-
-button.btn-solid input[type=button]:hover,
-button.btn-solid input[type=reset]:hover,
-button.btn-solid input[type=submit]:hover,
-button.btn-solid:hover {
-    background-color: var(--bg-bas-050);
-    border-color: var(--bg-bas-050);
-    box-shadow: 0 0 2px 2px var(--fg-pri-300);
-    color: var(--fg-blk);
-    outline: 0;
-}
-
-button.btn-outline input[type=button]:hover,
-button.btn-outline input[type=reset]:hover,
-button.btn-outline input[type=submit]:hover,
-button.btn-outline:hover {
-    background-color: var(--bg-bas-050);
-    border-color: var(--bg-bas-050);
-    box-shadow: 0 0 2px 2px var(--fg-pri-300);
-    color: var(--fg-blk);
-    outline: 0;
-}
-
-button.btn-outline input[type=button]:focus,
-button.btn-outline input[type=reset]:focus,
-button.btn-outline input[type=submit]:focus,
-button.btn-outline:focus,
-button.btn-solid input[type=button]:focus,
-button.btn-solid input[type=reset]:focus,
-button.btn-solid input[type=submit]:focus,
-button.btn-solid:focus,
-button:focus,
-input[type=button]:focus,
-input[type=reset]:focus,
-input[type=submit]:focus {
-    opacity: .7;
 }
 
 input[type=email],
@@ -957,274 +966,12 @@ img.focalpoint:hover {
     }
 }
 
-.btn-emoji {
-    border-radius: .25rem;
-    cursor: pointer;
-    display: table-cell;
-    font-size: 2.25rem;
-    min-height: 80px;
-    text-align: center;
-    vertical-align: middle;
-    min-width: 70px;
-    -webkit-tap-highlight-color: transparent;
-}
 
-.btn-emoji:focus,
-.btn-emoji:hover {
-    background-color: var(--bg-bas-100);
-}
-
-.tmpl-demo {
-    display: block;
-    width: 100%;
-}
-
-.tmpl-demo-head {
-    border-left: 6px solid var(--fg-bas-300);
-    margin-top: 1em;
-    margin-right: auto;
-    margin-bottom: 1em;
-    margin-left: 3%;
-    padding: 1em;
-    width: 100%;
-}
-
-.tmpl-demo-foot {
-    display: none;
-}
-
-
-/*  # fx an-cn
-    # 90909.1a
-    # flexbox annotation template
-    # https://the-echoplex.net/flexyboxes/
+/*  # spacer
+    # 91001.1a
+    # vertical spacers
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 **/
-
-.fx\:an-cn {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    background-color: #fafafa;
-}
-
-.fx\:an-item:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-}
-
-.fx\:an-item:nth-child(2) {
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-}
-
-
-/*  # fx erule-cn
-    # 90909.1a
-    # flexbox emblem rule template
-    # https://the-echoplex.net/flexyboxes/
-**/
-
-
-/*: emblem container :*/
-
-.fx\:erule-cn {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-
-/*: emblem center :*/
-
-.fx\:erule-item-center:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.fx\:erule-item-center:nth-child(2) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.fx\:erule-item-center:nth-child(3) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-
-/*: emblem left :*/
-
-.fx\:erule-item-left:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.fx\:erule-item-left:nth-child(2) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    padding-right: 1rem;
-}
-
-
-/*: emblem right :*/
-
-.fx\:erule-item-right:nth-child(1) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.fx\:erule-item-right:nth-child(2) {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    padding-left: 1rem;
-}
-
-
-/*  # two column table
-    # 90909.1a
-    # table layout works best in editor
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-**/
-
-table.twocol {
-    display: block;
-    width: 100%;
-}
-
-.twocol tr {
-    display: block;
-    width: 100%;
-}
-
-.twocol td {
-    border: none !important;
-    display: block;
-    padding: 0;
-    width: 100%;
-}
-
-@media (min-width:640px) {
-    table.twocol {
-        display: table;
-        border-collapse: separate;
-        width: 100%;
-    }
-    .twocol tr {
-        display: table-row;
-        width: 100%;
-    }
-    .twocol td {
-        display: table-cell;
-        vertical-align: top;
-        width: 50%;
-    }
-    .twocol td:first-child {
-        padding-right: 0.5rem;
-    }
-    .twocol td:last-child {
-        padding-left: 0.5rem;
-    }
-}
-
-
-/*
-    vertical spacing
-*/
 
 .vert\:spacer-1\/2 {
     color: transparent;
@@ -1257,6 +1004,214 @@ table.twocol {
 }
 
 
+/*  # button
+    # 91001.1a
+    # button element
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+**/
+
+
+/*: default :*/
+
+button {
+    background-color: var(--bg-bas-200);
+    border-radius: .25rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+button:focus,
+button a:focus {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    ;
+}
+
+button:hover {
+    filter: brightness(96%);
+}
+
+.btn\:shadow {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn\:shadow-hover:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.btn\:shadow-focus:focus {
+    filter: brightness(94%);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
+}
+
+
+/*  # hvr
+    # 91001.1a
+    # hover animations
+    # https://ianlunn.github.io/Hover/
+**/
+
+
+/* Grow */
+
+.hvr\:grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr\:grow:hover,
+.hvr\:grow:focus,
+.hvr\:grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/* Grow Shadow */
+
+.hvr\:grow-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.hvr\:grow-shadow:hover,
+.hvr\:grow-shadow:focus,
+.hvr\:grow-shadow:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/* Shadow */
+
+.hvr\:shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:shadow:hover,
+.hvr\:shadow:focus,
+.hvr\:shadow:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Glow Shadow */
+
+.hvr\:glow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:glow:hover,
+.hvr\:glow:focus,
+.hvr\:glow:active {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+
+/* Box Shadow */
+
+.hvr\:box-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:box-shadow:hover,
+.hvr\:box-shadow:focus,
+.hvr\:box-shadow:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Float Shadow */
+
+.hvr\:float-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr\:float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.hvr\:float-shadow:hover,
+.hvr\:float-shadow:focus,
+.hvr\:float-shadow:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+}
+
+.hvr\:float-shadow:hover:before,
+.hvr\:float-shadow:focus:before,
+.hvr\:float-shadow:active:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+
 /*
-    eof: /assets/css/style/common.css
+    eof: style/common.css
 */
