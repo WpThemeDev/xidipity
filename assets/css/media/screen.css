@@ -1,10 +1,10 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   /css/media/screen.css
- *  build:  90927.1b
+ *  file:   media/screen.css
+ *  build:  91001.1a
  *  descrp: common-style variables
- *  ref:    https://github.com/WpThemeDev/xidipity
+ *  ref:    https://material.io/design/
  *
  *  @package WordPress
  *  @subpackage Xidipity
@@ -18,11 +18,17 @@
 */
 
 :root {
+    /*
+        definitions
+    */
     /*: base font size :*/
     font-size: 16px;
+    /*: uni colors :*/
+    --transparent: transparent;
     /*: foreground colors :*/
     --fg-blk: #000000;
     --fg-wht: #ffffff;
+    /*: grey :*/
     --fg-bas-900: #212121;
     --fg-bas-800: #424242;
     --fg-bas-700: #616161;
@@ -33,29 +39,32 @@
     --fg-bas-200: #eeeeee;
     --fg-bas-100: #f5f5f5;
     --fg-bas-050: #fafafa;
-    --fg-pri-900: #bf360c;
-    --fg-pri-800: #d84315;
-    --fg-pri-700: #e64a19;
-    --fg-pri-600: #f4511e;
-    --fg-pri-500: #ff5722;
-    --fg-pri-400: #ff7043;
-    --fg-pri-300: #ff8a65;
-    --fg-pri-200: #ffab91;
-    --fg-pri-100: #ffccbc;
-    --fg-pri-050: #fbe9e7;
-    --fg-sec-900: #311b92;
-    --fg-sec-800: #4527a0;
-    --fg-sec-700: #512da8;
-    --fg-sec-600: #5e35b1;
-    --fg-sec-500: #673ab7;
-    --fg-sec-400: #7e57c2;
-    --fg-sec-300: #9575cd;
-    --fg-sec-200: #b39ddb;
-    --fg-sec-100: #d1c4e9;
-    --fg-sec-050: #ede7f6;
+    /*: deep purple :*/
+    --fg-pri-900: #311b92;
+    --fg-pri-800: #4527a0;
+    --fg-pri-700: #512da8;
+    --fg-pri-600: #5e35b1;
+    --fg-pri-500: #673ab7;
+    --fg-pri-400: #7e57c2;
+    --fg-pri-300: #9575cd;
+    --fg-pri-200: #b39ddb;
+    --fg-pri-100: #d1c4e9;
+    --fg-pri-050: #ede7f6;
+    /*: deep orange :*/
+    --fg-sec-900: #bf360c;
+    --fg-sec-800: #d84315;
+    --fg-sec-700: #e64a19;
+    --fg-sec-600: #f4511e;
+    --fg-sec-500: #ff5722;
+    --fg-sec-400: #ff7043;
+    --fg-sec-300: #ff8a65;
+    --fg-sec-200: #ffab91;
+    --fg-sec-100: #ffccbc;
+    --fg-sec-050: #fbe9e7;
     /*: background colors :*/
     --bg-blk: #000000;
     --bg-wht: #ffffff;
+    /*: grey :*/
     --bg-bas-900: #212121;
     --bg-bas-800: #424242;
     --bg-bas-700: #616161;
@@ -66,105 +75,133 @@
     --bg-bas-200: #eeeeee;
     --bg-bas-100: #f5f5f5;
     --bg-bas-050: #fafafa;
-    --bg-pri-900: #bf360c;
-    --bg-pri-800: #d84315;
-    --bg-pri-700: #e64a19;
-    --bg-pri-600: #f4511e;
-    --bg-pri-500: #ff5722;
-    --bg-pri-400: #ff7043;
-    --bg-pri-300: #ff8a65;
-    --bg-pri-200: #ffab91;
-    --bg-pri-100: #ffccbc;
-    --bg-pri-050: #fbe9e7;
-    --bg-sec-900: #311b92;
-    --bg-sec-800: #4527a0;
-    --bg-sec-700: #512da8;
-    --bg-sec-600: #5e35b1;
-    --bg-sec-500: #673ab7;
-    --bg-sec-400: #7e57c2;
-    --bg-sec-300: #9575cd;
-    --bg-sec-200: #b39ddb;
-    --bg-sec-100: #d1c4e9;
-    --bg-sec-050: #ede7f6;
-    /*: headers :*/
-    --h1-color: #424242;
-    --h1-font: "Roboto", sans-serif;
-    --h1-size: 2.125em;
-    --h1-style: normal;
-    --h1-weight: 400;
-    --h2-color: #424242;
-    --h2-font: "Roboto", sans-serif;
-    --h2-size: 1.9375em;
-    --h2-style: normal;
-    --h2-weight: 400;
-    --h3-color: #424242;
-    --h3-font: "Roboto", sans-serif;
-    --h3-size: 1.75em;
-    --h3-style: normal;
-    --h3-weight: 400;
-    --h4-color: #424242;
-    --h4-font: "Roboto", sans-serif;
-    --h4-size: 1.5625em;
-    --h4-style: normal;
-    --h4-weight: 400;
-    --h5-color: #424242;
-    --h5-font: "Roboto", sans-serif;
-    --h5-size: 1.375em;
-    --h5-style: normal;
-    --h5-weight: 400;
-    --h6-color: #424242;
-    --h6-font: "Roboto", sans-serif;
-    --h6-size: 1.1875em;
-    --h6-style: italic;
-    --h6-weight: 400;
-    /*: sys header :*/
-    --sys-hdr-bg-color: #fafafa;
-    --sys-hdr-align: center;
-    --title-lnk-pri-color: #5e35b1;
-    --title-lnk-sec-color: #f4511e;
-    --title-font-family: "Kaushan Script", cursive;
-    --title-font-size: 3em;
-    --title-font-spacing: 0.0625em;
-    --title-font-style: normal;
-    --title-font-weight: 400;
-    --descr-font-color: #212121;
-    --descr-font-family: "Roboto", sans-serif;
-    --descr-font-size: 1em;
-    --descr-font-spacing: 0.5em;
-    --descr-font-style: normal;
-    --descr-font-weight: 300;
-    /*: sys footer :*/
-    --sys-ft-bg-color: #fafafa;
-    --sys-ft-align: center;
-    /*: sys menu :*/
-    --mnu-bar-sm-bg: #e64a19;
-    --mnu-bar-sm-fg: #ffffff;
-    --mnu-bar-lg-bg: #fafafa;
-    --mnu-bar-lg-fg: #616161;
-    /*: sys content :*/
-    --sys-content-bg-color: #ffffff;
-    --sys-content-tp-border-color: #e0e0e0;
-    --sys-content-bt-border-color: #e0e0e0;
-    /*: system :*/
-    --sys-bg-color: #fafafa;
-    --sys-line-height: 1.4;
-    --sys-font-family: "Roboto", sans-serif;
-    --sys-font-color: #000000;
-    --sys-font-size: 1rem;
-    --sys-font-weight: 300;
-    --sys-font-spacing: normal;
-    --sys-lnk-pri-color: #673ab7;
-    --sys-lnk-sec-color: #f4511e;
-    --sys-lnk-sec-bg-color: transparent;
-    --sys-lnk-weight: 400;
-    --sys-content-order: 3;
-    --sys-sidebar-order: 4;
+    /*: deep purple :*/
+    --bg-pri-900: #311b92;
+    --bg-pri-800: #4527a0;
+    --bg-pri-700: #512da8;
+    --bg-pri-600: #5e35b1;
+    --bg-pri-500: #673ab7;
+    --bg-pri-400: #7e57c2;
+    --bg-pri-300: #9575cd;
+    --bg-pri-200: #b39ddb;
+    --bg-pri-100: #d1c4e9;
+    --bg-pri-050: #ede7f6;
+    /*: deep orange :*/
+    --bg-sec-900: #bf360c;
+    --bg-sec-800: #d84315;
+    --bg-sec-700: #e64a19;
+    --bg-sec-600: #f4511e;
+    --bg-sec-500: #ff5722;
+    --bg-sec-400: #ff7043;
+    --bg-sec-300: #ff8a65;
+    --bg-sec-200: #ffab91;
+    --bg-sec-100: #ffccbc;
+    --bg-sec-050: #fbe9e7;
+    /*: font families :*/
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
     --font-mono: "Roboto Mono", monospace;
     --font-serif: "Roboto Slab", serif;
     --font-cursive: "Kalam", cursive;
     --font-fancy: "Kaushan Script", cursive;
+    /*: font sizes :*/
+    --font-size-h1: 2.125rem;
+    --font-size-h2: 1.9375rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5625rem;
+    --font-size-h5: 1.375rem;
+    --font-size-h6: 1.1875rem;
+    --font-size-rg: 1rem;
+    --font-size-sm: 0.8125rem;
+    --font-size-xs: 0.625rem;
+    /*: font weight :*/
+    --font-wgt-thin: 100;
+    --font-wgt-xtralight: 200;
+    --font-wgt-light: 300;
+    --font-wgt-regular: 400;
+    --font-wgt-medium: 500;
+    --font-wgt-semibold: 600;
+    --font-wgt-bold: 700;
+    --font-wgt-extrabold: 800;
+    --font-wgt-black: 900;
+    /*: font styles :*/
+    --font-style-italic: italic;
+    --font-style-normal: normal;
+    --font-style-oblique: oblique;
+    /*
+        application
+    */
+    /*: headers :*/
+    --h1-color: var(--fg-bas-800);
+    --h1-font: var(--font-sans);
+    --h1-size: var(--font-size-h1);
+    --h1-style: var(--font-style-normal);
+    --h1-weight: var(--font-wgt-regular);
+    --h2-color: var(--fg-bas-800);
+    --h2-font: var(--font-sans);
+    --h2-size: var(--font-size-h2);
+    --h2-style: var(--font-style-normal);
+    --h2-weight: var(--font-wgt-regular);
+    --h3-color: var(--fg-bas-800);
+    --h3-font: var(--font-sans);
+    --h3-size: var(--font-size-h3);
+    --h3-style: var(--font-style-normal);
+    --h3-weight: var(--font-wgt-regular);
+    --h4-color: var(--fg-bas-800);
+    --h4-font: var(--font-sans);
+    --h4-size: var(--font-size-h4);
+    --h4-style: var(--font-style-normal);
+    --h4-weight: var(--font-wgt-regular);
+    --h5-color: var(--fg-bas-800);
+    --h5-font: var(--font-sans);
+    --h5-size: var(--font-size-h5);
+    --h5-style: var(--font-style-normal);
+    --h5-weight: var(--font-wgt-regular);
+    --h6-color: var(--fg-bas-700);
+    --h6-font: var(--font-sans);
+    --h6-size: var(--font-size-h6);
+    --h6-style: var(--font-style-oblique);
+    --h6-weight: var(--font-wgt-regular);
+    /*: sys header :*/
+    --sys-hdr-bg-color: var(--bg-bas-050);
+    --sys-hdr-align: center;
+    --title-lnk-pri-color: var(--fg-pri-600);
+    --title-lnk-sec-color: var(--fg-sec-600);
+    --title-font-family: var(--font-fancy);
+    --title-font-size: 3rem;
+    --title-font-spacing: 0.0625rem;
+    --title-font-style: normal;
+    --title-font-weight: var(--font-wgt-regular);
+    --descr-font-color: var(--fg-bas-900);
+    --descr-font-family: var(--font-sans);
+    --descr-font-size: 1rem;
+    --descr-font-spacing: 0.5rem;
+    --descr-font-style: normal;
+    --descr-font-weight: var(--font-wgt-light);
+    /*: sys footer :*/
+    --sys-ft-bg-color: var(--bg-bas-050);
+    --sys-ft-align: center;
+    /*: sys menu :*/
+    --mnu-bar-sm-bg: var(--transparent);
+    --mnu-bar-sm-fg: var(--fg-blk);
+    --mnu-bar-lg-bg: var(--bg-bas-050);
+    --mnu-bar-lg-fg: var(--fg-bas-700);
+    /*: sys content :*/
+    --sys-content-bg-color: var(--bg-wht);
+    --sys-content-tp-border-color: var(--fg-bas-300);
+    --sys-content-bt-border-color: var(--fg-bas-300);
+    /*: system :*/
+    --sys-bg-color: var(--bg-bas-050);
+    --sys-line-height: 1.4;
+    --sys-font-family: var(--font-sans);
+    --sys-font-color: var(--fg-blk);
+    --sys-font-size: 1rem;
+    --sys-font-weight: var(--font-wgt-light);
+    --sys-font-spacing: normal;
+    --sys-lnk-pri-color: var(--fg-pri-500);
+    --sys-lnk-sec-color: var(--fg-sec-600);
+    --sys-lnk-sec-bg-color: var(--transparent);
+    --sys-lnk-weight: var(--font-wgt-regular);
     /*: plugin :*/
     --pag-breadcrumb-dsp: block;
     --pst-breadcrumb-dsp: none;
@@ -172,5 +209,5 @@
 
 
 /*
-    eof: /css/media/screen.css
+    eof: media/screen.css
 */
