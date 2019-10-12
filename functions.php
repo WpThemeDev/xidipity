@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  90929.1a
+ *  build:  91001.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1409,11 +1409,11 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_err
- *  build: 90909.1a
+ *  build: 91001.1a
  *  description: Return properly formatted error message
  *  attributes:
  *      $att - string
- *  doc: https://xidipity.com/reference/source-code/functions/dsp_err/
+ *  ref:
  *
  */
 function dsp_err($att)
@@ -1432,7 +1432,7 @@ function dsp_err($att)
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 90903.1a/fnt/dsp/err             --><div class="fx:an-cn pad:all-0.5"><div class="fx:an-item fnt:size-larger pad:left-0.5 pad:right-0.5 bdr:right-0.125 bdr:style-solid bdr:bas-300"><svg class="mar:horz-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/></svg></div><div class="fx:an-item fnt:size-smaller pad:left-0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 90903.1a/fnt/dsp/err            -->';
+    $fn_retval = '<!-- xwpt: 90903.1a/fnt/dsp/err             --><div class="fx:r fa:1 fb:1 fc:6 bg:bas-050 pad:all-0.5"><div class="fd:1 fe:4 fnt:size-large pad:left-0.5 pad:right-1"><svg class="mar:horz-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/></svg></div><div class="fd:2 fe:4 fnt:size-small pad:left-0.5 bdr:left-0.125 bdr:style-solid bdr:bas-300">' . __($v_msg) . '</div></div><!-- /xwpt: 90903.1a/fnt/dsp/err            -->';
     // return html
     return $fn_retval;
 }
