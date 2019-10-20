@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/web.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,10 +11,9 @@
  *  @since 0.9.0
  *
 **/
-
 body {
     background-color: var(--sys-bg-color);
-    color: var(--sys-font-color);
+    color: var(--sys-content-fg-color);
     font-family: var(--sys-font-family);
     font-size: var(--sys-font-size);
     font-weight: var(--sys-font-weight);
@@ -23,13 +22,12 @@ body {
     -webkit-animation: bugfix infinite 1s;
 }
 
-
 /* needed for menu checkbox hack */
-
 @-webkit-keyframes bugfix {
     from {
         padding: 0;
     }
+
     to {
         padding: 0;
     }
@@ -45,12 +43,12 @@ body {
     padding: 0;
     position: absolute;
     width: 1px;
-    word-wrap: normal!important;
+    word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
     background-color: #eee;
-    clip: auto!important;
+    clip: auto !important;
     clip-path: none;
     color: #444;
     display: block;
@@ -96,7 +94,7 @@ body {
     z-index: 999999;
 }
 
-.web\:dsp-none {
+.dsp\:none\!web {
     display: none;
 }
 
@@ -170,7 +168,7 @@ ol.comment-list li {
 
 ol.comment-list li::before {
     color: var(--fg-pri-600);
-    content: "Comment: " counter(comment);
+    content: "Comment: "counter(comment);
     font-size: var(--h5-size);
     font-family: var(--font-sans);
     font-weight: var(--h5-weight);
@@ -190,21 +188,21 @@ ol.comment-list li::before {
     list-style: none;
 }
 
-.comment-list>li>.children .comment-body,
-.comment-list>li>.comment-body {
+.comment-list > li > .children .comment-body,
+.comment-list > li > .comment-body {
     border-top: 1px solid var(--fg-bas-400);
     margin: 15px 0 0;
     padding-top: 15px;
     position: relative;
 }
 
-.comment-list>li:first-child:not(.bypostauthor)>.comment-body {
+.comment-list > li:first-child:not(.bypostauthor) > .comment-body {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
 }
 
-.comment-list .bypostauthor>.comment-body {
+.comment-list .bypostauthor > .comment-body {
     background: var(--bg-bas-100);
     border-bottom: 3px solid var(--fg-sec-500);
     padding: 15px;
@@ -338,7 +336,7 @@ ol.comment-list li::before {
     padding: 0;
 }
 
-.comment-subscription-form+.comment-subscription-form {
+.comment-subscription-form + .comment-subscription-form {
     margin: 8px 0 0;
 }
 
@@ -359,15 +357,11 @@ ol.comment-list li::before {
     width: 100%;
 }
 
-
 /*  # web template support classes
     # 90929.1a
     # matching classes may be found in editor.css
 **/
-
-
 /*: multicolumn template :*/
-
 table.cols\:0,
 table.cols\:2,
 table.cols\:3,
@@ -386,15 +380,18 @@ table.cols\:4 {
 }
 
 @media (min-width:640px) {
+
     .cols\:auto td,
     .cols\:2 td {
         column-count: 2;
         column-gap: 2%;
     }
+
     .cols\:3 td {
         column-count: 3;
         column-gap: 2%;
     }
+
     .cols\:4 td {
         column-count: 4;
         column-gap: 2%;
@@ -453,12 +450,14 @@ table.cols\:4 {
         height: auto;
         width: 100%;
     }
+
     .embed-alignleft {
         border-right: solid transparent 10px;
         float: left;
         height: auto;
         width: 50%;
     }
+
     .embed-alignright {
         border-left: solid transparent 10px;
         float: right;
@@ -481,12 +480,12 @@ table.cols\:4 {
 }
 
 .wp-video {
-    width: 100%!important;
-    height: 100%!important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .wp-video {
-    max-width: 100%!important;
+    max-width: 100% !important;
 }
 
 .comment-navigation {
@@ -752,28 +751,28 @@ table.cols\:4 {
 
 .gist .line,
 .gist .line span {
-    word-wrap: normal!important;
+    word-wrap: normal !important;
 }
 
 .gist table {
-    margin-bottom: 0!important;
-    table-layout: auto!important;
+    margin-bottom: 0 !important;
+    table-layout: auto !important;
 }
 
 .gist .line-numbers {
-    width: 4em!important;
+    width: 4em !important;
 }
 
 .gist .line,
 .gist .line-number {
-    font-size: 12px!important;
-    height: 18px!important;
-    line-height: 18px!important;
+    font-size: 12px !important;
+    height: 18px !important;
+    line-height: 18px !important;
 }
 
 .gist .line {
-    white-space: pre!important;
-    width: auto!important;
+    white-space: pre !important;
+    width: auto !important;
 }
 
 .seo-pag-breadcrumbs,
@@ -797,11 +796,9 @@ table.cols\:4 {
     width: 100%;
 }
 
-
 /*
     page navigation
 */
-
 .dots {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -819,7 +816,7 @@ table.cols\:4 {
 
 a.page-numbers,
 a.page-numbers:visited {
-    color: var(--sys-font-color);
+    color: var(--sys-content-fg-color);
     text-decoration: none;
 }
 
@@ -836,13 +833,11 @@ a.page-numbers:focus {
     color: var(--fg-blk);
 }
 
-
 /*  # author flexbox
     # 90828.1s
     # post summary by author
     # https://the-echoplex.net/flexyboxes/
 **/
-
 .fx\:author-container {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -940,13 +935,11 @@ a.page-numbers:focus {
     }
 }
 
-
 /*  # bio flexbox
     # 90828.1s
     # biography synopsis used by biography.php
     # https://the-echoplex.net/flexyboxes/
 **/
-
 .fx\:cn-ct-bio {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1025,12 +1018,8 @@ a.page-numbers:focus {
     align-self: auto;
 }
 
-
 /*: support classes :*/
-
-
 /*: content / container / navigation :*/
-
 .fx\:cn-ct-nav {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1052,9 +1041,7 @@ a.page-numbers:focus {
     align-items: center;
 }
 
-
 /*: container / navigation / item :*/
-
 .fx\:ct-nav-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1070,9 +1057,7 @@ a.page-numbers:focus {
     padding: 15px 20px;
 }
 
-
 /*: content / container / meta :*/
-
 .fx\:cn-ct-meta {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1094,9 +1079,7 @@ a.page-numbers:focus {
     align-items: flex-start;
 }
 
-
 /*: container / meta / item :*/
-
 .fx\:ct-meta-itm {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -1110,7 +1093,6 @@ a.page-numbers:focus {
     padding-right: 10px;
 }
 
-
 /*  # special case core flexbox classes
     # 90828.1a
     # classes which support the following page templates
@@ -1119,18 +1101,13 @@ a.page-numbers:focus {
         # no-title.php
     # https://the-echoplex.net/flexyboxes/
 **/
-
-
 /*  # bexc-container
     # 90903.1a
     # supports blog excerpts shortcode
       all fx containers begin life as columns to support mobile
     # https://the-echoplex.net/flexyboxes/
 **/
-
-
 /*: blog excerpts container :*/
-
 .fx\:bexc-cn-img-left,
 .fx\:bexc-cn-img-none,
 .fx\:bexc-cn-img-right {
@@ -1175,6 +1152,7 @@ a.page-numbers:focus {
         -ms-flex-align: stretch;
         align-items: stretch;
     }
+
     .fx\:bexc-cn-img-left {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -1195,6 +1173,7 @@ a.page-numbers:focus {
         -ms-flex-align: stretch;
         align-items: stretch;
     }
+
     .fx\:bexc-cn-img-right {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -1217,9 +1196,7 @@ a.page-numbers:focus {
     }
 }
 
-
 /*: blog excerpts items :*/
-
 .fx\:bexc-cn-img-item,
 .fx\:bexc-cn-img-none-item {
     -webkit-order: 0;
@@ -1245,6 +1222,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: auto;
         align-self: auto;
     }
+
     .fx\:bexc-cn-img-item:nth-child(1) {
         -webkit-order: 0;
         -ms-flex-order: 0;
@@ -1257,6 +1235,7 @@ a.page-numbers:focus {
         align-self: auto;
         max-width: 40%;
     }
+
     .fx\:bexc-cn-img-item:nth-child(2) {
         -webkit-order: 1;
         -ms-flex-order: 1;
@@ -1272,14 +1251,12 @@ a.page-numbers:focus {
     }
 }
 
-
 /*  # fx gimg
     # 90903.1a
     # supports gallery image shortcode
       all fx containers begin life as columns to support mobile
     # https://the-echoplex.net/flexyboxes/
 **/
-
 .fx\:gimg-cn-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1341,9 +1318,7 @@ a.page-numbers:focus {
     margin-bottom: 0.5rem;
 }
 
-
 /*: smartphone portrait :*/
-
 @media (min-width: 640px) {
     .fx\:gimg-ct-itm {
         -webkit-order: 0;
@@ -1360,9 +1335,7 @@ a.page-numbers:focus {
     }
 }
 
-
 /*: desktop :*/
-
 @media (min-width: 1280px) {
     .fx\:gimg-ct-itm {
         -webkit-flex: 0 1 30%;
@@ -1372,7 +1345,6 @@ a.page-numbers:focus {
     }
 }
 
-
 /*  # core flexbox classes
             # 90910.1a
             # classes which support core design elements
@@ -1381,10 +1353,7 @@ a.page-numbers:focus {
             # itm   = page container item
             # https://the-echoplex.net/flexyboxes/
         **/
-
-
 /*: page container :*/
-
 .fx\:pg-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1406,9 +1375,7 @@ a.page-numbers:focus {
     align-items: flex-start;
 }
 
-
 /*: (header) page container item :*/
-
 .fx\:pg-ct-itm-sbl:nth-child(1),
 .fx\:pg-ct-itm-sbr:nth-child(1) {
     -webkit-order: 0;
@@ -1423,9 +1390,7 @@ a.page-numbers:focus {
     background-color: var(--sys-hdr-bg-color);
 }
 
-
 /*: (menu) page container item :*/
-
 .fx\:pg-ct-itm-sbl:nth-child(2),
 .fx\:pg-ct-itm-sbr:nth-child(2) {
     -webkit-order: 0;
@@ -1439,9 +1404,7 @@ a.page-numbers:focus {
     align-self: stretch;
 }
 
-
 /*: (content) page container item :*/
-
 .fx\:pg-ct-itm-sbl:nth-child(3),
 .fx\:pg-ct-itm-sbr:nth-child(3) {
     -webkit-order: 0;
@@ -1455,9 +1418,7 @@ a.page-numbers:focus {
     align-self: stretch;
 }
 
-
 /*: (sidebar) page container item :*/
-
 .fx\:pg-ct-itm-sbl:nth-child(4),
 .fx\:pg-ct-itm-sbr:nth-child(4) {
     -webkit-order: 0;
@@ -1471,9 +1432,7 @@ a.page-numbers:focus {
     align-self: stretch;
 }
 
-
 /*: (footer) page container item :*/
-
 .fx\:pg-ct-itm-sbl:nth-child(5),
 .fx\:pg-ct-itm-sbr:nth-child(5) {
     -webkit-order: 0;
@@ -1488,7 +1447,6 @@ a.page-numbers:focus {
     background-color: var(--sys-ft-bg-color);
 }
 
-
 /*  # core flexbox classes
             # 90910.1a
             # classes which support core design elements
@@ -1497,10 +1455,7 @@ a.page-numbers:focus {
             # itm   = content container item
             # https://the-echoplex.net/flexyboxes/
         **/
-
-
 /*: content container :*/
-
 .fx\:cn-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1536,25 +1491,19 @@ a.page-numbers:focus {
     margin-bottom: 0.75rem;
 }
 
-
 /*: default cn-itm-opt padding setting :*/
-
 .fx\:cn-itm-opt {
     padding: 0;
 }
 
-
 /*: default cn-ct-itm padding setting :*/
-
 .fx\:cn-ct-opt {
     background-color: var(--sys-content-bg-color);
     padding-left: 0;
     padding-right: 0;
 }
 
-
 /*: default cn-ct-itm image setting :*/
-
 .cn-ct-img {
     height: auto;
     width: 100%;
@@ -1565,7 +1514,6 @@ a.page-numbers:focus {
     width: 100% !important;
 }
 
-
 /*  # core flexbox classes
             # 90915.1a
             # classes which support core design elements
@@ -1574,10 +1522,7 @@ a.page-numbers:focus {
             # itm   = sidebar container item
             # https://the-echoplex.net/flexyboxes/
         **/
-
-
 /*: sidebar container :*/
-
 .fx\:sb-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1636,23 +1581,17 @@ a.page-numbers:focus {
     flex-basis: 100% !important;
 }
 
-
 /*  # sb-widget
     # 90915.1a
     # flexbox sidebar widgets
 **/
-
-
 /*: sidebar / widget / ad :*/
-
 .fx\:sb-widget-ad {
     max-width: 99%;
     margin-left: 1%;
 }
 
-
 /*: sidebar / widget / title :*/
-
 .fx\:sb-widget-ti {
     color: var(--fg-bas-600);
     font-family: var(--font-sans);
@@ -1662,25 +1601,21 @@ a.page-numbers:focus {
     margin: 0 0 4px;
 }
 
-
 /*  # fx-misc
     # 90915.1a
     # flexbox misc styling
 **/
-
 .fx\:shadow {
     -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
     -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, .14);
 }
 
-
 /*  # switch from column to row
     # 90910.1a
     # screen width 768px or larger
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
-
 @media (min-width: 640px) {
     .fx\:pg-ct {
         display: -ms-flexbox;
@@ -1702,6 +1637,7 @@ a.page-numbers:focus {
         -ms-flex-align: start;
         align-items: flex-start;
     }
+
     .fx\:pg-ct-itm-sbl:nth-child(1),
     .fx\:pg-ct-itm-sbr:nth-child(1) {
         -webkit-order: 0;
@@ -1714,6 +1650,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     .fx\:pg-ct-itm-sbl:nth-child(2),
     .fx\:pg-ct-itm-sbr:nth-child(2) {
         -webkit-order: 1;
@@ -1726,6 +1663,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     /*
         no-sidebar requires flex set to 2 1 70%,
     */
@@ -1740,6 +1678,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     .fx\:pg-ct-itm-sbr:nth-child(3) {
         -webkit-order: 2;
         -ms-flex-order: 2;
@@ -1751,6 +1690,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     .fx\:pg-ct-itm-sbl:nth-child(4) {
         -webkit-order: 2;
         -ms-flex-order: 2;
@@ -1762,6 +1702,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: stretch;
         align-self: stretch;
     }
+
     .fx\:pg-ct-itm-sbr:nth-child(4) {
         -webkit-order: 3;
         -ms-flex-order: 3;
@@ -1773,6 +1714,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: stretch;
         align-self: stretch;
     }
+
     .fx\:pg-ct-itm-sbr:nth-child(5),
     .fx\:pg-ct-itm-sbr:nth-child(5) {
         -webkit-order: 4;
@@ -1785,6 +1727,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     .fx\:cn-ct {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -1807,6 +1750,7 @@ a.page-numbers:focus {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
+
     /*
         setting width to 0 is required for overflow to work (?)
     */
@@ -1822,20 +1766,25 @@ a.page-numbers:focus {
         align-self: stretch;
         width: 0;
     }
+
     .fx\:cn-itm-opt {
         padding: 1rem;
     }
+
     .fx\:basis-50\% {
         flex-basis: 49% !important;
     }
+
     .fx\:sb-ct {
         margin-left: 0.5rem;
         margin-right: 1rem;
     }
+
     .fx\:sb-ct-opt {
         margin-left: auto;
         margin-right: auto;
     }
+
     .fx\:sb-itm-opt {
         max-width: 100% !important;
         padding: 1rem;
@@ -1848,25 +1797,23 @@ a.page-numbers:focus {
         -ms-flex: 2 1 75%;
         flex: 2 1 75%;
     }
+
     .fx\:pg-ct-itm-sbr:nth-child(4) {
         -webkit-flex: 0 1 25%;
         -ms-flex: 0 1 25%;
         flex: 0 1 25%;
     }
+
     .fx\:basis-50\% {
         flex-basis: 32.67% !important;
     }
 }
 
-
 /*  # fx misc
     # 90915.1a
     # misc classes
 **/
-
-
 /*: general purpose content wrapper :*/
-
 .fx\:cn-itm-wrapper {
     background-color: var(--sys-content-bg-color);
     border-bottom: 0.0625rem solid var(--sys-content-bt-border-color);
@@ -1876,28 +1823,20 @@ a.page-numbers:focus {
     width: 100%;
 }
 
-
 /*: force figure to 100% to keep from crashing container :*/
-
 figure {
     height: auto !important;
     width: 100% !important;
 }
 
-
 /*: verify margins :*/
-
-
 /*: content / item / header :*/
-
 .fx\:cn-itm-hd {
     margin: 0 0 6px;
     padding: 0;
 }
 
-
 /*: content / item / title :*/
-
 .fx\:cn-itm-ti {
     margin: 0;
     padding: 0;
@@ -1915,16 +1854,12 @@ figure {
     background-color: var(--sys-lnk-sec-bg-color);
 }
 
-
 /*  # nav
     # 90915.1a
     # flexbox menu navigation
     # https://codepen.io/joe-watkins/pen/Emzxf
 **/
-
-
 /*: menu bar width on mobile :*/
-
 .fx\:mnu-70\%,
 .fx\:mnu-75\%,
 .fx\:mnu-80\%,
@@ -1939,9 +1874,7 @@ figure {
     position: relative;
 }
 
-
 /*: display menu centered on mobile :*/
-
 #nav ul {
     display: none;
     list-style: none;
@@ -1983,33 +1916,40 @@ figure {
     left: -9999px;
 }
 
-#nav input.trigger:checked~ul,
-#nav input.trigger:checked~ul li ul {
+#nav input.trigger:checked ~ ul,
+#nav input.trigger:checked ~ ul li ul {
     display: block !important;
 }
 
 @media (min-width: 640px) {
+
     /*: menu bar width on desktop :*/
     .fx\:mnu-70\% {
         width: 70% !important;
     }
+
     .fx\:mnu-75\% {
         width: 75% !important;
     }
+
     .fx\:mnu-80\% {
         width: 80% !important;
     }
+
     .fx\:mnu-85\% {
         width: 85% !important;
     }
+
     .fx\:mnu-90\% {
         width: 90% !important;
     }
+
     .fx\:mnu-95\% {
         width: 95% !important;
     }
-    #nav input.trigger:checked~ul,
-    #nav input.trigger:checked~ul li ul {
+
+    #nav input.trigger:checked ~ ul,
+    #nav input.trigger:checked ~ ul li ul {
         /* older flexbox */
         display: -webkit-box;
         display: -moz-box;
@@ -2034,7 +1974,7 @@ figure {
     text-align: center;
 }
 
-#nav input.trigger:checked~label {
+#nav input.trigger:checked ~ label {
     filter: brightness(80%);
 }
 
@@ -2053,6 +1993,7 @@ figure {
         display: flex;
         flex-direction: row;
     }
+
     #nav ul li {
         position: relative;
         text-align: center;
@@ -2064,6 +2005,7 @@ figure {
         /* newer flexbox */
         flex: 1;
     }
+
     #nav ul li ul {
         display: none !important;
         position: absolute;
@@ -2073,35 +2015,36 @@ figure {
         width: 12.5rem;
         z-index: 200;
     }
+
     #nav ul li ul li {
         text-align: left;
     }
+
     #nav ul li ul li ul {
         z-index: 300;
         top: 0px;
         left: 12.5rem;
     }
+
     #nav ul li ul li ul li a {
         padding-left: 1.875rem !important;
     }
-    #nav ul li:hover>ul {
+
+    #nav ul li:hover > ul {
         display: block !important;
     }
+
     #nav label {
         display: none;
     }
 }
-
 
 /*  # area
     # 90925.1a
     # flexbox area classes
     #
 **/
-
-
 /*: area center :*/
-
 .fx\:area-ct-center {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2123,9 +2066,7 @@ figure {
     align-items: center;
 }
 
-
 /*: area left :*/
-
 .fx\:area-ct-left {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2147,9 +2088,7 @@ figure {
     align-items: center;
 }
 
-
 /*: area right :*/
-
 .fx\:area-ct-right {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2171,9 +2110,7 @@ figure {
     align-items: center;
 }
 
-
 /*: area item :*/
-
 .fx\:area-itm-center,
 .fx\:area-itm-left,
 .fx\:area-itm-right {
@@ -2203,14 +2140,12 @@ figure {
     text-align: right;
 }
 
-
 /*  # pal
     # 90903.1a
     # fx palette container
       all fx containers begin life as columns to support mobile
     # https://the-echoplex.net/flexyboxes/
 **/
-
 .fx\:pal-cn-ct {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -2275,6 +2210,7 @@ figure {
         -ms-flex-align: center;
         align-items: center;
     }
+
     .fx\:pal-ct-itm {
         -webkit-order: 0;
         -ms-flex-order: 0;
@@ -2289,7 +2225,6 @@ figure {
         padding: 5% 0;
     }
 }
-
 
 /*
     eof: style/web.css
