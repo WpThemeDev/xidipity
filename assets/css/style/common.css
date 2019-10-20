@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/common.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,7 +11,6 @@
  *  @since 0.9.0
  *
 **/
-
 ins,
 mark {
     background-color: #fff59d;
@@ -47,13 +46,11 @@ kbd {
     padding: 2px 4px;
 }
 
-
 /*  # <pre> element
     # 90910.1a
     # preformatted text which is to be presented exactly as written
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 **/
-
 pre {
     background: var(--bg-bas-050);
     border: solid 1px var(--fg-bas-300);
@@ -80,14 +77,12 @@ pre.wrap {
     width: 100%;
 }
 
-
 /*  # thematic break
     # 90910.1a
     # element represents a thematic break between paragraph-level elements
     # by default the width is 80% of available space
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 **/
-
 hr {
     background-color: transparent;
     border: 0;
@@ -96,6 +91,15 @@ hr {
     border-bottom-color: var(--fg-bas-400);
     margin: 0.75rem auto 0.8125rem auto;
     width: 80%;
+}
+
+.line\:single {
+    background-color: transparent;
+    border: 0;
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    width: 10%;
 }
 
 hr.double {
@@ -110,6 +114,19 @@ hr.double {
     height: 0.25rem;
     margin: 0.625rem auto 0.6875rem auto;
     width: 80%;
+}
+
+.line\:double {
+    background-color: transparent;
+    border: 0;
+    border-top-width: 0.0625rem;
+    border-top-style: solid;
+    border-top-color: var(--fg-bas-400);
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    height: 0.25rem;
+    width: 10%;
 }
 
 hr.gradient {
@@ -140,14 +157,12 @@ video {
     width: 100%;
 }
 
-
 /*  # <a> element
     # 90910.1a
     # anchor element creates a hyperlink to other web pages ...
     # variables are defined in assets/css/media/screen.css
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 **/
-
 a,
 a:visited {
     color: var(--sys-lnk-pri-color);
@@ -164,13 +179,11 @@ a:hover {
     -webkit-tap-highlight-color: transparent;
 }
 
-
 /*  # <ul> element
     # 90910.1a
     # unordered list of items with pre-defined bullets
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 **/
-
 ul {
     list-style-type: disc;
     margin-left: 1rem;
@@ -212,13 +225,11 @@ ul.mixed ul ul ul ul {
     list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -2 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Ccircle style='' cx='6.37' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='12' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='17.37' cy='21.39' r='1.349'/%3E%3C/svg%3E");
 }
 
-
 /*  # <ol> element
     # 90910.1a
     # ordered list of items with pre-defined bullets
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
 **/
-
 ol {
     list-style-type: decimal;
     margin-left: 1rem;
@@ -260,11 +271,11 @@ ol.outline ol ol ol ol {
     counter-reset: list;
 }
 
-ol.outline ol ol ol ol>li {
+ol.outline ol ol ol ol > li {
     list-style: none;
 }
 
-ol.outline ol ol ol ol>li:before {
+ol.outline ol ol ol ol > li:before {
     content: counter(list, decimal) ") ";
     counter-increment: list;
     padding-left: 1.5em;
@@ -272,13 +283,11 @@ ol.outline ol ol ol ol>li:before {
     margin-right: .25em;
 }
 
-
 /*  # font awesome list
     # 90910.1a
     # unordered font awesome list
     # https://fontawesome.com/how-to-use/on-the-web/styling/icons-in-a-list
 **/
-
 .fa-ul:nth-of-type(-n+4) {
     padding-left: 0;
 }
@@ -287,13 +296,11 @@ ol.outline ol ol ol ol>li:before {
     padding-left: .8125rem;
 }
 
-
 /*  # no bullet(s)
     # 90910.1a
     # unordered list without bullets
     # custom to xidipity
 **/
-
 .no-bullet {
     list-style-type: none;
 }
@@ -323,13 +330,11 @@ dd {
     }
 }
 
-
 /*  # table
     # 91001.1a
     # default table setting
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 **/
-
 table {
     background-color: transparent;
     border-collapse: collapse;
@@ -366,13 +371,11 @@ table td:not(:last-child) {
     border-right: 1px solid var(--fg-bas-300);
 }
 
-
 /*  # no border table
     # 91001.1a
     # table without borders
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 **/
-
 table.no-borders {
     background-color: transparent;
     border-collapse: collapse;
@@ -398,13 +401,11 @@ table.no-borders {
     font-weight: bolder;
 }
 
-
 /*  # resp table
     # 91001.1a
     # responsive table layout (block on mobile)
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 **/
-
 table.resp {
     display: block;
     margin: 1rem 0;
@@ -441,41 +442,46 @@ table.resp {
         table-layout: auto;
         width: auto;
     }
+
     .resp tr {
         display: table-row;
         width: auto;
     }
+
     .resp td {
         display: table-cell;
         padding: 0.25rem 0.5rem;
         vertical-align: top;
         width: auto;
     }
+
     .resp th {
         background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
         color: var(--fg-blk);
     }
+
     .resp thead th:not(:last-child) {
         border-right: 1px solid var(--fg-bas-300) !important;
     }
+
     .resp tr:not(:last-child) td {
         border-bottom: 1px solid var(--fg-bas-300) !important;
     }
+
     .resp td:not(:last-child) {
         border-right: 1px solid var(--fg-bas-300) !important;
     }
+
     .resp td:nth-child(odd) {
         background-color: transparent;
     }
 }
-
 
 /*  # <h1>–<h6>
     # 91001.1a
     # HTML Section Heading elements
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
 **/
-
 h1 {
     color: var(--h1-color);
     font-family: var(--h1-font);
@@ -528,13 +534,13 @@ p {
     margin: 0 0 2px;
 }
 
-p+p {
+p + p {
     margin: 2px 0 2px;
 }
 
 blockquote {
     color: var(--fg-bas-900);
-    border-left: 6px solid var(--fg-pri-100);
+    border-left: 6px solid var(--fg-sec-100);
     font-weight: 300;
     margin-top: 1em;
     margin-right: auto;
@@ -545,11 +551,11 @@ blockquote {
 }
 
 cite {
-    font-size: 87.5%;
-    font-weight: 300;
+    font-size: smaller;
     font-style: normal;
 }
 
+/* deprecated
 .note {
     color: var(--fg-bas-700);
     font-size: 87.5%;
@@ -567,6 +573,7 @@ cite {
     margin: 1em auto 1em 0;
     width: 25%;
 }
+*/
 
 button,
 input,
@@ -682,7 +689,7 @@ pre#textarea {
     border: 0;
     color: var(--fg-bas-900);
     font-family: var(--font-mono);
-    font-size: .875rem!important;
+    font-size: .875rem !important;
     padding: 0;
     white-space: pre-wrap;
 }
@@ -762,6 +769,16 @@ img {
     max-width: 100%;
 }
 
+/*  # material-icons
+    # 91012.1a
+    # set default alignment
+    # https://google.github.io/material-design-icons/
+**/
+
+.material-icons {
+    vertical-align: middle;
+}
+
 .video-aligncenter,
 .video-alignleft,
 .video-alignright {
@@ -778,12 +795,14 @@ img {
         height: auto;
         width: 100%;
     }
+
     .video-alignleft {
         border-right: solid transparent 10px;
         float: left;
         height: auto;
         width: 50%;
     }
+
     .video-alignright {
         border-left: solid transparent 10px;
         float: right;
@@ -883,18 +902,21 @@ img.focalpoint:hover {
 }
 
 @media (min-width:768px) {
+
     .wp-caption.alignleft,
     img.alignleft {
         float: left;
-        max-width: 50%!important;
+        max-width: 50% !important;
         padding: 0 16px 0 0;
     }
+
     .wp-caption.alignright,
     img.alignright {
         float: right;
-        max-width: 50%!important;
+        max-width: 50% !important;
         padding: 0 0 0 16px;
     }
+
     .wp-caption.aligncenter,
     img.aligncenter {
         clear: both;
@@ -931,34 +953,42 @@ img.focalpoint:hover {
         float: left;
         width: 50%;
     }
+
     .gallery-columns-3 .gallery-item {
         float: left;
         max-width: 33.33%;
     }
+
     .gallery-columns-4 .gallery-item {
         float: left;
         max-width: 25%;
     }
+
     .gallery-columns-5 .gallery-item {
         float: left;
         max-width: 20%;
     }
+
     .gallery-columns-6 .gallery-item {
         float: left;
         max-width: 16.66%;
     }
+
     .gallery-columns-7 .gallery-item {
         float: left;
         max-width: 14.28%;
     }
+
     .gallery-columns-8 .gallery-item {
         float: left;
         max-width: 12.5%;
     }
+
     .gallery-columns-9 .gallery-item {
         float: left;
         max-width: 11.11%;
     }
+
     .gallery:after {
         content: "";
         display: table;
@@ -966,13 +996,11 @@ img.focalpoint:hover {
     }
 }
 
-
 /*  # spacer
     # 91001.1a
     # vertical spacers
     # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 **/
-
 .vert\:spacer-1\/2 {
     color: transparent;
     line-height: 0.5;
@@ -1003,16 +1031,12 @@ img.focalpoint:hover {
     width: 100%;
 }
 
-
 /*  # button
     # 91001.1a
     # button element
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 **/
-
-
 /*: default :*/
-
 button {
     background-color: var(--bg-bas-200);
     border-radius: .25rem;
@@ -1044,16 +1068,12 @@ button:hover {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
 }
 
-
 /*  # hvr
     # 91001.1a
     # hover animations
     # https://ianlunn.github.io/Hover/
 **/
-
-
 /* Grow */
-
 .hvr\:grow {
     display: inline-block;
     vertical-align: middle;
@@ -1073,9 +1093,7 @@ button:hover {
     transform: scale(1.1);
 }
 
-
 /* Grow Shadow */
-
 .hvr\:grow-shadow {
     display: inline-block;
     vertical-align: middle;
@@ -1096,9 +1114,7 @@ button:hover {
     transform: scale(1.1);
 }
 
-
 /* Shadow */
-
 .hvr\:shadow {
     display: inline-block;
     vertical-align: middle;
@@ -1117,9 +1133,7 @@ button:hover {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
-
 /* Glow Shadow */
-
 .hvr\:glow {
     display: inline-block;
     vertical-align: middle;
@@ -1138,9 +1152,7 @@ button:hover {
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6);
 }
 
-
 /* Box Shadow */
-
 .hvr\:box-shadow {
     display: inline-block;
     vertical-align: middle;
@@ -1159,9 +1171,7 @@ button:hover {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-
 /* Float Shadow */
-
 .hvr\:float-shadow {
     display: inline-block;
     vertical-align: middle;
@@ -1211,6 +1221,30 @@ button:hover {
     /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
+/* Icon Spin */
+.hvr\:icon-spin {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.hvr\:icon-spin .hvr\:icon {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.hvr\:icon-spin:hover .hvr\:icon,
+.hvr\:icon-spin:focus .hvr\:icon,
+.hvr\:icon-spin:active .hvr\:icon {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
 
 /*
     eof: style/common.css
