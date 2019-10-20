@@ -2,1768 +2,3029 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/palette.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: theme palette
  *  ref:    https://github.com/WpThemeDev/xidipity
+ *  cm:     the use of !important is intentional as the purpose of
+ *          using these classes is to overwrite the current setting
+ *          if one has been set.
  *
  *  @package WordPress
  *  @subpackage Xidipity
  *  @since 0.9.0
  *
 **/
-
 /*
     foreground colors
 */
-
-.fg\:clear {
-    color: transparent;
+.fg\:transparent,
+.fg\:transparent\!hover:hover,
+a.fg\:transparent\!active:active,
+a.fg\:transparent\!focus:focus,
+button.fg\:transparent\!active:active,
+button.fg\:transparent\!focus:focus {
+    color: transparent !important;
 }
 
 .fg\:blk,
-.fg\:blk-hover:hover,
-.fg\:blk-focus:focus {
-    color: var(--fg-blk);
+.fg\:blk\!hover:hover,
+a.fg\:blk\!active:active,
+a.fg\:blk\!focus:focus,
+button.fg\:blk\!active:active,
+button.fg\:blk\!focus:focus {
+    color: var(--fg-blk) !important;
 }
 
 .fg\:wht,
-.fg\:wht-hover:hover,
-.fg\:wht-focus:focus {
-    color: var(--fg-wht);
+.fg\:wht\!hover:hover,
+a.fg\:wht\!active:active,
+a.fg\:wht\!focus:focus,
+button.fg\:wht\!active:active,
+button.fg\:wht\!focus:focus {
+    color: var(--fg-wht) !important;
 }
 
 .fg\:bas-900,
-.fg\:bas-900-hover:hover,
-.fg\:bas-900-focus:focus {
-    color: var(--fg-bas-900);
+.fg\:bas-900\!hover:hover,
+a.fg\:bas-900\!active:active,
+a.fg\:bas-900\!focus:focus,
+button.fg\:bas-900\!active:active,
+button.fg\:bas-900\!focus:focus {
+    color: var(--fg-bas-900) !important;
 }
 
 .fg\:bas-800,
-.fg\:bas-800-hover:hover,
-.fg\:bas-800-focus:focus {
-    color: var(--fg-bas-800);
+.fg\:bas-800\!hover:hover,
+a.fg\:bas-800\!active:active,
+a.fg\:bas-800\!focus:focus,
+button.fg\:bas-800\!active:active,
+button.fg\:bas-800\!focus:focus {
+    color: var(--fg-bas-800) !important;
 }
 
 .fg\:bas-700,
-.fg\:bas-700-hover:hover,
-.fg\:bas-700-focus:focus {
-    color: var(--fg-bas-700);
+.fg\:bas-700\!hover:hover,
+a.fg\:bas-700\!active:active,
+a.fg\:bas-700\!focus:focus,
+button.fg\:bas-700\!active:active,
+button.fg\:bas-700\!focus:focus {
+    color: var(--fg-bas-700) !important;
 }
 
 .fg\:bas-600,
-.fg\:bas-600-hover:hover,
-.fg\:bas-600-focus:focus {
-    color: var(--fg-bas-600);
+.fg\:bas-600\!hover:hover,
+a.fg\:bas-600\!active:active,
+a.fg\:bas-600\!focus:focus,
+button.fg\:bas-600\!active:active,
+button.fg\:bas-600\!focus:focus {
+    color: var(--fg-bas-600) !important;
 }
 
 .fg\:bas-500,
-.fg\:bas-500-hover:hover,
-.fg\:bas-500-focus:focus {
-    color: var(--fg-bas-500);
+.fg\:bas-500\!hover:hover,
+a.fg\:bas-500\!active:active,
+a.fg\:bas-500\!focus:focus,
+button.fg\:bas-500\!active:active,
+button.fg\:bas-500\!focus:focus {
+    color: var(--fg-bas-500) !important;
 }
 
 .fg\:bas-400,
-.fg\:bas-400-hover:hover,
-.fg\:bas-400-focus:focus {
-    color: var(--fg-bas-400);
+.fg\:bas-400\!hover:hover,
+a.fg\:bas-400\!active:active,
+a.fg\:bas-400\!focus:focus,
+button.fg\:bas-400\!active:active,
+button.fg\:bas-400\!focus:focus {
+    color: var(--fg-bas-400) !important;
 }
 
 .fg\:bas-300,
-.fg\:bas-300-hover:hover,
-.fg\:bas-300-focus:focus {
-    color: var(--fg-bas-300);
+.fg\:bas-300\!hover:hover,
+a.fg\:bas-300\!active:active,
+a.fg\:bas-300\!focus:focus,
+button.fg\:bas-300\!active:active,
+button.fg\:bas-300\!focus:focus {
+    color: var(--fg-bas-300) !important;
 }
 
 .fg\:bas-200,
-.fg\:bas-200-hover:hover,
-.fg\:bas-200-focus:focus {
-    color: var(--fg-bas-200);
+.fg\:bas-200\!hover:hover,
+a.fg\:bas-200\!active:active,
+a.fg\:bas-200\!focus:focus,
+button.fg\:bas-200\!active:active,
+button.fg\:bas-200\!focus:focus {
+    color: var(--fg-bas-200) !important;
 }
 
 .fg\:bas-100,
-.fg\:bas-100-hover:hover,
-.fg\:bas-100-focus:focus {
-    color: var(--fg-bas-100);
+.fg\:bas-100\!hover:hover,
+a.fg\:bas-100\!active:active,
+a.fg\:bas-100\!focus:focus,
+button.fg\:bas-100\!active:active,
+button.fg\:bas-100\!focus:focus {
+    color: var(--fg-bas-100) !important;
 }
 
 .fg\:bas-050,
-.fg\:bas-050-hover:hover,
-.fg\:bas-050-focus:focus {
-    color: var(--fg-bas-050);
+.fg\:bas-050\!hover:hover,
+a.fg\:bas-050\!active:active,
+a.fg\:bas-050\!focus:focus,
+button.fg\:bas-050\!active:active,
+button.fg\:bas-050\!focus:focus {
+    color: var(--fg-bas-050) !important;
 }
 
 .fg\:pri-900,
-.fg\:pri-900-hover:hover,
-.fg\:pri-900-focus:focus {
-    color: var(--fg-pri-900);
+.fg\:pri-900\!hover:hover,
+a.fg\:pri-900\!active:active,
+a.fg\:pri-900\!focus:focus,
+button.fg\:pri-900\!active:active,
+button.fg\:pri-900\!focus:focus {
+    color: var(--fg-pri-900) !important;
 }
 
 .fg\:pri-800,
-.fg\:pri-800-hover:hover,
-.fg\:pri-800-focus:focus {
-    color: var(--fg-pri-800);
+.fg\:pri-800\!hover:hover,
+a.fg\:pri-800\!active:active,
+a.fg\:pri-800\!focus:focus,
+button.fg\:pri-800\!active:active,
+button.fg\:pri-800\!focus:focus {
+    color: var(--fg-pri-800) !important;
 }
 
 .fg\:pri-700,
-.fg\:pri-700-hover:hover,
-.fg\:pri-700-focus:focus {
-    color: var(--fg-pri-700);
+.fg\:pri-700\!hover:hover,
+a.fg\:pri-700\!active:active,
+a.fg\:pri-700\!focus:focus,
+button.fg\:pri-700\!active:active,
+button.fg\:pri-700\!focus:focus {
+    color: var(--fg-pri-700) !important;
 }
 
 .fg\:pri-600,
-.fg\:pri-600-hover:hover,
-.fg\:pri-600-focus:focus {
-    color: var(--fg-pri-600);
+.fg\:pri-600\!hover:hover,
+a.fg\:pri-600\!active:active,
+a.fg\:pri-600\!focus:focus,
+button.fg\:pri-600\!active:active,
+button.fg\:pri-600\!focus:focus {
+    color: var(--fg-pri-600) !important;
 }
 
 .fg\:pri-500,
-.fg\:pri-500-hover:hover,
-.fg\:pri-500-focus:focus {
-    color: var(--fg-pri-500);
+.fg\:pri-500\!hover:hover,
+a.fg\:pri-500\!active:active,
+a.fg\:pri-500\!focus:focus,
+button.fg\:pri-500\!active:active,
+button.fg\:pri-500\!focus:focus {
+    color: var(--fg-pri-500) !important;
 }
 
 .fg\:pri-400,
-.fg\:pri-400-hover:hover,
-.fg\:pri-400-focus:focus {
-    color: var(--fg-pri-400);
+.fg\:pri-400\!hover:hover,
+a.fg\:pri-400\!active:active,
+a.fg\:pri-400\!focus:focus,
+button.fg\:pri-400\!active:active,
+button.fg\:pri-400\!focus:focus {
+    color: var(--fg-pri-400) !important;
 }
 
 .fg\:pri-300,
-.fg\:pri-300-hover:hover,
-.fg\:pri-300-focus:focus {
-    color: var(--fg-pri-300);
+.fg\:pri-300\!hover:hover,
+a.fg\:pri-300\!active:active,
+a.fg\:pri-300\!focus:focus,
+button.fg\:pri-300\!active:active,
+button.fg\:pri-300\!focus:focus {
+    color: var(--fg-pri-300) !important;
 }
 
 .fg\:pri-200,
-.fg\:pri-200-hover:hover,
-.fg\:pri-200-focus:focus {
-    color: var(--fg-pri-200);
+.fg\:pri-200\!hover:hover,
+a.fg\:pri-200\!active:active,
+a.fg\:pri-200\!focus:focus,
+button.fg\:pri-200\!active:active,
+button.fg\:pri-200\!focus:focus {
+    color: var(--fg-pri-200) !important;
 }
 
 .fg\:pri-100,
-.fg\:pri-100-hover:hover,
-.fg\:pri-100-focus:focus {
-    color: var(--fg-pri-100);
+.fg\:pri-100\!hover:hover,
+a.fg\:pri-100\!active:active,
+a.fg\:pri-100\!focus:focus,
+button.fg\:pri-100\!active:active,
+button.fg\:pri-100\!focus:focus {
+    color: var(--fg-pri-100) !important;
 }
 
 .fg\:pri-050,
-.fg\:pri-050-hover:hover,
-.fg\:pri-050-focus:focus {
-    color: var(--fg-pri-050);
+.fg\:pri-050\!hover:hover,
+a.fg\:pri-050\!active:active,
+a.fg\:pri-050\!focus:focus,
+button.fg\:pri-050\!active:active,
+button.fg\:pri-050\!focus:focus {
+    color: var(--fg-pri-050) !important;
 }
 
 .fg\:sec-900,
-.fg\:sec-900-hover:hover,
-.fg\:sec-900-focus:focus {
-    color: var(--fg-sec-900);
+.fg\:sec-900\!hover:hover,
+a.fg\:sec-900\!active:active,
+a.fg\:sec-900\!focus:focus,
+button.fg\:sec-900\!active:active,
+button.fg\:sec-900\!focus:focus {
+    color: var(--fg-sec-900) !important;
 }
 
 .fg\:sec-800,
-.fg\:sec-800-hover:hover,
-.fg\:sec-800-focus:focus {
-    color: var(--fg-sec-800);
+.fg\:sec-800\!hover:hover,
+a.fg\:sec-800\!active:active,
+a.fg\:sec-800\!focus:focus,
+button.fg\:sec-800\!active:active,
+button.fg\:sec-800\!focus:focus {
+    color: var(--fg-sec-800) !important;
 }
 
 .fg\:sec-700,
-.fg\:sec-700-hover:hover,
-.fg\:sec-700-focus:focus {
-    color: var(--fg-sec-700);
+.fg\:sec-700\!hover:hover,
+a.fg\:sec-700\!active:active,
+a.fg\:sec-700\!focus:focus,
+button.fg\:sec-700\!active:active,
+button.fg\:sec-700\!focus:focus {
+    color: var(--fg-sec-700) !important;
 }
 
 .fg\:sec-600,
-.fg\:sec-600-hover:hover,
-.fg\:sec-600-focus:focus {
-    color: var(--fg-sec-600);
+.fg\:sec-600\!hover:hover,
+a.fg\:sec-600\!active:active,
+a.fg\:sec-600\!focus:focus,
+button.fg\:sec-600\!active:active,
+button.fg\:sec-600\!focus:focus {
+    color: var(--fg-sec-600) !important;
 }
 
 .fg\:sec-500,
-.fg\:sec-500-hover:hover,
-.fg\:sec-500-focus:focus {
-    color: var(--fg-sec-500);
+.fg\:sec-500\!hover:hover,
+a.fg\:sec-500\!active:active,
+a.fg\:sec-500\!focus:focus,
+button.fg\:sec-500\!active:active,
+button.fg\:sec-500\!focus:focus {
+    color: var(--fg-sec-500) !important;
 }
 
 .fg\:sec-400,
-.fg\:sec-400-hover:hover,
-.fg\:sec-400-focus:focus {
-    color: var(--fg-sec-400);
+.fg\:sec-400\!hover:hover,
+a.fg\:sec-400\!active:active,
+a.fg\:sec-400\!focus:focus,
+button.fg\:sec-400\!active:active,
+button.fg\:sec-400\!focus:focus {
+    color: var(--fg-sec-400) !important;
 }
 
 .fg\:sec-300,
-.fg\:sec-300-hover:hover,
-.fg\:sec-300-focus:focus {
-    color: var(--fg-sec-300);
+.fg\:sec-300\!hover:hover,
+a.fg\:sec-300\!active:active,
+a.fg\:sec-300\!focus:focus,
+button.fg\:sec-300\!active:active,
+button.fg\:sec-300\!focus:focus {
+    color: var(--fg-sec-300) !important;
 }
 
 .fg\:sec-200,
-.fg\:sec-200-hover:hover,
-.fg\:sec-200-focus:focus {
-    color: var(--fg-sec-200);
+.fg\:sec-200\!hover:hover,
+a.fg\:sec-200\!active:active,
+a.fg\:sec-200\!focus:focus,
+button.fg\:sec-200\!active:active,
+button.fg\:sec-200\!focus:focus {
+    color: var(--fg-sec-200) !important;
 }
 
 .fg\:sec-100,
-.fg\:sec-100-hover:hover,
-.fg\:sec-100-focus:focus {
-    color: var(--fg-sec-100);
+.fg\:sec-100\!hover:hover,
+a.fg\:sec-100\!active:active,
+a.fg\:sec-100\!focus:focus,
+button.fg\:sec-100\!active:active,
+button.fg\:sec-100\!focus:focus {
+    color: var(--fg-sec-100) !important;
 }
 
 .fg\:sec-050,
-.fg\:sec-050-hover:hover,
-.fg\:sec-050-focus:focus {
-    color: var(--fg-sec-050);
+.fg\:sec-050\!hover:hover,
+a.fg\:sec-050\!active:active,
+a.fg\:sec-050\!focus:focus,
+button.fg\:sec-050\!active:active,
+button.fg\:sec-050\!focus:focus {
+    color: var(--fg-sec-050) !important;
 }
-
 
 /*
     background colors
 */
-
-.bg\:clear {
-    background-color: transparent;
+.bg\:transparent,
+.bg\:transparent\!hover:hover,
+a.bg\:transparent:active,
+a.bg\:transparent:focus,
+button.bg\:transparent:active,
+button.bg\:transparent:focus {
+    background-color: transparent !important;
 }
 
 .bg\:blk,
-.bg\:blk-hover:hover,
-.bg\:blk-focus:focus {
-    background-color: var(--bg-blk);
+.bg\:blk\!hover:hover,
+a.bg\:blk\!active:active,
+a.bg\:blk\!focus:focus,
+button.bg\:blk\!active:active,
+button.bg\:blk\!focus:focus {
+    background-color: var(--bg-blk) !important;
 }
 
 .bg\:wht,
-.bg\:wht-hover:hover,
-.bg\:wht-focus:focus {
-    background-color: var(--bg-wht);
+.bg\:wht\!hover:hover,
+a.bg\:wht\!active:active,
+a.bg\:wht\!focus:focus,
+button.bg\:wht\!active:active,
+button.bg\:wht\!focus:focus {
+    background-color: var(--bg-wht) !important;
 }
 
 .bg\:bas-900,
-.bg\:bas-900-hover:hover,
-.bg\:bas-900-focus:focus {
-    background-color: var(--bg-bas-900);
+.bg\:bas-900\!hover:hover,
+a.bg\:bas-900\!active:active,
+a.bg\:bas-900\!focus:focus,
+button.bg\:bas-900\!active:active,
+button.bg\:bas-900\!focus:focus {
+    background-color: var(--bg-bas-900) !important;
 }
 
 .bg\:bas-800,
-.bg\:bas-800-hover:hover,
-.bg\:bas-800-focus:focus {
-    background-color: var(--bg-bas-800);
+.bg\:bas-800\!hover:hover,
+a.bg\:bas-800\!active:active,
+a.bg\:bas-800\!focus:focus,
+button.bg\:bas-800\!active:active,
+button.bg\:bas-800\!focus:focus {
+    background-color: var(--bg-bas-800) !important;
 }
 
 .bg\:bas-700,
-.bg\:bas-700-hover:hover,
-.bg\:bas-700-focus:focus {
-    background-color: var(--bg-bas-700);
+.bg\:bas-700\!hover:hover,
+a.bg\:bas-700\!active:active,
+a.bg\:bas-700\!focus:focus,
+button.bg\:bas-700\!active:active,
+button.bg\:bas-700\!focus:focus {
+    background-color: var(--bg-bas-700) !important;
 }
 
 .bg\:bas-600,
-.bg\:bas-600-hover:hover,
-.bg\:bas-600-focus:focus {
-    background-color: var(--bg-bas-600);
+.bg\:bas-600\!hover:hover,
+a.bg\:bas-600\!active:active,
+a.bg\:bas-600\!focus:focus,
+button.bg\:bas-600\!active:active,
+button.bg\:bas-600\!focus:focus {
+    background-color: var(--bg-bas-600) !important;
 }
 
 .bg\:bas-500,
-.bg\:bas-500-hover:hover,
-.bg\:bas-500-focus:focus {
-    background-color: var(--bg-bas-500);
+.bg\:bas-500\!hover:hover,
+a.bg\:bas-500\!active:active,
+a.bg\:bas-500\!focus:focus,
+button.bg\:bas-500\!active:active,
+button.bg\:bas-500\!focus:focus {
+    background-color: var(--bg-bas-500) !important;
 }
 
 .bg\:bas-400,
-.bg\:bas-400-hover:hover,
-.bg\:bas-400-focus:focus {
-    background-color: var(--bg-bas-400);
+.bg\:bas-400\!hover:hover,
+a.bg\:bas-400\!active:active,
+a.bg\:bas-400\!focus:focus,
+button.bg\:bas-400\!active:active,
+button.bg\:bas-400\!focus:focus {
+    background-color: var(--bg-bas-400) !important;
 }
 
 .bg\:bas-300,
-.bg\:bas-300-hover:hover,
-.bg\:bas-300-focus:focus {
-    background-color: var(--bg-bas-300);
+.bg\:bas-300\!hover:hover,
+a.bg\:bas-300\!active:active,
+a.bg\:bas-300\!focus:focus,
+button.bg\:bas-300\!active:active,
+button.bg\:bas-300\!focus:focus {
+    background-color: var(--bg-bas-300) !important;
 }
 
 .bg\:bas-200,
-.bg\:bas-200-hover:hover,
-.bg\:bas-200-focus:focus {
-    background-color: var(--bg-bas-200);
+.bg\:bas-200\!hover:hover,
+a.bg\:bas-200\!active:active,
+a.bg\:bas-200\!focus:focus,
+button.bg\:bas-200\!active:active,
+button.bg\:bas-200\!focus:focus {
+    background-color: var(--bg-bas-200) !important;
 }
 
 .bg\:bas-100,
-.bg\:bas-100-hover:hover,
-.bg\:bas-100-focus:focus {
-    background-color: var(--bg-bas-100);
+.bg\:bas-100\!hover:hover,
+a.bg\:bas-100\!active:active,
+a.bg\:bas-100\!focus:focus,
+button.bg\:bas-100\!active:active,
+button.bg\:bas-100\!focus:focus {
+    background-color: var(--bg-bas-100) !important;
 }
 
 .bg\:bas-050,
-.bg\:bas-050-hover:hover,
-.bg\:bas-050-focus:focus {
-    background-color: var(--bg-bas-050);
+.bg\:bas-050\!hover:hover,
+a.bg\:bas-050\!active:active,
+a.bg\:bas-050\!focus:focus,
+button.bg\:bas-050\!active:active,
+button.bg\:bas-050\!focus:focus {
+    background-color: var(--bg-bas-050) !important;
 }
 
 .bg\:pri-900,
-.bg\:pri-900-hover:hover,
-.bg\:pri-900-focus:focus {
-    background-color: var(--bg-pri-900);
+.bg\:pri-900\!hover:hover,
+a.bg\:pri-900\!active:active,
+a.bg\:pri-900\!focus:focus,
+button.bg\:pri-900\!active:active,
+button.bg\:pri-900\!focus:focus {
+    background-color: var(--bg-pri-900) !important;
 }
 
 .bg\:pri-800,
-.bg\:pri-800-hover:hover,
-.bg\:pri-800-focus:focus {
-    background-color: var(--bg-pri-800);
+.bg\:pri-800\!hover:hover,
+a.bg\:pri-800\!active:active,
+a.bg\:pri-800\!focus:focus,
+button.bg\:pri-800\!active:active,
+button.bg\:pri-800\!focus:focus {
+    background-color: var(--bg-pri-800) !important;
 }
 
 .bg\:pri-700,
-.bg\:pri-700-hover:hover,
-.bg\:pri-700-focus:focus {
-    background-color: var(--bg-pri-700);
+.bg\:pri-700\!hover:hover,
+a.bg\:pri-700\!active:active,
+a.bg\:pri-700\!focus:focus,
+button.bg\:pri-700\!active:active,
+button.bg\:pri-700\!focus:focus {
+    background-color: var(--bg-pri-700) !important;
 }
 
 .bg\:pri-600,
-.bg\:pri-600-hover:hover,
-.bg\:pri-600-focus:focus {
-    background-color: var(--bg-pri-600);
+.bg\:pri-600\!hover:hover,
+a.bg\:pri-600\!active:active,
+a.bg\:pri-600\!focus:focus,
+button.bg\:pri-600\!active:active,
+button.bg\:pri-600\!focus:focus {
+    background-color: var(--bg-pri-600) !important;
 }
 
 .bg\:pri-500,
-.bg\:pri-500-hover:hover,
-.bg\:pri-500-focus:focus {
-    background-color: var(--bg-pri-500);
+.bg\:pri-500\!hover:hover,
+a.bg\:pri-500\!active:active,
+a.bg\:pri-500\!focus:focus,
+button.bg\:pri-500\!active:active,
+button.bg\:pri-500\!focus:focus {
+    background-color: var(--bg-pri-500) !important;
 }
 
 .bg\:pri-400,
-.bg\:pri-400-hover:hover,
-.bg\:pri-400-focus:focus {
-    background-color: var(--bg-pri-400);
+.bg\:pri-400\!hover:hover,
+a.bg\:pri-400\!active:active,
+a.bg\:pri-400\!focus:focus,
+button.bg\:pri-400\!active:active,
+button.bg\:pri-400\!focus:focus {
+    background-color: var(--bg-pri-400) !important;
 }
 
 .bg\:pri-300,
-.bg\:pri-300-hover:hover,
-.bg\:pri-300-focus:focus {
-    background-color: var(--bg-pri-300);
+.bg\:pri-300\!hover:hover,
+a.bg\:pri-300\!active:active,
+a.bg\:pri-300\!focus:focus,
+button.bg\:pri-300\!active:active,
+button.bg\:pri-300\!focus:focus {
+    background-color: var(--bg-pri-300) !important;
 }
 
 .bg\:pri-200,
-.bg\:pri-200-hover:hover,
-.bg\:pri-200-focus:focus {
-    background-color: var(--bg-pri-200);
+.bg\:pri-200\!hover:hover,
+a.bg\:pri-200\!active:active,
+a.bg\:pri-200\!focus:focus,
+button.bg\:pri-200\!active:active,
+button.bg\:pri-200\!focus:focus {
+    background-color: var(--bg-pri-200) !important;
 }
 
 .bg\:pri-100,
-.bg\:pri-100-hover:hover,
-.bg\:pri-100-focus:focus {
-    background-color: var(--bg-pri-100);
+.bg\:pri-100\!hover:hover,
+a.bg\:pri-100\!active:active,
+a.bg\:pri-100\!focus:focus,
+button.bg\:pri-100\!active:active,
+button.bg\:pri-100\!focus:focus {
+    background-color: var(--bg-pri-100) !important;
 }
 
 .bg\:pri-050,
-.bg\:pri-050-hover:hover,
-.bg\:pri-050-focus:focus {
-    background-color: var(--bg-pri-050);
+.bg\:pri-050\!hover:hover,
+a.bg\:pri-050\!active:active,
+a.bg\:pri-050\!focus:focus,
+button.bg\:pri-050\!active:active,
+button.bg\:pri-050\!focus:focus {
+    background-color: var(--bg-pri-050) !important;
 }
 
 .bg\:sec-900,
-.bg\:sec-900-hover:hover,
-.bg\:sec-900-focus:focus {
-    background-color: var(--bg-sec-900);
+.bg\:sec-900\!hover:hover,
+a.bg\:sec-900\!active:active,
+a.bg\:sec-900\!focus:focus,
+button.bg\:sec-900\!active:active,
+button.bg\:sec-900\!focus:focus {
+    background-color: var(--bg-sec-900) !important;
 }
 
 .bg\:sec-800,
-.bg\:sec-800-hover:hover,
-.bg\:sec-800-focus:focus {
-    background-color: var(--bg-sec-800);
+.bg\:sec-800\!hover:hover,
+a.bg\:sec-800\!active:active,
+a.bg\:sec-800\!focus:focus,
+button.bg\:sec-800\!active:active,
+button.bg\:sec-800\!focus:focus {
+    background-color: var(--bg-sec-800) !important;
 }
 
 .bg\:sec-700,
-.bg\:sec-700-hover:hover,
-.bg\:sec-700-focus:focus {
-    background-color: var(--bg-sec-700);
+.bg\:sec-700\!hover:hover,
+a.bg\:sec-700\!active:active,
+a.bg\:sec-700\!focus:focus,
+button.bg\:sec-700\!active:active,
+button.bg\:sec-700\!focus:focus {
+    background-color: var(--bg-sec-700) !important;
 }
 
 .bg\:sec-600,
-.bg\:sec-600-hover:hover,
-.bg\:sec-600-focus:focus {
-    background-color: var(--bg-sec-600);
+.bg\:sec-600\!hover:hover,
+a.bg\:sec-600\!active:active,
+a.bg\:sec-600\!focus:focus,
+button.bg\:sec-600\!active:active,
+button.bg\:sec-600\!focus:focus {
+    background-color: var(--bg-sec-600) !important;
 }
 
 .bg\:sec-500,
-.bg\:sec-500-hover:hover,
-.bg\:sec-500-focus:focus {
-    background-color: var(--bg-sec-500);
+.bg\:sec-500\!hover:hover,
+a.bg\:sec-500\!active:active,
+a.bg\:sec-500\!focus:focus,
+button.bg\:sec-500\!active:active,
+button.bg\:sec-500\!focus:focus {
+    background-color: var(--bg-sec-500) !important;
 }
 
 .bg\:sec-400,
-.bg\:sec-400-hover:hover,
-.bg\:sec-400-focus:focus {
-    background-color: var(--bg-sec-400);
+.bg\:sec-400\!hover:hover,
+a.bg\:sec-400\!active:active,
+a.bg\:sec-400\!focus:focus,
+button.bg\:sec-400\!active:active,
+button.bg\:sec-400\!focus:focus {
+    background-color: var(--bg-sec-400) !important;
 }
 
 .bg\:sec-300,
-.bg\:sec-300-hover:hover,
-.bg\:sec-300-focus:focus {
-    background-color: var(--bg-sec-300);
+.bg\:sec-300\!hover:hover,
+a.bg\:sec-300\!active:active,
+a.bg\:sec-300\!focus:focus,
+button.bg\:sec-300\!active:active,
+button.bg\:sec-300\!focus:focus {
+    background-color: var(--bg-sec-300) !important;
 }
 
 .bg\:sec-200,
-.bg\:sec-200-hover:hover,
-.bg\:sec-200-focus:focus {
-    background-color: var(--bg-sec-200);
+.bg\:sec-200\!hover:hover,
+a.bg\:sec-200\!active:active,
+a.bg\:sec-200\!focus:focus,
+button.bg\:sec-200\!active:active,
+button.bg\:sec-200\!focus:focus {
+    background-color: var(--bg-sec-200) !important;
 }
 
 .bg\:sec-100,
-.bg\:sec-100-hover:hover,
-.bg\:sec-100-focus:focus {
-    background-color: var(--bg-sec-100);
+.bg\:sec-100\!hover:hover,
+a.bg\:sec-100\!active:active,
+a.bg\:sec-100\!focus:focus,
+button.bg\:sec-100\!active:active,
+button.bg\:sec-100\!focus:focus {
+    background-color: var(--bg-sec-100) !important;
 }
 
 .bg\:sec-050,
-.bg\:sec-050-hover:hover,
-.bg\:sec-050-focus:focus {
-    background-color: var(--bg-sec-050);
+.bg\:sec-050\!hover:hover,
+a.bg\:sec-050\!active:active,
+a.bg\:sec-050\!focus:focus,
+button.bg\:sec-050\!active:active,
+button.bg\:sec-050\!focus:focus {
+    background-color: var(--bg-sec-050) !important;
 }
 
-
 /*
-    standard colors
+    other md colors
 */
-
 .fg\:red,
-.fg\:red-hover:hover,
-.fg\:red-focus:focus {
-    color: #F44336;
+.fg\:red\!hover:hover,
+a.fg\:red\!active:active,
+a.fg\:red\!focus:focus,
+button.fg\:red\!active:active,
+button.fg\:red\!focus:focus {
+    color: var(--fg-red);
 }
 
 .bg\:red,
-.bg\:red-hover:hover,
-.bg\:red-focus:focus {
-    background-color: #F44336;
+.bg\:red\!hover:hover,
+a.bg\:red\!active:active,
+a.bg\:red\!focus:focus,
+button.bg\:red\!active:active,
+button.bg\:red\!focus:focus {
+    background-color: var(--bg-red);
 }
 
 .fg\:pink,
-.fg\:pink-hover:hover,
-.fg\:pink-focus:focus {
-    color: #E91E63;
+.fg\:pink\!hover:hover,
+a.fg\:pink\!active:active,
+a.fg\:pink\!focus:focus,
+button.fg\:pink\!active:active,
+button.fg\:pink\!focus:focus {
+    color: var(--fg-pink);
 }
 
 .bg\:pink,
-.bg\:pink-hover:hover,
-.bg\:pink-focus:focus {
-    background-color: #E91E63;
+.bg\:pink\!hover:hover,
+a.bg\:pink\!active:active,
+a.bg\:pink\!focus:focus,
+button.bg\:pink\!active:active,
+button.bg\:pink\!focus:focus {
+    background-color: var(--bg-pink);
 }
 
-.fg\:purple .fg\:purple-hover:hover,
-.fg\:purple-focus:focus {
-    color: #9C27B0;
+.fg\:purple,
+.fg\:purple\!hover:hover,
+a.fg\:purple\!active:active,
+a.fg\:purple\!focus:focus,
+button.fg\:purple\!active:active,
+button.fg\:purple\!focus:focus {
+    color: var(--fg-purple);
 }
 
 .bg\:purple,
-.bg\:purple-hover:hover,
-.bg\:purple-focus:focus {
-    background-color: #9C27B0;
+.bg\:purple\!hover:hover,
+a.bg\:purple\!active:active,
+a.bg\:purple\!focus:focus,
+button.bg\:purple\!active:active,
+button.bg\:purple\!focus:focus {
+    background-color: var(--bg-purple);
 }
 
 .fg\:deep-purple,
-.fg\:deep-purple-hover:hover,
-.fg\:deep-purple-focus:focus {
-    color: #673AB7;
+.fg\:deep-purple\!hover:hover,
+a.fg\:deep-purple\!active:active,
+a.fg\:deep-purple\!focus:focus,
+button.fg\:deep-purple\!active:active,
+button.fg\:deep-purple\!focus:focus {
+    color: var(--fg-deep-purple);
 }
 
 .bg\:deep-purple,
-.bg\:deep-purple-hover:hover,
-.bg\:deep-purple-focus:focus {
-    background-color: #673AB7;
+.bg\:deep-purple\!hover:hover,
+a.bg\:deep-purple\!active:active,
+a.bg\:deep-purple\!focus:focus,
+button.bg\:deep-purple\!active:active,
+button.bg\:deep-purple\!focus:focus {
+    background-color: var(--bg-deep-purple);
 }
 
 .fg\:indigo,
-.fg\:indigo-hover:hover,
-.fg\:indigo-focus:focus {
-    color: #3F51B5;
+.fg\:indigo\!hover:hover,
+a.fg\:indigo\!active:active,
+a.fg\:indigo\!focus:focus,
+button.fg\:indigo\!active:active,
+button.fg\:indigo\!focus:focus {
+    color: var(--fg-indigo);
 }
 
 .bg\:indigo,
-.bg\:indigo-hover:hover,
-.bg\:indigo-focus:focus {
-    background-color: #3F51B5;
+.bg\:indigo\!hover:hover,
+a.bg\:indigo\!active:active,
+a.bg\:indigo\!focus:focus,
+button.bg\:indigo\!active:active,
+button.bg\:indigo\!focus:focus {
+    background-color: var(--bg-indigo);
 }
 
 .fg\:blue,
-.fg\:blue-hover:hover,
-.fg\:blue-focus:focus {
-    color: #2196F3;
+.fg\:blue\!hover:hover,
+a.fg\:blue\!active:active,
+a.fg\:blue\!focus:focus,
+button.fg\:blue\!active:active,
+button.fg\:blue\!focus:focus {
+    color: var(--fg-blue);
 }
 
 .bg\:blue,
-.bg\:blue-hover:hover,
-.bg\:blue-focus:focus {
-    background-color: #2196F3;
+.bg\:blue\!hover:hover,
+a.bg\:blue\!active:active,
+a.bg\:blue\!focus:focus,
+button.bg\:blue\!active:active,
+button.bg\:blue\!focus:focus {
+    background-color: var(--bg-blue);
 }
 
 .fg\:light-blue,
-.fg\:light-blue-hover:hover,
-.fg\:light-blue-focus:focus {
-    color: #03A9F4;
+.fg\:light-blue\!hover:hover,
+a.fg\:light-blue\!active:active,
+a.fg\:light-blue\!focus:focus,
+button.fg\:light-blue\!active:active,
+button.fg\:light-blue\!focus:focus {
+    color: var(--fg-light-blue);
 }
 
 .bg\:light-blue,
-.bg\:light-blue-hover:hover,
-.bg\:light-blue-focus:focus {
-    background-color: #03A9F4;
+.bg\:light-blue\!hover:hover,
+a.bg\:light-blue\!active:active,
+a.bg\:light-blue\!focus:focus,
+button.bg\:light-blue\!active:active,
+button.bg\:light-blue\!focus:focus {
+    background-color: var(--bg-light-blue);
 }
 
 .fg\:cyan,
-.fg\:cyan-hover:hover,
-.fg\:cyan-focus:focus {
-    color: #00BCD4;
+.fg\:cyan\!hover:hover,
+a.fg\:cyan\!active:active,
+a.fg\:cyan\!focus:focus,
+button.fg\:cyan\!active:active,
+button.fg\:cyan\!focus:focus {
+    color: var(--fg-cyan);
 }
 
 .bg\:cyan,
-.bg\:cyan-hover:hover,
-.bg\:cyan-focus:focus {
-    background-color: #00BCD4;
+.bg\:cyan\!hover:hover,
+a.bg\:cyan\!active:active,
+a.bg\:cyan\!focus:focus,
+button.bg\:cyan\!active:active,
+button.bg\:cyan\!focus:focus {
+    background-color: var(--bg-cyan);
 }
 
 .fg\:teal,
-.fg\:teal-hover:hover,
-.fg\:teal-focus:focus {
-    color: #009688;
+.fg\:teal\!hover:hover,
+a.fg\:teal\!active:active,
+a.fg\:teal\!focus:focus,
+button.fg\:teal\!active:active,
+button.fg\:teal\!focus:focus {
+    color: var(--fg-teal);
 }
 
 .bg\:teal,
-.bg\:teal-hover:hover,
-.bg\:teal-focus:focus {
-    background-color: #009688;
+.bg\:teal\!hover:hover,
+a.bg\:teal\!active:active,
+a.bg\:teal\!focus:focus,
+button.bg\:teal\!active:active,
+button.bg\:teal\!focus:focus {
+    background-color: var(--bg-teal);
 }
 
 .fg\:green,
-.fg\:green-hover:hover,
-.fg\:green-focus:focus {
-    color: #4CAF50;
+.fg\:green\!hover:hover,
+a.fg\:green\!active:active,
+a.fg\:green\!focus:focus,
+button.fg\:green\!active:active,
+button.fg\:green\!focus:focus {
+    color: var(--fg-green);
 }
 
 .bg\:green,
-.bg\:green-hover:hover,
-.bg\:green-focus:focus {
-    background-color: #4CAF50;
+.bg\:green\!hover:hover,
+a.bg\:green\!active:active,
+a.bg\:green\!focus:focus,
+button.bg\:green\!active:active,
+button.bg\:green\!focus:focus {
+    background-color: var(--bg-green);
 }
 
 .fg\:light-green,
-.fg\:light-green-hover:hover,
-.fg\:light-green-focus:focus {
-    color: #8BC34A;
+.fg\:light-green\!hover:hover,
+a.fg\:light-green\!active:active,
+a.fg\:light-green\!focus:focus,
+button.fg\:light-green\!active:active,
+button.fg\:light-green\!focus:focus {
+    color: var(--fg-light-green);
 }
 
 .bg\:light-green,
-.bg\:light-green-hover:hover,
-.bg\:light-green-focus:focus {
-    background-color: #8BC34A;
+.bg\:light-green\!hover:hover,
+a.bg\:light-green\!active:active,
+a.bg\:light-green\!focus:focus,
+button.bg\:light-green\!active:active,
+button.bg\:light-green\!focus:focus {
+    background-color: var(--bg-light-green);
 }
 
 .fg\:lime,
-.fg\:lime-hover:hover,
-.fg\:lime-focus:focus {
-    color: #CDDC39;
+.fg\:lime\!hover:hover,
+a.fg\:lime\!active:active,
+a.fg\:lime\!focus:focus,
+button.fg\:lime\!active:active,
+button.fg\:lime\!focus:focus {
+    color: var(--fg-lime);
 }
 
 .bg\:lime,
-.bg\:lime-hover:hover,
-.bg\:lime-focus:focus {
-    background-color: #CDDC39;
+.bg\:lime\!hover:hover,
+a.bg\:lime\!active:active,
+a.bg\:lime\!focus:focus,
+button.bg\:lime\!active:active,
+button.bg\:lime\!focus:focus {
+    background-color: var(--bg-lime);
 }
 
 .fg\:yellow,
-.fg\:yellow-hover:hover,
-.fg\:yellow-focus:focus {
-    color: #FFEB3B;
+.fg\:yellow\!hover:hover,
+a.fg\:yellow\!active:active,
+a.fg\:yellow\!focus:focus,
+button.fg\:yellow\!active:active,
+button.fg\:yellow\!focus:focus {
+    color: var(--fg-yellow);
 }
 
 .bg\:yellow,
-.bg\:yellow-hover:hover,
-.bg\:yellow-focus:focus {
-    background-color: #FFEB3B;
+.bg\:yellow\!hover:hover,
+a.bg\:yellow\!active:active,
+a.bg\:yellow\!focus:focus,
+button.bg\:yellow\!active:active,
+button.bg\:yellow\!focus:focus {
+    background-color: var(--bg-yellow);
 }
 
 .fg\:amber,
-.fg\:amber-hover:hover,
-.fg\:amber-focus:focus {
-    color: #FFC107;
+.fg\:amber\!hover:hover,
+a.fg\:amber\!active:active,
+a.fg\:amber\!focus:focus,
+button.fg\:amber\!active:active,
+button.fg\:amber\!focus:focus {
+    color: var(--fg-amber);
 }
 
 .bg\:amber,
-.bg\:amber-hover:hover,
-.bg\:amber-focus:focus {
-    background-color: #FFC107;
+.bg\:amber\!hover:hover,
+a.bg\:amber\!active:active,
+a.bg\:amber\!focus:focus,
+button.bg\:amber\!active:active,
+button.bg\:amber\!focus:focus {
+    background-color: vr(--bg-amber);
 }
 
 .fg\:orange,
-.fg\:orange-hover:hover,
-.fg\:orange-focus:focus {
-    color: #FF9800;
+.fg\:orange\!hover:hover,
+a.fg\:orange\!active:active,
+a.fg\:orange\!focus:focus,
+button.fg\:orange\!active:active,
+button.fg\:orange\!focus:focus {
+    color: var(--fg-orange);
 }
 
 .bg\:orange,
-.bg\:orange-hover:hover,
-.bg\:orange-focus:focus {
-    background-color: #FF9800;
+.bg\:orange\!hover:hover,
+a.bg\:orange\!active:active a.bg\:orange\!focus:focus,
+button.bg\:orange\!active:active,
+button.bg\:orange\!focus:focus {
+    background-color: var(--bg-orange);
 }
 
 .fg\:deep-orange,
-.fg\:deep-orange-hover:hover,
-.fg\:deep-orange-focus:focus {
-    color: #FF5722;
+.fg\:deep-orange\!hover:hover,
+a.fg\:deep-orange\!active:active,
+a.fg\:deep-orange\!focus:focus,
+button.fg\:deep-orange\!active:active,
+button.fg\:deep-orange\!focus:focus {
+    color: var(--fg-deep-orange);
 }
 
 .bg\:deep-orange,
-.bg\:deep-orange-hover:hover,
-.bg\:deep-orange-focus:focus {
-    background-color: #FF5722;
+.bg\:deep-orange\!hover:hover,
+a.bg\:deep-orange\!active:active,
+a.bg\:deep-orange\!focus:focus,
+button.bg\:deep-orange\!active:active,
+button.bg\:deep-orange\!focus:focus {
+    background-color: var(--bg-deep-orange);
 }
 
 .fg\:brown,
-.fg\:brown-hover:hover,
-.fg\:brown-focus:focus {
-    color: #795548;
+.fg\:brown\!hover:hover,
+a.fg\:brown\!active:active,
+a.fg\:brown\!focus:focus,
+button.fg\:brown\!active:active,
+button.fg\:brown\!focus:focus {
+    color: var(--fg-brown);
 }
 
 .bg\:brown,
-.bg\:brown-hover:hover,
-.bg\:brown-focus:focus {
-    background-color: #795548;
+.bg\:brown\!hover:hover,
+a.bg\:brown\!active:active,
+a.bg\:brown\!focus:focus,
+button.bg\:brown\!active:active,
+button.bg\:brown\!focus:focus {
+    background-color: var(--bg-brown);
 }
 
 .fg\:grey,
-.fg\:grey-hover:hover,
-.fg\:grey-focus:focus {
-    color: #9E9E9E;
+.fg\:grey\!hover:hover,
+a.fg\:grey\!active:active,
+a.fg\:grey\!focus:focus,
+button.fg\:grey\!active:active,
+button.fg\:grey\!focus:focus {
+    color: var(--fg-grey);
 }
 
 .bg\:grey,
-.bg\:grey-hover:hover,
-.bg\:grey-focus:focus {
-    background-color: #9E9E9E;
+.bg\:grey\!hover:hover,
+a.bg\:grey\!active:active,
+a.bg\:grey\!focus:focus,
+button.bg\:grey\!active:active,
+button.bg\:grey\!focus:focus {
+    background-color: vr(--bg-grey);
 }
 
 .fg\:blue-grey,
-.fg\:blue-grey-hover:hover,
-.fg\:blue-grey-focus:focus {
-    color: #607D8B;
+.fg\:blue-grey\!hover:hover,
+a.fg\:blue-grey\!active:active,
+a.fg\:blue-grey\!focus:focus,
+button.fg\:blue-grey\!active:active,
+button.fg\:blue-grey\!focus:focus {
+    color: var(--fg-blue-grey);
 }
 
 .bg\:blue-grey,
-.bg\:blue-grey-hover:hover,
-.bg\:blue-grey-focus:focus {
-    background-color: #607D8B;
+.bg\:blue-grey\!hover:hover,
+a.bg\:blue-grey\!active:active,
+a.bg\:blue-grey\!focus:focus,
+button.bg\:blue-grey\!active:active,
+button.bg\:blue-grey\!focus:focus {
+    background-color: var(--bg-blue-grey);
 }
-
 
 /*
-    system colors
+    color shortcuts
 */
-
-.sys\:fg {
-    color: var(--sys-font-color);
+/*: theme fg & bg colors :*/
+.sys\:fg,
+.sys\:fg\!hover:hover,
+a.sys\:fg\!active:active,
+a.sys\:fg\!focus:focus,
+button.sys\:fg\!active:active,
+button.sys\:fg\!focus:focus {
+    color: var(--sys-font-color) !important;
 }
 
-.sys\:bg {
-    background-color: var(--sys-content-bg-color);
+.sys\:bg,
+.sys\:bg\!hover:hover,
+a.sys\:bg\!active:active,
+a.sys\:bg\!focus:focus,
+button.sys\:bg\!active:active,
+button.sys\:bg\!focus:focus {
+    background-color: var(--sys-content-fg-color) !important;
 }
 
-.fg\:link {
-    color: var(--sys-lnk-pri-color);
+/*: theme link colors :*/
+.fg\:link,
+a.fg\:link,
+button.fg\:link {
+    color: var(--sys-lnk-pri-color) !important;
 }
 
-.fg\:link-hover:hover {
-    color: var(--sys-lnk-sec-color);
+.fg\:link\!hover:hover,
+a.fg\:link\!active:active,
+a.fg\:link\!focus:focus,
+button.fg\:link\!active:active,
+button.fg\:link\!focus:focus {
+    color: var(--sys-lnk-sec-color) !important;
 }
 
+/*: background tints :*/
+.bg\:dark\!hover:hover,
+button.bg\:dark\!active:active,
+button.bg\:dark\!focus:focus {
+    filter: brightness(92%) !important;
+}
+
+.bg\:darker\!hover:hover,
+button.bg\:darker\!active:active,
+button.bg\:darker\!focus:focus {
+    filter: brightness(96%) !important;
+}
+
+.bg\:brighter\!hover:hover,
+button.bg\:brighter\!active:active,
+button.bg\:brighter\!focus:focus {
+    filter: brightness(104%) !important;
+}
+
+.bg\:bright\!hover:hover,
+button.bg\:bright\!active:active,
+button.bg\:bright\!focus:focus {
+    filter: brightness(108%) !important;
+}
+
+/*: gradient tints :*/
+.bg\:bas-gradient {
+    background: var(--bg-bas-400);
+    background: -moz-linear-gradient(top, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+    background: -webkit-linear-gradient(top, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+    background: linear-gradient(to bottom, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--bg-bas-200)', endColorstr='var(--bg-bas-400)', GradientType=0);
+}
+
+.bg\:pri-gradient {
+    background: var(--bg-pri-200);
+    background: -moz-linear-gradient(top, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+    background: -webkit-linear-gradient(top, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+    background: linear-gradient(to bottom, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--bg-pri-050)', endColorstr='var(--bg-pri-200)', GradientType=0);
+}
+
+.bg\:sec-gradient {
+    background: var(--bg-sec-200);
+    background: -moz-linear-gradient(top, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+    background: -webkit-linear-gradient(top, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+    background: linear-gradient(to bottom, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--bg-sec-050)', endColorstr='var(--bg-sec-200)', GradientType=0);
+}
 
 /*
     border colors
 */
+.bdr\:transparent,
+.bdr\:transparent\!hover:hover,
+a.bdr\:transparent\!focus:focus,
+a.bdr\:transparent,
+button.bdr\:transparent\!hover:hover,
+button.bdr\:transparent\!focus:focus {
+    border-color: transparent !important;
+}
 
 .bdr\:blk,
-.bdr\:blk-hover:hover,
-.bdr\:blk-focus:focus {
+.bdr\:blk\!hover:hover,
+a.bdr\:blk\!focus:focus,
+a.bdr\:blk,
+button.bdr\:blk\!hover:hover,
+button.bdr\:blk\!focus:focus {
     border-color: var(--fg-blk) !important;
 }
 
 .bdr\:wht,
-.bdr\:wht-hover:hover,
-.bdr\:wht-focus:focus {
+.bdr\:wht\!hover:hover,
+a.bdr\:wht\!focus:focus,
+a.bdr\:wht,
+button.bdr\:wht\!hover:hover,
+button.bdr\:wht\!focus:focus {
     border-color: var(--fg-wht) !important;
 }
 
 .bdr\:bas-900,
-.bdr\:bas-900-hover:hover,
-.bdr\:bas-900-focus:focus {
+.bdr\:bas-900\!hover:hover,
+a.bdr\:bas-900\!focus:focus,
+a.bdr\:bas-900,
+button.bdr\:bas-900\!hover:hover,
+button.bdr\:bas-900\!focus:focus {
     border-color: var(--fg-bas-900) !important;
 }
 
 .bdr\:bas-800,
-.bdr\:bas-800-hover:hover,
-.bdr\:bas-800-focus:focus {
+.bdr\:bas-800\!hover:hover,
+a.bdr\:bas-800\!focus:focus,
+a.bdr\:bas-800,
+button.bdr\:bas-800\!hover:hover,
+button.bdr\:bas-800\!focus:focus {
     border-color: var(--fg-bas-800) !important;
 }
 
 .bdr\:bas-700,
-.bdr\:bas-700-hover:hover,
-.bdr\:bas-700-focus:focus {
+.bdr\:bas-700\!hover:hover,
+a.bdr\:bas-700\!focus:focus,
+a.bdr\:bas-700,
+button.bdr\:bas-700\!hover:hover,
+button.bdr\:bas-700\!focus:focus {
     border-color: var(--fg-bas-700) !important;
 }
 
 .bdr\:bas-600,
-.bdr\:bas-600-hover:hover,
-.bdr\:bas-600-focus:focus {
+.bdr\:bas-600\!hover:hover,
+a.bdr\:bas-600\!focus:focus,
+a.bdr\:bas-600,
+button.bdr\:bas-600\!hover:hover,
+button.bdr\:bas-600\!focus:focus {
     border-color: var(--fg-bas-600) !important;
 }
 
 .bdr\:bas-500,
-.bdr\:bas-500-hover:hover,
-.bdr\:bas-500-focus:focus {
+.bdr\:bas-500\!hover:hover,
+a.bdr\:bas-500\!focus:focus,
+a.bdr\:bas-500,
+button.bdr\:bas-500\!hover:hover,
+button.bdr\:bas-500\!focus:focus {
     border-color: var(--fg-bas-500) !important;
 }
 
 .bdr\:bas-400,
-.bdr\:bas-400-hover:hover,
-.bdr\:bas-400-focus:focus {
+.bdr\:bas-400\!hover:hover,
+a.bdr\:bas-400\!focus:focus,
+a.bdr\:bas-400,
+button.bdr\:bas-400\!hover:hover,
+button.bdr\:bas-400\!focus:focus {
     border-color: var(--fg-bas-400) !important;
 }
 
 .bdr\:bas-300,
-.bdr\:bas-300-hover:hover,
-.bdr\:bas-300-focus:focus {
+.bdr\:bas-300\!hover:hover,
+a.bdr\:bas-300\!focus:focus,
+a.bdr\:bas-300,
+button.bdr\:bas-300\!hover:hover,
+button.bdr\:bas-300\!focus:focus {
     border-color: var(--fg-bas-300) !important;
 }
 
 .bdr\:bas-200,
-.bdr\:bas-200-hover:hover,
-.bdr\:bas-200-focus:focus {
+.bdr\:bas-200\!hover:hover,
+a.bdr\:bas-200\!focus:focus,
+a.bdr\:bas-200,
+button.bdr\:bas-200\!hover:hover,
+button.bdr\:bas-200\!focus:focus {
     border-color: var(--fg-bas-200) !important;
 }
 
 .bdr\:bas-100,
-.bdr\:bas-100-hover:hover,
-.bdr\:bas-100-focus:focus {
+.bdr\:bas-100\!hover:hover,
+a.bdr\:bas-100\!focus:focus,
+a.bdr\:bas-100,
+button.bdr\:bas-100\!hover:hover,
+button.bdr\:bas-100\!focus:focus {
     border-color: var(--fg-bas-100) !important;
 }
 
 .bdr\:bas-050,
-.bdr\:bas-050-hover:hover,
-.bdr\:bas-050-focus:focus {
+.bdr\:bas-050\!hover:hover,
+a.bdr\:bas-050\!focus:focus,
+a.bdr\:bas-050,
+button.bdr\:bas-050\!hover:hover,
+button.bdr\:bas-050\!focus:focus {
     border-color: var(--fg-bas-050) !important;
 }
 
 .bdr\:pri-900,
-.bdr\:pri-900-hover:hover,
-.bdr\:pri-900-focus:focus {
+.bdr\:pri-900\!hover:hover,
+a.bdr\:pri-900\!focus:focus,
+a.bdr\:pri-900,
+button.bdr\:pri-900\!hover:hover,
+button.bdr\:pri-900\!focus:focus {
     border-color: var(--fg-pri-900) !important;
 }
 
 .bdr\:pri-800,
-.bdr\:pri-800-hover:hover,
-.bdr\:pri-800-focus:focus {
+.bdr\:pri-800\!hover:hover,
+a.bdr\:pri-800\!focus:focus,
+a.bdr\:pri-800,
+button.bdr\:pri-800\!hover:hover,
+button.bdr\:pri-800\!focus:focus {
     border-color: var(--fg-pri-800) !important;
 }
 
 .bdr\:pri-700,
-.bdr\:pri-700-hover:hover,
-.bdr\:pri-700-focus:focus {
+.bdr\:pri-700\!hover:hover,
+a.bdr\:pri-700\!focus:focus,
+a.bdr\:pri-700,
+button.bdr\:pri-700\!hover:hover,
+button.bdr\:pri-700\!focus:focus {
     border-color: var(--fg-pri-700) !important;
 }
 
 .bdr\:pri-600,
-.bdr\:pri-600-hover:hover,
-.bdr\:pri-600-focus:focus {
+.bdr\:pri-600\!hover:hover,
+a.bdr\:pri-600\!focus:focus,
+a.bdr\:pri-600,
+button.bdr\:pri-600\!hover:hover,
+button.bdr\:pri-600\!focus:focus {
     border-color: var(--fg-pri-600) !important;
 }
 
 .bdr\:pri-500,
-.bdr\:pri-500-hover:hover,
-.bdr\:pri-500-focus:focus {
+.bdr\:pri-500\!hover:hover,
+a.bdr\:pri-500\!focus:focus,
+a.bdr\:pri-500,
+button.bdr\:pri-500\!hover:hover,
+button.bdr\:pri-500\!focus:focus {
     border-color: var(--fg-pri-500) !important;
 }
 
 .bdr\:pri-400,
-.bdr\:pri-400-hover:hover,
-.bdr\:pri-400-focus:focus {
+.bdr\:pri-400\!hover:hover,
+a.bdr\:pri-400\!focus:focus,
+a.bdr\:pri-400,
+button.bdr\:pri-400\!hover:hover,
+button.bdr\:pri-400\!focus:focus {
     border-color: var(--fg-pri-400) !important;
 }
 
 .bdr\:pri-300,
-.bdr\:pri-300-hover:hover,
-.bdr\:pri-300-focus:focus {
+.bdr\:pri-300\!hover:hover,
+a.bdr\:pri-300\!focus:focus,
+a.bdr\:pri-300,
+button.bdr\:pri-300\!hover:hover,
+button.bdr\:pri-300\!focus:focus {
     border-color: var(--fg-pri-300) !important;
 }
 
 .bdr\:pri-200,
-.bdr\:pri-200-hover:hover,
-.bdr\:pri-200-focus:focus {
+.bdr\:pri-200\!hover:hover,
+a.bdr\:pri-200\!focus:focus,
+a.bdr\:pri-200,
+button.bdr\:pri-200\!hover:hover,
+button.bdr\:pri-200\!focus:focus {
     border-color: var(--fg-pri-200) !important;
 }
 
 .bdr\:pri-100,
-.bdr\:pri-100-hover:hover,
-.bdr\:pri-100-focus:focus {
+.bdr\:pri-100\!hover:hover,
+a.bdr\:pri-100\!focus:focus,
+a.bdr\:pri-100,
+button.bdr\:pri-100\!hover:hover,
+button.bdr\:pri-100\!focus:focus {
     border-color: var(--fg-pri-100) !important;
 }
 
 .bdr\:pri-050,
-.bdr\:pri-050-hover:hover,
-.bdr\:pri-050-focus:focus {
+.bdr\:pri-050\!hover:hover,
+a.bdr\:pri-050\!focus:focus,
+a.bdr\:pri-050,
+button.bdr\:pri-050\!hover:hover,
+button.bdr\:pri-050\!focus:focus {
     border-color: var(--fg-pri-050) !important;
 }
 
 .bdr\:sec-900,
-.bdr\:sec-900-hover:hover,
-.bdr\:sec-900-focus:focus {
+.bdr\:sec-900\!hover:hover,
+a.bdr\:sec-900\!focus:focus,
+a.bdr\:sec-900,
+button.bdr\:sec-900\!hover:hover,
+button.bdr\:sec-900\!focus:focus {
     border-color: var(--fg-sec-900) !important;
 }
 
 .bdr\:sec-800,
-.bdr\:sec-800-hover:hover,
-.bdr\:sec-800-focus:focus {
+.bdr\:sec-800\!hover:hover,
+a.bdr\:sec-800\!focus:focus,
+a.bdr\:sec-800,
+button.bdr\:sec-800\!hover:hover,
+button.bdr\:sec-800\!focus:focus {
     border-color: var(--fg-sec-800) !important;
 }
 
 .bdr\:sec-700,
-.bdr\:sec-700-hover:hover,
-.bdr\:sec-700-focus:focus {
+.bdr\:sec-700\!hover:hover,
+a.bdr\:sec-700\!focus:focus,
+a.bdr\:sec-700,
+button.bdr\:sec-700\!hover:hover,
+button.bdr\:sec-700\!focus:focus {
     border-color: var(--fg-sec-700) !important;
 }
 
 .bdr\:sec-600,
-.bdr\:sec-600-hover:hover,
-.bdr\:sec-600-focus:focus {
+.bdr\:sec-600\!hover:hover,
+a.bdr\:sec-600\!focus:focus,
+a.bdr\:sec-600,
+button.bdr\:sec-600\!hover:hover,
+button.bdr\:sec-600\!focus:focus {
     border-color: var(--fg-sec-600) !important;
 }
 
 .bdr\:sec-500,
-.bdr\:sec-500-hover:hover,
-.bdr\:sec-500-focus:focus {
+.bdr\:sec-500\!hover:hover,
+a.bdr\:sec-500\!focus:focus,
+a.bdr\:sec-500,
+button.bdr\:sec-500\!hover:hover,
+button.bdr\:sec-500\!focus:focus {
     border-color: var(--fg-sec-500) !important;
 }
 
 .bdr\:sec-400,
-.bdr\:sec-400-hover:hover,
-.bdr\:sec-400-focus:focus {
+.bdr\:sec-400\!hover:hover,
+a.bdr\:sec-400\!focus:focus,
+a.bdr\:sec-400,
+button.bdr\:sec-400\!hover:hover,
+button.bdr\:sec-400\!focus:focus {
     border-color: var(--fg-sec-400) !important;
 }
 
 .bdr\:sec-300,
-.bdr\:sec-300-hover:hover,
-.bdr\:sec-300-focus:focus {
+.bdr\:sec-300\!hover:hover,
+a.bdr\:sec-300\!focus:focus,
+a.bdr\:sec-300,
+button.bdr\:sec-300\!hover:hover,
+button.bdr\:sec-300\!focus:focus {
     border-color: var(--fg-sec-300) !important;
 }
 
 .bdr\:sec-200,
-.bdr\:sec-200-hover:hover,
-.bdr\:sec-200-focus:focus {
+.bdr\:sec-200\!hover:hover,
+a.bdr\:sec-200\!focus:focus,
+a.bdr\:sec-200,
+button.bdr\:sec-200\!hover:hover,
+button.bdr\:sec-200\!focus:focus {
     border-color: var(--fg-sec-200) !important;
 }
 
 .bdr\:sec-100,
-.bdr\:sec-100-hover:hover,
-.bdr\:sec-100-focus:focus {
+.bdr\:sec-100\!hover:hover,
+a.bdr\:sec-100\!focus:focus,
+a.bdr\:sec-100,
+button.bdr\:sec-100\!hover:hover,
+button.bdr\:sec-100\!focus:focus {
     border-color: var(--fg-sec-100) !important;
 }
 
 .bdr\:sec-050,
-.bdr\:sec-050-hover:hover,
-.bdr\:sec-050-focus:focus {
+.bdr\:sec-050\!hover:hover,
+a.bdr\:sec-050\!focus:focus,
+a.bdr\:sec-050,
+button.bdr\:sec-050\!hover:hover,
+button.bdr\:sec-050\!focus:focus {
     border-color: var(--fg-sec-050) !important;
 }
 
 .bdr\:red,
-.bdr\:red-hover:hover,
-.bdr\:red-focus:focus {
-    border-color: #F44336 !important;
+.bdr\:red\!hover:hover,
+a.bdr\:red\!focus:focus,
+a.bdr\:red,
+button.bdr\:red\!hover:hover,
+button.bdr\:red\!focus:focus {
+    border-color: var(--bdr-red) !important;
 }
 
 .bdr\:pink,
-.bdr\:pink-hover:hover,
-.bdr\:pink-focus:focus {
-    border-color: #E91E63 !important;
+.bdr\:pink\!hover:hover,
+a.bdr\:pink\!focus:focus,
+a.bdr\:pink,
+button.bdr\:pink\!hover:hover,
+button.bdr\:pink\!focus:focus {
+    border-color: var(--bdr-pink) !important;
 }
 
 .bdr\:purple,
-.bdr\:purple-hover:hover,
-.bdr\:purple-focus:focus {
-    border-color: #9C27B0 !important;
+.bdr\:purple\!hover:hover,
+a.bdr\:purple\!focus:focus,
+a.bdr\:purple,
+button.bdr\:purple\!hover:hover,
+button.bdr\:purple\!focus:focus {
+    border-color: var(--bdr-purple) !important;
 }
 
 .bdr\:deep-purple,
-.bdr\:deep-purple-hover:hover,
-.bdr\:deep-purple-focus:focus {
-    border-color: #673AB7 !important;
+.bdr\:deep-purple\!hover:hover,
+a.bdr\:deep-purple\!focus:focus,
+a.bdr\:deep-purple,
+button.bdr\:deep-purple\!hover:hover,
+button.bdr\:deep-purple\!focus:focus {
+    border-color: var(--bdr-deep-purple) !important;
 }
 
 .bdr\:indigo,
-.bdr\:indigo-hover:hover,
-.bdr\:indigo-focus:focus {
-    border-color: #3F51B5 !important;
+.bdr\:indigo\!hover:hover,
+a.bdr\:indigo\!focus:focus,
+a.bdr\:indigo,
+button.bdr\:indigo\!hover:hover,
+button.bdr\:indigo\!focus:focus {
+    border-color: var(--bdr-indigo) !important;
 }
 
 .bdr\:blue,
-.bdr\:blue-hover:hover,
-.bdr\:blue-focus:focus {
-    border-color: #2196F3 !important;
+.bdr\:blue\!hover:hover,
+a.bdr\:blue\!focus:focus,
+a.bdr\:blue,
+button.bdr\:blue\!hover:hover,
+button.bdr\:blue\!focus:focus {
+    border-color: var(--bdr-blue) !important;
 }
 
 .bdr\:light-blue,
-.bdr\:light-blue-hover:hover,
-.bdr\:light-blue-focus:focus {
-    border-color: #03A9F4 !important;
+.bdr\:light-blue\!hover:hover,
+a.bdr\:light-blue\!focus:focus,
+a.bdr\:light-blue,
+button.bdr\:light-blue\!hover:hover,
+button.bdr\:light-blue\!focus:focus {
+    border-color: var(--bdr-light-blue) !important;
 }
 
 .bdr\:cyan,
-.bdr\:cyan-hover:hover,
-.bdr\:cyan-focus:focus {
-    border-color: #00BCD4 !important;
+.bdr\:cyan\!hover:hover,
+a.bdr\:cyan\!focus:focus,
+a.bdr\:cyan,
+button.bdr\:cyan\!hover:hover,
+button.bdr\:cyan\!focus:focus {
+    border-color: var(--bdr-cyan) !important;
 }
 
 .bdr\:teal,
-.bdr\:teal-hover:hover,
-.bdr\:teal-focus:focus {
-    border-color: #009688 !important;
+.bdr\:teal\!hover:hover,
+a.bdr\:teal\!focus:focus,
+a.bdr\:teal,
+button.bdr\:teal\!hover:hover,
+button.bdr\:teal\!focus:focus {
+    border-color: var(--bdr-teal) !important;
 }
 
 .bdr\:green,
-.bdr\:green-hover:hover,
-.bdr\:green-focus:focus {
-    border-color: #4CAF50 !important;
+.bdr\:green\!hover:hover,
+a.bdr\:green\!focus:focus,
+a.bdr\:green,
+button.bdr\:green\!hover:hover,
+button.bdr\:green\!focus:focus {
+    border-color: var(--bdr-green) !important;
 }
 
 .bdr\:light-green,
-.bdr\:light-green-hover:hover,
-.bdr\:light-green-focus:focus {
-    border-color: #8BC34A !important;
+.bdr\:light-green\!hover:hover,
+a.bdr\:light-green\!focus:focus,
+a.bdr\:light-green,
+button.bdr\:light-green\!hover:hover,
+button.bdr\:light-green\!focus:focus {
+    border-color: var(--bdr-light-green) !important;
 }
 
 .bdr\:lime,
-.bdr\:lime-hover:hover,
-.bdr\:lime-focus:focus {
-    border-color: #CDDC39 !important;
+.bdr\:lime\!hover:hover,
+a.bdr\:lime\!focus:focus,
+a.bdr\:lime,
+button.bdr\:lime\!hover:hover,
+button.bdr\:lime\!focus:focus {
+    border-color: var(--bdr-lime) !important;
 }
 
 .bdr\:yellow,
-.bdr\:yellow-hover:hover,
-.bdr\:yellow-focus:focus {
-    border-color: #FFEB3B !important;
+.bdr\:yellow\!hover:hover,
+a.bdr\:yellow\!focus:focus,
+a.bdr\:yellow,
+button.bdr\:yellow\!hover:hover,
+button.bdr\:yellow\!focus:focus {
+    border-color: var(--bdr-yellow) !important;
 }
 
 .bdr\:amber,
-.bdr\:amber-hover:hover,
-.bdr\:amber-focus:focus {
-    border-color: #FFC107 !important;
+.bdr\:amber\!hover:hover,
+a.bdr\:amber\!focus:focus,
+a.bdr\:amber,
+button.bdr\:amber\!hover:hover,
+button.bdr\:amber\!focus:focus {
+    border-color: var(--bdr-amber) !important;
 }
 
 .bdr\:orange,
-.bdr\:orange-hover:hover,
-.bdr\:orange-focus:focus {
-    border-color: #FF9800 !important;
+.bdr\:orange\!hover:hover,
+a.bdr\:orange\!focus:focus,
+a.bdr\:orange,
+button.bdr\:orange\!hover:hover,
+button.bdr\:orange\!focus:focus {
+    border-color: var(--bdr-orange) !important;
 }
 
 .bdr\:deep-orange,
-.bdr\:deep-orange-hover:hover,
-.bdr\:deep-orange-focus:focus {
-    border-color: #FF5722 !important;
+.bdr\:deep-orange\!hover:hover,
+a.bdr\:deep-orange\!focus:focus,
+a.bdr\:deep-orange,
+button.bdr\:deep-orange\!hover:hover,
+button.bdr\:deep-orange\!focus:focus {
+    border-color: var(--bdr-deep-orange) !important;
 }
 
 .bdr\:brown,
-.bdr\:brown-hover:hover,
-.bdr\:brown-focus:focus {
-    border-color: #795548 !important;
+.bdr\:brown\!hover:hover,
+a.bdr\:brown\!focus:focus,
+a.bdr\:brown,
+button.bdr\:brown\!hover:hover,
+button.bdr\:brown\!focus:focus {
+    border-color: var(--bdr-brown) !important;
 }
 
 .bdr\:grey,
-.bdr\:grey-hover:hover,
-.bdr\:grey-focus:focus {
-    border-color: #9E9E9E !important;
+.bdr\:grey\!hover:hover,
+a.bdr\:grey\!focus:focus,
+a.bdr\:grey,
+button.bdr\:grey\!hover:hover,
+button.bdr\:grey\!focus:focus {
+    border-color: var(--bdr-grey) !important;
 }
 
 .bdr\:blue-grey,
-.bdr\:blue-grey-hover:hover,
-.bdr\:blue-grey-focus:focus {
-    border-color: #607D8B !important;
+.bdr\:blue-grey\!hover:hover,
+a.bdr\:blue-grey\!focus:focus,
+a.bdr\:blue-grey,
+button.bdr\:blue-grey\!hover:hover,
+button.bdr\:blue-grey\!focus:focus {
+    border-color: var(--bdr-blue-grey) !important;
 }
 
-
-/*  # sm device
-    # 91001.1a
-    # atm "sm" stands for standard media (everything but mobile)
-    # if other devices are added, it will become small media
+/*  # standard media (sm) device
+    # 91012.1a
+    # "sm" is everything but mobile
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
-
 @media (min-width:640px) {
-    .sm\>fg\:blk,
-    .sm\>fg\:blk-hover:hover,
-    .sm\>fg\:blk-focus:focus {
-        color: var(--fg-blk);
+
+    /*
+        foreground colors
+    */
+    .sm\)fg\:transparent,
+    .sm\)fg\:transparent\!hover: hover,
+        a.sm\)fg\:transparent\!active:active,
+        a.sm\)fg\:transparent\!focus:focus,
+        button.sm\)fg\:transparent\!active:active,
+        button.sm\)fg\:transparent\!focus:focus {
+        color: transparent !important;
     }
-    .sm\>fg\:wht,
-    .sm\>fg\:wht-hover:hover,
-    .sm\>fg\:wht-focus:focus {
-        color: var(--fg-wht);
+
+    .sm\)fg\:blk,
+    .sm\)fg\:blk\!hover:hover,
+    a.sm\)fg\:blk\!active:active,
+    a.sm\)fg\:blk\!focus:focus,
+    button.sm\)fg\:blk\!active:active,
+    button.sm\)fg\:blk\!focus:focus {
+        color: var(--fg-blk) !important;
     }
-    .sm\>fg\:bas-900,
-    .sm\>fg\:bas-900-hover:hover,
-    .sm\>fg\:bas-900-focus:focus {
-        color: var(--fg-bas-900);
+
+    .sm\)fg\:wht,
+    .sm\)fg\:wht\!hover:hover,
+    a.sm\)fg\:wht\!active:active,
+    a.sm\)fg\:wht\!focus:focus,
+    button.sm\)fg\:wht\!active:active,
+    button.sm\)fg\:wht\!focus:focus {
+        color: var(--fg-wht) !important;
     }
-    .sm\>fg\:bas-800,
-    .sm\>fg\:bas-800-hover:hover,
-    .sm\>fg\:bas-800-focus:focus {
-        color: var(--fg-bas-800);
+
+    .sm\)fg\:bas-900,
+    .sm\)fg\:bas-900\!hover:hover,
+    a.sm\)fg\:bas-900\!active:active,
+    a.sm\)fg\:bas-900\!focus:focus,
+    button.sm\)fg\:bas-900\!active:active,
+    button.sm\)fg\:bas-900\!focus:focus {
+        color: var(--fg-bas-900) !important;
     }
-    .sm\>fg\:bas-700,
-    .sm\>fg\:bas-700-hover:hover,
-    .sm\>fg\:bas-700-focus:focus {
-        color: var(--fg-bas-700);
+
+    .sm\)fg\:bas-800,
+    .sm\)fg\:bas-800\!hover:hover,
+    a.sm\)fg\:bas-800\!active:active,
+    a.sm\)fg\:bas-800\!focus:focus,
+    button.sm\)fg\:bas-800\!active:active,
+    button.sm\)fg\:bas-800\!focus:focus {
+        color: var(--fg-bas-800) !important;
     }
-    .sm\>fg\:bas-600,
-    .sm\>fg\:bas-600-hover:hover,
-    .sm\>fg\:bas-600-focus:focus {
-        color: var(--fg-bas-600);
+
+    .sm\)fg\:bas-700,
+    .sm\)fg\:bas-700\!hover:hover,
+    a.sm\)fg\:bas-700\!active:active,
+    a.sm\)fg\:bas-700\!focus:focus,
+    button.sm\)fg\:bas-700\!active:active,
+    button.sm\)fg\:bas-700\!focus:focus {
+        color: var(--fg-bas-700) !important;
     }
-    .sm\>fg\:bas-500,
-    .sm\>fg\:bas-500-hover:hover,
-    .sm\>fg\:bas-500-focus:focus {
-        color: var(--fg-bas-500);
+
+    .sm\)fg\:bas-600,
+    .sm\)fg\:bas-600\!hover:hover,
+    a.sm\)fg\:bas-600\!active:active,
+    a.sm\)fg\:bas-600\!focus:focus,
+    button.sm\)fg\:bas-600\!active:active,
+    button.sm\)fg\:bas-600\!focus:focus {
+        color: var(--fg-bas-600) !important;
     }
-    .sm\>fg\:bas-400,
-    .sm\>fg\:bas-400-hover:hover,
-    .sm\>fg\:bas-400-focus:focus {
-        color: var(--fg-bas-400);
+
+    .sm\)fg\:bas-500,
+    .sm\)fg\:bas-500\!hover:hover,
+    a.sm\)fg\:bas-500\!active:active,
+    a.sm\)fg\:bas-500\!focus:focus,
+    button.sm\)fg\:bas-500\!active:active,
+    button.sm\)fg\:bas-500\!focus:focus {
+        color: var(--fg-bas-500) !important;
     }
-    .sm\>fg\:bas-300,
-    .sm\>fg\:bas-300-hover:hover,
-    .sm\>fg\:bas-300-focus:focus {
-        color: var(--fg-bas-300);
+
+    .sm\)fg\:bas-400,
+    .sm\)fg\:bas-400\!hover:hover,
+    a.sm\)fg\:bas-400\!active:active,
+    a.sm\)fg\:bas-400\!focus:focus,
+    button.sm\)fg\:bas-400\!active:active,
+    button.sm\)fg\:bas-400\!focus:focus {
+        color: var(--fg-bas-400) !important;
     }
-    .sm\>fg\:bas-200,
-    .sm\>fg\:bas-200-hover:hover,
-    .sm\>fg\:bas-200-focus:focus {
-        color: var(--fg-bas-200);
+
+    .sm\)fg\:bas-300,
+    .sm\)fg\:bas-300\!hover:hover,
+    a.sm\)fg\:bas-300\!active:active,
+    a.sm\)fg\:bas-300\!focus:focus,
+    button.sm\)fg\:bas-300\!active:active,
+    button.sm\)fg\:bas-300\!focus:focus {
+        color: var(--fg-bas-300) !important;
     }
-    .sm\>fg\:bas-100,
-    .sm\>fg\:bas-100-hover:hover,
-    .sm\>fg\:bas-100-focus:focus {
-        color: var(--fg-bas-100);
+
+    .sm\)fg\:bas-200,
+    .sm\)fg\:bas-200\!hover:hover,
+    a.sm\)fg\:bas-200\!active:active,
+    a.sm\)fg\:bas-200\!focus:focus,
+    button.sm\)fg\:bas-200\!active:active,
+    button.sm\)fg\:bas-200\!focus:focus {
+        color: var(--fg-bas-200) !important;
     }
-    .sm\>fg\:bas-050,
-    .sm\>fg\:bas-050-hover:hover,
-    .sm\>fg\:bas-050-focus:focus {
-        color: var(--fg-bas-050);
+
+    .sm\)fg\:bas-100,
+    .sm\)fg\:bas-100\!hover:hover,
+    a.sm\)fg\:bas-100\!active:active,
+    a.sm\)fg\:bas-100\!focus:focus,
+    button.sm\)fg\:bas-100\!active:active,
+    button.sm\)fg\:bas-100\!focus:focus {
+        color: var(--fg-bas-100) !important;
     }
-    .sm\>fg\:pri-900,
-    .sm\>fg\:pri-900-hover:hover,
-    .sm\>fg\:pri-900-focus:focus {
-        color: var(--fg-pri-900);
+
+    .sm\)fg\:bas-050,
+    .sm\)fg\:bas-050\!hover:hover,
+    a.sm\)fg\:bas-050\!active:active,
+    a.sm\)fg\:bas-050\!focus:focus,
+    button.sm\)fg\:bas-050\!active:active,
+    button.sm\)fg\:bas-050\!focus:focus {
+        color: var(--fg-bas-050) !important;
     }
-    .sm\>fg\:pri-800,
-    .sm\>fg\:pri-800-hover:hover,
-    .sm\>fg\:pri-800-focus:focus {
-        color: var(--fg-pri-800);
+
+    .sm\)fg\:pri-900,
+    .sm\)fg\:pri-900\!hover:hover,
+    a.sm\)fg\:pri-900\!active:active,
+    a.sm\)fg\:pri-900\!focus:focus,
+    button.sm\)fg\:pri-900\!active:active,
+    button.sm\)fg\:pri-900\!focus:focus {
+        color: var(--fg-pri-900) !important;
     }
-    .sm\>fg\:pri-700,
-    .sm\>fg\:pri-700-hover:hover,
-    .sm\>fg\:pri-700-focus:focus {
-        color: var(--fg-pri-700);
+
+    .sm\)fg\:pri-800,
+    .sm\)fg\:pri-800\!hover:hover,
+    a.sm\)fg\:pri-800\!active:active,
+    a.sm\)fg\:pri-800\!focus:focus,
+    button.sm\)fg\:pri-800\!active:active,
+    button.sm\)fg\:pri-800\!focus:focus {
+        color: var(--fg-pri-800) !important;
     }
-    .sm\>fg\:pri-600,
-    .sm\>fg\:pri-600-hover:hover,
-    .sm\>fg\:pri-600-focus:focus {
-        color: var(--fg-pri-600);
+
+    .sm\)fg\:pri-700,
+    .sm\)fg\:pri-700\!hover:hover,
+    a.sm\)fg\:pri-700\!active:active,
+    a.sm\)fg\:pri-700\!focus:focus,
+    button.sm\)fg\:pri-700\!active:active,
+    button.sm\)fg\:pri-700\!focus:focus {
+        color: var(--fg-pri-700) !important;
     }
-    .sm\>fg\:pri-500,
-    .sm\>fg\:pri-500-hover:hover,
-    .sm\>fg\:pri-500-focus:focus {
-        color: var(--fg-pri-500);
+
+    .sm\)fg\:pri-600,
+    .sm\)fg\:pri-600\!hover:hover,
+    a.sm\)fg\:pri-600\!active:active,
+    a.sm\)fg\:pri-600\!focus:focus,
+    button.sm\)fg\:pri-600\!active:active,
+    button.sm\)fg\:pri-600\!focus:focus {
+        color: var(--fg-pri-600) !important;
     }
-    .sm\>fg\:pri-400,
-    .sm\>fg\:pri-400-hover:hover,
-    .sm\>fg\:pri-400-focus:focus {
-        color: var(--fg-pri-400);
+
+    .sm\)fg\:pri-500,
+    .sm\)fg\:pri-500\!hover:hover,
+    a.sm\)fg\:pri-500\!active:active,
+    a.sm\)fg\:pri-500\!focus:focus,
+    button.sm\)fg\:pri-500\!active:active,
+    button.sm\)fg\:pri-500\!focus:focus {
+        color: var(--fg-pri-500) !important;
     }
-    .sm\>fg\:pri-300,
-    .sm\>fg\:pri-300-hover:hover,
-    .sm\>fg\:pri-300-focus:focus {
-        color: var(--fg-pri-300);
+
+    .sm\)fg\:pri-400,
+    .sm\)fg\:pri-400\!hover:hover,
+    a.sm\)fg\:pri-400\!active:active,
+    a.sm\)fg\:pri-400\!focus:focus,
+    button.sm\)fg\:pri-400\!active:active,
+    button.sm\)fg\:pri-400\!focus:focus {
+        color: var(--fg-pri-400) !important;
     }
-    .sm\>fg\:pri-200,
-    .sm\>fg\:pri-200-hover:hover,
-    .sm\>fg\:pri-200-focus:focus {
-        color: var(--fg-pri-200);
+
+    .sm\)fg\:pri-300,
+    .sm\)fg\:pri-300\!hover:hover,
+    a.sm\)fg\:pri-300\!active:active,
+    a.sm\)fg\:pri-300\!focus:focus,
+    button.sm\)fg\:pri-300\!active:active,
+    button.sm\)fg\:pri-300\!focus:focus {
+        color: var(--fg-pri-300) !important;
     }
-    .sm\>fg\:pri-100,
-    .sm\>fg\:pri-100-hover:hover,
-    .sm\>fg\:pri-100-focus:focus {
-        color: var(--fg-pri-100);
+
+    .sm\)fg\:pri-200,
+    .sm\)fg\:pri-200\!hover:hover,
+    a.sm\)fg\:pri-200\!active:active,
+    a.sm\)fg\:pri-200\!focus:focus,
+    button.sm\)fg\:pri-200\!active:active,
+    button.sm\)fg\:pri-200\!focus:focus {
+        color: var(--fg-pri-200) !important;
     }
-    .sm\>fg\:pri-050,
-    .sm\>fg\:pri-050-hover:hover,
-    .sm\>fg\:pri-050-focus:focus {
-        color: var(--fg-pri-050);
+
+    .sm\)fg\:pri-100,
+    .sm\)fg\:pri-100\!hover:hover,
+    a.sm\)fg\:pri-100\!active:active,
+    a.sm\)fg\:pri-100\!focus:focus,
+    button.sm\)fg\:pri-100\!active:active,
+    button.sm\)fg\:pri-100\!focus:focus {
+        color: var(--fg-pri-100) !important;
     }
-    .sm\>fg\:sec-900,
-    .sm\>fg\:sec-900-hover:hover,
-    .sm\>fg\:sec-900-focus:focus {
-        color: var(--fg-sec-900);
+
+    .sm\)fg\:pri-050,
+    .sm\)fg\:pri-050\!hover:hover,
+    a.sm\)fg\:pri-050\!active:active,
+    a.sm\)fg\:pri-050\!focus:focus,
+    button.sm\)fg\:pri-050\!active:active,
+    button.sm\)fg\:pri-050\!focus:focus {
+        color: var(--fg-pri-050) !important;
     }
-    .sm\>fg\:sec-800,
-    .sm\>fg\:sec-800-hover:hover,
-    .sm\>fg\:sec-800-focus:focus {
-        color: var(--fg-sec-800);
+
+    .sm\)fg\:sec-900,
+    .sm\)fg\:sec-900\!hover:hover,
+    a.sm\)fg\:sec-900\!active:active,
+    a.sm\)fg\:sec-900\!focus:focus,
+    button.sm\)fg\:sec-900\!active:active,
+    button.sm\)fg\:sec-900\!focus:focus {
+        color: var(--fg-sec-900) !important;
     }
-    .sm\>fg\:sec-700,
-    .sm\>fg\:sec-700-hover:hover,
-    .sm\>fg\:sec-700-focus:focus {
-        color: var(--fg-sec-700);
+
+    .sm\)fg\:sec-800,
+    .sm\)fg\:sec-800\!hover:hover,
+    a.sm\)fg\:sec-800\!active:active,
+    a.sm\)fg\:sec-800\!focus:focus,
+    button.sm\)fg\:sec-800\!active:active,
+    button.sm\)fg\:sec-800\!focus:focus {
+        color: var(--fg-sec-800) !important;
     }
-    .sm\>fg\:sec-600,
-    .sm\>fg\:sec-600-hover:hover,
-    .sm\>fg\:sec-600-focus:focus {
-        color: var(--fg-sec-600);
+
+    .sm\)fg\:sec-700,
+    .sm\)fg\:sec-700\!hover:hover,
+    a.sm\)fg\:sec-700\!active:active,
+    a.sm\)fg\:sec-700\!focus:focus,
+    button.sm\)fg\:sec-700\!active:active,
+    button.sm\)fg\:sec-700\!focus:focus {
+        color: var(--fg-sec-700) !important;
     }
-    .sm\>fg\:sec-500,
-    .sm\>fg\:sec-500-hover:hover,
-    .sm\>fg\:sec-500-focus:focus {
-        color: var(--fg-sec-500);
+
+    .sm\)fg\:sec-600,
+    .sm\)fg\:sec-600\!hover:hover,
+    a.sm\)fg\:sec-600\!active:active,
+    a.sm\)fg\:sec-600\!focus:focus,
+    button.sm\)fg\:sec-600\!active:active,
+    button.sm\)fg\:sec-600\!focus:focus {
+        color: var(--fg-sec-600) !important;
     }
-    .sm\>fg\:sec-400,
-    .sm\>fg\:sec-400-hover:hover,
-    .sm\>fg\:sec-400-focus:focus {
-        color: var(--fg-sec-400);
+
+    .sm\)fg\:sec-500,
+    .sm\)fg\:sec-500\!hover:hover,
+    a.sm\)fg\:sec-500\!active:active,
+    a.sm\)fg\:sec-500\!focus:focus,
+    button.sm\)fg\:sec-500\!active:active,
+    button.sm\)fg\:sec-500\!focus:focus {
+        color: var(--fg-sec-500) !important;
     }
-    .sm\>fg\:sec-300,
-    .sm\>fg\:sec-300-hover:hover,
-    .sm\>fg\:sec-300-focus:focus {
-        color: var(--fg-sec-300);
+
+    .sm\)fg\:sec-400,
+    .sm\)fg\:sec-400\!hover:hover,
+    a.sm\)fg\:sec-400\!active:active,
+    a.sm\)fg\:sec-400\!focus:focus,
+    button.sm\)fg\:sec-400\!active:active,
+    button.sm\)fg\:sec-400\!focus:focus {
+        color: var(--fg-sec-400) !important;
     }
-    .sm\>fg\:sec-200,
-    .sm\>fg\:sec-200-hover:hover,
-    .sm\>fg\:sec-200-focus:focus {
-        color: var(--fg-sec-200);
+
+    .sm\)fg\:sec-300,
+    .sm\)fg\:sec-300\!hover:hover,
+    a.sm\)fg\:sec-300\!active:active,
+    a.sm\)fg\:sec-300\!focus:focus,
+    button.sm\)fg\:sec-300\!active:active,
+    button.sm\)fg\:sec-300\!focus:focus {
+        color: var(--fg-sec-300) !important;
     }
-    .sm\>fg\:sec-100,
-    .sm\>fg\:sec-100-hover:hover,
-    .sm\>fg\:sec-100-focus:focus {
-        color: var(--fg-sec-100);
+
+    .sm\)fg\:sec-200,
+    .sm\)fg\:sec-200\!hover:hover,
+    a.sm\)fg\:sec-200\!active:active,
+    a.sm\)fg\:sec-200\!focus:focus,
+    button.sm\)fg\:sec-200\!active:active,
+    button.sm\)fg\:sec-200\!focus:focus {
+        color: var(--fg-sec-200) !important;
     }
-    .sm\>fg\:sec-050,
-    .sm\>fg\:sec-050-hover:hover,
-    .sm\>fg\:sec-050-focus:focus {
-        color: var(--fg-sec-050);
+
+    .sm\)fg\:sec-100,
+    .sm\)fg\:sec-100\!hover:hover,
+    a.sm\)fg\:sec-100\!active:active,
+    a.sm\)fg\:sec-100\!focus:focus,
+    button.sm\)fg\:sec-100\!active:active,
+    button.sm\)fg\:sec-100\!focus:focus {
+        color: var(--fg-sec-100) !important;
     }
+
+    .sm\)fg\:sec-050,
+    .sm\)fg\:sec-050\!hover:hover,
+    a.sm\)fg\:sec-050\!active:active,
+    a.sm\)fg\:sec-050\!focus:focus,
+    button.sm\)fg\:sec-050\!active:active,
+    button.sm\)fg\:sec-050\!focus:focus {
+        color: var(--fg-sec-050) !important;
+    }
+
     /*
         background colors
     */
-    .sm\>bg\:clear {
-        background-color: transparent;
+    .sm\)bg\:transparent,
+    .sm\)bg\:transparent\!hover:hover,
+    a.sm\)bg\:transparent:active,
+    a.sm\)bg\:transparent:focus,
+    button.sm\)bg\:transparent:active,
+    button.sm\)bg\:transparent:focus {
+        background-color: transparent !important;
     }
-    .sm\>bg\:blk,
-    .sm\>bg\:blk-hover:hover,
-    .sm\>bg\:blk-focus:focus {
-        background-color: var(--bg-blk);
+
+    .sm\)bg\:blk,
+    .sm\)bg\:blk\!hover:hover,
+    a.sm\)bg\:blk\!active:active,
+    a.sm\)bg\:blk\!focus:focus,
+    button.sm\)bg\:blk\!active:active,
+    button.sm\)bg\:blk\!focus:focus {
+        background-color: var(--bg-blk) !important;
     }
-    .sm\>bg\:wht,
-    .sm\>bg\:wht-hover:hover,
-    .sm\>bg\:wht-focus:focus {
-        background-color: var(--bg-wht);
+
+    .sm\)bg\:wht,
+    .sm\)bg\:wht\!hover:hover,
+    a.sm\)bg\:wht\!active:active,
+    a.sm\)bg\:wht\!focus:focus,
+    button.sm\)bg\:wht\!active:active,
+    button.sm\)bg\:wht\!focus:focus {
+        background-color: var(--bg-wht) !important;
     }
-    .sm\>bg\:bas-900,
-    .sm\>bg\:bas-900-hover:hover,
-    .sm\>bg\:bas-900-focus:focus {
-        background-color: var(--bg-bas-900);
+
+    .sm\)bg\:bas-900,
+    .sm\)bg\:bas-900\!hover:hover,
+    a.sm\)bg\:bas-900\!active:active,
+    a.sm\)bg\:bas-900\!focus:focus,
+    button.sm\)bg\:bas-900\!active:active,
+    button.sm\)bg\:bas-900\!focus:focus {
+        background-color: var(--bg-bas-900) !important;
     }
-    .sm\>bg\:bas-800,
-    .sm\>bg\:bas-800-hover:hover,
-    .sm\>bg\:bas-800-focus:focus {
-        background-color: var(--bg-bas-800);
+
+    .sm\)bg\:bas-800,
+    .sm\)bg\:bas-800\!hover:hover,
+    a.sm\)bg\:bas-800\!active:active,
+    a.sm\)bg\:bas-800\!focus:focus,
+    button.sm\)bg\:bas-800\!active:active,
+    button.sm\)bg\:bas-800\!focus:focus {
+        background-color: var(--bg-bas-800) !important;
     }
-    .sm\>bg\:bas-700,
-    .sm\>bg\:bas-700-hover:hover,
-    .sm\>bg\:bas-700-focus:focus {
-        background-color: var(--bg-bas-700);
+
+    .sm\)bg\:bas-700,
+    .sm\)bg\:bas-700\!hover:hover,
+    a.sm\)bg\:bas-700\!active:active,
+    a.sm\)bg\:bas-700\!focus:focus,
+    button.sm\)bg\:bas-700\!active:active,
+    button.sm\)bg\:bas-700\!focus:focus {
+        background-color: var(--bg-bas-700) !important;
     }
-    .sm\>bg\:bas-600,
-    .sm\>bg\:bas-600-hover:hover,
-    .sm\>bg\:bas-600-focus:focus {
-        background-color: var(--bg-bas-600);
+
+    .sm\)bg\:bas-600,
+    .sm\)bg\:bas-600\!hover:hover,
+    a.sm\)bg\:bas-600\!active:active,
+    a.sm\)bg\:bas-600\!focus:focus,
+    button.sm\)bg\:bas-600\!active:active,
+    button.sm\)bg\:bas-600\!focus:focus {
+        background-color: var(--bg-bas-600) !important;
     }
-    .sm\>bg\:bas-500,
-    .sm\>bg\:bas-500-hover:hover,
-    .sm\>bg\:bas-500-focus:focus {
-        background-color: var(--bg-bas-500);
+
+    .sm\)bg\:bas-500,
+    .sm\)bg\:bas-500\!hover:hover,
+    a.sm\)bg\:bas-500\!active:active,
+    a.sm\)bg\:bas-500\!focus:focus,
+    button.sm\)bg\:bas-500\!active:active,
+    button.sm\)bg\:bas-500\!focus:focus {
+        background-color: var(--bg-bas-500) !important;
     }
-    .sm\>bg\:bas-400,
-    .sm\>bg\:bas-400-hover:hover,
-    .sm\>bg\:bas-400-focus:focus {
-        background-color: var(--bg-bas-400);
+
+    .sm\)bg\:bas-400,
+    .sm\)bg\:bas-400\!hover:hover,
+    a.sm\)bg\:bas-400\!active:active,
+    a.sm\)bg\:bas-400\!focus:focus,
+    button.sm\)bg\:bas-400\!active:active,
+    button.sm\)bg\:bas-400\!focus:focus {
+        background-color: var(--bg-bas-400) !important;
     }
-    .sm\>bg\:bas-300,
-    .sm\>bg\:bas-300-hover:hover,
-    .sm\>bg\:bas-300-focus:focus {
-        background-color: var(--bg-bas-300);
+
+    .sm\)bg\:bas-300,
+    .sm\)bg\:bas-300\!hover:hover,
+    a.sm\)bg\:bas-300\!active:active,
+    a.sm\)bg\:bas-300\!focus:focus,
+    button.sm\)bg\:bas-300\!active:active,
+    button.sm\)bg\:bas-300\!focus:focus {
+        background-color: var(--bg-bas-300) !important;
     }
-    .sm\>bg\:bas-200,
-    .sm\>bg\:bas-200-hover:hover,
-    .sm\>bg\:bas-200-focus:focus {
-        background-color: var(--bg-bas-200);
+
+    .sm\)bg\:bas-200,
+    .sm\)bg\:bas-200\!hover:hover,
+    a.sm\)bg\:bas-200\!active:active,
+    a.sm\)bg\:bas-200\!focus:focus,
+    button.sm\)bg\:bas-200\!active:active,
+    button.sm\)bg\:bas-200\!focus:focus {
+        background-color: var(--bg-bas-200) !important;
     }
-    .sm\>bg\:bas-100,
-    .sm\>bg\:bas-100-hover:hover,
-    .sm\>bg\:bas-100-focus:focus {
-        background-color: var(--bg-bas-100);
+
+    .sm\)bg\:bas-100,
+    .sm\)bg\:bas-100\!hover:hover,
+    a.sm\)bg\:bas-100\!active:active,
+    a.sm\)bg\:bas-100\!focus:focus,
+    button.sm\)bg\:bas-100\!active:active,
+    button.sm\)bg\:bas-100\!focus:focus {
+        background-color: var(--bg-bas-100) !important;
     }
-    .sm\>bg\:bas-050,
-    .sm\>bg\:bas-050-hover:hover,
-    .sm\>bg\:bas-050-focus:focus {
-        background-color: var(--bg-bas-050);
+
+    .sm\)bg\:bas-050,
+    .sm\)bg\:bas-050\!hover:hover,
+    a.sm\)bg\:bas-050\!active:active,
+    a.sm\)bg\:bas-050\!focus:focus,
+    button.sm\)bg\:bas-050\!active:active,
+    button.sm\)bg\:bas-050\!focus:focus {
+        background-color: var(--bg-bas-050) !important;
     }
-    .sm\>bg\:pri-900,
-    .sm\>bg\:pri-900-hover:hover,
-    .sm\>bg\:pri-900-focus:focus {
-        background-color: var(--bg-pri-900);
+
+    .sm\)bg\:pri-900,
+    .sm\)bg\:pri-900\!hover:hover,
+    a.sm\)bg\:pri-900\!active:active,
+    a.sm\)bg\:pri-900\!focus:focus,
+    button.sm\)bg\:pri-900\!active:active,
+    button.sm\)bg\:pri-900\!focus:focus {
+        background-color: var(--bg-pri-900) !important;
     }
-    .sm\>bg\:pri-800,
-    .sm\>bg\:pri-800-hover:hover,
-    .sm\>bg\:pri-800-focus:focus {
-        background-color: var(--bg-pri-800);
+
+    .sm\)bg\:pri-800,
+    .sm\)bg\:pri-800\!hover:hover,
+    a.sm\)bg\:pri-800\!active:active,
+    a.sm\)bg\:pri-800\!focus:focus,
+    button.sm\)bg\:pri-800\!active:active,
+    button.sm\)bg\:pri-800\!focus:focus {
+        background-color: var(--bg-pri-800) !important;
     }
-    .sm\>bg\:pri-700,
-    .sm\>bg\:pri-700-hover:hover,
-    .sm\>bg\:pri-700-focus:focus {
-        background-color: var(--bg-pri-700);
+
+    .sm\)bg\:pri-700,
+    .sm\)bg\:pri-700\!hover:hover,
+    a.sm\)bg\:pri-700\!active:active,
+    a.sm\)bg\:pri-700\!focus:focus,
+    button.sm\)bg\:pri-700\!active:active,
+    button.sm\)bg\:pri-700\!focus:focus {
+        background-color: var(--bg-pri-700) !important;
     }
-    .sm\>bg\:pri-600,
-    .sm\>bg\:pri-600-hover:hover,
-    .sm\>bg\:pri-600-focus:focus {
-        background-color: var(--bg-pri-600);
+
+    .sm\)bg\:pri-600,
+    .sm\)bg\:pri-600\!hover:hover,
+    a.sm\)bg\:pri-600\!active:active,
+    a.sm\)bg\:pri-600\!focus:focus,
+    button.sm\)bg\:pri-600\!active:active,
+    button.sm\)bg\:pri-600\!focus:focus {
+        background-color: var(--bg-pri-600) !important;
     }
-    .sm\>bg\:pri-500,
-    .sm\>bg\:pri-500-hover:hover,
-    .sm\>bg\:pri-500-focus:focus {
-        background-color: var(--bg-pri-500);
+
+    .sm\)bg\:pri-500,
+    .sm\)bg\:pri-500\!hover:hover,
+    a.sm\)bg\:pri-500\!active:active,
+    a.sm\)bg\:pri-500\!focus:focus,
+    button.sm\)bg\:pri-500\!active:active,
+    button.sm\)bg\:pri-500\!focus:focus {
+        background-color: var(--bg-pri-500) !important;
     }
-    .sm\>bg\:pri-400,
-    .sm\>bg\:pri-400-hover:hover,
-    .sm\>bg\:pri-400-focus:focus {
-        background-color: var(--bg-pri-400);
+
+    .sm\)bg\:pri-400,
+    .sm\)bg\:pri-400\!hover:hover,
+    a.sm\)bg\:pri-400\!active:active,
+    a.sm\)bg\:pri-400\!focus:focus,
+    button.sm\)bg\:pri-400\!active:active,
+    button.sm\)bg\:pri-400\!focus:focus {
+        background-color: var(--bg-pri-400) !important;
     }
-    .sm\>bg\:pri-300,
-    .sm\>bg\:pri-300-hover:hover,
-    .sm\>bg\:pri-300-focus:focus {
-        background-color: var(--bg-pri-300);
+
+    .sm\)bg\:pri-300,
+    .sm\)bg\:pri-300\!hover:hover,
+    a.sm\)bg\:pri-300\!active:active,
+    a.sm\)bg\:pri-300\!focus:focus,
+    button.sm\)bg\:pri-300\!active:active,
+    button.sm\)bg\:pri-300\!focus:focus {
+        background-color: var(--bg-pri-300) !important;
     }
-    .sm\>bg\:pri-200,
-    .sm\>bg\:pri-200-hover:hover,
-    .sm\>bg\:pri-200-focus:focus {
-        background-color: var(--bg-pri-200);
+
+    .sm\)bg\:pri-200,
+    .sm\)bg\:pri-200\!hover:hover,
+    a.sm\)bg\:pri-200\!active:active,
+    a.sm\)bg\:pri-200\!focus:focus,
+    button.sm\)bg\:pri-200\!active:active,
+    button.sm\)bg\:pri-200\!focus:focus {
+        background-color: var(--bg-pri-200) !important;
     }
-    .sm\>bg\:pri-100,
-    .sm\>bg\:pri-100-hover:hover,
-    .sm\>bg\:pri-100-focus:focus {
-        background-color: var(--bg-pri-100);
+
+    .sm\)bg\:pri-100,
+    .sm\)bg\:pri-100\!hover:hover,
+    a.sm\)bg\:pri-100\!active:active,
+    a.sm\)bg\:pri-100\!focus:focus,
+    button.sm\)bg\:pri-100\!active:active,
+    button.sm\)bg\:pri-100\!focus:focus {
+        background-color: var(--bg-pri-100) !important;
     }
-    .sm\>bg\:pri-050,
-    .sm\>bg\:pri-050-hover:hover,
-    .sm\>bg\:pri-050-focus:focus {
-        background-color: var(--bg-pri-050);
+
+    .sm\)bg\:pri-050,
+    .sm\)bg\:pri-050\!hover:hover,
+    a.sm\)bg\:pri-050\!active:active,
+    a.sm\)bg\:pri-050\!focus:focus,
+    button.sm\)bg\:pri-050\!active:active,
+    button.sm\)bg\:pri-050\!focus:focus {
+        background-color: var(--bg-pri-050) !important;
     }
-    .sm\>bg\:sec-900,
-    .sm\>bg\:sec-900-hover:hover,
-    .sm\>bg\:sec-900-focus:focus {
-        background-color: var(--bg-sec-900);
+
+    .sm\)bg\:sec-900,
+    .sm\)bg\:sec-900\!hover:hover,
+    a.sm\)bg\:sec-900\!active:active,
+    a.sm\)bg\:sec-900\!focus:focus,
+    button.sm\)bg\:sec-900\!active:active,
+    button.sm\)bg\:sec-900\!focus:focus {
+        background-color: var(--bg-sec-900) !important;
     }
-    .sm\>bg\:sec-800,
-    .sm\>bg\:sec-800-hover:hover,
-    .sm\>bg\:sec-800-focus:focus {
-        background-color: var(--bg-sec-800);
+
+    .sm\)bg\:sec-800,
+    .sm\)bg\:sec-800\!hover:hover,
+    a.sm\)bg\:sec-800\!active:active,
+    a.sm\)bg\:sec-800\!focus:focus,
+    button.sm\)bg\:sec-800\!active:active,
+    button.sm\)bg\:sec-800\!focus:focus {
+        background-color: var(--bg-sec-800) !important;
     }
-    .sm\>bg\:sec-700,
-    .sm\>bg\:sec-700-hover:hover,
-    .sm\>bg\:sec-700-focus:focus {
-        background-color: var(--bg-sec-700);
+
+    .sm\)bg\:sec-700,
+    .sm\)bg\:sec-700\!hover:hover,
+    a.sm\)bg\:sec-700\!active:active,
+    a.sm\)bg\:sec-700\!focus:focus,
+    button.sm\)bg\:sec-700\!active:active,
+    button.sm\)bg\:sec-700\!focus:focus {
+        background-color: var(--bg-sec-700) !important;
     }
-    .sm\>bg\:sec-600,
-    .sm\>bg\:sec-600-hover:hover,
-    .sm\>bg\:sec-600-focus:focus {
-        background-color: var(--bg-sec-600);
+
+    .sm\)bg\:sec-600,
+    .sm\)bg\:sec-600\!hover:hover,
+    a.sm\)bg\:sec-600\!active:active,
+    a.sm\)bg\:sec-600\!focus:focus,
+    button.sm\)bg\:sec-600\!active:active,
+    button.sm\)bg\:sec-600\!focus:focus {
+        background-color: var(--bg-sec-600) !important;
     }
-    .sm\>bg\:sec-500,
-    .sm\>bg\:sec-500-hover:hover,
-    .sm\>bg\:sec-500-focus:focus {
-        background-color: var(--bg-sec-500);
+
+    .sm\)bg\:sec-500,
+    .sm\)bg\:sec-500\!hover:hover,
+    a.sm\)bg\:sec-500\!active:active,
+    a.sm\)bg\:sec-500\!focus:focus,
+    button.sm\)bg\:sec-500\!active:active,
+    button.sm\)bg\:sec-500\!focus:focus {
+        background-color: var(--bg-sec-500) !important;
     }
-    .sm\>bg\:sec-400,
-    .sm\>bg\:sec-400-hover:hover,
-    .sm\>bg\:sec-400-focus:focus {
-        background-color: var(--bg-sec-400);
+
+    .sm\)bg\:sec-400,
+    .sm\)bg\:sec-400\!hover:hover,
+    a.sm\)bg\:sec-400\!active:active,
+    a.sm\)bg\:sec-400\!focus:focus,
+    button.sm\)bg\:sec-400\!active:active,
+    button.sm\)bg\:sec-400\!focus:focus {
+        background-color: var(--bg-sec-400) !important;
     }
-    .sm\>bg\:sec-300,
-    .sm\>bg\:sec-300-hover:hover,
-    .sm\>bg\:sec-300-focus:focus {
-        background-color: var(--bg-sec-300);
+
+    .sm\)bg\:sec-300,
+    .sm\)bg\:sec-300\!hover:hover,
+    a.sm\)bg\:sec-300\!active:active,
+    a.sm\)bg\:sec-300\!focus:focus,
+    button.sm\)bg\:sec-300\!active:active,
+    button.sm\)bg\:sec-300\!focus:focus {
+        background-color: var(--bg-sec-300) !important;
     }
-    .sm\>bg\:sec-200,
-    .sm\>bg\:sec-200-hover:hover,
-    .sm\>bg\:sec-200-focus:focus {
-        background-color: var(--bg-sec-200);
+
+    .sm\)bg\:sec-200,
+    .sm\)bg\:sec-200\!hover:hover,
+    a.sm\)bg\:sec-200\!active:active,
+    a.sm\)bg\:sec-200\!focus:focus,
+    button.sm\)bg\:sec-200\!active:active,
+    button.sm\)bg\:sec-200\!focus:focus {
+        background-color: var(--bg-sec-200) !important;
     }
-    .sm\>bg\:sec-100,
-    .sm\>bg\:sec-100-hover:hover,
-    .sm\>bg\:sec-100-focus:focus {
-        background-color: var(--bg-sec-100);
+
+    .sm\)bg\:sec-100,
+    .sm\)bg\:sec-100\!hover:hover,
+    a.sm\)bg\:sec-100\!active:active,
+    a.sm\)bg\:sec-100\!focus:focus,
+    button.sm\)bg\:sec-100\!active:active,
+    button.sm\)bg\:sec-100\!focus:focus {
+        background-color: var(--bg-sec-100) !important;
     }
-    .sm\>bg\:sec-050,
-    .sm\>bg\:sec-050-hover:hover,
-    .sm\>bg\:sec-050-focus:focus {
-        background-color: var(--bg-sec-050);
+
+    .sm\)bg\:sec-050,
+    .sm\)bg\:sec-050\!hover:hover,
+    a.sm\)bg\:sec-050\!active:active,
+    a.sm\)bg\:sec-050\!focus:focus,
+    button.sm\)bg\:sec-050\!active:active,
+    button.sm\)bg\:sec-050\!focus:focus {
+        background-color: var(--bg-sec-050) !important;
     }
+
     /*
-        standard colors
+        other md colors
     */
-    .sm\>fg\:red,
-    .sm\>fg\:red-hover:hover,
-    .sm\>fg\:red-focus:focus {
-        color: #F44336;
+    .sm\)fg\:red,
+    .sm\)fg\:red\!hover:hover,
+    a.sm\)fg\:red\!active:active,
+    a.sm\)fg\:red\!focus:focus,
+    button.sm\)fg\:red\!active:active,
+    button.sm\)fg\:red\!focus:focus {
+        color: var(--fg-red);
     }
-    .sm\>bg\:red,
-    .sm\>bg\:red-hover:hover,
-    .sm\>bg\:red-focus:focus {
-        background-color: #F44336;
+
+    .sm\)bg\:red,
+    .sm\)bg\:red\!hover:hover,
+    a.sm\)bg\:red\!active:active,
+    a.sm\)bg\:red\!focus:focus,
+    button.sm\)bg\:red\!active:active,
+    button.sm\)bg\:red\!focus:focus {
+        background-color: var(--bg-red);
     }
-    .sm\>fg\:pink,
-    .sm\>fg\:pink-hover:hover,
-    .sm\>fg\:pink-focus:focus {
-        color: #E91E63;
+
+    .sm\)fg\:pink,
+    .sm\)fg\:pink\!hover:hover,
+    a.sm\)fg\:pink\!active:active,
+    a.sm\)fg\:pink\!focus:focus,
+    button.sm\)fg\:pink\!active:active,
+    button.sm\)fg\:pink\!focus:focus {
+        color: var(--fg-pink);
     }
-    .sm\>bg\:pink,
-    .sm\>bg\:pink-hover:hover,
-    .sm\>bg\:pink-focus:focus {
-        background-color: #E91E63;
+
+    .sm\)bg\:pink,
+    .sm\)bg\:pink\!hover:hover,
+    a.sm\)bg\:pink\!active:active,
+    a.sm\)bg\:pink\!focus:focus,
+    button.sm\)bg\:pink\!active:active,
+    button.sm\)bg\:pink\!focus:focus {
+        background-color: var(--bg-pink);
     }
-    .sm\>fg\:purple .sm\>fg\:purple-hover:hover,
-    .sm\>fg\:purple-focus:focus {
-        color: #9C27B0;
+
+    .sm\)fg\:purple,
+    .sm\)fg\:purple\!hover:hover,
+    a.sm\)fg\:purple\!active:active,
+    a.sm\)fg\:purple\!focus:focus,
+    button.sm\)fg\:purple\!active:active,
+    button.sm\)fg\:purple\!focus:focus {
+        color: var(--fg-purple);
     }
-    .sm\>bg\:purple,
-    .sm\>bg\:purple-hover:hover,
-    .sm\>bg\:purple-focus:focus {
-        background-color: #9C27B0;
+
+    .sm\)bg\:purple,
+    .sm\)bg\:purple\!hover:hover,
+    a.sm\)bg\:purple\!active:active,
+    a.sm\)bg\:purple\!focus:focus,
+    button.sm\)bg\:purple\!active:active,
+    button.sm\)bg\:purple\!focus:focus {
+        background-color: var(--bg-purple);
     }
-    .sm\>fg\:deep-purple,
-    .sm\>fg\:deep-purple-hover:hover,
-    .sm\>fg\:deep-purple-focus:focus {
-        color: #673AB7;
+
+    .sm\)fg\:deep-purple,
+    .sm\)fg\:deep-purple\!hover:hover,
+    a.sm\)fg\:deep-purple\!active:active,
+    a.sm\)fg\:deep-purple\!focus:focus,
+    button.sm\)fg\:deep-purple\!active:active,
+    button.sm\)fg\:deep-purple\!focus:focus {
+        color: var(--fg-deep-purple);
     }
-    .sm\>bg\:deep-purple,
-    .sm\>bg\:deep-purple-hover:hover,
-    .sm\>bg\:deep-purple-focus:focus {
-        background-color: #673AB7;
+
+    .sm\)bg\:deep-purple,
+    .sm\)bg\:deep-purple\!hover:hover,
+    a.sm\)bg\:deep-purple\!active:active,
+    a.sm\)bg\:deep-purple\!focus:focus,
+    button.sm\)bg\:deep-purple\!active:active,
+    button.sm\)bg\:deep-purple\!focus:focus {
+        background-color: var(--bg-deep-purple);
     }
-    .sm\>fg\:indigo,
-    .sm\>fg\:indigo-hover:hover,
-    .sm\>fg\:indigo-focus:focus {
-        color: #3F51B5;
+
+    .sm\)fg\:indigo,
+    .sm\)fg\:indigo\!hover:hover,
+    a.sm\)fg\:indigo\!active:active,
+    a.sm\)fg\:indigo\!focus:focus,
+    button.sm\)fg\:indigo\!active:active,
+    button.sm\)fg\:indigo\!focus:focus {
+        color: var(--fg-indigo);
     }
-    .sm\>bg\:indigo,
-    .sm\>bg\:indigo-hover:hover,
-    .sm\>bg\:indigo-focus:focus {
-        background-color: #3F51B5;
+
+    .sm\)bg\:indigo,
+    .sm\)bg\:indigo\!hover:hover,
+    a.sm\)bg\:indigo\!active:active,
+    a.sm\)bg\:indigo\!focus:focus,
+    button.sm\)bg\:indigo\!active:active,
+    button.sm\)bg\:indigo\!focus:focus {
+        background-color: var(--bg-indigo);
     }
-    .sm\>fg\:blue,
-    .sm\>fg\:blue-hover:hover,
-    .sm\>fg\:blue-focus:focus {
-        color: #2196F3;
+
+    .sm\)fg\:blue,
+    .sm\)fg\:blue\!hover:hover,
+    a.sm\)fg\:blue\!active:active,
+    a.sm\)fg\:blue\!focus:focus,
+    button.sm\)fg\:blue\!active:active,
+    button.sm\)fg\:blue\!focus:focus {
+        color: var(--fg-blue);
     }
-    .sm\>bg\:blue,
-    .sm\>bg\:blue-hover:hover,
-    .sm\>bg\:blue-focus:focus {
-        background-color: #2196F3;
+
+    .sm\)bg\:blue,
+    .sm\)bg\:blue\!hover:hover,
+    a.sm\)bg\:blue\!active:active,
+    a.sm\)bg\:blue\!focus:focus,
+    button.sm\)bg\:blue\!active:active,
+    button.sm\)bg\:blue\!focus:focus {
+        background-color: var(--bg-blue);
     }
-    .sm\>fg\:light-blue,
-    .sm\>fg\:light-blue-hover:hover,
-    .sm\>fg\:light-blue-focus:focus {
-        color: #03A9F4;
+
+    .sm\)fg\:light-blue,
+    .sm\)fg\:light-blue\!hover:hover,
+    a.sm\)fg\:light-blue\!active:active,
+    a.sm\)fg\:light-blue\!focus:focus,
+    button.sm\)fg\:light-blue\!active:active,
+    button.sm\)fg\:light-blue\!focus:focus {
+        color: var(--fg-light-blue);
     }
-    .sm\>bg\:light-blue,
-    .sm\>bg\:light-blue-hover:hover,
-    .sm\>bg\:light-blue-focus:focus {
-        background-color: #03A9F4;
+
+    .sm\)bg\:light-blue,
+    .sm\)bg\:light-blue\!hover:hover,
+    a.sm\)bg\:light-blue\!active:active,
+    a.sm\)bg\:light-blue\!focus:focus,
+    button.sm\)bg\:light-blue\!active:active,
+    button.sm\)bg\:light-blue\!focus:focus {
+        background-color: var(--bg-light-blue);
     }
-    .sm\>fg\:cyan,
-    .sm\>fg\:cyan-hover:hover,
-    .sm\>fg\:cyan-focus:focus {
-        color: #00BCD4;
+
+    .sm\)fg\:cyan,
+    .sm\)fg\:cyan\!hover:hover,
+    a.sm\)fg\:cyan\!active:active,
+    a.sm\)fg\:cyan\!focus:focus,
+    button.sm\)fg\:cyan\!active:active,
+    button.sm\)fg\:cyan\!focus:focus {
+        color: var(--fg-cyan);
     }
-    .sm\>bg\:cyan,
-    .sm\>bg\:cyan-hover:hover,
-    .sm\>bg\:cyan-focus:focus {
-        background-color: #00BCD4;
+
+    .sm\)bg\:cyan,
+    .sm\)bg\:cyan\!hover:hover,
+    a.sm\)bg\:cyan\!active:active,
+    a.sm\)bg\:cyan\!focus:focus,
+    button.sm\)bg\:cyan\!active:active,
+    button.sm\)bg\:cyan\!focus:focus {
+        background-color: var(--bg-cyan);
     }
-    .sm\>fg\:teal,
-    .sm\>fg\:teal-hover:hover,
-    .sm\>fg\:teal-focus:focus {
-        color: #009688;
+
+    .sm\)fg\:teal,
+    .sm\)fg\:teal\!hover:hover,
+    a.sm\)fg\:teal\!active:active,
+    a.sm\)fg\:teal\!focus:focus,
+    button.sm\)fg\:teal\!active:active,
+    button.sm\)fg\:teal\!focus:focus {
+        color: var(--fg-teal);
     }
-    .sm\>bg\:teal,
-    .sm\>bg\:teal-hover:hover,
-    .sm\>bg\:teal-focus:focus {
-        background-color: #009688;
+
+    .sm\)bg\:teal,
+    .sm\)bg\:teal\!hover:hover,
+    a.sm\)bg\:teal\!active:active,
+    a.sm\)bg\:teal\!focus:focus,
+    button.sm\)bg\:teal\!active:active,
+    button.sm\)bg\:teal\!focus:focus {
+        background-color: var(--bg-teal);
     }
-    .sm\>fg\:green,
-    .sm\>fg\:green-hover:hover,
-    .sm\>fg\:green-focus:focus {
-        color: #4CAF50;
+
+    .sm\)fg\:green,
+    .sm\)fg\:green\!hover:hover,
+    a.sm\)fg\:green\!active:active,
+    a.sm\)fg\:green\!focus:focus,
+    button.sm\)fg\:green\!active:active,
+    button.sm\)fg\:green\!focus:focus {
+        color: var(--fg-green);
     }
-    .sm\>bg\:green,
-    .sm\>bg\:green-hover:hover,
-    .sm\>bg\:green-focus:focus {
-        background-color: #4CAF50;
+
+    .sm\)bg\:green,
+    .sm\)bg\:green\!hover:hover,
+    a.sm\)bg\:green\!active:active,
+    a.sm\)bg\:green\!focus:focus,
+    button.sm\)bg\:green\!active:active,
+    button.sm\)bg\:green\!focus:focus {
+        background-color: var(--bg-green);
     }
-    .sm\>fg\:light-green,
-    .sm\>fg\:light-green-hover:hover,
-    .sm\>fg\:light-green-focus:focus {
-        color: #8BC34A;
+
+    .sm\)fg\:light-green,
+    .sm\)fg\:light-green\!hover:hover,
+    a.sm\)fg\:light-green\!active:active,
+    a.sm\)fg\:light-green\!focus:focus,
+    button.sm\)fg\:light-green\!active:active,
+    button.sm\)fg\:light-green\!focus:focus {
+        color: var(--fg-light-green);
     }
-    .sm\>bg\:light-green,
-    .sm\>bg\:light-green-hover:hover,
-    .sm\>bg\:light-green-focus:focus {
-        background-color: #8BC34A;
+
+    .sm\)bg\:light-green,
+    .sm\)bg\:light-green\!hover:hover,
+    a.sm\)bg\:light-green\!active:active,
+    a.sm\)bg\:light-green\!focus:focus,
+    button.sm\)bg\:light-green\!active:active,
+    button.sm\)bg\:light-green\!focus:focus {
+        background-color: var(--bg-light-green);
     }
-    .sm\>fg\:lime,
-    .sm\>fg\:lime-hover:hover,
-    .sm\>fg\:lime-focus:focus {
-        color: #CDDC39;
+
+    .sm\)fg\:lime,
+    .sm\)fg\:lime\!hover:hover,
+    a.sm\)fg\:lime\!active:active,
+    a.sm\)fg\:lime\!focus:focus,
+    button.sm\)fg\:lime\!active:active,
+    button.sm\)fg\:lime\!focus:focus {
+        color: var(--fg-lime);
     }
-    .sm\>bg\:lime,
-    .sm\>bg\:lime-hover:hover,
-    .sm\>bg\:lime-focus:focus {
-        background-color: #CDDC39;
+
+    .sm\)bg\:lime,
+    .sm\)bg\:lime\!hover:hover,
+    a.sm\)bg\:lime\!active:active,
+    a.sm\)bg\:lime\!focus:focus,
+    button.sm\)bg\:lime\!active:active,
+    button.sm\)bg\:lime\!focus:focus {
+        background-color: var(--bg-lime);
     }
-    .sm\>fg\:yellow,
-    .sm\>fg\:yellow-hover:hover,
-    .sm\>fg\:yellow-focus:focus {
-        color: #FFEB3B;
+
+    .sm\)fg\:yellow,
+    .sm\)fg\:yellow\!hover:hover,
+    a.sm\)fg\:yellow\!active:active,
+    a.sm\)fg\:yellow\!focus:focus,
+    button.sm\)fg\:yellow\!active:active,
+    button.sm\)fg\:yellow\!focus:focus {
+        color: var(--fg-yellow);
     }
-    .sm\>bg\:yellow,
-    .sm\>bg\:yellow-hover:hover,
-    .sm\>bg\:yellow-focus:focus {
-        background-color: #FFEB3B;
+
+    .sm\)bg\:yellow,
+    .sm\)bg\:yellow\!hover:hover,
+    a.sm\)bg\:yellow\!active:active,
+    a.sm\)bg\:yellow\!focus:focus,
+    button.sm\)bg\:yellow\!active:active,
+    button.sm\)bg\:yellow\!focus:focus {
+        background-color: var(--bg-yellow);
     }
-    .sm\>fg\:amber,
-    .sm\>fg\:amber-hover:hover,
-    .sm\>fg\:amber-focus:focus {
-        color: #FFC107;
+
+    .sm\)fg\:amber,
+    .sm\)fg\:amber\!hover:hover,
+    a.sm\)fg\:amber\!active:active,
+    a.sm\)fg\:amber\!focus:focus,
+    button.sm\)fg\:amber\!active:active,
+    button.sm\)fg\:amber\!focus:focus {
+        color: var(--fg-amber);
     }
-    .sm\>bg\:amber,
-    .sm\>bg\:amber-hover:hover,
-    .sm\>bg\:amber-focus:focus {
-        background-color: #FFC107;
+
+    .sm\)bg\:amber,
+    .sm\)bg\:amber\!hover:hover,
+    a.sm\)bg\:amber\!active:active,
+    a.sm\)bg\:amber\!focus:focus,
+    button.sm\)bg\:amber\!active:active,
+    button.sm\)bg\:amber\!focus:focus {
+        background-color: vr(--bg-amber);
     }
-    .sm\>fg\:orange,
-    .sm\>fg\:orange-hover:hover,
-    .sm\>fg\:orange-focus:focus {
-        color: #FF9800;
+
+    .sm\)fg\:orange,
+    .sm\)fg\:orange\!hover:hover,
+    a.sm\)fg\:orange\!active:active,
+    a.sm\)fg\:orange\!focus:focus,
+    button.sm\)fg\:orange\!active:active,
+    button.sm\)fg\:orange\!focus:focus {
+        color: var(--fg-orange);
     }
-    .sm\>bg\:orange,
-    .sm\>bg\:orange-hover:hover,
-    .sm\>bg\:orange-focus:focus {
-        background-color: #FF9800;
+
+    .sm\)bg\:orange,
+    .sm\)bg\:orange\!hover:hover,
+    a.sm\)bg\:orange\!active:active a.sm\)bg\:orange\!focus:focus,
+    button.sm\)bg\:orange\!active:active,
+    button.sm\)bg\:orange\!focus:focus {
+        background-color: var(--bg-orange);
     }
-    .sm\>fg\:deep-orange,
-    .sm\>fg\:deep-orange-hover:hover,
-    .sm\>fg\:deep-orange-focus:focus {
-        color: #FF5722;
+
+    .sm\)fg\:deep-orange,
+    .sm\)fg\:deep-orange\!hover:hover,
+    a.sm\)fg\:deep-orange\!active:active,
+    a.sm\)fg\:deep-orange\!focus:focus,
+    button.sm\)fg\:deep-orange\!active:active,
+    button.sm\)fg\:deep-orange\!focus:focus {
+        color: var(--fg-deep-orange);
     }
-    .sm\>bg\:deep-orange,
-    .sm\>bg\:deep-orange-hover:hover,
-    .sm\>bg\:deep-orange-focus:focus {
-        background-color: #FF5722;
+
+    .sm\)bg\:deep-orange,
+    .sm\)bg\:deep-orange\!hover:hover,
+    a.sm\)bg\:deep-orange\!active:active,
+    a.sm\)bg\:deep-orange\!focus:focus,
+    button.sm\)bg\:deep-orange\!active:active,
+    button.sm\)bg\:deep-orange\!focus:focus {
+        background-color: var(--bg-deep-orange);
     }
-    .sm\>fg\:brown,
-    .sm\>fg\:brown-hover:hover,
-    .sm\>fg\:brown-focus:focus {
-        color: #795548;
+
+    .sm\)fg\:brown,
+    .sm\)fg\:brown\!hover:hover,
+    a.sm\)fg\:brown\!active:active,
+    a.sm\)fg\:brown\!focus:focus,
+    button.sm\)fg\:brown\!active:active,
+    button.sm\)fg\:brown\!focus:focus {
+        color: var(--fg-brown);
     }
-    .sm\>bg\:brown,
-    .sm\>bg\:brown-hover:hover,
-    .sm\>bg\:brown-focus:focus {
-        background-color: #795548;
+
+    .sm\)bg\:brown,
+    .sm\)bg\:brown\!hover:hover,
+    a.sm\)bg\:brown\!active:active,
+    a.sm\)bg\:brown\!focus:focus,
+    button.sm\)bg\:brown\!active:active,
+    button.sm\)bg\:brown\!focus:focus {
+        background-color: var(--bg-brown);
     }
-    .sm\>fg\:grey,
-    .sm\>fg\:grey-hover:hover,
-    .sm\>fg\:grey-focus:focus {
-        color: #9E9E9E;
+
+    .sm\)fg\:grey,
+    .sm\)fg\:grey\!hover:hover,
+    a.sm\)fg\:grey\!active:active,
+    a.sm\)fg\:grey\!focus:focus,
+    button.sm\)fg\:grey\!active:active,
+    button.sm\)fg\:grey\!focus:focus {
+        color: var(--fg-grey);
     }
-    .sm\>bg\:grey,
-    .sm\>bg\:grey-hover:hover,
-    .sm\>bg\:grey-focus:focus {
-        background-color: #9E9E9E;
+
+    .sm\)bg\:grey,
+    .sm\)bg\:grey\!hover:hover,
+    a.sm\)bg\:grey\!active:active,
+    a.sm\)bg\:grey\!focus:focus,
+    button.sm\)bg\:grey\!active:active,
+    button.sm\)bg\:grey\!focus:focus {
+        background-color: vr(--bg-grey);
     }
-    .sm\>fg\:blue-grey,
-    .sm\>fg\:blue-grey-hover:hover,
-    .sm\>fg\:blue-grey-focus:focus {
-        color: #607D8B;
+
+    .sm\)fg\:blue-grey,
+    .sm\)fg\:blue-grey\!hover:hover,
+    a.sm\)fg\:blue-grey\!active:active,
+    a.sm\)fg\:blue-grey\!focus:focus,
+    button.sm\)fg\:blue-grey\!active:active,
+    button.sm\)fg\:blue-grey\!focus:focus {
+        color: var(--fg-blue-grey);
     }
-    .sm\>bg\:blue-grey,
-    .sm\>bg\:blue-grey-hover:hover,
-    .sm\>bg\:blue-grey-focus:focus {
-        background-color: #607D8B;
+
+    .sm\)bg\:blue-grey,
+    .sm\)bg\:blue-grey\!hover:hover,
+    a.sm\)bg\:blue-grey\!active:active,
+    a.sm\)bg\:blue-grey\!focus:focus,
+    button.sm\)bg\:blue-grey\!active:active,
+    button.sm\)bg\:blue-grey\!focus:focus {
+        background-color: var(--bg-blue-grey);
     }
+
+    /*
+        color shortcuts
+    */
+    /*: theme fg & bg colors :*/
+    .sm\)sys\:fg,
+    .sm\)sys\:fg\!hover:hover,
+    a.sm\)sys\:fg\!active:active,
+    a.sm\)sys\:fg\!focus:focus,
+    button.sm\)sys\:fg\!active:active,
+    button.sm\)sys\:fg\!focus:focus {
+        color: var(--sys-font-color) !important;
+    }
+
+    .sm\)sys\:bg,
+    .sm\)sys\:bg\!hover:hover,
+    a.sm\)sys\:bg\!active:active,
+    a.sm\)sys\:bg\!focus:focus,
+    button.sm\)sys\:bg\!active:active,
+    button.sm\)sys\:bg\!focus:focus {
+        background-color: var(--sys-content-fg-color) !important;
+    }
+
+    /*: theme link colors :*/
+    .sm\)fg\:link,
+    a.sm\)fg\:link,
+    button.sm\)fg\:link {
+        color: var(--sys-lnk-pri-color) !important;
+    }
+
+    .sm\)fg\:link\!hover:hover,
+    a.sm\)fg\:link\!active:active,
+    a.sm\)fg\:link\!focus:focus,
+    button.sm\)fg\:link\!active:active,
+    button.sm\)fg\:link\!focus:focus {
+        color: var(--sys-lnk-sec-color) !important;
+    }
+
+    /*: background tints :*/
+    .sm\)bg\:dark\!hover:hover,
+    button.sm\)bg\:dark\!active:active,
+    button.sm\)bg\:dark\!focus:focus {
+        filter: brightness(92%) !important;
+    }
+
+    .sm\)bg\:darker\!hover:hover,
+    button.sm\)bg\:darker\!active:active,
+    button.sm\)bg\:darker\!focus:focus {
+        filter: brightness(96%) !important;
+    }
+
+    .sm\)bg\:brighter\!hover:hover,
+    button.sm\)bg\:brighter\!active:active,
+    button.sm\)bg\:brighter\!focus:focus {
+        filter: brightness(104%) !important;
+    }
+
+    .sm\)bg\:bright\!hover:hover,
+    button.sm\)bg\:bright\!active:active,
+    button.sm\)bg\:bright\!focus:focus {
+        filter: brightness(108%) !important;
+    }
+
+    /*: gradient tints :*/
+    .sm\)bg\:bas-gradient {
+        background: var(--bg-bas-400);
+        background: -moz-linear-gradient(top, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+        background: -webkit-linear-gradient(top, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+        background: linear-gradient(to bottom, var(--bg-bas-200) 0%, var(--bg-bas-400) 100%);
+        filter: progid:DXImageTransform.sm\)Microsoft.sm\)gradient(startColorstr='var(--bg-bas-200)', endColorstr='var(--bg-bas-400)', GradientType=0);
+    }
+
+    .sm\)bg\:pri-gradient {
+        background: var(--bg-pri-200);
+        background: -moz-linear-gradient(top, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+        background: -webkit-linear-gradient(top, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+        background: linear-gradient(to bottom, var(--bg-pri-050) 0%, var(--bg-pri-200) 100%);
+        filter: progid:DXImageTransform.sm\)Microsoft.sm\)gradient(startColorstr='var(--bg-pri-050)', endColorstr='var(--bg-pri-200)', GradientType=0);
+    }
+
+    .sm\)bg\:sec-gradient {
+        background: var(--bg-sec-200);
+        background: -moz-linear-gradient(top, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+        background: -webkit-linear-gradient(top, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+        background: linear-gradient(to bottom, var(--bg-sec-050) 0%, var(--bg-sec-200) 100%);
+        filter: progid:DXImageTransform.sm\)Microsoft.sm\)gradient(startColorstr='var(--bg-sec-050)', endColorstr='var(--bg-sec-200)', GradientType=0);
+    }
+
     /*
         border colors
     */
-    .sm\>bdr\:blk,
-    .sm\>bdr\:blk-hover:hover,
-    .sm\>bdr\:blk-focus:focus {
+    .sm\)bdr\:transparent,
+    .sm\)bdr\:transparent\!hover:hover,
+    a.sm\)bdr\:transparent\!focus:focus,
+    a.sm\)bdr\:transparent,
+    button.sm\)bdr\:transparent\!hover:hover,
+    button.sm\)bdr\:transparent\!focus:focus {
+        border-color: transparent !important;
+    }
+
+    .sm\)bdr\:blk,
+    .sm\)bdr\:blk\!hover:hover,
+    a.sm\)bdr\:blk\!focus:focus,
+    a.sm\)bdr\:blk,
+    button.sm\)bdr\:blk\!hover:hover,
+    button.sm\)bdr\:blk\!focus:focus {
         border-color: var(--fg-blk) !important;
     }
-    .sm\>bdr\:wht,
-    .sm\>bdr\:wht-hover:hover,
-    .sm\>bdr\:wht-focus:focus {
+
+    .sm\)bdr\:wht,
+    .sm\)bdr\:wht\!hover:hover,
+    a.sm\)bdr\:wht\!focus:focus,
+    a.sm\)bdr\:wht,
+    button.sm\)bdr\:wht\!hover:hover,
+    button.sm\)bdr\:wht\!focus:focus {
         border-color: var(--fg-wht) !important;
     }
-    .sm\>bdr\:bas-900,
-    .sm\>bdr\:bas-900-hover:hover,
-    .sm\>bdr\:bas-900-focus:focus {
+
+    .sm\)bdr\:bas-900,
+    .sm\)bdr\:bas-900\!hover:hover,
+    a.sm\)bdr\:bas-900\!focus:focus,
+    a.sm\)bdr\:bas-900,
+    button.sm\)bdr\:bas-900\!hover:hover,
+    button.sm\)bdr\:bas-900\!focus:focus {
         border-color: var(--fg-bas-900) !important;
     }
-    .sm\>bdr\:bas-800,
-    .sm\>bdr\:bas-800-hover:hover,
-    .sm\>bdr\:bas-800-focus:focus {
+
+    .sm\)bdr\:bas-800,
+    .sm\)bdr\:bas-800\!hover:hover,
+    a.sm\)bdr\:bas-800\!focus:focus,
+    a.sm\)bdr\:bas-800,
+    button.sm\)bdr\:bas-800\!hover:hover,
+    button.sm\)bdr\:bas-800\!focus:focus {
         border-color: var(--fg-bas-800) !important;
     }
-    .sm\>bdr\:bas-700,
-    .sm\>bdr\:bas-700-hover:hover,
-    .sm\>bdr\:bas-700-focus:focus {
+
+    .sm\)bdr\:bas-700,
+    .sm\)bdr\:bas-700\!hover:hover,
+    a.sm\)bdr\:bas-700\!focus:focus,
+    a.sm\)bdr\:bas-700,
+    button.sm\)bdr\:bas-700\!hover:hover,
+    button.sm\)bdr\:bas-700\!focus:focus {
         border-color: var(--fg-bas-700) !important;
     }
-    .sm\>bdr\:bas-600,
-    .sm\>bdr\:bas-600-hover:hover,
-    .sm\>bdr\:bas-600-focus:focus {
+
+    .sm\)bdr\:bas-600,
+    .sm\)bdr\:bas-600\!hover:hover,
+    a.sm\)bdr\:bas-600\!focus:focus,
+    a.sm\)bdr\:bas-600,
+    button.sm\)bdr\:bas-600\!hover:hover,
+    button.sm\)bdr\:bas-600\!focus:focus {
         border-color: var(--fg-bas-600) !important;
     }
-    .sm\>bdr\:bas-500,
-    .sm\>bdr\:bas-500-hover:hover,
-    .sm\>bdr\:bas-500-focus:focus {
+
+    .sm\)bdr\:bas-500,
+    .sm\)bdr\:bas-500\!hover:hover,
+    a.sm\)bdr\:bas-500\!focus:focus,
+    a.sm\)bdr\:bas-500,
+    button.sm\)bdr\:bas-500\!hover:hover,
+    button.sm\)bdr\:bas-500\!focus:focus {
         border-color: var(--fg-bas-500) !important;
     }
-    .sm\>bdr\:bas-400,
-    .sm\>bdr\:bas-400-hover:hover,
-    .sm\>bdr\:bas-400-focus:focus {
+
+    .sm\)bdr\:bas-400,
+    .sm\)bdr\:bas-400\!hover:hover,
+    a.sm\)bdr\:bas-400\!focus:focus,
+    a.sm\)bdr\:bas-400,
+    button.sm\)bdr\:bas-400\!hover:hover,
+    button.sm\)bdr\:bas-400\!focus:focus {
         border-color: var(--fg-bas-400) !important;
     }
-    .sm\>bdr\:bas-300,
-    .sm\>bdr\:bas-300-hover:hover,
-    .sm\>bdr\:bas-300-focus:focus {
+
+    .sm\)bdr\:bas-300,
+    .sm\)bdr\:bas-300\!hover:hover,
+    a.sm\)bdr\:bas-300\!focus:focus,
+    a.sm\)bdr\:bas-300,
+    button.sm\)bdr\:bas-300\!hover:hover,
+    button.sm\)bdr\:bas-300\!focus:focus {
         border-color: var(--fg-bas-300) !important;
     }
-    .sm\>bdr\:bas-200,
-    .sm\>bdr\:bas-200-hover:hover,
-    .sm\>bdr\:bas-200-focus:focus {
+
+    .sm\)bdr\:bas-200,
+    .sm\)bdr\:bas-200\!hover:hover,
+    a.sm\)bdr\:bas-200\!focus:focus,
+    a.sm\)bdr\:bas-200,
+    button.sm\)bdr\:bas-200\!hover:hover,
+    button.sm\)bdr\:bas-200\!focus:focus {
         border-color: var(--fg-bas-200) !important;
     }
-    .sm\>bdr\:bas-100,
-    .sm\>bdr\:bas-100-hover:hover,
-    .sm\>bdr\:bas-100-focus:focus {
+
+    .sm\)bdr\:bas-100,
+    .sm\)bdr\:bas-100\!hover:hover,
+    a.sm\)bdr\:bas-100\!focus:focus,
+    a.sm\)bdr\:bas-100,
+    button.sm\)bdr\:bas-100\!hover:hover,
+    button.sm\)bdr\:bas-100\!focus:focus {
         border-color: var(--fg-bas-100) !important;
     }
-    .sm\>bdr\:bas-050,
-    .sm\>bdr\:bas-050-hover:hover,
-    .sm\>bdr\:bas-050-focus:focus {
+
+    .sm\)bdr\:bas-050,
+    .sm\)bdr\:bas-050\!hover:hover,
+    a.sm\)bdr\:bas-050\!focus:focus,
+    a.sm\)bdr\:bas-050,
+    button.sm\)bdr\:bas-050\!hover:hover,
+    button.sm\)bdr\:bas-050\!focus:focus {
         border-color: var(--fg-bas-050) !important;
     }
-    .sm\>bdr\:pri-900,
-    .sm\>bdr\:pri-900-hover:hover,
-    .sm\>bdr\:pri-900-focus:focus {
+
+    .sm\)bdr\:pri-900,
+    .sm\)bdr\:pri-900\!hover:hover,
+    a.sm\)bdr\:pri-900\!focus:focus,
+    a.sm\)bdr\:pri-900,
+    button.sm\)bdr\:pri-900\!hover:hover,
+    button.sm\)bdr\:pri-900\!focus:focus {
         border-color: var(--fg-pri-900) !important;
     }
-    .sm\>bdr\:pri-800,
-    .sm\>bdr\:pri-800-hover:hover,
-    .sm\>bdr\:pri-800-focus:focus {
+
+    .sm\)bdr\:pri-800,
+    .sm\)bdr\:pri-800\!hover:hover,
+    a.sm\)bdr\:pri-800\!focus:focus,
+    a.sm\)bdr\:pri-800,
+    button.sm\)bdr\:pri-800\!hover:hover,
+    button.sm\)bdr\:pri-800\!focus:focus {
         border-color: var(--fg-pri-800) !important;
     }
-    .sm\>bdr\:pri-700,
-    .sm\>bdr\:pri-700-hover:hover,
-    .sm\>bdr\:pri-700-focus:focus {
+
+    .sm\)bdr\:pri-700,
+    .sm\)bdr\:pri-700\!hover:hover,
+    a.sm\)bdr\:pri-700\!focus:focus,
+    a.sm\)bdr\:pri-700,
+    button.sm\)bdr\:pri-700\!hover:hover,
+    button.sm\)bdr\:pri-700\!focus:focus {
         border-color: var(--fg-pri-700) !important;
     }
-    .sm\>bdr\:pri-600,
-    .sm\>bdr\:pri-600-hover:hover,
-    .sm\>bdr\:pri-600-focus:focus {
+
+    .sm\)bdr\:pri-600,
+    .sm\)bdr\:pri-600\!hover:hover,
+    a.sm\)bdr\:pri-600\!focus:focus,
+    a.sm\)bdr\:pri-600,
+    button.sm\)bdr\:pri-600\!hover:hover,
+    button.sm\)bdr\:pri-600\!focus:focus {
         border-color: var(--fg-pri-600) !important;
     }
-    .sm\>bdr\:pri-500,
-    .sm\>bdr\:pri-500-hover:hover,
-    .sm\>bdr\:pri-500-focus:focus {
+
+    .sm\)bdr\:pri-500,
+    .sm\)bdr\:pri-500\!hover:hover,
+    a.sm\)bdr\:pri-500\!focus:focus,
+    a.sm\)bdr\:pri-500,
+    button.sm\)bdr\:pri-500\!hover:hover,
+    button.sm\)bdr\:pri-500\!focus:focus {
         border-color: var(--fg-pri-500) !important;
     }
-    .sm\>bdr\:pri-400,
-    .sm\>bdr\:pri-400-hover:hover,
-    .sm\>bdr\:pri-400-focus:focus {
+
+    .sm\)bdr\:pri-400,
+    .sm\)bdr\:pri-400\!hover:hover,
+    a.sm\)bdr\:pri-400\!focus:focus,
+    a.sm\)bdr\:pri-400,
+    button.sm\)bdr\:pri-400\!hover:hover,
+    button.sm\)bdr\:pri-400\!focus:focus {
         border-color: var(--fg-pri-400) !important;
     }
-    .sm\>bdr\:pri-300,
-    .sm\>bdr\:pri-300-hover:hover,
-    .sm\>bdr\:pri-300-focus:focus {
+
+    .sm\)bdr\:pri-300,
+    .sm\)bdr\:pri-300\!hover:hover,
+    a.sm\)bdr\:pri-300\!focus:focus,
+    a.sm\)bdr\:pri-300,
+    button.sm\)bdr\:pri-300\!hover:hover,
+    button.sm\)bdr\:pri-300\!focus:focus {
         border-color: var(--fg-pri-300) !important;
     }
-    .sm\>bdr\:pri-200,
-    .sm\>bdr\:pri-200-hover:hover,
-    .sm\>bdr\:pri-200-focus:focus {
+
+    .sm\)bdr\:pri-200,
+    .sm\)bdr\:pri-200\!hover:hover,
+    a.sm\)bdr\:pri-200\!focus:focus,
+    a.sm\)bdr\:pri-200,
+    button.sm\)bdr\:pri-200\!hover:hover,
+    button.sm\)bdr\:pri-200\!focus:focus {
         border-color: var(--fg-pri-200) !important;
     }
-    .sm\>bdr\:pri-100,
-    .sm\>bdr\:pri-100-hover:hover,
-    .sm\>bdr\:pri-100-focus:focus {
+
+    .sm\)bdr\:pri-100,
+    .sm\)bdr\:pri-100\!hover:hover,
+    a.sm\)bdr\:pri-100\!focus:focus,
+    a.sm\)bdr\:pri-100,
+    button.sm\)bdr\:pri-100\!hover:hover,
+    button.sm\)bdr\:pri-100\!focus:focus {
         border-color: var(--fg-pri-100) !important;
     }
-    .sm\>bdr\:pri-050,
-    .sm\>bdr\:pri-050-hover:hover,
-    .sm\>bdr\:pri-050-focus:focus {
+
+    .sm\)bdr\:pri-050,
+    .sm\)bdr\:pri-050\!hover:hover,
+    a.sm\)bdr\:pri-050\!focus:focus,
+    a.sm\)bdr\:pri-050,
+    button.sm\)bdr\:pri-050\!hover:hover,
+    button.sm\)bdr\:pri-050\!focus:focus {
         border-color: var(--fg-pri-050) !important;
     }
-    .sm\>bdr\:sec-900,
-    .sm\>bdr\:sec-900-hover:hover,
-    .sm\>bdr\:sec-900-focus:focus {
+
+    .sm\)bdr\:sec-900,
+    .sm\)bdr\:sec-900\!hover:hover,
+    a.sm\)bdr\:sec-900\!focus:focus,
+    a.sm\)bdr\:sec-900,
+    button.sm\)bdr\:sec-900\!hover:hover,
+    button.sm\)bdr\:sec-900\!focus:focus {
         border-color: var(--fg-sec-900) !important;
     }
-    .sm\>bdr\:sec-800,
-    .sm\>bdr\:sec-800-hover:hover,
-    .sm\>bdr\:sec-800-focus:focus {
+
+    .sm\)bdr\:sec-800,
+    .sm\)bdr\:sec-800\!hover:hover,
+    a.sm\)bdr\:sec-800\!focus:focus,
+    a.sm\)bdr\:sec-800,
+    button.sm\)bdr\:sec-800\!hover:hover,
+    button.sm\)bdr\:sec-800\!focus:focus {
         border-color: var(--fg-sec-800) !important;
     }
-    .sm\>bdr\:sec-700,
-    .sm\>bdr\:sec-700-hover:hover,
-    .sm\>bdr\:sec-700-focus:focus {
+
+    .sm\)bdr\:sec-700,
+    .sm\)bdr\:sec-700\!hover:hover,
+    a.sm\)bdr\:sec-700\!focus:focus,
+    a.sm\)bdr\:sec-700,
+    button.sm\)bdr\:sec-700\!hover:hover,
+    button.sm\)bdr\:sec-700\!focus:focus {
         border-color: var(--fg-sec-700) !important;
     }
-    .sm\>bdr\:sec-600,
-    .sm\>bdr\:sec-600-hover:hover,
-    .sm\>bdr\:sec-600-focus:focus {
+
+    .sm\)bdr\:sec-600,
+    .sm\)bdr\:sec-600\!hover:hover,
+    a.sm\)bdr\:sec-600\!focus:focus,
+    a.sm\)bdr\:sec-600,
+    button.sm\)bdr\:sec-600\!hover:hover,
+    button.sm\)bdr\:sec-600\!focus:focus {
         border-color: var(--fg-sec-600) !important;
     }
-    .sm\>bdr\:sec-500,
-    .sm\>bdr\:sec-500-hover:hover,
-    .sm\>bdr\:sec-500-focus:focus {
+
+    .sm\)bdr\:sec-500,
+    .sm\)bdr\:sec-500\!hover:hover,
+    a.sm\)bdr\:sec-500\!focus:focus,
+    a.sm\)bdr\:sec-500,
+    button.sm\)bdr\:sec-500\!hover:hover,
+    button.sm\)bdr\:sec-500\!focus:focus {
         border-color: var(--fg-sec-500) !important;
     }
-    .sm\>bdr\:sec-400,
-    .sm\>bdr\:sec-400-hover:hover,
-    .sm\>bdr\:sec-400-focus:focus {
+
+    .sm\)bdr\:sec-400,
+    .sm\)bdr\:sec-400\!hover:hover,
+    a.sm\)bdr\:sec-400\!focus:focus,
+    a.sm\)bdr\:sec-400,
+    button.sm\)bdr\:sec-400\!hover:hover,
+    button.sm\)bdr\:sec-400\!focus:focus {
         border-color: var(--fg-sec-400) !important;
     }
-    .sm\>bdr\:sec-300,
-    .sm\>bdr\:sec-300-hover:hover,
-    .sm\>bdr\:sec-300-focus:focus {
+
+    .sm\)bdr\:sec-300,
+    .sm\)bdr\:sec-300\!hover:hover,
+    a.sm\)bdr\:sec-300\!focus:focus,
+    a.sm\)bdr\:sec-300,
+    button.sm\)bdr\:sec-300\!hover:hover,
+    button.sm\)bdr\:sec-300\!focus:focus {
         border-color: var(--fg-sec-300) !important;
     }
-    .sm\>bdr\:sec-200,
-    .sm\>bdr\:sec-200-hover:hover,
-    .sm\>bdr\:sec-200-focus:focus {
+
+    .sm\)bdr\:sec-200,
+    .sm\)bdr\:sec-200\!hover:hover,
+    a.sm\)bdr\:sec-200\!focus:focus,
+    a.sm\)bdr\:sec-200,
+    button.sm\)bdr\:sec-200\!hover:hover,
+    button.sm\)bdr\:sec-200\!focus:focus {
         border-color: var(--fg-sec-200) !important;
     }
-    .sm\>bdr\:sec-100,
-    .sm\>bdr\:sec-100-hover:hover,
-    .sm\>bdr\:sec-100-focus:focus {
+
+    .sm\)bdr\:sec-100,
+    .sm\)bdr\:sec-100\!hover:hover,
+    a.sm\)bdr\:sec-100\!focus:focus,
+    a.sm\)bdr\:sec-100,
+    button.sm\)bdr\:sec-100\!hover:hover,
+    button.sm\)bdr\:sec-100\!focus:focus {
         border-color: var(--fg-sec-100) !important;
     }
-    .sm\>bdr\:sec-050,
-    .sm\>bdr\:sec-050-hover:hover,
-    .sm\>bdr\:sec-050-focus:focus {
+
+    .sm\)bdr\:sec-050,
+    .sm\)bdr\:sec-050\!hover:hover,
+    a.sm\)bdr\:sec-050\!focus:focus,
+    a.sm\)bdr\:sec-050,
+    button.sm\)bdr\:sec-050\!hover:hover,
+    button.sm\)bdr\:sec-050\!focus:focus {
         border-color: var(--fg-sec-050) !important;
     }
-    .sm\>bdr\:red,
-    .sm\>bdr\:red-hover:hover,
-    .sm\>bdr\:red-focus:focus {
-        border-color: #F44336 !important;
+
+    .sm\)bdr\:red,
+    .sm\)bdr\:red\!hover:hover,
+    a.sm\)bdr\:red\!focus:focus,
+    a.sm\)bdr\:red,
+    button.sm\)bdr\:red\!hover:hover,
+    button.sm\)bdr\:red\!focus:focus {
+        border-color: var(--bdr-red) !important;
     }
-    .sm\>bdr\:pink,
-    .sm\>bdr\:pink-hover:hover,
-    .sm\>bdr\:pink-focus:focus {
-        border-color: #E91E63 !important;
+
+    .sm\)bdr\:pink,
+    .sm\)bdr\:pink\!hover:hover,
+    a.sm\)bdr\:pink\!focus:focus,
+    a.sm\)bdr\:pink,
+    button.sm\)bdr\:pink\!hover:hover,
+    button.sm\)bdr\:pink\!focus:focus {
+        border-color: var(--bdr-pink) !important;
     }
-    .sm\>bdr\:purple,
-    .sm\>bdr\:purple-hover:hover,
-    .sm\>bdr\:purple-focus:focus {
-        border-color: #9C27B0 !important;
+
+    .sm\)bdr\:purple,
+    .sm\)bdr\:purple\!hover:hover,
+    a.sm\)bdr\:purple\!focus:focus,
+    a.sm\)bdr\:purple,
+    button.sm\)bdr\:purple\!hover:hover,
+    button.sm\)bdr\:purple\!focus:focus {
+        border-color: var(--bdr-purple) !important;
     }
-    .sm\>bdr\:deep-purple,
-    .sm\>bdr\:deep-purple-hover:hover,
-    .sm\>bdr\:deep-purple-focus:focus {
-        border-color: #673AB7 !important;
+
+    .sm\)bdr\:deep-purple,
+    .sm\)bdr\:deep-purple\!hover:hover,
+    a.sm\)bdr\:deep-purple\!focus:focus,
+    a.sm\)bdr\:deep-purple,
+    button.sm\)bdr\:deep-purple\!hover:hover,
+    button.sm\)bdr\:deep-purple\!focus:focus {
+        border-color: var(--bdr-deep-purple) !important;
     }
-    .sm\>bdr\:indigo,
-    .sm\>bdr\:indigo-hover:hover,
-    .sm\>bdr\:indigo-focus:focus {
-        border-color: #3F51B5 !important;
+
+    .sm\)bdr\:indigo,
+    .sm\)bdr\:indigo\!hover:hover,
+    a.sm\)bdr\:indigo\!focus:focus,
+    a.sm\)bdr\:indigo,
+    button.sm\)bdr\:indigo\!hover:hover,
+    button.sm\)bdr\:indigo\!focus:focus {
+        border-color: var(--bdr-indigo) !important;
     }
-    .sm\>bdr\:blue,
-    .sm\>bdr\:blue-hover:hover,
-    .sm\>bdr\:blue-focus:focus {
-        border-color: #2196F3 !important;
+
+    .sm\)bdr\:blue,
+    .sm\)bdr\:blue\!hover:hover,
+    a.sm\)bdr\:blue\!focus:focus,
+    a.sm\)bdr\:blue,
+    button.sm\)bdr\:blue\!hover:hover,
+    button.sm\)bdr\:blue\!focus:focus {
+        border-color: var(--bdr-blue) !important;
     }
-    .sm\>bdr\:light-blue,
-    .sm\>bdr\:light-blue-hover:hover,
-    .sm\>bdr\:light-blue-focus:focus {
-        border-color: #03A9F4 !important;
+
+    .sm\)bdr\:light-blue,
+    .sm\)bdr\:light-blue\!hover:hover,
+    a.sm\)bdr\:light-blue\!focus:focus,
+    a.sm\)bdr\:light-blue,
+    button.sm\)bdr\:light-blue\!hover:hover,
+    button.sm\)bdr\:light-blue\!focus:focus {
+        border-color: var(--bdr-light-blue) !important;
     }
-    .sm\>bdr\:cyan,
-    .sm\>bdr\:cyan-hover:hover,
-    .sm\>bdr\:cyan-focus:focus {
-        border-color: #00BCD4 !important;
+
+    .sm\)bdr\:cyan,
+    .sm\)bdr\:cyan\!hover:hover,
+    a.sm\)bdr\:cyan\!focus:focus,
+    a.sm\)bdr\:cyan,
+    button.sm\)bdr\:cyan\!hover:hover,
+    button.sm\)bdr\:cyan\!focus:focus {
+        border-color: var(--bdr-cyan) !important;
     }
-    .sm\>bdr\:teal,
-    .sm\>bdr\:teal-hover:hover,
-    .sm\>bdr\:teal-focus:focus {
-        border-color: #009688 !important;
+
+    .sm\)bdr\:teal,
+    .sm\)bdr\:teal\!hover:hover,
+    a.sm\)bdr\:teal\!focus:focus,
+    a.sm\)bdr\:teal,
+    button.sm\)bdr\:teal\!hover:hover,
+    button.sm\)bdr\:teal\!focus:focus {
+        border-color: var(--bdr-teal) !important;
     }
-    .sm\>bdr\:green,
-    .sm\>bdr\:green-hover:hover,
-    .sm\>bdr\:green-focus:focus {
-        border-color: #4CAF50 !important;
+
+    .sm\)bdr\:green,
+    .sm\)bdr\:green\!hover:hover,
+    a.sm\)bdr\:green\!focus:focus,
+    a.sm\)bdr\:green,
+    button.sm\)bdr\:green\!hover:hover,
+    button.sm\)bdr\:green\!focus:focus {
+        border-color: var(--bdr-green) !important;
     }
-    .sm\>bdr\:light-green,
-    .sm\>bdr\:light-green-hover:hover,
-    .sm\>bdr\:light-green-focus:focus {
-        border-color: #8BC34A !important;
+
+    .sm\)bdr\:light-green,
+    .sm\)bdr\:light-green\!hover:hover,
+    a.sm\)bdr\:light-green\!focus:focus,
+    a.sm\)bdr\:light-green,
+    button.sm\)bdr\:light-green\!hover:hover,
+    button.sm\)bdr\:light-green\!focus:focus {
+        border-color: var(--bdr-light-green) !important;
     }
-    .sm\>bdr\:lime,
-    .sm\>bdr\:lime-hover:hover,
-    .sm\>bdr\:lime-focus:focus {
-        border-color: #CDDC39 !important;
+
+    .sm\)bdr\:lime,
+    .sm\)bdr\:lime\!hover:hover,
+    a.sm\)bdr\:lime\!focus:focus,
+    a.sm\)bdr\:lime,
+    button.sm\)bdr\:lime\!hover:hover,
+    button.sm\)bdr\:lime\!focus:focus {
+        border-color: var(--bdr-lime) !important;
     }
-    .sm\>bdr\:yellow,
-    .sm\>bdr\:yellow-hover:hover,
-    .sm\>bdr\:yellow-focus:focus {
-        border-color: #FFEB3B !important;
+
+    .sm\)bdr\:yellow,
+    .sm\)bdr\:yellow\!hover:hover,
+    a.sm\)bdr\:yellow\!focus:focus,
+    a.sm\)bdr\:yellow,
+    button.sm\)bdr\:yellow\!hover:hover,
+    button.sm\)bdr\:yellow\!focus:focus {
+        border-color: var(--bdr-yellow) !important;
     }
-    .sm\>bdr\:amber,
-    .sm\>bdr\:amber-hover:hover,
-    .sm\>bdr\:amber-focus:focus {
-        border-color: #FFC107 !important;
+
+    .sm\)bdr\:amber,
+    .sm\)bdr\:amber\!hover:hover,
+    a.sm\)bdr\:amber\!focus:focus,
+    a.sm\)bdr\:amber,
+    button.sm\)bdr\:amber\!hover:hover,
+    button.sm\)bdr\:amber\!focus:focus {
+        border-color: var(--bdr-amber) !important;
     }
-    .sm\>bdr\:orange,
-    .sm\>bdr\:orange-hover:hover,
-    .sm\>bdr\:orange-focus:focus {
-        border-color: #FF9800 !important;
+
+    .sm\)bdr\:orange,
+    .sm\)bdr\:orange\!hover:hover,
+    a.sm\)bdr\:orange\!focus:focus,
+    a.sm\)bdr\:orange,
+    button.sm\)bdr\:orange\!hover:hover,
+    button.sm\)bdr\:orange\!focus:focus {
+        border-color: var(--bdr-orange) !important;
     }
-    .sm\>bdr\:deep-orange,
-    .sm\>bdr\:deep-orange-hover:hover,
-    .sm\>bdr\:deep-orange-focus:focus {
-        border-color: #FF5722 !important;
+
+    .sm\)bdr\:deep-orange,
+    .sm\)bdr\:deep-orange\!hover:hover,
+    a.sm\)bdr\:deep-orange\!focus:focus,
+    a.sm\)bdr\:deep-orange,
+    button.sm\)bdr\:deep-orange\!hover:hover,
+    button.sm\)bdr\:deep-orange\!focus:focus {
+        border-color: var(--bdr-deep-orange) !important;
     }
-    .sm\>bdr\:brown,
-    .sm\>bdr\:brown-hover:hover,
-    .sm\>bdr\:brown-focus:focus {
-        border-color: #795548 !important;
+
+    .sm\)bdr\:brown,
+    .sm\)bdr\:brown\!hover:hover,
+    a.sm\)bdr\:brown\!focus:focus,
+    a.sm\)bdr\:brown,
+    button.sm\)bdr\:brown\!hover:hover,
+    button.sm\)bdr\:brown\!focus:focus {
+        border-color: var(--bdr-brown) !important;
     }
-    .sm\>bdr\:grey,
-    .sm\>bdr\:grey-hover:hover,
-    .sm\>bdr\:grey-focus:focus {
-        border-color: #9E9E9E !important;
+
+    .sm\)bdr\:grey,
+    .sm\)bdr\:grey\!hover:hover,
+    a.sm\)bdr\:grey\!focus:focus,
+    a.sm\)bdr\:grey,
+    button.sm\)bdr\:grey\!hover:hover,
+    button.sm\)bdr\:grey\!focus:focus {
+        border-color: var(--bdr-grey) !important;
     }
-    .sm\>bdr\:blue-grey,
-    .sm\>bdr\:blue-grey-hover:hover,
-    .sm\>bdr\:blue-grey-focus:focus {
-        border-color: #607D8B !important;
+
+    .sm\)bdr\:blue-grey,
+    .sm\)bdr\:blue-grey\!hover:hover,
+    a.sm\)bdr\:blue-grey\!focus:focus,
+    a.sm\)bdr\:blue-grey,
+    button.sm\)bdr\:blue-grey\!hover:hover,
+    button.sm\)bdr\:blue-grey\!focus:focus {
+        border-color: var(--bdr-blue-grey) !important;
     }
 }
-
 
 /*
     eof: style/palette.css
