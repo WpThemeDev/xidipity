@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/advance.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -10,30 +10,27 @@
  *          if one has been set. The exception to this rule is the
  *          DIY flexbox components.
  *
- *  future @media break points
- *      default (no prefix)    (mobile media)
- *      sm  = min-width: 640px (standard media)
+ *  current @media break points
+ *      default (no prefix)     (mobile media)
+ *      sm  = min-width: 640px  (standard media)
  *
  *  future @media break points
- *      default (no prefix)    (mobile media)
- *      sm  = min-width: 640px
- *      md  = min-width: 768px
- *      lg  = min-width: 1024px
- *      xl  = min-width: 1280px
+ *      default (no prefix)     (mobile media)
+ *      sm  = min-width: 640px  (small)
+ *      md  = min-width: 768px  (medium)
+ *      lg  = min-width: 1024px (large)
+ *      xl  = min-width: 1280px (x large)
  *
  *  @package WordPress
  *  @subpackage Xidipity
  *  @since 0.9.0
  *
 **/
-
-
 /*  # cur
     # 91001.1b
     # cursor style named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
 */
-
 .cur\:auto,
 .cur\:auto-hover:hover,
 .cur\:auto-focus:focus {
@@ -52,13 +49,11 @@
     cursor: pointer;
 }
 
-
 /*  # bdr:style
     # 90909.1b
     # border style named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 */
-
 .bdr\:style-dashed {
     border-style: dashed !important;
 }
@@ -75,73 +70,57 @@
     border-style: solid !important;
 }
 
-
 /*  # bdr:radius
     # 90909.1b
     # predefined border radius classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 */
+.bdr\:radius-none {
+    border-radius: none !important;
+}
 
 .bdr\:radius-0\.25 {
     border-radius: 0.25rem !important;
 }
 
-
 /*: wordpress friendly :*/
-
 .bdr-radius-025rm {
     border-radius: 0.25rem !important;
 }
-
-
-/*-*/
 
 .bdr\:radius-0\.5 {
     border-radius: 0.5rem !important;
 }
 
-
 /*: wordpress friendly :*/
-
 .bdr-radius-05rm {
     border-radius: 0.5rem !important;
 }
-
-
-/*-*/
 
 .bdr\:radius-0\.75 {
     border-radius: 0.75rem !important;
 }
 
-
 /*: wordpress friendly :*/
-
 .bdr-radius-075rm {
     border-radius: 0.75rem !important;
 }
 
-
 /*: container should be square :*/
-
 .bdr\:radius-circle {
     border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
 }
 
-
 /*: wordpress friendly :*/
-
 .bdr-radius-circle {
     border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
 }
 
-
 /*: border shortcuts! :*/
-
 .bdr {
     border-style: solid !important;
     border-width: 0.0625rem !important;
@@ -157,9 +136,28 @@
     border-width: 0.0625rem !important;
 }
 
+.bdr\:square {
+    border-radius: none !important;
+    border-style: solid !important;
+    border-width: 0.0625rem !important;
+}
+
 .bdr\:dashed {
     border-style: dashed !important;
     border-width: 0.0625rem !important;
+}
+
+.bdr\:dotted {
+    border-style: dotted !important;
+    border-width: 0.0625rem !important;
+}
+
+.bdr\:collapse {
+    border-collapse: collapse !important;
+}
+
+.bdr\:separate {
+    border-collapse: separate !important;
 }
 
 .bdr\:top {
@@ -182,9 +180,7 @@
     border-left-width: 0.0625rem !important;
 }
 
-
 /*: border @ 0 :*/
-
 .bdr\:all-0 {
     border-width: 0 !important;
 }
@@ -205,9 +201,7 @@
     border-left-width: 0 !important;
 }
 
-
 /*: border @ 1px :*/
-
 .bdr\:all-0\.0625 {
     border-width: 0.0625rem !important;
 }
@@ -228,9 +222,7 @@
     border-left-width: 0.0625rem !important;
 }
 
-
 /*: border @ 2px :*/
-
 .bdr\:all-0\.125 {
     border-width: 0.125rem !important;
 }
@@ -251,9 +243,7 @@
     border-left-width: 0.125rem !important;
 }
 
-
 /*: border @ 3px :*/
-
 .bdr\:all-0\.1875 {
     border-width: 0.1875rem !important;
 }
@@ -274,9 +264,7 @@
     border-left-width: 0.1875rem !important;
 }
 
-
 /*: border @ 4px :*/
-
 .bdr\:all-0\.25 {
     border-width: 0.25rem !important;
 }
@@ -302,60 +290,58 @@
     # display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 */
-
-
 .dsp\:none {
-    display: none;
+    display: none !important;
+}
+
+.dsp\:hidden {
+    visibility: hidden !important;
 }
 
 .dsp\:block {
-    display: block;
+    display: block !important;
 }
 
 .dsp\:inline {
-    display: inline;
+    display: inline !important;
 }
 
 .dsp\:inline-block {
-    display: inline-block;
+    display: inline-block !important;
 }
-
 
 /*
     font family
 */
-
 .fnt\:family-sans {
-    font-family: var(--font-sans);
+    font-family: var(--font-sans) !important;
 }
 
 .fnt\:family-serif {
-    font-family: var(--font-serif);
+    font-family: var(--font-serif) !important;
 }
 
 .fnt\:family-mono {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono) !important;
 }
 
 .fnt\:family-condensed {
-    font-family: var(--font-condensed);
+    font-family: var(--font-condensed) !important;
 }
 
 .fnt\:family-cursive {
-    font-family: var(--font-cursive);
+    font-family: var(--font-cursive) !important;
 }
 
 .fnt\:family-fancy {
-    font-family: var(--font-fancy);
+    font-family: var(--font-fancy) !important;
 }
-
 
 /*  # fnt:size
     # 90907.1b
     # font size named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
 */
-
 .fnt\:size-xx-large {
     font-size: xx-large !important;
 }
@@ -392,55 +378,95 @@
     font-size: smaller !important;
 }
 
+/*  # md
+    # 91012.1a
+    # materical design icon sizes
+    # https://google.github.io/material-design-icons/
+**/
+
+.md\:size-h1 {
+    font-size: var(--font-size-h1) !important;
+}
+
+.md\:size-h2 {
+    font-size: var(--font-size-h2) !important;
+}
+
+.md\:size-h3,
+.md\:size-xxx-large {
+    font-size: var(--font-size-h3) !important;
+}
+
+.md\:size-h4,
+.md\:size-xx-large {
+    font-size: var(--font-size-h4) !important;
+}
+
+.md\:size-h5,
+.md\:size-x-large {
+    font-size: var(--font-size-h5) !important;
+}
+
+.md\:size-h6,
+.md\:size-large {
+    font-size: var(--font-size-h6) !important;
+}
+
+.md\:size-medium {
+    font-size: var(--font-size-rg) !important;
+}
+
+.md\:size-small {
+    font-size: var(--font-size-sm) !important;
+}
+
+.md\:size-x-small {
+    font-size: var(--font-size-xs) !important;
+}
 
 /*  # fnt:space
     # 90907.1b
     # predefined letter spacing classes
     # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 */
-
 .fnt\:spacing-tight {
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.05rem !important;
 }
 
 .fnt\:spacing-normal {
-    letter-spacing: 0;
+    letter-spacing: 0 !important;
 }
 
 .fnt\:spacing-loose {
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem !important;
 }
 
 .fnt\:spacing-wide {
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.5rem !important;
 }
-
 
 /*  # fnt:style
     # 90907.1b
     # font style named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
 */
-
 .fnt\:style-italic {
-    font-style: italic;
+    font-style: italic !important;
 }
 
 .fnt\:style-normal {
-    font-style: normal;
+    font-style: normal !important;
 }
 
 .fnt\:style-oblique {
-    font-style: oblique;
+    font-style: oblique !important;
 }
-
 
 /*  # fnt:weight
     # 90907.1b
     # font weight named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 */
-
 .fnt\:weight-bold,
 .fnt\:weight-bold-hover:hover,
 .fnt\:weight-bold-focus:focus {
@@ -465,94 +491,70 @@
     font-weight: normal !important;
 }
 
-
 /*  # ht
     # 90907.1b
     # height
     # https://developer.mozilla.org/en-US/docs/Web/CSS/height
 */
-
 .ht\:auto {
     height: auto !important;
 }
 
-
 /*: 80px :*/
-
 .ht\:min-height-5 {
     min-height: 5rem !important;
 }
 
-
 /*: 160px :*/
-
 .ht\:min-height-10 {
     min-height: 10rem !important;
 }
 
-
 /*: 240px :*/
-
 .ht\:min-height-15 {
     min-height: 15rem !important;
 }
 
-
 /*: 320px :*/
-
 .ht\:min-height-20 {
     min-height: 20rem !important;
 }
 
-
 /*: 400px :*/
-
 .ht\:min-height-25 {
     min-height: 25rem !important;
 }
 
-
 /*: 480px :*/
-
 .ht\:min-height-30 {
     min-height: 30rem !important;
 }
 
-
 /*: 560px :*/
-
 .ht\:min-height-35 {
     min-height: 35rem !important;
 }
 
-
 /*: 640px :*/
-
 .ht\:min-height-40 {
     min-height: 40rem !important;
 }
 
-
 /*: 720px :*/
-
 .ht\:min-height-45 {
     min-height: 45rem !important;
 }
 
-
 /*: 800px :*/
-
 .ht\:min-height-50 {
     min-height: 50rem !important;
 }
-
 
 /*  # line ht
     # 90907.1b
     # line height
     # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 */
-
 .line\:ht-normal {
     line-height: normal !important;
 }
@@ -573,12 +575,10 @@
     line-height: 2.5 !important;
 }
 
-
 /*  # img
     # 90907.1b
     # set image width & height
 */
-
 .img\:25\% {
     height: auto !important;
     width: 25% !important;
@@ -599,9 +599,7 @@
     width: 100% !important;
 }
 
-
 /*: wordpress friendly :*/
-
 .img-full {
     height: auto !important;
     width: 100% !important;
@@ -617,13 +615,11 @@
     width: 25% !important;
 }
 
-
 /*  # mar
     # 90907.1b
     # margins (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 */
-
 .mar\:all-0 {
     margin: 0 !important;
 }
@@ -1158,13 +1154,11 @@
     padding-right: 10% !important;
 }
 
-
 /*  # pad
     # 90907.1b
     # padding (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 */
-
 .pad\:all-0 {
     padding: 0 !important;
 }
@@ -1381,13 +1375,11 @@
     padding-right: 10% !important;
 }
 
-
 /*  # txt
     # 90907.1b
     # text align
     # https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
 */
-
 .txt\:align-center {
     text-align: center !important;
 }
@@ -1400,13 +1392,11 @@
     text-align: right !important;
 }
 
-
 /*  # wd
     # 90907.1b
     # width (rem & %)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 */
-
 .wd\:10\% {
     width: 10% !important;
 }
@@ -1487,95 +1477,69 @@
     width: 100% !important;
 }
 
-
 /*: 25px :*/
-
 .wd\:1\.5625 {
     width: 1.5625rem !important;
 }
 
-
 /*: 50px :*/
-
 .wd\:3\.125 {
     width: 3.125rem !important;
 }
 
-
 /*: 75px :*/
-
 .wd\:4\.6875 {
     width: 4.6875rem !important;
 }
 
-
 /*: 100px :*/
-
 .wd\:6\.25 {
     width: 6.25rem !important;
 }
 
-
 /*: 125px :*/
-
 .wd\:7\.8125 {
     width: 7.8125rem !important;
 }
 
-
 /*: 150px :*/
-
 .wd\:9\.375 {
     width: 9.375rem !important;
 }
 
-
 /*: 175px :*/
-
 .wd\:10\.9375 {
     width: 10.9375rem !important;
 }
 
-
 /*: 200px :*/
-
 .wd\:12\.5 {
     width: 12.5rem !important;
 }
 
-
 /*: 225px :*/
-
 .wd\:14\.0625 {
     width: 14.0625rem !important;
 }
 
-
 /*: 250px :*/
-
 .wd\:15\.625 {
     width: 15.625rem !important;
 }
 
-
 /*: 275px :*/
-
 .wd\:17\.1875 {
     width: 17.1875rem !important;
 }
 
-
 /*: 300px :*/
-
 .wd\:18\.75 {
     width: 18.75rem !important;
 }
 
-
 /*
     list spacing
 */
-
 ol.li\:qtr-spaced li:not(:last-child),
 ul.li\:qtr-spaced li:not(:last-child) {
     margin-bottom: 0.25rem !important;
@@ -1591,11 +1555,9 @@ ul.li\:tpl-spaced li:not(:last-child) {
     margin-bottom: 0.75rem !important;
 }
 
-
 /*
     horizonal align
 */
-
 .horz\:align-center {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -1611,11 +1573,9 @@ ul.li\:tpl-spaced li:not(:last-child) {
     margin-right: 0 !important;
 }
 
-
 /*
     vertical align
 */
-
 .vert\:align-baseline {
     vertical-align: baseline;
 }
@@ -1640,13 +1600,11 @@ ul.li\:tpl-spaced li:not(:last-child) {
     vertical-align: text-top;
 }
 
-
 /*  # disp
     # 90907.1b
     # display
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 */
-
 .disp\:none {
     display: none;
 }
@@ -1663,13 +1621,11 @@ ul.li\:tpl-spaced li:not(:last-child) {
     display: inline-block;
 }
 
-
 /*  # tbl
     # 91001.1a
     # html table support classes
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 */
-
 .tbl\:layout-auto {
     table-layout: auto;
 }
@@ -1686,7 +1642,6 @@ ul.li\:tpl-spaced li:not(:last-child) {
     border-collapse: separate;
 }
 
-
 /*  # DIY flexbox components (beta)
     # 91001.1a
     # classes to build flexbox
@@ -1696,14 +1651,12 @@ ul.li\:tpl-spaced li:not(:last-child) {
         fx:cw   - column wrap
         fx:r    - row no wrap
         fx:rw   - row wrap
-        
         justify content
         fa:1    - flex-start
         fa:2    - flex-end
         fa:3    - center
         fa:4    - space-between
         fa:5    - space-around
-        
         align items
         fb:1    - flex-start
         fb:2    - flex-end
@@ -1711,19 +1664,16 @@ ul.li\:tpl-spaced li:not(:last-child) {
         fb:4    - between
         fb:5    - around
         fb:6    - stretch
-        
         align content
         fc:1    - flex-start
         fc:2    - flex-end
         fc:3    - center
         fc:4    - baseline
         fc:5    - stretch
-        
         item ranking (auto basis)
         fd:1    - 0 1 auto
         fd:2    - 1 1 auto
         fd:3    - 2 1 auto
-        
         item alignment
         fe:1    - auto
         fe:2    - flex-start
@@ -1732,7 +1682,6 @@ ul.li\:tpl-spaced li:not(:last-child) {
         fe:5    - baseline
         fe:6    - stretch
 **/
-
 .fx\:c {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1781,9 +1730,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
     flex-wrap: wrap;
 }
 
-
 /*: justify content :*/
-
 .fa\:1 {
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -1814,9 +1761,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
     justify-content: space-around;
 }
 
-
 /*: align content :*/
-
 .fb\:1 {
     -webkit-align-content: flex-start;
     -ms-flex-line-pack: start;
@@ -1853,9 +1798,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
     align-content: stretch;
 }
 
-
 /*: align items :*/
-
 .fc\:1 {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -1886,9 +1829,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
     align-items: stretch;
 }
 
-
 /*: item (importance ranking / auto is assumed) :*/
-
 .fd\:1 {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
@@ -1907,9 +1848,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
     flex: 2 1 auto;
 }
 
-
 /*: item (align self) :*/
-
 .fe\:1 {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
@@ -1946,15 +1885,14 @@ ul.li\:tpl-spaced li:not(:last-child) {
     align-self: stretch;
 }
 
-
 /*  # sm device
     # 91001.1a
     # atm "sm" stands for standard media (everything but mobile)
     # if other devices are added, it will become small media
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
-
 @media (min-width: 640px) {
+
     /*  # dsp
         # 90907.1b
         # display
@@ -1965,47 +1903,69 @@ ul.li\:tpl-spaced li:not(:last-child) {
         border-style: solid !important;
         border-width: 0.0625rem !important;
     }
+
     .sm\)bdr\:none {
         border: none !important;
     }
+
     .sm\)bdr\:rounded {
         border-radius: 0.25rem !important;
         border-style: solid !important;
         border-width: 0.0625rem !important;
     }
+
+    .sm\)bdr\:square {
+        border-radius: none !important;
+        border-style: solid !important;
+        border-width: 0.0625rem !important;
+    }
+    
     .sm\)bdr\:dashed {
         border-style: dashed !important;
         border-width: 0.0625rem !important;
     }
+
     .sm\)bdr\:top {
         border-top-style: solid !important;
         border-top-width: 0.0625rem !important;
     }
+
     .sm\)bdr\:right {
         border-right-style: solid !important;
         border-right-width: 0.0625rem !important;
     }
+
     .sm\)bdr\:bottom {
         border-bottom-style: solid !important;
         border-bottom-width: 0.0625rem !important;
     }
+
     .sm\)bdr\:left {
         border-left-style: solid !important;
         border-left-width: 0.0625rem !important;
     }
+
     /*: display options :*/
     .sm\)dsp\:none {
-        display: none;
+        display: none !important;
     }
+
+    .sm\)dsp\:hidden {
+        visibility: hidden !important;
+    }
+
     .sm\)dsp\:block {
-        display: block;
+        display: block !important;
     }
+
     .sm\)dsp\:inline {
-        display: inline;
+        display: inline !important;
     }
+
     .sm\)dsp\:inline-block {
-        display: inline-block;
+        display: inline-block !important;
     }
+
     /*  # fnt:size
         # 90907.1b
         # font size named classes
@@ -2014,47 +1974,106 @@ ul.li\:tpl-spaced li:not(:last-child) {
     .sm\)fnt\:size-xx-large {
         font-size: xx-large !important;
     }
+
     .sm\)fnt\:size-x-large {
         font-size: x-large !important;
     }
+
     .sm\)fnt\:size-large {
         font-size: large !important;
     }
+
     .sm\)fnt\:size-medium {
         font-size: medium !important;
     }
+
     .sm\)fnt\:size-small {
         font-size: small !important;
     }
+
     .sm\)fnt\:size-x-small {
         font-size: x-small !important;
     }
+
     .sm\)fnt\:size-xx-small {
         font-size: xx-small !important;
     }
+
     .sm\)fnt\:size-larger {
         font-size: larger !important;
     }
+
     .sm\)fnt\:size-smaller {
         font-size: smaller !important;
     }
+
+    /*  # md
+        # 91012.1a
+        # materical design icon sizes
+        # https://google.github.io/material-design-icons/
+    **/
+
+    .sm\)md\:size-h1 {
+        font-size: var(--font-size-h1) !important;
+    }
+
+    .sm\)md\:size-h2 {
+        font-size: var(--font-size-h2) !important;
+    }
+
+    .sm\)md\:size-h3,
+    .sm\)md\:size-xxx-large {
+        font-size: var(--font-size-h3) !important;
+    }
+
+    .sm\)md\:size-h4,
+    .sm\)md\:size-xx-large {
+        font-size: var(--font-size-h4) !important;
+    }
+
+    .sm\)md\:size-h5,
+    .sm\)md\:size-x-large {
+        font-size: var(--font-size-h5) !important;
+    }
+
+    .sm\)md\:size-h6,
+    .sm\)md\:size-large {
+        font-size: var(--font-size-h6) !important;
+    }
+
+    .sm\)md\:size-medium {
+        font-size: var(--font-size-rg) !important;
+    }
+
+    .sm\)md\:size-small {
+        font-size: var(--font-size-sm) !important;
+    }
+
+    .sm\)md\:size-x-small {
+        font-size: var(--font-size-xs) !important;
+    }
+
     /*  # fnt:space
         # 90907.1b
         # predefined letter spacing classes
         # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
     */
     .sm\)fnt\:spacing-tight {
-        letter-spacing: -0.05rem;
+        letter-spacing: -0.05rem !important;
     }
+
     .sm\)fnt\:spacing-normal {
-        letter-spacing: 0;
+        letter-spacing: 0 !important;
     }
+
     .sm\)fnt\:spacing-loose {
         letter-spacing: 0.1rem;
     }
+
     .sm\)fnt\:spacing-wide {
         letter-spacing: 0.5rem;
     }
+
     /*  # mar
         # 90907.1b
         # margins (rem)
@@ -2063,414 +2082,537 @@ ul.li\:tpl-spaced li:not(:last-child) {
     .sm\)mar\:all-0 {
         margin: 0 !important;
     }
+
     .sm\)mar\:all-0\.125 {
         margin: 0.125rem !important;
     }
+
     .sm\)mar\:all-0\.25 {
         margin: 0.25rem !important;
     }
+
     .sm\)mar\:all-0\.375 {
         margin: 0.375rem !important;
     }
+
     .sm\)mar\:all-0\.5 {
         margin: 0.5rem !important;
     }
+
     .sm\)mar\:all-0\.625 {
         margin: 0.625rem !important;
     }
+
     .sm\)mar\:all-0\.75 {
         margin: 0.75rem !important;
     }
+
     .sm\)mar\:all-0\.8125 {
         margin: 0.8125rem !important;
     }
+
     .sm\)mar\:all-0\.875 {
         margin: 0.875rem !important;
     }
+
     .sm\)mar\:all-0\.9375 {
         margin: 0.9375rem !important;
     }
+
     .sm\)mar\:all-1 {
         margin: 1rem !important;
     }
+
     .sm\)mar\:all-1\.25 {
         margin: 1.25rem !important;
     }
+
     .sm\)mar\:all-1\.5 {
         margin: 1.5rem !important;
     }
+
     .sm\)mar\:all-1\.75 {
         margin: 1.75rem !important;
     }
+
     .sm\)mar\:all-2 {
         margin: 2rem !important;
     }
+
     .sm\)mar\:bottom-0 {
         margin-bottom: 0 !important;
     }
+
     .sm\)mar\:bottom-0\.125 {
         margin-bottom: 0.125rem !important;
     }
+
     .sm\)mar\:bottom-0\.25 {
         margin-bottom: 0.25rem !important;
     }
+
     .sm\)mar\:bottom-0\.375 {
         margin-bottom: 0.375rem !important;
     }
+
     .sm\)mar\:bottom-0\.5 {
         margin-bottom: 0.5rem !important;
     }
+
     .sm\)mar\:bottom-0\.625 {
         margin-bottom: 0.625rem !important;
     }
+
     .sm\)mar\:bottom-0\.75 {
         margin-bottom: 0.75rem !important;
     }
+
     .sm\)mar\:bottom-0\.8125 {
         margin-bottom: 0.8125rem !important;
     }
+
     .sm\)mar\:bottom-0\.875 {
         margin-bottom: 0.875rem !important;
     }
+
     .sm\)mar\:bottom-0\.9375 {
         margin-bottom: 0.9375rem !important;
     }
+
     .sm\)mar\:bottom-1 {
         margin-bottom: 1rem !important;
     }
+
     .sm\)mar\:bottom-1\.25 {
         margin-bottom: 1.25rem !important;
     }
+
     .sm\)mar\:bottom-1\.5 {
         margin-bottom: 1.5rem !important;
     }
+
     .sm\)mar\:bottom-1\.75 {
         margin-bottom: 1.75rem !important;
     }
+
     .sm\)mar\:bottom-2 {
         margin-bottom: 2rem !important;
     }
+
     .sm\)mar\:left-0 {
         margin-left: 0 !important;
     }
+
     .sm\)mar\:left-0\.125 {
         margin-left: 0.125rem !important;
     }
+
     .sm\)mar\:left-0\.25 {
         margin-left: 0.25rem !important;
     }
+
     .sm\)mar\:left-0\.375 {
         margin-left: 0.375rem !important;
     }
+
     .sm\)mar\:left-0\.5 {
         margin-left: 0.5rem !important;
     }
+
     .sm\)mar\:left-0\.625 {
         margin-left: 0.625rem !important;
     }
+
     .sm\)mar\:left-0\.75 {
         margin-left: 0.75rem !important;
     }
+
     .sm\)mar\:left-0\.8125 {
         margin-left: 0.8125rem !important;
     }
+
     .sm\)mar\:left-0\.875 {
         margin-left: 0.875rem !important;
     }
+
     .sm\)mar\:left-0\.9375 {
         margin-left: 0.9375rem !important;
     }
+
     .sm\)mar\:left-1 {
         margin-left: 1rem !important;
     }
+
     .sm\)mar\:left-1\.25 {
         margin-left: 1.25rem !important;
     }
+
     .sm\)mar\:left-1\.5 {
         margin-left: 1.5rem !important;
     }
+
     .sm\)mar\:left-1\.75 {
         margin-left: 1.75rem !important;
     }
+
     .sm\)mar\:left-2 {
         margin-left: 2rem !important;
     }
+
     .sm\)mar\:right-0 {
         margin-right: 0 !important;
     }
+
     .sm\)mar\:right-0\.125 {
         margin-right: 0.125rem !important;
     }
+
     .sm\)mar\:right-0\.25 {
         margin-right: 0.25rem !important;
     }
+
     .sm\)mar\:right-0\.375 {
         margin-right: 0.375rem !important;
     }
+
     .sm\)mar\:right-0\.5 {
         margin-right: 0.5rem !important;
     }
+
     .sm\)mar\:right-0\.625 {
         margin-right: 0.625rem !important;
     }
+
     .sm\)mar\:right-0\.75 {
         margin-right: 0.75rem !important;
     }
+
     .sm\)mar\:right-0\.8125 {
         margin-right: 0.8125rem !important;
     }
+
     .sm\)mar\:right-0\.875 {
         margin-right: 0.875rem !important;
     }
+
     .sm\)mar\:right-0\.9375 {
         margin-right: 0.9375rem !important;
     }
+
     .sm\)mar\:right-1 {
         margin-right: 1rem !important;
     }
+
     .sm\)mar\:right-1\.25 {
         margin-right: 1.25rem !important;
     }
+
     .sm\)mar\:right-1\.5 {
         margin-right: 1.5rem !important;
     }
+
     .sm\)mar\:right-1\.75 {
         margin-right: 1.75rem !important;
     }
+
     .sm\)mar\:right-2 {
         margin-right: 2rem !important;
     }
+
     .sm\)mar\:top-0 {
         margin-top: 0 !important;
     }
+
     .sm\)mar\:top-0\.125 {
         margin-top: 0.125rem !important;
     }
+
     .sm\)mar\:top-0\.25 {
         margin-top: 0.25rem !important;
     }
+
     .sm\)mar\:top-0\.375 {
         margin-top: 0.375rem !important;
     }
+
     .sm\)mar\:top-0\.5 {
         margin-top: 0.5rem !important;
     }
+
     .sm\)mar\:top-0\.625 {
         margin-top: 0.625rem !important;
     }
+
     .sm\)mar\:top-0\.75 {
         margin-top: 0.75rem !important;
     }
+
     .sm\)mar\:top-0\.8125 {
         margin-top: 0.8125rem !important;
     }
+
     .sm\)mar\:top-0\.875 {
         margin-top: 0.875rem !important;
     }
+
     .sm\)mar\:top-0\.9375 {
         margin-top: 0.9375rem !important;
     }
+
     .sm\)mar\:top-1 {
         margin-top: 1rem !important;
     }
+
     .sm\)mar\:top-1\.25 {
         margin-top: 1.25rem !important;
     }
+
     .sm\)mar\:top-1\.5 {
         margin-top: 1.5rem !important;
     }
+
     .sm\)mar\:top-1\.75 {
         margin-top: 1.75rem !important;
     }
+
     .sm\)mar\:top-2 {
         margin-top: 2rem !important;
     }
+
     .sm\)mar\:horz-0 {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+
     .sm\)mar\:horz-0\.125 {
         margin-left: 0.125rem !important;
         margin-right: 0.125rem !important;
     }
+
     .sm\)mar\:horz-0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
     }
+
     .sm\)mar\:horz-0\.375 {
         margin-left: 0.375rem !important;
         margin-right: 0.375rem !important;
     }
+
     .sm\)mar\:horz-0\.5 {
         margin-left: 0.5rem !important;
         margin-right: 0.5rem !important;
     }
+
     .sm\)mar\:horz-0\.625 {
         margin-left: 0.625rem !important;
         margin-right: 0.625rem !important;
     }
+
     .sm\)mar\:horz-0\.75 {
         margin-left: 0.75rem !important;
         margin-right: 0.75rem !important;
     }
+
     .sm\)mar\:horz-0\.8125 {
         margin-left: 0.8125rem !important;
         margin-right: 0.8125rem !important;
     }
+
     .sm\)mar\:horz-0\.875 {
         margin-left: 0.875rem !important;
         margin-right: 0.875rem !important;
     }
+
     .sm\)mar\:horz-0\.9375 {
         margin-left: 0.9375rem !important;
         margin-right: 0.9375rem !important;
     }
+
     .sm\)mar\:horz-1 {
         margin-left: 1rem !important;
         margin-right: 1rem !important;
     }
+
     .sm\)mar\:horz-1\.25 {
         margin-left: 1.25rem !important;
         margin-right: 1.25rem !important;
     }
+
     .sm\)mar\:horz-1\.5 {
         margin-left: 1.5rem !important;
         margin-right: 1.5rem !important;
     }
+
     .sm\)mar\:horz-1\.75 {
         margin-left: 1.75rem !important;
         margin-right: 1.75rem !important;
     }
+
     .sm\)mar\:horz-2 {
         margin-left: 2rem !important;
         margin-right: 2rem !important;
     }
+
     .sm\)mar\:vert-0 {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
+
     .sm\)mar\:vert-0\.125 {
         margin-top: 0.125rem !important;
         margin-bottom: 0.125rem !important;
     }
+
     .sm\)mar\:vert-0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
     }
+
     .sm\)mar\:vert-0\.375 {
         margin-top: 0.375rem !important;
         margin-bottom: 0.375rem !important;
     }
+
     .sm\)mar\:vert-0\.5 {
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
     }
+
     .sm\)mar\:vert-0\.625 {
         margin-top: 0.625rem !important;
         margin-bottom: 0.625rem !important;
     }
+
     .sm\)mar\:vert-0\.75 {
         margin-top: 0.75rem !important;
         margin-bottom: 0.75rem !important;
     }
+
     .sm\)mar\:vert-0\.8125 {
         margin-top: 0.8125rem !important;
         margin-bottom: 0.8125rem !important;
     }
+
     .sm\)mar\:vert-0\.875 {
         margin-top: 0.875rem !important;
         margin-bottom: 0.875rem !important;
     }
+
     .sm\)mar\:vert-0\.9375 {
         margin-top: 0.9375rem !important;
         margin-bottom: 0.9375rem !important;
     }
+
     .sm\)mar\:vert-1 {
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
     }
+
     .sm\)mar\:vert-1\.25 {
         margin-top: 1.25rem !important;
         margin-bottom: 1.25rem !important;
     }
+
     .sm\)mar\:vert-1\.5 {
         margin-top: 1.5rem !important;
         margin-bottom: 1.5rem !important;
     }
+
     .sm\)mar\:vert-1\.75 {
         margin-top: 1.75rem !important;
         margin-bottom: 1.75rem !important;
     }
+
     .sm\)mar\:vert-2 {
         margin-top: 2rem !important;
         margin-bottom: 2rem !important;
     }
+
     .sm\)mar\:all-1\% {
         padding: 1% !important;
     }
+
     .sm\)mar\:all-2\% {
         padding: 2% !important;
     }
+
     .sm\)mar\:all-4\% {
         padding: 4% !important;
     }
+
     .sm\)mar\:all-6\% {
         padding: 6% !important;
     }
+
     .sm\)mar\:all-8\% {
         padding: 8% !important;
     }
+
     .sm\)mar\:all-10\% {
         padding: 1% !important;
     }
+
     .sm\)mar\:vert-1\% {
         padding-top: 1% !important;
         padding-bottom: 1% !important;
     }
+
     .sm\)mar\:vert-2\% {
         padding-top: 2% !important;
         padding-bottom: 2% !important;
     }
+
     .sm\)mar\:vert-4\% {
         padding-top: 4% !important;
         padding-bottom: 4% !important;
     }
+
     .sm\)mar\:vert-6\% {
         padding-top: 6% !important;
         padding-bottom: 6% !important;
     }
+
     .sm\)mar\:vert-8\% {
         padding-top: 8% !important;
         padding-bottom: 8% !important;
     }
+
     .sm\)mar\:vert-10\% {
         padding-top: 10% !important;
         padding-bottom: 10% !important;
     }
+
     .sm\)mar\:horz-1\% {
         padding-left: 1% !important;
         padding-right: 1% !important;
     }
+
     .sm\)mar\:horz-2\% {
         padding-left: 2% !important;
         padding-right: 2% !important;
     }
+
     .sm\)mar\:horz-4\% {
         padding-left: 4% !important;
         padding-right: 4% !important;
     }
+
     .sm\)mar\:horz-6\% {
         padding-left: 6% !important;
         padding-right: 6% !important;
     }
+
     .sm\)mar\:horz-8\% {
         padding-left: 8% !important;
         padding-right: 8% !important;
     }
+
     .sm\)mar\:horz-10\% {
         padding-left: 10% !important;
         padding-right: 10% !important;
     }
+
     /*  # pad
         # 90907.1b
         # padding (rem)
@@ -2479,170 +2621,219 @@ ul.li\:tpl-spaced li:not(:last-child) {
     .sm\)pad\:all-0 {
         padding: 0 !important;
     }
+
     .sm\)pad\:all-0\.125 {
         padding: 0.125rem !important;
     }
+
     .sm\)pad\:all-0\.25 {
         padding: 0.25rem !important;
     }
+
     .sm\)pad\:all-0\.375 {
         padding: 0.375rem !important;
     }
+
     .sm\)pad\:all-0\.5 {
         padding: 0.5rem !important;
     }
+
     .sm\)pad\:all-0\.625 {
         padding: 0.625rem !important;
     }
+
     .sm\)pad\:all-0\.75 {
         padding: 0.75rem !important;
     }
+
     .sm\)pad\:all-0\.8125 {
         padding: 0.8125rem !important;
     }
+
     .sm\)pad\:all-0\.875 {
         padding: 0.875rem !important;
     }
+
     .sm\)pad\:all-0\.9375 {
         padding: 0.9375rem !important;
     }
+
     .sm\)pad\:all-1 {
         padding: 1rem !important;
     }
+
     .sm\)pad\:all-1\.25 {
         padding: 1.25rem !important;
     }
+
     .sm\)pad\:all-1\.5 {
         padding: 1.5rem !important;
     }
+
     .sm\)pad\:all-1\.75 {
         padding: 1.75rem !important;
     }
+
     .sm\)pad\:all-2 {
         padding: 2rem !important;
     }
+
     .sm\)pad\:horz-0\.25 {
         padding-left: 0.25rem !important;
         padding-right: 0.25rem !important;
     }
+
     .sm\)pad\:horz-0\.5 {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
+
     .sm\)pad\:horz-0\.75 {
         padding-left: 0.75rem !important;
         padding-right: 0.75rem !important;
     }
+
     .sm\)pad\:horz-1 {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+
     sm\(.pad\:left-0\.5 {
         padding-left: 0.5rem !important;
     }
+
     .sm\)pad\:left-0\.75 {
         padding-left: 0.75rem !important;
     }
+
     .sm\)pad\:left-1 {
         padding-left: 1rem !important;
     }
+
     .sm\)pad\:right-0\.5 {
         padding-right: 0.5rem !important;
     }
+
     .sm\)pad\:right-0\.75 {
         padding-right: 0.75rem !important;
     }
+
     .sm\)pad\:right-1 {
         padding-right: 1rem !important;
     }
+
     .sm\)pad\:top-0\.3125 {
         padding-top: 0.3125rem !important;
     }
+
     .sm\)pad\:top-0\.5 {
         padding-top: 0.5rem !important;
     }
+
     .sm\)pad\:vert-0\.25 {
         padding-top: 0.25rem !important;
         padding-bottom: 0.25rem !important;
     }
+
     .sm\)pad\:vert-0\.5 {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
     }
+
     .sm\)pad\:vert-0\.75 {
         padding-top: 0.75rem !important;
         padding-bottom: 0.75rem !important;
     }
+
     .sm\)pad\:vert-1 {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
     }
+
     .sm\)pad\:all-1\% {
         padding: 1% !important;
     }
+
     .sm\)pad\:all-2\% {
         padding: 2% !important;
     }
+
     .sm\)pad\:all-4\% {
         padding: 4% !important;
     }
+
     .sm\)pad\:all-6\% {
         padding: 6% !important;
     }
+
     .sm\)pad\:all-8\% {
         padding: 8% !important;
     }
+
     .sm\)pad\:all-10\% {
         padding: 1% !important;
     }
+
     .sm\)pad\:vert-1\% {
         padding-top: 1% !important;
         padding-bottom: 1% !important;
     }
+
     .sm\)pad\:vert-2\% {
         padding-top: 2% !important;
         padding-bottom: 2% !important;
     }
+
     .sm\)pad\:vert-4\% {
         padding-top: 4% !important;
         padding-bottom: 4% !important;
     }
+
     .sm\)pad\:vert-6\% {
         padding-top: 6% !important;
         padding-bottom: 6% !important;
     }
+
     .sm\)pad\:vert-8\% {
         padding-top: 8% !important;
         padding-bottom: 8% !important;
     }
+
     .sm\)pad\:vert-10\% {
         padding-top: 10% !important;
         padding-bottom: 10% !important;
     }
+
     .sm\)pad\:horz-1\% {
         padding-left: 1% !important;
         padding-right: 1% !important;
     }
+
     .sm\)pad\:horz-2\% {
         padding-left: 2% !important;
         padding-right: 2% !important;
     }
+
     .sm\)pad\:horz-4\% {
         padding-left: 4% !important;
         padding-right: 4% !important;
     }
+
     .sm\)pad\:horz-6\% {
         padding-left: 6% !important;
         padding-right: 6% !important;
     }
+
     .sm\)pad\:horz-8\% {
         padding-left: 8% !important;
         padding-right: 8% !important;
     }
+
     .sm\)pad\:horz-10\% {
         padding-left: 10% !important;
         padding-right: 10% !important;
     }
+
     /*  # ht
         # 90907.1b
         # height
@@ -2651,46 +2842,57 @@ ul.li\:tpl-spaced li:not(:last-child) {
     .sm\)ht\:auto {
         height: auto !important;
     }
+
     /*: 80px :*/
     .sm\)ht\:min-height-5 {
         min-height: 5rem !important;
     }
+
     /*: 160px :*/
     .sm\)ht\:min-height-10 {
         min-height: 10rem !important;
     }
+
     /*: 240px :*/
     .sm\)ht\:min-height-15 {
         min-height: 15rem !important;
     }
+
     /*: 320px :*/
     .sm\)ht\:min-height-20 {
         min-height: 20rem !important;
     }
+
     /*: 400px :*/
     .sm\)ht\:min-height-25 {
         min-height: 25rem !important;
     }
+
     /*: 480px :*/
     .sm\)ht\:min-height-30 {
         min-height: 30rem !important;
     }
+
     /*: 560px :*/
     .sm\)ht\:min-height-35 {
         min-height: 35rem !important;
     }
+
     /*: 640px :*/
     .sm\)ht\:min-height-40 {
         min-height: 40rem !important;
     }
+
     /*: 720px :*/
     .sm\)ht\:min-height-45 {
         min-height: 45rem !important;
     }
+
     /*: 800px :*/
     .sm\)ht\:min-height-50 {
         min-height: 50rem !important;
     }
+
     /*  # img
         # 90907.1b
         # set image width & height
@@ -2699,18 +2901,22 @@ ul.li\:tpl-spaced li:not(:last-child) {
         height: auto !important;
         width: 25% !important;
     }
+
     .sm\)img\:50\% {
         height: auto !important;
         width: 50% !important;
     }
+
     .sm\)img\:75\% {
         height: auto !important;
         width: 75% !important;
     }
+
     .sm\)img\:100\% {
         height: auto !important;
         width: 100% !important;
     }
+
     /*  # wd
         # 90907.1b
         # width (rem & %)
@@ -2719,111 +2925,143 @@ ul.li\:tpl-spaced li:not(:last-child) {
     .sm\)wd\:10\% {
         width: 10% !important;
     }
+
     .sm\)wd\:15\% {
         width: 15% !important;
     }
+
     .sm\)wd\:20\% {
         width: 20% !important;
     }
+
     .sm\)wd\:25\% {
         width: 25% !important;
     }
+
     .sm\)wd\:30\% {
         width: 30% !important;
     }
+
     .sm\)wd\:35\% {
         width: 35% !important;
     }
+
     .sm\)wd\:40\% {
         width: 40% !important;
     }
+
     .sm\)wd\:45\% {
         width: 45% !important;
     }
+
     .sm\)wd\:50\% {
         width: 50% !important;
     }
+
     .sm\)wd\:55\% {
         width: 55% !important;
     }
+
     .sm\)wd\:60\% {
         width: 60% !important;
     }
+
     .sm\)wd\:65\% {
         width: 65% !important;
     }
+
     .sm\)wd\:70\% {
         width: 70% !important;
     }
+
     .sm\)wd\:75\% {
         width: 75% !important;
     }
+
     .sm\)wd\:80\% {
         width: 80% !important;
     }
+
     .sm\)wd\:85\% {
         width: 85% !important;
     }
+
     .sm\)wd\:90\% {
         width: 90% !important;
     }
+
     .sm\)wd\:95\% {
         width: 95% !important;
     }
+
     .sm\)wd\:auto {
         width: auto !important;
     }
+
     .sm\)wd\:100\% {
         width: 100% !important;
     }
+
     /*: 25px :*/
     .sm\)wd\:1\.5625 {
         width: 1.5625rem !important;
     }
+
     /*: 50px :*/
     .sm\)wd\:3\.125 {
         width: 3.125rem !important;
     }
+
     /*: 75px :*/
     .sm\)wd\:4\.6875 {
         width: 4.6875rem !important;
     }
+
     /*: 100px :*/
     .sm\)wd\:6\.25 {
         width: 6.25rem !important;
     }
+
     /*: 125px :*/
     .sm\)wd\:7\.8125 {
         width: 7.8125rem !important;
     }
+
     /*: 150px :*/
     .sm\)wd\:9\.375 {
         width: 9.375rem !important;
     }
+
     /*: 175px :*/
     .sm\)wd\:10\.9375 {
         width: 10.9375rem !important;
     }
+
     /*: 200px :*/
     .sm\)wd\:12\.5 {
         width: 12.5rem !important;
     }
+
     /*: 225px :*/
     .sm\)wd\:14\.0625 {
         width: 14.0625rem !important;
     }
+
     /*: 250px :*/
     .sm\)wd\:15\.625 {
         width: 15.625rem !important;
     }
+
     /*: 275px :*/
     .sm\)wd\:17\.1875 {
         width: 17.1875rem !important;
     }
+
     /*: 300px :*/
     .sm\)wd\:18\.75 {
         width: 18.75rem !important;
     }
+
     /*  # DIY flexbox components (beta)
         # 91001.1a
         # classes to build flexbox
@@ -2840,6 +3078,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     }
+
     .sm\)fx\:cw {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -2851,6 +3090,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
+
     .sm\)fx\:r {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -2862,6 +3102,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     }
+
     .sm\)fx\:rw {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -2873,138 +3114,162 @@ ul.li\:tpl-spaced li:not(:last-child) {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
+
     /*: justify content :*/
     .sm\)fa\:1 {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
+
     .sm\)fa\:2 {
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end;
     }
+
     .sm\)fa\:3 {
         -webkit-justify-content: flex-center;
         -ms-flex-pack: center;
         justify-content: flex-center;
     }
+
     .sm\)fa\:4 {
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
         justify-content: space-between;
     }
+
     .sm\)fa\:5 {
         -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
         justify-content: space-around;
     }
+
     /*: align content :*/
     .sm\)fb\:1 {
         -webkit-align-content: flex-start;
         -ms-flex-line-pack: start;
         align-content: flex-start;
     }
+
     .sm\)fb\:2 {
         -webkit-align-content: flex-end;
         -ms-flex-line-pack: end;
         align-content: flex-end;
     }
+
     .sm\)fb\:3 {
         -webkit-align-content: center;
         -ms-flex-line-pack: center;
         align-content: center;
     }
+
     .sm\)fb\:4 {
         -webkit-align-content: space-between;
         -ms-flex-line-pack: justify;
         align-content: space-between;
     }
+
     .sm\)fb\:5 {
         -webkit-align-content: space-around;
         -ms-flex-line-pack: distribute;
         align-content: space-around;
     }
+
     .sm\)fb\:6 {
         -webkit-align-content: stretch;
         -ms-flex-line-pack: stretch;
         align-content: stretch;
     }
+
     /*: align items :*/
     .sm\)fc\:1 {
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
         align-items: flex-start;
     }
+
     .sm\)fc\:2 {
         -webkit-align-items: flex-end;
         -ms-flex-align: end;
         align-items: flex-end;
     }
+
     .sm\)fc\:3 {
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center;
     }
+
     .sm\)fc\:4 {
         -webkit-align-items: baseline;
         -ms-flex-align: baseline;
         align-items: baseline;
     }
+
     .sm\)fc\:5 {
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
     }
+
     /*: item (importance ranking / auto is assumed) :*/
     .sm\)fd\:1 {
         -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     }
+
     .sm\)fd\:2 {
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     }
+
     .sm\)fd\:3 {
         -webkit-flex: 2 1 auto;
         -ms-flex: 2 1 auto;
         flex: 2 1 auto;
     }
+
     /*: item (align self) :*/
     .sm\)fe\:1 {
         -webkit-align-self: auto;
         -ms-flex-item-align: auto;
         align-self: auto;
     }
+
     .sm\)fe\:2 {
         -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
+
     .sm\)fe\:3 {
         -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
         align-self: flex-end;
     }
+
     .sm\)fe\:4 {
         -webkit-align-self: center;
         -ms-flex-item-align: center;
         align-self: center;
     }
+
     .sm\)fe\:5 {
         -webkit-align-self: baseline;
         -ms-flex-item-align: baseline;
         align-self: baseline;
     }
+
     .sm\)fe\:6 {
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
     }
 }
-
 
 /*
     eof: style/advance.css
