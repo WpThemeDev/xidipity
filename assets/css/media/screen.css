@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   media/screen.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: common-style variables
  *  ref:    https://material.io/design/
  *
@@ -11,12 +11,9 @@
  *  @since 0.9.0
  *
 **/
-
-
 /*
     root
 */
-
 :root {
     /*
         definitions
@@ -97,6 +94,64 @@
     --bg-sec-200: #ffab91;
     --bg-sec-100: #ffccbc;
     --bg-sec-050: #fbe9e7;
+    /*: other md colors (300/500/700) :*/
+    --bg-red: #E57373;
+    --bdr-red: #F44336;
+    --fg-red: #D32F2F;
+    --bg-pink: #F06292;
+    --bdr-pink: #E91E63;
+    --fg-pink: #C2185B;
+    --bg-purple: #BA68C8;
+    --bdr-purple: #9C27B0;
+    --fg-purple: #7B1FA2;
+    --bg-deep-purple: #9575CD;
+    --bdr-deep-purple: #673AB7;
+    --fg-deep-purple: #512DA8;
+    --bg-indigo: #7986CB;
+    --bdr-indigo: #3F51B5;
+    --fg-indigo: #303F9F;
+    --bg-blue: #64B5F6;
+    --bdr-blue: #2196F3;
+    --fg-blue: #1976D2;
+    --bg-light-blue: #4FC3F7;
+    --bdr-light-blue: #03A9F4;
+    --fg-light-blue: #0288D1;
+    --bg-cyan: #4DD0E1;
+    --bdr-cyan: #00BCD4;
+    --fg-cyan: #0097A7;
+    --bg-teal: #4DB6AC;
+    --bdr-teal: #009688;
+    --fg-teal: #00796B;
+    --bg-green: #81C784;
+    --bdr-green: #4CAF50;
+    --fg-green: #388E3C;
+    --bg-light-green: #AED581;
+    --bdr-light-green: #8BC34A;
+    --fg-light-green: #689F38;
+    --bg-lime: #DCE775;
+    --bdr-lime: #CDDC39;
+    --fg-lime: #AFB42B;
+    --bg-yellow: #FFF176;
+    --bdr-yellow: #FFEB3B;
+    --fg-yellow: #FBC02D;
+    --bg-amber: #FFD54F;
+    --bdr-amber: #FFC107;
+    --fg-amber: #FFA000;
+    --bg-orange: #FFB74D;
+    --bdr-orange: #FF9800;
+    --fg-orange: #F57C00;
+    --bg-deep-orange: #FF8A65;
+    --bdr-deep-orange: #FF5722;
+    --fg-deep-orange: #E64A19;
+    --bg-brown: #A1887F;
+    --bdr-brown: #795548;
+    --fg-brown: #5D4037;
+    --bg-grey: #E0E0E0;
+    --bdr-grey: #9E9E9E;
+    --fg-grey: #616161;
+    --bg-blue-grey: #90A4AE;
+    --bdr-blue-grey: #607D8B;
+    --fg-blue-grey: #455A64;
     /*: font families :*/
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
@@ -106,14 +161,14 @@
     --font-fancy: "Kaushan Script", cursive;
     /*: font sizes :*/
     --font-size-h1: 2.125rem;
-    --font-size-h2: 1.9375rem;
-    --font-size-h3: 1.75rem;
-    --font-size-h4: 1.5625rem;
+    --font-size-h2: 1.875rem;
+    --font-size-h3: 1.625rem;
+    --font-size-h4: 1.5rem;
     --font-size-h5: 1.375rem;
-    --font-size-h6: 1.1875rem;
+    --font-size-h6: 1.25rem;
     --font-size-rg: 1rem;
-    --font-size-sm: 0.8125rem;
-    --font-size-xs: 0.625rem;
+    --font-size-sm: 0.875rem;
+    --font-size-xs: 0.75rem;
     /*: font weight :*/
     --font-wgt-thin: 100;
     --font-wgt-xtralight: 200;
@@ -188,6 +243,7 @@
     --mnu-bar-lg-fg: var(--fg-bas-700);
     /*: sys content :*/
     --sys-content-bg-color: var(--bg-wht);
+    --sys-content-fg-color: var(--fg-bas-900);
     --sys-content-tp-border-color: var(--fg-bas-300);
     --sys-content-bt-border-color: var(--fg-bas-300);
     /*: system :*/
@@ -206,8 +262,6 @@
     --pag-breadcrumb-dsp: block;
     --pst-breadcrumb-dsp: none;
 }
-
-
 /*
     eof: media/screen.css
 */
