@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/print.css
- *  build:  91001.1a
+ *  build:  91012.1a
  *  descrp: blog print
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -11,12 +11,9 @@
  *  @since 0.9.0
  *
 **/
-
-
 /*  # Print
    ## Global defaults
  ----------------------------------------------------------------------------*/
-
 body {
     -webkit-print-color-adjust: exact;
     background: var(--bg-wht);
@@ -27,22 +24,18 @@ body {
     line-height: var(--sys-line-height);
 }
 
-
 /*
     page elements
 */
-
 @page {
     /* auto is the initial value */
     size: auto;
     margin: 8%;
 }
 
-
 /*
     hidden elements
 */
-
 #excerpt,
 #nav,
 #sidebar,
@@ -52,9 +45,7 @@ body {
     display: none;
 }
 
-
 /*: advance syntax :*/
-
 .prt\(dsp\:none\) {
     display: none;
 }
@@ -63,17 +54,68 @@ body {
     display: block;
 }
 
-
 /*
     Page break
 */
-
 .fx\:cn-ct-itm {
     page-break-after: always;
 }
 
 .prt\(pg-break\:after-always\) {
     page-break-after: always;
+}
+
+/*  # <h1>–<h6>
+    # 91001.1a
+    # HTML Section Heading elements
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+**/
+h1 {
+    color: var(--h1-color);
+    font-family: var(--h1-font);
+    font-size: var(--h1-size);
+    font-style: var(--h1-style);
+    font-weight: var(--h1-weight);
+}
+
+h2 {
+    color: var(--h2-color);
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+    font-style: var(--h2-style);
+    font-weight: var(--h2-weight);
+}
+
+h3 {
+    color: var(--h3-color);
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+    font-style: var(--h3-style);
+    font-weight: var(--h3-weight);
+}
+
+h4 {
+    color: var(--h4-color);
+    font-family: var(--h4-font);
+    font-size: var(--h4-size);
+    font-style: var(--h4-style);
+    font-weight: var(--h4-weight);
+}
+
+h5 {
+    color: var(--h5-color);
+    font-family: var(--h5-font);
+    font-size: var(--h5-size);
+    font-style: var(--h5-style);
+    font-weight: var(--h5-weight);
+}
+
+h6 {
+    color: var(--h6-color);
+    font-family: var(--h6-font);
+    font-size: var(--h6-size);
+    font-style: var(--h6-style);
+    font-weight: var(--h6-weight);
 }
 
 table {
@@ -85,21 +127,17 @@ tr {
     page-break-after: auto
 }
 
-
 /*  # fx-misc
     # 90915.1a
     # flexbox misc styling
 **/
-
 .fx\:shadow {
     box-shadow: none;
 }
 
-
 /*
     Force multi columns
 */
-
 table.cols\:auto,
 table.cols\:2,
 table.cols\:3,
@@ -125,12 +163,10 @@ table.cols\:4 {
     column-gap: 2%;
 }
 
-
 /*  # Print
    ## Print Specific Borders
       This solution displays a flux border inside the outer edge.
  ----------------------------------------------------------------------------*/
-
 .prt\(border\),
 .prt\(border-1\) {
     -webkit-box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
@@ -156,11 +192,9 @@ table.cols\:4 {
     box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
 }
 
-
 /*
     Print exception palette
 */
-
 .prt\(fg-blk\) {
     color: var(--fg-blk) !important;
 }
@@ -256,7 +290,6 @@ table.cols\:4 {
 .prt\(bg-bas-050\) {
     background-color: var(--bg-bas-050) !important;
 }
-
 
 /*
     eof: style/print.css
