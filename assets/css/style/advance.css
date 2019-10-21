@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/advance.css
- *  build:  91012.1a
+ *  build:  91020.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -68,6 +68,51 @@
 
 .bdr\:style-solid {
     border-style: solid !important;
+}
+
+/*  # bdr:spacing aka cell spacing
+    # 90909.1b
+    # predefined border/cell spacing classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing
+*/
+.bdr\:spacing-none {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+
+.bdr\:spacing-0\.25 {
+    border-collapse: separate !important;
+    border-spacing: 0.25rem !important;
+}
+
+.bdr\:spacing-0\.375 {
+    border-collapse: separate !important;
+    border-spacing: 0.375rem !important;
+}
+
+.bdr\:spacing-0\.5 {
+    border-collapse: separate !important;
+    border-spacing: 0.5rem !important;
+}
+
+.bdr\:spacing-0\.625 {
+    border-collapse: separate !important;
+    border-spacing: 0.625rem !important;
+}
+
+.bdr\:spacing-0\.75 {
+    border-collapse: separate !important;
+    border-spacing: 0.75rem !important;
+}
+
+.bdr\:spacing-0\.875 {
+    border-collapse: separate !important;
+    border-spacing: 0.875rem !important;
+}
+
+.bdr\:spacing-1 {
+    border-collapse: separate !important;
+    border-spacing: 1rem !important;
 }
 
 /*  # bdr:radius
@@ -1239,6 +1284,10 @@
     padding-right: 1rem !important;
 }
 
+.pad\:left-0 {
+    padding-left: 0 !important;
+}
+
 .pad\:left-0\.5 {
     padding-left: 0.5rem !important;
 }
@@ -1394,8 +1443,49 @@
 
 /*  # wd
     # 90907.1b
+    # width (fraction)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+*/
+.wd\:1\/4 {
+    width: 25% !important;
+}
+
+.wd\:1\/3 {
+    width: 33.3333% !important;
+}
+
+.wd\:1\/2 {
+    width: 50% !important;
+}
+
+.wd\:2\/3 {
+    width: 66.6666% !important;
+}
+
+.wd\:3\/4 {
+    width: 75% !important;
+}
+
+.wd\:1\/5 {
+    width: 20% !important;
+}
+
+.wd\:2\/5 {
+    width: 40% !important;
+}
+
+.wd\:3\/5 {
+    width: 60% !important;
+}
+
+.wd\:4\/5 {
+    width: 80% !important;
+}
+
+/*  # wd
+    # 90907.1b
     # width (rem & %)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
 */
 .wd\:10\% {
     width: 10% !important;
@@ -1919,7 +2009,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
         border-style: solid !important;
         border-width: 0.0625rem !important;
     }
-    
+
     .sm\)bdr\:dashed {
         border-style: dashed !important;
         border-width: 0.0625rem !important;
@@ -2698,7 +2788,11 @@ ul.li\:tpl-spaced li:not(:last-child) {
         padding-right: 1rem !important;
     }
 
-    sm\(.pad\:left-0\.5 {
+    .sm\)pad\:left-0 {
+        padding-left: 0 !important;
+    }
+    
+    .sm\)pad\:left-0\.5 {
         padding-left: 0.5rem !important;
     }
 
@@ -2919,8 +3013,49 @@ ul.li\:tpl-spaced li:not(:last-child) {
 
     /*  # wd
         # 90907.1b
+        # width (fraction)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+    */
+    .sm\)wd\:1\/4 {
+        width: 25% !important;
+    }
+
+    .sm\)wd\:1\/3 {
+        width: 33.3333% !important;
+    }
+
+    .sm\)wd\:1\/2 {
+        width: 50% !important;
+    }
+
+    .sm\)wd\:2\/3 {
+        width: 66.6666% !important;
+    }
+
+    .sm\)wd\:3\/4 {
+        width: 75% !important;
+    }
+
+    .sm\)wd\:1\/5 {
+        width: 20% !important;
+    }
+
+    .sm\)wd\:2\/5 {
+        width: 40% !important;
+    }
+
+    .sm\)wd\:3\/5 {
+        width: 60% !important;
+    }
+
+    .sm\)wd\:4\/5 {
+        width: 80% !important;
+    }
+
+    /*  # wd
+        # 90907.1b
         # width (rem & %)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
     */
     .sm\)wd\:10\% {
         width: 10% !important;
