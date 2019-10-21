@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/common.css
- *  build:  91012.1a
+ *  build:  91020.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -13,12 +13,12 @@
 **/
 ins,
 mark {
-    background-color: #fff59d;
+    background-color: var(--bg-yellow);
 }
 
 del {
     text-decoration: line-through;
-    text-decoration-color: #f44336;
+    text-decoration-color: var(--fg-red);
 }
 
 small {
@@ -554,26 +554,6 @@ cite {
     font-size: smaller;
     font-style: normal;
 }
-
-/* deprecated
-.note {
-    color: var(--fg-bas-700);
-    font-size: 87.5%;
-    font-weight: 300;
-}
-
-.note hr {
-    background-color: transparent;
-    border: 0;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
-    height: 1px;
-    margin: 16px auto 16px 0;
-    margin: 1em auto 1em 0;
-    width: 25%;
-}
-*/
 
 button,
 input,
