@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   media/screen.css
- *  build:  91012.1a
+ *  build:  91020.1a
  *  descrp: common-style variables
  *  ref:    https://material.io/design/
  *
@@ -152,6 +152,8 @@
     --bg-blue-grey: #90A4AE;
     --bdr-blue-grey: #607D8B;
     --fg-blue-grey: #455A64;
+    /*: hilite plugin support :*/
+    --bg-highlight: #FFF59D;
     /*: font families :*/
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
