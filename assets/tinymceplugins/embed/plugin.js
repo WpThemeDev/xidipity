@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   embed/plugin.js
- *  build:  91012.1a
+ *  build:  91020.1a
  *  descrp: embed plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -14,9 +14,9 @@
 (function () {
     tinymce.PluginManager.add('embed', function (editor, url) {
         editor.addButton('embed', {
-            title: 'Embed',
+            title: 'Insert template',
             icon: 'mce-embed',
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkgMTJ2N0g1di03SDN2N2MwIDEu%0D%0AMS45IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0ydi03aC0yem0tNiAuNjdsMi41OS0yLjU4TDE3IDEx%0D%0ALjVsLTUgNS01LTUgMS40MS0xLjQxTDExIDEyLjY3VjNoMnoiLz48cGF0aCBmaWxsPSJub25lIiBk%0D%0APSJNMCAwaDI0djI0SDB6Ii8+PC9zdmc+',
+            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAuNWgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMiAxNi41bDQtNGgtM3YtOWgtMnY5SDhsNCA0em05LTEzaC02djEuOTloNnYxNC4wM0gzVjUuNDloNlYzLjVIM2MtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxOGMxLjEgMCAyLS45IDItMnYtMTRjMC0xLjEtLjktMi0yLTJ6Ii8+PC9zdmc+',
             onclick: function () {
                 editor.windowManager.open({
                     name: 'embed',
