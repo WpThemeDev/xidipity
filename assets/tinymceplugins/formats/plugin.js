@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90817.1
+ *  build:  91020.1a
  *  descrp: format plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -15,17 +15,24 @@
 tinymce.PluginManager.add('formats', function(editor, url) {
   editor.addButton('formats', {
     type: 'splitbutton',
-    title: 'Underline (Ctrl+U)',
-    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJu%0D%0Ab25lIi8+PHBhdGggZD0iTTEyIDE3YzMuMzEgMCA2LTIuNjkgNi02VjNoLTIuNXY4YzAgMS45My0x%0D%0ALjU3IDMuNS0zLjUgMy41UzguNSAxMi45MyA4LjUgMTFWM0g2djhjMCAzLjMxIDIuNjkgNiA2IDZ6%0D%0AbS03IDJ2MmgxNHYtMkg1eiIvPjwvc3ZnPg==',
+    title: 'Text formats',
+    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHBhdGggaWQ9ImEiIGQ9Ik0yNCAyNEgwVjBoMjR2MjR6Ii8+PC9kZWZzPjxjbGlwUGF0aCBpZD0iYiI+PHVzZSB4bGluazpocmVmPSIjYSIgb3ZlcmZsb3c9InZpc2libGUiLz48L2NsaXBQYXRoPjxwYXRoIGNsaXAtcGF0aD0idXJsKCNiKSIgZD0iTTIuNSA0djNoNXYxMmgzVjdoNVY0aC0xM3ptMTkgNWgtOXYzaDN2N2gzdi03aDNWOXoiLz48L3N2Zz4=',
     onclick: function(e) {
       tinymce.execCommand(this.value);
     },
     menu: [
       {
         icon: false,
+        text: '• Underline',
+        onclick: function() {
+          tinyMCE.execCommand('underline');
+        }
+      },
+      {
+        icon: false,
         text: '• Strike through',
         onclick: function() {
-          tinyMCE.execCommand('strikethrough');
+          tinymce.execCommand('mceReplaceContent',false,'<del>{$selection}</del>');
         }
       },
       {
@@ -42,13 +49,6 @@ tinymce.PluginManager.add('formats', function(editor, url) {
           tinyMCE.execCommand('subscript');
         }
       },
-      {
-        icon: false,
-        text: '• Remove format',
-        onclick: function() {
-          tinyMCE.execCommand('removeformat');
-        }
-      }
     ],
     
     onPostRender: function() {
