@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   twocolumn/plugin.js
- *  build:  90927.1a
+ *  build:  91020.1a
  *  descrp: two column plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -14,9 +14,9 @@
 (function() {
     tinymce.PluginManager.add('twocolumn', function( editor, url ) {
         editor.addButton( 'twocolumn', {
-            title: 'Two Column',
+            title: 'Insert 2 column template',
             icon: 'mce-column',
-            image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhl%0D%0AaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIw%0D%0AMDAvc3ZnIj4KICA8cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz4KICA8cGF0%0D%0AaCBkPSJNIDMgMTUgTCAxMSAxNSBMIDExIDEzIEwgMyAxMyBMIDMgMTUgWiBNIDMgMTkgTCAxMSAx%0D%0AOSBMIDExIDE3IEwgMyAxNyBMIDMgMTkgWiBNIDMgMTEgTCAxMSAxMSBMIDExIDkgTCAzIDkgTCAz%0D%0AIDExIFogTSAzIDUgTCAzIDcgTCAxMSA3IEwgMTEgNSBMIDMgNSBaIE0gMTMgNSBMIDIxIDUgTCAy%0D%0AMSAxOSBMIDEzIDE5IEwgMTMgNSBaIiBzdHlsZT0iZmlsbDogcmdiKDMzLCAzMywgMzMpOyIvPgog%0D%0AIDxyZWN0IHg9IjEyLjk1IiB5PSI0Ljk5OCIgd2lkdGg9IjguMDQyIiBoZWlnaHQ9IjE0LjAwMyIg%0D%0Ac3R5bGU9ImZpbGw6IHJnYigxMTcsIDExNywgMTE3KTsiLz4KPC9zdmc+',
+            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNLTc0IDI5aDQ4djQ4aC00OFYyOXpNMCAwaDI0djI0SDBWMHptMCAwaDI0djI0SDBWMHoiLz48cGF0aCBkPSJNMTMgMTJoN3YxLjVoLTd6bTAtMi41aDdWMTFoLTd6bTAgNWg3VjE2aC03ek0yMSA0SDNjLTEuMSAwLTIgLjktMiAydjEzYzAgMS4xLjkgMiAyIDJoMThjMS4xIDAgMi0uOSAyLTJWNmMwLTEuMS0uOS0yLTItMnptMCAxNWgtOVY2aDl2MTN6Ii8+PC9zdmc+',
             onclick: function() {
                 var html = '<!-- xwpt: 90927.1a/mce/toolbar/multi-col   --><table class="cols:auto"><tbody><tr><td><p>&nbsp;</p></td></tr></tbody></table><!-- /xwpt: 90927.1a/mce/toolbar/multi-col  -->';
                 editor.insertContent(html);
