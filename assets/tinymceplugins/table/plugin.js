@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   plugin.js
- *  build:  90817.1
+ *  build:  91020.1a
  *  descrp: table plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -6696,9 +6696,9 @@
         }) : t.push(e.menuItems[n])
       }), e.addButton("table", {
         type: "menubutton",
-        title: "Table",
+        title: "Insert table",
         icon: 'mce-table',
-        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0%0D%0APSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJu%0D%0Ab25lIi8+PHBhdGggZD0iTTIwIDJINGMtMS4xIDAtMiAuOS0yIDJ2MTZjMCAxLjEuOSAyIDIgMmgx%0D%0ANmMxLjEgMCAyLS45IDItMlY0YzAtMS4xLS45LTItMi0yek04IDIwSDR2LTRoNHY0em0wLTZINHYt%0D%0ANGg0djR6bTAtNkg0VjRoNHY0em02IDEyaC00di00aDR2NHptMC02aC00di00aDR2NHptMC02aC00%0D%0AVjRoNHY0em02IDEyaC00di00aDR2NHptMC02aC00di00aDR2NHptMC02aC00VjRoNHY0eiIvPjwv%0D%0Ac3ZnPg==',
+        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz48cGF0aCBkPSJNMTAgMTAuMDJoNVYyMWgtNXpNMTcgMjFoM2MxLjEgMCAyLS45IDItMnYtOWgtNXYxMXptMy0xOEg1Yy0xLjEgMC0yIC45LTIgMnYzaDE5VjVjMC0xLjEtLjktMi0yLTJ6TTMgMTljMCAxLjEuOSAyIDIgMmgzVjEwSDN2OXoiLz48L3N2Zz4=',
         menu: t
       }), e.addButton("tableprops", {
         title: "Table properties",
