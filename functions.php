@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  91012.1a
+ *  build:  91020.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1307,6 +1307,114 @@ function register_mce_xscreen_button($buttons)
     return $buttons;
 }
 /**
+ * Add the TinyMCE MnuSp Plugin.
+ *
+ */
+add_action('admin_head', 'mce_add_mnusp_button');
+function mce_add_mnusp_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_mnusp_plugin");
+        add_filter('mce_buttons', 'register_mce_mnusp_button');
+    }
+}
+function add_tinymce_mnusp_plugin($plugin_array)
+{
+    $plugin_array['mnusp'] = get_template_directory_uri() . '/assets/tinymceplugins/mnusp/plugin.js';
+    return $plugin_array;
+}
+function register_mce_mnusp_button($buttons)
+{
+    array_push($buttons, 'mnusp');
+    return $buttons;
+}
+
+/**
+ * Add the TinyMCE ClrFmt Plugin.
+ *
+ */
+add_action('admin_head', 'mce_add_clrfmt_button');
+function mce_add_clrfmt_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_clrfmt_plugin");
+        add_filter('mce_buttons', 'register_mce_clrfmt_button');
+    }
+}
+function add_tinymce_clrfmt_plugin($plugin_array)
+{
+    $plugin_array['clrfmt'] = get_template_directory_uri() . '/assets/tinymceplugins/clrfmt/plugin.js';
+    return $plugin_array;
+}
+function register_mce_clrfmt_button($buttons)
+{
+    array_push($buttons, 'clrfmt');
+    return $buttons;
+}
+
+/**
+ * Add the TinyMCE HiLite Plugin.
+ *
+ */
+add_action('admin_head', 'mce_add_hilite_button');
+function mce_add_hilite_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_hilite_plugin");
+        add_filter('mce_buttons', 'register_mce_hilite_button');
+    }
+}
+function add_tinymce_hilite_plugin($plugin_array)
+{
+    $plugin_array['hilite'] = get_template_directory_uri() . '/assets/tinymceplugins/hilite/plugin.js';
+    return $plugin_array;
+}
+function register_mce_hilite_button($buttons)
+{
+    array_push($buttons, 'hilite');
+    return $buttons;
+}
+
+/**
  * Change TinyMCE configuration
  *
  */
@@ -1320,8 +1428,9 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    //    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,xscreen';
+    // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
+    // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,mnusp,fntwgt,italic,formats,forecolor,hilite,clrfmt,mnusp,txtalign,vspacer,hrule,mnusp,numlist,bullist,indent,outdent,mnusp,blockquote,excerpt,link,unlink,table,twocolumn,embed,mnusp,xscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -1330,6 +1439,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
+    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 900", "616161", "Grey 700", "9E9E9E", "Grey 500", "FF6F00", "Amber 900", "FFC107", "Amber 500", "3E2723", "Brown 900", "795548", "Brown 500", "BF360C", "Dp Orange 900", "FF5722", "Dp Orange 500", "827717", "Lime 900", "CDDC39", "Lime 500", "E65100", "Orange 900", "FF9800", "Orange 500", "880E4F", "Pink 900", "E91E63", "Pink 500", "B71C1C", "Red 900", "F44336", "Red 500", "263238", "Bluegrey 900", "607D8B", "Bluegrey 500", "0D47A1", "Blue 900", "2196F3", "Blue 500", "006064", "Cyan 900", "00BCD4", "Cyan 500", "311B92", "Dp Purple 900", "673AB7", "Dp Purple 500", "1B5E20", "Green 900", "4CAF50", "Green 500", "1A237E", "Indigo 900", "3F51B5", "Indigo 500", "01579B", "Lt Blue 900", "03A9F4", "Lt Blue 500", "33691E", "Lt Green 900", "8BC34A", "Lt Green 500", "4A148C", "Purple 900", "9C27B0", "Purple 500", "004D40", "Teal 900", "009688", "Teal 500", "FFFFFF", "White"]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
     return $in;
 }
