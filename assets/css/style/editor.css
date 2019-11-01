@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/editor.css
- *  build:  91012.1a
+ *  build:  91025.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -62,7 +62,7 @@ acronym {
 .spacer-single,
 .spacer-3\/4,
 .spacer-1\/2 {
-    background-color: var(--fg-sec-050);
+    background-color: var(--fg-pri-050);
 }
 
 /* misc                    ----------------------------------------------------
@@ -89,14 +89,14 @@ acronym {
     # optional post excerpt in table format
     # https://wordpress.org/support/article/excerpt/
 **/
-#excerpt {
+.exc {
     border: 1px dashed var(--fg-sec-400);
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-.excerpt\:txt {
+.exc\:content {
     background-color: var(--bg-bas-050);
     border: 0;
     font-size: 0.875rem;
@@ -104,7 +104,7 @@ acronym {
     width: 100%;
 }
 
-.excerpt\:tag {
+.exc\:tag {
     display: none;
 }
 
