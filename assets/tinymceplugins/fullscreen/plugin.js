@@ -1,8 +1,8 @@
 /*
  *  Xidipity WordPress Theme
  *
- *  file:   plugin.js
- *  build:  90817.1
+ *  file:   fullscreen/plugin.js
+ *  build:  91025.1
  *  descrp: full screen plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -10,16 +10,17 @@
  *  @subpackage Xidipity
  *  @since 0.9.0
  *
-**/
-(function() {
-    tinymce.PluginManager.add('xscreen', function( editor, url ) {
-        editor.addButton( 'xscreen', {
-            title: 'Full Screen',
-            icon: 'mce-fullscreen',
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRw%0D%0AOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9%0D%0AIjAgMCAyNCAyNCI+PGRlZnM+PHBhdGggaWQ9ImEiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L2RlZnM+%0D%0APGNsaXBQYXRoIGlkPSJiIj48dXNlIHhsaW5rOmhyZWY9IiNhIiBvdmVyZmxvdz0idmlzaWJsZSIv%0D%0APjwvY2xpcFBhdGg+PHBhdGggY2xpcC1wYXRoPSJ1cmwoI2IpIiBkPSJNMTUgM2wyLjMgMi4zLTIu%0D%0AODkgMi44NyAxLjQyIDEuNDJMMTguNyA2LjcgMjEgOVYzek0zIDlsMi4zLTIuMyAyLjg3IDIuODkg%0D%0AMS40Mi0xLjQyTDYuNyA1LjMgOSAzSDN6bTYgMTJsLTIuMy0yLjMgMi44OS0yLjg3LTEuNDItMS40%0D%0AMkw1LjMgMTcuMyAzIDE1djZ6bTEyLTZsLTIuMyAyLjMtMi44Ny0yLjg5LTEuNDIgMS40MiAyLjg5%0D%0AIDIuODdMMTUgMjFoNnoiLz48cGF0aCBjbGlwLXBhdGg9InVybCgjYikiIGZpbGw9Im5vbmUiIGQ9%0D%0AIk0wIDBoMjR2MjRIMHoiLz48L3N2Zz4=',
-            onclick: function() {
-              tinymce.execCommand('mceFullscreen');
-            }
-        });
+ **/
+tinymce.PluginManager.add('xscreen', function(editor, url) {
+    editor.addButton('xscreen', {
+        title: 'Full Screen',
+        icon: 'mce-fullscreen',
+        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTcgN0g3Yy0yLjc2IDAtNSAyLjI0LTUgNXMyLjI0IDUgNSA1aDEwYzIuNzYgMCA1LTIuMjQgNS01cy0yLjI0LTUtNS01ek03IDE1Yy0xLjY2IDAtMy0xLjM0LTMtM3MxLjM0LTMgMy0zIDMgMS4zNCAzIDMtMS4zNCAzLTMgM3oiLz48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PC9zdmc+',
+        onclick: function() {
+            editor.execCommand('mceFullscreen');
+        }
     });
-})();
+});
+/*
+    eof: fullscreen/plugin.js
+*/
