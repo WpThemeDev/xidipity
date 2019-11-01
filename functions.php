@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  91020.1a
+ *  build:  91025.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -811,15 +811,16 @@ if (!function_exists('xidipity_setup')):
 		add_theme_support( 'editor-styles' );
         
         $ed_css1 = 'style.css';
-        $ed_css2 = '/assets/css/style/palette.css';
-        $ed_css3 = '/assets/css/style/common.css';
-        $ed_css4 = '/assets/css/style/advance.css';
-        $ed_css5 = '/assets/css/media/screen.css';
+        $ed_css2 = '/assets/css/media/screen.css';
+        $ed_css3 = '/assets/css/style/palette.css';
+        $ed_css4 = '/assets/css/style/common.css';
+        $ed_css5 = '/assets/css/style/advance.css';
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
         $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
-        $ed_css8 = '/assets/css/style/editor.css';
+        $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap';
+        $ed_css9 = '/assets/css/style/editor.css';
 
-        $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8 );
+        $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
         add_editor_style( $ed_styles );
 
         /*
@@ -1415,6 +1416,78 @@ function register_mce_hilite_button($buttons)
 }
 
 /**
+ * Add the TinyMCE UlList Plugin.
+ *
+ */
+add_action('admin_head', 'mce_add_ullist_button');
+function mce_add_ullist_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_ullist_plugin");
+        add_filter('mce_buttons', 'register_mce_ullist_button');
+    }
+}
+function add_tinymce_ullist_plugin($plugin_array)
+{
+    $plugin_array['ullist'] = get_template_directory_uri() . '/assets/tinymceplugins/ullist/plugin.js';
+    return $plugin_array;
+}
+function register_mce_ullist_button($buttons)
+{
+    array_push($buttons, 'ullist');
+    return $buttons;
+}
+
+/**
+ * Add the TinyMCE OlList Plugin.
+ *
+ */
+add_action('admin_head', 'mce_add_ollist_button');
+function mce_add_ollist_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_ollist_plugin");
+        add_filter('mce_buttons', 'register_mce_ollist_button');
+    }
+}
+function add_tinymce_ollist_plugin($plugin_array)
+{
+    $plugin_array['ollist'] = get_template_directory_uri() . '/assets/tinymceplugins/ollist/plugin.js';
+    return $plugin_array;
+}
+function register_mce_ollist_button($buttons)
+{
+    array_push($buttons, 'ollist');
+    return $buttons;
+}
+
+/**
  * Change TinyMCE configuration
  *
  */
@@ -1430,7 +1503,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['menubar'] = '';
     // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
     // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,xscreen';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,mnusp,fntwgt,italic,formats,forecolor,hilite,clrfmt,mnusp,txtalign,vspacer,hrule,mnusp,numlist,bullist,indent,outdent,mnusp,blockquote,excerpt,link,unlink,table,twocolumn,embed,mnusp,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,mnusp,fntwgt,italic,formats,forecolor,hilite,clrfmt,mnusp,txtalign,vspacer,hrule,mnusp,ollist,ullist,indent,outdent,mnusp,blockquote,excerpt,link,unlink,table,twocolumn,embed,mnusp,xscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -1439,8 +1512,9 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 900", "616161", "Grey 700", "9E9E9E", "Grey 500", "FF6F00", "Amber 900", "FFC107", "Amber 500", "3E2723", "Brown 900", "795548", "Brown 500", "BF360C", "Dp Orange 900", "FF5722", "Dp Orange 500", "827717", "Lime 900", "CDDC39", "Lime 500", "E65100", "Orange 900", "FF9800", "Orange 500", "880E4F", "Pink 900", "E91E63", "Pink 500", "B71C1C", "Red 900", "F44336", "Red 500", "263238", "Bluegrey 900", "607D8B", "Bluegrey 500", "0D47A1", "Blue 900", "2196F3", "Blue 500", "006064", "Cyan 900", "00BCD4", "Cyan 500", "311B92", "Dp Purple 900", "673AB7", "Dp Purple 500", "1B5E20", "Green 900", "4CAF50", "Green 500", "1A237E", "Indigo 900", "3F51B5", "Indigo 500", "01579B", "Lt Blue 900", "03A9F4", "Lt Blue 500", "33691E", "Lt Green 900", "8BC34A", "Lt Green 500", "4A148C", "Purple 900", "9C27B0", "Purple 500", "004D40", "Teal 900", "009688", "Teal 500", "FFFFFF", "White"]';
+    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 900", "424242", "Grey 800", "616161", "Grey 700", "757575", "Grey 600", "9E9E9E", "Grey 500", "BDBDBD", "Grey 400", "FF6F00", "Amber 900", "FFC107", "Amber 500", "3E2723", "Brown 900", "795548", "Brown 500", "BF360C", "Dp Orange 900", "FF5722", "Dp Orange 500", "827717", "Lime 900", "CDDC39", "Lime 500", "E65100", "Orange 900", "FF9800", "Orange 500", "880E4F", "Pink 900", "E91E63", "Pink 500", "B71C1C", "Red 900", "F44336", "Red 500", "263238", "Bluegrey 900", "607D8B", "Bluegrey 500", "0D47A1", "Blue 900", "2196F3", "Blue 500", "006064", "Cyan 900", "00BCD4", "Cyan 500", "311B92", "Dp Purple 900", "673AB7", "Dp Purple 500", "1B5E20", "Green 900", "4CAF50", "Green 500", "1A237E", "Indigo 900", "3F51B5", "Indigo 500", "01579B", "Lt Blue 900", "03A9F4", "Lt Blue 500", "33691E", "Lt Green 900", "8BC34A", "Lt Green 500", "4A148C", "Purple 900", "9C27B0", "Purple 500", "004D40", "Teal 900", "009688", "Teal 500", "F57F17", "Yellow 900", "FFEB3B", "Yellow 500", "FFFFFF", "White"]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
+    $in['textcolor_cols'] = '9';
     return $in;
 }
 , 15, 2);
@@ -1536,13 +1610,13 @@ function dsp_err($att)
     $a_msg = trim($att);
     if (empty($a_msg))
     {
-        $v_msg = 'Error detected without a message';
+        $v_msg = 'Error detected without an explanation';
     }
     else
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 90903.1a/fnt/dsp/err             --><div class="fx:r fa:1 fb:1 fc:6 bg:bas-050 pad:all-0.5"><div class="fd:1 fe:4 fnt:size-large pad:left-0.5 pad:right-1"><svg class="mar:horz-auto" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M7.58 4.08L6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V2.5h-3v2.18C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z" style="fill: rgb(204, 0, 0);"/></svg></div><div class="fd:2 fe:4 fnt:size-small pad:left-0.5 bdr:left-0.125 bdr:style-solid bdr:bas-300">' . __($v_msg) . '</div></div><!-- /xwpt: 90903.1a/fnt/dsp/err            -->';
+    $fn_retval = '<!-- xwpt: 91025.1a/sys/dsp/err             --><div class="bdr:bas-300 bdr:rounded bg:bas-050 fa:1 fb:1 fc:6 fx:r pad:all-0.5"><div class="fd:1 fe:4 fnt:size-large pad:left-0.5 pad:right-1"><i class="material-icons fg:red">notifications_active</i></div><div class="bdr:bas-300 bdr:left-0.125 bdr:style-solid fd:2 fe:4 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 91025.1a/sys/dsp/err            -->';
     // return html
     return $fn_retval;
 }
