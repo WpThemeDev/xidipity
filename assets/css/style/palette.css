@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/palette.css
- *  build:  91020.1a
+ *  build:  91025.1a
  *  descrp: theme palette
  *  ref:    https://github.com/WpThemeDev/xidipity
  *  cm:     the use of !important is intentional as the purpose of
@@ -985,6 +985,11 @@ button.sys\:bg\!focus:focus {
 a.fg\:link,
 button.fg\:link {
     color: var(--sys-lnk-pri-color) !important;
+}
+
+/*: hilite mce plugin support :*/
+.bg\:highlight {
+    background-color: var(--bg-highlight);
 }
 
 .fg\:link\!hover:hover,
