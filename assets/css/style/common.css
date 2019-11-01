@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/common.css
- *  build:  91020.1a
+ *  build:  91025.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -293,7 +293,28 @@ ol.outline ol ol ol ol > li:before {
 }
 
 .fa-ul {
-    padding-left: .8125rem;
+    margin-left: 1.25rem !important;
+}
+
+.md-ul {
+    margin-left: 0 !important;
+}
+
+.md-ul li i {
+    margin-top: -0.1875rem;
+}
+
+/*  # google material design list
+    # 91025.1a
+    # unordered google icon list
+    # https://material.io/resources/icons/?style=baseline
+**/
+.md-ul,
+.md-ul ul,
+.md-ul ul ul,
+.md-ul ul ul ul,
+.md-ul ul ul ul ul {
+    list-style-type: none;
 }
 
 /*  # no bullet(s)
@@ -749,6 +770,57 @@ img {
     max-width: 100%;
 }
 
+/*  # aspect ratios
+    # 91025.1a
+    # framing images & videos to predefined aspect ratios
+    # html syntax: <div class="parent"><div class="@ratio"><div>content</div></div></div>
+**/
+.\@1x1 {
+	width: 100%;
+	padding-bottom: calc(960 / 960 * 100%);
+	position: relative;
+}
+.\@3x2 {
+	width: 100%;
+	padding-bottom: calc(640 / 960 * 100%);
+	position: relative;
+}
+.\@4x3 {
+	width: 100%;
+	padding-bottom: calc(720 / 960 * 100%);
+	position: relative;
+}
+.\@7x5 {
+	width: 100%;
+	padding-bottom: calc(686 / 960 * 100%);
+	position: relative;
+}
+.\@16x9 {
+	width: 100%;
+	padding-bottom: calc(540 / 960 * 100%);
+	position: relative;
+}
+.\@16x10 {
+	width: 100%;
+	padding-bottom: calc(600 / 960 * 100%);
+	position: relative;
+}
+.\@21x9 {
+	width: 100%;
+	padding-bottom: calc(411 / 960 * 100%);
+	position: relative;
+}
+.\@1x1 > div,
+.\@3x2 > div,
+.\@4x3 > div,
+.\@7x5 > div,
+.\@16x9 > div,
+.\@16x10 > div,
+.\@21x9 > div {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+}
+
 /*  # material-icons
     # 91012.1a
     # set default alignment
@@ -1019,6 +1091,7 @@ img.focalpoint:hover {
 /*: default :*/
 button {
     background-color: var(--bg-bas-200);
+    border: 1px solid transparent;
     border-radius: .25rem;
     padding: 1rem 1.5rem;
     text-align: center;
@@ -1032,20 +1105,30 @@ button a:focus {
 }
 
 button:hover {
+    filter: brightness(104%);
+}
+
+button:active {
     filter: brightness(96%);
 }
 
-.btn\:shadow {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+button.btn {
+    color: var(--fg-bas-200);
+    background-color: var(--bg-pri-600);
 }
 
-.btn\:shadow-hover:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+button.btn:hover {
+    box-shadow: 0px 2px 2px 1px var(--bg-bas-400);
+    filter: brightness(96%);
 }
 
-.btn\:shadow-focus:focus {
-    filter: brightness(94%);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.0);
+button.btn:active {
+    box-shadow: 0px 2px 2px 1px var(--bg-bas-100);
+    filter: brightness(85%);
+}
+
+button.btn:focus {
+    color: var(--fg-wht);
 }
 
 /*  # hvr
