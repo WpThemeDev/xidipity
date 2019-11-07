@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   functions.php
- *  build:  91025.1a
+ *  build:  91101.1a
  *  descrp: functions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -1633,7 +1633,7 @@ function dsp_err($att)
 function val_cat($att_list, $att_opt)
 {
     // system
-    $str_retval = '';
+    $fn_val = '';
     // variables
     $v_cat_lst = '';
     $v_cat_opt = '';
@@ -1669,10 +1669,10 @@ function val_cat($att_list, $att_opt)
                 $v_cat_lst .= $v_cat_opt . $wp_term . ',';
             }
         }
-        $str_retval = substr($v_cat_lst, 0, -1);
+        $fn_val = substr($v_cat_lst, 0, -1);
     }
     // return string
-    return $str_retval;
+    return $fn_val;
 }
 /**
  *  name: val_orby
@@ -1686,7 +1686,7 @@ function val_cat($att_list, $att_opt)
 function val_orby($att)
 {
     // system
-    $str_retval = 'none';
+    $fn_val = 'none';
     // variables
     $v_list = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
     $v_orderby = '';
@@ -1698,33 +1698,33 @@ function val_orby($att)
     {
         if (strpos($v_list, $v_orderby) === false)
         {
-            $str_retval = 'none';
+            $fn_val = 'none';
         }
         else
         {
-            $str_retval = $a_orderby;
-            if ($str_retval == 'id')
+            $fn_val = $a_orderby;
+            if ($fn_val == 'id')
             {
-                $str_retval = 'ID';
+                $fn_val = 'ID';
             }
         }
     }
     // return string
-    return $str_retval;
+    return $fn_val;
 }
 /**
  *  name: tpl_prg
- *  build: 90728.1
+ *  build: 91101.1
  *  description: Purge template default values (#?#)
  *  attributes:
  *      $att - string
  *  doc: https://xidipity.com/reference/source-code/functions/tpl_prg/
  *
  */
-function tpl_prg($att)
+function tpl_prg($att='')
 {
     // system
-    $str_retval = '';
+    $fn_val = '';
     // atributes
     $a_prm = trim($att);
     if (!empty($a_prm))
@@ -1732,11 +1732,11 @@ function tpl_prg($att)
         // No #?#
         if (substr_count($a_prm, '#') < 2)
         {
-            $str_retval = $a_prm;
+            $fn_val = $a_prm;
         }
     }
     // return string
-    return $str_retval;
+    return $fn_val;
 }
 /**
  *  name: get_image_sizes
