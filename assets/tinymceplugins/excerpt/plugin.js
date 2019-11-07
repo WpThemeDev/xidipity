@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   excerpt/plugin.js
- *  build:  91025.1a
+ *  build:  91101.1a
  *  descrp: excerpt plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -19,7 +19,7 @@ tinymce.PluginManager.add('excerpt', function( editor, url ) {
         onclick: function() {
             var dom = editor.dom;
             var uniqueID = dom.uniqueId();                                
-            var html = '<!-- xwpt: 90927.1b/mce/toolbar/excerpt     --><table class="exc" cellspacing="0"><tbody><tr><td class="exc:content"><p id="' + uniqueID + '">Type excerpt here ...</p></td><td class="exc:tag"><!--more--></td></tr></tbody></table><!-- /xwpt: 90927.1b/mce/toolbar/excerpt    -->';
+            var html = '<!-- xwpt: 90927.1b/mce/toolbar/excerpt     --><table class="exc dsp:none!web" cellspacing="0"><tbody><tr><td class="exc:content" id="' + uniqueID + '"></td><td class="exc:tag"><!--more--></td></tr></tbody></table><!-- /xwpt: 90927.1b/mce/toolbar/excerpt    -->';
             editor.insertContent(html);
             var newExcerpt = dom.select('p#' + uniqueID)[0];
             editor.selection.setCursorLocation(newExcerpt);                
