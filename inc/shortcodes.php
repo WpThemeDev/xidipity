@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   inc/shortcodes.php
- *  build:  90929.1a
+ *  build:  91101.1a
  *  descrp: shortcodes
  *  ref:    https://codex.wordpress.org/Shortcode_API
  *          https://github.com/WpThemeDev/xidipity
@@ -317,7 +317,7 @@ function bexc_shortcode($atts, $prms)
 }
 /**
  *  name: blst
- *  build: 90903.1
+ *  build: 91101.1
  *  description: Unordered list of blog links
  *  attributes:
  *      $atts - array
@@ -411,7 +411,7 @@ function blst_shortcode($atts, $prms)
         foreach ($wp_posts as $wp_post)
         {
             $html_retval .= '<li><a href="' . get_permalink($wp_post) . '">';
-            $html_retval .= $style_before . $wp_post->post_title . $style_after;
+            $html_retval .= $v_pre_itm . $wp_post->post_title . $v_pst_itm;
             $html_retval .= '</a></li>';
         }
         $html_retval .= '</ul>';
