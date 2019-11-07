@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   horzrule/plugin.js
- *  build:  91025.1a
+ *  build:  91101.1a
  *  descrp: horizonal rule plugin
  *  ref:    https://www.tiny.cloud/
  *
@@ -53,13 +53,13 @@ tinymce.PluginManager.add('hrule', function(editor, url) {
             text: '•\xa0Emblem',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:80%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
+                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:80%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger" style="margin-top:-0.125rem">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
             }
         }, {
             text: '•\xa0Emblem Wide',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:100%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
+                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:100%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger" style="margin-top:-0.125rem">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
             }
         }],
 
