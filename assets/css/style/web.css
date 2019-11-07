@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/web.css
- *  build:  91012.1a
+ *  build:  91101.1a
  *  descrp: web css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -96,6 +96,22 @@ body {
 
 .dsp\:none\!web {
     display: none;
+}
+
+.dsp\:hidden\!web {
+    visibility: hidden;
+}
+
+.dsp\:block\!web {
+    display: block;
+}
+
+.dsp\:inline\!web {
+    display: inline;
+}
+
+.dsp\:inline-block\!web {
+    display: inline-block;
 }
 
 .web\:spacer-1\/2 {
@@ -1586,10 +1602,12 @@ a.page-numbers:focus {
     # flexbox sidebar widgets
 **/
 /*: sidebar / widget / ad :*/
+/* deprecated
 .fx\:sb-widget-ad {
     max-width: 99%;
     margin-left: 1%;
 }
+*/
 
 /*: sidebar / widget / title :*/
 .fx\:sb-widget-ti {
