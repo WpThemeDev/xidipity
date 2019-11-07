@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/common.css
- *  build:  91025.1a
+ *  build:  91101.1a
  *  descrp: shared css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -283,17 +283,35 @@ ol.outline ol ol ol ol > li:before {
     margin-right: .25em;
 }
 
+ol.nested,
+ol.nested ol,
+ol.nested ol ol,
+ol.nested ol ol ol,
+ol.nested ol ol ol ol,
+ol.nested ol ol ol ol ol {
+    counter-reset: section;
+    list-style-type: none;
+}
+.nested li::before {
+    counter-increment: section;
+    content: counters(section, ".") " ";
+}
+
 /*  # font awesome list
     # 90910.1a
     # unordered font awesome list
     # https://fontawesome.com/how-to-use/on-the-web/styling/icons-in-a-list
 **/
 .fa-ul:nth-of-type(-n+4) {
-    padding-left: 0;
+    padding-left: 1.375rem !important;
+}
+
+.md-ul:nth-of-type(-n+4) {
+    padding-left: 1rem !important;
 }
 
 .fa-ul {
-    margin-left: 1.25rem !important;
+    margin-left: 1.375rem !important;
 }
 
 .md-ul {
@@ -332,6 +350,30 @@ ol.outline ol ol ol ol > li:before {
 .no-bullets ul ul ul,
 .no-bullets ul ul ul ul {
     list-style-type: none;
+}
+
+/*  # il
+    # 91101.1a
+    # image list
+    # custom to xidipity
+**/
+.il {
+    list-style-type: none;
+}
+
+.il li:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.il li img {
+    float: left;
+    height: auto;
+}
+
+.il li:not(:first-child) {
+    margin-top: 1rem;
 }
 
 dt {
