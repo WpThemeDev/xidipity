@@ -2,7 +2,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   style/editor.css
- *  build:  91025.1a
+ *  build:  91101.1a
  *  descrp: mce css
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -48,6 +48,22 @@ acronym {
     display: none;
 }
 
+.dsp\:hidden\!mce {
+    visibility: hidden;
+}
+
+.dsp\:block\!mce {
+    display: block;
+}
+
+.dsp\:inline\!mce {
+    display: inline;
+}
+
+.dsp\:inline-block\!mce {
+    display: inline-block;
+}
+
 /* page break symbol       ------------
 -- */
 .prt\(pg-break\:after-always\)::after {
@@ -85,13 +101,13 @@ acronym {
 }
 
 /*  # excerpt
-    # 90927.1b
+    # 91101.1b
     # optional post excerpt in table format
     # https://wordpress.org/support/article/excerpt/
 **/
 .exc {
     border: 1px dashed var(--fg-sec-400);
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     padding: 0;
     width: 100%;
 }
