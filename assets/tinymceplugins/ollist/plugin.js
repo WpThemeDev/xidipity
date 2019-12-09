@@ -10,10 +10,10 @@
  * File Name:       ollist/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91108.1a
- * Revision:        1
+ * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/high-light/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/ordered-list/
  */
 tinymce.PluginManager.add('ollist', function (editor, url) {
     editor.addButton('ollist', {
