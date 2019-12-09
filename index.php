@@ -1,17 +1,21 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   index.php
- *  build:  90920.1d
- *  descrp: Display blog excerpts
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        display blog excerpts
+ * File Name:       index.php
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ */
+
 /*
     set page options
 */
@@ -124,11 +128,8 @@ if (have_posts())
             readmore
         */
         $v_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-        
-        $v_meta_list  = '';
-        $v_meta_list .=  xidipity_icon_rm() . ',';
-        $v_meta_list .=  '<a href="' . $v_link . '">Read more …</a>' . ',';
-        echo xidipity_metalinks(explode(',', $v_meta_list));
+        $v_meta_list = '<!-- xwpt: 91108.1a/tmpl/readmore           --><div class="dsp:inline-block mar:vert-0.5"><span class="fg:sec-200 fnt:size-larger pad:right-0.5"><i class="fas fa-book-reader">&#x200B;</i></span><a href="' . $v_link . '">Read more &hellip;</a></div><!-- /xwpt: 91108.1a/tmpl/readmore          -->';
+        echo $v_meta_list;
         echo '<p>&nbsp;</p>' . "\n";
         echo '</div>' . "\n";
         echo '</article>' . "\n";
