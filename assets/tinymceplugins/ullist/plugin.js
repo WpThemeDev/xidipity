@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   ullist/plugin.js
- *  build:  91025.1a
- *  descrp: text ullist plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        tinymce unordered toolbar button
+ * File Name:       ullist/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/unordered-list/
+ */
 tinymce.PluginManager.add('ullist', function (editor, url) {
     editor.addButton('ullist', {
         type: 'splitbutton',
@@ -20,9 +24,9 @@ tinymce.PluginManager.add('ullist', function (editor, url) {
         onclick: function () {
             var dom = editor.dom;
             var uniqueID = dom.uniqueId();
-            var html = '<!-- xwpt: 91025.1a/mce/std/ul             --><ul><li><p id="' + uniqueID + '">&nbsp;</p></li></ul><!-- /xwpt: 91025.1a/mce/std/ul            -->';
+            var html = '<ul><li id="' + uniqueID + '"></li></ul>';
             editor.insertContent(html);
-            var newListItem = dom.select('p#' + uniqueID)[0];
+            var newListItem = dom.select('li#' + uniqueID)[0];
             editor.selection.setCursorLocation(newListItem);
         },
         menu: [{
@@ -31,23 +35,56 @@ tinymce.PluginManager.add('ullist', function (editor, url) {
             onclick: function () {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91025.1a/mce/std/ul             --><ul><li><p id="' + uniqueID + '">&nbsp;</p></li></ul><!-- /xwpt: 91025.1a/mce/std/ul            -->';
+                var html = '<ul><li id="' + uniqueID + '"></li></ul>';
                 editor.insertContent(html);
-                var newListItem = dom.select('p#' + uniqueID)[0];
+                var newListItem = dom.select('li#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newListItem);
             }
-            }, {
+        }, {
+            icon: false,
+            text: '•\xa0Circle',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ul class="circle"><li id="' + uniqueID + '"></li></ul>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+        }, {
+            icon: false,
+            text: '•\xa0Dash',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ul class="dash"><li id="' + uniqueID + '"></li></ul>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+        }, {
+            icon: false,
+            text: '•\xa0Square',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ul class="square"><li id="' + uniqueID + '"></li></ul>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+        }, {
             icon: false,
             text: '•\xa0Mixed',
             onclick: function () {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91025.1a/mce/std/ul             --><ul class="mixed"><li><p id="' + uniqueID + '">&nbsp;</p></li></ul><!-- /xwpt: 91025.1a/mce/std/ul            -->';
+                var html = '<ul class="mixed"><li id="' + uniqueID + '"></li></ul>';
                 editor.insertContent(html);
-                var newListItem = dom.select('p#' + uniqueID)[0];
+                var newListItem = dom.select('li#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newListItem);
             }
-            }]
+        }]
     });
 });
 /*
