@@ -1,27 +1,35 @@
 /*
- *  Xidipity WordPress Theme
- *
- *  file:   media/screen.css
- *  build:  91020.1a
- *  descrp: common-style variables
- *  ref:    https://material.io/design/
- *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
- *
-**/
-/*
-    root
+    * WordPress Xidipity CSS File
+    *
+    * @package      xidipity
+    * @author       John Baer
+    * @copyright    2019 John Baer
+    * @license      GPL-3.0-or-later
+    *
+    * Title:        Theme variables
+    * File Name:    assets/css/sys/theme-vars.css
+    * GitHub:       https://github.com/WpThemeDev/xidipity
+    * Build:        91108.1a
+    * Revision:     1
+    * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * Resources:    https://developer.mozilla.org/en-US/docs/Web/CSS/var
+    *               https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+    *               https://material.io/resources/color/#!/?view.left=0&view.right=0
 */
+
 :root {
     /*
-        definitions
+    ***
+    set base font size for rem calculations
+    ***
     */
-    /*: base font size :*/
     font-size: 16px;
-    /*: uni colors :*/
-    --transparent: transparent;
+    /*
+    ***
+    base, primary, secondary hue / shade
+    ***
+    */
     /*: foreground colors :*/
     --fg-blk: #000000;
     --fg-wht: #ffffff;
@@ -94,66 +102,106 @@
     --bg-sec-200: #ffab91;
     --bg-sec-100: #ffccbc;
     --bg-sec-050: #fbe9e7;
-    /*: other md colors (300/500/700) :*/
-    --bg-red: #E57373;
+    /*
+    ***
+    other colors (material design palette)
+    ***
+    */
+    --wcag-grey9: #212121;
+    --wcag-grey8: #424242;
+    --wcag-grey7: #616161;
+    --wcag-grey6: #757575;
+    --bg-red: #C62828;
     --bdr-red: #F44336;
-    --fg-red: #D32F2F;
-    --bg-pink: #F06292;
+    --fg-red: #C62828;
+    --wcag-red: #D50000;
+    --bg-pink: #C2185B;
     --bdr-pink: #E91E63;
     --fg-pink: #C2185B;
-    --bg-purple: #BA68C8;
+    --wcag-pink: #C51162;
+    --bg-purple: #8E24AA;
     --bdr-purple: #9C27B0;
-    --fg-purple: #7B1FA2;
-    --bg-deep-purple: #9575CD;
+    --fg-purple: #8E24AA;
+    --wcag-purple: #AA00FF;
+    --bg-deep-purple: #5E35B1;
     --bdr-deep-purple: #673AB7;
-    --fg-deep-purple: #512DA8;
-    --bg-indigo: #7986CB;
+    --fg-deep-purple: #5E35B1;
+    --wcag-deep-purple: #0A00B6;
+    --bg-indigo: #3949AB;
     --bdr-indigo: #3F51B5;
-    --fg-indigo: #303F9F;
-    --bg-blue: #64B5F6;
+    --fg-indigo: #3949AB;
+    --wcag-indigo: #304FFE;
+    --bg-blue: #1E88E5;
     --bdr-blue: #2196F3;
-    --fg-blue: #1976D2;
-    --bg-light-blue: #4FC3F7;
+    --fg-blue: #1E88E5;
+    --wcag-blue: #2962FF;
+    --bg-light-blue: #039BE5;
     --bdr-light-blue: #03A9F4;
-    --fg-light-blue: #0288D1;
-    --bg-cyan: #4DD0E1;
+    --fg-light-blue: #039BE5;
+    --wcag-light-blue: #0091EA;
+    --bg-cyan: #0097A7;
     --bdr-cyan: #00BCD4;
     --fg-cyan: #0097A7;
-    --bg-teal: #4DB6AC;
+    --wcag-cyan: #0093BD;
+    --bg-teal: #00897B;
     --bdr-teal: #009688;
-    --fg-teal: #00796B;
-    --bg-green: #81C784;
+    --fg-teal: #00897B;
+    --wcag-teal: #009688;
+    --bg-green: #388E3C;
     --bdr-green: #4CAF50;
     --fg-green: #388E3C;
-    --bg-light-green: #AED581;
+    --wcag-green: #087F23;
+    --bg-light-green: #689F38;
     --bdr-light-green: #8BC34A;
     --fg-light-green: #689F38;
-    --bg-lime: #DCE775;
+    --wcag-light-green: #689F38;
+    --bg-lime: #9E9D24;
     --bdr-lime: #CDDC39;
-    --fg-lime: #AFB42B;
-    --bg-yellow: #FFF176;
+    --fg-lime: #9E9D24;
+    --wcag-lime: #6C6F00;
+    --bg-yellow: #FFEB3B;
     --bdr-yellow: #FFEB3B;
     --fg-yellow: #FBC02D;
-    --bg-amber: #FFD54F;
+    --wcag-yellow: #C17900;
+    --bg-amber: #FFC107;
     --bdr-amber: #FFC107;
     --fg-amber: #FFA000;
-    --bg-orange: #FFB74D;
+    --wcag-amber: #EE6C03;
+    --bg-orange: #F57C00;
     --bdr-orange: #FF9800;
-    --fg-orange: #F57C00;
-    --bg-deep-orange: #FF8A65;
+    --fg-orange: #E65100;
+    --wcag-orange: #EF6C00;
+    --bg-deep-orange: #E64A19;
     --bdr-deep-orange: #FF5722;
     --fg-deep-orange: #E64A19;
-    --bg-brown: #A1887F;
+    --wcag-deep-orange: #A30000;
+    --bg-brown: #6D4C41;
     --bdr-brown: #795548;
-    --fg-brown: #5D4037;
-    --bg-grey: #E0E0E0;
+    --fg-brown: #6D4C41;
+    --bg-grey: #757575;
     --bdr-grey: #9E9E9E;
-    --fg-grey: #616161;
-    --bg-blue-grey: #90A4AE;
+    --fg-grey: #757575;
+    --bg-blue-grey: #546E7A;
     --bdr-blue-grey: #607D8B;
-    --fg-blue-grey: #455A64;
+    --fg-blue-grey: #546E7A;
+    /*
+    ***
+    special colors
+    ***
+    */
+    /*: no color :*/
+    --transparent: transparent;
     /*: hilite plugin support :*/
     --bg-highlight: #FFF59D;
+    /*: tints :*/
+    --bg-tint: #F7F8F9;
+    --bg-tint-bright: #F9FAFA;
+    --bg-tint-dark: #ECEFF1;
+    /*
+    ***
+    content attributes
+    ***
+    */
     /*: font families :*/
     --font-sans: "Roboto", sans-serif;
     --font-condensed: "Roboto Condensed", sans-serif;
@@ -168,7 +216,8 @@
     --font-size-h4: 1.5rem;
     --font-size-h5: 1.375rem;
     --font-size-h6: 1.25rem;
-    --font-size-rg: 1rem;
+    --font-size-xm: 1.125rem;
+    --font-size-md: 1rem;
     --font-size-sm: 0.875rem;
     --font-size-xs: 0.75rem;
     /*: font weight :*/
@@ -185,9 +234,6 @@
     --font-style-italic: italic;
     --font-style-normal: normal;
     --font-style-oblique: oblique;
-    /*
-        application
-    */
     /*: headers :*/
     --h1-color: var(--fg-bas-800);
     --h1-font: var(--font-sans);
@@ -214,53 +260,69 @@
     --h5-size: var(--font-size-h5);
     --h5-style: var(--font-style-normal);
     --h5-weight: var(--font-wgt-regular);
-    --h6-color: var(--fg-bas-700);
+    --h6-color: var(--fg-bas-800);
     --h6-font: var(--font-sans);
     --h6-size: var(--font-size-h6);
     --h6-style: var(--font-style-oblique);
     --h6-weight: var(--font-wgt-regular);
-    /*: sys header :*/
-    --sys-hdr-bg-color: var(--bg-bas-050);
-    --sys-hdr-align: center;
-    --title-lnk-pri-color: var(--fg-pri-600);
-    --title-lnk-sec-color: var(--fg-sec-600);
+    /*
+    ***
+    theme attributes
+    ***
+    */
+    /*: blog header :*/
+    --blog-hdr-bg-color: var(--bg-bas-050);
+    /*: blog title & tagline :*/
+    --title-lnk-pri-color: var(--wcag-deep-purple);
+    --title-lnk-sec-color: var(--wcag-deep-orange);
     --title-font-family: var(--font-fancy);
     --title-font-size: 3rem;
     --title-font-spacing: 0.0625rem;
     --title-font-style: normal;
     --title-font-weight: var(--font-wgt-regular);
-    --descr-font-color: var(--fg-bas-900);
+    --descr-font-color: var(--wcag-grey8);
     --descr-font-family: var(--font-sans);
     --descr-font-size: 1rem;
     --descr-font-spacing: 0.5rem;
     --descr-font-style: normal;
-    --descr-font-weight: var(--font-wgt-light);
-    /*: sys footer :*/
-    --sys-ft-bg-color: var(--bg-bas-050);
-    --sys-ft-align: center;
+    --descr-font-weight: var(--font-wgt-regular);
+    /*: blog footer :*/
+    --blog-ft-bg-color: var(--bg-bas-050);
     /*: sys menu :*/
     --mnu-bar-sm-bg: var(--transparent);
     --mnu-bar-sm-fg: var(--fg-blk);
-    --mnu-bar-lg-bg: var(--bg-bas-050);
-    --mnu-bar-lg-fg: var(--fg-bas-700);
+    --mnu-bar-lg-bg: var(--blog-hdr-bg-color);
+    --mnu-bar-lg-fg: var(--wcag-grey7);
     /*: sys content :*/
-    --sys-content-bg-color: var(--bg-wht);
-    --sys-content-fg-color: var(--fg-bas-900);
-    --sys-content-tp-border-color: var(--fg-bas-300);
-    --sys-content-bt-border-color: var(--fg-bas-300);
+    --content-bg-color: var(--bg-wht);
+    --content-fg-color: var(--fg-blk);
+    --content-tp-border-color: var(--fg-bas-300);
+    --content-bt-border-color: var(--fg-bas-300);
+    --content-counter-color: var(--wcag-grey6);
     /*: system :*/
-    --sys-bg-color: var(--bg-bas-050);
-    --sys-line-height: 1.4;
-    --sys-font-family: var(--font-sans);
-    --sys-font-color: var(--fg-blk);
-    --sys-font-size: 1rem;
-    --sys-font-weight: var(--font-wgt-light);
-    --sys-font-spacing: normal;
-    --sys-lnk-pri-color: var(--fg-pri-500);
-    --sys-lnk-sec-color: var(--fg-sec-600);
-    --sys-lnk-sec-bg-color: var(--transparent);
-    --sys-lnk-weight: var(--font-wgt-regular);
-    /*: plugin :*/
+    --dft-fg-color: var(--fg-blk);
+    --dft-bg-color: var(--bg-bas-050);
+    --dft-line-height: 1.4;
+    --dft-font-family: var(--font-sans);
+    --dft-font-color: var(--fg-blk);
+    --dft-font-size: 1rem;
+    --dft-font-weight: var(--font-wgt-light);
+    --dft-font-spacing: normal;
+    /*: link colors :*/
+    --dft-lnk-pri-color: var(--wcag-deep-purple);
+    --dft-lnk-sec-color: var(--wcag-deep-orange);
+    --dft-lnk-pri-bg-color: var(--transparent);
+    --dft-lnk-sec-bg-color: var(--transparent);
+    --dft-pri-lnk-wgt: var(--font-wgt-regular);
+    --dft-sec-lnk-wgt: var(--font-wgt-regular);
+    --dft-pri-lnk-decor: none;
+    --dft-sec-lnk-decor: none;
+    /*
+    ***
+    plugin attributes
+    ***
+    */
+    /*: yoast :*/
     --pag-breadcrumb-dsp: block;
     --pst-breadcrumb-dsp: none;
 }
