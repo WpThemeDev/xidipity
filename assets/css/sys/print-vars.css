@@ -1,22 +1,35 @@
 /*
- *  Xidipity WordPress Theme
- *
- *  file:   media/print.css
- *  build:  91012.1a
- *  descrp: turn all colors to grey
- *  ref:    https://material.io/design/
- *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
- *
-**/
-/*
-    root
+    * WordPress Xidipity CSS File
+    *
+    * @package      xidipity
+    * @author       John Baer
+    * @copyright    2019 John Baer
+    * @license      GPL-3.0-or-later
+    *
+    * Title:        Print variables
+    * File Name:    assets/css/sys/print-vars.css
+    * GitHub:       https://github.com/WpThemeDev/xidipity
+    * Build:        91108.1a
+    * Revision:     1
+    * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * Resources:    https://developer.mozilla.org/en-US/docs/Web/CSS/var
+    *               https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+    *               https://material.io/resources/color/#!/?view.left=0&view.right=0
 */
+
 :root {
-    /*: base font size :*/
+    /*
+    ***
+    set base font size for rem calculations
+    ***
+    */
     font-size: 16px;
+    /*
+    ***
+    base, primary, secondary hue / shade
+    ***
+    */
     /*: foreground colors :*/
     --fg-blk: #000000;
     --fg-wht: #ffffff;
@@ -207,8 +220,8 @@
     --h6-style: var(--font-style-oblique);
     --h6-weight: var(--font-wgt-regular);
     /*: sys header :*/
-    --sys-hdr-bg-color: var(--bg-wht);
-    --sys-hdr-align: center;
+    --blog-hdr-bg-color: var(--bg-wht);
+    --blog-hdr-align: center;
     --title-lnk-pri-color: var(--fg-pri-600);
     --title-lnk-sec-color: var(--fg-sec-600);
     --title-font-family: var(--font-fancy);
@@ -223,30 +236,33 @@
     --descr-font-style: normal;
     --descr-font-weight: var(--font-wgt-light);
     /*: sys footer :*/
-    --sys-ft-bg-color: var(--bg-wht);
-    --sys-ft-align: center;
+    --blog-ft-bg-color: var(--bg-wht);
+    --blog-ft-align: center;
     /*: sys menu :*/
     --mnu-bar-sm-bg: var(--transparent);
     --mnu-bar-sm-fg: var(--fg-blk);
     --mnu-bar-lg-bg: var(--bg-bas-050);
     --mnu-bar-lg-fg: var(--fg-bas-700);
     /*: sys content :*/
-    --sys-content-bg-color: var(--bg-wht);
-    --sys-content-fg-color: var(--fg-bas-900);
-    --sys-content-tp-border-color: var(--fg-bas-300);
-    --sys-content-bt-border-color: var(--fg-bas-300);
+    --content-bg-color: var(--bg-wht);
+    --content-fg-color: var(--fg-bas-900);
+    --content-tp-border-color: var(--transparent);
+    --content-bt-border-color: var(--transparent);
+    --content-counter-color: var(--wcag-grey6);
     /*: system :*/
-    --sys-bg-color: var(--bg-bas-050);
-    --sys-line-height: 1.4;
-    --sys-font-family: var(--font-sans);
-    --sys-font-color: var(--fg-blk);
-    --sys-font-size: 1rem;
-    --sys-font-weight: var(--font-wgt-light);
-    --sys-font-spacing: normal;
-    --sys-lnk-pri-color: var(--fg-pri-500);
-    --sys-lnk-sec-color: var(--fg-sec-600);
-    --sys-lnk-sec-bg-color: var(--transparent);
-    --sys-lnk-weight: var(--font-wgt-regular);
+    --dft-bg-color: var(--bg-bas-050);
+    --dft-line-height: 1.4;
+    --dft-font-family: var(--font-sans);
+    --dft-font-color: var(--fg-blk);
+    --dft-font-size: 1rem;
+    --dft-font-weight: var(--font-wgt-light);
+    --dft-font-spacing: normal;
+    --dft-lnk-pri-color: var(--fg-blk);
+    --dft-lnk-sec-color: var(--fg-blk);
+    --dft-lnk-sec-bg-color: var(--transparent);
+    --dft-pri-lnk-wgt: var(--font-wgt-regular);
+    --dft-sec-lnk-wgt: var(--font-wgt-regular);
+    --dft-pri-lnk-decor: underline;
     /*: plugin :*/
     --pag-breadcrumb-dsp: block;
     --pst-breadcrumb-dsp: none;
