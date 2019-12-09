@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   formats/plugin.js
- *  build:  91025.1a
- *  descrp: format plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        tinymce formats toolbar button
+ * File Name:       formats/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/text-formats/
+ */
 tinymce.PluginManager.add('formats', function(editor, url) {
     editor.addButton('formats', {
         type: 'splitbutton',
@@ -42,6 +46,12 @@ tinymce.PluginManager.add('formats', function(editor, url) {
             text: '•\xa0Sub script',
             onclick: function() {
                 editor.execCommand('subscript');
+            }
+        }, {
+            icon: false,
+            text: '•\xa0Drop Shadow',
+            onclick: function() {
+                tinymce.execCommand('mceReplaceContent', false, '<span class="fnt:shadow-medium">{$selection}</span>');
             }
         }, ],
     });
