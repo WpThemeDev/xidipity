@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   ollist/plugin.js
- *  build:  91025.1a
- *  descrp: text ollist plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        tinymce ordered list toolbar button
+ * File Name:       ollist/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/high-light/
+ */
 tinymce.PluginManager.add('ollist', function (editor, url) {
     editor.addButton('ollist', {
         type: 'splitbutton',
@@ -20,9 +24,9 @@ tinymce.PluginManager.add('ollist', function (editor, url) {
         onclick: function () {
             var dom = editor.dom;
             var uniqueID = dom.uniqueId();
-            var html = '<!-- xwpt: 91025.1a/mce/std/ul             --><ol><li><p id="' + uniqueID + '">&nbsp;</p></li></ol><!-- /xwpt: 91025.1a/mce/std/ul            -->';
+            var html = '<ol><li id="' + uniqueID + '"></li></ol>';
             editor.insertContent(html);
-            var newListItem = dom.select('p#' + uniqueID)[0];
+            var newListItem = dom.select('li#' + uniqueID)[0];
             editor.selection.setCursorLocation(newListItem);
         },
         menu: [{
@@ -31,9 +35,42 @@ tinymce.PluginManager.add('ollist', function (editor, url) {
             onclick: function () {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91025.1a/mce/std/ol             --><ol><li><p id="' + uniqueID + '">&nbsp;</p></li></ol><!-- /xwpt: 91025.1a/mce/std/ul            -->';
+                var html = '<ol><li id="' + uniqueID + '"></li></ol>';
                 editor.insertContent(html);
-                var newListItem = dom.select('p#' + uniqueID)[0];
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+            }, {
+            icon: false,
+            text: '•\xa0Nested',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ol class="nested"><li id="' + uniqueID + '"></li></ol>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+            }, {
+            icon: false,
+            text: '•\xa0Alpha',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ol class="alpha"><li id="' + uniqueID + '"></li></ol>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newListItem);
+            }
+            }, {
+            icon: false,
+            text: '•\xa0Roman',
+            onclick: function () {
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                var html = '<ol class="roman"><li id="' + uniqueID + '"></li></ol>';
+                editor.insertContent(html);
+                var newListItem = dom.select('li#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newListItem);
             }
             }, {
@@ -42,9 +79,9 @@ tinymce.PluginManager.add('ollist', function (editor, url) {
             onclick: function () {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91025.1a/mce/outline/ol         --><ol class="outline"><li><p id="' + uniqueID + '">&nbsp;</p></li></ol><!-- /xwpt: 91025.1a/mce/outline/ol        -->';
+                var html = '<ol class="outline"><li id="' + uniqueID + '"></li></ol>';
                 editor.insertContent(html);
-                var newListItem = dom.select('p#' + uniqueID)[0];
+                var newListItem = dom.select('li#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newListItem);
             }
             }]
