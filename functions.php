@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   functions.php
- *  build:  91101.1a
- *  descrp: functions
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Title:           Theme Functions
+ * File Name:       functions.php
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ */
+
 /**
  *  name: theme_cfg
  *  build: 90915.1b
@@ -811,13 +817,13 @@ if (!function_exists('xidipity_setup')):
 		add_theme_support( 'editor-styles' );
         
         $ed_css1 = 'style.css';
-        $ed_css2 = '/assets/css/media/screen.css';
+        $ed_css2 = '/assets/css/sys/theme-vars.css';
         $ed_css3 = '/assets/css/style/palette.css';
         $ed_css4 = '/assets/css/style/common.css';
         $ed_css5 = '/assets/css/style/advance.css';
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
         $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
-        $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap';
+        $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
         $ed_css9 = '/assets/css/style/editor.css';
 
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
@@ -905,17 +911,17 @@ add_action('widgets_init', 'xidipity_widgets_init');
 function xidipity_scripts()
 {
     /*: googlefonts.css :*/
-    wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap', array() , wp_get_theme()->get('Version') , 'all');
     /*: style.css :*/
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
     /*: xidipity css :*/
-    wp_enqueue_style('xidipity-screen-var', get_stylesheet_directory_uri() . '/assets/css/media/screen.css', array() , wp_get_theme()
+    wp_enqueue_style('xidipity-screen-var', get_stylesheet_directory_uri() . '/assets/css/sys/theme-vars.css', array() , wp_get_theme()
         ->get('Version') , 'screen');
     wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/style/common.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/style/palette.css', array() , wp_get_theme()
         ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-print-var', get_stylesheet_directory_uri() . '/assets/css/media/print.css', array() , wp_get_theme()
+    wp_enqueue_style('xidipity-print-var', get_stylesheet_directory_uri() . '/assets/css/sys/print-vars.css', array() , wp_get_theme()
         ->get('Version') , 'print');
     wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/style/print.css', array() , wp_get_theme()
         ->get('Version') , 'print');
@@ -1512,9 +1518,9 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 900", "424242", "Grey 800", "616161", "Grey 700", "757575", "Grey 600", "9E9E9E", "Grey 500", "BDBDBD", "Grey 400", "FF6F00", "Amber 900", "FFC107", "Amber 500", "3E2723", "Brown 900", "795548", "Brown 500", "BF360C", "Dp Orange 900", "FF5722", "Dp Orange 500", "827717", "Lime 900", "CDDC39", "Lime 500", "E65100", "Orange 900", "FF9800", "Orange 500", "880E4F", "Pink 900", "E91E63", "Pink 500", "B71C1C", "Red 900", "F44336", "Red 500", "263238", "Bluegrey 900", "607D8B", "Bluegrey 500", "0D47A1", "Blue 900", "2196F3", "Blue 500", "006064", "Cyan 900", "00BCD4", "Cyan 500", "311B92", "Dp Purple 900", "673AB7", "Dp Purple 500", "1B5E20", "Green 900", "4CAF50", "Green 500", "1A237E", "Indigo 900", "3F51B5", "Indigo 500", "01579B", "Lt Blue 900", "03A9F4", "Lt Blue 500", "33691E", "Lt Green 900", "8BC34A", "Lt Green 500", "4A148C", "Purple 900", "9C27B0", "Purple 500", "004D40", "Teal 900", "009688", "Teal 500", "F57F17", "Yellow 900", "FFEB3B", "Yellow 500", "FFFFFF", "White"]';
+    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "d50000", "Red", "c51162", "Pink", "aa00ff", "Purple", "0a00b6", "Dark Purple", "304ffe", "Indigo", "2962ff", "Blue", "0091ea", "Light Blue", "0093BD", "Cyan", "009688", "Teal", "087f23", "Green", "689f38", "Light Green", "6c6f00", "Lime", "c17900", "Yellow", "ee6c03", "Amber", "ef6c00", "Orange", "a30000", "Dark Orange", "ffffff", "White", ]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
-    $in['textcolor_cols'] = '9';
+    $in['textcolor_cols'] = '5';
     return $in;
 }
 , 15, 2);
@@ -1593,14 +1599,14 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_err
- *  build: 91001.1a
+ *  build: 91108.1a
  *  description: Return properly formatted error message
  *  attributes:
  *      $att - string
  *  ref:
  *
  */
-function dsp_err($att)
+function dsp_err($att = '')
 {
     // system
     $fn_retval = '';
@@ -1616,7 +1622,7 @@ function dsp_err($att)
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 91025.1a/sys/dsp/err             --><div class="bdr:bas-300 bdr:rounded bg:bas-050 fa:1 fb:1 fc:6 fx:r pad:all-0.5"><div class="fd:1 fe:4 fnt:size-large pad:left-0.5 pad:right-1"><i class="material-icons fg:red">notifications_active</i></div><div class="bdr:bas-300 bdr:left-0.125 bdr:style-solid fd:2 fe:4 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 91025.1a/sys/dsp/err            -->';
+    $fn_retval = '<!-- xwpt: 91108.1a/an/tmpl/warning         --><div class="bdr:bas-300 bdr:rounded bg:tint fa:1 fb:1 fc:5 fx:r pad:all-0.5"><div class="fd:1 fe:4 pad:left-0.25 pad:right-0.75"><i class="material-icons fnt:size-xx-large fg:red">notifications_active</i></div><div class="bdr:bas-400 bdr:left-solid-medium fd:2 fe:4 fnt:size-small pad:left-0.5"><p>' . __($v_msg) . '</p></div></div><!-- /xwpt: 91108.1a/an/tmpl/warning        -->';
     // return html
     return $fn_retval;
 }
