@@ -10,9 +10,11 @@
  * File Name:       embed/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91108.1a
- * Revision:        1
+ * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
+ *
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/embed/
  */
 tinymce.PluginManager.add('embed', function( editor, url ) {
     editor.addButton( 'embed', {
