@@ -1,0 +1,263 @@
+/*
+ * WordPress Xidipity PHP File
+ *
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
+ *
+ * Function:        xidipity tinymce CSS definitions
+ * File Name:       assets/css/theme/editor.css
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ */
+
+/*  # TinyMCE
+   ## Body
+ ----------------------------------------------------------------------------*/
+body,
+.mce-content-body {
+    background-color: var(--bg-wht);
+    color: var(--content-fg-color);
+    font-family: var(--dft-font-family);
+    font-size: var(--dft-font-size);
+    font-weight: var(--dft-font-weight);
+    line-height: var(--dft-line-height);
+    margin: 9px 10px;
+    max-width: 100%;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* required                ----------------------------------------------------
+-- */
+body.webkit strong,
+body.webkit b {
+    font-weight: bolder !important;
+}
+
+abbr,
+acronym {
+    font-weight: bolder !important;
+}
+
+/*  # TinyMCE
+   ## Editor Only
+ ----------------------------------------------------------------------------*/
+/* hide mce specific item  ------------
+-- */
+.dsp\:none\!mce {
+    display: none;
+}
+
+.dsp\:hidden\!mce {
+    visibility: hidden;
+}
+
+.dsp\:block\!mce {
+    display: block;
+}
+
+.dsp\:inline\!mce {
+    display: inline;
+}
+
+.dsp\:inline-block\!mce {
+    display: inline-block;
+}
+
+/* page break symbol       ------------
+-- */
+.prt\(pg-break\:after-always\)::after {
+    content: " ¶";
+    color: var(--fg-pri-500);
+}
+
+/* blank line spacers      ------------
+-- */
+.spacer-triple,
+.spacer-double,
+.spacer-single,
+.spacer-3\/4,
+.spacer-1\/2 {
+    background-color: var(--fg-pri-050);
+}
+
+/* force captions to 100%  ------------
+-- */
+.wp-caption {
+    height: auto !important;
+    width: 100% !important;
+}
+
+/* misc                    ----------------------------------------------------
+-- */
+/*  # tmpl
+    # 90905.1a
+    # editor template classes
+**/
+.tmpl {
+    width: 100%;
+}
+
+.tmpl-head {
+    display: block;
+    width: 100%;
+}
+
+.tmpl-foot {
+    display: none;
+}
+
+/*  # excerpt
+    # 91101.1b
+    # optional post excerpt in table format
+    # https://wordpress.org/support/article/excerpt/
+**/
+.exc {
+    border: 1px solid var(--fg-bas-300);
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+    width: 100%;
+}
+
+.exc\:content {
+    background-color: var(--bg-tint);
+    border-collapse: collapse;
+    border-style: none;
+    font-size: 0.875rem;
+    padding: 0.625rem 0.5rem;
+    width: 100%;
+}
+
+.exc\:tag {
+    display: none;
+}
+
+/*
+    vertical spacing
+    tint for editing
+*/
+.vert\:spacer-1\/2 {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-3\/4 {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-single {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-double {
+    background-color: var(--bg-sec-050);
+}
+
+.vert\:spacer-triple {
+    background-color: var(--bg-sec-050);
+}
+
+/*  # cols
+    # 91108.1a
+    # updated multi-column support
+    # sibling class in web.css will remove tint
+**/
+.cols\:fixed-2,
+.cols\:fixed-3,
+.cols\:fixed-4 {
+    border-collapse: separate;
+    border-spacing: 0.25rem 0;
+    border-style: none;
+    width: 100%;
+}
+
+.cols\:fixed-2 td {
+    background-color: var(--bg-tint);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 50%;
+}
+
+.cols\:fixed-3 td {
+    background-color: var(--bg-tint);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 33.3333%;
+}
+
+.cols\:fixed-4 td {
+    background-color: var(--bg-tint);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 25%;
+}
+
+.cols\:auto-2,
+.cols\:auto-3,
+.cols\:auto-4 {
+    border-collapse: separate;
+    border-spacing: 0.25rem 0;
+    border-style: none;
+    width: 100%;
+}
+
+.cols\:auto-2 td,
+.cols\:auto-3 td,
+.cols\:auto-4 td {
+    background-color: var(--bg-tint);
+    border-style: none;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+/*: embedded table :*/
+
+.cols\:auto-2 table,
+.cols\:auto-3 table,
+.cols\:auto-4 table,
+.cols\:fixed-2 table,
+.cols\:fixed-3 table,
+.cols\:fixed-4 table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+.cols\:auto-2 table thead th:not(:last-child),
+.cols\:auto-3 table thead th:not(:last-child),
+.cols\:auto-4 table thead th:not(:last-child),
+.cols\:fixed-2 table thead th:not(:last-child),
+.cols\:fixed-3 table thead th:not(:last-child),
+.cols\:fixed-4 table thead th:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300) !important;
+}
+
+.cols\:auto-2 table tr:not(:last-child) td,
+.cols\:auto-3 table tr:not(:last-child) td,
+.cols\:auto-4 table tr:not(:last-child) td,
+.cols\:fixed-2 table tr:not(:last-child) td,
+.cols\:fixed-3 table tr:not(:last-child) td,
+.cols\:fixed-4 table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--fg-bas-300) !important;
+}
+
+.cols\:auto-2 table td:not(:last-child),
+.cols\:auto-3 table td:not(:last-child),
+.cols\:auto-4 table td:not(:last-child),
+.cols\:fixed-2 table td:not(:last-child),
+.cols\:fixed-3 table td:not(:last-child),
+.cols\:fixed-4 table td:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300) !important;
+}
+
+/*
+    eof: style/editor.css
+*/
