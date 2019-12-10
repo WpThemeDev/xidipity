@@ -1,23 +1,27 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity CSS File
  *
- *  file:   style/web.css
- *  build:  91101.1a
- *  descrp: web css
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        xidipity web CSS definitions
+ * File Name:       assets/css/theme/web.css
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
-**/
+ */
+
 body {
-    background-color: var(--sys-bg-color);
-    color: var(--sys-content-fg-color);
-    font-family: var(--sys-font-family);
-    font-size: var(--sys-font-size);
-    font-weight: var(--sys-font-weight);
-    line-height: var(--sys-line-height);
+    background-color: var(--dft-bg-color);
+    color: var(--dft-fg-color);
+    font-family: var(--dft-font-family);
+    font-size: var(--dft-font-size);
+    font-weight: var(--dft-font-weight);
+    line-height: var(--dft-line-height);
     /* needed for menu checkbox hack */
     -webkit-animation: bugfix infinite 1s;
 }
@@ -267,6 +271,7 @@ ol.comment-list li::before {
     font-weight: 900;
 }
 
+/* deprecated
 .comment-list .comment-author .fn a,
 .comment-list .comment-author .fn a:visited {
     color: var(--fg-bas-600);
@@ -278,6 +283,7 @@ ol.comment-list li::before {
     color: var(--sys-lnk-sec-color);
     background-color: var(--sys-lnk-sec-bg-color);
 }
+*/
 
 .comment-list .says {
     display: none;
@@ -293,7 +299,7 @@ ol.comment-list li::before {
 }
 
 #respond {
-    background-color: var(--sys-content-bg-color);
+    background-color: var(--content-bg-color);
     background-color: transparent;
     padding: 15px;
 }
@@ -365,58 +371,146 @@ ol.comment-list li::before {
     display: none;
 }
 
+/* deprecated
 .youtube-embed {
     background-color: var(--bg-bas-800);
     border-radius: .25rem;
-    padding-bottom: 56%;
+    padding-bottom: 56.25%;
     position: relative;
     width: 100%;
 }
+*/
 
-/*  # web template support classes
-    # 90929.1a
-    # matching classes may be found in editor.css
+/*  # video-responsive
+    # 91108.1a
+    # iframe wrapper
+    # REQUIRES aspect ratios (ie. video-responsive @16x9)
 **/
-/*: multicolumn template :*/
-table.cols\:0,
-table.cols\:2,
-table.cols\:3,
-table.cols\:4 {
-    border: none !important;
+.video-responsive {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/*  # cols
+    # 91108.1a
+    # updated multi-column support
+    # sibling class in editor.css adds tint
+**/
+.cols\:fixed-2,
+.cols\:fixed-3,
+.cols\:fixed-4 {
+    border-collapse: separate;
+    border-spacing: 0.25rem 0;
+    border-style: none;
     width: 100%;
 }
 
-.cols\:auto td,
-.cols\:2 td,
-.cols\:3 td,
-.cols\:4 td {
-    border-color: transparent;
-    padding: 0;
+.cols\:fixed-2 td {
+    background-color: var(--transparent);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 50%;
+}
+
+.cols\:fixed-3 td {
+    background-color: var(--transparent);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 33.3333%;
+}
+
+.cols\:fixed-4 td {
+    background-color: var(--transparent);
+    border-style: none !important;
+    vertical-align: top;
+    padding: 0 0.25rem;
+    width: 25%;
+}
+
+.cols\:auto-2,
+.cols\:auto-3,
+.cols\:auto-4 {
+    border-collapse: separate;
+    border-spacing: 0.25rem 0;
+    border-style: none;
     width: 100%;
+}
+
+.cols\:auto-2 td,
+.cols\:auto-3 td,
+.cols\:auto-4 td {
+    background-color: var(--transparent);
+    border-style: none;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+/*: embedded table :*/
+
+.cols\:auto-2 table,
+.cols\:auto-3 table,
+.cols\:auto-4 table,
+.cols\:fixed-2 table,
+.cols\:fixed-3 table,
+.cols\:fixed-4 table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+.cols\:auto-2 table thead th:not(:last-child),
+.cols\:auto-3 table thead th:not(:last-child),
+.cols\:auto-4 table thead th:not(:last-child),
+.cols\:fixed-2 table thead th:not(:last-child),
+.cols\:fixed-3 table thead th:not(:last-child),
+.cols\:fixed-4 table thead th:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300) !important;
+}
+
+.cols\:auto-2 table tr:not(:last-child) td,
+.cols\:auto-3 table tr:not(:last-child) td,
+.cols\:auto-4 table tr:not(:last-child) td,
+.cols\:fixed-2 table tr:not(:last-child) td,
+.cols\:fixed-3 table tr:not(:last-child) td,
+.cols\:fixed-4 table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--fg-bas-300) !important;
+}
+
+.cols\:auto-2 table td:not(:last-child),
+.cols\:auto-3 table td:not(:last-child),
+.cols\:auto-4 table td:not(:last-child),
+.cols\:fixed-2 table td:not(:last-child),
+.cols\:fixed-3 table td:not(:last-child),
+.cols\:fixed-4 table td:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300) !important;
 }
 
 @media (min-width:640px) {
-
-    .cols\:auto td,
-    .cols\:2 td {
+    .cols\:auto-2 td {
         column-count: 2;
         column-gap: 2%;
     }
 
-    .cols\:3 td {
+    .cols\:auto-3 td {
         column-count: 3;
         column-gap: 2%;
     }
 
-    .cols\:4 td {
+    .cols\:auto-4 td {
         column-count: 4;
-        column-gap: 2%;
-    }
-}
-
-@media (min-width: 1440px) {
-    .cols\:auto td {
-        column-count: 3;
         column-gap: 2%;
     }
 }
@@ -505,7 +599,7 @@ table.cols\:4 {
 }
 
 .comment-navigation {
-    background-color: var(--sys-content-bg-color);
+    background-color: var(--content-bg-color);
     border-top: 1px solid var(--sys-content-tl-border-color);
     border-left: 1px solid var(--sys-content-tl-border-color);
     border-bottom: 1px solid var(--sys-content-br-border-color);
@@ -551,8 +645,7 @@ table.cols\:4 {
 .comment-navigation .nav-previous a:active,
 .comment-navigation .nav-previous a:focus,
 .comment-navigation .nav-previous a:hover {
-    color: var(--sys-lnk-sec-color);
-    background-color: var(--sys-lnk-sec-bg-color);
+    background-color: var(--transparent);
 }
 
 .comment-navigation .nav-next .meta-nav,
@@ -608,21 +701,21 @@ table.cols\:4 {
 }
 
 .toc-menu {
-    background-color: var(--sys-hdr-bg-color);
+    background-color: var(--blog-hdr-bg-color);
     background-color: var(--mnu-bg-color);
     font-size: 16px;
     font-size: 1rem;
     margin: 0;
     padding: .3125em 2em .3125em 2rem;
-    text-align: var(--sys-hdr-align);
-    text-align: center;
+    /* deprecate text-align: var(--blog-hdr-align);
+    text-align: center; */
 }
 
 @media (min-width:640px) {
     .toc-menu {
         padding: .3125em 2em .3125em 2rem;
-        text-align: var(--sys-hdr-align);
-        text-align: center;
+        /* deprecate text-align: var(--blog-hdr-align);
+        text-align: center; */
     }
 }
 
@@ -709,7 +802,7 @@ table.cols\:4 {
 }
 
 .search-frm .search-sub {
-    background-color: var(--sys-content-bg-color);
+    background-color: var(--content-bg-color);
     border-radius: .25rem;
     border: 1px solid transparent;
     position: relative;
@@ -832,19 +925,19 @@ table.cols\:4 {
 
 a.page-numbers,
 a.page-numbers:visited {
-    color: var(--sys-content-fg-color);
+    color: var(--content-fg-color);
     text-decoration: none;
 }
 
 a.page-numbers:hover {
-    color: var(--sys-lnk-sec-color);
+    /* deprecated color: var(--sys-lnk-sec-color);*/
     background-color: var(--bg-bas-100);
     -webkit-tap-highlight-color: transparent;
 }
 
 a.page-numbers:active,
 a.page-numbers:focus {
-    background-color: var(--bg-pri-100);
+    background-color: var(--bg-sec-100);
     border-radius: .25rem;
     color: var(--fg-blk);
 }
@@ -1109,266 +1202,14 @@ a.page-numbers:focus {
     padding-right: 10px;
 }
 
-/*  # special case core flexbox classes
-    # 90828.1a
-    # classes which support the following page templates
-        # naked.php
-        # no-sidebar.php
-        # no-title.php
-    # https://the-echoplex.net/flexyboxes/
-**/
-/*  # bexc-container
-    # 90903.1a
-    # supports blog excerpts shortcode
-      all fx containers begin life as columns to support mobile
-    # https://the-echoplex.net/flexyboxes/
-**/
-/*: blog excerpts container :*/
-.fx\:bexc-cn-img-left,
-.fx\:bexc-cn-img-none,
-.fx\:bexc-cn-img-right {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-}
-
-@media (min-width:640px) {
-    .fx\:bexc-cn-img-none {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-    }
-
-    .fx\:bexc-cn-img-left {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-    }
-
-    .fx\:bexc-cn-img-right {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row-reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-    }
-}
-
-/*: blog excerpts items :*/
-.fx\:bexc-cn-img-item,
-.fx\:bexc-cn-img-none-item {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-@media (min-width:640px) {
-    .fx\:bexc-cn-img-none-item {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 0 1 100%;
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-    }
-
-    .fx\:bexc-cn-img-item:nth-child(1) {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 0 1 40%;
-        -ms-flex: 0 1 40%;
-        flex: 0 1 40%;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-        max-width: 40%;
-    }
-
-    .fx\:bexc-cn-img-item:nth-child(2) {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-        -webkit-flex: 0 1 60%;
-        -ms-flex: 0 1 60%;
-        flex: 0 1 60%;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-        padding: 1rem;
-        max-width: 60%;
-    }
-}
-
-/*  # fx gimg
-    # 90903.1a
-    # supports gallery image shortcode
-      all fx containers begin life as columns to support mobile
-    # https://the-echoplex.net/flexyboxes/
-**/
-.fx\:gimg-cn-ct {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-}
-
-@media (min-width:640px) {
-    .fx\:gimg-cn-ct {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
-}
-
-.fx\:gimg-ct-itm {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-    margin-top: 0.5rem;
-}
-
-.fx\:gimg-ct-itm:last-child {
-    margin-bottom: 0.5rem;
-}
-
-/*: smartphone portrait :*/
-@media (min-width: 640px) {
-    .fx\:gimg-ct-itm {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 0 1 45%;
-        -ms-flex: 0 1 45%;
-        flex: 0 1 45%;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-        width: 45%;
-        margin: 1rem;
-    }
-}
-
-/*: desktop :*/
-@media (min-width: 1280px) {
-    .fx\:gimg-ct-itm {
-        -webkit-flex: 0 1 30%;
-        -ms-flex: 0 1 30%;
-        flex: 0 1 30%;
-        width: 30%;
-    }
-}
-
 /*  # core flexbox classes
-            # 90910.1a
-            # classes which support core design elements
-            # pg    = page
-            # ct    = container
-            # itm   = page container item
-            # https://the-echoplex.net/flexyboxes/
-        **/
+    # 90910.1a
+    # classes which support core design elements
+    # pg    = page
+    # ct    = container
+    # itm   = page container item
+    # https://the-echoplex.net/flexyboxes/
+**/
 /*: page container :*/
 .fx\:pg-ct {
     display: -ms-flexbox;
@@ -1403,7 +1244,7 @@ a.page-numbers:focus {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-    background-color: var(--sys-hdr-bg-color);
+    background-color: var(--blog-hdr-bg-color);
 }
 
 /*: (menu) page container item :*/
@@ -1460,7 +1301,7 @@ a.page-numbers:focus {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
-    background-color: var(--sys-ft-bg-color);
+    background-color: var(--blog-ft-bg-color);
 }
 
 /*  # core flexbox classes
@@ -1514,7 +1355,7 @@ a.page-numbers:focus {
 
 /*: default cn-ct-itm padding setting :*/
 .fx\:cn-ct-opt {
-    background-color: var(--sys-content-bg-color);
+    background-color: var(--content-bg-color);
     padding-left: 0;
     padding-right: 0;
 }
@@ -1579,7 +1420,7 @@ a.page-numbers:focus {
 }
 
 .fx\:sb-itm-opt {
-    background-color: var(--sys-content-bg-color);
+    background-color: var(--content-bg-color);
     max-width: 100% !important;
     padding: 1rem;
 }
@@ -1833,9 +1674,9 @@ a.page-numbers:focus {
 **/
 /*: general purpose content wrapper :*/
 .fx\:cn-itm-wrapper {
-    background-color: var(--sys-content-bg-color);
-    border-bottom: 0.0625rem solid var(--sys-content-bt-border-color);
-    border-top: 0.0625rem solid var(--sys-content-tp-border-color);
+    background-color: var(--content-bg-color);
+    border-bottom: 0.0625rem solid var(--content-bt-border-color);
+    border-top: 0.0625rem solid var(--content-tp-border-color);
     margin: 0;
     padding: 0;
     width: 100%;
@@ -1860,6 +1701,7 @@ figure {
     padding: 0;
 }
 
+/* deprecated
 .fx\:cn-itm-ti a,
 .fx\:cn-itm-ti a:active,
 .fx\:cn-itm-ti a:focus,
@@ -1871,6 +1713,7 @@ figure {
     color: var(--sys-lnk-sec-color);
     background-color: var(--sys-lnk-sec-bg-color);
 }
+*/
 
 /*  # nav
     # 90915.1a
