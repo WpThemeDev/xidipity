@@ -1,0 +1,4951 @@
+/*
+ * WordPress Xidipity PHP File
+ *
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
+ *
+ * Function:        xidipity advanced CSS definitions
+ * File Name:       assets/css/theme/advance.css
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * Comments:        the use of !important is intentional as the purpose of
+ *                  using these classes is to overwrite the current setting
+ *                  if one has been set. The exception to this rule is the
+ *                  DIY flexbox components.
+ *
+ *  Current @media break points
+ *                  default (no prefix)     (mobile media)
+ *                  sm  = min-width: 640px  (standard media)
+ *
+ *  Alternate @media break points
+ *                  default (no prefix)     (mobile media)
+ *                  sm  = min-width: 640px  (small)
+ *                  md  = min-width: 768px  (medium)
+ *                  lg  = min-width: 1024px (large)
+ *                  xl  = min-width: 1280px (x large)
+ *
+ */
+
+/*  # break
+    # 91108.1b
+    # inside page breaks
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
+*/
+.break\:inside-auto {
+    break-inside: auto !important;
+}
+.break\:inside-avoid {
+    break-inside: avoid !important;
+}
+.break\:inside-avoid-page {
+    break-inside: avoid-page !important;
+}
+.break\:inside-avoid-column {
+    break-inside: avoid-column !important;
+}
+.break\:inside-avoid-region {
+    break-inside: avoid-region !important;
+}
+/*  # cur
+    # 91001.1b
+    # cursor style named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+*/
+.cur\:auto,
+.cur\:auto\!hover:hover,
+.cur\:auto\!focus:focus {
+    cursor: auto;
+}
+
+.cur\:default,
+.cur\:default\!hover:hover,
+.cur\:default\!focus:focus {
+    cursor: default;
+}
+
+.cur\:pointer,
+.cur\:pointer\!hover:hover,
+.cur\:pointer\!focus:focus {
+    cursor: pointer;
+}
+
+/*  # bdr:radius
+    # 90909.1b
+    # predefined border radius classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+*/
+.bdr\:radius-none {
+    border-radius: none !important;
+}
+
+.bdr\:radius-0\.25 {
+    border-radius: 0.25rem !important;
+}
+
+.bdr\:radius-0\.5 {
+    border-radius: 0.5rem !important;
+}
+
+.bdr\:radius-0\.75 {
+    border-radius: 0.75rem !important;
+}
+
+/*: container should be square :*/
+.bdr\:radius-circle {
+    border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+
+/*  # dsp
+    # 90909.1b
+    # display options
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+*/
+.dsp\:none {
+    display: none !important;
+}
+
+.dsp\:hidden {
+    visibility: hidden !important;
+}
+
+.dsp\:block {
+    display: block !important;
+}
+
+.dsp\:inline {
+    display: inline !important;
+}
+
+.dsp\:inline-block {
+    display: inline-block !important;
+}
+
+/*  # family
+    # 91108.1a
+    # font family
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+*/
+.fnt\:family-sans {
+    font-family: var(--font-sans) !important;
+}
+
+.fnt\:family-serif {
+    font-family: var(--font-serif) !important;
+}
+
+.fnt\:family-mono {
+    font-family: var(--font-mono) !important;
+}
+
+.fnt\:family-condensed {
+    font-family: var(--font-condensed) !important;
+}
+
+.fnt\:family-cursive {
+    font-family: var(--font-cursive) !important;
+}
+
+.fnt\:family-fancy {
+    font-family: var(--font-fancy) !important;
+}
+
+/*  # fnt:size
+    # 90907.1b
+    # font size named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+.fnt\:size-xx-large {
+    font-size: xx-large !important;
+}
+
+.fnt\:size-x-large {
+    font-size: x-large !important;
+}
+
+.fnt\:size-large {
+    font-size: large !important;
+}
+
+.fnt\:size-x-medium {
+    font-size: var(--font-size-xr) !important;
+}
+
+.fnt\:size-medium {
+    font-size: medium !important;
+}
+
+.fnt\:size-small {
+    font-size: small !important;
+}
+
+.fnt\:size-x-small {
+    font-size: x-small !important;
+}
+
+.fnt\:size-xx-small {
+    font-size: xx-small !important;
+}
+
+.fnt\:size-larger {
+    font-size: larger !important;
+}
+
+.fnt\:size-smaller {
+    font-size: smaller !important;
+}
+
+/*  # shadow
+    # 91108.1a
+    # text shadow
+    # https://developers.google.com/fonts/docs/getting_started
+*/
+.fnt\:shadow,
+.fnt\:shadow-light {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.fnt\:shadow-medium {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.fnt\:shadow-dark {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+/*  # md
+    # 91012.1a
+    # materical design icon sizes
+    # https://google.github.io/material-design-icons/
+**/
+
+.md\:size-h1 {
+    font-size: var(--font-size-h1) !important;
+}
+
+.md\:size-h2 {
+    font-size: var(--font-size-h2) !important;
+}
+
+.md\:size-h3,
+.md\:size-xxx-large {
+    font-size: var(--font-size-h3) !important;
+}
+
+.md\:size-h4,
+.md\:size-xx-large {
+    font-size: var(--font-size-h4) !important;
+}
+
+.md\:size-h5,
+.md\:size-x-large {
+    font-size: var(--font-size-h5) !important;
+}
+
+.md\:size-h6,
+.md\:size-large {
+    font-size: var(--font-size-h6) !important;
+}
+
+.md\:size-medium {
+    font-size: var(--font-size-rg) !important;
+}
+
+.md\:size-small {
+    font-size: var(--font-size-sm) !important;
+}
+
+.md\:size-x-small {
+    font-size: var(--font-size-xs) !important;
+}
+
+/*  # fnt:space
+    # 90907.1b
+    # predefined letter spacing classes
+    # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+*/
+.fnt\:spacing-tight {
+    letter-spacing: -0.05rem !important;
+}
+
+.fnt\:spacing-normal {
+    letter-spacing: 0 !important;
+}
+
+.fnt\:spacing-loose {
+    letter-spacing: 0.1rem !important;
+}
+
+.fnt\:spacing-wide {
+    letter-spacing: 0.5rem !important;
+}
+
+/*  # fnt:style
+    # 90907.1b
+    # font style named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+*/
+.fnt\:style-italic {
+    font-style: italic !important;
+}
+
+.fnt\:style-normal {
+    font-style: normal !important;
+}
+
+.fnt\:style-oblique {
+    font-style: oblique !important;
+}
+
+/*  # fnt:weight
+    # 90907.1b
+    # font weight named classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+*/
+.fnt\:weight-bold,
+.fnt\:weight-bold\!hover:hover,
+.fnt\:weight-bold\!focus:focus {
+    font-weight: bold !important;
+}
+
+.fnt\:weight-bolder,
+.fnt\:weight-bolder\!hover:hover,
+.fnt\:weight-bolder\!focus:focus {
+    font-weight: bolder !important;
+}
+
+.fnt\:weight-lighter,
+.fnt\:weight-lighter\!hover:hover,
+.fnt\:weight-lighter\!focus:focus {
+    font-weight: lighter !important;
+}
+
+.fnt\:weight-normal,
+.fnt\:weight-normal\!hover:hover,
+.fnt\:weight-normal\!focus:focus {
+    font-weight: normal !important;
+}
+
+/*  # ht
+    # 90907.1b
+    # height
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/height
+*/
+.ht\:auto {
+    height: auto !important;
+}
+
+/*: 80px :*/
+.ht\:min-height-5 {
+    min-height: 5rem !important;
+}
+
+/*: 160px :*/
+.ht\:min-height-10 {
+    min-height: 10rem !important;
+}
+
+/*: 240px :*/
+.ht\:min-height-15 {
+    min-height: 15rem !important;
+}
+
+/*: 320px :*/
+.ht\:min-height-20 {
+    min-height: 20rem !important;
+}
+
+/*: 400px :*/
+.ht\:min-height-25 {
+    min-height: 25rem !important;
+}
+
+/*: 480px :*/
+.ht\:min-height-30 {
+    min-height: 30rem !important;
+}
+
+/*: 560px :*/
+.ht\:min-height-35 {
+    min-height: 35rem !important;
+}
+
+/*: 640px :*/
+.ht\:min-height-40 {
+    min-height: 40rem !important;
+}
+
+/*: 720px :*/
+.ht\:min-height-45 {
+    min-height: 45rem !important;
+}
+
+/*: 800px :*/
+.ht\:min-height-50 {
+    min-height: 50rem !important;
+}
+
+/*  # line ht
+    # 90907.1b
+    # line height
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+*/
+.line\:ht-normal {
+    line-height: normal !important;
+}
+
+.line\:ht-1\.75 {
+    line-height: 1.75 !important;
+}
+
+.line\:ht-2 {
+    line-height: 2 !important;
+}
+
+.line\:ht-2\.25 {
+    line-height: 2.25 !important;
+}
+
+.line\:ht-2\.5 {
+    line-height: 2.5 !important;
+}
+
+/*  # img
+    # 90907.1b
+    # set image width & height
+*/
+.img\:25\% {
+    height: auto !important;
+    width: 25% !important;
+}
+
+.img\:50\% {
+    height: auto !important;
+    width: 50% !important;
+}
+
+.img\:75\% {
+    height: auto !important;
+    width: 75% !important;
+}
+
+.img\:100\% {
+    height: auto !important;
+    width: 100% !important;
+}
+
+/*: wordpress friendly :*/
+.img-full {
+    height: auto !important;
+    width: 100% !important;
+}
+
+.img-half {
+    height: auto !important;
+    width: 50% !important;
+}
+
+.img-qtr {
+    height: auto !important;
+    width: 25% !important;
+}
+
+/*  # mar all
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:all-0 {
+    margin: 0 !important;
+}
+
+.mar\:all-0\.125 {
+    margin: 0.125rem !important;
+}
+
+.mar\:all-0\.25 {
+    margin: 0.25rem !important;
+}
+
+.mar\:all-0\.375 {
+    margin: 0.375rem !important;
+}
+
+.mar\:all-0\.5 {
+    margin: 0.5rem !important;
+}
+
+.mar\:all-0\.625 {
+    margin: 0.625rem !important;
+}
+
+.mar\:all-0\.75 {
+    margin: 0.75rem !important;
+}
+
+.mar\:all-0\.8125 {
+    margin: 0.8125rem !important;
+}
+
+.mar\:all-0\.875 {
+    margin: 0.875rem !important;
+}
+
+.mar\:all-0\.9375 {
+    margin: 0.9375rem !important;
+}
+
+.mar\:all-1 {
+    margin: 1rem !important;
+}
+
+.mar\:all-1\.25 {
+    margin: 1.25rem !important;
+}
+
+.mar\:all-1\.5 {
+    margin: 1.5rem !important;
+}
+
+.mar\:all-1\.75 {
+    margin: 1.75rem !important;
+}
+
+.mar\:all-2 {
+    margin: 2rem !important;
+}
+
+.mar\:all-1\% {
+    margin: 1% !important;
+}
+
+.mar\:all-2\% {
+    margin: 2% !important;
+}
+
+.mar\:all-4\% {
+    margin: 4% !important;
+}
+
+.mar\:all-6\% {
+    margin: 6% !important;
+}
+
+.mar\:all-8\% {
+    margin: 8% !important;
+}
+
+.mar\:all-10\% {
+    margin: 10% !important;
+}
+
+/*  # mar top
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:top-0 {
+    margin-top: 0 !important;
+}
+
+.mar\:top-0\.125 {
+    margin-top: 0.125rem !important;
+}
+
+.mar\:top-0\.25 {
+    margin-top: 0.25rem !important;
+}
+
+.mar\:top-0\.375 {
+    margin-top: 0.375rem !important;
+}
+
+.mar\:top-0\.5 {
+    margin-top: 0.5rem !important;
+}
+
+.mar\:top-0\.625 {
+    margin-top: 0.625rem !important;
+}
+
+.mar\:top-0\.75 {
+    margin-top: 0.75rem !important;
+}
+
+.mar\:top-0\.8125 {
+    margin-top: 0.8125rem !important;
+}
+
+.mar\:top-0\.875 {
+    margin-top: 0.875rem !important;
+}
+
+.mar\:top-0\.9375 {
+    margin-top: 0.9375rem !important;
+}
+
+.mar\:top-1 {
+    margin-top: 1rem !important;
+}
+
+.mar\:top-1\.25 {
+    margin-top: 1.25rem !important;
+}
+
+.mar\:top-1\.5 {
+    margin-top: 1.5rem !important;
+}
+
+.mar\:top-1\.75 {
+    margin-top: 1.75rem !important;
+}
+
+.mar\:top-2 {
+    margin-top: 2rem !important;
+}
+
+.mar\:top-1\% {
+    margin-top: 1% !important;
+}
+
+.mar\:top-2\% {
+    margin-top: 2% !important;
+}
+
+.mar\:top-4\% {
+    margin-top: 4% !important;
+}
+
+.mar\:top-6\% {
+    margin-top: 6% !important;
+}
+
+.mar\:top-8\% {
+    margin-top: 8% !important;
+}
+
+.mar\:top-10\% {
+    margin-top: 10% !important;
+}
+
+/*  # mar right
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:right-0 {
+    margin-right: 0 !important;
+}
+
+.mar\:right-0\.125 {
+    margin-right: 0.125rem !important;
+}
+
+.mar\:right-0\.25 {
+    margin-right: 0.25rem !important;
+}
+
+.mar\:right-0\.375 {
+    margin-right: 0.375rem !important;
+}
+
+.mar\:right-0\.5 {
+    margin-right: 0.5rem !important;
+}
+
+.mar\:right-0\.625 {
+    margin-right: 0.625rem !important;
+}
+
+.mar\:right-0\.75 {
+    margin-right: 0.75rem !important;
+}
+
+.mar\:right-0\.8125 {
+    margin-right: 0.8125rem !important;
+}
+
+.mar\:right-0\.875 {
+    margin-right: 0.875rem !important;
+}
+
+.mar\:right-0\.9375 {
+    margin-right: 0.9375rem !important;
+}
+
+.mar\:right-1 {
+    margin-right: 1rem !important;
+}
+
+.mar\:right-1\.25 {
+    margin-right: 1.25rem !important;
+}
+
+.mar\:right-1\.5 {
+    margin-right: 1.5rem !important;
+}
+
+.mar\:right-1\.75 {
+    margin-right: 1.75rem !important;
+}
+
+.mar\:right-2 {
+    margin-right: 2rem !important;
+}
+
+.mar\:right-1\% {
+    margin-right: 1% !important;
+}
+
+.mar\:right-2\% {
+    margin-right: 2% !important;
+}
+
+.mar\:right-4\% {
+    margin-right: 4% !important;
+}
+
+.mar\:right-6\% {
+    margin-right: 6% !important;
+}
+
+.mar\:right-8\% {
+    margin-right: 8% !important;
+}
+
+.mar\:right-10\% {
+    margin-right: 10% !important;
+}
+
+/*  # mar bottom
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.mar\:bottom-0\.125 {
+    margin-bottom: 0.125rem !important;
+}
+
+.mar\:bottom-0\.25 {
+    margin-bottom: 0.25rem !important;
+}
+
+.mar\:bottom-0\.375 {
+    margin-bottom: 0.375rem !important;
+}
+
+.mar\:bottom-0\.5 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mar\:bottom-0\.625 {
+    margin-bottom: 0.625rem !important;
+}
+
+.mar\:bottom-0\.75 {
+    margin-bottom: 0.75rem !important;
+}
+
+.mar\:bottom-0\.8125 {
+    margin-bottom: 0.8125rem !important;
+}
+
+.mar\:bottom-0\.875 {
+    margin-bottom: 0.875rem !important;
+}
+
+.mar\:bottom-0\.9375 {
+    margin-bottom: 0.9375rem !important;
+}
+
+.mar\:bottom-1 {
+    margin-bottom: 1rem !important;
+}
+
+.mar\:bottom-1\.25 {
+    margin-bottom: 1.25rem !important;
+}
+
+.mar\:bottom-1\.5 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mar\:bottom-1\.75 {
+    margin-bottom: 1.75rem !important;
+}
+
+.mar\:bottom-2 {
+    margin-bottom: 2rem !important;
+}
+
+.mar\:bottom-1\% {
+    margin-bottom: 1% !important;
+}
+
+.mar\:bottom-2\% {
+    margin-bottom: 2% !important;
+}
+
+.mar\:bottom-4\% {
+    margin-bottom: 4% !important;
+}
+
+.mar\:bottom-6\% {
+    margin-bottom: 6% !important;
+}
+
+.mar\:bottom-8\% {
+    margin-bottom: 8% !important;
+}
+
+.mar\:bottom-10\% {
+    margin-bottom: 10% !important;
+}
+
+/*  # mar left
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:left-0 {
+    margin-left: 0 !important;
+}
+
+.mar\:left-0\.125 {
+    margin-left: 0.125rem !important;
+}
+
+.mar\:left-0\.25 {
+    margin-left: 0.25rem !important;
+}
+
+.mar\:left-0\.375 {
+    margin-left: 0.375rem !important;
+}
+
+.mar\:left-0\.5 {
+    margin-left: 0.5rem !important;
+}
+
+.mar\:left-0\.625 {
+    margin-left: 0.625rem !important;
+}
+
+.mar\:left-0\.75 {
+    margin-left: 0.75rem !important;
+}
+
+.mar\:left-0\.8125 {
+    margin-left: 0.8125rem !important;
+}
+
+.mar\:left-0\.875 {
+    margin-left: 0.875rem !important;
+}
+
+.mar\:left-0\.9375 {
+    margin-left: 0.9375rem !important;
+}
+
+.mar\:left-1 {
+    margin-left: 1rem !important;
+}
+
+.mar\:left-1\.25 {
+    margin-left: 1.25rem !important;
+}
+
+.mar\:left-1\.5 {
+    margin-left: 1.5rem !important;
+}
+
+.mar\:left-1\.75 {
+    margin-left: 1.75rem !important;
+}
+
+.mar\:left-2 {
+    margin-left: 2rem !important;
+}
+
+.mar\:left-1\% {
+    margin-left: 1% !important;
+}
+
+.mar\:left-2\% {
+    margin-left: 2% !important;
+}
+
+.mar\:left-4\% {
+    margin-left: 4% !important;
+}
+
+.mar\:left-6\% {
+    margin-left: 6% !important;
+}
+
+.mar\:left-8\% {
+    margin-left: 8% !important;
+}
+
+.mar\:left-10\% {
+    margin-left: 10% !important;
+}
+
+/*  # mar horz
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:horz-0\.25 {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+}
+
+.mar\:horz-0\.5 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+.mar\:horz-0\.75 {
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
+}
+
+.mar\:horz-1 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+
+.mar\:horz-2 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+}
+
+.mar\:horz-1\% {
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+}
+
+.mar\:horz-2\% {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
+}
+
+.mar\:horz-4\% {
+    margin-left: 4% !important;
+    margin-right: 4% !important;
+}
+
+.mar\:horz-6\% {
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+}
+
+.mar\:horz-8\% {
+    margin-left: 8% !important;
+    margin-right: 8% !important;
+}
+
+.mar\:horz-10\% {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+}
+
+/*  # mar vert
+    # 91108.1b
+    # margin (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+.mar\:vert-0\.25 {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.mar\:vert-0\.5 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.mar\:vert-0\.75 {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.mar\:vert-1 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.mar\:vert-1\% {
+    margin-top: 1% !important;
+    margin-bottom: 1% !important;
+}
+
+.mar\:vert-2\% {
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+}
+
+.mar\:vert-4\% {
+    margin-top: 4% !important;
+    margin-bottom: 4% !important;
+}
+
+.mar\:vert-6\% {
+    margin-top: 6% !important;
+    margin-bottom: 6% !important;
+}
+
+.mar\:vert-8\% {
+    margin-top: 8% !important;
+    margin-bottom: 8% !important;
+}
+
+.mar\:vert-10\% {
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
+}
+
+/*  # pad all
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:all-0 {
+    padding: 0 !important;
+}
+
+.pad\:all-0\.125 {
+    padding: 0.125rem !important;
+}
+
+.pad\:all-0\.25 {
+    padding: 0.25rem !important;
+}
+
+.pad\:all-0\.375 {
+    padding: 0.375rem !important;
+}
+
+.pad\:all-0\.5 {
+    padding: 0.5rem !important;
+}
+
+.pad\:all-0\.625 {
+    padding: 0.625rem !important;
+}
+
+.pad\:all-0\.75 {
+    padding: 0.75rem !important;
+}
+
+.pad\:all-0\.8125 {
+    padding: 0.8125rem !important;
+}
+
+.pad\:all-0\.875 {
+    padding: 0.875rem !important;
+}
+
+.pad\:all-0\.9375 {
+    padding: 0.9375rem !important;
+}
+
+.pad\:all-1 {
+    padding: 1rem !important;
+}
+
+.pad\:all-1\.25 {
+    padding: 1.25rem !important;
+}
+
+.pad\:all-1\.5 {
+    padding: 1.5rem !important;
+}
+
+.pad\:all-1\.75 {
+    padding: 1.75rem !important;
+}
+
+.pad\:all-2 {
+    padding: 2rem !important;
+}
+
+.pad\:all-1\% {
+    padding: 1% !important;
+}
+
+.pad\:all-2\% {
+    padding: 2% !important;
+}
+
+.pad\:all-4\% {
+    padding: 4% !important;
+}
+
+.pad\:all-6\% {
+    padding: 6% !important;
+}
+
+.pad\:all-8\% {
+    padding: 8% !important;
+}
+
+.pad\:all-10\% {
+    padding: 10% !important;
+}
+
+/*  # pad top
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:top-0 {
+    padding-top: 0 !important;
+}
+
+.pad\:top-0\.125 {
+    padding-top: 0.125rem !important;
+}
+
+.pad\:top-0\.25 {
+    padding-top: 0.25rem !important;
+}
+
+.pad\:top-0\.375 {
+    padding-top: 0.375rem !important;
+}
+
+.pad\:top-0\.5 {
+    padding-top: 0.5rem !important;
+}
+
+.pad\:top-0\.625 {
+    padding-top: 0.625rem !important;
+}
+
+.pad\:top-0\.75 {
+    padding-top: 0.75rem !important;
+}
+
+.pad\:top-0\.8125 {
+    padding-top: 0.8125rem !important;
+}
+
+.pad\:top-0\.875 {
+    padding-top: 0.875rem !important;
+}
+
+.pad\:top-0\.9375 {
+    padding-top: 0.9375rem !important;
+}
+
+.pad\:top-1 {
+    padding-top: 1rem !important;
+}
+
+.pad\:top-1\.25 {
+    padding-top: 1.25rem !important;
+}
+
+.pad\:top-1\.5 {
+    padding-top: 1.5rem !important;
+}
+
+.pad\:top-1\.75 {
+    padding-top: 1.75rem !important;
+}
+
+.pad\:top-2 {
+    padding-top: 2rem !important;
+}
+
+.pad\:top-1\% {
+    padding-top: 1% !important;
+}
+
+.pad\:top-2\% {
+    padding-top: 2% !important;
+}
+
+.pad\:top-4\% {
+    padding-top: 4% !important;
+}
+
+.pad\:top-6\% {
+    padding-top: 6% !important;
+}
+
+.pad\:top-8\% {
+    padding-top: 8% !important;
+}
+
+.pad\:top-10\% {
+    padding-top: 10% !important;
+}
+
+/*  # pad right
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:right-0 {
+    padding-right: 0 !important;
+}
+
+.pad\:right-0\.125 {
+    padding-right: 0.125rem !important;
+}
+
+.pad\:right-0\.25 {
+    padding-right: 0.25rem !important;
+}
+
+.pad\:right-0\.375 {
+    padding-right: 0.375rem !important;
+}
+
+.pad\:right-0\.5 {
+    padding-right: 0.5rem !important;
+}
+
+.pad\:right-0\.625 {
+    padding-right: 0.625rem !important;
+}
+
+.pad\:right-0\.75 {
+    padding-right: 0.75rem !important;
+}
+
+.pad\:right-0\.8125 {
+    padding-right: 0.8125rem !important;
+}
+
+.pad\:right-0\.875 {
+    padding-right: 0.875rem !important;
+}
+
+.pad\:right-0\.9375 {
+    padding-right: 0.9375rem !important;
+}
+
+.pad\:right-1 {
+    padding-right: 1rem !important;
+}
+
+.pad\:right-1\.25 {
+    padding-right: 1.25rem !important;
+}
+
+.pad\:right-1\.5 {
+    padding-right: 1.5rem !important;
+}
+
+.pad\:right-1\.75 {
+    padding-right: 1.75rem !important;
+}
+
+.pad\:right-2 {
+    padding-right: 2rem !important;
+}
+
+.pad\:right-1\% {
+    padding-right: 1% !important;
+}
+
+.pad\:right-2\% {
+    padding-right: 2% !important;
+}
+
+.pad\:right-4\% {
+    padding-right: 4% !important;
+}
+
+.pad\:right-6\% {
+    padding-right: 6% !important;
+}
+
+.pad\:right-8\% {
+    padding-right: 8% !important;
+}
+
+.pad\:right-10\% {
+    padding-right: 10% !important;
+}
+
+/*  # pad bottom
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:bottom-0 {
+    padding-bottom: 0 !important;
+}
+
+.pad\:bottom-0\.125 {
+    padding-bottom: 0.125rem !important;
+}
+
+.pad\:bottom-0\.25 {
+    padding-bottom: 0.25rem !important;
+}
+
+.pad\:bottom-0\.375 {
+    padding-bottom: 0.375rem !important;
+}
+
+.pad\:bottom-0\.5 {
+    padding-bottom: 0.5rem !important;
+}
+
+.pad\:bottom-0\.625 {
+    padding-bottom: 0.625rem !important;
+}
+
+.pad\:bottom-0\.75 {
+    padding-bottom: 0.75rem !important;
+}
+
+.pad\:bottom-0\.8125 {
+    padding-bottom: 0.8125rem !important;
+}
+
+.pad\:bottom-0\.875 {
+    padding-bottom: 0.875rem !important;
+}
+
+.pad\:bottom-0\.9375 {
+    padding-bottom: 0.9375rem !important;
+}
+
+.pad\:bottom-1 {
+    padding-bottom: 1rem !important;
+}
+
+.pad\:bottom-1\.25 {
+    padding-bottom: 1.25rem !important;
+}
+
+.pad\:bottom-1\.5 {
+    padding-bottom: 1.5rem !important;
+}
+
+.pad\:bottom-1\.75 {
+    padding-bottom: 1.75rem !important;
+}
+
+.pad\:bottom-2 {
+    padding-bottom: 2rem !important;
+}
+
+.pad\:bottom-1\% {
+    padding-bottom: 1% !important;
+}
+
+.pad\:bottom-2\% {
+    padding-bottom: 2% !important;
+}
+
+.pad\:bottom-4\% {
+    padding-bottom: 4% !important;
+}
+
+.pad\:bottom-6\% {
+    padding-bottom: 6% !important;
+}
+
+.pad\:bottom-8\% {
+    padding-bottom: 8% !important;
+}
+
+.pad\:bottom-10\% {
+    padding-bottom: 10% !important;
+}
+
+/*  # pad left
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:left-0 {
+    padding-left: 0 !important;
+}
+
+.pad\:left-0\.125 {
+    padding-left: 0.125rem !important;
+}
+
+.pad\:left-0\.25 {
+    padding-left: 0.25rem !important;
+}
+
+.pad\:left-0\.375 {
+    padding-left: 0.375rem !important;
+}
+
+.pad\:left-0\.5 {
+    padding-left: 0.5rem !important;
+}
+
+.pad\:left-0\.625 {
+    padding-left: 0.625rem !important;
+}
+
+.pad\:left-0\.75 {
+    padding-left: 0.75rem !important;
+}
+
+.pad\:left-0\.8125 {
+    padding-left: 0.8125rem !important;
+}
+
+.pad\:left-0\.875 {
+    padding-left: 0.875rem !important;
+}
+
+.pad\:left-0\.9375 {
+    padding-left: 0.9375rem !important;
+}
+
+.pad\:left-1 {
+    padding-left: 1rem !important;
+}
+
+.pad\:left-1\.25 {
+    padding-left: 1.25rem !important;
+}
+
+.pad\:left-1\.5 {
+    padding-left: 1.5rem !important;
+}
+
+.pad\:left-1\.75 {
+    padding-left: 1.75rem !important;
+}
+
+.pad\:left-2 {
+    padding-left: 2rem !important;
+}
+
+.pad\:left-1\% {
+    padding-left: 1% !important;
+}
+
+.pad\:left-2\% {
+    padding-left: 2% !important;
+}
+
+.pad\:left-4\% {
+    padding-left: 4% !important;
+}
+
+.pad\:left-6\% {
+    padding-left: 6% !important;
+}
+
+.pad\:left-8\% {
+    padding-left: 8% !important;
+}
+
+.pad\:left-10\% {
+    padding-left: 10% !important;
+}
+
+/*  # pad horz
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:horz-0\.25 {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+}
+
+.pad\:horz-0\.5 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.pad\:horz-0\.75 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+}
+
+.pad\:horz-1 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.pad\:horz-1\% {
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}
+
+.pad\:horz-2\% {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+}
+
+.pad\:horz-4\% {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+}
+
+.pad\:horz-6\% {
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+}
+
+.pad\:horz-8\% {
+    padding-left: 8% !important;
+    padding-right: 8% !important;
+}
+
+.pad\:horz-10\% {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+/*  # pad vert
+    # 91108.1b
+    # padding (rem)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+.pad\:vert-0\.25 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+.pad\:vert-0\.5 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.pad\:vert-0\.75 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.pad\:vert-1 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.pad\:vert-1\% {
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+}
+
+.pad\:vert-2\% {
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}
+
+.pad\:vert-4\% {
+    padding-top: 4% !important;
+    padding-bottom: 4% !important;
+}
+
+.pad\:vert-6\% {
+    padding-top: 6% !important;
+    padding-bottom: 6% !important;
+}
+
+.pad\:vert-8\% {
+    padding-top: 8% !important;
+    padding-bottom: 8% !important;
+}
+
+.pad\:vert-10\% {
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+}
+
+/*  # txt
+    # 90907.1b
+    # text align
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+*/
+.txt\:align-center {
+    text-align: center !important;
+}
+
+.txt\:align-left {
+    text-align: left !important;
+}
+
+.txt\:align-right {
+    text-align: right !important;
+}
+
+/*  # wd
+    # 90907.1b
+    # width (fraction)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+*/
+.wd\:1\/4 {
+    width: 25% !important;
+}
+
+.wd\:1\/3 {
+    width: 33.3333% !important;
+}
+
+.wd\:1\/2 {
+    width: 50% !important;
+}
+
+.wd\:2\/3 {
+    width: 66.6666% !important;
+}
+
+.wd\:3\/4 {
+    width: 75% !important;
+}
+
+.wd\:1\/5 {
+    width: 20% !important;
+}
+
+.wd\:2\/5 {
+    width: 40% !important;
+}
+
+.wd\:3\/5 {
+    width: 60% !important;
+}
+
+.wd\:4\/5 {
+    width: 80% !important;
+}
+
+/*  # wd
+    # 90907.1b
+    # width (rem & %)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+*/
+.wd\:10\% {
+    width: 10% !important;
+}
+
+.wd\:min-10\% {
+    min-width: 10% !important;
+}
+
+.wd\:max-10\% {
+    max-width: 10% !important;
+}
+
+.wd\:15\% {
+    width: 15% !important;
+}
+
+.wd\:min-15\% {
+    min-width: 15% !important;
+}
+
+.wd\:max-15\% {
+    max-width: 15% !important;
+}
+
+.wd\:20\% {
+    width: 20% !important;
+}
+
+.wd\:min-20\% {
+    min-width: 20% !important;
+}
+
+.wd\:max-20\% {
+    max-width: 20% !important;
+}
+
+.wd\:25\% {
+    width: 25% !important;
+}
+
+.wd\:min-25\% {
+    min-width: 25% !important;
+}
+
+.wd\:max-25\% {
+    max-width: 25% !important;
+}
+
+.wd\:30\% {
+    width: 30% !important;
+}
+
+.wd\:min-30\% {
+    min-width: 30% !important;
+}
+
+.wd\:max-30\% {
+    max-width: 30% !important;
+}
+
+.wd\:35\% {
+    width: 35% !important;
+}
+
+.wd\:min-35\% {
+    min-width: 35% !important;
+}
+
+.wd\:max-35\% {
+    max-width: 35% !important;
+}
+
+.wd\:40\% {
+    width: 40% !important;
+}
+
+.wd\:min-40\% {
+    min-width: 40% !important;
+}
+
+.wd\:max-40\% {
+    max-width: 40% !important;
+}
+
+.wd\:45\% {
+    width: 45% !important;
+}
+
+.wd\:min-45\% {
+    min-width: 45% !important;
+}
+
+.wd\:max-45\% {
+    max-width: 45% !important;
+}
+
+.wd\:50\% {
+    width: 50% !important;
+}
+
+.wd\:min-50\% {
+    min-width: 50% !important;
+}
+
+.wd\:max-50\% {
+    max-width: 50% !important;
+}
+
+.wd\:55\% {
+    width: 55% !important;
+}
+
+.wd\:min-55\% {
+    min-width: 55% !important;
+}
+
+.wd\:max-55\% {
+    max-width: 55% !important;
+}
+
+.wd\:60\% {
+    width: 60% !important;
+}
+
+.wd\:min-60\% {
+    min-width: 60% !important;
+}
+
+.wd\:max-60\% {
+    max-width: 60% !important;
+}
+
+.wd\:65\% {
+    width: 65% !important;
+}
+
+.wd\:min-65\% {
+    min-width: 65% !important;
+}
+
+.wd\:max-70\% {
+    max-width: 70% !important;
+}
+
+.wd\:75\% {
+    width: 75% !important;
+}
+
+.wd\:min-75\% {
+    min-width: 75% !important;
+}
+
+.wd\:max-75\% {
+    max-width: 75% !important;
+}
+
+.wd\:80\% {
+    width: 80% !important;
+}
+
+.wd\:min-80\% {
+    min-width: 80% !important;
+}
+
+.wd\:max-80\% {
+    max-width: 80% !important;
+}
+
+.wd\:85\% {
+    width: 85% !important;
+}
+
+.wd\:min-85\% {
+    min-width: 85% !important;
+}
+
+.wd\:max-85\% {
+    max-width: 85% !important;
+}
+
+.wd\:90\% {
+    width: 90% !important;
+}
+
+.wd\:min-90\% {
+    min-width: 90% !important;
+}
+
+.wd\:max-90\% {
+    max-width: 90% !important;
+}
+
+.wd\:95\% {
+    width: 95% !important;
+}
+
+.wd\:min-95\% {
+    min-width: 95% !important;
+}
+
+.wd\:max-95\% {
+    max-width: 95% !important;
+}
+
+.wd\:auto {
+    width: auto !important;
+}
+
+.wd\:100\% {
+    width: 100% !important;
+}
+
+/*: 25px :*/
+.wd\:1\.5625 {
+    width: 1.5625rem !important;
+}
+
+.wd\:min-1\.5625 {
+    min-width: 1.5625rem !important;
+}
+
+.wd\:max-1\.5625 {
+    max-width: 1.5625rem !important;
+}
+
+/*: 50px :*/
+.wd\:3\.125 {
+    width: 3.125rem !important;
+}
+
+.wd\:min-3\.125 {
+    min-width: 3.125rem !important;
+}
+
+.wd\:max-3\.125 {
+    max-width: 3.125rem !important;
+}
+
+/*: 75px :*/
+.wd\:4\.6875 {
+    width: 4.6875rem !important;
+}
+
+.wd\:min-4\.6875 {
+    min-width: 4.6875rem !important;
+}
+
+.wd\:max-4\.6875 {
+    max-width: 4.6875rem !important;
+}
+
+/*: 100px :*/
+.wd\:6\.25 {
+    width: 6.25rem !important;
+}
+
+.wd\:min-6\.25 {
+    min-width: 6.25rem !important;
+}
+
+.wd\:max-6\.25 {
+    max-width: 6.25rem !important;
+}
+
+/*: 125px :*/
+.wd\:7\.8125 {
+    width: 7.8125rem !important;
+}
+
+.wd\:min-7\.8125 {
+    min-width: 7.8125rem !important;
+}
+
+.wd\:max-7\.8125 {
+    max-width: 7.8125rem !important;
+}
+
+/*: 150px :*/
+.wd\:9\.375 {
+    width: 9.375rem !important;
+}
+
+.wd\:min-9\.375 {
+    min-width: 9.375rem !important;
+}
+
+.wd\:max-9\.375 {
+    max-width: 9.375rem !important;
+}
+
+/*: 175px :*/
+.wd\:10\.9375 {
+    width: 10.9375rem !important;
+}
+
+.wd\:min-10\.9375 {
+    min-width: 10.9375rem !important;
+}
+
+.wd\:max-10\.9375 {
+    max-width: 10.9375rem !important;
+}
+
+/*: 200px :*/
+.wd\:12\.5 {
+    width: 12.5rem !important;
+}
+
+.wd\:min-12\.5 {
+    min-width: 12.5rem !important;
+}
+
+.wd\:max-12\.5 {
+    max-width: 12.5rem !important;
+}
+
+/*: 225px :*/
+.wd\:14\.0625 {
+    width: 14.0625rem !important;
+}
+
+.wd\:min-14\.0625 {
+    min-width: 14.0625rem !important;
+}
+
+.wd\:max-14\.0625 {
+    max-width: 14.0625rem !important;
+}
+
+/*: 250px :*/
+.wd\:15\.625 {
+    width: 15.625rem !important;
+}
+
+.wd\:min-15\.625 {
+    min-width: 15.625rem !important;
+}
+
+.wd\:max-15\.625 {
+    max-width: 15.625rem !important;
+}
+
+/*: 275px :*/
+.wd\:17\.1875 {
+    width: 17.1875rem !important;
+}
+
+.wd\:min-17\.1875 {
+    min-width: 17.1875rem !important;
+}
+
+.wd\:max-17\.1875 {
+    max-width: 17.1875rem !important;
+}
+
+/*: 300px :*/
+.wd\:18\.75 {
+    width: 18.75rem !important;
+}
+.wd\:min-18\.75 {
+    min-width: 18.75rem !important;
+}
+.wd\:max-18\.75 {
+    max-width: 18.75rem !important;
+}
+
+/*
+    list spacing
+*/
+ol.li\:qtr-spaced li:not(:last-child),
+ul.li\:qtr-spaced li:not(:last-child) {
+    margin-bottom: 0.25rem !important;
+}
+
+ol.li\:dbl-spaced li:not(:last-child),
+ul.li\:dbl-spaced li:not(:last-child) {
+    margin-bottom: 0.5rem !important;
+}
+
+ol.li\:tpl-spaced li:not(:last-child),
+ul.li\:tpl-spaced li:not(:last-child) {
+    margin-bottom: 0.75rem !important;
+}
+
+/*
+    horizonal align
+*/
+.horz\:align-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.horz\:align-left {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+.horz\:align-right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/*
+    vertical align
+*/
+.vert\:align-baseline {
+    vertical-align: baseline !important;
+}
+
+.vert\:align-top {
+    vertical-align: top !important;
+}
+
+.vert\:align-middle {
+    vertical-align: middle !important;
+}
+
+.vert\:align-bottom {
+    vertical-align: bottom !important;
+}
+
+.vert\:align-sub {
+    vertical-align: sub !important;
+}
+
+.vert\:align-text-top {
+    vertical-align: text-top !important;
+}
+
+/*  # disp
+    # 90907.1b
+    # display
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+*/
+.disp\:none {
+    display: none !important;
+}
+
+.disp\:block {
+    display: block !important;
+}
+
+.disp\:inline {
+    display: inline !important;
+}
+
+.disp\:inline-block {
+    display: inline-block !important;
+}
+
+/*  # table
+    # 91108.1a
+    # html table support classes
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+*/
+table.layout-auto {
+    table-layout: auto !important;
+}
+
+table.layout-fixed {
+    table-layout: fixed !important;
+}
+
+table.border-collapse {
+    border-collapse: collapse !important;
+}
+
+table.border-separate {
+    border-collapse: separate !important;
+}
+
+/*  # table cell
+    # 91108.1b
+    # predefined border/cell spacing classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing
+*/
+table.td\:spacing-none {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+
+table.td\:spacing-0\.25 {
+    border-collapse: separate !important;
+    border-spacing: 0.25rem !important;
+}
+
+table.td\:spacing-0\.375 {
+    border-collapse: separate !important;
+    border-spacing: 0.375rem !important;
+}
+
+table.td\:spacing-0\.5 {
+    border-collapse: separate !important;
+    border-spacing: 0.5rem !important;
+}
+
+table.td\:spacing-0\.625 {
+    border-collapse: separate !important;
+    border-spacing: 0.625rem !important;
+}
+
+table.td\:spacing-0\.75 {
+    border-collapse: separate !important;
+    border-spacing: 0.75rem !important;
+}
+
+table.td\:spacing-0\.875 {
+    border-collapse: separate !important;
+    border-spacing: 0.875rem !important;
+}
+
+table.td\:spacing-1 {
+    border-collapse: separate !important;
+    border-spacing: 1rem !important;
+}
+
+/*  # DIY flexbox components (beta)
+    # 91001.1a
+    # classes to build flexbox
+    # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+        flexbox
+        fx:c        - column no wrap
+        fx:cw       - column wrap
+        fx:r        - row no wrap
+        fx:r-rev    - row no wrap reverse
+        fx:rw       - row wrap
+        fx:rw-rev   - row wrap reverse
+        justify content
+        fa:1    - flex-start
+        fa:2    - flex-end
+        fa:3    - center
+        fa:4    - space-between
+        fa:5    - space-around
+        align items
+        fb:1    - flex-start
+        fb:2    - flex-end
+        fb:3    - center
+        fb:4    - between
+        fb:5    - around
+        fb:6    - stretch
+        align content
+        fc:1    - flex-start
+        fc:2    - flex-end
+        fc:3    - center
+        fc:4    - baseline
+        fc:5    - stretch
+        item ranking (auto basis)
+        fd:1    - 0 1 auto
+        fd:2    - 1 1 auto
+        fd:3    - 2 1 auto
+        item alignment
+        fe:1    - auto
+        fe:2    - flex-start
+        fe:3    - flex-end
+        fe:4    - center
+        fe:5    - baseline
+        fe:6    - stretch
+**/
+.fx\:c {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:cw {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fx\:r {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:r-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:rw {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fx\:rw-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/*: justify content :*/
+.fa\:1 {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.fa\:2 {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.fa\:3 {
+    -webkit-justify-content: flex-center;
+    -ms-flex-pack: center;
+    justify-content: flex-center;
+}
+
+.fa\:4 {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.fa\:5 {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+/*: align content :*/
+.fb\:1 {
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+
+.fb\:2 {
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+}
+
+.fb\:3 {
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.fb\:4 {
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+}
+
+.fb\:5 {
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+}
+
+.fb\:6 {
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+/*: align items :*/
+.fc\:1 {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.fc\:2 {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.fc\:3 {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fc\:4 {
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+}
+
+.fc\:5 {
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+/*: item (importance ranking / auto is assumed) :*/
+.fd\:1 {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+
+.fd\:2 {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.fd\:3 {
+    -webkit-flex: 2 1 auto;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto;
+}
+
+/*: item (align self) :*/
+.fe\:1 {
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.fe\:2 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+
+.fe\:3 {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.fe\:4 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.fe\:5 {
+    -webkit-align-self: baseline;
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+}
+
+.fe\:6 {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+/*  # bdr styles (beta)
+    # 91108.1a
+    # border style classes
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+*/
+.bdr\:none {
+    border-style: none !important;
+}
+
+.bdr\:top-none {
+    border-top-style: none !important;
+}
+
+.bdr\:right-none {
+    border-right-style: none !important;
+}
+
+.bdr\:bottom-none {
+    border-bottom-style: none !important;
+}
+
+.bdr\:left-none {
+    border-top-style: none !important;
+}
+
+.bdr\:dashed-thin,
+.bdr\:dashed-medium,
+.bdr\:dashed-thick,
+.bdr\:dashed-thin-rounded,
+.bdr\:dashed-medium-rounded,
+.bdr\:dashed-thick-rounded {
+    border-style: dashed !important;
+}
+
+.bdr\:top-dashed-thin,
+.bdr\:top-dashed-medium,
+.bdr\:top-dashed-thick {
+    border-top-style: dashed !important;
+}
+
+.bdr\:right-dashed-thin,
+.bdr\:right-dashed-medium,
+.bdr\:right-dashed-thick {
+    border-right-style: dashed !important;
+}
+
+.bdr\:bottom-dashed-thin,
+.bdr\:bottom-dashed-medium,
+.bdr\:bottom-dashed-thick {
+    border-bottom-style: dashed !important;
+}
+
+.bdr\:left-dashed-thin,
+.bdr\:left-dashed-medium,
+.bdr\:left-dashed-thick {
+    border-left-style: dashed !important;
+}
+
+.bdr\:dotted-thin,
+.bdr\:dotted-medium,
+.bdr\:dotted-thick,
+.bdr\:dotted-thin-rounded,
+.bdr\:dotted-medium-rounded,
+.bdr\:dotted-thick-rounded {
+    border-style: dotted !important;
+}
+
+.bdr\:top-dotted-thin,
+.bdr\:top-dotted-medium,
+.bdr\:top-dotted-thick {
+    border-top-style: dotted !important;
+}
+
+.bdr\:right-dotted-thin,
+.bdr\:right-dotted-medium,
+.bdr\:right-dotted-thick {
+    border-right-style: dotted !important;
+}
+
+.bdr\:bottom-dotted-thin,
+.bdr\:bottom-dotted-medium,
+.bdr\:bottom-dotted-thick {
+    border-bottom-style: dotted !important;
+}
+
+.bdr\:left-dotted-thin,
+.bdr\:left-dotted-medium,
+.bdr\:left-dotted-thick {
+    border-left-style: dotted !important;
+}
+
+.bdr\:solid-thin,
+.bdr\:solid-medium,
+.bdr\:solid-thick,
+.bdr\:solid-thin-rounded,
+.bdr\:solid-medium-rounded,
+.bdr\:solid-thick-rounded {
+    border-style: solid !important;
+}
+
+.bdr\:top-solid-thin,
+.bdr\:top-solid-medium,
+.bdr\:top-solid-thick {
+    border-top-style: solid !important;
+}
+
+.bdr\:right-solid-thin,
+.bdr\:right-solid-medium,
+.bdr\:right-solid-thick {
+    border-right-style: solid !important;
+}
+
+.bdr\:bottom-solid-thin,
+.bdr\:bottom-solid-medium,
+.bdr\:bottom-solid-thick {
+    border-bottom-style: solid !important;
+}
+
+.bdr\:left-solid-thin,
+.bdr\:left-solid-medium,
+.bdr\:left-solid-thick {
+    border-left-style: solid !important;
+}
+
+.bdr\:dashed-thin,
+.bdr\:dotted-thin,
+.bdr\:solid-thin,
+.bdr\:dashed-thin-rounded,
+.bdr\:dotted-thin-rounded,
+.bdr\:solid-thin-rounded {
+    border-width: thin !important;
+}
+
+.bdr\:top-dashed-thin,
+.bdr\:top-dotted-thin,
+.bdr\:top-solid-thin {
+    border-top-width: thin !important;
+}
+
+.bdr\:right-dashed-thin,
+.bdr\:right-dotted-thin,
+.bdr\:right-solid-thin {
+    border-right-width: thin !important;
+}
+
+.bdr\:bottom-dashed-thin,
+.bdr\:bottom-dotted-thin,
+.bdr\:bottom-solid-thin {
+    border-bottom-width: thin !important;
+}
+
+.bdr\:left-dashed-thin,
+.bdr\:left-dotted-thin,
+.bdr\:left-solid-thin {
+    border-left-width: thin !important;
+}
+
+.bdr\:dashed-medium,
+.bdr\:dotted-medium,
+.bdr\:solid-medium,
+.bdr\:dashed-medium-rounded,
+.bdr\:dotted-medium-rounded,
+.bdr\:solid-medium-rounded {
+    border-width: medium !important;
+}
+
+.bdr\:top-dashed-medium,
+.bdr\:top-dotted-medium,
+.bdr\:top-solid-medium {
+    border-top-width: medium !important;
+}
+
+.bdr\:right-dashed-medium,
+.bdr\:right-dotted-medium,
+.bdr\:right-solid-medium {
+    border-right-width: medium !important;
+}
+
+.bdr\:bottom-dashed-medium,
+.bdr\:bottom-dotted-medium,
+.bdr\:bottom-solid-medium {
+    border-bottom-width: medium !important;
+}
+
+.bdr\:left-dashed-medium,
+.bdr\:left-dotted-medium,
+.bdr\:left-solid-medium {
+    border-left-width: medium !important;
+}
+
+.bdr\:dashed-thick,
+.bdr\:dotted-thick,
+.bdr\:solid-thick,
+.bdr\:dashed-thick-rounded,
+.bdr\:dotted-thick-rounded,
+.bdr\:solid-thick-rounded {
+    border-width: thick !important;
+}
+
+.bdr\:top-dashed-thick,
+.bdr\:top-dotted-thick,
+.bdr\:top-solid-thick {
+    border-top-width: thick !important;
+}
+
+.bdr\:right-dashed-thick,
+.bdr\:right-dotted-thick,
+.bdr\:right-solid-thick {
+    border-right-width: thick !important;
+}
+
+.bdr\:bottom-dashed-thick,
+.bdr\:bottom-dotted-thick,
+.bdr\:bottom-solid-thick {
+    border-bottom-width: thick !important;
+}
+
+.bdr\:left-dashed-thick,
+.bdr\:left-dotted-thick,
+.bdr\:left-solid-thick {
+    border-left-width: thick !important;
+}
+
+.bdr\:dashed-thin-rounded,
+.bdr\:dashed-medium-rounded,
+.bdr\:dashed-thick-rounded,
+.bdr\:dotted-thin-rounded,
+.bdr\:dotted-medium-rounded,
+.bdr\:dotted-thick-rounded,
+.bdr\:solid-thin-rounded,
+.bdr\:solid-medium-rounded,
+.bdr\:solid-thick-rounded {
+    border-radius: 0.25rem !important;
+}
+
+/*  # sm device
+    # 91001.1a
+    # atm "sm" stands for standard media (everything but mobile)
+    # if other devices are added, it will become small media
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+**/
+@media (min-width: 640px) {
+    /*  # break
+        # 91108.1b
+        # inside page breaks
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
+    */
+    .sm\)break\:inside-auto {
+        break-inside: auto !important;
+    }
+    .sm\)break\:inside-avoid {
+        break-inside: avoid !important;
+    }
+    .sm\)break\:inside-avoid-page {
+        break-inside: avoid-page !important;
+    }
+    .sm\)break\:inside-avoid-column {
+        break-inside: avoid-column !important;
+    }
+    .sm\)break\:inside-avoid-region {
+        break-inside: avoid-region !important;
+    }
+    /*  # dsp
+        # 90907.1b
+        # display
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    */
+    /*: border shortcuts! :*/
+    .sm\)bdr {
+        border-style: solid !important;
+        border-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:none {
+        border: none !important;
+    }
+
+    .sm\)bdr\:rounded {
+        border-radius: 0.25rem !important;
+        border-style: solid !important;
+        border-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:square {
+        border-radius: none !important;
+        border-style: solid !important;
+        border-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:dashed {
+        border-style: dashed !important;
+        border-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:top {
+        border-top-style: solid !important;
+        border-top-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:right {
+        border-right-style: solid !important;
+        border-right-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:bottom {
+        border-bottom-style: solid !important;
+        border-bottom-width: 0.0625rem !important;
+    }
+
+    .sm\)bdr\:left {
+        border-left-style: solid !important;
+        border-left-width: 0.0625rem !important;
+    }
+
+    /*: display options :*/
+    .sm\)dsp\:none {
+        display: none !important;
+    }
+
+    .sm\)dsp\:hidden {
+        visibility: hidden !important;
+    }
+
+    .sm\)dsp\:block {
+        display: block !important;
+    }
+
+    .sm\)dsp\:inline {
+        display: inline !important;
+    }
+
+    .sm\)dsp\:inline-block {
+        display: inline-block !important;
+    }
+
+    /*  # fnt:size
+        # 90907.1b
+        # font size named classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+    */
+    .sm\)fnt\:size-xx-large {
+        font-size: xx-large !important;
+    }
+
+    .sm\)fnt\:size-x-large {
+        font-size: x-large !important;
+    }
+
+    .sm\)fnt\:size-large {
+        font-size: large !important;
+    }
+
+    .sm\)fnt\:size-x-medium {
+        font-size: var(--font-size-xr) !important;
+    }
+
+    .sm\)fnt\:size-medium {
+        font-size: medium !important;
+    }
+
+    .sm\)fnt\:size-small {
+        font-size: small !important;
+    }
+
+    .sm\)fnt\:size-x-small {
+        font-size: x-small !important;
+    }
+
+    .sm\)fnt\:size-xx-small {
+        font-size: xx-small !important;
+    }
+
+    .sm\)fnt\:size-larger {
+        font-size: larger !important;
+    }
+
+    .sm\)fnt\:size-smaller {
+        font-size: smaller !important;
+    }
+
+    /*  # md
+        # 91012.1a
+        # materical design icon sizes
+        # https://google.github.io/material-design-icons/
+    **/
+
+    .sm\)md\:size-h1 {
+        font-size: var(--font-size-h1) !important;
+    }
+
+    .sm\)md\:size-h2 {
+        font-size: var(--font-size-h2) !important;
+    }
+
+    .sm\)md\:size-h3,
+    .sm\)md\:size-xxx-large {
+        font-size: var(--font-size-h3) !important;
+    }
+
+    .sm\)md\:size-h4,
+    .sm\)md\:size-xx-large {
+        font-size: var(--font-size-h4) !important;
+    }
+
+    .sm\)md\:size-h5,
+    .sm\)md\:size-x-large {
+        font-size: var(--font-size-h5) !important;
+    }
+
+    .sm\)md\:size-h6,
+    .sm\)md\:size-large {
+        font-size: var(--font-size-h6) !important;
+    }
+
+    .sm\)md\:size-medium {
+        font-size: var(--font-size-rg) !important;
+    }
+
+    .sm\)md\:size-small {
+        font-size: var(--font-size-sm) !important;
+    }
+
+    .sm\)md\:size-x-small {
+        font-size: var(--font-size-xs) !important;
+    }
+
+    /*  # fnt:space
+        # 90907.1b
+        # predefined letter spacing classes
+        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+    */
+    .sm\)fnt\:spacing-tight {
+        letter-spacing: -0.05rem !important;
+    }
+
+    .sm\)fnt\:spacing-normal {
+        letter-spacing: 0 !important;
+    }
+
+    .sm\)fnt\:spacing-loose {
+        letter-spacing: 0.1rem;
+    }
+
+    .sm\)fnt\:spacing-wide {
+        letter-spacing: 0.5rem;
+    }
+
+    /*  # mar all
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:all-0 {
+        margin: 0 !important;
+    }
+
+    .sm\)mar\:all-0\.125 {
+        margin: 0.125rem !important;
+    }
+
+    .sm\)mar\:all-0\.25 {
+        margin: 0.25rem !important;
+    }
+
+    .sm\)mar\:all-0\.375 {
+        margin: 0.375rem !important;
+    }
+
+    .sm\)mar\:all-0\.5 {
+        margin: 0.5rem !important;
+    }
+
+    .sm\)mar\:all-0\.625 {
+        margin: 0.625rem !important;
+    }
+
+    .sm\)mar\:all-0\.75 {
+        margin: 0.75rem !important;
+    }
+
+    .sm\)mar\:all-0\.8125 {
+        margin: 0.8125rem !important;
+    }
+
+    .sm\)mar\:all-0\.875 {
+        margin: 0.875rem !important;
+    }
+
+    .sm\)mar\:all-0\.9375 {
+        margin: 0.9375rem !important;
+    }
+
+    .sm\)mar\:all-1 {
+        margin: 1rem !important;
+    }
+
+    .sm\)mar\:all-1\.25 {
+        margin: 1.25rem !important;
+    }
+
+    .sm\)mar\:all-1\.5 {
+        margin: 1.5rem !important;
+    }
+
+    .sm\)mar\:all-1\.75 {
+        margin: 1.75rem !important;
+    }
+
+    .sm\)mar\:all-2 {
+        margin: 2rem !important;
+    }
+
+    .sm\)mar\:all-1\% {
+        margin: 1% !important;
+    }
+
+    .sm\)mar\:all-2\% {
+        margin: 2% !important;
+    }
+
+    .sm\)mar\:all-4\% {
+        margin: 4% !important;
+    }
+
+    .sm\)mar\:all-6\% {
+        margin: 6% !important;
+    }
+
+    .sm\)mar\:all-8\% {
+        margin: 8% !important;
+    }
+
+    .sm\)mar\:all-10\% {
+        margin: 10% !important;
+    }
+
+    /*  # mar top
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:top-0 {
+        margin-top: 0 !important;
+    }
+
+    .sm\)mar\:top-0\.125 {
+        margin-top: 0.125rem !important;
+    }
+
+    .sm\)mar\:top-0\.25 {
+        margin-top: 0.25rem !important;
+    }
+
+    .sm\)mar\:top-0\.375 {
+        margin-top: 0.375rem !important;
+    }
+
+    .sm\)mar\:top-0\.5 {
+        margin-top: 0.5rem !important;
+    }
+
+    .sm\)mar\:top-0\.625 {
+        margin-top: 0.625rem !important;
+    }
+
+    .sm\)mar\:top-0\.75 {
+        margin-top: 0.75rem !important;
+    }
+
+    .sm\)mar\:top-0\.8125 {
+        margin-top: 0.8125rem !important;
+    }
+
+    .sm\)mar\:top-0\.875 {
+        margin-top: 0.875rem !important;
+    }
+
+    .sm\)mar\:top-0\.9375 {
+        margin-top: 0.9375rem !important;
+    }
+
+    .sm\)mar\:top-1 {
+        margin-top: 1rem !important;
+    }
+
+    .sm\)mar\:top-1\.25 {
+        margin-top: 1.25rem !important;
+    }
+
+    .sm\)mar\:top-1\.5 {
+        margin-top: 1.5rem !important;
+    }
+
+    .sm\)mar\:top-1\.75 {
+        margin-top: 1.75rem !important;
+    }
+
+    .sm\)mar\:top-2 {
+        margin-top: 2rem !important;
+    }
+
+    .sm\)mar\:top-1\% {
+        margin-top: 1% !important;
+    }
+
+    .sm\)mar\:top-2\% {
+        margin-top: 2% !important;
+    }
+
+    .sm\)mar\:top-4\% {
+        margin-top: 4% !important;
+    }
+
+    .sm\)mar\:top-6\% {
+        margin-top: 6% !important;
+    }
+
+    .sm\)mar\:top-8\% {
+        margin-top: 8% !important;
+    }
+
+    .sm\)mar\:top-10\% {
+        margin-top: 10% !important;
+    }
+
+    /*  # mar right
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:right-0 {
+        margin-right: 0 !important;
+    }
+
+    .sm\)mar\:right-0\.125 {
+        margin-right: 0.125rem !important;
+    }
+
+    .sm\)mar\:right-0\.25 {
+        margin-right: 0.25rem !important;
+    }
+
+    .sm\)mar\:right-0\.375 {
+        margin-right: 0.375rem !important;
+    }
+
+    .sm\)mar\:right-0\.5 {
+        margin-right: 0.5rem !important;
+    }
+
+    .sm\)mar\:right-0\.625 {
+        margin-right: 0.625rem !important;
+    }
+
+    .sm\)mar\:right-0\.75 {
+        margin-right: 0.75rem !important;
+    }
+
+    .sm\)mar\:right-0\.8125 {
+        margin-right: 0.8125rem !important;
+    }
+
+    .sm\)mar\:right-0\.875 {
+        margin-right: 0.875rem !important;
+    }
+
+    .sm\)mar\:right-0\.9375 {
+        margin-right: 0.9375rem !important;
+    }
+
+    .sm\)mar\:right-1 {
+        margin-right: 1rem !important;
+    }
+
+    .sm\)mar\:right-1\.25 {
+        margin-right: 1.25rem !important;
+    }
+
+    .sm\)mar\:right-1\.5 {
+        margin-right: 1.5rem !important;
+    }
+
+    .sm\)mar\:right-1\.75 {
+        margin-right: 1.75rem !important;
+    }
+
+    .sm\)mar\:right-2 {
+        margin-right: 2rem !important;
+    }
+
+    .sm\)mar\:right-1\% {
+        margin-right: 1% !important;
+    }
+
+    .sm\)mar\:right-2\% {
+        margin-right: 2% !important;
+    }
+
+    .sm\)mar\:right-4\% {
+        margin-right: 4% !important;
+    }
+
+    .sm\)mar\:right-6\% {
+        margin-right: 6% !important;
+    }
+
+    .sm\)mar\:right-8\% {
+        margin-right: 8% !important;
+    }
+
+    .sm\)mar\:right-10\% {
+        margin-right: 10% !important;
+    }
+
+    /*  # mar bottom
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:bottom-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .sm\)mar\:bottom-0\.125 {
+        margin-bottom: 0.125rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.25 {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.375 {
+        margin-bottom: 0.375rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.5 {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.625 {
+        margin-bottom: 0.625rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.75 {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.8125 {
+        margin-bottom: 0.8125rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.875 {
+        margin-bottom: 0.875rem !important;
+    }
+
+    .sm\)mar\:bottom-0\.9375 {
+        margin-bottom: 0.9375rem !important;
+    }
+
+    .sm\)mar\:bottom-1 {
+        margin-bottom: 1rem !important;
+    }
+
+    .sm\)mar\:bottom-1\.25 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    .sm\)mar\:bottom-1\.5 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .sm\)mar\:bottom-1\.75 {
+        margin-bottom: 1.75rem !important;
+    }
+
+    .sm\)mar\:bottom-2 {
+        margin-bottom: 2rem !important;
+    }
+
+    .sm\)mar\:bottom-1\% {
+        margin-bottom: 1% !important;
+    }
+
+    .sm\)mar\:bottom-2\% {
+        margin-bottom: 2% !important;
+    }
+
+    .sm\)mar\:bottom-4\% {
+        margin-bottom: 4% !important;
+    }
+
+    .sm\)mar\:bottom-6\% {
+        margin-bottom: 6% !important;
+    }
+
+    .sm\)mar\:bottom-8\% {
+        margin-bottom: 8% !important;
+    }
+
+    .sm\)mar\:bottom-10\% {
+        margin-bottom: 10% !important;
+    }
+
+    /*  # mar left
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:left-0 {
+        margin-left: 0 !important;
+    }
+
+    .sm\)mar\:left-0\.125 {
+        margin-left: 0.125rem !important;
+    }
+
+    .sm\)mar\:left-0\.25 {
+        margin-left: 0.25rem !important;
+    }
+
+    .sm\)mar\:left-0\.375 {
+        margin-left: 0.375rem !important;
+    }
+
+    .sm\)mar\:left-0\.5 {
+        margin-left: 0.5rem !important;
+    }
+
+    .sm\)mar\:left-0\.625 {
+        margin-left: 0.625rem !important;
+    }
+
+    .sm\)mar\:left-0\.75 {
+        margin-left: 0.75rem !important;
+    }
+
+    .sm\)mar\:left-0\.8125 {
+        margin-left: 0.8125rem !important;
+    }
+
+    .sm\)mar\:left-0\.875 {
+        margin-left: 0.875rem !important;
+    }
+
+    .sm\)mar\:left-0\.9375 {
+        margin-left: 0.9375rem !important;
+    }
+
+    .sm\)mar\:left-1 {
+        margin-left: 1rem !important;
+    }
+
+    .sm\)mar\:left-1\.25 {
+        margin-left: 1.25rem !important;
+    }
+
+    .sm\)mar\:left-1\.5 {
+        margin-left: 1.5rem !important;
+    }
+
+    .sm\)mar\:left-1\.75 {
+        margin-left: 1.75rem !important;
+    }
+
+    .sm\)mar\:left-2 {
+        margin-left: 2rem !important;
+    }
+
+    .sm\)mar\:left-1\% {
+        margin-left: 1% !important;
+    }
+
+    .sm\)mar\:left-2\% {
+        margin-left: 2% !important;
+    }
+
+    .sm\)mar\:left-4\% {
+        margin-left: 4% !important;
+    }
+
+    .sm\)mar\:left-6\% {
+        margin-left: 6% !important;
+    }
+
+    .sm\)mar\:left-8\% {
+        margin-left: 8% !important;
+    }
+
+    .sm\)mar\:left-10\% {
+        margin-left: 10% !important;
+    }
+
+    /*  # mar horz
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:horz-0\.25 {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
+    }
+
+    .sm\)mar\:horz-0\.5 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .sm\)mar\:horz-0\.75 {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+
+    .sm\)mar\:horz-1 {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+
+    .sm\)mar\:horz-2 {
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+    }
+    
+    .sm\)mar\:horz-1\% {
+        margin-left: 1% !important;
+        margin-right: 1% !important;
+    }
+
+    .sm\)mar\:horz-2\% {
+        margin-left: 2% !important;
+        margin-right: 2% !important;
+    }
+
+    .sm\)mar\:horz-4\% {
+        margin-left: 4% !important;
+        margin-right: 4% !important;
+    }
+
+    .sm\)mar\:horz-6\% {
+        margin-left: 6% !important;
+        margin-right: 6% !important;
+    }
+
+    .sm\)mar\:horz-8\% {
+        margin-left: 8% !important;
+        margin-right: 8% !important;
+    }
+
+    .sm\)mar\:horz-10\% {
+        margin-left: 10% !important;
+        margin-right: 10% !important;
+    }
+
+    /*  # mar vert
+        # 91108.1b
+        # margin (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    */
+    .sm\)mar\:vert-0\.25 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .sm\)mar\:vert-0\.5 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .sm\)mar\:vert-0\.75 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .sm\)mar\:vert-1 {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .sm\)mar\:vert-1\% {
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
+    }
+
+    .sm\)mar\:vert-2\% {
+        margin-top: 2% !important;
+        margin-bottom: 2% !important;
+    }
+
+    .sm\)mar\:vert-4\% {
+        margin-top: 4% !important;
+        margin-bottom: 4% !important;
+    }
+
+    .sm\)mar\:vert-6\% {
+        margin-top: 6% !important;
+        margin-bottom: 6% !important;
+    }
+
+    .sm\)mar\:vert-8\% {
+        margin-top: 8% !important;
+        margin-bottom: 8% !important;
+    }
+
+    .sm\)mar\:vert-10\% {
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+    }
+
+    /*  # pad all
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:all-0 {
+        padding: 0 !important;
+    }
+
+    .sm\)pad\:all-0\.125 {
+        padding: 0.125rem !important;
+    }
+
+    .sm\)pad\:all-0\.25 {
+        padding: 0.25rem !important;
+    }
+
+    .sm\)pad\:all-0\.375 {
+        padding: 0.375rem !important;
+    }
+
+    .sm\)pad\:all-0\.5 {
+        padding: 0.5rem !important;
+    }
+
+    .sm\)pad\:all-0\.625 {
+        padding: 0.625rem !important;
+    }
+
+    .sm\)pad\:all-0\.75 {
+        padding: 0.75rem !important;
+    }
+
+    .sm\)pad\:all-0\.8125 {
+        padding: 0.8125rem !important;
+    }
+
+    .sm\)pad\:all-0\.875 {
+        padding: 0.875rem !important;
+    }
+
+    .sm\)pad\:all-0\.9375 {
+        padding: 0.9375rem !important;
+    }
+
+    .sm\)pad\:all-1 {
+        padding: 1rem !important;
+    }
+
+    .sm\)pad\:all-1\.25 {
+        padding: 1.25rem !important;
+    }
+
+    .sm\)pad\:all-1\.5 {
+        padding: 1.5rem !important;
+    }
+
+    .sm\)pad\:all-1\.75 {
+        padding: 1.75rem !important;
+    }
+
+    .sm\)pad\:all-2 {
+        padding: 2rem !important;
+    }
+
+    .sm\)pad\:all-1\% {
+        padding: 1% !important;
+    }
+
+    .sm\)pad\:all-2\% {
+        padding: 2% !important;
+    }
+
+    .sm\)pad\:all-4\% {
+        padding: 4% !important;
+    }
+
+    .sm\)pad\:all-6\% {
+        padding: 6% !important;
+    }
+
+    .sm\)pad\:all-8\% {
+        padding: 8% !important;
+    }
+
+    .sm\)pad\:all-10\% {
+        padding: 10% !important;
+    }
+
+    /*  # pad top
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:top-0 {
+        padding-top: 0 !important;
+    }
+
+    .sm\)pad\:top-0\.125 {
+        padding-top: 0.125rem !important;
+    }
+
+    .sm\)pad\:top-0\.25 {
+        padding-top: 0.25rem !important;
+    }
+
+    .sm\)pad\:top-0\.375 {
+        padding-top: 0.375rem !important;
+    }
+
+    .sm\)pad\:top-0\.5 {
+        padding-top: 0.5rem !important;
+    }
+
+    .sm\)pad\:top-0\.625 {
+        padding-top: 0.625rem !important;
+    }
+
+    .sm\)pad\:top-0\.75 {
+        padding-top: 0.75rem !important;
+    }
+
+    .sm\)pad\:top-0\.8125 {
+        padding-top: 0.8125rem !important;
+    }
+
+    .sm\)pad\:top-0\.875 {
+        padding-top: 0.875rem !important;
+    }
+
+    .sm\)pad\:top-0\.9375 {
+        padding-top: 0.9375rem !important;
+    }
+
+    .sm\)pad\:top-1 {
+        padding-top: 1rem !important;
+    }
+
+    .sm\)pad\:top-1\.25 {
+        padding-top: 1.25rem !important;
+    }
+
+    .sm\)pad\:top-1\.5 {
+        padding-top: 1.5rem !important;
+    }
+
+    .sm\)pad\:top-1\.75 {
+        padding-top: 1.75rem !important;
+    }
+
+    .sm\)pad\:top-2 {
+        padding-top: 2rem !important;
+    }
+
+    .sm\)pad\:top-1\% {
+        padding-top: 1% !important;
+    }
+
+    .sm\)pad\:top-2\% {
+        padding-top: 2% !important;
+    }
+
+    .sm\)pad\:top-4\% {
+        padding-top: 4% !important;
+    }
+
+    .sm\)pad\:top-6\% {
+        padding-top: 6% !important;
+    }
+
+    .sm\)pad\:top-8\% {
+        padding-top: 8% !important;
+    }
+
+    .sm\)pad\:top-10\% {
+        padding-top: 10% !important;
+    }
+
+    /*  # pad right
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:right-0 {
+        padding-right: 0 !important;
+    }
+
+    .sm\)pad\:right-0\.125 {
+        padding-right: 0.125rem !important;
+    }
+
+    .sm\)pad\:right-0\.25 {
+        padding-right: 0.25rem !important;
+    }
+
+    .sm\)pad\:right-0\.375 {
+        padding-right: 0.375rem !important;
+    }
+
+    .sm\)pad\:right-0\.5 {
+        padding-right: 0.5rem !important;
+    }
+
+    .sm\)pad\:right-0\.625 {
+        padding-right: 0.625rem !important;
+    }
+
+    .sm\)pad\:right-0\.75 {
+        padding-right: 0.75rem !important;
+    }
+
+    .sm\)pad\:right-0\.8125 {
+        padding-right: 0.8125rem !important;
+    }
+
+    .sm\)pad\:right-0\.875 {
+        padding-right: 0.875rem !important;
+    }
+
+    .sm\)pad\:right-0\.9375 {
+        padding-right: 0.9375rem !important;
+    }
+
+    .sm\)pad\:right-1 {
+        padding-right: 1rem !important;
+    }
+
+    .sm\)pad\:right-1\.25 {
+        padding-right: 1.25rem !important;
+    }
+
+    .sm\)pad\:right-1\.5 {
+        padding-right: 1.5rem !important;
+    }
+
+    .sm\)pad\:right-1\.75 {
+        padding-right: 1.75rem !important;
+    }
+
+    .sm\)pad\:right-2 {
+        padding-right: 2rem !important;
+    }
+
+    .sm\)pad\:right-1\% {
+        padding-right: 1% !important;
+    }
+
+    .sm\)pad\:right-2\% {
+        padding-right: 2% !important;
+    }
+
+    .sm\)pad\:right-4\% {
+        padding-right: 4% !important;
+    }
+
+    .sm\)pad\:right-6\% {
+        padding-right: 6% !important;
+    }
+
+    .sm\)pad\:right-8\% {
+        padding-right: 8% !important;
+    }
+
+    .sm\)pad\:right-10\% {
+        padding-right: 10% !important;
+    }
+
+    /*  # pad bottom
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:bottom-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .sm\)pad\:bottom-0\.125 {
+        padding-bottom: 0.125rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.25 {
+        padding-bottom: 0.25rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.375 {
+        padding-bottom: 0.375rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.5 {
+        padding-bottom: 0.5rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.625 {
+        padding-bottom: 0.625rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.75 {
+        padding-bottom: 0.75rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.8125 {
+        padding-bottom: 0.8125rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.875 {
+        padding-bottom: 0.875rem !important;
+    }
+
+    .sm\)pad\:bottom-0\.9375 {
+        padding-bottom: 0.9375rem !important;
+    }
+
+    .sm\)pad\:bottom-1 {
+        padding-bottom: 1rem !important;
+    }
+
+    .sm\)pad\:bottom-1\.25 {
+        padding-bottom: 1.25rem !important;
+    }
+
+    .sm\)pad\:bottom-1\.5 {
+        padding-bottom: 1.5rem !important;
+    }
+
+    .sm\)pad\:bottom-1\.75 {
+        padding-bottom: 1.75rem !important;
+    }
+
+    .sm\)pad\:bottom-2 {
+        padding-bottom: 2rem !important;
+    }
+
+    .sm\)pad\:bottom-1\% {
+        padding-bottom: 1% !important;
+    }
+
+    .sm\)pad\:bottom-2\% {
+        padding-bottom: 2% !important;
+    }
+
+    .sm\)pad\:bottom-4\% {
+        padding-bottom: 4% !important;
+    }
+
+    .sm\)pad\:bottom-6\% {
+        padding-bottom: 6% !important;
+    }
+
+    .sm\)pad\:bottom-8\% {
+        padding-bottom: 8% !important;
+    }
+
+    .sm\)pad\:bottom-10\% {
+        padding-bottom: 10% !important;
+    }
+
+    /*  # pad left
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:left-0 {
+        padding-left: 0 !important;
+    }
+
+    .sm\)pad\:left-0\.125 {
+        padding-left: 0.125rem !important;
+    }
+
+    .sm\)pad\:left-0\.25 {
+        padding-left: 0.25rem !important;
+    }
+
+    .sm\)pad\:left-0\.375 {
+        padding-left: 0.375rem !important;
+    }
+
+    .sm\)pad\:left-0\.5 {
+        padding-left: 0.5rem !important;
+    }
+
+    .sm\)pad\:left-0\.625 {
+        padding-left: 0.625rem !important;
+    }
+
+    .sm\)pad\:left-0\.75 {
+        padding-left: 0.75rem !important;
+    }
+
+    .sm\)pad\:left-0\.8125 {
+        padding-left: 0.8125rem !important;
+    }
+
+    .sm\)pad\:left-0\.875 {
+        padding-left: 0.875rem !important;
+    }
+
+    .sm\)pad\:left-0\.9375 {
+        padding-left: 0.9375rem !important;
+    }
+
+    .sm\)pad\:left-1 {
+        padding-left: 1rem !important;
+    }
+
+    .sm\)pad\:left-1\.25 {
+        padding-left: 1.25rem !important;
+    }
+
+    .sm\)pad\:left-1\.5 {
+        padding-left: 1.5rem !important;
+    }
+
+    .sm\)pad\:left-1\.75 {
+        padding-left: 1.75rem !important;
+    }
+
+    .sm\)pad\:left-2 {
+        padding-left: 2rem !important;
+    }
+
+    .sm\)pad\:left-1\% {
+        padding-left: 1% !important;
+    }
+
+    .sm\)pad\:left-2\% {
+        padding-left: 2% !important;
+    }
+
+    .sm\)pad\:left-4\% {
+        padding-left: 4% !important;
+    }
+
+    .sm\)pad\:left-6\% {
+        padding-left: 6% !important;
+    }
+
+    .sm\)pad\:left-8\% {
+        padding-left: 8% !important;
+    }
+
+    .sm\)pad\:left-10\% {
+        padding-left: 10% !important;
+    }
+
+    /*  # pad horz
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:horz-0\.25 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+
+    .sm\)pad\:horz-0\.5 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .sm\)pad\:horz-0\.75 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .sm\)pad\:horz-1 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .sm\)pad\:horz-1\% {
+        padding-left: 1% !important;
+        padding-right: 1% !important;
+    }
+
+    .sm\)pad\:horz-2\% {
+        padding-left: 2% !important;
+        padding-right: 2% !important;
+    }
+
+    .sm\)pad\:horz-4\% {
+        padding-left: 4% !important;
+        padding-right: 4% !important;
+    }
+
+    .sm\)pad\:horz-6\% {
+        padding-left: 6% !important;
+        padding-right: 6% !important;
+    }
+
+    .sm\)pad\:horz-8\% {
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+    }
+
+    .sm\)pad\:horz-10\% {
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+
+    /*  # pad vert
+        # 91108.1b
+        # padding (rem)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    */
+    .sm\)pad\:vert-0\.25 {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+    }
+
+    .sm\)pad\:vert-0\.5 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .sm\)pad\:vert-0\.75 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .sm\)pad\:vert-1 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .sm\)pad\:vert-1\% {
+        padding-top: 1% !important;
+        padding-bottom: 1% !important;
+    }
+
+    .sm\)pad\:vert-2\% {
+        padding-top: 2% !important;
+        padding-bottom: 2% !important;
+    }
+
+    .sm\)pad\:vert-4\% {
+        padding-top: 4% !important;
+        padding-bottom: 4% !important;
+    }
+
+    .sm\)pad\:vert-6\% {
+        padding-top: 6% !important;
+        padding-bottom: 6% !important;
+    }
+
+    .sm\)pad\:vert-8\% {
+        padding-top: 8% !important;
+        padding-bottom: 8% !important;
+    }
+
+    .sm\)pad\:vert-10\% {
+        padding-top: 10% !important;
+        padding-bottom: 10% !important;
+    }
+
+    /*  # ht
+        # 90907.1b
+        # height
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    */
+    .sm\)ht\:auto {
+        height: auto !important;
+    }
+
+    /*: 80px :*/
+    .sm\)ht\:min-height-5 {
+        min-height: 5rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)ht\:min-height-10 {
+        min-height: 10rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)ht\:min-height-15 {
+        min-height: 15rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)ht\:min-height-20 {
+        min-height: 20rem !important;
+    }
+
+    /*: 400px :*/
+    .sm\)ht\:min-height-25 {
+        min-height: 25rem !important;
+    }
+
+    /*: 480px :*/
+    .sm\)ht\:min-height-30 {
+        min-height: 30rem !important;
+    }
+
+    /*: 560px :*/
+    .sm\)ht\:min-height-35 {
+        min-height: 35rem !important;
+    }
+
+    /*: 640px :*/
+    .sm\)ht\:min-height-40 {
+        min-height: 40rem !important;
+    }
+
+    /*: 720px :*/
+    .sm\)ht\:min-height-45 {
+        min-height: 45rem !important;
+    }
+
+    /*: 800px :*/
+    .sm\)ht\:min-height-50 {
+        min-height: 50rem !important;
+    }
+
+    /*  # img
+        # 90907.1b
+        # set image width & height
+    */
+    .sm\)img\:25\% {
+        height: auto !important;
+        width: 25% !important;
+    }
+
+    .sm\)img\:50\% {
+        height: auto !important;
+        width: 50% !important;
+    }
+
+    .sm\)img\:75\% {
+        height: auto !important;
+        width: 75% !important;
+    }
+
+    .sm\)img\:100\% {
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    /*  # wd
+        # 90907.1b
+        # width (fraction)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+    */
+    .sm\)wd\:1\/4 {
+        width: 25% !important;
+    }
+
+    .sm\)wd\:1\/3 {
+        width: 33.3333% !important;
+    }
+
+    .sm\)wd\:1\/2 {
+        width: 50% !important;
+    }
+
+    .sm\)wd\:2\/3 {
+        width: 66.6666% !important;
+    }
+
+    .sm\)wd\:3\/4 {
+        width: 75% !important;
+    }
+
+    .sm\)wd\:1\/5 {
+        width: 20% !important;
+    }
+
+    .sm\)wd\:2\/5 {
+        width: 40% !important;
+    }
+
+    .sm\)wd\:3\/5 {
+        width: 60% !important;
+    }
+
+    .sm\)wd\:4\/5 {
+        width: 80% !important;
+    }
+
+    /*  # wd
+        # 91108.1b
+        # width (rem & %)
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+    */
+    .sm\)wd\:10\% {
+        width: 10% !important;
+    }
+
+    .sm\)wd\:min-10\% {
+        min-width: 10% !important;
+    }
+
+    .sm\)wd\:max-10\% {
+        max-width: 10% !important;
+    }
+
+    .sm\)wd\:15\% {
+        width: 15% !important;
+    }
+
+    .sm\)wd\:min-15\% {
+        min-width: 15% !important;
+    }
+
+    .sm\)wd\:max-15\% {
+        max-width: 15% !important;
+    }
+
+    .sm\)wd\:20\% {
+        width: 20% !important;
+    }
+
+    .sm\)wd\:min-20\% {
+        min-width: 20% !important;
+    }
+
+    .sm\)wd\:max-20\% {
+        max-width: 20% !important;
+    }
+
+    .sm\)wd\:25\% {
+        width: 25% !important;
+    }
+
+    .sm\)wd\:min-25\% {
+        min-width: 25% !important;
+    }
+
+    .sm\)wd\:max-25\% {
+        max-width: 25% !important;
+    }
+
+    .sm\)wd\:30\% {
+        width: 30% !important;
+    }
+
+    .sm\)wd\:min-30\% {
+        min-width: 30% !important;
+    }
+
+    .sm\)wd\:max-30\% {
+        max-width: 30% !important;
+    }
+
+    .sm\)wd\:35\% {
+        width: 35% !important;
+    }
+
+    .sm\)wd\:min-35\% {
+        min-width: 35% !important;
+    }
+
+    .sm\)wd\:max-35\% {
+        max-width: 35% !important;
+    }
+
+    .sm\)wd\:40\% {
+        width: 40% !important;
+    }
+
+    .sm\)wd\:min-40\% {
+        min-width: 40% !important;
+    }
+
+    .sm\)wd\:max-40\% {
+        max-width: 40% !important;
+    }
+
+    .sm\)wd\:45\% {
+        width: 45% !important;
+    }
+
+    .sm\)wd\:min-45\% {
+        min-width: 45% !important;
+    }
+
+    .sm\)wd\:max-45\% {
+        max-width: 45% !important;
+    }
+
+    .sm\)wd\:50\% {
+        width: 50% !important;
+    }
+
+    .sm\)wd\:min-50\% {
+        min-width: 50% !important;
+    }
+
+    .sm\)wd\:max-50\% {
+        max-width: 50% !important;
+    }
+
+    .sm\)wd\:55\% {
+        width: 55% !important;
+    }
+
+    .sm\)wd\:min-55\% {
+        min-width: 55% !important;
+    }
+
+    .sm\)wd\:max-55\% {
+        max-width: 55% !important;
+    }
+
+    .sm\)wd\:60\% {
+        width: 60% !important;
+    }
+
+    .sm\)wd\:min-60\% {
+        min-width: 60% !important;
+    }
+
+    .sm\)wd\:max-60\% {
+        max-width: 60% !important;
+    }
+
+    .sm\)wd\:65\% {
+        width: 65% !important;
+    }
+
+    .sm\)wd\:min-65\% {
+        min-width: 65% !important;
+    }
+
+    .sm\)wd\:max-70\% {
+        max-width: 70% !important;
+    }
+
+    .sm\)wd\:75\% {
+        width: 75% !important;
+    }
+
+    .sm\)wd\:min-75\% {
+        min-width: 75% !important;
+    }
+
+    .sm\)wd\:max-75\% {
+        max-width: 75% !important;
+    }
+
+    .sm\)wd\:80\% {
+        width: 80% !important;
+    }
+
+    .sm\)wd\:min-80\% {
+        min-width: 80% !important;
+    }
+
+    .sm\)wd\:max-80\% {
+        max-width: 80% !important;
+    }
+
+    .sm\)wd\:85\% {
+        width: 85% !important;
+    }
+
+    .sm\)wd\:min-85\% {
+        min-width: 85% !important;
+    }
+
+    .sm\)wd\:max-85\% {
+        max-width: 85% !important;
+    }
+
+    .sm\)wd\:90\% {
+        width: 90% !important;
+    }
+
+    .sm\)wd\:min-90\% {
+        min-width: 90% !important;
+    }
+
+    .sm\)wd\:max-90\% {
+        max-width: 90% !important;
+    }
+
+    .sm\)wd\:95\% {
+        width: 95% !important;
+    }
+
+    .sm\)wd\:min-95\% {
+        min-width: 95% !important;
+    }
+
+    .sm\)wd\:max-95\% {
+        max-width: 95% !important;
+    }
+
+    .sm\)wd\:auto {
+        width: auto !important;
+    }
+
+    .sm\)wd\:100\% {
+        width: 100% !important;
+    }
+
+    /*: 25px :*/
+    .sm\)wd\:1\.5625 {
+        width: 1.5625rem !important;
+    }
+
+    .sm\)wd\:min-1\.5625 {
+        min-width: 1.5625rem !important;
+    }
+
+    .sm\)wd\:max-1\.5625 {
+        max-width: 1.5625rem !important;
+    }
+
+    /*: 50px :*/
+    .sm\)wd\:3\.125 {
+        width: 3.125rem !important;
+    }
+
+    .sm\)wd\:min-3\.125 {
+        min-width: 3.125rem !important;
+    }
+
+    .sm\)wd\:max-3\.125 {
+        max-width: 3.125rem !important;
+    }
+
+    /*: 75px :*/
+    .sm\)wd\:4\.6875 {
+        width: 4.6875rem !important;
+    }
+
+    .sm\)wd\:min-4\.6875 {
+        min-width: 4.6875rem !important;
+    }
+
+    .sm\)wd\:max-4\.6875 {
+        max-width: 4.6875rem !important;
+    }
+
+    /*: 100px :*/
+    .sm\)wd\:6\.25 {
+        width: 6.25rem !important;
+    }
+
+    .sm\)wd\:min-6\.25 {
+        min-width: 6.25rem !important;
+    }
+
+    .sm\)wd\:max-6\.25 {
+        max-width: 6.25rem !important;
+    }
+
+    /*: 125px :*/
+    .sm\)wd\:7\.8125 {
+        width: 7.8125rem !important;
+    }
+
+    .sm\)wd\:min-7\.8125 {
+        min-width: 7.8125rem !important;
+    }
+
+    .sm\)wd\:max-7\.8125 {
+        max-width: 7.8125rem !important;
+    }
+
+    /*: 150px :*/
+    .sm\)wd\:9\.375 {
+        width: 9.375rem !important;
+    }
+
+    .sm\)wd\:min-9\.375 {
+        min-width: 9.375rem !important;
+    }
+
+    .sm\)wd\:max-9\.375 {
+        max-width: 9.375rem !important;
+    }
+
+    /*: 175px :*/
+    .sm\)wd\:10\.9375 {
+        width: 10.9375rem !important;
+    }
+
+    .sm\)wd\:min-10\.9375 {
+        min-width: 10.9375rem !important;
+    }
+
+    .sm\)wd\:max-10\.9375 {
+        max-width: 10.9375rem !important;
+    }
+
+    /*: 200px :*/
+    .sm\)wd\:12\.5 {
+        width: 12.5rem !important;
+    }
+
+    .sm\)wd\:min-12\.5 {
+        min-width: 12.5rem !important;
+    }
+
+    .sm\)wd\:max-12\.5 {
+        max-width: 12.5rem !important;
+    }
+
+    /*: 225px :*/
+    .sm\)wd\:14\.0625 {
+        width: 14.0625rem !important;
+    }
+
+    .sm\)wd\:min-14\.0625 {
+        min-width: 14.0625rem !important;
+    }
+
+    .sm\)wd\:max-14\.0625 {
+        max-width: 14.0625rem !important;
+    }
+
+    /*: 250px :*/
+    .sm\)wd\:15\.625 {
+        width: 15.625rem !important;
+    }
+
+    .sm\)wd\:min-15\.625 {
+        min-width: 15.625rem !important;
+    }
+
+    .sm\)wd\:max-15\.625 {
+        max-width: 15.625rem !important;
+    }
+
+    /*: 275px :*/
+    .sm\)wd\:17\.1875 {
+        width: 17.1875rem !important;
+    }
+
+    .sm\)wd\:min-17\.1875 {
+        min-width: 17.1875rem !important;
+    }
+
+    .sm\)wd\:max-17\.1875 {
+        max-width: 17.1875rem !important;
+    }
+
+    /*: 300px :*/
+    .sm\)wd\:18\.75 {
+        width: 18.75rem !important;
+    }
+    .sm\)wd\:min-18\.75 {
+        min-width: 18.75rem !important;
+    }
+    .sm\)wd\:max-18\.75 {
+        max-width: 18.75rem !important;
+    }
+
+    /*  # DIY flexbox components (beta)
+        # 91001.1a
+        # classes to build flexbox
+        # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+    **/
+    .sm\)fx\:c {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .sm\)fx\:cw {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .sm\)fx\:r {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .sm\)fx\:r-rev {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .sm\)fx\:rw {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .sm\)fx\:rw-rev {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /*: justify content :*/
+    .sm\)fa\:1 {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .sm\)fa\:2 {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+
+    .sm\)fa\:3 {
+        -webkit-justify-content: flex-center;
+        -ms-flex-pack: center;
+        justify-content: flex-center;
+    }
+
+    .sm\)fa\:4 {
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .sm\)fa\:5 {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    /*: align content :*/
+    .sm\)fb\:1 {
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
+
+    .sm\)fb\:2 {
+        -webkit-align-content: flex-end;
+        -ms-flex-line-pack: end;
+        align-content: flex-end;
+    }
+
+    .sm\)fb\:3 {
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+
+    .sm\)fb\:4 {
+        -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+    }
+
+    .sm\)fb\:5 {
+        -webkit-align-content: space-around;
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+
+    .sm\)fb\:6 {
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    }
+
+    /*: align items :*/
+    .sm\)fc\:1 {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .sm\)fc\:2 {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+
+    .sm\)fc\:3 {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .sm\)fc\:4 {
+        -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+
+    .sm\)fc\:5 {
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+
+    /*: item (importance ranking / auto is assumed) :*/
+    .sm\)fd\:1 {
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+
+    .sm\)fd\:2 {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
+    .sm\)fd\:3 {
+        -webkit-flex: 2 1 auto;
+        -ms-flex: 2 1 auto;
+        flex: 2 1 auto;
+    }
+
+    /*: item (align self) :*/
+    .sm\)fe\:1 {
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+
+    .sm\)fe\:2 {
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+
+    .sm\)fe\:3 {
+        -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+    }
+
+    .sm\)fe\:4 {
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    .sm\)fe\:5 {
+        -webkit-align-self: baseline;
+        -ms-flex-item-align: baseline;
+        align-self: baseline;
+    }
+
+    .sm\)fe\:6 {
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+
+    /*  # bdr styles (beta)
+        # 91108.1a
+        # border style classes
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/border
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+        # https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+    */
+    .sm\)bdr\:none {
+        border-style: none !important;
+    }
+
+    .sm\)bdr\:top-none {
+        border-top-style: none !important;
+    }
+
+    .sm\)bdr\:right-none {
+        border-right-style: none !important;
+    }
+
+    .sm\)bdr\:bottom-none {
+        border-bottom-style: none !important;
+    }
+
+    .sm\)bdr\:left-none {
+        border-top-style: none !important;
+    }
+
+    .sm\)bdr\:dashed-thin,
+    .sm\)bdr\:dashed-medium,
+    .sm\)bdr\:dashed-thick,
+    .sm\)bdr\:dashed-thin-rounded,
+    .sm\)bdr\:dashed-medium-rounded,
+    .sm\)bdr\:dashed-thick-rounded {
+        border-style: dashed !important;
+    }
+
+    .sm\)bdr\:top-dashed-thin,
+    .sm\)bdr\:top-dashed-medium,
+    .sm\)bdr\:top-dashed-thick {
+        border-top-style: dashed !important;
+    }
+
+    .sm\)bdr\:right-dashed-thin,
+    .sm\)bdr\:right-dashed-medium,
+    .sm\)bdr\:right-dashed-thick {
+        border-right-style: dashed !important;
+    }
+
+    .sm\)bdr\:bottom-dashed-thin,
+    .sm\)bdr\:bottom-dashed-medium,
+    .sm\)bdr\:bottom-dashed-thick {
+        border-bottom-style: dashed !important;
+    }
+
+    .sm\)bdr\:left-dashed-thin,
+    .sm\)bdr\:left-dashed-medium,
+    .sm\)bdr\:left-dashed-thick {
+        border-left-style: dashed !important;
+    }
+
+    .sm\)bdr\:dotted-thin,
+    .sm\)bdr\:dotted-medium,
+    .sm\)bdr\:dotted-thick,
+    .sm\)bdr\:dotted-thin-rounded,
+    .sm\)bdr\:dotted-medium-rounded,
+    .sm\)bdr\:dotted-thick-rounded {
+        border-style: dotted !important;
+    }
+
+    .sm\)bdr\:top-dotted-thin,
+    .sm\)bdr\:top-dotted-medium,
+    .sm\)bdr\:top-dotted-thick {
+        border-top-style: dotted !important;
+    }
+
+    .sm\)bdr\:right-dotted-thin,
+    .sm\)bdr\:right-dotted-medium,
+    .sm\)bdr\:right-dotted-thick {
+        border-right-style: dotted !important;
+    }
+
+    .sm\)bdr\:bottom-dotted-thin,
+    .sm\)bdr\:bottom-dotted-medium,
+    .sm\)bdr\:bottom-dotted-thick {
+        border-bottom-style: dotted !important;
+    }
+
+    .sm\)bdr\:left-dotted-thin,
+    .sm\)bdr\:left-dotted-medium,
+    .sm\)bdr\:left-dotted-thick {
+        border-left-style: dotted !important;
+    }
+
+    .sm\)bdr\:solid-thin,
+    .sm\)bdr\:solid-medium,
+    .sm\)bdr\:solid-thick,
+    .sm\)bdr\:solid-thin-rounded,
+    .sm\)bdr\:solid-medium-rounded,
+    .sm\)bdr\:solid-thick-rounded {
+        border-style: solid !important;
+    }
+
+    .sm\)bdr\:top-solid-thin,
+    .sm\)bdr\:top-solid-medium,
+    .sm\)bdr\:top-solid-thick {
+        border-top-style: solid !important;
+    }
+
+    .sm\)bdr\:right-solid-thin,
+    .sm\)bdr\:right-solid-medium,
+    .sm\)bdr\:right-solid-thick {
+        border-right-style: solid !important;
+    }
+
+    .sm\)bdr\:bottom-solid-thin,
+    .sm\)bdr\:bottom-solid-medium,
+    .sm\)bdr\:bottom-solid-thick {
+        border-bottom-style: solid !important;
+    }
+
+    .sm\)bdr\:left-solid-thin,
+    .sm\)bdr\:left-solid-medium,
+    .sm\)bdr\:left-solid-thick {
+        border-left-style: solid !important;
+    }
+
+    .sm\)bdr\:dashed-thin,
+    .sm\)bdr\:dotted-thin,
+    .sm\)bdr\:solid-thin,
+    .sm\)bdr\:dashed-thin-rounded,
+    .sm\)bdr\:dotted-thin-rounded,
+    .sm\)bdr\:solid-thin-rounded {
+        border-width: thin !important;
+    }
+
+    .sm\)bdr\:top-dashed-thin,
+    .sm\)bdr\:top-dotted-thin,
+    .sm\)bdr\:top-solid-thin {
+        border-top-width: thin !important;
+    }
+
+    .sm\)bdr\:right-dashed-thin,
+    .sm\)bdr\:right-dotted-thin,
+    .sm\)bdr\:right-solid-thin {
+        border-right-width: thin !important;
+    }
+
+    .sm\)bdr\:bottom-dashed-thin,
+    .sm\)bdr\:bottom-dotted-thin,
+    .sm\)bdr\:bottom-solid-thin {
+        border-bottom-width: thin !important;
+    }
+
+    .sm\)bdr\:left-dashed-thin,
+    .sm\)bdr\:left-dotted-thin,
+    .sm\)bdr\:left-solid-thin {
+        border-left-width: thin !important;
+    }
+
+    .sm\)bdr\:dashed-medium,
+    .sm\)bdr\:dotted-medium,
+    .sm\)bdr\:solid-medium,
+    .sm\)bdr\:dashed-medium-rounded,
+    .sm\)bdr\:dotted-medium-rounded,
+    .sm\)bdr\:solid-medium-rounded {
+        border-width: medium !important;
+    }
+
+    .sm\)bdr\:top-dashed-medium,
+    .sm\)bdr\:top-dotted-medium,
+    .sm\)bdr\:top-solid-medium {
+        border-top-width: medium !important;
+    }
+
+    .sm\)bdr\:right-dashed-medium,
+    .sm\)bdr\:right-dotted-medium,
+    .sm\)bdr\:right-solid-medium {
+        border-right-width: medium !important;
+    }
+
+    .sm\)bdr\:bottom-dashed-medium,
+    .sm\)bdr\:bottom-dotted-medium,
+    .sm\)bdr\:bottom-solid-medium {
+        border-bottom-width: medium !important;
+    }
+
+    .sm\)bdr\:left-dashed-medium,
+    .sm\)bdr\:left-dotted-medium,
+    .sm\)bdr\:left-solid-medium {
+        border-left-width: medium !important;
+    }
+
+    .sm\)bdr\:dashed-thick,
+    .sm\)bdr\:dotted-thick,
+    .sm\)bdr\:solid-thick,
+    .sm\)bdr\:dashed-thick-rounded,
+    .sm\)bdr\:dotted-thick-rounded,
+    .sm\)bdr\:solid-thick-rounded {
+        border-width: thick !important;
+    }
+
+    .sm\)bdr\:top-dashed-thick,
+    .sm\)bdr\:top-dotted-thick,
+    .sm\)bdr\:top-solid-thick {
+        border-top-width: thick !important;
+    }
+
+    .sm\)bdr\:right-dashed-thick,
+    .sm\)bdr\:right-dotted-thick,
+    .sm\)bdr\:right-solid-thick {
+        border-right-width: thick !important;
+    }
+
+    .sm\)bdr\:bottom-dashed-thick,
+    .sm\)bdr\:bottom-dotted-thick,
+    .sm\)bdr\:bottom-solid-thick {
+        border-bottom-width: thick !important;
+    }
+
+    .sm\)bdr\:left-dashed-thick,
+    .sm\)bdr\:left-dotted-thick,
+    .sm\)bdr\:left-solid-thick {
+        border-left-width: thick !important;
+    }
+
+    .sm\)bdr\:dashed-thin-rounded,
+    .sm\)bdr\:dashed-medium-rounded,
+    .sm\)bdr\:dashed-thick-rounded,
+    .sm\)bdr\:dotted-thin-rounded,
+    .sm\)bdr\:dotted-medium-rounded,
+    .sm\)bdr\:dotted-thick-rounded,
+    .sm\)bdr\:solid-thin-rounded,
+    .sm\)bdr\:solid-medium-rounded,
+    .sm\)bdr\:solid-thick-rounded {
+        border-radius: 0.25rem !important;
+    }
+}
+
+/*
+    eof: style/advance.css
+*/
