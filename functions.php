@@ -7,11 +7,11 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Title:           Theme Functions
+ * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91108.1a
- * Revision:        1
+ * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://developer.wordpress.org/themes/basics/theme-functions/
@@ -818,9 +818,9 @@ if (!function_exists('xidipity_setup')):
         
         $ed_css1 = 'style.css';
         $ed_css2 = '/assets/css/sys/theme-vars.css';
-        $ed_css3 = '/assets/css/style/palette.css';
-        $ed_css4 = '/assets/css/style/common.css';
-        $ed_css5 = '/assets/css/style/advance.css';
+        $ed_css3 = '/assets/css/theme/palette.css';
+        $ed_css4 = '/assets/css/theme/common.css';
+        $ed_css5 = '/assets/css/theme/advance.css';
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
         $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
         $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
@@ -915,19 +915,19 @@ function xidipity_scripts()
     /*: style.css :*/
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
     /*: xidipity css :*/
-    wp_enqueue_style('xidipity-screen-var', get_stylesheet_directory_uri() . '/assets/css/sys/theme-vars.css', array() , wp_get_theme()
-        ->get('Version') , 'screen');
-    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/style/common.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/style/palette.css', array() , wp_get_theme()
-        ->get('Version') , 'all');
     wp_enqueue_style('xidipity-print-var', get_stylesheet_directory_uri() . '/assets/css/sys/print-vars.css', array() , wp_get_theme()
         ->get('Version') , 'print');
-    wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/style/print.css', array() , wp_get_theme()
-        ->get('Version') , 'print');
-    wp_enqueue_style('xidipity-advance', get_stylesheet_directory_uri() . '/assets/css/style/advance.css', array() , wp_get_theme()
+    wp_enqueue_style('xidipity-theme-var', get_stylesheet_directory_uri() . '/assets/css/sys/theme-vars.css', array() , wp_get_theme()
+        ->get('Version') , 'screen');
+    wp_enqueue_style('xidipity-common', get_stylesheet_directory_uri() . '/assets/css/theme/common.css', array() , wp_get_theme()
         ->get('Version') , 'all');
-    wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/style/web.css', array() , wp_get_theme()
+    wp_enqueue_style('xidipity-palette', get_stylesheet_directory_uri() . '/assets/css/theme/palette.css', array() , wp_get_theme()
+        ->get('Version') , 'all');
+    wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/theme/print.css', array() , wp_get_theme()
+        ->get('Version') , 'print');
+    wp_enqueue_style('xidipity-advance', get_stylesheet_directory_uri() . '/assets/css/theme/advance.css', array() , wp_get_theme()
+        ->get('Version') , 'all');
+    wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/theme/web.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     /*: fontawesome css :*/
     // version set @ fa_ver
