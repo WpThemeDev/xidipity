@@ -1,16 +1,24 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity PHP File
  *
- *  file:   style/common.css
- *  build:  91101.1a
- *  descrp: shared css
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        xidipity common CSS definitions
+ * File Name:       assets/css/theme/common.css
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91108.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
-**/
+ */
+
+/* Create counter named 'section' (initial value is 0) */
+body {
+  counter-reset: section;
+}
 ins,
 mark {
     background-color: var(--bg-yellow);
@@ -52,9 +60,9 @@ kbd {
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 **/
 pre {
-    background: var(--bg-bas-050);
-    border: solid 1px var(--fg-bas-300);
-    border-radius: .25rem;
+    background: var(--bg-tint);
+    border: solid medium var(--fg-bas-300);
+    border-radius: 0.25rem;
     color: var(--fg-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
@@ -141,9 +149,17 @@ hr.gradient {
     width: 80%;
 }
 
+/* deprecated
 figure {
     margin: 0;
     padding: 0 0 8px 0;
+}
+*/
+
+/*: force figure to 100% to keep from crashing container :*/
+figure {
+    height: auto !important;
+    width: 100% !important;
 }
 
 audio,
@@ -165,17 +181,19 @@ video {
 **/
 a,
 a:visited {
-    color: var(--sys-lnk-pri-color);
-    font-weight: var(--sys-lnk-weight);
-    text-decoration: none;
+    background-color: var(--dft-lnk-pri-bg-color);
+    color: var(--dft-lnk-pri-color);
+    font-weight: var(--dft-pri-lnk-wgt);
+    text-decoration: var(--dft-pri-lnk-decor);
 }
 
 a:active,
 a:focus,
 a:hover {
-    color: var(--sys-lnk-sec-color);
-    background-color: var(--sys-lnk-sec-bg-color);
-    font-weight: var(--sys-lnk-weight);
+    background-color: var(--dft-lnk-sec-bg-color);
+    color: var(--dft-lnk-sec-color);
+    font-weight: var(--dft-sec-lnk-wgt);
+    text-decoration: var(--dft-sec-lnk-decor);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -283,18 +301,24 @@ ol.outline ol ol ol ol > li:before {
     margin-right: .25em;
 }
 
+/*  # nested
+    # 91108.1a
+    # nested ordered list
+    # https://mzl.la/2ps8ua3
+**/
 ol.nested,
 ol.nested ol,
 ol.nested ol ol,
 ol.nested ol ol ol,
 ol.nested ol ol ol ol,
 ol.nested ol ol ol ol ol {
-    counter-reset: section;
+    counter-reset: nested;
     list-style-type: none;
 }
 .nested li::before {
-    counter-increment: section;
-    content: counters(section, ".") " ";
+    counter-increment: nested;
+    content: counters(nested, ".");
+    padding-right: 0.5rem;
 }
 
 /*  # font awesome list
@@ -402,6 +426,7 @@ table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
+    border-style: hidden;
     margin: 1rem 0;
     table-layout: auto;
 }
@@ -434,110 +459,17 @@ table td:not(:last-child) {
     border-right: 1px solid var(--fg-bas-300);
 }
 
-/*  # no border table
-    # 91001.1a
-    # table without borders
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+/*  # table (no borders)
+    # 91108.1a
+    # hide table element borders
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 **/
-table.no-borders {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 1rem 0;
-    table-layout: auto;
-}
-
-.no-borders caption {
-    caption-side: bottom;
-    font-size: smaller;
-}
-
-.no-borders td,
-.no-borders th {
-    border: none !important;
-    padding: 0.25rem 0.5rem;
-}
-
-.no-borders th {
-    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-    color: var(--fg-blk);
-    font-weight: bolder;
-}
-
-/*  # resp table
-    # 91001.1a
-    # responsive table layout (block on mobile)
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-**/
-table.resp {
-    display: block;
-    margin: 1rem 0;
-    width: 100%;
-}
-
-.resp tr {
-    border: none !important;
-    display: block;
-    width: 100%;
-}
-
-.resp td {
-    border: none !important;
-    display: block;
-    padding: 0.25rem 0.5rem;
-    width: 100%;
-}
-
-.resp th {
-    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-    color: var(--fg-blk);
-    font-weight: bolder;
-}
-
-.resp td:nth-child(odd) {
-    background-color: var(--bg-bas-050);
-}
-
-@media (min-width:640px) {
-    table.resp {
-        display: table;
-        border-collapse: collapse;
-        table-layout: auto;
-        width: auto;
-    }
-
-    .resp tr {
-        display: table-row;
-        width: auto;
-    }
-
-    .resp td {
-        display: table-cell;
-        padding: 0.25rem 0.5rem;
-        vertical-align: top;
-        width: auto;
-    }
-
-    .resp th {
-        background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-        color: var(--fg-blk);
-    }
-
-    .resp thead th:not(:last-child) {
-        border-right: 1px solid var(--fg-bas-300) !important;
-    }
-
-    .resp tr:not(:last-child) td {
-        border-bottom: 1px solid var(--fg-bas-300) !important;
-    }
-
-    .resp td:not(:last-child) {
-        border-right: 1px solid var(--fg-bas-300) !important;
-    }
-
-    .resp td:nth-child(odd) {
-        background-color: transparent;
-    }
+tr.no-border,
+td.no-border,
+table.no-border,
+table.no-border tr,
+table.no-border td {
+    border-style: hidden;
 }
 
 /*  # <h1>–<h6>
@@ -591,6 +523,35 @@ h6 {
     font-size: var(--h6-size);
     font-style: var(--h6-style);
     font-weight: var(--h6-weight);
+}
+
+/*  # cnt
+    # 91108.1a
+    # add counter to header
+    # https://mzl.la/2ps8ua3
+**/
+h1.cnt::before,
+h2.cnt::before,
+h3.cnt::before,
+h4.cnt::before,
+h5.cnt::before,
+h6.cnt::before {
+    counter-increment: section;
+    content: counter(section) ".";
+    color: var(--content-counter-color);
+    padding-right: 0.5rem;
+}
+
+h1.cnt\!alt::before,
+h2.cnt\!alt::before,
+h3.cnt\!alt::before,
+h4.cnt\!alt::before,
+h5.cnt\!alt::before,
+h6.cnt\!alt::before {
+    counter-increment: section;
+    content: counter(section) ":";
+    color: var(--content-counter-color);
+    padding-right: 0.5rem;
 }
 
 p {
@@ -905,57 +866,13 @@ img {
     }
 }
 
-img.zoom {
-    -moz-transition: all .5s;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-}
-
-img.zoom:focus,
-img.zoom:hover {
-    -moz-transform: scale(1.025);
-    -webkit-transform: scale(1.025);
-    transform: scale(1.025);
-}
-
-img.shadow {
-    -webkit-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
-    -moz-box-shadow: 0 10px 6px -6px var(--fg-bas-400);
-    box-shadow: 0 10px 6px -6px var(--fg-bas-400);
-}
-
-img.grayscale {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-}
-
-img.grayscale:focus,
-img.grayscale:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-}
-
-img.focalpoint {
-    opacity: .8;
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-}
-
-img.focalpoint:focus,
-img.focalpoint:hover {
-    opacity: 1;
-}
-
 .img-caption,
 .wp-caption {
     background-color: var(--bg-wht);
     color: var(--fg-bas-600);
-    font-size: 14px;
     font-size: .875rem;
     font-weight: 300;
-    max-width: 100%;
+    width: 100%;
     text-align: center;
     margin: 0;
     padding: 2px 0;
@@ -995,7 +912,7 @@ img.focalpoint:hover {
     margin-right: auto;
 }
 
-@media (min-width:768px) {
+@media (min-width:640px) {
 
     .wp-caption.alignleft,
     img.alignleft {
@@ -1178,6 +1095,46 @@ button.btn:focus {
     # hover animations
     # https://ianlunn.github.io/Hover/
 **/
+
+/* Image annimations */
+
+.hvr\:nudge {
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.hvr\:nudge:focus,
+.hvr\:nudge:hover {
+    -moz-transform: scale(1.012);
+    -webkit-transform: scale(1.012);
+    transform: scale(1.012);
+}
+
+.hvr\:greyscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.hvr\:greyscale:focus,
+.hvr\:greyscale:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.hvr\:focalpoint {
+    opacity: .8;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.hvr\:focalpoint:focus,
+.hvr\:focalpoint:hover {
+    opacity: 1;
+}
+
 /* Grow */
 .hvr\:grow {
     display: inline-block;
