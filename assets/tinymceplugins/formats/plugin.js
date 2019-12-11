@@ -1,5 +1,5 @@
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity JS File
  *
  * @package         xidipity
  * @author          John Baer
@@ -9,7 +9,7 @@
  * Function:        tinymce formats toolbar button
  * File Name:       formats/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           91210.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
