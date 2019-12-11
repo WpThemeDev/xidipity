@@ -6,10 +6,10 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        toggle tinymce into full screen & standard view
- * File Name:       fullscreen/plugin.js
+ * Function:        toggle tinymce full screen & standard view
+ * File Name:       toggle-fullscreen/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -25,6 +25,6 @@ tinymce.PluginManager.add('xscreen', function(editor, url) {
         }
     });
 });
-/*
-    eof: fullscreen/plugin.js
-*/
+/**
+ *  eof: text-align/plugin.js
+ */
