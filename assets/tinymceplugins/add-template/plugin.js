@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        insert HTML into tinymce base
- * File Name:       embed/plugin.js
+ * File Name:       add-template/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -45,6 +45,6 @@ tinymce.PluginManager.add('embed', function( editor, url ) {
         }
     });
 });
-/*
-    eof: embed/plugin.js
-*/
+/**
+ *  eof: add-template/plugin.js
+ */
