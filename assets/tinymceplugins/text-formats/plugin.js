@@ -6,10 +6,10 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        tinymce formats toolbar button
- * File Name:       formats/plugin.js
+ * Function:        tinymce text formats toolbar button
+ * File Name:       text-formats/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -56,6 +56,6 @@ tinymce.PluginManager.add('formats', function(editor, url) {
         }, ],
     });
 });
-/*
-    eof: formats/plugin.js
-*/
+/**
+ *  eof: text-formats/plugin.js
+ */
