@@ -1,16 +1,19 @@
 /*
- *  Xidipity WordPress Theme
- *
- *  file:   xidipity-cfg.txt
- *  build:  90929.1a
- *  descrp: Configuration file
- *  ref:    https://github.com/WpThemeDev/xidipity
- *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.9
- *
-**/,
+    * WordPress Xidipity Configuration File
+    *
+    * @package      xidipity
+    * @author       John Baer
+    * @copyright    2019 John Baer
+    * @license      GPL-3.0-or-later
+    *
+    * Function:     Theme configuration options
+    * File Name:    xidipity-cfg.txt
+    * GitHub:       https://github.com/WpThemeDev/xidipity
+    * Build:        91211.1a
+    * Revision:     1
+    * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+ */,
 /*: page header height :*/,
 hdr-height=100px,
 /*: page header image :*/,
@@ -34,4 +37,4 @@ sb-align=right,
 /*: display emoji default :*/,
 emoji-display=yes,
 /*: font awesome version :*/,
-fa-version=5.11.1
+fa-version=5.12.0
