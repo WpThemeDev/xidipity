@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        modification of standard table button
- * File Name:       table/plugin.js
+ * File Name:       add-table/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -7012,3 +7012,7 @@
     }), xf(e, u)
   })
 }();
+
+/**
+ *  eof: add-table/plugin.js
+ */
