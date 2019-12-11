@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        insert excerpt template into tinymce HTML code
- * File Name:       excerpt/plugin.js
+ * File Name:       add-excerpt/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -30,6 +30,6 @@ tinymce.PluginManager.add('excerpt', function( editor, url ) {
         }
     });
 });
-/*
-    eof: excerpt/plugin.js
-*/
+/**
+ *  eof: add-excerpt/plugin.js
+ */
