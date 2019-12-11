@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        insert vertical spacer template into tinymce HTML code
- * File Name:       vertspacers/plugin.js
+ * File Name:       add-vertical-space/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -54,5 +54,5 @@ tinymce.PluginManager.add('vspacer', function(editor, url) {
     });
 });
 /**
- *  eof: vertspacer/plugin.js
+ *  eof: add-vertical-space/plugin.js
  */
