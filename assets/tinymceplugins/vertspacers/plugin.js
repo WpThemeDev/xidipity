@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity JS File
  *
- *  file:   vertspaces/plugin.js
- *  build:  91025.1a
- *  descrp: vertical Space plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        insert vertical spacer template into tinymce HTML code
+ * File Name:       vertspacers/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91210.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-vertical-space/
+ */
 tinymce.PluginManager.add('vspacer', function(editor, url) {
     editor.addButton('vspacer', {
         title: 'Vertical Spacers',
