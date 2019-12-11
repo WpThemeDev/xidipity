@@ -10,7 +10,7 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -993,7 +993,7 @@ function add_the_table_button($buttons)
 add_filter('mce_buttons', 'add_the_table_button');
 function add_the_table_plugin($plugins)
 {
-    $plugins['table'] = get_template_directory_uri() . '/assets/tinymceplugins/table/plugin.js';
+    $plugins['table'] = get_template_directory_uri() . '/assets/tinymceplugins/add-table/plugin.js';
     return $plugins;
 }
 add_filter('mce_external_plugins', 'add_the_table_plugin');
@@ -1024,7 +1024,7 @@ function mce_add_embed_button()
 }
 function add_tinymce_embed_plugin($plugin_array)
 {
-    $plugin_array['embed'] = get_template_directory_uri() . '/assets/tinymceplugins/embed/plugin.js';
+    $plugin_array['embed'] = get_template_directory_uri() . '/assets/tinymceplugins/add-template/plugin.js';
     return $plugin_array;
 }
 function register_mce_embed_button($buttons)
@@ -1059,7 +1059,7 @@ function mce_add_twocol_button()
 }
 function add_tinymce_twocol_plugin($plugin_array)
 {
-    $plugin_array['twocolumn'] = get_template_directory_uri() . '/assets/tinymceplugins/twocolumn/plugin.js';
+    $plugin_array['twocolumn'] = get_template_directory_uri() . '/assets/tinymceplugins/multiple-columns/plugin.js';
     return $plugin_array;
 }
 function register_mce_twocol_button($buttons)
@@ -1095,7 +1095,7 @@ function mce_add_excerpt_button()
 }
 function add_tinymce_excerpt_plugin($plugin_array)
 {
-    $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/excerpt/plugin.js';
+    $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/add-excerpt/plugin.js';
     return $plugin_array;
 }
 function register_mce_excerpt_button($buttons)
@@ -1130,7 +1130,7 @@ function mce_add_vspacer_button()
 }
 function add_tinymce_vspacer_plugin($plugin_array)
 {
-    $plugin_array['vspacer'] = get_template_directory_uri() . '/assets/tinymceplugins/vertspacers/plugin.js';
+    $plugin_array['vspacer'] = get_template_directory_uri() . '/assets/tinymceplugins/add-vertical-space/plugin.js';
     return $plugin_array;
 }
 function register_mce_vspacer_button($buttons)
@@ -1165,7 +1165,7 @@ function mce_add_hrule_button()
 }
 function add_tinymce_hrule_plugin($plugin_array)
 {
-    $plugin_array['hrule'] = get_template_directory_uri() . '/assets/tinymceplugins/horzrule/plugin.js';
+    $plugin_array['hrule'] = get_template_directory_uri() . '/assets/tinymceplugins/add-horizontal-rule/plugin.js';
     return $plugin_array;
 }
 function register_mce_hrule_button($buttons)
@@ -1200,7 +1200,7 @@ function mce_add_txtalign_button()
 }
 function add_tinymce_txtalign_plugin($plugin_array)
 {
-    $plugin_array['txtalign'] = get_template_directory_uri() . '/assets/tinymceplugins/align/plugin.js';
+    $plugin_array['txtalign'] = get_template_directory_uri() . '/assets/tinymceplugins/text-align/plugin.js';
     return $plugin_array;
 }
 function register_mce_txtalign_button($buttons)
@@ -1235,7 +1235,7 @@ function mce_add_formats_button()
 }
 function add_tinymce_formats_plugin($plugin_array)
 {
-    $plugin_array['formats'] = get_template_directory_uri() . '/assets/tinymceplugins/formats/plugin.js';
+    $plugin_array['formats'] = get_template_directory_uri() . '/assets/tinymceplugins/text-formats/plugin.js';
     return $plugin_array;
 }
 function register_mce_formats_button($buttons)
@@ -1270,7 +1270,7 @@ function mce_add_fntwgt_button()
 }
 function add_tinymce_fntwgt_plugin($plugin_array)
 {
-    $plugin_array['fntwgt'] = get_template_directory_uri() . '/assets/tinymceplugins/fntwgt/plugin.js';
+    $plugin_array['fntwgt'] = get_template_directory_uri() . '/assets/tinymceplugins/text-weight/plugin.js';
     return $plugin_array;
 }
 function register_mce_fntwgt_button($buttons)
@@ -1305,7 +1305,7 @@ function mce_add_xscreen_button()
 }
 function add_tinymce_xscreen_plugin($plugin_array)
 {
-    $plugin_array['xscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/fullscreen/plugin.js';
+    $plugin_array['xscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/toggle-fullscreen/plugin.js';
     return $plugin_array;
 }
 function register_mce_xscreen_button($buttons)
@@ -1340,7 +1340,7 @@ function mce_add_mnusp_button()
 }
 function add_tinymce_mnusp_plugin($plugin_array)
 {
-    $plugin_array['mnusp'] = get_template_directory_uri() . '/assets/tinymceplugins/mnusp/plugin.js';
+    $plugin_array['mnusp'] = get_template_directory_uri() . '/assets/tinymceplugins/add-menu-divider/plugin.js';
     return $plugin_array;
 }
 function register_mce_mnusp_button($buttons)
@@ -1376,7 +1376,7 @@ function mce_add_clrfmt_button()
 }
 function add_tinymce_clrfmt_plugin($plugin_array)
 {
-    $plugin_array['clrfmt'] = get_template_directory_uri() . '/assets/tinymceplugins/clrfmt/plugin.js';
+    $plugin_array['clrfmt'] = get_template_directory_uri() . '/assets/tinymceplugins/clear-format/plugin.js';
     return $plugin_array;
 }
 function register_mce_clrfmt_button($buttons)
@@ -1412,7 +1412,7 @@ function mce_add_hilite_button()
 }
 function add_tinymce_hilite_plugin($plugin_array)
 {
-    $plugin_array['hilite'] = get_template_directory_uri() . '/assets/tinymceplugins/hilite/plugin.js';
+    $plugin_array['hilite'] = get_template_directory_uri() . '/assets/tinymceplugins/add-highlight/plugin.js';
     return $plugin_array;
 }
 function register_mce_hilite_button($buttons)
@@ -1448,7 +1448,7 @@ function mce_add_ullist_button()
 }
 function add_tinymce_ullist_plugin($plugin_array)
 {
-    $plugin_array['ullist'] = get_template_directory_uri() . '/assets/tinymceplugins/ullist/plugin.js';
+    $plugin_array['ullist'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-unordered/plugin.js';
     return $plugin_array;
 }
 function register_mce_ullist_button($buttons)
@@ -1484,7 +1484,7 @@ function mce_add_ollist_button()
 }
 function add_tinymce_ollist_plugin($plugin_array)
 {
-    $plugin_array['ollist'] = get_template_directory_uri() . '/assets/tinymceplugins/ollist/plugin.js';
+    $plugin_array['ollist'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-ordered/plugin.js';
     return $plugin_array;
 }
 function register_mce_ollist_button($buttons)
