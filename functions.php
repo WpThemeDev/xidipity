@@ -10,8 +10,8 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
- * Revision:        2
+ * Build:           91210.1a
+ * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://developer.wordpress.org/themes/basics/theme-functions/
@@ -824,7 +824,7 @@ if (!function_exists('xidipity_setup')):
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
         $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
         $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
-        $ed_css9 = '/assets/css/style/editor.css';
+        $ed_css9 = '/assets/css/theme/editor.css';
 
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
         add_editor_style( $ed_styles );
