@@ -1,5 +1,5 @@
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity JS File
  *
  * @package         xidipity
  * @author          John Baer
@@ -9,11 +9,11 @@
  * Function:        tinymce two column toolbar button
  * File Name:       twocolumn/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
- * Revision:        2
+ * Build:           91210.1a
+ * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/two-column/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-multiple-columns/
  */
 tinymce.PluginManager.add('twocolumn', function (editor, url) {
     editor.addButton('twocolumn', {
