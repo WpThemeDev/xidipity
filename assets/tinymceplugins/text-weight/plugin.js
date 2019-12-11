@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        wrap selected text with span tags with weight styles
- * File Name:       fntwgt/plugin.js
+ * File Name:       text-weight/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -90,6 +90,6 @@ tinymce.PluginManager.add('fntwgt', function (editor, url) {
   ]
     });
 });
-/*
-    eof: fntwgt/plugin.js
-*/
+/**
+ *  eof: text-weight/plugin.js
+ */
