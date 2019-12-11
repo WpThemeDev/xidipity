@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        insert horizonal rule template into tinymce HTML code
- * File Name:       horzrule/plugin.js
+ * File Name:       add-horizontal-rule/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -57,13 +57,13 @@ tinymce.PluginManager.add('hrule', function(editor, url) {
             text: '•\xa0Emblem',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:80%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger" style="margin-top:-0.125rem">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
+                editor.insertContent('<!-- xwpt: 91211.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:80%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-2"><span class="fnt:weight-bolder fnt:size-larger" style="margin-top: -0.125rem;">§</span></div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91211.1a/mce/rule/emblem/center -->');
             }
         }, {
             text: '•\xa0Emblem Wide',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 91001.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:100%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-1.5 fnt:weight-bolder fnt:size-larger" style="margin-top:-0.125rem">§</div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91001.1a/mce/rule/emblem/center -->');
+                editor.insertContent('<!-- xwpt: 91211.1a/mce/rule/emblem/center  --><div class="horz:align-center wd:100%"><div class="fx:r fa:1 fb:3 fc:5"><div class="fd:2 fe:1"><hr class="horz:align-right wd:100%" /></div><div class="fd:1 fe:1 mar:horz-2"><span class="fnt:weight-bolder fnt:size-larger" style="margin-top: -0.125rem;">§</span></div><div class="fd:2 fe:1"><hr class="horz:align-left wd:100%" /></div></div></div><!-- /xwpt: 91211.1a/mce/rule/emblem/center -->');
             }
         }],
 
@@ -75,5 +75,5 @@ tinymce.PluginManager.add('hrule', function(editor, url) {
     });
 });
 /**
- *  eof: horzrule/plugin.js
+ *  eof: add-horizontal-rule/plugin.js
  */
