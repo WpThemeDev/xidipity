@@ -1,5 +1,5 @@
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity JS File
  *
  * @package         xidipity
  * @author          John Baer
@@ -9,11 +9,11 @@
  * Function:        tinymce unordered toolbar button
  * File Name:       ullist/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           91210.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/unordered-list/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-list-unordered/
  */
 tinymce.PluginManager.add('ullist', function (editor, url) {
     editor.addButton('ullist', {
