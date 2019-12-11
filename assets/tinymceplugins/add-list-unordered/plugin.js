@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        tinymce unordered toolbar button
- * File Name:       ullist/plugin.js
+ * File Name:       add-list-unordered/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -87,6 +87,6 @@ tinymce.PluginManager.add('ullist', function (editor, url) {
         }]
     });
 });
-/*
-    eof: ullist/plugin.js
-*/
+/**
+ *  eof: add-list-unordered/plugin.js
+ */
