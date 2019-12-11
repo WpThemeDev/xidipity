@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity JS File
  *
- *  file:   fntwgt/plugin.js
- *  build:  91025.1a
- *  descrp: font weight plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        wrap selected text with span tags with weight styles
+ * File Name:       fntwgt/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91210.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/text-weight/
+ */
 tinymce.PluginManager.add('fntwgt', function (editor, url) {
     editor.addButton('fntwgt', {
         type: 'splitbutton',
