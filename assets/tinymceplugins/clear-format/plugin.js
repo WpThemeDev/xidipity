@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        clear format of selected text
- * File Name:       clrfmt/plugin.js
+ * File Name:       clear-format/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91210.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -23,6 +23,6 @@ tinymce.PluginManager.add('clrfmt', function( editor, url ) {
         cmd: 'removeformat'
     });
 });
-/*
-    eof: clrfmt/plugin.js
-*/
+/**
+ *  eof: clear-format/plugin.js
+ */
