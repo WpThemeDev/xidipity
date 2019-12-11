@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity JS File
  *
- *  file:   plugin.js
- *  build:  91020.1a
- *  descrp: table plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        modification of standard table button
+ * File Name:       table/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91210.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
-**/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-table/
+ */
 ! function() {
   "use strict";
   var n, e, t, r, o, i, u = tinymce.util.Tools.resolve("tinymce.PluginManager"),
