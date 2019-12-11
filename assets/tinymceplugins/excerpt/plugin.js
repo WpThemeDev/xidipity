@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity JS File
  *
- *  file:   excerpt/plugin.js
- *  build:  91101.1a
- *  descrp: excerpt plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        insert excerpt template into tinymce HTML code
+ * File Name:       excerpt/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91210.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
-**/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-excerpt/
+ */
 tinymce.PluginManager.add('excerpt', function( editor, url ) {
     editor.addButton( 'excerpt', {
         title: 'Insert excerpt',
