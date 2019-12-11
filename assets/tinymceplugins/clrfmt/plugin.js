@@ -6,23 +6,45 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        clear format of selected text
- * File Name:       clrfmt/plugin.js
+ * Function:        insert HTML into tinymce base
+ * File Name:       embed/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91210.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/clear-format/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-template/
  */
-tinymce.PluginManager.add('clrfmt', function( editor, url ) {
-    editor.addButton( 'clrfmt', {
-        title: 'Clear Format',
-        icon: 'mce-clrfmt',
-        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjAgOFY1SDYuMzlsMyAzaDEuODNsLS41NSAxLjI4IDIuMDkgMi4xTDE0LjIxIDh6TTMuNDEgNC44NkwyIDYuMjdsNi45NyA2Ljk3TDYuNSAxOWgzbDEuNTctMy42NkwxNi43MyAyMWwxLjQxLTEuNDF6Ii8+PC9zdmc+',
-        cmd: 'removeformat'
+tinymce.PluginManager.add('embed', function( editor, url ) {
+    editor.addButton( 'embed', {
+        title: 'Embed',
+        icon: 'mce-embed',
+        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAuNWgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMiAxNi41bDQtNGgtM3YtOWgtMnY5SDhsNCA0em05LTEzaC02djEuOTloNnYxNC4wM0gzVjUuNDloNlYzLjVIM2MtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxOGMxLjEgMCAyLS45IDItMnYtMTRjMC0xLjEtLjktMi0yLTJ6Ii8+PC9zdmc+',
+        onclick: function() {
+          editor.windowManager.open({
+            name: 'embed',
+            title: 'Embed',
+            width: window.outerWidth * .5,
+            minWidth: 320,
+            height: window.outerHeight * .6,
+            minHeight: 640,
+            body: {
+              id: "embed",
+              type: "textbox",
+              name: "mce_txt",
+              multiline: !0,
+              minWidth: window.innerWidth * .4,
+              minHeight: window.innerHeight * .61,
+              style: "direction: ltr; text-align: left; height: 100%; font-family: 'Roboto Mono', monospace; color: #212121; border: 1px solid #f5f5f5;" },
+            onSubmit: function() {
+              var html = document.getElementsByClassName("mce-textbox")[0].value.trim();
+              editor.insertContent(html);
+            }
+          }, {
+          });
+        }
     });
 });
 /*
-    eof: clrfmt/plugin.js
+    eof: embed/plugin.js
 */
