@@ -7,9 +7,9 @@
  * @license         GPL-3.0-or-later
  *
  * Function:        tinymce text highlight toolbar button
- * File Name:       hilite/plugin.js
+ * File Name:       add-highlight/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           91211.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -25,6 +25,6 @@ tinymce.PluginManager.add('hilite', function (editor, url) {
         }
     });
 });
-/*
-    eof: hilite/plugin.js
-*/
+/**
+ *  eof: add-highlight/plugin.js
+ */
