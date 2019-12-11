@@ -1,5 +1,5 @@
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity JS File
  *
  * @package         xidipity
  * @author          John Baer
@@ -13,7 +13,7 @@
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/high-light/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/add-highlight/
  */
 tinymce.PluginManager.add('hilite', function (editor, url) {
     editor.addButton('hilite', {
