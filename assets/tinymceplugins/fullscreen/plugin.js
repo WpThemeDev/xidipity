@@ -1,16 +1,20 @@
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity JS File
  *
- *  file:   fullscreen/plugin.js
- *  build:  91101.1
- *  descrp: full screen plugin
- *  ref:    https://www.tiny.cloud/
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019 John Baer
+ * @license         GPL-3.0-or-later
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * Function:        toggle tinymce into full screen & standard view
+ * File Name:       fullscreen/plugin.js
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           91210.1a
+ * Revision:        1
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- **/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/toggle-fullscreen/
+ */
 tinymce.PluginManager.add('xscreen', function(editor, url) {
     editor.addButton('xscreen', {
         title: 'Toggle Full Screen',
