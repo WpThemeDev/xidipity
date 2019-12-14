@@ -9,8 +9,8 @@
  * Function:        xidipity tinymce CSS definitions
  * File Name:       assets/css/theme/editor.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
- * Revision:        2
+ * Build:           91212.1a
+ * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  */
@@ -68,21 +68,15 @@ acronym {
     display: inline-block;
 }
 
+.dsp\:tint\!mce {
+    background-color: var(--bg-tint);
+}
+
 /* page break symbol       ------------
 -- */
 .prt\(pg-break\:after-always\)::after {
     content: " ¶";
     color: var(--fg-pri-500);
-}
-
-/* blank line spacers      ------------
--- */
-.spacer-triple,
-.spacer-double,
-.spacer-single,
-.spacer-3\/4,
-.spacer-1\/2 {
-    background-color: var(--fg-pri-050);
 }
 
 /* force captions to 100%  ------------
@@ -258,6 +252,6 @@ acronym {
     border-right: 1px solid var(--fg-bas-300) !important;
 }
 
-/*
-    eof: style/editor.css
-*/
+/**
+ *  eof: assets/css/theme/editor.css
+ */
