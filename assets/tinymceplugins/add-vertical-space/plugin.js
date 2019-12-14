@@ -6,10 +6,10 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        insert vertical spacer template into tinymce HTML code
+ * Function:        insert vertical spacer tag into tinymce HTML code
  * File Name:       add-vertical-space/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91211.1a
+ * Build:           91212.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -21,34 +21,40 @@ tinymce.PluginManager.add('vspacer', function(editor, url) {
         image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAg%0D%0AMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTSAz%0D%0AIDE5IEwgMjEgMTkgTCAyMSAxMyBMIDMgMTMgTCAzIDE5IFogTSAzIDExIEwgMjEgMTEgTCAyMSA5%0D%0AIEwgMyA5IEwgMyAxMSBaIE0gMyA1IEwgMyA3IEwgMjEgNyBMIDIxIDUgTCAzIDUgWiIgc3R5bGU9%0D%0AImZpbGw6IHJnYigzMywgMzMsIDMzKTsiLz4KPC9zdmc+',
         type: 'menubutton',
         menu: [{
-            text: '•\xa01/2 Line',
+            text: '•\xa0\xBD Line',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/vertspacer  --><p class="vert:spacer-1/2">½×</p><!-- /xwpt: 90927.1a/mce/toolbar/vertspacer -->');
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 50%); font-size: calc(var(--dft-font-size) * 50%);">&nbsp;</p>');
             }
         }, {
-            text: '•\xa03/4 Line',
+            text: '•\xa0\xBE Line',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/vertspacer  --><p class="vert:spacer-3/4">¾×</p><!-- /xwpt: 90927.1a/mce/toolbar/vertspacer -->');
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 75%); font-size: calc(var(--dft-font-size) * 75%);">&nbsp;</p>');
             }
         }, {
-            text: '•\xa0Single Line',
+            text: '•\xa01\xBD Lines',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/vertspacer  --><p class="vert:spacer-single">1×</p><!-- /xwpt: 90927.1a/mce/toolbar/vertspacer -->');
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 150%); font-size: calc(var(--dft-font-size) * 150%);">&nbsp;</p>');
             }
         }, {
-            text: '•\xa0Double Line',
+            text: '•\xa02 Lines',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/vertspacer  --><p class="vert:spacer-double">2×</p><!-- /xwpt: 90927.1a/mce/toolbar/vertspacer -->');
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 200%); font-size: calc(var(--dft-font-size) * 200%);">&nbsp;</p>');
             }
         }, {
-            text: '•\xa0Triple Line',
+            text: '•\xa02\xBD Lines',
             icon: false,
             onclick: function() {
-                editor.insertContent('<!-- xwpt: 90927.1a/mce/toolbar/vertspacer  --><p class="vert:spacer-triple">3×</p><!-- /xwpt: 90927.1a/mce/toolbar/vertspacer -->');
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 250%); font-size: calc(var(--dft-font-size) * 250%);">&nbsp;</p>');
+            }
+        }, {
+            text: '•\xa03 Lines',
+            icon: false,
+            onclick: function() {
+                editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 300%); font-size: calc(var(--dft-font-size) * 300%);">&nbsp;</p>');
             }
         }]
     });
