@@ -9,7 +9,7 @@
  * Function:        xidipity common CSS definitions
  * File Name:       assets/css/theme/common.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           91212.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -460,16 +460,16 @@ table td:not(:last-child) {
 }
 
 /*  # table (no borders)
-    # 91108.1a
-    # hide table element borders
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+    # 91211.1a
+    # hide but preserve table width borders
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
 **/
 tr.no-border,
 td.no-border,
 table.no-border,
 table.no-border tr,
-table.no-border td {
-    border-style: hidden;
+table.no-border tr td {
+    border-color: transparent !important;
 }
 
 /*  # <h1>–<h6>
@@ -1308,6 +1308,6 @@ button.btn:focus {
     transform: rotate(360deg);
 }
 
-/*
-    eof: style/common.css
-*/
+/**
+ *  eof: assets/css/theme/common.css
+ */
