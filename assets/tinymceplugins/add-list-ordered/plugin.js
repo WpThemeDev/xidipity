@@ -6,7 +6,7 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        tinymce ordered list toolbar button
+ * Function:        add ordered list
  * File Name:       add-list-ordered/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91211.1a
@@ -15,11 +15,11 @@
  *
  *                  https://xidipity.com/documentation/reference/editor/toolbar/add-list-ordered/
  */
-tinymce.PluginManager.add('ollist', function (editor, url) {
-    editor.addButton('ollist', {
+tinymce.PluginManager.add('add_lst_order', function (editor, url) {
+    editor.addButton('add_lst_order', {
         type: 'splitbutton',
         title: 'Ordered lists',
-        icon: 'mce-ollist',
+        icon: false,
         image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAxN2gydi41SDN2MWgxdi41SDJ2MWgzdi00SDJ2MXptMS05aDFWNEgydjFoMXYzem0tMSAzaDEuOEwyIDEzLjF2LjloM3YtMUgzLjJMNSAxMC45VjEwSDJ2MXptNS02djJoMTRWNUg3em0wIDE0aDE0di0ySDd2MnptMC02aDE0di0ySDd2MnoiLz48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+',
         onclick: function () {
             var dom = editor.dom;
