@@ -9,7 +9,7 @@
  * Function:        add ordered list
  * File Name:       add-list-ordered/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91211.1a
+ * Build:           91215.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
