@@ -10,7 +10,7 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91211.1a
+ * Build:           91215.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -981,8 +981,481 @@ require get_template_directory() . '/inc/template-tags.php';
  * Short code additions.
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
 /**
- * Add the TinyMCE Table Plugin.
+ *  Tinymce Plugins
+ *
+ *  custom plugins are assign to the editor toolbar and are located in
+ *		"assets/tinymceplugins/ directory"
+ *
+ *	core toolbar plugins include:
+ *		formatselect
+ *		fontsizeselect
+ *		link
+ *
+ *	https://www.tiny.cloud/docs/plugins/
+ *
+ */
+
+/**
+ *	plugin:	apply text weight
+ *	build:	91215.1a
+ *	descr:	apply font weight to selected text
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_weight_button');
+function mce_add_apply_txt_weight_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_weight_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_weight_button');
+    }
+}
+function add_tinymce_apply_txt_weight_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_weight'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-weight/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_weight_button($buttons)
+{
+    array_push($buttons, "apply_txt_weight");
+    return $buttons;
+}
+
+/**
+ *	plugin:	toggle italic
+ *	build:	91215.1a
+ *	descr:	apply/remove text italic
+ *
+ */
+add_action('admin_head', 'mce_add_toggle_italic_button');
+function mce_add_toggle_italic_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_toggle_italic_plugin");
+        add_filter('mce_buttons', 'register_mce_toggle_italic_button');
+    }
+}
+function add_tinymce_toggle_italic_plugin($plugin_array)
+{
+    $plugin_array['toggle_italic'] = get_template_directory_uri() . '/assets/tinymceplugins/toggle-italic/plugin.js';
+    return $plugin_array;
+}
+function register_mce_toggle_italic_button($buttons)
+{
+    array_push($buttons, 'toggle_italic');
+    return $buttons;
+}
+
+/**
+ *	plugin:	apply text format
+ *	build:	91215.1a
+ *	descr:	apply the following formats
+ *			  	- underline
+ *				- strike through
+ *				- super script
+ *				- sub script
+ *				- drop shadow
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_formats_button');
+function mce_add_apply_txt_formats_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_formats_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_formats_button');
+    }
+}
+function add_tinymce_apply_txt_formats_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_formats'] = get_template_directory_uri() . '/assets/tinymceplugins/apply_text_format/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_formats_button($buttons)
+{
+    array_push($buttons, "apply_txt_formats");
+    return $buttons;
+}
+
+/**
+ *	plugin:	apply text highlight
+ *	build:	91215.1a
+ *	descr:	apply highlight background color to selected text
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_hilight_button');
+function mce_add_apply_txt_hilight_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_hilight_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_hilight_button');
+    }
+}
+function add_tinymce_apply_txt_hilight_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_hilight'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-highlight/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_hilight_button($buttons)
+{
+    array_push($buttons, 'apply_txt_hilight');
+    return $buttons;
+}
+
+/**
+ *	plugin:	clear format
+ *	build:	91215.1a
+ *	descr:	remove all formatting from selected text
+ *
+ */
+add_action('admin_head', 'mce_add_clear_format_button');
+function mce_add_clear_format_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_clear_format_plugin");
+        add_filter('mce_buttons', 'register_mce_clear_format_button');
+    }
+}
+function add_tinymce_clear_format_plugin($plugin_array)
+{
+    $plugin_array['clear_format'] = get_template_directory_uri() . '/assets/tinymceplugins/clear-format/plugin.js';
+    return $plugin_array;
+}
+function register_mce_clear_format_button($buttons)
+{
+    array_push($buttons, 'clear_format');
+    return $buttons;
+}
+
+/**
+ *	plugin:	apply text alignment
+ *	build:	91215.1a
+ *	descr:	apply the following alignments
+ *			  	- left
+ *				- center
+ *				- right
+ *				- indent >
+ *				- indent <
+ *				- _ paragraph
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_align_button');
+function mce_add_apply_txt_align_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_align_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_align_button');
+    }
+}
+function add_tinymce_apply_txt_align_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_align'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-alignment/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_align_button($buttons)
+{
+    array_push($buttons, "apply_txt_align");
+    return $buttons;
+}
+
+/**
+ *	plugin:	add ordered list
+ *	build:	91215.1a
+ *	descr:	list choices
+ *			  	- standard
+ *				- nested
+ *				- alpha
+ *				- roman
+ *				- outline
+ *
+ */
+add_action('admin_head', 'mce_add_lst_order_button');
+function mce_add_lst_order_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_lst_order_plugin");
+        add_filter('mce_buttons', 'register_mce_lst_order_button');
+    }
+}
+function add_tinymce_lst_order_plugin($plugin_array)
+{
+    $plugin_array['add_lst_order'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-ordered/plugin.js';
+    return $plugin_array;
+}
+function register_mce_lst_order_button($buttons)
+{
+    array_push($buttons, 'add_lst_order');
+    return $buttons;
+}
+
+/**
+ *	plugin:	add unordered list
+ *	build:	91215.1a
+ *	descr:	list choices
+ *			  	- standard
+ *				- circled
+ *				- dash
+ *				- square
+ *				- mixed
+ *
+ */
+add_action('admin_head', 'mce_add_lst_unorder_button');
+function mce_add_lst_unorder_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_lst_unorder_plugin");
+        add_filter('mce_buttons', 'register_mce_lst_unorder_button');
+    }
+}
+function add_tinymce_lst_unorder_plugin($plugin_array)
+{
+    $plugin_array['add_lst_unorder'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-unordered/plugin.js';
+    return $plugin_array;
+}
+function register_mce_lst_unorder_button($buttons)
+{
+    array_push($buttons, 'add_lst_unorder');
+    return $buttons;
+}
+
+/**
+ *	plugin:	add miscellaneous options
+ *	build:	91215.1a
+ *	descr:	options include
+ *			  	- block quote
+ *				- excerpt
+ *
+ */
+add_action('admin_head', 'mce_add_misc_opts_button');
+function mce_add_misc_opts_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_misc_opts_plugin");
+        add_filter('mce_buttons', 'register_mce_misc_opts_button');
+    }
+}
+function add_tinymce_misc_opts_plugin($plugin_array)
+{
+    $plugin_array['add_misc_opts'] = get_template_directory_uri() . '/assets/tinymceplugins/add-misc-opts/plugin.js';
+    return $plugin_array;
+}
+function register_mce_misc_opts_button($buttons)
+{
+    array_push($buttons, 'add_misc_opts');
+    return $buttons;
+}
+
+/**
+ *	plugin:	add vertical space
+ *	build:	91215.1a
+ *	descr:	options include
+ *			  	- 1/2 line
+ *				- 3/4 line
+ *				- 1 1/2 lines
+ *				- 2 lines
+ *				- 2 1/2 lines
+ *				- 3 lines
+ *
+ */
+add_action('admin_head', 'mce_add_vert_space_button');
+function mce_add_vert_space_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_add_vert_space_plugin");
+        add_filter('mce_buttons', 'register_mce_add_vert_space_button');
+    }
+}
+function add_tinymce_add_vert_space_plugin($plugin_array)
+{
+    $plugin_array['add_vert_space'] = get_template_directory_uri() . '/assets/tinymceplugins/add-vertical-space/plugin.js';
+    return $plugin_array;
+}
+function register_mce_add_vert_space_button($buttons)
+{
+    array_push($buttons, "add_vert_space");
+    return $buttons;
+}
+
+/**
+ *	plugin:	add horizontal rule
+ *	build:	91215.1a
+ *	descr:	options include
+ *			  	- Single narrow
+ *				- Single wide
+ *				- Double narrow
+ *				- Double wide
+ *				- Gradient narrow
+ *				- Gradient wide
+ *				- Emblem narrow
+ *				- Emblem wide
+ *
+ */
+add_action('admin_head', 'mce_add_horz_rule_button');
+function mce_add_horz_rule_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_add_horz_rule_plugin");
+        add_filter('mce_buttons', 'register_mce_add_horz_rule_button');
+    }
+}
+function add_tinymce_add_horz_rule_plugin($plugin_array)
+{
+    $plugin_array['add_horz_rule'] = get_template_directory_uri() . '/assets/tinymceplugins/add-horizontal-rule/plugin.js';
+    return $plugin_array;
+}
+function register_mce_add_horz_rule_button($buttons)
+{
+    array_push($buttons, "add_horz_rule");
+    return $buttons;
+}
+
+/**
+ *	plugin:	add table
+ *	build:	91215.1a
+ *	descr:	modified core plugin
  *
  */
 function add_the_table_button($buttons)
@@ -997,12 +1470,21 @@ function add_the_table_plugin($plugins)
     return $plugins;
 }
 add_filter('mce_external_plugins', 'add_the_table_plugin');
+
 /**
- * Add the TinyMCE Embed Plugin.
+ *	plugin:	add multiple columns
+ *	build:	91215.1a
+ *	descr:	options include
+ *			  	- Auto 2 columns
+ *				- Auto 3 columns
+ *				- Auto 4 columns
+ *				- Fixed 2 columns
+ *				- Fixed 3 columns
+ *				- Fixed 4 columns
  *
  */
-add_action('admin_head', 'mce_add_embed_button');
-function mce_add_embed_button()
+add_action('admin_head', 'mce_add_multi_cols_button');
+function mce_add_multi_cols_button()
 {
     global $typenow;
     // check user permissions
@@ -1018,343 +1500,29 @@ function mce_add_embed_button()
     // check if WYSIWYG is enabled
     if (get_user_option('rich_editing') == 'true')
     {
-        add_filter("mce_external_plugins", "add_tinymce_embed_plugin");
-        add_filter('mce_buttons', 'register_mce_embed_button');
+        add_filter("mce_external_plugins", "add_tinymce_add_multi_cols_plugin");
+        add_filter('mce_buttons', 'register_mce_add_multi_cols_button');
     }
 }
-function add_tinymce_embed_plugin($plugin_array)
+function add_tinymce_add_multi_cols_plugin($plugin_array)
 {
-    $plugin_array['embed'] = get_template_directory_uri() . '/assets/tinymceplugins/add-template/plugin.js';
+    $plugin_array['add_multi_cols'] = get_template_directory_uri() . '/assets/tinymceplugins/add-multiple-columns/plugin.js';
     return $plugin_array;
 }
-function register_mce_embed_button($buttons)
+function register_mce_add_multi_cols_button($buttons)
 {
-    array_push($buttons, "embed");
-    return $buttons;
-}
-/**
- * Add the TinyMCE two columns Plugin.
- *
- */
-add_action('admin_head', 'mce_add_twocol_button');
-function mce_add_twocol_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_twocol_plugin");
-        add_filter('mce_buttons', 'register_mce_twocol_button');
-    }
-}
-function add_tinymce_twocol_plugin($plugin_array)
-{
-    $plugin_array['twocolumn'] = get_template_directory_uri() . '/assets/tinymceplugins/multiple-columns/plugin.js';
-    return $plugin_array;
-}
-function register_mce_twocol_button($buttons)
-{
-    array_push($buttons, "twocolumn");
-    return $buttons;
-}
-/**
- * Add the TinyMCE excerpt Plugin.
- *
- *
- */
-add_action('admin_head', 'mce_add_excerpt_button');
-function mce_add_excerpt_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_excerpt_plugin");
-        add_filter('mce_buttons', 'register_mce_excerpt_button');
-    }
-}
-function add_tinymce_excerpt_plugin($plugin_array)
-{
-    $plugin_array['excerpt'] = get_template_directory_uri() . '/assets/tinymceplugins/add-excerpt/plugin.js';
-    return $plugin_array;
-}
-function register_mce_excerpt_button($buttons)
-{
-    array_push($buttons, "excerpt");
-    return $buttons;
-}
-/**
- * Add the TinyMCE vspacer Plugin.
- *
- */
-add_action('admin_head', 'mce_add_vspacer_button');
-function mce_add_vspacer_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_vspacer_plugin");
-        add_filter('mce_buttons', 'register_mce_vspacer_button');
-    }
-}
-function add_tinymce_vspacer_plugin($plugin_array)
-{
-    $plugin_array['vspacer'] = get_template_directory_uri() . '/assets/tinymceplugins/add-vertical-space/plugin.js';
-    return $plugin_array;
-}
-function register_mce_vspacer_button($buttons)
-{
-    array_push($buttons, "vspacer");
-    return $buttons;
-}
-/**
- * Add the TinyMCE hrule Plugin.
- *
- */
-add_action('admin_head', 'mce_add_hrule_button');
-function mce_add_hrule_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_hrule_plugin");
-        add_filter('mce_buttons', 'register_mce_hrule_button');
-    }
-}
-function add_tinymce_hrule_plugin($plugin_array)
-{
-    $plugin_array['hrule'] = get_template_directory_uri() . '/assets/tinymceplugins/add-horizontal-rule/plugin.js';
-    return $plugin_array;
-}
-function register_mce_hrule_button($buttons)
-{
-    array_push($buttons, "hrule");
-    return $buttons;
-}
-/**
- * Add the TinyMCE Align Plugin.
- *
- */
-add_action('admin_head', 'mce_add_txtalign_button');
-function mce_add_txtalign_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_txtalign_plugin");
-        add_filter('mce_buttons', 'register_mce_txtalign_button');
-    }
-}
-function add_tinymce_txtalign_plugin($plugin_array)
-{
-    $plugin_array['txtalign'] = get_template_directory_uri() . '/assets/tinymceplugins/text-align/plugin.js';
-    return $plugin_array;
-}
-function register_mce_txtalign_button($buttons)
-{
-    array_push($buttons, "txtalign");
-    return $buttons;
-}
-/**
- * Add the TinyMCE formats Plugin.
- *
- */
-add_action('admin_head', 'mce_add_formats_button');
-function mce_add_formats_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_formats_plugin");
-        add_filter('mce_buttons', 'register_mce_formats_button');
-    }
-}
-function add_tinymce_formats_plugin($plugin_array)
-{
-    $plugin_array['formats'] = get_template_directory_uri() . '/assets/tinymceplugins/text-formats/plugin.js';
-    return $plugin_array;
-}
-function register_mce_formats_button($buttons)
-{
-    array_push($buttons, "formats");
-    return $buttons;
-}
-/**
- * Add the TinyMCE font weights Plugin.
- *
- */
-add_action('admin_head', 'mce_add_fntwgt_button');
-function mce_add_fntwgt_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_fntwgt_plugin");
-        add_filter('mce_buttons', 'register_mce_fntwgt_button');
-    }
-}
-function add_tinymce_fntwgt_plugin($plugin_array)
-{
-    $plugin_array['fntwgt'] = get_template_directory_uri() . '/assets/tinymceplugins/text-weight/plugin.js';
-    return $plugin_array;
-}
-function register_mce_fntwgt_button($buttons)
-{
-    array_push($buttons, "fntwgt");
-    return $buttons;
-}
-/**
- * Add the TinyMCE full screen Plugin.
- *
- */
-add_action('admin_head', 'mce_add_xscreen_button');
-function mce_add_xscreen_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_xscreen_plugin");
-        add_filter('mce_buttons', 'register_mce_xscreen_button');
-    }
-}
-function add_tinymce_xscreen_plugin($plugin_array)
-{
-    $plugin_array['xscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/toggle-fullscreen/plugin.js';
-    return $plugin_array;
-}
-function register_mce_xscreen_button($buttons)
-{
-    array_push($buttons, 'xscreen');
-    return $buttons;
-}
-/**
- * Add the TinyMCE MnuSp Plugin.
- *
- */
-add_action('admin_head', 'mce_add_mnusp_button');
-function mce_add_mnusp_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_mnusp_plugin");
-        add_filter('mce_buttons', 'register_mce_mnusp_button');
-    }
-}
-function add_tinymce_mnusp_plugin($plugin_array)
-{
-    $plugin_array['mnusp'] = get_template_directory_uri() . '/assets/tinymceplugins/add-menu-divider/plugin.js';
-    return $plugin_array;
-}
-function register_mce_mnusp_button($buttons)
-{
-    array_push($buttons, 'mnusp');
+    array_push($buttons, "add_multi_cols");
     return $buttons;
 }
 
 /**
- * Add the TinyMCE ClrFmt Plugin.
+ *	plugin:	add template
+ *	build:	91215.1a
+ *	descr:	add template code to HTML
  *
  */
-add_action('admin_head', 'mce_add_clrfmt_button');
-function mce_add_clrfmt_button()
+add_action('admin_head', 'mce_add_template_button');
+function mce_add_template_button()
 {
     global $typenow;
     // check user permissions
@@ -1370,27 +1538,29 @@ function mce_add_clrfmt_button()
     // check if WYSIWYG is enabled
     if (get_user_option('rich_editing') == 'true')
     {
-        add_filter("mce_external_plugins", "add_tinymce_clrfmt_plugin");
-        add_filter('mce_buttons', 'register_mce_clrfmt_button');
+        add_filter("mce_external_plugins", "add_tinymce_add_template_plugin");
+        add_filter('mce_buttons', 'register_mce_add_template_button');
     }
 }
-function add_tinymce_clrfmt_plugin($plugin_array)
+function add_tinymce_add_template_plugin($plugin_array)
 {
-    $plugin_array['clrfmt'] = get_template_directory_uri() . '/assets/tinymceplugins/clear-format/plugin.js';
+    $plugin_array['add_template'] = get_template_directory_uri() . '/assets/tinymceplugins/add-template/plugin.js';
     return $plugin_array;
 }
-function register_mce_clrfmt_button($buttons)
+function register_mce_add_template_button($buttons)
 {
-    array_push($buttons, 'clrfmt');
+    array_push($buttons, "add_template");
     return $buttons;
 }
 
 /**
- * Add the TinyMCE HiLite Plugin.
+ *	plugin:	toggle fullscreen
+ *	build:	91215.1a
+ *	descr:	toggle editor full screen mode
  *
  */
-add_action('admin_head', 'mce_add_hilite_button');
-function mce_add_hilite_button()
+add_action('admin_head', 'mce_add_toggle_fullscreen_button');
+function mce_add_toggle_fullscreen_button()
 {
     global $typenow;
     // check user permissions
@@ -1406,27 +1576,29 @@ function mce_add_hilite_button()
     // check if WYSIWYG is enabled
     if (get_user_option('rich_editing') == 'true')
     {
-        add_filter("mce_external_plugins", "add_tinymce_hilite_plugin");
-        add_filter('mce_buttons', 'register_mce_hilite_button');
+        add_filter("mce_external_plugins", "add_tinymce_toggle_fullscreen_plugin");
+        add_filter('mce_buttons', 'register_mce_toggle_fullscreen_button');
     }
 }
-function add_tinymce_hilite_plugin($plugin_array)
+function add_tinymce_toggle_fullscreen_plugin($plugin_array)
 {
-    $plugin_array['hilite'] = get_template_directory_uri() . '/assets/tinymceplugins/add-highlight/plugin.js';
+    $plugin_array['toggle_fullscreen'] = get_template_directory_uri() . '/assets/tinymceplugins/toggle-fullscreen/plugin.js';
     return $plugin_array;
 }
-function register_mce_hilite_button($buttons)
+function register_mce_toggle_fullscreen_button($buttons)
 {
-    array_push($buttons, 'hilite');
+    array_push($buttons, 'toggle_fullscreen');
     return $buttons;
 }
 
 /**
- * Add the TinyMCE UlList Plugin.
+ *	plugin:	add menu divider
+ *	build:	91215.1a
+ *	descr:	add "|" to toolbar menu
  *
  */
-add_action('admin_head', 'mce_add_ullist_button');
-function mce_add_ullist_button()
+add_action('admin_head', 'mce_add_mnu_div_button');
+function mce_add_mnu_div_button()
 {
     global $typenow;
     // check user permissions
@@ -1442,54 +1614,18 @@ function mce_add_ullist_button()
     // check if WYSIWYG is enabled
     if (get_user_option('rich_editing') == 'true')
     {
-        add_filter("mce_external_plugins", "add_tinymce_ullist_plugin");
-        add_filter('mce_buttons', 'register_mce_ullist_button');
+        add_filter("mce_external_plugins", "add_tinymce_add_mnu_div_plugin");
+        add_filter('mce_buttons', 'register_mce_add_mnu_div_button');
     }
 }
-function add_tinymce_ullist_plugin($plugin_array)
+function add_tinymce_add_mnu_div_plugin($plugin_array)
 {
-    $plugin_array['ullist'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-unordered/plugin.js';
+    $plugin_array['add_mnu_div'] = get_template_directory_uri() . '/assets/tinymceplugins/add-menu-divider/plugin.js';
     return $plugin_array;
 }
-function register_mce_ullist_button($buttons)
+function register_mce_add_mnu_div_button($buttons)
 {
-    array_push($buttons, 'ullist');
-    return $buttons;
-}
-
-/**
- * Add the TinyMCE OlList Plugin.
- *
- */
-add_action('admin_head', 'mce_add_ollist_button');
-function mce_add_ollist_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_ollist_plugin");
-        add_filter('mce_buttons', 'register_mce_ollist_button');
-    }
-}
-function add_tinymce_ollist_plugin($plugin_array)
-{
-    $plugin_array['ollist'] = get_template_directory_uri() . '/assets/tinymceplugins/add-list-ordered/plugin.js';
-    return $plugin_array;
-}
-function register_mce_ollist_button($buttons)
-{
-    array_push($buttons, 'ollist');
+    array_push($buttons, 'add_mnu_div');
     return $buttons;
 }
 
@@ -1507,9 +1643,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,adsense,xscreen';
-    // $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,fntwgt,italic,formats,indent,outdent,forecolor,backcolor,bullist,numlist,link,unlink,blockquote,txtalign,hrule,vspacer,table,embed,twocolumn,excerpt,xscreen';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,mnusp,fntwgt,italic,formats,forecolor,hilite,clrfmt,mnusp,txtalign,vspacer,hrule,mnusp,ollist,ullist,indent,outdent,mnusp,blockquote,excerpt,link,unlink,table,twocolumn,embed,mnusp,xscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,add_mnu_div,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,toggle_fullscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -1791,7 +1925,7 @@ function get_image_sizes($size = '')
     }
     return $sizes;
 }
-/*
-    eof: functions.php
-*/
+/**
+ *  eof: functions.php
+ */
 ?>
