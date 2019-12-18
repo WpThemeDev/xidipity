@@ -6,20 +6,20 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        insert HTML into tinymce base
+ * Function:        add template to HTML
  * File Name:       add-template/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91211.1a
+ * Build:           91215.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://xidipity.com/documentation/reference/editor/toolbar/add-template/
  */
-tinymce.PluginManager.add('embed', function( editor, url ) {
-    editor.addButton( 'embed', {
-        title: 'Embed',
-        icon: 'mce-embed',
-        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAuNWgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMiAxNi41bDQtNGgtM3YtOWgtMnY5SDhsNCA0em05LTEzaC02djEuOTloNnYxNC4wM0gzVjUuNDloNlYzLjVIM2MtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxOGMxLjEgMCAyLS45IDItMnYtMTRjMC0xLjEtLjktMi0yLTJ6Ii8+PC9zdmc+',
+tinymce.PluginManager.add('add_template', function( editor, url ) {
+    editor.addButton( 'add_template', {
+        title: 'Add Template',
+        icon: false,
+        image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNHB4IgoJIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnIGlkPSJCb3VuZGluZ19Cb3giPgoJPHJlY3QgZmlsbD0ibm9uZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CjwvZz4KPGcgaWQ9IkZsYXQiPgoJPGcgaWQ9InVpX3g1Rl9zcGVjX3g1Rl9oZWFkZXJfY29weV8yIj4KCTwvZz4KCTxnPgoJCTxwb2x5Z29uIHBvaW50cz0iMTcsMTkuMjIgNSwxOS4yMiA1LDcgMTIsNyAxMiw1IDMsNSAzLDIxIDE5LDIxIDE5LDEyIDE3LDEyIAkJIi8+CgkJPHBhdGggZD0iTTE5LDJoLTJ2M2gtM2MwLjAxLDAuMDEsMCwyLDAsMmgzdjIuOTljMC4wMSwwLjAxLDIsMCwyLDBWN2gzVjVoLTNWMnoiLz4KCQk8cmVjdCB4PSI3IiB5PSI5IiB3aWR0aD0iOCIgaGVpZ2h0PSIyIi8+CgkJPHBvbHlnb24gcG9pbnRzPSI3LDEyIDcsMTQgMTUsMTQgMTUsMTIgMTIsMTIgCQkiLz4KCQk8cmVjdCB4PSI3IiB5PSIxNSIgd2lkdGg9IjgiIGhlaWdodD0iMiIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo=',
         onclick: function() {
           editor.windowManager.open({
             name: 'embed',
