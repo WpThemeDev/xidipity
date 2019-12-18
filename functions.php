@@ -11,7 +11,7 @@
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           91215.1a
- * Revision:        1
+ * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://developer.wordpress.org/themes/basics/theme-functions/
@@ -1107,7 +1107,7 @@ function mce_add_apply_txt_formats_button()
 }
 function add_tinymce_apply_txt_formats_plugin($plugin_array)
 {
-    $plugin_array['apply_txt_formats'] = get_template_directory_uri() . '/assets/tinymceplugins/apply_text_format/plugin.js';
+    $plugin_array['apply_txt_formats'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-format/plugin.js';
     return $plugin_array;
 }
 function register_mce_apply_txt_formats_button($buttons)
