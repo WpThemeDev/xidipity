@@ -13,7 +13,7 @@
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/apply-highlight/
+ *                  https://xidipity.com/documentation/reference/editor/toolbar/apply-text-highlight/
  */
 tinymce.PluginManager.add('apply_txt_hilight', function (editor, url) {
     editor.addButton('apply_txt_hilight', {
