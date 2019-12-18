@@ -6,20 +6,24 @@
  * @copyright       2019 John Baer
  * @license         GPL-3.0-or-later
  *
- * Function:        insert vertical spacer tag into tinymce HTML code
+ * Function:        add vertical space
  * File Name:       add-vertical-space/plugin.js
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91212.1a
+ * Build:           91215.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://xidipity.com/documentation/reference/editor/toolbar/add-vertical-space/
  */
-tinymce.PluginManager.add('vspacer', function(editor, url) {
-    editor.addButton('vspacer', {
-        title: 'Vertical Spacers',
+tinymce.PluginManager.add('add_vert_space', function(editor, url) {
+    editor.addButton('add_vert_space', {
+        title: '\xBD Vertical Space',
+		icon: false,
         image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAg%0D%0AMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTSAz%0D%0AIDE5IEwgMjEgMTkgTCAyMSAxMyBMIDMgMTMgTCAzIDE5IFogTSAzIDExIEwgMjEgMTEgTCAyMSA5%0D%0AIEwgMyA5IEwgMyAxMSBaIE0gMyA1IEwgMyA3IEwgMjEgNyBMIDIxIDUgTCAzIDUgWiIgc3R5bGU9%0D%0AImZpbGw6IHJnYigzMywgMzMsIDMzKTsiLz4KPC9zdmc+',
-        type: 'menubutton',
+        type: 'splitbutton',
+        onclick: function() {
+            editor.insertContent('<p class="dsp:tint!mce" style="line-height: calc(var(--dft-line-height) * 50%); font-size: calc(var(--dft-font-size) * 50%);">&nbsp;</p>');
+        },
         menu: [{
             text: '•\xa0\xBD Line',
             icon: false,
