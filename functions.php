@@ -10,14 +10,13 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
+ * Build:           91220.1a
  * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://developer.wordpress.org/themes/basics/theme-functions/
  *
  */
-
 /**
  *  name: theme_cfg
  *  build: 90915.1b
@@ -25,9 +24,7 @@
  *
  */
 function theme_cfg() {
-
     $xwt_file = get_template_directory() . '/xidipity-cfg.txt';
-    
     if (file_exists($xwt_file)) {
         $xwt_prms = file_get_contents($xwt_file);
         $cfg_items = explode(',', $xwt_prms);
@@ -124,7 +121,6 @@ function theme_cfg() {
     }
     return;
 }
-
 /**
  *  name: fa_ver
  *  build: 90915.1b
@@ -135,7 +131,6 @@ function fa_ver()
     /*: return db value :*/
     return get_option('xwt_fa_ver');
 }
-
 /**
  *  name: hdr_hgt
  *  build: 90925.1a
@@ -146,7 +141,6 @@ function hdr_hgt()
     /*: return db value :*/
     return get_option('xwt_hdr_hgt');
 }
-
 /**
  *  name: hdr_img
  *  build: 90925.1a
@@ -157,7 +151,6 @@ function hdr_img()
     /*: return db value :*/
     return get_option('xwt_hdr_img');
 }
-
 /**
  *  name: hdr_logo
  *  build: 90925.1a
@@ -168,7 +161,6 @@ function hdr_logo()
     /*: return db value :*/
     return get_option('xwt_hdr_logo');
 }
-
 /**
  *  name: hdr_align
  *  build: 90925.1a
@@ -179,7 +171,6 @@ function hdr_align()
     /*: return db value :*/
     return get_option('xwt_hdr_align');
 }
-
 /**
  *  name: ftr_align
  *  build: 90925.1a
@@ -190,7 +181,6 @@ function ftr_align()
     /*: return db value :*/
     return get_option('xwt_ftr_align');
 }
-
 /**
  *  name: mnu_width
  *  build: 90920.1a
@@ -201,7 +191,6 @@ function mnu_width()
     /*: return db value :*/
     return get_option('xwt_menu_width');
 }
- 
 /**
  *  name: emoji_dsp
  *  build: 90929.1a
@@ -212,7 +201,6 @@ function emoji_dsp()
     /*: return db value :*/
     return get_option('xwt_emoji_dsp');
 }
-
 /**
  *  name: mnu_align
  *  build: 90920.1a
@@ -223,7 +211,6 @@ function mnu_align()
     /*: return db value :*/
     return get_option('xwt_mnu_align');
 }
- 
 /**
  *  name: disp_menu
  *  build: 90915.1b
@@ -272,7 +259,6 @@ function disp_menu($attr='')
     }
     return $fn_val;
 }
- 
 /**
  *  name: disp_sidebar
  *  build: 90915.1b
@@ -321,7 +307,6 @@ function disp_sidebar($attr='')
     }
     return $fn_val;
 }
- 
 /**
  *  name: align_sidebar
  *  build: 90915.1b
@@ -359,7 +344,6 @@ function align_sidebar($attr='')
     }
     return $fn_val;
 }
-
 /**
  *  name: err_msg
  *  build: 90901.1a
@@ -388,7 +372,6 @@ function err_msg($attr='')
     }
     return $fn_val;
 }
-
 /**
  *  name: has_match
  *  build: 90915.1b
@@ -400,7 +383,6 @@ function err_msg($attr='')
  *      nothing (error)
  *      true / false
  */
-
 function has_match($haystack='', $needle='')
 {
     if (empty($haystack) || empty($needle))
@@ -418,7 +400,6 @@ function has_match($haystack='', $needle='')
     }
     return $fn_val;
 }
-
 /**
  *  name: strwrap
  *  build: 90915.1b
@@ -447,7 +428,6 @@ function strwrap( $str='', $first='', $last='' )
     }
     return $fn_val;
 }
-
 /**
  *  name: blog_copyright
  *  build: 90925.1a
@@ -478,7 +458,6 @@ function blog_copyright() {
     }
     return $fn_val;
 }
-
 /**
  *  name: c_walker
  *  build: 90728.1
@@ -815,7 +794,6 @@ if (!function_exists('xidipity_setup')):
         */
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-        
         $ed_css1 = 'style.css';
         $ed_css2 = '/assets/css/sys/theme-vars.css';
         $ed_css3 = '/assets/css/theme/palette.css';
@@ -825,10 +803,8 @@ if (!function_exists('xidipity_setup')):
         $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
         $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
         $ed_css9 = '/assets/css/theme/editor.css';
-
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
         add_editor_style( $ed_styles );
-
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
@@ -844,7 +820,6 @@ if (!function_exists('xidipity_setup')):
             'default-color' => 'f2f2f0',
             'default-image' => ''
         )));
-        
         /**
          *  name: customization
          *  build: 90925.1a
@@ -854,14 +829,12 @@ if (!function_exists('xidipity_setup')):
         function remove_some_nodes_from_admin_top_bar_menu( $wp_admin_bar ) {
             $wp_admin_bar->remove_menu( 'customize' );
         }
-        
         /**
          *  name: configuration
          *  build: 90925.1a
          *  description: read configuration file
          */
         theme_cfg();
-        
         /**
          *  name: emoji_dsp
          *  build: 90929.1a
@@ -872,7 +845,6 @@ if (!function_exists('xidipity_setup')):
             add_filter( 'emoji_svg_url', '__return_false' );
         }
     }
-    
 endif; // xidipity_setup
 add_action('after_setup_theme', 'xidipity_setup');
 /**
@@ -981,7 +953,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Short code additions.
  */
 require get_template_directory() . '/inc/shortcodes.php';
-
 /**
  *  Tinymce Plugins
  *
@@ -996,7 +967,6 @@ require get_template_directory() . '/inc/shortcodes.php';
  *	https://www.tiny.cloud/docs/plugins/
  *
  */
-
 /**
  *	plugin:	apply text weight
  *	build:	91215.1a
@@ -1034,7 +1004,6 @@ function register_mce_apply_txt_weight_button($buttons)
     array_push($buttons, "apply_txt_weight");
     return $buttons;
 }
-
 /**
  *	plugin:	toggle italic
  *	build:	91215.1a
@@ -1072,16 +1041,15 @@ function register_mce_toggle_italic_button($buttons)
     array_push($buttons, 'toggle_italic');
     return $buttons;
 }
-
 /**
  *	plugin:	apply text format
  *	build:	91215.1a
  *	descr:	apply the following formats
- *			  	- underline
- *				- strike through
- *				- super script
- *				- sub script
- *				- drop shadow
+ *      - underline
+ *		- strike through
+ *		- super script
+ *		- sub script
+ *		- drop shadow
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_formats_button');
@@ -1115,7 +1083,6 @@ function register_mce_apply_txt_formats_button($buttons)
     array_push($buttons, "apply_txt_formats");
     return $buttons;
 }
-
 /**
  *	plugin:	apply text highlight
  *	build:	91215.1a
@@ -1153,7 +1120,6 @@ function register_mce_apply_txt_hilight_button($buttons)
     array_push($buttons, 'apply_txt_hilight');
     return $buttons;
 }
-
 /**
  *	plugin:	clear format
  *	build:	91215.1a
@@ -1191,17 +1157,16 @@ function register_mce_clear_format_button($buttons)
     array_push($buttons, 'clear_format');
     return $buttons;
 }
-
 /**
  *	plugin:	apply text alignment
  *	build:	91215.1a
  *	descr:	apply the following alignments
- *			  	- left
- *				- center
- *				- right
- *				- indent >
- *				- indent <
- *				- _ paragraph
+ *      - left
+ *		- center
+ *		- right
+ *		- indent >
+ *		- indent <
+ *		- _ paragraph
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_align_button');
@@ -1235,16 +1200,15 @@ function register_mce_apply_txt_align_button($buttons)
     array_push($buttons, "apply_txt_align");
     return $buttons;
 }
-
 /**
  *	plugin:	add ordered list
  *	build:	91215.1a
  *	descr:	list choices
- *			  	- standard
- *				- nested
- *				- alpha
- *				- roman
- *				- outline
+ *      - standard
+ *		- nested
+ *		- alpha
+ *		- roman
+ *		- outline
  *
  */
 add_action('admin_head', 'mce_add_lst_order_button');
@@ -1278,16 +1242,15 @@ function register_mce_lst_order_button($buttons)
     array_push($buttons, 'add_lst_order');
     return $buttons;
 }
-
 /**
  *	plugin:	add unordered list
  *	build:	91215.1a
  *	descr:	list choices
- *			  	- standard
- *				- circled
- *				- dash
- *				- square
- *				- mixed
+ *      - standard
+ *		- circled
+ *		- dash
+ *		- square
+ *		- mixed
  *
  */
 add_action('admin_head', 'mce_add_lst_unorder_button');
@@ -1321,13 +1284,12 @@ function register_mce_lst_unorder_button($buttons)
     array_push($buttons, 'add_lst_unorder');
     return $buttons;
 }
-
 /**
  *	plugin:	add miscellaneous options
  *	build:	91215.1a
  *	descr:	options include
- *			  	- block quote
- *				- excerpt
+ *      - block quote
+ *		- excerpt
  *
  */
 add_action('admin_head', 'mce_add_misc_opts_button');
@@ -1361,17 +1323,16 @@ function register_mce_misc_opts_button($buttons)
     array_push($buttons, 'add_misc_opts');
     return $buttons;
 }
-
 /**
  *	plugin:	add vertical space
  *	build:	91215.1a
  *	descr:	options include
- *			  	- 1/2 line
- *				- 3/4 line
- *				- 1 1/2 lines
- *				- 2 lines
- *				- 2 1/2 lines
- *				- 3 lines
+ *      - 1/2 line
+ *		- 3/4 line
+ *		- 1 1/2 lines
+ *		- 2 lines
+ *		- 2 1/2 lines
+ *		- 3 lines
  *
  */
 add_action('admin_head', 'mce_add_vert_space_button');
@@ -1405,19 +1366,18 @@ function register_mce_add_vert_space_button($buttons)
     array_push($buttons, "add_vert_space");
     return $buttons;
 }
-
 /**
  *	plugin:	add horizontal rule
  *	build:	91215.1a
  *	descr:	options include
- *			  	- Single narrow
- *				- Single wide
- *				- Double narrow
- *				- Double wide
- *				- Gradient narrow
- *				- Gradient wide
- *				- Emblem narrow
- *				- Emblem wide
+ *      - Single narrow
+ *		- Single wide
+ *		- Double narrow
+ *		- Double wide
+ *		- Gradient narrow
+ *		- Gradient wide
+ *		- Emblem narrow
+ *		- Emblem wide
  *
  */
 add_action('admin_head', 'mce_add_horz_rule_button');
@@ -1451,7 +1411,6 @@ function register_mce_add_horz_rule_button($buttons)
     array_push($buttons, "add_horz_rule");
     return $buttons;
 }
-
 /**
  *	plugin:	add table
  *	build:	91215.1a
@@ -1470,17 +1429,16 @@ function add_the_table_plugin($plugins)
     return $plugins;
 }
 add_filter('mce_external_plugins', 'add_the_table_plugin');
-
 /**
  *	plugin:	add multiple columns
  *	build:	91215.1a
  *	descr:	options include
- *			  	- Auto 2 columns
- *				- Auto 3 columns
- *				- Auto 4 columns
- *				- Fixed 2 columns
- *				- Fixed 3 columns
- *				- Fixed 4 columns
+ *	    - Auto 2 columns
+ *      - Auto 3 columns
+ *      - Auto 4 columns
+ *      - Fixed 2 columns
+ *      - Fixed 3 columns
+ *      - Fixed 4 columns
  *
  */
 add_action('admin_head', 'mce_add_multi_cols_button');
@@ -1514,7 +1472,6 @@ function register_mce_add_multi_cols_button($buttons)
     array_push($buttons, "add_multi_cols");
     return $buttons;
 }
-
 /**
  *	plugin:	add template
  *	build:	91215.1a
@@ -1552,7 +1509,6 @@ function register_mce_add_template_button($buttons)
     array_push($buttons, "add_template");
     return $buttons;
 }
-
 /**
  *	plugin:	toggle fullscreen
  *	build:	91215.1a
@@ -1590,7 +1546,6 @@ function register_mce_toggle_fullscreen_button($buttons)
     array_push($buttons, 'toggle_fullscreen');
     return $buttons;
 }
-
 /**
  *	plugin:	add menu divider
  *	build:	91215.1a
@@ -1628,7 +1583,6 @@ function register_mce_add_mnu_div_button($buttons)
     array_push($buttons, 'add_mnu_div');
     return $buttons;
 }
-
 /**
  * Change TinyMCE configuration
  *
@@ -1652,7 +1606,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "d50000", "Red", "c51162", "Pink", "aa00ff", "Purple", "0a00b6", "Dark Purple", "304ffe", "Indigo", "2962ff", "Blue", "0091ea", "Light Blue", "0093BD", "Cyan", "009688", "Teal", "087f23", "Green", "689f38", "Light Green", "6c6f00", "Lime", "c17900", "Yellow", "ee6c03", "Amber", "ef6c00", "Orange", "a30000", "Dark Orange", "ffffff", "White", ]';
+    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "d50000", "Red", "c51162", "Pink", "aa00ff", "Purple", "0a00b6", "Deep Purple", "304ffe", "Indigo", "2962ff", "Blue", "0091ea", "Light Blue", "0093BD", "Cyan", "009688", "Teal", "087f23", "Green", "689f38", "Light Green", "6c6f00", "Lime", "c17900", "Yellow", "ee6c03", "Amber", "ef6c00", "Orange", "a30000", "Deep Orange", "ffffff", "White", ]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
     $in['textcolor_cols'] = '5';
     return $in;
@@ -1677,7 +1631,6 @@ function xidipity_theme_customize_register($wp_customize)
     $wp_customize->remove_section("colors");
     $wp_customize->remove_section("background_image");
     // $wp_customize->remove_section("static_front_page");
-    
 }
 /**
  * Use tinymce to edit category descriptions
