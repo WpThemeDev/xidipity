@@ -5,7 +5,8 @@
  *  Xidipity WordPress Theme
  *
  *  file:   no-sidebar.php
- *  build:  90920.1d
+ *  build:  91220.1a
+ *  revision: 1
  *  descrp: Page template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -39,14 +40,7 @@ $v_pages = 0;
 get_header();
 echo '<!-- xwpt: 90920.1d/page/php                -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
-{
-    echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
-}
-else
-{
-    echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
-}
+echo '<main class="fx:pg-ct-itm">' . "\n";
 echo '<div class="fx:cn-ct">' . "\n";
 if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
