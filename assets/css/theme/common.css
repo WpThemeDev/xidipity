@@ -9,7 +9,7 @@
  * Function:        xidipity common CSS definitions
  * File Name:       assets/css/theme/common.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91212.1a
+ * Build:           91220.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -771,6 +771,19 @@ img {
     height: auto;
     width: inherit;
     max-width: 100%;
+}
+
+/*: color swatch :*/
+.swatch {
+	height: 85px;
+	width: 85px;
+}
+
+@media (min-width:768px) {
+	.swatch {
+		height: 150px;
+		width: 150px;
+	}
 }
 
 /*  # aspect ratios
