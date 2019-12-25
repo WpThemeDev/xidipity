@@ -9,7 +9,7 @@
  * Function:        xidipity web CSS definitions
  * File Name:       assets/css/theme/web.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           91220.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1400,6 +1400,8 @@ a.page-numbers:focus {
     -ms-flex-align: center;
     align-items: center;
     margin-top: 0.5rem;
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
 }
 
 .fx\:sb-ct-itm {
@@ -1430,8 +1432,12 @@ a.page-numbers:focus {
     width: 100%;
 }
 
+.fx\:sb-ct-itm ul li {
+	margin-bottom: 0.5rem;
+}
+
 .fx\:basis-100\% {
-    flex-basis: 100% !important;
+    flex-basis: 100%;
 }
 
 .fx\:basis-50\% {
@@ -1443,12 +1449,11 @@ a.page-numbers:focus {
     # flexbox sidebar widgets
 **/
 /*: sidebar / widget / ad :*/
-/* deprecated
 .fx\:sb-widget-ad {
-    max-width: 99%;
-    margin-left: 1%;
+	margin-left: auto;
+	margin-right: auto;
+    width: 285px;
 }
-*/
 
 /*: sidebar / widget / title :*/
 .fx\:sb-widget-ti {
@@ -1475,7 +1480,7 @@ a.page-numbers:focus {
     # screen width 768px or larger
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 **/
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .fx\:pg-ct {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -1523,55 +1528,76 @@ a.page-numbers:focus {
         align-self: flex-start;
     }
 
-    /*
-        no-sidebar requires flex set to 2 1 70%,
-    */
+    /*: no-sidebar :*/
+    .fx\:pg-ct-itm {
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
+        -webkit-flex: 2 1 auto;
+        -ms-flex: 2 1 auto;
+        flex: 2 1 auto;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        border-left:solid 0.5rem transparent;
+        border-right:solid 0.5rem transparent;
+		width: 100%;
+    }
+
+    /*: left sidebar :*/
     .fx\:pg-ct-itm-sbl:nth-child(3) {
         -webkit-order: 3;
         -ms-flex-order: 3;
         order: 3;
-        -webkit-flex: 2 1 70%;
-        -ms-flex: 2 1 70%;
-        flex: 2 1 70%;
+        -webkit-flex: 2 1 auto;
+        -ms-flex: 2 1 auto;
+        flex: 2 1 auto;
         -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
         align-self: flex-start;
+        border-right:solid 0.5rem transparent;
+		width: calc(100% - 348px);
     }
 
+    /*: right sidebar :*/
     .fx\:pg-ct-itm-sbr:nth-child(3) {
         -webkit-order: 2;
         -ms-flex-order: 2;
         order: 2;
-        -webkit-flex: 2 1 70%;
-        -ms-flex: 2 1 70%;
-        flex: 2 1 70%;
+        -webkit-flex: 2 1 auto;
+        -ms-flex: 2 1 auto;
+        flex: 2 1 auto;
         -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
         align-self: flex-start;
+        border-left:solid 0.5rem transparent;
+		width: calc(100% - 348px);
     }
 
     .fx\:pg-ct-itm-sbl:nth-child(4) {
         -webkit-order: 2;
         -ms-flex-order: 2;
         order: 2;
-        -webkit-flex: 0 1 30%;
-        -ms-flex: 0 1 30%;
-        flex: 0 1 30%;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
+		width: 348px;
     }
 
     .fx\:pg-ct-itm-sbr:nth-child(4) {
         -webkit-order: 3;
         -ms-flex-order: 3;
         order: 3;
-        -webkit-flex: 0 1 30%;
-        -ms-flex: 0 1 30%;
-        flex: 0 1 30%;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
+		width: 348px;
     }
 
     .fx\:pg-ct-itm-sbr:nth-child(5),
@@ -1606,8 +1632,6 @@ a.page-numbers:focus {
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
         align-items: flex-start;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
     }
 
     /*
@@ -1634,9 +1658,13 @@ a.page-numbers:focus {
         flex-basis: 49% !important;
     }
 
+    .fx\:basis-100\% {
+        flex-basis: 100% !important;
+    }
+
     .fx\:sb-ct {
-        margin-left: 0.5rem;
-        margin-right: 1rem;
+        border-left:solid 0.5rem transparent;
+        border-right:solid 0.5rem transparent;
     }
 
     .fx\:sb-ct-opt {
@@ -1645,27 +1673,14 @@ a.page-numbers:focus {
     }
 
     .fx\:sb-itm-opt {
-        max-width: 100% !important;
+        width: 100%;
         padding: 1rem;
     }
-}
 
-@media (min-width: 1440px) {
-    .fx\:pg-ct-itm-sbr:nth-child(3) {
-        -webkit-flex: 2 1 75%;
-        -ms-flex: 2 1 75%;
-        flex: 2 1 75%;
-    }
-
-    .fx\:pg-ct-itm-sbr:nth-child(4) {
-        -webkit-flex: 0 1 25%;
-        -ms-flex: 0 1 25%;
-        flex: 0 1 25%;
-    }
-
-    .fx\:basis-50\% {
-        flex-basis: 32.67% !important;
-    }
+	/*: sidebar / widget / ad :*/
+	.fx\:sb-widget-ad {
+	    width: 300px;
+	}
 }
 
 /*  # fx misc
@@ -1701,20 +1716,6 @@ figure {
     padding: 0;
 }
 
-/* deprecated
-.fx\:cn-itm-ti a,
-.fx\:cn-itm-ti a:active,
-.fx\:cn-itm-ti a:focus,
-.fx\:cn-itm-ti a:visited {
-    color: var(--h1-color);
-}
-
-.fx\:cn-itm-ti a:hover {
-    color: var(--sys-lnk-sec-color);
-    background-color: var(--sys-lnk-sec-bg-color);
-}
-*/
-
 /*  # nav
     # 90915.1a
     # flexbox menu navigation
@@ -1739,9 +1740,6 @@ figure {
 #nav ul {
     display: none;
     list-style: none;
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
     width: 100%;
 }
 
@@ -2087,6 +2085,6 @@ figure {
     }
 }
 
-/*
-    eof: style/web.css
-*/
+/**
+ *  eof: theme/web.css
+ */
