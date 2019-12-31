@@ -9,7 +9,7 @@
  * Function:        xidipity web CSS definitions
  * File Name:       assets/css/theme/web.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91220.1a
+ * Build:           191231.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1989,6 +1989,11 @@ figure {
     text-align: center;
 }
 
+/*: this is a hack :*/
+.fx\:area-itm-center ul {
+    margin-left: -0.5rem;
+}
+
 .fx\:area-itm-left {
     padding-left: 0.5rem;
     text-align: left;
@@ -1997,6 +2002,27 @@ figure {
 .fx\:area-itm-right {
     padding-right: 0.5rem;
     text-align: right;
+}
+
+/*: hamburger menu icon alignment :*/
+.mnu\:hb-left {
+    align-items: flex-start; 
+    display: flex; 
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+.mnu\:hb-center {
+    align-items: center; 
+    display: flex; 
+    justify-content:center;    
+}
+
+.mnu\:hb-right {
+    align-items: flex-end; 
+    display: flex; 
+    justify-content: flex-end;
+    margin-right: 1rem;
 }
 
 /*  # pal
