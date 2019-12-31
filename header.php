@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   header.php
- *  build:  91001.1a
+ *  build:  191231.1a
  *  descrp: Header template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -170,18 +170,22 @@ if ($wp_menu || $wp_page)
         /*: xidipity toc page :*/
         if ($wp_page->ID == get_queried_object_id())
         {
-            echo '<a class="toc-btn txt:align-center" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
+            echo '<div class="mnu:hb-' . mnu_align() . '">' . "\n";
+            echo '<a class="toc-btn" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
+            echo '</div>' . "\n";
         }
         else
         {
-            echo '<a class="toc-btn txt:align-center" href="' . get_permalink($wp_page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
+            echo '<div class="mnu:hb-' . mnu_align() . '">' . "\n";
+            echo '<a class="toc-btn" href="' . get_permalink($wp_page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
+            echo '</div>' . "\n";
         }
     }
     else
     {
         /*: drop down menu :*/
         echo '<div class="fx:area-ct-' . mnu_align() . '">' . "\n";
-        echo '<div class="fx::area-itm-' . mnu_align() . ' fx:mnu-' . mnu_width() . '">' . "\n";
+        echo '<div class="fx:area-itm-' . mnu_align() . ' fx:mnu-' . mnu_width() . '">' . "\n";
         echo '<nav role="navigation" id="nav">' . "\n";
         echo '<input class="trigger" type="checkbox" id="mainNavButton">' . "\n";
         echo '<label for="mainNavButton" onclick><i class="material-icons vert:align-bottom">menu</i></label>' . "\n";
