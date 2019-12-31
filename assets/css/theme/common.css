@@ -9,7 +9,7 @@
  * Function:        xidipity common CSS definitions
  * File Name:       assets/css/theme/common.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91220.1a
+ * Build:           91231.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -424,9 +424,11 @@ dd {
 **/
 table {
     background-color: transparent;
-    border-collapse: collapse;
+    border-color: transparent
+    /* border-collapse: collapse;
     border-spacing: 0;
     border-style: hidden;
+	border-color: transparent;  */
     margin: 1rem 0;
     table-layout: auto;
 }
@@ -461,7 +463,7 @@ table td:not(:last-child) {
 
 /*  # table (no borders)
     # 91211.1a
-    # hide but preserve table width borders
+    # hide but preserve table with borders
     # https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
 **/
 tr.no-border,
@@ -470,6 +472,39 @@ table.no-border,
 table.no-border tr,
 table.no-border tr td {
     border-color: transparent !important;
+}
+
+/*  # table (classic)
+    # 91231.1a
+    # table with borders
+    # https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+**/
+tr.classic,
+td.classic,
+table.classic,
+table.classic tr,
+table.classic tr td {
+    border: 1px solid var(--fg-bas-300);
+}
+
+/*  # table (pinstripe)
+    # 91231.1a
+    # table with alternate rows tinted
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+**/
+table.highlight tr:active,
+table.highlight tr:focus,
+table.highlight tr:hover {
+    background-color: var(--bg-tint-dark);
+}
+
+/*  # table (pinstripe)
+    # 91231.1a
+    # table with alternate rows tinted
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+**/
+table.pinstripe tr:nth-child(even) {
+    background-color: var(--bg-tint-dark);
 }
 
 /*  # <h1>–<h6>
