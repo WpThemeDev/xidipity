@@ -10,8 +10,8 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91220.1a
- * Revision:        2
+ * Build:           191231.1a
+ * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  *                  https://developer.wordpress.org/themes/basics/theme-functions/
@@ -951,8 +951,8 @@ require get_template_directory() . '/inc/template-tags.php';
 //require get_template_directory() . '/inc/customizer.php';
 /**
  * Short code additions.
- */
 require get_template_directory() . '/inc/shortcodes.php';
+ */
 /**
  *  Tinymce Plugins
  *
