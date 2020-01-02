@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   footer.php
- *  build:  90927.1b
+ *  build:  200107.1a
  *  descrp: Display site footer
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -17,17 +17,17 @@ echo '<!-- xwpt: flexbox/page/container/item-5    -->' . "\n";
 /*
     footer management
 */
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<footer class="fx:pg-ct-itm-sbl fnt:size-smaller">' . "\n";
-    echo '<div class="fx:area-ct-' . ftr_align() . ' mar:vert-0.75">' . "\n";
-    echo '<div class="fx:area-itm-' . ftr_align() .  '">' . "\n";
+    echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert-0.75">' . "\n";
+    echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
 }
 else
 {
     echo '<footer class="fx:pg-ct-itm-sbr fnt:size-smaller">' . "\n";
-    echo '<div class="fx:area-ct-' . ftr_align() . ' mar:vert-0.75">' . "\n";
-    echo '<div class="fx:area-itm-' . ftr_align() .  '">' . "\n";
+    echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert-0.75">' . "\n";
+    echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
 }
 echo '<p>' . blog_copyright() . '</p>';
 echo '<p><a href="' . get_site_url() . '">Xidipity Theme</a> &sdot; Powered by <a href="https://wordpress.org">WordPress</a>';
