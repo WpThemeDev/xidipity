@@ -10,7 +10,7 @@
  * Function:        xidipity functions definitions
  * File Name:       functions.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           191231.1a
+ * Build:           200102.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -19,7 +19,7 @@
  */
 /**
  *  name: theme_cfg
- *  build: 90915.1b
+ *  build: 190915.1b
  *  description: set global configuration defaults
  *
  */
@@ -38,10 +38,10 @@ function theme_cfg() {
                 switch ($cfg_key)
                 {
                     case 'fa-version':
-                        update_option('xwt_fa_ver',$cfg_val);
+                        define("XWT_FA_VER", $cfg_val);
                         break;
                     case 'hdr-height':
-                        update_option('xwt_hdr_hgt',$cfg_val);
+                        define("XWT_HDR_HGT", $cfg_val);
                         break;
                     case 'hdr-image':
                         $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
@@ -49,7 +49,7 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-                        update_option('xwt_hdr_img',$cfg_val);
+                        define("XWT_HDR_IMG", $cfg_val);
                         break;
                     case 'hdr-logo':
                         $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
@@ -57,21 +57,21 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-                        update_option('xwt_hdr_logo',$cfg_val);
+                        define("XWT_HDR_LOGO", $cfg_val);
                         break;
                     case 'hdr-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        update_option('xwt_hdr_align',$cfg_val);
+                        define("XWT_HDR_ALIGN", $cfg_val);
                         break;
                     case 'ftr-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        update_option('xwt_ftr_align',$cfg_val);
+                        define("XWT_FTR_ALIGN", $cfg_val);
                         break;
                     case 'mnu-display':
                         if (!has_match('no/yes',$cfg_val))
@@ -85,14 +85,14 @@ function theme_cfg() {
                         {
                             $cfg_val = '100%';
                         }
-                        update_option('xwt_menu_width',$cfg_val);
+                        define("XWT_MENU_WIDTH", $cfg_val);
                         break;
                     case 'mnu-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        update_option('xwt_mnu_align',$cfg_val);
+                        define("XWT_MNU_ALIGN", $cfg_val);
                         break;
                     case 'sb-display':
                         if (!has_match('no/yes',$cfg_val))
@@ -106,14 +106,14 @@ function theme_cfg() {
                         {
                             $cfg_val = 'right';
                         }
-                        update_option('xwt_sidebar_align',$cfg_val);
+                        define("XWT_SIDEBAR_ALIGN", $cfg_val);
                         break;
                     case 'emoji-display':
                         if (!has_match('no/yes',$cfg_val))
                         {
                             $cfg_val = 'yes';
                         }
-                        update_option('xwt_emoji_dsp',$cfg_val);
+                        define("XWT_EMOJI_DSP", $cfg_val);
                         break;
                 }
             }
@@ -122,98 +122,8 @@ function theme_cfg() {
     return;
 }
 /**
- *  name: fa_ver
- *  build: 90915.1b
- *  description: get font awesome version
- */
-function fa_ver()
-{
-    /*: return db value :*/
-    return get_option('xwt_fa_ver');
-}
-/**
- *  name: hdr_hgt
- *  build: 90925.1a
- *  description: get page header height
- */
-function hdr_hgt()
-{
-    /*: return db value :*/
-    return get_option('xwt_hdr_hgt');
-}
-/**
- *  name: hdr_img
- *  build: 90925.1a
- *  description: get page header image
- */
-function hdr_img()
-{
-    /*: return db value :*/
-    return get_option('xwt_hdr_img');
-}
-/**
- *  name: hdr_logo
- *  build: 90925.1a
- *  description: get page header logo
- */
-function hdr_logo()
-{
-    /*: return db value :*/
-    return get_option('xwt_hdr_logo');
-}
-/**
- *  name: hdr_align
- *  build: 90925.1a
- *  description: get page header alignment
- */
-function hdr_align()
-{
-    /*: return db value :*/
-    return get_option('xwt_hdr_align');
-}
-/**
- *  name: ftr_align
- *  build: 90925.1a
- *  description: get page footer alignment
- */
-function ftr_align()
-{
-    /*: return db value :*/
-    return get_option('xwt_ftr_align');
-}
-/**
- *  name: mnu_width
- *  build: 90920.1a
- *  description: get menu width
- */
-function mnu_width()
-{
-    /*: return db value :*/
-    return get_option('xwt_menu_width');
-}
-/**
- *  name: emoji_dsp
- *  build: 90929.1a
- *  description: get emoji display option
- */
-function emoji_dsp()
-{
-    /*: return db value :*/
-    return get_option('xwt_emoji_dsp');
-}
-/**
- *  name: mnu_align
- *  build: 90920.1a
- *  description: get menu alignment
- */
-function mnu_align()
-{
-    /*: return db value :*/
-    return get_option('xwt_mnu_align');
-}
-/**
  *  name: disp_menu
- *  build: 90915.1b
+ *  build: 190915.1b
  *  description: set / get display menu flag
  *  attributes:
  *      $attr - string
@@ -261,7 +171,7 @@ function disp_menu($attr='')
 }
 /**
  *  name: disp_sidebar
- *  build: 90915.1b
+ *  build: 190915.1b
  *  description: set / get display sidebar flag
  *  attributes:
  *      $attr - string
@@ -308,45 +218,8 @@ function disp_sidebar($attr='')
     return $fn_val;
 }
 /**
- *  name: align_sidebar
- *  build: 90915.1b
- *  description: set / get sidebar alignment flag
- *  attributes:
- *      $attr - string
- *
- */
-function align_sidebar($attr='')
-{
-    $fn_val = '';
-    /*: get value :*/
-    $db_val = get_option('xwt_sidebar_align');
-    if (empty($attr))
-    {
-        if (empty($db_val))
-        {
-            /*: set default :*/
-            update_option('xwt_sidebar_align','right');
-            $fn_val = 'right';
-        }
-        else
-        {
-            /*: get value :*/
-            $fn_val = $db_val;
-        }
-    }
-    else
-    {
-        $db_val = strtolower($attr);
-        if (has_match('left,right',$db_val)) {
-            /*: set value :*/
-            update_option('xwt_sidebar_align',$db_val);
-        }
-    }
-    return $fn_val;
-}
-/**
  *  name: err_msg
- *  build: 90901.1a
+ *  build: 190901.1a
  *  description: set / get error message
  *  attributes:
  *      $attr - string
@@ -374,7 +247,7 @@ function err_msg($attr='')
 }
 /**
  *  name: has_match
- *  build: 90915.1b
+ *  build: 190915.1b
  *  description: is needle in haystack
  *  attributes:
  *      $haystack - string
@@ -402,7 +275,7 @@ function has_match($haystack='', $needle='')
 }
 /**
  *  name: strwrap
- *  build: 90915.1b
+ *  build: 190915.1b
  *  description: add chr(s) to beginning & end of string
  *  attributes:
  *      $str - string
@@ -430,7 +303,7 @@ function strwrap( $str='', $first='', $last='' )
 }
 /**
  *  name: blog_copyright
- *  build: 90925.1a
+ *  build: 190925.1a
  *  description: return copyright
  *  url: https://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
@@ -460,7 +333,7 @@ function blog_copyright() {
 }
 /**
  *  name: c_walker
- *  build: 90728.1
+ *  build: 190728.1
  *  description: category walker extension to support font awesome icons
  *  functions:
  *      $atts - array
@@ -493,7 +366,7 @@ class c_walker extends Walker
 }
 /**
  *  name: p_walker
- *  build: 90728.1
+ *  build: 190728.1
  *  description: page list walker extension to support font awesome icons
  *  functions:
  *      $args - array
@@ -800,7 +673,7 @@ if (!function_exists('xidipity_setup')):
         $ed_css4 = '/assets/css/theme/common.css';
         $ed_css5 = '/assets/css/theme/advance.css';
         $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-        $ed_css7 = 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css';
+        $ed_css7 = 'https://use.fontawesome.com/releases/v' . XWT_FA_VER . '/css/all.css';
         $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
         $ed_css9 = '/assets/css/theme/editor.css';
         $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
@@ -822,7 +695,7 @@ if (!function_exists('xidipity_setup')):
         )));
         /**
          *  name: customization
-         *  build: 90925.1a
+         *  build: 190925.1a
          *  description: remove customization menubar option
          */
         add_action( 'admin_bar_menu', 'remove_some_nodes_from_admin_top_bar_menu', 999 );
@@ -831,13 +704,13 @@ if (!function_exists('xidipity_setup')):
         }
         /**
          *  name: configuration
-         *  build: 90925.1a
+         *  build: 190925.1a
          *  description: read configuration file
          */
         theme_cfg();
         /**
          *  name: emoji_dsp
-         *  build: 90929.1a
+         *  build: 190929.1a
          *  description: disable emoji prefetch
          */
         if (emoji_dsp() == 'no')
@@ -903,7 +776,7 @@ function xidipity_scripts()
         ->get('Version') , 'all');
     /*: fontawesome css :*/
     // version set @ fa_ver
-    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . fa_ver() . '/css/all.css', array() , fa_ver(), 'all');
+    wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . XWT_FA_VER . '/css/all.css', array() , XWT_FA_VER, 'all');
     /*: google material design icons :*/
     wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
         ->get('Version') , 'all');
@@ -1685,8 +1558,34 @@ function remove_default_category_description()
     }
 }
 /**
+ *  name: dsp_rm
+ *  build: 191231.1a
+ *  description: Return properly formatted read more HTML string
+ *  attributes:
+ *      $att - string
+ *  ref:
+ *
+ */
+function dsp_rm($att = '')
+{
+    // system
+    $fn_retval = '';
+    // atributes
+    $v_html = trim($att);
+    if (empty($v_html))
+    {
+        $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik02LDRIMTFWMTJMOC41LDEwLjVMNiwxMk0xOCwySDZBMiwyIDAgMCwwIDQsNFYyMEEyLDIgMCAwLDAgNiwyMkgxOEEyLDIgMCAwLDAgMjAsMjBWNEEyLDIgMCAwLDAgMTgsMloiIHN0eWxlPSJmaWxsOiByZ2IoMTU4LCAxNTgsIDE1OCk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" />No additional information</p>';
+    } 
+    else
+    {
+        $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" /><a href="' . $v_html . '">Read more &hellip;</a></p>';
+    }
+    // return html
+    return $fn_retval;
+}
+/**
  *  name: dsp_err
- *  build: 91108.1a
+ *  build: 191108.1a
  *  description: Return properly formatted error message
  *  attributes:
  *      $att - string
@@ -1715,7 +1614,7 @@ function dsp_err($att = '')
 }
 /**
  *  name: val_cat
- *  build: 90728.1
+ *  build: 190728.1
  *  description: Validate one or more wordpress categories
  *  attributes:
  *      $att_list - array
@@ -1769,7 +1668,7 @@ function val_cat($att_list, $att_opt)
 }
 /**
  *  name: val_orby
- *  build: 90728.1
+ *  build: 190728.1
  *  description: Validate orderby database argument
  *  attributes:
  *      $att - string
@@ -1807,7 +1706,7 @@ function val_orby($att)
 }
 /**
  *  name: tpl_prg
- *  build: 91101.1
+ *  build: 191101.1
  *  description: Purge template default values (#?#)
  *  attributes:
  *      $att - string
@@ -1833,7 +1732,7 @@ function tpl_prg($att='')
 }
 /**
  *  name: get_image_sizes
- *  build: 90728.1
+ *  build: 190728.1
  *  description: return reg image demensions
  *
  */
