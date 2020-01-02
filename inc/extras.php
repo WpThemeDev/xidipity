@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   inc/extras.php
- *  build:  191231.1a
+ *  build:  200102.1a
  *  descrp: Custom functions that act independently of the theme templates
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -477,7 +477,6 @@ function bexc_shortcode($atts = array() , $prms = '')
     $v_meta_link_rm = '';
     $v_meta_list_byline = '';
     $v_meta_list_cat = '';
-    $v_meta_list_rm = '';
     $v_order = 'DESC';
     $v_orderby = '';
     $v_paged = 'n';
@@ -617,7 +616,6 @@ function bexc_shortcode($atts = array() , $prms = '')
             }
             /*: read more :*/
             $v_meta_link_rm = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-            $v_meta_list_rm = '<!-- xwpt: 91108.1a/tmpl/readmore           --><div class="dsp:inline-block mar:vert-0.5"><span class="fg:sec-200 fnt:size-larger pad:right-0.5"><i class="fas fa-book-reader">&#x200B;</i></span><a href="' . $v_meta_link_rm . '">Read more &hellip;</a></div><!-- /xwpt: 91108.1a/tmpl/readmore          -->';
             /*: image :*/
             $v_img_exists = has_post_thumbnail(get_the_ID());
             $wp_html_img_url = get_the_post_thumbnail_url($post->ID, 'full');
@@ -641,7 +639,7 @@ function bexc_shortcode($atts = array() , $prms = '')
                 $html_retval .= '</header>';
                 $html_retval .= $v_meta_list_byline;
                 $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= $v_meta_list_rm;
+                $html_retval .= dsp_rm($v_meta_link_rm);
                 $html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
@@ -658,7 +656,7 @@ function bexc_shortcode($atts = array() , $prms = '')
                 $html_retval .= '</header>';
                 $html_retval .= $v_meta_list_byline;
                 $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= $v_meta_list_rm;
+                $html_retval .= dsp_rm($v_meta_link_rm);
                 $html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
@@ -675,7 +673,7 @@ function bexc_shortcode($atts = array() , $prms = '')
                 $html_retval .= '</header>';
                 $html_retval .= $v_meta_list_byline;
                 $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= $v_meta_list_rm;
+                $html_retval .= dsp_rm($v_meta_link_rm);
                 $html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
@@ -1333,7 +1331,7 @@ function get_pg_title_shortcode()
 add_shortcode('x_fa_ver', 'x_fa_ver_shortcode');
 function x_fa_ver_shortcode()
 {
-    return fa_ver();
+    return XWT_FA_VER;
 }
 
 /*  # x_wp_ver
