@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   template-tags.php
- *  build:  90915.1a
+ *  build:  200102.1a
  *  descrp: Core WordPress extensions
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -389,7 +389,7 @@ if (!function_exists('xidipity_posted_by'))
         // We need to get author meta data from both inside/outside the loop.
         $post_author_id = get_post_field('post_author', $post->ID);
         // Byline
-        $byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
+        $byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" style="max-height:68px;max-width:68px;" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
         // Posted By HTML
         $html = '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
         
