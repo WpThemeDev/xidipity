@@ -713,7 +713,7 @@ if (!function_exists('xidipity_setup')):
          *  build: 190929.1a
          *  description: disable emoji prefetch
          */
-        if (emoji_dsp() == 'no')
+        if (XWT_EMOJI_DSP == 'no')
         {
             add_filter( 'emoji_svg_url', '__return_false' );
         }
