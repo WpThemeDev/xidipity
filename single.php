@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   single.php
- *  build:  90927.1a
+ *  build:  200102.1a
  *  descrp: Single post template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -33,7 +33,7 @@ $v_pages = 0;
 get_header();
 echo '<!-- xwpt: 90927.1a/single/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
 }
