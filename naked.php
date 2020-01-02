@@ -52,7 +52,7 @@ if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
         echo '<!-- xwpt: 90915.1a/content-page/php        -->' . "\n";
-        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
+        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow mar:right-0.5">' . "\n";
         /*
         content title
         */
