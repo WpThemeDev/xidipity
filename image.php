@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   image.php
- *  build:  90920.1d
+ *  build:  200102.1a
  *  descrp: Display media library image
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -33,7 +33,7 @@ $v_title = '';
 get_header();
 echo '<!-- xwpt: 90920.1d/image/php               -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
 }
