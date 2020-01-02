@@ -9,7 +9,7 @@
  * Function:        xidipity web CSS definitions
  * File Name:       assets/css/theme/web.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           191231.1a
+ * Build:           200102.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -174,13 +174,20 @@ body {
     background-color: transparent;
 }
 
-com\:title {
+/*  # comments
+    # 200102.1a
+    # wordpress core functionality
+    # https://developer.wordpress.org/reference/functions/comment_form/
+**/
+
+/*: comments title :*/
+
+.comments-title {
     color: var(--fg-bas-700);
-    font-size: var(--h4-size);
-    font-weight: var(--h4-weight);
-    margin: 0;
-    padding: 0;
 }
+
+
+/*: comments list :*/
 
 ol.comment-list li {
     margin-top: 14px;
@@ -188,14 +195,14 @@ ol.comment-list li {
 
 ol.comment-list li::before {
     color: var(--fg-pri-600);
-    content: "Comment: "counter(comment);
+    content: "Comment: " counter(comment);
     font-size: var(--h5-size);
     font-family: var(--font-sans);
     font-weight: var(--h5-weight);
     counter-increment: comment;
-    maring-left: 0;
+    margin-left: 0;
     text-align: left;
-    width: 6.25rem;
+    width: 6.25em;
 }
 
 .comment-list {
@@ -208,25 +215,31 @@ ol.comment-list li::before {
     list-style: none;
 }
 
-.comment-list > li > .children .comment-body,
-.comment-list > li > .comment-body {
+
+/*: comments body :*/
+
+.comment-list>li>.comment-body,
+.comment-list>li>.children .comment-body {
     border-top: 1px solid var(--fg-bas-400);
     margin: 15px 0 0;
     padding-top: 15px;
     position: relative;
 }
 
-.comment-list > li:first-child:not(.bypostauthor) > .comment-body {
+.comment-list>li:first-child:not(.bypostauthor)>.comment-body {
     border-top: none;
     margin-top: 0;
     padding-top: 0;
 }
 
-.comment-list .bypostauthor > .comment-body {
+.comment-list .bypostauthor>.comment-body {
     background: var(--bg-bas-100);
     border-bottom: 3px solid var(--fg-sec-500);
     padding: 15px;
 }
+
+
+/*: comments avatar :*/
 
 .comment-list .comment-author .avatar {
     border: 1px solid var(--fg-bas-400);
@@ -245,14 +258,22 @@ ol.comment-list li::before {
     height: 68px;
 }
 
+.comment-author img {
+    max-width: 68px !important;
+    max-height: 68px !important;
+}
+
 .comment-list .children .comment-author .avatar {
     height: 50px;
     width: 50px;
 }
 
+
+/*: comments meta :*/
+
 .comment-list .comment-meta {
     font-size: 12px;
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin-bottom: 15px;
 }
 
@@ -263,7 +284,7 @@ ol.comment-list li::before {
 
 .comment-list .reply {
     font-size: 12px;
-    font-size: .75rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }
 
@@ -271,19 +292,17 @@ ol.comment-list li::before {
     font-weight: 900;
 }
 
-/* deprecated
 .comment-list .comment-author .fn a,
 .comment-list .comment-author .fn a:visited {
     color: var(--fg-bas-600);
 }
 
-.comment-list .comment-author .fn a:active,
+.comment-list .comment-author .fn a:hover,
 .comment-list .comment-author .fn a:focus,
-.comment-list .comment-author .fn a:hover {
+.comment-list .comment-author .fn a:active {
     color: var(--sys-lnk-sec-color);
     background-color: var(--sys-lnk-sec-bg-color);
 }
-*/
 
 .comment-list .says {
     display: none;
@@ -298,9 +317,14 @@ ol.comment-list li::before {
     margin-top: 10px;
 }
 
+/*: comments form :*/
+
 #respond {
-    background-color: var(--content-bg-color);
+    background-color: var(--sys-content-bg-color);
     background-color: transparent;
+    /*border: solid var(--fg-bas-300);
+    border-width: 0 1px 1px 0;
+    margin: 15px 0 0;*/
     padding: 15px;
 }
 
@@ -320,10 +344,11 @@ ol.comment-list li::before {
 }
 
 #respond .comment-notes,
+#respond .logged-in-as,
 #respond .form-allowed-tags,
-#respond .form-allowed-tags code,
-#respond .logged-in-as {
-    font-size: .875rem;
+#respond .form-allowed-tags code {
+    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 #respond .comment-form label {
@@ -341,7 +366,7 @@ ol.comment-list li::before {
 #respond #cancel-comment-reply-link {
     color: var(--fg-pri-900);
     font-size: 12px;
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin: 0;
     padding: 10px;
     position: absolute;
@@ -350,36 +375,52 @@ ol.comment-list li::before {
     right: 0;
 }
 
+/*: comments form/button :*/
+
+#submit {
+    background-color: transparent;
+    border: 1px solid var(--fg-bas-400);
+    border-radius: 0.25rem;
+    color: black;
+    cursor:pointer;
+    line-height: 3;
+    margin-top: 0.25rem;
+    padding: 0 0.75rem;
+}
+
+#submit:hover {
+    background-color: var(--bg-tint);
+    border: 1px solid var(--fg-bas-500);
+}
+
+#submit:focus,
+#submit:active {
+    background-color: var(--bg-tint-dark);
+    border: 1px solid var(--fg-bas-600);
+}
+
+/*: comments subscription :*/
+
 .comment-subscription-form {
     font-size: 15px;
-    font-size: .9375rem;
+    font-size: 0.9375rem;
     line-height: 1.4;
     margin: 30px 0 0;
     padding: 0;
 }
 
-.comment-subscription-form + .comment-subscription-form {
+.comment-subscription-form+.comment-subscription-form {
     margin: 8px 0 0;
 }
 
 .akismet_comment_form_privacy_notice {
-    font-size: .875rem;
+    font-size: 0.875rem;
     text-align: center;
 }
 
 .updated:not(.published) {
     display: none;
 }
-
-/* deprecated
-.youtube-embed {
-    background-color: var(--bg-bas-800);
-    border-radius: .25rem;
-    padding-bottom: 56.25%;
-    position: relative;
-    width: 100%;
-}
-*/
 
 /*  # video-responsive
     # 91108.1a
