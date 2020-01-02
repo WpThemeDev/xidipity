@@ -10,7 +10,7 @@
  * Function:        display blog excerpts
  * File Name:       index.php
  * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91108.1a
+ * Build:           200102.1a
  * Revision:        1
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -55,7 +55,7 @@ $v_cur_page = $wp_paged;
 get_header();
 echo '<!-- xwpt: 90920.1d/index/php               -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
 }
@@ -128,9 +128,7 @@ if (have_posts())
             readmore
         */
         $v_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-        $v_meta_list = '<!-- xwpt: 91108.1a/tmpl/readmore           --><div class="dsp:inline-block mar:vert-0.5"><span class="fg:sec-200 fnt:size-larger pad:right-0.5"><i class="fas fa-book-reader">&#x200B;</i></span><a href="' . $v_link . '">Read more &hellip;</a></div><!-- /xwpt: 91108.1a/tmpl/readmore          -->';
-        echo $v_meta_list;
-        echo '<p>&nbsp;</p>' . "\n";
+        echo dsp_rm($v_link);
         echo '</div>' . "\n";
         echo '</article>' . "\n";
         echo '<!-- /xwpt: 90920.1d/content/blog/php       -->' . "\n";
