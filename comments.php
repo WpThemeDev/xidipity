@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   comments.php
- *  build:  90927.1a
+ *  build:  200102.1a
  *  descrp: comment template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -24,8 +24,8 @@ echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
 echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow prt(dsp:none)">' . "\n";
 
 if (have_comments()):
-    echo '<div class="fx:ct-itm-opt">' . "\n";
-    echo '<h2 class="com:title">' . "\n";
+    echo '<div class="fx:ct-itm-opt mar:horz-1">' . "\n";
+    echo '<h3 class="comments-title">' . "\n";
     $comments_number = get_comments_number();
     if ('1' === $comments_number) {
         /*
@@ -42,7 +42,7 @@ if (have_comments()):
         esc_html(_nx('%1$s Comment to &ldquo;%2$s&rdquo;', '%1$s Comments to &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'xidipity')) , number_format_i18n($comments_number) , get_the_title());
     }
 
-    echo '</h2>' . "\n";
+    echo '</h3>' . "\n";
     if (get_comment_pages_count() > 1 && get_option('page_comments')):
         echo '<nav id="comment-nav-above" class="navigation comment-navigation comment-navigation-above" role="navigation">' . "\n";
         echo '<h1 class="screen-reader-text">' . esc_html_e('Comment navigation', 'xidipity') . '</h1>' . "\n";
@@ -81,7 +81,7 @@ endif;
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments')):
     echo '<div class="com:msg">' . "\n";
-    echo '<p>' . __('<i class="far fa-comment-alt fg-pri-400 pad:right-0.5"></i>Comments are closed.', 'xidipity') . '</p>' . "\n";
+    echo '<p>' . __('<i class="far fa-comment-alt fg:pri-400 pad:right-0.5"></i>Comments are closed.', 'xidipity') . '</p>' . "\n";
     echo '</div>' . "\n";
 endif;
 /*
@@ -89,12 +89,13 @@ endif;
 */
 echo '<div class="pad:all-1">' . "\n";
 comment_form(array(
-    'title_reply'=>'<i class="far fa-comments fg-pri-300 pad:right-0.5"></i>Got Something To Say?',
+    'title_reply'=>'<i class="far fa-comments fg:sec-300 pad:right-0.5"></i>Got Something To Say?',
     'logged_in_as' =>''
     ) );
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 90927.1a/comments/php           -->' . "\n";
+echo '</div>' . "\n";
 /*
     eof: comments.php
 */
