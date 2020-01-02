@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   search.php
- *  build:  90920.1d
+ *  build:  200102.1a
  *  descrp: Display archive excerpts
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -38,7 +38,7 @@ $v_cur_page = $wp_paged;
 get_header();
 echo '<!-- xwpt: 90920.1d/search/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
 }
