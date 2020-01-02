@@ -10,7 +10,7 @@
  * File Name:       assets/css/theme/web.css
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * Build:           200102.1a
- * Revision:        1
+ * Revision:        2
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  */
@@ -1328,6 +1328,8 @@ a.page-numbers:focus {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 /*: (footer) page container item :*/
