@@ -3,7 +3,7 @@
  *  Xidipity WordPress Theme
  *
  *  file:   author.php
- *  build:  90927.1a
+ *  build:  200102.1a
  *  descrp: author template
  *  ref:    https://github.com/WpThemeDev/xidipity
  *
@@ -36,7 +36,7 @@ if ($v_img_width == 0)
 get_header();
 echo '<!-- xwpt: 90927.1a/author/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
-if (align_sidebar() == 'left')
+if (XWT_SIDEBAR_ALIGN == 'left')
 {
     echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
 }
