@@ -1,19 +1,23 @@
 <?php
 /*
- *  Template Name: Naked
+ * WordPress Xidipity Theme PHP File
  *
- *  Xidipity WordPress Theme
+ * File Name:       naked.php
+ * Function:        display page without menu & sidebar
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  file:   naked.php
- *  build:  200102.1a
- *  descrp: Page template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
- *
-**/
+ */
+
 /*
     set page options
 */
@@ -52,7 +56,7 @@ if ($wp_query->have_posts()) {
     while ($wp_query->have_posts()) {
         the_post();
         echo '<!-- xwpt: 90915.1a/content-page/php        -->' . "\n";
-        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow mar:right-0.5">' . "\n";
+        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow mar:right-0.25 sm)mar:right-0.5">' . "\n";
         /*
         content title
         */
@@ -129,7 +133,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: naked.php
-*/
+ * EOF:     naked.php
+ * Build:   200104-1
+ *
+ */
 ?>
