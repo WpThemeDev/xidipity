@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   archive.php
- *  build:  200102.1a
- *  descrp: Display archive excerpts
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       archive.php
+ * Function:        display pages assigned to archive category
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- ****/
+ */
+
 /*
     set page options
 */
@@ -157,7 +163,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: archive.php
-*/
+ * EOF:     archive.php
+ * Build:   200104-1
+ *
+ */
 ?>
