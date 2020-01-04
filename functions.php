@@ -1,22 +1,32 @@
 <?php
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity Theme PHP File
+ *
+ * File Name:       functions.php
+ * Function:        xidipity functions definitions
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- *
- * Function:        xidipity functions definitions
- * File Name:       functions.php
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           200102.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://developer.wordpress.org/themes/basics/theme-functions/
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
  */
+
+/**
+ *  global variables
+ *  build: 200104-1
+ *
+ */
+
+$global_dsp_menu = '';
+$global_dsp_sidebar = '';
+
 /**
  *  name: theme_cfg
  *  build: 190915.1b
@@ -38,10 +48,10 @@ function theme_cfg() {
                 switch ($cfg_key)
                 {
                     case 'fa-version':
-                        define("XWT_FA_VER", $cfg_val);
+                        define('XWT_FA_VER', $cfg_val);
                         break;
                     case 'hdr-height':
-                        define("XWT_HDR_HGT", $cfg_val);
+                        define('XWT_HDR_HGT', $cfg_val);
                         break;
                     case 'hdr-image':
                         $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
@@ -73,13 +83,6 @@ function theme_cfg() {
                         }
                         define("XWT_FTR_ALIGN", $cfg_val);
                         break;
-                    case 'mnu-display':
-                        if (!has_match('no/yes',$cfg_val))
-                        {
-                            $cfg_val = 'yes';
-                        }
-                        update_option('xwt_menu_disp',$cfg_val);
-                        break;
                     case 'mnu-width':
                         if (!has_match('70%/75%/80%/85%/90%/95%/100%',$cfg_val))
                         {
@@ -99,7 +102,7 @@ function theme_cfg() {
                         {
                             $cfg_val = 'yes';
                         }
-                        update_option('xwt_sidebar_disp',$cfg_val);
+                        //update_option('xwt_sidebar_disp',$cfg_val);
                         break;
                     case 'sb-align':
                         if (!has_match('left/right',$cfg_val))
@@ -119,6 +122,14 @@ function theme_cfg() {
             }
         }
     }
+    /**
+     *  theme needs to work even if the
+     *  xidipity-cfg.txt file is missing
+     *
+     */
+    if (!defined('XWT_FA_VER')) {
+        define('XWT_FA_VER', '5.12.0');
+    }
     return;
 }
 /**
@@ -131,41 +142,33 @@ function theme_cfg() {
  */
 function disp_menu($attr='')
 {
-    $fn_val = '';
-    /*: get value :*/
-    $db_val = get_option('xwt_menu_disp');
-    if (empty($attr))
+    $fn_val = 'yes';
+	$v_attr = trim($attr);
+    if (empty($v_attr))
     {
-        if (empty($db_val))
-        {
-            /*: set default :*/
-            update_option('xwt_menu_disp','yes');
-            $fn_val = 'yes';
-        }
-        elseif ($db_val == 'dftno')
-        {
-            /*: default override :*/
-            $fn_val = 'no';
-        }
-        elseif ($db_val == 'dftyes')
-        {
-            /*: default override :*/
-            $fn_val = 'yes';
-        }
-        else
-        {
-            /*: get value :*/
-            $fn_val = $db_val;
-        }
+	    /*: get value :*/
+        if (empty($GLOBALS['$global_dsp_menu']))
+		{
+            /*: set default value :*/
+            $GLOBALS['$global_dsp_menu'] = 'yes';
+		}
+        /*: return value :*/
+        $fn_val = $GLOBALS['$global_dsp_menu'];
     }
     else
     {
-        $db_val = strtolower($attr);
-        if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
+		$v_attr = strtolower($v_attr);
+        if (has_match('no,yes',$v_attr))
         {
             /*: set value :*/
-            update_option('xwt_menu_disp',$db_val);
+            $GLOBALS['$global_dsp_menu'] = $v_attr;
         }
+		else
+		{
+            /*: set default value :*/
+            $GLOBALS['$global_dsp_menu'] = 'yes';
+		}
+        $fn_val = $v_attr;
     }
     return $fn_val;
 }
@@ -179,41 +182,33 @@ function disp_menu($attr='')
  */
 function disp_sidebar($attr='')
 {
-    $fn_val = '';
-    /*: get value :*/
-    $db_val = get_option('xwt_sidebar_disp');
-    if (empty($attr))
+    $fn_val = 'yes';
+	$v_attr = trim($attr);
+    if (empty($v_attr))
     {
-        if (empty($db_val))
-        {
-            /*: set default :*/
-            update_option('xwt_sidebar_disp','yes');
-            $fn_val = 'yes';
-        }
-        elseif ($db_val == 'dftno')
-        {
-            /*: default override :*/
-            $fn_val = 'no';
-        }
-        elseif ($db_val == 'dftyes')
-        {
-            /*: default override :*/
-            $fn_val = 'yes';
-        }
-        else
-        {
-            /*: get value :*/
-            $fn_val = $db_val;
-        }
+	    /*: get value :*/
+        if (empty($GLOBALS['$global_dsp_sidebar']))
+		{
+            /*: set default value :*/
+            $GLOBALS['$global_dsp_sidebar'] = 'yes';
+		}
+        /*: return value :*/
+        $fn_val = $GLOBALS['$global_dsp_sidebar'];
     }
     else
     {
-        $db_val = strtolower($attr);
-        if (!has_match($db_val,'dft') && has_match('no,yes',$db_val))
+		$v_attr = strtolower($v_attr);
+        if (has_match('no,yes',$v_attr))
         {
             /*: set value :*/
-            update_option('xwt_sidebar_disp',$db_val);
+            $GLOBALS['$global_dsp_sidebar'] = $v_attr;
         }
+		else
+		{
+            /*: set default value :*/
+            $GLOBALS['$global_dsp_sidebar'] = 'yes';
+		}
+        $fn_val = $v_attr;
     }
     return $fn_val;
 }
@@ -661,6 +656,12 @@ if (!function_exists('xidipity_setup')):
         register_nav_menus(array(
             'primary' => esc_html__('Primary Menu', 'xidipity')
         ));
+        /**
+         *  name: configuration
+         *  build: 190925.1a
+         *  description: read configuration file
+         */
+        theme_cfg();
         /*
          * Registers an editor stylesheet for the theme.
          * https://developer.wordpress.org/reference/functions/add_editor_style/
@@ -702,12 +703,6 @@ if (!function_exists('xidipity_setup')):
         function remove_some_nodes_from_admin_top_bar_menu( $wp_admin_bar ) {
             $wp_admin_bar->remove_menu( 'customize' );
         }
-        /**
-         *  name: configuration
-         *  build: 190925.1a
-         *  description: read configuration file
-         */
-        theme_cfg();
         /**
          *  name: emoji_dsp
          *  build: 190929.1a
@@ -1777,7 +1772,9 @@ function get_image_sizes($size = '')
     }
     return $sizes;
 }
-/**
- *  eof: functions.php
+/*
+ * EOF:     functions.php
+ * Build:   200104-1
+ *
  */
 ?>
