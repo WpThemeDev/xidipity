@@ -1,20 +1,23 @@
 <?php
 /*
- *  Template Name: No-Sidebar
+ * WordPress Xidipity Theme PHP File
  *
- *  Xidipity WordPress Theme
+ * File Name:       no-sidebar.php
+ * Function:        display page without sidebar
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  file:   no-sidebar.php
- *  build:  91220.1a
- *  revision: 1
- *  descrp: Page template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
- *
-**/
+ */
+
 /*
     set page options
 */
@@ -123,7 +126,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: no-sidebar.php
-*/
+ * EOF:     no-sidebar.php
+ * Build:   200104-1
+ *
+ */
 ?>
