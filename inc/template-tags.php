@@ -1,18 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   template-tags.php
- *  build:  200102.1a
- *  descrp: Core WordPress extensions
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       inc/template-tags.php
+ * Function:        extended functinality
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://codex.wordpress.org/Template_Tags
  *
-**/
- 
+ */
+
 /*  # xidipity_icon_date
     # 90728.1
     # return date icon
@@ -515,7 +520,10 @@ function xidipity_has_excerpt()
      */
     return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
+
 /*
-    eof: template-tags.php
-*/
+ * EOF:     inc/template-tags.php
+ * Build:   200104-1
+ *
+ */
 ?>
