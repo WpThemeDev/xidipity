@@ -1,19 +1,23 @@
 <?php
 /*
- *  Template Name: No-Title
+ * WordPress Xidipity Theme PHP File
  *
- *  Xidipity WordPress Theme
+ * File Name:       no-title.php
+ * Function:        display page without page title
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  file:   no-title.php
- *  build:  200102.1a
- *  descrp: Page template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
- *
-**/
+ */
+
 /*
     set page options
 */
@@ -129,7 +133,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: no-title.php
-*/
+ * EOF:     no-title.php
+ * Build:   200104-1
+ *
+ */
 ?>
