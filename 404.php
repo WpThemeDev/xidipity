@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   content-page-404.php
- *  build:  90728.1
- *  descrp: 404 template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       404.php
+ * Function:        display 404 page
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
-**/
+ */
+
 /*
     system variables
 */
@@ -58,7 +64,7 @@ if ($wp_page) {
 If (!empty($wp_images))
 {
     foreach ($wp_images as $wp_image) {
-        $wp_img =  wp_get_attachment_image_src($wp_image->ID,'full');
+        $wp_img = wp_get_attachment_image_src($wp_image->ID,'full');
         echo '<img class="full-scr" src="' .$wp_img[0] . '" alt="' . $wp_title . ' 404 error"/>' . "\n";
     }
 }
@@ -82,7 +88,10 @@ else
 echo '<!-- /xwpt: 90728.1/404.php     -->' . "\n";
 echo '</body>' . "\n";
 echo '</html>' . "\n";
+
 /*
-    eof:404.php
-*/
+ * EOF:     404.php
+ * Build:   200104-1
+ *
+ */
 ?>
