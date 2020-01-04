@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   content-none.php
- *  build:  90915.1a
- *  descrp: content none
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       template-parts/content-none.php
+ * Function:        page content not found
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- **/
+ */
+
 /*
     system variables
 */
@@ -74,7 +80,10 @@ else
 echo '<!-- /xwpt: 90915.1a/content/none/php/err   -->';
 echo '</article>' . "\n";
 echo '<!-- /xwpt: 90915.1a/content/none/php       -->' . "\n";
+
 /*
-    eof: content-none.php
-*/
+ * EOF:     template-parts/content-none.php
+ * Build:   200104-1
+ *
+ */
 ?>
