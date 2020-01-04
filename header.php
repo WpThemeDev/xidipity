@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   header.php
- *  build:  200102.1a
- *  descrp: Header template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       header.php
+ * Function:        display page header
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- **/
+ */
+
 echo '<!doctype html>' . "\n";
 ?>
 <html <?php
@@ -138,11 +144,11 @@ if ( disp_menu() == 'no' )
 {
     if (XWT_SIDEBAR_ALIGN == 'left')
     {
-        echo '<div class="fx:pg-ct-itm-sbl disp:none">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbl dsp:none">' . "\n";
     }
     else
     {
-        echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbr dsp:none">' . "\n";
     }
 }
 else
@@ -201,7 +207,10 @@ if ($wp_menu || $wp_page)
 }
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 91001.1a/header/php/nav         -->' . "\n";
+
 /*
-    eof: header.php
-*/
+ * EOF:     header.php
+ * Build:   200104-1
+ *
+ */
 ?>
