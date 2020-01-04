@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   single.php
- *  build:  200102.1a
- *  descrp: Single post template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       single.php
+ * Function:        display blog post
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
-**/
+ */
+
 /*
     system variables
 */
@@ -188,7 +194,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: single.php
-*/
+ * EOF:     single.php
+ * Build:   200104-1
+ *
+ */
 ?>
