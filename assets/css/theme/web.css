@@ -1,17 +1,19 @@
 /*
- * WordPress Xidipity CSS File
+ * WordPress Xidipity Theme CSS File
+ *
+ * File Name:       theme/web.css
+ * Function:        CSS web elements
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- *
- * Function:        xidipity web CSS definitions
- * File Name:       assets/css/theme/web.css
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           200102.1a
- * Revision:        2
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
  */
 
@@ -1488,14 +1490,15 @@ a.page-numbers:focus {
 }
 
 /*  # sb-widget
-    # 90915.1a
+    # 200104.1a
     # flexbox sidebar widgets
+    # https://support.google.com/google-ads/answer/7031480?hl=en
 **/
 /*: sidebar / widget / ad :*/
 .fx\:sb-widget-ad {
 	margin-left: auto;
 	margin-right: auto;
-    width: 285px;
+    width: 250px;
 }
 
 /*: sidebar / widget / title :*/
@@ -2154,6 +2157,8 @@ figure {
     }
 }
 
-/**
- *  eof: theme/web.css
+/*
+ * EOF:     theme/web.css
+ * Build:   200104-1
+ *
  */
