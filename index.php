@@ -1,18 +1,20 @@
 <?php
 /*
- * WordPress Xidipity PHP File
+ * WordPress Xidipity Theme PHP File
+ *
+ * File Name:       index.php
+ * Function:        display blog excerpts
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- *
- * Function:        display blog excerpts
- * File Name:       index.php
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           200102.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
  */
 
@@ -167,7 +169,10 @@ wp_reset_postdata();
     display footer
 */
 get_footer();
+
 /*
-    eof: index.php
-*/
+ * EOF:     index.php
+ * Build:   200104-1
+ *
+ */
 ?>
