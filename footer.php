@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   footer.php
- *  build:  200107.1a
- *  descrp: Display site footer
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       footer.php
+ * Function:        display page footer
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
- ****/
+ */
+
 echo '<!-- xwpt: 90920.1d/footer/php              -->' . "\n";
 echo '<!-- xwpt: flexbox/page/container/item-5    -->' . "\n";
 /*
@@ -39,7 +45,10 @@ echo '<!-- /xwpt: 90920.1d/footer/php             -->' . "\n";
 wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
+
 /*
-    eof: footer.php
-*/
+ * EOF:     footer.php
+ * Build:   200104-1
+ *
+ */
 ?>
