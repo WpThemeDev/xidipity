@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   comments.php
- *  build:  200102.1a
- *  descrp: comment template
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       comments.php
+ * Function:        display comments
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
-**/
+ */
+
 /*
     login required
 */
@@ -96,7 +102,10 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 90927.1a/comments/php           -->' . "\n";
 echo '</div>' . "\n";
+
 /*
-    eof: comments.php
-*/
+ * EOF:     comments.php
+ * Build:   200104-1
+ *
+ */
 ?>
