@@ -1,17 +1,23 @@
 <?php
 /*
- *  Xidipity WordPress Theme
+ * WordPress Xidipity Theme PHP File
  *
- *  file:   sidebar.php
- *  build:  200102.1a
- *  descrp: sidebar (Flexbox column)
- *  ref:    https://github.com/WpThemeDev/xidipity
+ * File Name:       sidebar.php
+ * Function:        display sidebar
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.0
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
-**/
+ */
+
 /*
     get page options
 */
@@ -51,7 +57,10 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /xwpt: 90915.1a/sidebar/php            -->' . "\n";
+
 /*
-    eof: sidebar.php
-*/
+ * EOF:     sidebar.php
+ * Build:   200104-1
+ *
+ */
 ?>
