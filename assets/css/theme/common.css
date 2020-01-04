@@ -46,7 +46,1372 @@ var {
     font-size: .875rem;
 }
 
+kbd {/*
+ * WordPress Xidipity Theme CSS File
+ *
+ * File Name:       theme/common.css
+ * Function:        shared CSS elements
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
+ *
+ */
+
+/* Create counter named 'section' (initial value is 0) */
+body {
+  counter-reset: section;
+}
+ins,
+mark {
+    background-color: var(--bg-yellow);
+}
+
+del {
+    text-decoration: line-through;
+    text-decoration-color: var(--fg-red);
+}
+
+small {
+    font-size: smaller;
+}
+
+big {
+    font-size: larger;
+}
+
+code,
+kbd,
+samp,
+tt,
+var {
+    font-family: var(--font-mono);
+    font-size: .875rem;
+}
+
 kbd {
+    background-color: var(--fg-sec-700);
+    border-radius: .25rem;
+    color: var(--fg-wht);
+    font-size: smaller;
+    padding: 2px 4px;
+}
+
+/*  # <pre> element
+    # 90910.1a
+    # preformatted text which is to be presented exactly as written
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
+**/
+pre {
+    background: var(--bg-tint);
+    border: solid medium var(--fg-bas-300);
+    border-radius: 0.25rem;
+    color: var(--fg-bas-800);
+    font-family: var(--font-mono);
+    font-size: smaller;
+    font-weight: normal;
+    padding: 1rem;
+    overflow-x: auto;
+    width: 100%;
+}
+
+pre.wrap {
+    background: var(--bg-bas-050);
+    border: solid 1px var(--fg-bas-300);
+    border-radius: .25rem;
+    color: var(--fg-bas-800);
+    font-family: var(--font-mono);
+    font-size: smaller;
+    font-weight: normal;
+    padding: 1rem;
+    white-space: pre-wrap;
+    width: 100%;
+}
+
+/*  # thematic break
+    # 90910.1a
+    # element represents a thematic break between paragraph-level elements
+    # by default the width is 80% of available space
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+**/
+hr {
+    background-color: transparent;
+    border: 0;
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    margin: 0.75rem auto 0.8125rem auto;
+    width: 80%;
+}
+
+.line\:single {
+    background-color: transparent;
+    border: 0;
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    width: 10%;
+}
+
+hr.double {
+    background-color: transparent;
+    border: 0;
+    border-top-width: 0.0625rem;
+    border-top-style: solid;
+    border-top-color: var(--fg-bas-400);
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    height: 0.25rem;
+    margin: 0.625rem auto 0.6875rem auto;
+    width: 80%;
+}
+
+.line\:double {
+    background-color: transparent;
+    border: 0;
+    border-top-width: 0.0625rem;
+    border-top-style: solid;
+    border-top-color: var(--fg-bas-400);
+    border-bottom-width: 0.0625rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--fg-bas-400);
+    height: 0.25rem;
+    width: 10%;
+}
+
+hr.gradient {
+    background-image: -webkit-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
+    background-image: -webkit-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
+    background-image: -moz-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
+    background-image: -ms-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
+    background-image: -o-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
+    border: 0;
+    height: 0.0625rem;
+    margin: 0.75rem auto 0.8125rem auto;
+    width: 80%;
+}
+
+/* deprecated
+figure {
+    margin: 0;
+    padding: 0 0 8px 0;
+}
+*/
+
+/*: force figure to 100% to keep from crashing container :*/
+figure {
+    height: auto !important;
+    width: 100% !important;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+object,
+progress,
+video {
+    height: auto;
+    width: 100%;
+}
+
+/*  # <a> element
+    # 90910.1a
+    # anchor element creates a hyperlink to other web pages ...
+    # variables are defined in assets/css/media/screen.css
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+**/
+a,
+a:visited {
+    background-color: var(--dft-lnk-pri-bg-color);
+    color: var(--dft-lnk-pri-color);
+    font-weight: var(--dft-pri-lnk-wgt);
+    text-decoration: var(--dft-pri-lnk-decor);
+}
+
+a:active,
+a:focus,
+a:hover {
+    background-color: var(--dft-lnk-sec-bg-color);
+    color: var(--dft-lnk-sec-color);
+    font-weight: var(--dft-sec-lnk-wgt);
+    text-decoration: var(--dft-sec-lnk-decor);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*  # <ul> element
+    # 90910.1a
+    # unordered list of items with pre-defined bullets
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+**/
+ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+
+ul.circle,
+ul.circle ul:nth-of-type(1) {
+    list-style-type: circle;
+}
+
+ul.dash,
+ul.dash ul:nth-of-type(1) {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
+}
+
+ul.square,
+ul.square ul:nth-of-type(1) {
+    list-style-type: square;
+}
+
+ul.mixed {
+    list-style-type: disc;
+}
+
+ul.mixed ul {
+    list-style-type: circle;
+}
+
+ul.mixed ul ul {
+    list-style-type: square;
+}
+
+ul.mixed ul ul ul {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -6 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cline style='stroke: rgb(0, 0, 0); paint-order: stroke; stroke-width: 3px; stroke-linecap: round;' x1='7.222' y1='12' x2='16.779' y2='12'/%3E%3C/svg%3E");
+}
+
+ul.mixed ul ul ul ul {
+    list-style-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='16' height='16' viewBox='0 -2 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Ccircle style='' cx='6.37' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='12' cy='21.39' r='1.349'/%3E%3Ccircle style='' cx='17.37' cy='21.39' r='1.349'/%3E%3C/svg%3E");
+}
+
+/*  # <ol> element
+    # 90910.1a
+    # ordered list of items with pre-defined bullets
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
+**/
+ol {
+    list-style-type: decimal;
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+
+ol.alpha,
+ol.alpha ol:nth-of-type(1) {
+    list-style-type: lower-alpha;
+}
+
+ol.alpha-alt,
+ol.alpha-alt ol:nth-of-type(1) {
+    list-style-type: upper-alpha;
+}
+
+ol.roman,
+ol.roman ol:nth-of-type(1) {
+    list-style-type: upper-roman;
+}
+
+ol.outline {
+    list-style-type: upper-roman;
+}
+
+ol.outline ol {
+    list-style-type: upper-alpha;
+}
+
+ol.outline ol ol {
+    list-style-type: decimal;
+}
+
+ol.outline ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+ol.outline ol ol ol ol {
+    counter-reset: list;
+}
+
+ol.outline ol ol ol ol > li {
+    list-style: none;
+}
+
+ol.outline ol ol ol ol > li:before {
+    content: counter(list, decimal) ") ";
+    counter-increment: list;
+    padding-left: 1.5em;
+    margin-left: -2.9em;
+    margin-right: .25em;
+}
+
+/*  # nested
+    # 91108.1a
+    # nested ordered list
+    # https://mzl.la/2ps8ua3
+**/
+ol.nested,
+ol.nested ol,
+ol.nested ol ol,
+ol.nested ol ol ol,
+ol.nested ol ol ol ol,
+ol.nested ol ol ol ol ol {
+    counter-reset: nested;
+    list-style-type: none;
+}
+.nested li::before {
+    counter-increment: nested;
+    content: counters(nested, ".");
+    padding-right: 0.5rem;
+}
+
+/*  # font awesome list
+    # 90910.1a
+    # unordered font awesome list
+    # https://fontawesome.com/how-to-use/on-the-web/styling/icons-in-a-list
+**/
+.fa-ul:nth-of-type(-n+4) {
+    padding-left: 1.375rem !important;
+}
+
+.md-ul:nth-of-type(-n+4) {
+    padding-left: 1rem !important;
+}
+
+.fa-ul {
+    margin-left: 1.375rem !important;
+}
+
+.md-ul {
+    margin-left: 0 !important;
+}
+
+.md-ul li i {
+    margin-top: -0.1875rem;
+}
+
+/*  # google material design list
+    # 91025.1a
+    # unordered google icon list
+    # https://material.io/resources/icons/?style=baseline
+**/
+.md-ul,
+.md-ul ul,
+.md-ul ul ul,
+.md-ul ul ul ul,
+.md-ul ul ul ul ul {
+    list-style-type: none;
+}
+
+/*  # no bullet(s)
+    # 90910.1a
+    # unordered list without bullets
+    # custom to xidipity
+**/
+.no-bullet {
+    list-style-type: none;
+}
+
+.no-bullets,
+.no-bullets ul,
+.no-bullets ul ul,
+.no-bullets ul ul ul,
+.no-bullets ul ul ul ul {
+    list-style-type: none;
+}
+
+/*  # il
+    # 91101.1a
+    # image list
+    # custom to xidipity
+**/
+.il {
+    list-style-type: none;
+}
+
+.il li:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.il li img {
+    float: left;
+    height: auto;
+}
+
+.il li:not(:first-child) {
+    margin-top: 1rem;
+}
+
+dt {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+dd {
+    margin-bottom: .625em;
+    margin-top: .625em;
+    margin-left: 0;
+}
+
+@media (min-width:640px) {
+    dd {
+        margin-left: 2.25rem;
+    }
+}
+
+/*  # table
+    # 91001.1a
+    # default table setting
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+**/
+table {
+    background-color: transparent;
+    border-color: transparent
+    /* border-collapse: collapse;
+    border-spacing: 0;
+    border-style: hidden;
+	border-color: transparent;  */
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+table caption {
+    caption-side: bottom;
+    font-size: smaller;
+}
+
+table td,
+table th {
+    padding: 0.25rem 0.5rem;
+}
+
+table thead th {
+    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
+    color: var(--fg-blk);
+    font-weight: bolder;
+}
+
+table thead th:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300);
+}
+
+table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--fg-bas-300);
+}
+
+table td:not(:last-child) {
+    border-right: 1px solid var(--fg-bas-300);
+}
+
+/*  # table (no borders)
+    # 91211.1a
+    # hide but preserve table with borders
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-color
+**/
+tr.no-border,
+td.no-border,
+table.no-border,
+table.no-border tr,
+table.no-border tr td {
+    border-color: transparent !important;
+}
+
+/*  # table (classic)
+    # 91231.1a
+    # table with borders
+    # https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+**/
+tr.classic,
+td.classic,
+table.classic,
+table.classic tr,
+table.classic tr td {
+    border: 1px solid var(--fg-bas-300);
+}
+
+/*  # table (pinstripe)
+    # 91231.1a
+    # table with alternate rows tinted
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+**/
+table.highlight tr:active,
+table.highlight tr:focus,
+table.highlight tr:hover {
+    background-color: var(--bg-tint-dark);
+}
+
+/*  # table (pinstripe)
+    # 91231.1a
+    # table with alternate rows tinted
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+**/
+table.pinstripe tr:nth-child(even) {
+    background-color: var(--bg-tint-dark);
+}
+
+/*  # <h1>–<h6>
+    # 91001.1a
+    # HTML Section Heading elements
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+**/
+h1 {
+    color: var(--h1-color);
+    font-family: var(--h1-font);
+    font-size: var(--h1-size);
+    font-style: var(--h1-style);
+    font-weight: var(--h1-weight);
+}
+
+h2 {
+    color: var(--h2-color);
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+    font-style: var(--h2-style);
+    font-weight: var(--h2-weight);
+}
+
+h3 {
+    color: var(--h3-color);
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+    font-style: var(--h3-style);
+    font-weight: var(--h3-weight);
+}
+
+h4 {
+    color: var(--h4-color);
+    font-family: var(--h4-font);
+    font-size: var(--h4-size);
+    font-style: var(--h4-style);
+    font-weight: var(--h4-weight);
+}
+
+h5 {
+    color: var(--h5-color);
+    font-family: var(--h5-font);
+    font-size: var(--h5-size);
+    font-style: var(--h5-style);
+    font-weight: var(--h5-weight);
+}
+
+h6 {
+    color: var(--h6-color);
+    font-family: var(--h6-font);
+    font-size: var(--h6-size);
+    font-style: var(--h6-style);
+    font-weight: var(--h6-weight);
+}
+
+/*  # cnt
+    # 91108.1a
+    # add counter to header
+    # https://mzl.la/2ps8ua3
+**/
+h1.cnt::before,
+h2.cnt::before,
+h3.cnt::before,
+h4.cnt::before,
+h5.cnt::before,
+h6.cnt::before {
+    counter-increment: section;
+    content: counter(section) ".";
+    color: var(--content-counter-color);
+    padding-right: 0.5rem;
+}
+
+h1.cnt\!alt::before,
+h2.cnt\!alt::before,
+h3.cnt\!alt::before,
+h4.cnt\!alt::before,
+h5.cnt\!alt::before,
+h6.cnt\!alt::before {
+    counter-increment: section;
+    content: counter(section) ":";
+    color: var(--content-counter-color);
+    padding-right: 0.5rem;
+}
+
+p {
+    margin: 0 0 2px;
+}
+
+p + p {
+    margin: 2px 0 2px;
+}
+
+blockquote {
+    color: var(--fg-bas-900);
+    border-left: 6px solid var(--fg-sec-100);
+    font-weight: 300;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-left: 3%;
+    padding: 1em;
+    position: relative;
+}
+
+cite {
+    font-size: smaller;
+    font-style: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    line-height: inherit;
+    margin: 0;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    background-color: var(--bg-wht);
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+legend {
+    display: block;
+    white-space: normal;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: inherit;
+}
+
+:-webkit-input-placeholder {
+    color: var(--fg-bas-600);
+}
+
+:-moz-placeholder {
+    color: var(--fg-bas-600);
+}
+
+:-moz-placeholder {
+    color: var(--fg-bas-600);
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: var(--fg-bas-600);
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=text],
+input[type=url],
+select,
+textarea {
+    color: var(--fg-bas-700);
+    border: 1px solid var(--fg-bas-400);
+    border-radius: .25rem;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+select:focus,
+textarea:focus {
+    color: var(--fg-bas-900);
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=text],
+input[type=url] {
+    padding: 8px 10px;
+}
+
+select {
+    padding: 8px 10px;
+    width: 98%;
+}
+
+textarea {
+    padding: 8px 10px;
+    resize: vertical;
+    vertical-align: top;
+    width: 98%;
+}
+
+textarea#comment {
+    margin-bottom: 4px;
+}
+
+pre#textarea {
+    background: 0 0;
+    box-shadow: none;
+    border: 0;
+    color: var(--fg-bas-900);
+    font-family: var(--font-mono);
+    font-size: .875rem !important;
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+.pre-caption {
+    background-color: var(--bg-wht);
+    color: var(--fg-bas-600);
+    font-size: .875rem;
+    letter-spacing: 6px;
+    letter-spacing: .375rem;
+    margin-top: -4px;
+    text-align: center;
+    width: 100%;
+}
+
+.ratio-container {
+    height: auto;
+    width: 100%;
+}
+
+td .ratio-container {
+    padding-top: 2px;
+}
+
+.ratio\@16x10,
+.ratio\@16x9,
+.ratio\@1x1,
+.ratio\@21x9,
+.ratio\@4x3,
+.ratio\@6x4,
+.ratio\@7x5 {
+    height: 0;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+.ratio\@1x1 {
+    padding-top: 100%;
+}
+
+.ratio\@4x3 {
+    padding-top: calc(720 / 960 * 100%);
+}
+
+.ratio\@6x4 {
+    padding-top: calc(640 / 960 * 100%);
+}
+
+.ratio\@7x5 {
+    padding-top: calc(686 / 960 * 100%);
+}
+
+.ratio\@16x10 {
+    padding-top: calc(600 / 960 * 100%);
+}
+
+.ratio\@16x9 {
+    padding-top: calc(540 / 960 * 100%);
+}
+
+.ratio\@21x9 {
+    padding-top: calc(411 / 960 * 100%);
+}
+
+.selected-ratio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    height: auto;
+    width: inherit;
+    max-width: 100%;
+}
+
+/*: color swatch :*/
+.swatch {
+	height: 85px;
+	width: 85px;
+}
+
+@media (min-width:768px) {
+	.swatch {
+		height: 150px;
+		width: 150px;
+	}
+}
+
+/*  # aspect ratios
+    # 91025.1a
+    # framing images & videos to predefined aspect ratios
+    # html syntax: <div class="parent"><div class="@ratio"><div>content</div></div></div>
+**/
+.\@1x1 {
+	width: 100%;
+	padding-bottom: calc(960 / 960 * 100%);
+	position: relative;
+}
+.\@3x2 {
+	width: 100%;
+	padding-bottom: calc(640 / 960 * 100%);
+	position: relative;
+}
+.\@4x3 {
+	width: 100%;
+	padding-bottom: calc(720 / 960 * 100%);
+	position: relative;
+}
+.\@7x5 {
+	width: 100%;
+	padding-bottom: calc(686 / 960 * 100%);
+	position: relative;
+}
+.\@16x9 {
+	width: 100%;
+	padding-bottom: calc(540 / 960 * 100%);
+	position: relative;
+}
+.\@16x10 {
+	width: 100%;
+	padding-bottom: calc(600 / 960 * 100%);
+	position: relative;
+}
+.\@21x9 {
+	width: 100%;
+	padding-bottom: calc(411 / 960 * 100%);
+	position: relative;
+}
+.\@1x1 > div,
+.\@3x2 > div,
+.\@4x3 > div,
+.\@7x5 > div,
+.\@16x9 > div,
+.\@16x10 > div,
+.\@21x9 > div {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+}
+
+/*  # material-icons
+    # 91012.1a
+    # set default alignment
+    # https://google.github.io/material-design-icons/
+**/
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.video-aligncenter,
+.video-alignleft,
+.video-alignright {
+    clear: both;
+    border: 0;
+    height: auto;
+    width: 100%;
+}
+
+@media (min-width:768px) {
+    .video-aligncenter {
+        border-bottom: solid transparent 10px;
+        clear: both;
+        height: auto;
+        width: 100%;
+    }
+
+    .video-alignleft {
+        border-right: solid transparent 10px;
+        float: left;
+        height: auto;
+        width: 50%;
+    }
+
+    .video-alignright {
+        border-left: solid transparent 10px;
+        float: right;
+        height: auto;
+        width: 50%;
+    }
+}
+
+.img-caption,
+.wp-caption {
+    background-color: var(--bg-wht);
+    color: var(--fg-bas-600);
+    font-size: .875rem;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 2px 0;
+}
+
+.img-caption {
+    padding-top: 6px;
+}
+
+.img-caption.align-left,
+.wp-caption.align-left {
+    text-align: left;
+}
+
+.img-caption.align-right,
+.wp-caption.align-right {
+    text-align: right;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 8px 0;
+    text-align: center;
+}
+
+.wp-caption.alignleft {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.wp-caption.alignright {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.wp-caption.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:640px) {
+
+    .wp-caption.alignleft,
+    img.alignleft {
+        float: left;
+        max-width: 50% !important;
+        padding: 0 16px 0 0;
+    }
+
+    .wp-caption.alignright,
+    img.alignright {
+        float: right;
+        max-width: 50% !important;
+        padding: 0 0 0 16px;
+    }
+
+    .wp-caption.aligncenter,
+    img.aligncenter {
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.gallery {
+    display: block;
+    width: 100%;
+}
+
+.gallery .gallery-item {
+    padding: 5px;
+}
+
+.gallery .gallery-icon img {
+    height: auto;
+    width: 100%;
+}
+
+.gallery .gallery-caption {
+    color: var(--fg-bas-600);
+    display: block;
+    font-size: 14px;
+    font-size: .875em;
+    padding-top: 4px;
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .gallery-columns-2 .gallery-item {
+        float: left;
+        width: 50%;
+    }
+
+    .gallery-columns-3 .gallery-item {
+        float: left;
+        max-width: 33.33%;
+    }
+
+    .gallery-columns-4 .gallery-item {
+        float: left;
+        max-width: 25%;
+    }
+
+    .gallery-columns-5 .gallery-item {
+        float: left;
+        max-width: 20%;
+    }
+
+    .gallery-columns-6 .gallery-item {
+        float: left;
+        max-width: 16.66%;
+    }
+
+    .gallery-columns-7 .gallery-item {
+        float: left;
+        max-width: 14.28%;
+    }
+
+    .gallery-columns-8 .gallery-item {
+        float: left;
+        max-width: 12.5%;
+    }
+
+    .gallery-columns-9 .gallery-item {
+        float: left;
+        max-width: 11.11%;
+    }
+
+    .gallery:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/*  # spacer
+    # 91001.1a
+    # vertical spacers
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+**/
+.vert\:spacer-1\/2 {
+    color: transparent;
+    line-height: 0.5;
+    width: 100%;
+}
+
+.vert\:spacer-3\/4 {
+    color: transparent;
+    line-height: 0.75;
+    width: 100%;
+}
+
+.vert\:spacer-single {
+    color: transparent;
+    line-height: normal;
+    width: 100%;
+}
+
+.vert\:spacer-double {
+    color: transparent;
+    line-height: 2.0;
+    width: 100%;
+}
+
+.vert\:spacer-triple {
+    color: transparent;
+    line-height: 3.0;
+    width: 100%;
+}
+
+/*  # button
+    # 91001.1a
+    # button element
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+**/
+/*: default :*/
+button {
+    background-color: var(--bg-bas-200);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+button:focus,
+button a:focus {
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    ;
+}
+
+button:hover {
+    filter: brightness(104%);
+}
+
+button:active {
+    filter: brightness(96%);
+}
+
+button.btn {
+    color: var(--fg-bas-200);
+    background-color: var(--bg-pri-600);
+}
+
+button.btn:hover {
+    box-shadow: 0px 2px 2px 1px var(--bg-bas-400);
+    filter: brightness(96%);
+}
+
+button.btn:active {
+    box-shadow: 0px 2px 2px 1px var(--bg-bas-100);
+    filter: brightness(85%);
+}
+
+button.btn:focus {
+    color: var(--fg-wht);
+}
+
+/*  # hvr
+    # 91001.1a
+    # hover animations
+    # https://ianlunn.github.io/Hover/
+**/
+
+/* Image annimations */
+
+.hvr\:nudge {
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
+.hvr\:nudge:focus,
+.hvr\:nudge:hover {
+    -moz-transform: scale(1.012);
+    -webkit-transform: scale(1.012);
+    transform: scale(1.012);
+}
+
+.hvr\:greyscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.hvr\:greyscale:focus,
+.hvr\:greyscale:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.hvr\:focalpoint {
+    opacity: .8;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.hvr\:focalpoint:focus,
+.hvr\:focalpoint:hover {
+    opacity: 1;
+}
+
+/* Grow */
+.hvr\:grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr\:grow:hover,
+.hvr\:grow:focus,
+.hvr\:grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Grow Shadow */
+.hvr\:grow-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.hvr\:grow-shadow:hover,
+.hvr\:grow-shadow:focus,
+.hvr\:grow-shadow:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Shadow */
+.hvr\:shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:shadow:hover,
+.hvr\:shadow:focus,
+.hvr\:shadow:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Glow Shadow */
+.hvr\:glow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:glow:hover,
+.hvr\:glow:focus,
+.hvr\:glow:active {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+/* Box Shadow */
+.hvr\:box-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.hvr\:box-shadow:hover,
+.hvr\:box-shadow:focus,
+.hvr\:box-shadow:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Float Shadow */
+.hvr\:float-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr\:float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.hvr\:float-shadow:hover,
+.hvr\:float-shadow:focus,
+.hvr\:float-shadow:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+}
+
+.hvr\:float-shadow:hover:before,
+.hvr\:float-shadow:focus:before,
+.hvr\:float-shadow:active:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+/* Icon Spin */
+.hvr\:icon-spin {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.hvr\:icon-spin .hvr\:icon {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.hvr\:icon-spin:hover .hvr\:icon,
+.hvr\:icon-spin:focus .hvr\:icon,
+.hvr\:icon-spin:active .hvr\:icon {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*
+ * EOF:     theme/common.css
+ * Build:   200104-1
+ *
+ */
+
     background-color: var(--fg-sec-700);
     border-radius: .25rem;
     color: var(--fg-wht);
