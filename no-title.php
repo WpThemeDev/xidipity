@@ -1,10 +1,12 @@
 <?php
 /*
+ * Template Name: No-Title
+ *
  * WordPress Xidipity Theme PHP File
  *
  * File Name:       no-title.php
  * Function:        display page without page title
- * Build:           200104-1
+ * Build:           200104-2
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -136,7 +138,7 @@ get_footer();
 
 /*
  * EOF:     no-title.php
- * Build:   200104-1
+ * Build:   200104-2
  *
  */
 ?>
