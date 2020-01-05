@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       clear-format/plugin.js
+ * Function:        tinymce set format to default plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version         1.0
+ * @since           0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        clear format of selected text
- * File Name:       clear-format/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/clear-format/
  */
+
 tinymce.PluginManager.add('clear_format', function( editor, url ) {
     editor.addButton( 'clear_format', {
         title: 'Clear Format',
@@ -23,6 +25,9 @@ tinymce.PluginManager.add('clear_format', function( editor, url ) {
         cmd: 'RemoveFormat'
     });
 });
-/**
- *  eof: clear-format/plugin.js
+
+/*
+ * EOF:     clear-format/plugin.js
+ * Build:   200104-1
+ *
  */
