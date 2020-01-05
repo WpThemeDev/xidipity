@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-misc-opts/plugin.js
+ * Function:        tinymce misc opts plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add miscellaneous options
- * File Name:       add-misc-opts/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-miscellaneous-options/
  */
+
 tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
     editor.addButton('add_misc_opts', {
         type: 'splitbutton',
@@ -34,16 +36,19 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             icon: false,
             text: '•\xa0Excerpt',
             onclick: function() {
-	            var dom = editor.dom;
-	            var uniqueID = dom.uniqueId();                                
-	            var html = '<!-- xwpt: 90927.1b/mce/toolbar/excerpt     --><table class="exc dsp:none!web" cellspacing="0"><tbody><tr><td class="exc:content" id="' + uniqueID + '"></td><td class="exc:tag"><!--more--></td></tr></tbody></table><!-- /xwpt: 90927.1b/mce/toolbar/excerpt    -->';
-	            editor.insertContent(html);
-	            var newExcerpt = dom.select('p#' + uniqueID)[0];
-	            editor.selection.setCursorLocation(newExcerpt);
+              var dom = editor.dom;
+              var uniqueID = dom.uniqueId();                                
+              var html = '<!-- xwpt: 90927.1b/mce/toolbar/excerpt     --><table class="exc dsp:none!web" cellspacing="0"><tbody><tr><td class="exc:content" id="' + uniqueID + '"></td><td class="exc:tag"><!--more--></td></tr></tbody></table><!-- /xwpt: 90927.1b/mce/toolbar/excerpt    -->';
+              editor.insertContent(html);
+              var newExcerpt = dom.select('p#' + uniqueID)[0];
+              editor.selection.setCursorLocation(newExcerpt);
             }
         }],
     });
 });
-/**
- *  eof: add-misc-opts/plugin.js
+
+/*
+ * EOF:     add-misc-opts/plugin.js
+ * Build:   200104-1
+ *
  */
