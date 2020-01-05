@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-horizontal-rule/plugin.js
+ * Function:        tinymce horizontal rule plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version			1.0
+ * @since			0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add horizontal rule
- * File Name:       add-horizontal-rule/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-horizontal-rule/
  */
+
 tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
     editor.addButton('add_horz_rule', {
         type: 'splitbutton',
@@ -81,6 +83,9 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
 
     });
 });
-/**
- *  eof: add-horizontal-rule/plugin.js
+
+/*
+ * EOF:     add-horizontal-rule/plugin.js
+ * Build:   200104-1
+ *
  */
