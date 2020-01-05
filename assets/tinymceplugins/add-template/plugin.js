@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-template/plugin.js
+ * Function:        tinymce HTML embed plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add template to HTML
- * File Name:       add-template/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-template/
  */
+
 tinymce.PluginManager.add('add_template', function( editor, url ) {
     editor.addButton( 'add_template', {
         title: 'Add Template',
@@ -45,6 +47,9 @@ tinymce.PluginManager.add('add_template', function( editor, url ) {
         }
     });
 });
-/**
- *  eof: add-template/plugin.js
+
+/*
+ * EOF:     add-template/plugin.js
+ * Build:   200104-1
+ *
  */
