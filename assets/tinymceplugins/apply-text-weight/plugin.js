@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       apply-text-weight/plugin.js
+ * Function:        tinymce text weight plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        wrap selected text with span tags with weight styles
- * File Name:       apply-text-weight/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/apply-text-weight/
  */
+
 tinymce.PluginManager.add('apply_txt_weight', function (editor, url) {
     editor.addButton('apply_txt_weight', {
         type: 'splitbutton',
@@ -90,6 +92,9 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor, url) {
   ]
     });
 });
-/**
- *  eof: apply-text-weight/plugin.js
+
+/*
+ * EOF:     apply-text-weight/plugin.js
+ * Build:   200104-1
+ *
  */
