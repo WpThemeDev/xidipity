@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       toggle-italic/plugin.js
+ * Function:        tinymce italic plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version         1.0
+ * @since           0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        toggle italic of selected text
- * File Name:       toggle-italic/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/toggle-italic/
  */
+
 tinymce.PluginManager.add('toggle_italic', function( editor, url ) {
     editor.addButton( 'toggle_italic', {
         title: 'Toggle Italic',
@@ -23,6 +25,9 @@ tinymce.PluginManager.add('toggle_italic', function( editor, url ) {
         cmd: 'Italic'
     });
 });
-/**
- *  eof: toggle-italic/plugin.js
+
+/*
+ * EOF:     toggle-italic/plugin.js
+ * Build:   200104-1
+ *
  */
