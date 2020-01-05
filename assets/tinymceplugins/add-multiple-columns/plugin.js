@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-multiple-columns/plugin.js
+ * Function:        tinymce multi column plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add multiple columns
- * File Name:       add-multiple-columns/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-multiple-columns/
  */
+
 tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
     editor.addButton('add_multi_cols', {
         type: 'splitbutton',
@@ -32,12 +34,12 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             icon: false,
             text: '•\xa0Auto 2 Column',
             onclick: function() {
-	            var dom = editor.dom;
-	            var uniqueID = dom.uniqueId();
-	            var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
-	            editor.insertContent(html);
-	            var newTwoColumn = dom.select('td#' + uniqueID)[0];
-	            editor.selection.setCursorLocation(newTwoColumn);
+              var dom = editor.dom;
+              var uniqueID = dom.uniqueId();
+              var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+              editor.insertContent(html);
+              var newTwoColumn = dom.select('td#' + uniqueID)[0];
+              editor.selection.setCursorLocation(newTwoColumn);
             }
         }, {
             icon: false,
@@ -97,6 +99,9 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
         }, ],
     });
 });
-/**
- *  eof: add-multiple-columns/plugin.js
+
+/*
+ * EOF:     add-multiple-columns/plugin.js
+ * Build:   200104-1
+ *
  */
