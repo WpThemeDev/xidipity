@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200104-1
+ * Build:           200104-2
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -97,13 +97,6 @@ function theme_cfg() {
                         }
                         define("XWT_MNU_ALIGN", $cfg_val);
                         break;
-                    case 'sb-display':
-                        if (!has_match('no/yes',$cfg_val))
-                        {
-                            $cfg_val = 'yes';
-                        }
-                        //update_option('xwt_sidebar_disp',$cfg_val);
-                        break;
                     case 'sb-align':
                         if (!has_match('left/right',$cfg_val))
                         {
@@ -129,6 +122,33 @@ function theme_cfg() {
      */
     if (!defined('XWT_FA_VER')) {
         define('XWT_FA_VER', '5.12.0');
+    }
+    if (!defined('XWT_HDR_HGT')) {
+        define('XWT_HDR_HGT', '100px');
+    }
+    if (!defined('XWT_HDR_IMG')) {
+        define('XWT_HDR_IMG', 'none');
+    }
+    if (!defined('XWT_HDR_LOGO')) {
+        define('XWT_HDR_LOGO', 'none');
+    }
+    if (!defined('XWT_HDR_ALIGN')) {
+        define('XWT_HDR_ALIGN', 'center');
+    }
+    if (!defined('XWT_FTR_ALIGN')) {
+        define('XWT_FTR_ALIGN', 'center');
+    }
+    if (!defined('XWT_MENU_WIDTH')) {
+        define('XWT_MENU_WIDTH', '100%');
+    }
+    if (!defined('XWT_MNU_ALIGN')) {
+        define('XWT_MNU_ALIGN', 'center');
+    }
+    if (!defined('XWT_SIDEBAR_ALIGN')) {
+        define('XWT_SIDEBAR_ALIGN', 'right');
+    }
+    if (!defined('XWT_EMOJI_DSP')) {
+        define('XWT_EMOJI_DSP', 'yes');
     }
     return;
 }
