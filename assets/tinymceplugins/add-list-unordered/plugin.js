@@ -1,20 +1,22 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-list-unordered/plugin.js
+ * Function:        tinymce unordered list plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add unordered list
- * File Name:       add-list-unordered/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-list-unordered/
  */
+
 tinymce.PluginManager.add('add_lst_unorder', function (editor, url) {
     editor.addButton('add_lst_unorder', {
         type: 'splitbutton',
@@ -87,6 +89,9 @@ tinymce.PluginManager.add('add_lst_unorder', function (editor, url) {
         }]
     });
 });
-/**
- *  eof: add-list-unordered/plugin.js
+
+/*
+ * EOF:     add-list-unordered/plugin.js
+ * Build:   200104-1
+ *
  */
