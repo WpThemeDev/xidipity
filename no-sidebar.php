@@ -1,10 +1,12 @@
 <?php
 /*
+ * Template Name: No-Sidebar
+ *
  * WordPress Xidipity Theme PHP File
  *
  * File Name:       no-sidebar.php
  * Function:        display page without sidebar
- * Build:           200104-1
+ * Build:           200104-2
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -129,7 +131,7 @@ get_footer();
 
 /*
  * EOF:     no-sidebar.php
- * Build:   200104-1
+ * Build:   200104-2
  *
  */
 ?>
