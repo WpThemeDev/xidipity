@@ -1,24 +1,26 @@
 /*
- * WordPress Xidipity JS File
+ * WordPress Xidipity Theme JS File
+ *
+ * File Name:       add-vertical-space/plugin.js
+ * Function:        tinymce vertical space plugin
+ * Build:           200104-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
+ * @version      	1.0
+ * @since      		0.9
+ * @link            https://www.tiny.cloud/docs/
  *
- * Function:        add vertical space
- * File Name:       add-vertical-space/plugin.js
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91215.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- *                  https://xidipity.com/documentation/reference/editor/toolbar/add-vertical-space/
  */
+
 tinymce.PluginManager.add('add_vert_space', function(editor, url) {
     editor.addButton('add_vert_space', {
         title: '\xBD Vertical Space',
-		icon: false,
+    icon: false,
         image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAg%0D%0AMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTSAz%0D%0AIDE5IEwgMjEgMTkgTCAyMSAxMyBMIDMgMTMgTCAzIDE5IFogTSAzIDExIEwgMjEgMTEgTCAyMSA5%0D%0AIEwgMyA5IEwgMyAxMSBaIE0gMyA1IEwgMyA3IEwgMjEgNyBMIDIxIDUgTCAzIDUgWiIgc3R5bGU9%0D%0AImZpbGw6IHJnYigzMywgMzMsIDMzKTsiLz4KPC9zdmc+',
         type: 'splitbutton',
         onclick: function() {
@@ -63,6 +65,9 @@ tinymce.PluginManager.add('add_vert_space', function(editor, url) {
         }]
     });
 });
-/**
- *  eof: add-vertical-space/plugin.js
+
+/*
+ * EOF:     add-vertical-space/plugin.js
+ * Build:   200104-1
+ *
  */
