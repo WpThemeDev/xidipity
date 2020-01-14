@@ -4,7 +4,7 @@
  *
  * File Name:       sidebar.php
  * Function:        display sidebar
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -30,11 +30,11 @@ if (disp_sidebar() == 'no')
 {
     if (XWT_SIDEBAR_ALIGN == 'left')
     {
-        echo '<div class="fx:pg-ct-itm-sbl disp:none">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbl dsp:none">' . "\n";
     }
     else
     {
-        echo '<div class="fx:pg-ct-itm-sbr disp:none">' . "\n";
+        echo '<div class="fx:pg-ct-itm-sbr dsp:none">' . "\n";
     }
 }
 else
