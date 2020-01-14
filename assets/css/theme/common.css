@@ -1,17 +1,19 @@
 /*
- * WordPress Xidipity CSS File
+ * WordPress Xidipity Theme CSS File
+ *
+ * File Name:       theme/common.css
+ * Function:        CSS web elements
+ * Build:           200107-1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
- * @copyright       2019 John Baer
+ * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- *
- * Function:        xidipity common CSS definitions
- * File Name:       assets/css/theme/common.css
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * Build:           91231.1a
- * Revision:        1
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * @version			1.0
+ * @since			0.9
+ * @link            https://developer.wordpress.org/themes/basics/
  *
  */
 
@@ -21,12 +23,12 @@ body {
 }
 ins,
 mark {
-    background-color: var(--bg-yellow);
+    background-color: var(--hue-yellow);
 }
 
 del {
     text-decoration: line-through;
-    text-decoration-color: var(--fg-red);
+    text-decoration-color: var(--hue-red);
 }
 
 small {
@@ -71,12 +73,12 @@ body {
 }
 ins,
 mark {
-    background-color: var(--bg-yellow);
+    background-color: var(--hue-yellow);
 }
 
 del {
     text-decoration: line-through;
-    text-decoration-color: var(--fg-red);
+    text-decoration-color: var(--hue-red);
 }
 
 small {
@@ -97,9 +99,9 @@ var {
 }
 
 kbd {
-    background-color: var(--fg-sec-700);
-    border-radius: .25rem;
-    color: var(--fg-wht);
+    background-color: var(--hue-sec-700);
+    border-radius: 0.3333rem;
+    color: var(--hue-wht);
     font-size: smaller;
     padding: 2px 4px;
 }
@@ -110,10 +112,10 @@ kbd {
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 **/
 pre {
-    background: var(--bg-tint);
-    border: solid medium var(--fg-bas-300);
-    border-radius: 0.25rem;
-    color: var(--fg-bas-800);
+    background: var(--hue-tint);
+    border: solid medium var(--hue-bas-300);
+    border-radius: 0.3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -123,10 +125,10 @@ pre {
 }
 
 pre.wrap {
-    background: var(--bg-bas-050);
-    border: solid 1px var(--fg-bas-300);
-    border-radius: .25rem;
-    color: var(--fg-bas-800);
+    background: var(--hue-bas-050);
+    border: solid 1px var(--hue-bas-300);
+    border-radius: .3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -146,7 +148,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     margin: 0.75rem auto 0.8125rem auto;
     width: 80%;
 }
@@ -156,7 +158,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     width: 10%;
 }
 
@@ -165,10 +167,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     margin: 0.625rem auto 0.6875rem auto;
     width: 80%;
@@ -179,10 +181,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     width: 10%;
 }
@@ -494,21 +496,21 @@ table th {
 }
 
 table thead th {
-    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-    color: var(--fg-blk);
+    background: linear-gradient(var(--hue-bas-050), var(--hue-bas-100));
+    color: var(--hue-blk);
     font-weight: bolder;
 }
 
 table thead th:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--fg-bas-300);
+    border-bottom: 1px solid var(--hue-bas-300);
 }
 
 table td:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 /*  # table (no borders)
@@ -534,10 +536,10 @@ td.classic,
 table.classic,
 table.classic tr,
 table.classic tr td {
-    border: 1px solid var(--fg-bas-300);
+    border: 1px solid var(--hue-bas-300);
 }
 
-/*  # table (pinstripe)
+/*  # table (highlight)
     # 91231.1a
     # table with alternate rows tinted
     # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
@@ -545,7 +547,7 @@ table.classic tr td {
 table.highlight tr:active,
 table.highlight tr:focus,
 table.highlight tr:hover {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*  # table (pinstripe)
@@ -554,7 +556,7 @@ table.highlight tr:hover {
     # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 **/
 table.pinstripe tr:nth-child(even) {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*  # <h1>–<h6>
@@ -648,8 +650,8 @@ p + p {
 }
 
 blockquote {
-    color: var(--fg-bas-900);
-    border-left: 6px solid var(--fg-sec-100);
+    color: var(--hue-bas-900);
+    border-left: 6px solid var(--hue-sec-100);
     font-weight: 300;
     margin-top: 1em;
     margin-right: auto;
@@ -676,7 +678,7 @@ textarea {
 
 input,
 textarea {
-    background-color: var(--bg-wht);
+    background-color: var(--hue-wht);
 }
 
 input:focus,
@@ -707,20 +709,20 @@ legend {
 }
 
 :-webkit-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     opacity: 1
 }
 
 :-ms-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 input[type=email],
@@ -731,9 +733,9 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    color: var(--fg-bas-700);
-    border: 1px solid var(--fg-bas-400);
-    border-radius: .25rem;
+    color: var(--hue-bas-700);
+    border: 1px solid var(--hue-bas-400);
+    border-radius: 0.3333rem;
 }
 
 input[type=email]:focus,
@@ -744,7 +746,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 select:focus,
 textarea:focus {
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
 }
 
 input[type=email],
@@ -776,7 +778,7 @@ pre#textarea {
     background: 0 0;
     box-shadow: none;
     border: 0;
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
     font-family: var(--font-mono);
     font-size: .875rem !important;
     padding: 0;
@@ -784,8 +786,8 @@ pre#textarea {
 }
 
 .pre-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     letter-spacing: 6px;
     letter-spacing: .375rem;
@@ -966,8 +968,8 @@ img {
 
 .img-caption,
 .wp-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     font-weight: 300;
     width: 100%;
@@ -1049,7 +1051,7 @@ img {
 }
 
 .gallery .gallery-caption {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     display: block;
     font-size: 14px;
     font-size: .875em;
@@ -1147,9 +1149,9 @@ img {
 **/
 /*: default :*/
 button {
-    background-color: var(--bg-bas-200);
+    background-color: var(--hue-bas-200);
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0.3333rem;
     padding: 1rem 1.5rem;
     text-align: center;
 }
@@ -1170,22 +1172,22 @@ button:active {
 }
 
 button.btn {
-    color: var(--fg-bas-200);
-    background-color: var(--bg-pri-600);
+    color: var(--hue-bas-200);
+    background-color: var(--hue-pri-600);
 }
 
 button.btn:hover {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-400);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-400);
     filter: brightness(96%);
 }
 
 button.btn:active {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-100);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-100);
     filter: brightness(85%);
 }
 
 button.btn:focus {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
 }
 
 /*  # hvr
@@ -1412,9 +1414,9 @@ button.btn:focus {
  *
  */
 
-    background-color: var(--fg-sec-700);
-    border-radius: .25rem;
-    color: var(--fg-wht);
+    background-color: var(--hue-sec-700);
+    border-radius: 0.3333rem;
+    color: var(--hue-wht);
     font-size: smaller;
     padding: 2px 4px;
 }
@@ -1425,10 +1427,10 @@ button.btn:focus {
     # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 **/
 pre {
-    background: var(--bg-tint);
-    border: solid medium var(--fg-bas-300);
-    border-radius: 0.25rem;
-    color: var(--fg-bas-800);
+    background: var(--hue-tint);
+    border: solid medium var(--hue-bas-300);
+    border-radius: 0.3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -1438,10 +1440,10 @@ pre {
 }
 
 pre.wrap {
-    background: var(--bg-bas-050);
-    border: solid 1px var(--fg-bas-300);
-    border-radius: .25rem;
-    color: var(--fg-bas-800);
+    background: var(--hue-bas-050);
+    border: solid 1px var(--hue-bas-300);
+    border-radius: 0.3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -1461,7 +1463,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     margin: 0.75rem auto 0.8125rem auto;
     width: 80%;
 }
@@ -1471,7 +1473,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     width: 10%;
 }
 
@@ -1480,10 +1482,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     margin: 0.625rem auto 0.6875rem auto;
     width: 80%;
@@ -1494,10 +1496,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     width: 10%;
 }
@@ -1809,21 +1811,21 @@ table th {
 }
 
 table thead th {
-    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-    color: var(--fg-blk);
+    background: linear-gradient(var(--hue-bas-050), var(--hue-bas-100));
+    color: var(--hue-blk);
     font-weight: bolder;
 }
 
 table thead th:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--fg-bas-300);
+    border-bottom: 1px solid var(--hue-bas-300);
 }
 
 table td:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 /*  # table (no borders)
@@ -1849,7 +1851,7 @@ td.classic,
 table.classic,
 table.classic tr,
 table.classic tr td {
-    border: 1px solid var(--fg-bas-300);
+    border: 1px solid var(--hue-bas-300);
 }
 
 /*  # table (pinstripe)
@@ -1860,7 +1862,7 @@ table.classic tr td {
 table.highlight tr:active,
 table.highlight tr:focus,
 table.highlight tr:hover {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*  # table (pinstripe)
@@ -1869,7 +1871,7 @@ table.highlight tr:hover {
     # https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
 **/
 table.pinstripe tr:nth-child(even) {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*  # <h1>–<h6>
@@ -1963,8 +1965,8 @@ p + p {
 }
 
 blockquote {
-    color: var(--fg-bas-900);
-    border-left: 6px solid var(--fg-sec-100);
+    color: var(--hue-bas-900);
+    border-left: 6px solid var(--hue-sec-100);
     font-weight: 300;
     margin-top: 1em;
     margin-right: auto;
@@ -1991,7 +1993,7 @@ textarea {
 
 input,
 textarea {
-    background-color: var(--bg-wht);
+    background-color: var(--hue-wht);
 }
 
 input:focus,
@@ -2022,20 +2024,20 @@ legend {
 }
 
 :-webkit-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     opacity: 1
 }
 
 :-ms-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 input[type=email],
@@ -2046,9 +2048,9 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    color: var(--fg-bas-700);
-    border: 1px solid var(--fg-bas-400);
-    border-radius: .25rem;
+    color: var(--hue-bas-700);
+    border: 1px solid var(--hue-bas-400);
+    border-radius: 0.3333rem;
 }
 
 input[type=email]:focus,
@@ -2059,7 +2061,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 select:focus,
 textarea:focus {
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
 }
 
 input[type=email],
@@ -2091,7 +2093,7 @@ pre#textarea {
     background: 0 0;
     box-shadow: none;
     border: 0;
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
     font-family: var(--font-mono);
     font-size: .875rem !important;
     padding: 0;
@@ -2099,8 +2101,8 @@ pre#textarea {
 }
 
 .pre-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     letter-spacing: 6px;
     letter-spacing: .375rem;
@@ -2281,8 +2283,8 @@ img {
 
 .img-caption,
 .wp-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     font-weight: 300;
     width: 100%;
@@ -2364,7 +2366,7 @@ img {
 }
 
 .gallery .gallery-caption {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     display: block;
     font-size: 14px;
     font-size: .875em;
@@ -2462,9 +2464,9 @@ img {
 **/
 /*: default :*/
 button {
-    background-color: var(--bg-bas-200);
+    background-color: var(--hue-bas-200);
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0.3333rem;
     padding: 1rem 1.5rem;
     text-align: center;
 }
@@ -2485,22 +2487,22 @@ button:active {
 }
 
 button.btn {
-    color: var(--fg-bas-200);
-    background-color: var(--bg-pri-600);
+    color: var(--hue-bas-200);
+    background-color: var(--hue-pri-600);
 }
 
 button.btn:hover {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-400);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-400);
     filter: brightness(96%);
 }
 
 button.btn:active {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-100);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-100);
     filter: brightness(85%);
 }
 
 button.btn:focus {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
 }
 
 /*  # hvr
@@ -2721,6 +2723,8 @@ button.btn:focus {
     transform: rotate(360deg);
 }
 
-/**
- *  eof: assets/css/theme/common.css
+/*
+ * EOF:     theme/common.css
+ * Build:   200107-1
+ *
  */
