@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -70,7 +70,7 @@ body {
 }
 
 .site .skip-link {
-    background-color: var(--bg-bas-100);
+    background-color: var(--hue-bas-100);
     -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
     color: #4527a0;
@@ -100,6 +100,40 @@ body {
     z-index: 999999;
 }
 
+/*
+***
+    # dsp
+    # 200107-1
+    # web specific display options
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+***
+*/
+.web\(dsp\:none\),
+.web\[dsp\:none\] {
+    display: none;
+}
+
+.web\(dsp\:hidden\),
+.web\[dsp\:hidden\] {
+    visibility: hidden;
+}
+
+.web\(dsp\:block\),
+.web\[dsp\:block\] {
+    display: block;
+}
+
+.web\(dsp\:inline\),
+.web\[dsp\:inline\] {
+    display: inline;
+}
+
+.web\(dsp\:inline-block\),
+.web\[dsp\:inline-block\] {
+    display: inline-block;
+}
+
+/*: deprecate :*/
 .dsp\:none\!web {
     display: none;
 }
@@ -185,7 +219,7 @@ body {
 /*: comments title :*/
 
 .comments-title {
-    color: var(--fg-bas-700);
+    color: var(--hue-bas-700);
 }
 
 
@@ -196,7 +230,7 @@ ol.comment-list li {
 }
 
 ol.comment-list li::before {
-    color: var(--fg-pri-600);
+    color: var(--hue-pri-600);
     content: "Comment: " counter(comment);
     font-size: var(--h5-size);
     font-family: var(--font-sans);
@@ -222,7 +256,7 @@ ol.comment-list li::before {
 
 .comment-list>li>.comment-body,
 .comment-list>li>.children .comment-body {
-    border-top: 1px solid var(--fg-bas-400);
+    border-top: 1px solid var(--hue-bas-400);
     margin: 15px 0 0;
     padding-top: 15px;
     position: relative;
@@ -235,8 +269,8 @@ ol.comment-list li::before {
 }
 
 .comment-list .bypostauthor>.comment-body {
-    background: var(--bg-bas-100);
-    border-bottom: 3px solid var(--fg-sec-500);
+    background: var(--hue-bas-100);
+    border-bottom: 3px solid var(--hue-sec-500);
     padding: 15px;
 }
 
@@ -244,7 +278,7 @@ ol.comment-list li::before {
 /*: comments avatar :*/
 
 .comment-list .comment-author .avatar {
-    border: 1px solid var(--fg-bas-400);
+    border: 1px solid var(--hue-bas-400);
     border-radius: 100%;
     display: block;
     margin: 0 0 15px;
@@ -252,7 +286,7 @@ ol.comment-list li::before {
 }
 
 .comment-list .bypostauthor .comment-author .avatar {
-    border: 1px solid var(--fg-bas-400);
+    border: 1px solid var(--hue-bas-400);
 }
 
 .comment-list .comment-author .avatar {
@@ -296,7 +330,7 @@ ol.comment-list li::before {
 
 .comment-list .comment-author .fn a,
 .comment-list .comment-author .fn a:visited {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 .comment-list .comment-author .fn a:hover,
@@ -315,7 +349,7 @@ ol.comment-list li::before {
 }
 
 .comment-list .comment-awaiting-moderation {
-    color: var(--fg-pri-500);
+    color: var(--hue-pri-500);
     margin-top: 10px;
 }
 
@@ -324,21 +358,21 @@ ol.comment-list li::before {
 #respond {
     background-color: var(--sys-content-bg-color);
     background-color: transparent;
-    /*border: solid var(--fg-bas-300);
+    /*border: solid var(--hue-bas-300);
     border-width: 0 1px 1px 0;
     margin: 15px 0 0;*/
     padding: 15px;
 }
 
 .comment-list #respond {
-    background: var(--bg-bas-100);
+    background: var(--hue-bas-100);
     margin: 15px 0;
     padding: 15px;
     position: relative;
 }
 
 #respond .comment-reply-title {
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
     font-size: 23px;
     font-size: 1.4375rem;
     line-height: 1;
@@ -362,11 +396,11 @@ ol.comment-list li::before {
 }
 
 #respond .required {
-    color: var(--fg-pri-900);
+    color: var(--hue-pri-900);
 }
 
 #respond #cancel-comment-reply-link {
-    color: var(--fg-pri-900);
+    color: var(--hue-pri-900);
     font-size: 12px;
     font-size: 0.75rem;
     margin: 0;
@@ -381,7 +415,7 @@ ol.comment-list li::before {
 
 #submit {
     background-color: transparent;
-    border: 1px solid var(--fg-bas-400);
+    border: 1px solid var(--hue-bas-400);
     border-radius: 0.25rem;
     color: black;
     cursor:pointer;
@@ -391,14 +425,14 @@ ol.comment-list li::before {
 }
 
 #submit:hover {
-    background-color: var(--bg-tint);
-    border: 1px solid var(--fg-bas-500);
+    background-color: var(--hue-tint);
+    border: 1px solid var(--hue-bas-500);
 }
 
 #submit:focus,
 #submit:active {
-    background-color: var(--bg-tint-dark);
-    border: 1px solid var(--fg-bas-600);
+    background-color: var(--hue-tint-dark);
+    border: 1px solid var(--hue-bas-600);
 }
 
 /*: comments subscription :*/
@@ -520,7 +554,7 @@ ol.comment-list li::before {
 .cols\:fixed-2 table thead th:not(:last-child),
 .cols\:fixed-3 table thead th:not(:last-child),
 .cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-300) !important;
 }
 
 .cols\:auto-2 table tr:not(:last-child) td,
@@ -529,7 +563,7 @@ ol.comment-list li::before {
 .cols\:fixed-2 table tr:not(:last-child) td,
 .cols\:fixed-3 table tr:not(:last-child) td,
 .cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--fg-bas-300) !important;
+    border-bottom: 1px solid var(--hue-bas-300) !important;
 }
 
 .cols\:auto-2 table td:not(:last-child),
@@ -538,7 +572,7 @@ ol.comment-list li::before {
 .cols\:fixed-2 table td:not(:last-child),
 .cols\:fixed-3 table td:not(:last-child),
 .cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-300) !important;
 }
 
 @media (min-width:640px) {
@@ -566,7 +600,7 @@ ol.comment-list li::before {
 }
 
 .facebook-embed {
-    background-color: var(--bg-bas-800);
+    background-color: var(--hue-bas-800);
     border-radius: .25rem;
     height: auto;
     padding-top: 100%;
@@ -620,7 +654,7 @@ ol.comment-list li::before {
 }
 
 .embed-caption {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     font-size: .75rem;
     margin-top: 8px;
     text-align: center;
@@ -673,7 +707,7 @@ ol.comment-list li::before {
 .comment-navigation .nav-next a,
 .comment-navigation .nav-next a:visited,
 .comment-navigation .nav-previous a:visited {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     display: block;
     font-size: 13px;
     font-size: .8125rem;
@@ -697,13 +731,13 @@ ol.comment-list li::before {
 }
 
 .comment-navigation .nav-previous a::before {
-    color: var(--fg-pri-500);
+    color: var(--hue-pri-500);
     content: "⊲";
     margin: 0 5px 0 0;
 }
 
 .comment-navigation .nav-next a::after {
-    color: var(--fg-pri-500);
+    color: var(--hue-pri-500);
     content: "⊳";
     margin: 0 0 0 5px;
 }
@@ -764,13 +798,13 @@ ol.comment-list li::before {
 
 .toc-menu a,
 .toc-menu a:visited {
-    color: var(--fg-blk);
+    color: var(--hue-blk);
 }
 
 .toc-menu a:active,
 .toc-menu a:focus,
 .toc-menu a:hover {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
 }
 
 .toc-btn {
@@ -798,7 +832,7 @@ ol.comment-list li::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--bg-sec-500);
+    background: var(--hue-sec-500);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -813,7 +847,7 @@ ol.comment-list li::before {
 .toc-btn:active,
 .toc-btn:focus,
 .toc-btn:hover {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
 }
 
 .toc-btn:active:before,
@@ -875,7 +909,7 @@ ol.comment-list li::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--bg-sec-500);
+    background-color: var(--hue-sec-500);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -890,7 +924,7 @@ ol.comment-list li::before {
 .search-frm .search-sub:active,
 .search-frm .search-sub:focus,
 .search-frm .search-sub:hover {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
     box-shadow: none;
 }
 
@@ -974,15 +1008,15 @@ a.page-numbers:visited {
 
 a.page-numbers:hover {
     /* deprecated color: var(--sys-lnk-sec-color);*/
-    background-color: var(--bg-bas-100);
+    background-color: var(--hue-bas-100);
     -webkit-tap-highlight-color: transparent;
 }
 
 a.page-numbers:active,
 a.page-numbers:focus {
-    background-color: var(--bg-sec-100);
+    background-color: var(--hue-sec-100);
     border-radius: .25rem;
-    color: var(--fg-blk);
+    color: var(--hue-blk);
 }
 
 /*  # author flexbox
@@ -1503,7 +1537,7 @@ a.page-numbers:focus {
 
 /*: sidebar / widget / title :*/
 .fx\:sb-widget-ti {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
     font-weight: 400;
@@ -2117,7 +2151,7 @@ figure {
 }
 
 .fx\:pal-ct-itm:hover {
-    border: 1px solid var(--fg-bas-400);
+    border: 1px solid var(--hue-bas-400);
 }
 
 @media (min-width: 640px) {
@@ -2159,6 +2193,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
