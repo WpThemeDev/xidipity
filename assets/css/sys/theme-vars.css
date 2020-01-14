@@ -3,7 +3,7 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -14,29 +14,14 @@
  * @version			1.0
  * @since			0.9
  * @link            https://developer.wordpress.org/themes/basics/
+ * 					https://developer.mozilla.org/en-US/docs/Web/CSS/var
+ *               	https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+ *               	https://material.io/resources/color/#!/?view.left=0&view.right=0
+ *
+ * Comments:		By default the base hue is grey, primary deep purple, and secondary
+ *					deep orange. WCAG hues are high contrast for legibility.
  *
  */
-
-
-/*
-    * WordPress Xidipity CSS File
-    *
-    * @package      xidipity
-    * @author       John Baer
-    * @copyright    2019 John Baer
-    * @license      GPL-3.0-or-later
-    *
-    * Title:        Theme variables
-    * File Name:    assets/css/sys/theme-vars.css
-    * GitHub:       https://github.com/WpThemeDev/xidipity
-    * Build:        91108.1a
-    * Revision:     1
-    * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * Resources:    https://developer.mozilla.org/en-US/docs/Web/CSS/var
-    *               https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
-    *               https://material.io/resources/color/#!/?view.left=0&view.right=0
-*/
 
 :root {
     /*
@@ -50,78 +35,42 @@
     base, primary, secondary hue / shade
     ***
     */
-    /*: foreground colors :*/
-    --fg-blk: #000000;
-    --fg-wht: #ffffff;
-    /*: grey :*/
-    --fg-bas-900: #212121;
-    --fg-bas-800: #424242;
-    --fg-bas-700: #616161;
-    --fg-bas-600: #757575;
-    --fg-bas-500: #9e9e9e;
-    --fg-bas-400: #bdbdbd;
-    --fg-bas-300: #e0e0e0;
-    --fg-bas-200: #eeeeee;
-    --fg-bas-100: #f5f5f5;
-    --fg-bas-050: #fafafa;
-    /*: deep purple :*/
-    --fg-pri-900: #311b92;
-    --fg-pri-800: #4527a0;
-    --fg-pri-700: #512da8;
-    --fg-pri-600: #5e35b1;
-    --fg-pri-500: #673ab7;
-    --fg-pri-400: #7e57c2;
-    --fg-pri-300: #9575cd;
-    --fg-pri-200: #b39ddb;
-    --fg-pri-100: #d1c4e9;
-    --fg-pri-050: #ede7f6;
-    /*: deep orange :*/
-    --fg-sec-900: #bf360c;
-    --fg-sec-800: #d84315;
-    --fg-sec-700: #e64a19;
-    --fg-sec-600: #f4511e;
-    --fg-sec-500: #ff5722;
-    --fg-sec-400: #ff7043;
-    --fg-sec-300: #ff8a65;
-    --fg-sec-200: #ffab91;
-    --fg-sec-100: #ffccbc;
-    --fg-sec-050: #fbe9e7;
-    /*: background colors :*/
-    --bg-blk: #000000;
-    --bg-wht: #ffffff;
-    /*: grey :*/
-    --bg-bas-900: #212121;
-    --bg-bas-800: #424242;
-    --bg-bas-700: #616161;
-    --bg-bas-600: #757575;
-    --bg-bas-500: #9e9e9e;
-    --bg-bas-400: #bdbdbd;
-    --bg-bas-300: #e0e0e0;
-    --bg-bas-200: #eeeeee;
-    --bg-bas-100: #f5f5f5;
-    --bg-bas-050: #fafafa;
-    /*: deep purple :*/
-    --bg-pri-900: #311b92;
-    --bg-pri-800: #4527a0;
-    --bg-pri-700: #512da8;
-    --bg-pri-600: #5e35b1;
-    --bg-pri-500: #673ab7;
-    --bg-pri-400: #7e57c2;
-    --bg-pri-300: #9575cd;
-    --bg-pri-200: #b39ddb;
-    --bg-pri-100: #d1c4e9;
-    --bg-pri-050: #ede7f6;
-    /*: deep orange :*/
-    --bg-sec-900: #bf360c;
-    --bg-sec-800: #d84315;
-    --bg-sec-700: #e64a19;
-    --bg-sec-600: #f4511e;
-    --bg-sec-500: #ff5722;
-    --bg-sec-400: #ff7043;
-    --bg-sec-300: #ff8a65;
-    --bg-sec-200: #ffab91;
-    --bg-sec-100: #ffccbc;
-    --bg-sec-050: #fbe9e7;
+    /*: black & white :*/
+    --hue-blk: #000000;
+    --hue-wht: #ffffff;
+    /*: base hue :*/
+    --hue-bas-900: #212121;
+    --hue-bas-800: #424242;
+    --hue-bas-700: #616161;
+    --hue-bas-600: #757575;
+    --hue-bas-500: #9e9e9e;
+    --hue-bas-400: #bdbdbd;
+    --hue-bas-300: #e0e0e0;
+    --hue-bas-200: #eeeeee;
+    --hue-bas-100: #f5f5f5;
+    --hue-bas-050: #fafafa;
+    /*: primary hue :*/
+    --hue-pri-900: #311b92;
+    --hue-pri-800: #4527a0;
+    --hue-pri-700: #512da8;
+    --hue-pri-600: #5e35b1;
+    --hue-pri-500: #673ab7;
+    --hue-pri-400: #7e57c2;
+    --hue-pri-300: #9575cd;
+    --hue-pri-200: #b39ddb;
+    --hue-pri-100: #d1c4e9;
+    --hue-pri-050: #ede7f6;
+    /*: secondary hue :*/
+    --hue-sec-900: #bf360c;
+    --hue-sec-800: #d84315;
+    --hue-sec-700: #e64a19;
+    --hue-sec-600: #f4511e;
+    --hue-sec-500: #ff5722;
+    --hue-sec-400: #ff7043;
+    --hue-sec-300: #ff8a65;
+    --hue-sec-200: #ffab91;
+    --hue-sec-100: #ffccbc;
+    --hue-sec-050: #fbe9e7;
     /*
     ***
     other colors (material design palette)
@@ -131,79 +80,43 @@
     --wcag-grey8: #424242;
     --wcag-grey7: #616161;
     --wcag-grey6: #757575;
-    --bg-red: #C62828;
-    --bdr-red: #F44336;
-    --fg-red: #C62828;
+    --hue-red: #C62828;
     --wcag-red: #D50000;
-    --bg-pink: #C2185B;
-    --bdr-pink: #E91E63;
-    --fg-pink: #C2185B;
+    --hue-pink: #C2185B;
     --wcag-pink: #C51162;
-    --bg-purple: #8E24AA;
-    --bdr-purple: #9C27B0;
-    --fg-purple: #8E24AA;
+    --hue-purple: #8E24AA;
     --wcag-purple: #AA00FF;
-    --bg-deep-purple: #5E35B1;
-    --bdr-deep-purple: #673AB7;
-    --fg-deep-purple: #5E35B1;
+    --hue-deep-purple: #5E35B1;
     --wcag-deep-purple: #0A00B6;
-    --bg-indigo: #3949AB;
-    --bdr-indigo: #3F51B5;
-    --fg-indigo: #3949AB;
+    --hue-indigo: #3949AB;
     --wcag-indigo: #304FFE;
-    --bg-blue: #1E88E5;
-    --bdr-blue: #2196F3;
-    --fg-blue: #1E88E5;
+    --hue-blue: #1E88E5;
     --wcag-blue: #2962FF;
-    --bg-light-blue: #039BE5;
-    --bdr-light-blue: #03A9F4;
-    --fg-light-blue: #039BE5;
+    --hue-light-blue: #039BE5;
     --wcag-light-blue: #0091EA;
-    --bg-cyan: #0097A7;
-    --bdr-cyan: #00BCD4;
-    --fg-cyan: #0097A7;
+    --hue-cyan: #0097A7;
     --wcag-cyan: #0093BD;
-    --bg-teal: #00897B;
-    --bdr-teal: #009688;
-    --fg-teal: #00897B;
+    --hue-teal: #00897B;
     --wcag-teal: #009688;
-    --bg-green: #388E3C;
-    --bdr-green: #4CAF50;
-    --fg-green: #388E3C;
+    --hue-green: #388E3C;
     --wcag-green: #087F23;
-    --bg-light-green: #689F38;
-    --bdr-light-green: #8BC34A;
-    --fg-light-green: #689F38;
+    --hue-light-green: #689F38;
     --wcag-light-green: #689F38;
-    --bg-lime: #9E9D24;
-    --bdr-lime: #CDDC39;
-    --fg-lime: #9E9D24;
+    --hue-lime: #9E9D24;
     --wcag-lime: #6C6F00;
-    --bg-yellow: #FFEB3B;
-    --bdr-yellow: #FFEB3B;
-    --fg-yellow: #FBC02D;
+    --hue-yellow: #FBC02D;
     --wcag-yellow: #C17900;
-    --bg-amber: #FFC107;
-    --bdr-amber: #FFC107;
-    --fg-amber: #FFA000;
+    --hue-amber: #FFA000;
     --wcag-amber: #EE6C03;
-    --bg-orange: #F57C00;
-    --bdr-orange: #FF9800;
-    --fg-orange: #E65100;
+    --hue-orange: #E65100;
     --wcag-orange: #EF6C00;
-    --bg-deep-orange: #E64A19;
-    --bdr-deep-orange: #FF5722;
-    --fg-deep-orange: #E64A19;
+    --hue-deep-orange: #E64A19;
     --wcag-deep-orange: #A30000;
-    --bg-brown: #6D4C41;
-    --bdr-brown: #795548;
-    --fg-brown: #6D4C41;
-    --bg-grey: #757575;
-    --bdr-grey: #9E9E9E;
-    --fg-grey: #757575;
-    --bg-blue-grey: #546E7A;
-    --bdr-blue-grey: #607D8B;
-    --fg-blue-grey: #546E7A;
+    --hue-brown: #6D4C41;
+    --wcag-brown: #4E342E;
+    --hue-grey: #757575;
+    --hue-blue-grey: #546E7A;
+    --wcag-blue-grey: #37474F;
     /*
     ***
     special colors
@@ -212,11 +125,11 @@
     /*: no color :*/
     --transparent: transparent;
     /*: hilite plugin support :*/
-    --bg-highlight: #FFF59D;
+    --hue-highlight: #FFF59D;
     /*: tints :*/
-    --bg-tint: #F7F8F9;
-    --bg-tint-bright: #F9FAFA;
-    --bg-tint-dark: #ECEFF1;
+    --hue-tint: #F7F8F9;
+    --hue-tint-bright: #F9FAFA;
+    --hue-tint-dark: #ECEFF1;
     /*
     ***
     content attributes
@@ -255,32 +168,32 @@
     --font-style-normal: normal;
     --font-style-oblique: oblique;
     /*: headers :*/
-    --h1-color: var(--fg-bas-800);
+    --h1-color: var(--hue-bas-800);
     --h1-font: var(--font-sans);
     --h1-size: var(--font-size-h1);
     --h1-style: var(--font-style-normal);
     --h1-weight: var(--font-wgt-regular);
-    --h2-color: var(--fg-bas-800);
+    --h2-color: var(--hue-bas-800);
     --h2-font: var(--font-sans);
     --h2-size: var(--font-size-h2);
     --h2-style: var(--font-style-normal);
     --h2-weight: var(--font-wgt-regular);
-    --h3-color: var(--fg-bas-800);
+    --h3-color: var(--hue-bas-800);
     --h3-font: var(--font-sans);
     --h3-size: var(--font-size-h3);
     --h3-style: var(--font-style-normal);
     --h3-weight: var(--font-wgt-regular);
-    --h4-color: var(--fg-bas-800);
+    --h4-color: var(--hue-bas-800);
     --h4-font: var(--font-sans);
     --h4-size: var(--font-size-h4);
     --h4-style: var(--font-style-normal);
     --h4-weight: var(--font-wgt-regular);
-    --h5-color: var(--fg-bas-800);
+    --h5-color: var(--hue-bas-800);
     --h5-font: var(--font-sans);
     --h5-size: var(--font-size-h5);
     --h5-style: var(--font-style-normal);
     --h5-weight: var(--font-wgt-regular);
-    --h6-color: var(--fg-bas-800);
+    --h6-color: var(--hue-bas-800);
     --h6-font: var(--font-sans);
     --h6-size: var(--font-size-h6);
     --h6-style: var(--font-style-oblique);
@@ -291,7 +204,7 @@
     ***
     */
     /*: blog header :*/
-    --blog-hdr-bg-color: var(--bg-bas-050);
+    --blog-hdr-bg-color: var(--hue-bas-050);
     /*: blog title & tagline :*/
     --title-lnk-pri-color: var(--wcag-deep-purple);
     --title-lnk-sec-color: var(--wcag-deep-orange);
@@ -307,24 +220,24 @@
     --descr-font-style: normal;
     --descr-font-weight: var(--font-wgt-regular);
     /*: blog footer :*/
-    --blog-ft-bg-color: var(--bg-bas-050);
+    --blog-ft-bg-color: var(--hue-bas-050);
     /*: sys menu :*/
     --mnu-bar-sm-bg: var(--transparent);
-    --mnu-bar-sm-fg: var(--fg-blk);
+    --mnu-bar-sm-fg: var(--hue-blk);
     --mnu-bar-lg-bg: var(--blog-hdr-bg-color);
     --mnu-bar-lg-fg: var(--wcag-grey7);
     /*: sys content :*/
-    --content-bg-color: var(--bg-wht);
-    --content-fg-color: var(--fg-blk);
-    --content-tp-border-color: var(--fg-bas-300);
-    --content-bt-border-color: var(--fg-bas-300);
+    --content-bg-color: var(--hue-wht);
+    --content-fg-color: var(--hue-blk);
+    --content-tp-border-color: var(--hue-bas-300);
+    --content-bt-border-color: var(--hue-bas-300);
     --content-counter-color: var(--wcag-grey6);
     /*: system :*/
-    --dft-fg-color: var(--fg-blk);
-    --dft-bg-color: var(--bg-bas-050);
+    --dft-fg-color: var(--hue-blk);
+    --dft-bg-color: var(--hue-bas-050);
     --dft-line-height: 1.4;
     --dft-font-family: var(--font-sans);
-    --dft-font-color: var(--fg-blk);
+    --dft-font-color: var(--hue-blk);
     --dft-font-size: 1rem;
     --dft-font-weight: var(--font-wgt-light);
     --dft-font-spacing: normal;
