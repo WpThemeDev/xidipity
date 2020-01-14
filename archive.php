@@ -4,7 +4,7 @@
  *
  * File Name:       archive.php
  * Function:        display pages assigned to archive category
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -80,11 +80,11 @@ if (have_posts())
         {
             /*: post thumbnail :*/
             echo $wp_img;
-            echo '<div class="pad:all-1">' . "\n";
+            echo '<div class="pad:1">' . "\n";
         }
         else
         {
-            echo '<div class="pad:all-1 ht:min-455px">' . "\n";
+            echo '<div class="pad:1 ht:min-455px">' . "\n";
         }
         if ('post' == get_post_type())
         {
@@ -166,7 +166,7 @@ get_footer();
 
 /*
  * EOF:     archive.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
