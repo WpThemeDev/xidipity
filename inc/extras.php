@@ -4,7 +4,7 @@
  *
  * File Name:       inc/extras.php
  * Function:        xidipity extensions
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -639,7 +639,7 @@ function bexc_shortcode($atts = array() , $prms = '')
             {
                 $html_retval .= '<div class="fx:c fa:3 fb:6 fc:5 sm)fx:r">';
                 $html_retval .= '<div class="fd:1 fe:1">';
-                $html_retval .= '<p class="fx:cn-ct-meta pad:vert-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
+                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
                 $html_retval .= '<header class="fx:cn-itm-hd">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
@@ -656,7 +656,7 @@ function bexc_shortcode($atts = array() , $prms = '')
                 $html_retval .= $v_html_img;
                 $html_retval .= '</div>';
                 $html_retval .= '<div class="fd:1 fe:1 pad:right-1 wd:100% sm)max-width:60%">';
-                $html_retval .= '<p class="fx:cn-ct-meta pad:vert-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
+                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
                 $html_retval .= '<header class="fd:1 fe:1">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
@@ -673,7 +673,7 @@ function bexc_shortcode($atts = array() , $prms = '')
                 $html_retval .= $v_html_img;
                 $html_retval .= '</div>';
                 $html_retval .= '<div class="fd:1 fe:1 pad:left-1 wd:100% sm)max-width:60%">';
-                $html_retval .= '<p class="fx:cn-ct-meta pad:vert-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
+                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt-0.75 sm)pad:bottom-0.5 sm)pad:top-0"><span class="pad:right-0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
                 $html_retval .= '<header class="fd:1 fe:1">';
                 $html_retval .= $v_html_title;
                 $html_retval .= '</header>';
@@ -1133,7 +1133,7 @@ function imgg_shortcode($atts = array() , $prms = '')
                 $wp_query->the_post();
                 $wp_img = wp_get_attachment_image_src(get_the_ID() , 'full');
 
-                $html_retval .= '<div class="fx:c fa:1 fb:1 fc:1 pad:all-0.5 wd:100% sm)wd:' . $v_columns . '">';
+                $html_retval .= '<div class="fx:c fa:1 fb:1 fc:1 pad:0.5 wd:100% sm)wd:' . $v_columns . '">';
                 $html_retval .= '<div class="fx:c fa:1 fb:1 fc:1">';
                 
                 $html_retval .= '<div class="fd:1 fe:1 wd:100%">';                
@@ -1147,7 +1147,7 @@ function imgg_shortcode($atts = array() , $prms = '')
                 }
                 $html_retval .= '</div>';
                 
-                $html_retval .= '<div class="fd:1 fe:1 line:ht-2 txt:align-' . $v_align_capt . ' wd:100%">';    
+                $html_retval .= '<div class="fd:1 fe:1 line:ht-2 aln:text-' . $v_align_capt . ' wd:100%">';    
                 $html_retval .= '<p>' . $wp_query->post->post_excerpt . '</p>';
                 $html_retval .= '</div>';
                 
@@ -1427,7 +1427,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
