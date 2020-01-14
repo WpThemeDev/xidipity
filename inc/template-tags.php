@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -227,7 +227,7 @@ if (!function_exists('xidipity_excerpt_banner'))
         if (!empty($v_hdr_title))
         {
             $html_retval .= '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:all-1">';
+            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:1">';
             $html_retval .= '<header class="fx:cn-itm-hd">';
             $html_retval .= '<h2>' . $v_icon . $v_hdr_title . '</h2>';
             if (!empty($v_hdr_descr))
@@ -284,7 +284,7 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
-        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 bdr:radius-0.25 mar:vert-1">';
+        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert-1 cnr:small-arch">';
         if ($wp_search)
         {
             
@@ -333,7 +333,7 @@ if (!function_exists('xidipity_metalinks'))
         /*: go / no go  :*/
         if ($v_cnt >0)
         {
-            $html_retval .= '<div class="fx:cn-ct-meta pad:vert-0.75">';
+            $html_retval .= '<div class="fx:cn-ct-meta mar:vrt-0.75">';
             foreach ($atts as $att)
             {
                 $html_retval .= '<div class="fx:ct-meta-itm">' . $att . '</div>';
@@ -523,7 +523,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
