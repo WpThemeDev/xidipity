@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -22,7 +22,7 @@
  ----------------------------------------------------------------------------*/
 body,
 .mce-content-body {
-    background-color: var(--bg-wht);
+    background-color: var(--hue-wht);
     color: var(--content-fg-color);
     font-family: var(--dft-font-family);
     font-size: var(--dft-font-size);
@@ -45,11 +45,40 @@ acronym {
     font-weight: bolder !important;
 }
 
-/*  # TinyMCE
-   ## Editor Only
- ----------------------------------------------------------------------------*/
-/* hide mce specific item  ------------
--- */
+/*
+***
+    # dsp
+    # 200107-1
+    # mce specific display options
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+***
+*/
+.mce\(dsp\:none\),
+.mce\[dsp\:none\] {
+    display: none;
+}
+
+.mce\(dsp\:hidden\),
+.mce\[dsp\:hidden\] {
+    visibility: hidden;
+}
+
+.mce\(dsp\:block\),
+.mce\[dsp\:block\] {
+    display: block;
+}
+
+.mce\(dsp\:inline\),
+.mce\[dsp\:inline\] {
+    display: inline;
+}
+
+.mce\(dsp\:inline-block\),
+.mce\[dsp\:inline-block\] {
+    display: inline-block;
+}
+
+/*: deprecate :*/
 .dsp\:none\!mce {
     display: none;
 }
@@ -71,14 +100,14 @@ acronym {
 }
 
 .dsp\:tint\!mce {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
 }
 
 /* page break symbol       ------------
 -- */
 .prt\(pg-break\:after-always\)::after {
     content: " ¶";
-    color: var(--fg-pri-500);
+    color: var(--hue-pri-500);
 }
 
 /* force captions to 100%  ------------
@@ -113,14 +142,14 @@ acronym {
     # https://wordpress.org/support/article/excerpt/
 **/
 .exc {
-    border: 1px solid var(--fg-bas-300);
+    border: 1px solid var(--hue-bas-300);
     margin: 0 0 0.5rem 0;
     padding: 0;
     width: 100%;
 }
 
 .exc\:content {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
     border-collapse: collapse;
     border-style: none;
     font-size: 0.875rem;
@@ -137,23 +166,23 @@ acronym {
     tint for editing
 */
 .vert\:spacer-1\/2 {
-    background-color: var(--bg-sec-050);
+    background-color: var(--hue-sec-050);
 }
 
 .vert\:spacer-3\/4 {
-    background-color: var(--bg-sec-050);
+    background-color: var(--hue-sec-050);
 }
 
 .vert\:spacer-single {
-    background-color: var(--bg-sec-050);
+    background-color: var(--hue-sec-050);
 }
 
 .vert\:spacer-double {
-    background-color: var(--bg-sec-050);
+    background-color: var(--hue-sec-050);
 }
 
 .vert\:spacer-triple {
-    background-color: var(--bg-sec-050);
+    background-color: var(--hue-sec-050);
 }
 
 /*  # cols
@@ -171,7 +200,7 @@ acronym {
 }
 
 .cols\:fixed-2 td {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
     border-style: none !important;
     vertical-align: top;
     padding: 0 0.25rem;
@@ -179,7 +208,7 @@ acronym {
 }
 
 .cols\:fixed-3 td {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
     border-style: none !important;
     vertical-align: top;
     padding: 0 0.25rem;
@@ -187,7 +216,7 @@ acronym {
 }
 
 .cols\:fixed-4 td {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
     border-style: none !important;
     vertical-align: top;
     padding: 0 0.25rem;
@@ -206,7 +235,7 @@ acronym {
 .cols\:auto-2 td,
 .cols\:auto-3 td,
 .cols\:auto-4 td {
-    background-color: var(--bg-tint);
+    background-color: var(--hue-tint);
     border-style: none;
     padding: 0.25rem;
     width: 100%;
@@ -233,7 +262,7 @@ acronym {
 .cols\:fixed-2 table thead th:not(:last-child),
 .cols\:fixed-3 table thead th:not(:last-child),
 .cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-300) !important;
 }
 
 .cols\:auto-2 table tr:not(:last-child) td,
@@ -242,7 +271,7 @@ acronym {
 .cols\:fixed-2 table tr:not(:last-child) td,
 .cols\:fixed-3 table tr:not(:last-child) td,
 .cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--fg-bas-300) !important;
+    border-bottom: 1px solid var(--hue-bas-300) !important;
 }
 
 .cols\:auto-2 table td:not(:last-child),
@@ -251,11 +280,11 @@ acronym {
 .cols\:fixed-2 table td:not(:last-child),
 .cols\:fixed-3 table td:not(:last-child),
 .cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-300) !important;
 }
 
 /*
  * EOF:     theme/editor.css
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
