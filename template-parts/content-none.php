@@ -4,7 +4,7 @@
  *
  * File Name:       template-parts/content-none.php
  * Function:        page content not found
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -25,7 +25,7 @@ global $post;
 $wp_err = '';
 echo '<!-- xwpt: 90915.1a/content/none/php        -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
+echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:1 fx:shadow">' . "\n";
 /*
     no posts
 */
@@ -83,7 +83,7 @@ echo '<!-- /xwpt: 90915.1a/content/none/php       -->' . "\n";
 
 /*
  * EOF:     template-parts/content-none.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
