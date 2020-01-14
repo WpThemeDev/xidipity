@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200104-2
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1623,7 +1623,7 @@ function dsp_err($att = '')
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 91108.1a/an/tmpl/warning         --><div class="bdr:bas-300 bdr:rounded bg:tint fa:1 fb:1 fc:5 fx:r pad:all-0.5"><div class="fd:1 fe:4 pad:left-0.25 pad:right-0.75"><i class="material-icons fnt:size-xx-large fg:red">notifications_active</i></div><div class="bdr:bas-400 bdr:left-solid-medium fd:2 fe:4 fnt:size-small pad:left-0.5"><p>' . __($v_msg) . '</p></div></div><!-- /xwpt: 91108.1a/an/tmpl/warning        -->';
+    $fn_retval = '<div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:5 pad:0.5"><div class="fxd:1 fxe:4 pad:left-0.25 pad:right-0.75"><div style="height:1.75rem; width:1.75rem;"><img class="img:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fxe:4 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div>';
     // return html
     return $fn_retval;
 }
@@ -1794,7 +1794,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
