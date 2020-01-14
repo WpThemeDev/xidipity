@@ -3,7 +3,7 @@
  *
  * File Name:       theme/print.css
  * Function:        CSS print elements
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -22,8 +22,8 @@
  ----------------------------------------------------------------------------*/
 body {
     -webkit-print-color-adjust: exact;
-    background: var(--bg-wht);
-    color: var(--fg-blk);
+    background: var(--hue-wht);
+    color: var(--hue-blk);
     font-family: var(--dft-font-family);
     font-size: var(--dft-font-size);
     font-weight: var(--dft-font-weight);
@@ -63,19 +63,26 @@ a:visited {
 a:active,
 a:focus,
 a:hover {
-    color: var(--fg-blk);
+    color: var(--hue-blk);
     background-color: var(--transparent);
     font-weight: var(--dft-pri-lnk-wgt);
 }
 
 
 /*: advance syntax :*/
-.prt\(dsp\:none\) {
-    display: none;
+.prt\(dsp\:none\),
+.prt\[dsp\:none\] {
+    display: none !important;
 }
 
-.prt\(dsp\:block\) {
-    display: block;
+.prt\(dsp\:hidden\),
+.prt\[dsp\:hidden\] {
+    visibility: hidden !important;
+}
+
+.prt\(dsp\:block\),
+.prt\[dsp\:block\] {
+    display: block !important;
 }
 
 /*
@@ -193,130 +200,142 @@ table.cols\:4 {
  ----------------------------------------------------------------------------*/
 .prt\(border\),
 .prt\(border-1\) {
-    -webkit-box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
-    box-shadow: inset 0px 0px 0px 1px var(--fg-bas-500);
+    -webkit-box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
+    -moz-box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
+    box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
 }
 
 .prt\(border-2\) {
-    -webkit-box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
-    box-shadow: inset 0px 0px 0px 2px var(--fg-bas-500);
+    -webkit-box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
+    -moz-box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
+    box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
 }
 
 .prt\(border-3\) {
-    -webkit-box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
-    box-shadow: inset 0px 0px 0px 3px var(--fg-bas-500);
+    -webkit-box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
+    -moz-box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
+    box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
 }
 
 .prt\(border-4\) {
-    -webkit-box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
-    box-shadow: inset 0px 0px 0px 4px var(--fg-bas-500);
+    -webkit-box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
+    -moz-box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
+    box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
 }
 
 /*
     Print exception palette
 */
 .prt\(fg-blk\) {
-    color: var(--fg-blk) !important;
+    color: var(--hue-blk) !important;
 }
 
 .prt\(fg-wht\) {
-    color: var(--fg-wht) !important;
+    color: var(--hue-wht) !important;
 }
 
 .prt\(bg-blk\) {
-    background-color: var(--bg-blk) !important;
+    background-color: var(--hue-blk) !important;
 }
 
 .prt\(bg-wht\) {
-    background-color: var(--bg-wht) !important;
+    background-color: var(--hue-wht) !important;
 }
 
 .prt\(fg-bas-900\) {
-    color: var(--fg-bas-900) !important;
+    color: var(--hue-bas-900) !important;
 }
 
 .prt\(fg-bas-800\) {
-    color: var(--fg-bas-800) !important;
+    color: var(--hue-bas-800) !important;
 }
 
 .prt\(fg-bas-700\) {
-    color: var(--fg-bas-700) !important;
+    color: var(--hue-bas-700) !important;
 }
 
 .prt\(fg-bas-600\) {
-    color: var(--fg-bas-600) !important;
+    color: var(--hue-bas-600) !important;
 }
 
 .prt\(fg-bas-500\) {
-    color: var(--fg-bas-500) !important;
+    color: var(--hue-bas-500) !important;
 }
 
 .prt\(fg-bas-400\) {
-    color: var(--fg-bas-400) !important;
+    color: var(--hue-bas-400) !important;
 }
 
 .prt\(fg-bas-300\) {
-    color: var(--fg-bas-300) !important;
+    color: var(--hue-bas-300) !important;
 }
 
 .prt\(fg-bas-200\) {
-    color: var(--fg-bas-200) !important;
+    color: var(--hue-bas-200) !important;
 }
 
 .prt\(fg-bas-100\) {
-    color: var(--fg-bas-100) !important;
+    color: var(--hue-bas-100) !important;
 }
 
 .prt\(fg-bas-050\) {
-    color: var(--fg-bas-050) !important;
+    color: var(--hue-bas-050) !important;
 }
 
 .prt\(bg-bas-900\) {
-    background-color: var(--bg-bas-900) !important;
+    background-color: var(--hue-bas-900) !important;
 }
 
 .prt\(bg-bas-800\) {
-    background-color: var(--bg-bas-800) !important;
+    background-color: var(--hue-bas-800) !important;
 }
 
 .prt\(bg-bas-700\) {
-    background-color: var(--bg-bas-700) !important;
+    background-color: var(--hue-bas-700) !important;
 }
 
 .prt\(bg-bas-600\) {
-    background-color: var(--bg-bas-600) !important;
+    background-color: var(--hue-bas-600) !important;
 }
 
 .prt\(bg-bas-500\) {
-    background-color: var(--bg-bas-500) !important;
+    background-color: var(--hue-bas-500) !important;
 }
 
 .prt\(bg-bas-400\) {
-    background-color: var(--bg-bas-400) !important;
+    background-color: var(--hue-bas-400) !important;
 }
 
 .prt\(bg-bas-300\) {
-    background-color: var(--bg-bas-300) !important;
+    background-color: var(--hue-bas-300) !important;
 }
 
 .prt\(bg-bas-200\) {
-    background-color: var(--bg-bas-200) !important;
+    background-color: var(--hue-bas-200) !important;
 }
 
 .prt\(bg-bas-100\) {
-    background-color: var(--bg-bas-100) !important;
+    background-color: var(--hue-bas-100) !important;
 }
 
 .prt\(bg-bas-050\) {
-    background-color: var(--bg-bas-050) !important;
+    background-color: var(--hue-bas-050) !important;
+}
+
+/*
+***
+    # breadcrumbs
+    # 200107-1
+    # Yoast breadcrumbs
+    # https://yoast.com/
+***
+*/
+#breadcrumbs {
+    display: none;
 }
 
 /*
  * EOF:     theme/print.css
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
