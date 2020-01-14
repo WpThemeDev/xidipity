@@ -4,7 +4,7 @@
  *
  * File Name:       comments.php
  * Function:        display comments
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -93,7 +93,7 @@ endif;
 /*
     display comment form
 */
-echo '<div class="pad:all-1">' . "\n";
+echo '<div class="pad:1">' . "\n";
 comment_form(array(
     'title_reply'=>'<i class="far fa-comments fg:sec-300 pad:right-0.5"></i>Got Something To Say?',
     'logged_in_as' =>''
@@ -105,7 +105,7 @@ echo '</div>' . "\n";
 
 /*
  * EOF:     comments.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
