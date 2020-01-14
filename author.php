@@ -4,7 +4,7 @@
  *
  * File Name:       author.php
  * Function:        display author info
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -75,7 +75,7 @@ $v_meta_list = '';
 echo '<!-- xwpt: 90915.1a/biography/php           -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:all-1 fx:shadow">' . "\n";
+echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:1 fx:shadow">' . "\n";
 echo '<div class="fx:cn-ct-bio">' . "\n";
 echo '<div class="fx:ct-bio-itm">' . $v_img . '</div>';
 echo '<div class="fx:ct-bio-itm pad:left-0.5">' . $v_biography . '</div>';
@@ -90,7 +90,7 @@ echo '<div class="fx:cn-ct">' . "\n";
 echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
 echo '<h4>Other posts by author:</h4>' . "\n";
 //echo '<p>&nbsp;</p>' . "\n";
-echo '<div class="sys:bg pad:all-1">' . "\n";
+echo '<div class="sys:bg pad:1">' . "\n";
 $wp_qry = array(
     'author' => $wp_author_id,
     'orderby' => 'post_date',
@@ -154,7 +154,7 @@ get_footer();
 
 /*
  * EOF:     author.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
