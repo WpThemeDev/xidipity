@@ -4,7 +4,7 @@
  *
  * File Name:       page.php
  * Function:        display page
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -79,7 +79,7 @@ if ($wp_query->have_posts()) {
         content
         */
         echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
-        echo '<div class="fx:cn-itm-wrapper pad:all-1">' . "\n";
+        echo '<div class="fx:cn-itm-wrapper pad:1">' . "\n";
         the_content();
         echo '</div>' . "\n";
         /*
@@ -136,7 +136,7 @@ get_footer();
 
 /*
  * EOF:     page.php
- * Build:   200104-1
+ * Build:   200107-1
  *
  */
 ?>
