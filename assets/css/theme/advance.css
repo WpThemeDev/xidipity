@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200104-1
+ * Build:           200107-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -18,52 +18,60 @@
  */
 
 /*
- *
- * Comments:        the use of !important is intentional as the purpose of
- *                  using these classes is to overwrite the current setting
- *                  if one has been set. The exception to this rule is the
- *                  DIY flexbox components.
- *
- *  Current @media break points
- *                  default (no prefix)     (mobile media)
- *                  sm  = min-width: 640px  (standard media)
- *
- *  Alternate @media break points
- *                  default (no prefix)     (mobile media)
- *                  sm  = min-width: 640px  (small)
- *                  md  = min-width: 768px  (medium)
- *                  lg  = min-width: 1024px (large)
- *                  xl  = min-width: 1280px (x large)
- *
- */
+***
+ 	*
+ 	* COMMENTS
+ 	*
+ 	* The use of !important is intentional as the purpose of
+ 	* using these classes is to overwrite the current setting
+ 	* if one has been set. The exception to this rule is the
+ 	* DIY flexbox components.
+	*
+	*  Current @media break points
+	*                  default (no prefix)     (mobile media)
+	*                  sm  = min-width: 640px  (standard media)
+	*
+	*  Alternate @media break points
+	*                  default (no prefix)     (mobile media)
+	*                  sm  = min-width: 640px  (small)
+	*                  md  = min-width: 768px  (medium)
+	*                  lg  = min-width: 1024px (large)
+	*                  xl  = min-width: 1280px (x large)
+	*
+***
+*/
 
 /*
 ***
-    # break
-    # 91108.1b
-    # inside page breaks
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
+    # cnr
+    # 200107-1
+    # corner (arch)
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.break\:inside-auto {
-    break-inside: auto !important;
+.cnr\:no-arch {
+	border-radius: 0% !important;
 }
-.break\:inside-avoid {
-    break-inside: avoid !important;
+.cnr\:small-arch {
+    border-radius: 0.3333rem !important;
 }
-.break\:inside-avoid-page {
-    break-inside: avoid-page !important;
+.cnr\:medium-arch {
+    border-radius: 0.6666rem !important;
 }
-.break\:inside-avoid-column {
-    break-inside: avoid-column !important;
+.cnr\:large-arch {
+    border-radius: 1rem !important;
 }
-.break\:inside-avoid-region {
-    break-inside: avoid-region !important;
+.cnr\:full-arch {
+    border-radius: 100% !important;
 }
-/*  # cur
-    # 91001.1b
-    # cursor style named classes
+
+/*
+***
+    # cur
+    # 200107-1
+    # cursor
     # https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+***
 */
 .cur\:auto,
 .cur\:auto\!hover:hover,
@@ -83,32 +91,16 @@
     cursor: pointer;
 }
 
-/*  # bdr:radius
-    # 90909.1b
-    # predefined border radius classes
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-*/
-.bdr\:radius-none {
-    border-radius: none !important;
+.cur\:text,
+.cur\:text\!hover:hover,
+.cur\:text\!focus:focus {
+    cursor: text;
 }
 
-.bdr\:radius-0\.25 {
-    border-radius: 0.25rem !important;
-}
-
-.bdr\:radius-0\.5 {
-    border-radius: 0.5rem !important;
-}
-
-.bdr\:radius-0\.75 {
-    border-radius: 0.75rem !important;
-}
-
-/*: container should be square :*/
-.bdr\:radius-circle {
-    border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    -webkit-border-radius: 50% !important;
+.cur\:wait,
+.cur\:wait\!hover:hover,
+.cur\:wait\!focus:focus {
+    cursor: wait;
 }
 
 /*  # dsp
@@ -165,131 +157,106 @@
     font-family: var(--font-fancy) !important;
 }
 
-/*  # fnt:size
-    # 90907.1b
+/*
+***
+    # fnt/icon:size
+    # 200107-1
     # font size named classes
     # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+***
 */
-.fnt\:size-xx-large {
+.fnt\:size-xxx-large,
+.icon\:size-xxx-large {
+    font-size: xxx-large !important;
+}
+
+.fnt\:size-xx-large,
+.icon\:size-xx-large {
     font-size: xx-large !important;
 }
 
-.fnt\:size-x-large {
+.fnt\:size-x-large,
+.icon\:size-x-large {
     font-size: x-large !important;
 }
 
-.fnt\:size-large {
+.fnt\:size-large,
+.icon\:size-large {
     font-size: large !important;
 }
 
-.fnt\:size-x-medium {
+.fnt\:size-x-medium,
+.icon\:size-x-medium {
     font-size: var(--font-size-xr) !important;
 }
 
-.fnt\:size-medium {
+.fnt\:size-medium,
+.icon\:size-medium {
     font-size: medium !important;
 }
 
-.fnt\:size-small {
+.fnt\:size-small,
+.icon\:size-small {
     font-size: small !important;
 }
 
-.fnt\:size-x-small {
+.fnt\:size-x-small,
+.icon\:size-x-small {
     font-size: x-small !important;
 }
 
-.fnt\:size-xx-small {
+.fnt\:size-xx-small,
+.icon\:size-xx-small {
     font-size: xx-small !important;
 }
 
-.fnt\:size-larger {
+.fnt\:size-larger,
+.icon\:size-larger {
     font-size: larger !important;
 }
 
-.fnt\:size-smaller {
+.fnt\:size-smaller,
+.icon\:size-smaller {
     font-size: smaller !important;
 }
 
-/*  # shadow
-    # 91108.1a
+/*
+***
+    # shadow
+    # 200107-1
     # text shadow
-    # https://developers.google.com/fonts/docs/getting_started
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
+***
 */
 .fnt\:shadow,
 .fnt\:shadow-light {
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 3px 3px #BDBDBD;
 }
 .fnt\:shadow-medium {
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 3px 3px #9E9E9E;
 }
 .fnt\:shadow-dark {
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 3px 3px #757575;
 }
 
-/*  # md
-    # 91012.1a
-    # materical design icon sizes
-    # https://google.github.io/material-design-icons/
-**/
-
-.md\:size-h1 {
-    font-size: var(--font-size-h1) !important;
-}
-
-.md\:size-h2 {
-    font-size: var(--font-size-h2) !important;
-}
-
-.md\:size-h3,
-.md\:size-xxx-large {
-    font-size: var(--font-size-h3) !important;
-}
-
-.md\:size-h4,
-.md\:size-xx-large {
-    font-size: var(--font-size-h4) !important;
-}
-
-.md\:size-h5,
-.md\:size-x-large {
-    font-size: var(--font-size-h5) !important;
-}
-
-.md\:size-h6,
-.md\:size-large {
-    font-size: var(--font-size-h6) !important;
-}
-
-.md\:size-medium {
-    font-size: var(--font-size-rg) !important;
-}
-
-.md\:size-small {
-    font-size: var(--font-size-sm) !important;
-}
-
-.md\:size-x-small {
-    font-size: var(--font-size-xs) !important;
-}
-
-/*  # fnt:space
-    # 90907.1b
-    # predefined letter spacing classes
+/*  # trk
+    # 200107.1a
+    # tracking - type letter spacing
     # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 */
-.fnt\:spacing-tight {
-    letter-spacing: -0.05rem !important;
+.trk\:tight {
+    letter-spacing: -0.01rem !important;
 }
 
-.fnt\:spacing-normal {
-    letter-spacing: 0 !important;
+.trk\:normal {
+    letter-spacing: normal !important;
 }
 
-.fnt\:spacing-loose {
+.trk\:loose {
     letter-spacing: 0.1rem !important;
 }
 
-.fnt\:spacing-wide {
+.trk\:wide {
     letter-spacing: 0.5rem !important;
 }
 
@@ -403,23 +370,23 @@
     # line height
     # https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 */
-.line\:ht-normal {
+.ht\:line-normal {
     line-height: normal !important;
 }
 
-.line\:ht-1\.75 {
+.ht\:line-1\.75 {
     line-height: 1.75 !important;
 }
 
-.line\:ht-2 {
+.ht\:line-2 {
     line-height: 2 !important;
 }
 
-.line\:ht-2\.25 {
+.ht\:line-2\.25 {
     line-height: 2.25 !important;
 }
 
-.line\:ht-2\.5 {
+.ht\:line-2\.5 {
     line-height: 2.5 !important;
 }
 
@@ -463,91 +430,115 @@
     width: 25% !important;
 }
 
-/*  # mar all
-    # 91108.1b
-    # margin (rem)
+/*
+***
+    # mar
+    # 200107-1
+    # margin all (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
+.mar\:0,
 .mar\:all-0 {
     margin: 0 !important;
 }
 
+.mar\:0\.125,
 .mar\:all-0\.125 {
     margin: 0.125rem !important;
 }
 
+.mar\:0\.25,
 .mar\:all-0\.25 {
     margin: 0.25rem !important;
 }
 
+.mar\:0\.375,
 .mar\:all-0\.375 {
     margin: 0.375rem !important;
 }
 
+.mar\:0\.5,
 .mar\:all-0\.5 {
     margin: 0.5rem !important;
 }
 
+.mar\:0\.625,
 .mar\:all-0\.625 {
     margin: 0.625rem !important;
 }
 
+.mar\:0\.75,
 .mar\:all-0\.75 {
     margin: 0.75rem !important;
 }
 
+.mar\:0\.8125,
 .mar\:all-0\.8125 {
     margin: 0.8125rem !important;
 }
 
+.mar\:0\.875,
 .mar\:all-0\.875 {
     margin: 0.875rem !important;
 }
 
+.mar\:0\.9375,
 .mar\:all-0\.9375 {
     margin: 0.9375rem !important;
 }
 
+.mar\:1,
 .mar\:all-1 {
     margin: 1rem !important;
 }
 
+.mar\:1\.25,
 .mar\:all-1\.25 {
     margin: 1.25rem !important;
 }
 
+.mar\:1\.5,
 .mar\:all-1\.5 {
     margin: 1.5rem !important;
 }
 
+.mar\:1\.75,
 .mar\:all-1\.75 {
     margin: 1.75rem !important;
 }
 
+.mar\:2,
 .mar\:all-2 {
     margin: 2rem !important;
 }
 
+.mar\:1\%,
 .mar\:all-1\% {
     margin: 1% !important;
 }
 
+.mar\:2\%,
 .mar\:all-2\% {
     margin: 2% !important;
 }
 
+.mar\:4\%,
 .mar\:all-4\% {
     margin: 4% !important;
 }
 
+.mar\:6\%,
 .mar\:all-6\% {
     margin: 6% !important;
 }
 
+.mar\:8\%,
 .mar\:all-8\% {
     margin: 8% !important;
 }
 
+.mar\:10\%,
 .mar\:all-10\% {
     margin: 10% !important;
 }
@@ -913,57 +904,57 @@
     # margin (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 */
-.mar\:horz-0\.25 {
+.mar\:hrz-0\.25 {
     margin-left: 0.25rem !important;
     margin-right: 0.25rem !important;
 }
 
-.mar\:horz-0\.5 {
+.mar\:hrz-0\.5 {
     margin-left: 0.5rem !important;
     margin-right: 0.5rem !important;
 }
 
-.mar\:horz-0\.75 {
+.mar\:hrz-0\.75 {
     margin-left: 0.75rem !important;
     margin-right: 0.75rem !important;
 }
 
-.mar\:horz-1 {
+.mar\:hrz-1 {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
 }
 
-.mar\:horz-2 {
+.mar\:hrz-2 {
     margin-left: 2rem !important;
     margin-right: 2rem !important;
 }
 
-.mar\:horz-1\% {
+.mar\:hrz-1\% {
     margin-left: 1% !important;
     margin-right: 1% !important;
 }
 
-.mar\:horz-2\% {
+.mar\:hrz-2\% {
     margin-left: 2% !important;
     margin-right: 2% !important;
 }
 
-.mar\:horz-4\% {
+.mar\:hrz-4\% {
     margin-left: 4% !important;
     margin-right: 4% !important;
 }
 
-.mar\:horz-6\% {
+.mar\:hrz-6\% {
     margin-left: 6% !important;
     margin-right: 6% !important;
 }
 
-.mar\:horz-8\% {
+.mar\:hrz-8\% {
     margin-left: 8% !important;
     margin-right: 8% !important;
 }
 
-.mar\:horz-10\% {
+.mar\:hrz-10\% {
     margin-left: 10% !important;
     margin-right: 10% !important;
 }
@@ -973,141 +964,165 @@
     # margin (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 */
-.mar\:vert-0\.25 {
+.mar\:vrt-0\.25 {
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
 }
 
-.mar\:vert-0\.5 {
+.mar\:vrt-0\.5 {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
 }
 
-.mar\:vert-0\.75 {
+.mar\:vrt-0\.75 {
     margin-top: 0.75rem !important;
     margin-bottom: 0.75rem !important;
 }
 
-.mar\:vert-1 {
+.mar\:vrt-1 {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
 }
 
-.mar\:vert-1\% {
+.mar\:vrt-1\% {
     margin-top: 1% !important;
     margin-bottom: 1% !important;
 }
 
-.mar\:vert-2\% {
+.mar\:vrt-2\% {
     margin-top: 2% !important;
     margin-bottom: 2% !important;
 }
 
-.mar\:vert-4\% {
+.mar\:vrt-4\% {
     margin-top: 4% !important;
     margin-bottom: 4% !important;
 }
 
-.mar\:vert-6\% {
+.mar\:vrt-6\% {
     margin-top: 6% !important;
     margin-bottom: 6% !important;
 }
 
-.mar\:vert-8\% {
+.mar\:vrt-8\% {
     margin-top: 8% !important;
     margin-bottom: 8% !important;
 }
 
-.mar\:vert-10\% {
+.mar\:vrt-10\% {
     margin-top: 10% !important;
     margin-bottom: 10% !important;
 }
 
-/*  # pad all
-    # 91108.1b
-    # padding (rem)
+/*
+***
+    # pad
+    # 200107-1
+    # pad all (rem)
     # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
+.pad\:0,
 .pad\:all-0 {
     padding: 0 !important;
 }
 
+.pad\:0\.125,
 .pad\:all-0\.125 {
     padding: 0.125rem !important;
 }
 
+.pad\:0\.25,
 .pad\:all-0\.25 {
     padding: 0.25rem !important;
 }
 
+.pad\:0\.375,
 .pad\:all-0\.375 {
     padding: 0.375rem !important;
 }
 
+.pad\:0\.5,
 .pad\:all-0\.5 {
     padding: 0.5rem !important;
 }
 
+.pad\:0\.625,
 .pad\:all-0\.625 {
     padding: 0.625rem !important;
 }
 
+.pad\:0\.75,
 .pad\:all-0\.75 {
     padding: 0.75rem !important;
 }
 
+.pad\:0\.8125,
 .pad\:all-0\.8125 {
     padding: 0.8125rem !important;
 }
 
+.pad\:0\.875,
 .pad\:all-0\.875 {
     padding: 0.875rem !important;
 }
 
+.pad\:0\.9375,
 .pad\:all-0\.9375 {
     padding: 0.9375rem !important;
 }
 
+.pad\:1,
 .pad\:all-1 {
     padding: 1rem !important;
 }
 
+.pad\:1\.25,
 .pad\:all-1\.25 {
     padding: 1.25rem !important;
 }
 
+.pad\:1\.5,
 .pad\:all-1\.5 {
     padding: 1.5rem !important;
 }
 
+.pad\:1\.75,
 .pad\:all-1\.75 {
     padding: 1.75rem !important;
 }
 
+.pad\:2,
 .pad\:all-2 {
     padding: 2rem !important;
 }
 
+.pad\:1\%,
 .pad\:all-1\% {
     padding: 1% !important;
 }
 
+.pad\:2\%,
 .pad\:all-2\% {
     padding: 2% !important;
 }
 
+.pad\:4\%,
 .pad\:all-4\% {
     padding: 4% !important;
 }
 
+.pad\:6\%,
 .pad\:all-6\% {
     padding: 6% !important;
 }
 
+.pad\:8\%,
 .pad\:all-8\% {
     padding: 8% !important;
 }
 
+.pad\:10\%,
 .pad\:all-10\% {
     padding: 10% !important;
 }
@@ -1468,137 +1483,129 @@
     padding-left: 10% !important;
 }
 
-/*  # pad horz
-    # 91108.1b
-    # padding (rem)
+/*
+***
+    # pad hrz
+    # 200107-1
+    # horizontal padding
     # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
-.pad\:horz-0\.25 {
+.pad\:hrz-0\.25 {
     padding-left: 0.25rem !important;
     padding-right: 0.25rem !important;
 }
 
-.pad\:horz-0\.5 {
+.pad\:hrz-0\.5 {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
 }
 
-.pad\:horz-0\.75 {
+.pad\:hrz-0\.75 {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
 }
 
-.pad\:horz-1 {
+.pad\:hrz-1 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
 }
 
-.pad\:horz-1\% {
+.pad\:hrz-1\% {
     padding-left: 1% !important;
     padding-right: 1% !important;
 }
 
-.pad\:horz-2\% {
+.pad\:hrz-2\% {
     padding-left: 2% !important;
     padding-right: 2% !important;
 }
 
-.pad\:horz-4\% {
+.pad\:hrz-4\% {
     padding-left: 4% !important;
     padding-right: 4% !important;
 }
 
-.pad\:horz-6\% {
+.pad\:hrz-6\% {
     padding-left: 6% !important;
     padding-right: 6% !important;
 }
 
-.pad\:horz-8\% {
+.pad\:hrz-8\% {
     padding-left: 8% !important;
     padding-right: 8% !important;
 }
 
-.pad\:horz-10\% {
+.pad\:hrz-10\% {
     padding-left: 10% !important;
     padding-right: 10% !important;
 }
 
-/*  # pad vert
-    # 91108.1b
-    # padding (rem)
+/*
+***
+    # pad vrt
+    # 200107-1
+    # vertical padding
     # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
-.pad\:vert-0\.25 {
+.pad\:vrt-0\.25 {
     padding-top: 0.25rem !important;
     padding-bottom: 0.25rem !important;
 }
 
-.pad\:vert-0\.5 {
+.pad\:vrt-0\.5 {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
 }
 
-.pad\:vert-0\.75 {
+.pad\:vrt-0\.75 {
     padding-top: 0.75rem !important;
     padding-bottom: 0.75rem !important;
 }
 
-.pad\:vert-1 {
+.pad\:vrt-1 {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
 
-.pad\:vert-1\% {
+.pad\:vrt-1\% {
     padding-top: 1% !important;
     padding-bottom: 1% !important;
 }
 
-.pad\:vert-2\% {
+.pad\:vrt-2\% {
     padding-top: 2% !important;
     padding-bottom: 2% !important;
 }
 
-.pad\:vert-4\% {
+.pad\:vrt-4\% {
     padding-top: 4% !important;
     padding-bottom: 4% !important;
 }
 
-.pad\:vert-6\% {
+.pad\:vrt-6\% {
     padding-top: 6% !important;
     padding-bottom: 6% !important;
 }
 
-.pad\:vert-8\% {
+.pad\:vrt-8\% {
     padding-top: 8% !important;
     padding-bottom: 8% !important;
 }
 
-.pad\:vert-10\% {
+.pad\:vrt-10\% {
     padding-top: 10% !important;
     padding-bottom: 10% !important;
 }
 
-/*  # txt
-    # 90907.1b
-    # text align
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
-*/
-.txt\:align-center {
-    text-align: center !important;
-}
-
-.txt\:align-left {
-    text-align: left !important;
-}
-
-.txt\:align-right {
-    text-align: right !important;
-}
-
-/*  # wd
-    # 90907.1b
-    # width (fraction)
+/*
+***
+    # wd
+    # 200107-1
+    # width
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport/width
+***
 */
 .wd\:1\/4 {
     width: 25% !important;
@@ -2028,6 +2035,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
 /*
     horizonal align
 */
+/* deprecated
 .horz\:align-center {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -2042,10 +2050,12 @@ ul.li\:tpl-spaced li:not(:last-child) {
     margin-left: auto !important;
     margin-right: 0 !important;
 }
+*/
 
 /*
     vertical align
 */
+/* deprecated
 .vert\:align-baseline {
     vertical-align: baseline !important;
 }
@@ -2069,12 +2079,99 @@ ul.li\:tpl-spaced li:not(:last-child) {
 .vert\:align-text-top {
     vertical-align: text-top !important;
 }
+*/
+
+/*
+***
+    # aln
+    # 200107-1
+    # alignment
+***
+*/
+.aln\:center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.aln\:left {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+.aln\:right {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+.aln\:baseline {
+    vertical-align: baseline !important;
+}
+
+.aln\:top {
+    vertical-align: top !important;
+}
+
+.aln\:middle {
+    vertical-align: middle !important;
+}
+
+.aln\:bottom {
+    vertical-align: bottom !important;
+}
+
+.aln\:sub {
+    vertical-align: sub !important;
+}
+
+.aln\:sup {
+    vertical-align: super !important;
+}
+
+.aln\:text-bottom {
+    vertical-align: text-bottom !important;
+}
+
+.aln\:text-top {
+    vertical-align: text-top !important;
+}
+
+.aln\:text-center {
+    text-align: center !important;
+}
+
+.aln\:text-left {
+    text-align: left !important;
+}
+
+.aln\:text-right {
+    text-align: right !important;
+}
+
+/*  # txt
+    # 90907.1b
+    # text align
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+*/
+/* deprecated
+.txt\:align-center {
+    text-align: center !important;
+}
+
+.txt\:align-left {
+    text-align: left !important;
+}
+
+.txt\:align-right {
+    text-align: right !important;
+}
+*/
 
 /*  # disp
     # 90907.1b
     # display
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 */
+/* deprecated
 .disp\:none {
     display: none !important;
 }
@@ -2090,6 +2187,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
 .disp\:inline-block {
     display: inline-block !important;
 }
+*/
 
 /*  # table
     # 91108.1a
@@ -2169,35 +2267,35 @@ table.td\:spacing-1 {
         fx:rw       - row wrap
         fx:rw-rev   - row wrap reverse
         justify content
-        fa:1    - flex-start
-        fa:2    - flex-end
-        fa:3    - center
-        fa:4    - space-between
-        fa:5    - space-around
+        fxa:1    - flex-start
+        fxa:2    - flex-end
+        fxa:3    - center
+        fxa:4    - space-between
+        fxa:5    - space-around
         align items
-        fb:1    - flex-start
-        fb:2    - flex-end
-        fb:3    - center
-        fb:4    - between
-        fb:5    - around
-        fb:6    - stretch
+        fxb:1    - flex-start
+        fxb:2    - flex-end
+        fxb:3    - center
+        fxb:4    - between
+        fxb:5    - around
+        fxb:6    - stretch
         align content
-        fc:1    - flex-start
-        fc:2    - flex-end
-        fc:3    - center
-        fc:4    - baseline
-        fc:5    - stretch
+        fxc:1    - flex-start
+        fxc:2    - flex-end
+        fxc:3    - center
+        fxc:4    - baseline
+        fxc:5    - stretch
         item ranking (auto basis)
-        fd:1    - 0 1 auto
-        fd:2    - 1 1 auto
-        fd:3    - 2 1 auto
+        fxd:1    - 0 1 auto
+        fxd:2    - 1 1 auto
+        fxd:3    - 2 1 auto
         item alignment
-        fe:1    - auto
-        fe:2    - flex-start
-        fe:3    - flex-end
-        fe:4    - center
-        fe:5    - baseline
-        fe:6    - stretch
+        fxe:1    - auto
+        fxe:2    - flex-start
+        fxe:3    - flex-end
+        fxe:4    - center
+        fxe:5    - baseline
+        fxe:6    - stretch
 **/
 .fx\:c {
     display: -ms-flexbox;
@@ -2272,155 +2370,180 @@ table.td\:spacing-1 {
 }
 
 /*: justify content :*/
-.fa\:1 {
+.fa\:1,
+.fxa\:1 {
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
 }
 
-.fa\:2 {
+.fa\:2,
+.fxa\:2 {
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
-.fa\:3 {
+.fa\:3,
+.fxa\:3 {
     -webkit-justify-content: flex-center;
     -ms-flex-pack: center;
     justify-content: flex-center;
 }
 
-.fa\:4 {
+.fa\:4,
+.fxa\:4 {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
-.fa\:5 {
+.fa\:5,
+.fxa\:5 {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
 /*: align content :*/
-.fb\:1 {
+.fb\:1,
+.fxb\:1 {
     -webkit-align-content: flex-start;
     -ms-flex-line-pack: start;
     align-content: flex-start;
 }
 
-.fb\:2 {
+.fb\:2,
+.fxb\:2 {
     -webkit-align-content: flex-end;
     -ms-flex-line-pack: end;
     align-content: flex-end;
 }
 
-.fb\:3 {
+.fb\:3,
+.fxb\:3 {
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
 }
 
-.fb\:4 {
+.fb\:4,
+.fxb\:4 {
     -webkit-align-content: space-between;
     -ms-flex-line-pack: justify;
     align-content: space-between;
 }
 
-.fb\:5 {
+.fb\:5,
+.fxb\:5 {
     -webkit-align-content: space-around;
     -ms-flex-line-pack: distribute;
     align-content: space-around;
 }
 
-.fb\:6 {
+.fb\:6,
+.fxb\:6 {
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
 }
 
 /*: align items :*/
-.fc\:1 {
+.fc\:1,
+.fxc\:1 {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
 }
 
-.fc\:2 {
+.fc\:2,
+.fxc\:2 {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
 }
 
-.fc\:3 {
+.fc\:3,
+.fxc\:3 {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
 }
 
-.fc\:4 {
+.fc\:4,
+.fxc\:4 {
     -webkit-align-items: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
 }
 
-.fc\:5 {
+.fc\:5,
+.fxc\:5 {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
 }
 
 /*: item (importance ranking / auto is assumed) :*/
-.fd\:1 {
+.fd\:1,
+.fxd\:1 {
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
 }
 
-.fd\:2 {
+.fd\:2,
+.fxd\:2 {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
 
-.fd\:3 {
+.fd\:3,
+.fxd\:3 {
     -webkit-flex: 2 1 auto;
     -ms-flex: 2 1 auto;
     flex: 2 1 auto;
 }
 
 /*: item (align self) :*/
-.fe\:1 {
+.fe\:1,
+.fxe\:1 {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
 }
 
-.fe\:2 {
+.fe\:2,
+.fxe\:2 {
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
     align-self: flex-start;
 }
 
-.fe\:3 {
+.fe\:3,
+.fxe\:3 {
     -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
 }
 
-.fe\:4 {
+.fe\:4,
+.fxe\:4 {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
 }
 
-.fe\:5 {
+.fe\:5,
+.fxe\:5 {
     -webkit-align-self: baseline;
     -ms-flex-item-align: baseline;
     align-self: baseline;
 }
 
-.fe\:6 {
+.fe\:6,
+.fxe\:6 {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
@@ -2434,31 +2557,28 @@ table.td\:spacing-1 {
     # https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
 */
 .bdr\:none {
-    border-style: none !important;
+    border-color: transparent !important;
 }
 
 .bdr\:top-none {
-    border-top-style: none !important;
+    border-top-color: transparent !important;
 }
 
 .bdr\:right-none {
-    border-right-style: none !important;
+    border-right-color: transparent !important;
 }
 
 .bdr\:bottom-none {
-    border-bottom-style: none !important;
+    border-bottom-color: transparent !important;
 }
 
 .bdr\:left-none {
-    border-top-style: none !important;
+    border-left-color: transparent !important;
 }
 
 .bdr\:dashed-thin,
 .bdr\:dashed-medium,
-.bdr\:dashed-thick,
-.bdr\:dashed-thin-rounded,
-.bdr\:dashed-medium-rounded,
-.bdr\:dashed-thick-rounded {
+.bdr\:dashed-thick {
     border-style: dashed !important;
 }
 
@@ -2488,10 +2608,7 @@ table.td\:spacing-1 {
 
 .bdr\:dotted-thin,
 .bdr\:dotted-medium,
-.bdr\:dotted-thick,
-.bdr\:dotted-thin-rounded,
-.bdr\:dotted-medium-rounded,
-.bdr\:dotted-thick-rounded {
+.bdr\:dotted-thick {
     border-style: dotted !important;
 }
 
@@ -2521,10 +2638,7 @@ table.td\:spacing-1 {
 
 .bdr\:solid-thin,
 .bdr\:solid-medium,
-.bdr\:solid-thick,
-.bdr\:solid-thin-rounded,
-.bdr\:solid-medium-rounded,
-.bdr\:solid-thick-rounded {
+.bdr\:solid-thick {
     border-style: solid !important;
 }
 
@@ -2554,10 +2668,7 @@ table.td\:spacing-1 {
 
 .bdr\:dashed-thin,
 .bdr\:dotted-thin,
-.bdr\:solid-thin,
-.bdr\:dashed-thin-rounded,
-.bdr\:dotted-thin-rounded,
-.bdr\:solid-thin-rounded {
+.bdr\:solid-thin {
     border-width: thin !important;
 }
 
@@ -2587,10 +2698,7 @@ table.td\:spacing-1 {
 
 .bdr\:dashed-medium,
 .bdr\:dotted-medium,
-.bdr\:solid-medium,
-.bdr\:dashed-medium-rounded,
-.bdr\:dotted-medium-rounded,
-.bdr\:solid-medium-rounded {
+.bdr\:solid-medium {
     border-width: medium !important;
 }
 
@@ -2620,10 +2728,7 @@ table.td\:spacing-1 {
 
 .bdr\:dashed-thick,
 .bdr\:dotted-thick,
-.bdr\:solid-thick,
-.bdr\:dashed-thick-rounded,
-.bdr\:dotted-thick-rounded,
-.bdr\:solid-thick-rounded {
+.bdr\:solid-thick {
     border-width: thick !important;
 }
 
@@ -2649,18 +2754,6 @@ table.td\:spacing-1 {
 .bdr\:left-dotted-thick,
 .bdr\:left-solid-thick {
     border-left-width: thick !important;
-}
-
-.bdr\:dashed-thin-rounded,
-.bdr\:dashed-medium-rounded,
-.bdr\:dashed-thick-rounded,
-.bdr\:dotted-thin-rounded,
-.bdr\:dotted-medium-rounded,
-.bdr\:dotted-thick-rounded,
-.bdr\:solid-thin-rounded,
-.bdr\:solid-medium-rounded,
-.bdr\:solid-thick-rounded {
-    border-radius: 0.25rem !important;
 }
 
 /*  # sm device
@@ -2695,52 +2788,6 @@ table.td\:spacing-1 {
         # display
         # https://developer.mozilla.org/en-US/docs/Web/CSS/display
     */
-    /*: border shortcuts! :*/
-    .sm\)bdr {
-        border-style: solid !important;
-        border-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:none {
-        border: none !important;
-    }
-
-    .sm\)bdr\:rounded {
-        border-radius: 0.25rem !important;
-        border-style: solid !important;
-        border-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:square {
-        border-radius: none !important;
-        border-style: solid !important;
-        border-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:dashed {
-        border-style: dashed !important;
-        border-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:top {
-        border-top-style: solid !important;
-        border-top-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:right {
-        border-right-style: solid !important;
-        border-right-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:bottom {
-        border-bottom-style: solid !important;
-        border-bottom-width: 0.0625rem !important;
-    }
-
-    .sm\)bdr\:left {
-        border-left-style: solid !important;
-        border-left-width: 0.0625rem !important;
-    }
 
     /*: display options :*/
     .sm\)dsp\:none {
@@ -2875,92 +2922,116 @@ table.td\:spacing-1 {
         letter-spacing: 0.5rem;
     }
 
-    /*  # mar all
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
-    .sm\)mar\:all-0 {
+	/*
+	***
+	    # mar
+	    # 200107-1
+	    # margin all (rem)
+	    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
+	.sm\)mar\:0,
+	.sm\)mar\:all-0 {
         margin: 0 !important;
     }
 
-    .sm\)mar\:all-0\.125 {
+	.sm\)mar\:0\.125,
+	.sm\)mar\:all-0\.125 {
         margin: 0.125rem !important;
     }
 
-    .sm\)mar\:all-0\.25 {
+    .sm\)mar\:0\.25,
+	.sm\)mar\:all-0\.25 {
         margin: 0.25rem !important;
     }
 
-    .sm\)mar\:all-0\.375 {
+    .sm\)mar\:0\.375,
+	.sm\)mar\:all-0\.375 {
         margin: 0.375rem !important;
     }
 
-    .sm\)mar\:all-0\.5 {
+    .sm\)mar\:0\.5,
+	.sm\)mar\:all-0\.5 {
         margin: 0.5rem !important;
     }
 
-    .sm\)mar\:all-0\.625 {
+    .sm\)mar\:0\.625,
+	.sm\)mar\:all-0\.625 {
         margin: 0.625rem !important;
     }
 
-    .sm\)mar\:all-0\.75 {
+    .sm\)mar\:0\.75,
+	.sm\)mar\:all-0\.75 {
         margin: 0.75rem !important;
     }
 
-    .sm\)mar\:all-0\.8125 {
+    .sm\)mar\:0\.8125,
+	.sm\)mar\:all-0\.8125 {
         margin: 0.8125rem !important;
     }
 
-    .sm\)mar\:all-0\.875 {
+    .sm\)mar\:0\.875,
+	.sm\)mar\:all-0\.875 {
         margin: 0.875rem !important;
     }
 
-    .sm\)mar\:all-0\.9375 {
+    .sm\)mar\:0\.9375,
+	.sm\)mar\:all-0\.9375 {
         margin: 0.9375rem !important;
     }
 
-    .sm\)mar\:all-1 {
+    .sm\)mar\:1,
+	.sm\)mar\:all-1 {
         margin: 1rem !important;
     }
 
-    .sm\)mar\:all-1\.25 {
+    .sm\)mar\:1\.25,
+	.sm\)mar\:all-1\.25 {
         margin: 1.25rem !important;
     }
 
-    .sm\)mar\:all-1\.5 {
+    .sm\)mar\:1\.5,
+	.sm\)mar\:all-1\.5 {
         margin: 1.5rem !important;
     }
 
-    .sm\)mar\:all-1\.75 {
+    .sm\)mar\:1\.75,
+	.sm\)mar\:all-1\.75 {
         margin: 1.75rem !important;
     }
 
-    .sm\)mar\:all-2 {
+    .sm\)mar\:2,
+	.sm\)mar\:all-2 {
         margin: 2rem !important;
     }
 
-    .sm\)mar\:all-1\% {
+    .sm\)mar\:1\%,
+	.sm\)mar\:all-1\% {
         margin: 1% !important;
     }
 
-    .sm\)mar\:all-2\% {
+    .sm\)mar\:2\%,
+	.sm\)mar\:all-2\% {
         margin: 2% !important;
     }
 
-    .sm\)mar\:all-4\% {
+    .sm\)mar\:4\%,
+	.sm\)mar\:all-4\% {
         margin: 4% !important;
     }
 
-    .sm\)mar\:all-6\% {
+    .sm\)mar\:6\%,
+	.sm\)mar\:all-6\% {
         margin: 6% !important;
     }
 
-    .sm\)mar\:all-8\% {
+    .sm\)mar\:8\%,
+	.sm\)mar\:all-8\% {
         margin: 8% !important;
     }
 
-    .sm\)mar\:all-10\% {
+    .sm\)mar\:10\%,
+	.sm\)mar\:all-10\% {
         margin: 10% !important;
     }
 
@@ -3325,57 +3396,57 @@ table.td\:spacing-1 {
         # margin (rem)
         # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     */
-    .sm\)mar\:horz-0\.25 {
+    .sm\)mar\:hrz-0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
     }
 
-    .sm\)mar\:horz-0\.5 {
+    .sm\)mar\:hrz-0\.5 {
         margin-left: 0.5rem !important;
         margin-right: 0.5rem !important;
     }
 
-    .sm\)mar\:horz-0\.75 {
+    .sm\)mar\:hrz-0\.75 {
         margin-left: 0.75rem !important;
         margin-right: 0.75rem !important;
     }
 
-    .sm\)mar\:horz-1 {
+    .sm\)mar\:hrz-1 {
         margin-left: 1rem !important;
         margin-right: 1rem !important;
     }
 
-    .sm\)mar\:horz-2 {
+    .sm\)mar\:hrz-2 {
         margin-left: 2rem !important;
         margin-right: 2rem !important;
     }
     
-    .sm\)mar\:horz-1\% {
+    .sm\)mar\:hrz-1\% {
         margin-left: 1% !important;
         margin-right: 1% !important;
     }
 
-    .sm\)mar\:horz-2\% {
+    .sm\)mar\:hrz-2\% {
         margin-left: 2% !important;
         margin-right: 2% !important;
     }
 
-    .sm\)mar\:horz-4\% {
+    .sm\)mar\:hrz-4\% {
         margin-left: 4% !important;
         margin-right: 4% !important;
     }
 
-    .sm\)mar\:horz-6\% {
+    .sm\)mar\:hrz-6\% {
         margin-left: 6% !important;
         margin-right: 6% !important;
     }
 
-    .sm\)mar\:horz-8\% {
+    .sm\)mar\:hrz-8\% {
         margin-left: 8% !important;
         margin-right: 8% !important;
     }
 
-    .sm\)mar\:horz-10\% {
+    .sm\)mar\:hrz-10\% {
         margin-left: 10% !important;
         margin-right: 10% !important;
     }
@@ -3385,142 +3456,166 @@ table.td\:spacing-1 {
         # margin (rem)
         # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     */
-    .sm\)mar\:vert-0\.25 {
+    .sm\)mar\:vrt-0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
     }
 
-    .sm\)mar\:vert-0\.5 {
+    .sm\)mar\:vrt-0\.5 {
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
     }
 
-    .sm\)mar\:vert-0\.75 {
+    .sm\)mar\:vrt-0\.75 {
         margin-top: 0.75rem !important;
         margin-bottom: 0.75rem !important;
     }
 
-    .sm\)mar\:vert-1 {
+    .sm\)mar\:vrt-1 {
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
     }
 
-    .sm\)mar\:vert-1\% {
+    .sm\)mar\:vrt-1\% {
         margin-top: 1% !important;
         margin-bottom: 1% !important;
     }
 
-    .sm\)mar\:vert-2\% {
+    .sm\)mar\:vrt-2\% {
         margin-top: 2% !important;
         margin-bottom: 2% !important;
     }
 
-    .sm\)mar\:vert-4\% {
+    .sm\)mar\:vrt-4\% {
         margin-top: 4% !important;
         margin-bottom: 4% !important;
     }
 
-    .sm\)mar\:vert-6\% {
+    .sm\)mar\:vrt-6\% {
         margin-top: 6% !important;
         margin-bottom: 6% !important;
     }
 
-    .sm\)mar\:vert-8\% {
+    .sm\)mar\:vrt-8\% {
         margin-top: 8% !important;
         margin-bottom: 8% !important;
     }
 
-    .sm\)mar\:vert-10\% {
+    .sm\)mar\:vrt-10\% {
         margin-top: 10% !important;
         margin-bottom: 10% !important;
     }
 
-    /*  # pad all
-        # 91108.1b
-        # padding (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
-    .sm\)pad\:all-0 {
+	/*
+	***
+	    # pad
+	    # 200107-1
+	    # pad all (rem)
+	    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
+    .sm\)pad\:0,
+	.sm\)pad\:all-0 {
         padding: 0 !important;
     }
 
-    .sm\)pad\:all-0\.125 {
+    .sm\)pad\:0\.125,
+	.sm\)pad\:all-0\.125 {
         padding: 0.125rem !important;
     }
 
-    .sm\)pad\:all-0\.25 {
+    .sm\)pad\:0\.25,
+	.sm\)pad\:all-0\.25 {
         padding: 0.25rem !important;
     }
 
-    .sm\)pad\:all-0\.375 {
+    .sm\)pad\:0\.375,
+	.sm\)pad\:all-0\.375 {
         padding: 0.375rem !important;
     }
 
-    .sm\)pad\:all-0\.5 {
+    .sm\)pad\:0\.5,
+	.sm\)pad\:all-0\.5 {
         padding: 0.5rem !important;
     }
 
-    .sm\)pad\:all-0\.625 {
+    .sm\)pad\:0\.625,
+	.sm\)pad\:all-0\.625 {
         padding: 0.625rem !important;
     }
 
-    .sm\)pad\:all-0\.75 {
+    .sm\)pad\:0\.75,
+	.sm\)pad\:all-0\.75 {
         padding: 0.75rem !important;
     }
 
-    .sm\)pad\:all-0\.8125 {
+    .sm\)pad\:0\.8125,
+	.sm\)pad\:all-0\.8125 {
         padding: 0.8125rem !important;
     }
 
-    .sm\)pad\:all-0\.875 {
+    .sm\)pad\:0\.875,
+	.sm\)pad\:all-0\.875 {
         padding: 0.875rem !important;
     }
 
-    .sm\)pad\:all-0\.9375 {
+    .sm\)pad\:0\.9375,
+	.sm\)pad\:all-0\.9375 {
         padding: 0.9375rem !important;
     }
 
-    .sm\)pad\:all-1 {
+    .sm\)pad\:1,
+	.sm\)pad\:all-1 {
         padding: 1rem !important;
     }
 
-    .sm\)pad\:all-1\.25 {
+    .sm\)pad\:1\.25,
+	.sm\)pad\:all-1\.25 {
         padding: 1.25rem !important;
     }
 
-    .sm\)pad\:all-1\.5 {
+    .sm\)pad\:1\.5,
+	.sm\)pad\:all-1\.5 {
         padding: 1.5rem !important;
     }
 
-    .sm\)pad\:all-1\.75 {
+    .sm\)pad\:1\.75,
+	.sm\)pad\:all-1\.75 {
         padding: 1.75rem !important;
     }
 
-    .sm\)pad\:all-2 {
+    .sm\)pad\:2,
+	.sm\)pad\:all-2 {
         padding: 2rem !important;
     }
 
-    .sm\)pad\:all-1\% {
+    .sm\)pad\:1\%,
+	.sm\)pad\:all-1\% {
         padding: 1% !important;
     }
 
-    .sm\)pad\:all-2\% {
+    .sm\)pad\:2\%,
+	.sm\)pad\:all-2\% {
         padding: 2% !important;
     }
 
-    .sm\)pad\:all-4\% {
+    .sm\)pad\:4\%,
+	.sm\)pad\:all-4\% {
         padding: 4% !important;
     }
 
-    .sm\)pad\:all-6\% {
+    .sm\)pad\:6\%,
+	.sm\)pad\:all-6\% {
         padding: 6% !important;
     }
 
-    .sm\)pad\:all-8\% {
+    .sm\)pad\:8\%,
+	.sm\)pad\:all-8\% {
         padding: 8% !important;
     }
 
-    .sm\)pad\:all-10\% {
+    .sm\)pad\:10\%,
+	.sm\)pad\:all-10\% {
         padding: 10% !important;
     }
 
@@ -3880,112 +3975,112 @@ table.td\:spacing-1 {
         padding-left: 10% !important;
     }
 
-    /*  # pad horz
+    /*  # pad hrz
         # 91108.1b
-        # padding (rem)
+        # horizontal padding
         # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     */
-    .sm\)pad\:horz-0\.25 {
+    .sm\)pad\:hrz-0\.25 {
         padding-left: 0.25rem !important;
         padding-right: 0.25rem !important;
     }
 
-    .sm\)pad\:horz-0\.5 {
+    .sm\)pad\:hrz-0\.5 {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
 
-    .sm\)pad\:horz-0\.75 {
+    .sm\)pad\:hrz-0\.75 {
         padding-left: 0.75rem !important;
         padding-right: 0.75rem !important;
     }
 
-    .sm\)pad\:horz-1 {
+    .sm\)pad\:hrz-1 {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
 
-    .sm\)pad\:horz-1\% {
+    .sm\)pad\:hrz-1\% {
         padding-left: 1% !important;
         padding-right: 1% !important;
     }
 
-    .sm\)pad\:horz-2\% {
+    .sm\)pad\:hrz-2\% {
         padding-left: 2% !important;
         padding-right: 2% !important;
     }
 
-    .sm\)pad\:horz-4\% {
+    .sm\)pad\:hrz-4\% {
         padding-left: 4% !important;
         padding-right: 4% !important;
     }
 
-    .sm\)pad\:horz-6\% {
+    .sm\)pad\:hrz-6\% {
         padding-left: 6% !important;
         padding-right: 6% !important;
     }
 
-    .sm\)pad\:horz-8\% {
+    .sm\)pad\:hrz-8\% {
         padding-left: 8% !important;
         padding-right: 8% !important;
     }
 
-    .sm\)pad\:horz-10\% {
+    .sm\)pad\:hrz-10\% {
         padding-left: 10% !important;
         padding-right: 10% !important;
     }
 
-    /*  # pad vert
+    /*  # pad vrt
         # 91108.1b
-        # padding (rem)
+        # vertical padding
         # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     */
-    .sm\)pad\:vert-0\.25 {
+    .sm\)pad\:vrt-0\.25 {
         padding-top: 0.25rem !important;
         padding-bottom: 0.25rem !important;
     }
 
-    .sm\)pad\:vert-0\.5 {
+    .sm\)pad\:vrt-0\.5 {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
     }
 
-    .sm\)pad\:vert-0\.75 {
+    .sm\)pad\:vrt-0\.75 {
         padding-top: 0.75rem !important;
         padding-bottom: 0.75rem !important;
     }
 
-    .sm\)pad\:vert-1 {
+    .sm\)pad\:vrt-1 {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
     }
 
-    .sm\)pad\:vert-1\% {
+    .sm\)pad\:vrt-1\% {
         padding-top: 1% !important;
         padding-bottom: 1% !important;
     }
 
-    .sm\)pad\:vert-2\% {
+    .sm\)pad\:vrt-2\% {
         padding-top: 2% !important;
         padding-bottom: 2% !important;
     }
 
-    .sm\)pad\:vert-4\% {
+    .sm\)pad\:vrt-4\% {
         padding-top: 4% !important;
         padding-bottom: 4% !important;
     }
 
-    .sm\)pad\:vert-6\% {
+    .sm\)pad\:vrt-6\% {
         padding-top: 6% !important;
         padding-bottom: 6% !important;
     }
 
-    .sm\)pad\:vert-8\% {
+    .sm\)pad\:vrt-8\% {
         padding-top: 8% !important;
         padding-bottom: 8% !important;
     }
 
-    .sm\)pad\:vert-10\% {
+    .sm\)pad\:vrt-10\% {
         padding-top: 10% !important;
         padding-bottom: 10% !important;
     }
@@ -4563,155 +4658,180 @@ table.td\:spacing-1 {
     }
 
     /*: justify content :*/
-    .sm\)fa\:1 {
+    .sm\)fa\:1,
+	.sm\)fxa\:1 {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
     }
 
-    .sm\)fa\:2 {
+    .sm\)fa\:2,
+	.sm\)fxa\:2 {
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end;
     }
 
-    .sm\)fa\:3 {
+    .sm\)fa\:3,
+	.sm\)fxa\:3 {
         -webkit-justify-content: flex-center;
         -ms-flex-pack: center;
         justify-content: flex-center;
     }
 
-    .sm\)fa\:4 {
+    .sm\)fa\:4,
+	.sm\)fxa\:4 {
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
-    .sm\)fa\:5 {
+    .sm\)fa\:5,
+	.sm\)fxa\:5 {
         -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
         justify-content: space-around;
     }
 
     /*: align content :*/
-    .sm\)fb\:1 {
+    .sm\)fb\:1,
+	.sm\)fxb\:1 {
         -webkit-align-content: flex-start;
         -ms-flex-line-pack: start;
         align-content: flex-start;
     }
 
-    .sm\)fb\:2 {
+    .sm\)fb\:2,
+	.sm\)fxb\:2 {
         -webkit-align-content: flex-end;
         -ms-flex-line-pack: end;
         align-content: flex-end;
     }
 
-    .sm\)fb\:3 {
+    .sm\)fb\:3,
+	.sm\)fxb\:3 {
         -webkit-align-content: center;
         -ms-flex-line-pack: center;
         align-content: center;
     }
 
-    .sm\)fb\:4 {
+    .sm\)fb\:4,
+	.sm\)fxb\:4 {
         -webkit-align-content: space-between;
         -ms-flex-line-pack: justify;
         align-content: space-between;
     }
 
-    .sm\)fb\:5 {
+    .sm\)fb\:5,
+	.sm\)fxb\:5 {
         -webkit-align-content: space-around;
         -ms-flex-line-pack: distribute;
         align-content: space-around;
     }
 
-    .sm\)fb\:6 {
+    .sm\)fb\:6,
+	.sm\)fxb\:6 {
         -webkit-align-content: stretch;
         -ms-flex-line-pack: stretch;
         align-content: stretch;
     }
 
     /*: align items :*/
-    .sm\)fc\:1 {
+    .sm\)fc\:1,
+	.sm\)fxc\:1 {
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
         align-items: flex-start;
     }
 
-    .sm\)fc\:2 {
+    .sm\)fc\:2,
+	.sm\)fxc\:2 {
         -webkit-align-items: flex-end;
         -ms-flex-align: end;
         align-items: flex-end;
     }
 
-    .sm\)fc\:3 {
+    .sm\)fc\:3,
+	.sm\)fxc\:3 {
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center;
     }
 
-    .sm\)fc\:4 {
+    .sm\)fc\:4,
+	.sm\)fxc\:4 {
         -webkit-align-items: baseline;
         -ms-flex-align: baseline;
         align-items: baseline;
     }
 
-    .sm\)fc\:5 {
+    .sm\)fc\:5,
+	.sm\)fxc\:5 {
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
     }
 
     /*: item (importance ranking / auto is assumed) :*/
-    .sm\)fd\:1 {
+    .sm\)fd\:1,
+	.sm\)fxd\:1 {
         -webkit-flex: 0 1 auto;
         -ms-flex: 0 1 auto;
         flex: 0 1 auto;
     }
 
-    .sm\)fd\:2 {
+    .sm\)fd\:2,
+	.sm\)fxd\:2 {
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     }
 
-    .sm\)fd\:3 {
+    .sm\)fd\:3,
+	.sm\)fxd\:3 {
         -webkit-flex: 2 1 auto;
         -ms-flex: 2 1 auto;
         flex: 2 1 auto;
     }
 
     /*: item (align self) :*/
-    .sm\)fe\:1 {
+    .sm\)fe\:1,
+	.sm\)fxe\:1 {
         -webkit-align-self: auto;
         -ms-flex-item-align: auto;
         align-self: auto;
     }
 
-    .sm\)fe\:2 {
+    .sm\)fe\:2,
+	.sm\)fxe\:2 {
         -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
         align-self: flex-start;
     }
 
-    .sm\)fe\:3 {
+    .sm\)fe\:3,
+	.sm\)fxe\:3 {
         -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
         align-self: flex-end;
     }
 
-    .sm\)fe\:4 {
+    .sm\)fe\:4,
+	.sm\)fxe\:4 {
         -webkit-align-self: center;
         -ms-flex-item-align: center;
         align-self: center;
     }
 
-    .sm\)fe\:5 {
+    .sm\)fe\:5,
+	.sm\)fxe\:5 {
         -webkit-align-self: baseline;
         -ms-flex-item-align: baseline;
         align-self: baseline;
     }
 
-    .sm\)fe\:6 {
+    .sm\)fe\:6,
+	.sm\)fxe\:6 {
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
@@ -4746,10 +4866,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:dashed-thin,
     .sm\)bdr\:dashed-medium,
-    .sm\)bdr\:dashed-thick,
-    .sm\)bdr\:dashed-thin-rounded,
-    .sm\)bdr\:dashed-medium-rounded,
-    .sm\)bdr\:dashed-thick-rounded {
+    .sm\)bdr\:dashed-thick {
         border-style: dashed !important;
     }
 
@@ -4779,10 +4896,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:dotted-thin,
     .sm\)bdr\:dotted-medium,
-    .sm\)bdr\:dotted-thick,
-    .sm\)bdr\:dotted-thin-rounded,
-    .sm\)bdr\:dotted-medium-rounded,
-    .sm\)bdr\:dotted-thick-rounded {
+    .sm\)bdr\:dotted-thick {
         border-style: dotted !important;
     }
 
@@ -4812,10 +4926,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:solid-thin,
     .sm\)bdr\:solid-medium,
-    .sm\)bdr\:solid-thick,
-    .sm\)bdr\:solid-thin-rounded,
-    .sm\)bdr\:solid-medium-rounded,
-    .sm\)bdr\:solid-thick-rounded {
+    .sm\)bdr\:solid-thick {
         border-style: solid !important;
     }
 
@@ -4845,10 +4956,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:dashed-thin,
     .sm\)bdr\:dotted-thin,
-    .sm\)bdr\:solid-thin,
-    .sm\)bdr\:dashed-thin-rounded,
-    .sm\)bdr\:dotted-thin-rounded,
-    .sm\)bdr\:solid-thin-rounded {
+    .sm\)bdr\:solid-thin {
         border-width: thin !important;
     }
 
@@ -4878,10 +4986,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:dashed-medium,
     .sm\)bdr\:dotted-medium,
-    .sm\)bdr\:solid-medium,
-    .sm\)bdr\:dashed-medium-rounded,
-    .sm\)bdr\:dotted-medium-rounded,
-    .sm\)bdr\:solid-medium-rounded {
+    .sm\)bdr\:solid-medium {
         border-width: medium !important;
     }
 
@@ -4911,10 +5016,7 @@ table.td\:spacing-1 {
 
     .sm\)bdr\:dashed-thick,
     .sm\)bdr\:dotted-thick,
-    .sm\)bdr\:solid-thick,
-    .sm\)bdr\:dashed-thick-rounded,
-    .sm\)bdr\:dotted-thick-rounded,
-    .sm\)bdr\:solid-thick-rounded {
+    .sm\)bdr\:solid-thick {
         border-width: thick !important;
     }
 
@@ -4940,18 +5042,6 @@ table.td\:spacing-1 {
     .sm\)bdr\:left-dotted-thick,
     .sm\)bdr\:left-solid-thick {
         border-left-width: thick !important;
-    }
-
-    .sm\)bdr\:dashed-thin-rounded,
-    .sm\)bdr\:dashed-medium-rounded,
-    .sm\)bdr\:dashed-thick-rounded,
-    .sm\)bdr\:dotted-thin-rounded,
-    .sm\)bdr\:dotted-medium-rounded,
-    .sm\)bdr\:dotted-thick-rounded,
-    .sm\)bdr\:solid-thin-rounded,
-    .sm\)bdr\:solid-medium-rounded,
-    .sm\)bdr\:solid-thick-rounded {
-        border-radius: 0.25rem !important;
     }
 }
 
