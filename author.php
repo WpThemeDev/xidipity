@@ -4,7 +4,7 @@
  *
  * File Name:       author.php
  * Function:        display author info
- * Build:           200107-1
+ * Build:           200115-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -70,7 +70,7 @@ else
 {
     $v_biography .= '<p>No information about the author is available at this time.</p>';
 }
-$v_img = '<img class="img:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
+$v_img = '<img class="xwd:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
 $v_meta_list = '';
 echo '<!-- xwpt: 90915.1a/biography/php           -->' . "\n";
 echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
@@ -154,7 +154,7 @@ get_footer();
 
 /*
  * EOF:     author.php
- * Build:   200107-1
+ * Build:   200115-1
  *
  */
 ?>
