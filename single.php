@@ -4,7 +4,7 @@
  *
  * File Name:       single.php
  * Function:        display blog post
- * Build:           200107-1
+ * Build:           200115-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -150,7 +150,7 @@ if ($wp_query->have_posts()) {
         $v_biography  = '';
         $v_biography .= '<h5>About: <a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a></h5>';
         $v_biography .= '<p>' . $wp_bio . '</p>';
-        $v_img = '<img class="img:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
+        $v_img = '<img class="xwd:100%" src="' . $wp_permalink . '" alt="Xidipity Avatar" />';
         $v_meta_list = '';
         echo '<!-- xwpt: 90927.1a/biography/php           -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
@@ -197,7 +197,7 @@ get_footer();
 
 /*
  * EOF:     single.php
- * Build:   200107-1
+ * Build:   200115-1
  *
  */
 ?>
