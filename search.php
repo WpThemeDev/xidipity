@@ -4,7 +4,7 @@
  *
  * File Name:       search.php
  * Function:        display search results
- * Build:           200107-1
+ * Build:           200115-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -86,7 +86,7 @@ if (have_posts())
         /*
             featured image
         */
-        $wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'img:100%'));
+        $wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'xwd:100%'));
         if ($wp_img)
         {
             /*: post thumbnail :*/
@@ -177,7 +177,7 @@ get_footer();
 
 /*
  * EOF:     search.php
- * Build:   200107-1
+ * Build:   200115-1
  *
  */
 ?>
