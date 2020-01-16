@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200107-1
+ * Build:           200115-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -163,31 +163,31 @@ function theme_cfg() {
 function disp_menu($attr='')
 {
     $fn_val = 'yes';
-	$v_attr = trim($attr);
+    $v_attr = trim($attr);
     if (empty($v_attr))
     {
-	    /*: get value :*/
+        /*: get value :*/
         if (empty($GLOBALS['$global_dsp_menu']))
-		{
+        {
             /*: set default value :*/
             $GLOBALS['$global_dsp_menu'] = 'yes';
-		}
+        }
         /*: return value :*/
         $fn_val = $GLOBALS['$global_dsp_menu'];
     }
     else
     {
-		$v_attr = strtolower($v_attr);
+        $v_attr = strtolower($v_attr);
         if (has_match('no,yes',$v_attr))
         {
             /*: set value :*/
             $GLOBALS['$global_dsp_menu'] = $v_attr;
         }
-		else
-		{
+        else
+        {
             /*: set default value :*/
             $GLOBALS['$global_dsp_menu'] = 'yes';
-		}
+        }
         $fn_val = $v_attr;
     }
     return $fn_val;
@@ -203,31 +203,31 @@ function disp_menu($attr='')
 function disp_sidebar($attr='')
 {
     $fn_val = 'yes';
-	$v_attr = trim($attr);
+    $v_attr = trim($attr);
     if (empty($v_attr))
     {
-	    /*: get value :*/
+        /*: get value :*/
         if (empty($GLOBALS['$global_dsp_sidebar']))
-		{
+        {
             /*: set default value :*/
             $GLOBALS['$global_dsp_sidebar'] = 'yes';
-		}
+        }
         /*: return value :*/
         $fn_val = $GLOBALS['$global_dsp_sidebar'];
     }
     else
     {
-		$v_attr = strtolower($v_attr);
+        $v_attr = strtolower($v_attr);
         if (has_match('no,yes',$v_attr))
         {
             /*: set value :*/
             $GLOBALS['$global_dsp_sidebar'] = $v_attr;
         }
-		else
-		{
+        else
+        {
             /*: set default value :*/
             $GLOBALS['$global_dsp_sidebar'] = 'yes';
-		}
+        }
         $fn_val = $v_attr;
     }
     return $fn_val;
@@ -686,8 +686,8 @@ if (!function_exists('xidipity_setup')):
          * Registers an editor stylesheet for the theme.
          * https://developer.wordpress.org/reference/functions/add_editor_style/
         */
-		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
+        // Add support for editor styles.
+        add_theme_support( 'editor-styles' );
         $ed_css1 = 'style.css';
         $ed_css2 = '/assets/css/sys/theme-vars.css';
         $ed_css3 = '/assets/css/theme/palette.css';
@@ -845,20 +845,20 @@ require get_template_directory() . '/inc/shortcodes.php';
  *  Tinymce Plugins
  *
  *  custom plugins are assign to the editor toolbar and are located in
- *		"assets/tinymceplugins/ directory"
+ *      "assets/tinymceplugins/ directory"
  *
- *	core toolbar plugins include:
- *		formatselect
- *		fontsizeselect
- *		link
+ *  core toolbar plugins include:
+ *      formatselect
+ *      fontsizeselect
+ *      link
  *
- *	https://www.tiny.cloud/docs/plugins/
+ *  https://www.tiny.cloud/docs/plugins/
  *
  */
 /**
- *	plugin:	apply text weight
- *	build:	91215.1a
- *	descr:	apply font weight to selected text
+ *  plugin: apply text weight
+ *  build:  91215.1a
+ *  descr:  apply font weight to selected text
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_weight_button');
@@ -893,9 +893,9 @@ function register_mce_apply_txt_weight_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	toggle italic
- *	build:	91215.1a
- *	descr:	apply/remove text italic
+ *  plugin: toggle italic
+ *  build:  91215.1a
+ *  descr:  apply/remove text italic
  *
  */
 add_action('admin_head', 'mce_add_toggle_italic_button');
@@ -930,14 +930,14 @@ function register_mce_toggle_italic_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	apply text format
- *	build:	91215.1a
- *	descr:	apply the following formats
+ *  plugin: apply text format
+ *  build:  91215.1a
+ *  descr:  apply the following formats
  *      - underline
- *		- strike through
- *		- super script
- *		- sub script
- *		- drop shadow
+ *      - strike through
+ *      - super script
+ *      - sub script
+ *      - drop shadow
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_formats_button');
@@ -972,9 +972,9 @@ function register_mce_apply_txt_formats_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	apply text highlight
- *	build:	91215.1a
- *	descr:	apply highlight background color to selected text
+ *  plugin: apply text highlight
+ *  build:  91215.1a
+ *  descr:  apply highlight background color to selected text
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_hilight_button');
@@ -1009,9 +1009,9 @@ function register_mce_apply_txt_hilight_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	clear format
- *	build:	91215.1a
- *	descr:	remove all formatting from selected text
+ *  plugin: clear format
+ *  build:  91215.1a
+ *  descr:  remove all formatting from selected text
  *
  */
 add_action('admin_head', 'mce_add_clear_format_button');
@@ -1046,15 +1046,15 @@ function register_mce_clear_format_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	apply text alignment
- *	build:	91215.1a
- *	descr:	apply the following alignments
+ *  plugin: apply text alignment
+ *  build:  91215.1a
+ *  descr:  apply the following alignments
  *      - left
- *		- center
- *		- right
- *		- indent >
- *		- indent <
- *		- _ paragraph
+ *      - center
+ *      - right
+ *      - indent >
+ *      - indent <
+ *      - _ paragraph
  *
  */
 add_action('admin_head', 'mce_add_apply_txt_align_button');
@@ -1089,14 +1089,14 @@ function register_mce_apply_txt_align_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add ordered list
- *	build:	91215.1a
- *	descr:	list choices
+ *  plugin: add ordered list
+ *  build:  91215.1a
+ *  descr:  list choices
  *      - standard
- *		- nested
- *		- alpha
- *		- roman
- *		- outline
+ *      - nested
+ *      - alpha
+ *      - roman
+ *      - outline
  *
  */
 add_action('admin_head', 'mce_add_lst_order_button');
@@ -1131,14 +1131,14 @@ function register_mce_lst_order_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add unordered list
- *	build:	91215.1a
- *	descr:	list choices
+ *  plugin: add unordered list
+ *  build:  91215.1a
+ *  descr:  list choices
  *      - standard
- *		- circled
- *		- dash
- *		- square
- *		- mixed
+ *      - circled
+ *      - dash
+ *      - square
+ *      - mixed
  *
  */
 add_action('admin_head', 'mce_add_lst_unorder_button');
@@ -1173,11 +1173,11 @@ function register_mce_lst_unorder_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add miscellaneous options
- *	build:	91215.1a
- *	descr:	options include
+ *  plugin: add miscellaneous options
+ *  build:  91215.1a
+ *  descr:  options include
  *      - block quote
- *		- excerpt
+ *      - excerpt
  *
  */
 add_action('admin_head', 'mce_add_misc_opts_button');
@@ -1212,15 +1212,15 @@ function register_mce_misc_opts_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add vertical space
- *	build:	91215.1a
- *	descr:	options include
+ *  plugin: add vertical space
+ *  build:  91215.1a
+ *  descr:  options include
  *      - 1/2 line
- *		- 3/4 line
- *		- 1 1/2 lines
- *		- 2 lines
- *		- 2 1/2 lines
- *		- 3 lines
+ *      - 3/4 line
+ *      - 1 1/2 lines
+ *      - 2 lines
+ *      - 2 1/2 lines
+ *      - 3 lines
  *
  */
 add_action('admin_head', 'mce_add_vert_space_button');
@@ -1255,17 +1255,17 @@ function register_mce_add_vert_space_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add horizontal rule
- *	build:	91215.1a
- *	descr:	options include
+ *  plugin: add horizontal rule
+ *  build:  91215.1a
+ *  descr:  options include
  *      - Single narrow
- *		- Single wide
- *		- Double narrow
- *		- Double wide
- *		- Gradient narrow
- *		- Gradient wide
- *		- Emblem narrow
- *		- Emblem wide
+ *      - Single wide
+ *      - Double narrow
+ *      - Double wide
+ *      - Gradient narrow
+ *      - Gradient wide
+ *      - Emblem narrow
+ *      - Emblem wide
  *
  */
 add_action('admin_head', 'mce_add_horz_rule_button');
@@ -1300,9 +1300,9 @@ function register_mce_add_horz_rule_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add table
- *	build:	91215.1a
- *	descr:	modified core plugin
+ *  plugin: add table
+ *  build:  91215.1a
+ *  descr:  modified core plugin
  *
  */
 function add_the_table_button($buttons)
@@ -1318,10 +1318,10 @@ function add_the_table_plugin($plugins)
 }
 add_filter('mce_external_plugins', 'add_the_table_plugin');
 /**
- *	plugin:	add multiple columns
- *	build:	91215.1a
- *	descr:	options include
- *	    - Auto 2 columns
+ *  plugin: add multiple columns
+ *  build:  91215.1a
+ *  descr:  options include
+ *      - Auto 2 columns
  *      - Auto 3 columns
  *      - Auto 4 columns
  *      - Fixed 2 columns
@@ -1361,9 +1361,9 @@ function register_mce_add_multi_cols_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add template
- *	build:	91215.1a
- *	descr:	add template code to HTML
+ *  plugin: add template
+ *  build:  91215.1a
+ *  descr:  add template code to HTML
  *
  */
 add_action('admin_head', 'mce_add_template_button');
@@ -1398,9 +1398,9 @@ function register_mce_add_template_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	toggle fullscreen
- *	build:	91215.1a
- *	descr:	toggle editor full screen mode
+ *  plugin: toggle fullscreen
+ *  build:  91215.1a
+ *  descr:  toggle editor full screen mode
  *
  */
 add_action('admin_head', 'mce_add_toggle_fullscreen_button');
@@ -1435,9 +1435,9 @@ function register_mce_toggle_fullscreen_button($buttons)
     return $buttons;
 }
 /**
- *	plugin:	add menu divider
- *	build:	91215.1a
- *	descr:	add "|" to toolbar menu
+ *  plugin: add menu divider
+ *  build:  91215.1a
+ *  descr:  add "|" to toolbar menu
  *
  */
 add_action('admin_head', 'mce_add_mnu_div_button');
@@ -1590,7 +1590,7 @@ function dsp_rm($att = '')
     if (empty($v_html))
     {
         $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik02LDRIMTFWMTJMOC41LDEwLjVMNiwxMk0xOCwySDZBMiwyIDAgMCwwIDQsNFYyMEEyLDIgMCAwLDAgNiwyMkgxOEEyLDIgMCAwLDAgMjAsMjBWNEEyLDIgMCAwLDAgMTgsMloiIHN0eWxlPSJmaWxsOiByZ2IoMTU4LCAxNTgsIDE1OCk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" />No additional information</p>';
-    } 
+    }
     else
     {
         $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" /><a href="' . $v_html . '">Read more &hellip;</a></p>';
@@ -1623,7 +1623,7 @@ function dsp_err($att = '')
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:5 pad:0.5"><div class="fxd:1 fxe:4 pad:left-0.25 pad:right-0.75"><div style="height:1.75rem; width:1.75rem;"><img class="img:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fxe:4 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div>';
+    $fn_retval = '<div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:5 pad:0.5"><div class="fxd:1 fxe:4 pad:left-0.25 pad:right-0.75"><div style="height:1.75rem; width:1.75rem;"><img class="xwd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fxe:4 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div>';
     // return html
     return $fn_retval;
 }
@@ -1794,7 +1794,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200107-1
+ * Build:   200115-1
  *
  */
 ?>
