@@ -4,7 +4,7 @@
  *
  * File Name:       inc/extras.php
  * Function:        xidipity extensions
- * Build:           200107-1
+ * Build:           200115-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -631,7 +631,7 @@ function bexc_shortcode($atts = array() , $prms = '')
             }
             else
             {
-                $v_html_img = '<img class="img:100%" src="' . $wp_html_img_url . '" alt="Xidipity Blog Excerpt Shortcode" >';                
+                $v_html_img = '<img class="xwd:100%" src="' . $wp_html_img_url . '" alt="Xidipity Blog Excerpt Shortcode" >';                
             }            
             /*: title :*/
             $v_html_title = '<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">' . get_the_title() . '</a></h1>';
@@ -1139,11 +1139,11 @@ function imgg_shortcode($atts = array() , $prms = '')
                 $html_retval .= '<div class="fd:1 fe:1 wd:100%">';                
                 if (empty($v_class))
                 {
-                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="img:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
+                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
                 }
                 else
                 {
-                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="img:100% ' . $v_class . '" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
+                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100% ' . $v_class . '" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
                 }
                 $html_retval .= '</div>';
                 
@@ -1427,7 +1427,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200107-1
+ * Build:   200115-1
  *
  */
 ?>
