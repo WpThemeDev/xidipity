@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200115-1
+ * Build:           200120-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -45,24 +45,24 @@
 ***
     * selector: cnr
     * dsc: box corner
-    * ver: 200107-1
+    * ver: 200120-1
     * fnt: control curvature of corners
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.cnr\:no-arch {
+.cnr\:arch-none {
     border-radius: 0% !important;
 }
-.cnr\:small-arch {
+.cnr\:arch-small {
     border-radius: 0.3333rem !important;
 }
-.cnr\:medium-arch {
+.cnr\:arch-medium {
     border-radius: 0.6666rem !important;
 }
-.cnr\:large-arch {
+.cnr\:arch-large {
     border-radius: 1rem !important;
 }
-.cnr\:full-arch {
+.cnr\:arch-full {
     border-radius: 100% !important;
 }
 
@@ -253,31 +253,6 @@
 
 /*
 ***
-    * selector: trk
-    * dsc: tracking
-    * ver: 200107-1
-    * fnt: adjust letter spacing
-    * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
-***
-*/
-.trk\:tight {
-    letter-spacing: -0.01rem !important;
-}
-
-.trk\:normal {
-    letter-spacing: normal !important;
-}
-
-.trk\:loose {
-    letter-spacing: 0.1rem !important;
-}
-
-.trk\:wide {
-    letter-spacing: 0.5rem !important;
-}
-
-/*
-***
     * selector: fnt
     * dsc: font style
     * ver: 200107-1
@@ -332,6 +307,31 @@
 
 /*
 ***
+    * selector: trk
+    * dsc: tracking
+    * ver: 200120-1
+    * fnt: adjust letter spacing
+    * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+***
+*/
+.trk\:narrow {
+    letter-spacing: -0.01rem !important;
+}
+
+.trk\:default {
+    letter-spacing: normal !important;
+}
+
+.trk\:wide {
+    letter-spacing: 0.1rem !important;
+}
+
+.trk\:x-wide {
+    letter-spacing: 0.5rem !important;
+}
+
+/*
+***
     * selector: led
     * dsc: leading
     * ver: 200107-1
@@ -361,224 +361,6 @@
 
 .led\:xx-wide {
     line-height: calc(var(--dft-line-height) + .375) !important;
-}
-
-/*
-***
-    * selector: xwd
-    * dsc: auto height / fixed width
-    * ver: 200107-1
-    * fnt: scale height based on preset width %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.xwd\:10\% {
-    height: auto !important;
-    width: 10% !important;
-}
-
-.xwd\:12\% {
-    height: auto !important;
-    width: 12% !important;
-}
-
-.xwd\:14\% {
-    height: auto !important;
-    width: 14% !important;
-}
-
-.xwd\:16\% {
-    height: auto !important;
-    width: 16% !important;
-}
-
-.xwd\:18\% {
-    height: auto !important;
-    width: 18% !important;
-}
-
-.xwd\:20\% {
-    height: auto !important;
-    width: 20% !important;
-}
-
-.xwd\:25\% {
-    height: auto !important;
-    width: 25% !important;
-}
-
-.xwd\:30\% {
-    height: auto !important;
-    width: 30% !important;
-}
-
-.xwd\:35\% {
-    height: auto !important;
-    width: 35% !important;
-}
-
-.xwd\:40\% {
-    height: auto !important;
-    width: 40% !important;
-}
-
-.xwd\:45\% {
-    height: auto !important;
-    width: 45% !important;
-}
-
-.xwd\:50\% {
-    height: auto !important;
-    width: 50% !important;
-}
-
-.xwd\:55\% {
-    height: auto !important;
-    width: 55% !important;
-}
-
-.xwd\:60\% {
-    height: auto !important;
-    width: 60% !important;
-}
-
-.xwd\:65\% {
-    height: auto !important;
-    width: 65% !important;
-}
-
-.xwd\:70\% {
-    height: auto !important;
-    width: 70% !important;
-}
-
-.xwd\:75\% {
-    height: auto !important;
-    width: 75% !important;
-}
-
-.xwd\:80\% {
-    height: auto !important;
-    width: 80% !important;
-}
-
-.xwd\:90\% {
-    height: auto !important;
-    width: 90% !important;
-}
-
-.xwd\:100\% {
-    height: auto !important;
-    width: 100% !important;
-}
-
-/*
-***
-    * selector: ywd
-    * dsc: fixed height / auto width
-    * ver: 200107-1
-    * fnt: scale width based on preset height %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.ywd\:10\% {
-    height: 10% !important;
-    width: auto !important;
-}
-
-.ywd\:12\% {
-    height: 12% !important;
-    width: auto !important;
-}
-
-.ywd\:14\% {
-    height: 14% !important;
-    width: auto !important;
-}
-
-.ywd\:16\% {
-    height: 16% !important;
-    width: auto !important;
-}
-
-.ywd\:18\% {
-    height: 18% !important;
-    width: auto !important;
-}
-
-.ywd\:20\% {
-    height: 20% !important;
-    width: auto !important;
-}
-
-.ywd\:25\% {
-    height: 25% !important;
-    width: auto !important;
-}
-
-.ywd\:30\% {
-    height: 30% !important;
-    width: auto !important;
-}
-
-.ywd\:35\% {
-    height: 35% !important;
-    width: auto !important;
-}
-
-.ywd\:40\% {
-    height: 40% !important;
-    width: auto !important;
-}
-
-.ywd\:45\% {
-    height: 45% !important;
-    width: auto !important;
-}
-
-.ywd\:50\% {
-    height: 50% !important;
-    width: auto !important;
-}
-
-.ywd\:55\% {
-    height: 55% !important;
-    width: auto !important;
-}
-
-.ywd\:60\% {
-    height: 60% !important;
-    width: auto !important;
-}
-
-.ywd\:65\% {
-    height: 65% !important;
-    width: auto !important;
-}
-
-.ywd\:70\% {
-    height: 70% !important;
-    width: auto !important;
-}
-
-.ywd\:75\% {
-    height: 75% !important;
-    width: auto !important;
-}
-
-.ywd\:80\% {
-    height: 80% !important;
-    width: auto !important;
-}
-
-.ywd\:90\% {
-    height: 90% !important;
-    width: auto !important;
-}
-
-.ywd\:100\% {
-    height: 100% !important;
-    width: auto !important;
 }
 
 /*
@@ -787,6 +569,115 @@
 
 /*
 ***
+    * selector: yht
+    * dsc: fixed height / auto width
+    * ver: 200107-1
+    * fnt: scale width based on preset height %
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+***
+*/
+.yht\:10\% {
+    height: 10% !important;
+    width: auto !important;
+}
+
+.yht\:12\% {
+    height: 12% !important;
+    width: auto !important;
+}
+
+.yht\:14\% {
+    height: 14% !important;
+    width: auto !important;
+}
+
+.yht\:16\% {
+    height: 16% !important;
+    width: auto !important;
+}
+
+.yht\:18\% {
+    height: 18% !important;
+    width: auto !important;
+}
+
+.yht\:20\% {
+    height: 20% !important;
+    width: auto !important;
+}
+
+.yht\:25\% {
+    height: 25% !important;
+    width: auto !important;
+}
+
+.yht\:30\% {
+    height: 30% !important;
+    width: auto !important;
+}
+
+.yht\:35\% {
+    height: 35% !important;
+    width: auto !important;
+}
+
+.yht\:40\% {
+    height: 40% !important;
+    width: auto !important;
+}
+
+.yht\:45\% {
+    height: 45% !important;
+    width: auto !important;
+}
+
+.yht\:50\% {
+    height: 50% !important;
+    width: auto !important;
+}
+
+.yht\:55\% {
+    height: 55% !important;
+    width: auto !important;
+}
+
+.yht\:60\% {
+    height: 60% !important;
+    width: auto !important;
+}
+
+.yht\:65\% {
+    height: 65% !important;
+    width: auto !important;
+}
+
+.yht\:70\% {
+    height: 70% !important;
+    width: auto !important;
+}
+
+.yht\:75\% {
+    height: 75% !important;
+    width: auto !important;
+}
+
+.yht\:80\% {
+    height: 80% !important;
+    width: auto !important;
+}
+
+.yht\:90\% {
+    height: 90% !important;
+    width: auto !important;
+}
+
+.yht\:100\% {
+    height: 100% !important;
+    width: auto !important;
+}
+
+/*
+***
     * selector: wd
     * dsc: fixed width presets
     * ver: 200107-1
@@ -991,50 +882,136 @@
 
 /*
 ***
-    # mar
-    # 200107-1
-    # margin all (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+    * selector: xwd
+    * dsc: auto height / fixed width
+    * ver: 200107-1
+    * fnt: scale height based on preset width %
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+***
+*/
+.xwd\:10\% {
+    height: auto !important;
+    width: 10% !important;
+}
+
+.xwd\:12\% {
+    height: auto !important;
+    width: 12% !important;
+}
+
+.xwd\:14\% {
+    height: auto !important;
+    width: 14% !important;
+}
+
+.xwd\:16\% {
+    height: auto !important;
+    width: 16% !important;
+}
+
+.xwd\:18\% {
+    height: auto !important;
+    width: 18% !important;
+}
+
+.xwd\:20\% {
+    height: auto !important;
+    width: 20% !important;
+}
+
+.xwd\:25\% {
+    height: auto !important;
+    width: 25% !important;
+}
+
+.xwd\:30\% {
+    height: auto !important;
+    width: 30% !important;
+}
+
+.xwd\:35\% {
+    height: auto !important;
+    width: 35% !important;
+}
+
+.xwd\:40\% {
+    height: auto !important;
+    width: 40% !important;
+}
+
+.xwd\:45\% {
+    height: auto !important;
+    width: 45% !important;
+}
+
+.xwd\:50\% {
+    height: auto !important;
+    width: 50% !important;
+}
+
+.xwd\:55\% {
+    height: auto !important;
+    width: 55% !important;
+}
+
+.xwd\:60\% {
+    height: auto !important;
+    width: 60% !important;
+}
+
+.xwd\:65\% {
+    height: auto !important;
+    width: 65% !important;
+}
+
+.xwd\:70\% {
+    height: auto !important;
+    width: 70% !important;
+}
+
+.xwd\:75\% {
+    height: auto !important;
+    width: 75% !important;
+}
+
+.xwd\:80\% {
+    height: auto !important;
+    width: 80% !important;
+}
+
+.xwd\:90\% {
+    height: auto !important;
+    width: 90% !important;
+}
+
+.xwd\:100\% {
+    height: auto !important;
+    width: 100% !important;
+}
+
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set all margins
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
 .mar\:0 {
     margin: 0 !important;
 }
 
-.mar\:0\.125 {
-    margin: 0.125rem !important;
-}
-
 .mar\:0\.25 {
     margin: 0.25rem !important;
-}
-
-.mar\:0\.375 {
-    margin: 0.375rem !important;
 }
 
 .mar\:0\.5 {
     margin: 0.5rem !important;
 }
 
-.mar\:0\.625 {
-    margin: 0.625rem !important;
-}
-
 .mar\:0\.75 {
     margin: 0.75rem !important;
-}
-
-.mar\:0\.8125 {
-    margin: 0.8125rem !important;
-}
-
-.mar\:0\.875 {
-    margin: 0.875rem !important;
-}
-
-.mar\:0\.9375 {
-    margin: 0.9375rem !important;
 }
 
 .mar\:1 {
@@ -1057,73 +1034,29 @@
     margin: 2rem !important;
 }
 
-.mar\:1\% {
-    margin: 1% !important;
-}
-
-.mar\:2\% {
-    margin: 2% !important;
-}
-
-.mar\:4\% {
-    margin: 4% !important;
-}
-
-.mar\:6\% {
-    margin: 6% !important;
-}
-
-.mar\:8\% {
-    margin: 8% !important;
-}
-
-.mar\:10\% {
-    margin: 10% !important;
-}
-
-/*  # mar top
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set top margin
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
 .mar\:top-0 {
     margin-top: 0 !important;
-}
-
-.mar\:top-0\.125 {
-    margin-top: 0.125rem !important;
 }
 
 .mar\:top-0\.25 {
     margin-top: 0.25rem !important;
 }
 
-.mar\:top-0\.375 {
-    margin-top: 0.375rem !important;
-}
-
 .mar\:top-0\.5 {
     margin-top: 0.5rem !important;
 }
 
-.mar\:top-0\.625 {
-    margin-top: 0.625rem !important;
-}
-
 .mar\:top-0\.75 {
     margin-top: 0.75rem !important;
-}
-
-.mar\:top-0\.8125 {
-    margin-top: 0.8125rem !important;
-}
-
-.mar\:top-0\.875 {
-    margin-top: 0.875rem !important;
-}
-
-.mar\:top-0\.9375 {
-    margin-top: 0.9375rem !important;
 }
 
 .mar\:top-1 {
@@ -1146,73 +1079,29 @@
     margin-top: 2rem !important;
 }
 
-.mar\:top-1\% {
-    margin-top: 1% !important;
-}
-
-.mar\:top-2\% {
-    margin-top: 2% !important;
-}
-
-.mar\:top-4\% {
-    margin-top: 4% !important;
-}
-
-.mar\:top-6\% {
-    margin-top: 6% !important;
-}
-
-.mar\:top-8\% {
-    margin-top: 8% !important;
-}
-
-.mar\:top-10\% {
-    margin-top: 10% !important;
-}
-
-/*  # mar right
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set right margin
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
 .mar\:right-0 {
     margin-right: 0 !important;
-}
-
-.mar\:right-0\.125 {
-    margin-right: 0.125rem !important;
 }
 
 .mar\:right-0\.25 {
     margin-right: 0.25rem !important;
 }
 
-.mar\:right-0\.375 {
-    margin-right: 0.375rem !important;
-}
-
 .mar\:right-0\.5 {
     margin-right: 0.5rem !important;
 }
 
-.mar\:right-0\.625 {
-    margin-right: 0.625rem !important;
-}
-
 .mar\:right-0\.75 {
     margin-right: 0.75rem !important;
-}
-
-.mar\:right-0\.8125 {
-    margin-right: 0.8125rem !important;
-}
-
-.mar\:right-0\.875 {
-    margin-right: 0.875rem !important;
-}
-
-.mar\:right-0\.9375 {
-    margin-right: 0.9375rem !important;
 }
 
 .mar\:right-1 {
@@ -1235,73 +1124,29 @@
     margin-right: 2rem !important;
 }
 
-.mar\:right-1\% {
-    margin-right: 1% !important;
-}
-
-.mar\:right-2\% {
-    margin-right: 2% !important;
-}
-
-.mar\:right-4\% {
-    margin-right: 4% !important;
-}
-
-.mar\:right-6\% {
-    margin-right: 6% !important;
-}
-
-.mar\:right-8\% {
-    margin-right: 8% !important;
-}
-
-.mar\:right-10\% {
-    margin-right: 10% !important;
-}
-
-/*  # mar bottom
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set bottom margin
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
 .mar\:bottom-0 {
     margin-bottom: 0 !important;
-}
-
-.mar\:bottom-0\.125 {
-    margin-bottom: 0.125rem !important;
 }
 
 .mar\:bottom-0\.25 {
     margin-bottom: 0.25rem !important;
 }
 
-.mar\:bottom-0\.375 {
-    margin-bottom: 0.375rem !important;
-}
-
 .mar\:bottom-0\.5 {
     margin-bottom: 0.5rem !important;
 }
 
-.mar\:bottom-0\.625 {
-    margin-bottom: 0.625rem !important;
-}
-
 .mar\:bottom-0\.75 {
     margin-bottom: 0.75rem !important;
-}
-
-.mar\:bottom-0\.8125 {
-    margin-bottom: 0.8125rem !important;
-}
-
-.mar\:bottom-0\.875 {
-    margin-bottom: 0.875rem !important;
-}
-
-.mar\:bottom-0\.9375 {
-    margin-bottom: 0.9375rem !important;
 }
 
 .mar\:bottom-1 {
@@ -1324,73 +1169,29 @@
     margin-bottom: 2rem !important;
 }
 
-.mar\:bottom-1\% {
-    margin-bottom: 1% !important;
-}
-
-.mar\:bottom-2\% {
-    margin-bottom: 2% !important;
-}
-
-.mar\:bottom-4\% {
-    margin-bottom: 4% !important;
-}
-
-.mar\:bottom-6\% {
-    margin-bottom: 6% !important;
-}
-
-.mar\:bottom-8\% {
-    margin-bottom: 8% !important;
-}
-
-.mar\:bottom-10\% {
-    margin-bottom: 10% !important;
-}
-
-/*  # mar left
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set left margin
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
 .mar\:left-0 {
     margin-left: 0 !important;
-}
-
-.mar\:left-0\.125 {
-    margin-left: 0.125rem !important;
 }
 
 .mar\:left-0\.25 {
     margin-left: 0.25rem !important;
 }
 
-.mar\:left-0\.375 {
-    margin-left: 0.375rem !important;
-}
-
 .mar\:left-0\.5 {
     margin-left: 0.5rem !important;
 }
 
-.mar\:left-0\.625 {
-    margin-left: 0.625rem !important;
-}
-
 .mar\:left-0\.75 {
     margin-left: 0.75rem !important;
-}
-
-.mar\:left-0\.8125 {
-    margin-left: 0.8125rem !important;
-}
-
-.mar\:left-0\.875 {
-    margin-left: 0.875rem !important;
-}
-
-.mar\:left-0\.9375 {
-    margin-left: 0.9375rem !important;
 }
 
 .mar\:left-1 {
@@ -1413,35 +1214,20 @@
     margin-left: 2rem !important;
 }
 
-.mar\:left-1\% {
-    margin-left: 1% !important;
-}
-
-.mar\:left-2\% {
-    margin-left: 2% !important;
-}
-
-.mar\:left-4\% {
-    margin-left: 4% !important;
-}
-
-.mar\:left-6\% {
-    margin-left: 6% !important;
-}
-
-.mar\:left-8\% {
-    margin-left: 8% !important;
-}
-
-.mar\:left-10\% {
-    margin-left: 10% !important;
-}
-
-/*  # mar horz
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set left / right margins
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
+.mar\:hrz-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .mar\:hrz-0\.25 {
     margin-left: 0.25rem !important;
     margin-right: 0.25rem !important;
@@ -1462,46 +1248,40 @@
     margin-right: 1rem !important;
 }
 
+.mar\:hrz-1.25 {
+    margin-left: 1.25rem !important;
+    margin-right: 1.25rem !important;
+}
+
+.mar\:hrz-1.5 {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+}
+
+.mar\:hrz-1.75 {
+    margin-left: 1.75rem !important;
+    margin-right: 1.75rem !important;
+}
+
 .mar\:hrz-2 {
     margin-left: 2rem !important;
     margin-right: 2rem !important;
 }
 
-.mar\:hrz-1\% {
-    margin-left: 1% !important;
-    margin-right: 1% !important;
-}
-
-.mar\:hrz-2\% {
-    margin-left: 2% !important;
-    margin-right: 2% !important;
-}
-
-.mar\:hrz-4\% {
-    margin-left: 4% !important;
-    margin-right: 4% !important;
-}
-
-.mar\:hrz-6\% {
-    margin-left: 6% !important;
-    margin-right: 6% !important;
-}
-
-.mar\:hrz-8\% {
-    margin-left: 8% !important;
-    margin-right: 8% !important;
-}
-
-.mar\:hrz-10\% {
-    margin-left: 10% !important;
-    margin-right: 10% !important;
-}
-
-/*  # mar vert
-    # 91108.1b
-    # margin (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/*
+***
+    * selector: mar
+    * dsc: margin
+    * ver: 200120-1
+    * fnt: set top / bottom margins
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+***
 */
+.mar\:vrt-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 .mar\:vrt-0\.25 {
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
@@ -1522,82 +1302,49 @@
     margin-bottom: 1rem !important;
 }
 
-.mar\:vrt-1\% {
-    margin-top: 1% !important;
-    margin-bottom: 1% !important;
+.mar\:vrt-1.25 {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
 }
 
-.mar\:vrt-2\% {
-    margin-top: 2% !important;
-    margin-bottom: 2% !important;
+.mar\:vrt-1.5 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
-.mar\:vrt-4\% {
-    margin-top: 4% !important;
-    margin-bottom: 4% !important;
+.mar\:vrt-1.75 {
+    margin-top: 1.75rem !important;
+    margin-bottom: 1.75rem !important;
 }
 
-.mar\:vrt-6\% {
-    margin-top: 6% !important;
-    margin-bottom: 6% !important;
-}
-
-.mar\:vrt-8\% {
-    margin-top: 8% !important;
-    margin-bottom: 8% !important;
-}
-
-.mar\:vrt-10\% {
-    margin-top: 10% !important;
-    margin-bottom: 10% !important;
+.mar\:vrt-2 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
 }
 
 /*
 ***
-    # pad
-    # 200107-1
-    # pad all (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    * selector: pad
+    * dsc: padding
+    * ver: 200120-1
+    * fnt: set all padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
 .pad\:0 {
     padding: 0 !important;
 }
 
-.pad\:0\.125 {
-    padding: 0.125rem !important;
-}
-
 .pad\:0\.25 {
     padding: 0.25rem !important;
-}
-
-.pad\:0\.375 {
-    padding: 0.375rem !important;
 }
 
 .pad\:0\.5 {
     padding: 0.5rem !important;
 }
 
-.pad\:0\.625 {
-    padding: 0.625rem !important;
-}
-
 .pad\:0\.75 {
     padding: 0.75rem !important;
-}
-
-.pad\:0\.8125 {
-    padding: 0.8125rem !important;
-}
-
-.pad\:0\.875 {
-    padding: 0.875rem !important;
-}
-
-.pad\:0\.9375 {
-    padding: 0.9375rem !important;
 }
 
 .pad\:1 {
@@ -1620,73 +1367,29 @@
     padding: 2rem !important;
 }
 
-.pad\:1\% {
-    padding: 1% !important;
-}
-
-.pad\:2\% {
-    padding: 2% !important;
-}
-
-.pad\:4\% {
-    padding: 4% !important;
-}
-
-.pad\:6\% {
-    padding: 6% !important;
-}
-
-.pad\:8\% {
-    padding: 8% !important;
-}
-
-.pad\:10\% {
-    padding: 10% !important;
-}
-
-/*  # pad top
-    # 91108.1b
-    # padding (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/*
+***
+    * selector: pad
+    * dsc: top
+    * ver: 200120-1
+    * fnt: set top padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
 .pad\:top-0 {
     padding-top: 0 !important;
-}
-
-.pad\:top-0\.125 {
-    padding-top: 0.125rem !important;
 }
 
 .pad\:top-0\.25 {
     padding-top: 0.25rem !important;
 }
 
-.pad\:top-0\.375 {
-    padding-top: 0.375rem !important;
-}
-
 .pad\:top-0\.5 {
     padding-top: 0.5rem !important;
 }
 
-.pad\:top-0\.625 {
-    padding-top: 0.625rem !important;
-}
-
 .pad\:top-0\.75 {
     padding-top: 0.75rem !important;
-}
-
-.pad\:top-0\.8125 {
-    padding-top: 0.8125rem !important;
-}
-
-.pad\:top-0\.875 {
-    padding-top: 0.875rem !important;
-}
-
-.pad\:top-0\.9375 {
-    padding-top: 0.9375rem !important;
 }
 
 .pad\:top-1 {
@@ -1709,73 +1412,29 @@
     padding-top: 2rem !important;
 }
 
-.pad\:top-1\% {
-    padding-top: 1% !important;
-}
-
-.pad\:top-2\% {
-    padding-top: 2% !important;
-}
-
-.pad\:top-4\% {
-    padding-top: 4% !important;
-}
-
-.pad\:top-6\% {
-    padding-top: 6% !important;
-}
-
-.pad\:top-8\% {
-    padding-top: 8% !important;
-}
-
-.pad\:top-10\% {
-    padding-top: 10% !important;
-}
-
-/*  # pad right
-    # 91108.1b
-    # padding (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/*
+***
+    * selector: pad
+    * dsc: right
+    * ver: 200120-1
+    * fnt: set right padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
 .pad\:right-0 {
     padding-right: 0 !important;
-}
-
-.pad\:right-0\.125 {
-    padding-right: 0.125rem !important;
 }
 
 .pad\:right-0\.25 {
     padding-right: 0.25rem !important;
 }
 
-.pad\:right-0\.375 {
-    padding-right: 0.375rem !important;
-}
-
 .pad\:right-0\.5 {
     padding-right: 0.5rem !important;
 }
 
-.pad\:right-0\.625 {
-    padding-right: 0.625rem !important;
-}
-
 .pad\:right-0\.75 {
     padding-right: 0.75rem !important;
-}
-
-.pad\:right-0\.8125 {
-    padding-right: 0.8125rem !important;
-}
-
-.pad\:right-0\.875 {
-    padding-right: 0.875rem !important;
-}
-
-.pad\:right-0\.9375 {
-    padding-right: 0.9375rem !important;
 }
 
 .pad\:right-1 {
@@ -1798,73 +1457,29 @@
     padding-right: 2rem !important;
 }
 
-.pad\:right-1\% {
-    padding-right: 1% !important;
-}
-
-.pad\:right-2\% {
-    padding-right: 2% !important;
-}
-
-.pad\:right-4\% {
-    padding-right: 4% !important;
-}
-
-.pad\:right-6\% {
-    padding-right: 6% !important;
-}
-
-.pad\:right-8\% {
-    padding-right: 8% !important;
-}
-
-.pad\:right-10\% {
-    padding-right: 10% !important;
-}
-
-/*  # pad bottom
-    # 91108.1b
-    # padding (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/*
+***
+    * selector: pad
+    * dsc: bottom
+    * ver: 200120-1
+    * fnt: set bottom padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
 .pad\:bottom-0 {
     padding-bottom: 0 !important;
-}
-
-.pad\:bottom-0\.125 {
-    padding-bottom: 0.125rem !important;
 }
 
 .pad\:bottom-0\.25 {
     padding-bottom: 0.25rem !important;
 }
 
-.pad\:bottom-0\.375 {
-    padding-bottom: 0.375rem !important;
-}
-
 .pad\:bottom-0\.5 {
     padding-bottom: 0.5rem !important;
 }
 
-.pad\:bottom-0\.625 {
-    padding-bottom: 0.625rem !important;
-}
-
 .pad\:bottom-0\.75 {
     padding-bottom: 0.75rem !important;
-}
-
-.pad\:bottom-0\.8125 {
-    padding-bottom: 0.8125rem !important;
-}
-
-.pad\:bottom-0\.875 {
-    padding-bottom: 0.875rem !important;
-}
-
-.pad\:bottom-0\.9375 {
-    padding-bottom: 0.9375rem !important;
 }
 
 .pad\:bottom-1 {
@@ -1887,73 +1502,29 @@
     padding-bottom: 2rem !important;
 }
 
-.pad\:bottom-1\% {
-    padding-bottom: 1% !important;
-}
-
-.pad\:bottom-2\% {
-    padding-bottom: 2% !important;
-}
-
-.pad\:bottom-4\% {
-    padding-bottom: 4% !important;
-}
-
-.pad\:bottom-6\% {
-    padding-bottom: 6% !important;
-}
-
-.pad\:bottom-8\% {
-    padding-bottom: 8% !important;
-}
-
-.pad\:bottom-10\% {
-    padding-bottom: 10% !important;
-}
-
-/*  # pad left
-    # 91108.1b
-    # padding (rem)
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/*
+***
+    * selector: pad
+    * dsc: left
+    * ver: 200120-1
+    * fnt: set left padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+***
 */
 .pad\:left-0 {
     padding-left: 0 !important;
-}
-
-.pad\:left-0\.125 {
-    padding-left: 0.125rem !important;
 }
 
 .pad\:left-0\.25 {
     padding-left: 0.25rem !important;
 }
 
-.pad\:left-0\.375 {
-    padding-left: 0.375rem !important;
-}
-
 .pad\:left-0\.5 {
     padding-left: 0.5rem !important;
 }
 
-.pad\:left-0\.625 {
-    padding-left: 0.625rem !important;
-}
-
 .pad\:left-0\.75 {
     padding-left: 0.75rem !important;
-}
-
-.pad\:left-0\.8125 {
-    padding-left: 0.8125rem !important;
-}
-
-.pad\:left-0\.875 {
-    padding-left: 0.875rem !important;
-}
-
-.pad\:left-0\.9375 {
-    padding-left: 0.9375rem !important;
 }
 
 .pad\:left-1 {
@@ -1976,38 +1547,20 @@
     padding-left: 2rem !important;
 }
 
-.pad\:left-1\% {
-    padding-left: 1% !important;
-}
-
-.pad\:left-2\% {
-    padding-left: 2% !important;
-}
-
-.pad\:left-4\% {
-    padding-left: 4% !important;
-}
-
-.pad\:left-6\% {
-    padding-left: 6% !important;
-}
-
-.pad\:left-8\% {
-    padding-left: 8% !important;
-}
-
-.pad\:left-10\% {
-    padding-left: 10% !important;
-}
-
 /*
 ***
-    # pad hrz
-    # 200107-1
-    # horizontal padding
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    * selector: pad
+    * dsc: hrz
+    * ver: 200120-1
+    * fnt: set left/right (horizontal) padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:hrz-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .pad\:hrz-0\.25 {
     padding-left: 0.25rem !important;
     padding-right: 0.25rem !important;
@@ -2028,44 +1581,40 @@
     padding-right: 1rem !important;
 }
 
-.pad\:hrz-1\% {
-    padding-left: 1% !important;
-    padding-right: 1% !important;
+.pad\:hrz-1.25 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
 }
 
-.pad\:hrz-2\% {
-    padding-left: 2% !important;
-    padding-right: 2% !important;
+.pad\:hrz-1.5 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
-.pad\:hrz-4\% {
-    padding-left: 4% !important;
-    padding-right: 4% !important;
+.pad\:hrz-1.75 {
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
 }
 
-.pad\:hrz-6\% {
-    padding-left: 6% !important;
-    padding-right: 6% !important;
-}
-
-.pad\:hrz-8\% {
-    padding-left: 8% !important;
-    padding-right: 8% !important;
-}
-
-.pad\:hrz-10\% {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+.pad\:hrz-2 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }
 
 /*
 ***
-    # pad vrt
-    # 200107-1
-    # vertical padding
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+    * selector: pad
+    * dsc: vrt
+    * ver: 200120-1
+    * fnt: set top/bottom (vertical) padding
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:vrt-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .pad\:vrt-0\.25 {
     padding-top: 0.25rem !important;
     padding-bottom: 0.25rem !important;
@@ -2086,108 +1635,35 @@
     padding-bottom: 1rem !important;
 }
 
-.pad\:vrt-1\% {
-    padding-top: 1% !important;
-    padding-bottom: 1% !important;
+.pad\:vrt-1.25 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
 }
 
-.pad\:vrt-2\% {
-    padding-top: 2% !important;
-    padding-bottom: 2% !important;
+.pad\:vrt-1.5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
 
-.pad\:vrt-4\% {
-    padding-top: 4% !important;
-    padding-bottom: 4% !important;
+.pad\:vrt-1.75 {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
 }
 
-.pad\:vrt-6\% {
-    padding-top: 6% !important;
-    padding-bottom: 6% !important;
+.pad\:vrt-2 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
 }
-
-.pad\:vrt-8\% {
-    padding-top: 8% !important;
-    padding-bottom: 8% !important;
-}
-
-.pad\:vrt-10\% {
-    padding-top: 10% !important;
-    padding-bottom: 10% !important;
-}
-
-/*
-    list spacing
-*/
-ol.li\:qtr-spaced li:not(:last-child),
-ul.li\:qtr-spaced li:not(:last-child) {
-    margin-bottom: 0.25rem !important;
-}
-
-ol.li\:dbl-spaced li:not(:last-child),
-ul.li\:dbl-spaced li:not(:last-child) {
-    margin-bottom: 0.5rem !important;
-}
-
-ol.li\:tpl-spaced li:not(:last-child),
-ul.li\:tpl-spaced li:not(:last-child) {
-    margin-bottom: 0.75rem !important;
-}
-
-/*
-    horizonal align
-*/
-/* deprecated
-.horz\:align-center {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.horz\:align-left {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-}
-
-.horz\:align-right {
-    margin-left: auto !important;
-    margin-right: 0 !important;
-}
-*/
-
-/*
-    vertical align
-*/
-/* deprecated
-.vert\:align-baseline {
-    vertical-align: baseline !important;
-}
-
-.vert\:align-top {
-    vertical-align: top !important;
-}
-
-.vert\:align-middle {
-    vertical-align: middle !important;
-}
-
-.vert\:align-bottom {
-    vertical-align: bottom !important;
-}
-
-.vert\:align-sub {
-    vertical-align: sub !important;
-}
-
-.vert\:align-text-top {
-    vertical-align: text-top !important;
-}
-*/
 
 /*
 ***
-    # aln
-    # 200107-1
-    # alignment
+    * selector: aln
+    * dsc: alignment
+    * ver: 200120-1
+    * fnt: set alignment
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
 ***
 */
 .aln\:center {
@@ -2249,414 +1725,16 @@ ul.li\:tpl-spaced li:not(:last-child) {
     text-align: right !important;
 }
 
-/*  # txt
-    # 90907.1b
-    # text align
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
-*/
-/* deprecated
-.txt\:align-center {
-    text-align: center !important;
-}
-
-.txt\:align-left {
-    text-align: left !important;
-}
-
-.txt\:align-right {
-    text-align: right !important;
-}
-*/
-
-/*  # disp
-    # 90907.1b
-    # display
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
-*/
-/* deprecated
-.disp\:none {
-    display: none !important;
-}
-
-.disp\:block {
-    display: block !important;
-}
-
-.disp\:inline {
-    display: inline !important;
-}
-
-.disp\:inline-block {
-    display: inline-block !important;
-}
-*/
-
-/*  # table
-    # 91108.1a
-    # html table support classes
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-*/
-table.layout-auto {
-    table-layout: auto !important;
-}
-
-table.layout-fixed {
-    table-layout: fixed !important;
-}
-
-table.border-collapse {
-    border-collapse: collapse !important;
-}
-
-table.border-separate {
-    border-collapse: separate !important;
-}
-
-/*  # table cell
-    # 91108.1b
-    # predefined border/cell spacing classes
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing
-*/
-table.td\:spacing-none {
-    border-collapse: collapse !important;
-    border-spacing: 0 !important;
-}
-
-table.td\:spacing-0\.25 {
-    border-collapse: separate !important;
-    border-spacing: 0.25rem !important;
-}
-
-table.td\:spacing-0\.375 {
-    border-collapse: separate !important;
-    border-spacing: 0.375rem !important;
-}
-
-table.td\:spacing-0\.5 {
-    border-collapse: separate !important;
-    border-spacing: 0.5rem !important;
-}
-
-table.td\:spacing-0\.625 {
-    border-collapse: separate !important;
-    border-spacing: 0.625rem !important;
-}
-
-table.td\:spacing-0\.75 {
-    border-collapse: separate !important;
-    border-spacing: 0.75rem !important;
-}
-
-table.td\:spacing-0\.875 {
-    border-collapse: separate !important;
-    border-spacing: 0.875rem !important;
-}
-
-table.td\:spacing-1 {
-    border-collapse: separate !important;
-    border-spacing: 1rem !important;
-}
-
-/*  # DIY flexbox components (beta)
-    # 91001.1a
-    # classes to build flexbox
-    # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-        flexbox
-        fx:c        - column no wrap
-        fx:cw       - column wrap
-        fx:r        - row no wrap
-        fx:r-rev    - row no wrap reverse
-        fx:rw       - row wrap
-        fx:rw-rev   - row wrap reverse
-        justify content
-        fxa:1    - flex-start
-        fxa:2    - flex-end
-        fxa:3    - center
-        fxa:4    - space-between
-        fxa:5    - space-around
-        align items
-        fxb:1    - flex-start
-        fxb:2    - flex-end
-        fxb:3    - center
-        fxb:4    - between
-        fxb:5    - around
-        fxb:6    - stretch
-        align content
-        fxc:1    - flex-start
-        fxc:2    - flex-end
-        fxc:3    - center
-        fxc:4    - baseline
-        fxc:5    - stretch
-        item ranking (auto basis)
-        fxd:1    - 0 1 auto
-        fxd:2    - 1 1 auto
-        fxd:3    - 2 1 auto
-        item alignment
-        fxe:1    - auto
-        fxe:2    - flex-start
-        fxe:3    - flex-end
-        fxe:4    - center
-        fxe:5    - baseline
-        fxe:6    - stretch
-**/
-.fx\:c {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:cw {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.fx\:r {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:r-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:rw {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.fx\:rw-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-/*: justify content :*/
-.fa\:1,
-.fxa\:1 {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-}
-
-.fa\:2,
-.fxa\:2 {
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-
-.fa\:3,
-.fxa\:3 {
-    -webkit-justify-content: flex-center;
-    -ms-flex-pack: center;
-    justify-content: flex-center;
-}
-
-.fa\:4,
-.fxa\:4 {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.fa\:5,
-.fxa\:5 {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-
-/*: align content :*/
-.fb\:1,
-.fxb\:1 {
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-}
-
-.fb\:2,
-.fxb\:2 {
-    -webkit-align-content: flex-end;
-    -ms-flex-line-pack: end;
-    align-content: flex-end;
-}
-
-.fb\:3,
-.fxb\:3 {
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-}
-
-.fb\:4,
-.fxb\:4 {
-    -webkit-align-content: space-between;
-    -ms-flex-line-pack: justify;
-    align-content: space-between;
-}
-
-.fb\:5,
-.fxb\:5 {
-    -webkit-align-content: space-around;
-    -ms-flex-line-pack: distribute;
-    align-content: space-around;
-}
-
-.fb\:6,
-.fxb\:6 {
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-}
-
-/*: align items :*/
-.fc\:1,
-.fxc\:1 {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.fc\:2,
-.fxc\:2 {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-.fc\:3,
-.fxc\:3 {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.fc\:4,
-.fxc\:4 {
-    -webkit-align-items: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
-}
-
-.fc\:5,
-.fxc\:5 {
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-}
-
-/*: item (importance ranking / auto is assumed) :*/
-.fd\:1,
-.fxd\:1 {
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-}
-
-.fd\:2,
-.fxd\:2 {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-}
-
-.fd\:3,
-.fxd\:3 {
-    -webkit-flex: 2 1 auto;
-    -ms-flex: 2 1 auto;
-    flex: 2 1 auto;
-}
-
-/*: item (align self) :*/
-.fe\:1,
-.fxe\:1 {
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.fe\:2,
-.fxe\:2 {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-}
-
-.fe\:3,
-.fxe\:3 {
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-}
-
-.fe\:4,
-.fxe\:4 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-}
-
-.fe\:5,
-.fxe\:5 {
-    -webkit-align-self: baseline;
-    -ms-flex-item-align: baseline;
-    align-self: baseline;
-}
-
-.fe\:6,
-.fxe\:6 {
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-}
-
-/*  # bdr styles (beta)
-    # 91108.1a
-    # border style classes
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+/*
+***
+    * selector: bdr
+    * dsc: border
+    * ver: 200120-1
+    * fnt: set border style (not color)
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border
+	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+***
 */
 .bdr\:none {
     border-color: transparent !important;
@@ -2858,33 +1936,389 @@ table.td\:spacing-1 {
     border-left-width: thick !important;
 }
 
-/*  # sm device
-    # 91001.1a
-    # atm "sm" stands for standard media (everything but mobile)
-    # if other devices are added, it will become small media
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+/*
+***
+    * selector: bdr
+    * dsc: table
+    * ver: 200120-1
+    * fnt: set table border attribute
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
+***
+*/
+.bdr\:collapse {
+    border-collapse: collapse !important;
+}
+
+.bdr\:separate {
+    border-collapse: separate !important;
+}
+
+/*
+***
+    * selector: bdr
+    * dsc: table
+    * ver: 200120-1
+    * fnt: set table border cell spacing attributes
+    * Spec: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
+***
+*/
+.bdr\:space-0 {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+.bdr\:space-0\.25 {
+    border-collapse: separate !important;
+    border-spacing: 0.25rem !important;
+}
+
+.bdr\:space-0\.5 {
+    border-collapse: separate !important;
+    border-spacing: 0.5rem !important;
+}
+
+.bdr\:space-0\.75 {
+    border-collapse: separate !important;
+    border-spacing: 0.75rem !important;
+}
+
+.bdr\:space-1 {
+    border-collapse: separate !important;
+    border-spacing: 1rem !important;
+}
+
+.bdr\:space-1\.25 {
+    border-collapse: separate !important;
+    border-spacing: 1.25rem !important;
+}
+
+.bdr\:space-1\.5 {
+    border-collapse: separate !important;
+    border-spacing: 1.5rem !important;
+}
+
+.bdr\:space-1\.75 {
+    border-collapse: separate !important;
+    border-spacing: 1.75rem !important;
+}
+
+.bdr\:space-2 {
+    border-collapse: separate !important;
+    border-spacing: 2rem !important;
+}
+
+/*  # DIY flexbox components
+    # 200120-1
+    # classes to build flexbox
+    # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+        flexbox
+        fx:c        - column no wrap
+        fx:c-rev    - column reverse no wrap
+        fx:cw       - column wrap
+        fx:cw-rev   - column wrap reverse
+        fx:r        - row no wrap
+        fx:r-rev    - row reverse no wrap
+        fx:rw       - row wrap
+        fx:rw-rev   - row wrap reverse
+        justify content
+        fxa:1    - flex-start
+        fxa:2    - flex-end
+        fxa:3    - center
+        fxa:4    - space-between
+        fxa:5    - space-around
+        align content
+        fxb:1    - flex-start
+        fxb:2    - flex-end
+        fxb:3    - center
+        fxb:4    - between
+        fxb:5    - around
+        fxb:6    - stretch
+        align items
+        fxc:1    - flex-start
+        fxc:2    - flex-end
+        fxc:3    - center
+        fxc:4    - baseline
+        fxc:5    - stretch
+        item attributes (auto basis)
+        fxd:1    - 0 1 auto
+        fxd:2    - 1 1 auto
+        fxd:3    - 2 1 auto
+        align self (override)
+        fxe:1    - auto
+        fxe:2    - flex-start
+        fxe:3    - flex-end
+        fxe:4    - center
+        fxe:5    - baseline
+        fxe:6    - stretch
 **/
+.fx\:c {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:c-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:cw {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fx\:cw-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+}
+
+.fx\:r {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:r-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.fx\:rw {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fx\:rw-rev {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+}
+
+/*: justify content :*/
+.fxa\:1 {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.fxa\:2 {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.fxa\:3 {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.fxa\:4 {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.fxa\:5 {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+/*: align content :*/
+.fxb\:1 {
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+
+.fxb\:2 {
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+}
+
+.fxb\:3 {
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.fxb\:4 {
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+}
+
+.fxb\:5 {
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+}
+
+.fxb\:6 {
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+}
+
+/*: align items :*/
+.fxc\:1 {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.fxc\:2 {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.fxc\:3 {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fxc\:4 {
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+}
+
+.fxc\:5 {
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+/*: item (importance ranking / auto is assumed) :*/
+.fxd\:1 {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;	
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+
+.fxd\:2 {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;	
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.fxd\:3 {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;	
+    -webkit-flex: 2 1 auto;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto;
+}
+
+/*: item (align self) :*/
+.fxe\:1 {
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.fxe\:2 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+
+.fxe\:3 {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.fxe\:4 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.fxe\:5 {
+    -webkit-align-self: baseline;
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+}
+
+.fxe\:6 {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+/*	----------------------------------------------------------------------------
+	*	media break
+		"sm" stands for standard media (everything but mobile)
+		not every class has a an alternate "sm)" equivalent
+	*	https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+----------------------------------------------------------------------------  */
+
 @media (min-width: 640px) {
-    /*  # break
-        # 91108.1b
-        # inside page breaks
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
-    */
-    .sm\)break\:inside-auto {
-        break-inside: auto !important;
-    }
-    .sm\)break\:inside-avoid {
-        break-inside: avoid !important;
-    }
-    .sm\)break\:inside-avoid-page {
-        break-inside: avoid-page !important;
-    }
-    .sm\)break\:inside-avoid-column {
-        break-inside: avoid-column !important;
-    }
-    .sm\)break\:inside-avoid-region {
-        break-inside: avoid-region !important;
-    }
     /*  # dsp
         # 90907.1b
         # display
@@ -3024,52 +2458,29 @@ table.td\:spacing-1 {
         letter-spacing: 0.5rem;
     }
 
-    /*
-    ***
-        # mar
-        # 200107-1
-        # margin all (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    ***
-    */
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set all margins
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
     .sm\)mar\:0 {
         margin: 0 !important;
-    }
-
-    .sm\)mar\:0\.125 {
-        margin: 0.125rem !important;
     }
 
     .sm\)mar\:0\.25 {
         margin: 0.25rem !important;
     }
 
-    .sm\)mar\:0\.375 {
-        margin: 0.375rem !important;
-    }
-
     .sm\)mar\:0\.5 {
         margin: 0.5rem !important;
     }
 
-    .sm\)mar\:0\.625 {
-        margin: 0.625rem !important;
-    }
-
     .sm\)mar\:0\.75 {
         margin: 0.75rem !important;
-    }
-
-    .sm\)mar\:0\.8125 {
-        margin: 0.8125rem !important;
-    }
-
-    .sm\)mar\:0\.875 {
-        margin: 0.875rem !important;
-    }
-
-    .sm\)mar\:0\.9375 {
-        margin: 0.9375rem !important;
     }
 
     .sm\)mar\:1 {
@@ -3092,73 +2503,29 @@ table.td\:spacing-1 {
         margin: 2rem !important;
     }
 
-    .sm\)mar\:1\% {
-        margin: 1% !important;
-    }
-
-    .sm\)mar\:2\% {
-        margin: 2% !important;
-    }
-
-    .sm\)mar\:4\% {
-        margin: 4% !important;
-    }
-
-    .sm\)mar\:6\% {
-        margin: 6% !important;
-    }
-
-    .sm\)mar\:8\% {
-        margin: 8% !important;
-    }
-
-    .sm\)mar\:10\% {
-        margin: 10% !important;
-    }
-
-    /*  # mar top
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set top margin
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
     .sm\)mar\:top-0 {
         margin-top: 0 !important;
-    }
-
-    .sm\)mar\:top-0\.125 {
-        margin-top: 0.125rem !important;
     }
 
     .sm\)mar\:top-0\.25 {
         margin-top: 0.25rem !important;
     }
 
-    .sm\)mar\:top-0\.375 {
-        margin-top: 0.375rem !important;
-    }
-
     .sm\)mar\:top-0\.5 {
         margin-top: 0.5rem !important;
     }
 
-    .sm\)mar\:top-0\.625 {
-        margin-top: 0.625rem !important;
-    }
-
     .sm\)mar\:top-0\.75 {
         margin-top: 0.75rem !important;
-    }
-
-    .sm\)mar\:top-0\.8125 {
-        margin-top: 0.8125rem !important;
-    }
-
-    .sm\)mar\:top-0\.875 {
-        margin-top: 0.875rem !important;
-    }
-
-    .sm\)mar\:top-0\.9375 {
-        margin-top: 0.9375rem !important;
     }
 
     .sm\)mar\:top-1 {
@@ -3181,73 +2548,29 @@ table.td\:spacing-1 {
         margin-top: 2rem !important;
     }
 
-    .sm\)mar\:top-1\% {
-        margin-top: 1% !important;
-    }
-
-    .sm\)mar\:top-2\% {
-        margin-top: 2% !important;
-    }
-
-    .sm\)mar\:top-4\% {
-        margin-top: 4% !important;
-    }
-
-    .sm\)mar\:top-6\% {
-        margin-top: 6% !important;
-    }
-
-    .sm\)mar\:top-8\% {
-        margin-top: 8% !important;
-    }
-
-    .sm\)mar\:top-10\% {
-        margin-top: 10% !important;
-    }
-
-    /*  # mar right
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set right margin
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
     .sm\)mar\:right-0 {
         margin-right: 0 !important;
-    }
-
-    .sm\)mar\:right-0\.125 {
-        margin-right: 0.125rem !important;
     }
 
     .sm\)mar\:right-0\.25 {
         margin-right: 0.25rem !important;
     }
 
-    .sm\)mar\:right-0\.375 {
-        margin-right: 0.375rem !important;
-    }
-
     .sm\)mar\:right-0\.5 {
         margin-right: 0.5rem !important;
     }
 
-    .sm\)mar\:right-0\.625 {
-        margin-right: 0.625rem !important;
-    }
-
     .sm\)mar\:right-0\.75 {
         margin-right: 0.75rem !important;
-    }
-
-    .sm\)mar\:right-0\.8125 {
-        margin-right: 0.8125rem !important;
-    }
-
-    .sm\)mar\:right-0\.875 {
-        margin-right: 0.875rem !important;
-    }
-
-    .sm\)mar\:right-0\.9375 {
-        margin-right: 0.9375rem !important;
     }
 
     .sm\)mar\:right-1 {
@@ -3270,73 +2593,29 @@ table.td\:spacing-1 {
         margin-right: 2rem !important;
     }
 
-    .sm\)mar\:right-1\% {
-        margin-right: 1% !important;
-    }
-
-    .sm\)mar\:right-2\% {
-        margin-right: 2% !important;
-    }
-
-    .sm\)mar\:right-4\% {
-        margin-right: 4% !important;
-    }
-
-    .sm\)mar\:right-6\% {
-        margin-right: 6% !important;
-    }
-
-    .sm\)mar\:right-8\% {
-        margin-right: 8% !important;
-    }
-
-    .sm\)mar\:right-10\% {
-        margin-right: 10% !important;
-    }
-
-    /*  # mar bottom
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set bottom margin
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
     .sm\)mar\:bottom-0 {
         margin-bottom: 0 !important;
-    }
-
-    .sm\)mar\:bottom-0\.125 {
-        margin-bottom: 0.125rem !important;
     }
 
     .sm\)mar\:bottom-0\.25 {
         margin-bottom: 0.25rem !important;
     }
 
-    .sm\)mar\:bottom-0\.375 {
-        margin-bottom: 0.375rem !important;
-    }
-
     .sm\)mar\:bottom-0\.5 {
         margin-bottom: 0.5rem !important;
     }
 
-    .sm\)mar\:bottom-0\.625 {
-        margin-bottom: 0.625rem !important;
-    }
-
     .sm\)mar\:bottom-0\.75 {
         margin-bottom: 0.75rem !important;
-    }
-
-    .sm\)mar\:bottom-0\.8125 {
-        margin-bottom: 0.8125rem !important;
-    }
-
-    .sm\)mar\:bottom-0\.875 {
-        margin-bottom: 0.875rem !important;
-    }
-
-    .sm\)mar\:bottom-0\.9375 {
-        margin-bottom: 0.9375rem !important;
     }
 
     .sm\)mar\:bottom-1 {
@@ -3359,73 +2638,29 @@ table.td\:spacing-1 {
         margin-bottom: 2rem !important;
     }
 
-    .sm\)mar\:bottom-1\% {
-        margin-bottom: 1% !important;
-    }
-
-    .sm\)mar\:bottom-2\% {
-        margin-bottom: 2% !important;
-    }
-
-    .sm\)mar\:bottom-4\% {
-        margin-bottom: 4% !important;
-    }
-
-    .sm\)mar\:bottom-6\% {
-        margin-bottom: 6% !important;
-    }
-
-    .sm\)mar\:bottom-8\% {
-        margin-bottom: 8% !important;
-    }
-
-    .sm\)mar\:bottom-10\% {
-        margin-bottom: 10% !important;
-    }
-
-    /*  # mar left
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set left margin
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
     .sm\)mar\:left-0 {
         margin-left: 0 !important;
-    }
-
-    .sm\)mar\:left-0\.125 {
-        margin-left: 0.125rem !important;
     }
 
     .sm\)mar\:left-0\.25 {
         margin-left: 0.25rem !important;
     }
 
-    .sm\)mar\:left-0\.375 {
-        margin-left: 0.375rem !important;
-    }
-
     .sm\)mar\:left-0\.5 {
         margin-left: 0.5rem !important;
     }
 
-    .sm\)mar\:left-0\.625 {
-        margin-left: 0.625rem !important;
-    }
-
     .sm\)mar\:left-0\.75 {
         margin-left: 0.75rem !important;
-    }
-
-    .sm\)mar\:left-0\.8125 {
-        margin-left: 0.8125rem !important;
-    }
-
-    .sm\)mar\:left-0\.875 {
-        margin-left: 0.875rem !important;
-    }
-
-    .sm\)mar\:left-0\.9375 {
-        margin-left: 0.9375rem !important;
     }
 
     .sm\)mar\:left-1 {
@@ -3448,35 +2683,20 @@ table.td\:spacing-1 {
         margin-left: 2rem !important;
     }
 
-    .sm\)mar\:left-1\% {
-        margin-left: 1% !important;
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set left / right margins
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
+    .sm\)mar\:hrz-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
-    .sm\)mar\:left-2\% {
-        margin-left: 2% !important;
-    }
-
-    .sm\)mar\:left-4\% {
-        margin-left: 4% !important;
-    }
-
-    .sm\)mar\:left-6\% {
-        margin-left: 6% !important;
-    }
-
-    .sm\)mar\:left-8\% {
-        margin-left: 8% !important;
-    }
-
-    .sm\)mar\:left-10\% {
-        margin-left: 10% !important;
-    }
-
-    /*  # mar horz
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
     .sm\)mar\:hrz-0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
@@ -3497,46 +2717,40 @@ table.td\:spacing-1 {
         margin-right: 1rem !important;
     }
 
+    .sm\)mar\:hrz-1.25 {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
+    }
+
+    .sm\)mar\:hrz-1.5 {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+
+    .sm\)mar\:hrz-1.75 {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
+    }
+
     .sm\)mar\:hrz-2 {
         margin-left: 2rem !important;
         margin-right: 2rem !important;
     }
     
-    .sm\)mar\:hrz-1\% {
-        margin-left: 1% !important;
-        margin-right: 1% !important;
+	/*
+	***
+	    * selector: mar
+	    * dsc: margin
+	    * ver: 200120-1
+	    * fnt: set top / bottom margins
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+	***
+	*/
+    .sm\)mar\:vrt-0 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
-    .sm\)mar\:hrz-2\% {
-        margin-left: 2% !important;
-        margin-right: 2% !important;
-    }
-
-    .sm\)mar\:hrz-4\% {
-        margin-left: 4% !important;
-        margin-right: 4% !important;
-    }
-
-    .sm\)mar\:hrz-6\% {
-        margin-left: 6% !important;
-        margin-right: 6% !important;
-    }
-
-    .sm\)mar\:hrz-8\% {
-        margin-left: 8% !important;
-        margin-right: 8% !important;
-    }
-
-    .sm\)mar\:hrz-10\% {
-        margin-left: 10% !important;
-        margin-right: 10% !important;
-    }
-
-    /*  # mar vert
-        # 91108.1b
-        # margin (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-    */
     .sm\)mar\:vrt-0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
@@ -3557,82 +2771,49 @@ table.td\:spacing-1 {
         margin-bottom: 1rem !important;
     }
 
-    .sm\)mar\:vrt-1\% {
-        margin-top: 1% !important;
-        margin-bottom: 1% !important;
+    .sm\)mar\:vrt-1.25 {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
     }
 
-    .sm\)mar\:vrt-2\% {
-        margin-top: 2% !important;
-        margin-bottom: 2% !important;
+    .sm\)mar\:vrt-1.5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .sm\)mar\:vrt-4\% {
-        margin-top: 4% !important;
-        margin-bottom: 4% !important;
+    .sm\)mar\:vrt-1.75 {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
     }
 
-    .sm\)mar\:vrt-6\% {
-        margin-top: 6% !important;
-        margin-bottom: 6% !important;
+    .sm\)mar\:vrt-2 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
     }
 
-    .sm\)mar\:vrt-8\% {
-        margin-top: 8% !important;
-        margin-bottom: 8% !important;
-    }
-
-    .sm\)mar\:vrt-10\% {
-        margin-top: 10% !important;
-        margin-bottom: 10% !important;
-    }
-
-    /*
-    ***
-        # pad
-        # 200107-1
-        # pad all (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    ***
-    */
+	/*
+	***
+	    * selector: pad
+	    * dsc: padding
+	    * ver: 200120-1
+	    * fnt: set all padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
     .sm\)pad\:0 {
         padding: 0 !important;
-    }
-
-    .sm\)pad\:0\.125 {
-        padding: 0.125rem !important;
     }
 
     .sm\)pad\:0\.25 {
         padding: 0.25rem !important;
     }
 
-    .sm\)pad\:0\.375 {
-        padding: 0.375rem !important;
-    }
-
     .sm\)pad\:0\.5 {
         padding: 0.5rem !important;
     }
 
-    .sm\)pad\:0\.625 {
-        padding: 0.625rem !important;
-    }
-
     .sm\)pad\:0\.75 {
         padding: 0.75rem !important;
-    }
-
-    .sm\)pad\:0\.8125 {
-        padding: 0.8125rem !important;
-    }
-
-    .sm\)pad\:0\.875 {
-        padding: 0.875rem !important;
-    }
-
-    .sm\)pad\:0\.9375 {
-        padding: 0.9375rem !important;
     }
 
     .sm\)pad\:1 {
@@ -3655,73 +2836,29 @@ table.td\:spacing-1 {
         padding: 2rem !important;
     }
 
-    .sm\)pad\:1\% {
-        padding: 1% !important;
-    }
-
-    .sm\)pad\:2\% {
-        padding: 2% !important;
-    }
-
-    .sm\)pad\:4\% {
-        padding: 4% !important;
-    }
-
-    .sm\)pad\:6\% {
-        padding: 6% !important;
-    }
-
-    .sm\)pad\:8\% {
-        padding: 8% !important;
-    }
-
-    .sm\)pad\:10\% {
-        padding: 10% !important;
-    }
-
-    /*  # pad top
-        # 91108.1b
-        # padding (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
+	/*
+	***
+	    * selector: pad
+	    * dsc: top
+	    * ver: 200120-1
+	    * fnt: set top padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
     .sm\)pad\:top-0 {
         padding-top: 0 !important;
-    }
-
-    .sm\)pad\:top-0\.125 {
-        padding-top: 0.125rem !important;
     }
 
     .sm\)pad\:top-0\.25 {
         padding-top: 0.25rem !important;
     }
 
-    .sm\)pad\:top-0\.375 {
-        padding-top: 0.375rem !important;
-    }
-
     .sm\)pad\:top-0\.5 {
         padding-top: 0.5rem !important;
     }
 
-    .sm\)pad\:top-0\.625 {
-        padding-top: 0.625rem !important;
-    }
-
     .sm\)pad\:top-0\.75 {
         padding-top: 0.75rem !important;
-    }
-
-    .sm\)pad\:top-0\.8125 {
-        padding-top: 0.8125rem !important;
-    }
-
-    .sm\)pad\:top-0\.875 {
-        padding-top: 0.875rem !important;
-    }
-
-    .sm\)pad\:top-0\.9375 {
-        padding-top: 0.9375rem !important;
     }
 
     .sm\)pad\:top-1 {
@@ -3748,69 +2885,29 @@ table.td\:spacing-1 {
         padding-top: 1% !important;
     }
 
-    .sm\)pad\:top-2\% {
-        padding-top: 2% !important;
-    }
-
-    .sm\)pad\:top-4\% {
-        padding-top: 4% !important;
-    }
-
-    .sm\)pad\:top-6\% {
-        padding-top: 6% !important;
-    }
-
-    .sm\)pad\:top-8\% {
-        padding-top: 8% !important;
-    }
-
-    .sm\)pad\:top-10\% {
-        padding-top: 10% !important;
-    }
-
-    /*  # pad right
-        # 91108.1b
-        # padding (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
+	/*
+	***
+	    * selector: pad
+	    * dsc: right
+	    * ver: 200120-1
+	    * fnt: set right padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
     .sm\)pad\:right-0 {
         padding-right: 0 !important;
-    }
-
-    .sm\)pad\:right-0\.125 {
-        padding-right: 0.125rem !important;
     }
 
     .sm\)pad\:right-0\.25 {
         padding-right: 0.25rem !important;
     }
 
-    .sm\)pad\:right-0\.375 {
-        padding-right: 0.375rem !important;
-    }
-
     .sm\)pad\:right-0\.5 {
         padding-right: 0.5rem !important;
     }
 
-    .sm\)pad\:right-0\.625 {
-        padding-right: 0.625rem !important;
-    }
-
     .sm\)pad\:right-0\.75 {
         padding-right: 0.75rem !important;
-    }
-
-    .sm\)pad\:right-0\.8125 {
-        padding-right: 0.8125rem !important;
-    }
-
-    .sm\)pad\:right-0\.875 {
-        padding-right: 0.875rem !important;
-    }
-
-    .sm\)pad\:right-0\.9375 {
-        padding-right: 0.9375rem !important;
     }
 
     .sm\)pad\:right-1 {
@@ -3833,73 +2930,29 @@ table.td\:spacing-1 {
         padding-right: 2rem !important;
     }
 
-    .sm\)pad\:right-1\% {
-        padding-right: 1% !important;
-    }
-
-    .sm\)pad\:right-2\% {
-        padding-right: 2% !important;
-    }
-
-    .sm\)pad\:right-4\% {
-        padding-right: 4% !important;
-    }
-
-    .sm\)pad\:right-6\% {
-        padding-right: 6% !important;
-    }
-
-    .sm\)pad\:right-8\% {
-        padding-right: 8% !important;
-    }
-
-    .sm\)pad\:right-10\% {
-        padding-right: 10% !important;
-    }
-
-    /*  # pad bottom
-        # 91108.1b
-        # padding (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
+	/*
+	***
+	    * selector: pad
+	    * dsc: bottom
+	    * ver: 200120-1
+	    * fnt: set bottom padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
     .sm\)pad\:bottom-0 {
         padding-bottom: 0 !important;
-    }
-
-    .sm\)pad\:bottom-0\.125 {
-        padding-bottom: 0.125rem !important;
     }
 
     .sm\)pad\:bottom-0\.25 {
         padding-bottom: 0.25rem !important;
     }
 
-    .sm\)pad\:bottom-0\.375 {
-        padding-bottom: 0.375rem !important;
-    }
-
     .sm\)pad\:bottom-0\.5 {
         padding-bottom: 0.5rem !important;
     }
 
-    .sm\)pad\:bottom-0\.625 {
-        padding-bottom: 0.625rem !important;
-    }
-
     .sm\)pad\:bottom-0\.75 {
         padding-bottom: 0.75rem !important;
-    }
-
-    .sm\)pad\:bottom-0\.8125 {
-        padding-bottom: 0.8125rem !important;
-    }
-
-    .sm\)pad\:bottom-0\.875 {
-        padding-bottom: 0.875rem !important;
-    }
-
-    .sm\)pad\:bottom-0\.9375 {
-        padding-bottom: 0.9375rem !important;
     }
 
     .sm\)pad\:bottom-1 {
@@ -3922,73 +2975,29 @@ table.td\:spacing-1 {
         padding-bottom: 2rem !important;
     }
 
-    .sm\)pad\:bottom-1\% {
-        padding-bottom: 1% !important;
-    }
-
-    .sm\)pad\:bottom-2\% {
-        padding-bottom: 2% !important;
-    }
-
-    .sm\)pad\:bottom-4\% {
-        padding-bottom: 4% !important;
-    }
-
-    .sm\)pad\:bottom-6\% {
-        padding-bottom: 6% !important;
-    }
-
-    .sm\)pad\:bottom-8\% {
-        padding-bottom: 8% !important;
-    }
-
-    .sm\)pad\:bottom-10\% {
-        padding-bottom: 10% !important;
-    }
-
-    /*  # pad left
-        # 91108.1b
-        # padding (rem)
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
+	/*
+	***
+	    * selector: pad
+	    * dsc: left
+	    * ver: 200120-1
+	    * fnt: set left padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
     .sm\)pad\:left-0 {
         padding-left: 0 !important;
-    }
-
-    .sm\)pad\:left-0\.125 {
-        padding-left: 0.125rem !important;
     }
 
     .sm\)pad\:left-0\.25 {
         padding-left: 0.25rem !important;
     }
 
-    .sm\)pad\:left-0\.375 {
-        padding-left: 0.375rem !important;
-    }
-
     .sm\)pad\:left-0\.5 {
         padding-left: 0.5rem !important;
     }
 
-    .sm\)pad\:left-0\.625 {
-        padding-left: 0.625rem !important;
-    }
-
     .sm\)pad\:left-0\.75 {
         padding-left: 0.75rem !important;
-    }
-
-    .sm\)pad\:left-0\.8125 {
-        padding-left: 0.8125rem !important;
-    }
-
-    .sm\)pad\:left-0\.875 {
-        padding-left: 0.875rem !important;
-    }
-
-    .sm\)pad\:left-0\.9375 {
-        padding-left: 0.9375rem !important;
     }
 
     .sm\)pad\:left-1 {
@@ -4011,35 +3020,20 @@ table.td\:spacing-1 {
         padding-left: 2rem !important;
     }
 
-    .sm\)pad\:left-1\% {
-        padding-left: 1% !important;
+	/*
+	***
+	    * selector: pad
+	    * dsc: hrz
+	    * ver: 200120-1
+	    * fnt: set left/right (horizontal) padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
+    .sm\)pad\:hrz-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
-    .sm\)pad\:left-2\% {
-        padding-left: 2% !important;
-    }
-
-    .sm\)pad\:left-4\% {
-        padding-left: 4% !important;
-    }
-
-    .sm\)pad\:left-6\% {
-        padding-left: 6% !important;
-    }
-
-    .sm\)pad\:left-8\% {
-        padding-left: 8% !important;
-    }
-
-    .sm\)pad\:left-10\% {
-        padding-left: 10% !important;
-    }
-
-    /*  # pad hrz
-        # 91108.1b
-        # horizontal padding
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
     .sm\)pad\:hrz-0\.25 {
         padding-left: 0.25rem !important;
         padding-right: 0.25rem !important;
@@ -4060,41 +3054,40 @@ table.td\:spacing-1 {
         padding-right: 1rem !important;
     }
 
-    .sm\)pad\:hrz-1\% {
-        padding-left: 1% !important;
-        padding-right: 1% !important;
+    .sm\)pad\:hrz-1.25 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
-    .sm\)pad\:hrz-2\% {
-        padding-left: 2% !important;
-        padding-right: 2% !important;
+    .sm\)pad\:hrz-1.5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
-    .sm\)pad\:hrz-4\% {
-        padding-left: 4% !important;
-        padding-right: 4% !important;
+    .sm\)pad\:hrz-1.75 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
-    .sm\)pad\:hrz-6\% {
-        padding-left: 6% !important;
-        padding-right: 6% !important;
+    .sm\)pad\:hrz-2 {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
     }
 
-    .sm\)pad\:hrz-8\% {
-        padding-left: 8% !important;
-        padding-right: 8% !important;
+	/*
+	***
+	    * selector: pad
+	    * dsc: vrt
+	    * ver: 200120-1
+	    * fnt: set top/bottom (vertical) padding
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+	***
+	*/
+    .sm\)pad\:vrt-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
-    .sm\)pad\:hrz-10\% {
-        padding-left: 10% !important;
-        padding-right: 10% !important;
-    }
-
-    /*  # pad vrt
-        # 91108.1b
-        # vertical padding
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-    */
     .sm\)pad\:vrt-0\.25 {
         padding-top: 0.25rem !important;
         padding-bottom: 0.25rem !important;
@@ -4115,45 +3108,35 @@ table.td\:spacing-1 {
         padding-bottom: 1rem !important;
     }
 
-    .sm\)pad\:vrt-1\% {
-        padding-top: 1% !important;
-        padding-bottom: 1% !important;
+    .sm\)pad\:vrt-1.25 {
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
     }
 
-    .sm\)pad\:vrt-2\% {
-        padding-top: 2% !important;
-        padding-bottom: 2% !important;
+    .sm\)pad\:vrt-1.5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 
-    .sm\)pad\:vrt-4\% {
-        padding-top: 4% !important;
-        padding-bottom: 4% !important;
+    .sm\)pad\:vrt-1.75 {
+        padding-top: 1.75rem !important;
+        padding-bottom: 1.75rem !important;
     }
 
-    .sm\)pad\:vrt-6\% {
-        padding-top: 6% !important;
-        padding-bottom: 6% !important;
+    .sm\)pad\:vrt-2 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
     }
 
-    .sm\)pad\:vrt-8\% {
-        padding-top: 8% !important;
-        padding-bottom: 8% !important;
-    }
-
-    .sm\)pad\:vrt-10\% {
-        padding-top: 10% !important;
-        padding-bottom: 10% !important;
-    }
-
-    /*
-    ***
-        * selector: ht
-        * dsc: fixed height presets
-        * ver: 200107-1
-        * fnt: set of predefined fixed heights
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-    ***
-    */
+	/*
+	***
+	    * selector: ht
+	    * dsc: fixed height presets
+	    * ver: 200107-1
+	    * fnt: set of predefined fixed heights
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+	***
+	*/
     .sm\)ht\:auto {
         height: auto !important;
     }
@@ -4208,15 +3191,15 @@ table.td\:spacing-1 {
         height: 20rem !important;
     }
 
-    /*
-    ***
-        * selector: ht
-        * dsc: % height presets
-        * ver: 200107-1
-        * fnt: set of predefined % heights
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-    ***
-    */
+	/*
+	***
+	    * selector: ht
+	    * dsc: % height presets
+	    * ver: 200107-1
+	    * fnt: set of predefined % heights
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+	***
+	*/
     .sm\)ht\:10\% {
         height: 10% !important;
     }
@@ -4297,15 +3280,15 @@ table.td\:spacing-1 {
         height: 100% !important;
     }
 
-    /*
-    ***
-        * selector: ht
-        * dsc: fraction height presets
-        * ver: 200107-1
-        * fnt: set height to predefined fraction
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-    ***
-    */
+	/*
+	***
+	    * selector: ht
+	    * dsc: fraction height presets
+	    * ver: 200107-1
+	    * fnt: set height to predefined fraction
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+	***
+	*/
     .sm\)ht\:1\/5 {
         height: 20% !important;
     }
@@ -4349,39 +3332,124 @@ table.td\:spacing-1 {
         height: 100% !important;
     }
 
-    /*  # img
-        # 90907.1b
-        # set image width & height
-    */
-    .sm\)img\:25\% {
-        height: auto !important;
-        width: 25% !important;
-    }
+	/*
+	***
+	    * selector: yht
+	    * dsc: fixed height / auto width
+	    * ver: 200107-1
+	    * fnt: scale width based on preset height %
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+	***
+	*/
+	.sm\)yht\:10\% {
+	    height: 10% !important;
+	    width: auto !important;
+	}
 
-    .sm\)img\:50\% {
-        height: auto !important;
-        width: 50% !important;
-    }
+	.sm\)yht\:12\% {
+	    height: 12% !important;
+	    width: auto !important;
+	}
 
-    .sm\)img\:75\% {
-        height: auto !important;
-        width: 75% !important;
-    }
+	.sm\)yht\:14\% {
+	    height: 14% !important;
+	    width: auto !important;
+	}
 
-    .sm\)img\:100\% {
-        height: auto !important;
-        width: 100% !important;
-    }
+	.sm\)yht\:16\% {
+	    height: 16% !important;
+	    width: auto !important;
+	}
 
-    /*
-    ***
-        * selector: wd
-        * dsc: fixed width presets
-        * ver: 200107-1
-        * fnt: set of predefined fixed widths
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-    ***
-    */
+	.sm\)yht\:18\% {
+	    height: 18% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:20\% {
+	    height: 20% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:25\% {
+	    height: 25% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:30\% {
+	    height: 30% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:35\% {
+	    height: 35% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:40\% {
+	    height: 40% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:45\% {
+	    height: 45% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:50\% {
+	    height: 50% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:55\% {
+	    height: 55% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:60\% {
+	    height: 60% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:65\% {
+	    height: 65% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:70\% {
+	    height: 70% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:75\% {
+	    height: 75% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:80\% {
+	    height: 80% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:90\% {
+	    height: 90% !important;
+	    width: auto !important;
+	}
+
+	.sm\)yht\:100\% {
+	    height: 100% !important;
+	    width: auto !important;
+	}
+
+	/*
+	***
+	    * selector: wd
+	    * dsc: fixed width presets
+	    * ver: 200107-1
+	    * fnt: set of predefined fixed widths
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
     .sm\)wd\:auto {
         width: auto !important;
     }
@@ -4436,15 +3504,15 @@ table.td\:spacing-1 {
         width: 20rem !important;
     }
 
-    /*
-    ***
-        * selector: wd
-        * dsc: % width presets
-        * ver: 200107-1
-        * fnt: set of predefined % widths
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-    ***
-    */
+	/*
+	***
+	    * selector: wd
+	    * dsc: % width presets
+	    * ver: 200107-1
+	    * fnt: set of predefined % widths
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
     .sm\)wd\:10\% {
         width: 10% !important;
     }
@@ -4525,15 +3593,15 @@ table.td\:spacing-1 {
         width: 100% !important;
     }
 
-    /*
-    ***
-        * selector: wd
-        * dsc: fraction width presets
-        * ver: 200107-1
-        * fnt: set width to predefined fraction
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-    ***
-    */
+	/*
+	***
+	    * selector: wd
+	    * dsc: fraction width presets
+	    * ver: 200107-1
+	    * fnt: set width to predefined fraction
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
     .sm\)wd\:1\/5 {
         width: 20% !important;
     }
@@ -4577,270 +3645,126 @@ table.td\:spacing-1 {
         width: 100% !important;
     }
 
-    /*  # DIY flexbox components (beta)
-        # 91001.1a
-        # classes to build flexbox
-        # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-    **/
-    .sm\)fx\:c {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    }
+	/*
+	***
+	    * selector: xwd
+	    * dsc: auto height / fixed width
+	    * ver: 200107-1
+	    * fnt: scale height based on preset width %
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+	***
+	*/
+	.sm\)xwd\:10\% {
+	    height: auto !important;
+	    width: 10% !important;
+	}
 
-    .sm\)fx\:cw {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+	.sm\)xwd\:12\% {
+	    height: auto !important;
+	    width: 12% !important;
+	}
 
-    .sm\)fx\:r {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    }
+	.sm\)xwd\:14\% {
+	    height: auto !important;
+	    width: 14% !important;
+	}
 
-    .sm\)fx\:r-rev {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row-reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    }
+	.sm\)xwd\:16\% {
+	    height: auto !important;
+	    width: 16% !important;
+	}
 
-    .sm\)fx\:rw {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+	.sm\)xwd\:18\% {
+	    height: auto !important;
+	    width: 18% !important;
+	}
 
-    .sm\)fx\:rw-rev {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row-reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
+	.sm\)xwd\:20\% {
+	    height: auto !important;
+	    width: 20% !important;
+	}
 
-    /*: justify content :*/
-    .sm\)fa\:1,
-    .sm\)fxa\:1 {
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-    }
+	.sm\)xwd\:25\% {
+	    height: auto !important;
+	    width: 25% !important;
+	}
 
-    .sm\)fa\:2,
-    .sm\)fxa\:2 {
-        -webkit-justify-content: flex-end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-    }
+	.sm\)xwd\:30\% {
+	    height: auto !important;
+	    width: 30% !important;
+	}
 
-    .sm\)fa\:3,
-    .sm\)fxa\:3 {
-        -webkit-justify-content: flex-center;
-        -ms-flex-pack: center;
-        justify-content: flex-center;
-    }
+	.sm\)xwd\:35\% {
+	    height: auto !important;
+	    width: 35% !important;
+	}
 
-    .sm\)fa\:4,
-    .sm\)fxa\:4 {
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
+	.sm\)xwd\:40\% {
+	    height: auto !important;
+	    width: 40% !important;
+	}
 
-    .sm\)fa\:5,
-    .sm\)fxa\:5 {
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-    }
+	.sm\)xwd\:45\% {
+	    height: auto !important;
+	    width: 45% !important;
+	}
 
-    /*: align content :*/
-    .sm\)fb\:1,
-    .sm\)fxb\:1 {
-        -webkit-align-content: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start;
-    }
+	.sm\)xwd\:50\% {
+	    height: auto !important;
+	    width: 50% !important;
+	}
 
-    .sm\)fb\:2,
-    .sm\)fxb\:2 {
-        -webkit-align-content: flex-end;
-        -ms-flex-line-pack: end;
-        align-content: flex-end;
-    }
+	.sm\)xwd\:55\% {
+	    height: auto !important;
+	    width: 55% !important;
+	}
 
-    .sm\)fb\:3,
-    .sm\)fxb\:3 {
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-    }
+	.sm\)xwd\:60\% {
+	    height: auto !important;
+	    width: 60% !important;
+	}
 
-    .sm\)fb\:4,
-    .sm\)fxb\:4 {
-        -webkit-align-content: space-between;
-        -ms-flex-line-pack: justify;
-        align-content: space-between;
-    }
+	.sm\)xwd\:65\% {
+	    height: auto !important;
+	    width: 65% !important;
+	}
 
-    .sm\)fb\:5,
-    .sm\)fxb\:5 {
-        -webkit-align-content: space-around;
-        -ms-flex-line-pack: distribute;
-        align-content: space-around;
-    }
+	.sm\)xwd\:70\% {
+	    height: auto !important;
+	    width: 70% !important;
+	}
 
-    .sm\)fb\:6,
-    .sm\)fxb\:6 {
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-    }
+	.sm\)xwd\:75\% {
+	    height: auto !important;
+	    width: 75% !important;
+	}
 
-    /*: align items :*/
-    .sm\)fc\:1,
-    .sm\)fxc\:1 {
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
+	.sm\)xwd\:80\% {
+	    height: auto !important;
+	    width: 80% !important;
+	}
 
-    .sm\)fc\:2,
-    .sm\)fxc\:2 {
-        -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
+	.sm\)xwd\:90\% {
+	    height: auto !important;
+	    width: 90% !important;
+	}
 
-    .sm\)fc\:3,
-    .sm\)fxc\:3 {
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
+	.sm\)xwd\:100\% {
+	    height: auto !important;
+	    width: 100% !important;
+	}
 
-    .sm\)fc\:4,
-    .sm\)fxc\:4 {
-        -webkit-align-items: baseline;
-        -ms-flex-align: baseline;
-        align-items: baseline;
-    }
-
-    .sm\)fc\:5,
-    .sm\)fxc\:5 {
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-    }
-
-    /*: item (importance ranking / auto is assumed) :*/
-    .sm\)fd\:1,
-    .sm\)fxd\:1 {
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-    }
-
-    .sm\)fd\:2,
-    .sm\)fxd\:2 {
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    }
-
-    .sm\)fd\:3,
-    .sm\)fxd\:3 {
-        -webkit-flex: 2 1 auto;
-        -ms-flex: 2 1 auto;
-        flex: 2 1 auto;
-    }
-
-    /*: item (align self) :*/
-    .sm\)fe\:1,
-    .sm\)fxe\:1 {
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
-    }
-
-    .sm\)fe\:2,
-    .sm\)fxe\:2 {
-        -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-        align-self: flex-start;
-    }
-
-    .sm\)fe\:3,
-    .sm\)fxe\:3 {
-        -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-        align-self: flex-end;
-    }
-
-    .sm\)fe\:4,
-    .sm\)fxe\:4 {
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
-        align-self: center;
-    }
-
-    .sm\)fe\:5,
-    .sm\)fxe\:5 {
-        -webkit-align-self: baseline;
-        -ms-flex-item-align: baseline;
-        align-self: baseline;
-    }
-
-    .sm\)fe\:6,
-    .sm\)fxe\:6 {
-        -webkit-align-self: stretch;
-        -ms-flex-item-align: stretch;
-        align-self: stretch;
-    }
-
-    /*  # bdr styles (beta)
-        # 91108.1a
-        # border style classes
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/border
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
-    */
+	/*
+	***
+	    * selector: bdr
+	    * dsc: border
+	    * ver: 200120-1
+	    * fnt: set border style (not color)
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border
+		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+	***
+	*/
     .sm\)bdr\:none {
         border-style: none !important;
     }
@@ -5040,10 +3964,279 @@ table.td\:spacing-1 {
     .sm\)bdr\:left-solid-thick {
         border-left-width: thick !important;
     }
+
+	/*
+	***
+	    * DIY flexbox components
+	    * dsc: flexbox classes
+	    * ver: 200120-1
+	    * fnt: classes to build flexbox container and items
+	    * ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+	***
+	*/
+	.sm)fx\:c {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	}
+
+	.sm)fx\:c-rev {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column-reverse;
+	    -ms-flex-direction: column-reverse;
+	    flex-direction: column-reverse;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	}
+
+	.sm)fx\:cw {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	}
+
+	.sm)fx\:cw-rev {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-flex-wrap: wrap-reverse;
+	    -ms-flex-wrap: wrap-reverse;
+	    flex-wrap: wrap-reverse;
+	}
+
+	.sm)fx\:r {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	}
+
+	.sm)fx\:r-rev {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row-reverse;
+	    -ms-flex-direction: row-reverse;
+	    flex-direction: row-reverse;
+	    -webkit-flex-wrap: nowrap;
+	    -ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+	}
+
+	.sm)fx\:rw {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	}
+
+	.sm)fx\:rw-rev {
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	    -webkit-flex-wrap: wrap-reverse;
+	    -ms-flex-wrap: wrap-reverse;
+	    flex-wrap: wrap-reverse;
+	}
+
+	/*: justify content :*/
+	.sm)fxa\:1 {
+	    -webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	}
+
+	.sm)fxa\:2 {
+	    -webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	    justify-content: flex-end;
+	}
+
+	.sm)fxa\:3 {
+	    -webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	    justify-content: center;
+	}
+
+	.sm)fxa\:4 {
+	    -webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	    justify-content: space-between;
+	}
+
+	.sm)fxa\:5 {
+	    -webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	    justify-content: space-around;
+	}
+
+	/*: align content :*/
+	.sm)fxb\:1 {
+	    -webkit-align-content: flex-start;
+	    -ms-flex-line-pack: start;
+	    align-content: flex-start;
+	}
+
+	.sm)fxb\:2 {
+	    -webkit-align-content: flex-end;
+	    -ms-flex-line-pack: end;
+	    align-content: flex-end;
+	}
+
+	.sm)fxb\:3 {
+	    -webkit-align-content: center;
+	    -ms-flex-line-pack: center;
+	    align-content: center;
+	}
+
+	.sm)fxb\:4 {
+	    -webkit-align-content: space-between;
+	    -ms-flex-line-pack: justify;
+	    align-content: space-between;
+	}
+
+	.sm)fxb\:5 {
+	    -webkit-align-content: space-around;
+	    -ms-flex-line-pack: distribute;
+	    align-content: space-around;
+	}
+
+	.sm)fxb\:6 {
+	    -webkit-align-content: stretch;
+	    -ms-flex-line-pack: stretch;
+	    align-content: stretch;
+	}
+
+	/*: align items :*/
+	.sm)fxc\:1 {
+	    -webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+	}
+
+	.sm)fxc\:2 {
+	    -webkit-align-items: flex-end;
+	    -ms-flex-align: end;
+	    align-items: flex-end;
+	}
+
+	.sm)fxc\:3 {
+	    -webkit-align-items: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	}
+
+	.sm)fxc\:4 {
+	    -webkit-align-items: baseline;
+	    -ms-flex-align: baseline;
+	    align-items: baseline;
+	}
+
+	.sm)fxc\:5 {
+	    -webkit-align-items: stretch;
+	    -ms-flex-align: stretch;
+	    align-items: stretch;
+	}
+
+	/*: item (importance ranking / auto is assumed) :*/
+	.sm)fxd\:1 {
+		-webkit-order: 0;
+		-ms-flex-order: 0;
+		order: 0;	
+	    -webkit-flex: 0 1 auto;
+	    -ms-flex: 0 1 auto;
+	    flex: 0 1 auto;
+	}
+
+	.sm)fxd\:2 {
+		-webkit-order: 0;
+		-ms-flex-order: 0;
+		order: 0;	
+	    -webkit-flex: 1 1 auto;
+	    -ms-flex: 1 1 auto;
+	    flex: 1 1 auto;
+	}
+
+	.sm)fxd\:3 {
+		-webkit-order: 0;
+		-ms-flex-order: 0;
+		order: 0;	
+	    -webkit-flex: 2 1 auto;
+	    -ms-flex: 2 1 auto;
+	    flex: 2 1 auto;
+	}
+
+	/*: item (align self) :*/
+	.sm)fxe\:1 {
+	    -webkit-align-self: auto;
+	    -ms-flex-item-align: auto;
+	    align-self: auto;
+	}
+
+	.sm)fxe\:2 {
+	    -webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	    align-self: flex-start;
+	}
+
+	.sm)fxe\:3 {
+	    -webkit-align-self: flex-end;
+	    -ms-flex-item-align: end;
+	    align-self: flex-end;
+	}
+
+	.sm)fxe\:4 {
+	    -webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	    align-self: center;
+	}
+
+	.sm)fxe\:5 {
+	    -webkit-align-self: baseline;
+	    -ms-flex-item-align: baseline;
+	    align-self: baseline;
+	}
+
+	.sm)fxe\:6 {
+	    -webkit-align-self: stretch;
+	    -ms-flex-item-align: stretch;
+	    align-self: stretch;
+	}
 }
 
 /*
  * EOF:     theme/advance.css
- * Build:   200115-1
+ * Build:   200120-1
  *
  */
