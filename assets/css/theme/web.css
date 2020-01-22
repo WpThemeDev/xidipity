@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200107-1
+ * Build:           200120-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -103,7 +103,7 @@ body {
 /*
 ***
     # dsp
-    # 200107-1
+    # 200120-1
     # web specific display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -1446,8 +1446,8 @@ a.page-numbers:focus {
 }
 
 .fx\:cn-ct-itm img {
-    height: auto !important;
-    width: 100% !important;
+    height: auto;
+    width: 100%;
 }
 
 /*  # core flexbox classes
@@ -2193,6 +2193,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200107-1
+ * Build:   200120-1
  *
  */
