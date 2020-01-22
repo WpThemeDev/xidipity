@@ -463,6 +463,24 @@ dd {
     margin-left: 0;
 }
 
+/*
+    list spacing
+*/
+ol.li\:qtr-spaced li:not(:last-child),
+ul.li\:qtr-spaced li:not(:last-child) {
+    margin-bottom: 0.25rem !important;
+}
+
+ol.li\:dbl-spaced li:not(:last-child),
+ul.li\:dbl-spaced li:not(:last-child) {
+    margin-bottom: 0.5rem !important;
+}
+
+ol.li\:tpl-spaced li:not(:last-child),
+ul.li\:tpl-spaced li:not(:last-child) {
+    margin-bottom: 0.75rem !important;
+}
+
 @media (min-width:640px) {
     dd {
         margin-left: 2.25rem;
@@ -557,6 +575,23 @@ table.highlight tr:hover {
 **/
 table.pinstripe tr:nth-child(even) {
     background-color: var(--hue-tint-dark);
+}
+
+/*
+***
+    * selector: table
+    * dsc: table layout options
+    * ver: 200120-1
+    * fnt: control table layout attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
+***
+*/
+table.layout-auto {
+    table-layout: auto !important;
+}
+
+table.layout-fixed {
+    table-layout: fixed !important;
 }
 
 /*  # <h1>–<h6>
