@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200107-1
+ * Build:           200120-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://codex.wordpress.org/Template_Tags
  *
  */
@@ -284,7 +284,7 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
-        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert-1 cnr:small-arch">';
+        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert-1 cnr:arch-small">';
         if ($wp_search)
         {
             
@@ -523,7 +523,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200107-1
+ * Build:   200120-1
  *
  */
 ?>
