@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200120-1
+ * Build:           200123-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1494,7 +1494,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "d50000", "Red", "c51162", "Pink", "aa00ff", "Purple", "0a00b6", "Deep Purple", "304ffe", "Indigo", "2962ff", "Blue", "0091ea", "Light Blue", "0093BD", "Cyan", "009688", "Teal", "087f23", "Green", "689f38", "Light Green", "6c6f00", "Lime", "c17900", "Yellow", "ee6c03", "Amber", "ef6c00", "Orange", "a30000", "Deep Orange", "ffffff", "White", ]';
+    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "B71C1C", "Red", "880E4F", "Pink", "4A148C", "Purple", "311B92", "Deep Purple", "1A237E", "Indigo", "0D47A1", "Blue", "01579B", "Light Blue", "006064", "Cyan", "004D40", "Teal", "1B5E20", "Green", "33691E", "Light Green", "827717", "Lime", "F57F17", "Yellow", "FF6F00", "Amber", "E65100", "Orange", "BF360C", "Deep Orange", "FFFFFF", "White", ]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
     $in['textcolor_cols'] = '5';
     return $in;
@@ -1794,7 +1794,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200120-1
+ * Build:   200123-1
  *
  */
 ?>
