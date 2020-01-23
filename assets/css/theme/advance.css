@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200120-1
+ * Build:           200123-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -3974,7 +3974,7 @@
 	    * ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
 	***
 	*/
-	.sm)fx\:c {
+	.sm\)fx\:c {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -3986,7 +3986,7 @@
 	    flex-wrap: nowrap;
 	}
 
-	.sm)fx\:c-rev {
+	.sm\)fx\:c-rev {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -3998,7 +3998,7 @@
 	    flex-wrap: nowrap;
 	}
 
-	.sm)fx\:cw {
+	.sm\)fx\:cw {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4010,7 +4010,7 @@
 	    flex-wrap: wrap;
 	}
 
-	.sm)fx\:cw-rev {
+	.sm\)fx\:cw-rev {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4022,7 +4022,7 @@
 	    flex-wrap: wrap-reverse;
 	}
 
-	.sm)fx\:r {
+	.sm\)fx\:r {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4034,7 +4034,7 @@
 	    flex-wrap: nowrap;
 	}
 
-	.sm)fx\:r-rev {
+	.sm\)fx\:r-rev {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4046,7 +4046,7 @@
 	    flex-wrap: nowrap;
 	}
 
-	.sm)fx\:rw {
+	.sm\)fx\:rw {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4058,7 +4058,7 @@
 	    flex-wrap: wrap;
 	}
 
-	.sm)fx\:rw-rev {
+	.sm\)fx\:rw-rev {
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
 	    display: flex;
@@ -4071,106 +4071,106 @@
 	}
 
 	/*: justify content :*/
-	.sm)fxa\:1 {
+	.sm\)fxa\:1 {
 	    -webkit-justify-content: flex-start;
 	    -ms-flex-pack: start;
 	    justify-content: flex-start;
 	}
 
-	.sm)fxa\:2 {
+	.sm\)fxa\:2 {
 	    -webkit-justify-content: flex-end;
 	    -ms-flex-pack: end;
 	    justify-content: flex-end;
 	}
 
-	.sm)fxa\:3 {
+	.sm\)fxa\:3 {
 	    -webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	    justify-content: center;
 	}
 
-	.sm)fxa\:4 {
+	.sm\)fxa\:4 {
 	    -webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	    justify-content: space-between;
 	}
 
-	.sm)fxa\:5 {
+	.sm\)fxa\:5 {
 	    -webkit-justify-content: space-around;
 	    -ms-flex-pack: distribute;
 	    justify-content: space-around;
 	}
 
 	/*: align content :*/
-	.sm)fxb\:1 {
+	.sm\)fxb\:1 {
 	    -webkit-align-content: flex-start;
 	    -ms-flex-line-pack: start;
 	    align-content: flex-start;
 	}
 
-	.sm)fxb\:2 {
+	.sm\)fxb\:2 {
 	    -webkit-align-content: flex-end;
 	    -ms-flex-line-pack: end;
 	    align-content: flex-end;
 	}
 
-	.sm)fxb\:3 {
+	.sm\)fxb\:3 {
 	    -webkit-align-content: center;
 	    -ms-flex-line-pack: center;
 	    align-content: center;
 	}
 
-	.sm)fxb\:4 {
+	.sm\)fxb\:4 {
 	    -webkit-align-content: space-between;
 	    -ms-flex-line-pack: justify;
 	    align-content: space-between;
 	}
 
-	.sm)fxb\:5 {
+	.sm\)fxb\:5 {
 	    -webkit-align-content: space-around;
 	    -ms-flex-line-pack: distribute;
 	    align-content: space-around;
 	}
 
-	.sm)fxb\:6 {
+	.sm\)fxb\:6 {
 	    -webkit-align-content: stretch;
 	    -ms-flex-line-pack: stretch;
 	    align-content: stretch;
 	}
 
 	/*: align items :*/
-	.sm)fxc\:1 {
+	.sm\)fxc\:1 {
 	    -webkit-align-items: flex-start;
 	    -ms-flex-align: start;
 	    align-items: flex-start;
 	}
 
-	.sm)fxc\:2 {
+	.sm\)fxc\:2 {
 	    -webkit-align-items: flex-end;
 	    -ms-flex-align: end;
 	    align-items: flex-end;
 	}
 
-	.sm)fxc\:3 {
+	.sm\)fxc\:3 {
 	    -webkit-align-items: center;
 	    -ms-flex-align: center;
 	    align-items: center;
 	}
 
-	.sm)fxc\:4 {
+	.sm\)fxc\:4 {
 	    -webkit-align-items: baseline;
 	    -ms-flex-align: baseline;
 	    align-items: baseline;
 	}
 
-	.sm)fxc\:5 {
+	.sm\)fxc\:5 {
 	    -webkit-align-items: stretch;
 	    -ms-flex-align: stretch;
 	    align-items: stretch;
 	}
 
 	/*: item (importance ranking / auto is assumed) :*/
-	.sm)fxd\:1 {
+	.sm\)fxd\:1 {
 		-webkit-order: 0;
 		-ms-flex-order: 0;
 		order: 0;	
@@ -4179,7 +4179,7 @@
 	    flex: 0 1 auto;
 	}
 
-	.sm)fxd\:2 {
+	.sm\)fxd\:2 {
 		-webkit-order: 0;
 		-ms-flex-order: 0;
 		order: 0;	
@@ -4188,7 +4188,7 @@
 	    flex: 1 1 auto;
 	}
 
-	.sm)fxd\:3 {
+	.sm\)fxd\:3 {
 		-webkit-order: 0;
 		-ms-flex-order: 0;
 		order: 0;	
@@ -4198,37 +4198,37 @@
 	}
 
 	/*: item (align self) :*/
-	.sm)fxe\:1 {
+	.sm\)fxe\:1 {
 	    -webkit-align-self: auto;
 	    -ms-flex-item-align: auto;
 	    align-self: auto;
 	}
 
-	.sm)fxe\:2 {
+	.sm\)fxe\:2 {
 	    -webkit-align-self: flex-start;
 	    -ms-flex-item-align: start;
 	    align-self: flex-start;
 	}
 
-	.sm)fxe\:3 {
+	.sm\)fxe\:3 {
 	    -webkit-align-self: flex-end;
 	    -ms-flex-item-align: end;
 	    align-self: flex-end;
 	}
 
-	.sm)fxe\:4 {
+	.sm\)fxe\:4 {
 	    -webkit-align-self: center;
 	    -ms-flex-item-align: center;
 	    align-self: center;
 	}
 
-	.sm)fxe\:5 {
+	.sm\)fxe\:5 {
 	    -webkit-align-self: baseline;
 	    -ms-flex-item-align: baseline;
 	    align-self: baseline;
 	}
 
-	.sm)fxe\:6 {
+	.sm\)fxe\:6 {
 	    -webkit-align-self: stretch;
 	    -ms-flex-item-align: stretch;
 	    align-self: stretch;
@@ -4237,6 +4237,6 @@
 
 /*
  * EOF:     theme/advance.css
- * Build:   200120-1
+ * Build:   200123-1
  *
  */
