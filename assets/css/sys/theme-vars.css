@@ -3,7 +3,7 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200123-1
+ * Build:           200126-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -81,39 +81,27 @@
     --wcag-grey7: #616161;
     --wcag-grey6: #757575;
     --hue-red: #D50000;
-    --wcag-red: #B71C1C;
+    --wcag-red: #B50707;
     --hue-pink: #C51162;
-    --wcag-pink: #880E4F;
     --hue-purple: #AA00FF;
-    --wcag-purple: #4A148C;
     --hue-deep-purple: #6200EA;
-    --wcag-deep-purple: #311B92;
+    --wcag-deep-purple: #783BB7;
     --hue-indigo: #304FFE;
-    --wcag-indigo: #1A237E;
     --hue-blue: #2962FF;
-    --wcag-blue: #0D47A1;
+    --wcag-blue: #0051D8;
     --hue-light-blue: #0091EA;
-    --wcag-light-blue: #01579B;
     --hue-cyan: #00B8D4;
-    --wcag-cyan: #006064;
     --hue-teal: #00BFA5;
-    --wcag-teal: #004D40;
     --hue-green: #00C853;
-    --wcag-green: #1B5E20;
+    --wcag-green: #048618;
     --hue-light-green: #64DD17;
-    --wcag-light-green: #33691E;
     --hue-lime: #AEEA00;
-    --wcag-lime: #827717;
     --hue-yellow: #FFD600;
-    --wcag-yellow: #F57F17;
     --hue-amber: #FFAB00;
-    --wcag-amber: #FF6F00;
     --hue-orange: #FF6D00;
-    --wcag-orange: #E65100;
     --hue-deep-orange: #DD2C00;
-    --wcag-deep-orange: #BF360C;
+    --wcag-deep-orange: #D44511;
     --hue-brown: #6D4C41;
-    --wcag-brown: #3E2723;
     --hue-grey: #757575;
     --hue-blue-grey: #546E7A;
     --wcag-blue-grey: #263238;
@@ -262,6 +250,6 @@
 
 /*
  * EOF:     sys/theme-vars.css
- * Build:   200123-1
+ * Build:   200126-1
  *
  */
