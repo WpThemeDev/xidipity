@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200107-1
+ * Build:           200126-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -17,9 +17,15 @@
  *
  */
 
-/*  # TinyMCE
-   ## Body
- ----------------------------------------------------------------------------*/
+/*
+***
+    * element: <body>
+    * dsc: body
+    * ver: 190926-1
+    * fnt: apply body formatting
+    * ref: 
+***
+*/
 body,
 .mce-content-body {
     background-color: var(--hue-wht);
@@ -33,114 +39,67 @@ body,
     -webkit-font-smoothing: antialiased !important;
 }
 
-/* required                ----------------------------------------------------
--- */
 body.webkit strong,
 body.webkit b {
     font-weight: bolder !important;
 }
 
-abbr,
-acronym {
-    font-weight: bolder !important;
-}
-
 /*
 ***
-    # dsp
-    # 200107-1
-    # mce specific display options
-    # https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    * selector: mce
+    * dsc: editor specific formatting
+    * ver: 190926-1
+    * fnt: apply mce formatting
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
 */
-.mce\(dsp\:none\),
 .mce\[dsp\:none\] {
     display: none;
 }
 
-.mce\(dsp\:hidden\),
 .mce\[dsp\:hidden\] {
     visibility: hidden;
 }
 
-.mce\(dsp\:block\),
 .mce\[dsp\:block\] {
     display: block;
 }
 
-.mce\(dsp\:inline\),
 .mce\[dsp\:inline\] {
     display: inline;
 }
 
-.mce\(dsp\:inline-block\),
 .mce\[dsp\:inline-block\] {
     display: inline-block;
 }
 
-/*: deprecate :*/
-.dsp\:none\!mce {
-    display: none;
-}
-
-.dsp\:hidden\!mce {
-    visibility: hidden;
-}
-
-.dsp\:block\!mce {
-    display: block;
-}
-
-.dsp\:inline\!mce {
-    display: inline;
-}
-
-.dsp\:inline-block\!mce {
-    display: inline-block;
-}
-
-.dsp\:tint\!mce {
+.mce\[dsp\:tint\] {
     background-color: var(--hue-tint);
 }
 
-/* page break symbol       ------------
--- */
-.prt\(pg-break\:after-always\)::after {
-    content: " ¶";
-    color: var(--hue-pri-500);
-}
-
-/* force captions to 100%  ------------
--- */
+/*
+***	VALIDATE NEED FOR THIS!
+    * selector: wp-caption
+    * dsc: format caption
+    * ver: 190926-1
+    * fnt: stretch capiton to fill available space
+    * ref: 
+***
+*/
 .wp-caption {
     height: auto !important;
     width: 100% !important;
 }
 
-/* misc                    ----------------------------------------------------
--- */
-/*  # tmpl
-    # 90905.1a
-    # editor template classes
-**/
-.tmpl {
-    width: 100%;
-}
-
-.tmpl-head {
-    display: block;
-    width: 100%;
-}
-
-.tmpl-foot {
-    display: none;
-}
-
-/*  # excerpt
-    # 91101.1b
-    # optional post excerpt in table format
-    # https://wordpress.org/support/article/excerpt/
-**/
+/*
+***
+    * selector: exc
+    * dsc: excerpt
+    * ver: 190926-1
+    * fnt: apply excerpt input formatting
+    * ref: https://wordpress.org/support/article/excerpt/
+***
+*/
 .exc {
     border: 1px solid var(--hue-bas-300);
     margin: 0 0 0.5rem 0;
@@ -162,34 +121,14 @@ acronym {
 }
 
 /*
-    vertical spacing
-    tint for editing
+***
+    * selector: cols
+    * dsc: multi-column
+    * ver: 190926-1
+    * fnt: apply multi-column formatting
+    * ref: 
+***
 */
-.vert\:spacer-1\/2 {
-    background-color: var(--hue-sec-050);
-}
-
-.vert\:spacer-3\/4 {
-    background-color: var(--hue-sec-050);
-}
-
-.vert\:spacer-single {
-    background-color: var(--hue-sec-050);
-}
-
-.vert\:spacer-double {
-    background-color: var(--hue-sec-050);
-}
-
-.vert\:spacer-triple {
-    background-color: var(--hue-sec-050);
-}
-
-/*  # cols
-    # 91108.1a
-    # updated multi-column support
-    # sibling class in web.css will remove tint
-**/
 .cols\:fixed-2,
 .cols\:fixed-3,
 .cols\:fixed-4 {
@@ -285,6 +224,6 @@ acronym {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200107-1
+ * Build:   200126-1
  *
  */
