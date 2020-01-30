@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200126-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -23,12 +23,12 @@ body {
 }
 ins,
 mark {
-    background-color: var(--bg-yellow);
+    background-color: var(--hue-yellow);
 }
 
 del {
     text-decoration: line-through;
-    text-decoration-color: var(--fg-red);
+    text-decoration-color: var(--hue-red);
 }
 
 small {
@@ -49,9 +49,9 @@ var {
 }
 
 kbd {
-    background-color: var(--fg-sec-700);
-    border-radius: .25rem;
-    color: var(--fg-wht);
+    background-color: var(--hue-sec-dark);
+    border-radius: 0.3333rem;
+    color: var(--hue-wht);
     font-size: smaller;
     padding: 2px 4px;
 }
@@ -80,10 +80,10 @@ abbr {
 ***
 */
 pre {
-    background: var(--bg-tint);
-    border: solid medium var(--fg-bas-300);
-    border-radius: 0.25rem;
-    color: var(--fg-bas-800);
+    background-color: var(--hue-tint);
+    border: solid thin var(--hue-bas-300);
+    border-radius: 0.3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -93,10 +93,10 @@ pre {
 }
 
 pre.wrap {
-    background: var(--bg-bas-050);
-    border: solid 1px var(--fg-bas-300);
-    border-radius: .25rem;
-    color: var(--fg-bas-800);
+    background-color: var(--hue-bas-050);
+    border: solid 1px var(--hue-bas-300);
+    border-radius: 0.3333rem;
+    color: var(--hue-bas-800);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -120,7 +120,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     margin: 0.75rem auto 0.8125rem auto;
     width: 80%;
 }
@@ -130,7 +130,7 @@ hr {
     border: 0;
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     width: 10%;
 }
 
@@ -139,10 +139,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     margin: 0.625rem auto 0.6875rem auto;
     width: 80%;
@@ -153,10 +153,10 @@ hr.double {
     border: 0;
     border-top-width: 0.0625rem;
     border-top-style: solid;
-    border-top-color: var(--fg-bas-400);
+    border-top-color: var(--hue-bas-400);
     border-bottom-width: 0.0625rem;
     border-bottom-style: solid;
-    border-bottom-color: var(--fg-bas-400);
+    border-bottom-color: var(--hue-bas-400);
     height: 0.25rem;
     width: 10%;
 }
@@ -204,22 +204,52 @@ video {
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 ***
 */
-a,
+a {
+    background-color: var(--lnk-dft-bg-hue);
+    color: var(--lnk-dft-fg-hue);
+    font-weight: var(--lnk-dft-wgt);
+    text-decoration: var(--lnk-dft-decor);
+}
+
 a:visited {
-    background-color: var(--dft-lnk-pri-bg-color);
-    color: var(--dft-lnk-pri-color);
-    font-weight: var(--dft-pri-lnk-wgt);
-    text-decoration: var(--dft-pri-lnk-decor);
+    background-color: var(--lnk-vst-bg-hue);
+    color: var(--lnk-vst-fg-hue);
+    font-weight: var(--lnk-vst-wgt);
+    text-decoration: var(--lnk-vst-decor);
 }
 
 a:active,
 a:focus,
 a:hover {
-    background-color: var(--dft-lnk-sec-bg-color);
-    color: var(--dft-lnk-sec-color);
-    font-weight: var(--dft-sec-lnk-wgt);
-    text-decoration: var(--dft-sec-lnk-decor);
+    background-color: var(--lnk-hvr-bg-hue);
+    color: var(--lnk-hvr-fg-hue);
+    font-weight: var(--lnk-hvr-wgt);
+    text-decoration: var(--lnk-hvr-decor);
     -webkit-tap-highlight-color: transparent;
+}
+
+/*
+***
+    * element: <ol> / <ul>
+    * dsc: space list items
+    * ver: 200128-1
+    * fnt: set list item line height as specified by declaration
+    * ref: 
+***
+*/
+ol.li\:qtr-spaced li:not(:last-child),
+ul.li\:qtr-spaced li:not(:last-child) {
+	line-height: calc(var(--dft-line-height) + 0.25) !important;	
+}
+
+ol.li\:dbl-spaced li:not(:last-child),
+ul.li\:dbl-spaced li:not(:last-child) {
+	line-height: calc(var(--dft-line-height) + 0.5) !important;
+}
+
+ol.li\:tpl-spaced li:not(:last-child),
+ul.li\:tpl-spaced li:not(:last-child) {
+	line-height: calc(var(--dft-line-height) + 0.75) !important;
 }
 
 /*
@@ -502,21 +532,21 @@ table th {
 }
 
 table thead th {
-    background: linear-gradient(var(--bg-bas-050), var(--bg-bas-100));
-    color: var(--fg-blk);
+    background: linear-gradient(var(--hue-bas-050), var(--hue-bas-100));
+    color: var(--hue-blk);
     font-weight: bolder;
 }
 
 table thead th:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--fg-bas-300);
+    border-bottom: 1px solid var(--hue-bas-300);
 }
 
 table td:not(:last-child) {
-    border-right: 1px solid var(--fg-bas-300);
+    border-right: 1px solid var(--hue-bas-300);
 }
 
 /*
@@ -550,7 +580,7 @@ td.classic,
 table.classic,
 table.classic tr,
 table.classic tr td {
-    border: 1px solid var(--fg-bas-300);
+    border: 1px solid var(--hue-bas-300);
 }
 
 /*
@@ -565,7 +595,7 @@ table.classic tr td {
 table.highlight tr:active,
 table.highlight tr:focus,
 table.highlight tr:hover {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*
@@ -578,7 +608,7 @@ table.highlight tr:hover {
 ***
 */
 table.pinstripe tr:nth-child(even) {
-    background-color: var(--bg-tint-dark);
+    background-color: var(--hue-tint-dark);
 }
 
 /*
@@ -715,8 +745,8 @@ p + p {
 ***
 */
 blockquote {
-    color: var(--fg-bas-900);
-    border-left: 6px solid var(--fg-sec-100);
+    color: var(--hue-bas-900);
+    border-left: 6px solid var(--hue-bas-300);
     font-weight: 300;
     margin-top: 1em;
     margin-right: auto;
@@ -752,7 +782,7 @@ textarea {
 
 input,
 textarea {
-    background-color: var(--bg-wht);
+    background-color: var(--hue-wht);
 }
 
 input:focus,
@@ -783,20 +813,20 @@ legend {
 }
 
 :-webkit-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 :-moz-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     opacity: 1
 }
 
 :-ms-input-placeholder {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
 }
 
 input[type=email],
@@ -807,9 +837,9 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    color: var(--fg-bas-700);
-    border: 1px solid var(--fg-bas-400);
-    border-radius: .25rem;
+    color: var(--hue-bas-700);
+    border: 1px solid var(--hue-bas-400);
+    border-radius: 0.3333rem;
 }
 
 input[type=email]:focus,
@@ -820,7 +850,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 select:focus,
 textarea:focus {
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
 }
 
 input[type=email],
@@ -852,7 +882,7 @@ pre#textarea {
     background: 0 0;
     box-shadow: none;
     border: 0;
-    color: var(--fg-bas-900);
+    color: var(--hue-bas-900);
     font-family: var(--font-mono);
     font-size: .875rem !important;
     padding: 0;
@@ -860,8 +890,8 @@ pre#textarea {
 }
 
 .pre-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     letter-spacing: 6px;
     letter-spacing: .375rem;
@@ -889,7 +919,7 @@ img {
 ***
     * selector: fbx
     * dsc: fixed height/width boxes
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: to be used in conjunction with a flexbox container
 	*	   set justify content to space around (6)
     * ref: 
@@ -931,7 +961,7 @@ img {
 ***
     * selector: various
     * dsc: set aspect ratio
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: frame images / videos to an aspect ratio
 	*	   <div class="width"><div class="@ratio">img/itag</div></div>
     * ref: 
@@ -987,7 +1017,7 @@ img {
 ***
     * selector: material-icons
     * dsc: google icon font
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: tweak default class
     * ref: https://google.github.io/material-design-icons/
 ***
@@ -1002,7 +1032,7 @@ img {
 *** REVIEW THIS!
     * selector: 
     * dsc: 
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: 
     * ref: 
 ***
@@ -1041,8 +1071,8 @@ img {
 
 .img-caption,
 .wp-caption {
-    background-color: var(--bg-wht);
-    color: var(--fg-bas-600);
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-600);
     font-size: .875rem;
     font-weight: 300;
     width: 100%;
@@ -1124,7 +1154,7 @@ img {
 }
 
 .gallery .gallery-caption {
-    color: var(--fg-bas-600);
+    color: var(--hue-bas-600);
     display: block;
     font-size: 14px;
     font-size: .875em;
@@ -1184,16 +1214,16 @@ img {
 ***
     * element: <button>
     * dsc: default button
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: style button
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
 */
 button {
-    background-color: var(--bg-bas-200);
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    padding: 1rem 1.5rem;
+    background-color: var(--hue-pri);
+    border: thin solid transparent;
+	color: var(--hue-wht);
+    padding: 0.5rem 1.5rem;
     text-align: center;
 }
 
@@ -1205,37 +1235,39 @@ button a:focus {
 }
 
 button:hover {
-    filter: brightness(104%);
+	filter: brightness(110%);
 }
 
 button:active {
-    filter: brightness(96%);
+	background-color: var(--hue-pri-dark);
 }
 
+/* deprecated
 button.btn {
-    color: var(--fg-bas-200);
-    background-color: var(--bg-pri-600);
+    color: var(--hue-bas-200);
+    background-color: var(--hue-pri);
 }
 
 button.btn:hover {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-400);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-400);
     filter: brightness(96%);
 }
 
 button.btn:active {
-    box-shadow: 0px 2px 2px 1px var(--bg-bas-100);
+    box-shadow: 0px 2px 2px 1px var(--hue-bas-100);
     filter: brightness(85%);
 }
 
 button.btn:focus {
-    color: var(--fg-wht);
+    color: var(--hue-wht);
 }
+*/
 
 /*
 ***
     * selector: hvr
     * dsc: hover effects
-    * ver: 200126-1
+    * ver: 200128-1
     * fnt: image/button hover annimations
     * ref: https://ianlunn.github.io/Hover/
 ***
@@ -1456,6 +1488,6 @@ button.btn:focus {
 
 /*
  * EOF:     theme/common.css
- * Build:   200126-1
+ * Build:   200128-1
  *
  */
