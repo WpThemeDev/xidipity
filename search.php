@@ -4,7 +4,7 @@
  *
  * File Name:       search.php
  * Function:        display search results
- * Build:           200115-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -130,12 +130,12 @@ if (have_posts())
             readmore
         */
         $v_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-        
-        $v_meta_list  = '';
-        $v_meta_list .=  xidipity_icon_rm() . ',';
-        $v_meta_list .=  '<a href="' . $v_link . '">Read more …</a>' . ',';
-        echo xidipity_metalinks(explode(',', $v_meta_list));
-        echo '<p>&nbsp;</p>' . "\n";
+        echo dsp_rm($v_link);
+        //$v_meta_list  = '';
+        //$v_meta_list .=  xidipity_icon_rm() . ',';
+        //$v_meta_list .=  '<a href="' . $v_link . '">Read more …</a>' . ',';
+        //echo xidipity_metalinks(explode(',', $v_meta_list));
+        //echo '<p>&nbsp;</p>' . "\n";
         echo '</div>' . "\n";
         echo '</article>' . "\n";
         echo '<!-- /xwpt: 90920.1d/content/blog/php       -->' . "\n";
@@ -177,7 +177,7 @@ get_footer();
 
 /*
  * EOF:     search.php
- * Build:   200115-1
+ * Build:   200128-1
  *
  */
 ?>
