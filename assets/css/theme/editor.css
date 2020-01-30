@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200126-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -89,35 +89,6 @@ body.webkit b {
 .wp-caption {
     height: auto !important;
     width: 100% !important;
-}
-
-/*
-***
-    * selector: exc
-    * dsc: excerpt
-    * ver: 190926-1
-    * fnt: apply excerpt input formatting
-    * ref: https://wordpress.org/support/article/excerpt/
-***
-*/
-.exc {
-    border: 1px solid var(--hue-bas-300);
-    margin: 0 0 0.5rem 0;
-    padding: 0;
-    width: 100%;
-}
-
-.exc\:content {
-    background-color: var(--hue-tint);
-    border-collapse: collapse;
-    border-style: none;
-    font-size: 0.875rem;
-    padding: 0.625rem 0.5rem;
-    width: 100%;
-}
-
-.exc\:tag {
-    display: none;
 }
 
 /*
@@ -224,6 +195,6 @@ body.webkit b {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200126-1
+ * Build:   200128-1
  *
  */
