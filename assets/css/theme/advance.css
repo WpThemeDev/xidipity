@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200123-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -202,7 +202,9 @@
 }
 
 .fnt\:size-medium,
-.icon\:size-medium {
+.fnt\:size-default,
+.icon\:size-medium,
+.icon\:size-default {
     font-size: medium !important;
 }
 
@@ -303,6 +305,12 @@
 .fnt\:weight-normal\!hover:hover,
 .fnt\:weight-normal\!focus:focus {
     font-weight: normal !important;
+}
+
+.fnt\:weight-default,
+.fnt\:weight-default\!hover:hover,
+.fnt\:weight-default\!focus:focus {
+    font-weight: var(--dft-font-weight) !important;
 }
 
 /*
@@ -2311,152 +2319,113 @@
     align-self: stretch;
 }
 
-/*	----------------------------------------------------------------------------
+/*
+***
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 	*	media break
 		"sm" stands for standard media (everything but mobile)
 		not every class has a an alternate "sm)" equivalent
 	*	https://developer.mozilla.org/en-US/docs/Web/CSS/@media
-----------------------------------------------------------------------------  */
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+***
+*/
 @media (min-width: 640px) {
-    /*  # dsp
-        # 90907.1b
-        # display
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/display
-    */
+	/*
+	***
+	    * selector: dsp
+	    * dsc: element display
+	    * ver: 200107-1
+	    * fnt: hide / display page elements
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/display
+	***
+	*/
+	.sm\)dsp\:none {
+	    display: none !important;
+	}
 
-    /*: display options :*/
-    .sm\)dsp\:none {
-        display: none !important;
-    }
+	.sm\)dsp\:hidden {
+	    visibility: hidden !important;
+	}
 
-    .sm\)dsp\:hidden {
-        visibility: hidden !important;
-    }
+	.sm\)dsp\:block {
+	    display: block !important;
+	}
 
-    .sm\)dsp\:block {
-        display: block !important;
-    }
+	.sm\)dsp\:inline {
+	    display: inline !important;
+	}
 
-    .sm\)dsp\:inline {
-        display: inline !important;
-    }
+	.sm\)dsp\:inline-block {
+	    display: inline-block !important;
+	}
 
-    .sm\)dsp\:inline-block {
-        display: inline-block !important;
-    }
+	/*
+	***
+	    * selector: fnt
+	    * dsc: font size
+	    * ver: 200107-1
+	    * fnt: set font / font icon size
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+	***
+	*/
+	.sm\)fnt\:size-xxx-large,
+	.sm\)icon\:size-xxx-large {
+	    font-size: xxx-large !important;
+	}
 
-    /*  # fnt:size
-        # 90907.1b
-        # font size named classes
-        # https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
-    */
-    .sm\)fnt\:size-xx-large {
-        font-size: xx-large !important;
-    }
+	.sm\)fnt\:size-xx-large,
+	.sm\)icon\:size-xx-large {
+	    font-size: xx-large !important;
+	}
 
-    .sm\)fnt\:size-x-large {
-        font-size: x-large !important;
-    }
+	.sm\)fnt\:size-x-large,
+	.sm\)icon\:size-x-large {
+	    font-size: x-large !important;
+	}
 
-    .sm\)fnt\:size-large {
-        font-size: large !important;
-    }
+	.sm\)fnt\:size-large,
+	.sm\)icon\:size-large {
+	    font-size: large !important;
+	}
 
-    .sm\)fnt\:size-x-medium {
-        font-size: var(--font-size-xr) !important;
-    }
+	.sm\)fnt\:size-x-medium,
+	.sm\)icon\:size-x-medium {
+	    font-size: var(--font-size-xr) !important;
+	}
 
-    .sm\)fnt\:size-medium {
-        font-size: medium !important;
-    }
+	.sm\)fnt\:size-medium,
+	.sm\)fnt\:size-default,
+	.sm\)icon\:size-medium,
+	.sm\)icon\:size-default {
+	    font-size: medium !important;
+	}
 
-    .sm\)fnt\:size-small {
-        font-size: small !important;
-    }
+	.sm\)fnt\:size-small,
+	.sm\)icon\:size-small {
+	    font-size: small !important;
+	}
 
-    .sm\)fnt\:size-x-small {
-        font-size: x-small !important;
-    }
+	.sm\)fnt\:size-x-small,
+	.sm\)icon\:size-x-small {
+	    font-size: x-small !important;
+	}
 
-    .sm\)fnt\:size-xx-small {
-        font-size: xx-small !important;
-    }
+	.sm\)fnt\:size-xx-small,
+	.sm\)icon\:size-xx-small {
+	    font-size: xx-small !important;
+	}
 
-    .sm\)fnt\:size-larger {
-        font-size: larger !important;
-    }
+	.sm\)fnt\:size-larger,
+	.sm\)icon\:size-larger {
+	    font-size: larger !important;
+	}
 
-    .sm\)fnt\:size-smaller {
-        font-size: smaller !important;
-    }
-
-    /*  # md
-        # 91012.1a
-        # materical design icon sizes
-        # https://google.github.io/material-design-icons/
-    **/
-
-    .sm\)md\:size-h1 {
-        font-size: var(--font-size-h1) !important;
-    }
-
-    .sm\)md\:size-h2 {
-        font-size: var(--font-size-h2) !important;
-    }
-
-    .sm\)md\:size-h3,
-    .sm\)md\:size-xxx-large {
-        font-size: var(--font-size-h3) !important;
-    }
-
-    .sm\)md\:size-h4,
-    .sm\)md\:size-xx-large {
-        font-size: var(--font-size-h4) !important;
-    }
-
-    .sm\)md\:size-h5,
-    .sm\)md\:size-x-large {
-        font-size: var(--font-size-h5) !important;
-    }
-
-    .sm\)md\:size-h6,
-    .sm\)md\:size-large {
-        font-size: var(--font-size-h6) !important;
-    }
-
-    .sm\)md\:size-medium {
-        font-size: var(--font-size-rg) !important;
-    }
-
-    .sm\)md\:size-small {
-        font-size: var(--font-size-sm) !important;
-    }
-
-    .sm\)md\:size-x-small {
-        font-size: var(--font-size-xs) !important;
-    }
-
-    /*  # fnt:space
-        # 90907.1b
-        # predefined letter spacing classes
-        # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
-    */
-    .sm\)fnt\:spacing-tight {
-        letter-spacing: -0.05rem !important;
-    }
-
-    .sm\)fnt\:spacing-normal {
-        letter-spacing: 0 !important;
-    }
-
-    .sm\)fnt\:spacing-loose {
-        letter-spacing: 0.1rem;
-    }
-
-    .sm\)fnt\:spacing-wide {
-        letter-spacing: 0.5rem;
-    }
+	.sm\)fnt\:size-smaller,
+	.sm\)icon\:size-smaller {
+	    font-size: smaller !important;
+	}
 
 	/*
 	***
@@ -3756,6 +3725,76 @@
 
 	/*
 	***
+	    * selector: aln
+	    * dsc: alignment
+	    * ver: 200120-1
+	    * fnt: set alignment
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
+		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+	***
+	*/
+	.sm\)aln\:center {
+	    margin-left: auto !important;
+	    margin-right: auto !important;
+	}
+
+	.sm\)aln\:left {
+	    margin-left: 0 !important;
+	    margin-right: auto !important;
+	}
+
+	.sm\)aln\:right {
+	    margin-left: auto !important;
+	    margin-right: 0 !important;
+	}
+
+	.sm\)aln\:baseline {
+	    vertical-align: baseline !important;
+	}
+
+	.sm\)aln\:top {
+	    vertical-align: top !important;
+	}
+
+	.sm\)aln\:middle {
+	    vertical-align: middle !important;
+	}
+
+	.sm\)aln\:bottom {
+	    vertical-align: bottom !important;
+	}
+
+	.sm\)aln\:sub {
+	    vertical-align: sub !important;
+	}
+
+	.sm\)aln\:sup {
+	    vertical-align: super !important;
+	}
+
+	.sm\)aln\:text-bottom {
+	    vertical-align: text-bottom !important;
+	}
+
+	.sm\)aln\:text-top {
+	    vertical-align: text-top !important;
+	}
+
+	.sm\)aln\:text-center {
+	    text-align: center !important;
+	}
+
+	.sm\)aln\:text-left {
+	    text-align: left !important;
+	}
+
+	.sm\)aln\:text-right {
+	    text-align: right !important;
+	}
+
+	/*
+	***
 	    * selector: bdr
 	    * dsc: border
 	    * ver: 200120-1
@@ -4237,6 +4276,6 @@
 
 /*
  * EOF:     theme/advance.css
- * Build:   200123-1
+ * Build:   200128-1
  *
  */
