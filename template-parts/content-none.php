@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         3.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -71,7 +71,7 @@ else
     echo '</div>' . "\n";
     echo '</div>' . "\n";
     echo '<div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fnt:size-small pad:left-0.5">' . "\n";
-    echo '<p class="fnt:size-x-large sm)fnt:size-xx-large fnt:weight-normal">404 Page Error</p><p>The page you are looking for can not be found.</p></div>' . "\n";
+    echo '<p class="fnt:size-large sm)fnt:size-xx-large fnt:weight-normal">404 Page Error</p><p>The page you are looking for can not be found.</p></div>' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /xwpt: 200128-1/tmpl/an/404            -->' . "\n";
     echo '<div class="aln:text-center sm)aln:text-left mar:top-1">' . "\n";
