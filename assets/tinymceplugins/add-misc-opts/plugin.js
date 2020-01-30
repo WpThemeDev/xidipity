@@ -3,7 +3,7 @@
  *
  * File Name:       add-misc-opts/plugin.js
  * Function:        tinymce misc opts plugin
- * Build:           200126-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -38,7 +38,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 90927.1b/mce/toolbar/excerpt     --><table class="exc web[dsp:none]" cellspacing="0"><tbody><tr><td class="exc:content" id="' + uniqueID + '"></td><td class="exc:tag"><!--more--></td></tr></tbody></table><!-- /xwpt: 90927.1b/mce/toolbar/excerpt    -->';
+                var html = '<table class="bdr:collapse mar:top-0 mar:bottom-0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bg:tint cnr:arch-small fnt:size-smaller pad:0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table>';
                 editor.insertContent(html);
                 var newExcerpt = dom.select('p#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newExcerpt);
@@ -55,6 +55,6 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
 
 /*
  * EOF:     add-misc-opts/plugin.js
- * Build:   200126-1
+ * Build:   200128-1
  *
  */
