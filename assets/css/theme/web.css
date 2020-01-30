@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200120-1
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -103,7 +103,7 @@ body {
 /*
 ***
     # dsp
-    # 200120-1
+    # 200128-1
     # web specific display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -230,7 +230,7 @@ ol.comment-list li {
 }
 
 ol.comment-list li::before {
-    color: var(--hue-pri-600);
+    color: var(--hue-pri);
     content: "Comment: " counter(comment);
     font-size: var(--h5-size);
     font-family: var(--font-sans);
@@ -270,7 +270,7 @@ ol.comment-list li::before {
 
 .comment-list .bypostauthor>.comment-body {
     background: var(--hue-bas-100);
-    border-bottom: 3px solid var(--hue-sec-500);
+    border-bottom: 3px solid var(--hue-sec);
     padding: 15px;
 }
 
@@ -349,7 +349,7 @@ ol.comment-list li::before {
 }
 
 .comment-list .comment-awaiting-moderation {
-    color: var(--hue-pri-500);
+    color: var(--hue-pri);
     margin-top: 10px;
 }
 
@@ -396,11 +396,11 @@ ol.comment-list li::before {
 }
 
 #respond .required {
-    color: var(--hue-pri-900);
+    color: var(--hue-pri);
 }
 
 #respond #cancel-comment-reply-link {
-    color: var(--hue-pri-900);
+    color: var(--hue-pri);
     font-size: 12px;
     font-size: 0.75rem;
     margin: 0;
@@ -416,7 +416,7 @@ ol.comment-list li::before {
 #submit {
     background-color: transparent;
     border: 1px solid var(--hue-bas-400);
-    border-radius: 0.25rem;
+    border-radius: 0.3333rem;
     color: black;
     cursor:pointer;
     line-height: 3;
@@ -731,19 +731,20 @@ ol.comment-list li::before {
 }
 
 .comment-navigation .nav-previous a::before {
-    color: var(--hue-pri-500);
+    color: var(--hue-pri);
     content: "⊲";
     margin: 0 5px 0 0;
 }
 
 .comment-navigation .nav-next a::after {
-    color: var(--hue-pri-500);
+    color: var(--hue-pri);
     content: "⊳";
     margin: 0 0 0 5px;
 }
 
 .site-title {
     color: var(--title-lnk-pri-color);
+    color: var(--hue-pri-dark);
     font-family: var(--title-font-family);
     font-size: var(--title-font-size);
     font-style: var(--title-font-style);
@@ -751,13 +752,15 @@ ol.comment-list li::before {
     letter-spacing: var(--title-font-spacing);
 }
 
-.site-title a,
-.site-title a:visited {
+a.site-title,
+a.site-title:visited {
     color: var(--title-lnk-pri-color);
+    color: var(--hue-pri-dark);
 }
 
-.site-title a:hover {
+a.site-title:hover {
     color: var(--title-lnk-sec-color);
+    color: var(--hue-sec-dark);
 }
 
 .site-description {
@@ -832,7 +835,7 @@ ol.comment-list li::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--hue-sec-500);
+    background-color: var(--hue-sec-dark);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -882,6 +885,7 @@ ol.comment-list li::before {
     background-color: var(--content-bg-color);
     border-radius: .25rem;
     border: 1px solid transparent;
+	color: var(--hue-sec-dark);
     position: relative;
     display: inline-block;
     float: right;
@@ -909,7 +913,7 @@ ol.comment-list li::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--hue-sec-500);
+    background-color: var(--hue-sec-dark);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -1014,7 +1018,7 @@ a.page-numbers:hover {
 
 a.page-numbers:active,
 a.page-numbers:focus {
-    background-color: var(--hue-sec-100);
+    background-color: var(--hue-sec-bright);
     border-radius: .25rem;
     color: var(--hue-blk);
 }
@@ -2143,7 +2147,7 @@ figure {
     -ms-flex-item-align: auto;
     align-self: auto;
     border: 1px solid transparent;
-    border-radius: 0.25rem;
+    border-radius: 0.3333rem;
     margin: 8px 0;
     padding: 10px 0;
     text-align: center;
@@ -2193,6 +2197,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200120-1
+ * Build:   200128-1
  *
  */
