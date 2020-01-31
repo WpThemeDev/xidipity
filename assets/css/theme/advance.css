@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200128-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -311,64 +311,6 @@
 .fnt\:weight-default\!hover:hover,
 .fnt\:weight-default\!focus:focus {
     font-weight: var(--dft-font-weight) !important;
-}
-
-/*
-***
-    * selector: trk
-    * dsc: tracking
-    * ver: 200120-1
-    * fnt: adjust letter spacing
-    * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
-***
-*/
-.trk\:narrow {
-    letter-spacing: -0.01rem !important;
-}
-
-.trk\:default {
-    letter-spacing: normal !important;
-}
-
-.trk\:wide {
-    letter-spacing: 0.1rem !important;
-}
-
-.trk\:x-wide {
-    letter-spacing: 0.5rem !important;
-}
-
-/*
-***
-    * selector: led
-    * dsc: leading
-    * ver: 200107-1
-    * fnt: set line height
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
-***
-*/
-.led\:x-narrow {
-    line-height: calc(var(--dft-line-height) - .25) !important;
-}
-
-.led\:narrow {
-    line-height: calc(var(--dft-line-height) - .125) !important;
-}
-
-.led\:default {
-    line-height: var(--dft-line-height) !important;
-}
-
-.led\:wide {
-    line-height: calc(var(--dft-line-height) + .125) !important;
-}
-
-.led\:x-wide {
-    line-height: calc(var(--dft-line-height) + .25) !important;
-}
-
-.led\:xx-wide {
-    line-height: calc(var(--dft-line-height) + .375) !important;
 }
 
 /*
@@ -682,6 +624,134 @@
 .yht\:100\% {
     height: 100% !important;
     width: auto !important;
+}
+
+/*
+***
+    * selector: led
+    * dsc: leading
+    * ver: 200107-1
+    * fnt: set line height
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+***
+*/
+.led\:x-narrow {
+    line-height: calc(var(--dft-line-height) - .25) !important;
+}
+
+.led\:narrow {
+    line-height: calc(var(--dft-line-height) - .125) !important;
+}
+
+.led\:default {
+    line-height: var(--dft-line-height) !important;
+}
+
+.led\:wide {
+    line-height: calc(var(--dft-line-height) + .125) !important;
+}
+
+.led\:x-wide {
+    line-height: calc(var(--dft-line-height) + .25) !important;
+}
+
+.led\:xx-wide {
+    line-height: calc(var(--dft-line-height) + .375) !important;
+}
+
+/*
+***
+    * selector: tdc
+    * dsc: text decoration
+    * ver: 200205-1
+    * fnt: set predefined text decoration
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
+***
+*/
+
+.tdc\:underline, 
+.tdc\:underline\!hover:hover, 
+.tdc\:underline\!focus:focus {
+	text-decoration: underline solid;
+}
+
+.tdc\:underline-red, 
+.tdc\:underline-red\!hover:hover, 
+.tdc\:underline-red\!focus:focus {
+	text-decoration: underline solid #B50707;
+}
+
+.tdc\:line-through,
+.tdc\:line-through\!hover:hover,
+.tdc\:line-through\!focus:focus {
+	text-decoration: line-through solid;
+}
+
+.tdc\:line-through-red,
+.tdc\:line-through-red\!hover:hover,
+.tdc\:line-through-red\!focus:focus {
+	text-decoration: line-through solid #B50707;
+}
+
+.tdc\:underline-double,
+.tdc\:underline-double\!hover:hover,
+.tdc\:underline-double\!focus:focus {
+	text-decoration: underline double;
+}
+
+.tdc\:underline-double-red,
+.tdc\:underline-double-red\!hover:hover,
+.tdc\:underline-double-red\!focus:focus {
+	text-decoration: underline double #B50707;
+}
+
+.tdc\:underline-dotted,
+.tdc\:underline-dotted\!hover:hover,
+.tdc\:underline-dotted\!focus:focus {
+	text-decoration: underline dotted;
+}
+
+.tdc\:underline-dotted-red,
+.tdc\:underline-dotted-red\!hover:hover,
+.tdc\:underline-dotted-red\!focus:focus {
+	text-decoration: underline dotted #B50707;
+}
+
+.tdc\:underline-wavy,
+.tdc\:underline-wavy\!hover:hover,
+.tdc\:underline-wavy\!focus:focus {
+	text-decoration: underline wavy;
+}
+
+.tdc\:underline-wavy-red,
+.tdc\:underline-wavy-red\!hover:hover,
+.tdc\:underline-wavy-red\!focus:focus {
+	text-decoration: underline wavy #B50707;
+}
+
+/*
+***
+    * selector: trk
+    * dsc: tracking
+    * ver: 200120-1
+    * fnt: adjust letter spacing
+    * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
+***
+*/
+.trk\:narrow {
+    letter-spacing: -0.01rem !important;
+}
+
+.trk\:default {
+    letter-spacing: normal !important;
+}
+
+.trk\:wide {
+    letter-spacing: 0.1rem !important;
+}
+
+.trk\:x-wide {
+    letter-spacing: 0.5rem !important;
 }
 
 /*
@@ -4276,6 +4346,6 @@
 
 /*
  * EOF:     theme/advance.css
- * Build:   200128-1
+ * Build:   200205-1
  *
  */
