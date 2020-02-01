@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -101,11 +101,11 @@ if (have_posts())
         {
             if (is_sticky())
             {
-				echo dsp_sticky(xidipity_first_category());
+                echo dsp_sticky(xidipity_first_category());
             }
             else
             {
-				echo dsp_cat(xidipity_first_category());
+                echo dsp_cat(xidipity_first_category());
             }
         }
         if ('post' == get_post_type())
@@ -113,9 +113,9 @@ if (have_posts())
             $v_meta_list  = '';
             $v_meta_list .=  xidipity_posted_on() . '|';
             $v_meta_list .=  xidipity_posted_by() . '|';
-			echo '<div class="fnt:size-smaller" style="margin-top:-16px;margin-left:-8px;">' . "\n";
+            echo '<div class="fnt:size-smaller" style="margin-top:-16px;margin-left:-8px;">' . "\n";
             echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
-			echo '</div>' . "\n";
+            echo '</div>' . "\n";
         }
         echo '<header class="fx:cn-itm-hd">' . "\n";
         the_title('<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '" rel="bookmark">', '</a></h1>');
