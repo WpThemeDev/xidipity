@@ -4,7 +4,7 @@
  *
  * File Name:       index.php
  * Function:        display blog excerpts
- * Build:           200115-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -101,27 +101,25 @@ if (have_posts())
         {
             if (is_sticky())
             {
-                $v_icon = xidipity_icon_star();
+				echo dsp_sticky(xidipity_first_category());
             }
             else
             {
-                $v_icon = xidipity_icon_cat();
+				echo dsp_cat(xidipity_first_category());
             }
+        }
+        if ('post' == get_post_type())
+        {
             $v_meta_list  = '';
-            $v_meta_list .=  $v_icon . ',';
-            $v_meta_list .=  xidipity_first_category() . ',';
-            echo xidipity_metalinks(explode(',', $v_meta_list));
+            $v_meta_list .=  xidipity_posted_on() . '|';
+            $v_meta_list .=  xidipity_posted_by() . '|';
+			echo '<div class="fnt:size-smaller" style="margin-top:-16px;margin-left:-8px;">' . "\n";
+            echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+			echo '</div>' . "\n";
         }
         echo '<header class="fx:cn-itm-hd">' . "\n";
         the_title('<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '" rel="bookmark">', '</a></h1>');
         echo '</header>' . "\n";
-        if ('post' == get_post_type())
-        {
-            $v_meta_list  = '';
-            $v_meta_list .=  xidipity_posted_on() . ',';
-            $v_meta_list .=  xidipity_posted_by() . ',';
-            echo xidipity_metalinks(explode(',', $v_meta_list));
-        }
         if (xidipity_has_excerpt())
         {
             the_excerpt();
@@ -130,7 +128,7 @@ if (have_posts())
             readmore
         */
         $v_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-        echo dsp_rm($v_link);
+        echo dsp_rm($v_link) . "\n";
         echo '</div>' . "\n";
         echo '</article>' . "\n";
         echo '<!-- /xwpt: 90920.1d/content/blog/php       -->' . "\n";
@@ -172,7 +170,7 @@ get_footer();
 
 /*
  * EOF:     index.php
- * Build:   200115-1
+ * Build:   200205-1
  *
  */
 ?>
