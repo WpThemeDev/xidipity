@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200128-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,8 +11,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -67,7 +67,7 @@ kbd {
 */
 abbr {
     font-weight: bolder !important;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 /*
@@ -111,7 +111,7 @@ pre.wrap {
     * dsc: thematic break
     * ver: 190910-1
     * fnt: thematic break between paragraph-level elements
-	*	   default the width is 80% of available space
+    *      default the width is 80% of available space
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
@@ -176,7 +176,7 @@ hr.gradient {
 /*
 ***
     * elements: <figure> / <audio> / <canvas> / <iframe>
-	*		    <object> / <progress> / <video>
+    *           <object> / <progress> / <video>
     * dsc: wrappers
     * ver: 190910-1
     * fnt: by default, force width to 100%
@@ -232,24 +232,24 @@ a:hover {
 ***
     * element: <ol> / <ul>
     * dsc: space list items
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: set list item line height as specified by declaration
     * ref: 
 ***
 */
 ol.li\:qtr-spaced li:not(:last-child),
 ul.li\:qtr-spaced li:not(:last-child) {
-	line-height: calc(var(--dft-line-height) + 0.25) !important;	
+    line-height: calc(var(--dft-line-height) + 0.25) !important;    
 }
 
 ol.li\:dbl-spaced li:not(:last-child),
 ul.li\:dbl-spaced li:not(:last-child) {
-	line-height: calc(var(--dft-line-height) + 0.5) !important;
+    line-height: calc(var(--dft-line-height) + 0.5) !important;
 }
 
 ol.li\:tpl-spaced li:not(:last-child),
 ul.li\:tpl-spaced li:not(:last-child) {
-	line-height: calc(var(--dft-line-height) + 0.75) !important;
+    line-height: calc(var(--dft-line-height) + 0.75) !important;
 }
 
 /*
@@ -919,88 +919,88 @@ img {
 ***
     * selector: fbx
     * dsc: fixed height/width boxes
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: to be used in conjunction with a flexbox container
-	*	   set justify content to space around (6)
+    *      set justify content to space around (6)
     * ref: 
 ***
 */
 .fbx\:1x1 {
-	height: 135px;
-	width: 135px;	
+    height: 135px;
+    width: 135px;   
 }
 
 .fbx\:4x3 {
-	height: 101px;
-	width: 135px;	
+    height: 101px;
+    width: 135px;   
 }
 
 .fbx\:16x19 {
-	height: 76px;
-	width: 135px;	
+    height: 76px;
+    width: 135px;   
 }
 
 @media (min-width:768px) {
-	.fbx\:1x1 {
-		height: 140px;
-		width: 140px;	
-	}
-	
-	.fbx\:4x3 {
-		height: 105px;
-		width: 140px;	
-	}
-	
-	.fbx\:16x19 {
-		height: 77px;
-		width: 140px;	
-	}
+    .fbx\:1x1 {
+        height: 140px;
+        width: 140px;   
+    }
+    
+    .fbx\:4x3 {
+        height: 105px;
+        width: 140px;   
+    }
+    
+    .fbx\:16x19 {
+        height: 77px;
+        width: 140px;   
+    }
 }
 
 /*
 ***
     * selector: various
     * dsc: set aspect ratio
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: frame images / videos to an aspect ratio
-	*	   <div class="width"><div class="@ratio">img/itag</div></div>
+    *      <div class="width"><div class="@ratio">img/itag</div></div>
     * ref: 
 ***
 */
 .\@1x1 {
-	width: 100%;
-	padding-bottom: calc(960 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(960 / 960 * 100%);
+    position: relative;
 }
 .\@3x2 {
-	width: 100%;
-	padding-bottom: calc(640 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(640 / 960 * 100%);
+    position: relative;
 }
 .\@4x3 {
-	width: 100%;
-	padding-bottom: calc(720 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(720 / 960 * 100%);
+    position: relative;
 }
 .\@7x5 {
-	width: 100%;
-	padding-bottom: calc(686 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(686 / 960 * 100%);
+    position: relative;
 }
 .\@16x9 {
-	width: 100%;
-	padding-bottom: calc(540 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(540 / 960 * 100%);
+    position: relative;
 }
 .\@16x10 {
-	width: 100%;
-	padding-bottom: calc(600 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(600 / 960 * 100%);
+    position: relative;
 }
 .\@21x9 {
-	width: 100%;
-	padding-bottom: calc(411 / 960 * 100%);
-	position: relative;
+    width: 100%;
+    padding-bottom: calc(411 / 960 * 100%);
+    position: relative;
 }
 .\@1x1 > div,
 .\@3x2 > div,
@@ -1009,22 +1009,22 @@ img {
 .\@16x9 > div,
 .\@16x10 > div,
 .\@21x9 > div {
-	position: absolute;
-	top: 0; bottom: 0; left: 0; right: 0;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
 }
 
 /*
 ***
     * selector: material-icons
     * dsc: google icon font
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: tweak default class
     * ref: https://google.github.io/material-design-icons/
 ***
 */
 .material-icons {
-	font-size: 100%;
-	padding-bottom: 4px;
+    font-size: 100%;
+    padding-bottom: 4px;
     vertical-align: bottom;
 }
 
@@ -1032,7 +1032,7 @@ img {
 *** REVIEW THIS!
     * selector: 
     * dsc: 
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: 
     * ref: 
 ***
@@ -1214,7 +1214,7 @@ img {
 ***
     * element: <button>
     * dsc: default button
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: style button
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
@@ -1222,7 +1222,7 @@ img {
 button {
     background-color: var(--hue-pri);
     border: thin solid transparent;
-	color: var(--hue-wht);
+    color: var(--hue-wht);
     padding: 0.5rem 1.5rem;
     text-align: center;
 }
@@ -1231,43 +1231,21 @@ button:focus,
 button a:focus {
     outline: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    ;
 }
 
 button:hover {
-	filter: brightness(110%);
+    filter: brightness(110%);
 }
 
 button:active {
-	background-color: var(--hue-pri-dark);
+    background-color: var(--hue-pri-dark);
 }
-
-/* deprecated
-button.btn {
-    color: var(--hue-bas-200);
-    background-color: var(--hue-pri);
-}
-
-button.btn:hover {
-    box-shadow: 0px 2px 2px 1px var(--hue-bas-400);
-    filter: brightness(96%);
-}
-
-button.btn:active {
-    box-shadow: 0px 2px 2px 1px var(--hue-bas-100);
-    filter: brightness(85%);
-}
-
-button.btn:focus {
-    color: var(--hue-wht);
-}
-*/
 
 /*
 ***
     * selector: hvr
     * dsc: hover effects
-    * ver: 200128-1
+    * ver: 200205-1
     * fnt: image/button hover annimations
     * ref: https://ianlunn.github.io/Hover/
 ***
@@ -1488,6 +1466,6 @@ button.btn:focus {
 
 /*
  * EOF:     theme/common.css
- * Build:   200128-1
+ * Build:   200205-1
  *
  */
