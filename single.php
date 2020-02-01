@@ -4,7 +4,7 @@
  *
  * File Name:       single.php
  * Function:        display blog post
- * Build:           200115-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -62,8 +62,11 @@ if ($wp_query->have_posts()) {
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
     echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
     echo '<div class="pad:left-1">' . "\n";
-    $v_meta_list .= $wp_post_date . ',' . 'Author -' . ',' . '<a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a>';
-    echo xidipity_metalinks(explode(',', $v_meta_list));
+    $v_meta_list  = $wp_post_date . '|';
+    $v_meta_list .= 'Author - <a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a>';
+    echo '<div class="fnt:size-smaller">' . "\n";
+    echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+    echo '</div>' . "\n";
     /*
         content title
     */
@@ -91,31 +94,28 @@ if ($wp_query->have_posts()) {
     /*: edit :*/
     if (get_edit_post_link())
     {
-        $v_meta_list .= xidipity_icon_edit() . ',';
-        $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
-        $v_meta_list .= '&nbsp;,';
+        $v_meta_list .= xidipity_icon_edit() . '<a class="pad:left-0.5" href="' . get_edit_post_link() . '">Edit</a>' . '|';
     }
     /*: category :*/
     $v_cat = xidipity_first_category();
     if (!empty($v_cat))
     {
-        $v_meta_list .=  xidipity_icon_cat() . ',';
-        $v_meta_list .=  $v_cat . ',';
-        $v_meta_list .= '&nbsp;,';
+        $v_meta_list .=  xidipity_icon_bm() . '<span class="pad:left-0.5">' . $v_cat . '</span>' . '|';
     }
     /*: tags :*/
     if ($wp_tags)
     {
-        $v_meta_list .=  xidipity_icon_tags() . ',';
+        $v_meta_list .=  '<span class="pad:right-0.5">' . xidipity_icon_tags() . '</span>';
         if ( $wp_tags ) {
             foreach( $wp_tags as $wp_tag ) {
-                $v_meta_list .= $wp_tag->name . ', ';
+                $v_meta_list .= $wp_tag->name . ' ';
             }
         }
+        $v_meta_list .= '|';
     }
     if (!empty($v_meta_list))
     {
-        echo xidipity_metalinks(explode(',', $v_meta_list));
+        echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     }
     echo '</div>' . "\n";
     echo '</article>' . "\n";
@@ -197,7 +197,7 @@ get_footer();
 
 /*
  * EOF:     single.php
- * Build:   200115-1
+ * Build:   200205-1
  *
  */
 ?>
