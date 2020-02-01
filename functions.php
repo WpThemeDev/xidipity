@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200126-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1599,6 +1599,54 @@ function dsp_rm($att = '')
     return $fn_retval;
 }
 /**
+ *  name: dsp_sticky
+ *  build: 200205-1
+ *  description: Return properly formatted sticky post category HTML string
+ *  attributes:
+ *      $att - string
+ *  ref:
+ *
+ */
+function dsp_sticky($att = '')
+{
+    // system
+    $fn_retval = '';
+    // atributes
+    $v_html = trim($att);
+    if (!empty($v_html))
+    {
+        $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMTEgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYyICg5MTM5MCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+UGF0aDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJzdGlja3kiIGZpbGw9IiM1NzU3NTAiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik05LjUsNSBMOS41LDE2LjUgQzkuNSwxOC43MDkxMzkgNy43MDkxMzksMjAuNSA1LjUsMjAuNSBDMy4yOTA4NjEsMjAuNSAxLjUsMTguNzA5MTM5IDEuNSwxNi41IEwxLjUsNCBDMS41LDIuNjE5Mjg4MTMgMi42MTkyODgxMywxLjUgNCwxLjUgQzUuMzgwNzExODcsMS41IDYuNSwyLjYxOTI4ODEzIDYuNSw0IEw2LjUsMTQuNSBDNi41LDE1LjA1MjI4NDcgNi4wNTIyODQ3NSwxNS41IDUuNSwxNS41IEM0Ljk0NzcxNTI1LDE1LjUgNC41LDE1LjA1MjI4NDcgNC41LDE0LjUgTDQuNSw1IEwzLDUgTDMsMTQuNSBDMywxNS44ODA3MTE5IDQuMTE5Mjg4MTMsMTcgNS41LDE3IEM2Ljg4MDcxMTg3LDE3IDgsMTUuODgwNzExOSA4LDE0LjUgTDgsNCBDOCwxLjc5MDg2MSA2LjIwOTEzOSwwIDQsMCBDMS43OTA4NjEsMCAwLDEuNzkwODYxIDAsNCBMMCwxNi41IEMwLDE5LjUzNzU2NjEgMi40NjI0MzM4OCwyMiA1LjUsMjIgQzguNTM3NTY2MTIsMjIgMTEsMTkuNTM3NTY2MSAxMSwxNi41IEwxMSw1IEw5LjUsNSBaIiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Sticky Post Category" />' . $v_html;
+    }
+    // return html
+    return $fn_retval;
+}
+/**
+ *  name: dsp_cat
+ *  build: 200205-1
+ *  description: Return properly formatted post category HTML string
+ *  attributes:
+ *      $att - string
+ *  ref:
+ *
+ */
+function dsp_cat($att = '')
+{
+    // system
+    $fn_retval = '';
+    // atributes
+    $v_html = trim($att);
+    if (empty($v_html))
+    {
+        $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTggMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYyICg5MTM5MCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ibm8tcG9zdC1jYXRlZ29yeSIgZmlsbD0iIzc1NzU3NSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEuMjgsMSBMMCwyLjI3IEwzLDUuMjcgTDMsMTggTDEwLDE1IEwxNC43OCwxNy4wNSBMMTYuNzMsMTkgTDE4LDE3LjcyIEwxLjI4LDEgTTUsMTUgTDUsNy4yNyBMMTEsMTMuMjUgTDEwLDEyLjgyIEw1LDE1IE01LDIuMTYgTDMuNSwwLjY3IEMzLjg4LDAuMjYgNC40MSwwIDUsMCBMMTUsMCBDMTYuMTA0NTY5NSwwIDE3LDAuODk1NDMwNSAxNywyIEwxNywxNC4xNiBMMTUsMTIuMTYgTDE1LDIgTDUsMiBMNSwyLjE2IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Post Category" />Uncategorized</p>';
+    }
+    else
+    {
+        $fn_retval = '<p style="line-height: 2.5;"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjJweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMjIgMTgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDYyICg5MTM5MCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0icG9zdC1jYXRlZ29yeSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEuMDAwMDAwLCAtNC4wMDAwMDApIiBmaWxsPSIjNzU3NTc1IiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICAgICAgICA8cGF0aCBkPSJNMTcuNSw0LjUgQzE1LjU1LDQuNSAxMy40NSw0LjkgMTIsNiBDMTAuNTUsNC45IDguNDUsNC41IDYuNSw0LjUgQzQuNTUsNC41IDIuNDUsNC45IDEsNiBMMSwyMC42NSBDMSwyMS4zIDEuNzMsMjEuMSAxLjc1LDIxLjEgQzMuMSwyMC40NSA1LjA1LDIwIDYuNSwyMCBDOC40NSwyMCAxMC41NSwyMC40IDEyLDIxLjUgQzEzLjM1LDIwLjY1IDE1LjgsMjAgMTcuNSwyMCBDMTkuMTUsMjAgMjAuODUsMjAuMyAyMi4yNSwyMS4wNSBDMjIuNjYsMjEuMjYgMjMsMjAuODYgMjMsMjAuNiBMMjMsNiBDMjEuNTEsNC44OCAxOS4zNyw0LjUgMTcuNSw0LjUgWiBNMjEsMTguNSBDMTkuOSwxOC4xNSAxOC43LDE4IDE3LjUsMTggQzE1LjgsMTggMTMuMzUsMTguNjUgMTIsMTkuNSBMMTIsOCBDMTMuMzUsNy4xNSAxNS44LDYuNSAxNy41LDYuNSBDMTguNyw2LjUgMTkuOSw2LjY1IDIxLDcgTDIxLDE4LjUgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="Xidipity WordPress Theme Post Category" />' . $v_html;
+    }
+    // return html
+    return $fn_retval;
+}
+/**
  *  name: dsp_err
  *  build: 191108.1a
  *  description: Return properly formatted error message
@@ -1794,7 +1842,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200126-1
+ * Build:   200205-1
  *
  */
 ?>
