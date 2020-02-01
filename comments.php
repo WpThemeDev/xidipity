@@ -4,7 +4,7 @@
  *
  * File Name:       comments.php
  * Function:        display comments
- * Build:           200107-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -87,7 +87,7 @@ endif;
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments')):
     echo '<div class="com:msg">' . "\n";
-    echo '<p>' . __('<i class="far fa-comment-alt fg:pri-400 pad:right-0.5"></i>Comments are closed.', 'xidipity') . '</p>' . "\n";
+    echo '<p>' . xidipity_icon_comment() . __('<span class="pad:left-0.5">Comments are closed.</span>', 'xidipity') . '</p>' . "\n";
     echo '</div>' . "\n";
 endif;
 /*
@@ -95,7 +95,7 @@ endif;
 */
 echo '<div class="pad:1">' . "\n";
 comment_form(array(
-    'title_reply'=>'<i class="far fa-comments fg:sec-300 pad:right-0.5"></i>Got Something To Say?',
+    'title_reply'=>xidipity_icon_discuss() . '<span class="pad:left-0.5">Got Something To Say?</span>',
     'logged_in_as' =>''
     ) );
 echo '</div>' . "\n";
@@ -105,7 +105,7 @@ echo '</div>' . "\n";
 
 /*
  * EOF:     comments.php
- * Build:   200107-1
+ * Build:   200205-1
  *
  */
 ?>
