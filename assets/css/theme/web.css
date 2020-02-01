@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200128-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,8 +11,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -103,7 +103,7 @@ body {
 /*
 ***
     # dsp
-    # 200128-1
+    # 200205-1
     # web specific display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -414,25 +414,21 @@ ol.comment-list li::before {
 /*: comments form/button :*/
 
 #submit {
-    background-color: transparent;
-    border: 1px solid var(--hue-bas-400);
-    border-radius: 0.3333rem;
-    color: black;
-    cursor:pointer;
-    line-height: 3;
-    margin-top: 0.25rem;
-    padding: 0 0.75rem;
+    background-color: var(--hue-pri);
+    border: thin solid transparent;
+    color: var(--hue-wht);
+    padding: 0.5rem 1.5rem;
+    text-align: center;
 }
 
 #submit:hover {
-    background-color: var(--hue-tint);
-    border: 1px solid var(--hue-bas-500);
+    filter: brightness(110%);
 }
 
 #submit:focus,
 #submit:active {
-    background-color: var(--hue-tint-dark);
-    border: 1px solid var(--hue-bas-600);
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /*: comments subscription :*/
@@ -885,7 +881,7 @@ a.site-title:hover {
     background-color: var(--content-bg-color);
     border-radius: .25rem;
     border: 1px solid transparent;
-	color: var(--hue-sec-dark);
+    color: var(--hue-sec-dark);
     position: relative;
     display: inline-block;
     float: right;
@@ -1483,8 +1479,8 @@ a.page-numbers:focus {
     -ms-flex-align: center;
     align-items: center;
     margin-top: 0.5rem;
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 .fx\:sb-ct-itm {
@@ -1516,7 +1512,7 @@ a.page-numbers:focus {
 }
 
 .fx\:sb-ct-itm ul li {
-	margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .fx\:basis-100\% {
@@ -1534,8 +1530,8 @@ a.page-numbers:focus {
 **/
 /*: sidebar / widget / ad :*/
 .fx\:sb-widget-ad {
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 250px;
 }
 
@@ -1625,7 +1621,7 @@ a.page-numbers:focus {
         align-self: flex-start;
         border-left:solid 0.5rem transparent;
         border-right:solid 0.5rem transparent;
-		width: 100%;
+        width: 100%;
     }
 
     /*: left sidebar :*/
@@ -1640,7 +1636,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
         border-right:solid 0.5rem transparent;
-		width: calc(100% - 348px);
+        width: calc(100% - 348px);
     }
 
     /*: right sidebar :*/
@@ -1655,7 +1651,7 @@ a.page-numbers:focus {
         -ms-flex-item-align: start;
         align-self: flex-start;
         border-left:solid 0.5rem transparent;
-		width: calc(100% - 348px);
+        width: calc(100% - 348px);
     }
 
     .fx\:pg-ct-itm-sbl:nth-child(4) {
@@ -1668,7 +1664,7 @@ a.page-numbers:focus {
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
-		width: 348px;
+        width: 348px;
     }
 
     .fx\:pg-ct-itm-sbr:nth-child(4) {
@@ -1681,7 +1677,7 @@ a.page-numbers:focus {
         -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
         align-self: stretch;
-		width: 348px;
+        width: 348px;
     }
 
     .fx\:pg-ct-itm-sbr:nth-child(5),
@@ -1761,10 +1757,10 @@ a.page-numbers:focus {
         padding: 1rem;
     }
 
-	/*: sidebar / widget / ad :*/
-	.fx\:sb-widget-ad {
-	    width: 300px;
-	}
+    /*: sidebar / widget / ad :*/
+    .fx\:sb-widget-ad {
+        width: 300px;
+    }
 }
 
 /*  # fx misc
@@ -2197,6 +2193,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200128-1
+ * Build:   200205-1
  *
  */
