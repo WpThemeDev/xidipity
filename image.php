@@ -4,7 +4,7 @@
  *
  * File Name:       image.php
  * Function:        display media library image
- * Build:           200104-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -86,12 +86,12 @@ if (have_posts())
             $v_aspect_ratio = '';
     }
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-    echo '<article class="fx:cn-ct-itm fx:ct-itm-opt fx:basis-100% fx:shadow">' . "\n";
-    echo '<h2 class="pad:xy-1"><i class="far fa-image fg-pri-300"></i> ' . $v_title . '</h2>' . "\n";
-    echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
+    echo '<article class="fx:cn-ct-itm fx:ct-itm-opt fx:shadow mar:right-0.5 pad:2 wd:100%">' . "\n";
+    echo '<h1 class="wcag:fg-grey9">' . $v_title . '</h1>' . "\n";
+    echo '<p><span class="fnt:weight-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
     if (!empty($v_aspect_ratio))
     {
-        echo '<p class="pad:l-1 fnt:sm"><span class="font-normal">Aspect Ratio:</span> ' . $v_aspect_ratio . '</p>' . "\n";
+        echo '<p><span class="fnt:weight-normal">Aspect Ratio:</span> ' . $v_aspect_ratio . '</p>' . "\n";
     }
     echo '<p>&nbsp;</p>' . "\n";
     echo '<div class="wd:100%">' . "\n";
@@ -107,31 +107,33 @@ if (have_posts())
     echo '</figure>' . "\n";
     echo get_the_content() . "\n";
     echo '</div>' . "\n";
-    echo '<div class="pad:left-1">' . "\n";
+    echo '<div class="wd:100%">' . "\n";
     if ($wp_metadata)
     {
-        $v_meta_list .= xidipity_icon_vw_img();
-        $v_meta_list .=  ',' . '<a href="' . esc_url(wp_get_attachment_url()) . '">View</a>';
+        $v_meta_list .= '<span class="pad:right-0.5">' . xidipity_icon_vw_img() . '</span>';
+        $v_meta_list .= '<a href="' . esc_url(wp_get_attachment_url()) . '">View</a>' . '|';
     }
     /*
         show on login
     */
     if (get_edit_post_link())
     {
-        $v_meta_list .= ',' . xidipity_icon_edit();
-        $v_meta_list .= ',' . '<a href="' . get_edit_post_link() . '">Edit</a>';
+        $v_meta_list .= '<span class="pad:right-0.5">' . xidipity_icon_edit() . '</span>';
+        $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . '|';
     }
     /*
         attm parent
     */
     if (!empty($wp_attm_title)) {
 
-        $v_meta_list .= ',' . '<p>Published in:</p>';
-        $v_meta_list .= ',' . $wp_attm_title_lnk;
+        $v_meta_list .= '<span class="pad:right-0.5">Published in:</span>';
+        $v_meta_list .= $wp_attm_title_lnk . '|';
     }
     if (!empty($v_meta_list))
     {
-        echo xidipity_metalinks(explode(',', $v_meta_list));
+		echo '<div class="fnt:size-smaller">' . "\n";
+        echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+	    echo '</div>' . "\n";
     }
     echo '</div>' . "\n";
     echo '</article>' . "\n";
@@ -157,7 +159,7 @@ get_footer();
 
 /*
  * EOF:     image.php
- * Build:   200104-1
+ * Build:   200205-1
  *
  */
 ?>
