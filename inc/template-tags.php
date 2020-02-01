@@ -18,157 +18,207 @@
  *
  */
 
-/*  # xidipity_icon_date
-    # 90728.1
-    # return date icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_date
+    * dsc: calendar
+    * ver: 200205-1
+    * fnt: return font awesome calendar icon
+    * ref: https://fontawesome.com/icons/calendar-alt?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_date'))
 {
     function xidipity_icon_date()
     {
-            return '<i class="far fa-calendar-alt fg:bas-500"></i>';
+            return '<i class="far fa-calendar-alt wcag:fg-grey6"></i>';
     }
 }
 
-/*  # xidipity_icon_tags
-    # 90728.1
-    # return tags icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_tags
+    * dsc: tags
+    * ver: 200205-1
+    * fnt: return font awesome tags icon
+    * ref: https://fontawesome.com/icons/tags?style=solid
+***
+*/
 if (!function_exists('xidipity_icon_tags'))
 {
     function xidipity_icon_tags()
     {
-            return '<i class="fas fa-tags fg:bas-500"></i>';
+            return '<i class="fas fa-tags wcag:fg-grey6"></i>';
     }
 }
 
-/*  # xidipity_icon_cat
-    # 90728.1
-    # return category icon
-    @return html
-**/
-   
-if (!function_exists('xidipity_icon_cat'))
+/*
+***
+    * ico: xidipity_icon_bm
+    * dsc: bookmark
+    * ver: 200205-1
+    * fnt: return font awesome bookmark icon
+    * ref: https://fontawesome.com/icons/bookmark?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_bm'))
 {
-    function xidipity_icon_cat()
+    function xidipity_icon_bm()
     {
-            return '<i class="far fa-clone fg:bas-500"></i>';
+            return '<i class="far fa-bookmark wcag:fg-grey6"></i>';         
     }
 }
 
-/*  # xidipity_icon_vw_img
-    # 90728.1
-    # return view image icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_vw_img
+    * dsc: image
+    * ver: 200205-1
+    * fnt: return font awesome file image icon
+    * ref: https://fontawesome.com/icons/image?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_vw_img'))
 {
     function xidipity_icon_vw_img()
     {
-            return '<i class="far fa-file-image fg:bas-500"></i>';
+            return '<i class="far fa-file-image wcag:fg-grey6"></i>';
     }
 }
 
-/*  # xidipity_icon_edit
-    # 90728.1
-    # return edit icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_edit
+    * dsc: edit
+    * ver: 200205-1
+    * fnt: return font awesome file edit icon
+    * ref: https://fontawesome.com/icons/edit?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_edit'))
 {
     function xidipity_icon_edit()
     {
-        return '<i class="far fa-edit fg:bas-500"></i>';
+        return '<i class="far fa-edit wcag:fg-grey6"></i>';
     }
 }
 
-/*  # xidipity_icon_idea
-    # 90728.1
-    # return idea icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_idea
+    * dsc: light bulb
+    * ver: 200205-1
+    * fnt: return font awesome file lightbulb icon
+    * ref: https://fontawesome.com/icons/lightbulb?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_idea'))
 {
     function xidipity_icon_idea()
     {
-        return '<i class="far fa-lightbulb" style="color:#fdd835"></i>';
+        return '<i class="far fa-lightbulb fg:sec-bright"></i>';
     }
 }
 
-/*  # xidipity_icon_note
-    # 90728.1
-    # return note icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_note
+    * dsc: note
+    * ver: 200205-1
+    * fnt: return font awesome file sticky note icon
+    * ref: https://fontawesome.com/icons/sticky-note?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_note'))
 {
     function xidipity_icon_note()
     {
-        return '<i class="far fa-sticky-note fg:bas-500"></i>';
+        return '<i class="far fa-sticky-note wcag:fg-grey6"></i>';
     }
 }
 
-/*  # xidipity_icon_star
-    # 90728.1
-    # return star icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_star
+    * dsc: star
+    * ver: 200205-1
+    * fnt: return font awesome file star icon
+    * ref: https://fontawesome.com/icons/sticky-note?style=regular
+***
+*/
 if (!function_exists('xidipity_icon_star'))
 {
     function xidipity_icon_star()
     {
-        return '<i class="far fa-star fg:pri-300"></i>';
+        return '<i class="far fa-star fg:sec-bright"></i>';
     }
 }
 
-/*  # xidipity_icon_caret_left
-    # 90728.1
-    # return caret left icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_caret_left
+    * dsc: angle left
+    * ver: 200205-1
+    * fnt: return font awesome file angle left icon
+    * ref: https://fontawesome.com/icons/angle-left?style=solid
+***
+*/
 if (!function_exists('xidipity_icon_caret_left'))
 {
     function xidipity_icon_caret_left()
     {
-        return '<i class="fas fa-angle-left"></i>';
+        return '<i class="fas fa-angle-left wcag:fg-grey9"></i>';
     }
 }
 
-/*  # xidipity_icon_caret_right
-    # 90728.1
-    # return caret right icon
-    @return html
-**/
-   
+/*
+***
+    * ico: xidipity_icon_caret_right
+    * dsc: angle right
+    * ver: 200205-1
+    * fnt: return font awesome file angle right icon
+    * ref: https://fontawesome.com/icons/angle-right?style=solid
+***
+*/
 if (!function_exists('xidipity_icon_caret_right'))
 {
     function xidipity_icon_caret_right()
     {
-        return '<i class="fas fa-angle-right"></i>';
+        return '<i class="fas fa-angle-right wcag:fg-grey9"></i>';
     }
 }
 
-/*  # xidipity_icon_rm
-    # 90728.1
-    # return readmore icon
-    @return html
-**/
-   
-if (!function_exists('xidipity_icon_rm'))
+/*
+***
+    * ico: xidipity_icon_discuss
+    * dsc: discussion
+    * ver: 200205-1
+    * fnt: return font awesome file comments icon
+    * ref: https://fontawesome.com/icons/comments?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_discuss'))
 {
-    function xidipity_icon_rm()
+    function xidipity_icon_discuss()
     {
-        return '<i class="fas fa-book-reader fg:pri-300"></i>';
+        return '<i class="far fa-comments fg:sec"></i>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_comment
+    * dsc: comment
+    * ver: 200205-1
+    * fnt: return font awesome file comment icon
+    * ref: https://fontawesome.com/icons/comment?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_comment'))
+{
+    function xidipity_icon_comment()
+    {
+        return '<i class="far fa-comment fg:sec"></i>';
     }
 }
 
@@ -327,10 +377,10 @@ if (!function_exists('xidipity_metalinks'))
 {
     function xidipity_metalinks($atts = array())
     {
-        /*: variables   :*/
+        /*: variables
         $html_retval = '';
-        $v_cnt = count($atts);
-        /*: go / no go  :*/
+        $v_cnt = count($atts);   :*/
+        /*: go / no go
         if ($v_cnt >0)
         {
             $html_retval .= '<div class="fx:cn-ct-meta mar:vrt-0.75">';
@@ -339,7 +389,29 @@ if (!function_exists('xidipity_metalinks'))
                 $html_retval .= '<div class="fx:ct-meta-itm">' . $att . '</div>';
             }
             $html_retval .= '</div>';
+        }  :*/
+
+        /*: variables   :*/
+        $html_retval = '';
+        $v_cnt = count($atts);
+        /*: go / no go  :*/
+        if ($v_cnt >0)
+        {
+            $html_retval .= '<table class="bdr:collapse">';
+            $html_retval .= '<tbody>';
+            $html_retval .= '<tr>';
+            foreach ($atts as $att)
+            {
+                if (!empty(trim($att)))
+                {
+                    $html_retval .= '<td class="aln:text-center aln:middle">' . $att . '</td>';
+                }
+            }
+            $html_retval .= '</tr>';
+            $html_retval .= '</tbody>';
+            $html_retval .= '</table>';
         }
+        
         /*: return html :*/
         return $html_retval;
     }
