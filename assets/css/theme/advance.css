@@ -11,7 +11,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -630,7 +630,7 @@
 ***
     * selector: led
     * dsc: leading
-    * ver: 200107-1
+    * ver: 200205-1
     * fnt: set line height
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
@@ -651,12 +651,20 @@
     line-height: calc(var(--dft-line-height) + .125) !important;
 }
 
-.led\:x-wide {
+.led\:1x-wide {
     line-height: calc(var(--dft-line-height) + .25) !important;
 }
 
-.led\:xx-wide {
+.led\:2x-wide {
     line-height: calc(var(--dft-line-height) + .375) !important;
+}
+
+.led\:3x-wide {
+    line-height: calc(var(--dft-line-height) + .5) !important;
+}
+
+.led\:4x-wide {
+    line-height: calc(var(--dft-line-height) + .625) !important;
 }
 
 /*
@@ -2083,6 +2091,23 @@
 .bdr\:space-2 {
     border-collapse: separate !important;
     border-spacing: 2rem !important;
+}
+
+/*
+***
+    * selector: tcw
+    * dsc: table column width
+    * ver: 200205-1
+    * fnt: fix column width or grow with content
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+***
+*/
+.tcw\:auto {
+	table-layout: auto;
+}
+
+.tcw\:fixed {
+	table-layout: fixed;
 }
 
 /*  # DIY flexbox components
