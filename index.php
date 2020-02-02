@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -101,12 +101,13 @@ if (have_posts())
         {
             if (is_sticky())
             {
-                echo dsp_sticky(xidipity_first_category());
+                $v_meta_list = dsp_sticky(xidipity_first_category());
             }
             else
             {
-                echo dsp_cat(xidipity_first_category());
+                $v_meta_list = dsp_cat(xidipity_first_category());
             }
+			echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         }
         if ('post' == get_post_type())
         {
