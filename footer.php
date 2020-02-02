@@ -4,7 +4,7 @@
  *
  * File Name:       footer.php
  * Function:        display page footer
- * Build:           200104-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         5.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -25,13 +25,13 @@ echo '<!-- xwpt: flexbox/page/container/item-5    -->' . "\n";
 */
 if (XWT_SIDEBAR_ALIGN == 'left')
 {
-    echo '<footer class="fx:pg-ct-itm-sbl fnt:size-smaller">' . "\n";
+    echo '<footer class="fx:pg-ct-itm-sbl fnt:size-smaller mar:bottom-1">' . "\n";
     echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert-0.75">' . "\n";
     echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
 }
 else
 {
-    echo '<footer class="fx:pg-ct-itm-sbr fnt:size-smaller">' . "\n";
+    echo '<footer class="fx:pg-ct-itm-sbr fnt:size-smaller mar:bottom-1">' . "\n";
     echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert-0.75">' . "\n";
     echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
 }
@@ -48,7 +48,7 @@ echo '</html>' . "\n";
 
 /*
  * EOF:     footer.php
- * Build:   200104-1
+ * Build:   200205-1
  *
  */
 ?>
