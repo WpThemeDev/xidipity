@@ -6,7 +6,7 @@
  *
  * File Name:       no-sidebar.php
  * Function:        display page without sidebar
- * Build:           200107-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -14,7 +14,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
+ * @version			3.0
  * @since			0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -80,19 +80,15 @@ if ($wp_query->have_posts()) {
         /*
             page footer
         */
-        echo '<div class="pad:left-1 fnt:size-smaller">' . "\n";
-        $v_meta_list = '';
-        /*: edit :*/
-        if (get_edit_post_link())
-        {
-            $v_meta_list .= xidipity_icon_edit() . ',';
-            $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . ',';
-            $v_meta_list .= '&nbsp;,';
-        }
+	    /*: edit :*/
+	    if (get_edit_post_link())
+	    {
+	        $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
+	    }
         /*: date :*/
-        $v_meta_list .= xidipity_icon_date() . ',';
-        $v_meta_list .= get_the_date() . ',';
-        echo xidipity_metalinks(explode(',', $v_meta_list));
+        $v_meta_list .= dsp_date(get_the_date()) . '|';
+        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
+        echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         echo '</div>' . "\n";
         echo '</div>' . "\n";
     }
@@ -131,7 +127,7 @@ get_footer();
 
 /*
  * EOF:     no-sidebar.php
- * Build:   200107-1
+ * Build:   200205-1
  *
  */
 ?>
