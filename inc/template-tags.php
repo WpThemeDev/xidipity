@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200120-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://codex.wordpress.org/Template_Tags
  *
@@ -395,7 +395,7 @@ if (!function_exists('xidipity_metalinks'))
         $html_retval = '';
         $v_cnt = count($atts);
         /*: go / no go  :*/
-        if ($v_cnt >0)
+        if ($v_cnt > 0)
         {
             $html_retval .= '<table class="bdr:collapse">';
             $html_retval .= '<tbody>';
@@ -404,7 +404,7 @@ if (!function_exists('xidipity_metalinks'))
             {
                 if (!empty(trim($att)))
                 {
-                    $html_retval .= '<td class="aln:text-center aln:middle">' . $att . '</td>';
+                    $html_retval .= '<td class="aln:text-left aln:middle">' . trim($att) . '</td>';
                 }
             }
             $html_retval .= '</tr>';
@@ -595,7 +595,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200120-1
+ * Build:   200205-1
  *
  */
 ?>
