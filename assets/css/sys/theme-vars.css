@@ -3,7 +3,7 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200128-1
+ * Build:           200205-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,15 +11,15 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         4.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
- * 					https://developer.mozilla.org/en-US/docs/Web/CSS/var
- *               	https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
- *               	https://material.io/resources/color/#!/?view.left=0&view.right=0
+ *                  https://developer.mozilla.org/en-US/docs/Web/CSS/var
+ *                  https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+ *                  https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=1565c0&secondary.color=f25c02
  *
- * Comments:		By default the base hue is grey, primary deep purple, and secondary
- *					deep orange. WCAG hues are high contrast for legibility.
+ * Comments:        By default the base hue is grey, primary blue, and secondary
+ *                  orange. WCAG hues are high contrast (4.5:1 or greater) for legibility.
  *
  */
 
@@ -50,13 +50,13 @@
     --hue-bas-100: #f5f5f5;
     --hue-bas-050: #fafafa;
     /*: primary hue :*/
-	--hue-pri: #1565c0;
-	--hue-pri-bright: #5e92f3;
-	--hue-pri-dark: #003c8f;
+    --hue-pri: #1565c0;
+    --hue-pri-bright: #5e92f3;
+    --hue-pri-dark: #003c8f;
     /*: secondary hue :*/
-	--hue-sec: #f25c02;
-	--hue-sec-bright: #ff8e3d;
-	--hue-sec-dark: #b82800;
+    --hue-sec: #f25c02;
+    --hue-sec-bright: #ff8e3d;
+    --hue-sec-dark: #b82800;
     /*
     ***
     other colors (material design palette)
@@ -99,7 +99,7 @@
     /*: no color :*/
     --transparent: transparent;
     /*: hilite plugin support :*/
-    --hue-highlight: #FFF9C4;
+    --hue-highlight: #FFF59D;
     /*: tints :*/
     --hue-tint: #F7F8F9;
     --hue-tint-bright: #F9FAFA;
@@ -180,10 +180,10 @@
     /*: blog header :*/
     --blog-hdr-bg-color: var(--hue-bas-050);
     /*: blog title & tagline :*/
-	/* deprecated
+    /* deprecated
     --title-lnk-pri-color: var(--hue-pri-dark);
     --title-lnk-sec-color: var(--hue-sec-dark);
-	*/
+    */
     --title-font-family: var(--font-fancy);
     --title-font-size: 3rem;
     --title-font-spacing: 0.0625rem;
@@ -242,6 +242,6 @@
 
 /*
  * EOF:     sys/theme-vars.css
- * Build:   200128-1
+ * Build:   200205-1
  *
  */
