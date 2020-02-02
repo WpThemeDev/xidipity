@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -62,10 +62,9 @@ if ($wp_query->have_posts()) {
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
     echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
     echo '<div class="pad:left-1">' . "\n";
-    $v_meta_list  = $wp_post_date . '|';
-    $v_meta_list .= 'Author - <a href="' . get_author_posts_url( $wp_author_id, $wp_author ) . '">' . $wp_author . '</a>';
-    echo '<div class="fnt:size-smaller">' . "\n";
-    echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+	$v_meta_list = dsp_cat(xidipity_first_category()) . '|';
+    echo '<div class="pad:vrt-0.25">' . "\n";
+	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     /*
         content title
@@ -89,34 +88,15 @@ if ($wp_query->have_posts()) {
     /*
         meta footer
     */
-    echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
     $v_meta_list = '';
     /*: edit :*/
     if (get_edit_post_link())
     {
-        $v_meta_list .= xidipity_icon_edit() . '<a class="pad:left-0.5" href="' . get_edit_post_link() . '">Edit</a>' . '|';
+        $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
     }
-    /*: category :*/
-    $v_cat = xidipity_first_category();
-    if (!empty($v_cat))
-    {
-        $v_meta_list .=  xidipity_icon_bm() . '<span class="pad:left-0.5">' . $v_cat . '</span>' . '|';
-    }
-    /*: tags :*/
-    if ($wp_tags)
-    {
-        $v_meta_list .=  '<span class="pad:right-0.5">' . xidipity_icon_tags() . '</span>';
-        if ( $wp_tags ) {
-            foreach( $wp_tags as $wp_tag ) {
-                $v_meta_list .= $wp_tag->name . ' ';
-            }
-        }
-        $v_meta_list .= '|';
-    }
-    if (!empty($v_meta_list))
-    {
-        echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
-    }
+	$v_meta_list .= dsp_tags(get_the_tags()) . '|';
+    echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
+	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     echo '</article>' . "\n";
     echo '<!-- /xwpt: 90927.1a/content-post/php       -->' . "\n";
@@ -169,8 +149,7 @@ if ($wp_query->have_posts()) {
     if (comments_open() || '0' != get_comments_number())
     {
         comments_template();
-    }
-    
+    }   
 }
 else
 {
