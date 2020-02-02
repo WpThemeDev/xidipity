@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -85,16 +85,14 @@ if ($wp_query->have_posts()) {
         /*
             page footer
         */
-        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
-        /*: edit :*/
-        if (get_edit_post_link())
-        {
-            $v_meta_list .= '<span class="pad:right-0.5">' . xidipity_icon_edit() . '</span>';
-            $v_meta_list .= '<a href="' . get_edit_post_link() . '">Edit</a>' . '|';
-        }
+	    /*: edit :*/
+	    if (get_edit_post_link())
+	    {
+	        $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
+	    }
         /*: date :*/
-        $v_meta_list .= '<span class="pad:right-0.5">' . xidipity_icon_date() . '</span>';
-        $v_meta_list .= get_the_date() . '|';
+        $v_meta_list .= dsp_date(get_the_date()) . '|';
+        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
         echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         echo '</div>' . "\n";
         echo '</div>' . "\n";
