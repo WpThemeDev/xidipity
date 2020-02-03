@@ -4,7 +4,7 @@
  *
  * File Name:       comments.php
  * Function:        display comments
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -30,7 +30,7 @@ echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
 echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow prt(dsp:none)">' . "\n";
 
 if (have_comments()):
-    echo '<div class="fx:ct-itm-opt mar:horz-1">' . "\n";
+    echo '<div class="fx:ct-itm-opt mar:horz+1">' . "\n";
     echo '<h3 class="comments-title">' . "\n";
     $comments_number = get_comments_number();
     if ('1' === $comments_number) {
@@ -87,15 +87,15 @@ endif;
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments')):
     echo '<div class="com:msg">' . "\n";
-    echo '<p>' . xidipity_icon_comment() . __('<span class="pad:left-0.5">Comments are closed.</span>', 'xidipity') . '</p>' . "\n";
+    echo '<p>' . xidipity_icon_comment() . __('<span class="pad:left+0.5">Comments are closed.</span>', 'xidipity') . '</p>' . "\n";
     echo '</div>' . "\n";
 endif;
 /*
     display comment form
 */
-echo '<div class="pad:1">' . "\n";
+echo '<div class="pad:+1">' . "\n";
 comment_form(array(
-    'title_reply'=>xidipity_icon_discuss() . '<span class="pad:left-0.5">Got Something To Say?</span>',
+    'title_reply'=>xidipity_icon_discuss() . '<span class="pad:left+0.5">Got Something To Say?</span>',
     'logged_in_as' =>''
     ) );
 echo '</div>' . "\n";
@@ -105,7 +105,7 @@ echo '</div>' . "\n";
 
 /*
  * EOF:     comments.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
