@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -95,7 +95,7 @@ if (have_posts())
         }
         else
         {
-            echo '<div class="pad:+1 ht:min-455px">' . "\n";
+            echo '<div class="pad:+1">' . "\n";
         }
         if ('post' == get_post_type())
         {
