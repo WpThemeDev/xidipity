@@ -4,7 +4,7 @@
  *
  * File Name:       single.php
  * Function:        display blog post
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -61,9 +61,9 @@ if ($wp_query->have_posts()) {
     echo '<!-- xwpt: 90927.1a/content-post/php        -->' . "\n";
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
     echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
-    echo '<div class="pad:left-1">' . "\n";
+    echo '<div class="pad:left+1">' . "\n";
 	$v_meta_list = dsp_cat(xidipity_first_category()) . '|';
-    echo '<div class="pad:vrt-0.25">' . "\n";
+    echo '<div class="pad:vrt+0.25">' . "\n";
 	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     /*
@@ -82,7 +82,7 @@ if ($wp_query->have_posts()) {
     /*
         content
     */
-    echo '<div class="fx:cn-itm-wrapper pad:1">' . "\n";
+    echo '<div class="fx:cn-itm-wrapper pad:+1">' . "\n";
     the_content();
     echo '</div>' . "\n";
     /*
@@ -95,7 +95,7 @@ if ($wp_query->have_posts()) {
         $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
     }
 	$v_meta_list .= dsp_tags(get_the_tags()) . '|';
-    echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
+    echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
 	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     echo '</article>' . "\n";
@@ -135,10 +135,10 @@ if ($wp_query->have_posts()) {
         echo '<!-- xwpt: 90927.1a/biography/php           -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
         echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:1 fx:shadow prt(dsp:none)">' . "\n";
+        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% pad:+1 fx:shadow prt(dsp:none)">' . "\n";
         echo '<div class="fx:cn-ct-bio">' . "\n";
         echo '<div class="fx:ct-bio-itm">' . $v_img . '</div>';
-        echo '<div class="fx:ct-bio-itm pad:left-0.5">' . $v_biography . '</div>';
+        echo '<div class="fx:ct-bio-itm pad:left+0.5">' . $v_biography . '</div>';
         echo '</div>' . "\n";
         echo '</div>' . "\n";
         echo '<!-- /xwpt: 90927.1a/biography/php          -->' . "\n";
@@ -176,7 +176,7 @@ get_footer();
 
 /*
  * EOF:     single.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
