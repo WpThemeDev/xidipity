@@ -4,7 +4,7 @@
  *
  * File Name:       archive.php
  * Function:        display pages assigned to archive category
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -61,7 +61,7 @@ if (have_posts())
     echo '<div class="fx:cn-ct">' . "\n";
     echo xidipity_excerpt_banner(array(
         'cat' => single_cat_title('', false),
-        'icon' => '<span class="pad:right-0.5">' . xidipity_icon_comment() . '</span>',
+        'icon' => '<span class="pad:right+0.5">' . xidipity_icon_comment() . '</span>',
     ));
     echo '</div>' . "\n";
     echo '<!-- xwpt: flexbox/content/container        -->' . "\n";
@@ -80,21 +80,21 @@ if (have_posts())
         {
             /*: post thumbnail :*/
             echo $wp_img;
-            echo '<div class="pad:1">' . "\n";
+            echo '<div class="pad:+1">' . "\n";
         }
         else
         {
-            echo '<div class="pad:1 ht:min-455px">' . "\n";
+            echo '<div class="pad:+1 ht:min-455px">' . "\n";
         }
         if ('post' == get_post_type())
         {
             if (is_sticky())
             {
-				echo dsp_sticky(xidipity_first_category());
+                echo dsp_sticky(xidipity_first_category());
             }
             else
             {
-				echo dsp_cat(xidipity_first_category());
+                echo dsp_cat(xidipity_first_category());
             }
         }
         echo '<header class="fx:cn-itm-hd">' . "\n";
@@ -157,7 +157,7 @@ get_footer();
 
 /*
  * EOF:     archive.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
