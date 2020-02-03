@@ -4,7 +4,7 @@
  *
  * File Name:       search.php
  * Function:        display search results
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -63,14 +63,14 @@ if (have_posts())
     if ($wp_cnt  == 1)
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<span class="pad:right-0.5">' . xidipity_icon_comment() . '</span>',
+            'icon' => '<span class="pad:right+0.5">' . xidipity_icon_comment() . '</span>',
             'title' => $wp_query->found_posts . ' Item found',
         ));
     }
     else
     {
         echo xidipity_excerpt_banner(array(
-            'icon' => '<span class="pad:right-0.5">' . xidipity_icon_comment() . '</span>',
+            'icon' => '<span class="pad:right+0.5">' . xidipity_icon_comment() . '</span>',
             'title' => $wp_query->found_posts . ' Items found',
         ));
     }
@@ -91,11 +91,11 @@ if (have_posts())
         {
             /*: post thumbnail :*/
             echo $wp_img;
-            echo '<div class="pad:1">' . "\n";
+            echo '<div class="pad:+1">' . "\n";
         }
         else
         {
-            echo '<div class="pad:1 ht:min-455px">' . "\n";
+            echo '<div class="pad:+1 ht:min-455px">' . "\n";
         }
         if ('post' == get_post_type())
         {
@@ -171,7 +171,7 @@ get_footer();
 
 /*
  * EOF:     search.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
