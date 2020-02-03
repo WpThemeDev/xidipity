@@ -6,7 +6,7 @@
  *
  * File Name:       no-title.php
  * Function:        display page without page title
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -14,8 +14,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			3.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -62,7 +62,7 @@ if ($wp_query->have_posts()) {
         /*
         content title
         */
-        echo '<div class="pad:left-1" style="display:none;">' . "\n";
+        echo '<div class="pad:left+1" style="display:none;">' . "\n";
         echo '<header class="fx:cn-itm-hd">' . "\n";
         the_title('<h1 class="fx:cn-itm-ti">', '</h1>');
         echo '</header>' . "\n";
@@ -81,20 +81,20 @@ if ($wp_query->have_posts()) {
         content
         */
         echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
-        echo '<div class="fx:cn-itm-wrapper pad:1">' . "\n";
+        echo '<div class="fx:cn-itm-wrapper pad:+1">' . "\n";
         the_content();
         echo '</div>' . "\n";
         /*
             page footer
         */
-	    /*: edit :*/
-	    if (get_edit_post_link())
-	    {
-	        $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
-	    }
+        /*: edit :*/
+        if (get_edit_post_link())
+        {
+            $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
+        }
         /*: date :*/
         $v_meta_list .= dsp_date(get_the_date()) . '|';
-        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
+        echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
         echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         echo '</div>' . "\n";
         echo '</div>' . "\n";
@@ -134,7 +134,7 @@ get_footer();
 
 /*
  * EOF:     no-title.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
