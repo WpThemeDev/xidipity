@@ -4,7 +4,7 @@
  *
  * File Name:       index.php
  * Function:        display blog excerpts
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -91,11 +91,11 @@ if (have_posts())
         {
             /*: post thumbnail :*/
             echo $wp_img;
-            echo '<div class="pad:1">' . "\n";
+            echo '<div class="pad:+1">' . "\n";
         }
         else
         {
-            echo '<div class="pad:1 ht:min-455px">' . "\n";
+            echo '<div class="pad:+1 ht:min-455px">' . "\n";
         }
         if ('post' == get_post_type())
         {
@@ -171,7 +171,7 @@ get_footer();
 
 /*
  * EOF:     index.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
