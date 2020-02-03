@@ -4,7 +4,7 @@
  *
  * File Name:       image.php
  * Function:        display media library image
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -86,7 +86,7 @@ if (have_posts())
             $v_aspect_ratio = '';
     }
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-    echo '<article class="fx:cn-ct-itm fx:ct-itm-opt fx:shadow mar:right-0.5 pad:2 wd:100%">' . "\n";
+    echo '<article class="fx:cn-ct-itm fx:ct-itm-opt fx:shadow mar:right+0.5 pad:+2 wd:100%">' . "\n";
     echo '<h1 class="wcag:fg-grey9">' . $v_title . '</h1>' . "\n";
     echo '<p><span class="fnt:weight-normal">Dimensions:</span> ' . absint($wp_metadata['width']) . '&times;' . absint($wp_metadata['height']) . 'px' . "\n";
     if (!empty($v_aspect_ratio))
@@ -124,12 +124,12 @@ if (have_posts())
     */
     if (!empty($wp_attm_title)) {
 
-        $v_meta_list .= '<span class="pad:right-0.5">Published in:</span>';
+        $v_meta_list .= '<span class="pad:right+0.5">Published in:</span>';
         $v_meta_list .= $wp_attm_title_lnk . '|';
     }
     if (!empty($v_meta_list))
     {
-        echo '<div class="pad:left-1 fnt:size-smaller prt(dsp:none)">' . "\n";
+        echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
         echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         echo '</div>' . "\n";
     }
@@ -157,7 +157,7 @@ get_footer();
 
 /*
  * EOF:     image.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
