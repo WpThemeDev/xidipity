@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://codex.wordpress.org/Template_Tags
  *
@@ -22,7 +22,7 @@
 ***
     * ico: xidipity_icon_date
     * dsc: calendar
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome calendar icon
     * ref: https://fontawesome.com/icons/calendar-alt?style=regular
 ***
@@ -39,7 +39,7 @@ if (!function_exists('xidipity_icon_date'))
 ***
     * ico: xidipity_icon_tags
     * dsc: tags
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome tags icon
     * ref: https://fontawesome.com/icons/tags?style=solid
 ***
@@ -56,7 +56,7 @@ if (!function_exists('xidipity_icon_tags'))
 ***
     * ico: xidipity_icon_bm
     * dsc: bookmark
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome bookmark icon
     * ref: https://fontawesome.com/icons/bookmark?style=regular
 ***
@@ -73,7 +73,7 @@ if (!function_exists('xidipity_icon_bm'))
 ***
     * ico: xidipity_icon_vw_img
     * dsc: image
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file image icon
     * ref: https://fontawesome.com/icons/image?style=regular
 ***
@@ -90,7 +90,7 @@ if (!function_exists('xidipity_icon_vw_img'))
 ***
     * ico: xidipity_icon_edit
     * dsc: edit
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file edit icon
     * ref: https://fontawesome.com/icons/edit?style=regular
 ***
@@ -107,7 +107,7 @@ if (!function_exists('xidipity_icon_edit'))
 ***
     * ico: xidipity_icon_idea
     * dsc: light bulb
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file lightbulb icon
     * ref: https://fontawesome.com/icons/lightbulb?style=regular
 ***
@@ -124,7 +124,7 @@ if (!function_exists('xidipity_icon_idea'))
 ***
     * ico: xidipity_icon_note
     * dsc: note
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file sticky note icon
     * ref: https://fontawesome.com/icons/sticky-note?style=regular
 ***
@@ -141,7 +141,7 @@ if (!function_exists('xidipity_icon_note'))
 ***
     * ico: xidipity_icon_star
     * dsc: star
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file star icon
     * ref: https://fontawesome.com/icons/sticky-note?style=regular
 ***
@@ -158,7 +158,7 @@ if (!function_exists('xidipity_icon_star'))
 ***
     * ico: xidipity_icon_caret_left
     * dsc: angle left
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file angle left icon
     * ref: https://fontawesome.com/icons/angle-left?style=solid
 ***
@@ -175,7 +175,7 @@ if (!function_exists('xidipity_icon_caret_left'))
 ***
     * ico: xidipity_icon_caret_right
     * dsc: angle right
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file angle right icon
     * ref: https://fontawesome.com/icons/angle-right?style=solid
 ***
@@ -192,7 +192,7 @@ if (!function_exists('xidipity_icon_caret_right'))
 ***
     * ico: xidipity_icon_discuss
     * dsc: discussion
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file comments icon
     * ref: https://fontawesome.com/icons/comments?style=regular
 ***
@@ -209,7 +209,7 @@ if (!function_exists('xidipity_icon_discuss'))
 ***
     * ico: xidipity_icon_comment
     * dsc: comment
-    * ver: 200205-1
+    * ver: 200206
     * fnt: return font awesome file comment icon
     * ref: https://fontawesome.com/icons/comment?style=regular
 ***
@@ -277,7 +277,7 @@ if (!function_exists('xidipity_excerpt_banner'))
         if (!empty($v_hdr_title))
         {
             $html_retval .= '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:1">';
+            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:+1">';
             $html_retval .= '<header class="fx:cn-itm-hd">';
             $html_retval .= '<h2>' . $v_icon . $v_hdr_title . '</h2>';
             if (!empty($v_hdr_descr))
@@ -334,7 +334,7 @@ if (!function_exists('xidipity_paginate_links'))
         {
             $wp_search = (abs(strpos($v_url, 's=')) !== 0);
         }
-        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert-1 cnr:arch-small">';
+        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert+1 cnr:arch-small">';
         if ($wp_search)
         {
             
@@ -377,20 +377,6 @@ if (!function_exists('xidipity_metalinks'))
 {
     function xidipity_metalinks($atts = array())
     {
-        /*: variables
-        $html_retval = '';
-        $v_cnt = count($atts);   :*/
-        /*: go / no go
-        if ($v_cnt >0)
-        {
-            $html_retval .= '<div class="fx:cn-ct-meta mar:vrt-0.75">';
-            foreach ($atts as $att)
-            {
-                $html_retval .= '<div class="fx:ct-meta-itm">' . $att . '</div>';
-            }
-            $html_retval .= '</div>';
-        }  :*/
-
         /*: variables   :*/
         $html_retval = '';
         $v_cnt = count($atts);
@@ -595,7 +581,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
