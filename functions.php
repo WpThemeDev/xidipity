@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200205-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -1600,7 +1600,7 @@ function dsp_rm($att = '')
 }
 /**
  *  name: dsp_sticky
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted sticky post category HTML string
  *  attributes:
  *      $att - string
@@ -1615,14 +1615,14 @@ function dsp_sticky($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="fas fa-paperclip">&#x200B;</i></span>' . $v_html . '</p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-paperclip">&#x200B;</i></span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_date
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted post date HTML string
  *  attributes:
  *      $att - string
@@ -1637,14 +1637,14 @@ function dsp_date($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $v_html . '</p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_edit
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted edit post HTML string
  *  attributes:
  *      $att - string
@@ -1659,14 +1659,14 @@ function dsp_edit($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="fas fa-user-edit">&#x200B;</i></span><a href="' . $v_html . '">Edit</a></p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span><a href="' . $v_html . '">Edit</a></p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_view
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted view image HTML string
  *  attributes:
  *      $att - string
@@ -1681,14 +1681,14 @@ function dsp_view($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="far fa-eye">&#x200B;</i></span><a href="' . $v_html . '">View</a></p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-eye">&#x200B;</i></span><a href="' . $v_html . '">View</a></p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_cat
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted post category HTML string
  *  attributes:
  *      $att - string
@@ -1703,18 +1703,18 @@ function dsp_cat($att = '')
     $v_html = trim($att);
     if (empty($v_html))
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="fas fa-exclamation">&#x200B;</i></span>Uncategorized</p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-exclamation">&#x200B;</i></span>Uncategorized</p>';
     }
     else
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="far fa-bookmark">&#x200B;</i></span>' . $v_html . '</p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-bookmark">&#x200B;</i></span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_tags
- *  build: 200205-1
+ *  build: 200206
  *  description: Return properly formatted post tags HTML string
  *  attributes:
  *      $att - string
@@ -1734,7 +1734,7 @@ function dsp_tags($att = array())
 	    foreach( $wp_tags as $wp_tag ) {
 	        $v_meta_list .= $wp_tag->name . ' ';
 	    }
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right-0.5"><i class="fas fa-user-tag">&#x200B;</i></span>' . $v_meta_list . '</p>';
+		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-user-tag">&#x200B;</i></span>' . $v_meta_list . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1764,7 +1764,7 @@ function dsp_err($att = '')
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 200120-1/tmpl/an/alarm           --><div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:3 pad:0.5"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1 mar:right-0.5" style="width:1.75rem"><img class="xwd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fnt:size-small pad:left-0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 200120-1/tmpl/an/alarm          -->';
+    $fn_retval = '<!-- xwpt: 200120-1/tmpl/an/alarm           --><div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:3 pad:+0.5"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1 mar:right+0.5" style="width:1.75rem"><img class="xwd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fnt:size-small pad:left+0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 200120-1/tmpl/an/alarm          -->';
     // return html
     return $fn_retval;
 }
@@ -1935,7 +1935,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200205-1
+ * Build:   200206
  *
  */
 ?>
