@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -1700,10 +1700,10 @@ function dsp_cat($att = '')
     // system
     $fn_retval = '';
     // atributes (first category)
-    $v_html = trim($att);
-    if (empty($v_html))
+    $v_html = trim($att);	
+    if (strtolower($v_html) == 'uncategorized')
     {
-		$fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-exclamation">&#x200B;</i></span>Uncategorized</p>';
+		$fn_retval = '<p><span class="wcag:fg-red pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span>' . $v_html . '</p>';
     }
     else
     {
