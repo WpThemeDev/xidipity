@@ -11,7 +11,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -1028,6 +1028,7 @@
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+/*: add margin :*/
 .mar\:\+0 {
     margin: 0 !important;
 }
@@ -1064,15 +1065,53 @@
     margin: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:-0 {
+    margin: 0 !important;
+}
+
+.mar\:-0\.25 {
+    margin: -0.25rem !important;
+}
+
+.mar\:-0\.5 {
+    margin: -0.5rem !important;
+}
+
+.mar\:-0\.75 {
+    margin: -0.75rem !important;
+}
+
+.mar\:-1 {
+    margin: -1rem !important;
+}
+
+.mar\:-1\.25 {
+    margin: -1.25rem !important;
+}
+
+.mar\:-1\.5 {
+    margin: -1.5rem !important;
+}
+
+.mar\:-1\.75 {
+    margin: -1.75rem !important;
+}
+
+.mar\:-2 {
+    margin: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin top
+    * ver: 200206
     * fnt: set top margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+/*: add margin :*/
 .mar\:top\+0 {
     margin-top: 0 !important;
 }
@@ -1109,15 +1148,54 @@
     margin-top: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:top-0 {
+    margin-top: 0 !important;
+}
+
+.mar\:top-0\.25 {
+    margin-top: -0.25rem !important;
+}
+
+.mar\:top-0\.5 {
+    margin-top: -0.5rem !important;
+}
+
+.mar\:top-0\.75 {
+    margin-top: -0.75rem !important;
+}
+
+.mar\:top-1 {
+    margin-top: -1rem !important;
+}
+
+.mar\:top-1\.25 {
+    margin-top: -1.25rem !important;
+}
+
+.mar\:top-1\.5 {
+    margin-top: -1.5rem !important;
+}
+
+.mar\:top-1\.75 {
+    margin-top: -1.75rem !important;
+}
+
+.mar\:top-2 {
+    margin-top: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin right
+    * ver: 200206
     * fnt: set right margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+
+/*: add margin :*/
 .mar\:top\+0 {
     margin-right: 0 !important;
 }
@@ -1154,15 +1232,54 @@
     margin-right: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:top-0 {
+    margin-right: 0 !important;
+}
+
+.mar\:top-0\.25 {
+    margin-right: -0.25rem !important;
+}
+
+.mar\:top-0\.5 {
+    margin-right: -0.5rem !important;
+}
+
+.mar\:top-0\.75 {
+    margin-right: -0.75rem !important;
+}
+
+.mar\:top-1 {
+    margin-right: -1rem !important;
+}
+
+.mar\:top-1\.25 {
+    margin-right: -1.25rem !important;
+}
+
+.mar\:top-1\.5 {
+    margin-right: -1.5rem !important;
+}
+
+.mar\:top-1\.75 {
+    margin-right: -1.75rem !important;
+}
+
+.mar\:top-2 {
+    margin-right: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin bottom
+    * ver: 200206
     * fnt: set bottom margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+
+/*: add margin :*/
 .mar\:bottom\+0 {
     margin-bottom: 0 !important;
 }
@@ -1199,15 +1316,54 @@
     margin-bottom: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.mar\:bottom-0\.25 {
+    margin-bottom: -0.25rem !important;
+}
+
+.mar\:bottom-0\.5 {
+    margin-bottom: -0.5rem !important;
+}
+
+.mar\:bottom-0\.75 {
+    margin-bottom: -0.75rem !important;
+}
+
+.mar\:bottom-1 {
+    margin-bottom: -1rem !important;
+}
+
+.mar\:bottom-1\.25 {
+    margin-bottom: -1.25rem !important;
+}
+
+.mar\:bottom-1\.5 {
+    margin-bottom: -1.5rem !important;
+}
+
+.mar\:bottom-1\.75 {
+    margin-bottom: -1.75rem !important;
+}
+
+.mar\:bottom-2 {
+    margin-bottom: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin left
+    * ver: 200206
     * fnt: set left margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+
+/*: add margin :*/
 .mar\:left\+0 {
     margin-left: 0 !important;
 }
@@ -1244,15 +1400,54 @@
     margin-left: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:left-0 {
+    margin-left: 0 !important;
+}
+
+.mar\:left-0\.25 {
+    margin-left: -0.25rem !important;
+}
+
+.mar\:left-0\.5 {
+    margin-left: -0.5rem !important;
+}
+
+.mar\:left-0\.75 {
+    margin-left: -0.75rem !important;
+}
+
+.mar\:left-1 {
+    margin-left: -1rem !important;
+}
+
+.mar\:left-1\.25 {
+    margin-left: -1.25rem !important;
+}
+
+.mar\:left-1\.5 {
+    margin-left: -1.5rem !important;
+}
+
+.mar\:left-1\.75 {
+    margin-left: -1.75rem !important;
+}
+
+.mar\:left-2 {
+    margin-left: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin horzontal
+    * ver: 200206
     * fnt: set left / right margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+
+/*: add margin :*/
 .mar\:hrz\+0 {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -1298,15 +1493,63 @@
     margin-right: 2rem !important;
 }
 
+/*: subtract margin :*/
+.mar\:hrz-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.mar\:hrz-0\.25 {
+    margin-left: -0.25rem !important;
+    margin-right: -0.25rem !important;
+}
+
+.mar\:hrz-0\.5 {
+    margin-left: -0.5rem !important;
+    margin-right: -0.5rem !important;
+}
+
+.mar\:hrz-0\.75 {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important;
+}
+
+.mar\:hrz-1 {
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+}
+
+.mar\:hrz-1.25 {
+    margin-left: -1.25rem !important;
+    margin-right: -1.25rem !important;
+}
+
+.mar\:hrz-1.5 {
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+}
+
+.mar\:hrz-1.75 {
+    margin-left: -1.75rem !important;
+    margin-right: -1.75rem !important;
+}
+
+.mar\:hrz-2 {
+    margin-left: -2rem !important;
+    margin-right: -2rem !important;
+}
+
 /*
 ***
     * selector: mar
-    * dsc: margin
-    * ver: 200120-1
+    * dsc: margin vertical
+    * ver: 200206
     * fnt: set top / bottom margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
+
+/*: add margin :*/
 .mar\:vrt\+0 {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -1350,6 +1593,52 @@
 .mar\:vrt\+2 {
     margin-top: 2rem !important;
     margin-bottom: 2rem !important;
+}
+
+/*: subtract margin :*/
+.mar\:vrt-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.mar\:vrt-0\.25 {
+    margin-top: -0.25rem !important;
+    margin-bottom: -0.25rem !important;
+}
+
+.mar\:vrt-0\.5 {
+    margin-top: -0.5rem !important;
+    margin-bottom: -0.5rem !important;
+}
+
+.mar\:vrt-0\.75 {
+    margin-top: -0.75rem !important;
+    margin-bottom: -0.75rem !important;
+}
+
+.mar\:vrt-1 {
+    margin-top: -1rem !important;
+    margin-bottom: -1rem !important;
+}
+
+.mar\:vrt-1.25 {
+    margin-top: -1.25rem !important;
+    margin-bottom: -1.25rem !important;
+}
+
+.mar\:vrt-1.5 {
+    margin-top: -1.5rem !important;
+    margin-bottom: -1.5rem !important;
+}
+
+.mar\:vrt-1.75 {
+    margin-top: -1.75rem !important;
+    margin-bottom: -1.75rem !important;
+}
+
+.mar\:vrt-2 {
+    margin-top: -2rem !important;
+    margin-bottom: -2rem !important;
 }
 
 /*
@@ -2526,334 +2815,623 @@
 	***
 	    * selector: mar
 	    * dsc: margin
-	    * ver: 200120-1
+	    * ver: 200206
 	    * fnt: set all margins
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:\+0 {
-        margin: 0 !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:\+0 {
+	    margin: 0 !important;
+	}
 
-    .sm\)mar\:\+0\.25 {
-        margin: 0.25rem !important;
-    }
+	.sm\)mar\:\+0\.25 {
+	    margin: 0.25rem !important;
+	}
 
-    .sm\)mar\:\+0\.5 {
-        margin: 0.5rem !important;
-    }
+	.sm\)mar\:\+0\.5 {
+	    margin: 0.5rem !important;
+	}
 
-    .sm\)mar\:\+0\.75 {
-        margin: 0.75rem !important;
-    }
+	.sm\)mar\:\+0\.75 {
+	    margin: 0.75rem !important;
+	}
 
-    .sm\)mar\:\+1 {
-        margin: 1rem !important;
-    }
+	.sm\)mar\:\+1 {
+	    margin: 1rem !important;
+	}
 
-    .sm\)mar\:\+1\.25 {
-        margin: 1.25rem !important;
-    }
+	.sm\)mar\:\+1\.25 {
+	    margin: 1.25rem !important;
+	}
 
-    .sm\)mar\:\+1\.5 {
-        margin: 1.5rem !important;
-    }
+	.sm\)mar\:\+1\.5 {
+	    margin: 1.5rem !important;
+	}
 
-    .sm\)mar\:\+1\.75 {
-        margin: 1.75rem !important;
-    }
+	.sm\)mar\:\+1\.75 {
+	    margin: 1.75rem !important;
+	}
 
-    .sm\)mar\:\+2 {
-        margin: 2rem !important;
-    }
+	.sm\)mar\:\+2 {
+	    margin: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:-0 {
+	    margin: 0 !important;
+	}
+
+	.sm\)mar\:-0\.25 {
+	    margin: -0.25rem !important;
+	}
+
+	.sm\)mar\:-0\.5 {
+	    margin: -0.5rem !important;
+	}
+
+	.sm\)mar\:-0\.75 {
+	    margin: -0.75rem !important;
+	}
+
+	.sm\)mar\:-1 {
+	    margin: -1rem !important;
+	}
+
+	.sm\)mar\:-1\.25 {
+	    margin: -1.25rem !important;
+	}
+
+	.sm\)mar\:-1\.5 {
+	    margin: -1.5rem !important;
+	}
+
+	.sm\)mar\:-1\.75 {
+	    margin: -1.75rem !important;
+	}
+
+	.sm\)mar\:-2 {
+	    margin: -2rem !important;
+	}
 
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
+	    * dsc: margin top
 	    * ver: 200120-1
 	    * fnt: set top margin
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:top\+0 {
-        margin-top: 0 !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:top\+0 {
+	    margin-top: 0 !important;
+	}
 
-    .sm\)mar\:top\+0\.25 {
-        margin-top: 0.25rem !important;
-    }
+	.sm\)mar\:top\+0\.25 {
+	    margin-top: 0.25rem !important;
+	}
 
-    .sm\)mar\:top\+0\.5 {
-        margin-top: 0.5rem !important;
-    }
+	.sm\)mar\:top\+0\.5 {
+	    margin-top: 0.5rem !important;
+	}
 
-    .sm\)mar\:top\+0\.75 {
-        margin-top: 0.75rem !important;
-    }
+	.sm\)mar\:top\+0\.75 {
+	    margin-top: 0.75rem !important;
+	}
 
-    .sm\)mar\:top\+1 {
-        margin-top: 1rem !important;
-    }
+	.sm\)mar\:top\+1 {
+	    margin-top: 1rem !important;
+	}
 
-    .sm\)mar\:top\+1\.25 {
-        margin-top: 1.25rem !important;
-    }
+	.sm\)mar\:top\+1\.25 {
+	    margin-top: 1.25rem !important;
+	}
 
-    .sm\)mar\:top\+1\.5 {
-        margin-top: 1.5rem !important;
-    }
+	.sm\)mar\:top\+1\.5 {
+	    margin-top: 1.5rem !important;
+	}
 
-    .sm\)mar\:top\+1\.75 {
-        margin-top: 1.75rem !important;
-    }
+	.sm\)mar\:top\+1\.75 {
+	    margin-top: 1.75rem !important;
+	}
 
-    .sm\)mar\:top\+2 {
-        margin-top: 2rem !important;
-    }
+	.sm\)mar\:top\+2 {
+	    margin-top: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:top-0 {
+	    margin-top: 0 !important;
+	}
+
+	.sm\)mar\:top-0\.25 {
+	    margin-top: -0.25rem !important;
+	}
+
+	.sm\)mar\:top-0\.5 {
+	    margin-top: -0.5rem !important;
+	}
+
+	.sm\)mar\:top-0\.75 {
+	    margin-top: -0.75rem !important;
+	}
+
+	.sm\)mar\:top-1 {
+	    margin-top: -1rem !important;
+	}
+
+	.sm\)mar\:top-1\.25 {
+	    margin-top: -1.25rem !important;
+	}
+
+	.sm\)mar\:top-1\.5 {
+	    margin-top: -1.5rem !important;
+	}
+
+	.sm\)mar\:top-1\.75 {
+	    margin-top: -1.75rem !important;
+	}
+
+	.sm\)mar\:top-2 {
+	    margin-top: -2rem !important;
+	}
 
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
-	    * ver: 200120-1
+	    * dsc: margin right
+	    * ver: 200206
 	    * fnt: set right margin
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:right\+0 {
-        margin-right: 0 !important;
-    }
 
-    .sm\)mar\:right\+0\.25 {
-        margin-right: 0.25rem !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:top\+0 {
+	    margin-right: 0 !important;
+	}
 
-    .sm\)mar\:right\+0\.5 {
-        margin-right: 0.5rem !important;
-    }
+	.sm\)mar\:top\+0\.25 {
+	    margin-right: 0.25rem !important;
+	}
 
-    .sm\)mar\:right\+0\.75 {
-        margin-right: 0.75rem !important;
-    }
+	.sm\)mar\:top\+0\.5 {
+	    margin-right: 0.5rem !important;
+	}
 
-    .sm\)mar\:right\+1 {
-        margin-right: 1rem !important;
-    }
+	.sm\)mar\:top\+0\.75 {
+	    margin-right: 0.75rem !important;
+	}
 
-    .sm\)mar\:right\+1\.25 {
-        margin-right: 1.25rem !important;
-    }
+	.sm\)mar\:top\+1 {
+	    margin-right: 1rem !important;
+	}
 
-    .sm\)mar\:right\+1\.5 {
-        margin-right: 1.5rem !important;
-    }
+	.sm\)mar\:top\+1\.25 {
+	    margin-right: 1.25rem !important;
+	}
 
-    .sm\)mar\:right\+1\.75 {
-        margin-right: 1.75rem !important;
-    }
+	.sm\)mar\:top\+1\.5 {
+	    margin-right: 1.5rem !important;
+	}
 
-    .sm\)mar\:right\+2 {
-        margin-right: 2rem !important;
-    }
+	.sm\)mar\:top\+1\.75 {
+	    margin-right: 1.75rem !important;
+	}
+
+	.sm\)mar\:top\+2 {
+	    margin-right: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:top-0 {
+	    margin-right: 0 !important;
+	}
+
+	.sm\)mar\:top-0\.25 {
+	    margin-right: -0.25rem !important;
+	}
+
+	.sm\)mar\:top-0\.5 {
+	    margin-right: -0.5rem !important;
+	}
+
+	.sm\)mar\:top-0\.75 {
+	    margin-right: -0.75rem !important;
+	}
+
+	.sm\)mar\:top-1 {
+	    margin-right: -1rem !important;
+	}
+
+	.sm\)mar\:top-1\.25 {
+	    margin-right: -1.25rem !important;
+	}
+
+	.sm\)mar\:top-1\.5 {
+	    margin-right: -1.5rem !important;
+	}
+
+	.sm\)mar\:top-1\.75 {
+	    margin-right: -1.75rem !important;
+	}
+
+	.sm\)mar\:top-2 {
+	    margin-right: -2rem !important;
+	}
 
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
-	    * ver: 200120-1
+	    * dsc: margin bottom
+	    * ver: 200206
 	    * fnt: set bottom margin
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:bottom\+0 {
-        margin-bottom: 0 !important;
-    }
 
-    .sm\)mar\:bottom\+0\.25 {
-        margin-bottom: 0.25rem !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:bottom\+0 {
+	    margin-bottom: 0 !important;
+	}
 
-    .sm\)mar\:bottom\+0\.5 {
-        margin-bottom: 0.5rem !important;
-    }
+	.sm\)mar\:bottom\+0\.25 {
+	    margin-bottom: 0.25rem !important;
+	}
 
-    .sm\)mar\:bottom\+0\.75 {
-        margin-bottom: 0.75rem !important;
-    }
+	.sm\)mar\:bottom\+0\.5 {
+	    margin-bottom: 0.5rem !important;
+	}
 
-    .sm\)mar\:bottom\+1 {
-        margin-bottom: 1rem !important;
-    }
+	.sm\)mar\:bottom\+0\.75 {
+	    margin-bottom: 0.75rem !important;
+	}
 
-    .sm\)mar\:bottom\+1\.25 {
-        margin-bottom: 1.25rem !important;
-    }
+	.sm\)mar\:bottom\+1 {
+	    margin-bottom: 1rem !important;
+	}
 
-    .sm\)mar\:bottom\+1\.5 {
-        margin-bottom: 1.5rem !important;
-    }
+	.sm\)mar\:bottom\+1\.25 {
+	    margin-bottom: 1.25rem !important;
+	}
 
-    .sm\)mar\:bottom\+1\.75 {
-        margin-bottom: 1.75rem !important;
-    }
+	.sm\)mar\:bottom\+1\.5 {
+	    margin-bottom: 1.5rem !important;
+	}
 
-    .sm\)mar\:bottom\+2 {
-        margin-bottom: 2rem !important;
-    }
+	.sm\)mar\:bottom\+1\.75 {
+	    margin-bottom: 1.75rem !important;
+	}
+
+	.sm\)mar\:bottom\+2 {
+	    margin-bottom: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:bottom-0 {
+	    margin-bottom: 0 !important;
+	}
+
+	.sm\)mar\:bottom-0\.25 {
+	    margin-bottom: -0.25rem !important;
+	}
+
+	.sm\)mar\:bottom-0\.5 {
+	    margin-bottom: -0.5rem !important;
+	}
+
+	.sm\)mar\:bottom-0\.75 {
+	    margin-bottom: -0.75rem !important;
+	}
+
+	.sm\)mar\:bottom-1 {
+	    margin-bottom: -1rem !important;
+	}
+
+	.sm\)mar\:bottom-1\.25 {
+	    margin-bottom: -1.25rem !important;
+	}
+
+	.sm\)mar\:bottom-1\.5 {
+	    margin-bottom: -1.5rem !important;
+	}
+
+	.sm\)mar\:bottom-1\.75 {
+	    margin-bottom: -1.75rem !important;
+	}
+
+	.sm\)mar\:bottom-2 {
+	    margin-bottom: -2rem !important;
+	}
 
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
-	    * ver: 200120-1
+	    * dsc: margin left
+	    * ver: 200206
 	    * fnt: set left margin
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:left\+0 {
-        margin-left: 0 !important;
-    }
 
-    .sm\)mar\:left\+0\.25 {
-        margin-left: 0.25rem !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:left\+0 {
+	    margin-left: 0 !important;
+	}
 
-    .sm\)mar\:left\+0\.5 {
-        margin-left: 0.5rem !important;
-    }
+	.sm\)mar\:left\+0\.25 {
+	    margin-left: 0.25rem !important;
+	}
 
-    .sm\)mar\:left\+0\.75 {
-        margin-left: 0.75rem !important;
-    }
+	.sm\)mar\:left\+0\.5 {
+	    margin-left: 0.5rem !important;
+	}
 
-    .sm\)mar\:left\+1 {
-        margin-left: 1rem !important;
-    }
+	.sm\)mar\:left\+0\.75 {
+	    margin-left: 0.75rem !important;
+	}
 
-    .sm\)mar\:left\+1\.25 {
-        margin-left: 1.25rem !important;
-    }
+	.sm\)mar\:left\+1 {
+	    margin-left: 1rem !important;
+	}
 
-    .sm\)mar\:left\+1\.5 {
-        margin-left: 1.5rem !important;
-    }
+	.sm\)mar\:left\+1\.25 {
+	    margin-left: 1.25rem !important;
+	}
 
-    .sm\)mar\:left\+1\.75 {
-        margin-left: 1.75rem !important;
-    }
+	.sm\)mar\:left\+1\.5 {
+	    margin-left: 1.5rem !important;
+	}
 
-    .sm\)mar\:left\+2 {
-        margin-left: 2rem !important;
-    }
+	.sm\)mar\:left\+1\.75 {
+	    margin-left: 1.75rem !important;
+	}
+
+	.sm\)mar\:left\+2 {
+	    margin-left: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:left-0 {
+	    margin-left: 0 !important;
+	}
+
+	.sm\)mar\:left-0\.25 {
+	    margin-left: -0.25rem !important;
+	}
+
+	.sm\)mar\:left-0\.5 {
+	    margin-left: -0.5rem !important;
+	}
+
+	.sm\)mar\:left-0\.75 {
+	    margin-left: -0.75rem !important;
+	}
+
+	.sm\)mar\:left-1 {
+	    margin-left: -1rem !important;
+	}
+
+	.sm\)mar\:left-1\.25 {
+	    margin-left: -1.25rem !important;
+	}
+
+	.sm\)mar\:left-1\.5 {
+	    margin-left: -1.5rem !important;
+	}
+
+	.sm\)mar\:left-1\.75 {
+	    margin-left: -1.75rem !important;
+	}
+
+	.sm\)mar\:left-2 {
+	    margin-left: -2rem !important;
+	}
 
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
-	    * ver: 200120-1
+	    * dsc: margin horzontal
+	    * ver: 200206
 	    * fnt: set left / right margins
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:hrz\+0 {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
 
-    .sm\)mar\:hrz\+0\.25 {
-        margin-left: 0.25rem !important;
-        margin-right: 0.25rem !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:hrz\+0 {
+	    margin-left: 0 !important;
+	    margin-right: 0 !important;
+	}
 
-    .sm\)mar\:hrz\+0\.5 {
-        margin-left: 0.5rem !important;
-        margin-right: 0.5rem !important;
-    }
+	.sm\)mar\:hrz\+0\.25 {
+	    margin-left: 0.25rem !important;
+	    margin-right: 0.25rem !important;
+	}
 
-    .sm\)mar\:hrz\+0\.75 {
-        margin-left: 0.75rem !important;
-        margin-right: 0.75rem !important;
-    }
+	.sm\)mar\:hrz\+0\.5 {
+	    margin-left: 0.5rem !important;
+	    margin-right: 0.5rem !important;
+	}
 
-    .sm\)mar\:hrz\+1 {
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
-    }
+	.sm\)mar\:hrz\+0\.75 {
+	    margin-left: 0.75rem !important;
+	    margin-right: 0.75rem !important;
+	}
 
-    .sm\)mar\:hrz\+1.25 {
-        margin-left: 1.25rem !important;
-        margin-right: 1.25rem !important;
-    }
+	.sm\)mar\:hrz\+1 {
+	    margin-left: 1rem !important;
+	    margin-right: 1rem !important;
+	}
 
-    .sm\)mar\:hrz\+1.5 {
-        margin-left: 1.5rem !important;
-        margin-right: 1.5rem !important;
-    }
+	.sm\)mar\:hrz\+1.25 {
+	    margin-left: 1.25rem !important;
+	    margin-right: 1.25rem !important;
+	}
 
-    .sm\)mar\:hrz\+1.75 {
-        margin-left: 1.75rem !important;
-        margin-right: 1.75rem !important;
-    }
+	.sm\)mar\:hrz\+1.5 {
+	    margin-left: 1.5rem !important;
+	    margin-right: 1.5rem !important;
+	}
 
-    .sm\)mar\:hrz\+2 {
-        margin-left: 2rem !important;
-        margin-right: 2rem !important;
-    }
+	.sm\)mar\:hrz\+1.75 {
+	    margin-left: 1.75rem !important;
+	    margin-right: 1.75rem !important;
+	}
+
+	.sm\)mar\:hrz\+2 {
+	    margin-left: 2rem !important;
+	    margin-right: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:hrz-0 {
+	    margin-left: 0 !important;
+	    margin-right: 0 !important;
+	}
+
+	.sm\)mar\:hrz-0\.25 {
+	    margin-left: -0.25rem !important;
+	    margin-right: -0.25rem !important;
+	}
+
+	.sm\)mar\:hrz-0\.5 {
+	    margin-left: -0.5rem !important;
+	    margin-right: -0.5rem !important;
+	}
+
+	.sm\)mar\:hrz-0\.75 {
+	    margin-left: -0.75rem !important;
+	    margin-right: -0.75rem !important;
+	}
+
+	.sm\)mar\:hrz-1 {
+	    margin-left: -1rem !important;
+	    margin-right: -1rem !important;
+	}
+
+	.sm\)mar\:hrz-1.25 {
+	    margin-left: -1.25rem !important;
+	    margin-right: -1.25rem !important;
+	}
+
+	.sm\)mar\:hrz-1.5 {
+	    margin-left: -1.5rem !important;
+	    margin-right: -1.5rem !important;
+	}
+
+	.sm\)mar\:hrz-1.75 {
+	    margin-left: -1.75rem !important;
+	    margin-right: -1.75rem !important;
+	}
+
+	.sm\)mar\:hrz-2 {
+	    margin-left: -2rem !important;
+	    margin-right: -2rem !important;
+	}
     
 	/*
 	***
 	    * selector: mar
-	    * dsc: margin
-	    * ver: 200120-1
+	    * dsc: margin vertical
+	    * ver: 200206
 	    * fnt: set top / bottom margins
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 	***
 	*/
-    .sm\)mar\:vrt\+0 {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
 
-    .sm\)mar\:vrt\+0\.25 {
-        margin-top: 0.25rem !important;
-        margin-bottom: 0.25rem !important;
-    }
+	/*: add margin :*/
+	.sm\)mar\:vrt\+0 {
+	    margin-top: 0 !important;
+	    margin-bottom: 0 !important;
+	}
 
-    .sm\)mar\:vrt\+0\.5 {
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
+	.sm\)mar\:vrt\+0\.25 {
+	    margin-top: 0.25rem !important;
+	    margin-bottom: 0.25rem !important;
+	}
 
-    .sm\)mar\:vrt\+0\.75 {
-        margin-top: 0.75rem !important;
-        margin-bottom: 0.75rem !important;
-    }
+	.sm\)mar\:vrt\+0\.5 {
+	    margin-top: 0.5rem !important;
+	    margin-bottom: 0.5rem !important;
+	}
 
-    .sm\)mar\:vrt\+1 {
-        margin-top: 1rem !important;
-        margin-bottom: 1rem !important;
-    }
+	.sm\)mar\:vrt\+0\.75 {
+	    margin-top: 0.75rem !important;
+	    margin-bottom: 0.75rem !important;
+	}
 
-    .sm\)mar\:vrt\+1.25 {
-        margin-top: 1.25rem !important;
-        margin-bottom: 1.25rem !important;
-    }
+	.sm\)mar\:vrt\+1 {
+	    margin-top: 1rem !important;
+	    margin-bottom: 1rem !important;
+	}
 
-    .sm\)mar\:vrt\+1.5 {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
-    }
+	.sm\)mar\:vrt\+1.25 {
+	    margin-top: 1.25rem !important;
+	    margin-bottom: 1.25rem !important;
+	}
 
-    .sm\)mar\:vrt\+1.75 {
-        margin-top: 1.75rem !important;
-        margin-bottom: 1.75rem !important;
-    }
+	.sm\)mar\:vrt\+1.5 {
+	    margin-top: 1.5rem !important;
+	    margin-bottom: 1.5rem !important;
+	}
 
-    .sm\)mar\:vrt\+2 {
-        margin-top: 2rem !important;
-        margin-bottom: 2rem !important;
-    }
+	.sm\)mar\:vrt\+1.75 {
+	    margin-top: 1.75rem !important;
+	    margin-bottom: 1.75rem !important;
+	}
+
+	.sm\)mar\:vrt\+2 {
+	    margin-top: 2rem !important;
+	    margin-bottom: 2rem !important;
+	}
+
+	/*: subtract margin :*/
+	.sm\)mar\:vrt-0 {
+	    margin-top: 0 !important;
+	    margin-bottom: 0 !important;
+	}
+
+	.sm\)mar\:vrt-0\.25 {
+	    margin-top: -0.25rem !important;
+	    margin-bottom: -0.25rem !important;
+	}
+
+	.sm\)mar\:vrt-0\.5 {
+	    margin-top: -0.5rem !important;
+	    margin-bottom: -0.5rem !important;
+	}
+
+	.sm\)mar\:vrt-0\.75 {
+	    margin-top: -0.75rem !important;
+	    margin-bottom: -0.75rem !important;
+	}
+
+	.sm\)mar\:vrt-1 {
+	    margin-top: -1rem !important;
+	    margin-bottom: -1rem !important;
+	}
+
+	.sm\)mar\:vrt-1.25 {
+	    margin-top: -1.25rem !important;
+	    margin-bottom: -1.25rem !important;
+	}
+
+	.sm\)mar\:vrt-1.5 {
+	    margin-top: -1.5rem !important;
+	    margin-bottom: -1.5rem !important;
+	}
+
+	.sm\)mar\:vrt-1.75 {
+	    margin-top: -1.75rem !important;
+	    margin-bottom: -1.75rem !important;
+	}
+
+	.sm\)mar\:vrt-2 {
+	    margin-top: -2rem !important;
+	    margin-bottom: -2rem !important;
+	}
 
 	/*
 	***
