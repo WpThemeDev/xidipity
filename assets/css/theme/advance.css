@@ -11,7 +11,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         3.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -416,6 +416,82 @@
 }
 .cnr\:arch-full {
     border-radius: 100% !important;
+}
+
+/*
+***
+    * selector: cnr
+    * dsc: left box corner
+    * ver: 200120-1
+    * fnt: control curvature of corners
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+***
+*/
+.cnr\:arch-left-small {
+    border-radius: 0.3333rem 0 0 0.3333rem !important;
+}
+.cnr\:arch-left-medium {
+    border-radius: 0.6666rem 0 0 0.6666rem !important;
+}
+.cnr\:arch-left-large {
+    border-radius: 1rem 0 0 1rem !important;
+}
+
+/*
+***
+    * selector: cnr
+    * dsc: right box corner
+    * ver: 200120-1
+    * fnt: control curvature of corners
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+***
+*/
+.cnr\:arch-right-small {
+    border-radius: 0 0.3333rem 0.3333rem 0 !important;
+}
+.cnr\:arch-right-medium {
+    border-radius: 0 0.6666rem 0.6666rem 0 !important;
+}
+.cnr\:arch-right-large {
+    border-radius: 0 1rem 1rem 0 !important;
+}
+
+/*
+***
+    * selector: cnr
+    * dsc: top box corner
+    * ver: 200120-1
+    * fnt: control curvature of corners
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+***
+*/
+.cnr\:arch-top-small {
+    border-radius: 0.3333rem 0.3333rem 0 0 !important;
+}
+.cnr\:arch-top-medium {
+    border-radius: 0.6666rem 0.6666rem 0 0 !important;
+}
+.cnr\:arch-top-large {
+    border-radius: 1rem 1rem 0 0 !important;
+}
+
+/*
+***
+    * selector: cnr
+    * dsc: bottom box corner
+    * ver: 200120-1
+    * fnt: control curvature of corners
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+***
+*/
+.cnr\:arch-bottom-small {
+    border-radius: 0 0 0.3333rem 0.3333rem !important;
+}
+.cnr\:arch-bottom-medium {
+    border-radius: 0 0 0.6666rem 0.6666rem !important;
+}
+.cnr\:arch-bottom-large {
+    border-radius: 0 0 1rem 1rem !important;
 }
 
 /*
