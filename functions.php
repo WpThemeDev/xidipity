@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         3.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -1764,7 +1764,7 @@ function dsp_err($att = '')
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<!-- xwpt: 200120-1/tmpl/an/alarm           --><div class="bdr:solid-thin bdr:bas-100 bg:tint cnr:small-arch fx:r fxa:1 fxb:1 fxc:3 pad:+0.5"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1"><div class="fx:r fxa:3 fxb:6 fxc:3"><div class="fxd:1 mar:right+0.5" style="width:1.75rem"><img class="xwd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMSwxOVYyMEgzVjE5TDUsMTdWMTFDNSw3LjkgNy4wMyw1LjE3IDEwLDQuMjlDMTAsNC4xOSAxMCw0LjEgMTAsNEEyLDIgMCAwLDEgMTIsMkEyLDIgMCAwLDEgMTQsNEMxNCw0LjEgMTQsNC4xOSAxNCw0LjI5QzE2Ljk3LDUuMTcgMTksNy45IDE5LDExVjE3TDIxLDE5TTE0LDIxQTIsMiAwIDAsMSAxMiwyM0EyLDIgMCAwLDEgMTAsMjFNMTkuNzUsMy4xOUwxOC4zMyw0LjYxQzIwLjA0LDYuMyAyMSw4LjYgMjEsMTFIMjNDMjMsOC4wNyAyMS44NCw1LjI1IDE5Ljc1LDMuMTlNMSwxMUgzQzMsOC42IDMuOTYsNi4zIDUuNjcsNC42MUw0LjI1LDMuMTlDMi4xNiw1LjI1IDEsOC4wNyAxLDExWiIgc3R5bGU9ImZpbGw6IHJnYigxNzgsIDM0LCA1Mik7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Annotation" /></div></div></div></div><div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fnt:size-small pad:left+0.5">' . __($v_msg) . '</div></div><!-- /xwpt: 200120-1/tmpl/an/alarm          -->';
+	$fn_retval = '<!-- xwpt: 200206/tmpl/an/alarm             --><table class="bdr:collapse no-border tcw:auto wd:100%"><tbody><tr><td class="aln:text-left aln:middle wcag:bg-red cnr:arch-left-small fnt:size-xx-large fg:wht pad:hrz+0.75"><i class="fas fa-bell">&#x200B;</i></td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table><!-- /xwpt: 200206/tmpl/an/alarm            -->';
     // return html
     return $fn_retval;
 }
