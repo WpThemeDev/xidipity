@@ -11,7 +11,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         3.0
+ * @version         4.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -630,8 +630,10 @@
 }
 
 .fnt\:size-medium,
+.fnt\:size-normal,
 .fnt\:size-default,
 .icon\:size-medium,
+.icon\:size-normal,
 .icon\:size-default {
     font-size: medium !important;
 }
@@ -1071,6 +1073,7 @@
     line-height: calc(var(--dft-line-height) - .125) !important;
 }
 
+.led\:normal,
 .led\:default {
     line-height: var(--dft-line-height) !important;
 }
@@ -1079,7 +1082,7 @@
     line-height: calc(var(--dft-line-height) + .125) !important;
 }
 
-.led\:1x-wide {
+.led\:x-wide {
     line-height: calc(var(--dft-line-height) + .25) !important;
 }
 
@@ -2141,7 +2144,7 @@
 ***
     * selector: trk
     * dsc: tracking
-    * ver: 200120-1
+    * ver: 200206
     * fnt: adjust letter spacing
     * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 ***
@@ -2150,6 +2153,7 @@
     letter-spacing: -0.01rem !important;
 }
 
+.trk\:normal,
 .trk\:default {
     letter-spacing: normal !important;
 }
@@ -2740,6 +2744,15 @@
     -webkit-flex: 2 1 auto;
     -ms-flex: 2 1 auto;
     flex: 2 1 auto;
+}
+
+.fxd\:4 {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;	
+    -webkit-flex: 1 2 auto;
+    -ms-flex: 1 2 auto;
+    flex: 1 2  auto;
 }
 
 /*: item (align self) :*/
@@ -4979,6 +4992,15 @@
 	    -webkit-flex: 2 1 auto;
 	    -ms-flex: 2 1 auto;
 	    flex: 2 1 auto;
+	}
+
+	.sm\)fxd\:4 {
+		-webkit-order: 0;
+		-ms-flex-order: 0;
+		order: 0;	
+	    -webkit-flex: 1 2 auto;
+	    -ms-flex: 1 2 auto;
+	    flex: 1 2  auto;
 	}
 
 	/*: item (align self) :*/
