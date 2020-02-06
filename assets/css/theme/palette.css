@@ -1,9 +1,9 @@
 /*
  * WordPress Xidipity Theme CSS File
  *
- * File Name:       theme/advance.css
- * Function:        Xidipity CSS framework
- * Build:           200206
+ * File Name:       theme/palette.css
+ * Function:        CSS palette elements
+ * Build:           200128-1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,7 +11,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         4.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -19,5030 +19,3295 @@
 
 /*
 ***
-    *
-    * COMMENTS
-    *
-    * The use of !important is intentional as the purpose of
-    * using these classes is to overwrite the current setting
-    * if one has been set. The exception to this rule is the
-    * DIY flexbox components.
-    *
-    *  Current @media break points
-    *                  default (no prefix)     (mobile media)
-    *                  sm  = min-width: 640px  (standard media)
-    *
-    *  Alternate @media break points
-    *                  default (no prefix)     (mobile media)
-    *                  sm  = min-width: 640px  (small)
-    *                  md  = min-width: 768px  (medium)
-    *                  lg  = min-width: 1024px (large)
-    *                  xl  = min-width: 1280px (x large)
-    *
+speciality foreground colors
 ***
 */
-
-/*
-***
-    * selector: aln
-    * dsc: alignment
-    * ver: 200120-1
-    * fnt: set alignment
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
-	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
-***
-*/
-.aln\:center {
-    margin-left: auto !important;
-    margin-right: auto !important;
+.fg\:dim {
+    color: var(--wcag-grey6) !important;
 }
-
-.aln\:left {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-}
-
-.aln\:right {
-    margin-left: auto !important;
-    margin-right: 0 !important;
-}
-
-.aln\:baseline {
-    vertical-align: baseline !important;
-}
-
-.aln\:top {
-    vertical-align: top !important;
-}
-
-.aln\:middle {
-    vertical-align: middle !important;
-}
-
-.aln\:bottom {
-    vertical-align: bottom !important;
-}
-
-.aln\:sub {
-    vertical-align: sub !important;
-}
-
-.aln\:sup {
-    vertical-align: super !important;
-}
-
-.aln\:text-bottom {
-    vertical-align: text-bottom !important;
-}
-
-.aln\:text-top {
-    vertical-align: text-top !important;
-}
-
-.aln\:text-center {
-    text-align: center !important;
-}
-
-.aln\:text-left {
-    text-align: left !important;
-}
-
-.aln\:text-right {
-    text-align: right !important;
+.fg\:disable {
+    color: var(--hue-bas-400) !important;   
 }
 
 /*
 ***
-    * selector: bdr
-    * dsc: border
-    * ver: 200120-1
-    * fnt: set border style (not color)
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border
-	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
-	*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+base foreground colors
 ***
 */
-.bdr\:none {
+.fg\:transparent,
+.fg\:transparent\!hover:hover,
+a.fg\:transparent\!active:active,
+a.fg\:transparent\!focus:focus,
+button.fg\:transparent\!active:active,
+button.fg\:transparent\!focus:focus {
+    color: transparent !important;
+}
+
+.fg\:blk,
+.fg\:blk\!hover:hover,
+a.fg\:blk\!active:active,
+a.fg\:blk\!focus:focus,
+button.fg\:blk\!active:active,
+button.fg\:blk\!focus:focus {
+    color: var(--hue-blk) !important;
+}
+
+.fg\:wht,
+.fg\:wht\!hover:hover,
+a.fg\:wht\!active:active,
+a.fg\:wht\!focus:focus,
+button.fg\:wht\!active:active,
+button.fg\:wht\!focus:focus {
+    color: var(--hue-wht) !important;
+}
+
+.fg\:bas-900,
+.fg\:bas-900\!hover:hover,
+a.fg\:bas-900\!active:active,
+a.fg\:bas-900\!focus:focus,
+button.fg\:bas-900\!active:active,
+button.fg\:bas-900\!focus:focus {
+    color: var(--hue-bas-900) !important;
+}
+
+.fg\:bas-800,
+.fg\:bas-800\!hover:hover,
+a.fg\:bas-800\!active:active,
+a.fg\:bas-800\!focus:focus,
+button.fg\:bas-800\!active:active,
+button.fg\:bas-800\!focus:focus {
+    color: var(--hue-bas-800) !important;
+}
+
+.fg\:bas-700,
+.fg\:bas-700\!hover:hover,
+a.fg\:bas-700\!active:active,
+a.fg\:bas-700\!focus:focus,
+button.fg\:bas-700\!active:active,
+button.fg\:bas-700\!focus:focus {
+    color: var(--hue-bas-700) !important;
+}
+
+.fg\:bas-600,
+.fg\:bas-600\!hover:hover,
+a.fg\:bas-600\!active:active,
+a.fg\:bas-600\!focus:focus,
+button.fg\:bas-600\!active:active,
+button.fg\:bas-600\!focus:focus {
+    color: var(--hue-bas-600) !important;
+}
+
+.fg\:bas-500,
+.fg\:bas-500\!hover:hover,
+a.fg\:bas-500\!active:active,
+a.fg\:bas-500\!focus:focus,
+button.fg\:bas-500\!active:active,
+button.fg\:bas-500\!focus:focus {
+    color: var(--hue-bas-500) !important;
+}
+
+.fg\:bas-400,
+.fg\:bas-400\!hover:hover,
+a.fg\:bas-400\!active:active,
+a.fg\:bas-400\!focus:focus,
+button.fg\:bas-400\!active:active,
+button.fg\:bas-400\!focus:focus {
+    color: var(--hue-bas-400) !important;
+}
+
+.fg\:bas-300,
+.fg\:bas-300\!hover:hover,
+a.fg\:bas-300\!active:active,
+a.fg\:bas-300\!focus:focus,
+button.fg\:bas-300\!active:active,
+button.fg\:bas-300\!focus:focus {
+    color: var(--hue-bas-300) !important;
+}
+
+.fg\:bas-200,
+.fg\:bas-200\!hover:hover,
+a.fg\:bas-200\!active:active,
+a.fg\:bas-200\!focus:focus,
+button.fg\:bas-200\!active:active,
+button.fg\:bas-200\!focus:focus {
+    color: var(--hue-bas-200) !important;
+}
+
+.fg\:bas-100,
+.fg\:bas-100\!hover:hover,
+a.fg\:bas-100\!active:active,
+a.fg\:bas-100\!focus:focus,
+button.fg\:bas-100\!active:active,
+button.fg\:bas-100\!focus:focus {
+    color: var(--hue-bas-100) !important;
+}
+
+.fg\:bas-050,
+.fg\:bas-050\!hover:hover,
+a.fg\:bas-050\!active:active,
+a.fg\:bas-050\!focus:focus,
+button.fg\:bas-050\!active:active,
+button.fg\:bas-050\!focus:focus {
+    color: var(--hue-bas-050) !important;
+}
+
+/*
+***
+primary foreground colors
+***
+*/
+.fg\:pri,
+.fg\:pri\!hover:hover,
+a.fg\:pri\!active:active,
+a.fg\:pri\!focus:focus,
+button.fg\:pri\!active:active,
+button.fg\:pri\!focus:focus {
+    color: var(--hue-pri) !important;
+}
+
+.fg\:pri-bright,
+.fg\:pri-bright\!hover:hover,
+a.fg\:pri-bright\!active:active,
+a.fg\:pri-bright\!focus:focus,
+button.fg\:pri-bright\!active:active,
+button.fg\:pri-bright\!focus:focus {
+    color: var(--hue-pri-bright) !important;
+}
+
+.fg\:pri-dark,
+.fg\:pri-dark\!hover:hover,
+a.fg\:pri-dark\!active:active,
+a.fg\:pri-dark\!focus:focus,
+button.fg\:pri-dark\!active:active,
+button.fg\:pri-dark\!focus:focus {
+    color: var(--hue-pri-dark) !important;
+}
+
+/* deprecated
+.fg\:pri-900,
+.fg\:pri-900\!hover:hover,
+a.fg\:pri-900\!active:active,
+a.fg\:pri-900\!focus:focus,
+button.fg\:pri-900\!active:active,
+button.fg\:pri-900\!focus:focus {
+    color: var(--hue-pri-900) !important;
+}
+
+.fg\:pri-800,
+.fg\:pri-800\!hover:hover,
+a.fg\:pri-800\!active:active,
+a.fg\:pri-800\!focus:focus,
+button.fg\:pri-800\!active:active,
+button.fg\:pri-800\!focus:focus {
+    color: var(--hue-pri-800) !important;
+}
+
+.fg\:pri-700,
+.fg\:pri-700\!hover:hover,
+a.fg\:pri-700\!active:active,
+a.fg\:pri-700\!focus:focus,
+button.fg\:pri-700\!active:active,
+button.fg\:pri-700\!focus:focus {
+    color: var(--hue-pri-700) !important;
+}
+
+.fg\:pri-600,
+.fg\:pri-600\!hover:hover,
+a.fg\:pri-600\!active:active,
+a.fg\:pri-600\!focus:focus,
+button.fg\:pri-600\!active:active,
+button.fg\:pri-600\!focus:focus {
+    color: var(--hue-pri-600) !important;
+}
+
+.fg\:pri-500,
+.fg\:pri-500\!hover:hover,
+a.fg\:pri-500\!active:active,
+a.fg\:pri-500\!focus:focus,
+button.fg\:pri-500\!active:active,
+button.fg\:pri-500\!focus:focus {
+    color: var(--hue-pri-500) !important;
+}
+
+.fg\:pri-400,
+.fg\:pri-400\!hover:hover,
+a.fg\:pri-400\!active:active,
+a.fg\:pri-400\!focus:focus,
+button.fg\:pri-400\!active:active,
+button.fg\:pri-400\!focus:focus {
+    color: var(--hue-pri-400) !important;
+}
+
+.fg\:pri-300,
+.fg\:pri-300\!hover:hover,
+a.fg\:pri-300\!active:active,
+a.fg\:pri-300\!focus:focus,
+button.fg\:pri-300\!active:active,
+button.fg\:pri-300\!focus:focus {
+    color: var(--hue-pri-300) !important;
+}
+
+.fg\:pri-200,
+.fg\:pri-200\!hover:hover,
+a.fg\:pri-200\!active:active,
+a.fg\:pri-200\!focus:focus,
+button.fg\:pri-200\!active:active,
+button.fg\:pri-200\!focus:focus {
+    color: var(--hue-pri-200) !important;
+}
+
+.fg\:pri-100,
+.fg\:pri-100\!hover:hover,
+a.fg\:pri-100\!active:active,
+a.fg\:pri-100\!focus:focus,
+button.fg\:pri-100\!active:active,
+button.fg\:pri-100\!focus:focus {
+    color: var(--hue-pri-100) !important;
+}
+
+.fg\:pri-050,
+.fg\:pri-050\!hover:hover,
+a.fg\:pri-050\!active:active,
+a.fg\:pri-050\!focus:focus,
+button.fg\:pri-050\!active:active,
+button.fg\:pri-050\!focus:focus {
+    color: var(--hue-pri-050) !important;
+}
+*/
+
+/*
+***
+secondary foreground colors
+***
+*/
+.fg\:sec,
+.fg\:sec\!hover:hover,
+a.fg\:sec\!active:active,
+a.fg\:sec\!focus:focus,
+button.fg\:sec\!active:active,
+button.fg\:sec\!focus:focus {
+    color: var(--hue-sec) !important;
+}
+
+.fg\:sec-bright,
+.fg\:sec-bright\!hover:hover,
+a.fg\:sec-bright\!active:active,
+a.fg\:sec-bright\!focus:focus,
+button.fg\:sec-bright\!active:active,
+button.fg\:sec-bright\!focus:focus {
+    color: var(--hue-sec-bright) !important;
+}
+
+.fg\:sec-dark,
+.fg\:sec-dark\!hover:hover,
+a.fg\:sec-dark\!active:active,
+a.fg\:sec-dark\!focus:focus,
+button.fg\:sec-dark\!active:active,
+button.fg\:sec-dark\!focus:focus {
+    color: var(--hue-sec-dark) !important;
+}
+
+/* deprecated
+.fg\:sec-900,
+.fg\:sec-900\!hover:hover,
+a.fg\:sec-900\!active:active,
+a.fg\:sec-900\!focus:focus,
+button.fg\:sec-900\!active:active,
+button.fg\:sec-900\!focus:focus {
+    color: var(--hue-sec-900) !important;
+}
+
+.fg\:sec-800,
+.fg\:sec-800\!hover:hover,
+a.fg\:sec-800\!active:active,
+a.fg\:sec-800\!focus:focus,
+button.fg\:sec-800\!active:active,
+button.fg\:sec-800\!focus:focus {
+    color: var(--hue-sec-800) !important;
+}
+
+.fg\:sec-700,
+.fg\:sec-700\!hover:hover,
+a.fg\:sec-700\!active:active,
+a.fg\:sec-700\!focus:focus,
+button.fg\:sec-700\!active:active,
+button.fg\:sec-700\!focus:focus {
+    color: var(--hue-sec-700) !important;
+}
+
+.fg\:sec-600,
+.fg\:sec-600\!hover:hover,
+a.fg\:sec-600\!active:active,
+a.fg\:sec-600\!focus:focus,
+button.fg\:sec-600\!active:active,
+button.fg\:sec-600\!focus:focus {
+    color: var(--hue-sec-600) !important;
+}
+
+.fg\:sec-500,
+.fg\:sec-500\!hover:hover,
+a.fg\:sec-500\!active:active,
+a.fg\:sec-500\!focus:focus,
+button.fg\:sec-500\!active:active,
+button.fg\:sec-500\!focus:focus {
+    color: var(--hue-sec-500) !important;
+}
+
+.fg\:sec-400,
+.fg\:sec-400\!hover:hover,
+a.fg\:sec-400\!active:active,
+a.fg\:sec-400\!focus:focus,
+button.fg\:sec-400\!active:active,
+button.fg\:sec-400\!focus:focus {
+    color: var(--hue-sec-400) !important;
+}
+
+.fg\:sec-300,
+.fg\:sec-300\!hover:hover,
+a.fg\:sec-300\!active:active,
+a.fg\:sec-300\!focus:focus,
+button.fg\:sec-300\!active:active,
+button.fg\:sec-300\!focus:focus {
+    color: var(--hue-sec-300) !important;
+}
+
+.fg\:sec-200,
+.fg\:sec-200\!hover:hover,
+a.fg\:sec-200\!active:active,
+a.fg\:sec-200\!focus:focus,
+button.fg\:sec-200\!active:active,
+button.fg\:sec-200\!focus:focus {
+    color: var(--hue-sec-200) !important;
+}
+
+.fg\:sec-100,
+.fg\:sec-100\!hover:hover,
+a.fg\:sec-100\!active:active,
+a.fg\:sec-100\!focus:focus,
+button.fg\:sec-100\!active:active,
+button.fg\:sec-100\!focus:focus {
+    color: var(--hue-sec-100) !important;
+}
+
+.fg\:sec-050,
+.fg\:sec-050\!hover:hover,
+a.fg\:sec-050\!active:active,
+a.fg\:sec-050\!focus:focus,
+button.fg\:sec-050\!active:active,
+button.fg\:sec-050\!focus:focus {
+    color: var(--hue-sec-050) !important;
+}
+*/
+
+/*
+***
+base background colors
+***
+*/
+.bg\:transparent,
+.bg\:transparent\!hover:hover,
+a.bg\:transparent:active,
+a.bg\:transparent:focus,
+button.bg\:transparent:active,
+button.bg\:transparent:focus {
+    background-color: transparent !important;
+}
+
+.bg\:blk,
+.bg\:blk\!hover:hover,
+a.bg\:blk\!active:active,
+a.bg\:blk\!focus:focus,
+button.bg\:blk\!active:active,
+button.bg\:blk\!focus:focus {
+    background-color: var(--hue-blk) !important;
+}
+
+.bg\:wht,
+.bg\:wht\!hover:hover,
+a.bg\:wht\!active:active,
+a.bg\:wht\!focus:focus,
+button.bg\:wht\!active:active,
+button.bg\:wht\!focus:focus {
+    background-color: var(--hue-wht) !important;
+}
+
+.bg\:bas-900,
+.bg\:bas-900\!hover:hover,
+a.bg\:bas-900\!active:active,
+a.bg\:bas-900\!focus:focus,
+button.bg\:bas-900\!active:active,
+button.bg\:bas-900\!focus:focus {
+    background-color: var(--hue-bas-900) !important;
+}
+
+.bg\:bas-800,
+.bg\:bas-800\!hover:hover,
+a.bg\:bas-800\!active:active,
+a.bg\:bas-800\!focus:focus,
+button.bg\:bas-800\!active:active,
+button.bg\:bas-800\!focus:focus {
+    background-color: var(--hue-bas-800) !important;
+}
+
+.bg\:bas-700,
+.bg\:bas-700\!hover:hover,
+a.bg\:bas-700\!active:active,
+a.bg\:bas-700\!focus:focus,
+button.bg\:bas-700\!active:active,
+button.bg\:bas-700\!focus:focus {
+    background-color: var(--hue-bas-700) !important;
+}
+
+.bg\:bas-600,
+.bg\:bas-600\!hover:hover,
+a.bg\:bas-600\!active:active,
+a.bg\:bas-600\!focus:focus,
+button.bg\:bas-600\!active:active,
+button.bg\:bas-600\!focus:focus {
+    background-color: var(--hue-bas-600) !important;
+}
+
+.bg\:bas-500,
+.bg\:bas-500\!hover:hover,
+a.bg\:bas-500\!active:active,
+a.bg\:bas-500\!focus:focus,
+button.bg\:bas-500\!active:active,
+button.bg\:bas-500\!focus:focus {
+    background-color: var(--hue-bas-500) !important;
+}
+
+.bg\:bas-400,
+.bg\:bas-400\!hover:hover,
+a.bg\:bas-400\!active:active,
+a.bg\:bas-400\!focus:focus,
+button.bg\:bas-400\!active:active,
+button.bg\:bas-400\!focus:focus {
+    background-color: var(--hue-bas-400) !important;
+}
+
+.bg\:bas-300,
+.bg\:bas-300\!hover:hover,
+a.bg\:bas-300\!active:active,
+a.bg\:bas-300\!focus:focus,
+button.bg\:bas-300\!active:active,
+button.bg\:bas-300\!focus:focus {
+    background-color: var(--hue-bas-300) !important;
+}
+
+.bg\:bas-200,
+.bg\:bas-200\!hover:hover,
+a.bg\:bas-200\!active:active,
+a.bg\:bas-200\!focus:focus,
+button.bg\:bas-200\!active:active,
+button.bg\:bas-200\!focus:focus {
+    background-color: var(--hue-bas-200) !important;
+}
+
+.bg\:bas-100,
+.bg\:bas-100\!hover:hover,
+a.bg\:bas-100\!active:active,
+a.bg\:bas-100\!focus:focus,
+button.bg\:bas-100\!active:active,
+button.bg\:bas-100\!focus:focus {
+    background-color: var(--hue-bas-100) !important;
+}
+
+.bg\:bas-050,
+.bg\:bas-050\!hover:hover,
+a.bg\:bas-050\!active:active,
+a.bg\:bas-050\!focus:focus,
+button.bg\:bas-050\!active:active,
+button.bg\:bas-050\!focus:focus {
+    background-color: var(--hue-bas-050) !important;
+}
+
+/*
+***
+primary background colors
+***
+*/
+.bg\:pri,
+.bg\:pri\!hover:hover,
+a.bg\:pri\!active:active,
+a.bg\:pri\!focus:focus,
+button.bg\:pri\!active:active,
+button.bg\:pri\!focus:focus {
+    background-color: var(--hue-pri) !important;
+}
+
+.bg\:pri-bright,
+.bg\:pri-bright\!hover:hover,
+a.bg\:pri-bright\!active:active,
+a.bg\:pri-bright\!focus:focus,
+button.bg\:pri-bright\!active:active,
+button.bg\:pri-bright\!focus:focus {
+    background-color: var(--hue-pri-bright) !important;
+}
+
+.bg\:pri-dark,
+.bg\:pri-dark\!hover:hover,
+a.bg\:pri-dark\!active:active,
+a.bg\:pri-dark\!focus:focus,
+button.bg\:pri-dark\!active:active,
+button.bg\:pri-dark\!focus:focus {
+    background-color: var(--hue-pri-dark) !important;
+}
+
+/*
+***
+secondary background colors
+***
+*/
+.bg\:sec,
+.bg\:sec\!hover:hover,
+a.bg\:sec\!active:active,
+a.bg\:sec\!focus:focus,
+button.bg\:sec\!active:active,
+button.bg\:sec\!focus:focus {
+    background-color: var(--hue-sec) !important;
+}
+
+.bg\:sec-bright,
+.bg\:sec-bright\!hover:hover,
+a.bg\:sec-bright\!active:active,
+a.bg\:sec-bright\!focus:focus,
+button.bg\:sec-bright\!active:active,
+button.bg\:sec-bright\!focus:focus {
+    background-color: var(--hue-sec-bright) !important;
+}
+
+.bg\:sec-dark,
+.bg\:sec-dark\!hover:hover,
+a.bg\:sec-dark\!active:active,
+a.bg\:sec-dark\!focus:focus,
+button.bg\:sec-dark\!active:active,
+button.bg\:sec-dark\!focus:focus {
+    background-color: var(--hue-sec-dark) !important;
+}
+
+/*
+***
+google md colors
+***
+*/
+.fg\:red,
+.fg\:red\!hover:hover,
+a.fg\:red\!active:active,
+a.fg\:red\!focus:focus,
+button.fg\:red\!active:active,
+button.fg\:red\!focus:focus {
+    color: var(--hue-red);
+}
+
+.bg\:red,
+.bg\:red\!hover:hover,
+a.bg\:red\!active:active,
+a.bg\:red\!focus:focus,
+button.bg\:red\!active:active,
+button.bg\:red\!focus:focus {
+    background-color: var(--hue-red);
+}
+
+.fg\:pink,
+.fg\:pink\!hover:hover,
+a.fg\:pink\!active:active,
+a.fg\:pink\!focus:focus,
+button.fg\:pink\!active:active,
+button.fg\:pink\!focus:focus {
+    color: var(--hue-pink);
+}
+
+.bg\:pink,
+.bg\:pink\!hover:hover,
+a.bg\:pink\!active:active,
+a.bg\:pink\!focus:focus,
+button.bg\:pink\!active:active,
+button.bg\:pink\!focus:focus {
+    background-color: var(--hue-pink);
+}
+
+.fg\:purple,
+.fg\:purple\!hover:hover,
+a.fg\:purple\!active:active,
+a.fg\:purple\!focus:focus,
+button.fg\:purple\!active:active,
+button.fg\:purple\!focus:focus {
+    color: var(--hue-purple);
+}
+
+.bg\:purple,
+.bg\:purple\!hover:hover,
+a.bg\:purple\!active:active,
+a.bg\:purple\!focus:focus,
+button.bg\:purple\!active:active,
+button.bg\:purple\!focus:focus {
+    background-color: var(--hue-purple);
+}
+
+.fg\:deep-purple,
+.fg\:deep-purple\!hover:hover,
+a.fg\:deep-purple\!active:active,
+a.fg\:deep-purple\!focus:focus,
+button.fg\:deep-purple\!active:active,
+button.fg\:deep-purple\!focus:focus {
+    color: var(--hue-deep-purple);
+}
+
+.bg\:deep-purple,
+.bg\:deep-purple\!hover:hover,
+a.bg\:deep-purple\!active:active,
+a.bg\:deep-purple\!focus:focus,
+button.bg\:deep-purple\!active:active,
+button.bg\:deep-purple\!focus:focus {
+    background-color: var(--hue-deep-purple);
+}
+
+.fg\:indigo,
+.fg\:indigo\!hover:hover,
+a.fg\:indigo\!active:active,
+a.fg\:indigo\!focus:focus,
+button.fg\:indigo\!active:active,
+button.fg\:indigo\!focus:focus {
+    color: var(--hue-indigo);
+}
+
+.bg\:indigo,
+.bg\:indigo\!hover:hover,
+a.bg\:indigo\!active:active,
+a.bg\:indigo\!focus:focus,
+button.bg\:indigo\!active:active,
+button.bg\:indigo\!focus:focus {
+    background-color: var(--hue-indigo);
+}
+
+.fg\:blue,
+.fg\:blue\!hover:hover,
+a.fg\:blue\!active:active,
+a.fg\:blue\!focus:focus,
+button.fg\:blue\!active:active,
+button.fg\:blue\!focus:focus {
+    color: var(--hue-blue);
+}
+
+.bg\:blue,
+.bg\:blue\!hover:hover,
+a.bg\:blue\!active:active,
+a.bg\:blue\!focus:focus,
+button.bg\:blue\!active:active,
+button.bg\:blue\!focus:focus {
+    background-color: var(--hue-blue);
+}
+
+.fg\:light-blue,
+.fg\:light-blue\!hover:hover,
+a.fg\:light-blue\!active:active,
+a.fg\:light-blue\!focus:focus,
+button.fg\:light-blue\!active:active,
+button.fg\:light-blue\!focus:focus {
+    color: var(--hue-light-blue);
+}
+
+.bg\:light-blue,
+.bg\:light-blue\!hover:hover,
+a.bg\:light-blue\!active:active,
+a.bg\:light-blue\!focus:focus,
+button.bg\:light-blue\!active:active,
+button.bg\:light-blue\!focus:focus {
+    background-color: var(--hue-light-blue);
+}
+
+.fg\:cyan,
+.fg\:cyan\!hover:hover,
+a.fg\:cyan\!active:active,
+a.fg\:cyan\!focus:focus,
+button.fg\:cyan\!active:active,
+button.fg\:cyan\!focus:focus {
+    color: var(--hue-cyan);
+}
+
+.bg\:cyan,
+.bg\:cyan\!hover:hover,
+a.bg\:cyan\!active:active,
+a.bg\:cyan\!focus:focus,
+button.bg\:cyan\!active:active,
+button.bg\:cyan\!focus:focus {
+    background-color: var(--hue-cyan);
+}
+
+.fg\:teal,
+.fg\:teal\!hover:hover,
+a.fg\:teal\!active:active,
+a.fg\:teal\!focus:focus,
+button.fg\:teal\!active:active,
+button.fg\:teal\!focus:focus {
+    color: var(--hue-teal);
+}
+
+.bg\:teal,
+.bg\:teal\!hover:hover,
+a.bg\:teal\!active:active,
+a.bg\:teal\!focus:focus,
+button.bg\:teal\!active:active,
+button.bg\:teal\!focus:focus {
+    background-color: var(--hue-teal);
+}
+
+.fg\:green,
+.fg\:green\!hover:hover,
+a.fg\:green\!active:active,
+a.fg\:green\!focus:focus,
+button.fg\:green\!active:active,
+button.fg\:green\!focus:focus {
+    color: var(--hue-green);
+}
+
+.bg\:green,
+.bg\:green\!hover:hover,
+a.bg\:green\!active:active,
+a.bg\:green\!focus:focus,
+button.bg\:green\!active:active,
+button.bg\:green\!focus:focus {
+    background-color: var(--hue-green);
+}
+
+.fg\:light-green,
+.fg\:light-green\!hover:hover,
+a.fg\:light-green\!active:active,
+a.fg\:light-green\!focus:focus,
+button.fg\:light-green\!active:active,
+button.fg\:light-green\!focus:focus {
+    color: var(--hue-light-green);
+}
+
+.bg\:light-green,
+.bg\:light-green\!hover:hover,
+a.bg\:light-green\!active:active,
+a.bg\:light-green\!focus:focus,
+button.bg\:light-green\!active:active,
+button.bg\:light-green\!focus:focus {
+    background-color: var(--hue-light-green);
+}
+
+.fg\:lime,
+.fg\:lime\!hover:hover,
+a.fg\:lime\!active:active,
+a.fg\:lime\!focus:focus,
+button.fg\:lime\!active:active,
+button.fg\:lime\!focus:focus {
+    color: var(--hue-lime);
+}
+
+.bg\:lime,
+.bg\:lime\!hover:hover,
+a.bg\:lime\!active:active,
+a.bg\:lime\!focus:focus,
+button.bg\:lime\!active:active,
+button.bg\:lime\!focus:focus {
+    background-color: var(--hue-lime);
+}
+
+.fg\:yellow,
+.fg\:yellow\!hover:hover,
+a.fg\:yellow\!active:active,
+a.fg\:yellow\!focus:focus,
+button.fg\:yellow\!active:active,
+button.fg\:yellow\!focus:focus {
+    color: var(--hue-yellow);
+}
+
+.bg\:yellow,
+.bg\:yellow\!hover:hover,
+a.bg\:yellow\!active:active,
+a.bg\:yellow\!focus:focus,
+button.bg\:yellow\!active:active,
+button.bg\:yellow\!focus:focus {
+    background-color: var(--hue-yellow);
+}
+
+.fg\:amber,
+.fg\:amber\!hover:hover,
+a.fg\:amber\!active:active,
+a.fg\:amber\!focus:focus,
+button.fg\:amber\!active:active,
+button.fg\:amber\!focus:focus {
+    color: var(--hue-amber);
+}
+
+.bg\:amber,
+.bg\:amber\!hover:hover,
+a.bg\:amber\!active:active,
+a.bg\:amber\!focus:focus,
+button.bg\:amber\!active:active,
+button.bg\:amber\!focus:focus {
+    background-color: var(--hue-amber);
+}
+
+.fg\:orange,
+.fg\:orange\!hover:hover,
+a.fg\:orange\!active:active,
+a.fg\:orange\!focus:focus,
+button.fg\:orange\!active:active,
+button.fg\:orange\!focus:focus {
+    color: var(--hue-orange);
+}
+
+.bg\:orange,
+.bg\:orange\!hover:hover,
+a.bg\:orange\!active:active a.bg\:orange\!focus:focus,
+button.bg\:orange\!active:active,
+button.bg\:orange\!focus:focus {
+    background-color: var(--hue-orange);
+}
+
+.fg\:deep-orange,
+.fg\:deep-orange\!hover:hover,
+a.fg\:deep-orange\!active:active,
+a.fg\:deep-orange\!focus:focus,
+button.fg\:deep-orange\!active:active,
+button.fg\:deep-orange\!focus:focus {
+    color: var(--hue-deep-orange);
+}
+
+.bg\:deep-orange,
+.bg\:deep-orange\!hover:hover,
+a.bg\:deep-orange\!active:active,
+a.bg\:deep-orange\!focus:focus,
+button.bg\:deep-orange\!active:active,
+button.bg\:deep-orange\!focus:focus {
+    background-color: var(--hue-deep-orange);
+}
+
+.fg\:brown,
+.fg\:brown\!hover:hover,
+a.fg\:brown\!active:active,
+a.fg\:brown\!focus:focus,
+button.fg\:brown\!active:active,
+button.fg\:brown\!focus:focus {
+    color: var(--hue-brown);
+}
+
+.bg\:brown,
+.bg\:brown\!hover:hover,
+a.bg\:brown\!active:active,
+a.bg\:brown\!focus:focus,
+button.bg\:brown\!active:active,
+button.bg\:brown\!focus:focus {
+    background-color: var(--hue-brown);
+}
+
+.fg\:grey,
+.fg\:grey\!hover:hover,
+a.fg\:grey\!active:active,
+a.fg\:grey\!focus:focus,
+button.fg\:grey\!active:active,
+button.fg\:grey\!focus:focus {
+    color: var(--hue-grey);
+}
+
+.bg\:grey,
+.bg\:grey\!hover:hover,
+a.bg\:grey\!active:active,
+a.bg\:grey\!focus:focus,
+button.bg\:grey\!active:active,
+button.bg\:grey\!focus:focus {
+    background-color: var(--hue-grey);
+}
+
+.fg\:blue-grey,
+.fg\:blue-grey\!hover:hover,
+a.fg\:blue-grey\!active:active,
+a.fg\:blue-grey\!focus:focus,
+button.fg\:blue-grey\!active:active,
+button.fg\:blue-grey\!focus:focus {
+    color: var(--hue-blue-grey);
+}
+
+.bg\:blue-grey,
+.bg\:blue-grey\!hover:hover,
+a.bg\:blue-grey\!active:active,
+a.bg\:blue-grey\!focus:focus,
+button.bg\:blue-grey\!active:active,
+button.bg\:blue-grey\!focus:focus {
+    background-color: var(--hue-blue-grey);
+}
+
+/*
+***
+color shortcuts
+***
+*/
+/*: theme fg & bg colors :*/
+.sys\:fg,
+.sys\:fg\!hover:hover,
+a.sys\:fg\!active:active,
+a.sys\:fg\!focus:focus,
+button.sys\:fg\!active:active,
+button.sys\:fg\!focus:focus {
+    color: var(--dft-font-color) !important;
+}
+
+.sys\:bg,
+.sys\:bg\!hover:hover,
+a.sys\:bg\!active:active,
+a.sys\:bg\!focus:focus,
+button.sys\:bg\!active:active,
+button.sys\:bg\!focus:focus {
+    background-color: var(--content-fg-color) !important;
+}
+
+/*: theme link colors :*/
+.fg\:link,
+a.fg\:link,
+button.fg\:link {
+    color: var(--dft-lnk-pri-color) !important;
+}
+
+/*: hilite mce plugin support :*/
+.bg\:highlight {
+    background-color: var(--hue-highlight);
+}
+
+.bg\:tint {
+    background-color: var(--hue-tint);
+}
+
+.fg\:link\!hover:hover,
+a.fg\:link\!active:active,
+a.fg\:link\!focus:focus,
+button.fg\:link\!active:active,
+button.fg\:link\!focus:focus {
+    color: var(--dft-lnk-sec-color) !important;
+}
+
+/*: background tints :*/
+.bg\:dark,
+.bg\:dark\!hover:hover,
+button.bg\:dark\!active:active,
+button.bg\:dark\!focus:focus {
+    filter: brightness(92%) !important;
+}
+
+.bg\:darker,
+.bg\:darker\!hover:hover,
+button.bg\:darker\!active:active,
+button.bg\:darker\!focus:focus {
+    filter: brightness(96%) !important;
+}
+
+.bg\:brighter,
+.bg\:brighter\!hover:hover,
+button.bg\:brighter\!active:active,
+button.bg\:brighter\!focus:focus {
+    filter: brightness(104%) !important;
+}
+
+.bg\:bright,
+.bg\:bright\!hover:hover,
+button.bg\:bright\!active:active,
+button.bg\:bright\!focus:focus {
+    filter: brightness(108%) !important;
+}
+
+/*
+***
+gradient backgrounds
+***
+*/
+.grd\:pri {
+    background: #1565c0;
+    background: -moz-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
+    background: -webkit-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
+    background: linear-gradient(to bottom, #8ab2df 0%, #1565c0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ab2df', endColorstr='#1565c0', GradientType=0);	
+	color: var(--hue-wht);
+}
+
+.grd\:pri-bright {
+    background: #5e92f3;
+    background: -moz-linear-gradient(top, #aec8f9 0%, #5e92f3 100%);
+    background: -webkit-linear-gradient(top, #aec8f9 0%, #5e92f3 100%);
+    background: linear-gradient(to bottom, #aec8f9 0%, #5e92f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#5e92f3', GradientType=0);
+	color: var(--hue-blk);
+}
+
+.grd\:pri-dark {
+    background: #5e92f3;
+    background: -moz-linear-gradient(top, #7f9dc7 0%, #003c8f 100%);
+    background: -webkit-linear-gradient(top, #7f9dc7 0%, #003c8f 100%);
+    background: linear-gradient(to bottom, #7f9dc7 0%, #003c8f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f9dc7', endColorstr='#003c8f', GradientType=0);
+	color: var(--hue-wht);
+}
+
+.grd\:sec {
+    background: #1565c0;
+    background: -moz-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
+    background: -webkit-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
+    background: linear-gradient(to bottom, #f8ae80 0%, #f25c02 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ae80', endColorstr='#f25c02', GradientType=0);	
+	color: var(--hue-wht);
+}
+
+.grd\:sec-bright {
+    background: #5e92f3;
+    background: -moz-linear-gradient(top, #ffc69e 0%, #ff8e3d 100%);
+    background: -webkit-linear-gradient(top, #ffc69e 0%, #ff8e3d 100%);
+    background: linear-gradient(to bottom, #ffc69e 0%, #ff8e3d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#ff8e3d', GradientType=0);
+	color: var(--hue-blk);
+}
+
+.grd\:sec-dark {
+    background: #5e92f3;
+    background: -moz-linear-gradient(top, #db937f 0%, #b82800 100%);
+    background: -webkit-linear-gradient(top, #db937f 0%, #b82800 100%);
+    background: linear-gradient(to bottom, #db937f 0%, #b82800 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db937f', endColorstr='#003c8f', GradientType=0);
+	color: var(--hue-wht);
+}
+
+.grd\:tint {
+    background: #e0e0e0;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
+    background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
+	color: var(--hue-blk);
+}
+
+.grd\:tint-bright {
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #fafafa 0%, #f5f5f5 100%);
+    background: -webkit-linear-gradient(top, #fafafa 0%, #f5f5f5 100%);
+    background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#f5f5f5', GradientType=0);
+	color: var(--hue-blk);
+}
+
+.grd\:tint-dark {
+    background: #9e9e9e;
+    background: -moz-linear-gradient(top, #bdbdbd 0%, #9e9e9e 100%);
+    background: -webkit-linear-gradient(top, #bdbdbd 0%, #9e9e9e 100%);
+    background: linear-gradient(to bottom, #bdbdbd 0%, #9e9e9e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdbdbd', endColorstr='#9e9e9e', GradientType=0);
+	color: var(--hue-wht);
+}
+
+/*
+***
+border colors
+***
+*/
+.bdr\:transparent,
+.bdr\:transparent\!hover:hover,
+a.bdr\:transparent\!focus:focus,
+a.bdr\:transparent,
+button.bdr\:transparent\!hover:hover,
+button.bdr\:transparent\!focus:focus {
     border-color: transparent !important;
 }
 
-.bdr\:top-none {
-    border-top-color: transparent !important;
+.bdr\:blk,
+.bdr\:blk\!hover:hover,
+a.bdr\:blk\!focus:focus,
+a.bdr\:blk,
+button.bdr\:blk\!hover:hover,
+button.bdr\:blk\!focus:focus {
+    border-color: var(--hue-blk) !important;
 }
 
-.bdr\:right-none {
-    border-right-color: transparent !important;
+.bdr\:wht,
+.bdr\:wht\!hover:hover,
+a.bdr\:wht\!focus:focus,
+a.bdr\:wht,
+button.bdr\:wht\!hover:hover,
+button.bdr\:wht\!focus:focus {
+    border-color: var(--hue-wht) !important;
 }
 
-.bdr\:bottom-none {
-    border-bottom-color: transparent !important;
+.bdr\:bas-900,
+.bdr\:bas-900\!hover:hover,
+a.bdr\:bas-900\!focus:focus,
+a.bdr\:bas-900,
+button.bdr\:bas-900\!hover:hover,
+button.bdr\:bas-900\!focus:focus {
+    border-color: var(--hue-bas-900) !important;
 }
 
-.bdr\:left-none {
-    border-left-color: transparent !important;
+.bdr\:bas-800,
+.bdr\:bas-800\!hover:hover,
+a.bdr\:bas-800\!focus:focus,
+a.bdr\:bas-800,
+button.bdr\:bas-800\!hover:hover,
+button.bdr\:bas-800\!focus:focus {
+    border-color: var(--hue-bas-800) !important;
 }
 
-.bdr\:dashed-thin,
-.bdr\:dashed-medium,
-.bdr\:dashed-thick {
-    border-style: dashed !important;
+.bdr\:bas-700,
+.bdr\:bas-700\!hover:hover,
+a.bdr\:bas-700\!focus:focus,
+a.bdr\:bas-700,
+button.bdr\:bas-700\!hover:hover,
+button.bdr\:bas-700\!focus:focus {
+    border-color: var(--hue-bas-700) !important;
 }
 
-.bdr\:top-dashed-thin,
-.bdr\:top-dashed-medium,
-.bdr\:top-dashed-thick {
-    border-top-style: dashed !important;
+.bdr\:bas-600,
+.bdr\:bas-600\!hover:hover,
+a.bdr\:bas-600\!focus:focus,
+a.bdr\:bas-600,
+button.bdr\:bas-600\!hover:hover,
+button.bdr\:bas-600\!focus:focus {
+    border-color: var(--hue-bas-600) !important;
 }
 
-.bdr\:right-dashed-thin,
-.bdr\:right-dashed-medium,
-.bdr\:right-dashed-thick {
-    border-right-style: dashed !important;
+.bdr\:bas-500,
+.bdr\:bas-500\!hover:hover,
+a.bdr\:bas-500\!focus:focus,
+a.bdr\:bas-500,
+button.bdr\:bas-500\!hover:hover,
+button.bdr\:bas-500\!focus:focus {
+    border-color: var(--hue-bas-500) !important;
 }
 
-.bdr\:bottom-dashed-thin,
-.bdr\:bottom-dashed-medium,
-.bdr\:bottom-dashed-thick {
-    border-bottom-style: dashed !important;
+.bdr\:bas-400,
+.bdr\:bas-400\!hover:hover,
+a.bdr\:bas-400\!focus:focus,
+a.bdr\:bas-400,
+button.bdr\:bas-400\!hover:hover,
+button.bdr\:bas-400\!focus:focus {
+    border-color: var(--hue-bas-400) !important;
 }
 
-.bdr\:left-dashed-thin,
-.bdr\:left-dashed-medium,
-.bdr\:left-dashed-thick {
-    border-left-style: dashed !important;
+.bdr\:bas-300,
+.bdr\:bas-300\!hover:hover,
+a.bdr\:bas-300\!focus:focus,
+a.bdr\:bas-300,
+button.bdr\:bas-300\!hover:hover,
+button.bdr\:bas-300\!focus:focus {
+    border-color: var(--hue-bas-300) !important;
 }
 
-.bdr\:dotted-thin,
-.bdr\:dotted-medium,
-.bdr\:dotted-thick {
-    border-style: dotted !important;
+.bdr\:bas-200,
+.bdr\:bas-200\!hover:hover,
+a.bdr\:bas-200\!focus:focus,
+a.bdr\:bas-200,
+button.bdr\:bas-200\!hover:hover,
+button.bdr\:bas-200\!focus:focus {
+    border-color: var(--hue-bas-200) !important;
 }
 
-.bdr\:top-dotted-thin,
-.bdr\:top-dotted-medium,
-.bdr\:top-dotted-thick {
-    border-top-style: dotted !important;
+.bdr\:bas-100,
+.bdr\:bas-100\!hover:hover,
+a.bdr\:bas-100\!focus:focus,
+a.bdr\:bas-100,
+button.bdr\:bas-100\!hover:hover,
+button.bdr\:bas-100\!focus:focus {
+    border-color: var(--hue-bas-100) !important;
 }
 
-.bdr\:right-dotted-thin,
-.bdr\:right-dotted-medium,
-.bdr\:right-dotted-thick {
-    border-right-style: dotted !important;
+.bdr\:bas-050,
+.bdr\:bas-050\!hover:hover,
+a.bdr\:bas-050\!focus:focus,
+a.bdr\:bas-050,
+button.bdr\:bas-050\!hover:hover,
+button.bdr\:bas-050\!focus:focus {
+    border-color: var(--hue-bas-050) !important;
 }
 
-.bdr\:bottom-dotted-thin,
-.bdr\:bottom-dotted-medium,
-.bdr\:bottom-dotted-thick {
-    border-bottom-style: dotted !important;
+.bdr\:pri,
+.bdr\:pri\!hover:hover,
+a.bdr\:pri\!focus:focus,
+a.bdr\:pri,
+button.bdr\:pri\!hover:hover,
+button.bdr\:pri\!focus:focus {
+    border-color: var(--hue-pri) !important;
 }
 
-.bdr\:left-dotted-thin,
-.bdr\:left-dotted-medium,
-.bdr\:left-dotted-thick {
-    border-left-style: dotted !important;
+.bdr\:pri-bright,
+.bdr\:pri-bright\!hover:hover,
+a.bdr\:pri-bright\!focus:focus,
+a.bdr\:pri-bright,
+button.bdr\:pri-bright\!hover:hover,
+button.bdr\:pri-bright\!focus:focus {
+    border-color: var(--hue-pri-bright) !important;
 }
 
-.bdr\:solid-thin,
-.bdr\:solid-medium,
-.bdr\:solid-thick {
-    border-style: solid !important;
+.bdr\:pri-dark,
+.bdr\:pri-dark\!hover:hover,
+a.bdr\:pri-dark\!focus:focus,
+a.bdr\:pri-dark,
+button.bdr\:pri-dark\!hover:hover,
+button.bdr\:pri-dark\!focus:focus {
+    border-color: var(--hue-pri-dark) !important;
 }
 
-.bdr\:top-solid-thin,
-.bdr\:top-solid-medium,
-.bdr\:top-solid-thick {
-    border-top-style: solid !important;
+.bdr\:sec,
+.bdr\:sec\!hover:hover,
+a.bdr\:sec\!focus:focus,
+a.bdr\:sec,
+button.bdr\:sec\!hover:hover,
+button.bdr\:sec\!focus:focus {
+    border-color: var(--hue-sec) !important;
 }
 
-.bdr\:right-solid-thin,
-.bdr\:right-solid-medium,
-.bdr\:right-solid-thick {
-    border-right-style: solid !important;
+.bdr\:sec-bright,
+.bdr\:sec-bright\!hover:hover,
+a.bdr\:sec-bright\!focus:focus,
+a.bdr\:sec-bright,
+button.bdr\:sec-bright\!hover:hover,
+button.bdr\:sec-bright\!focus:focus {
+    border-color: var(--hue-sec-bright) !important;
 }
 
-.bdr\:bottom-solid-thin,
-.bdr\:bottom-solid-medium,
-.bdr\:bottom-solid-thick {
-    border-bottom-style: solid !important;
+.bdr\:sec-dark,
+.bdr\:sec-dark\!hover:hover,
+a.bdr\:sec-dark\!focus:focus,
+a.bdr\:sec-dark,
+button.bdr\:sec-dark\!hover:hover,
+button.bdr\:sec-dark\!focus:focus {
+    border-color: var(--hue-sec-dark) !important;
 }
 
-.bdr\:left-solid-thin,
-.bdr\:left-solid-medium,
-.bdr\:left-solid-thick {
-    border-left-style: solid !important;
+.bdr\:red,
+.bdr\:red\!hover:hover,
+a.bdr\:red\!focus:focus,
+a.bdr\:red,
+button.bdr\:red\!hover:hover,
+button.bdr\:red\!focus:focus {
+    border-color: var(--hue-red) !important;
 }
 
-.bdr\:dashed-thin,
-.bdr\:dotted-thin,
-.bdr\:solid-thin {
-    border-width: thin !important;
+.bdr\:pink,
+.bdr\:pink\!hover:hover,
+a.bdr\:pink\!focus:focus,
+a.bdr\:pink,
+button.bdr\:pink\!hover:hover,
+button.bdr\:pink\!focus:focus {
+    border-color: var(--hue-pink) !important;
 }
 
-.bdr\:top-dashed-thin,
-.bdr\:top-dotted-thin,
-.bdr\:top-solid-thin {
-    border-top-width: thin !important;
+.bdr\:purple,
+.bdr\:purple\!hover:hover,
+a.bdr\:purple\!focus:focus,
+a.bdr\:purple,
+button.bdr\:purple\!hover:hover,
+button.bdr\:purple\!focus:focus {
+    border-color: var(--hue-purple) !important;
 }
 
-.bdr\:right-dashed-thin,
-.bdr\:right-dotted-thin,
-.bdr\:right-solid-thin {
-    border-right-width: thin !important;
+.bdr\:deep-purple,
+.bdr\:deep-purple\!hover:hover,
+a.bdr\:deep-purple\!focus:focus,
+a.bdr\:deep-purple,
+button.bdr\:deep-purple\!hover:hover,
+button.bdr\:deep-purple\!focus:focus {
+    border-color: var(--hue-deep-purple) !important;
 }
 
-.bdr\:bottom-dashed-thin,
-.bdr\:bottom-dotted-thin,
-.bdr\:bottom-solid-thin {
-    border-bottom-width: thin !important;
+.bdr\:indigo,
+.bdr\:indigo\!hover:hover,
+a.bdr\:indigo\!focus:focus,
+a.bdr\:indigo,
+button.bdr\:indigo\!hover:hover,
+button.bdr\:indigo\!focus:focus {
+    border-color: var(--hue-indigo) !important;
 }
 
-.bdr\:left-dashed-thin,
-.bdr\:left-dotted-thin,
-.bdr\:left-solid-thin {
-    border-left-width: thin !important;
+.bdr\:blue,
+.bdr\:blue\!hover:hover,
+a.bdr\:blue\!focus:focus,
+a.bdr\:blue,
+button.bdr\:blue\!hover:hover,
+button.bdr\:blue\!focus:focus {
+    border-color: var(--hue-blue) !important;
 }
 
-.bdr\:dashed-medium,
-.bdr\:dotted-medium,
-.bdr\:solid-medium {
-    border-width: medium !important;
+.bdr\:light-blue,
+.bdr\:light-blue\!hover:hover,
+a.bdr\:light-blue\!focus:focus,
+a.bdr\:light-blue,
+button.bdr\:light-blue\!hover:hover,
+button.bdr\:light-blue\!focus:focus {
+    border-color: var(--hue-light-blue) !important;
 }
 
-.bdr\:top-dashed-medium,
-.bdr\:top-dotted-medium,
-.bdr\:top-solid-medium {
-    border-top-width: medium !important;
+.bdr\:cyan,
+.bdr\:cyan\!hover:hover,
+a.bdr\:cyan\!focus:focus,
+a.bdr\:cyan,
+button.bdr\:cyan\!hover:hover,
+button.bdr\:cyan\!focus:focus {
+    border-color: var(--hue-cyan) !important;
 }
 
-.bdr\:right-dashed-medium,
-.bdr\:right-dotted-medium,
-.bdr\:right-solid-medium {
-    border-right-width: medium !important;
+.bdr\:teal,
+.bdr\:teal\!hover:hover,
+a.bdr\:teal\!focus:focus,
+a.bdr\:teal,
+button.bdr\:teal\!hover:hover,
+button.bdr\:teal\!focus:focus {
+    border-color: var(--hue-teal) !important;
 }
 
-.bdr\:bottom-dashed-medium,
-.bdr\:bottom-dotted-medium,
-.bdr\:bottom-solid-medium {
-    border-bottom-width: medium !important;
+.bdr\:green,
+.bdr\:green\!hover:hover,
+a.bdr\:green\!focus:focus,
+a.bdr\:green,
+button.bdr\:green\!hover:hover,
+button.bdr\:green\!focus:focus {
+    border-color: var(--hue-green) !important;
 }
 
-.bdr\:left-dashed-medium,
-.bdr\:left-dotted-medium,
-.bdr\:left-solid-medium {
-    border-left-width: medium !important;
+.bdr\:light-green,
+.bdr\:light-green\!hover:hover,
+a.bdr\:light-green\!focus:focus,
+a.bdr\:light-green,
+button.bdr\:light-green\!hover:hover,
+button.bdr\:light-green\!focus:focus {
+    border-color: var(--hue-light-green) !important;
 }
 
-.bdr\:dashed-thick,
-.bdr\:dotted-thick,
-.bdr\:solid-thick {
-    border-width: thick !important;
+.bdr\:lime,
+.bdr\:lime\!hover:hover,
+a.bdr\:lime\!focus:focus,
+a.bdr\:lime,
+button.bdr\:lime\!hover:hover,
+button.bdr\:lime\!focus:focus {
+    border-color: var(--hue-lime) !important;
 }
 
-.bdr\:top-dashed-thick,
-.bdr\:top-dotted-thick,
-.bdr\:top-solid-thick {
-    border-top-width: thick !important;
+.bdr\:yellow,
+.bdr\:yellow\!hover:hover,
+a.bdr\:yellow\!focus:focus,
+a.bdr\:yellow,
+button.bdr\:yellow\!hover:hover,
+button.bdr\:yellow\!focus:focus {
+    border-color: var(--hue-yellow) !important;
 }
 
-.bdr\:right-dashed-thick,
-.bdr\:right-dotted-thick,
-.bdr\:right-solid-thick {
-    border-right-width: thick !important;
+.bdr\:amber,
+.bdr\:amber\!hover:hover,
+a.bdr\:amber\!focus:focus,
+a.bdr\:amber,
+button.bdr\:amber\!hover:hover,
+button.bdr\:amber\!focus:focus {
+    border-color: var(--hue-amber) !important;
 }
 
-.bdr\:bottom-dashed-thick,
-.bdr\:bottom-dotted-thick,
-.bdr\:bottom-solid-thick {
-    border-bottom-width: thick !important;
+.bdr\:orange,
+.bdr\:orange\!hover:hover,
+a.bdr\:orange\!focus:focus,
+a.bdr\:orange,
+button.bdr\:orange\!hover:hover,
+button.bdr\:orange\!focus:focus {
+    border-color: var(--hue-orange) !important;
 }
 
-.bdr\:left-dashed-thick,
-.bdr\:left-dotted-thick,
-.bdr\:left-solid-thick {
-    border-left-width: thick !important;
+.bdr\:deep-orange,
+.bdr\:deep-orange\!hover:hover,
+a.bdr\:deep-orange\!focus:focus,
+a.bdr\:deep-orange,
+button.bdr\:deep-orange\!hover:hover,
+button.bdr\:deep-orange\!focus:focus {
+    border-color: var(--hue-deep-orange) !important;
 }
 
-/*
-***
-    * selector: bdr
-    * dsc: table
-    * ver: 200120-1
-    * fnt: set table border attribute
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
-***
-*/
-.bdr\:collapse {
-    border-collapse: collapse !important;
+.bdr\:brown,
+.bdr\:brown\!hover:hover,
+a.bdr\:brown\!focus:focus,
+a.bdr\:brown,
+button.bdr\:brown\!hover:hover,
+button.bdr\:brown\!focus:focus {
+    border-color: var(--hue-brown) !important;
 }
 
-.bdr\:separate {
-    border-collapse: separate !important;
+.bdr\:grey,
+.bdr\:grey\!hover:hover,
+a.bdr\:grey\!focus:focus,
+a.bdr\:grey,
+button.bdr\:grey\!hover:hover,
+button.bdr\:grey\!focus:focus {
+    border-color: var(--hue-grey) !important;
 }
 
-/*
-***
-    * selector: bdr
-    * dsc: table
-    * ver: 200120-1
-    * fnt: set table border cell spacing attributes
-    * Spec: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
-***
-*/
-.bdr\:space-0 {
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-}
-
-.bdr\:space-0\.25 {
-    border-collapse: separate !important;
-    border-spacing: 0.25rem !important;
-}
-
-.bdr\:space-0\.5 {
-    border-collapse: separate !important;
-    border-spacing: 0.5rem !important;
-}
-
-.bdr\:space-0\.75 {
-    border-collapse: separate !important;
-    border-spacing: 0.75rem !important;
-}
-
-.bdr\:space-1 {
-    border-collapse: separate !important;
-    border-spacing: 1rem !important;
-}
-
-.bdr\:space-1\.25 {
-    border-collapse: separate !important;
-    border-spacing: 1.25rem !important;
-}
-
-.bdr\:space-1\.5 {
-    border-collapse: separate !important;
-    border-spacing: 1.5rem !important;
-}
-
-.bdr\:space-1\.75 {
-    border-collapse: separate !important;
-    border-spacing: 1.75rem !important;
-}
-
-.bdr\:space-2 {
-    border-collapse: separate !important;
-    border-spacing: 2rem !important;
-}
-
-/*
-***
-    * selector: cnr
-    * dsc: box corner
-    * ver: 200120-1
-    * fnt: control curvature of corners
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-***
-*/
-.cnr\:arch-none {
-    border-radius: 0% !important;
-}
-.cnr\:arch-small {
-    border-radius: 0.3333rem !important;
-}
-.cnr\:arch-medium {
-    border-radius: 0.6666rem !important;
-}
-.cnr\:arch-large {
-    border-radius: 1rem !important;
-}
-.cnr\:arch-full {
-    border-radius: 100% !important;
-}
-
-/*
-***
-    * selector: cnr
-    * dsc: left box corner
-    * ver: 200120-1
-    * fnt: control curvature of corners
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-***
-*/
-.cnr\:arch-left-small {
-    border-radius: 0.3333rem 0 0 0.3333rem !important;
-}
-.cnr\:arch-left-medium {
-    border-radius: 0.6666rem 0 0 0.6666rem !important;
-}
-.cnr\:arch-left-large {
-    border-radius: 1rem 0 0 1rem !important;
-}
-
-/*
-***
-    * selector: cnr
-    * dsc: right box corner
-    * ver: 200120-1
-    * fnt: control curvature of corners
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-***
-*/
-.cnr\:arch-right-small {
-    border-radius: 0 0.3333rem 0.3333rem 0 !important;
-}
-.cnr\:arch-right-medium {
-    border-radius: 0 0.6666rem 0.6666rem 0 !important;
-}
-.cnr\:arch-right-large {
-    border-radius: 0 1rem 1rem 0 !important;
-}
-
-/*
-***
-    * selector: cnr
-    * dsc: top box corner
-    * ver: 200120-1
-    * fnt: control curvature of corners
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-***
-*/
-.cnr\:arch-top-small {
-    border-radius: 0.3333rem 0.3333rem 0 0 !important;
-}
-.cnr\:arch-top-medium {
-    border-radius: 0.6666rem 0.6666rem 0 0 !important;
-}
-.cnr\:arch-top-large {
-    border-radius: 1rem 1rem 0 0 !important;
+.bdr\:blue-grey,
+.bdr\:blue-grey\!hover:hover,
+a.bdr\:blue-grey\!focus:focus,
+a.bdr\:blue-grey,
+button.bdr\:blue-grey\!hover:hover,
+button.bdr\:blue-grey\!focus:focus {
+    border-color: var(--hue-blue-grey) !important;
 }
 
 /*
 ***
-    * selector: cnr
-    * dsc: bottom box corner
-    * ver: 200120-1
-    * fnt: control curvature of corners
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+high contrast text colors
 ***
 */
-.cnr\:arch-bottom-small {
-    border-radius: 0 0 0.3333rem 0.3333rem !important;
+.wcag\:fg-grey9,
+.wcag\:fg-grey9\!hover:hover,
+a.wcag\:fg-grey9\!focus:focus,
+a.wcag\:fg-grey9,
+button.wcag\:fg-grey9\!hover:hover,
+button.wcag\:fg-grey9\!focus:focus {
+    color: var(--wcag-grey9) !important;
 }
-.cnr\:arch-bottom-medium {
-    border-radius: 0 0 0.6666rem 0.6666rem !important;
+
+.wcag\:bg-grey9 {
+    background-color: var(--wcag-grey9) !important;
+    color: var(--hue-wht);
 }
-.cnr\:arch-bottom-large {
-    border-radius: 0 0 1rem 1rem !important;
+
+.wcag\:fg-grey8,
+.wcag\:fg-grey8\!hover:hover,
+a.wcag\:fg-grey8\!focus:focus,
+a.wcag\:fg-grey8,
+button.wcag\:fg-grey8\!hover:hover,
+button.wcag\:fg-grey8\!focus:focus {
+    color: var(--wcag-grey8) !important;
+}
+
+.wcag\:bg-grey8 {
+    background-color: var(--wcag-grey8) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-grey7,
+.wcag\:fg-grey7\!hover:hover,
+a.wcag\:fg-grey7\!focus:focus,
+a.wcag\:fg-grey7,
+button.wcag\:fg-grey7\!hover:hover,
+button.wcag\:fg-grey7\!focus:focus {
+    color: var(--wcag-grey7) !important;
+}
+
+.wcag\:bg-grey7 {
+    background-color: var(--wcag-grey7) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-grey6,
+.wcag\:fg-grey6\!hover:hover,
+a.wcag\:fg-grey6\!focus:focus,
+a.wcag\:fg-grey6,
+button.wcag\:fg-grey6\!hover:hover,
+button.wcag\:fg-grey6\!focus:focus {
+    color: var(--wcag-grey6) !important;
+}
+
+.wcag\:bg-grey6 {
+    background-color: var(--wcag-grey6) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-red,
+.wcag\:fg-red\!hover:hover,
+a.wcag\:fg-red\!focus:focus,
+a.wcag\:fg-red,
+button.wcag\:fg-red\!hover:hover,
+button.wcag\:fg-red\!focus:focus {
+    color: var(--wcag-red) !important;
+}
+
+.wcag\:bg-red {
+    background-color: var(--wcag-red) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-deep-purple,
+.wcag\:fg-deep-purple\!hover:hover,
+a.wcag\:fg-deep-purple\!focus:focus,
+a.wcag\:fg-deep-purple,
+button.wcag\:fg-deep-purple\!hover:hover,
+button.wcag\:fg-deep-purple\!focus:focus {
+    color: var(--wcag-deep-purple) !important;
+}
+
+.wcag\:bg-deep-purple {
+    background-color: var(--wcag-deep-purple) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-blue,
+.wcag\:fg-blue\!hover:hover,
+a.wcag\:fg-blue\!focus:focus,
+a.wcag\:fg-blue,
+button.wcag\:fg-blue\!hover:hover,
+button.wcag\:fg-blue\!focus:focus {
+    color: var(--wcag-blue) !important;
+}
+
+.wcag\:bg-blue {
+    background-color: var(--wcag-blue) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-green,
+.wcag\:fg-green\!hover:hover,
+a.wcag\:fg-green\!focus:focus,
+a.wcag\:fg-green,
+button.wcag\:fg-green\!hover:hover,
+button.wcag\:fg-green\!focus:focus {
+    color: var(--wcag-green) !important;
+}
+
+.wcag\:bg-green {
+    background-color: var(--wcag-green) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-deep-orange,
+.wcag\:fg-deep-orange\!hover:hover,
+a.wcag\:fg-deep-orange\!focus:focus,
+a.wcag\:fg-deep-orange,
+button.wcag\:fg-deep-orange\!hover:hover,
+button.wcag\:fg-deep-orange\!focus:focus {
+    color: var(--wcag-deep-orange) !important;
+}
+
+.wcag\:bg-deep-orange {
+    background-color: var(--wcag-deep-orange) !important;
+    color: var(--hue-wht);
+}
+
+.wcag\:fg-blue-grey,
+.wcag\:fg-blue-grey\!hover:hover,
+a.wcag\:fg-blue-grey\!focus:focus,
+a.wcag\:fg-blue-grey,
+button.wcag\:fg-blue-grey\!hover:hover,
+button.wcag\:fg-blue-grey\!focus:focus {
+    color: var(--wcag-blue-grey) !important;
+}
+
+.wcag\:bg-blue-grey {
+    background-color: var(--wcag-blue-grey) !important;
+    color: var(--hue-wht);
 }
 
 /*
 ***
-    * selector: cur
-    * dsc: cursor display
-    * ver: 200107-1
-    * fnt: control cursor display
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+    # standard media (sm) devices
+    # 91012.1a
+    # "sm" is everything but mobile
+    # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 ***
 */
-.cur\:auto,
-.cur\:auto\!hover:hover,
-.cur\:auto\!focus:focus {
-    cursor: auto;
-}
-
-.cur\:default,
-.cur\:default\!hover:hover,
-.cur\:default\!focus:focus {
-    cursor: default;
-}
-
-.cur\:pointer,
-.cur\:pointer\!hover:hover,
-.cur\:pointer\!focus:focus {
-    cursor: pointer;
-}
-
-.cur\:text,
-.cur\:text\!hover:hover,
-.cur\:text\!focus:focus {
-    cursor: text;
-}
-
-.cur\:wait,
-.cur\:wait\!hover:hover,
-.cur\:wait\!focus:focus {
-    cursor: wait;
-}
-
-/*
-***
-    * selector: dsp
-    * dsc: element display
-    * ver: 200107-1
-    * fnt: hide / display page elements
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/display
-***
-*/
-.dsp\:none {
-    display: none !important;
-}
-
-.dsp\:hidden {
-    visibility: hidden !important;
-}
-
-.dsp\:block {
-    display: block !important;
-}
-
-.dsp\:inline {
-    display: inline !important;
-}
-
-.dsp\:inline-block {
-    display: inline-block !important;
-}
-
-/*
-***
-    * selector: fnt
-    * dsc: font family
-    * ver: 200107-1
-    * fnt: font attributes
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
-***
-*/
-.fnt\:family-sans {
-    font-family: var(--font-sans) !important;
-}
-
-.fnt\:family-serif {
-    font-family: var(--font-serif) !important;
-}
-
-.fnt\:family-mono {
-    font-family: var(--font-mono) !important;
-}
-
-.fnt\:family-condensed {
-    font-family: var(--font-condensed) !important;
-}
-
-.fnt\:family-cursive {
-    font-family: var(--font-cursive) !important;
-}
-
-.fnt\:family-fancy {
-    font-family: var(--font-fancy) !important;
-}
-
-/*
-***
-    * selector: fnt
-    * dsc: font size
-    * ver: 200107-1
-    * fnt: set font / font icon size
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
-***
-*/
-.fnt\:size-xxx-large,
-.icon\:size-xxx-large {
-    font-size: xxx-large !important;
-}
-
-.fnt\:size-xx-large,
-.icon\:size-xx-large {
-    font-size: xx-large !important;
-}
-
-.fnt\:size-x-large,
-.icon\:size-x-large {
-    font-size: x-large !important;
-}
-
-.fnt\:size-large,
-.icon\:size-large {
-    font-size: large !important;
-}
-
-.fnt\:size-x-medium,
-.icon\:size-x-medium {
-    font-size: var(--font-size-xr) !important;
-}
-
-.fnt\:size-medium,
-.fnt\:size-normal,
-.fnt\:size-default,
-.icon\:size-medium,
-.icon\:size-normal,
-.icon\:size-default {
-    font-size: medium !important;
-}
-
-.fnt\:size-small,
-.icon\:size-small {
-    font-size: small !important;
-}
-
-.fnt\:size-x-small,
-.icon\:size-x-small {
-    font-size: x-small !important;
-}
-
-.fnt\:size-xx-small,
-.icon\:size-xx-small {
-    font-size: xx-small !important;
-}
-
-.fnt\:size-larger,
-.icon\:size-larger {
-    font-size: larger !important;
-}
-
-.fnt\:size-smaller,
-.icon\:size-smaller {
-    font-size: smaller !important;
-}
-
-/*
-***
-    * selector: fnt
-    * dsc: font drop shadow
-    * ver: 200107-1
-    * fnt: set font drop shadow hue
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
-***
-*/
-.fnt\:shadow,
-.fnt\:shadow-light {
-    text-shadow: 2px 3px 3px #BDBDBD;
-}
-.fnt\:shadow-medium {
-    text-shadow: 2px 3px 3px #9E9E9E;
-}
-.fnt\:shadow-dark {
-    text-shadow: 2px 3px 3px #757575;
-}
-
-/*
-***
-    * selector: fnt
-    * dsc: font style
-    * ver: 200107-1
-    * fnt: italic / normal / oblique
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
-***
-*/
-.fnt\:style-italic {
-    font-style: italic !important;
-}
-
-.fnt\:style-normal {
-    font-style: normal !important;
-}
-
-.fnt\:style-oblique {
-    font-style: oblique !important;
-}
-
-/*
-***
-    * selector: fnt
-    * dsc: font weight
-    * ver: 200107-1
-    * fnt: set named weights
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
-***
-*/
-.fnt\:weight-bold,
-.fnt\:weight-bold\!hover:hover,
-.fnt\:weight-bold\!focus:focus {
-    font-weight: bold !important;
-}
-
-.fnt\:weight-bolder,
-.fnt\:weight-bolder\!hover:hover,
-.fnt\:weight-bolder\!focus:focus {
-    font-weight: bolder !important;
-}
-
-.fnt\:weight-lighter,
-.fnt\:weight-lighter\!hover:hover,
-.fnt\:weight-lighter\!focus:focus {
-    font-weight: lighter !important;
-}
-
-.fnt\:weight-normal,
-.fnt\:weight-normal\!hover:hover,
-.fnt\:weight-normal\!focus:focus {
-    font-weight: normal !important;
-}
-
-.fnt\:weight-default,
-.fnt\:weight-default\!hover:hover,
-.fnt\:weight-default\!focus:focus {
-    font-weight: var(--dft-font-weight) !important;
-}
-
-/*
-***
-    * selector: ht
-    * dsc: fixed height presets
-    * ver: 200107-1
-    * fnt: set of predefined fixed heights
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.ht\:auto {
-    height: auto !important;
-}
-
-/*: 32px :*/
-.ht\:2 {
-    height: 2rem !important;
-}
-
-/*: 64px :*/
-.ht\:4 {
-    height: 4rem !important;
-}
-
-/*: 96px :*/
-.ht\:6 {
-    height: 6rem !important;
-}
-
-/*: 128px :*/
-.ht\:8 {
-    height: 8rem !important;
-}
-
-/*: 160px :*/
-.ht\:10 {
-    height: 10rem !important;
-}
-
-/*: 192px :*/
-.ht\:12 {
-    height: 12rem !important;
-}
-
-/*: 224px :*/
-.ht\:14 {
-    height: 14rem !important;
-}
-
-/*: 256px :*/
-.ht\:16 {
-    height: 16rem !important;
-}
-
-/*: 288px :*/
-.ht\:18 {
-    height: 18rem !important;
-}
-
-/*: 320px :*/
-.ht\:20 {
-    height: 20rem !important;
-}
-
-/*
-***
-    * selector: ht
-    * dsc: % height presets
-    * ver: 200107-1
-    * fnt: set of predefined % heights
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.ht\:10\% {
-    height: 10% !important;
-}
-
-.ht\:12\% {
-    height: 12% !important;
-}
-
-.ht\:14\% {
-    height: 14% !important;
-}
-
-.ht\:16\% {
-    height: 16% !important;
-}
-
-.ht\:18\% {
-    height: 18% !important;
-}
-
-.ht\:20\% {
-    height: 20% !important;
-}
-
-.ht\:25\% {
-    height: 25% !important;
-}
-
-.ht\:30\% {
-    height: 30% !important;
-}
-
-.ht\:35\% {
-    height: 35% !important;
-}
-
-.ht\:40\% {
-    height: 40% !important;
-}
-
-.ht\:45\% {
-    height: 45% !important;
-}
-
-.ht\:50\% {
-    height: 50% !important;
-}
-
-.ht\:55\% {
-    height: 55% !important;
-}
-
-.ht\:60\% {
-    height: 60% !important;
-}
-
-.ht\:65\% {
-    height: 65% !important;
-}
-
-.ht\:70\% {
-    height: 70% !important;
-}
-
-.ht\:75\% {
-    height: 75% !important;
-}
-
-.ht\:80\% {
-    height: 80% !important;
-}
-
-.ht\:90\% {
-    height: 90% !important;
-}
-
-.ht\:100\% {
-    height: 100% !important;
-}
-
-/*
-***
-    * selector: ht
-    * dsc: fraction height presets
-    * ver: 200107-1
-    * fnt: set height to predefined fraction
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.ht\:1\/5 {
-    height: 20% !important;
-}
-
-.ht\:1\/4 {
-    height: 25% !important;
-}
-
-.ht\:1\/3 {
-    height: 33.3333% !important;
-}
-
-.ht\:2\/5 {
-    height: 40% !important;
-}
-
-.ht\:1\/2 {
-    height: 50% !important;
-}
-
-.ht\:3\/5 {
-    height: 60% !important;
-}
-
-.ht\:2\/3 {
-    height: 66.6666% !important;
-}
-
-.ht\:3\/4 {
-    height: 75% !important;
-}
-
-.ht\:4\/5 {
-    height: 80% !important;
-}
-
-.ht\:2\/2,
-.ht\:3\/3,
-.ht\:4\/4,
-.ht\:5\/5 {
-    height: 100% !important;
-}
-
-/*
-***
-    * selector: yht
-    * dsc: fixed height / auto width
-    * ver: 200107-1
-    * fnt: scale width based on preset height %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.yht\:10\% {
-    height: 10% !important;
-    width: auto !important;
-}
-
-.yht\:12\% {
-    height: 12% !important;
-    width: auto !important;
-}
-
-.yht\:14\% {
-    height: 14% !important;
-    width: auto !important;
-}
-
-.yht\:16\% {
-    height: 16% !important;
-    width: auto !important;
-}
-
-.yht\:18\% {
-    height: 18% !important;
-    width: auto !important;
-}
-
-.yht\:20\% {
-    height: 20% !important;
-    width: auto !important;
-}
-
-.yht\:25\% {
-    height: 25% !important;
-    width: auto !important;
-}
-
-.yht\:30\% {
-    height: 30% !important;
-    width: auto !important;
-}
-
-.yht\:35\% {
-    height: 35% !important;
-    width: auto !important;
-}
-
-.yht\:40\% {
-    height: 40% !important;
-    width: auto !important;
-}
-
-.yht\:45\% {
-    height: 45% !important;
-    width: auto !important;
-}
-
-.yht\:50\% {
-    height: 50% !important;
-    width: auto !important;
-}
-
-.yht\:55\% {
-    height: 55% !important;
-    width: auto !important;
-}
-
-.yht\:60\% {
-    height: 60% !important;
-    width: auto !important;
-}
-
-.yht\:65\% {
-    height: 65% !important;
-    width: auto !important;
-}
-
-.yht\:70\% {
-    height: 70% !important;
-    width: auto !important;
-}
-
-.yht\:75\% {
-    height: 75% !important;
-    width: auto !important;
-}
-
-.yht\:80\% {
-    height: 80% !important;
-    width: auto !important;
-}
-
-.yht\:90\% {
-    height: 90% !important;
-    width: auto !important;
-}
-
-.yht\:100\% {
-    height: 100% !important;
-    width: auto !important;
-}
-
-/*
-***
-    * selector: led
-    * dsc: leading
-    * ver: 200206
-    * fnt: set line height
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
-***
-*/
-.led\:x-narrow {
-    line-height: calc(var(--dft-line-height) - .25) !important;
-}
-
-.led\:narrow {
-    line-height: calc(var(--dft-line-height) - .125) !important;
-}
-
-.led\:normal,
-.led\:default {
-    line-height: var(--dft-line-height) !important;
-}
-
-.led\:wide {
-    line-height: calc(var(--dft-line-height) + .125) !important;
-}
-
-.led\:x-wide {
-    line-height: calc(var(--dft-line-height) + .25) !important;
-}
-
-.led\:2x-wide {
-    line-height: calc(var(--dft-line-height) + .375) !important;
-}
-
-.led\:3x-wide {
-    line-height: calc(var(--dft-line-height) + .5) !important;
-}
-
-.led\:4x-wide {
-    line-height: calc(var(--dft-line-height) + .625) !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin
-    * ver: 200120-1
-    * fnt: set all margins
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-/*: add margin :*/
-.mar\:\+0 {
-    margin: 0 !important;
-}
-
-.mar\:\+0\.25 {
-    margin: 0.25rem !important;
-}
-
-.mar\:\+0\.5 {
-    margin: 0.5rem !important;
-}
-
-.mar\:\+0\.75 {
-    margin: 0.75rem !important;
-}
-
-.mar\:\+1 {
-    margin: 1rem !important;
-}
-
-.mar\:\+1\.25 {
-    margin: 1.25rem !important;
-}
-
-.mar\:\+1\.5 {
-    margin: 1.5rem !important;
-}
-
-.mar\:\+1\.75 {
-    margin: 1.75rem !important;
-}
-
-.mar\:\+2 {
-    margin: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:-0 {
-    margin: 0 !important;
-}
-
-.mar\:-0\.25 {
-    margin: -0.25rem !important;
-}
-
-.mar\:-0\.5 {
-    margin: -0.5rem !important;
-}
-
-.mar\:-0\.75 {
-    margin: -0.75rem !important;
-}
-
-.mar\:-1 {
-    margin: -1rem !important;
-}
-
-.mar\:-1\.25 {
-    margin: -1.25rem !important;
-}
-
-.mar\:-1\.5 {
-    margin: -1.5rem !important;
-}
-
-.mar\:-1\.75 {
-    margin: -1.75rem !important;
-}
-
-.mar\:-2 {
-    margin: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin top
-    * ver: 200206
-    * fnt: set top margin
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-/*: add margin :*/
-.mar\:top\+0 {
-    margin-top: 0 !important;
-}
-
-.mar\:top\+0\.25 {
-    margin-top: 0.25rem !important;
-}
-
-.mar\:top\+0\.5 {
-    margin-top: 0.5rem !important;
-}
-
-.mar\:top\+0\.75 {
-    margin-top: 0.75rem !important;
-}
-
-.mar\:top\+1 {
-    margin-top: 1rem !important;
-}
-
-.mar\:top\+1\.25 {
-    margin-top: 1.25rem !important;
-}
-
-.mar\:top\+1\.5 {
-    margin-top: 1.5rem !important;
-}
-
-.mar\:top\+1\.75 {
-    margin-top: 1.75rem !important;
-}
-
-.mar\:top\+2 {
-    margin-top: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:top-0 {
-    margin-top: 0 !important;
-}
-
-.mar\:top-0\.25 {
-    margin-top: -0.25rem !important;
-}
-
-.mar\:top-0\.5 {
-    margin-top: -0.5rem !important;
-}
-
-.mar\:top-0\.75 {
-    margin-top: -0.75rem !important;
-}
-
-.mar\:top-1 {
-    margin-top: -1rem !important;
-}
-
-.mar\:top-1\.25 {
-    margin-top: -1.25rem !important;
-}
-
-.mar\:top-1\.5 {
-    margin-top: -1.5rem !important;
-}
-
-.mar\:top-1\.75 {
-    margin-top: -1.75rem !important;
-}
-
-.mar\:top-2 {
-    margin-top: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin right
-    * ver: 200206
-    * fnt: set right margin
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-
-/*: add margin :*/
-.mar\:top\+0 {
-    margin-right: 0 !important;
-}
-
-.mar\:top\+0\.25 {
-    margin-right: 0.25rem !important;
-}
-
-.mar\:top\+0\.5 {
-    margin-right: 0.5rem !important;
-}
-
-.mar\:top\+0\.75 {
-    margin-right: 0.75rem !important;
-}
-
-.mar\:top\+1 {
-    margin-right: 1rem !important;
-}
-
-.mar\:top\+1\.25 {
-    margin-right: 1.25rem !important;
-}
-
-.mar\:top\+1\.5 {
-    margin-right: 1.5rem !important;
-}
-
-.mar\:top\+1\.75 {
-    margin-right: 1.75rem !important;
-}
-
-.mar\:top\+2 {
-    margin-right: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:top-0 {
-    margin-right: 0 !important;
-}
-
-.mar\:top-0\.25 {
-    margin-right: -0.25rem !important;
-}
-
-.mar\:top-0\.5 {
-    margin-right: -0.5rem !important;
-}
-
-.mar\:top-0\.75 {
-    margin-right: -0.75rem !important;
-}
-
-.mar\:top-1 {
-    margin-right: -1rem !important;
-}
-
-.mar\:top-1\.25 {
-    margin-right: -1.25rem !important;
-}
-
-.mar\:top-1\.5 {
-    margin-right: -1.5rem !important;
-}
-
-.mar\:top-1\.75 {
-    margin-right: -1.75rem !important;
-}
-
-.mar\:top-2 {
-    margin-right: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin bottom
-    * ver: 200206
-    * fnt: set bottom margin
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-
-/*: add margin :*/
-.mar\:bottom\+0 {
-    margin-bottom: 0 !important;
-}
-
-.mar\:bottom\+0\.25 {
-    margin-bottom: 0.25rem !important;
-}
-
-.mar\:bottom\+0\.5 {
-    margin-bottom: 0.5rem !important;
-}
-
-.mar\:bottom\+0\.75 {
-    margin-bottom: 0.75rem !important;
-}
-
-.mar\:bottom\+1 {
-    margin-bottom: 1rem !important;
-}
-
-.mar\:bottom\+1\.25 {
-    margin-bottom: 1.25rem !important;
-}
-
-.mar\:bottom\+1\.5 {
-    margin-bottom: 1.5rem !important;
-}
-
-.mar\:bottom\+1\.75 {
-    margin-bottom: 1.75rem !important;
-}
-
-.mar\:bottom\+2 {
-    margin-bottom: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:bottom-0 {
-    margin-bottom: 0 !important;
-}
-
-.mar\:bottom-0\.25 {
-    margin-bottom: -0.25rem !important;
-}
-
-.mar\:bottom-0\.5 {
-    margin-bottom: -0.5rem !important;
-}
-
-.mar\:bottom-0\.75 {
-    margin-bottom: -0.75rem !important;
-}
-
-.mar\:bottom-1 {
-    margin-bottom: -1rem !important;
-}
-
-.mar\:bottom-1\.25 {
-    margin-bottom: -1.25rem !important;
-}
-
-.mar\:bottom-1\.5 {
-    margin-bottom: -1.5rem !important;
-}
-
-.mar\:bottom-1\.75 {
-    margin-bottom: -1.75rem !important;
-}
-
-.mar\:bottom-2 {
-    margin-bottom: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin left
-    * ver: 200206
-    * fnt: set left margin
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-
-/*: add margin :*/
-.mar\:left\+0 {
-    margin-left: 0 !important;
-}
-
-.mar\:left\+0\.25 {
-    margin-left: 0.25rem !important;
-}
-
-.mar\:left\+0\.5 {
-    margin-left: 0.5rem !important;
-}
-
-.mar\:left\+0\.75 {
-    margin-left: 0.75rem !important;
-}
-
-.mar\:left\+1 {
-    margin-left: 1rem !important;
-}
-
-.mar\:left\+1\.25 {
-    margin-left: 1.25rem !important;
-}
-
-.mar\:left\+1\.5 {
-    margin-left: 1.5rem !important;
-}
-
-.mar\:left\+1\.75 {
-    margin-left: 1.75rem !important;
-}
-
-.mar\:left\+2 {
-    margin-left: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:left-0 {
-    margin-left: 0 !important;
-}
-
-.mar\:left-0\.25 {
-    margin-left: -0.25rem !important;
-}
-
-.mar\:left-0\.5 {
-    margin-left: -0.5rem !important;
-}
-
-.mar\:left-0\.75 {
-    margin-left: -0.75rem !important;
-}
-
-.mar\:left-1 {
-    margin-left: -1rem !important;
-}
-
-.mar\:left-1\.25 {
-    margin-left: -1.25rem !important;
-}
-
-.mar\:left-1\.5 {
-    margin-left: -1.5rem !important;
-}
-
-.mar\:left-1\.75 {
-    margin-left: -1.75rem !important;
-}
-
-.mar\:left-2 {
-    margin-left: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin horzontal
-    * ver: 200206
-    * fnt: set left / right margins
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-
-/*: add margin :*/
-.mar\:hrz\+0 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.mar\:hrz\+0\.25 {
-    margin-left: 0.25rem !important;
-    margin-right: 0.25rem !important;
-}
-
-.mar\:hrz\+0\.5 {
-    margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
-}
-
-.mar\:hrz\+0\.75 {
-    margin-left: 0.75rem !important;
-    margin-right: 0.75rem !important;
-}
-
-.mar\:hrz\+1 {
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-}
-
-.mar\:hrz\+1.25 {
-    margin-left: 1.25rem !important;
-    margin-right: 1.25rem !important;
-}
-
-.mar\:hrz\+1.5 {
-    margin-left: 1.5rem !important;
-    margin-right: 1.5rem !important;
-}
-
-.mar\:hrz\+1.75 {
-    margin-left: 1.75rem !important;
-    margin-right: 1.75rem !important;
-}
-
-.mar\:hrz\+2 {
-    margin-left: 2rem !important;
-    margin-right: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:hrz-0 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.mar\:hrz-0\.25 {
-    margin-left: -0.25rem !important;
-    margin-right: -0.25rem !important;
-}
-
-.mar\:hrz-0\.5 {
-    margin-left: -0.5rem !important;
-    margin-right: -0.5rem !important;
-}
-
-.mar\:hrz-0\.75 {
-    margin-left: -0.75rem !important;
-    margin-right: -0.75rem !important;
-}
-
-.mar\:hrz-1 {
-    margin-left: -1rem !important;
-    margin-right: -1rem !important;
-}
-
-.mar\:hrz-1.25 {
-    margin-left: -1.25rem !important;
-    margin-right: -1.25rem !important;
-}
-
-.mar\:hrz-1.5 {
-    margin-left: -1.5rem !important;
-    margin-right: -1.5rem !important;
-}
-
-.mar\:hrz-1.75 {
-    margin-left: -1.75rem !important;
-    margin-right: -1.75rem !important;
-}
-
-.mar\:hrz-2 {
-    margin-left: -2rem !important;
-    margin-right: -2rem !important;
-}
-
-/*
-***
-    * selector: mar
-    * dsc: margin vertical
-    * ver: 200206
-    * fnt: set top / bottom margins
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-***
-*/
-
-/*: add margin :*/
-.mar\:vrt\+0 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.mar\:vrt\+0\.25 {
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
-}
-
-.mar\:vrt\+0\.5 {
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-}
-
-.mar\:vrt\+0\.75 {
-    margin-top: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-}
-
-.mar\:vrt\+1 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-}
-
-.mar\:vrt\+1.25 {
-    margin-top: 1.25rem !important;
-    margin-bottom: 1.25rem !important;
-}
-
-.mar\:vrt\+1.5 {
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-}
-
-.mar\:vrt\+1.75 {
-    margin-top: 1.75rem !important;
-    margin-bottom: 1.75rem !important;
-}
-
-.mar\:vrt\+2 {
-    margin-top: 2rem !important;
-    margin-bottom: 2rem !important;
-}
-
-/*: subtract margin :*/
-.mar\:vrt-0 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.mar\:vrt-0\.25 {
-    margin-top: -0.25rem !important;
-    margin-bottom: -0.25rem !important;
-}
-
-.mar\:vrt-0\.5 {
-    margin-top: -0.5rem !important;
-    margin-bottom: -0.5rem !important;
-}
-
-.mar\:vrt-0\.75 {
-    margin-top: -0.75rem !important;
-    margin-bottom: -0.75rem !important;
-}
-
-.mar\:vrt-1 {
-    margin-top: -1rem !important;
-    margin-bottom: -1rem !important;
-}
-
-.mar\:vrt-1.25 {
-    margin-top: -1.25rem !important;
-    margin-bottom: -1.25rem !important;
-}
-
-.mar\:vrt-1.5 {
-    margin-top: -1.5rem !important;
-    margin-bottom: -1.5rem !important;
-}
-
-.mar\:vrt-1.75 {
-    margin-top: -1.75rem !important;
-    margin-bottom: -1.75rem !important;
-}
-
-.mar\:vrt-2 {
-    margin-top: -2rem !important;
-    margin-bottom: -2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: padding
-    * ver: 200206
-    * fnt: set all padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:\+0 {
-    padding: 0 !important;
-}
-
-.pad\:\+0\.25 {
-    padding: 0.25rem !important;
-}
-
-.pad\:\+0\.5 {
-    padding: 0.5rem !important;
-}
-
-.pad\:\+0\.75 {
-    padding: 0.75rem !important;
-}
-
-.pad\:\+1 {
-    padding: 1rem !important;
-}
-
-.pad\:\+1\.25 {
-    padding: 1.25rem !important;
-}
-
-.pad\:\+1\.5 {
-    padding: 1.5rem !important;
-}
-
-.pad\:\+1\.75 {
-    padding: 1.75rem !important;
-}
-
-.pad\:\+2 {
-    padding: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: top
-    * ver: 200120-1
-    * fnt: set top padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:top\+0 {
-    padding-top: 0 !important;
-}
-
-.pad\:top\+0\.25 {
-    padding-top: 0.25rem !important;
-}
-
-.pad\:top\+0\.5 {
-    padding-top: 0.5rem !important;
-}
-
-.pad\:top\+0\.75 {
-    padding-top: 0.75rem !important;
-}
-
-.pad\:top\+1 {
-    padding-top: 1rem !important;
-}
-
-.pad\:top\+1\.25 {
-    padding-top: 1.25rem !important;
-}
-
-.pad\:top\+1\.5 {
-    padding-top: 1.5rem !important;
-}
-
-.pad\:top\+1\.75 {
-    padding-top: 1.75rem !important;
-}
-
-.pad\:top\+2 {
-    padding-top: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: right
-    * ver: 200120-1
-    * fnt: set right padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:right\+0 {
-    padding-right: 0 !important;
-}
-
-.pad\:right\+0\.25 {
-    padding-right: 0.25rem !important;
-}
-
-.pad\:right\+0\.5 {
-    padding-right: 0.5rem !important;
-}
-
-.pad\:right\+0\.75 {
-    padding-right: 0.75rem !important;
-}
-
-.pad\:right\+1 {
-    padding-right: 1rem !important;
-}
-
-.pad\:right\+1\.25 {
-    padding-right: 1.25rem !important;
-}
-
-.pad\:right\+1\.5 {
-    padding-right: 1.5rem !important;
-}
-
-.pad\:right\+1\.75 {
-    padding-right: 1.75rem !important;
-}
-
-.pad\:right\+2 {
-    padding-right: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: bottom
-    * ver: 200120-1
-    * fnt: set bottom padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:bottom\+0 {
-    padding-bottom: 0 !important;
-}
-
-.pad\:bottom\+0\.25 {
-    padding-bottom: 0.25rem !important;
-}
-
-.pad\:bottom\+0\.5 {
-    padding-bottom: 0.5rem !important;
-}
-
-.pad\:bottom\+0\.75 {
-    padding-bottom: 0.75rem !important;
-}
-
-.pad\:bottom\+1 {
-    padding-bottom: 1rem !important;
-}
-
-.pad\:bottom\+1\.25 {
-    padding-bottom: 1.25rem !important;
-}
-
-.pad\:bottom\+1\.5 {
-    padding-bottom: 1.5rem !important;
-}
-
-.pad\:bottom\+1\.75 {
-    padding-bottom: 1.75rem !important;
-}
-
-.pad\:bottom\+2 {
-    padding-bottom: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: left
-    * ver: 200120-1
-    * fnt: set left padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:left\+0 {
-    padding-left: 0 !important;
-}
-
-.pad\:left\+0\.25 {
-    padding-left: 0.25rem !important;
-}
-
-.pad\:left\+0\.5 {
-    padding-left: 0.5rem !important;
-}
-
-.pad\:left\+0\.75 {
-    padding-left: 0.75rem !important;
-}
-
-.pad\:left\+1 {
-    padding-left: 1rem !important;
-}
-
-.pad\:left\+1\.25 {
-    padding-left: 1.25rem !important;
-}
-
-.pad\:left\+1\.5 {
-    padding-left: 1.5rem !important;
-}
-
-.pad\:left\+1\.75 {
-    padding-left: 1.75rem !important;
-}
-
-.pad\:left\+2 {
-    padding-left: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: hrz
-    * ver: 200120-1
-    * fnt: set left/right (horizontal) padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:hrz\+0 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.pad\:hrz\+0\.25 {
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-}
-
-.pad\:hrz\+0\.5 {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-}
-
-.pad\:hrz\+0\.75 {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-}
-
-.pad\:hrz\+1 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-}
-
-.pad\:hrz\+1.25 {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-}
-
-.pad\:hrz\+1.5 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-}
-
-.pad\:hrz\+1.75 {
-    padding-left: 1.75rem !important;
-    padding-right: 1.75rem !important;
-}
-
-.pad\:hrz\+2 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-}
-
-/*
-***
-    * selector: pad
-    * dsc: vrt
-    * ver: 200120-1
-    * fnt: set top/bottom (vertical) padding
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-***
-*/
-.pad\:vrt\+0 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.pad\:vrt\+0\.25 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
-}
-
-.pad\:vrt\+0\.5 {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-}
-
-.pad\:vrt\+0\.75 {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-}
-
-.pad\:vrt\+1 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-}
-
-.pad\:vrt\+1.25 {
-    padding-top: 1.25rem !important;
-    padding-bottom: 1.25rem !important;
-}
-
-.pad\:vrt\+1.5 {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-}
-
-.pad\:vrt\+1.75 {
-    padding-top: 1.75rem !important;
-    padding-bottom: 1.75rem !important;
-}
-
-.pad\:vrt\+2 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-}
-
-/*
-***
-    * selector: tcw
-    * dsc: table column width
-    * ver: 200206
-    * fnt: fix column width or grow with content
-    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-***
-*/
-.tcw\:auto {
-	table-layout: auto;
-}
-
-.tcw\:fixed {
-	table-layout: fixed;
-}
-
-/*
-***
-    * selector: tdc
-    * dsc: text decoration
-    * ver: 200206
-    * fnt: set predefined text decoration
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
-***
-*/
-
-.tdc\:underline, 
-.tdc\:underline\!hover:hover, 
-.tdc\:underline\!focus:focus {
-	text-decoration: underline solid;
-}
-
-.tdc\:underline-red, 
-.tdc\:underline-red\!hover:hover, 
-.tdc\:underline-red\!focus:focus {
-	text-decoration: underline solid #B50707;
-}
-
-.tdc\:line-through,
-.tdc\:line-through\!hover:hover,
-.tdc\:line-through\!focus:focus {
-	text-decoration: line-through solid;
-}
-
-.tdc\:line-through-red,
-.tdc\:line-through-red\!hover:hover,
-.tdc\:line-through-red\!focus:focus {
-	text-decoration: line-through solid #B50707;
-}
-
-.tdc\:underline-double,
-.tdc\:underline-double\!hover:hover,
-.tdc\:underline-double\!focus:focus {
-	text-decoration: underline double;
-}
-
-.tdc\:underline-double-red,
-.tdc\:underline-double-red\!hover:hover,
-.tdc\:underline-double-red\!focus:focus {
-	text-decoration: underline double #B50707;
-}
-
-.tdc\:underline-dotted,
-.tdc\:underline-dotted\!hover:hover,
-.tdc\:underline-dotted\!focus:focus {
-	text-decoration: underline dotted;
-}
-
-.tdc\:underline-dotted-red,
-.tdc\:underline-dotted-red\!hover:hover,
-.tdc\:underline-dotted-red\!focus:focus {
-	text-decoration: underline dotted #B50707;
-}
-
-.tdc\:underline-wavy,
-.tdc\:underline-wavy\!hover:hover,
-.tdc\:underline-wavy\!focus:focus {
-	text-decoration: underline wavy;
-}
-
-.tdc\:underline-wavy-red,
-.tdc\:underline-wavy-red\!hover:hover,
-.tdc\:underline-wavy-red\!focus:focus {
-	text-decoration: underline wavy #B50707;
-}
-
-/*
-***
-    * selector: trk
-    * dsc: tracking
-    * ver: 200206
-    * fnt: adjust letter spacing
-    * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
-***
-*/
-.trk\:narrow {
-    letter-spacing: -0.01rem !important;
-}
-
-.trk\:normal,
-.trk\:default {
-    letter-spacing: normal !important;
-}
-
-.trk\:wide {
-    letter-spacing: 0.1rem !important;
-}
-
-.trk\:x-wide {
-    letter-spacing: 0.5rem !important;
-}
-
-/*
-***
-    * selector: wd
-    * dsc: fixed width presets
-    * ver: 200107-1
-    * fnt: set of predefined fixed widths
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-***
-*/
-.wd\:auto {
-    width: auto !important;
-}
-
-/*: 32px :*/
-.wd\:2 {
-    width: 2rem !important;
-}
-
-/*: 64px :*/
-.wd\:4 {
-    width: 4rem !important;
-}
-
-/*: 96px :*/
-.wd\:6 {
-    width: 6rem !important;
-}
-
-/*: 128px :*/
-.wd\:8 {
-    width: 8rem !important;
-}
-
-/*: 160px :*/
-.wd\:10 {
-    width: 10rem !important;
-}
-
-/*: 192px :*/
-.wd\:12 {
-    width: 12rem !important;
-}
-
-/*: 224px :*/
-.wd\:14 {
-    width: 14rem !important;
-}
-
-/*: 256px :*/
-.wd\:16 {
-    width: 16rem !important;
-}
-
-/*: 288px :*/
-.wd\:18 {
-    width: 18rem !important;
-}
-
-/*: 320px :*/
-.wd\:20 {
-    width: 20rem !important;
-}
-
-/*
-***
-    * selector: wd
-    * dsc: % width presets
-    * ver: 200107-1
-    * fnt: set of predefined % widths
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-***
-*/
-.wd\:10\% {
-    width: 10% !important;
-}
-
-.wd\:12\% {
-    width: 12% !important;
-}
-
-.wd\:14\% {
-    width: 14% !important;
-}
-
-.wd\:16\% {
-    width: 16% !important;
-}
-
-.wd\:18\% {
-    width: 18% !important;
-}
-
-.wd\:20\% {
-    width: 20% !important;
-}
-
-.wd\:25\% {
-    width: 25% !important;
-}
-
-.wd\:30\% {
-    width: 30% !important;
-}
-
-.wd\:35\% {
-    width: 35% !important;
-}
-
-.wd\:40\% {
-    width: 40% !important;
-}
-
-.wd\:45\% {
-    width: 45% !important;
-}
-
-.wd\:50\% {
-    width: 50% !important;
-}
-
-.wd\:55\% {
-    width: 55% !important;
-}
-
-.wd\:60\% {
-    width: 60% !important;
-}
-
-.wd\:65\% {
-    width: 65% !important;
-}
-
-.wd\:70\% {
-    width: 70% !important;
-}
-
-.wd\:75\% {
-    width: 75% !important;
-}
-
-.wd\:80\% {
-    width: 80% !important;
-}
-
-.wd\:90\% {
-    width: 90% !important;
-}
-
-.wd\:100\% {
-    width: 100% !important;
-}
-
-/*
-***
-    * selector: wd
-    * dsc: fraction width presets
-    * ver: 200107-1
-    * fnt: set width to predefined fraction
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-***
-*/
-.wd\:1\/5 {
-    width: 20% !important;
-}
-
-.wd\:1\/4 {
-    width: 25% !important;
-}
-
-.wd\:1\/3 {
-    width: 33.3333% !important;
-}
-
-.wd\:2\/5 {
-    width: 40% !important;
-}
-
-.wd\:1\/2 {
-    width: 50% !important;
-}
-
-.wd\:3\/5 {
-    width: 60% !important;
-}
-
-.wd\:2\/3 {
-    width: 66.6666% !important;
-}
-
-.wd\:3\/4 {
-    width: 75% !important;
-}
-
-.wd\:4\/5 {
-    width: 80% !important;
-}
-
-.wd\:2\/2,
-.wd\:3\/3,
-.wd\:4\/4,
-.wd\:5\/5 {
-    width: 100% !important;
-}
-
-/*
-***
-    * selector: xwd
-    * dsc: auto height / fixed width
-    * ver: 200107-1
-    * fnt: scale height based on preset width %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.xwd\:10\% {
-    height: auto !important;
-    width: 10% !important;
-}
-
-.xwd\:12\% {
-    height: auto !important;
-    width: 12% !important;
-}
-
-.xwd\:14\% {
-    height: auto !important;
-    width: 14% !important;
-}
-
-.xwd\:16\% {
-    height: auto !important;
-    width: 16% !important;
-}
-
-.xwd\:18\% {
-    height: auto !important;
-    width: 18% !important;
-}
-
-.xwd\:20\% {
-    height: auto !important;
-    width: 20% !important;
-}
-
-.xwd\:25\% {
-    height: auto !important;
-    width: 25% !important;
-}
-
-.xwd\:30\% {
-    height: auto !important;
-    width: 30% !important;
-}
-
-.xwd\:35\% {
-    height: auto !important;
-    width: 35% !important;
-}
-
-.xwd\:40\% {
-    height: auto !important;
-    width: 40% !important;
-}
-
-.xwd\:45\% {
-    height: auto !important;
-    width: 45% !important;
-}
-
-.xwd\:50\% {
-    height: auto !important;
-    width: 50% !important;
-}
-
-.xwd\:55\% {
-    height: auto !important;
-    width: 55% !important;
-}
-
-.xwd\:60\% {
-    height: auto !important;
-    width: 60% !important;
-}
-
-.xwd\:65\% {
-    height: auto !important;
-    width: 65% !important;
-}
-
-.xwd\:70\% {
-    height: auto !important;
-    width: 70% !important;
-}
-
-.xwd\:75\% {
-    height: auto !important;
-    width: 75% !important;
-}
-
-.xwd\:80\% {
-    height: auto !important;
-    width: 80% !important;
-}
-
-.xwd\:90\% {
-    height: auto !important;
-    width: 90% !important;
-}
-
-.xwd\:100\% {
-    height: auto !important;
-    width: 100% !important;
-}
-
-/*  # DIY flexbox components
-    # 200120-1
-    # classes to build flexbox
-    # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-        flexbox
-        fx:c        - column no wrap
-        fx:c-rev    - column reverse no wrap
-        fx:cw       - column wrap
-        fx:cw-rev   - column wrap reverse
-        fx:r        - row no wrap
-        fx:r-rev    - row reverse no wrap
-        fx:rw       - row wrap
-        fx:rw-rev   - row wrap reverse
-        justify content
-        fxa:1    - flex-start
-        fxa:2    - flex-end
-        fxa:3    - center
-        fxa:4    - space-between
-        fxa:5    - space-around
-        align content
-        fxb:1    - flex-start
-        fxb:2    - flex-end
-        fxb:3    - center
-        fxb:4    - between
-        fxb:5    - around
-        fxb:6    - stretch
-        align items
-        fxc:1    - flex-start
-        fxc:2    - flex-end
-        fxc:3    - center
-        fxc:4    - baseline
-        fxc:5    - stretch
-        item attributes (auto basis)
-        fxd:1    - 0 1 auto
-        fxd:2    - 1 1 auto
-        fxd:3    - 2 1 auto
-        align self (override)
-        fxe:1    - auto
-        fxe:2    - flex-start
-        fxe:3    - flex-end
-        fxe:4    - center
-        fxe:5    - baseline
-        fxe:6    - stretch
-**/
-.fx\:c {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:c-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:cw {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.fx\:cw-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: wrap-reverse;
-    -ms-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-}
-
-.fx\:r {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:r-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
-
-.fx\:rw {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.fx\:rw-rev {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap-reverse;
-    -ms-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-}
-
-/*: justify content :*/
-.fxa\:1 {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-}
-
-.fxa\:2 {
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-
-.fxa\:3 {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.fxa\:4 {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.fxa\:5 {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-
-/*: align content :*/
-.fxb\:1 {
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-}
-
-.fxb\:2 {
-    -webkit-align-content: flex-end;
-    -ms-flex-line-pack: end;
-    align-content: flex-end;
-}
-
-.fxb\:3 {
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-}
-
-.fxb\:4 {
-    -webkit-align-content: space-between;
-    -ms-flex-line-pack: justify;
-    align-content: space-between;
-}
-
-.fxb\:5 {
-    -webkit-align-content: space-around;
-    -ms-flex-line-pack: distribute;
-    align-content: space-around;
-}
-
-.fxb\:6 {
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-}
-
-/*: align items :*/
-.fxc\:1 {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.fxc\:2 {
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-}
-
-.fxc\:3 {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.fxc\:4 {
-    -webkit-align-items: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
-}
-
-.fxc\:5 {
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-}
-
-/*: item (importance ranking / auto is assumed) :*/
-.fxd\:1 {
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;	
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-}
-
-.fxd\:2 {
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;	
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-}
-
-.fxd\:3 {
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;	
-    -webkit-flex: 2 1 auto;
-    -ms-flex: 2 1 auto;
-    flex: 2 1 auto;
-}
-
-.fxd\:4 {
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;	
-    -webkit-flex: 1 2 auto;
-    -ms-flex: 1 2 auto;
-    flex: 1 2  auto;
-}
-
-/*: item (align self) :*/
-.fxe\:1 {
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-}
-
-.fxe\:2 {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-}
-
-.fxe\:3 {
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-}
-
-.fxe\:4 {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-}
-
-.fxe\:5 {
-    -webkit-align-self: baseline;
-    -ms-flex-item-align: baseline;
-    align-self: baseline;
-}
-
-.fxe\:6 {
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-}
-
-/*
-***
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-	*	media break
-		"sm" stands for standard media (everything but mobile)
-		not every class has a an alternate "sm)" equivalent
-	*	https://developer.mozilla.org/en-US/docs/Web/CSS/@media
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-***
-*/
-@media (min-width: 640px) {
-	/*
-	***
-	    * selector: dsp
-	    * dsc: element display
-	    * ver: 200107-1
-	    * fnt: hide / display page elements
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/display
-	***
-	*/
-	.sm\)dsp\:none {
-	    display: none !important;
-	}
-
-	.sm\)dsp\:hidden {
-	    visibility: hidden !important;
-	}
-
-	.sm\)dsp\:block {
-	    display: block !important;
-	}
-
-	.sm\)dsp\:inline {
-	    display: inline !important;
-	}
-
-	.sm\)dsp\:inline-block {
-	    display: inline-block !important;
-	}
-
-	/*
-	***
-	    * selector: fnt
-	    * dsc: font size
-	    * ver: 200107-1
-	    * fnt: set font / font icon size
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
-	***
-	*/
-	.sm\)fnt\:size-xxx-large,
-	.sm\)icon\:size-xxx-large {
-	    font-size: xxx-large !important;
-	}
-
-	.sm\)fnt\:size-xx-large,
-	.sm\)icon\:size-xx-large {
-	    font-size: xx-large !important;
-	}
-
-	.sm\)fnt\:size-x-large,
-	.sm\)icon\:size-x-large {
-	    font-size: x-large !important;
-	}
-
-	.sm\)fnt\:size-large,
-	.sm\)icon\:size-large {
-	    font-size: large !important;
-	}
-
-	.sm\)fnt\:size-x-medium,
-	.sm\)icon\:size-x-medium {
-	    font-size: var(--font-size-xr) !important;
-	}
-
-	.sm\)fnt\:size-medium,
-	.sm\)fnt\:size-default,
-	.sm\)icon\:size-medium,
-	.sm\)icon\:size-default {
-	    font-size: medium !important;
-	}
-
-	.sm\)fnt\:size-small,
-	.sm\)icon\:size-small {
-	    font-size: small !important;
-	}
-
-	.sm\)fnt\:size-x-small,
-	.sm\)icon\:size-x-small {
-	    font-size: x-small !important;
-	}
-
-	.sm\)fnt\:size-xx-small,
-	.sm\)icon\:size-xx-small {
-	    font-size: xx-small !important;
-	}
-
-	.sm\)fnt\:size-larger,
-	.sm\)icon\:size-larger {
-	    font-size: larger !important;
-	}
-
-	.sm\)fnt\:size-smaller,
-	.sm\)icon\:size-smaller {
-	    font-size: smaller !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin
-	    * ver: 200206
-	    * fnt: set all margins
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-	/*: add margin :*/
-	.sm\)mar\:\+0 {
-	    margin: 0 !important;
-	}
-
-	.sm\)mar\:\+0\.25 {
-	    margin: 0.25rem !important;
-	}
-
-	.sm\)mar\:\+0\.5 {
-	    margin: 0.5rem !important;
-	}
-
-	.sm\)mar\:\+0\.75 {
-	    margin: 0.75rem !important;
-	}
-
-	.sm\)mar\:\+1 {
-	    margin: 1rem !important;
-	}
-
-	.sm\)mar\:\+1\.25 {
-	    margin: 1.25rem !important;
-	}
-
-	.sm\)mar\:\+1\.5 {
-	    margin: 1.5rem !important;
-	}
-
-	.sm\)mar\:\+1\.75 {
-	    margin: 1.75rem !important;
-	}
-
-	.sm\)mar\:\+2 {
-	    margin: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:-0 {
-	    margin: 0 !important;
-	}
-
-	.sm\)mar\:-0\.25 {
-	    margin: -0.25rem !important;
-	}
-
-	.sm\)mar\:-0\.5 {
-	    margin: -0.5rem !important;
-	}
-
-	.sm\)mar\:-0\.75 {
-	    margin: -0.75rem !important;
-	}
-
-	.sm\)mar\:-1 {
-	    margin: -1rem !important;
-	}
-
-	.sm\)mar\:-1\.25 {
-	    margin: -1.25rem !important;
-	}
-
-	.sm\)mar\:-1\.5 {
-	    margin: -1.5rem !important;
-	}
-
-	.sm\)mar\:-1\.75 {
-	    margin: -1.75rem !important;
-	}
-
-	.sm\)mar\:-2 {
-	    margin: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin top
-	    * ver: 200120-1
-	    * fnt: set top margin
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-	/*: add margin :*/
-	.sm\)mar\:top\+0 {
-	    margin-top: 0 !important;
-	}
-
-	.sm\)mar\:top\+0\.25 {
-	    margin-top: 0.25rem !important;
-	}
-
-	.sm\)mar\:top\+0\.5 {
-	    margin-top: 0.5rem !important;
-	}
-
-	.sm\)mar\:top\+0\.75 {
-	    margin-top: 0.75rem !important;
-	}
-
-	.sm\)mar\:top\+1 {
-	    margin-top: 1rem !important;
-	}
-
-	.sm\)mar\:top\+1\.25 {
-	    margin-top: 1.25rem !important;
-	}
-
-	.sm\)mar\:top\+1\.5 {
-	    margin-top: 1.5rem !important;
-	}
-
-	.sm\)mar\:top\+1\.75 {
-	    margin-top: 1.75rem !important;
-	}
-
-	.sm\)mar\:top\+2 {
-	    margin-top: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:top-0 {
-	    margin-top: 0 !important;
-	}
-
-	.sm\)mar\:top-0\.25 {
-	    margin-top: -0.25rem !important;
-	}
-
-	.sm\)mar\:top-0\.5 {
-	    margin-top: -0.5rem !important;
-	}
-
-	.sm\)mar\:top-0\.75 {
-	    margin-top: -0.75rem !important;
-	}
-
-	.sm\)mar\:top-1 {
-	    margin-top: -1rem !important;
-	}
-
-	.sm\)mar\:top-1\.25 {
-	    margin-top: -1.25rem !important;
-	}
-
-	.sm\)mar\:top-1\.5 {
-	    margin-top: -1.5rem !important;
-	}
-
-	.sm\)mar\:top-1\.75 {
-	    margin-top: -1.75rem !important;
-	}
-
-	.sm\)mar\:top-2 {
-	    margin-top: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin right
-	    * ver: 200206
-	    * fnt: set right margin
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-
-	/*: add margin :*/
-	.sm\)mar\:top\+0 {
-	    margin-right: 0 !important;
-	}
-
-	.sm\)mar\:top\+0\.25 {
-	    margin-right: 0.25rem !important;
-	}
-
-	.sm\)mar\:top\+0\.5 {
-	    margin-right: 0.5rem !important;
-	}
-
-	.sm\)mar\:top\+0\.75 {
-	    margin-right: 0.75rem !important;
-	}
-
-	.sm\)mar\:top\+1 {
-	    margin-right: 1rem !important;
-	}
-
-	.sm\)mar\:top\+1\.25 {
-	    margin-right: 1.25rem !important;
-	}
-
-	.sm\)mar\:top\+1\.5 {
-	    margin-right: 1.5rem !important;
-	}
-
-	.sm\)mar\:top\+1\.75 {
-	    margin-right: 1.75rem !important;
-	}
-
-	.sm\)mar\:top\+2 {
-	    margin-right: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:top-0 {
-	    margin-right: 0 !important;
-	}
-
-	.sm\)mar\:top-0\.25 {
-	    margin-right: -0.25rem !important;
-	}
-
-	.sm\)mar\:top-0\.5 {
-	    margin-right: -0.5rem !important;
-	}
-
-	.sm\)mar\:top-0\.75 {
-	    margin-right: -0.75rem !important;
-	}
-
-	.sm\)mar\:top-1 {
-	    margin-right: -1rem !important;
-	}
-
-	.sm\)mar\:top-1\.25 {
-	    margin-right: -1.25rem !important;
-	}
-
-	.sm\)mar\:top-1\.5 {
-	    margin-right: -1.5rem !important;
-	}
-
-	.sm\)mar\:top-1\.75 {
-	    margin-right: -1.75rem !important;
-	}
-
-	.sm\)mar\:top-2 {
-	    margin-right: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin bottom
-	    * ver: 200206
-	    * fnt: set bottom margin
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-
-	/*: add margin :*/
-	.sm\)mar\:bottom\+0 {
-	    margin-bottom: 0 !important;
-	}
-
-	.sm\)mar\:bottom\+0\.25 {
-	    margin-bottom: 0.25rem !important;
-	}
-
-	.sm\)mar\:bottom\+0\.5 {
-	    margin-bottom: 0.5rem !important;
-	}
-
-	.sm\)mar\:bottom\+0\.75 {
-	    margin-bottom: 0.75rem !important;
-	}
-
-	.sm\)mar\:bottom\+1 {
-	    margin-bottom: 1rem !important;
-	}
-
-	.sm\)mar\:bottom\+1\.25 {
-	    margin-bottom: 1.25rem !important;
-	}
-
-	.sm\)mar\:bottom\+1\.5 {
-	    margin-bottom: 1.5rem !important;
-	}
-
-	.sm\)mar\:bottom\+1\.75 {
-	    margin-bottom: 1.75rem !important;
-	}
-
-	.sm\)mar\:bottom\+2 {
-	    margin-bottom: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:bottom-0 {
-	    margin-bottom: 0 !important;
-	}
-
-	.sm\)mar\:bottom-0\.25 {
-	    margin-bottom: -0.25rem !important;
-	}
-
-	.sm\)mar\:bottom-0\.5 {
-	    margin-bottom: -0.5rem !important;
-	}
-
-	.sm\)mar\:bottom-0\.75 {
-	    margin-bottom: -0.75rem !important;
-	}
-
-	.sm\)mar\:bottom-1 {
-	    margin-bottom: -1rem !important;
-	}
-
-	.sm\)mar\:bottom-1\.25 {
-	    margin-bottom: -1.25rem !important;
-	}
-
-	.sm\)mar\:bottom-1\.5 {
-	    margin-bottom: -1.5rem !important;
-	}
-
-	.sm\)mar\:bottom-1\.75 {
-	    margin-bottom: -1.75rem !important;
-	}
-
-	.sm\)mar\:bottom-2 {
-	    margin-bottom: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin left
-	    * ver: 200206
-	    * fnt: set left margin
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-
-	/*: add margin :*/
-	.sm\)mar\:left\+0 {
-	    margin-left: 0 !important;
-	}
-
-	.sm\)mar\:left\+0\.25 {
-	    margin-left: 0.25rem !important;
-	}
-
-	.sm\)mar\:left\+0\.5 {
-	    margin-left: 0.5rem !important;
-	}
-
-	.sm\)mar\:left\+0\.75 {
-	    margin-left: 0.75rem !important;
-	}
-
-	.sm\)mar\:left\+1 {
-	    margin-left: 1rem !important;
-	}
-
-	.sm\)mar\:left\+1\.25 {
-	    margin-left: 1.25rem !important;
-	}
-
-	.sm\)mar\:left\+1\.5 {
-	    margin-left: 1.5rem !important;
-	}
-
-	.sm\)mar\:left\+1\.75 {
-	    margin-left: 1.75rem !important;
-	}
-
-	.sm\)mar\:left\+2 {
-	    margin-left: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:left-0 {
-	    margin-left: 0 !important;
-	}
-
-	.sm\)mar\:left-0\.25 {
-	    margin-left: -0.25rem !important;
-	}
-
-	.sm\)mar\:left-0\.5 {
-	    margin-left: -0.5rem !important;
-	}
-
-	.sm\)mar\:left-0\.75 {
-	    margin-left: -0.75rem !important;
-	}
-
-	.sm\)mar\:left-1 {
-	    margin-left: -1rem !important;
-	}
-
-	.sm\)mar\:left-1\.25 {
-	    margin-left: -1.25rem !important;
-	}
-
-	.sm\)mar\:left-1\.5 {
-	    margin-left: -1.5rem !important;
-	}
-
-	.sm\)mar\:left-1\.75 {
-	    margin-left: -1.75rem !important;
-	}
-
-	.sm\)mar\:left-2 {
-	    margin-left: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin horzontal
-	    * ver: 200206
-	    * fnt: set left / right margins
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-
-	/*: add margin :*/
-	.sm\)mar\:hrz\+0 {
-	    margin-left: 0 !important;
-	    margin-right: 0 !important;
-	}
-
-	.sm\)mar\:hrz\+0\.25 {
-	    margin-left: 0.25rem !important;
-	    margin-right: 0.25rem !important;
-	}
-
-	.sm\)mar\:hrz\+0\.5 {
-	    margin-left: 0.5rem !important;
-	    margin-right: 0.5rem !important;
-	}
-
-	.sm\)mar\:hrz\+0\.75 {
-	    margin-left: 0.75rem !important;
-	    margin-right: 0.75rem !important;
-	}
-
-	.sm\)mar\:hrz\+1 {
-	    margin-left: 1rem !important;
-	    margin-right: 1rem !important;
-	}
-
-	.sm\)mar\:hrz\+1.25 {
-	    margin-left: 1.25rem !important;
-	    margin-right: 1.25rem !important;
-	}
-
-	.sm\)mar\:hrz\+1.5 {
-	    margin-left: 1.5rem !important;
-	    margin-right: 1.5rem !important;
-	}
-
-	.sm\)mar\:hrz\+1.75 {
-	    margin-left: 1.75rem !important;
-	    margin-right: 1.75rem !important;
-	}
-
-	.sm\)mar\:hrz\+2 {
-	    margin-left: 2rem !important;
-	    margin-right: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:hrz-0 {
-	    margin-left: 0 !important;
-	    margin-right: 0 !important;
-	}
-
-	.sm\)mar\:hrz-0\.25 {
-	    margin-left: -0.25rem !important;
-	    margin-right: -0.25rem !important;
-	}
-
-	.sm\)mar\:hrz-0\.5 {
-	    margin-left: -0.5rem !important;
-	    margin-right: -0.5rem !important;
-	}
-
-	.sm\)mar\:hrz-0\.75 {
-	    margin-left: -0.75rem !important;
-	    margin-right: -0.75rem !important;
-	}
-
-	.sm\)mar\:hrz-1 {
-	    margin-left: -1rem !important;
-	    margin-right: -1rem !important;
-	}
-
-	.sm\)mar\:hrz-1.25 {
-	    margin-left: -1.25rem !important;
-	    margin-right: -1.25rem !important;
-	}
-
-	.sm\)mar\:hrz-1.5 {
-	    margin-left: -1.5rem !important;
-	    margin-right: -1.5rem !important;
-	}
-
-	.sm\)mar\:hrz-1.75 {
-	    margin-left: -1.75rem !important;
-	    margin-right: -1.75rem !important;
-	}
-
-	.sm\)mar\:hrz-2 {
-	    margin-left: -2rem !important;
-	    margin-right: -2rem !important;
-	}
+@media (min-width:640px) {
+    /*
+    ***
+    foreground colors
+    ***
+    */
+    .sm\)fg\:transparent,
+    .sm\)fg\:transparent\!hover: hover,
+        a.sm\)fg\:transparent\!active:active,
+        a.sm\)fg\:transparent\!focus:focus,
+        button.sm\)fg\:transparent\!active:active,
+        button.sm\)fg\:transparent\!focus:focus {
+        color: transparent !important;
+    }
+
+    .sm\)fg\:blk,
+    .sm\)fg\:blk\!hover:hover,
+    a.sm\)fg\:blk\!active:active,
+    a.sm\)fg\:blk\!focus:focus,
+    button.sm\)fg\:blk\!active:active,
+    button.sm\)fg\:blk\!focus:focus {
+        color: var(--hue-blk) !important;
+    }
+
+    .sm\)fg\:wht,
+    .sm\)fg\:wht\!hover:hover,
+    a.sm\)fg\:wht\!active:active,
+    a.sm\)fg\:wht\!focus:focus,
+    button.sm\)fg\:wht\!active:active,
+    button.sm\)fg\:wht\!focus:focus {
+        color: var(--hue-wht) !important;
+    }
+
+    .sm\)fg\:bas-900,
+    .sm\)fg\:bas-900\!hover:hover,
+    a.sm\)fg\:bas-900\!active:active,
+    a.sm\)fg\:bas-900\!focus:focus,
+    button.sm\)fg\:bas-900\!active:active,
+    button.sm\)fg\:bas-900\!focus:focus {
+        color: var(--hue-bas-900) !important;
+    }
+
+    .sm\)fg\:bas-800,
+    .sm\)fg\:bas-800\!hover:hover,
+    a.sm\)fg\:bas-800\!active:active,
+    a.sm\)fg\:bas-800\!focus:focus,
+    button.sm\)fg\:bas-800\!active:active,
+    button.sm\)fg\:bas-800\!focus:focus {
+        color: var(--hue-bas-800) !important;
+    }
+
+    .sm\)fg\:bas-700,
+    .sm\)fg\:bas-700\!hover:hover,
+    a.sm\)fg\:bas-700\!active:active,
+    a.sm\)fg\:bas-700\!focus:focus,
+    button.sm\)fg\:bas-700\!active:active,
+    button.sm\)fg\:bas-700\!focus:focus {
+        color: var(--hue-bas-700) !important;
+    }
+
+    .sm\)fg\:bas-600,
+    .sm\)fg\:bas-600\!hover:hover,
+    a.sm\)fg\:bas-600\!active:active,
+    a.sm\)fg\:bas-600\!focus:focus,
+    button.sm\)fg\:bas-600\!active:active,
+    button.sm\)fg\:bas-600\!focus:focus {
+        color: var(--hue-bas-600) !important;
+    }
+
+    .sm\)fg\:bas-500,
+    .sm\)fg\:bas-500\!hover:hover,
+    a.sm\)fg\:bas-500\!active:active,
+    a.sm\)fg\:bas-500\!focus:focus,
+    button.sm\)fg\:bas-500\!active:active,
+    button.sm\)fg\:bas-500\!focus:focus {
+        color: var(--hue-bas-500) !important;
+    }
+
+    .sm\)fg\:bas-400,
+    .sm\)fg\:bas-400\!hover:hover,
+    a.sm\)fg\:bas-400\!active:active,
+    a.sm\)fg\:bas-400\!focus:focus,
+    button.sm\)fg\:bas-400\!active:active,
+    button.sm\)fg\:bas-400\!focus:focus {
+        color: var(--hue-bas-400) !important;
+    }
+
+    .sm\)fg\:bas-300,
+    .sm\)fg\:bas-300\!hover:hover,
+    a.sm\)fg\:bas-300\!active:active,
+    a.sm\)fg\:bas-300\!focus:focus,
+    button.sm\)fg\:bas-300\!active:active,
+    button.sm\)fg\:bas-300\!focus:focus {
+        color: var(--hue-bas-300) !important;
+    }
+
+    .sm\)fg\:bas-200,
+    .sm\)fg\:bas-200\!hover:hover,
+    a.sm\)fg\:bas-200\!active:active,
+    a.sm\)fg\:bas-200\!focus:focus,
+    button.sm\)fg\:bas-200\!active:active,
+    button.sm\)fg\:bas-200\!focus:focus {
+        color: var(--hue-bas-200) !important;
+    }
+
+    .sm\)fg\:bas-100,
+    .sm\)fg\:bas-100\!hover:hover,
+    a.sm\)fg\:bas-100\!active:active,
+    a.sm\)fg\:bas-100\!focus:focus,
+    button.sm\)fg\:bas-100\!active:active,
+    button.sm\)fg\:bas-100\!focus:focus {
+        color: var(--hue-bas-100) !important;
+    }
+
+    .sm\)fg\:bas-050,
+    .sm\)fg\:bas-050\!hover:hover,
+    a.sm\)fg\:bas-050\!active:active,
+    a.sm\)fg\:bas-050\!focus:focus,
+    button.sm\)fg\:bas-050\!active:active,
+    button.sm\)fg\:bas-050\!focus:focus {
+        color: var(--hue-bas-050) !important;
+    }
+
+    .sm\)fg\:pri-900,
+    .sm\)fg\:pri-900\!hover:hover,
+    a.sm\)fg\:pri-900\!active:active,
+    a.sm\)fg\:pri-900\!focus:focus,
+    button.sm\)fg\:pri-900\!active:active,
+    button.sm\)fg\:pri-900\!focus:focus {
+        color: var(--hue-pri-900) !important;
+    }
+
+    .sm\)fg\:pri-800,
+    .sm\)fg\:pri-800\!hover:hover,
+    a.sm\)fg\:pri-800\!active:active,
+    a.sm\)fg\:pri-800\!focus:focus,
+    button.sm\)fg\:pri-800\!active:active,
+    button.sm\)fg\:pri-800\!focus:focus {
+        color: var(--hue-pri-800) !important;
+    }
+
+    .sm\)fg\:pri-700,
+    .sm\)fg\:pri-700\!hover:hover,
+    a.sm\)fg\:pri-700\!active:active,
+    a.sm\)fg\:pri-700\!focus:focus,
+    button.sm\)fg\:pri-700\!active:active,
+    button.sm\)fg\:pri-700\!focus:focus {
+        color: var(--hue-pri-700) !important;
+    }
+
+    .sm\)fg\:pri-600,
+    .sm\)fg\:pri-600\!hover:hover,
+    a.sm\)fg\:pri-600\!active:active,
+    a.sm\)fg\:pri-600\!focus:focus,
+    button.sm\)fg\:pri-600\!active:active,
+    button.sm\)fg\:pri-600\!focus:focus {
+        color: var(--hue-pri-600) !important;
+    }
+
+    .sm\)fg\:pri-500,
+    .sm\)fg\:pri-500\!hover:hover,
+    a.sm\)fg\:pri-500\!active:active,
+    a.sm\)fg\:pri-500\!focus:focus,
+    button.sm\)fg\:pri-500\!active:active,
+    button.sm\)fg\:pri-500\!focus:focus {
+        color: var(--hue-pri-500) !important;
+    }
+
+    .sm\)fg\:pri-400,
+    .sm\)fg\:pri-400\!hover:hover,
+    a.sm\)fg\:pri-400\!active:active,
+    a.sm\)fg\:pri-400\!focus:focus,
+    button.sm\)fg\:pri-400\!active:active,
+    button.sm\)fg\:pri-400\!focus:focus {
+        color: var(--hue-pri-400) !important;
+    }
+
+    .sm\)fg\:pri-300,
+    .sm\)fg\:pri-300\!hover:hover,
+    a.sm\)fg\:pri-300\!active:active,
+    a.sm\)fg\:pri-300\!focus:focus,
+    button.sm\)fg\:pri-300\!active:active,
+    button.sm\)fg\:pri-300\!focus:focus {
+        color: var(--hue-pri-300) !important;
+    }
+
+    .sm\)fg\:pri-200,
+    .sm\)fg\:pri-200\!hover:hover,
+    a.sm\)fg\:pri-200\!active:active,
+    a.sm\)fg\:pri-200\!focus:focus,
+    button.sm\)fg\:pri-200\!active:active,
+    button.sm\)fg\:pri-200\!focus:focus {
+        color: var(--hue-pri-200) !important;
+    }
+
+    .sm\)fg\:pri-100,
+    .sm\)fg\:pri-100\!hover:hover,
+    a.sm\)fg\:pri-100\!active:active,
+    a.sm\)fg\:pri-100\!focus:focus,
+    button.sm\)fg\:pri-100\!active:active,
+    button.sm\)fg\:pri-100\!focus:focus {
+        color: var(--hue-pri-100) !important;
+    }
+
+    .sm\)fg\:pri-050,
+    .sm\)fg\:pri-050\!hover:hover,
+    a.sm\)fg\:pri-050\!active:active,
+    a.sm\)fg\:pri-050\!focus:focus,
+    button.sm\)fg\:pri-050\!active:active,
+    button.sm\)fg\:pri-050\!focus:focus {
+        color: var(--hue-pri-050) !important;
+    }
+
+    .sm\)fg\:sec-900,
+    .sm\)fg\:sec-900\!hover:hover,
+    a.sm\)fg\:sec-900\!active:active,
+    a.sm\)fg\:sec-900\!focus:focus,
+    button.sm\)fg\:sec-900\!active:active,
+    button.sm\)fg\:sec-900\!focus:focus {
+        color: var(--hue-sec-900) !important;
+    }
+
+    .sm\)fg\:sec-800,
+    .sm\)fg\:sec-800\!hover:hover,
+    a.sm\)fg\:sec-800\!active:active,
+    a.sm\)fg\:sec-800\!focus:focus,
+    button.sm\)fg\:sec-800\!active:active,
+    button.sm\)fg\:sec-800\!focus:focus {
+        color: var(--hue-sec-800) !important;
+    }
+
+    .sm\)fg\:sec-700,
+    .sm\)fg\:sec-700\!hover:hover,
+    a.sm\)fg\:sec-700\!active:active,
+    a.sm\)fg\:sec-700\!focus:focus,
+    button.sm\)fg\:sec-700\!active:active,
+    button.sm\)fg\:sec-700\!focus:focus {
+        color: var(--hue-sec-700) !important;
+    }
+
+    .sm\)fg\:sec-600,
+    .sm\)fg\:sec-600\!hover:hover,
+    a.sm\)fg\:sec-600\!active:active,
+    a.sm\)fg\:sec-600\!focus:focus,
+    button.sm\)fg\:sec-600\!active:active,
+    button.sm\)fg\:sec-600\!focus:focus {
+        color: var(--hue-sec-600) !important;
+    }
+
+    .sm\)fg\:sec-500,
+    .sm\)fg\:sec-500\!hover:hover,
+    a.sm\)fg\:sec-500\!active:active,
+    a.sm\)fg\:sec-500\!focus:focus,
+    button.sm\)fg\:sec-500\!active:active,
+    button.sm\)fg\:sec-500\!focus:focus {
+        color: var(--hue-sec-500) !important;
+    }
+
+    .sm\)fg\:sec-400,
+    .sm\)fg\:sec-400\!hover:hover,
+    a.sm\)fg\:sec-400\!active:active,
+    a.sm\)fg\:sec-400\!focus:focus,
+    button.sm\)fg\:sec-400\!active:active,
+    button.sm\)fg\:sec-400\!focus:focus {
+        color: var(--hue-sec-400) !important;
+    }
+
+    .sm\)fg\:sec-300,
+    .sm\)fg\:sec-300\!hover:hover,
+    a.sm\)fg\:sec-300\!active:active,
+    a.sm\)fg\:sec-300\!focus:focus,
+    button.sm\)fg\:sec-300\!active:active,
+    button.sm\)fg\:sec-300\!focus:focus {
+        color: var(--hue-sec-300) !important;
+    }
+
+    .sm\)fg\:sec-200,
+    .sm\)fg\:sec-200\!hover:hover,
+    a.sm\)fg\:sec-200\!active:active,
+    a.sm\)fg\:sec-200\!focus:focus,
+    button.sm\)fg\:sec-200\!active:active,
+    button.sm\)fg\:sec-200\!focus:focus {
+        color: var(--hue-sec-200) !important;
+    }
+
+    .sm\)fg\:sec-100,
+    .sm\)fg\:sec-100\!hover:hover,
+    a.sm\)fg\:sec-100\!active:active,
+    a.sm\)fg\:sec-100\!focus:focus,
+    button.sm\)fg\:sec-100\!active:active,
+    button.sm\)fg\:sec-100\!focus:focus {
+        color: var(--hue-sec-100) !important;
+    }
+
+    .sm\)fg\:sec-050,
+    .sm\)fg\:sec-050\!hover:hover,
+    a.sm\)fg\:sec-050\!active:active,
+    a.sm\)fg\:sec-050\!focus:focus,
+    button.sm\)fg\:sec-050\!active:active,
+    button.sm\)fg\:sec-050\!focus:focus {
+        color: var(--hue-sec-050) !important;
+    }
+
+    /*
+    ***
+    background colors
+    ***
+    */
+    .sm\)bg\:transparent,
+    .sm\)bg\:transparent\!hover:hover,
+    a.sm\)bg\:transparent:active,
+    a.sm\)bg\:transparent:focus,
+    button.sm\)bg\:transparent:active,
+    button.sm\)bg\:transparent:focus {
+        background-color: transparent !important;
+    }
+
+    .sm\)bg\:blk,
+    .sm\)bg\:blk\!hover:hover,
+    a.sm\)bg\:blk\!active:active,
+    a.sm\)bg\:blk\!focus:focus,
+    button.sm\)bg\:blk\!active:active,
+    button.sm\)bg\:blk\!focus:focus {
+        background-color: var(--hue-blk) !important;
+    }
+
+    .sm\)bg\:wht,
+    .sm\)bg\:wht\!hover:hover,
+    a.sm\)bg\:wht\!active:active,
+    a.sm\)bg\:wht\!focus:focus,
+    button.sm\)bg\:wht\!active:active,
+    button.sm\)bg\:wht\!focus:focus {
+        background-color: var(--hue-wht) !important;
+    }
+
+    .sm\)bg\:bas-900,
+    .sm\)bg\:bas-900\!hover:hover,
+    a.sm\)bg\:bas-900\!active:active,
+    a.sm\)bg\:bas-900\!focus:focus,
+    button.sm\)bg\:bas-900\!active:active,
+    button.sm\)bg\:bas-900\!focus:focus {
+        background-color: var(--hue-bas-900) !important;
+    }
+
+    .sm\)bg\:bas-800,
+    .sm\)bg\:bas-800\!hover:hover,
+    a.sm\)bg\:bas-800\!active:active,
+    a.sm\)bg\:bas-800\!focus:focus,
+    button.sm\)bg\:bas-800\!active:active,
+    button.sm\)bg\:bas-800\!focus:focus {
+        background-color: var(--hue-bas-800) !important;
+    }
+
+    .sm\)bg\:bas-700,
+    .sm\)bg\:bas-700\!hover:hover,
+    a.sm\)bg\:bas-700\!active:active,
+    a.sm\)bg\:bas-700\!focus:focus,
+    button.sm\)bg\:bas-700\!active:active,
+    button.sm\)bg\:bas-700\!focus:focus {
+        background-color: var(--hue-bas-700) !important;
+    }
+
+    .sm\)bg\:bas-600,
+    .sm\)bg\:bas-600\!hover:hover,
+    a.sm\)bg\:bas-600\!active:active,
+    a.sm\)bg\:bas-600\!focus:focus,
+    button.sm\)bg\:bas-600\!active:active,
+    button.sm\)bg\:bas-600\!focus:focus {
+        background-color: var(--hue-bas-600) !important;
+    }
+
+    .sm\)bg\:bas-500,
+    .sm\)bg\:bas-500\!hover:hover,
+    a.sm\)bg\:bas-500\!active:active,
+    a.sm\)bg\:bas-500\!focus:focus,
+    button.sm\)bg\:bas-500\!active:active,
+    button.sm\)bg\:bas-500\!focus:focus {
+        background-color: var(--hue-bas-500) !important;
+    }
+
+    .sm\)bg\:bas-400,
+    .sm\)bg\:bas-400\!hover:hover,
+    a.sm\)bg\:bas-400\!active:active,
+    a.sm\)bg\:bas-400\!focus:focus,
+    button.sm\)bg\:bas-400\!active:active,
+    button.sm\)bg\:bas-400\!focus:focus {
+        background-color: var(--hue-bas-400) !important;
+    }
+
+    .sm\)bg\:bas-300,
+    .sm\)bg\:bas-300\!hover:hover,
+    a.sm\)bg\:bas-300\!active:active,
+    a.sm\)bg\:bas-300\!focus:focus,
+    button.sm\)bg\:bas-300\!active:active,
+    button.sm\)bg\:bas-300\!focus:focus {
+        background-color: var(--hue-bas-300) !important;
+    }
+
+    .sm\)bg\:bas-200,
+    .sm\)bg\:bas-200\!hover:hover,
+    a.sm\)bg\:bas-200\!active:active,
+    a.sm\)bg\:bas-200\!focus:focus,
+    button.sm\)bg\:bas-200\!active:active,
+    button.sm\)bg\:bas-200\!focus:focus {
+        background-color: var(--hue-bas-200) !important;
+    }
+
+    .sm\)bg\:bas-100,
+    .sm\)bg\:bas-100\!hover:hover,
+    a.sm\)bg\:bas-100\!active:active,
+    a.sm\)bg\:bas-100\!focus:focus,
+    button.sm\)bg\:bas-100\!active:active,
+    button.sm\)bg\:bas-100\!focus:focus {
+        background-color: var(--hue-bas-100) !important;
+    }
+
+    .sm\)bg\:bas-050,
+    .sm\)bg\:bas-050\!hover:hover,
+    a.sm\)bg\:bas-050\!active:active,
+    a.sm\)bg\:bas-050\!focus:focus,
+    button.sm\)bg\:bas-050\!active:active,
+    button.sm\)bg\:bas-050\!focus:focus {
+        background-color: var(--hue-bas-050) !important;
+    }
+
+    .sm\)bg\:pri-900,
+    .sm\)bg\:pri-900\!hover:hover,
+    a.sm\)bg\:pri-900\!active:active,
+    a.sm\)bg\:pri-900\!focus:focus,
+    button.sm\)bg\:pri-900\!active:active,
+    button.sm\)bg\:pri-900\!focus:focus {
+        background-color: var(--hue-pri-900) !important;
+    }
+
+    .sm\)bg\:pri-800,
+    .sm\)bg\:pri-800\!hover:hover,
+    a.sm\)bg\:pri-800\!active:active,
+    a.sm\)bg\:pri-800\!focus:focus,
+    button.sm\)bg\:pri-800\!active:active,
+    button.sm\)bg\:pri-800\!focus:focus {
+        background-color: var(--hue-pri-800) !important;
+    }
+
+    .sm\)bg\:pri-700,
+    .sm\)bg\:pri-700\!hover:hover,
+    a.sm\)bg\:pri-700\!active:active,
+    a.sm\)bg\:pri-700\!focus:focus,
+    button.sm\)bg\:pri-700\!active:active,
+    button.sm\)bg\:pri-700\!focus:focus {
+        background-color: var(--hue-pri-700) !important;
+    }
+
+    .sm\)bg\:pri-600,
+    .sm\)bg\:pri-600\!hover:hover,
+    a.sm\)bg\:pri-600\!active:active,
+    a.sm\)bg\:pri-600\!focus:focus,
+    button.sm\)bg\:pri-600\!active:active,
+    button.sm\)bg\:pri-600\!focus:focus {
+        background-color: var(--hue-pri-600) !important;
+    }
+
+    .sm\)bg\:pri-500,
+    .sm\)bg\:pri-500\!hover:hover,
+    a.sm\)bg\:pri-500\!active:active,
+    a.sm\)bg\:pri-500\!focus:focus,
+    button.sm\)bg\:pri-500\!active:active,
+    button.sm\)bg\:pri-500\!focus:focus {
+        background-color: var(--hue-pri-500) !important;
+    }
+
+    .sm\)bg\:pri-400,
+    .sm\)bg\:pri-400\!hover:hover,
+    a.sm\)bg\:pri-400\!active:active,
+    a.sm\)bg\:pri-400\!focus:focus,
+    button.sm\)bg\:pri-400\!active:active,
+    button.sm\)bg\:pri-400\!focus:focus {
+        background-color: var(--hue-pri-400) !important;
+    }
+
+    .sm\)bg\:pri-300,
+    .sm\)bg\:pri-300\!hover:hover,
+    a.sm\)bg\:pri-300\!active:active,
+    a.sm\)bg\:pri-300\!focus:focus,
+    button.sm\)bg\:pri-300\!active:active,
+    button.sm\)bg\:pri-300\!focus:focus {
+        background-color: var(--hue-pri-300) !important;
+    }
+
+    .sm\)bg\:pri-200,
+    .sm\)bg\:pri-200\!hover:hover,
+    a.sm\)bg\:pri-200\!active:active,
+    a.sm\)bg\:pri-200\!focus:focus,
+    button.sm\)bg\:pri-200\!active:active,
+    button.sm\)bg\:pri-200\!focus:focus {
+        background-color: var(--hue-pri-200) !important;
+    }
+
+    .sm\)bg\:pri-100,
+    .sm\)bg\:pri-100\!hover:hover,
+    a.sm\)bg\:pri-100\!active:active,
+    a.sm\)bg\:pri-100\!focus:focus,
+    button.sm\)bg\:pri-100\!active:active,
+    button.sm\)bg\:pri-100\!focus:focus {
+        background-color: var(--hue-pri-100) !important;
+    }
+
+    .sm\)bg\:pri-050,
+    .sm\)bg\:pri-050\!hover:hover,
+    a.sm\)bg\:pri-050\!active:active,
+    a.sm\)bg\:pri-050\!focus:focus,
+    button.sm\)bg\:pri-050\!active:active,
+    button.sm\)bg\:pri-050\!focus:focus {
+        background-color: var(--hue-pri-050) !important;
+    }
+
+    .sm\)bg\:sec-900,
+    .sm\)bg\:sec-900\!hover:hover,
+    a.sm\)bg\:sec-900\!active:active,
+    a.sm\)bg\:sec-900\!focus:focus,
+    button.sm\)bg\:sec-900\!active:active,
+    button.sm\)bg\:sec-900\!focus:focus {
+        background-color: var(--hue-sec-900) !important;
+    }
+
+    .sm\)bg\:sec-800,
+    .sm\)bg\:sec-800\!hover:hover,
+    a.sm\)bg\:sec-800\!active:active,
+    a.sm\)bg\:sec-800\!focus:focus,
+    button.sm\)bg\:sec-800\!active:active,
+    button.sm\)bg\:sec-800\!focus:focus {
+        background-color: var(--hue-sec-800) !important;
+    }
+
+    .sm\)bg\:sec-700,
+    .sm\)bg\:sec-700\!hover:hover,
+    a.sm\)bg\:sec-700\!active:active,
+    a.sm\)bg\:sec-700\!focus:focus,
+    button.sm\)bg\:sec-700\!active:active,
+    button.sm\)bg\:sec-700\!focus:focus {
+        background-color: var(--hue-sec-700) !important;
+    }
+
+    .sm\)bg\:sec-600,
+    .sm\)bg\:sec-600\!hover:hover,
+    a.sm\)bg\:sec-600\!active:active,
+    a.sm\)bg\:sec-600\!focus:focus,
+    button.sm\)bg\:sec-600\!active:active,
+    button.sm\)bg\:sec-600\!focus:focus {
+        background-color: var(--hue-sec-600) !important;
+    }
+
+    .sm\)bg\:sec-500,
+    .sm\)bg\:sec-500\!hover:hover,
+    a.sm\)bg\:sec-500\!active:active,
+    a.sm\)bg\:sec-500\!focus:focus,
+    button.sm\)bg\:sec-500\!active:active,
+    button.sm\)bg\:sec-500\!focus:focus {
+        background-color: var(--hue-sec-500) !important;
+    }
+
+    .sm\)bg\:sec-400,
+    .sm\)bg\:sec-400\!hover:hover,
+    a.sm\)bg\:sec-400\!active:active,
+    a.sm\)bg\:sec-400\!focus:focus,
+    button.sm\)bg\:sec-400\!active:active,
+    button.sm\)bg\:sec-400\!focus:focus {
+        background-color: var(--hue-sec-400) !important;
+    }
+
+    .sm\)bg\:sec-300,
+    .sm\)bg\:sec-300\!hover:hover,
+    a.sm\)bg\:sec-300\!active:active,
+    a.sm\)bg\:sec-300\!focus:focus,
+    button.sm\)bg\:sec-300\!active:active,
+    button.sm\)bg\:sec-300\!focus:focus {
+        background-color: var(--hue-sec-300) !important;
+    }
+
+    .sm\)bg\:sec-200,
+    .sm\)bg\:sec-200\!hover:hover,
+    a.sm\)bg\:sec-200\!active:active,
+    a.sm\)bg\:sec-200\!focus:focus,
+    button.sm\)bg\:sec-200\!active:active,
+    button.sm\)bg\:sec-200\!focus:focus {
+        background-color: var(--hue-sec-200) !important;
+    }
+
+    .sm\)bg\:sec-100,
+    .sm\)bg\:sec-100\!hover:hover,
+    a.sm\)bg\:sec-100\!active:active,
+    a.sm\)bg\:sec-100\!focus:focus,
+    button.sm\)bg\:sec-100\!active:active,
+    button.sm\)bg\:sec-100\!focus:focus {
+        background-color: var(--hue-sec-100) !important;
+    }
+
+    .sm\)bg\:sec-050,
+    .sm\)bg\:sec-050\!hover:hover,
+    a.sm\)bg\:sec-050\!active:active,
+    a.sm\)bg\:sec-050\!focus:focus,
+    button.sm\)bg\:sec-050\!active:active,
+    button.sm\)bg\:sec-050\!focus:focus {
+        background-color: var(--hue-sec-050) !important;
+    }
+
+    /*
+    ***
+    google md colors
+    ***
+    */
+    .sm\)fg\:red,
+    .sm\)fg\:red\!hover:hover,
+    a.sm\)fg\:red\!active:active,
+    a.sm\)fg\:red\!focus:focus,
+    button.sm\)fg\:red\!active:active,
+    button.sm\)fg\:red\!focus:focus {
+        color: var(--hue-red);
+    }
+
+    .sm\)bg\:red,
+    .sm\)bg\:red\!hover:hover,
+    a.sm\)bg\:red\!active:active,
+    a.sm\)bg\:red\!focus:focus,
+    button.sm\)bg\:red\!active:active,
+    button.sm\)bg\:red\!focus:focus {
+        background-color: var(--hue-red);
+    }
+
+    .sm\)fg\:pink,
+    .sm\)fg\:pink\!hover:hover,
+    a.sm\)fg\:pink\!active:active,
+    a.sm\)fg\:pink\!focus:focus,
+    button.sm\)fg\:pink\!active:active,
+    button.sm\)fg\:pink\!focus:focus {
+        color: var(--hue-pink);
+    }
+
+    .sm\)bg\:pink,
+    .sm\)bg\:pink\!hover:hover,
+    a.sm\)bg\:pink\!active:active,
+    a.sm\)bg\:pink\!focus:focus,
+    button.sm\)bg\:pink\!active:active,
+    button.sm\)bg\:pink\!focus:focus {
+        background-color: var(--hue-pink);
+    }
+
+    .sm\)fg\:purple,
+    .sm\)fg\:purple\!hover:hover,
+    a.sm\)fg\:purple\!active:active,
+    a.sm\)fg\:purple\!focus:focus,
+    button.sm\)fg\:purple\!active:active,
+    button.sm\)fg\:purple\!focus:focus {
+        color: var(--hue-purple);
+    }
+
+    .sm\)bg\:purple,
+    .sm\)bg\:purple\!hover:hover,
+    a.sm\)bg\:purple\!active:active,
+    a.sm\)bg\:purple\!focus:focus,
+    button.sm\)bg\:purple\!active:active,
+    button.sm\)bg\:purple\!focus:focus {
+        background-color: var(--hue-purple);
+    }
+
+    .sm\)fg\:deep-purple,
+    .sm\)fg\:deep-purple\!hover:hover,
+    a.sm\)fg\:deep-purple\!active:active,
+    a.sm\)fg\:deep-purple\!focus:focus,
+    button.sm\)fg\:deep-purple\!active:active,
+    button.sm\)fg\:deep-purple\!focus:focus {
+        color: var(--hue-deep-purple);
+    }
+
+    .sm\)bg\:deep-purple,
+    .sm\)bg\:deep-purple\!hover:hover,
+    a.sm\)bg\:deep-purple\!active:active,
+    a.sm\)bg\:deep-purple\!focus:focus,
+    button.sm\)bg\:deep-purple\!active:active,
+    button.sm\)bg\:deep-purple\!focus:focus {
+        background-color: var(--hue-deep-purple);
+    }
+
+    .sm\)fg\:indigo,
+    .sm\)fg\:indigo\!hover:hover,
+    a.sm\)fg\:indigo\!active:active,
+    a.sm\)fg\:indigo\!focus:focus,
+    button.sm\)fg\:indigo\!active:active,
+    button.sm\)fg\:indigo\!focus:focus {
+        color: var(--hue-indigo);
+    }
+
+    .sm\)bg\:indigo,
+    .sm\)bg\:indigo\!hover:hover,
+    a.sm\)bg\:indigo\!active:active,
+    a.sm\)bg\:indigo\!focus:focus,
+    button.sm\)bg\:indigo\!active:active,
+    button.sm\)bg\:indigo\!focus:focus {
+        background-color: var(--hue-indigo);
+    }
+
+    .sm\)fg\:blue,
+    .sm\)fg\:blue\!hover:hover,
+    a.sm\)fg\:blue\!active:active,
+    a.sm\)fg\:blue\!focus:focus,
+    button.sm\)fg\:blue\!active:active,
+    button.sm\)fg\:blue\!focus:focus {
+        color: var(--hue-blue);
+    }
+
+    .sm\)bg\:blue,
+    .sm\)bg\:blue\!hover:hover,
+    a.sm\)bg\:blue\!active:active,
+    a.sm\)bg\:blue\!focus:focus,
+    button.sm\)bg\:blue\!active:active,
+    button.sm\)bg\:blue\!focus:focus {
+        background-color: var(--hue-blue);
+    }
+
+    .sm\)fg\:light-blue,
+    .sm\)fg\:light-blue\!hover:hover,
+    a.sm\)fg\:light-blue\!active:active,
+    a.sm\)fg\:light-blue\!focus:focus,
+    button.sm\)fg\:light-blue\!active:active,
+    button.sm\)fg\:light-blue\!focus:focus {
+        color: var(--hue-light-blue);
+    }
+
+    .sm\)bg\:light-blue,
+    .sm\)bg\:light-blue\!hover:hover,
+    a.sm\)bg\:light-blue\!active:active,
+    a.sm\)bg\:light-blue\!focus:focus,
+    button.sm\)bg\:light-blue\!active:active,
+    button.sm\)bg\:light-blue\!focus:focus {
+        background-color: var(--hue-light-blue);
+    }
+
+    .sm\)fg\:cyan,
+    .sm\)fg\:cyan\!hover:hover,
+    a.sm\)fg\:cyan\!active:active,
+    a.sm\)fg\:cyan\!focus:focus,
+    button.sm\)fg\:cyan\!active:active,
+    button.sm\)fg\:cyan\!focus:focus {
+        color: var(--hue-cyan);
+    }
+
+    .sm\)bg\:cyan,
+    .sm\)bg\:cyan\!hover:hover,
+    a.sm\)bg\:cyan\!active:active,
+    a.sm\)bg\:cyan\!focus:focus,
+    button.sm\)bg\:cyan\!active:active,
+    button.sm\)bg\:cyan\!focus:focus {
+        background-color: var(--hue-cyan);
+    }
+
+    .sm\)fg\:teal,
+    .sm\)fg\:teal\!hover:hover,
+    a.sm\)fg\:teal\!active:active,
+    a.sm\)fg\:teal\!focus:focus,
+    button.sm\)fg\:teal\!active:active,
+    button.sm\)fg\:teal\!focus:focus {
+        color: var(--hue-teal);
+    }
+
+    .sm\)bg\:teal,
+    .sm\)bg\:teal\!hover:hover,
+    a.sm\)bg\:teal\!active:active,
+    a.sm\)bg\:teal\!focus:focus,
+    button.sm\)bg\:teal\!active:active,
+    button.sm\)bg\:teal\!focus:focus {
+        background-color: var(--hue-teal);
+    }
+
+    .sm\)fg\:green,
+    .sm\)fg\:green\!hover:hover,
+    a.sm\)fg\:green\!active:active,
+    a.sm\)fg\:green\!focus:focus,
+    button.sm\)fg\:green\!active:active,
+    button.sm\)fg\:green\!focus:focus {
+        color: var(--hue-green);
+    }
+
+    .sm\)bg\:green,
+    .sm\)bg\:green\!hover:hover,
+    a.sm\)bg\:green\!active:active,
+    a.sm\)bg\:green\!focus:focus,
+    button.sm\)bg\:green\!active:active,
+    button.sm\)bg\:green\!focus:focus {
+        background-color: var(--hue-green);
+    }
+
+    .sm\)fg\:light-green,
+    .sm\)fg\:light-green\!hover:hover,
+    a.sm\)fg\:light-green\!active:active,
+    a.sm\)fg\:light-green\!focus:focus,
+    button.sm\)fg\:light-green\!active:active,
+    button.sm\)fg\:light-green\!focus:focus {
+        color: var(--hue-light-green);
+    }
+
+    .sm\)bg\:light-green,
+    .sm\)bg\:light-green\!hover:hover,
+    a.sm\)bg\:light-green\!active:active,
+    a.sm\)bg\:light-green\!focus:focus,
+    button.sm\)bg\:light-green\!active:active,
+    button.sm\)bg\:light-green\!focus:focus {
+        background-color: var(--hue-light-green);
+    }
+
+    .sm\)fg\:lime,
+    .sm\)fg\:lime\!hover:hover,
+    a.sm\)fg\:lime\!active:active,
+    a.sm\)fg\:lime\!focus:focus,
+    button.sm\)fg\:lime\!active:active,
+    button.sm\)fg\:lime\!focus:focus {
+        color: var(--hue-lime);
+    }
+
+    .sm\)bg\:lime,
+    .sm\)bg\:lime\!hover:hover,
+    a.sm\)bg\:lime\!active:active,
+    a.sm\)bg\:lime\!focus:focus,
+    button.sm\)bg\:lime\!active:active,
+    button.sm\)bg\:lime\!focus:focus {
+        background-color: var(--hue-lime);
+    }
+
+    .sm\)fg\:yellow,
+    .sm\)fg\:yellow\!hover:hover,
+    a.sm\)fg\:yellow\!active:active,
+    a.sm\)fg\:yellow\!focus:focus,
+    button.sm\)fg\:yellow\!active:active,
+    button.sm\)fg\:yellow\!focus:focus {
+        color: var(--hue-yellow);
+    }
+
+    .sm\)bg\:yellow,
+    .sm\)bg\:yellow\!hover:hover,
+    a.sm\)bg\:yellow\!active:active,
+    a.sm\)bg\:yellow\!focus:focus,
+    button.sm\)bg\:yellow\!active:active,
+    button.sm\)bg\:yellow\!focus:focus {
+        background-color: var(--hue-yellow);
+    }
+
+    .sm\)fg\:amber,
+    .sm\)fg\:amber\!hover:hover,
+    a.sm\)fg\:amber\!active:active,
+    a.sm\)fg\:amber\!focus:focus,
+    button.sm\)fg\:amber\!active:active,
+    button.sm\)fg\:amber\!focus:focus {
+        color: var(--hue-amber);
+    }
+
+    .sm\)bg\:amber,
+    .sm\)bg\:amber\!hover:hover,
+    a.sm\)bg\:amber\!active:active,
+    a.sm\)bg\:amber\!focus:focus,
+    button.sm\)bg\:amber\!active:active,
+    button.sm\)bg\:amber\!focus:focus {
+        background-color: vr(--hue-amber);
+    }
+
+    .sm\)fg\:orange,
+    .sm\)fg\:orange\!hover:hover,
+    a.sm\)fg\:orange\!active:active,
+    a.sm\)fg\:orange\!focus:focus,
+    button.sm\)fg\:orange\!active:active,
+    button.sm\)fg\:orange\!focus:focus {
+        color: var(--hue-orange);
+    }
+
+    .sm\)bg\:orange,
+    .sm\)bg\:orange\!hover:hover,
+    a.sm\)bg\:orange\!active:active 
+    a.sm\)bg\:orange\!focus:focus,
+    button.sm\)bg\:orange\!active:active,
+    button.sm\)bg\:orange\!focus:focus {
+        background-color: var(--hue-orange);
+    }
+
+    .sm\)fg\:deep-orange,
+    .sm\)fg\:deep-orange\!hover:hover,
+    a.sm\)fg\:deep-orange\!active:active,
+    a.sm\)fg\:deep-orange\!focus:focus,
+    button.sm\)fg\:deep-orange\!active:active,
+    button.sm\)fg\:deep-orange\!focus:focus {
+        color: var(--hue-deep-orange);
+    }
+
+    .sm\)bg\:deep-orange,
+    .sm\)bg\:deep-orange\!hover:hover,
+    a.sm\)bg\:deep-orange\!active:active,
+    a.sm\)bg\:deep-orange\!focus:focus,
+    button.sm\)bg\:deep-orange\!active:active,
+    button.sm\)bg\:deep-orange\!focus:focus {
+        background-color: var(--hue-deep-orange);
+    }
+
+    .sm\)fg\:brown,
+    .sm\)fg\:brown\!hover:hover,
+    a.sm\)fg\:brown\!active:active,
+    a.sm\)fg\:brown\!focus:focus,
+    button.sm\)fg\:brown\!active:active,
+    button.sm\)fg\:brown\!focus:focus {
+        color: var(--hue-brown);
+    }
+
+    .sm\)bg\:brown,
+    .sm\)bg\:brown\!hover:hover,
+    a.sm\)bg\:brown\!active:active,
+    a.sm\)bg\:brown\!focus:focus,
+    button.sm\)bg\:brown\!active:active,
+    button.sm\)bg\:brown\!focus:focus {
+        background-color: var(--hue-brown);
+    }
+
+    .sm\)fg\:grey,
+    .sm\)fg\:grey\!hover:hover,
+    a.sm\)fg\:grey\!active:active,
+    a.sm\)fg\:grey\!focus:focus,
+    button.sm\)fg\:grey\!active:active,
+    button.sm\)fg\:grey\!focus:focus {
+        color: var(--hue-grey);
+    }
+
+    .sm\)bg\:grey,
+    .sm\)bg\:grey\!hover:hover,
+    a.sm\)bg\:grey\!active:active,
+    a.sm\)bg\:grey\!focus:focus,
+    button.sm\)bg\:grey\!active:active,
+    button.sm\)bg\:grey\!focus:focus {
+        background-color: vr(--hue-grey);
+    }
+
+    .sm\)fg\:blue-grey,
+    .sm\)fg\:blue-grey\!hover:hover,
+    a.sm\)fg\:blue-grey\!active:active,
+    a.sm\)fg\:blue-grey\!focus:focus,
+    button.sm\)fg\:blue-grey\!active:active,
+    button.sm\)fg\:blue-grey\!focus:focus {
+        color: var(--hue-blue-grey);
+    }
+
+    .sm\)bg\:blue-grey,
+    .sm\)bg\:blue-grey\!hover:hover,
+    a.sm\)bg\:blue-grey\!active:active,
+    a.sm\)bg\:blue-grey\!focus:focus,
+    button.sm\)bg\:blue-grey\!active:active,
+    button.sm\)bg\:blue-grey\!focus:focus {
+        background-color: var(--hue-blue-grey);
+    }
+
+    /*
+    ***
+    color shortcuts
+    ***
+    */
+    /*: theme fg & bg colors :*/
+    .sm\)sys\:fg,
+    .sm\)sys\:fg\!hover:hover,
+    a.sm\)sys\:fg\!active:active,
+    a.sm\)sys\:fg\!focus:focus,
+    button.sm\)sys\:fg\!active:active,
+    button.sm\)sys\:fg\!focus:focus {
+        color: var(--dft-font-color);
+    }
+
+    .sm\)sys\:bg,
+    .sm\)sys\:bg\!hover:hover,
+    a.sm\)sys\:bg\!active:active,
+    a.sm\)sys\:bg\!focus:focus,
+    button.sm\)sys\:bg\!active:active,
+    button.sm\)sys\:bg\!focus:focus {
+        background-color: var(--content-fg-color);
+    }
+
+    /*: theme link colors :*/
+    .sm\)fg\:link,
+    a.sm\)fg\:link,
+    button.sm\)fg\:link {
+        color: var(--dft-lnk-pri-color);
+    }
+
+    .sm\)fg\:link\!hover:hover,
+    a.sm\)fg\:link\!active:active,
+    a.sm\)fg\:link\!focus:focus,
+    button.sm\)fg\:link\!active:active,
+    button.sm\)fg\:link\!focus:focus {
+        color: var(--dft-lnk-sec-color);
+    }
+
+    /*: background tints :*/
+    .sm\)bg\:dark\!hover:hover,
+    button.sm\)bg\:dark\!active:active,
+    button.sm\)bg\:dark\!focus:focus {
+        filter: brightness(92%);
+    }
+
+    .sm\)bg\:darker\!hover:hover,
+    button.sm\)bg\:darker\!active:active,
+    button.sm\)bg\:darker\!focus:focus {
+        filter: brightness(96%);
+    }
+
+    .sm\)bg\:brighter\!hover:hover,
+    button.sm\)bg\:brighter\!active:active,
+    button.sm\)bg\:brighter\!focus:focus {
+        filter: brightness(104%);
+    }
+
+    .sm\)bg\:bright\!hover:hover,
+    button.sm\)bg\:bright\!active:active,
+    button.sm\)bg\:bright\!focus:focus {
+        filter: brightness(108%);
+    }
+
+    /*
+    ***
+    border colors
+    ***
+    */
+    .sm\)bdr\:transparent,
+    .sm\)bdr\:transparent\!hover:hover,
+    a.sm\)bdr\:transparent\!focus:focus,
+    a.sm\)bdr\:transparent,
+    button.sm\)bdr\:transparent\!hover:hover,
+    button.sm\)bdr\:transparent\!focus:focus {
+        border-color: transparent !important;
+    }
+
+    .sm\)bdr\:blk,
+    .sm\)bdr\:blk\!hover:hover,
+    a.sm\)bdr\:blk\!focus:focus,
+    a.sm\)bdr\:blk,
+    button.sm\)bdr\:blk\!hover:hover,
+    button.sm\)bdr\:blk\!focus:focus {
+        border-color: var(--hue-blk) !important;
+    }
+
+    .sm\)bdr\:wht,
+    .sm\)bdr\:wht\!hover:hover,
+    a.sm\)bdr\:wht\!focus:focus,
+    a.sm\)bdr\:wht,
+    button.sm\)bdr\:wht\!hover:hover,
+    button.sm\)bdr\:wht\!focus:focus {
+        border-color: var(--hue-wht) !important;
+    }
+
+    .sm\)bdr\:bas-900,
+    .sm\)bdr\:bas-900\!hover:hover,
+    a.sm\)bdr\:bas-900\!focus:focus,
+    a.sm\)bdr\:bas-900,
+    button.sm\)bdr\:bas-900\!hover:hover,
+    button.sm\)bdr\:bas-900\!focus:focus {
+        border-color: var(--hue-bas-900) !important;
+    }
+
+    .sm\)bdr\:bas-800,
+    .sm\)bdr\:bas-800\!hover:hover,
+    a.sm\)bdr\:bas-800\!focus:focus,
+    a.sm\)bdr\:bas-800,
+    button.sm\)bdr\:bas-800\!hover:hover,
+    button.sm\)bdr\:bas-800\!focus:focus {
+        border-color: var(--hue-bas-800) !important;
+    }
+
+    .sm\)bdr\:bas-700,
+    .sm\)bdr\:bas-700\!hover:hover,
+    a.sm\)bdr\:bas-700\!focus:focus,
+    a.sm\)bdr\:bas-700,
+    button.sm\)bdr\:bas-700\!hover:hover,
+    button.sm\)bdr\:bas-700\!focus:focus {
+        border-color: var(--hue-bas-700) !important;
+    }
+
+    .sm\)bdr\:bas-600,
+    .sm\)bdr\:bas-600\!hover:hover,
+    a.sm\)bdr\:bas-600\!focus:focus,
+    a.sm\)bdr\:bas-600,
+    button.sm\)bdr\:bas-600\!hover:hover,
+    button.sm\)bdr\:bas-600\!focus:focus {
+        border-color: var(--hue-bas-600) !important;
+    }
+
+    .sm\)bdr\:bas-500,
+    .sm\)bdr\:bas-500\!hover:hover,
+    a.sm\)bdr\:bas-500\!focus:focus,
+    a.sm\)bdr\:bas-500,
+    button.sm\)bdr\:bas-500\!hover:hover,
+    button.sm\)bdr\:bas-500\!focus:focus {
+        border-color: var(--hue-bas-500) !important;
+    }
+
+    .sm\)bdr\:bas-400,
+    .sm\)bdr\:bas-400\!hover:hover,
+    a.sm\)bdr\:bas-400\!focus:focus,
+    a.sm\)bdr\:bas-400,
+    button.sm\)bdr\:bas-400\!hover:hover,
+    button.sm\)bdr\:bas-400\!focus:focus {
+        border-color: var(--hue-bas-400) !important;
+    }
+
+    .sm\)bdr\:bas-300,
+    .sm\)bdr\:bas-300\!hover:hover,
+    a.sm\)bdr\:bas-300\!focus:focus,
+    a.sm\)bdr\:bas-300,
+    button.sm\)bdr\:bas-300\!hover:hover,
+    button.sm\)bdr\:bas-300\!focus:focus {
+        border-color: var(--hue-bas-300) !important;
+    }
+
+    .sm\)bdr\:bas-200,
+    .sm\)bdr\:bas-200\!hover:hover,
+    a.sm\)bdr\:bas-200\!focus:focus,
+    a.sm\)bdr\:bas-200,
+    button.sm\)bdr\:bas-200\!hover:hover,
+    button.sm\)bdr\:bas-200\!focus:focus {
+        border-color: var(--hue-bas-200) !important;
+    }
+
+    .sm\)bdr\:bas-100,
+    .sm\)bdr\:bas-100\!hover:hover,
+    a.sm\)bdr\:bas-100\!focus:focus,
+    a.sm\)bdr\:bas-100,
+    button.sm\)bdr\:bas-100\!hover:hover,
+    button.sm\)bdr\:bas-100\!focus:focus {
+        border-color: var(--hue-bas-100) !important;
+    }
+
+    .sm\)bdr\:bas-050,
+    .sm\)bdr\:bas-050\!hover:hover,
+    a.sm\)bdr\:bas-050\!focus:focus,
+    a.sm\)bdr\:bas-050,
+    button.sm\)bdr\:bas-050\!hover:hover,
+    button.sm\)bdr\:bas-050\!focus:focus {
+        border-color: var(--hue-bas-050) !important;
+    }
+
+    .sm\)bdr\:pri-900,
+    .sm\)bdr\:pri-900\!hover:hover,
+    a.sm\)bdr\:pri-900\!focus:focus,
+    a.sm\)bdr\:pri-900,
+    button.sm\)bdr\:pri-900\!hover:hover,
+    button.sm\)bdr\:pri-900\!focus:focus {
+        border-color: var(--hue-pri-900) !important;
+    }
+
+    .sm\)bdr\:pri-800,
+    .sm\)bdr\:pri-800\!hover:hover,
+    a.sm\)bdr\:pri-800\!focus:focus,
+    a.sm\)bdr\:pri-800,
+    button.sm\)bdr\:pri-800\!hover:hover,
+    button.sm\)bdr\:pri-800\!focus:focus {
+        border-color: var(--hue-pri-800) !important;
+    }
+
+    .sm\)bdr\:pri-700,
+    .sm\)bdr\:pri-700\!hover:hover,
+    a.sm\)bdr\:pri-700\!focus:focus,
+    a.sm\)bdr\:pri-700,
+    button.sm\)bdr\:pri-700\!hover:hover,
+    button.sm\)bdr\:pri-700\!focus:focus {
+        border-color: var(--hue-pri-700) !important;
+    }
+
+    .sm\)bdr\:pri-600,
+    .sm\)bdr\:pri-600\!hover:hover,
+    a.sm\)bdr\:pri-600\!focus:focus,
+    a.sm\)bdr\:pri-600,
+    button.sm\)bdr\:pri-600\!hover:hover,
+    button.sm\)bdr\:pri-600\!focus:focus {
+        border-color: var(--hue-pri-600) !important;
+    }
+
+    .sm\)bdr\:pri-500,
+    .sm\)bdr\:pri-500\!hover:hover,
+    a.sm\)bdr\:pri-500\!focus:focus,
+    a.sm\)bdr\:pri-500,
+    button.sm\)bdr\:pri-500\!hover:hover,
+    button.sm\)bdr\:pri-500\!focus:focus {
+        border-color: var(--hue-pri-500) !important;
+    }
+
+    .sm\)bdr\:pri-400,
+    .sm\)bdr\:pri-400\!hover:hover,
+    a.sm\)bdr\:pri-400\!focus:focus,
+    a.sm\)bdr\:pri-400,
+    button.sm\)bdr\:pri-400\!hover:hover,
+    button.sm\)bdr\:pri-400\!focus:focus {
+        border-color: var(--hue-pri-400) !important;
+    }
+
+    .sm\)bdr\:pri-300,
+    .sm\)bdr\:pri-300\!hover:hover,
+    a.sm\)bdr\:pri-300\!focus:focus,
+    a.sm\)bdr\:pri-300,
+    button.sm\)bdr\:pri-300\!hover:hover,
+    button.sm\)bdr\:pri-300\!focus:focus {
+        border-color: var(--hue-pri-300) !important;
+    }
+
+    .sm\)bdr\:pri-200,
+    .sm\)bdr\:pri-200\!hover:hover,
+    a.sm\)bdr\:pri-200\!focus:focus,
+    a.sm\)bdr\:pri-200,
+    button.sm\)bdr\:pri-200\!hover:hover,
+    button.sm\)bdr\:pri-200\!focus:focus {
+        border-color: var(--hue-pri-200) !important;
+    }
+
+    .sm\)bdr\:pri-100,
+    .sm\)bdr\:pri-100\!hover:hover,
+    a.sm\)bdr\:pri-100\!focus:focus,
+    a.sm\)bdr\:pri-100,
+    button.sm\)bdr\:pri-100\!hover:hover,
+    button.sm\)bdr\:pri-100\!focus:focus {
+        border-color: var(--hue-pri-100) !important;
+    }
+
+    .sm\)bdr\:pri-050,
+    .sm\)bdr\:pri-050\!hover:hover,
+    a.sm\)bdr\:pri-050\!focus:focus,
+    a.sm\)bdr\:pri-050,
+    button.sm\)bdr\:pri-050\!hover:hover,
+    button.sm\)bdr\:pri-050\!focus:focus {
+        border-color: var(--hue-pri-050) !important;
+    }
+
+    .sm\)bdr\:sec-900,
+    .sm\)bdr\:sec-900\!hover:hover,
+    a.sm\)bdr\:sec-900\!focus:focus,
+    a.sm\)bdr\:sec-900,
+    button.sm\)bdr\:sec-900\!hover:hover,
+    button.sm\)bdr\:sec-900\!focus:focus {
+        border-color: var(--hue-sec-900) !important;
+    }
+
+    .sm\)bdr\:sec-800,
+    .sm\)bdr\:sec-800\!hover:hover,
+    a.sm\)bdr\:sec-800\!focus:focus,
+    a.sm\)bdr\:sec-800,
+    button.sm\)bdr\:sec-800\!hover:hover,
+    button.sm\)bdr\:sec-800\!focus:focus {
+        border-color: var(--hue-sec-800) !important;
+    }
+
+    .sm\)bdr\:sec-700,
+    .sm\)bdr\:sec-700\!hover:hover,
+    a.sm\)bdr\:sec-700\!focus:focus,
+    a.sm\)bdr\:sec-700,
+    button.sm\)bdr\:sec-700\!hover:hover,
+    button.sm\)bdr\:sec-700\!focus:focus {
+        border-color: var(--hue-sec-700) !important;
+    }
+
+    .sm\)bdr\:sec-600,
+    .sm\)bdr\:sec-600\!hover:hover,
+    a.sm\)bdr\:sec-600\!focus:focus,
+    a.sm\)bdr\:sec-600,
+    button.sm\)bdr\:sec-600\!hover:hover,
+    button.sm\)bdr\:sec-600\!focus:focus {
+        border-color: var(--hue-sec-600) !important;
+    }
+
+    .sm\)bdr\:sec-500,
+    .sm\)bdr\:sec-500\!hover:hover,
+    a.sm\)bdr\:sec-500\!focus:focus,
+    a.sm\)bdr\:sec-500,
+    button.sm\)bdr\:sec-500\!hover:hover,
+    button.sm\)bdr\:sec-500\!focus:focus {
+        border-color: var(--hue-sec-500) !important;
+    }
+
+    .sm\)bdr\:sec-400,
+    .sm\)bdr\:sec-400\!hover:hover,
+    a.sm\)bdr\:sec-400\!focus:focus,
+    a.sm\)bdr\:sec-400,
+    button.sm\)bdr\:sec-400\!hover:hover,
+    button.sm\)bdr\:sec-400\!focus:focus {
+        border-color: var(--hue-sec-400) !important;
+    }
+
+    .sm\)bdr\:sec-300,
+    .sm\)bdr\:sec-300\!hover:hover,
+    a.sm\)bdr\:sec-300\!focus:focus,
+    a.sm\)bdr\:sec-300,
+    button.sm\)bdr\:sec-300\!hover:hover,
+    button.sm\)bdr\:sec-300\!focus:focus {
+        border-color: var(--hue-sec-300) !important;
+    }
+
+    .sm\)bdr\:sec-200,
+    .sm\)bdr\:sec-200\!hover:hover,
+    a.sm\)bdr\:sec-200\!focus:focus,
+    a.sm\)bdr\:sec-200,
+    button.sm\)bdr\:sec-200\!hover:hover,
+    button.sm\)bdr\:sec-200\!focus:focus {
+        border-color: var(--hue-sec-200) !important;
+    }
+
+    .sm\)bdr\:sec-100,
+    .sm\)bdr\:sec-100\!hover:hover,
+    a.sm\)bdr\:sec-100\!focus:focus,
+    a.sm\)bdr\:sec-100,
+    button.sm\)bdr\:sec-100\!hover:hover,
+    button.sm\)bdr\:sec-100\!focus:focus {
+        border-color: var(--hue-sec-100) !important;
+    }
+
+    .sm\)bdr\:sec-050,
+    .sm\)bdr\:sec-050\!hover:hover,
+    a.sm\)bdr\:sec-050\!focus:focus,
+    a.sm\)bdr\:sec-050,
+    button.sm\)bdr\:sec-050\!hover:hover,
+    button.sm\)bdr\:sec-050\!focus:focus {
+        border-color: var(--hue-sec-050) !important;
+    }
+
+    .sm\)bdr\:red,
+    .sm\)bdr\:red\!hover:hover,
+    a.sm\)bdr\:red\!focus:focus,
+    a.sm\)bdr\:red,
+    button.sm\)bdr\:red\!hover:hover,
+    button.sm\)bdr\:red\!focus:focus {
+        border-color: var(--hue-red) !important;
+    }
+
+    .sm\)bdr\:pink,
+    .sm\)bdr\:pink\!hover:hover,
+    a.sm\)bdr\:pink\!focus:focus,
+    a.sm\)bdr\:pink,
+    button.sm\)bdr\:pink\!hover:hover,
+    button.sm\)bdr\:pink\!focus:focus {
+        border-color: var(--hue-pink) !important;
+    }
+
+    .sm\)bdr\:purple,
+    .sm\)bdr\:purple\!hover:hover,
+    a.sm\)bdr\:purple\!focus:focus,
+    a.sm\)bdr\:purple,
+    button.sm\)bdr\:purple\!hover:hover,
+    button.sm\)bdr\:purple\!focus:focus {
+        border-color: var(--hue-purple) !important;
+    }
+
+    .sm\)bdr\:deep-purple,
+    .sm\)bdr\:deep-purple\!hover:hover,
+    a.sm\)bdr\:deep-purple\!focus:focus,
+    a.sm\)bdr\:deep-purple,
+    button.sm\)bdr\:deep-purple\!hover:hover,
+    button.sm\)bdr\:deep-purple\!focus:focus {
+        border-color: var(--hue-deep-purple) !important;
+    }
+
+    .sm\)bdr\:indigo,
+    .sm\)bdr\:indigo\!hover:hover,
+    a.sm\)bdr\:indigo\!focus:focus,
+    a.sm\)bdr\:indigo,
+    button.sm\)bdr\:indigo\!hover:hover,
+    button.sm\)bdr\:indigo\!focus:focus {
+        border-color: var(--hue-indigo) !important;
+    }
+
+    .sm\)bdr\:blue,
+    .sm\)bdr\:blue\!hover:hover,
+    a.sm\)bdr\:blue\!focus:focus,
+    a.sm\)bdr\:blue,
+    button.sm\)bdr\:blue\!hover:hover,
+    button.sm\)bdr\:blue\!focus:focus {
+        border-color: var(--hue-blue) !important;
+    }
+
+    .sm\)bdr\:light-blue,
+    .sm\)bdr\:light-blue\!hover:hover,
+    a.sm\)bdr\:light-blue\!focus:focus,
+    a.sm\)bdr\:light-blue,
+    button.sm\)bdr\:light-blue\!hover:hover,
+    button.sm\)bdr\:light-blue\!focus:focus {
+        border-color: var(--hue-light-blue) !important;
+    }
+
+    .sm\)bdr\:cyan,
+    .sm\)bdr\:cyan\!hover:hover,
+    a.sm\)bdr\:cyan\!focus:focus,
+    a.sm\)bdr\:cyan,
+    button.sm\)bdr\:cyan\!hover:hover,
+    button.sm\)bdr\:cyan\!focus:focus {
+        border-color: var(--hue-cyan) !important;
+    }
+
+    .sm\)bdr\:teal,
+    .sm\)bdr\:teal\!hover:hover,
+    a.sm\)bdr\:teal\!focus:focus,
+    a.sm\)bdr\:teal,
+    button.sm\)bdr\:teal\!hover:hover,
+    button.sm\)bdr\:teal\!focus:focus {
+        border-color: var(--hue-teal) !important;
+    }
+
+    .sm\)bdr\:green,
+    .sm\)bdr\:green\!hover:hover,
+    a.sm\)bdr\:green\!focus:focus,
+    a.sm\)bdr\:green,
+    button.sm\)bdr\:green\!hover:hover,
+    button.sm\)bdr\:green\!focus:focus {
+        border-color: var(--hue-green) !important;
+    }
+
+    .sm\)bdr\:light-green,
+    .sm\)bdr\:light-green\!hover:hover,
+    a.sm\)bdr\:light-green\!focus:focus,
+    a.sm\)bdr\:light-green,
+    button.sm\)bdr\:light-green\!hover:hover,
+    button.sm\)bdr\:light-green\!focus:focus {
+        border-color: var(--hue-light-green) !important;
+    }
+
+    .sm\)bdr\:lime,
+    .sm\)bdr\:lime\!hover:hover,
+    a.sm\)bdr\:lime\!focus:focus,
+    a.sm\)bdr\:lime,
+    button.sm\)bdr\:lime\!hover:hover,
+    button.sm\)bdr\:lime\!focus:focus {
+        border-color: var(--hue-lime) !important;
+    }
+
+    .sm\)bdr\:yellow,
+    .sm\)bdr\:yellow\!hover:hover,
+    a.sm\)bdr\:yellow\!focus:focus,
+    a.sm\)bdr\:yellow,
+    button.sm\)bdr\:yellow\!hover:hover,
+    button.sm\)bdr\:yellow\!focus:focus {
+        border-color: var(--hue-yellow) !important;
+    }
+
+    .sm\)bdr\:amber,
+    .sm\)bdr\:amber\!hover:hover,
+    a.sm\)bdr\:amber\!focus:focus,
+    a.sm\)bdr\:amber,
+    button.sm\)bdr\:amber\!hover:hover,
+    button.sm\)bdr\:amber\!focus:focus {
+        border-color: var(--hue-amber) !important;
+    }
+
+    .sm\)bdr\:orange,
+    .sm\)bdr\:orange\!hover:hover,
+    a.sm\)bdr\:orange\!focus:focus,
+    a.sm\)bdr\:orange,
+    button.sm\)bdr\:orange\!hover:hover,
+    button.sm\)bdr\:orange\!focus:focus {
+        border-color: var(--hue-orange) !important;
+    }
+
+    .sm\)bdr\:deep-orange,
+    .sm\)bdr\:deep-orange\!hover:hover,
+    a.sm\)bdr\:deep-orange\!focus:focus,
+    a.sm\)bdr\:deep-orange,
+    button.sm\)bdr\:deep-orange\!hover:hover,
+    button.sm\)bdr\:deep-orange\!focus:focus {
+        border-color: var(--hue-deep-orange) !important;
+    }
+
+    .sm\)bdr\:brown,
+    .sm\)bdr\:brown\!hover:hover,
+    a.sm\)bdr\:brown\!focus:focus,
+    a.sm\)bdr\:brown,
+    button.sm\)bdr\:brown\!hover:hover,
+    button.sm\)bdr\:brown\!focus:focus {
+        border-color: var(--hue-brown) !important;
+    }
+
+    .sm\)bdr\:grey,
+    .sm\)bdr\:grey\!hover:hover,
+    a.sm\)bdr\:grey\!focus:focus,
+    a.sm\)bdr\:grey,
+    button.sm\)bdr\:grey\!hover:hover,
+    button.sm\)bdr\:grey\!focus:focus {
+        border-color: var(--hue-grey) !important;
+    }
+
+    .sm\)bdr\:blue-grey,
+    .sm\)bdr\:blue-grey\!hover:hover,
+    a.sm\)bdr\:blue-grey\!focus:focus,
+    a.sm\)bdr\:blue-grey,
+    button.sm\)bdr\:blue-grey\!hover:hover,
+    button.sm\)bdr\:blue-grey\!focus:focus {
+        border-color: var(--hue-blue-grey) !important;
+    }
+
+    /*
+    ***
+    high contrast text colors
+    ***
+    */
+    .sm\)wcag\:fg-grey9,
+    .sm\)wcag\:fg-grey9\!hover:hover,
+    a.sm\)wcag\:fg-grey9\!focus:focus,
+    a.sm\)wcag\:fg-grey9,
+    button.sm\)wcag\:fg-grey9\!hover:hover,
+    button.sm\)wcag\:fg-grey9\!focus:focus {
+        color: var(--wcag-grey9) !important;
+    }
     
-	/*
-	***
-	    * selector: mar
-	    * dsc: margin vertical
-	    * ver: 200206
-	    * fnt: set top / bottom margins
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-	***
-	*/
-
-	/*: add margin :*/
-	.sm\)mar\:vrt\+0 {
-	    margin-top: 0 !important;
-	    margin-bottom: 0 !important;
-	}
-
-	.sm\)mar\:vrt\+0\.25 {
-	    margin-top: 0.25rem !important;
-	    margin-bottom: 0.25rem !important;
-	}
-
-	.sm\)mar\:vrt\+0\.5 {
-	    margin-top: 0.5rem !important;
-	    margin-bottom: 0.5rem !important;
-	}
-
-	.sm\)mar\:vrt\+0\.75 {
-	    margin-top: 0.75rem !important;
-	    margin-bottom: 0.75rem !important;
-	}
-
-	.sm\)mar\:vrt\+1 {
-	    margin-top: 1rem !important;
-	    margin-bottom: 1rem !important;
-	}
-
-	.sm\)mar\:vrt\+1.25 {
-	    margin-top: 1.25rem !important;
-	    margin-bottom: 1.25rem !important;
-	}
-
-	.sm\)mar\:vrt\+1.5 {
-	    margin-top: 1.5rem !important;
-	    margin-bottom: 1.5rem !important;
-	}
-
-	.sm\)mar\:vrt\+1.75 {
-	    margin-top: 1.75rem !important;
-	    margin-bottom: 1.75rem !important;
-	}
-
-	.sm\)mar\:vrt\+2 {
-	    margin-top: 2rem !important;
-	    margin-bottom: 2rem !important;
-	}
-
-	/*: subtract margin :*/
-	.sm\)mar\:vrt-0 {
-	    margin-top: 0 !important;
-	    margin-bottom: 0 !important;
-	}
-
-	.sm\)mar\:vrt-0\.25 {
-	    margin-top: -0.25rem !important;
-	    margin-bottom: -0.25rem !important;
-	}
-
-	.sm\)mar\:vrt-0\.5 {
-	    margin-top: -0.5rem !important;
-	    margin-bottom: -0.5rem !important;
-	}
-
-	.sm\)mar\:vrt-0\.75 {
-	    margin-top: -0.75rem !important;
-	    margin-bottom: -0.75rem !important;
-	}
-
-	.sm\)mar\:vrt-1 {
-	    margin-top: -1rem !important;
-	    margin-bottom: -1rem !important;
-	}
-
-	.sm\)mar\:vrt-1.25 {
-	    margin-top: -1.25rem !important;
-	    margin-bottom: -1.25rem !important;
-	}
-
-	.sm\)mar\:vrt-1.5 {
-	    margin-top: -1.5rem !important;
-	    margin-bottom: -1.5rem !important;
-	}
-
-	.sm\)mar\:vrt-1.75 {
-	    margin-top: -1.75rem !important;
-	    margin-bottom: -1.75rem !important;
-	}
-
-	.sm\)mar\:vrt-2 {
-	    margin-top: -2rem !important;
-	    margin-bottom: -2rem !important;
-	}
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: padding
-	    * ver: 200120-1
-	    * fnt: set all padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:\+0 {
-        padding: 0 !important;
-    }
-
-    .sm\)pad\:\+0\.25 {
-        padding: 0.25rem !important;
-    }
-
-    .sm\)pad\:\+0\.5 {
-        padding: 0.5rem !important;
-    }
-
-    .sm\)pad\:\+0\.75 {
-        padding: 0.75rem !important;
-    }
-
-    .sm\)pad\:\+1 {
-        padding: 1rem !important;
-    }
-
-    .sm\)pad\:\+1\.25 {
-        padding: 1.25rem !important;
-    }
-
-    .sm\)pad\:\+1\.5 {
-        padding: 1.5rem !important;
-    }
-
-    .sm\)pad\:\+1\.75 {
-        padding: 1.75rem !important;
-    }
-
-    .sm\)pad\:\+2 {
-        padding: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: top
-	    * ver: 200120-1
-	    * fnt: set top padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:top\+0 {
-        padding-top: 0 !important;
-    }
-
-    .sm\)pad\:top\+0\.25 {
-        padding-top: 0.25rem !important;
-    }
-
-    .sm\)pad\:top\+0\.5 {
-        padding-top: 0.5rem !important;
-    }
-
-    .sm\)pad\:top\+0\.75 {
-        padding-top: 0.75rem !important;
-    }
-
-    .sm\)pad\:top\+1 {
-        padding-top: 1rem !important;
-    }
-
-    .sm\)pad\:top\+1\.25 {
-        padding-top: 1.25rem !important;
-    }
-
-    .sm\)pad\:top\+1\.5 {
-        padding-top: 1.5rem !important;
-    }
-
-    .sm\)pad\:top\+1\.75 {
-        padding-top: 1.75rem !important;
-    }
-
-    .sm\)pad\:top\+2 {
-        padding-top: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: right
-	    * ver: 200120-1
-	    * fnt: set right padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:right\+0 {
-        padding-right: 0 !important;
-    }
-
-    .sm\)pad\:right\+0\.25 {
-        padding-right: 0.25rem !important;
-    }
-
-    .sm\)pad\:right\+0\.5 {
-        padding-right: 0.5rem !important;
-    }
-
-    .sm\)pad\:right\+0\.75 {
-        padding-right: 0.75rem !important;
-    }
-
-    .sm\)pad\:right\+1 {
-        padding-right: 1rem !important;
-    }
-
-    .sm\)pad\:right\+1\.25 {
-        padding-right: 1.25rem !important;
-    }
-
-    .sm\)pad\:right\+1\.5 {
-        padding-right: 1.5rem !important;
-    }
-
-    .sm\)pad\:right\+1\.75 {
-        padding-right: 1.75rem !important;
-    }
-
-    .sm\)pad\:right\+2 {
-        padding-right: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: bottom
-	    * ver: 200120-1
-	    * fnt: set bottom padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:bottom\+0 {
-        padding-bottom: 0 !important;
-    }
-
-    .sm\)pad\:bottom\+0\.25 {
-        padding-bottom: 0.25rem !important;
-    }
-
-    .sm\)pad\:bottom\+0\.5 {
-        padding-bottom: 0.5rem !important;
-    }
-
-    .sm\)pad\:bottom\+0\.75 {
-        padding-bottom: 0.75rem !important;
-    }
-
-    .sm\)pad\:bottom\+1 {
-        padding-bottom: 1rem !important;
-    }
-
-    .sm\)pad\:bottom\+1\.25 {
-        padding-bottom: 1.25rem !important;
-    }
-
-    .sm\)pad\:bottom\+1\.5 {
-        padding-bottom: 1.5rem !important;
-    }
-
-    .sm\)pad\:bottom\+1\.75 {
-        padding-bottom: 1.75rem !important;
-    }
-
-    .sm\)pad\:bottom\+2 {
-        padding-bottom: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: left
-	    * ver: 200120-1
-	    * fnt: set left padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:left\+0 {
-        padding-left: 0 !important;
-    }
-
-    .sm\)pad\:left\+0\.25 {
-        padding-left: 0.25rem !important;
-    }
-
-    .sm\)pad\:left\+0\.5 {
-        padding-left: 0.5rem !important;
-    }
-
-    .sm\)pad\:left\+0\.75 {
-        padding-left: 0.75rem !important;
-    }
-
-    .sm\)pad\:left\+1 {
-        padding-left: 1rem !important;
-    }
-
-    .sm\)pad\:left\+1\.25 {
-        padding-left: 1.25rem !important;
-    }
-
-    .sm\)pad\:left\+1\.5 {
-        padding-left: 1.5rem !important;
-    }
-
-    .sm\)pad\:left\+1\.75 {
-        padding-left: 1.75rem !important;
-    }
-
-    .sm\)pad\:left\+2 {
-        padding-left: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: hrz
-	    * ver: 200120-1
-	    * fnt: set left/right (horizontal) padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:hrz\+0 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    .sm\)pad\:hrz\+0\.25 {
-        padding-left: 0.25rem !important;
-        padding-right: 0.25rem !important;
-    }
-
-    .sm\)pad\:hrz\+0\.5 {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-
-    .sm\)pad\:hrz\+0\.75 {
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-    }
-
-    .sm\)pad\:hrz\+1 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    .sm\)pad\:hrz\+1.25 {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-    }
-
-    .sm\)pad\:hrz\+1.5 {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
-    }
-
-    .sm\)pad\:hrz\+1.75 {
-        padding-left: 1.75rem !important;
-        padding-right: 1.75rem !important;
-    }
-
-    .sm\)pad\:hrz\+2 {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: pad
-	    * dsc: vrt
-	    * ver: 200120-1
-	    * fnt: set top/bottom (vertical) padding
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
-	***
-	*/
-    .sm\)pad\:vrt\+0 {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-    .sm\)pad\:vrt\+0\.25 {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-    }
-
-    .sm\)pad\:vrt\+0\.5 {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-    }
-
-    .sm\)pad\:vrt\+0\.75 {
-        padding-top: 0.75rem !important;
-        padding-bottom: 0.75rem !important;
-    }
-
-    .sm\)pad\:vrt\+1 {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-
-    .sm\)pad\:vrt\+1.25 {
-        padding-top: 1.25rem !important;
-        padding-bottom: 1.25rem !important;
-    }
-
-    .sm\)pad\:vrt\+1.5 {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-    }
-
-    .sm\)pad\:vrt\+1.75 {
-        padding-top: 1.75rem !important;
-        padding-bottom: 1.75rem !important;
-    }
-
-    .sm\)pad\:vrt\+2 {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-
-	/*
-	***
-	    * selector: ht
-	    * dsc: fixed height presets
-	    * ver: 200107-1
-	    * fnt: set of predefined fixed heights
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-    .sm\)ht\:auto {
-        height: auto !important;
-    }
-
-    /*: 32px :*/
-    .sm\)ht\:2 {
-        height: 2rem !important;
-    }
-
-    /*: 64px :*/
-    .sm\)ht\:4 {
-        height: 4rem !important;
-    }
-
-    /*: 96px :*/
-    .sm\)ht\:6 {
-        height: 6rem !important;
-    }
-
-    /*: 128px :*/
-    .sm\)ht\:8 {
-        height: 8rem !important;
-    }
-
-    /*: 160px :*/
-    .sm\)ht\:10 {
-        height: 10rem !important;
-    }
-
-    /*: 192px :*/
-    .sm\)ht\:12 {
-        height: 12rem !important;
-    }
-
-    /*: 224px :*/
-    .sm\)ht\:14 {
-        height: 14rem !important;
-    }
-
-    /*: 256px :*/
-    .sm\)ht\:16 {
-        height: 16rem !important;
-    }
-
-    /*: 288px :*/
-    .sm\)ht\:18 {
-        height: 18rem !important;
-    }
-
-    /*: 320px :*/
-    .sm\)ht\:20 {
-        height: 20rem !important;
-    }
-
-	/*
-	***
-	    * selector: ht
-	    * dsc: % height presets
-	    * ver: 200107-1
-	    * fnt: set of predefined % heights
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-    .sm\)ht\:10\% {
-        height: 10% !important;
-    }
-
-    .sm\)ht\:12\% {
-        height: 12% !important;
-    }
-
-    .sm\)ht\:14\% {
-        height: 14% !important;
-    }
-
-    .sm\)ht\:16\% {
-        height: 16% !important;
-    }
-
-    .sm\)ht\:18\% {
-        height: 18% !important;
-    }
-
-    .sm\)ht\:20\% {
-        height: 20% !important;
-    }
-
-    .sm\)ht\:25\% {
-        height: 25% !important;
-    }
-
-    .sm\)ht\:30\% {
-        height: 30% !important;
-    }
-
-    .sm\)ht\:35\% {
-        height: 35% !important;
-    }
-
-    .sm\)ht\:40\% {
-        height: 40% !important;
-    }
-
-    .sm\)ht\:45\% {
-        height: 45% !important;
-    }
-
-    .sm\)ht\:50\% {
-        height: 50% !important;
-    }
-
-    .sm\)ht\:55\% {
-        height: 55% !important;
-    }
-
-    .sm\)ht\:60\% {
-        height: 60% !important;
-    }
-
-    .sm\)ht\:65\% {
-        height: 65% !important;
-    }
-
-    .sm\)ht\:70\% {
-        height: 70% !important;
-    }
-
-    .sm\)ht\:75\% {
-        height: 75% !important;
-    }
-
-    .sm\)ht\:80\% {
-        height: 80% !important;
-    }
-
-    .sm\)ht\:90\% {
-        height: 90% !important;
-    }
-
-    .sm\)ht\:100\% {
-        height: 100% !important;
-    }
-
-	/*
-	***
-	    * selector: ht
-	    * dsc: fraction height presets
-	    * ver: 200107-1
-	    * fnt: set height to predefined fraction
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-    .sm\)ht\:1\/5 {
-        height: 20% !important;
-    }
-
-    .sm\)ht\:1\/4 {
-        height: 25% !important;
-    }
-
-    .sm\)ht\:1\/3 {
-        height: 33.3333% !important;
-    }
-
-    .sm\)ht\:2\/5 {
-        height: 40% !important;
-    }
-
-    .sm\)ht\:1\/2 {
-        height: 50% !important;
-    }
-
-    .sm\)ht\:3\/5 {
-        height: 60% !important;
-    }
-
-    .sm\)ht\:2\/3 {
-        height: 66.6666% !important;
-    }
-
-    .sm\)ht\:3\/4 {
-        height: 75% !important;
-    }
-
-    .sm\)ht\:4\/5 {
-        height: 80% !important;
-    }
-
-    .sm\)ht\:2\/2,
-    .sm\)ht\:3\/3,
-    .sm\)ht\:4\/4,
-    .sm\)ht\:5\/5 {
-        height: 100% !important;
-    }
-
-	/*
-	***
-	    * selector: yht
-	    * dsc: fixed height / auto width
-	    * ver: 200107-1
-	    * fnt: scale width based on preset height %
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-	.sm\)yht\:10\% {
-	    height: 10% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:12\% {
-	    height: 12% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:14\% {
-	    height: 14% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:16\% {
-	    height: 16% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:18\% {
-	    height: 18% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:20\% {
-	    height: 20% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:25\% {
-	    height: 25% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:30\% {
-	    height: 30% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:35\% {
-	    height: 35% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:40\% {
-	    height: 40% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:45\% {
-	    height: 45% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:50\% {
-	    height: 50% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:55\% {
-	    height: 55% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:60\% {
-	    height: 60% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:65\% {
-	    height: 65% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:70\% {
-	    height: 70% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:75\% {
-	    height: 75% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:80\% {
-	    height: 80% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:90\% {
-	    height: 90% !important;
-	    width: auto !important;
-	}
-
-	.sm\)yht\:100\% {
-	    height: 100% !important;
-	    width: auto !important;
-	}
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: fixed width presets
-	    * ver: 200107-1
-	    * fnt: set of predefined fixed widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-    .sm\)wd\:auto {
-        width: auto !important;
-    }
-
-    /*: 32px :*/
-    .sm\)wd\:2 {
-        width: 2rem !important;
-    }
-
-    /*: 64px :*/
-    .sm\)wd\:4 {
-        width: 4rem !important;
-    }
-
-    /*: 96px :*/
-    .sm\)wd\:6 {
-        width: 6rem !important;
-    }
-
-    /*: 128px :*/
-    .sm\)wd\:8 {
-        width: 8rem !important;
-    }
-
-    /*: 160px :*/
-    .sm\)wd\:10 {
-        width: 10rem !important;
-    }
-
-    /*: 192px :*/
-    .sm\)wd\:12 {
-        width: 12rem !important;
-    }
-
-    /*: 224px :*/
-    .sm\)wd\:14 {
-        width: 14rem !important;
-    }
-
-    /*: 256px :*/
-    .sm\)wd\:16 {
-        width: 16rem !important;
-    }
-
-    /*: 288px :*/
-    .sm\)wd\:18 {
-        width: 18rem !important;
-    }
-
-    /*: 320px :*/
-    .sm\)wd\:20 {
-        width: 20rem !important;
-    }
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: % width presets
-	    * ver: 200107-1
-	    * fnt: set of predefined % widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-    .sm\)wd\:10\% {
-        width: 10% !important;
-    }
-
-    .sm\)wd\:12\% {
-        width: 12% !important;
-    }
-
-    .sm\)wd\:14\% {
-        width: 14% !important;
-    }
-
-    .sm\)wd\:16\% {
-        width: 16% !important;
-    }
-
-    .sm\)wd\:18\% {
-        width: 18% !important;
-    }
-
-    .sm\)wd\:20\% {
-        width: 20% !important;
-    }
-
-    .sm\)wd\:25\% {
-        width: 25% !important;
-    }
-
-    .sm\)wd\:30\% {
-        width: 30% !important;
-    }
-
-    .sm\)wd\:35\% {
-        width: 35% !important;
-    }
-
-    .sm\)wd\:40\% {
-        width: 40% !important;
-    }
-
-    .sm\)wd\:45\% {
-        width: 45% !important;
-    }
-
-    .sm\)wd\:50\% {
-        width: 50% !important;
-    }
-
-    .sm\)wd\:55\% {
-        width: 55% !important;
-    }
-
-    .sm\)wd\:60\% {
-        width: 60% !important;
-    }
-
-    .sm\)wd\:65\% {
-        width: 65% !important;
-    }
-
-    .sm\)wd\:70\% {
-        width: 70% !important;
-    }
-
-    .sm\)wd\:75\% {
-        width: 75% !important;
-    }
-
-    .sm\)wd\:80\% {
-        width: 80% !important;
-    }
-
-    .sm\)wd\:90\% {
-        width: 90% !important;
-    }
-
-    .sm\)wd\:100\% {
-        width: 100% !important;
-    }
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: fraction width presets
-	    * ver: 200107-1
-	    * fnt: set width to predefined fraction
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-    .sm\)wd\:1\/5 {
-        width: 20% !important;
-    }
-
-    .sm\)wd\:1\/4 {
-        width: 25% !important;
-    }
-
-    .sm\)wd\:1\/3 {
-        width: 33.3333% !important;
-    }
-
-    .sm\)wd\:2\/5 {
-        width: 40% !important;
-    }
-
-    .sm\)wd\:1\/2 {
-        width: 50% !important;
-    }
-
-    .sm\)wd\:3\/5 {
-        width: 60% !important;
-    }
-
-    .sm\)wd\:2\/3 {
-        width: 66.6666% !important;
-    }
-
-    .sm\)wd\:3\/4 {
-        width: 75% !important;
-    }
-
-    .sm\)wd\:4\/5 {
-        width: 80% !important;
-    }
-
-    .sm\)wd\:2\/2,
-    .sm\)wd\:3\/3,
-    .sm\)wd\:4\/4,
-    .sm\)wd\:5\/5 {
-        width: 100% !important;
-    }
-
-	/*
-	***
-	    * selector: xwd
-	    * dsc: auto height / fixed width
-	    * ver: 200107-1
-	    * fnt: scale height based on preset width %
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-	.sm\)xwd\:10\% {
-	    height: auto !important;
-	    width: 10% !important;
-	}
-
-	.sm\)xwd\:12\% {
-	    height: auto !important;
-	    width: 12% !important;
-	}
-
-	.sm\)xwd\:14\% {
-	    height: auto !important;
-	    width: 14% !important;
-	}
-
-	.sm\)xwd\:16\% {
-	    height: auto !important;
-	    width: 16% !important;
-	}
-
-	.sm\)xwd\:18\% {
-	    height: auto !important;
-	    width: 18% !important;
-	}
-
-	.sm\)xwd\:20\% {
-	    height: auto !important;
-	    width: 20% !important;
-	}
-
-	.sm\)xwd\:25\% {
-	    height: auto !important;
-	    width: 25% !important;
-	}
-
-	.sm\)xwd\:30\% {
-	    height: auto !important;
-	    width: 30% !important;
-	}
-
-	.sm\)xwd\:35\% {
-	    height: auto !important;
-	    width: 35% !important;
-	}
-
-	.sm\)xwd\:40\% {
-	    height: auto !important;
-	    width: 40% !important;
-	}
-
-	.sm\)xwd\:45\% {
-	    height: auto !important;
-	    width: 45% !important;
-	}
-
-	.sm\)xwd\:50\% {
-	    height: auto !important;
-	    width: 50% !important;
-	}
-
-	.sm\)xwd\:55\% {
-	    height: auto !important;
-	    width: 55% !important;
-	}
-
-	.sm\)xwd\:60\% {
-	    height: auto !important;
-	    width: 60% !important;
-	}
-
-	.sm\)xwd\:65\% {
-	    height: auto !important;
-	    width: 65% !important;
-	}
-
-	.sm\)xwd\:70\% {
-	    height: auto !important;
-	    width: 70% !important;
-	}
-
-	.sm\)xwd\:75\% {
-	    height: auto !important;
-	    width: 75% !important;
-	}
-
-	.sm\)xwd\:80\% {
-	    height: auto !important;
-	    width: 80% !important;
-	}
-
-	.sm\)xwd\:90\% {
-	    height: auto !important;
-	    width: 90% !important;
-	}
-
-	.sm\)xwd\:100\% {
-	    height: auto !important;
-	    width: 100% !important;
-	}
-
-	/*
-	***
-	    * selector: aln
-	    * dsc: alignment
-	    * ver: 200120-1
-	    * fnt: set alignment
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
-		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
-		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
-	***
-	*/
-	.sm\)aln\:center {
-	    margin-left: auto !important;
-	    margin-right: auto !important;
-	}
-
-	.sm\)aln\:left {
-	    margin-left: 0 !important;
-	    margin-right: auto !important;
-	}
-
-	.sm\)aln\:right {
-	    margin-left: auto !important;
-	    margin-right: 0 !important;
-	}
-
-	.sm\)aln\:baseline {
-	    vertical-align: baseline !important;
-	}
-
-	.sm\)aln\:top {
-	    vertical-align: top !important;
-	}
-
-	.sm\)aln\:middle {
-	    vertical-align: middle !important;
-	}
-
-	.sm\)aln\:bottom {
-	    vertical-align: bottom !important;
-	}
-
-	.sm\)aln\:sub {
-	    vertical-align: sub !important;
-	}
-
-	.sm\)aln\:sup {
-	    vertical-align: super !important;
-	}
-
-	.sm\)aln\:text-bottom {
-	    vertical-align: text-bottom !important;
-	}
-
-	.sm\)aln\:text-top {
-	    vertical-align: text-top !important;
-	}
-
-	.sm\)aln\:text-center {
-	    text-align: center !important;
-	}
-
-	.sm\)aln\:text-left {
-	    text-align: left !important;
-	}
-
-	.sm\)aln\:text-right {
-	    text-align: right !important;
-	}
-
-	/*
-	***
-	    * selector: bdr
-	    * dsc: border
-	    * ver: 200120-1
-	    * fnt: set border style (not color)
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/border
-		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
-		*	   https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
-	***
-	*/
-    .sm\)bdr\:none {
-        border-style: none !important;
-    }
-
-    .sm\)bdr\:top-none {
-        border-top-style: none !important;
-    }
-
-    .sm\)bdr\:right-none {
-        border-right-style: none !important;
-    }
-
-    .sm\)bdr\:bottom-none {
-        border-bottom-style: none !important;
-    }
-
-    .sm\)bdr\:left-none {
-        border-top-style: none !important;
-    }
-
-    .sm\)bdr\:dashed-thin,
-    .sm\)bdr\:dashed-medium,
-    .sm\)bdr\:dashed-thick {
-        border-style: dashed !important;
-    }
-
-    .sm\)bdr\:top-dashed-thin,
-    .sm\)bdr\:top-dashed-medium,
-    .sm\)bdr\:top-dashed-thick {
-        border-top-style: dashed !important;
-    }
-
-    .sm\)bdr\:right-dashed-thin,
-    .sm\)bdr\:right-dashed-medium,
-    .sm\)bdr\:right-dashed-thick {
-        border-right-style: dashed !important;
-    }
-
-    .sm\)bdr\:bottom-dashed-thin,
-    .sm\)bdr\:bottom-dashed-medium,
-    .sm\)bdr\:bottom-dashed-thick {
-        border-bottom-style: dashed !important;
-    }
-
-    .sm\)bdr\:left-dashed-thin,
-    .sm\)bdr\:left-dashed-medium,
-    .sm\)bdr\:left-dashed-thick {
-        border-left-style: dashed !important;
-    }
-
-    .sm\)bdr\:dotted-thin,
-    .sm\)bdr\:dotted-medium,
-    .sm\)bdr\:dotted-thick {
-        border-style: dotted !important;
-    }
-
-    .sm\)bdr\:top-dotted-thin,
-    .sm\)bdr\:top-dotted-medium,
-    .sm\)bdr\:top-dotted-thick {
-        border-top-style: dotted !important;
-    }
-
-    .sm\)bdr\:right-dotted-thin,
-    .sm\)bdr\:right-dotted-medium,
-    .sm\)bdr\:right-dotted-thick {
-        border-right-style: dotted !important;
-    }
-
-    .sm\)bdr\:bottom-dotted-thin,
-    .sm\)bdr\:bottom-dotted-medium,
-    .sm\)bdr\:bottom-dotted-thick {
-        border-bottom-style: dotted !important;
-    }
-
-    .sm\)bdr\:left-dotted-thin,
-    .sm\)bdr\:left-dotted-medium,
-    .sm\)bdr\:left-dotted-thick {
-        border-left-style: dotted !important;
-    }
-
-    .sm\)bdr\:solid-thin,
-    .sm\)bdr\:solid-medium,
-    .sm\)bdr\:solid-thick {
-        border-style: solid !important;
-    }
-
-    .sm\)bdr\:top-solid-thin,
-    .sm\)bdr\:top-solid-medium,
-    .sm\)bdr\:top-solid-thick {
-        border-top-style: solid !important;
-    }
-
-    .sm\)bdr\:right-solid-thin,
-    .sm\)bdr\:right-solid-medium,
-    .sm\)bdr\:right-solid-thick {
-        border-right-style: solid !important;
-    }
-
-    .sm\)bdr\:bottom-solid-thin,
-    .sm\)bdr\:bottom-solid-medium,
-    .sm\)bdr\:bottom-solid-thick {
-        border-bottom-style: solid !important;
-    }
-
-    .sm\)bdr\:left-solid-thin,
-    .sm\)bdr\:left-solid-medium,
-    .sm\)bdr\:left-solid-thick {
-        border-left-style: solid !important;
-    }
-
-    .sm\)bdr\:dashed-thin,
-    .sm\)bdr\:dotted-thin,
-    .sm\)bdr\:solid-thin {
-        border-width: thin !important;
-    }
-
-    .sm\)bdr\:top-dashed-thin,
-    .sm\)bdr\:top-dotted-thin,
-    .sm\)bdr\:top-solid-thin {
-        border-top-width: thin !important;
-    }
-
-    .sm\)bdr\:right-dashed-thin,
-    .sm\)bdr\:right-dotted-thin,
-    .sm\)bdr\:right-solid-thin {
-        border-right-width: thin !important;
-    }
-
-    .sm\)bdr\:bottom-dashed-thin,
-    .sm\)bdr\:bottom-dotted-thin,
-    .sm\)bdr\:bottom-solid-thin {
-        border-bottom-width: thin !important;
-    }
-
-    .sm\)bdr\:left-dashed-thin,
-    .sm\)bdr\:left-dotted-thin,
-    .sm\)bdr\:left-solid-thin {
-        border-left-width: thin !important;
-    }
-
-    .sm\)bdr\:dashed-medium,
-    .sm\)bdr\:dotted-medium,
-    .sm\)bdr\:solid-medium {
-        border-width: medium !important;
-    }
-
-    .sm\)bdr\:top-dashed-medium,
-    .sm\)bdr\:top-dotted-medium,
-    .sm\)bdr\:top-solid-medium {
-        border-top-width: medium !important;
-    }
-
-    .sm\)bdr\:right-dashed-medium,
-    .sm\)bdr\:right-dotted-medium,
-    .sm\)bdr\:right-solid-medium {
-        border-right-width: medium !important;
-    }
-
-    .sm\)bdr\:bottom-dashed-medium,
-    .sm\)bdr\:bottom-dotted-medium,
-    .sm\)bdr\:bottom-solid-medium {
-        border-bottom-width: medium !important;
-    }
-
-    .sm\)bdr\:left-dashed-medium,
-    .sm\)bdr\:left-dotted-medium,
-    .sm\)bdr\:left-solid-medium {
-        border-left-width: medium !important;
-    }
-
-    .sm\)bdr\:dashed-thick,
-    .sm\)bdr\:dotted-thick,
-    .sm\)bdr\:solid-thick {
-        border-width: thick !important;
-    }
-
-    .sm\)bdr\:top-dashed-thick,
-    .sm\)bdr\:top-dotted-thick,
-    .sm\)bdr\:top-solid-thick {
-        border-top-width: thick !important;
-    }
-
-    .sm\)bdr\:right-dashed-thick,
-    .sm\)bdr\:right-dotted-thick,
-    .sm\)bdr\:right-solid-thick {
-        border-right-width: thick !important;
+    .sm\)wcag\:fg-grey8,
+    .sm\)wcag\:fg-grey8\!hover:hover,
+    a.sm\)wcag\:fg-grey8\!focus:focus,
+    a.sm\)wcag\:fg-grey8,
+    button.sm\)wcag\:fg-grey8\!hover:hover,
+    button.sm\)wcag\:fg-grey8\!focus:focus {
+        color: var(--wcag-grey8) !important;
+    }
+    
+    .sm\)wcag\:fg-grey7,
+    .sm\)wcag\:fg-grey7\!hover:hover,
+    a.sm\)wcag\:fg-grey7\!focus:focus,
+    a.sm\)wcag\:fg-grey7,
+    button.sm\)wcag\:fg-grey7\!hover:hover,
+    button.sm\)wcag\:fg-grey7\!focus:focus {
+        color: var(--wcag-grey7) !important;
+    }
+    
+    .sm\)wcag\:fg-grey6,
+    .sm\)wcag\:fg-grey6\!hover:hover,
+    a.sm\)wcag\:fg-grey6\!focus:focus,
+    a.sm\)wcag\:fg-grey6,
+    button.sm\)wcag\:fg-grey6\!hover:hover,
+    button.sm\)wcag\:fg-grey6\!focus:focus {
+        color: var(--wcag-grey6) !important;
+    }
+    
+    .sm\)wcag\:fg-red,
+    .sm\)wcag\:fg-red\!hover:hover,
+    a.sm\)wcag\:fg-red\!focus:focus,
+    a.sm\)wcag\:fg-red,
+    button.sm\)wcag\:fg-red\!hover:hover,
+    button.sm\)wcag\:fg-red\!focus:focus {
+        color: var(--wcag-red) !important;
+    }
+    
+    .sm\)wcag\:fg-pink,
+    .sm\)wcag\:fg-pink\!hover:hover,
+    a.sm\)wcag\:fg-pink\!focus:focus,
+    a.sm\)wcag\:fg-pink,
+    button.sm\)wcag\:fg-pink\!hover:hover,
+    button.sm\)wcag\:fg-pink\!focus:focus {
+        color: var(--wcag-pink) !important;
+    }
+    
+    .sm\)wcag\:fg-purple,
+    .sm\)wcag\:fg-purple\!hover:hover,
+    a.sm\)wcag\:fg-purple\!focus:focus,
+    a.sm\)wcag\:fg-purple,
+    button.sm\)wcag\:fg-purple\!hover:hover,
+    button.sm\)wcag\:fg-purple\!focus:focus {
+        color: var(--wcag-purple) !important;
+    }
+    
+    .sm\)wcag\:fg-deep-purple,
+    .sm\)wcag\:fg-deep-purple\!hover:hover,
+    a.sm\)wcag\:fg-deep-purple\!focus:focus,
+    a.sm\)wcag\:fg-deep-purple,
+    button.sm\)wcag\:fg-deep-purple\!hover:hover,
+    button.sm\)wcag\:fg-deep-purple\!focus:focus {
+        color: var(--wcag-deep-purple) !important;
+    }
+    
+    .sm\)wcag\:fg-indigo,
+    .sm\)wcag\:fg-indigo\!hover:hover,
+    a.sm\)wcag\:fg-indigo\!focus:focus,
+    a.sm\)wcag\:fg-indigo,
+    button.sm\)wcag\:fg-indigo\!hover:hover,
+    button.sm\)wcag\:fg-indigo\!focus:focus {
+        color: var(--wcag-indigo) !important;
+    }
+    
+    .sm\)wcag\:fg-blue,
+    .sm\)wcag\:fg-blue\!hover:hover,
+    a.sm\)wcag\:fg-blue\!focus:focus,
+    a.sm\)wcag\:fg-blue,
+    button.sm\)wcag\:fg-blue\!hover:hover,
+    button.sm\)wcag\:fg-blue\!focus:focus {
+        color: var(--wcag-blue) !important;
+    }
+    
+    .sm\)wcag\:fg-light-blue,
+    .sm\)wcag\:fg-light-blue\!hover:hover,
+    a.sm\)wcag\:fg-light-blue\!focus:focus,
+    a.sm\)wcag\:fg-light-blue,
+    button.sm\)wcag\:fg-light-blue\!hover:hover,
+    button.sm\)wcag\:fg-light-blue\!focus:focus {
+        color: var(--wcag-light-blue) !important;
+    }
+    
+    .sm\)wcag\:fg-cyan,
+    .sm\)wcag\:fg-cyan\!hover:hover,
+    a.sm\)wcag\:fg-cyan\!focus:focus,
+    a.sm\)wcag\:fg-cyan,
+    button.sm\)wcag\:fg-cyan\!hover:hover,
+    button.sm\)wcag\:fg-cyan\!focus:focus {
+        color: var(--wcag-cyan) !important;
+    }
+    
+    .sm\)wcag\:fg-teal,
+    .sm\)wcag\:fg-teal\!hover:hover,
+    a.sm\)wcag\:fg-teal\!focus:focus,
+    a.sm\)wcag\:fg-teal,
+    button.sm\)wcag\:fg-teal\!hover:hover,
+    button.sm\)wcag\:fg-teal\!focus:focus {
+        color: var(--wcag-teal) !important;
+    }
+    
+    .sm\)wcag\:fg-green,
+    .sm\)wcag\:fg-green\!hover:hover,
+    a.sm\)wcag\:fg-green\!focus:focus,
+    a.sm\)wcag\:fg-green,
+    button.sm\)wcag\:fg-green\!hover:hover,
+    button.sm\)wcag\:fg-green\!focus:focus {
+        color: var(--wcag-green) !important;
+    }
+    
+    .sm\)wcag\:fg-light-green,
+    .sm\)wcag\:fg-light-green\!hover:hover,
+    a.sm\)wcag\:fg-light-green\!focus:focus,
+    a.sm\)wcag\:fg-light-green,
+    button.sm\)wcag\:fg-light-green\!hover:hover,
+    button.sm\)wcag\:fg-light-green\!focus:focus {
+        color: var(--wcag-light-green) !important;
+    }
+    
+    .sm\)wcag\:fg-lime,
+    .sm\)wcag\:fg-lime\!hover:hover,
+    a.sm\)wcag\:fg-lime\!focus:focus,
+    a.sm\)wcag\:fg-lime,
+    button.sm\)wcag\:fg-lime\!hover:hover,
+    button.sm\)wcag\:fg-lime\!focus:focus {
+        color: var(--wcag-lime) !important;
+    }
+    
+    .sm\)wcag\:fg-yellow,
+    .sm\)wcag\:fg-yellow\!hover:hover,
+    a.sm\)wcag\:fg-yellow\!focus:focus,
+    a.sm\)wcag\:fg-yellow,
+    button.sm\)wcag\:fg-yellow\!hover:hover,
+    button.sm\)wcag\:fg-yellow\!focus:focus {
+        color: var(--wcag-yellow) !important;
+    }
+    
+    .sm\)wcag\:fg-amber,
+    .sm\)wcag\:fg-amber\!hover:hover,
+    a.sm\)wcag\:fg-amber\!focus:focus,
+    a.sm\)wcag\:fg-amber,
+    button.sm\)wcag\:fg-amber\!hover:hover,
+    button.sm\)wcag\:fg-amber\!focus:focus {
+        color: var(--wcag-amber) !important;
+    }
+    
+    .sm\)wcag\:fg-orange,
+    .sm\)wcag\:fg-orange\!hover:hover,
+    a.sm\)wcag\:fg-orange\!focus:focus,
+    a.sm\)wcag\:fg-orange,
+    button.sm\)wcag\:fg-orange\!hover:hover,
+    button.sm\)wcag\:fg-orange\!focus:focus {
+        color: var(--wcag-orange) !important;
+    }
+    
+    .sm\)wcag\:fg-deep-orange,
+    .sm\)wcag\:fg-deep-orange\!hover:hover,
+    a.sm\)wcag\:fg-deep-orange\!focus:focus,
+    a.sm\)wcag\:fg-deep-orange,
+    button.sm\)wcag\:fg-deep-orange\!hover:hover,
+    button.sm\)wcag\:fg-deep-orange\!focus:focus {
+        color: var(--wcag-deep-orange) !important;
+    }
+
+    .sm\)wcag\:fg-brown,
+    .sm\)wcag\:fg-brown\!hover:hover,
+    a.sm\)wcag\:fg-brown\!focus:focus,
+    a.sm\)wcag\:fg-brown,
+    button.sm\)wcag\:fg-brown\!hover:hover,
+    button.sm\)wcag\:fg-brown\!focus:focus {
+        color: var(--wcag-brown) !important;
+    }
+
+    .sm\)wcag\:fg-blue-grey,
+    .sm\)wcag\:fg-blue-grey\!hover:hover,
+    a.sm\)wcag\:fg-blue-grey\!focus:focus,
+    a.sm\)wcag\:fg-blue-grey,
+    button.sm\)wcag\:fg-blue-grey\!hover:hover,
+    button.sm\)wcag\:fg-blue-grey\!focus:focus {
+        color: var(--wcag-blue-grey) !important;
+    }
+
+    .sm\)wcag\:fg-brown,
+    .sm\)wcag\:fg-brown\!hover:hover,
+    a.sm\)wcag\:fg-brown\!focus:focus,
+    a.sm\)wcag\:fg-brown,
+    button.sm\)wcag\:fg-brown\!hover:hover,
+    button.sm\)wcag\:fg-brown\!focus:focus {
+        color: var(--wcag-brown) !important;
+    }
+
+    .sm\)wcag\:fg-blue-grey,
+    .sm\)wcag\:fg-blue-grey\!hover:hover,
+    a.sm\)wcag\:fg-blue-grey\!focus:focus,
+    a.sm\)wcag\:fg-blue-grey,
+    button.sm\)wcag\:fg-blue-grey\!hover:hover,
+    button.sm\)wcag\:fg-blue-grey\!focus:focus {
+        color: var(--wcag-blue-grey) !important;
     }
-
-    .sm\)bdr\:bottom-dashed-thick,
-    .sm\)bdr\:bottom-dotted-thick,
-    .sm\)bdr\:bottom-solid-thick {
-        border-bottom-width: thick !important;
-    }
-
-    .sm\)bdr\:left-dashed-thick,
-    .sm\)bdr\:left-dotted-thick,
-    .sm\)bdr\:left-solid-thick {
-        border-left-width: thick !important;
-    }
-
-	/*
-	***
-	    * DIY flexbox components
-	    * dsc: flexbox classes
-	    * ver: 200120-1
-	    * fnt: classes to build flexbox container and items
-	    * ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-	***
-	*/
-	.sm\)fx\:c {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
-	    -webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	}
-
-	.sm\)fx\:c-rev {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: column-reverse;
-	    -ms-flex-direction: column-reverse;
-	    flex-direction: column-reverse;
-	    -webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	}
-
-	.sm\)fx\:cw {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
-	    -webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	}
-
-	.sm\)fx\:cw-rev {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	    flex-direction: column;
-	    -webkit-flex-wrap: wrap-reverse;
-	    -ms-flex-wrap: wrap-reverse;
-	    flex-wrap: wrap-reverse;
-	}
-
-	.sm\)fx\:r {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: row;
-	    -ms-flex-direction: row;
-	    flex-direction: row;
-	    -webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	}
-
-	.sm\)fx\:r-rev {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: row-reverse;
-	    -ms-flex-direction: row-reverse;
-	    flex-direction: row-reverse;
-	    -webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
-	}
-
-	.sm\)fx\:rw {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: row;
-	    -ms-flex-direction: row;
-	    flex-direction: row;
-	    -webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	}
-
-	.sm\)fx\:rw-rev {
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: row;
-	    -ms-flex-direction: row;
-	    flex-direction: row;
-	    -webkit-flex-wrap: wrap-reverse;
-	    -ms-flex-wrap: wrap-reverse;
-	    flex-wrap: wrap-reverse;
-	}
-
-	/*: justify content :*/
-	.sm\)fxa\:1 {
-	    -webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
-	    justify-content: flex-start;
-	}
-
-	.sm\)fxa\:2 {
-	    -webkit-justify-content: flex-end;
-	    -ms-flex-pack: end;
-	    justify-content: flex-end;
-	}
-
-	.sm\)fxa\:3 {
-	    -webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	    justify-content: center;
-	}
-
-	.sm\)fxa\:4 {
-	    -webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	    justify-content: space-between;
-	}
-
-	.sm\)fxa\:5 {
-	    -webkit-justify-content: space-around;
-	    -ms-flex-pack: distribute;
-	    justify-content: space-around;
-	}
-
-	/*: align content :*/
-	.sm\)fxb\:1 {
-	    -webkit-align-content: flex-start;
-	    -ms-flex-line-pack: start;
-	    align-content: flex-start;
-	}
-
-	.sm\)fxb\:2 {
-	    -webkit-align-content: flex-end;
-	    -ms-flex-line-pack: end;
-	    align-content: flex-end;
-	}
-
-	.sm\)fxb\:3 {
-	    -webkit-align-content: center;
-	    -ms-flex-line-pack: center;
-	    align-content: center;
-	}
-
-	.sm\)fxb\:4 {
-	    -webkit-align-content: space-between;
-	    -ms-flex-line-pack: justify;
-	    align-content: space-between;
-	}
-
-	.sm\)fxb\:5 {
-	    -webkit-align-content: space-around;
-	    -ms-flex-line-pack: distribute;
-	    align-content: space-around;
-	}
-
-	.sm\)fxb\:6 {
-	    -webkit-align-content: stretch;
-	    -ms-flex-line-pack: stretch;
-	    align-content: stretch;
-	}
-
-	/*: align items :*/
-	.sm\)fxc\:1 {
-	    -webkit-align-items: flex-start;
-	    -ms-flex-align: start;
-	    align-items: flex-start;
-	}
-
-	.sm\)fxc\:2 {
-	    -webkit-align-items: flex-end;
-	    -ms-flex-align: end;
-	    align-items: flex-end;
-	}
-
-	.sm\)fxc\:3 {
-	    -webkit-align-items: center;
-	    -ms-flex-align: center;
-	    align-items: center;
-	}
-
-	.sm\)fxc\:4 {
-	    -webkit-align-items: baseline;
-	    -ms-flex-align: baseline;
-	    align-items: baseline;
-	}
-
-	.sm\)fxc\:5 {
-	    -webkit-align-items: stretch;
-	    -ms-flex-align: stretch;
-	    align-items: stretch;
-	}
-
-	/*: item (importance ranking / auto is assumed) :*/
-	.sm\)fxd\:1 {
-		-webkit-order: 0;
-		-ms-flex-order: 0;
-		order: 0;	
-	    -webkit-flex: 0 1 auto;
-	    -ms-flex: 0 1 auto;
-	    flex: 0 1 auto;
-	}
-
-	.sm\)fxd\:2 {
-		-webkit-order: 0;
-		-ms-flex-order: 0;
-		order: 0;	
-	    -webkit-flex: 1 1 auto;
-	    -ms-flex: 1 1 auto;
-	    flex: 1 1 auto;
-	}
-
-	.sm\)fxd\:3 {
-		-webkit-order: 0;
-		-ms-flex-order: 0;
-		order: 0;	
-	    -webkit-flex: 2 1 auto;
-	    -ms-flex: 2 1 auto;
-	    flex: 2 1 auto;
-	}
-
-	.sm\)fxd\:4 {
-		-webkit-order: 0;
-		-ms-flex-order: 0;
-		order: 0;	
-	    -webkit-flex: 1 2 auto;
-	    -ms-flex: 1 2 auto;
-	    flex: 1 2  auto;
-	}
-
-	/*: item (align self) :*/
-	.sm\)fxe\:1 {
-	    -webkit-align-self: auto;
-	    -ms-flex-item-align: auto;
-	    align-self: auto;
-	}
-
-	.sm\)fxe\:2 {
-	    -webkit-align-self: flex-start;
-	    -ms-flex-item-align: start;
-	    align-self: flex-start;
-	}
-
-	.sm\)fxe\:3 {
-	    -webkit-align-self: flex-end;
-	    -ms-flex-item-align: end;
-	    align-self: flex-end;
-	}
-
-	.sm\)fxe\:4 {
-	    -webkit-align-self: center;
-	    -ms-flex-item-align: center;
-	    align-self: center;
-	}
-
-	.sm\)fxe\:5 {
-	    -webkit-align-self: baseline;
-	    -ms-flex-item-align: baseline;
-	    align-self: baseline;
-	}
 
-	.sm\)fxe\:6 {
-	    -webkit-align-self: stretch;
-	    -ms-flex-item-align: stretch;
-	    align-self: stretch;
-	}
 }
 
 /*
- * EOF:     theme/advance.css
- * Build:   200206
+ * EOF:     theme/palette.css
+ * Build:   200128-1
  *
  */
