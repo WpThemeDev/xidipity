@@ -3,7 +3,7 @@
  *
  * File Name:       theme/print.css
  * Function:        CSS print elements
- * Build:           200107-1
+ * Build:           200206
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,15 +11,21 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
 
-/*  # Print
-   ## Global defaults
- ----------------------------------------------------------------------------*/
+/*
+***
+    * element: body
+    * dsc: content of an HTML document
+    * ver: 200206
+    * fnt: set body attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
+***
+*/
 body {
     -webkit-print-color-adjust: exact;
     background: var(--hue-wht);
@@ -31,7 +37,13 @@ body {
 }
 
 /*
-    page elements
+***
+    * rule: @page
+    * dsc: modify some CSS properties when printing a document
+    * ver: 200206
+    * fnt: set print page attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/@page
+***
 */
 @page {
     /* auto is the initial value */
@@ -40,7 +52,13 @@ body {
 }
 
 /*
-    hidden elements
+***
+    * id: excerpt, nav, sidebar, ...
+    * dsc: theme ids
+    * ver: 200206
+    * fnt: selectors to not print
+    * ref:
+***
 */
 #excerpt,
 #nav,
@@ -51,8 +69,28 @@ body {
     display: none;
 }
 
-/*: link syntax :*/
+/*
+***
+    * selector: fx
+    * dsc: flexbox
+    * ver: 190206
+    * fnt: do not print flexbox shadows
+    * ref:
+***
+*/
+.fx\:shadow {
+    box-shadow: none;
+}
 
+/*
+***
+    * element: <a>
+    * dsc: link
+    * ver: 190206
+    * fnt: disable anchor element to other web pages
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+***
+*/
 a,
 a:visited {
     color: var(--dft-lnk-pri-color);
@@ -68,39 +106,37 @@ a:hover {
     font-weight: var(--dft-pri-lnk-wgt);
 }
 
-
-/*: advance syntax :*/
-.prt\(dsp\:none\),
-.prt\[dsp\:none\] {
-    display: none !important;
+/*
+***
+    * selector: break
+    * dsc: page breaks
+    * ver: 190206
+    * fnt: default page breaks
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/break-after
+***
+*/
+.fx\:cn-ct-itm {
+    break-after: always;
 }
 
-.prt\(dsp\:hidden\),
-.prt\[dsp\:hidden\] {
-    visibility: hidden !important;
+table {
+    break-inside: auto
 }
 
-.prt\(dsp\:block\),
-.prt\[dsp\:block\] {
-    display: block !important;
+tr {
+    break-inside: avoid;
+    break-after: auto
 }
 
 /*
-    Page break
+***
+    * elements: <h1>–<h6>
+    * dsc: document headers
+    * ver: 190206
+    * fnt: adjust headers for print
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+***
 */
-.fx\:cn-ct-itm {
-    page-break-after: always;
-}
-
-.prt\(pg-break\:after-always\) {
-    page-break-after: always;
-}
-
-/*  # <h1>–<h6>
-    # 91001.1a
-    # HTML Section Heading elements
-    # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
-**/
 h1 {
     color: var(--h1-color);
     font-family: var(--h1-font);
@@ -149,25 +185,14 @@ h6 {
     font-weight: var(--h6-weight);
 }
 
-table {
-    page-break-inside: auto
-}
-
-tr {
-    page-break-inside: avoid;
-    page-break-after: auto
-}
-
-/*  # fx-misc
-    # 90915.1a
-    # flexbox misc styling
-**/
-.fx\:shadow {
-    box-shadow: none;
-}
-
 /*
-    Force multi columns
+***
+    * element: table
+    * dsc: table
+    * ver: 190206
+    * fnt: adjust multi-column for print
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+***
 */
 table.cols\:auto,
 table.cols\:2,
@@ -181,7 +206,7 @@ table.cols\:4 {
 .cols\:2 td {
     column-count: 2;
     column-gap: 2%;
-    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .cols\:3 td {
@@ -194,140 +219,139 @@ table.cols\:4 {
     column-gap: 2%;
 }
 
-/*  # Print
-   ## Print Specific Borders
-      This solution displays a flux border inside the outer edge.
- ----------------------------------------------------------------------------*/
-.prt\(border\),
-.prt\(border-1\) {
-    -webkit-box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
-    box-shadow: inset 0px 0px 0px 1px var(--hue-bas-500);
+/*
+***
+    * environment: prt
+    * dsc: display
+    * ver: 190206
+    * fnt: print specific display options
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+***
+*/
+.prt\[dsp\:none\] {
+    display: none !important;
 }
 
-.prt\(border-2\) {
-    -webkit-box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
-    box-shadow: inset 0px 0px 0px 2px var(--hue-bas-500);
+.prt\[dsp\:hidden\] {
+    visibility: hidden !important;
 }
 
-.prt\(border-3\) {
-    -webkit-box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
-    box-shadow: inset 0px 0px 0px 3px var(--hue-bas-500);
+.prt\[dsp\:inline\] {
+    display: inline !important;
 }
 
-.prt\(border-4\) {
-    -webkit-box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
-    -moz-box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
-    box-shadow: inset 0px 0px 0px 4px var(--hue-bas-500);
+.prt\[dsp\:inline-block\] {
+    display: inline-block !important;
+}
+
+.prt\[pg-break\:after\] {
+    break-after: always;
 }
 
 /*
-    Print exception palette
+***
+    * environment: prt
+    * dsc: palette adjustments
+    * ver: 190206
+    * fnt: print specific palette adjustments
+    * ref: theme print-vars.css
+***
 */
-.prt\(fg-blk\) {
+.prt\[fg-blk\] {
     color: var(--hue-blk) !important;
 }
 
-.prt\(fg-wht\) {
+.prt\[fg-wht\] {
     color: var(--hue-wht) !important;
 }
 
-.prt\(bg-blk\) {
-    background-color: var(--hue-blk) !important;
-}
-
-.prt\(bg-wht\) {
-    background-color: var(--hue-wht) !important;
-}
-
-.prt\(fg-bas-900\) {
+.prt\[fg-bas-900\] {
     color: var(--hue-bas-900) !important;
 }
 
-.prt\(fg-bas-800\) {
+.prt\[fg-bas-800\] {
     color: var(--hue-bas-800) !important;
 }
 
-.prt\(fg-bas-700\) {
+.prt\[fg-bas-700\] {
     color: var(--hue-bas-700) !important;
 }
 
-.prt\(fg-bas-600\) {
+.prt\[fg-bas-600\] {
     color: var(--hue-bas-600) !important;
 }
 
-.prt\(fg-bas-500\) {
+.prt\[fg-bas-500\] {
     color: var(--hue-bas-500) !important;
 }
 
-.prt\(fg-bas-400\) {
+.prt\[fg-bas-400\] {
     color: var(--hue-bas-400) !important;
 }
 
-.prt\(fg-bas-300\) {
+.prt\[fg-bas-300\] {
     color: var(--hue-bas-300) !important;
 }
 
-.prt\(fg-bas-200\) {
+.prt\[fg-bas-200\] {
     color: var(--hue-bas-200) !important;
 }
 
-.prt\(fg-bas-100\) {
+.prt\[fg-bas-100\] {
     color: var(--hue-bas-100) !important;
 }
 
-.prt\(fg-bas-050\) {
+.prt\[fg-bas-050\] {
     color: var(--hue-bas-050) !important;
 }
 
-.prt\(bg-bas-900\) {
+.prt\[bg-bas-900\] {
     background-color: var(--hue-bas-900) !important;
 }
 
-.prt\(bg-bas-800\) {
+.prt\[bg-bas-800\] {
     background-color: var(--hue-bas-800) !important;
 }
 
-.prt\(bg-bas-700\) {
+.prt\[bg-bas-700\] {
     background-color: var(--hue-bas-700) !important;
 }
 
-.prt\(bg-bas-600\) {
+.prt\[bg-bas-600\] {
     background-color: var(--hue-bas-600) !important;
 }
 
-.prt\(bg-bas-500\) {
+.prt\[bg-bas-500\] {
     background-color: var(--hue-bas-500) !important;
 }
 
-.prt\(bg-bas-400\) {
+.prt\[bg-bas-400\] {
     background-color: var(--hue-bas-400) !important;
 }
 
-.prt\(bg-bas-300\) {
+.prt\[bg-bas-300\] {
     background-color: var(--hue-bas-300) !important;
 }
 
-.prt\(bg-bas-200\) {
+.prt\[bg-bas-200\] {
     background-color: var(--hue-bas-200) !important;
 }
 
-.prt\(bg-bas-100\) {
+.prt\[bg-bas-100\] {
     background-color: var(--hue-bas-100) !important;
 }
 
-.prt\(bg-bas-050\) {
+.prt\[bg-bas-050\] {
     background-color: var(--hue-bas-050) !important;
 }
 
 /*
 ***
-    # breadcrumbs
-    # 200107-1
-    # Yoast breadcrumbs
-    # https://yoast.com/
+    * id: breadcrumbs
+    * dsc: yoast breadcrumbs
+    * ver: 190206
+    * fnt: do not display breadcrumbs on print
+    * ref: https://kb.yoast.com/kb/implement-wordpress-seo-breadcrumbs/
 ***
 */
 #breadcrumbs {
@@ -336,6 +360,6 @@ table.cols\:4 {
 
 /*
  * EOF:     theme/print.css
- * Build:   200107-1
+ * Build:   200206
  *
  */
