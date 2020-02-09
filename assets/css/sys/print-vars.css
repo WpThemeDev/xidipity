@@ -3,7 +3,8 @@
  *
  * File Name:       sys/print-vars.css
  * Function:        print css data elements
- * Build:           200107-1
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -24,9 +25,9 @@
     ***
     */
     /*: black & white :*/
-	--hue-blk: #000000;
+    --hue-blk: #000000;
     --hue-wht: #ffffff;
-	/*: base hue :*/
+    /*: base hue :*/
     --hue-bas-900: #212121;
     --hue-bas-800: #424242;
     --hue-bas-700: #616161;
@@ -37,7 +38,7 @@
     --hue-bas-200: #eeeeee;
     --hue-bas-100: #f5f5f5;
     --hue-bas-050: #fafafa;
-	/*: primary hue :*/
+    /*: primary hue :*/
     --hue-pri-900: #212121;
     --hue-pri-800: #424242;
     --hue-pri-700: #616161;
@@ -48,7 +49,7 @@
     --hue-pri-200: #eeeeee;
     --hue-pri-100: #f5f5f5;
     --hue-pri-050: #fafafa;
-	/*: secondary hue :*/
+    /*: secondary hue :*/
     --hue-sec-900: #212121;
     --hue-sec-800: #424242;
     --hue-sec-700: #616161;
@@ -63,6 +64,6 @@
 
 /*
  * EOF:     sys/print-var.css
- * Build:   200107-1
+ * Build:   200208
  *
  */
