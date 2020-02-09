@@ -3,7 +3,8 @@
  *
  * File Name:       theme/print.css
  * Function:        CSS print elements
- * Build:           200206
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -21,7 +22,7 @@
 ***
     * element: body
     * dsc: content of an HTML document
-    * ver: 200206
+    * ver: 200208
     * fnt: set body attributes
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
 ***
@@ -40,7 +41,7 @@ body {
 ***
     * rule: @page
     * dsc: modify some CSS properties when printing a document
-    * ver: 200206
+    * ver: 200208
     * fnt: set print page attributes
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/@page
 ***
@@ -55,7 +56,7 @@ body {
 ***
     * id: excerpt, nav, sidebar, ...
     * dsc: theme ids
-    * ver: 200206
+    * ver: 200208
     * fnt: selectors to not print
     * ref:
 ***
@@ -360,6 +361,6 @@ table.cols\:4 {
 
 /*
  * EOF:     theme/print.css
- * Build:   200206
+ * Build:   200208
  *
  */
