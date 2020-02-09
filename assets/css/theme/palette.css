@@ -3,7 +3,8 @@
  *
  * File Name:       theme/palette.css
  * Function:        CSS palette elements
- * Build:           200128-1
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -26,7 +27,7 @@ speciality foreground colors
     color: var(--wcag-grey6) !important;
 }
 .fg\:disable {
-    color: var(--hue-bas-400) !important;   
+    color: var(--hue-bas-400) !important;
 }
 
 /*
@@ -183,98 +184,6 @@ button.fg\:pri-dark\!focus:focus {
     color: var(--hue-pri-dark) !important;
 }
 
-/* deprecated
-.fg\:pri-900,
-.fg\:pri-900\!hover:hover,
-a.fg\:pri-900\!active:active,
-a.fg\:pri-900\!focus:focus,
-button.fg\:pri-900\!active:active,
-button.fg\:pri-900\!focus:focus {
-    color: var(--hue-pri-900) !important;
-}
-
-.fg\:pri-800,
-.fg\:pri-800\!hover:hover,
-a.fg\:pri-800\!active:active,
-a.fg\:pri-800\!focus:focus,
-button.fg\:pri-800\!active:active,
-button.fg\:pri-800\!focus:focus {
-    color: var(--hue-pri-800) !important;
-}
-
-.fg\:pri-700,
-.fg\:pri-700\!hover:hover,
-a.fg\:pri-700\!active:active,
-a.fg\:pri-700\!focus:focus,
-button.fg\:pri-700\!active:active,
-button.fg\:pri-700\!focus:focus {
-    color: var(--hue-pri-700) !important;
-}
-
-.fg\:pri-600,
-.fg\:pri-600\!hover:hover,
-a.fg\:pri-600\!active:active,
-a.fg\:pri-600\!focus:focus,
-button.fg\:pri-600\!active:active,
-button.fg\:pri-600\!focus:focus {
-    color: var(--hue-pri-600) !important;
-}
-
-.fg\:pri-500,
-.fg\:pri-500\!hover:hover,
-a.fg\:pri-500\!active:active,
-a.fg\:pri-500\!focus:focus,
-button.fg\:pri-500\!active:active,
-button.fg\:pri-500\!focus:focus {
-    color: var(--hue-pri-500) !important;
-}
-
-.fg\:pri-400,
-.fg\:pri-400\!hover:hover,
-a.fg\:pri-400\!active:active,
-a.fg\:pri-400\!focus:focus,
-button.fg\:pri-400\!active:active,
-button.fg\:pri-400\!focus:focus {
-    color: var(--hue-pri-400) !important;
-}
-
-.fg\:pri-300,
-.fg\:pri-300\!hover:hover,
-a.fg\:pri-300\!active:active,
-a.fg\:pri-300\!focus:focus,
-button.fg\:pri-300\!active:active,
-button.fg\:pri-300\!focus:focus {
-    color: var(--hue-pri-300) !important;
-}
-
-.fg\:pri-200,
-.fg\:pri-200\!hover:hover,
-a.fg\:pri-200\!active:active,
-a.fg\:pri-200\!focus:focus,
-button.fg\:pri-200\!active:active,
-button.fg\:pri-200\!focus:focus {
-    color: var(--hue-pri-200) !important;
-}
-
-.fg\:pri-100,
-.fg\:pri-100\!hover:hover,
-a.fg\:pri-100\!active:active,
-a.fg\:pri-100\!focus:focus,
-button.fg\:pri-100\!active:active,
-button.fg\:pri-100\!focus:focus {
-    color: var(--hue-pri-100) !important;
-}
-
-.fg\:pri-050,
-.fg\:pri-050\!hover:hover,
-a.fg\:pri-050\!active:active,
-a.fg\:pri-050\!focus:focus,
-button.fg\:pri-050\!active:active,
-button.fg\:pri-050\!focus:focus {
-    color: var(--hue-pri-050) !important;
-}
-*/
-
 /*
 ***
 secondary foreground colors
@@ -306,98 +215,6 @@ button.fg\:sec-dark\!active:active,
 button.fg\:sec-dark\!focus:focus {
     color: var(--hue-sec-dark) !important;
 }
-
-/* deprecated
-.fg\:sec-900,
-.fg\:sec-900\!hover:hover,
-a.fg\:sec-900\!active:active,
-a.fg\:sec-900\!focus:focus,
-button.fg\:sec-900\!active:active,
-button.fg\:sec-900\!focus:focus {
-    color: var(--hue-sec-900) !important;
-}
-
-.fg\:sec-800,
-.fg\:sec-800\!hover:hover,
-a.fg\:sec-800\!active:active,
-a.fg\:sec-800\!focus:focus,
-button.fg\:sec-800\!active:active,
-button.fg\:sec-800\!focus:focus {
-    color: var(--hue-sec-800) !important;
-}
-
-.fg\:sec-700,
-.fg\:sec-700\!hover:hover,
-a.fg\:sec-700\!active:active,
-a.fg\:sec-700\!focus:focus,
-button.fg\:sec-700\!active:active,
-button.fg\:sec-700\!focus:focus {
-    color: var(--hue-sec-700) !important;
-}
-
-.fg\:sec-600,
-.fg\:sec-600\!hover:hover,
-a.fg\:sec-600\!active:active,
-a.fg\:sec-600\!focus:focus,
-button.fg\:sec-600\!active:active,
-button.fg\:sec-600\!focus:focus {
-    color: var(--hue-sec-600) !important;
-}
-
-.fg\:sec-500,
-.fg\:sec-500\!hover:hover,
-a.fg\:sec-500\!active:active,
-a.fg\:sec-500\!focus:focus,
-button.fg\:sec-500\!active:active,
-button.fg\:sec-500\!focus:focus {
-    color: var(--hue-sec-500) !important;
-}
-
-.fg\:sec-400,
-.fg\:sec-400\!hover:hover,
-a.fg\:sec-400\!active:active,
-a.fg\:sec-400\!focus:focus,
-button.fg\:sec-400\!active:active,
-button.fg\:sec-400\!focus:focus {
-    color: var(--hue-sec-400) !important;
-}
-
-.fg\:sec-300,
-.fg\:sec-300\!hover:hover,
-a.fg\:sec-300\!active:active,
-a.fg\:sec-300\!focus:focus,
-button.fg\:sec-300\!active:active,
-button.fg\:sec-300\!focus:focus {
-    color: var(--hue-sec-300) !important;
-}
-
-.fg\:sec-200,
-.fg\:sec-200\!hover:hover,
-a.fg\:sec-200\!active:active,
-a.fg\:sec-200\!focus:focus,
-button.fg\:sec-200\!active:active,
-button.fg\:sec-200\!focus:focus {
-    color: var(--hue-sec-200) !important;
-}
-
-.fg\:sec-100,
-.fg\:sec-100\!hover:hover,
-a.fg\:sec-100\!active:active,
-a.fg\:sec-100\!focus:focus,
-button.fg\:sec-100\!active:active,
-button.fg\:sec-100\!focus:focus {
-    color: var(--hue-sec-100) !important;
-}
-
-.fg\:sec-050,
-.fg\:sec-050\!hover:hover,
-a.fg\:sec-050\!active:active,
-a.fg\:sec-050\!focus:focus,
-button.fg\:sec-050\!active:active,
-button.fg\:sec-050\!focus:focus {
-    color: var(--hue-sec-050) !important;
-}
-*/
 
 /*
 ***
@@ -933,79 +750,44 @@ button.bg\:blue-grey\!focus:focus {
 
 /*
 ***
-color shortcuts
+background tints
 ***
 */
-/*: theme fg & bg colors :*/
-.sys\:fg,
-.sys\:fg\!hover:hover,
-a.sys\:fg\!active:active,
-a.sys\:fg\!focus:focus,
-button.sys\:fg\!active:active,
-button.sys\:fg\!focus:focus {
-    color: var(--dft-font-color) !important;
+.bg\:tint-2,
+.bg\:tint-2\!hover:hover,
+button.bg\:tint-2\!active:active,
+button.bg\:tint-2\!focus:focus {
+    filter: brightness(70%) !important;
 }
 
-.sys\:bg,
-.sys\:bg\!hover:hover,
-a.sys\:bg\!active:active,
-a.sys\:bg\!focus:focus,
-button.sys\:bg\!active:active,
-button.sys\:bg\!focus:focus {
-    background-color: var(--content-fg-color) !important;
+.bg\:tint-1,
+.bg\:tint-1\!hover:hover,
+button.bg\:tint-1\!active:active,
+button.bg\:tint-1\!focus:focus {
+    filter: brightness(85%) !important;
 }
 
-/*: theme link colors :*/
-.fg\:link,
-a.fg\:link,
-button.fg\:link {
-    color: var(--dft-lnk-pri-color) !important;
+.bg\:tint {
+    background-color: var(--hue-bas-100);
+}
+
+.bg\:tint\+1,
+.bg\:tint\+1\!hover:hover,
+button.bg\:tint\+1\!active:active,
+button.bg\:tint\+1\!focus:focus {
+    filter: brightness(115%) !important;
+}
+
+.bg\:tint\+2,
+.bg\:tint\+2\!hover:hover,
+button.bg\:tint\+2\!active:active,
+button.bg\:tint\+2\!focus:focus {
+    filter: brightness(130%) !important;
 }
 
 /*: hilite mce plugin support :*/
 .bg\:highlight {
     background-color: var(--hue-highlight);
-}
-
-.bg\:tint {
-    background-color: var(--hue-tint);
-}
-
-.fg\:link\!hover:hover,
-a.fg\:link\!active:active,
-a.fg\:link\!focus:focus,
-button.fg\:link\!active:active,
-button.fg\:link\!focus:focus {
-    color: var(--dft-lnk-sec-color) !important;
-}
-
-/*: background tints :*/
-.bg\:dark,
-.bg\:dark\!hover:hover,
-button.bg\:dark\!active:active,
-button.bg\:dark\!focus:focus {
-    filter: brightness(92%) !important;
-}
-
-.bg\:darker,
-.bg\:darker\!hover:hover,
-button.bg\:darker\!active:active,
-button.bg\:darker\!focus:focus {
-    filter: brightness(96%) !important;
-}
-
-.bg\:brighter,
-.bg\:brighter\!hover:hover,
-button.bg\:brighter\!active:active,
-button.bg\:brighter\!focus:focus {
-    filter: brightness(104%) !important;
-}
-
-.bg\:bright,
-.bg\:bright\!hover:hover,
-button.bg\:bright\!active:active,
-button.bg\:bright\!focus:focus {
-    filter: brightness(108%) !important;
 }
 
 /*
@@ -1018,8 +800,8 @@ gradient backgrounds
     background: -moz-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
     background: -webkit-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
     background: linear-gradient(to bottom, #8ab2df 0%, #1565c0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ab2df', endColorstr='#1565c0', GradientType=0);	
-	color: var(--hue-wht);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ab2df', endColorstr='#1565c0', GradientType=0);
+    color: var(--hue-wht);
 }
 
 .grd\:pri-bright {
@@ -1028,7 +810,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #aec8f9 0%, #5e92f3 100%);
     background: linear-gradient(to bottom, #aec8f9 0%, #5e92f3 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#5e92f3', GradientType=0);
-	color: var(--hue-blk);
+    color: var(--hue-blk);
 }
 
 .grd\:pri-dark {
@@ -1037,7 +819,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #7f9dc7 0%, #003c8f 100%);
     background: linear-gradient(to bottom, #7f9dc7 0%, #003c8f 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f9dc7', endColorstr='#003c8f', GradientType=0);
-	color: var(--hue-wht);
+    color: var(--hue-wht);
 }
 
 .grd\:sec {
@@ -1045,8 +827,8 @@ gradient backgrounds
     background: -moz-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
     background: -webkit-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
     background: linear-gradient(to bottom, #f8ae80 0%, #f25c02 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ae80', endColorstr='#f25c02', GradientType=0);	
-	color: var(--hue-wht);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ae80', endColorstr='#f25c02', GradientType=0);
+    color: var(--hue-wht);
 }
 
 .grd\:sec-bright {
@@ -1055,7 +837,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #ffc69e 0%, #ff8e3d 100%);
     background: linear-gradient(to bottom, #ffc69e 0%, #ff8e3d 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#ff8e3d', GradientType=0);
-	color: var(--hue-blk);
+    color: var(--hue-blk);
 }
 
 .grd\:sec-dark {
@@ -1064,7 +846,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #db937f 0%, #b82800 100%);
     background: linear-gradient(to bottom, #db937f 0%, #b82800 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db937f', endColorstr='#003c8f', GradientType=0);
-	color: var(--hue-wht);
+    color: var(--hue-wht);
 }
 
 .grd\:tint {
@@ -1073,7 +855,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
     background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
-	color: var(--hue-blk);
+    color: var(--hue-blk);
 }
 
 .grd\:tint-bright {
@@ -1082,7 +864,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #fafafa 0%, #f5f5f5 100%);
     background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#f5f5f5', GradientType=0);
-	color: var(--hue-blk);
+    color: var(--hue-blk);
 }
 
 .grd\:tint-dark {
@@ -1091,7 +873,7 @@ gradient backgrounds
     background: -webkit-linear-gradient(top, #bdbdbd 0%, #9e9e9e 100%);
     background: linear-gradient(to bottom, #bdbdbd 0%, #9e9e9e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdbdbd', endColorstr='#9e9e9e', GradientType=0);
-	color: var(--hue-wht);
+    color: var(--hue-wht);
 }
 
 /*
@@ -2467,7 +2249,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
 
     .sm\)bg\:orange,
     .sm\)bg\:orange\!hover:hover,
-    a.sm\)bg\:orange\!active:active 
+    a.sm\)bg\:orange\!active:active
     a.sm\)bg\:orange\!focus:focus,
     button.sm\)bg\:orange\!active:active,
     button.sm\)bg\:orange\!focus:focus {
@@ -2544,70 +2326,6 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)bg\:blue-grey\!active:active,
     button.sm\)bg\:blue-grey\!focus:focus {
         background-color: var(--hue-blue-grey);
-    }
-
-    /*
-    ***
-    color shortcuts
-    ***
-    */
-    /*: theme fg & bg colors :*/
-    .sm\)sys\:fg,
-    .sm\)sys\:fg\!hover:hover,
-    a.sm\)sys\:fg\!active:active,
-    a.sm\)sys\:fg\!focus:focus,
-    button.sm\)sys\:fg\!active:active,
-    button.sm\)sys\:fg\!focus:focus {
-        color: var(--dft-font-color);
-    }
-
-    .sm\)sys\:bg,
-    .sm\)sys\:bg\!hover:hover,
-    a.sm\)sys\:bg\!active:active,
-    a.sm\)sys\:bg\!focus:focus,
-    button.sm\)sys\:bg\!active:active,
-    button.sm\)sys\:bg\!focus:focus {
-        background-color: var(--content-fg-color);
-    }
-
-    /*: theme link colors :*/
-    .sm\)fg\:link,
-    a.sm\)fg\:link,
-    button.sm\)fg\:link {
-        color: var(--dft-lnk-pri-color);
-    }
-
-    .sm\)fg\:link\!hover:hover,
-    a.sm\)fg\:link\!active:active,
-    a.sm\)fg\:link\!focus:focus,
-    button.sm\)fg\:link\!active:active,
-    button.sm\)fg\:link\!focus:focus {
-        color: var(--dft-lnk-sec-color);
-    }
-
-    /*: background tints :*/
-    .sm\)bg\:dark\!hover:hover,
-    button.sm\)bg\:dark\!active:active,
-    button.sm\)bg\:dark\!focus:focus {
-        filter: brightness(92%);
-    }
-
-    .sm\)bg\:darker\!hover:hover,
-    button.sm\)bg\:darker\!active:active,
-    button.sm\)bg\:darker\!focus:focus {
-        filter: brightness(96%);
-    }
-
-    .sm\)bg\:brighter\!hover:hover,
-    button.sm\)bg\:brighter\!active:active,
-    button.sm\)bg\:brighter\!focus:focus {
-        filter: brightness(104%);
-    }
-
-    .sm\)bg\:bright\!hover:hover,
-    button.sm\)bg\:bright\!active:active,
-    button.sm\)bg\:bright\!focus:focus {
-        filter: brightness(108%);
     }
 
     /*
@@ -3096,7 +2814,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-grey9\!focus:focus {
         color: var(--wcag-grey9) !important;
     }
-    
+
     .sm\)wcag\:fg-grey8,
     .sm\)wcag\:fg-grey8\!hover:hover,
     a.sm\)wcag\:fg-grey8\!focus:focus,
@@ -3105,7 +2823,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-grey8\!focus:focus {
         color: var(--wcag-grey8) !important;
     }
-    
+
     .sm\)wcag\:fg-grey7,
     .sm\)wcag\:fg-grey7\!hover:hover,
     a.sm\)wcag\:fg-grey7\!focus:focus,
@@ -3114,7 +2832,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-grey7\!focus:focus {
         color: var(--wcag-grey7) !important;
     }
-    
+
     .sm\)wcag\:fg-grey6,
     .sm\)wcag\:fg-grey6\!hover:hover,
     a.sm\)wcag\:fg-grey6\!focus:focus,
@@ -3123,7 +2841,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-grey6\!focus:focus {
         color: var(--wcag-grey6) !important;
     }
-    
+
     .sm\)wcag\:fg-red,
     .sm\)wcag\:fg-red\!hover:hover,
     a.sm\)wcag\:fg-red\!focus:focus,
@@ -3132,7 +2850,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-red\!focus:focus {
         color: var(--wcag-red) !important;
     }
-    
+
     .sm\)wcag\:fg-pink,
     .sm\)wcag\:fg-pink\!hover:hover,
     a.sm\)wcag\:fg-pink\!focus:focus,
@@ -3141,7 +2859,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-pink\!focus:focus {
         color: var(--wcag-pink) !important;
     }
-    
+
     .sm\)wcag\:fg-purple,
     .sm\)wcag\:fg-purple\!hover:hover,
     a.sm\)wcag\:fg-purple\!focus:focus,
@@ -3150,7 +2868,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-purple\!focus:focus {
         color: var(--wcag-purple) !important;
     }
-    
+
     .sm\)wcag\:fg-deep-purple,
     .sm\)wcag\:fg-deep-purple\!hover:hover,
     a.sm\)wcag\:fg-deep-purple\!focus:focus,
@@ -3159,7 +2877,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-deep-purple\!focus:focus {
         color: var(--wcag-deep-purple) !important;
     }
-    
+
     .sm\)wcag\:fg-indigo,
     .sm\)wcag\:fg-indigo\!hover:hover,
     a.sm\)wcag\:fg-indigo\!focus:focus,
@@ -3168,7 +2886,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-indigo\!focus:focus {
         color: var(--wcag-indigo) !important;
     }
-    
+
     .sm\)wcag\:fg-blue,
     .sm\)wcag\:fg-blue\!hover:hover,
     a.sm\)wcag\:fg-blue\!focus:focus,
@@ -3177,7 +2895,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-blue\!focus:focus {
         color: var(--wcag-blue) !important;
     }
-    
+
     .sm\)wcag\:fg-light-blue,
     .sm\)wcag\:fg-light-blue\!hover:hover,
     a.sm\)wcag\:fg-light-blue\!focus:focus,
@@ -3186,7 +2904,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-light-blue\!focus:focus {
         color: var(--wcag-light-blue) !important;
     }
-    
+
     .sm\)wcag\:fg-cyan,
     .sm\)wcag\:fg-cyan\!hover:hover,
     a.sm\)wcag\:fg-cyan\!focus:focus,
@@ -3195,7 +2913,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-cyan\!focus:focus {
         color: var(--wcag-cyan) !important;
     }
-    
+
     .sm\)wcag\:fg-teal,
     .sm\)wcag\:fg-teal\!hover:hover,
     a.sm\)wcag\:fg-teal\!focus:focus,
@@ -3204,7 +2922,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-teal\!focus:focus {
         color: var(--wcag-teal) !important;
     }
-    
+
     .sm\)wcag\:fg-green,
     .sm\)wcag\:fg-green\!hover:hover,
     a.sm\)wcag\:fg-green\!focus:focus,
@@ -3213,7 +2931,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-green\!focus:focus {
         color: var(--wcag-green) !important;
     }
-    
+
     .sm\)wcag\:fg-light-green,
     .sm\)wcag\:fg-light-green\!hover:hover,
     a.sm\)wcag\:fg-light-green\!focus:focus,
@@ -3222,7 +2940,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-light-green\!focus:focus {
         color: var(--wcag-light-green) !important;
     }
-    
+
     .sm\)wcag\:fg-lime,
     .sm\)wcag\:fg-lime\!hover:hover,
     a.sm\)wcag\:fg-lime\!focus:focus,
@@ -3231,7 +2949,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-lime\!focus:focus {
         color: var(--wcag-lime) !important;
     }
-    
+
     .sm\)wcag\:fg-yellow,
     .sm\)wcag\:fg-yellow\!hover:hover,
     a.sm\)wcag\:fg-yellow\!focus:focus,
@@ -3240,7 +2958,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-yellow\!focus:focus {
         color: var(--wcag-yellow) !important;
     }
-    
+
     .sm\)wcag\:fg-amber,
     .sm\)wcag\:fg-amber\!hover:hover,
     a.sm\)wcag\:fg-amber\!focus:focus,
@@ -3249,7 +2967,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-amber\!focus:focus {
         color: var(--wcag-amber) !important;
     }
-    
+
     .sm\)wcag\:fg-orange,
     .sm\)wcag\:fg-orange\!hover:hover,
     a.sm\)wcag\:fg-orange\!focus:focus,
@@ -3258,7 +2976,7 @@ button.wcag\:fg-blue-grey\!focus:focus {
     button.sm\)wcag\:fg-orange\!focus:focus {
         color: var(--wcag-orange) !important;
     }
-    
+
     .sm\)wcag\:fg-deep-orange,
     .sm\)wcag\:fg-deep-orange\!hover:hover,
     a.sm\)wcag\:fg-deep-orange\!focus:focus,
@@ -3308,6 +3026,6 @@ button.wcag\:fg-blue-grey\!focus:focus {
 
 /*
  * EOF:     theme/palette.css
- * Build:   200128-1
+ * Build:   200208
  *
  */
