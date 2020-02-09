@@ -3,7 +3,8 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200206
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         5.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -325,7 +326,7 @@
 /*
 ***
     * selector: bdr
-    * dsc: table
+    * dsc: table borders
     * ver: 200120-1
     * fnt: set table border attribute
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
@@ -342,53 +343,105 @@
 /*
 ***
     * selector: bdr
-    * dsc: table
-    * ver: 200120-1
+    * dsc: hide table border(s)
+    * ver: 190208
+    * fnt: hide, but preserve space of table border(s)
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+***
+*/
+tr.bdr\:hidden,
+td.bdr\:hidden,
+table.bdr\:hidden,
+table.bdr\:hidden tr,
+table.bdr\:hidden tr td {
+    border-color: transparent !important;
+}
+
+/*
+***
+    * selector: bdr
+    * dsc: display all table borders
+    * ver: 190208
+    * fnt: spreadsheet styled table borders
+    * ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+***
+*/
+tr.bdr\:full,
+td.bdr\:full,
+table.bdr\:full,
+table.bdr\:full tr,
+table.bdr\:full tr td {
+    border: 1px solid var(--hue-bas-300);
+}
+
+/*
+***
+    * selector: cols
+    * dsc: table layout options
+    * ver: 200208
+    * fnt: control table column attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
+***
+*/
+table.cols\:auto {
+    table-layout: auto !important;
+}
+
+table.cols\:fixed {
+    table-layout: fixed !important;
+}
+
+/*
+***
+    * selector: bdr
+    * dsc: cell space
+    * ver: 200208
     * fnt: set table border cell spacing attributes
     * Spec: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
 */
-.bdr\:space-0 {
+.bdr\:space-0,
+.bdr\:space\+0 {
     border-collapse: separate !important;
     border-spacing: 0 !important;
 }
 
-.bdr\:space-0\.25 {
+.bdr\:space\+0\.25 {
     border-collapse: separate !important;
     border-spacing: 0.25rem !important;
 }
 
-.bdr\:space-0\.5 {
+.bdr\:space\+0\.5 {
     border-collapse: separate !important;
     border-spacing: 0.5rem !important;
 }
 
-.bdr\:space-0\.75 {
+.bdr\:space\+0\.75 {
     border-collapse: separate !important;
     border-spacing: 0.75rem !important;
 }
 
-.bdr\:space-1 {
+.bdr\:space\+1 {
     border-collapse: separate !important;
     border-spacing: 1rem !important;
 }
 
-.bdr\:space-1\.25 {
+.bdr\:space\+1\.25 {
     border-collapse: separate !important;
     border-spacing: 1.25rem !important;
 }
 
-.bdr\:space-1\.5 {
+.bdr\:space\+1\.5 {
     border-collapse: separate !important;
     border-spacing: 1.5rem !important;
 }
 
-.bdr\:space-1\.75 {
+.bdr\:space\+1\.75 {
     border-collapse: separate !important;
     border-spacing: 1.75rem !important;
 }
 
-.bdr\:space-2 {
+.bdr\:space\+2 {
     border-collapse: separate !important;
     border-spacing: 2rem !important;
 }
@@ -1060,7 +1113,7 @@
 ***
     * selector: led
     * dsc: leading
-    * ver: 200206
+    * ver: 200208
     * fnt: set line height
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
@@ -1185,7 +1238,7 @@
 ***
     * selector: mar
     * dsc: margin top
-    * ver: 200206
+    * ver: 200208
     * fnt: set top margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1268,7 +1321,7 @@
 ***
     * selector: mar
     * dsc: margin right
-    * ver: 200206
+    * ver: 200208
     * fnt: set right margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1352,7 +1405,7 @@
 ***
     * selector: mar
     * dsc: margin bottom
-    * ver: 200206
+    * ver: 200208
     * fnt: set bottom margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1436,7 +1489,7 @@
 ***
     * selector: mar
     * dsc: margin left
-    * ver: 200206
+    * ver: 200208
     * fnt: set left margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1520,7 +1573,7 @@
 ***
     * selector: mar
     * dsc: margin horzontal
-    * ver: 200206
+    * ver: 200208
     * fnt: set left / right margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1622,7 +1675,7 @@
 ***
     * selector: mar
     * dsc: margin vertical
-    * ver: 200206
+    * ver: 200208
     * fnt: set top / bottom margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1724,7 +1777,7 @@
 ***
     * selector: pad
     * dsc: padding
-    * ver: 200206
+    * ver: 200208
     * fnt: set all padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2055,26 +2108,9 @@
 
 /*
 ***
-    * selector: tcw
-    * dsc: table column width
-    * ver: 200206
-    * fnt: fix column width or grow with content
-    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-***
-*/
-.tcw\:auto {
-    table-layout: auto;
-}
-
-.tcw\:fixed {
-    table-layout: fixed;
-}
-
-/*
-***
     * selector: tdc
     * dsc: text decoration
-    * ver: 200206
+    * ver: 200208
     * fnt: set predefined text decoration
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
 ***
@@ -2144,7 +2180,7 @@
 ***
     * selector: trk
     * dsc: tracking
-    * ver: 200206
+    * ver: 200208
     * fnt: adjust letter spacing
     * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 ***
@@ -2904,7 +2940,7 @@
     ***
         * selector: mar
         * dsc: margin
-        * ver: 200206
+        * ver: 200208
         * fnt: set all margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3070,7 +3106,7 @@
     ***
         * selector: mar
         * dsc: margin right
-        * ver: 200206
+        * ver: 200208
         * fnt: set right margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3154,7 +3190,7 @@
     ***
         * selector: mar
         * dsc: margin bottom
-        * ver: 200206
+        * ver: 200208
         * fnt: set bottom margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3238,7 +3274,7 @@
     ***
         * selector: mar
         * dsc: margin left
-        * ver: 200206
+        * ver: 200208
         * fnt: set left margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3322,7 +3358,7 @@
     ***
         * selector: mar
         * dsc: margin horzontal
-        * ver: 200206
+        * ver: 200208
         * fnt: set left / right margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3424,7 +3460,7 @@
     ***
         * selector: mar
         * dsc: margin vertical
-        * ver: 200206
+        * ver: 200208
         * fnt: set top / bottom margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -5043,6 +5079,6 @@
 
 /*
  * EOF:     theme/advance.css
- * Build:   200206
+ * Build:   200208
  *
  */
