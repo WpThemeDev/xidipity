@@ -3,7 +3,8 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200128-1
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -11,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -23,7 +24,7 @@
     * dsc: body
     * ver: 190926-1
     * fnt: apply body formatting
-    * ref: 
+    * ref:
 ***
 */
 body,
@@ -78,12 +79,12 @@ body.webkit b {
 }
 
 /*
-***	VALIDATE NEED FOR THIS!
+*** VALIDATE NEED FOR THIS!
     * selector: wp-caption
     * dsc: format caption
     * ver: 190926-1
     * fnt: stretch capiton to fill available space
-    * ref: 
+    * ref:
 ***
 */
 .wp-caption {
@@ -97,7 +98,7 @@ body.webkit b {
     * dsc: multi-column
     * ver: 190926-1
     * fnt: apply multi-column formatting
-    * ref: 
+    * ref:
 ***
 */
 .cols\:fixed-2,
@@ -195,6 +196,6 @@ body.webkit b {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200128-1
+ * Build:   200208
  *
  */
