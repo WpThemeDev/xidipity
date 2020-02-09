@@ -3,7 +3,8 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200205-1
+ * Build:           200208
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -103,7 +104,7 @@ body {
 /*
 ***
     # dsp
-    # 200205-1
+    # 200208
     # web specific display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -130,27 +131,6 @@ body {
 
 .web\(dsp\:inline-block\),
 .web\[dsp\:inline-block\] {
-    display: inline-block;
-}
-
-/*: deprecate :*/
-.dsp\:none\!web {
-    display: none;
-}
-
-.dsp\:hidden\!web {
-    visibility: hidden;
-}
-
-.dsp\:block\!web {
-    display: block;
-}
-
-.dsp\:inline\!web {
-    display: inline;
-}
-
-.dsp\:inline-block\!web {
     display: inline-block;
 }
 
@@ -783,15 +763,11 @@ a.site-title:hover {
     font-size: 1rem;
     margin: 0;
     padding: .3125em 2em .3125em 2rem;
-    /* deprecate text-align: var(--blog-hdr-align);
-    text-align: center; */
 }
 
 @media (min-width:640px) {
     .toc-menu {
         padding: .3125em 2em .3125em 2rem;
-        /* deprecate text-align: var(--blog-hdr-align);
-        text-align: center; */
     }
 }
 
@@ -1007,7 +983,6 @@ a.page-numbers:visited {
 }
 
 a.page-numbers:hover {
-    /* deprecated color: var(--sys-lnk-sec-color);*/
     background-color: var(--hue-bas-100);
     -webkit-tap-highlight-color: transparent;
 }
@@ -2086,21 +2061,21 @@ figure {
 
 /*: hamburger menu icon alignment :*/
 .mnu\:hb-left {
-    align-items: flex-start; 
-    display: flex; 
+    align-items: flex-start;
+    display: flex;
     justify-content: flex-start;
     margin-left: 1rem;
 }
 
 .mnu\:hb-center {
-    align-items: center; 
-    display: flex; 
-    justify-content:center;    
+    align-items: center;
+    display: flex;
+    justify-content:center;
 }
 
 .mnu\:hb-right {
-    align-items: flex-end; 
-    display: flex; 
+    align-items: flex-end;
+    display: flex;
     justify-content: flex-end;
     margin-right: 1rem;
 }
@@ -2193,6 +2168,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200205-1
+ * Build:   200208
  *
  */
