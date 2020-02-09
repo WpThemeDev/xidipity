@@ -3,7 +3,8 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200205-1
+ * Build:           200208
+ * Revision:		1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -232,7 +233,7 @@ a:hover {
 ***
     * element: <ol> / <ul>
     * dsc: space list items
-    * ver: 200205-1
+    * ver: 200208
     * fnt: set list item line height as specified by declaration
     * ref: 
 ***
@@ -551,40 +552,6 @@ table td:not(:last-child) {
 
 /*
 ***
-    * selector: no-border
-    * dsc: hide table border(s)
-    * ver: 190910-1
-    * fnt: hide but preserve space of table border(s)
-    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-***
-*/
-tr.no-border,
-td.no-border,
-table.no-border,
-table.no-border tr,
-table.no-border tr td {
-    border-color: transparent !important;
-}
-
-/*
-***
-    * selector: classic
-    * dsc: display border(s)
-    * ver: 190910-1
-    * fnt: spreadsheet styled table
-    * ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-***
-*/
-tr.classic,
-td.classic,
-table.classic,
-table.classic tr,
-table.classic tr td {
-    border: 1px solid var(--hue-bas-300);
-}
-
-/*
-***
     * selector: highlight
     * dsc: tint selected row(s)
     * ver: 190910-1
@@ -609,23 +576,6 @@ table.highlight tr:hover {
 */
 table.pinstripe tr:nth-child(even) {
     background-color: var(--hue-tint-dark);
-}
-
-/*
-***
-    * selector: table
-    * dsc: table layout options
-    * ver: 200120-1
-    * fnt: control table layout attributes
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
-***
-*/
-table.layout-auto {
-    table-layout: auto !important;
-}
-
-table.layout-fixed {
-    table-layout: fixed !important;
 }
 
 /*
@@ -919,7 +869,7 @@ img {
 ***
     * selector: fbx
     * dsc: fixed height/width boxes
-    * ver: 200205-1
+    * ver: 200208
     * fnt: to be used in conjunction with a flexbox container
     *      set justify content to space around (6)
     * ref: 
@@ -961,7 +911,7 @@ img {
 ***
     * selector: various
     * dsc: set aspect ratio
-    * ver: 200205-1
+    * ver: 200208
     * fnt: frame images / videos to an aspect ratio
     *      <div class="width"><div class="@ratio">img/itag</div></div>
     * ref: 
@@ -1017,7 +967,7 @@ img {
 ***
     * selector: material-icons
     * dsc: google icon font
-    * ver: 200205-1
+    * ver: 200208
     * fnt: tweak default class
     * ref: https://google.github.io/material-design-icons/
 ***
@@ -1032,7 +982,7 @@ img {
 *** REVIEW THIS!
     * selector: 
     * dsc: 
-    * ver: 200205-1
+    * ver: 200208
     * fnt: 
     * ref: 
 ***
@@ -1214,7 +1164,7 @@ img {
 ***
     * element: <button>
     * dsc: default button
-    * ver: 200205-1
+    * ver: 200208
     * fnt: style button
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
@@ -1234,18 +1184,19 @@ button a:focus {
 }
 
 button:hover {
-    filter: brightness(110%);
+    filter: brightness(115%);
 }
 
 button:active {
-    background-color: var(--hue-pri-dark);
+    /* background-color: var(--hue-pri-dark); */
+    filter: brightness(85%);
 }
 
 /*
 ***
     * selector: hvr
     * dsc: hover effects
-    * ver: 200205-1
+    * ver: 200208
     * fnt: image/button hover annimations
     * ref: https://ianlunn.github.io/Hover/
 ***
@@ -1466,6 +1417,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200205-1
+ * Build:   200208
  *
  */
