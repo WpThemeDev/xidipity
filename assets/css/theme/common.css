@@ -4,7 +4,7 @@
  * File Name:       theme/common.css
  * Function:        shared CSS elements
  * Build:           200208
- * Revision:		1
+ * Revision:        2
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         1.0
+ * @version         2.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -110,56 +110,42 @@ pre.wrap {
 ***
     * element: <hr>
     * dsc: thematic break
-    * ver: 190910-1
+    * ver: 200208
     * fnt: thematic break between paragraph-level elements
-    *      default the width is 80% of available space
+    *      default the width is 100% of available space
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-hr {
-    background-color: transparent;
-    border: 0;
-    border-bottom-width: 0.0625rem;
-    border-bottom-style: solid;
-    border-bottom-color: var(--hue-bas-400);
-    margin: 0.75rem auto 0.8125rem auto;
-    width: 80%;
+
+hr,
+hr.thin {
+    background-color: var(--hue-bas-400);
+    height: 1px;
+    margin: 0.6875rem auto 0.8125rem auto;
+    width: 100%;
 }
 
-.line\:single {
-    background-color: transparent;
-    border: 0;
-    border-bottom-width: 0.0625rem;
-    border-bottom-style: solid;
-    border-bottom-color: var(--hue-bas-400);
-    width: 10%;
+hr.medium,
+hr.gradient {
+    background-color: var(--hue-bas-400);
+    height: 0.125rem;
+    margin: 0.625rem auto 0.75rem auto;
+    width: 100%;
+}
+
+hr.thick,
+hr.double {
+    background-color: var(--hue-bas-400);
+    height: 0.25rem;
+    margin: 0.5625rem auto 0.625rem auto;
+    width: 100%;
 }
 
 hr.double {
     background-color: transparent;
     border: 0;
-    border-top-width: 0.0625rem;
-    border-top-style: solid;
-    border-top-color: var(--hue-bas-400);
-    border-bottom-width: 0.0625rem;
-    border-bottom-style: solid;
-    border-bottom-color: var(--hue-bas-400);
-    height: 0.25rem;
-    margin: 0.625rem auto 0.6875rem auto;
-    width: 80%;
-}
-
-.line\:double {
-    background-color: transparent;
-    border: 0;
-    border-top-width: 0.0625rem;
-    border-top-style: solid;
-    border-top-color: var(--hue-bas-400);
-    border-bottom-width: 0.0625rem;
-    border-bottom-style: solid;
-    border-bottom-color: var(--hue-bas-400);
-    height: 0.25rem;
-    width: 10%;
+    border-top: 0.0625rem solid var(--hue-bas-400);
+    border-bottom:  0.0625rem solid var(--hue-bas-400);
 }
 
 hr.gradient {
@@ -168,10 +154,6 @@ hr.gradient {
     background-image: -moz-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
     background-image: -ms-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
     background-image: -o-linear-gradient(left, #fafafa, #9e9e9e, #fafafa);
-    border: 0;
-    height: 0.0625rem;
-    margin: 0.75rem auto 0.8125rem auto;
-    width: 80%;
 }
 
 /*
@@ -235,12 +217,12 @@ a:hover {
     * dsc: space list items
     * ver: 200208
     * fnt: set list item line height as specified by declaration
-    * ref: 
+    * ref:
 ***
 */
 ol.li\:qtr-spaced li:not(:last-child),
 ul.li\:qtr-spaced li:not(:last-child) {
-    line-height: calc(var(--dft-line-height) + 0.25) !important;    
+    line-height: calc(var(--dft-line-height) + 0.25) !important;
 }
 
 ol.li\:dbl-spaced li:not(:last-child),
@@ -458,7 +440,7 @@ ol.nested ol ol ol ol ol {
     * dsc: image list
     * ver: 190910-1
     * fnt: custom list of images
-    * ref: 
+    * ref:
 ***
 */
 .il {
@@ -717,7 +699,7 @@ cite {
     * dsc: form elements
     * ver: 190910-1
     * fnt: form elements
-    * ref: 
+    * ref:
 ***
 */
 button,
@@ -872,38 +854,38 @@ img {
     * ver: 200208
     * fnt: to be used in conjunction with a flexbox container
     *      set justify content to space around (6)
-    * ref: 
+    * ref:
 ***
 */
 .fbx\:1x1 {
     height: 135px;
-    width: 135px;   
+    width: 135px;
 }
 
 .fbx\:4x3 {
     height: 101px;
-    width: 135px;   
+    width: 135px;
 }
 
 .fbx\:16x19 {
     height: 76px;
-    width: 135px;   
+    width: 135px;
 }
 
 @media (min-width:768px) {
     .fbx\:1x1 {
         height: 140px;
-        width: 140px;   
+        width: 140px;
     }
-    
+
     .fbx\:4x3 {
         height: 105px;
-        width: 140px;   
+        width: 140px;
     }
-    
+
     .fbx\:16x19 {
         height: 77px;
-        width: 140px;   
+        width: 140px;
     }
 }
 
@@ -914,7 +896,7 @@ img {
     * ver: 200208
     * fnt: frame images / videos to an aspect ratio
     *      <div class="width"><div class="@ratio">img/itag</div></div>
-    * ref: 
+    * ref:
 ***
 */
 .\@1x1 {
@@ -980,11 +962,11 @@ img {
 
 /*
 *** REVIEW THIS!
-    * selector: 
-    * dsc: 
+    * selector:
+    * dsc:
     * ver: 200208
-    * fnt: 
-    * ref: 
+    * fnt:
+    * ref:
 ***
 */
 .video-aligncenter,
