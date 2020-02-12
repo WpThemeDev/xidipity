@@ -4,7 +4,7 @@
  * File Name:       theme/common.css
  * Function:        shared CSS elements
  * Build:           200208
- * Revision:        2
+ * Revision:        3
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,7 +12,7 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version         2.0
+ * @version         1.0
  * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
@@ -81,7 +81,7 @@ abbr {
 ***
 */
 pre {
-    background-color: var(--hue-tint);
+    background-color: var(--hue-bas-100);
     border: solid thin var(--hue-bas-300);
     border-radius: 0.3333rem;
     color: var(--hue-bas-800);
@@ -544,7 +544,7 @@ table td:not(:last-child) {
 table.highlight tr:active,
 table.highlight tr:focus,
 table.highlight tr:hover {
-    background-color: var(--hue-tint-dark);
+    background-color: var(--hue-bas-200);
 }
 
 /*
@@ -557,7 +557,7 @@ table.highlight tr:hover {
 ***
 */
 table.pinstripe tr:nth-child(even) {
-    background-color: var(--hue-tint-dark);
+    background-color: var(--hue-bas-200);
 }
 
 /*
