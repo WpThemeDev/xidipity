@@ -4,7 +4,7 @@
  * File Name:       theme/common.css
  * Function:        shared CSS elements
  * Build:           200208
- * Revision:        4
+ * Revision:        5
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -117,7 +117,6 @@ pre.wrap {
 ***
 */
 
-hr,
 hr.rul\:solid-thin {
     background-color: var(--hue-bas-400);
     height: 1px;
@@ -125,6 +124,7 @@ hr.rul\:solid-thin {
     width: 100%;
 }
 
+hr,
 hr.rul\:solid-medium,
 hr.rul\:gradient {
     background-color: var(--hue-bas-400);
