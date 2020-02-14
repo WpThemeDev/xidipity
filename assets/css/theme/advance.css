@@ -4,7 +4,7 @@
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
  * Build:           200208
- * Revision:        2
+ * Revision:        3
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -907,6 +907,224 @@ table.cols\:fixed {
 /*: 320px :*/
 .ht\:20 {
     height: 20rem !important;
+}
+
+/*
+***
+    * selector: ht
+    * dsc: minimum fixed height presets
+    * ver: 200208
+    * fnt: set of predefined fixed heights
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+***
+*/
+/*: 16px :*/
+.ht\:min1 {
+    min-width: 1rem !important;
+}
+
+/*: 32px :*/
+.ht\:min2 {
+    min-width: 2rem !important;
+}
+
+/*: 48px :*/
+.ht\:min3 {
+    min-width: 3rem !important;
+}
+
+/*: 64px :*/
+.ht\:min4 {
+    min-width: 4rem !important;
+}
+
+/*: 80px :*/
+.ht\:min5 {
+    min-width: 5rem !important;
+}
+
+/*: 96px :*/
+.ht\:min6 {
+    min-width: 6rem !important;
+}
+
+/*: 112px :*/
+.ht\:min7 {
+    min-width: 7rem !important;
+}
+
+/*: 128px :*/
+.ht\:min8 {
+    min-width: 8rem !important;
+}
+
+/*: 144px :*/
+.ht\:min9 {
+    min-width: 9rem !important;
+}
+
+/*: 160px :*/
+.ht\:min10 {
+    min-width: 10rem !important;
+}
+
+/*: 176px :*/
+.ht\:min11 {
+    min-width: 11rem !important;
+}
+
+/*: 192px :*/
+.ht\:min12 {
+    min-width: 12rem !important;
+}
+
+/*: 208px :*/
+.ht\:min13 {
+    min-width: 13rem !important;
+}
+
+/*: 224px :*/
+.ht\:min14 {
+    min-width: 14rem !important;
+}
+
+/*: 240px :*/
+.ht\:min15 {
+    min-width: 15rem !important;
+}
+
+/*: 256px :*/
+.ht\:min16 {
+    min-width: 16rem !important;
+}
+
+/*: 272px :*/
+.ht\:min17 {
+    min-width: 17rem !important;
+}
+
+/*: 288px :*/
+.ht\:min18 {
+    min-width: 18rem !important;
+}
+
+/*: 304px :*/
+.ht\:min19 {
+    min-width: 19rem !important;
+}
+
+/*: 320px :*/
+.ht\:min20 {
+    min-width: 20rem !important;
+}
+
+/*
+***
+    * selector: wd
+    * dsc: maximum fixed width presets
+    * ver: 200208
+    * fnt: set of predefined fixed widths
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+***
+*/
+/*: 16px :*/
+.ht\:max1 {
+    max-width: 1rem !important;
+}
+
+/*: 32px :*/
+.ht\:max2 {
+    max-width: 2rem !important;
+}
+
+/*: 48px :*/
+.ht\:max3 {
+    max-width: 3rem !important;
+}
+
+/*: 64px :*/
+.ht\:max4 {
+    max-width: 4rem !important;
+}
+
+/*: 80px :*/
+.ht\:max5 {
+    max-width: 5rem !important;
+}
+
+/*: 96px :*/
+.ht\:max6 {
+    max-width: 6rem !important;
+}
+
+/*: 112px :*/
+.ht\:max7 {
+    max-width: 7rem !important;
+}
+
+/*: 128px :*/
+.ht\:max8 {
+    max-width: 8rem !important;
+}
+
+/*: 144px :*/
+.ht\:max9 {
+    max-width: 9rem !important;
+}
+
+/*: 160px :*/
+.ht\:max10 {
+    max-width: 10rem !important;
+}
+
+/*: 176px :*/
+.ht\:max11 {
+    max-width: 11rem !important;
+}
+
+/*: 192px :*/
+.ht\:max12 {
+    max-width: 12rem !important;
+}
+
+/*: 208px :*/
+.ht\:max13 {
+    max-width: 13rem !important;
+}
+
+/*: 224px :*/
+.ht\:max14 {
+    max-width: 14rem !important;
+}
+
+/*: 240px :*/
+.ht\:max15 {
+    max-width: 15rem !important;
+}
+
+/*: 256px :*/
+.ht\:max16 {
+    max-width: 16rem !important;
+}
+
+/*: 272px :*/
+.ht\:max17 {
+    max-width: 17rem !important;
+}
+
+/*: 288px :*/
+.ht\:max18 {
+    max-width: 18rem !important;
+}
+
+/*: 304px :*/
+.ht\:max19 {
+    max-width: 19rem !important;
+}
+
+/*: 320px :*/
+.ht\:max20 {
+    max-width: 20rem !important;
 }
 
 /*
@@ -2363,6 +2581,224 @@ table.cols\:fixed {
 /*: 320px :*/
 .wd\:20 {
     width: 20rem !important;
+}
+
+/*
+***
+    * selector: wd
+    * dsc: minimum fixed width presets
+    * ver: 200208
+    * fnt: set of predefined fixed widths
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+***
+*/
+/*: 16px :*/
+.wd\:min1 {
+    min-width: 1rem !important;
+}
+
+/*: 32px :*/
+.wd\:min2 {
+    min-width: 2rem !important;
+}
+
+/*: 48px :*/
+.wd\:min3 {
+    min-width: 3rem !important;
+}
+
+/*: 64px :*/
+.wd\:min4 {
+    min-width: 4rem !important;
+}
+
+/*: 80px :*/
+.wd\:min5 {
+    min-width: 5rem !important;
+}
+
+/*: 96px :*/
+.wd\:min6 {
+    min-width: 6rem !important;
+}
+
+/*: 112px :*/
+.wd\:min7 {
+    min-width: 7rem !important;
+}
+
+/*: 128px :*/
+.wd\:min8 {
+    min-width: 8rem !important;
+}
+
+/*: 144px :*/
+.wd\:min9 {
+    min-width: 9rem !important;
+}
+
+/*: 160px :*/
+.wd\:min10 {
+    min-width: 10rem !important;
+}
+
+/*: 176px :*/
+.wd\:min11 {
+    min-width: 11rem !important;
+}
+
+/*: 192px :*/
+.wd\:min12 {
+    min-width: 12rem !important;
+}
+
+/*: 208px :*/
+.wd\:min13 {
+    min-width: 13rem !important;
+}
+
+/*: 224px :*/
+.wd\:min14 {
+    min-width: 14rem !important;
+}
+
+/*: 240px :*/
+.wd\:min15 {
+    min-width: 15rem !important;
+}
+
+/*: 256px :*/
+.wd\:min16 {
+    min-width: 16rem !important;
+}
+
+/*: 272px :*/
+.wd\:min17 {
+    min-width: 17rem !important;
+}
+
+/*: 288px :*/
+.wd\:min18 {
+    min-width: 18rem !important;
+}
+
+/*: 304px :*/
+.wd\:min19 {
+    min-width: 19rem !important;
+}
+
+/*: 320px :*/
+.wd\:min20 {
+    min-width: 20rem !important;
+}
+
+/*
+***
+    * selector: wd
+    * dsc: maximum fixed width presets
+    * ver: 200208
+    * fnt: set of predefined fixed widths
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+***
+*/
+/*: 16px :*/
+.wd\:max1 {
+    max-width: 1rem !important;
+}
+
+/*: 32px :*/
+.wd\:max2 {
+    max-width: 2rem !important;
+}
+
+/*: 48px :*/
+.wd\:max3 {
+    max-width: 3rem !important;
+}
+
+/*: 64px :*/
+.wd\:max4 {
+    max-width: 4rem !important;
+}
+
+/*: 80px :*/
+.wd\:max5 {
+    max-width: 5rem !important;
+}
+
+/*: 96px :*/
+.wd\:max6 {
+    max-width: 6rem !important;
+}
+
+/*: 112px :*/
+.wd\:max7 {
+    max-width: 7rem !important;
+}
+
+/*: 128px :*/
+.wd\:max8 {
+    max-width: 8rem !important;
+}
+
+/*: 144px :*/
+.wd\:max9 {
+    max-width: 9rem !important;
+}
+
+/*: 160px :*/
+.wd\:max10 {
+    max-width: 10rem !important;
+}
+
+/*: 176px :*/
+.wd\:max11 {
+    max-width: 11rem !important;
+}
+
+/*: 192px :*/
+.wd\:max12 {
+    max-width: 12rem !important;
+}
+
+/*: 208px :*/
+.wd\:max13 {
+    max-width: 13rem !important;
+}
+
+/*: 224px :*/
+.wd\:max14 {
+    max-width: 14rem !important;
+}
+
+/*: 240px :*/
+.wd\:max15 {
+    max-width: 15rem !important;
+}
+
+/*: 256px :*/
+.wd\:max16 {
+    max-width: 16rem !important;
+}
+
+/*: 272px :*/
+.wd\:max17 {
+    max-width: 17rem !important;
+}
+
+/*: 288px :*/
+.wd\:max18 {
+    max-width: 18rem !important;
+}
+
+/*: 304px :*/
+.wd\:max19 {
+    max-width: 19rem !important;
+}
+
+/*: 320px :*/
+.wd\:max20 {
+    max-width: 20rem !important;
 }
 
 /*
@@ -4104,6 +4540,224 @@ table.cols\:fixed {
 	    height: 20rem !important;
 	}
 
+	/*
+	***
+	    * selector: ht
+	    * dsc: minimum fixed height presets
+	    * ver: 200208
+	    * fnt: set of predefined fixed heights
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
+	/*: 16px :*/
+	.sm\)ht\:min1 {
+	    min-width: 1rem !important;
+	}
+
+	/*: 32px :*/
+	.sm\)ht\:min2 {
+	    min-width: 2rem !important;
+	}
+
+	/*: 48px :*/
+	.sm\)ht\:min3 {
+	    min-width: 3rem !important;
+	}
+
+	/*: 64px :*/
+	.sm\)ht\:min4 {
+	    min-width: 4rem !important;
+	}
+
+	/*: 80px :*/
+	.sm\)ht\:min5 {
+	    min-width: 5rem !important;
+	}
+
+	/*: 96px :*/
+	.sm\)ht\:min6 {
+	    min-width: 6rem !important;
+	}
+
+	/*: 112px :*/
+	.sm\)ht\:min7 {
+	    min-width: 7rem !important;
+	}
+
+	/*: 128px :*/
+	.sm\)ht\:min8 {
+	    min-width: 8rem !important;
+	}
+
+	/*: 144px :*/
+	.sm\)ht\:min9 {
+	    min-width: 9rem !important;
+	}
+
+	/*: 160px :*/
+	.sm\)ht\:min10 {
+	    min-width: 10rem !important;
+	}
+
+	/*: 176px :*/
+	.sm\)ht\:min11 {
+	    min-width: 11rem !important;
+	}
+
+	/*: 192px :*/
+	.sm\)ht\:min12 {
+	    min-width: 12rem !important;
+	}
+
+	/*: 208px :*/
+	.sm\)ht\:min13 {
+	    min-width: 13rem !important;
+	}
+
+	/*: 224px :*/
+	.sm\)ht\:min14 {
+	    min-width: 14rem !important;
+	}
+
+	/*: 240px :*/
+	.sm\)ht\:min15 {
+	    min-width: 15rem !important;
+	}
+
+	/*: 256px :*/
+	.sm\)ht\:min16 {
+	    min-width: 16rem !important;
+	}
+
+	/*: 272px :*/
+	.sm\)ht\:min17 {
+	    min-width: 17rem !important;
+	}
+
+	/*: 288px :*/
+	.sm\)ht\:min18 {
+	    min-width: 18rem !important;
+	}
+
+	/*: 304px :*/
+	.sm\)ht\:min19 {
+	    min-width: 19rem !important;
+	}
+
+	/*: 320px :*/
+	.sm\)ht\:min20 {
+	    min-width: 20rem !important;
+	}
+
+	/*
+	***
+	    * selector: wd
+	    * dsc: maximum fixed width presets
+	    * ver: 200208
+	    * fnt: set of predefined fixed widths
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
+	/*: 16px :*/
+	.sm\)ht\:max1 {
+	    max-width: 1rem !important;
+	}
+
+	/*: 32px :*/
+	.sm\)ht\:max2 {
+	    max-width: 2rem !important;
+	}
+
+	/*: 48px :*/
+	.sm\)ht\:max3 {
+	    max-width: 3rem !important;
+	}
+
+	/*: 64px :*/
+	.sm\)ht\:max4 {
+	    max-width: 4rem !important;
+	}
+
+	/*: 80px :*/
+	.sm\)ht\:max5 {
+	    max-width: 5rem !important;
+	}
+
+	/*: 96px :*/
+	.sm\)ht\:max6 {
+	    max-width: 6rem !important;
+	}
+
+	/*: 112px :*/
+	.sm\)ht\:max7 {
+	    max-width: 7rem !important;
+	}
+
+	/*: 128px :*/
+	.sm\)ht\:max8 {
+	    max-width: 8rem !important;
+	}
+
+	/*: 144px :*/
+	.sm\)ht\:max9 {
+	    max-width: 9rem !important;
+	}
+
+	/*: 160px :*/
+	.sm\)ht\:max10 {
+	    max-width: 10rem !important;
+	}
+
+	/*: 176px :*/
+	.sm\)ht\:max11 {
+	    max-width: 11rem !important;
+	}
+
+	/*: 192px :*/
+	.sm\)ht\:max12 {
+	    max-width: 12rem !important;
+	}
+
+	/*: 208px :*/
+	.sm\)ht\:max13 {
+	    max-width: 13rem !important;
+	}
+
+	/*: 224px :*/
+	.sm\)ht\:max14 {
+	    max-width: 14rem !important;
+	}
+
+	/*: 240px :*/
+	.sm\)ht\:max15 {
+	    max-width: 15rem !important;
+	}
+
+	/*: 256px :*/
+	.sm\)ht\:max16 {
+	    max-width: 16rem !important;
+	}
+
+	/*: 272px :*/
+	.sm\)ht\:max17 {
+	    max-width: 17rem !important;
+	}
+
+	/*: 288px :*/
+	.sm\)ht\:max18 {
+	    max-width: 18rem !important;
+	}
+
+	/*: 304px :*/
+	.sm\)ht\:max19 {
+	    max-width: 19rem !important;
+	}
+
+	/*: 320px :*/
+	.sm\)ht\:max20 {
+	    max-width: 20rem !important;
+	}
+
     /*
     ***
         * selector: ht
@@ -4465,6 +5119,224 @@ table.cols\:fixed {
 	/*: 320px :*/
 	.sm\)wd\:20 {
 	    width: 20rem !important;
+	}
+
+	/*
+	***
+	    * selector: wd
+	    * dsc: minimum fixed width presets
+	    * ver: 200208
+	    * fnt: set of predefined fixed widths
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
+	/*: 16px :*/
+	.sm\)wd\:min1 {
+	    min-width: 1rem !important;
+	}
+
+	/*: 32px :*/
+	.sm\)wd\:min2 {
+	    min-width: 2rem !important;
+	}
+
+	/*: 48px :*/
+	.sm\)wd\:min3 {
+	    min-width: 3rem !important;
+	}
+
+	/*: 64px :*/
+	.sm\)wd\:min4 {
+	    min-width: 4rem !important;
+	}
+
+	/*: 80px :*/
+	.sm\)wd\:min5 {
+	    min-width: 5rem !important;
+	}
+
+	/*: 96px :*/
+	.sm\)wd\:min6 {
+	    min-width: 6rem !important;
+	}
+
+	/*: 112px :*/
+	.sm\)wd\:min7 {
+	    min-width: 7rem !important;
+	}
+
+	/*: 128px :*/
+	.sm\)wd\:min8 {
+	    min-width: 8rem !important;
+	}
+
+	/*: 144px :*/
+	.sm\)wd\:min9 {
+	    min-width: 9rem !important;
+	}
+
+	/*: 160px :*/
+	.sm\)wd\:min10 {
+	    min-width: 10rem !important;
+	}
+
+	/*: 176px :*/
+	.sm\)wd\:min11 {
+	    min-width: 11rem !important;
+	}
+
+	/*: 192px :*/
+	.sm\)wd\:min12 {
+	    min-width: 12rem !important;
+	}
+
+	/*: 208px :*/
+	.sm\)wd\:min13 {
+	    min-width: 13rem !important;
+	}
+
+	/*: 224px :*/
+	.sm\)wd\:min14 {
+	    min-width: 14rem !important;
+	}
+
+	/*: 240px :*/
+	.sm\)wd\:min15 {
+	    min-width: 15rem !important;
+	}
+
+	/*: 256px :*/
+	.sm\)wd\:min16 {
+	    min-width: 16rem !important;
+	}
+
+	/*: 272px :*/
+	.sm\)wd\:min17 {
+	    min-width: 17rem !important;
+	}
+
+	/*: 288px :*/
+	.sm\)wd\:min18 {
+	    min-width: 18rem !important;
+	}
+
+	/*: 304px :*/
+	.sm\)wd\:min19 {
+	    min-width: 19rem !important;
+	}
+
+	/*: 320px :*/
+	.sm\)wd\:min20 {
+	    min-width: 20rem !important;
+	}
+
+	/*
+	***
+	    * selector: wd
+	    * dsc: maximum fixed width presets
+	    * ver: 200208
+	    * fnt: set of predefined fixed widths
+	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+	***
+	*/
+	/*: 16px :*/
+	.sm\)wd\:max1 {
+	    max-width: 1rem !important;
+	}
+
+	/*: 32px :*/
+	.sm\)wd\:max2 {
+	    max-width: 2rem !important;
+	}
+
+	/*: 48px :*/
+	.sm\)wd\:max3 {
+	    max-width: 3rem !important;
+	}
+
+	/*: 64px :*/
+	.sm\)wd\:max4 {
+	    max-width: 4rem !important;
+	}
+
+	/*: 80px :*/
+	.sm\)wd\:max5 {
+	    max-width: 5rem !important;
+	}
+
+	/*: 96px :*/
+	.sm\)wd\:max6 {
+	    max-width: 6rem !important;
+	}
+
+	/*: 112px :*/
+	.sm\)wd\:max7 {
+	    max-width: 7rem !important;
+	}
+
+	/*: 128px :*/
+	.sm\)wd\:max8 {
+	    max-width: 8rem !important;
+	}
+
+	/*: 144px :*/
+	.sm\)wd\:max9 {
+	    max-width: 9rem !important;
+	}
+
+	/*: 160px :*/
+	.sm\)wd\:max10 {
+	    max-width: 10rem !important;
+	}
+
+	/*: 176px :*/
+	.sm\)wd\:max11 {
+	    max-width: 11rem !important;
+	}
+
+	/*: 192px :*/
+	.sm\)wd\:max12 {
+	    max-width: 12rem !important;
+	}
+
+	/*: 208px :*/
+	.sm\)wd\:max13 {
+	    max-width: 13rem !important;
+	}
+
+	/*: 224px :*/
+	.sm\)wd\:max14 {
+	    max-width: 14rem !important;
+	}
+
+	/*: 240px :*/
+	.sm\)wd\:max15 {
+	    max-width: 15rem !important;
+	}
+
+	/*: 256px :*/
+	.sm\)wd\:max16 {
+	    max-width: 16rem !important;
+	}
+
+	/*: 272px :*/
+	.sm\)wd\:max17 {
+	    max-width: 17rem !important;
+	}
+
+	/*: 288px :*/
+	.sm\)wd\:max18 {
+	    max-width: 18rem !important;
+	}
+
+	/*: 304px :*/
+	.sm\)wd\:max19 {
+	    max-width: 19rem !important;
+	}
+
+	/*: 320px :*/
+	.sm\)wd\:max20 {
+	    max-width: 20rem !important;
 	}
 
     /*
