@@ -3,8 +3,8 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200208
- * Revision:        3
+ * Build:           200222
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -378,7 +378,7 @@ table.bdr\:full tr td {
 ***
     * selector: cols
     * dsc: table layout options
-    * ver: 200208
+    * ver: 200222
     * fnt: control table column attributes
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -395,7 +395,7 @@ table.cols\:fixed {
 ***
     * selector: bdr
     * dsc: cell space
-    * ver: 200208
+    * ver: 200222
     * fnt: set table border cell spacing attributes
     * Spec: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -657,13 +657,13 @@ table.cols\:fixed {
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
 */
-.fnt\:size-xxx-large,
-.icon\:size-xxx-large {
+.fnt\:size-3x-large,
+.icon\:size-3x-large {
     font-size: xxx-large !important;
 }
 
-.fnt\:size-xx-large,
-.icon\:size-xx-large {
+.fnt\:size-2x-large,
+.icon\:size-2x-large {
     font-size: xx-large !important;
 }
 
@@ -701,8 +701,8 @@ table.cols\:fixed {
     font-size: x-small !important;
 }
 
-.fnt\:size-xx-small,
-.icon\:size-xx-small {
+.fnt\:size-2x-small,
+.icon\:size-2x-small {
     font-size: xx-small !important;
 }
 
@@ -800,7 +800,7 @@ table.cols\:fixed {
 ***
     * selector: ht
     * dsc: fixed height presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed heights
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -913,218 +913,218 @@ table.cols\:fixed {
 ***
     * selector: ht
     * dsc: minimum fixed height presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed heights
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
 */
 /*: 16px :*/
 .ht\:min1 {
-    min-width: 1rem !important;
+    min-height: 1rem !important;
 }
 
 /*: 32px :*/
 .ht\:min2 {
-    min-width: 2rem !important;
+    min-height: 2rem !important;
 }
 
 /*: 48px :*/
 .ht\:min3 {
-    min-width: 3rem !important;
+    min-height: 3rem !important;
 }
 
 /*: 64px :*/
 .ht\:min4 {
-    min-width: 4rem !important;
+    min-height: 4rem !important;
 }
 
 /*: 80px :*/
 .ht\:min5 {
-    min-width: 5rem !important;
+    min-height: 5rem !important;
 }
 
 /*: 96px :*/
 .ht\:min6 {
-    min-width: 6rem !important;
+    min-height: 6rem !important;
 }
 
 /*: 112px :*/
 .ht\:min7 {
-    min-width: 7rem !important;
+    min-height: 7rem !important;
 }
 
 /*: 128px :*/
 .ht\:min8 {
-    min-width: 8rem !important;
+    min-height: 8rem !important;
 }
 
 /*: 144px :*/
 .ht\:min9 {
-    min-width: 9rem !important;
+    min-height: 9rem !important;
 }
 
 /*: 160px :*/
 .ht\:min10 {
-    min-width: 10rem !important;
+    min-height: 10rem !important;
 }
 
 /*: 176px :*/
 .ht\:min11 {
-    min-width: 11rem !important;
+    min-height: 11rem !important;
 }
 
 /*: 192px :*/
 .ht\:min12 {
-    min-width: 12rem !important;
+    min-height: 12rem !important;
 }
 
 /*: 208px :*/
 .ht\:min13 {
-    min-width: 13rem !important;
+    min-height: 13rem !important;
 }
 
 /*: 224px :*/
 .ht\:min14 {
-    min-width: 14rem !important;
+    min-height: 14rem !important;
 }
 
 /*: 240px :*/
 .ht\:min15 {
-    min-width: 15rem !important;
+    min-height: 15rem !important;
 }
 
 /*: 256px :*/
 .ht\:min16 {
-    min-width: 16rem !important;
+    min-height: 16rem !important;
 }
 
 /*: 272px :*/
 .ht\:min17 {
-    min-width: 17rem !important;
+    min-height: 17rem !important;
 }
 
 /*: 288px :*/
 .ht\:min18 {
-    min-width: 18rem !important;
+    min-height: 18rem !important;
 }
 
 /*: 304px :*/
 .ht\:min19 {
-    min-width: 19rem !important;
+    min-height: 19rem !important;
 }
 
 /*: 320px :*/
 .ht\:min20 {
-    min-width: 20rem !important;
+    min-height: 20rem !important;
 }
 
 /*
 ***
     * selector: wd
     * dsc: maximum fixed width presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
 */
 /*: 16px :*/
 .ht\:max1 {
-    max-width: 1rem !important;
+    max-height: 1rem !important;
 }
 
 /*: 32px :*/
 .ht\:max2 {
-    max-width: 2rem !important;
+    max-height: 2rem !important;
 }
 
 /*: 48px :*/
 .ht\:max3 {
-    max-width: 3rem !important;
+    max-height: 3rem !important;
 }
 
 /*: 64px :*/
 .ht\:max4 {
-    max-width: 4rem !important;
+    max-height: 4rem !important;
 }
 
 /*: 80px :*/
 .ht\:max5 {
-    max-width: 5rem !important;
+    max-height: 5rem !important;
 }
 
 /*: 96px :*/
 .ht\:max6 {
-    max-width: 6rem !important;
+    max-height: 6rem !important;
 }
 
 /*: 112px :*/
 .ht\:max7 {
-    max-width: 7rem !important;
+    max-height: 7rem !important;
 }
 
 /*: 128px :*/
 .ht\:max8 {
-    max-width: 8rem !important;
+    max-height: 8rem !important;
 }
 
 /*: 144px :*/
 .ht\:max9 {
-    max-width: 9rem !important;
+    max-height: 9rem !important;
 }
 
 /*: 160px :*/
 .ht\:max10 {
-    max-width: 10rem !important;
+    max-height: 10rem !important;
 }
 
 /*: 176px :*/
 .ht\:max11 {
-    max-width: 11rem !important;
+    max-height: 11rem !important;
 }
 
 /*: 192px :*/
 .ht\:max12 {
-    max-width: 12rem !important;
+    max-height: 12rem !important;
 }
 
 /*: 208px :*/
 .ht\:max13 {
-    max-width: 13rem !important;
+    max-height: 13rem !important;
 }
 
 /*: 224px :*/
 .ht\:max14 {
-    max-width: 14rem !important;
+    max-height: 14rem !important;
 }
 
 /*: 240px :*/
 .ht\:max15 {
-    max-width: 15rem !important;
+    max-height: 15rem !important;
 }
 
 /*: 256px :*/
 .ht\:max16 {
-    max-width: 16rem !important;
+    max-height: 16rem !important;
 }
 
 /*: 272px :*/
 .ht\:max17 {
-    max-width: 17rem !important;
+    max-height: 17rem !important;
 }
 
 /*: 288px :*/
 .ht\:max18 {
-    max-width: 18rem !important;
+    max-height: 18rem !important;
 }
 
 /*: 304px :*/
 .ht\:max19 {
-    max-width: 19rem !important;
+    max-height: 19rem !important;
 }
 
 /*: 320px :*/
 .ht\:max20 {
-    max-width: 20rem !important;
+    max-height: 20rem !important;
 }
 
 /*
@@ -1381,7 +1381,7 @@ table.cols\:fixed {
 ***
     * selector: led
     * dsc: leading
-    * ver: 200208
+    * ver: 200222
     * fnt: set line height
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
@@ -1506,7 +1506,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin top
-    * ver: 200208
+    * ver: 200222
     * fnt: set top margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1589,7 +1589,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin right
-    * ver: 200208
+    * ver: 200222
     * fnt: set right margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1673,7 +1673,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin bottom
-    * ver: 200208
+    * ver: 200222
     * fnt: set bottom margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1757,7 +1757,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin left
-    * ver: 200208
+    * ver: 200222
     * fnt: set left margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1841,7 +1841,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin horzontal
-    * ver: 200208
+    * ver: 200222
     * fnt: set left / right margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1943,7 +1943,7 @@ table.cols\:fixed {
 ***
     * selector: mar
     * dsc: margin vertical
-    * ver: 200208
+    * ver: 200222
     * fnt: set top / bottom margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -2045,7 +2045,7 @@ table.cols\:fixed {
 ***
     * selector: pad
     * dsc: padding
-    * ver: 200208
+    * ver: 200222
     * fnt: set all padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2378,7 +2378,7 @@ table.cols\:fixed {
 ***
     * selector: tdc
     * dsc: text decoration
-    * ver: 200208
+    * ver: 200222
     * fnt: set predefined text decoration
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
 ***
@@ -2448,7 +2448,7 @@ table.cols\:fixed {
 ***
     * selector: trk
     * dsc: tracking
-    * ver: 200208
+    * ver: 200222
     * fnt: adjust letter spacing
     * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 ***
@@ -2474,7 +2474,7 @@ table.cols\:fixed {
 ***
     * selector: wd
     * dsc: fixed width presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2587,7 +2587,7 @@ table.cols\:fixed {
 ***
     * selector: wd
     * dsc: minimum fixed width presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2696,7 +2696,7 @@ table.cols\:fixed {
 ***
     * selector: wd
     * dsc: maximum fixed width presets
-    * ver: 200208
+    * ver: 200222
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -3415,13 +3415,13 @@ table.cols\:fixed {
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
-    .sm\)fnt\:size-xxx-large,
-    .sm\)icon\:size-xxx-large {
+    .sm\)fnt\:size-3x-large,
+    .sm\)icon\:size-3x-large {
         font-size: xxx-large !important;
     }
 
-    .sm\)fnt\:size-xx-large,
-    .sm\)icon\:size-xx-large {
+    .sm\)fnt\:size-2x-large,
+    .sm\)icon\:size-2x-large {
         font-size: xx-large !important;
     }
 
@@ -3457,8 +3457,8 @@ table.cols\:fixed {
         font-size: x-small !important;
     }
 
-    .sm\)fnt\:size-xx-small,
-    .sm\)icon\:size-xx-small {
+    .sm\)fnt\:size-2x-small,
+    .sm\)icon\:size-2x-small {
         font-size: xx-small !important;
     }
 
@@ -3476,7 +3476,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin
-        * ver: 200208
+        * ver: 200222
         * fnt: set all margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3642,7 +3642,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin right
-        * ver: 200208
+        * ver: 200222
         * fnt: set right margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3726,7 +3726,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin bottom
-        * ver: 200208
+        * ver: 200222
         * fnt: set bottom margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3810,7 +3810,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin left
-        * ver: 200208
+        * ver: 200222
         * fnt: set left margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3894,7 +3894,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin horzontal
-        * ver: 200208
+        * ver: 200222
         * fnt: set left / right margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3996,7 +3996,7 @@ table.cols\:fixed {
     ***
         * selector: mar
         * dsc: margin vertical
-        * ver: 200208
+        * ver: 200222
         * fnt: set top / bottom margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4431,7 +4431,7 @@ table.cols\:fixed {
 	***
 	    * selector: ht
 	    * dsc: fixed height presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed heights
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
 	***
@@ -4544,218 +4544,218 @@ table.cols\:fixed {
 	***
 	    * selector: ht
 	    * dsc: minimum fixed height presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed heights
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 	***
 	*/
 	/*: 16px :*/
 	.sm\)ht\:min1 {
-	    min-width: 1rem !important;
+	    min-height: 1rem !important;
 	}
 
 	/*: 32px :*/
 	.sm\)ht\:min2 {
-	    min-width: 2rem !important;
+	    min-height: 2rem !important;
 	}
 
 	/*: 48px :*/
 	.sm\)ht\:min3 {
-	    min-width: 3rem !important;
+	    min-height: 3rem !important;
 	}
 
 	/*: 64px :*/
 	.sm\)ht\:min4 {
-	    min-width: 4rem !important;
+	    min-height: 4rem !important;
 	}
 
 	/*: 80px :*/
 	.sm\)ht\:min5 {
-	    min-width: 5rem !important;
+	    min-height: 5rem !important;
 	}
 
 	/*: 96px :*/
 	.sm\)ht\:min6 {
-	    min-width: 6rem !important;
+	    min-height: 6rem !important;
 	}
 
 	/*: 112px :*/
 	.sm\)ht\:min7 {
-	    min-width: 7rem !important;
+	    min-height: 7rem !important;
 	}
 
 	/*: 128px :*/
 	.sm\)ht\:min8 {
-	    min-width: 8rem !important;
+	    min-height: 8rem !important;
 	}
 
 	/*: 144px :*/
 	.sm\)ht\:min9 {
-	    min-width: 9rem !important;
+	    min-height: 9rem !important;
 	}
 
 	/*: 160px :*/
 	.sm\)ht\:min10 {
-	    min-width: 10rem !important;
+	    min-height: 10rem !important;
 	}
 
 	/*: 176px :*/
 	.sm\)ht\:min11 {
-	    min-width: 11rem !important;
+	    min-height: 11rem !important;
 	}
 
 	/*: 192px :*/
 	.sm\)ht\:min12 {
-	    min-width: 12rem !important;
+	    min-height: 12rem !important;
 	}
 
 	/*: 208px :*/
 	.sm\)ht\:min13 {
-	    min-width: 13rem !important;
+	    min-height: 13rem !important;
 	}
 
 	/*: 224px :*/
 	.sm\)ht\:min14 {
-	    min-width: 14rem !important;
+	    min-height: 14rem !important;
 	}
 
 	/*: 240px :*/
 	.sm\)ht\:min15 {
-	    min-width: 15rem !important;
+	    min-height: 15rem !important;
 	}
 
 	/*: 256px :*/
 	.sm\)ht\:min16 {
-	    min-width: 16rem !important;
+	    min-height: 16rem !important;
 	}
 
 	/*: 272px :*/
 	.sm\)ht\:min17 {
-	    min-width: 17rem !important;
+	    min-height: 17rem !important;
 	}
 
 	/*: 288px :*/
 	.sm\)ht\:min18 {
-	    min-width: 18rem !important;
+	    min-height: 18rem !important;
 	}
 
 	/*: 304px :*/
 	.sm\)ht\:min19 {
-	    min-width: 19rem !important;
+	    min-height: 19rem !important;
 	}
 
 	/*: 320px :*/
 	.sm\)ht\:min20 {
-	    min-width: 20rem !important;
+	    min-height: 20rem !important;
 	}
 
 	/*
 	***
 	    * selector: wd
 	    * dsc: maximum fixed width presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed widths
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 	***
 	*/
 	/*: 16px :*/
 	.sm\)ht\:max1 {
-	    max-width: 1rem !important;
+	    max-height: 1rem !important;
 	}
 
 	/*: 32px :*/
 	.sm\)ht\:max2 {
-	    max-width: 2rem !important;
+	    max-height: 2rem !important;
 	}
 
 	/*: 48px :*/
 	.sm\)ht\:max3 {
-	    max-width: 3rem !important;
+	    max-height: 3rem !important;
 	}
 
 	/*: 64px :*/
 	.sm\)ht\:max4 {
-	    max-width: 4rem !important;
+	    max-height: 4rem !important;
 	}
 
 	/*: 80px :*/
 	.sm\)ht\:max5 {
-	    max-width: 5rem !important;
+	    max-height: 5rem !important;
 	}
 
 	/*: 96px :*/
 	.sm\)ht\:max6 {
-	    max-width: 6rem !important;
+	    max-height: 6rem !important;
 	}
 
 	/*: 112px :*/
 	.sm\)ht\:max7 {
-	    max-width: 7rem !important;
+	    max-height: 7rem !important;
 	}
 
 	/*: 128px :*/
 	.sm\)ht\:max8 {
-	    max-width: 8rem !important;
+	    max-height: 8rem !important;
 	}
 
 	/*: 144px :*/
 	.sm\)ht\:max9 {
-	    max-width: 9rem !important;
+	    max-height: 9rem !important;
 	}
 
 	/*: 160px :*/
 	.sm\)ht\:max10 {
-	    max-width: 10rem !important;
+	    max-height: 10rem !important;
 	}
 
 	/*: 176px :*/
 	.sm\)ht\:max11 {
-	    max-width: 11rem !important;
+	    max-height: 11rem !important;
 	}
 
 	/*: 192px :*/
 	.sm\)ht\:max12 {
-	    max-width: 12rem !important;
+	    max-height: 12rem !important;
 	}
 
 	/*: 208px :*/
 	.sm\)ht\:max13 {
-	    max-width: 13rem !important;
+	    max-height: 13rem !important;
 	}
 
 	/*: 224px :*/
 	.sm\)ht\:max14 {
-	    max-width: 14rem !important;
+	    max-height: 14rem !important;
 	}
 
 	/*: 240px :*/
 	.sm\)ht\:max15 {
-	    max-width: 15rem !important;
+	    max-height: 15rem !important;
 	}
 
 	/*: 256px :*/
 	.sm\)ht\:max16 {
-	    max-width: 16rem !important;
+	    max-height: 16rem !important;
 	}
 
 	/*: 272px :*/
 	.sm\)ht\:max17 {
-	    max-width: 17rem !important;
+	    max-height: 17rem !important;
 	}
 
 	/*: 288px :*/
 	.sm\)ht\:max18 {
-	    max-width: 18rem !important;
+	    max-height: 18rem !important;
 	}
 
 	/*: 304px :*/
 	.sm\)ht\:max19 {
-	    max-width: 19rem !important;
+	    max-height: 19rem !important;
 	}
 
 	/*: 320px :*/
 	.sm\)ht\:max20 {
-	    max-width: 20rem !important;
+	    max-height: 20rem !important;
 	}
 
     /*
@@ -5012,7 +5012,7 @@ table.cols\:fixed {
 	***
 	    * selector: wd
 	    * dsc: fixed width presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed widths
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 	***
@@ -5125,7 +5125,7 @@ table.cols\:fixed {
 	***
 	    * selector: wd
 	    * dsc: minimum fixed width presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed widths
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 	***
@@ -5234,7 +5234,7 @@ table.cols\:fixed {
 	***
 	    * selector: wd
 	    * dsc: maximum fixed width presets
-	    * ver: 200208
+	    * ver: 200222
 	    * fnt: set of predefined fixed widths
 	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 	***
@@ -6151,6 +6151,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200208
+ * Build:   200222
  *
  */
