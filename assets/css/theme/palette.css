@@ -3,7 +3,7 @@
  *
  * File Name:       theme/palette.css
  * Function:        CSS palette elements
- * Build:           200208
+ * Build:           200222
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -1228,142 +1228,142 @@ button.bdr\:blue-grey\!focus:focus {
 high contrast text colors
 ***
 */
-.wcag\:fg-grey9,
-.wcag\:fg-grey9\!hover:hover,
-a.wcag\:fg-grey9\!focus:focus,
-a.wcag\:fg-grey9,
-button.wcag\:fg-grey9\!hover:hover,
-button.wcag\:fg-grey9\!focus:focus {
+.fg\:wcag-grey9,
+.fg\:wcag-grey9\!hover:hover,
+a.fg\:wcag-grey9\!focus:focus,
+a.fg\:wcag-grey9,
+button.fg\:wcag-grey9\!hover:hover,
+button.fg\:wcag-grey9\!focus:focus {
     color: var(--wcag-grey9) !important;
 }
 
-.wcag\:bg-grey9 {
+.bg\:wcag-grey9 {
     background-color: var(--wcag-grey9) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-grey8,
-.wcag\:fg-grey8\!hover:hover,
-a.wcag\:fg-grey8\!focus:focus,
-a.wcag\:fg-grey8,
-button.wcag\:fg-grey8\!hover:hover,
-button.wcag\:fg-grey8\!focus:focus {
+.fg\:wcag-grey8,
+.fg\:wcag-grey8\!hover:hover,
+a.fg\:wcag-grey8\!focus:focus,
+a.fg\:wcag-grey8,
+button.fg\:wcag-grey8\!hover:hover,
+button.fg\:wcag-grey8\!focus:focus {
     color: var(--wcag-grey8) !important;
 }
 
-.wcag\:bg-grey8 {
+.bg\:wcag-grey8 {
     background-color: var(--wcag-grey8) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-grey7,
-.wcag\:fg-grey7\!hover:hover,
-a.wcag\:fg-grey7\!focus:focus,
-a.wcag\:fg-grey7,
-button.wcag\:fg-grey7\!hover:hover,
-button.wcag\:fg-grey7\!focus:focus {
+.fg\:wcag-grey7,
+.fg\:wcag-grey7\!hover:hover,
+a.fg\:wcag-grey7\!focus:focus,
+a.fg\:wcag-grey7,
+button.fg\:wcag-grey7\!hover:hover,
+button.fg\:wcag-grey7\!focus:focus {
     color: var(--wcag-grey7) !important;
 }
 
-.wcag\:bg-grey7 {
+.bg\:wcag-grey7 {
     background-color: var(--wcag-grey7) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-grey6,
-.wcag\:fg-grey6\!hover:hover,
-a.wcag\:fg-grey6\!focus:focus,
-a.wcag\:fg-grey6,
-button.wcag\:fg-grey6\!hover:hover,
-button.wcag\:fg-grey6\!focus:focus {
+.fg\:wcag-grey6,
+.fg\:wcag-grey6\!hover:hover,
+a.fg\:wcag-grey6\!focus:focus,
+a.fg\:wcag-grey6,
+button.fg\:wcag-grey6\!hover:hover,
+button.fg\:wcag-grey6\!focus:focus {
     color: var(--wcag-grey6) !important;
 }
 
-.wcag\:bg-grey6 {
+.bg\:wcag-grey6 {
     background-color: var(--wcag-grey6) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-red,
-.wcag\:fg-red\!hover:hover,
-a.wcag\:fg-red\!focus:focus,
-a.wcag\:fg-red,
-button.wcag\:fg-red\!hover:hover,
-button.wcag\:fg-red\!focus:focus {
+.fg\:wcag-red,
+.fg\:wcag-red\!hover:hover,
+a.fg\:wcag-red\!focus:focus,
+a.fg\:wcag-red,
+button.fg\:wcag-red\!hover:hover,
+button.fg\:wcag-red\!focus:focus {
     color: var(--wcag-red) !important;
 }
 
-.wcag\:bg-red {
+.bg\:wcag-red {
     background-color: var(--wcag-red) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-deep-purple,
-.wcag\:fg-deep-purple\!hover:hover,
-a.wcag\:fg-deep-purple\!focus:focus,
-a.wcag\:fg-deep-purple,
-button.wcag\:fg-deep-purple\!hover:hover,
-button.wcag\:fg-deep-purple\!focus:focus {
+.fg\:wcag-deep-purple,
+.fg\:wcag-deep-purple\!hover:hover,
+a.fg\:wcag-deep-purple\!focus:focus,
+a.fg\:wcag-deep-purple,
+button.fg\:wcag-deep-purple\!hover:hover,
+button.fg\:wcag-deep-purple\!focus:focus {
     color: var(--wcag-deep-purple) !important;
 }
 
-.wcag\:bg-deep-purple {
+.bg\:wcag-deep-purple {
     background-color: var(--wcag-deep-purple) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-blue,
-.wcag\:fg-blue\!hover:hover,
-a.wcag\:fg-blue\!focus:focus,
-a.wcag\:fg-blue,
-button.wcag\:fg-blue\!hover:hover,
-button.wcag\:fg-blue\!focus:focus {
+.fg\:wcag-blue,
+.fg\:wcag-blue\!hover:hover,
+a.fg\:wcag-blue\!focus:focus,
+a.fg\:wcag-blue,
+button.fg\:wcag-blue\!hover:hover,
+button.fg\:wcag-blue\!focus:focus {
     color: var(--wcag-blue) !important;
 }
 
-.wcag\:bg-blue {
+.bg\:wcag-blue {
     background-color: var(--wcag-blue) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-green,
-.wcag\:fg-green\!hover:hover,
-a.wcag\:fg-green\!focus:focus,
-a.wcag\:fg-green,
-button.wcag\:fg-green\!hover:hover,
-button.wcag\:fg-green\!focus:focus {
+.fg\:wcag-green,
+.fg\:wcag-green\!hover:hover,
+a.fg\:wcag-green\!focus:focus,
+a.fg\:wcag-green,
+button.fg\:wcag-green\!hover:hover,
+button.fg\:wcag-green\!focus:focus {
     color: var(--wcag-green) !important;
 }
 
-.wcag\:bg-green {
+.bg\:wcag-green {
     background-color: var(--wcag-green) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-deep-orange,
-.wcag\:fg-deep-orange\!hover:hover,
-a.wcag\:fg-deep-orange\!focus:focus,
-a.wcag\:fg-deep-orange,
-button.wcag\:fg-deep-orange\!hover:hover,
-button.wcag\:fg-deep-orange\!focus:focus {
+.fg\:wcag-deep-orange,
+.fg\:wcag-deep-orange\!hover:hover,
+a.fg\:wcag-deep-orange\!focus:focus,
+a.fg\:wcag-deep-orange,
+button.fg\:wcag-deep-orange\!hover:hover,
+button.fg\:wcag-deep-orange\!focus:focus {
     color: var(--wcag-deep-orange) !important;
 }
 
-.wcag\:bg-deep-orange {
+.bg\:wcag-deep-orange {
     background-color: var(--wcag-deep-orange) !important;
     color: var(--hue-wht);
 }
 
-.wcag\:fg-blue-grey,
-.wcag\:fg-blue-grey\!hover:hover,
-a.wcag\:fg-blue-grey\!focus:focus,
-a.wcag\:fg-blue-grey,
-button.wcag\:fg-blue-grey\!hover:hover,
-button.wcag\:fg-blue-grey\!focus:focus {
+.fg\:wcag-blue-grey,
+.fg\:wcag-blue-grey\!hover:hover,
+a.fg\:wcag-blue-grey\!focus:focus,
+a.fg\:wcag-blue-grey,
+button.fg\:wcag-blue-grey\!hover:hover,
+button.fg\:wcag-blue-grey\!focus:focus {
     color: var(--wcag-blue-grey) !important;
 }
 
-.wcag\:bg-blue-grey {
+.bg\:wcag-blue-grey {
     background-color: var(--wcag-blue-grey) !important;
     color: var(--hue-wht);
 }
@@ -2806,219 +2806,219 @@ button.wcag\:fg-blue-grey\!focus:focus {
     high contrast text colors
     ***
     */
-    .sm\)wcag\:fg-grey9,
-    .sm\)wcag\:fg-grey9\!hover:hover,
-    a.sm\)wcag\:fg-grey9\!focus:focus,
-    a.sm\)wcag\:fg-grey9,
-    button.sm\)wcag\:fg-grey9\!hover:hover,
-    button.sm\)wcag\:fg-grey9\!focus:focus {
+    .sm\)fg\:wcag-grey9,
+    .sm\)fg\:wcag-grey9\!hover:hover,
+    a.sm\)fg\:wcag-grey9\!focus:focus,
+    a.sm\)fg\:wcag-grey9,
+    button.sm\)fg\:wcag-grey9\!hover:hover,
+    button.sm\)fg\:wcag-grey9\!focus:focus {
         color: var(--wcag-grey9) !important;
     }
 
-    .sm\)wcag\:fg-grey8,
-    .sm\)wcag\:fg-grey8\!hover:hover,
-    a.sm\)wcag\:fg-grey8\!focus:focus,
-    a.sm\)wcag\:fg-grey8,
-    button.sm\)wcag\:fg-grey8\!hover:hover,
-    button.sm\)wcag\:fg-grey8\!focus:focus {
+    .sm\)fg\:wcag-grey8,
+    .sm\)fg\:wcag-grey8\!hover:hover,
+    a.sm\)fg\:wcag-grey8\!focus:focus,
+    a.sm\)fg\:wcag-grey8,
+    button.sm\)fg\:wcag-grey8\!hover:hover,
+    button.sm\)fg\:wcag-grey8\!focus:focus {
         color: var(--wcag-grey8) !important;
     }
 
-    .sm\)wcag\:fg-grey7,
-    .sm\)wcag\:fg-grey7\!hover:hover,
-    a.sm\)wcag\:fg-grey7\!focus:focus,
-    a.sm\)wcag\:fg-grey7,
-    button.sm\)wcag\:fg-grey7\!hover:hover,
-    button.sm\)wcag\:fg-grey7\!focus:focus {
+    .sm\)fg\:wcag-grey7,
+    .sm\)fg\:wcag-grey7\!hover:hover,
+    a.sm\)fg\:wcag-grey7\!focus:focus,
+    a.sm\)fg\:wcag-grey7,
+    button.sm\)fg\:wcag-grey7\!hover:hover,
+    button.sm\)fg\:wcag-grey7\!focus:focus {
         color: var(--wcag-grey7) !important;
     }
 
-    .sm\)wcag\:fg-grey6,
-    .sm\)wcag\:fg-grey6\!hover:hover,
-    a.sm\)wcag\:fg-grey6\!focus:focus,
-    a.sm\)wcag\:fg-grey6,
-    button.sm\)wcag\:fg-grey6\!hover:hover,
-    button.sm\)wcag\:fg-grey6\!focus:focus {
+    .sm\)fg\:wcag-grey6,
+    .sm\)fg\:wcag-grey6\!hover:hover,
+    a.sm\)fg\:wcag-grey6\!focus:focus,
+    a.sm\)fg\:wcag-grey6,
+    button.sm\)fg\:wcag-grey6\!hover:hover,
+    button.sm\)fg\:wcag-grey6\!focus:focus {
         color: var(--wcag-grey6) !important;
     }
 
-    .sm\)wcag\:fg-red,
-    .sm\)wcag\:fg-red\!hover:hover,
-    a.sm\)wcag\:fg-red\!focus:focus,
-    a.sm\)wcag\:fg-red,
-    button.sm\)wcag\:fg-red\!hover:hover,
-    button.sm\)wcag\:fg-red\!focus:focus {
+    .sm\)fg\:wcag-red,
+    .sm\)fg\:wcag-red\!hover:hover,
+    a.sm\)fg\:wcag-red\!focus:focus,
+    a.sm\)fg\:wcag-red,
+    button.sm\)fg\:wcag-red\!hover:hover,
+    button.sm\)fg\:wcag-red\!focus:focus {
         color: var(--wcag-red) !important;
     }
 
-    .sm\)wcag\:fg-pink,
-    .sm\)wcag\:fg-pink\!hover:hover,
-    a.sm\)wcag\:fg-pink\!focus:focus,
-    a.sm\)wcag\:fg-pink,
-    button.sm\)wcag\:fg-pink\!hover:hover,
-    button.sm\)wcag\:fg-pink\!focus:focus {
+    .sm\)fg\:wcag-pink,
+    .sm\)fg\:wcag-pink\!hover:hover,
+    a.sm\)fg\:wcag-pink\!focus:focus,
+    a.sm\)fg\:wcag-pink,
+    button.sm\)fg\:wcag-pink\!hover:hover,
+    button.sm\)fg\:wcag-pink\!focus:focus {
         color: var(--wcag-pink) !important;
     }
 
-    .sm\)wcag\:fg-purple,
-    .sm\)wcag\:fg-purple\!hover:hover,
-    a.sm\)wcag\:fg-purple\!focus:focus,
-    a.sm\)wcag\:fg-purple,
-    button.sm\)wcag\:fg-purple\!hover:hover,
-    button.sm\)wcag\:fg-purple\!focus:focus {
+    .sm\)fg\:wcag-purple,
+    .sm\)fg\:wcag-purple\!hover:hover,
+    a.sm\)fg\:wcag-purple\!focus:focus,
+    a.sm\)fg\:wcag-purple,
+    button.sm\)fg\:wcag-purple\!hover:hover,
+    button.sm\)fg\:wcag-purple\!focus:focus {
         color: var(--wcag-purple) !important;
     }
 
-    .sm\)wcag\:fg-deep-purple,
-    .sm\)wcag\:fg-deep-purple\!hover:hover,
-    a.sm\)wcag\:fg-deep-purple\!focus:focus,
-    a.sm\)wcag\:fg-deep-purple,
-    button.sm\)wcag\:fg-deep-purple\!hover:hover,
-    button.sm\)wcag\:fg-deep-purple\!focus:focus {
+    .sm\)fg\:wcag-deep-purple,
+    .sm\)fg\:wcag-deep-purple\!hover:hover,
+    a.sm\)fg\:wcag-deep-purple\!focus:focus,
+    a.sm\)fg\:wcag-deep-purple,
+    button.sm\)fg\:wcag-deep-purple\!hover:hover,
+    button.sm\)fg\:wcag-deep-purple\!focus:focus {
         color: var(--wcag-deep-purple) !important;
     }
 
-    .sm\)wcag\:fg-indigo,
-    .sm\)wcag\:fg-indigo\!hover:hover,
-    a.sm\)wcag\:fg-indigo\!focus:focus,
-    a.sm\)wcag\:fg-indigo,
-    button.sm\)wcag\:fg-indigo\!hover:hover,
-    button.sm\)wcag\:fg-indigo\!focus:focus {
+    .sm\)fg\:wcag-indigo,
+    .sm\)fg\:wcag-indigo\!hover:hover,
+    a.sm\)fg\:wcag-indigo\!focus:focus,
+    a.sm\)fg\:wcag-indigo,
+    button.sm\)fg\:wcag-indigo\!hover:hover,
+    button.sm\)fg\:wcag-indigo\!focus:focus {
         color: var(--wcag-indigo) !important;
     }
 
-    .sm\)wcag\:fg-blue,
-    .sm\)wcag\:fg-blue\!hover:hover,
-    a.sm\)wcag\:fg-blue\!focus:focus,
-    a.sm\)wcag\:fg-blue,
-    button.sm\)wcag\:fg-blue\!hover:hover,
-    button.sm\)wcag\:fg-blue\!focus:focus {
+    .sm\)fg\:wcag-blue,
+    .sm\)fg\:wcag-blue\!hover:hover,
+    a.sm\)fg\:wcag-blue\!focus:focus,
+    a.sm\)fg\:wcag-blue,
+    button.sm\)fg\:wcag-blue\!hover:hover,
+    button.sm\)fg\:wcag-blue\!focus:focus {
         color: var(--wcag-blue) !important;
     }
 
-    .sm\)wcag\:fg-light-blue,
-    .sm\)wcag\:fg-light-blue\!hover:hover,
-    a.sm\)wcag\:fg-light-blue\!focus:focus,
-    a.sm\)wcag\:fg-light-blue,
-    button.sm\)wcag\:fg-light-blue\!hover:hover,
-    button.sm\)wcag\:fg-light-blue\!focus:focus {
+    .sm\)fg\:wcag-light-blue,
+    .sm\)fg\:wcag-light-blue\!hover:hover,
+    a.sm\)fg\:wcag-light-blue\!focus:focus,
+    a.sm\)fg\:wcag-light-blue,
+    button.sm\)fg\:wcag-light-blue\!hover:hover,
+    button.sm\)fg\:wcag-light-blue\!focus:focus {
         color: var(--wcag-light-blue) !important;
     }
 
-    .sm\)wcag\:fg-cyan,
-    .sm\)wcag\:fg-cyan\!hover:hover,
-    a.sm\)wcag\:fg-cyan\!focus:focus,
-    a.sm\)wcag\:fg-cyan,
-    button.sm\)wcag\:fg-cyan\!hover:hover,
-    button.sm\)wcag\:fg-cyan\!focus:focus {
+    .sm\)fg\:wcag-cyan,
+    .sm\)fg\:wcag-cyan\!hover:hover,
+    a.sm\)fg\:wcag-cyan\!focus:focus,
+    a.sm\)fg\:wcag-cyan,
+    button.sm\)fg\:wcag-cyan\!hover:hover,
+    button.sm\)fg\:wcag-cyan\!focus:focus {
         color: var(--wcag-cyan) !important;
     }
 
-    .sm\)wcag\:fg-teal,
-    .sm\)wcag\:fg-teal\!hover:hover,
-    a.sm\)wcag\:fg-teal\!focus:focus,
-    a.sm\)wcag\:fg-teal,
-    button.sm\)wcag\:fg-teal\!hover:hover,
-    button.sm\)wcag\:fg-teal\!focus:focus {
+    .sm\)fg\:wcag-teal,
+    .sm\)fg\:wcag-teal\!hover:hover,
+    a.sm\)fg\:wcag-teal\!focus:focus,
+    a.sm\)fg\:wcag-teal,
+    button.sm\)fg\:wcag-teal\!hover:hover,
+    button.sm\)fg\:wcag-teal\!focus:focus {
         color: var(--wcag-teal) !important;
     }
 
-    .sm\)wcag\:fg-green,
-    .sm\)wcag\:fg-green\!hover:hover,
-    a.sm\)wcag\:fg-green\!focus:focus,
-    a.sm\)wcag\:fg-green,
-    button.sm\)wcag\:fg-green\!hover:hover,
-    button.sm\)wcag\:fg-green\!focus:focus {
+    .sm\)fg\:wcag-green,
+    .sm\)fg\:wcag-green\!hover:hover,
+    a.sm\)fg\:wcag-green\!focus:focus,
+    a.sm\)fg\:wcag-green,
+    button.sm\)fg\:wcag-green\!hover:hover,
+    button.sm\)fg\:wcag-green\!focus:focus {
         color: var(--wcag-green) !important;
     }
 
-    .sm\)wcag\:fg-light-green,
-    .sm\)wcag\:fg-light-green\!hover:hover,
-    a.sm\)wcag\:fg-light-green\!focus:focus,
-    a.sm\)wcag\:fg-light-green,
-    button.sm\)wcag\:fg-light-green\!hover:hover,
-    button.sm\)wcag\:fg-light-green\!focus:focus {
+    .sm\)fg\:wcag-light-green,
+    .sm\)fg\:wcag-light-green\!hover:hover,
+    a.sm\)fg\:wcag-light-green\!focus:focus,
+    a.sm\)fg\:wcag-light-green,
+    button.sm\)fg\:wcag-light-green\!hover:hover,
+    button.sm\)fg\:wcag-light-green\!focus:focus {
         color: var(--wcag-light-green) !important;
     }
 
-    .sm\)wcag\:fg-lime,
-    .sm\)wcag\:fg-lime\!hover:hover,
-    a.sm\)wcag\:fg-lime\!focus:focus,
-    a.sm\)wcag\:fg-lime,
-    button.sm\)wcag\:fg-lime\!hover:hover,
-    button.sm\)wcag\:fg-lime\!focus:focus {
+    .sm\)fg\:wcag-lime,
+    .sm\)fg\:wcag-lime\!hover:hover,
+    a.sm\)fg\:wcag-lime\!focus:focus,
+    a.sm\)fg\:wcag-lime,
+    button.sm\)fg\:wcag-lime\!hover:hover,
+    button.sm\)fg\:wcag-lime\!focus:focus {
         color: var(--wcag-lime) !important;
     }
 
-    .sm\)wcag\:fg-yellow,
-    .sm\)wcag\:fg-yellow\!hover:hover,
-    a.sm\)wcag\:fg-yellow\!focus:focus,
-    a.sm\)wcag\:fg-yellow,
-    button.sm\)wcag\:fg-yellow\!hover:hover,
-    button.sm\)wcag\:fg-yellow\!focus:focus {
+    .sm\)fg\:wcag-yellow,
+    .sm\)fg\:wcag-yellow\!hover:hover,
+    a.sm\)fg\:wcag-yellow\!focus:focus,
+    a.sm\)fg\:wcag-yellow,
+    button.sm\)fg\:wcag-yellow\!hover:hover,
+    button.sm\)fg\:wcag-yellow\!focus:focus {
         color: var(--wcag-yellow) !important;
     }
 
-    .sm\)wcag\:fg-amber,
-    .sm\)wcag\:fg-amber\!hover:hover,
-    a.sm\)wcag\:fg-amber\!focus:focus,
-    a.sm\)wcag\:fg-amber,
-    button.sm\)wcag\:fg-amber\!hover:hover,
-    button.sm\)wcag\:fg-amber\!focus:focus {
+    .sm\)fg\:wcag-amber,
+    .sm\)fg\:wcag-amber\!hover:hover,
+    a.sm\)fg\:wcag-amber\!focus:focus,
+    a.sm\)fg\:wcag-amber,
+    button.sm\)fg\:wcag-amber\!hover:hover,
+    button.sm\)fg\:wcag-amber\!focus:focus {
         color: var(--wcag-amber) !important;
     }
 
-    .sm\)wcag\:fg-orange,
-    .sm\)wcag\:fg-orange\!hover:hover,
-    a.sm\)wcag\:fg-orange\!focus:focus,
-    a.sm\)wcag\:fg-orange,
-    button.sm\)wcag\:fg-orange\!hover:hover,
-    button.sm\)wcag\:fg-orange\!focus:focus {
+    .sm\)fg\:wcag-orange,
+    .sm\)fg\:wcag-orange\!hover:hover,
+    a.sm\)fg\:wcag-orange\!focus:focus,
+    a.sm\)fg\:wcag-orange,
+    button.sm\)fg\:wcag-orange\!hover:hover,
+    button.sm\)fg\:wcag-orange\!focus:focus {
         color: var(--wcag-orange) !important;
     }
 
-    .sm\)wcag\:fg-deep-orange,
-    .sm\)wcag\:fg-deep-orange\!hover:hover,
-    a.sm\)wcag\:fg-deep-orange\!focus:focus,
-    a.sm\)wcag\:fg-deep-orange,
-    button.sm\)wcag\:fg-deep-orange\!hover:hover,
-    button.sm\)wcag\:fg-deep-orange\!focus:focus {
+    .sm\)fg\:wcag-deep-orange,
+    .sm\)fg\:wcag-deep-orange\!hover:hover,
+    a.sm\)fg\:wcag-deep-orange\!focus:focus,
+    a.sm\)fg\:wcag-deep-orange,
+    button.sm\)fg\:wcag-deep-orange\!hover:hover,
+    button.sm\)fg\:wcag-deep-orange\!focus:focus {
         color: var(--wcag-deep-orange) !important;
     }
 
-    .sm\)wcag\:fg-brown,
-    .sm\)wcag\:fg-brown\!hover:hover,
-    a.sm\)wcag\:fg-brown\!focus:focus,
-    a.sm\)wcag\:fg-brown,
-    button.sm\)wcag\:fg-brown\!hover:hover,
-    button.sm\)wcag\:fg-brown\!focus:focus {
+    .sm\)fg\:wcag-brown,
+    .sm\)fg\:wcag-brown\!hover:hover,
+    a.sm\)fg\:wcag-brown\!focus:focus,
+    a.sm\)fg\:wcag-brown,
+    button.sm\)fg\:wcag-brown\!hover:hover,
+    button.sm\)fg\:wcag-brown\!focus:focus {
         color: var(--wcag-brown) !important;
     }
 
-    .sm\)wcag\:fg-blue-grey,
-    .sm\)wcag\:fg-blue-grey\!hover:hover,
-    a.sm\)wcag\:fg-blue-grey\!focus:focus,
-    a.sm\)wcag\:fg-blue-grey,
-    button.sm\)wcag\:fg-blue-grey\!hover:hover,
-    button.sm\)wcag\:fg-blue-grey\!focus:focus {
+    .sm\)fg\:wcag-blue-grey,
+    .sm\)fg\:wcag-blue-grey\!hover:hover,
+    a.sm\)fg\:wcag-blue-grey\!focus:focus,
+    a.sm\)fg\:wcag-blue-grey,
+    button.sm\)fg\:wcag-blue-grey\!hover:hover,
+    button.sm\)fg\:wcag-blue-grey\!focus:focus {
         color: var(--wcag-blue-grey) !important;
     }
 
-    .sm\)wcag\:fg-brown,
-    .sm\)wcag\:fg-brown\!hover:hover,
-    a.sm\)wcag\:fg-brown\!focus:focus,
-    a.sm\)wcag\:fg-brown,
-    button.sm\)wcag\:fg-brown\!hover:hover,
-    button.sm\)wcag\:fg-brown\!focus:focus {
+    .sm\)fg\:wcag-brown,
+    .sm\)fg\:wcag-brown\!hover:hover,
+    a.sm\)fg\:wcag-brown\!focus:focus,
+    a.sm\)fg\:wcag-brown,
+    button.sm\)fg\:wcag-brown\!hover:hover,
+    button.sm\)fg\:wcag-brown\!focus:focus {
         color: var(--wcag-brown) !important;
     }
 
-    .sm\)wcag\:fg-blue-grey,
-    .sm\)wcag\:fg-blue-grey\!hover:hover,
-    a.sm\)wcag\:fg-blue-grey\!focus:focus,
-    a.sm\)wcag\:fg-blue-grey,
-    button.sm\)wcag\:fg-blue-grey\!hover:hover,
-    button.sm\)wcag\:fg-blue-grey\!focus:focus {
+    .sm\)fg\:wcag-blue-grey,
+    .sm\)fg\:wcag-blue-grey\!hover:hover,
+    a.sm\)fg\:wcag-blue-grey\!focus:focus,
+    a.sm\)fg\:wcag-blue-grey,
+    button.sm\)fg\:wcag-blue-grey\!hover:hover,
+    button.sm\)fg\:wcag-blue-grey\!focus:focus {
         color: var(--wcag-blue-grey) !important;
     }
 
@@ -3026,6 +3026,6 @@ button.wcag\:fg-blue-grey\!focus:focus {
 
 /*
  * EOF:     theme/palette.css
- * Build:   200208
+ * Build:   200222
  *
  */
