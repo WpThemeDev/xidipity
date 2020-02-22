@@ -3,8 +3,8 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200208
- * Revision:        5
+ * Build:           200222
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -18,9 +18,24 @@
  *
  */
 
-/* Create counter named 'section' (initial value is 0) */
-body {
-  counter-reset: section;
+/*
+***
+    * element: <body>
+    * dsc: body
+    * ver: 200222
+    * fnt: html body (see web.css for other property values)
+    * ref: https://developer.mozilla.org/en-US/docs/Web/API/Body
+***
+*/
+body,
+.mce-content-body {
+    background-color: var(--dft-bg-color);
+    color: var(--dft-fg-color);
+	counter-reset: section;
+    font-family: var(--dft-font-family);
+    font-size: var(--dft-font-size);
+    font-weight: var(--dft-font-weight);
+    line-height: var(--dft-line-height);
 }
 ins,
 mark {
@@ -110,7 +125,7 @@ pre.wrap {
 ***
     * element: <hr>
     * dsc: thematic break
-    * ver: 200208
+    * ver: 200222
     * fnt: thematic break between paragraph-level elements
     *      default the width is 100% of available space
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
@@ -214,25 +229,38 @@ a:hover {
 /*
 ***
     * element: <ol> / <ul>
+    * dsc: material design icon iframe
+    * ver: 200222
+    * fnt: adjust size of icon
+    * ref:
+***
+*/
+.md-li i {
+	font-size: 95%;
+}
+
+/*
+***
+    * element: <ol> / <ul>
     * dsc: space list items
-    * ver: 200208
+    * ver: 200222
     * fnt: set list item line height as specified by declaration
     * ref:
 ***
 */
-ol.li\:qtr-spaced li:not(:last-child),
-ul.li\:qtr-spaced li:not(:last-child) {
-    line-height: calc(var(--dft-line-height) + 0.25) !important;
+.li\:qtr-spaced li {
+    padding-bottom: 0.25rem !important;
+    padding-top: 0.25rem !important;
 }
 
-ol.li\:dbl-spaced li:not(:last-child),
-ul.li\:dbl-spaced li:not(:last-child) {
-    line-height: calc(var(--dft-line-height) + 0.5) !important;
+.li\:dbl-spaced li {
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
 }
 
-ol.li\:tpl-spaced li:not(:last-child),
-ul.li\:tpl-spaced li:not(:last-child) {
-    line-height: calc(var(--dft-line-height) + 0.75) !important;
+.li\:tpl-spaced li {
+    padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
 }
 
 /*
@@ -246,6 +274,7 @@ ul.li\:tpl-spaced li:not(:last-child) {
 */
 ul {
     list-style-type: disc;
+	line-height: var(--dft-line-height); 
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -296,6 +325,7 @@ ul.mixed ul ul ul ul {
 */
 ol {
     list-style-type: decimal;
+	line-height: var(--dft-line-height); 
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -369,7 +399,7 @@ ol.nested ol ol ol ol ol {
 
 /*
 ***
-    * selector: fa-ul
+    * property: fa-ul
     * dsc: font awesome web icon
     * ver: 190910-1
     * fnt: unordered font awesome list
@@ -398,7 +428,7 @@ ol.nested ol ol ol ol ol {
 
 /*
 ***
-    * selector: md-ul
+    * property: md-ul
     * dsc: google web icon
     * ver: 190910-1
     * fnt: unordered google icon list
@@ -415,7 +445,7 @@ ol.nested ol ol ol ol ol {
 
 /*
 ***
-    * selector: no-bullet(s)
+    * property: no-bullet(s)
     * dsc: hide bullets
     * ver: 190910-1
     * fnt: unordered list without bullets
@@ -434,15 +464,14 @@ ol.nested ol ol ol ol ol {
     list-style-type: none;
 }
 
-/*
+/* deprecate
 ***
-    * selector: il
+    * property: il
     * dsc: image list
     * ver: 190910-1
     * fnt: custom list of images
     * ref:
 ***
-*/
 .il {
     list-style-type: none;
 }
@@ -461,6 +490,7 @@ ol.nested ol ol ol ol ol {
 .il li:not(:first-child) {
     margin-top: 1rem;
 }
+*/
 
 /*
 ***
@@ -472,20 +502,52 @@ ol.nested ol ol ol ol ol {
 ***
 */
 dt {
-    font-weight: 500;
-    margin-bottom: 5px;
+	font-size: larger;
+    font-weight: bolder;
 }
 
 dd {
-    margin-bottom: .625em;
-    margin-top: .625em;
+	line-height: var(--dft-line-height); 	
     margin-left: 0;
 }
 
 @media (min-width:640px) {
     dd {
-        margin-left: 2.25rem;
+	    margin-left: 1rem;
     }
+}
+
+/*
+***
+    * property: vs
+    * dsc: vertical space
+    * ver: 200222
+    * fnt: set line height
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+***
+*/
+.vs\:1\/2 {
+    line-height: calc(var(--dft-line-height) * 0.5);
+}
+
+.vs\:3\/4 {
+    line-height: calc(var(--dft-line-height) * 0.75);
+}
+
+.vs\:1-1\/2 {
+    line-height: calc(var(--dft-line-height) * 1.5);
+}
+
+.vs\:2 {
+    line-height: calc(var(--dft-line-height) * 2);
+}
+
+.vs\:2-1\/2 {
+    line-height: calc(var(--dft-line-height) * 2.5);
+}
+
+.vs\:3 {
+    line-height: calc(var(--dft-line-height) * 3);
 }
 
 /*
@@ -534,7 +596,7 @@ table td:not(:last-child) {
 
 /*
 ***
-    * selector: highlight
+    * property: highlight
     * dsc: tint selected row(s)
     * ver: 190910-1
     * fnt: table with selected rows tinted
@@ -549,7 +611,7 @@ table.highlight tr:hover {
 
 /*
 ***
-    * selector: pinstripe
+    * property: pinstripe
     * dsc: tint row(s)
     * ver: 190910-1
     * fnt: table with alternate rows tinted
@@ -558,6 +620,117 @@ table.highlight tr:hover {
 */
 table.pinstripe tr:nth-child(even) {
     background-color: var(--hue-bas-200);
+}
+
+/*
+***
+    property: cols
+    * dsc: multi-column
+    * ver: 190926-1
+    * fnt: apply multi-column formatting
+    * ref:
+***
+*/
+.cols\:auto-2,
+.cols\:auto-3,
+.cols\:auto-4,
+.cols\:fixed-2,
+.cols\:fixed-3,
+.cols\:fixed-4 {
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cols\:auto-2 td,
+.cols\:auto-3 td,
+.cols\:auto-4 td,
+.cols\:fixed-2 td,
+.cols\:fixed-3 td,
+.cols\:fixed-4 td {
+    line-height: var(--dft-line-height);
+    padding: 0 0.25rem;
+    vertical-align: top;
+}
+
+.cols\:fixed-2 td {
+    width: 50%;
+}
+
+.cols\:fixed-3 td {
+    width: 33.3333%;
+}
+
+.cols\:fixed-4 td {
+    width: 25%;
+}
+
+.cols\:fixed-2 td:first-child,
+.cols\:fixed-3 td:first-child,
+.cols\:fixed-4 td:first-child {
+    padding-left: 0;
+}
+
+.cols\:fixed-0 td:last-child,
+.cols\:fixed-3 td:last-child,
+.cols\:fixed-4 td:last-child {
+    padding-right: 0;
+}
+
+.cols\:auto-2,
+.cols\:auto-3,
+.cols\:auto-4 {
+    border-color: transparent;
+}
+
+.cols\:auto-2 td,
+.cols\:auto-3 td,
+.cols\:auto-4 td {
+    padding: 0;
+    width: 100%;
+}
+
+/*: embedded table :*/
+
+.cols\:auto-2 table,
+.cols\:auto-3 table,
+.cols\:auto-4 table,
+.cols\:fixed-2 table,
+.cols\:fixed-3 table,
+.cols\:fixed-4 table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+.cols\:auto-2 table thead th:not(:last-child),
+.cols\:auto-3 table thead th:not(:last-child),
+.cols\:auto-4 table thead th:not(:last-child),
+.cols\:fixed-2 table thead th:not(:last-child),
+.cols\:fixed-3 table thead th:not(:last-child),
+.cols\:fixed-4 table thead th:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-300) !important;
+}
+
+.cols\:auto-2 table tr:not(:last-child) td,
+.cols\:auto-3 table tr:not(:last-child) td,
+.cols\:auto-4 table tr:not(:last-child) td,
+.cols\:fixed-2 table tr:not(:last-child) td,
+.cols\:fixed-3 table tr:not(:last-child) td,
+.cols\:fixed-4 table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--hue-bas-300) !important;
+}
+
+.cols\:auto-2 table td:not(:last-child),
+.cols\:auto-3 table td:not(:last-child),
+.cols\:auto-4 table td:not(:last-child),
+.cols\:fixed-2 table td:not(:last-child),
+.cols\:fixed-3 table td:not(:last-child),
+.cols\:fixed-4 table td:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-300) !important;
 }
 
 /*
@@ -619,7 +792,7 @@ h6 {
 
 /*
 ***
-    * selector: cnt
+    * property: cnt
     * dsc: counter
     * ver: 190910-1
     * fnt: add counter to header
@@ -660,11 +833,7 @@ h6.cnt\!alt::before {
 ***
 */
 p {
-    margin: 0 0 2px;
-}
-
-p + p {
-    margin: 2px 0 2px;
+	line-height: var(--dft-line-height); 
 }
 
 /*
@@ -849,9 +1018,9 @@ img {
 
 /*
 ***
-    * selector: fbx
+    * property: fbx
     * dsc: fixed height/width boxes
-    * ver: 200208
+    * ver: 200222
     * fnt: to be used in conjunction with a flexbox container
     *      set justify content to space around (6)
     * ref:
@@ -891,9 +1060,9 @@ img {
 
 /*
 ***
-    * selector: various
+    * property: various
     * dsc: set aspect ratio
-    * ver: 200208
+    * ver: 200222
     * fnt: frame images / videos to an aspect ratio
     *      <div class="width"><div class="@ratio">img/itag</div></div>
     * ref:
@@ -947,9 +1116,9 @@ img {
 
 /*
 ***
-    * selector: material-icons
+    * property: material-icons
     * dsc: google icon font
-    * ver: 200208
+    * ver: 200222
     * fnt: tweak default class
     * ref: https://google.github.io/material-design-icons/
 ***
@@ -962,9 +1131,9 @@ img {
 
 /*
 *** REVIEW THIS!
-    * selector:
+    * property:
     * dsc:
-    * ver: 200208
+    * ver: 200222
     * fnt:
     * ref:
 ***
@@ -1146,7 +1315,7 @@ img {
 ***
     * element: <button>
     * dsc: default button
-    * ver: 200208
+    * ver: 200222
     * fnt: style button
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
@@ -1176,9 +1345,9 @@ button:active {
 
 /*
 ***
-    * selector: hvr
+    * property: hvr
     * dsc: hover effects
-    * ver: 200208
+    * ver: 200222
     * fnt: image/button hover annimations
     * ref: https://ianlunn.github.io/Hover/
 ***
@@ -1399,6 +1568,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200208
+ * Build:   200222
  *
  */
