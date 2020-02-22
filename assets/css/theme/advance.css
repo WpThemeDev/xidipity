@@ -4,7 +4,7 @@
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
  * Build:           200222
- * Revision:        1
+ * Revision:        2
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -44,7 +44,7 @@
 
 /*
 ***
-    * selector: aln
+    * property: aln
     * dsc: alignment
     * ver: 200120-1
     * fnt: set alignment
@@ -114,7 +114,7 @@
 
 /*
 ***
-    * selector: bdr
+    * property: bdr
     * dsc: border
     * ver: 200120-1
     * fnt: set border style (not color)
@@ -325,7 +325,7 @@
 
 /*
 ***
-    * selector: bdr
+    * property: bdr
     * dsc: table borders
     * ver: 200120-1
     * fnt: set table border attribute
@@ -342,7 +342,7 @@
 
 /*
 ***
-    * selector: bdr
+    * property: bdr
     * dsc: hide table border(s)
     * ver: 190208
     * fnt: hide, but preserve space of table border(s)
@@ -359,7 +359,7 @@ table.bdr\:hidden tr td {
 
 /*
 ***
-    * selector: bdr
+    * property: bdr
     * dsc: display all table borders
     * ver: 190208
     * fnt: spreadsheet styled table borders
@@ -376,7 +376,7 @@ table.bdr\:full tr td {
 
 /*
 ***
-    * selector: cols
+    * property: cols
     * dsc: table layout options
     * ver: 200222
     * fnt: control table column attributes
@@ -393,7 +393,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: bdr
+    * property: bdr
     * dsc: cell space
     * ver: 200222
     * fnt: set table border cell spacing attributes
@@ -448,7 +448,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cnr
+    * property: cnr
     * dsc: box corner
     * ver: 200120-1
     * fnt: control curvature of corners
@@ -473,7 +473,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cnr
+    * property: cnr
     * dsc: left box corner
     * ver: 200120-1
     * fnt: control curvature of corners
@@ -492,7 +492,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cnr
+    * property: cnr
     * dsc: right box corner
     * ver: 200120-1
     * fnt: control curvature of corners
@@ -511,7 +511,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cnr
+    * property: cnr
     * dsc: top box corner
     * ver: 200120-1
     * fnt: control curvature of corners
@@ -530,7 +530,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cnr
+    * property: cnr
     * dsc: bottom box corner
     * ver: 200120-1
     * fnt: control curvature of corners
@@ -549,7 +549,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: cur
+    * property: cur
     * dsc: cursor display
     * ver: 200107-1
     * fnt: control cursor display
@@ -588,7 +588,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: dsp
+    * property: dsp
     * dsc: element display
     * ver: 200107-1
     * fnt: hide / display page elements
@@ -617,7 +617,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: fnt
+    * property: fnt
     * dsc: font family
     * ver: 200107-1
     * fnt: font attributes
@@ -650,7 +650,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: fnt
+    * property: fnt
     * dsc: font size
     * ver: 200107-1
     * fnt: set font / font icon size
@@ -718,7 +718,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: fnt
+    * property: fnt
     * dsc: font drop shadow
     * ver: 200107-1
     * fnt: set font drop shadow hue
@@ -738,7 +738,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: fnt
+    * property: fnt
     * dsc: font style
     * ver: 200107-1
     * fnt: italic / normal / oblique
@@ -759,7 +759,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: fnt
+    * property: fnt
     * dsc: font weight
     * ver: 200107-1
     * fnt: set named weights
@@ -798,7 +798,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: ht
+    * property: ht
     * dsc: fixed height presets
     * ver: 200222
     * fnt: set of predefined fixed heights
@@ -911,7 +911,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: ht
+    * property: ht
     * dsc: minimum fixed height presets
     * ver: 200222
     * fnt: set of predefined fixed heights
@@ -1020,7 +1020,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: maximum fixed width presets
     * ver: 200222
     * fnt: set of predefined fixed widths
@@ -1129,7 +1129,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: ht
+    * property: ht
     * dsc: % height presets
     * ver: 200107-1
     * fnt: set of predefined % heights
@@ -1218,7 +1218,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: ht
+    * property: ht
     * dsc: fraction height presets
     * ver: 200107-1
     * fnt: set height to predefined fraction
@@ -1270,123 +1270,14 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: yht
-    * dsc: fixed height / auto width
-    * ver: 200107-1
-    * fnt: scale width based on preset height %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.yht\:10\% {
-    height: 10% !important;
-    width: auto !important;
-}
-
-.yht\:12\% {
-    height: 12% !important;
-    width: auto !important;
-}
-
-.yht\:14\% {
-    height: 14% !important;
-    width: auto !important;
-}
-
-.yht\:16\% {
-    height: 16% !important;
-    width: auto !important;
-}
-
-.yht\:18\% {
-    height: 18% !important;
-    width: auto !important;
-}
-
-.yht\:20\% {
-    height: 20% !important;
-    width: auto !important;
-}
-
-.yht\:25\% {
-    height: 25% !important;
-    width: auto !important;
-}
-
-.yht\:30\% {
-    height: 30% !important;
-    width: auto !important;
-}
-
-.yht\:35\% {
-    height: 35% !important;
-    width: auto !important;
-}
-
-.yht\:40\% {
-    height: 40% !important;
-    width: auto !important;
-}
-
-.yht\:45\% {
-    height: 45% !important;
-    width: auto !important;
-}
-
-.yht\:50\% {
-    height: 50% !important;
-    width: auto !important;
-}
-
-.yht\:55\% {
-    height: 55% !important;
-    width: auto !important;
-}
-
-.yht\:60\% {
-    height: 60% !important;
-    width: auto !important;
-}
-
-.yht\:65\% {
-    height: 65% !important;
-    width: auto !important;
-}
-
-.yht\:70\% {
-    height: 70% !important;
-    width: auto !important;
-}
-
-.yht\:75\% {
-    height: 75% !important;
-    width: auto !important;
-}
-
-.yht\:80\% {
-    height: 80% !important;
-    width: auto !important;
-}
-
-.yht\:90\% {
-    height: 90% !important;
-    width: auto !important;
-}
-
-.yht\:100\% {
-    height: 100% !important;
-    width: auto !important;
-}
-
-/*
-***
-    * selector: led
+    * property: led
     * dsc: leading
     * ver: 200222
     * fnt: set line height
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
 */
-.led\:x-narrow {
+.2x-narrow {
     line-height: calc(var(--dft-line-height) - .25) !important;
 }
 
@@ -1421,7 +1312,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin
     * ver: 200120-1
     * fnt: set all margins
@@ -1429,10 +1320,6 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:\+0 {
-    margin: 0 !important;
-}
-
 .mar\:\+0\.25 {
     margin: 0.25rem !important;
 }
@@ -1465,11 +1352,14 @@ table.cols\:fixed {
     margin: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:-0 {
+/*: 0 margin :*/
+.mar\:0,
+.mar\:-0,
+.mar\:\+0 {
     margin: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:-0\.25 {
     margin: -0.25rem !important;
 }
@@ -1504,7 +1394,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin top
     * ver: 200222
     * fnt: set top margin
@@ -1512,10 +1402,6 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:top\+0 {
-    margin-top: 0 !important;
-}
-
 .mar\:top\+0\.25 {
     margin-top: 0.25rem !important;
 }
@@ -1548,11 +1434,14 @@ table.cols\:fixed {
     margin-top: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:top-0 {
+/*: 0 margin :*/
+.mar\:top0,
+.mar\:top-0,
+.mar\:top\+0 {
     margin-top: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:top-0\.25 {
     margin-top: -0.25rem !important;
 }
@@ -1587,7 +1476,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin right
     * ver: 200222
     * fnt: set right margin
@@ -1596,82 +1485,81 @@ table.cols\:fixed {
 */
 
 /*: add margin :*/
-.mar\:top\+0 {
-    margin-right: 0 !important;
-}
-
-.mar\:top\+0\.25 {
+.mar\:right\+0\.25 {
     margin-right: 0.25rem !important;
 }
 
-.mar\:top\+0\.5 {
+.mar\:right\+0\.5 {
     margin-right: 0.5rem !important;
 }
 
-.mar\:top\+0\.75 {
+.mar\:right\+0\.75 {
     margin-right: 0.75rem !important;
 }
 
-.mar\:top\+1 {
+.mar\:right\+1 {
     margin-right: 1rem !important;
 }
 
-.mar\:top\+1\.25 {
+.mar\:right\+1\.25 {
     margin-right: 1.25rem !important;
 }
 
-.mar\:top\+1\.5 {
+.mar\:right\+1\.5 {
     margin-right: 1.5rem !important;
 }
 
-.mar\:top\+1\.75 {
+.mar\:right\+1\.75 {
     margin-right: 1.75rem !important;
 }
 
-.mar\:top\+2 {
+.mar\:right\+2 {
     margin-right: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:top-0 {
+/*: 0 margin :*/
+.mar\:right0,
+.mar\:right-0,
+.mar\:right\+0 {
     margin-right: 0 !important;
 }
 
-.mar\:top-0\.25 {
+/*: subtract margin :*/
+.mar\:right-0\.25 {
     margin-right: -0.25rem !important;
 }
 
-.mar\:top-0\.5 {
+.mar\:right-0\.5 {
     margin-right: -0.5rem !important;
 }
 
-.mar\:top-0\.75 {
+.mar\:right-0\.75 {
     margin-right: -0.75rem !important;
 }
 
-.mar\:top-1 {
+.mar\:right-1 {
     margin-right: -1rem !important;
 }
 
-.mar\:top-1\.25 {
+.mar\:right-1\.25 {
     margin-right: -1.25rem !important;
 }
 
-.mar\:top-1\.5 {
+.mar\:right-1\.5 {
     margin-right: -1.5rem !important;
 }
 
-.mar\:top-1\.75 {
+.mar\:right-1\.75 {
     margin-right: -1.75rem !important;
 }
 
-.mar\:top-2 {
+.mar\:right-2 {
     margin-right: -2rem !important;
 }
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin bottom
     * ver: 200222
     * fnt: set bottom margin
@@ -1680,10 +1568,6 @@ table.cols\:fixed {
 */
 
 /*: add margin :*/
-.mar\:bottom\+0 {
-    margin-bottom: 0 !important;
-}
-
 .mar\:bottom\+0\.25 {
     margin-bottom: 0.25rem !important;
 }
@@ -1716,11 +1600,14 @@ table.cols\:fixed {
     margin-bottom: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:bottom-0 {
+/*: 0 margin :*/
+.mar\:bottom0,
+.mar\:bottom-0,
+.mar\:bottom\+0 {
     margin-bottom: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:bottom-0\.25 {
     margin-bottom: -0.25rem !important;
 }
@@ -1755,7 +1642,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin left
     * ver: 200222
     * fnt: set left margin
@@ -1764,10 +1651,6 @@ table.cols\:fixed {
 */
 
 /*: add margin :*/
-.mar\:left\+0 {
-    margin-left: 0 !important;
-}
-
 .mar\:left\+0\.25 {
     margin-left: 0.25rem !important;
 }
@@ -1800,11 +1683,14 @@ table.cols\:fixed {
     margin-left: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:left-0 {
+/*: 0 margin :*/
+.mar\:left0,
+.mar\:left-0,
+.mar\:left\+0 {
     margin-left: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:left-0\.25 {
     margin-left: -0.25rem !important;
 }
@@ -1839,7 +1725,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin horzontal
     * ver: 200222
     * fnt: set left / right margins
@@ -1848,11 +1734,6 @@ table.cols\:fixed {
 */
 
 /*: add margin :*/
-.mar\:hrz\+0 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
 .mar\:hrz\+0\.25 {
     margin-left: 0.25rem !important;
     margin-right: 0.25rem !important;
@@ -1893,12 +1774,15 @@ table.cols\:fixed {
     margin-right: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:hrz-0 {
+/*: 0 margin :*/
+.mar\:hrz0,
+.mar\:hrz-0,
+.mar\:hrz\+0 {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:hrz-0\.25 {
     margin-left: -0.25rem !important;
     margin-right: -0.25rem !important;
@@ -1941,7 +1825,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: mar
+    * property: mar
     * dsc: margin vertical
     * ver: 200222
     * fnt: set top / bottom margins
@@ -1950,11 +1834,6 @@ table.cols\:fixed {
 */
 
 /*: add margin :*/
-.mar\:vrt\+0 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
 .mar\:vrt\+0\.25 {
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
@@ -1995,12 +1874,15 @@ table.cols\:fixed {
     margin-bottom: 2rem !important;
 }
 
-/*: subtract margin :*/
-.mar\:vrt-0 {
+/*: 0 margin :*/
+.mar\:vrt0,
+.mar\:vrt-0,
+.mar\:vrt\+0 {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
+/*: subtract margin :*/
 .mar\:vrt-0\.25 {
     margin-top: -0.25rem !important;
     margin-bottom: -0.25rem !important;
@@ -2043,13 +1925,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: padding
     * ver: 200222
     * fnt: set all padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:0,
+.pad\:-0,
 .pad\:\+0 {
     padding: 0 !important;
 }
@@ -2088,13 +1972,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: top
     * ver: 200120-1
     * fnt: set top padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:top0,
+.pad\:top-0,
 .pad\:top\+0 {
     padding-top: 0 !important;
 }
@@ -2133,13 +2019,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: right
     * ver: 200120-1
     * fnt: set right padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:right0,
+.pad\:right-0,
 .pad\:right\+0 {
     padding-right: 0 !important;
 }
@@ -2178,13 +2066,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: bottom
     * ver: 200120-1
     * fnt: set bottom padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:bottom0,
+.pad\:bottom-0,
 .pad\:bottom\+0 {
     padding-bottom: 0 !important;
 }
@@ -2223,13 +2113,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: left
     * ver: 200120-1
     * fnt: set left padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:left0,
+.pad\:left-0,
 .pad\:left\+0 {
     padding-left: 0 !important;
 }
@@ -2268,13 +2160,15 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: hrz
-    * ver: 200120-1
+    * ver: 200222
     * fnt: set left/right (horizontal) padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:hrz0,
+.pad\:hrz-0,
 .pad\:hrz\+0 {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -2322,61 +2216,63 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: pad
+    * property: pad
     * dsc: vrt
     * ver: 200120-1
     * fnt: set top/bottom (vertical) padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
+.pad\:vrt0,
+.pad\:vrt-0,
 .pad\:vrt\+0 {
-    padding-top: 0 !important;
     padding-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 
 .pad\:vrt\+0\.25 {
-    padding-top: 0.25rem !important;
     padding-bottom: 0.25rem !important;
+    padding-top: 0.25rem !important;
 }
 
 .pad\:vrt\+0\.5 {
-    padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
 }
 
 .pad\:vrt\+0\.75 {
-    padding-top: 0.75rem !important;
     padding-bottom: 0.75rem !important;
+    padding-top: 0.75rem !important;
 }
 
 .pad\:vrt\+1 {
-    padding-top: 1rem !important;
     padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
 }
 
 .pad\:vrt\+1\.25 {
-    padding-top: 1.25rem !important;
     padding-bottom: 1.25rem !important;
+    padding-top: 1.25rem !important;
 }
 
 .pad\:vrt\+1\.5 {
-    padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
+    padding-top: 1.5rem !important;
 }
 
 .pad\:vrt\+1\.75 {
-    padding-top: 1.75rem !important;
     padding-bottom: 1.75rem !important;
+    padding-top: 1.75rem !important;
 }
 
 .pad\:vrt\+2 {
-    padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
 }
 
 /*
 ***
-    * selector: tdc
+    * property: tdc
     * dsc: text decoration
     * ver: 200222
     * fnt: set predefined text decoration
@@ -2446,7 +2342,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: trk
+    * property: trk
     * dsc: tracking
     * ver: 200222
     * fnt: adjust letter spacing
@@ -2472,7 +2368,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: fixed width presets
     * ver: 200222
     * fnt: set of predefined fixed widths
@@ -2585,7 +2481,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: minimum fixed width presets
     * ver: 200222
     * fnt: set of predefined fixed widths
@@ -2694,7 +2590,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: maximum fixed width presets
     * ver: 200222
     * fnt: set of predefined fixed widths
@@ -2803,7 +2699,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: % width presets
     * ver: 200107-1
     * fnt: set of predefined % widths
@@ -2892,7 +2788,7 @@ table.cols\:fixed {
 
 /*
 ***
-    * selector: wd
+    * property: wd
     * dsc: fraction width presets
     * ver: 200107-1
     * fnt: set width to predefined fraction
@@ -2942,117 +2838,8 @@ table.cols\:fixed {
     width: 100% !important;
 }
 
-/*
-***
-    * selector: xwd
-    * dsc: auto height / fixed width
-    * ver: 200107-1
-    * fnt: scale height based on preset width %
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-***
-*/
-.xwd\:10\% {
-    height: auto !important;
-    width: 10% !important;
-}
-
-.xwd\:12\% {
-    height: auto !important;
-    width: 12% !important;
-}
-
-.xwd\:14\% {
-    height: auto !important;
-    width: 14% !important;
-}
-
-.xwd\:16\% {
-    height: auto !important;
-    width: 16% !important;
-}
-
-.xwd\:18\% {
-    height: auto !important;
-    width: 18% !important;
-}
-
-.xwd\:20\% {
-    height: auto !important;
-    width: 20% !important;
-}
-
-.xwd\:25\% {
-    height: auto !important;
-    width: 25% !important;
-}
-
-.xwd\:30\% {
-    height: auto !important;
-    width: 30% !important;
-}
-
-.xwd\:35\% {
-    height: auto !important;
-    width: 35% !important;
-}
-
-.xwd\:40\% {
-    height: auto !important;
-    width: 40% !important;
-}
-
-.xwd\:45\% {
-    height: auto !important;
-    width: 45% !important;
-}
-
-.xwd\:50\% {
-    height: auto !important;
-    width: 50% !important;
-}
-
-.xwd\:55\% {
-    height: auto !important;
-    width: 55% !important;
-}
-
-.xwd\:60\% {
-    height: auto !important;
-    width: 60% !important;
-}
-
-.xwd\:65\% {
-    height: auto !important;
-    width: 65% !important;
-}
-
-.xwd\:70\% {
-    height: auto !important;
-    width: 70% !important;
-}
-
-.xwd\:75\% {
-    height: auto !important;
-    width: 75% !important;
-}
-
-.xwd\:80\% {
-    height: auto !important;
-    width: 80% !important;
-}
-
-.xwd\:90\% {
-    height: auto !important;
-    width: 90% !important;
-}
-
-.xwd\:100\% {
-    height: auto !important;
-    width: 100% !important;
-}
-
 /*  # DIY flexbox components
-    # 200120-1
+    # 200222
     # classes to build flexbox
     # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
         flexbox
@@ -3084,9 +2871,9 @@ table.cols\:fixed {
         fxc:4    - baseline
         fxc:5    - stretch
         item attributes (auto basis)
-        fxd:1    - 0 1 auto
-        fxd:2    - 1 1 auto
-        fxd:3    - 2 1 auto
+        fxd:1    - 0 0 auto
+        fxd:2    - 0 1 auto
+        fxd:3    - 1 0 auto
         align self (override)
         fxe:1    - auto
         fxe:2    - flex-start
@@ -3295,36 +3082,27 @@ table.cols\:fixed {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 .fxd\:2 {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
 }
 
 .fxd\:3 {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 2 1 auto;
-    -ms-flex: 2 1 auto;
-    flex: 2 1 auto;
-}
-
-.fxd\:4 {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 2 auto;
-    -ms-flex: 1 2 auto;
-    flex: 1 2  auto;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 /*: item (align self) :*/
@@ -3379,7 +3157,7 @@ table.cols\:fixed {
 @media (min-width: 640px) {
     /*
     ***
-        * selector: dsp
+        * property: dsp
         * dsc: element display
         * ver: 200107-1
         * fnt: hide / display page elements
@@ -3408,7 +3186,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: fnt
+        * property: fnt
         * dsc: font size
         * ver: 200107-1
         * fnt: set font / font icon size
@@ -3474,7 +3252,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin
         * ver: 200222
         * fnt: set all margins
@@ -3482,10 +3260,6 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
-    .sm\)mar\:\+0 {
-        margin: 0 !important;
-    }
-
     .sm\)mar\:\+0\.25 {
         margin: 0.25rem !important;
     }
@@ -3518,8 +3292,10 @@ table.cols\:fixed {
         margin: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:0,
+    .sm\)mar\:-0,
+    .sm\)mar\:\+0 {
         margin: 0 !important;
     }
 
@@ -3557,7 +3333,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin top
         * ver: 200120-1
         * fnt: set top margin
@@ -3565,10 +3341,6 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
-    .sm\)mar\:top\+0 {
-        margin-top: 0 !important;
-    }
-
     .sm\)mar\:top\+0\.25 {
         margin-top: 0.25rem !important;
     }
@@ -3601,11 +3373,14 @@ table.cols\:fixed {
         margin-top: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:top-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:top0,
+    .sm\)mar\:top-0,
+    .sm\)mar\:top\+0 {
         margin-top: 0 !important;
     }
 
+    /*: subtract margin :*/
     .sm\)mar\:top-0\.25 {
         margin-top: -0.25rem !important;
     }
@@ -3640,7 +3415,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin right
         * ver: 200222
         * fnt: set right margin
@@ -3649,82 +3424,81 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
-    .sm\)mar\:top\+0 {
-        margin-right: 0 !important;
-    }
-
-    .sm\)mar\:top\+0\.25 {
+    .sm\)mar\:right\+0\.25 {
         margin-right: 0.25rem !important;
     }
 
-    .sm\)mar\:top\+0\.5 {
+    .sm\)mar\:right\+0\.5 {
         margin-right: 0.5rem !important;
     }
 
-    .sm\)mar\:top\+0\.75 {
+    .sm\)mar\:right\+0\.75 {
         margin-right: 0.75rem !important;
     }
 
-    .sm\)mar\:top\+1 {
+    .sm\)mar\:right\+1 {
         margin-right: 1rem !important;
     }
 
-    .sm\)mar\:top\+1\.25 {
+    .sm\)mar\:right\+1\.25 {
         margin-right: 1.25rem !important;
     }
 
-    .sm\)mar\:top\+1\.5 {
+    .sm\)mar\:right\+1\.5 {
         margin-right: 1.5rem !important;
     }
 
-    .sm\)mar\:top\+1\.75 {
+    .sm\)mar\:right\+1\.75 {
         margin-right: 1.75rem !important;
     }
 
-    .sm\)mar\:top\+2 {
+    .sm\)mar\:right\+2 {
         margin-right: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:top-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:right0,
+    .sm\)mar\:right-0,
+    .sm\)mar\:right\+0 {
         margin-right: 0 !important;
     }
 
-    .sm\)mar\:top-0\.25 {
+    /*: subtract margin :*/
+    .sm\)mar\:right-0\.25 {
         margin-right: -0.25rem !important;
     }
 
-    .sm\)mar\:top-0\.5 {
+    .sm\)mar\:right-0\.5 {
         margin-right: -0.5rem !important;
     }
 
-    .sm\)mar\:top-0\.75 {
+    .sm\)mar\:right-0\.75 {
         margin-right: -0.75rem !important;
     }
 
-    .sm\)mar\:top-1 {
+    .sm\)mar\:right-1 {
         margin-right: -1rem !important;
     }
 
-    .sm\)mar\:top-1\.25 {
+    .sm\)mar\:right-1\.25 {
         margin-right: -1.25rem !important;
     }
 
-    .sm\)mar\:top-1\.5 {
+    .sm\)mar\:right-1\.5 {
         margin-right: -1.5rem !important;
     }
 
-    .sm\)mar\:top-1\.75 {
+    .sm\)mar\:right-1\.75 {
         margin-right: -1.75rem !important;
     }
 
-    .sm\)mar\:top-2 {
+    .sm\)mar\:right-2 {
         margin-right: -2rem !important;
     }
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin bottom
         * ver: 200222
         * fnt: set bottom margin
@@ -3733,10 +3507,6 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
-    .sm\)mar\:bottom\+0 {
-        margin-bottom: 0 !important;
-    }
-
     .sm\)mar\:bottom\+0\.25 {
         margin-bottom: 0.25rem !important;
     }
@@ -3769,11 +3539,14 @@ table.cols\:fixed {
         margin-bottom: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:bottom-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:bottom0,
+    .sm\)mar\:bottom-0,
+    .sm\)mar\:bottom\+0 {
         margin-bottom: 0 !important;
     }
 
+    /*: subtract margin :*/
     .sm\)mar\:bottom-0\.25 {
         margin-bottom: -0.25rem !important;
     }
@@ -3808,7 +3581,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin left
         * ver: 200222
         * fnt: set left margin
@@ -3817,10 +3590,6 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
-    .sm\)mar\:left\+0 {
-        margin-left: 0 !important;
-    }
-
     .sm\)mar\:left\+0\.25 {
         margin-left: 0.25rem !important;
     }
@@ -3853,11 +3622,14 @@ table.cols\:fixed {
         margin-left: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:left-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:left0,
+    .sm\)mar\:left-0,
+    .sm\)mar\:left\+0 {
         margin-left: 0 !important;
     }
 
+    /*: subtract margin :*/
     .sm\)mar\:left-0\.25 {
         margin-left: -0.25rem !important;
     }
@@ -3892,7 +3664,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin horzontal
         * ver: 200222
         * fnt: set left / right margins
@@ -3901,11 +3673,6 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
-    .sm\)mar\:hrz\+0 {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
     .sm\)mar\:hrz\+0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
@@ -3946,12 +3713,15 @@ table.cols\:fixed {
         margin-right: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:hrz-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:hrz0,
+    .sm\)mar\:hrz-0,
+    .sm\)mar\:hrz\+0 {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
+    /*: subtract margin :*/
     .sm\)mar\:hrz-0\.25 {
         margin-left: -0.25rem !important;
         margin-right: -0.25rem !important;
@@ -3994,7 +3764,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: mar
+        * property: mar
         * dsc: margin vertical
         * ver: 200222
         * fnt: set top / bottom margins
@@ -4003,11 +3773,6 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
-    .sm\)mar\:vrt\+0 {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
     .sm\)mar\:vrt\+0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
@@ -4048,12 +3813,15 @@ table.cols\:fixed {
         margin-bottom: 2rem !important;
     }
 
-    /*: subtract margin :*/
-    .sm\)mar\:vrt-0 {
+    /*: 0 margin :*/
+    .sm\)mar\:vrt0,
+    .sm\)mar\:vrt-0,
+    .sm\)mar\:vrt\+0 {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
 
+    /*: subtract margin :*/
     .sm\)mar\:vrt-0\.25 {
         margin-top: -0.25rem !important;
         margin-bottom: -0.25rem !important;
@@ -4096,13 +3864,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: padding
         * ver: 200120-1
         * fnt: set all padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:0,
+    .sm\)pad\:-0,
     .sm\)pad\:\+0 {
         padding: 0 !important;
     }
@@ -4141,13 +3911,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: top
         * ver: 200120-1
         * fnt: set top padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:top0,
+    .sm\)pad\:top-0,
     .sm\)pad\:top\+0 {
         padding-top: 0 !important;
     }
@@ -4186,13 +3958,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: right
         * ver: 200120-1
         * fnt: set right padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:right0,
+    .sm\)pad\:right-0,
     .sm\)pad\:right\+0 {
         padding-right: 0 !important;
     }
@@ -4231,13 +4005,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: bottom
         * ver: 200120-1
         * fnt: set bottom padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:bottom0,
+    .sm\)pad\:bottom-0,
     .sm\)pad\:bottom\+0 {
         padding-bottom: 0 !important;
     }
@@ -4276,13 +4052,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: left
         * ver: 200120-1
         * fnt: set left padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:left0,
+    .sm\)pad\:left-0,
     .sm\)pad\:left\+0 {
         padding-left: 0 !important;
     }
@@ -4321,13 +4099,15 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: hrz
         * ver: 200120-1
         * fnt: set left/right (horizontal) padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:hrz0,
+    .sm\)pad\:hrz-0,
     .sm\)pad\:hrz\+0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -4375,392 +4155,394 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: pad
+        * property: pad
         * dsc: vrt
         * ver: 200120-1
         * fnt: set top/bottom (vertical) padding
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
+    .sm\)pad\:vrt0,
+    .sm\)pad\:vrt-0,
     .sm\)pad\:vrt\+0 {
-        padding-top: 0 !important;
         padding-bottom: 0 !important;
+        padding-top: 0 !important;
     }
 
     .sm\)pad\:vrt\+0\.25 {
-        padding-top: 0.25rem !important;
         padding-bottom: 0.25rem !important;
+        padding-top: 0.25rem !important;
     }
 
     .sm\)pad\:vrt\+0\.5 {
-        padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
     .sm\)pad\:vrt\+0\.75 {
-        padding-top: 0.75rem !important;
         padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
     }
 
     .sm\)pad\:vrt\+1 {
-        padding-top: 1rem !important;
         padding-bottom: 1rem !important;
+        padding-top: 1rem !important;
     }
 
     .sm\)pad\:vrt\+1\.25 {
-        padding-top: 1.25rem !important;
         padding-bottom: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
 
     .sm\)pad\:vrt\+1\.5 {
-        padding-top: 1.5rem !important;
         padding-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
     }
 
     .sm\)pad\:vrt\+1\.75 {
-        padding-top: 1.75rem !important;
         padding-bottom: 1.75rem !important;
+        padding-top: 1.75rem !important;
     }
 
     .sm\)pad\:vrt\+2 {
-        padding-top: 2rem !important;
         padding-bottom: 2rem !important;
+        padding-top: 2rem !important;
     }
-
-	/*
-	***
-	    * selector: ht
-	    * dsc: fixed height presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed heights
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-	***
-	*/
-	.sm\)ht\:auto {
-	    height: auto !important;
-	}
-
-	/*: 16px :*/
-	.sm\)ht\:1 {
-	    height: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)ht\:2 {
-	    height: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)ht\:3 {
-	    height: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)ht\:4 {
-	    height: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)ht\:5 {
-	    height: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)ht\:6 {
-	    height: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)ht\:7 {
-	    height: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)ht\:8 {
-	    height: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)ht\:9 {
-	    height: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)ht\:10 {
-	    height: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)ht\:11 {
-	    height: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)ht\:12 {
-	    height: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)ht\:13 {
-	    height: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)ht\:14 {
-	    height: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)ht\:15 {
-	    height: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)ht\:16 {
-	    height: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)ht\:17 {
-	    height: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)ht\:18 {
-	    height: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)ht\:19 {
-	    height: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)ht\:20 {
-	    height: 20rem !important;
-	}
-
-	/*
-	***
-	    * selector: ht
-	    * dsc: minimum fixed height presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed heights
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-	/*: 16px :*/
-	.sm\)ht\:min1 {
-	    min-height: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)ht\:min2 {
-	    min-height: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)ht\:min3 {
-	    min-height: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)ht\:min4 {
-	    min-height: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)ht\:min5 {
-	    min-height: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)ht\:min6 {
-	    min-height: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)ht\:min7 {
-	    min-height: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)ht\:min8 {
-	    min-height: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)ht\:min9 {
-	    min-height: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)ht\:min10 {
-	    min-height: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)ht\:min11 {
-	    min-height: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)ht\:min12 {
-	    min-height: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)ht\:min13 {
-	    min-height: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)ht\:min14 {
-	    min-height: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)ht\:min15 {
-	    min-height: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)ht\:min16 {
-	    min-height: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)ht\:min17 {
-	    min-height: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)ht\:min18 {
-	    min-height: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)ht\:min19 {
-	    min-height: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)ht\:min20 {
-	    min-height: 20rem !important;
-	}
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: maximum fixed width presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-	/*: 16px :*/
-	.sm\)ht\:max1 {
-	    max-height: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)ht\:max2 {
-	    max-height: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)ht\:max3 {
-	    max-height: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)ht\:max4 {
-	    max-height: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)ht\:max5 {
-	    max-height: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)ht\:max6 {
-	    max-height: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)ht\:max7 {
-	    max-height: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)ht\:max8 {
-	    max-height: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)ht\:max9 {
-	    max-height: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)ht\:max10 {
-	    max-height: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)ht\:max11 {
-	    max-height: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)ht\:max12 {
-	    max-height: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)ht\:max13 {
-	    max-height: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)ht\:max14 {
-	    max-height: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)ht\:max15 {
-	    max-height: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)ht\:max16 {
-	    max-height: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)ht\:max17 {
-	    max-height: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)ht\:max18 {
-	    max-height: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)ht\:max19 {
-	    max-height: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)ht\:max20 {
-	    max-height: 20rem !important;
-	}
 
     /*
     ***
-        * selector: ht
+        * property: ht
+        * dsc: fixed height presets
+        * ver: 200222
+        * fnt: set of predefined fixed heights
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    ***
+    */
+    .sm\)ht\:auto {
+        height: auto !important;
+    }
+
+    /*: 16px :*/
+    .sm\)ht\:1 {
+        height: 1rem !important;
+    }
+
+    /*: 32px :*/
+    .sm\)ht\:2 {
+        height: 2rem !important;
+    }
+
+    /*: 48px :*/
+    .sm\)ht\:3 {
+        height: 3rem !important;
+    }
+
+    /*: 64px :*/
+    .sm\)ht\:4 {
+        height: 4rem !important;
+    }
+
+    /*: 80px :*/
+    .sm\)ht\:5 {
+        height: 5rem !important;
+    }
+
+    /*: 96px :*/
+    .sm\)ht\:6 {
+        height: 6rem !important;
+    }
+
+    /*: 112px :*/
+    .sm\)ht\:7 {
+        height: 7rem !important;
+    }
+
+    /*: 128px :*/
+    .sm\)ht\:8 {
+        height: 8rem !important;
+    }
+
+    /*: 144px :*/
+    .sm\)ht\:9 {
+        height: 9rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)ht\:10 {
+        height: 10rem !important;
+    }
+
+    /*: 176px :*/
+    .sm\)ht\:11 {
+        height: 11rem !important;
+    }
+
+    /*: 192px :*/
+    .sm\)ht\:12 {
+        height: 12rem !important;
+    }
+
+    /*: 208px :*/
+    .sm\)ht\:13 {
+        height: 13rem !important;
+    }
+
+    /*: 224px :*/
+    .sm\)ht\:14 {
+        height: 14rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)ht\:15 {
+        height: 15rem !important;
+    }
+
+    /*: 256px :*/
+    .sm\)ht\:16 {
+        height: 16rem !important;
+    }
+
+    /*: 272px :*/
+    .sm\)ht\:17 {
+        height: 17rem !important;
+    }
+
+    /*: 288px :*/
+    .sm\)ht\:18 {
+        height: 18rem !important;
+    }
+
+    /*: 304px :*/
+    .sm\)ht\:19 {
+        height: 19rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)ht\:20 {
+        height: 20rem !important;
+    }
+
+    /*
+    ***
+        * property: ht
+        * dsc: minimum fixed height presets
+        * ver: 200222
+        * fnt: set of predefined fixed heights
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+    ***
+    */
+    /*: 16px :*/
+    .sm\)ht\:min1 {
+        min-height: 1rem !important;
+    }
+
+    /*: 32px :*/
+    .sm\)ht\:min2 {
+        min-height: 2rem !important;
+    }
+
+    /*: 48px :*/
+    .sm\)ht\:min3 {
+        min-height: 3rem !important;
+    }
+
+    /*: 64px :*/
+    .sm\)ht\:min4 {
+        min-height: 4rem !important;
+    }
+
+    /*: 80px :*/
+    .sm\)ht\:min5 {
+        min-height: 5rem !important;
+    }
+
+    /*: 96px :*/
+    .sm\)ht\:min6 {
+        min-height: 6rem !important;
+    }
+
+    /*: 112px :*/
+    .sm\)ht\:min7 {
+        min-height: 7rem !important;
+    }
+
+    /*: 128px :*/
+    .sm\)ht\:min8 {
+        min-height: 8rem !important;
+    }
+
+    /*: 144px :*/
+    .sm\)ht\:min9 {
+        min-height: 9rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)ht\:min10 {
+        min-height: 10rem !important;
+    }
+
+    /*: 176px :*/
+    .sm\)ht\:min11 {
+        min-height: 11rem !important;
+    }
+
+    /*: 192px :*/
+    .sm\)ht\:min12 {
+        min-height: 12rem !important;
+    }
+
+    /*: 208px :*/
+    .sm\)ht\:min13 {
+        min-height: 13rem !important;
+    }
+
+    /*: 224px :*/
+    .sm\)ht\:min14 {
+        min-height: 14rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)ht\:min15 {
+        min-height: 15rem !important;
+    }
+
+    /*: 256px :*/
+    .sm\)ht\:min16 {
+        min-height: 16rem !important;
+    }
+
+    /*: 272px :*/
+    .sm\)ht\:min17 {
+        min-height: 17rem !important;
+    }
+
+    /*: 288px :*/
+    .sm\)ht\:min18 {
+        min-height: 18rem !important;
+    }
+
+    /*: 304px :*/
+    .sm\)ht\:min19 {
+        min-height: 19rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)ht\:min20 {
+        min-height: 20rem !important;
+    }
+
+    /*
+    ***
+        * property: wd
+        * dsc: maximum fixed width presets
+        * ver: 200222
+        * fnt: set of predefined fixed widths
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+    ***
+    */
+    /*: 16px :*/
+    .sm\)ht\:max1 {
+        max-height: 1rem !important;
+    }
+
+    /*: 32px :*/
+    .sm\)ht\:max2 {
+        max-height: 2rem !important;
+    }
+
+    /*: 48px :*/
+    .sm\)ht\:max3 {
+        max-height: 3rem !important;
+    }
+
+    /*: 64px :*/
+    .sm\)ht\:max4 {
+        max-height: 4rem !important;
+    }
+
+    /*: 80px :*/
+    .sm\)ht\:max5 {
+        max-height: 5rem !important;
+    }
+
+    /*: 96px :*/
+    .sm\)ht\:max6 {
+        max-height: 6rem !important;
+    }
+
+    /*: 112px :*/
+    .sm\)ht\:max7 {
+        max-height: 7rem !important;
+    }
+
+    /*: 128px :*/
+    .sm\)ht\:max8 {
+        max-height: 8rem !important;
+    }
+
+    /*: 144px :*/
+    .sm\)ht\:max9 {
+        max-height: 9rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)ht\:max10 {
+        max-height: 10rem !important;
+    }
+
+    /*: 176px :*/
+    .sm\)ht\:max11 {
+        max-height: 11rem !important;
+    }
+
+    /*: 192px :*/
+    .sm\)ht\:max12 {
+        max-height: 12rem !important;
+    }
+
+    /*: 208px :*/
+    .sm\)ht\:max13 {
+        max-height: 13rem !important;
+    }
+
+    /*: 224px :*/
+    .sm\)ht\:max14 {
+        max-height: 14rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)ht\:max15 {
+        max-height: 15rem !important;
+    }
+
+    /*: 256px :*/
+    .sm\)ht\:max16 {
+        max-height: 16rem !important;
+    }
+
+    /*: 272px :*/
+    .sm\)ht\:max17 {
+        max-height: 17rem !important;
+    }
+
+    /*: 288px :*/
+    .sm\)ht\:max18 {
+        max-height: 18rem !important;
+    }
+
+    /*: 304px :*/
+    .sm\)ht\:max19 {
+        max-height: 19rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)ht\:max20 {
+        max-height: 20rem !important;
+    }
+
+    /*
+    ***
+        * property: ht
         * dsc: % height presets
         * ver: 200107-1
         * fnt: set of predefined % heights
@@ -4849,7 +4631,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: ht
+        * property: ht
         * dsc: fraction height presets
         * ver: 200107-1
         * fnt: set height to predefined fraction
@@ -4901,447 +4683,338 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: yht
-        * dsc: fixed height / auto width
-        * ver: 200107-1
-        * fnt: scale width based on preset height %
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+        * property: wd
+        * dsc: fixed width presets
+        * ver: 200222
+        * fnt: set of predefined fixed widths
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
     */
-    .sm\)yht\:10\% {
-        height: 10% !important;
+    .sm\)wd\:auto {
         width: auto !important;
     }
 
-    .sm\)yht\:12\% {
-        height: 12% !important;
-        width: auto !important;
+    /*: 16px :*/
+    .sm\)wd\:1 {
+        width: 1rem !important;
     }
 
-    .sm\)yht\:14\% {
-        height: 14% !important;
-        width: auto !important;
+    /*: 32px :*/
+    .sm\)wd\:2 {
+        width: 2rem !important;
     }
 
-    .sm\)yht\:16\% {
-        height: 16% !important;
-        width: auto !important;
+    /*: 48px :*/
+    .sm\)wd\:3 {
+        width: 3rem !important;
     }
 
-    .sm\)yht\:18\% {
-        height: 18% !important;
-        width: auto !important;
+    /*: 64px :*/
+    .sm\)wd\:4 {
+        width: 4rem !important;
     }
 
-    .sm\)yht\:20\% {
-        height: 20% !important;
-        width: auto !important;
+    /*: 80px :*/
+    .sm\)wd\:5 {
+        width: 5rem !important;
     }
 
-    .sm\)yht\:25\% {
-        height: 25% !important;
-        width: auto !important;
+    /*: 96px :*/
+    .sm\)wd\:6 {
+        width: 6rem !important;
     }
 
-    .sm\)yht\:30\% {
-        height: 30% !important;
-        width: auto !important;
+    /*: 112px :*/
+    .sm\)wd\:7 {
+        width: 7rem !important;
     }
 
-    .sm\)yht\:35\% {
-        height: 35% !important;
-        width: auto !important;
+    /*: 128px :*/
+    .sm\)wd\:8 {
+        width: 8rem !important;
     }
 
-    .sm\)yht\:40\% {
-        height: 40% !important;
-        width: auto !important;
+    /*: 144px :*/
+    .sm\)wd\:9 {
+        width: 9rem !important;
     }
 
-    .sm\)yht\:45\% {
-        height: 45% !important;
-        width: auto !important;
+    /*: 160px :*/
+    .sm\)wd\:10 {
+        width: 10rem !important;
     }
 
-    .sm\)yht\:50\% {
-        height: 50% !important;
-        width: auto !important;
+    /*: 176px :*/
+    .sm\)wd\:11 {
+        width: 11rem !important;
     }
 
-    .sm\)yht\:55\% {
-        height: 55% !important;
-        width: auto !important;
+    /*: 192px :*/
+    .sm\)wd\:12 {
+        width: 12rem !important;
     }
 
-    .sm\)yht\:60\% {
-        height: 60% !important;
-        width: auto !important;
+    /*: 208px :*/
+    .sm\)wd\:13 {
+        width: 13rem !important;
     }
 
-    .sm\)yht\:65\% {
-        height: 65% !important;
-        width: auto !important;
+    /*: 224px :*/
+    .sm\)wd\:14 {
+        width: 14rem !important;
     }
 
-    .sm\)yht\:70\% {
-        height: 70% !important;
-        width: auto !important;
+    /*: 240px :*/
+    .sm\)wd\:15 {
+        width: 15rem !important;
     }
 
-    .sm\)yht\:75\% {
-        height: 75% !important;
-        width: auto !important;
+    /*: 256px :*/
+    .sm\)wd\:16 {
+        width: 16rem !important;
     }
 
-    .sm\)yht\:80\% {
-        height: 80% !important;
-        width: auto !important;
+    /*: 272px :*/
+    .sm\)wd\:17 {
+        width: 17rem !important;
     }
 
-    .sm\)yht\:90\% {
-        height: 90% !important;
-        width: auto !important;
+    /*: 288px :*/
+    .sm\)wd\:18 {
+        width: 18rem !important;
     }
 
-    .sm\)yht\:100\% {
-        height: 100% !important;
-        width: auto !important;
+    /*: 304px :*/
+    .sm\)wd\:19 {
+        width: 19rem !important;
     }
 
-	/*
-	***
-	    * selector: wd
-	    * dsc: fixed width presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-	.sm\)wd\:auto {
-	    width: auto !important;
-	}
-
-	/*: 16px :*/
-	.sm\)wd\:1 {
-	    width: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)wd\:2 {
-	    width: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)wd\:3 {
-	    width: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)wd\:4 {
-	    width: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)wd\:5 {
-	    width: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)wd\:6 {
-	    width: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)wd\:7 {
-	    width: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)wd\:8 {
-	    width: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)wd\:9 {
-	    width: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)wd\:10 {
-	    width: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)wd\:11 {
-	    width: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)wd\:12 {
-	    width: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)wd\:13 {
-	    width: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)wd\:14 {
-	    width: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)wd\:15 {
-	    width: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)wd\:16 {
-	    width: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)wd\:17 {
-	    width: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)wd\:18 {
-	    width: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)wd\:19 {
-	    width: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)wd\:20 {
-	    width: 20rem !important;
-	}
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: minimum fixed width presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-	/*: 16px :*/
-	.sm\)wd\:min1 {
-	    min-width: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)wd\:min2 {
-	    min-width: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)wd\:min3 {
-	    min-width: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)wd\:min4 {
-	    min-width: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)wd\:min5 {
-	    min-width: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)wd\:min6 {
-	    min-width: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)wd\:min7 {
-	    min-width: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)wd\:min8 {
-	    min-width: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)wd\:min9 {
-	    min-width: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)wd\:min10 {
-	    min-width: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)wd\:min11 {
-	    min-width: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)wd\:min12 {
-	    min-width: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)wd\:min13 {
-	    min-width: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)wd\:min14 {
-	    min-width: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)wd\:min15 {
-	    min-width: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)wd\:min16 {
-	    min-width: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)wd\:min17 {
-	    min-width: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)wd\:min18 {
-	    min-width: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)wd\:min19 {
-	    min-width: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)wd\:min20 {
-	    min-width: 20rem !important;
-	}
-
-	/*
-	***
-	    * selector: wd
-	    * dsc: maximum fixed width presets
-	    * ver: 200222
-	    * fnt: set of predefined fixed widths
-	    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
-	***
-	*/
-	/*: 16px :*/
-	.sm\)wd\:max1 {
-	    max-width: 1rem !important;
-	}
-
-	/*: 32px :*/
-	.sm\)wd\:max2 {
-	    max-width: 2rem !important;
-	}
-
-	/*: 48px :*/
-	.sm\)wd\:max3 {
-	    max-width: 3rem !important;
-	}
-
-	/*: 64px :*/
-	.sm\)wd\:max4 {
-	    max-width: 4rem !important;
-	}
-
-	/*: 80px :*/
-	.sm\)wd\:max5 {
-	    max-width: 5rem !important;
-	}
-
-	/*: 96px :*/
-	.sm\)wd\:max6 {
-	    max-width: 6rem !important;
-	}
-
-	/*: 112px :*/
-	.sm\)wd\:max7 {
-	    max-width: 7rem !important;
-	}
-
-	/*: 128px :*/
-	.sm\)wd\:max8 {
-	    max-width: 8rem !important;
-	}
-
-	/*: 144px :*/
-	.sm\)wd\:max9 {
-	    max-width: 9rem !important;
-	}
-
-	/*: 160px :*/
-	.sm\)wd\:max10 {
-	    max-width: 10rem !important;
-	}
-
-	/*: 176px :*/
-	.sm\)wd\:max11 {
-	    max-width: 11rem !important;
-	}
-
-	/*: 192px :*/
-	.sm\)wd\:max12 {
-	    max-width: 12rem !important;
-	}
-
-	/*: 208px :*/
-	.sm\)wd\:max13 {
-	    max-width: 13rem !important;
-	}
-
-	/*: 224px :*/
-	.sm\)wd\:max14 {
-	    max-width: 14rem !important;
-	}
-
-	/*: 240px :*/
-	.sm\)wd\:max15 {
-	    max-width: 15rem !important;
-	}
-
-	/*: 256px :*/
-	.sm\)wd\:max16 {
-	    max-width: 16rem !important;
-	}
-
-	/*: 272px :*/
-	.sm\)wd\:max17 {
-	    max-width: 17rem !important;
-	}
-
-	/*: 288px :*/
-	.sm\)wd\:max18 {
-	    max-width: 18rem !important;
-	}
-
-	/*: 304px :*/
-	.sm\)wd\:max19 {
-	    max-width: 19rem !important;
-	}
-
-	/*: 320px :*/
-	.sm\)wd\:max20 {
-	    max-width: 20rem !important;
-	}
+    /*: 320px :*/
+    .sm\)wd\:20 {
+        width: 20rem !important;
+    }
 
     /*
     ***
-        * selector: wd
+        * property: wd
+        * dsc: minimum fixed width presets
+        * ver: 200222
+        * fnt: set of predefined fixed widths
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+    ***
+    */
+    /*: 16px :*/
+    .sm\)wd\:min1 {
+        min-width: 1rem !important;
+    }
+
+    /*: 32px :*/
+    .sm\)wd\:min2 {
+        min-width: 2rem !important;
+    }
+
+    /*: 48px :*/
+    .sm\)wd\:min3 {
+        min-width: 3rem !important;
+    }
+
+    /*: 64px :*/
+    .sm\)wd\:min4 {
+        min-width: 4rem !important;
+    }
+
+    /*: 80px :*/
+    .sm\)wd\:min5 {
+        min-width: 5rem !important;
+    }
+
+    /*: 96px :*/
+    .sm\)wd\:min6 {
+        min-width: 6rem !important;
+    }
+
+    /*: 112px :*/
+    .sm\)wd\:min7 {
+        min-width: 7rem !important;
+    }
+
+    /*: 128px :*/
+    .sm\)wd\:min8 {
+        min-width: 8rem !important;
+    }
+
+    /*: 144px :*/
+    .sm\)wd\:min9 {
+        min-width: 9rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)wd\:min10 {
+        min-width: 10rem !important;
+    }
+
+    /*: 176px :*/
+    .sm\)wd\:min11 {
+        min-width: 11rem !important;
+    }
+
+    /*: 192px :*/
+    .sm\)wd\:min12 {
+        min-width: 12rem !important;
+    }
+
+    /*: 208px :*/
+    .sm\)wd\:min13 {
+        min-width: 13rem !important;
+    }
+
+    /*: 224px :*/
+    .sm\)wd\:min14 {
+        min-width: 14rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)wd\:min15 {
+        min-width: 15rem !important;
+    }
+
+    /*: 256px :*/
+    .sm\)wd\:min16 {
+        min-width: 16rem !important;
+    }
+
+    /*: 272px :*/
+    .sm\)wd\:min17 {
+        min-width: 17rem !important;
+    }
+
+    /*: 288px :*/
+    .sm\)wd\:min18 {
+        min-width: 18rem !important;
+    }
+
+    /*: 304px :*/
+    .sm\)wd\:min19 {
+        min-width: 19rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)wd\:min20 {
+        min-width: 20rem !important;
+    }
+
+    /*
+    ***
+        * property: wd
+        * dsc: maximum fixed width presets
+        * ver: 200222
+        * fnt: set of predefined fixed widths
+        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
+    ***
+    */
+    /*: 16px :*/
+    .sm\)wd\:max1 {
+        max-width: 1rem !important;
+    }
+
+    /*: 32px :*/
+    .sm\)wd\:max2 {
+        max-width: 2rem !important;
+    }
+
+    /*: 48px :*/
+    .sm\)wd\:max3 {
+        max-width: 3rem !important;
+    }
+
+    /*: 64px :*/
+    .sm\)wd\:max4 {
+        max-width: 4rem !important;
+    }
+
+    /*: 80px :*/
+    .sm\)wd\:max5 {
+        max-width: 5rem !important;
+    }
+
+    /*: 96px :*/
+    .sm\)wd\:max6 {
+        max-width: 6rem !important;
+    }
+
+    /*: 112px :*/
+    .sm\)wd\:max7 {
+        max-width: 7rem !important;
+    }
+
+    /*: 128px :*/
+    .sm\)wd\:max8 {
+        max-width: 8rem !important;
+    }
+
+    /*: 144px :*/
+    .sm\)wd\:max9 {
+        max-width: 9rem !important;
+    }
+
+    /*: 160px :*/
+    .sm\)wd\:max10 {
+        max-width: 10rem !important;
+    }
+
+    /*: 176px :*/
+    .sm\)wd\:max11 {
+        max-width: 11rem !important;
+    }
+
+    /*: 192px :*/
+    .sm\)wd\:max12 {
+        max-width: 12rem !important;
+    }
+
+    /*: 208px :*/
+    .sm\)wd\:max13 {
+        max-width: 13rem !important;
+    }
+
+    /*: 224px :*/
+    .sm\)wd\:max14 {
+        max-width: 14rem !important;
+    }
+
+    /*: 240px :*/
+    .sm\)wd\:max15 {
+        max-width: 15rem !important;
+    }
+
+    /*: 256px :*/
+    .sm\)wd\:max16 {
+        max-width: 16rem !important;
+    }
+
+    /*: 272px :*/
+    .sm\)wd\:max17 {
+        max-width: 17rem !important;
+    }
+
+    /*: 288px :*/
+    .sm\)wd\:max18 {
+        max-width: 18rem !important;
+    }
+
+    /*: 304px :*/
+    .sm\)wd\:max19 {
+        max-width: 19rem !important;
+    }
+
+    /*: 320px :*/
+    .sm\)wd\:max20 {
+        max-width: 20rem !important;
+    }
+
+    /*
+    ***
+        * property: wd
         * dsc: % width presets
         * ver: 200107-1
         * fnt: set of predefined % widths
@@ -5430,7 +5103,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: wd
+        * property: wd
         * dsc: fraction width presets
         * ver: 200107-1
         * fnt: set width to predefined fraction
@@ -5482,116 +5155,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: xwd
-        * dsc: auto height / fixed width
-        * ver: 200107-1
-        * fnt: scale height based on preset width %
-        * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
-    ***
-    */
-    .sm\)xwd\:10\% {
-        height: auto !important;
-        width: 10% !important;
-    }
-
-    .sm\)xwd\:12\% {
-        height: auto !important;
-        width: 12% !important;
-    }
-
-    .sm\)xwd\:14\% {
-        height: auto !important;
-        width: 14% !important;
-    }
-
-    .sm\)xwd\:16\% {
-        height: auto !important;
-        width: 16% !important;
-    }
-
-    .sm\)xwd\:18\% {
-        height: auto !important;
-        width: 18% !important;
-    }
-
-    .sm\)xwd\:20\% {
-        height: auto !important;
-        width: 20% !important;
-    }
-
-    .sm\)xwd\:25\% {
-        height: auto !important;
-        width: 25% !important;
-    }
-
-    .sm\)xwd\:30\% {
-        height: auto !important;
-        width: 30% !important;
-    }
-
-    .sm\)xwd\:35\% {
-        height: auto !important;
-        width: 35% !important;
-    }
-
-    .sm\)xwd\:40\% {
-        height: auto !important;
-        width: 40% !important;
-    }
-
-    .sm\)xwd\:45\% {
-        height: auto !important;
-        width: 45% !important;
-    }
-
-    .sm\)xwd\:50\% {
-        height: auto !important;
-        width: 50% !important;
-    }
-
-    .sm\)xwd\:55\% {
-        height: auto !important;
-        width: 55% !important;
-    }
-
-    .sm\)xwd\:60\% {
-        height: auto !important;
-        width: 60% !important;
-    }
-
-    .sm\)xwd\:65\% {
-        height: auto !important;
-        width: 65% !important;
-    }
-
-    .sm\)xwd\:70\% {
-        height: auto !important;
-        width: 70% !important;
-    }
-
-    .sm\)xwd\:75\% {
-        height: auto !important;
-        width: 75% !important;
-    }
-
-    .sm\)xwd\:80\% {
-        height: auto !important;
-        width: 80% !important;
-    }
-
-    .sm\)xwd\:90\% {
-        height: auto !important;
-        width: 90% !important;
-    }
-
-    .sm\)xwd\:100\% {
-        height: auto !important;
-        width: 100% !important;
-    }
-
-    /*
-    ***
-        * selector: aln
+        * property: aln
         * dsc: alignment
         * ver: 200120-1
         * fnt: set alignment
@@ -5661,7 +5225,7 @@ table.cols\:fixed {
 
     /*
     ***
-        * selector: bdr
+        * property: bdr
         * dsc: border
         * ver: 200120-1
         * fnt: set border style (not color)
@@ -6079,36 +5643,27 @@ table.cols\:fixed {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
     }
 
     .sm\)fxd\:2 {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
     }
 
     .sm\)fxd\:3 {
         -webkit-order: 0;
         -ms-flex-order: 0;
         order: 0;
-        -webkit-flex: 2 1 auto;
-        -ms-flex: 2 1 auto;
-        flex: 2 1 auto;
-    }
-
-    .sm\)fxd\:4 {
-        -webkit-order: 0;
-        -ms-flex-order: 0;
-        order: 0;
-        -webkit-flex: 1 2 auto;
-        -ms-flex: 1 2 auto;
-        flex: 1 2  auto;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
     }
 
     /*: item (align self) :*/
