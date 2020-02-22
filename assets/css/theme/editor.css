@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200208
+ * Build:           200222
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -22,21 +22,13 @@
 ***
     * element: <body>
     * dsc: body
-    * ver: 190926-1
-    * fnt: apply body formatting
-    * ref:
+    * ver: 200222
+    * fnt: html body (see common.css, web.css for other property values)
+    * ref: https://developer.mozilla.org/en-US/docs/Web/API/Body
 ***
 */
-body,
 .mce-content-body {
-    background-color: var(--hue-wht);
-    color: var(--content-fg-color);
-    font-family: var(--dft-font-family);
-    font-size: var(--dft-font-size);
-    font-weight: var(--dft-font-weight);
-    line-height: var(--dft-line-height);
-    margin: 9px 10px;
-    max-width: 100%;
+	margin: 1rem;
     -webkit-font-smoothing: antialiased !important;
 }
 
@@ -47,7 +39,7 @@ body.webkit b {
 
 /*
 ***
-    * selector: mce
+    property: mce
     * dsc: editor specific formatting
     * ver: 190926-1
     * fnt: apply mce formatting
@@ -74,13 +66,27 @@ body.webkit b {
     display: inline-block;
 }
 
-.mce\[dsp\:tint\] {
-    background-color: var(--hue-tint);
+/*
+***
+    * property: vs
+    * dsc: vertical space
+    * ver: 200222
+    * fnt: set line height
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+***
+*/
+.vs\:1\/2,
+.vs\:3\/4,
+.vs\:1-1\/2,
+.vs\:2,
+.vs\:2-1\/2,
+.vs\:3 {
+    background-color: var(--hue-bas-100);
 }
 
 /*
 *** VALIDATE NEED FOR THIS!
-    * selector: wp-caption
+    property: wp-caption
     * dsc: format caption
     * ver: 190926-1
     * fnt: stretch capiton to fill available space
@@ -93,109 +99,7 @@ body.webkit b {
 }
 
 /*
-***
-    * selector: cols
-    * dsc: multi-column
-    * ver: 190926-1
-    * fnt: apply multi-column formatting
-    * ref:
-***
-*/
-.cols\:fixed-2,
-.cols\:fixed-3,
-.cols\:fixed-4 {
-    border-collapse: separate;
-    border-spacing: 0.25rem 0;
-    border-style: none;
-    width: 100%;
-}
-
-.cols\:fixed-2 td {
-    background-color: var(--hue-tint);
-    border-style: none !important;
-    vertical-align: top;
-    padding: 0 0.25rem;
-    width: 50%;
-}
-
-.cols\:fixed-3 td {
-    background-color: var(--hue-tint);
-    border-style: none !important;
-    vertical-align: top;
-    padding: 0 0.25rem;
-    width: 33.3333%;
-}
-
-.cols\:fixed-4 td {
-    background-color: var(--hue-tint);
-    border-style: none !important;
-    vertical-align: top;
-    padding: 0 0.25rem;
-    width: 25%;
-}
-
-.cols\:auto-2,
-.cols\:auto-3,
-.cols\:auto-4 {
-    border-collapse: separate;
-    border-spacing: 0.25rem 0;
-    border-style: none;
-    width: 100%;
-}
-
-.cols\:auto-2 td,
-.cols\:auto-3 td,
-.cols\:auto-4 td {
-    background-color: var(--hue-tint);
-    border-style: none;
-    padding: 0.25rem;
-    width: 100%;
-}
-
-/*: embedded table :*/
-
-.cols\:auto-2 table,
-.cols\:auto-3 table,
-.cols\:auto-4 table,
-.cols\:fixed-2 table,
-.cols\:fixed-3 table,
-.cols\:fixed-4 table {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 1rem 0;
-    table-layout: auto;
-}
-
-.cols\:auto-2 table thead th:not(:last-child),
-.cols\:auto-3 table thead th:not(:last-child),
-.cols\:auto-4 table thead th:not(:last-child),
-.cols\:fixed-2 table thead th:not(:last-child),
-.cols\:fixed-3 table thead th:not(:last-child),
-.cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
-}
-
-.cols\:auto-2 table tr:not(:last-child) td,
-.cols\:auto-3 table tr:not(:last-child) td,
-.cols\:auto-4 table tr:not(:last-child) td,
-.cols\:fixed-2 table tr:not(:last-child) td,
-.cols\:fixed-3 table tr:not(:last-child) td,
-.cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--hue-bas-300) !important;
-}
-
-.cols\:auto-2 table td:not(:last-child),
-.cols\:auto-3 table td:not(:last-child),
-.cols\:auto-4 table td:not(:last-child),
-.cols\:fixed-2 table td:not(:last-child),
-.cols\:fixed-3 table td:not(:last-child),
-.cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
-}
-
-/*
  * EOF:     theme/editor.css
- * Build:   200208
+ * Build:   200222
  *
  */
