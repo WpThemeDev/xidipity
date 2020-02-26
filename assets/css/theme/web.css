@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200222
+ * Build:           200226
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -22,7 +22,7 @@
 ***
     * element: <body>
     * dsc: body
-    * ver: 200222
+    * ver: 200226
     * fnt: html body (see common.css for other property values)
     * ref: https://developer.mozilla.org/en-US/docs/Web/API/Body
 ***
@@ -105,7 +105,7 @@ body {
 /*
 ***
     # dsp
-    # 200222
+    # 200226
     # web specific display options
     # https://developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -458,7 +458,7 @@ ol.comment-list li::before {
 ***
     property: cols
     * dsc: multi-column
-    * ver: 200222
+    * ver: 200226
     * fnt: apply multi-column formatting
     * ref:
 ***
@@ -913,6 +913,27 @@ a.page-numbers:focus {
     background-color: var(--hue-sec-bright);
     border-radius: .25rem;
     color: var(--hue-blk);
+}
+
+/*
+***
+    * element: codemirror
+    * dsc: set attributes
+    * ver: 200226
+    * fnt: set height, etc...
+    * ref: https://codemirror.net/
+***
+*/
+
+.CodeMirror-activeline-background {
+    background-color: #FFF59D !important;
+}
+
+.CodeMirror {
+    border: 1px solid var(--hue-bas-300) !important;
+    height: 65vh !important; 
+	font-family: var(--font-mono) !important;
+    overflow: auto;
 }
 
 /*  # author flexbox
@@ -2089,6 +2110,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200222
+ * Build:   200226
  *
  */
