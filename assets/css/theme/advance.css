@@ -3,8 +3,8 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200222
- * Revision:        2
+ * Build:           200229
+ * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -378,7 +378,7 @@ table.bdr\:full tr td {
 ***
     * property: cols
     * dsc: table layout options
-    * ver: 200222
+    * ver: 200229
     * fnt: control table column attributes
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -395,7 +395,7 @@ table.cols\:fixed {
 ***
     * property: bdr
     * dsc: cell space
-    * ver: 200222
+    * ver: 200229
     * fnt: set table border cell spacing attributes
     * Spec: https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -800,7 +800,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: fixed height presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed heights
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -913,7 +913,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: minimum fixed height presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed heights
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -1022,7 +1022,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: maximum fixed width presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -1272,17 +1272,17 @@ table.cols\:fixed {
 ***
     * property: led
     * dsc: leading
-    * ver: 200222
+    * ver: 200229
     * fnt: set line height
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
 */
-.2x-narrow {
-    line-height: calc(var(--dft-line-height) - .25) !important;
+.led\:x-narrow {
+    line-height: calc(var(--dft-line-height) * 80%) !important;
 }
 
 .led\:narrow {
-    line-height: calc(var(--dft-line-height) - .125) !important;
+    line-height: calc(var(--dft-line-height) * 90%) !important;
 }
 
 .led\:normal,
@@ -1291,23 +1291,23 @@ table.cols\:fixed {
 }
 
 .led\:wide {
-    line-height: calc(var(--dft-line-height) + .125) !important;
+    line-height: calc(var(--dft-line-height) * 120%) !important;
 }
 
 .led\:x-wide {
-    line-height: calc(var(--dft-line-height) + .25) !important;
+    line-height: calc(var(--dft-line-height) * 140%) !important;
 }
 
 .led\:2x-wide {
-    line-height: calc(var(--dft-line-height) + .375) !important;
+    line-height: calc(var(--dft-line-height) * 160%) !important;
 }
 
 .led\:3x-wide {
-    line-height: calc(var(--dft-line-height) + .5) !important;
+    line-height: calc(var(--dft-line-height) * 180%) !important;
 }
 
 .led\:4x-wide {
-    line-height: calc(var(--dft-line-height) + .625) !important;
+    line-height: calc(var(--dft-line-height) * 200%) !important;
 }
 
 /*
@@ -1396,7 +1396,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin top
-    * ver: 200222
+    * ver: 200229
     * fnt: set top margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1478,7 +1478,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin right
-    * ver: 200222
+    * ver: 200229
     * fnt: set right margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1561,7 +1561,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin bottom
-    * ver: 200222
+    * ver: 200229
     * fnt: set bottom margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1644,7 +1644,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin left
-    * ver: 200222
+    * ver: 200229
     * fnt: set left margin
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1727,7 +1727,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin horzontal
-    * ver: 200222
+    * ver: 200229
     * fnt: set left / right margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1827,7 +1827,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin vertical
-    * ver: 200222
+    * ver: 200229
     * fnt: set top / bottom margins
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1927,7 +1927,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: padding
-    * ver: 200222
+    * ver: 200229
     * fnt: set all padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2162,7 +2162,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: hrz
-    * ver: 200222
+    * ver: 200229
     * fnt: set left/right (horizontal) padding
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2274,7 +2274,7 @@ table.cols\:fixed {
 ***
     * property: tdc
     * dsc: text decoration
-    * ver: 200222
+    * ver: 200229
     * fnt: set predefined text decoration
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
 ***
@@ -2344,7 +2344,7 @@ table.cols\:fixed {
 ***
     * property: trk
     * dsc: tracking
-    * ver: 200222
+    * ver: 200229
     * fnt: adjust letter spacing
     * ref: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 ***
@@ -2370,7 +2370,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: fixed width presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2483,7 +2483,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: minimum fixed width presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2592,7 +2592,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: maximum fixed width presets
-    * ver: 200222
+    * ver: 200229
     * fnt: set of predefined fixed widths
     * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2839,7 +2839,7 @@ table.cols\:fixed {
 }
 
 /*  # DIY flexbox components
-    # 200222
+    # 200229
     # classes to build flexbox
     # https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
         flexbox
@@ -3254,7 +3254,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin
-        * ver: 200222
+        * ver: 200229
         * fnt: set all margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3417,7 +3417,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin right
-        * ver: 200222
+        * ver: 200229
         * fnt: set right margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3500,7 +3500,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin bottom
-        * ver: 200222
+        * ver: 200229
         * fnt: set bottom margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3583,7 +3583,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin left
-        * ver: 200222
+        * ver: 200229
         * fnt: set left margin
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3666,7 +3666,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin horzontal
-        * ver: 200222
+        * ver: 200229
         * fnt: set left / right margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -3766,7 +3766,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin vertical
-        * ver: 200222
+        * ver: 200229
         * fnt: set top / bottom margins
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4213,7 +4213,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fixed height presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed heights
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -4326,7 +4326,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: minimum fixed height presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed heights
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -4435,7 +4435,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed widths
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -4685,7 +4685,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fixed width presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed widths
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -4798,7 +4798,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: minimum fixed width presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed widths
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -4907,7 +4907,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200222
+        * ver: 200229
         * fnt: set of predefined fixed widths
         * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -5706,6 +5706,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200222
+ * Build:   200229
  *
  */
