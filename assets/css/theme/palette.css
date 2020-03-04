@@ -3,7 +3,7 @@
  *
  * File Name:       theme/palette.css
  * Function:        CSS palette elements
- * Build:           200222
+ * Build:           200304
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -868,11 +868,11 @@ gradient backgrounds
 }
 
 .grd\:tint-dark {
-    background: #9e9e9e;
-    background: -moz-linear-gradient(top, #bdbdbd 0%, #9e9e9e 100%);
-    background: -webkit-linear-gradient(top, #bdbdbd 0%, #9e9e9e 100%);
-    background: linear-gradient(to bottom, #bdbdbd 0%, #9e9e9e 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdbdbd', endColorstr='#9e9e9e', GradientType=0);
+    background: #616161;
+    background: -moz-linear-gradient(top, #757575 0%, #616161 100%);
+    background: -webkit-linear-gradient(top, #757575 0%, #616161 100%);
+    background: linear-gradient(to bottom, #757575 0%, #616161 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#757575', endColorstr='#616161', GradientType=0);
     color: var(--hue-wht);
 }
 
@@ -1366,6 +1366,47 @@ button.fg\:wcag-blue-grey\!focus:focus {
 .bg\:wcag-blue-grey {
     background-color: var(--wcag-blue-grey) !important;
     color: var(--hue-wht);
+}
+
+/*
+***
+stripe even table rows
+***
+*/
+tbody.tr\:stripe-pri-dark tr:nth-child(even) {
+    background-color: var(--hue-pri-tint-dark) !important;    
+}
+
+tbody.tr\:stripe-sec-dark tr:nth-child(even) {
+    background-color: var(--hue-sec-tint-dark) !important;    
+}
+
+tbody.tr\:stripe-tint-dark tr:nth-child(even) {
+    background-color: var(--hue-bas-200) !important;    
+}
+
+tbody.tr\:stripe-pri tr:nth-child(even) {
+    background-color: var(--hue-pri-tint) !important;    
+}
+
+tbody.tr\:stripe-sec tr:nth-child(even) {
+    background-color: var(--hue-sec-tint) !important;    
+}
+
+tbody.tr\:stripe-tint tr:nth-child(even) {
+    background-color: var(--hue-bas-100) !important;    
+}
+
+tbody.tr\:stripe-pri-bright tr:nth-child(even) {
+    background-color: var(--hue-pri-tint-bright) !important;    
+}
+
+tbody.tr\:stripe-sec-bright tr:nth-child(even) {
+    background-color: var(--hue-sec-tint-bright) !important;    
+}
+
+tbody.tr\:stripe-tint-bright tr:nth-child(even) {
+    background-color: var(--hue-bas-050) !important;    
 }
 
 /*
@@ -3026,6 +3067,6 @@ button.fg\:wcag-blue-grey\!focus:focus {
 
 /*
  * EOF:     theme/palette.css
- * Build:   200222
+ * Build:   200304
  *
  */
