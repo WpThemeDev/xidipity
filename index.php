@@ -4,7 +4,7 @@
  *
  * File Name:       index.php
  * Function:        display blog excerpts
- * Build:           200206
+ * Build:           200304
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -86,7 +86,7 @@ if (have_posts())
         /*
             featured image
         */
-        $wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'xwd:100%'));
+        $wp_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'ht:auto wd:100%'));
         if ($wp_img)
         {
             /*: post thumbnail :*/
@@ -107,14 +107,14 @@ if (have_posts())
             {
                 $v_meta_list = dsp_cat(xidipity_first_category());
             }
-			echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+            echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
         }
         if ('post' == get_post_type())
         {
             $v_meta_list  = '';
             $v_meta_list .=  xidipity_posted_on() . '|';
             $v_meta_list .=  xidipity_posted_by() . '|';
-            echo '<div class="fnt:size-smaller" style="margin-top:-16px;margin-left:-8px;">' . "\n";
+            echo '<div class="fnt:size-smaller mar:top-0.5 mar:left-0.5">' . "\n";
             echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
             echo '</div>' . "\n";
         }
@@ -171,7 +171,7 @@ get_footer();
 
 /*
  * EOF:     index.php
- * Build:   200206
+ * Build:   200304
  *
  */
 ?>
