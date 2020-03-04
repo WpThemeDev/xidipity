@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200229
+ * Build:           200304
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -110,6 +110,10 @@
 
 .aln\:text-right {
     text-align: right !important;
+}
+
+.aln\:text-justify {
+    text-align: justify !important;
 }
 
 /*
@@ -5706,6 +5710,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200229
+ * Build:   200304
  *
  */
