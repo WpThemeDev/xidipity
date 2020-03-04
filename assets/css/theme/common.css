@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200222
+ * Build:           200304
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -31,7 +31,7 @@ body,
 .mce-content-body {
     background-color: var(--dft-bg-color);
     color: var(--dft-fg-color);
-	counter-reset: section;
+    counter-reset: section;
     font-family: var(--dft-font-family);
     font-size: var(--dft-font-size);
     font-weight: var(--dft-font-weight);
@@ -236,7 +236,7 @@ a:hover {
 ***
 */
 .md-li i {
-	font-size: 95%;
+    font-size: 95%;
 }
 
 /*
@@ -274,7 +274,7 @@ a:hover {
 */
 ul {
     list-style-type: disc;
-	line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height); 
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -316,6 +316,26 @@ ul.mixed ul ul ul ul {
 
 /*
 ***
+    * element: <ul>
+    * dsc: paragraph list
+    * ver: 200304
+    * fnt: unordered list to be used as a paragraph indent
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+***
+*/
+ul.par,
+ul.par ul,
+ul.par ul ul,
+ul.par ul ul ul,
+ul.par ul ul ul ul,
+ul.par ul ul ul ul ul {
+    list-style-type: none;
+    margin-left: 2.5rem;
+    padding: 0;
+}
+
+/*
+***
     * element: <ol>
     * dsc: ordered list
     * ver: 190910-1
@@ -325,7 +345,7 @@ ul.mixed ul ul ul ul {
 */
 ol {
     list-style-type: decimal;
-	line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height); 
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -502,18 +522,18 @@ ol.nested ol ol ol ol ol {
 ***
 */
 dt {
-	font-size: larger;
+    font-size: larger;
     font-weight: bolder;
 }
 
 dd {
-	line-height: var(--dft-line-height); 	
+    line-height: var(--dft-line-height);    
     margin-left: 0;
 }
 
 @media (min-width:640px) {
     dd {
-	    margin-left: 1rem;
+        margin-left: 1rem;
     }
 }
 
@@ -554,7 +574,7 @@ dd {
 ***
     * element: <table>
     * dsc: html table
-    * ver: 190910-1
+    * ver: 200304
     * fnt: default tic-tac-toe table
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
@@ -562,7 +582,6 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    margin: 1rem 0;
     table-layout: auto;
 }
 
@@ -577,7 +596,11 @@ table th {
 }
 
 table thead th {
-    background: linear-gradient(var(--hue-bas-050), var(--hue-bas-100));
+    background: #e0e0e0;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
+    background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
     color: var(--hue-blk);
     font-weight: bolder;
 }
@@ -596,30 +619,29 @@ table td:not(:last-child) {
 
 /*
 ***
-    * property: highlight
-    * dsc: tint selected row(s)
-    * ver: 190910-1
-    * fnt: table with selected rows tinted
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+    * element: <tbody>
+    * dsc: html table tbody
+    * ver: 200304
+    * fnt: display all borders (spreadsheet style)
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
 */
-table.highlight tr:active,
-table.highlight tr:focus,
-table.highlight tr:hover {
-    background-color: var(--hue-bas-200);
+tbody.bdr\:xls td {
+    border: 1px solid var(--hue-bas-400) !important;
 }
 
 /*
 ***
-    * property: pinstripe
-    * dsc: tint row(s)
-    * ver: 190910-1
-    * fnt: table with alternate rows tinted
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+    * element: <tbody>
+    * dsc: html table tbody
+    * ver: 200304
+    * fnt: hide all borders
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
 */
-table.pinstripe tr:nth-child(even) {
-    background-color: var(--hue-bas-200);
+tbody.bdr\:none td,
+tbody.bdr\:none tr {
+    border-color: transparent !important;
 }
 
 /*
@@ -833,7 +855,7 @@ h6.cnt\!alt::before {
 ***
 */
 p {
-	line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height); 
 }
 
 /*
@@ -1568,6 +1590,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200222
+ * Build:   200304
  *
  */
