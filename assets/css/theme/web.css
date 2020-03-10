@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200226
+ * Build:           200308
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -35,8 +35,8 @@ body {
 /* needed for menu checkbox hack */
 @-webkit-keyframes bugfix {
     from {
-		padding: 0;
-	} to {
+    padding: 0;
+  } to {
         padding: 0;
     }
 }
@@ -932,7 +932,7 @@ a.page-numbers:focus {
 .CodeMirror {
     border: 1px solid var(--hue-bas-300) !important;
     height: 65vh !important; 
-	font-family: var(--font-mono) !important;
+  font-family: var(--font-mono) !important;
     overflow: auto;
 }
 
@@ -1357,6 +1357,7 @@ a.page-numbers:focus {
 }
 
 /*: default cn-ct-itm image setting :*/
+/*: deprecate
 .cn-ct-img {
     height: auto;
     width: 100%;
@@ -1366,6 +1367,7 @@ a.page-numbers:focus {
     height: auto;
     width: 100%;
 }
+:*/
 
 /*  # core flexbox classes
             # 90915.1a
@@ -1986,10 +1988,11 @@ figure {
     text-align: center;
 }
 
-/*: this is a hack :*/
+/*: this is a hack
 .fx\:area-itm-center ul {
     margin-left: -0.5rem;
 }
+:*/
 
 .fx\:area-itm-left {
     padding-left: 0.5rem;
@@ -2110,6 +2113,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200226
+ * Build:   200308
  *
  */
