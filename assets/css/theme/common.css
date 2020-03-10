@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200304
+ * Build:           200308
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -226,17 +226,137 @@ a:hover {
     -webkit-tap-highlight-color: transparent;
 }
 
+a:focus {
+    outline: none;    
+}
+
 /*
 ***
-    * element: <ol> / <ul>
-    * dsc: material design icon iframe
-    * ver: 200222
-    * fnt: adjust size of icon
-    * ref:
+    * property: ul
+    * dsc: icon list box
+    * ver: 200308
+    * fnt: replace ul bullet with icon
+    * ref: 
 ***
 */
-.md-li i {
-    font-size: 95%;
+.ul\:icon {
+    list-style-type: none;
+}
+
+/*: fx:r fxa:1 fxb:3 fxc:1 :*/
+.ul\:icon > li {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-left: -1.625rem;
+}
+
+.ul\:icon-itm:nth-child(1) {
+    text-align: center;
+    max-width: 1.625rem;
+    min-width: 1.625rem;
+}
+
+.ul\:icon-itm:nth-child(2) {
+    font-size: inherit;
+}
+
+/*: Google icon adjustments :*/
+.ul\:icon-itm > .material-icons {
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+/*
+***
+    * element: ul
+    * dsc: img list box
+    * ver: 200308
+    * fnt: setup (responsive) ul for image bullet
+    * ref: 
+***
+*/
+.ul\:img {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/*: fx:c fxa:1 fxb:3 fxc:1 :*/
+.ul\:img > li {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.ul\:img-itm:nth-child(1) {
+    width: 100%;
+}
+
+.ul\:img-itm:nth-child(2) {
+    padding-top: 0.5rem;
+}
+
+/*: table media :*/
+@media (min-width: 640px) {
+    .ul\:img {
+        margin-left: -0.25rem;
+    }
+}
+
+/*: standard media :*/
+@media (min-width: 1024px) {
+    .ul\:img {
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+
+    /*: fx:r fxa:1 fxb:3 fxc:1 :*/
+    .ul\:img > li {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .ul\:img-itm:nth-child(1) {
+        min-width: 15rem;
+        max-width: 15rem;
+    }
+
+    .ul\:img-itm:nth-child(2) {
+        padding-top: 0;
+        padding-left: 0.5rem;
+    }
 }
 
 /*
@@ -868,8 +988,8 @@ p {
 ***
 */
 blockquote {
-    color: var(--hue-bas-900);
-    border-left: 6px solid var(--hue-bas-300);
+    color: var(--hue-bas-700);
+    border-left: 6px solid var(--hue-pri-tint-dark);
     font-weight: 300;
     margin-top: 1em;
     margin-right: auto;
@@ -1032,10 +1152,32 @@ td .ratio-container {
     padding-top: 2px;
 }
 
+/*: deprecate
 img {
     height: auto;
     width: inherit;
     max-width: 100%;
+}
+:*/
+
+/*
+***
+    * property: drp
+    * dsc: drop shadow
+    * ver: 200308
+    * fnt: add drop shadow
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
+***
+*/
+.drp\:shadow-light {
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-400));
+}
+.drp\:shadow,
+.drp\:shadow-medium {
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
+}
+.drp\:shadow-dark {
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-600));
 }
 
 /*
@@ -1134,21 +1276,6 @@ img {
 .\@21x9 > div {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
-}
-
-/*
-***
-    * property: material-icons
-    * dsc: google icon font
-    * ver: 200222
-    * fnt: tweak default class
-    * ref: https://google.github.io/material-design-icons/
-***
-*/
-.material-icons {
-    font-size: 100%;
-    padding-bottom: 4px;
-    vertical-align: bottom;
 }
 
 /*
@@ -1368,55 +1495,59 @@ button:active {
 /*
 ***
     * property: hvr
-    * dsc: hover effects
-    * ver: 200222
+    * dsc: transformation effects
+    * ver: 200308
     * fnt: image/button hover annimations
     * ref: https://ianlunn.github.io/Hover/
 ***
 */
 
 /*: nudge image :*/
-.hvr\:nudge {
+.trn\:nudge\!focus,
+.trn\:nudge\!hover {
     -moz-transition: all .5s;
     -webkit-transition: all .5s;
     transition: all .5s;
 }
 
-.hvr\:nudge:focus,
-.hvr\:nudge:hover {
-    -moz-transform: scale(1.012);
-    -webkit-transform: scale(1.012);
-    transform: scale(1.012);
+.trn\:nudge\!focus:focus,
+.trn\:nudge\!hover:hover {
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 /*: image greyscale :*/
-.hvr\:greyscale {
+.trn\:greyscale\!focus,
+.trn\:greyscale\!hover {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
 }
 
-.hvr\:greyscale:focus,
-.hvr\:greyscale:hover {
+.trn\:greyscale\!focus:focus,
+.trn\:greyscale\!hover:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
 }
 
 /*: image focalpoint :*/
-.hvr\:focalpoint {
-    opacity: .8;
+.trn\:focalpoint\!focus,
+.trn\:focalpoint\!hover {
+    opacity: .85;
     -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
 }
 
-.hvr\:focalpoint:focus,
-.hvr\:focalpoint:hover {
+.trn\:focalpoint\!focus:focus,
+.trn\:focalpoint\!hover:hover {
     opacity: 1;
 }
 
 /*: image/button grow :*/
-.hvr\:grow {
+.trn\:grow\!focus,
+.trn\:grow\!hover {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -1428,15 +1559,15 @@ button:active {
     transition-property: transform;
 }
 
-.hvr\:grow:hover,
-.hvr\:grow:focus,
-.hvr\:grow:active {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+.trn\:grow\!focus:focus,
+.trn\:grow\!hover:hover {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 /*: image/button grow shadow :*/
-.hvr\:grow-shadow {
+.trn\:grow-shadow\!focus,
+.trn\:grow-shadow\!hover {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -1448,35 +1579,35 @@ button:active {
     transition-property: box-shadow, transform;
 }
 
-.hvr\:grow-shadow:hover,
-.hvr\:grow-shadow:focus,
-.hvr\:grow-shadow:active {
+.trn\:grow-shadow\!hover:hover,
+.trn\:grow-shadow\!focus:focus {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 /*: image/button shadow :*/
-.hvr\:shadow {
+.trn\:shadow\!hover,
+.trn\:shadow\!focus {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow;
-    transition-property: box-shadow;
+    -webkit-transition-property: filter;
+    transition-property: filter;
 }
 
-.hvr\:shadow:hover,
-.hvr\:shadow:focus,
-.hvr\:shadow:active {
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+.trn\:shadow\!hover:hover,
+.trn\:shadow\!focus:focus {
+    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas-500));    
 }
 
 /*: image/button glow shadow :*/
-.hvr\:glow {
+.trn\:glow\!hover,
+.trn\:glow\!focus {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -1484,18 +1615,18 @@ button:active {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow;
-    transition-property: box-shadow;
+    -webkit-transition-property: filter;
+    transition-property: filter;
 }
 
-.hvr\:glow:hover,
-.hvr\:glow:focus,
-.hvr\:glow:active {
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.6);
+.trn\:glow\!hover:hover,
+.trn\:glow\!focus:focus {
+    filter: drop-shadow(0 0 0.25rem var(--hue-bas-600));    
 }
 
-/*: image/button box shadow :*/
-.hvr\:box-shadow {
+/*: image/button drop shadow :*/
+.trn\:drop-shadow\!hover,
+.trn\:drop-shadow\!focus {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -1503,18 +1634,18 @@ button:active {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow;
-    transition-property: box-shadow;
+    -webkit-transition-property: filter;
+    transition-property: filter;
 }
 
-.hvr\:box-shadow:hover,
-.hvr\:box-shadow:focus,
-.hvr\:box-shadow:active {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+.trn\:drop-shadow\!hover:hover,
+.trn\:drop-shadow\!focus:focus {
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));    
 }
 
-/*: image/button float shadow :*/
-.hvr\:float-shadow {
+/*: button only float shadow :*/
+.trn\:float-shadow\!hover,
+.trn\:float-shadow\!focus {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -1527,7 +1658,8 @@ button:active {
     transition-property: transform;
 }
 
-.hvr\:float-shadow:before {
+.trn\:float-shadow\!hover:before,
+.trn\:float-shadow\!focus:before {
     pointer-events: none;
     position: absolute;
     z-index: -1;
@@ -1546,17 +1678,15 @@ button:active {
     transition-property: transform, opacity;
 }
 
-.hvr\:float-shadow:hover,
-.hvr\:float-shadow:focus,
-.hvr\:float-shadow:active {
+.trn\:float-shadow\!hover:hover,
+.trn\:float-shadow\!focus:focus {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
     /* move the element up by 5px */
 }
 
-.hvr\:float-shadow:hover:before,
-.hvr\:float-shadow:focus:before,
-.hvr\:float-shadow:active:before {
+.trn\:float-shadow\!hover:hover:before,
+.trn\:float-shadow\!focus:focus:before {
     opacity: 1;
     -webkit-transform: translateY(5px);
     transform: translateY(5px);
@@ -1590,6 +1720,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200304
+ * Build:   200308
  *
  */
