@@ -5,7 +5,7 @@
       Author: John Baer
   Author URI: https://github.com/WpThemeDev
  Description: Xidipity is a meticulously crafted WordPress theme which brings new power to the classic editor and offers a beautiful sophisticated design supporting a wide range of solutions. Content in the new classic editor is created visually the way it will be displayed on the web and supports many popular features such as an extensive color palette, font awesome icons, two columns, a robust table design, expanded HR designs, extensive video support, and Google adsense ads. To ensure a positive user experience Xidipity leverages the latest web technologies to deliver fast performance which includes the use of Content Delivery Networks and compressed local resources. For those who like to customize the details of their content design Xidity supports the Tailwind CSS framework. See this exciting theme at "https://xidipity.com/".
-     Version: 1.0 beta v15 200315-0
+     Version: 1.0 beta v15 200315-1
      License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: xidipity
@@ -32,7 +32,7 @@
 
 The following CSS files are loaded from "functions.php"
 
-    Source/File                         Comment
+    Source/Files                        Comment
     ---------------------------------   ---------------------------------------
     /assets/css/theme/common.css        classes shared by all environments
     /assets/css/theme/editor.css        classes specific to editor
@@ -41,7 +41,7 @@ The following CSS files are loaded from "functions.php"
     /assets/css/theme/advance.css       enhanced Xidipity classes
     /assets/css/theme/web.css           classes specific to the web
 
-    Source/File                         Comment
+    Variable/Files                      Comment
     ---------------------------------   ---------------------------------------
     /assets/css/sys/print-vars.css      print css variables
     /assets/css/sys/theme-vars.css      theme css variables
@@ -736,6 +736,6 @@ video {
 
 /*
  * EOF:     style.css
- * Build:   200308-1
+ * Build:   200315-1
  *
  */
