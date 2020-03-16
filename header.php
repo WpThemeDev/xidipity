@@ -4,7 +4,7 @@
  *
  * File Name:       header.php
  * Function:        display page header
- * Build:           200104-1
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -12,8 +12,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -194,7 +194,7 @@ if ($wp_menu || $wp_page)
         echo '<div class="fx:area-itm-' . XWT_MNU_ALIGN . ' fx:mnu-' . XWT_MENU_WIDTH . '">' . "\n";
         echo '<nav role="navigation" id="nav">' . "\n";
         echo '<input class="trigger" type="checkbox" id="mainNavButton">' . "\n";
-        echo '<label for="mainNavButton" onclick><i class="material-icons vert:align-bottom">menu</i></label>' . "\n";
+        echo '<label for="mainNavButton" onclick><i class="fas fa-bars"></i></label>' . "\n";
         wp_nav_menu(array(
             'theme_location' => 'primary',
             'menu_id' => 'primary-menu',
@@ -210,7 +210,7 @@ echo '<!-- /xwpt: 91001.1a/header/php/nav         -->' . "\n";
 
 /*
  * EOF:     header.php
- * Build:   200104-1
+ * Build:   200315
  *
  */
 ?>
