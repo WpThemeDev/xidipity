@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200308
+ * Build:           200315
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -537,7 +537,7 @@ ol.nested ol ol ol ol ol {
     padding-right: 0.5rem;
 }
 
-/*
+/* deprecate
 ***
     * property: fa-ul
     * dsc: font awesome web icon
@@ -545,7 +545,6 @@ ol.nested ol ol ol ol ol {
     * fnt: unordered font awesome list
     * ref: https://fontawesome.com/how-to-use/on-the-web/styling/icons-in-a-list
 ***
-*/
 .fa-ul:nth-of-type(-n+4) {
     padding-left: 1.375rem !important;
 }
@@ -565,8 +564,9 @@ ol.nested ol ol ol ol ol {
 .md-ul li i {
     margin-top: -0.1875rem;
 }
+*/
 
-/*
+/* deprecate
 ***
     * property: md-ul
     * dsc: google web icon
@@ -574,13 +574,36 @@ ol.nested ol ol ol ol ol {
     * fnt: unordered google icon list
     * ref: https://material.io/resources/icons/?style=baseline
 ***
-*/
 .md-ul,
 .md-ul ul,
 .md-ul ul ul,
 .md-ul ul ul ul,
 .md-ul ul ul ul ul {
     list-style-type: none;
+}
+*/
+
+/*
+***
+    * property: ul-fa
+    * dsc: init list for font awesome icons
+    * ver: 200315
+    * fnt: hide bullets and adjust margins
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+***
+*/
+.ul-fa {
+  list-style-type: none;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.li-fa {
+  display: inline-block; 
+  margin-left: -2rem; 
+  padding-right: 0.25rem; 
+  text-align: center; 
+  width: 2rem;
 }
 
 /*
@@ -602,6 +625,20 @@ ol.nested ol ol ol ol ol {
 .no-bullets ul ul ul,
 .no-bullets ul ul ul ul {
     list-style-type: none;
+}
+
+/*
+***
+    * property: footnote
+    * dsc: footnote list
+    * ver: 200315
+    * fnt: move list left
+    * ref:
+***
+*/
+.footnote {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 /* deprecate
@@ -654,6 +691,70 @@ dd {
 @media (min-width:640px) {
     dd {
         margin-left: 1rem;
+    }
+}
+
+/*
+***
+    * property: xlst
+    * dsc: excerpt list
+    * ver: 200315
+    * fnt: to be used in conjunction with excerpt list shortcode
+    * ref:
+***
+*/
+.xlst\:left,
+.xlst\:right {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+} 
+
+.xlst\:itm {
+    width: 100%;   
+}
+
+.xlst\:itm:nth-child(2) {
+    padding: 0.5rem;
+}
+
+@media (min-width:1024px) {
+    .xlst\:left {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .xlst\:right {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    .xlst\:itm:nth-child(1) {
+        min-height: 10rem;
+        width: 33.3333%;
+    }
+
+    .xlst\:itm:nth-child(2) {
+        min-height: 10rem;
+        width: 66.6666%;
     }
 }
 
@@ -767,12 +868,147 @@ tbody.bdr\:none tr {
 /*
 ***
     property: cols
+    * dsc: table multi-column
+    * ver: 190315
+    * fnt: apply multi-column formatting
+    * ref:
+***
+*/
+table.cols\:auto-2,
+table.cols\:auto-3,
+table.cols\:auto-4,
+table.cols\:fixed-2,
+table.cols\:fixed-3,
+table.cols\:fixed-4 {
+    display: block;
+    width: 100%;
+}
+
+table.cols\:auto-2 tr,
+table.cols\:auto-3 tr,
+table.cols\:auto-4 tr,
+table.cols\:fixed-2 tr,
+table.cols\:fixed-3 tr,
+table.cols\:fixed-4 tr {
+    display: block;
+    width: 100%;
+}
+
+table.cols\:auto-2 td,
+table.cols\:auto-3 td,
+table.cols\:auto-4 td,
+table.cols\:fixed-2 td,
+table.cols\:fixed-3 td,
+table.cols\:fixed-4 td {
+    display: block;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+table.cols\:auto-2 td,
+table.cols\:auto-3 td,
+table.cols\:auto-4 td,
+table.cols\:fixed-2 td:last-child,
+table.cols\:fixed-3 td:last-child,
+table.cols\:fixed-4 td:last-child {
+    padding-bottom: 0;
+}
+
+/*: standard media :*/
+@media (min-width: 1024px) {
+    table.cols\:auto-2,
+    table.cols\:auto-3,
+    table.cols\:auto-4,
+    table.cols\:fixed-2,
+    table.cols\:fixed-3,
+    table.cols\:fixed-4 {
+        display: table;
+    }
+
+    table.cols\:auto-2 tr,
+    table.cols\:auto-3 tr,
+    table.cols\:auto-4 tr,
+    table.cols\:fixed-2 tr,
+    table.cols\:fixed-3 tr,
+    table.cols\:fixed-4 tr {
+        display: table-row;
+    }
+
+    table.cols\:auto-2 td,
+    table.cols\:auto-3 td,
+    table.cols\:auto-4 td,
+    table.cols\:fixed-2 td,
+    table.cols\:fixed-3 td,
+    table.cols\:fixed-4 td {
+        border-style: none !important;
+        display: table-cell;
+        padding-bottom: 0;
+        vertical-align: top;
+    }
+
+    table.cols\:fixed-2 td {
+        width: 50%;
+    }
+
+    table.cols\:fixed-3 td {
+        width: 33.3333%;
+    }
+
+    table.cols\:fixed-4 td {
+        width: 25%;
+    }
+}
+
+/*: embedded table :*/
+
+table.cols\:auto-2 table,
+table.cols\:auto-3 table,
+table.cols\:auto-4 table,
+table.cols\:fixed-2 table,
+table.cols\:fixed-3 table,
+table.cols\:fixed-4 table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    table-layout: auto;
+}
+
+table.cols\:auto-2 table thead th:not(:last-child),
+table.cols\:auto-3 table thead th:not(:last-child),
+table.cols\:auto-4 table thead th:not(:last-child),
+table.cols\:fixed-2 table thead th:not(:last-child),
+table.cols\:fixed-3 table thead th:not(:last-child),
+table.cols\:fixed-4 table thead th:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-300) !important;
+}
+
+table.cols\:auto-2 table tr:not(:last-child) td,
+table.cols\:auto-3 table tr:not(:last-child) td,
+table.cols\:auto-4 table tr:not(:last-child) td,
+table.cols\:fixed-2 table tr:not(:last-child) td,
+table.cols\:fixed-3 table tr:not(:last-child) td,
+table.cols\:fixed-4 table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--hue-bas-300) !important;
+}
+
+table.cols\:auto-2 table td:not(:last-child),
+table.cols\:auto-3 table td:not(:last-child),
+table.cols\:auto-4 table td:not(:last-child),
+table.cols\:fixed-2 table td:not(:last-child),
+table.cols\:fixed-3 table td:not(:last-child),
+table.cols\:fixed-4 table td:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-300) !important;
+}
+
+/*
+***
+    property: cols
     * dsc: multi-column
     * ver: 190926-1
     * fnt: apply multi-column formatting
     * ref:
 ***
-*/
 .cols\:auto-2,
 .cols\:auto-3,
 .cols\:auto-4,
@@ -832,48 +1068,7 @@ tbody.bdr\:none tr {
     padding: 0;
     width: 100%;
 }
-
-/*: embedded table :*/
-
-.cols\:auto-2 table,
-.cols\:auto-3 table,
-.cols\:auto-4 table,
-.cols\:fixed-2 table,
-.cols\:fixed-3 table,
-.cols\:fixed-4 table {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 1rem 0;
-    table-layout: auto;
-}
-
-.cols\:auto-2 table thead th:not(:last-child),
-.cols\:auto-3 table thead th:not(:last-child),
-.cols\:auto-4 table thead th:not(:last-child),
-.cols\:fixed-2 table thead th:not(:last-child),
-.cols\:fixed-3 table thead th:not(:last-child),
-.cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
-}
-
-.cols\:auto-2 table tr:not(:last-child) td,
-.cols\:auto-3 table tr:not(:last-child) td,
-.cols\:auto-4 table tr:not(:last-child) td,
-.cols\:fixed-2 table tr:not(:last-child) td,
-.cols\:fixed-3 table tr:not(:last-child) td,
-.cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--hue-bas-300) !important;
-}
-
-.cols\:auto-2 table td:not(:last-child),
-.cols\:auto-3 table td:not(:last-child),
-.cols\:auto-4 table td:not(:last-child),
-.cols\:fixed-2 table td:not(:last-child),
-.cols\:fixed-3 table td:not(:last-child),
-.cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
-}
+*/
 
 /*
 ***
@@ -1180,7 +1375,7 @@ img {
     filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-600));
 }
 
-/*
+/* deprecate
 ***
     * property: fbx
     * dsc: fixed height/width boxes
@@ -1189,7 +1384,6 @@ img {
     *      set justify content to space around (6)
     * ref:
 ***
-*/
 .fbx\:1x1 {
     height: 135px;
     width: 135px;
@@ -1221,6 +1415,7 @@ img {
         width: 140px;
     }
 }
+*/
 
 /*
 ***
@@ -1720,6 +1915,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200308
+ * Build:   200315
  *
  */
