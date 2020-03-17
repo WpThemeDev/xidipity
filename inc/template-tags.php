@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200206
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -31,7 +31,24 @@ if (!function_exists('xidipity_icon_date'))
 {
     function xidipity_icon_date()
     {
-            return '<i class="far fa-calendar-alt wcag:fg-grey6"></i>';
+            return '<i class="far fa-calendar-alt"></i>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_question
+    * dsc: question mark
+    * ver: 200315
+    * fnt: return font awesome calendar icon
+    * ref: https://fontawesome.com/icons/question-circle?style=solid
+***
+*/
+if (!function_exists('xidipity_icon_question'))
+{
+    function xidipity_icon_question()
+    {
+            return '<i class="fas fa-question-circle"></i>';
     }
 }
 
@@ -48,7 +65,7 @@ if (!function_exists('xidipity_icon_tags'))
 {
     function xidipity_icon_tags()
     {
-            return '<i class="fas fa-tags wcag:fg-grey6"></i>';
+            return '<i class="fas fa-tags"></i>';
     }
 }
 
@@ -65,7 +82,7 @@ if (!function_exists('xidipity_icon_bm'))
 {
     function xidipity_icon_bm()
     {
-            return '<i class="far fa-bookmark wcag:fg-grey6"></i>';         
+            return '<i class="far fa-bookmark"></i>';         
     }
 }
 
@@ -82,7 +99,7 @@ if (!function_exists('xidipity_icon_vw_img'))
 {
     function xidipity_icon_vw_img()
     {
-            return '<i class="far fa-file-image wcag:fg-grey6"></i>';
+            return '<i class="far fa-file-image"></i>';
     }
 }
 
@@ -99,7 +116,7 @@ if (!function_exists('xidipity_icon_edit'))
 {
     function xidipity_icon_edit()
     {
-        return '<i class="far fa-edit wcag:fg-grey6"></i>';
+        return '<i class="far fa-edit"></i>';
     }
 }
 
@@ -116,7 +133,7 @@ if (!function_exists('xidipity_icon_idea'))
 {
     function xidipity_icon_idea()
     {
-        return '<i class="far fa-lightbulb fg:sec-bright"></i>';
+        return '<i class="far fa-lightbulb"></i>';
     }
 }
 
@@ -133,7 +150,24 @@ if (!function_exists('xidipity_icon_note'))
 {
     function xidipity_icon_note()
     {
-        return '<i class="far fa-sticky-note wcag:fg-grey6"></i>';
+        return '<i class="far fa-sticky-note"></i>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_pc
+    * dsc: paperclip
+    * ver: 200315
+    * fnt: return font awesome file star icon
+    * ref: https://fontawesome.com/icons/sticky-note?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_pc'))
+{
+    function xidipity_icon_pc()
+    {
+        return '<i class="fas fa-paperclip"></i>';
     }
 }
 
@@ -150,7 +184,7 @@ if (!function_exists('xidipity_icon_star'))
 {
     function xidipity_icon_star()
     {
-        return '<i class="far fa-star fg:sec-bright"></i>';
+        return '<i class="far fa-star"></i>';
     }
 }
 
@@ -167,7 +201,7 @@ if (!function_exists('xidipity_icon_caret_left'))
 {
     function xidipity_icon_caret_left()
     {
-        return '<i class="fas fa-angle-left wcag:fg-grey9"></i>';
+        return '<i class="fas fa-angle-left"></i>';
     }
 }
 
@@ -184,7 +218,7 @@ if (!function_exists('xidipity_icon_caret_right'))
 {
     function xidipity_icon_caret_right()
     {
-        return '<i class="fas fa-angle-right wcag:fg-grey9"></i>';
+        return '<i class="fas fa-angle-right"></i>';
     }
 }
 
@@ -201,7 +235,7 @@ if (!function_exists('xidipity_icon_discuss'))
 {
     function xidipity_icon_discuss()
     {
-        return '<i class="far fa-comments fg:sec"></i>';
+        return '<i class="far fa-comments"></i>';
     }
 }
 
@@ -218,7 +252,7 @@ if (!function_exists('xidipity_icon_comment'))
 {
     function xidipity_icon_comment()
     {
-        return '<i class="far fa-comment fg:sec"></i>';
+        return '<i class="far fa-comment"></i>';
     }
 }
 
@@ -581,7 +615,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200206
+ * Build:   200315
  *
  */
 ?>
