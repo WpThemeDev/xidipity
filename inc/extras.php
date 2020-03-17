@@ -4,7 +4,7 @@
  *
  * File Name:       inc/extras.php
  * Function:        xidipity extensions
- * Build:           200206
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -418,11 +418,11 @@ if (!function_exists('xidipity_the_attached_image')) {
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
- *  bexc    91108.1a  blog excerpts
- *  blst    91108.1a  unordered list of linked blog titles
- *  clst    91108.1a  unordered list of linked category titles
- *  imgg    91108.1a  image gallary
- *  plst    91108.1a  unordered list of linked page titles
+ *  xlst    200315    excerpt list
+ *  blst    200315    unordered list of linked blog titles
+ *  clst    200315    unordered list of linked category titles
+ *  imgg    200315    image gallary
+ *  plst    200315    unordered list of linked page titles
  *
  *  Utility
  *  ---------------  ---------------------------------------------------------
@@ -436,9 +436,9 @@ if (!function_exists('xidipity_the_attached_image')) {
 /*
  *  Xidipity WordPress Theme
  *
- *  name:   bexc
- *  build:  91108.1
- *  descrp: display blog excerpt(s)
+ *  name:   xlst
+ *  build:  200315
+ *  descrp: display list of blog excerpts
  *  attributes ($atts - array):
  *      orderby - string
  *      order - string (A/D)
@@ -450,15 +450,15 @@ if (!function_exists('xidipity_the_attached_image')) {
  *  parameters ($prm - string):
  *      category - string
  *
- *  [bexc orderby='' order='' xclude='' align_img='' count=0 paged='']category[/bexc]
+ *  [xlst orderby='' order='' xclude='' align_img='' count=0 paged='']category[/xlst]
  *
  *  @package WordPress
  *  @subpackage Xidipity
  *  @since 0.9.9
  *
  */
-add_shortcode('bexc', 'bexc_shortcode');
-function bexc_shortcode($atts = array() , $prms = '')
+add_shortcode('xlst', 'xlst_shortcode');
+function xlst_shortcode($atts = array() , $prms = '')
 {
     /*
         system variables
@@ -474,7 +474,7 @@ function bexc_shortcode($atts = array() , $prms = '')
     $v_align = 0;
     $v_align_img = 'l';
     $v_cats = '';
-    $v_count = 0;
+    $v_count = 1;
     $v_html_img = '';
     $v_html_title = '';
     $v_img_exists = false;
@@ -515,9 +515,9 @@ function bexc_shortcode($atts = array() , $prms = '')
     {
         $a_xclude = $atts['xclude'];
     }
-    if (isset($atts['align_img']))
+    if (isset($atts['align']))
     {
-        $a_align_img = $atts['align_img'];
+        $a_align_img = $atts['align'];
     }
     if (isset($atts['count']))
     {
@@ -594,21 +594,20 @@ function bexc_shortcode($atts = array() , $prms = '')
         );
     }
     $db_query = new WP_Query($qry_prms);
+    $post_cnt = $db_query->post_count;
     if ($db_query->have_posts())
     {
-        $html_retval .= '<!-- xwpt: 90903.1a/xsc/bexc/php            -->';
         while ($db_query->have_posts())
         {
             $db_query->the_post();
-            $v_count++;
             /*: post category :*/
             if (is_sticky())
             {
-                $v_meta_icon_cat = xidipity_icon_star();
+                $v_meta_icon_cat = xidipity_icon_pc();
             }
             else
             {
-                $v_meta_icon_cat = xidipity_icon_note();
+                $v_meta_icon_cat = xidipity_icon_bm();
             }
             $v_meta_list_cat =  $v_meta_icon_cat . ',' . xidipity_first_category();
             /*: post byline :*/
@@ -637,30 +636,14 @@ function bexc_shortcode($atts = array() , $prms = '')
             $v_html_title = '<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">' . get_the_title() . '</a></h1>';
             if (!$wp_html_img_url)
             {
-                $html_retval .= '<div class="fx:c fa:3 fb:6 fc:5 sm)fx:r">';
-                $html_retval .= '<div class="fd:1 fe:1">';
-                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt+0.75 sm)pad:bottom+0.5 sm)pad:top+0"><span class="pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
-                $html_retval .= '<header class="fx:cn-itm-hd">';
-                $html_retval .= $v_html_title;
-                $html_retval .= '</header>';
+                $html_retval .= '<div class="xlst:left bg:bas-050">';
+                $html_retval .= '<div class="xlst:itm dsp:none">&nbsp;</div>';
+                $html_retval .= '<div class="xlst:itm">';
+                $html_retval .= '<p><span class="fg:wcag-grey6 pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
                 $html_retval .= $v_meta_list_byline;
-                $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= dsp_rm($v_meta_link_rm);
-                $html_retval .= '</div>';
-                $html_retval .= '</div>';
-            }
-            elseif ($v_align_img == 'r')
-            {
-                $html_retval .= '<div class="fx:c fa:3 fb:6 fc:5 sm)fx:r-rev">';
-                $html_retval .= '<div class="fd:1 fe:1 wd:100% sm)width:40%">';
-                $html_retval .= $v_html_img;
-                $html_retval .= '</div>';
-                $html_retval .= '<div class="fd:1 fe:1 pad:right+1 wd:100% sm)max-width:60%">';
-                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt+0.75 sm)pad:bottom+0.5 sm)pad:top+0"><span class="pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
-                $html_retval .= '<header class="fd:1 fe:1">';
-                $html_retval .= $v_html_title;
+                $html_retval .= '<header>';
+                $html_retval .= '<h2>' . $v_html_title . '<h2>';
                 $html_retval .= '</header>';
-                $html_retval .= $v_meta_list_byline;
                 $html_retval .= '<p>' . get_the_excerpt() . '</p>';
                 $html_retval .= dsp_rm($v_meta_link_rm);
                 $html_retval .= '</div>';
@@ -668,27 +651,34 @@ function bexc_shortcode($atts = array() , $prms = '')
             }
             else
             {
-                $html_retval .= '<div class="fx:c fa:3 fb:6 fc:5 sm)fx:r">';
-                $html_retval .= '<div class="fd:1 fe:1 wd:100% sm)width:40%">';
+                if ($v_align_img == 'l') {
+                    $html_retval .= '<div class="xlst:left bg:bas-050 mar:vrt+0">';
+                }
+                else
+                {
+                    $html_retval .= '<div class="xlst:right bg:bas-050 mar:vrt+0">';
+                }
+                $html_retval .= '<div class="xlst:itm">';
                 $html_retval .= $v_html_img;
                 $html_retval .= '</div>';
-                $html_retval .= '<div class="fd:1 fe:1 pad:left+1 wd:100% sm)max-width:60%">';
-                $html_retval .= '<p class="fx:cn-ct-meta mar:vrt+0.75 sm)pad:bottom+0.5 sm)pad:top+0"><span class="pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
-                $html_retval .= '<header class="fd:1 fe:1">';
-                $html_retval .= $v_html_title;
-                $html_retval .= '</header>';
+                $html_retval .= '<div class="xlst:itm">';
+                $html_retval .= '<p><span class="fg:wcag-grey6 pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
                 $html_retval .= $v_meta_list_byline;
+                $html_retval .= '<header>';
+                $html_retval .= '<h2>' . $v_html_title . '<h2>';
+                $html_retval .= '</header>';
                 $html_retval .= '<p>' . get_the_excerpt() . '</p>';
                 $html_retval .= dsp_rm($v_meta_link_rm);
                 $html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
-            if ($v_count < $v_ppp)
+        
+            if ($v_count < $post_cnt)
             {
                 $html_retval .= '<p>&nbsp;</p>';
+                $v_count++;
             }
         }
-        $html_retval .= '<!-- /xwpt: 90903.1a/xsc/bexc/php           -->';
         /*
             paginate flag set
         */
@@ -705,21 +695,21 @@ function bexc_shortcode($atts = array() , $prms = '')
     }
     else
     {
-        $html_retval = dsp_err('[bexc] No blogs assigned to category list: ' . $p_cat_lst);
+        $html_retval = dsp_err('[xlst] No blogs assigned to category list: ' . $p_cat_lst);
     }
     /*: close query :*/
     wp_reset_postdata();
     /*: return html :*/
     return $html_retval;
 }
+
 /**
  *  name:   blst
- *  build:  91108.1
+ *  build:  200315
  *  descrp: display unordered list of linked blog titles
  *  attributes ($atts - array):
  *      class - string
- *      pre_itm - string
- *      pst_itm - string
+ *      bullet - string (font awesome)
  *      orderby - string
  *      order - string (A/D)
  *      xclude - string (y/n)
@@ -727,7 +717,7 @@ function bexc_shortcode($atts = array() , $prms = '')
  *  parameters ($prm - string):
  *      category - string
  *
- *  [blst class='' pre_itm='' pst_itm='' orderby='' order='' xclude='']category[/blst]
+ *  [blst class='' bullet='' orderby='' order='' xclude='']category[/blst]
  *
  */
 add_shortcode('blst', 'blst_shortcode');
@@ -738,14 +728,13 @@ function blst_shortcode($atts = array(), $prms = '')
     // variables
     $v_cat_lst = '';
     $v_class = '';
-    $v_pre_itm = '';
     $v_pst_itm = '';
+    $v_pre_itm = '';
     $v_orderby = 'title';
     $v_order = 'ASC';
     // attributes
     $a_class = '';
-    $a_pre_itm = '';
-    $a_pst_itm = '';
+    $a_bullet = '';
     $a_orderby = '';
     $a_order = '';
     $a_xclude = 0;
@@ -756,13 +745,9 @@ function blst_shortcode($atts = array(), $prms = '')
     {
         $a_class = tpl_prg($atts['class']);
     }
-    if (isset($atts['pre_itm']))
+    if (isset($atts['bullet']))
     {
-        $a_pre_itm = tpl_prg($atts['pre_itm']);
-    }
-    if (isset($atts['pst_itm']))
-    {
-        $a_pst_itm = tpl_prg($atts['pst_itm']);
+        $a_bullet = tpl_prg($atts['bullet']);
     }
     if (isset($atts['orderby']))
     {
@@ -785,7 +770,6 @@ function blst_shortcode($atts = array(), $prms = '')
     {
         $v_cat_lst = val_cat($p_cat_lst, 0);
     }
-    $v_class = $a_class;
     if (strtoupper($a_order) == 'D')
     {
         $v_order = 'DESC';
@@ -794,9 +778,13 @@ function blst_shortcode($atts = array(), $prms = '')
     {
         $v_orderby = val_orby($a_orderby);
     }
-    $v_pst_itm = $a_pst_itm;
-    $v_pre_itm = $a_pre_itm;
-    
+    $v_class = $a_class;
+    if (!empty($a_bullet))
+    {
+        $v_class = 'ul-fa ' . $a_class;
+        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
+        $v_pst_itm  = '';
+    }
     if (empty($v_cat_lst) && !empty($p_cat_lst))
     {
         $html_retval = dsp_err('[blst] Invalid category list.');
@@ -817,20 +805,18 @@ function blst_shortcode($atts = array(), $prms = '')
         $wp_posts = get_posts($wp_qry);
         if (!empty($wp_posts))
         {
-            $html_retval .= '<!-- xwpt: 91108.1a/ext/blst/php            -->';
-            $html_retval .= '<ul>';
+            $html_retval = '<ul>';
             if (!empty($v_class))
             {
-                $html_retval .= '<ul class="' . $v_class . '">';
+                $html_retval = '<ul class="' . trim($v_class) . '">';
             }
             foreach ($wp_posts as $wp_post)
             {
-                $html_retval .= '<li><a href="' . get_permalink($wp_post) . '">';
-                $html_retval .= $v_pre_itm . $wp_post->post_title . $v_pst_itm;
-                $html_retval .= '</a></li>';
+                $html_retval .= '<li>';
+                $html_retval .= '<a href="' . get_permalink($wp_post) . '">'  . $v_pre_itm . $wp_post->post_title . $v_pst_itm . '</a>';
+                $html_retval .= '</li>';
             }
             $html_retval .= '</ul>';
-            $html_retval .= '<!-- /xwpt: 91108.1a/ext/blst/php           -->';
             // close query
             wp_reset_postdata();
         }        
@@ -840,12 +826,11 @@ function blst_shortcode($atts = array(), $prms = '')
 }
 /**
  *  name:   clst
- *  build:  91108.1
+ *  build:  200315
  *  descrp: display unordered list of linked category titles
  *  attributes ($atts - array):
  *      class - string
- *      pre_itm - string
- *      pst_itm - string
+ *      bullet - string (font awesome)
  *      depth - numeric
  *      active - string (y/n)
  *      xclude - string
@@ -855,7 +840,7 @@ function blst_shortcode($atts = array(), $prms = '')
  *
  *  https://developer.wordpress.org/reference/functions/wp_list_categories/
  *
- *  [clst class='' pre_itm='' pst_itm='' depth=0 active='' xclude='']category[/clst]
+ *  [clst class='' bullet='' depth=0 active='' xclude='']category[/clst]
  *
  */
 add_shortcode('clst', 'clst_shortcode');
@@ -872,12 +857,10 @@ function clst_shortcode($atts = array(), $prm = '')
     $v_pst_itm = '';
     $v_xclude = '';
     // attributes
-    $a_active = 0;
+    $a_active = '';
+    $a_bullet = '';
     $a_class = '';
     $a_depth = 0;
-    $a_active = '';
-    $a_pre_itm = '';
-    $a_pst_itm = '';
     $a_xclude = '';
     // parameters
     $p_ct_root = trim($prm);
@@ -886,6 +869,10 @@ function clst_shortcode($atts = array(), $prm = '')
     {
         $a_active = $atts['active'];
     }
+    if (isset($atts['bullet']))
+    {
+        $a_bullet = tpl_prg($atts['bullet']);
+    }
     if (isset($atts['class']))
     {
         $a_class = tpl_prg($atts['class']);
@@ -893,14 +880,6 @@ function clst_shortcode($atts = array(), $prm = '')
     if (isset($atts['depth']))
     {
         $a_depth = $atts['depth'];
-    }
-    if (isset($atts['pst_itm']))
-    {
-        $a_pst_itm = tpl_prg($atts['pst_itm']);
-    }
-    if (isset($atts['pre_itm']))
-    {
-        $a_pre_itm = tpl_prg($atts['pre_itm']);
     }
     if (isset($atts['xclude']))
     {
@@ -912,8 +891,12 @@ function clst_shortcode($atts = array(), $prm = '')
         $v_active = true;
     }
     $v_class = $a_class;
-    $v_pre_itm = $a_pst_itm;
-    $v_pst_itm = $a_pre_itm;
+    if (!empty($a_bullet))
+    {
+        $v_class = 'ul-fa ' . $a_class;
+        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
+        $v_pst_itm  = '';
+    }
     $v_depth = abs($a_depth);
     // convert excluded category names to cateogry id's
     if (!empty($a_xclude))
@@ -968,7 +951,6 @@ function clst_shortcode($atts = array(), $prm = '')
             'use_desc_for_title' => 0,
             'walker' => new c_walker()
         );
-        $html_retval .= '<!-- xwpt: 91108.1a/xsc/clst/php            -->';
         if (empty($v_class))
         {
             $html_retval .= '<ul>';
@@ -979,7 +961,6 @@ function clst_shortcode($atts = array(), $prm = '')
         }
         $html_retval .= wp_list_categories($wp_qry);
         $html_retval .= '</ul>';
-        $html_retval .= '<!-- /xwpt: 91108.1a/xsc/clst/php           -->';
     }
     // close query
     wp_reset_postdata();
@@ -988,7 +969,7 @@ function clst_shortcode($atts = array(), $prm = '')
 }
 /**
  *  name: imgg
- *  build: 91108.1a
+ *  build: 200315
  *  description: Gallery images by category
  *  attributes ($atts - array):
  *      class - string
@@ -1125,43 +1106,46 @@ function imgg_shortcode($atts = array() , $prms = '')
         $wp_query = new WP_Query($wp_prms);
         if ($wp_query->have_posts())
         {
-            $html_retval .= '<!-- xwpt: 91108.1a/xsc/imgg/php            -->';
-            $html_retval .= '<div class="fx:rw fa:1 fb:1 fc:1">';
+            //$html_retval .= '<div class="fx:rw fa:1 fb:1 fc:1">';
+            $html_retval .= '<div class="fx:c sm)fx:rw fxa:3 fxb:1 fxc:1">';
 
             while ($wp_query->have_posts())
             {
                 $wp_query->the_post();
                 $wp_img = wp_get_attachment_image_src(get_the_ID() , 'full');
 
-                $html_retval .= '<div class="fx:c fa:1 fb:1 fc:1 pad:+0.5 wd:100% sm)wd:' . $v_columns . '">';
-                $html_retval .= '<div class="fx:c fa:1 fb:1 fc:1">';
+                //$html_retval .= '<div class="fx:c fa:1 fb:1 fc:1 pad:+0.5 wd:100% sm)wd:' . $v_columns . '">';
+                $html_retval .= '<div class="wd:100% sm)pad:+0.5 sm)wd:min20 sm)wd:' . $v_columns . '">';
                 
-                $html_retval .= '<div class="fd:1 fe:1 wd:100%">';                
+                //$html_retval .= '<div class="fx:c fa:1 fb:1 fc:1">';
+                
+                //$html_retval .= '<div class="fd:1 fe:1 wd:100%">';                
                 if (empty($v_class))
                 {
-                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
+                    $html_retval .= '<p><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a></p>';
                 }
                 else
                 {
-                    $html_retval .= '<a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100% ' . $v_class . '" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a>';
+                    $html_retval .= '<p><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100% ' . $v_class . '" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a></p>';
                 }
-                $html_retval .= '</div>';
+                //$html_retval .= '</div>';
                 
-                $html_retval .= '<div class="fd:1 fe:1 line:ht-2 aln:text-' . $v_align_capt . ' wd:100%">';    
-                $html_retval .= '<p>' . $wp_query->post->post_excerpt . '</p>';
-                $html_retval .= '</div>';
+                //$html_retval .= '<div class="fd:1 fe:1 line:ht-2 aln:text-' . $v_align_capt . ' wd:100%">';    
+                $html_retval .= '<p class="aln:text-' . $v_align_capt . '">' . $wp_query->post->post_excerpt . '</p>';    
+                //$html_retval .= '<p>' . $wp_query->post->post_excerpt . '</p>';
+                //$html_retval .= '</div>';
                 
                 if ($v_dsp_desc == 'y')
                 {
-                    $html_retval .= '<div class="fd:1 fe:1 wd:100%">';
-                    $html_retval .= '<p>' . $wp_query->post->post_content . '</p>';
-                    $html_retval .= '</div>';
+                    //$html_retval .= '<div class="fd:1 fe:1 wd:100%">';
+                    $html_retval .= '<p class="mar:top+0.5">' . $wp_query->post->post_content . '</p>';
+                    //$html_retval .= '</div>';
                 }
-                $html_retval .= '</div>';
+                //$html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
             $html_retval .= '</div>';
-            $html_retval .= '<!-- /xwpt: 90903.1a/xsc/imgg/php           -->';
+
         }
         else
         {
@@ -1177,12 +1161,11 @@ function imgg_shortcode($atts = array() , $prms = '')
  *  Xidipity WordPress Theme
  *
  *  name:   plst
- *  build:  91108.1
+ *  build:  200315
  *  descrp: display unordered list of linked page titles
  *  attributes ($atts - array):
  *      class - string
- *      pre_itm - string
- *      pst_itm - string
+ *      bullet - string (font awesome/google)
  *      depth - numeric
  *      xclude - string
  *
@@ -1211,9 +1194,8 @@ function plst_shortcode($atts = array(), $prm = string)
     $v_depth = 1;
     $v_xclude = '';
     // attributes
+    $a_bullet = '';
     $a_class = '';
-    $a_pre_itm = '';
-    $a_pst_itm = '';
     $a_depth = 0;
     $a_xclude = '';
     // parameters
@@ -1223,13 +1205,9 @@ function plst_shortcode($atts = array(), $prm = string)
     {
         $a_class = tpl_prg($atts['class']);
     }
-    if (isset($atts['pre_itm']))
+    if (isset($atts['bullet']))
     {
-        $a_pre_itm = tpl_prg($atts['pre_itm']);
-    }
-    if (isset($atts['pst_itm']))
-    {
-        $a_pst_itm = tpl_prg($atts['pst_itm']);
+        $a_bullet = tpl_prg($atts['bullet']);
     }
     if (isset($atts['depth']))
     {
@@ -1241,8 +1219,12 @@ function plst_shortcode($atts = array(), $prm = string)
     }
     // sanitize attributes
     $v_class = $a_class;
-    $v_pre_itm = $a_pre_itm;
-    $v_pst_itm = $a_pst_itm;
+    if (!empty($a_bullet))
+    {
+        $v_class = 'ul-fa ' . $a_class;
+        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
+        $v_pst_itm  = '';
+    }
     $v_depth = abs($a_depth);
     // convert excluded page names to page id's
     if (!empty($a_xclude))
@@ -1281,18 +1263,16 @@ function plst_shortcode($atts = array(), $prm = string)
         'title_li' => '',
         'walker' => new p_walker()
     );
-    $html_retval .= '<!-- xwpt: 90903.1a/xsc/plst/php            -->';
     if (empty($v_class))
     {
         $html_retval .= '<ul>';
     }
     else
     {
-        $html_retval .= '<ul class="' . $v_class . '">';
+        $html_retval .= '<ul class="' . trim($v_class) . '">';
     }
     $html_retval .= wp_list_pages($wp_qry);
     $html_retval .= '</ul>';
-    $html_retval .= '<!-- /xwpt: 90903.1a/xsc/plst/php           -->';
     // close query
     wp_reset_postdata();
     // return html
@@ -1427,7 +1407,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200206
+ * Build:   200315
  *
  */
 ?>
