@@ -3,7 +3,7 @@
  *
  * File Name:       apply-text-alignment/plugin.js
  * Function:        tinymce text alignment plugin
- * Build:           200304
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -58,9 +58,15 @@ tinymce.PluginManager.add('apply_txt_align', function(editor, url) {
             }
         }, {
             icon: false,
-            text: '•\xa0_ Paragraph >',
+            text: '•\xa0Hanging Indent >',
             onclick: function() {
-                tinymce.execCommand('mceReplaceContent', false, '<span style="display:block;text-indent:2.5rem;">{$selection}</span>');
+                tinymce.execCommand('mceReplaceContent', false, '<span class="dsp:block pad:left+2" style="text-indent: -2rem;">{$selection}</span>');
+            }
+        }, {
+            icon: false,
+            text: '•\xa0Paragraph Indent >',
+            onclick: function() {
+                tinymce.execCommand('mceReplaceContent', false, '<span style="display:block;text-indent:2rem;">{$selection}</span>');
             }
         }],
     });
@@ -68,6 +74,6 @@ tinymce.PluginManager.add('apply_txt_align', function(editor, url) {
 
 /*
  * EOF:     apply-text-alignment/plugin.js
- * Build:   200304
+ * Build:   200315
  *
  */
