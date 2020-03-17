@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200308
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -579,6 +579,7 @@ class p_walker extends Walker
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
+        //$output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $attributes, $args['link_before'],
         $output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $attributes, $args['link_before'],
         /** This filter is documented in wp-includes/post-template.php */
         apply_filters('the_title', $page->post_title, $page->ID) , $args['link_after']);
@@ -1574,7 +1575,7 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_rm
- *  build: 200308
+ *  build: 200315
  *  description: Return properly formatted read more HTML string
  *  attributes:
  *      $att - string
@@ -1589,18 +1590,18 @@ function dsp_rm($att = '')
     $v_html = trim($att);
     if (empty($v_html))
     {
-        $fn_retval = '<p class="led:2x-wide"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik02LDRIMTFWMTJMOC41LDEwLjVMNiwxMk0xOCwySDZBMiwyIDAgMCwwIDQsNFYyMEEyLDIgMCAwLDAgNiwyMkgxOEEyLDIgMCAwLDAgMjAsMjBWNEEyLDIgMCAwLDAgMTgsMloiIHN0eWxlPSJmaWxsOiByZ2IoMTU4LCAxNTgsIDE1OCk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" />No additional information</p>';
+        $fn_retval = '<ul class="ul:icon mar:vrt+0.5"><li><div class="ul:icon-itm"><img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE1LjUsMTJDMTgsMTIgMjAsMTQgMjAsMTYuNUMyMCwxNy4zOCAxOS43NSwxOC4yMSAxOS4zMSwxOC45TDIyLjM5LDIyTDIxLDIzLjM5TDE3Ljg4LDIwLjMyQzE3LjE5LDIwLjc1IDE2LjM3LDIxIDE1LjUsMjFDMTMsMjEgMTEsMTkgMTEsMTYuNUMxMSwxNCAxMywxMiAxNS41LDEyTTE1LjUsMTRBMi41LDIuNSAwIDAsMCAxMywxNi41QTIuNSwyLjUgMCAwLDAgMTUuNSwxOUEyLjUsMi41IDAgMCwwIDE4LDE2LjVBMi41LDIuNSAwIDAsMCAxNS41LDE0TTYsMjJBMiwyIDAgMCwxIDQsMjBWNEM0LDIuODkgNC45LDIgNiwySDdWOUw5LjUsNy41TDEyLDlWMkgxOEEyLDIgMCAwLDEgMjAsNFYxMS44MUMxOC44MywxMC42OSAxNy4yNSwxMCAxNS41LDEwQTYuNSw2LjUgMCAwLDAgOSwxNi41QzksMTguODEgMTAuMjEsMjAuODUgMTIuMDMsMjJINloiIC8+PC9zdmc+" alt="Xidipity WordPress Theme Read More" /></div><div class="ul:icon-itm pad:left+0.5" style="padding-top:0.125rem;">No additional information</div></li></ul>';
     }
     else
     {
-        $fn_retval = '<p class="led:2x-wide"><img style="display: inline-block; margin-right: 0.5rem; max-height: 24px; max-width: 24px; vertical-align: -0.25rem;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" /><a href="' . $v_html . '">Read more &hellip;</a></p>';
+        $fn_retval = '<ul class="ul:icon mar:vrt+0.5"><li><div class="ul:icon-itm"><img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" /></div><div class="ul:icon-itm pad:left+0.5" style="padding-top:0.125rem;"><a href="' . $v_html . '">Read more …</a></div></li></ul>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_sticky
- *  build: 200206
+ *  build: 200314
  *  description: Return properly formatted sticky post category HTML string
  *  attributes:
  *      $att - string
@@ -1615,7 +1616,7 @@ function dsp_sticky($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-paperclip">&#x200B;</i></span>' . $v_html . '</p>';
+    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5">' . xidipity_icon_pc() . '</span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1637,7 +1638,7 @@ function dsp_date($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $v_html . '</p>';
+    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1659,7 +1660,7 @@ function dsp_edit($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span><a href="' . $v_html . '">Edit</a></p>';
+    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span><a href="' . $v_html . '">Edit</a></p>';
     }
     // return html
     return $fn_retval;
@@ -1681,7 +1682,7 @@ function dsp_view($att = '')
     $v_html = trim($att);
     if (!empty($v_html))
     {
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-eye">&#x200B;</i></span><a href="' . $v_html . '">View</a></p>';
+    $fn_retval = '<p><span class="pad:right+0.5"><i class="far fa-eye">&#x200B;</i></span><a href="' . $v_html . '">View</a></p>';
     }
     // return html
     return $fn_retval;
@@ -1703,11 +1704,11 @@ function dsp_cat($att = '')
     $v_html = trim($att);  
     if (strtolower($v_html) == 'uncategorized')
     {
-    $fn_retval = '<p><span class="wcag:fg-red pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span>' . $v_html . '</p>';
+    $fn_retval = '<p><span class="fg:sec pad:right+0.5">' . xidipity_icon_question() . '</span>' . $v_html . '</p>';
     }
     else
     {
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="far fa-bookmark">&#x200B;</i></span>' . $v_html . '</p>';
+    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5">' . xidipity_icon_bm() . '</span>' . $v_html . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1734,14 +1735,14 @@ function dsp_tags($att = array())
       foreach( $wp_tags as $wp_tag ) {
           $v_meta_list .= $wp_tag->name . ' ';
       }
-    $fn_retval = '<p><span class="wcag:fg-grey6 pad:right+0.5"><i class="fas fa-user-tag">&#x200B;</i></span>' . $v_meta_list . '</p>';
+    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="fas fa-user-tag">&#x200B;</i></span>' . $v_meta_list . '</p>';
     }
     // return html
     return $fn_retval;
 }
 /**
  *  name: dsp_err
- *  build: 191108.1a
+ *  build: 200315
  *  description: Return properly formatted error message
  *  attributes:
  *      $att - string
@@ -1764,7 +1765,7 @@ function dsp_err($att = '')
     {
         $v_msg = $a_msg;
     }
-  $fn_retval = '<!-- xwpt: 200206/tmpl/an/alarm             --><table class="bdr:collapse no-border tcw:auto wd:100%"><tbody><tr><td class="aln:text-left aln:middle wcag:bg-red cnr:arch-left-small fnt:size-xx-large fg:wht pad:hrz+0.75"><i class="fas fa-bell">&#x200B;</i></td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table><!-- /xwpt: 200206/tmpl/an/alarm            -->';
+    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fnt:size-2x-large fg:wht pad:hrz+0.75"><i class="fas fa-bell">&#x200B;</i></td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table>';
     // return html
     return $fn_retval;
 }
@@ -1935,7 +1936,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200308
+ * Build:   200315
  *
  */
 ?>
