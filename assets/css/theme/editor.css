@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200308
+ * Build:           200315
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -119,7 +119,37 @@ ul.par ul ul ul ul ul {
 }
 
 /*
+***
+    property: cols
+    * dsc: table multi-column
+    * ver: 190315
+    * fnt: turn borders on in editor
+    * ref:
+***
+*/
+table.cols\:auto-2,
+table.cols\:auto-3,
+table.cols\:auto-4,
+table.cols\:auto-2 td,
+table.cols\:auto-3 td,
+table.cols\:auto-4 td {
+    width: 100%;
+}
+
+table.cols\:fixed-2 td,
+table.cols\:fixed-3 td,
+table.cols\:fixed-4 td {
+    border-right: 1px dashed var(--hue-bas-400) !important;
+}
+
+table.cols\:fixed-2 td:last-child,
+table.cols\:fixed-3 td:last-child,
+table.cols\:fixed-4 td:last-child {
+    border-right-style: none;
+}
+
+/*
  * EOF:     theme/editor.css
- * Build:   200308
+ * Build:   200315
  *
  */
