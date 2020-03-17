@@ -3,7 +3,7 @@
  *
  * File Name:       add-vertical-space/plugin.js
  * Function:        tinymce vertical space plugin
- * Build:           200222
+ * Build:           200315
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -39,6 +39,12 @@ tinymce.PluginManager.add('add_vert_space', function(editor, url) {
                 editor.insertContent('<p class="vs:3/4">&nbsp;</p>');
             }
         }, {
+            text: '•\xa01 Line',
+            icon: false,
+            onclick: function() {
+                editor.insertContent('<p>&nbsp;</p>');
+            }
+        }, {
             text: '•\xa01\xBD Lines',
             icon: false,
             onclick: function() {
@@ -68,6 +74,6 @@ tinymce.PluginManager.add('add_vert_space', function(editor, url) {
 
 /*
  * EOF:     add-vertical-space/plugin.js
- * Build:   200222
+ * Build:   200315
  *
  */
