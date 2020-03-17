@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200308
+ * Build:           200315
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -435,6 +435,33 @@ ol.comment-list li::before {
     display: none;
 }
 
+/*
+***
+    property: cols
+    * dsc: table multi-column
+    * ver: 190315
+    * fnt: add auto formatting here 
+    * ref:
+***
+*/
+/*: standard media :*/
+@media (min-width: 1024px) {
+    table.cols\:auto-2 td {
+        column-count: 2;
+        column-gap: 2%;
+    }
+
+    table.cols\:auto-3 td {
+        column-count: 3;
+        column-gap: 2%;
+    }
+
+    table.cols\:auto-4 td {
+        column-count: 4;
+        column-gap: 2%;
+    }
+}
+
 /*  # video-responsive
     # 91108.1a
     # iframe wrapper
@@ -452,41 +479,6 @@ ol.comment-list li::before {
     height: 100%;
     width: 100%;
     position: absolute;
-}
-
-/*
-***
-    property: cols
-    * dsc: multi-column
-    * ver: 200226
-    * fnt: apply multi-column formatting
-    * ref:
-***
-*/
-.cols\:auto-2 td,
-.cols\:auto-3 td,
-.cols\:auto-4 td,
-.cols\:fixed-2 td,
-.cols\:fixed-3 td,
-.cols\:fixed-4 td {
-    border-width: 0 !important;
-}
-
-@media (min-width:640px) {
-    .cols\:auto-2 td {
-        column-count: 2;
-        column-gap: 2%;
-    }
-
-    .cols\:auto-3 td {
-        column-count: 3;
-        column-gap: 2%;
-    }
-
-    .cols\:auto-4 td {
-        column-count: 4;
-        column-gap: 2%;
-    }
 }
 
 .youtube-embed iframe {
@@ -1703,7 +1695,7 @@ figure {
 }
 
 /*: verify margins :*/
-/*: content / item / header :*/
+/*: content / item / header ??? :*/
 .fx\:cn-itm-hd {
     margin: 0 0 6px;
     padding: 0;
@@ -1737,8 +1729,12 @@ figure {
 
 /*: display menu centered on mobile :*/
 #nav ul {
+    background-color: transparent;
     display: none;
     list-style: none;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    text-align: left;
     width: 100%;
 }
 
@@ -1750,6 +1746,28 @@ figure {
     padding: 1rem;
     text-decoration: none;
     transition: all 0.5s ease;
+}
+
+/*: standard media :*/
+@media (min-width: 640px) {
+    #nav ul {
+        background-color: transparent;
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #nav ul li a {
+        background-color: var(--mnu-bar-lg-bg);
+        color: var(--mnu-bar-lg-fg);
+        display: block;
+        font-size: smaller;
+        padding: 1rem;
+        text-decoration: none;
+        transition: all 0.5s ease;
+    }
 }
 
 #nav ul li a:hover {
@@ -1875,7 +1893,7 @@ figure {
     }
 
     #nav ul li ul li {
-        text-align: left;
+        text-align: center;
     }
 
     #nav ul li ul li ul {
@@ -2113,6 +2131,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200308
+ * Build:   200315
  *
  */
