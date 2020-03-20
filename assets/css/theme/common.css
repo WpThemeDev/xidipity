@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200315
+ * Build:           200318
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -131,7 +131,6 @@ pre.wrap {
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-
 hr.rul\:solid-thin {
     background-color: var(--hue-bas-400);
     height: 1px;
@@ -190,7 +189,7 @@ object,
 progress,
 video {
     height: auto;
-    width: 100%;
+    width: auto;
 }
 
 /*
@@ -1417,71 +1416,7 @@ img {
 }
 */
 
-/*
-***
-    * property: various
-    * dsc: set aspect ratio
-    * ver: 200222
-    * fnt: frame images / videos to an aspect ratio
-    *      <div class="width"><div class="@ratio">img/itag</div></div>
-    * ref:
-***
-*/
-.\@1x1 {
-    width: 100%;
-    padding-bottom: calc(960 / 960 * 100%);
-    position: relative;
-}
-.\@3x2 {
-    width: 100%;
-    padding-bottom: calc(640 / 960 * 100%);
-    position: relative;
-}
-.\@4x3 {
-    width: 100%;
-    padding-bottom: calc(720 / 960 * 100%);
-    position: relative;
-}
-.\@7x5 {
-    width: 100%;
-    padding-bottom: calc(686 / 960 * 100%);
-    position: relative;
-}
-.\@16x9 {
-    width: 100%;
-    padding-bottom: calc(540 / 960 * 100%);
-    position: relative;
-}
-.\@16x10 {
-    width: 100%;
-    padding-bottom: calc(600 / 960 * 100%);
-    position: relative;
-}
-.\@21x9 {
-    width: 100%;
-    padding-bottom: calc(411 / 960 * 100%);
-    position: relative;
-}
-.\@1x1 > div,
-.\@3x2 > div,
-.\@4x3 > div,
-.\@7x5 > div,
-.\@16x9 > div,
-.\@16x10 > div,
-.\@21x9 > div {
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-}
-
-/*
-*** REVIEW THIS!
-    * property:
-    * dsc:
-    * ver: 200222
-    * fnt:
-    * ref:
-***
-*/
+/* deprecated
 .video-aligncenter,
 .video-alignleft,
 .video-alignright {
@@ -1583,6 +1518,99 @@ img {
         margin-right: auto;
     }
 }
+*/
+
+/*
+***
+    * element: figure
+    * dsc: wrapper for image with caption
+    * ver: 200318
+    * fnt: wraps image with caption
+    * ref: 
+***
+*/
+figure {
+    display: block;
+}
+
+/*
+***
+    property: wp-caption
+    * dsc: image caption
+    * ver: 190318
+    * fnt: center image caption
+    * ref:
+***
+*/
+.wp-caption {
+    font-size: .875rem;
+    line-height: calc(var(--dft-line-height) * 120%);
+    text-align: center;
+}
+
+/*
+***
+    * property: alignleft/center/right
+    * dsc: alignment for image/figure
+    * ver: 200318
+    * fnt: floats left/right or centers
+    * ref: 
+***
+*/
+.alignleft {
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    float: right;
+    margin-left: 0.5rem;
+}
+
+.alignleft::after,
+.alignright::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*
+.wp-caption {
+    font-size: .875rem;
+    padding-top: 2px;
+}
+
+.wp-caption.alignleft {
+    margin-right: auto;
+}
+
+.alignleft img {
+    margin-right: auto;
+}
+
+.wp-caption.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aligncenter img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption.alignright {
+    margin-left: auto;
+}
+
+.alignright img {
+    margin-left: auto;
+}
+*/
 
 .gallery {
     display: block;
@@ -1915,6 +1943,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200315
+ * Build:   200318
  *
  */
