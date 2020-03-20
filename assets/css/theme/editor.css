@@ -3,7 +3,7 @@
  *
  * File Name:       theme/editor.css
  * Function:        Editor specific CSS
- * Build:           200315
+ * Build:           200318
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -85,20 +85,6 @@ body.webkit b {
 }
 
 /*
-*** VALIDATE NEED FOR THIS!
-    property: wp-caption
-    * dsc: format caption
-    * ver: 190926-1
-    * fnt: stretch capiton to fill available space
-    * ref:
-***
-*/
-.wp-caption {
-    height: auto !important;
-    width: 100% !important;
-}
-
-/*
 ***
     * element: <ul>
     * dsc: paragraph list
@@ -150,6 +136,6 @@ table.cols\:fixed-4 td:last-child {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200315
+ * Build:   200318
  *
  */
