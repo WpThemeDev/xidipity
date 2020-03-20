@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200315
+ * Build:           200318
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -462,11 +462,24 @@ ol.comment-list li::before {
     }
 }
 
-/*  # video-responsive
-    # 91108.1a
-    # iframe wrapper
-    # REQUIRES aspect ratios (ie. video-responsive @16x9)
-**/
+/*
+***
+    * property: video-embed
+    * dsc: set iframe attributes
+    * ver: 200318
+    * fnt: expand facebook & youtube iframe to fill available space
+    * ref:
+***
+*/
+.facebook-embed iframe,
+.youtube-embed iframe {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+/* deprecated
 .video-responsive {
     overflow: hidden;
     position: relative;
@@ -479,13 +492,6 @@ ol.comment-list li::before {
     height: 100%;
     width: 100%;
     position: absolute;
-}
-
-.youtube-embed iframe {
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
 }
 
 .facebook-embed {
@@ -554,7 +560,9 @@ ol.comment-list li::before {
         font-size: .875rem;
     }
 }
+*/
 
+/* deprecated
 .wp-video {
     width: 100% !important;
     height: 100% !important;
@@ -563,6 +571,7 @@ ol.comment-list li::before {
 .wp-video {
     max-width: 100% !important;
 }
+*/
 
 .comment-navigation {
     background-color: var(--content-bg-color);
@@ -1683,15 +1692,47 @@ a.page-numbers:focus {
     background-color: var(--content-bg-color);
     border-bottom: 0.0625rem solid var(--content-bt-border-color);
     border-top: 0.0625rem solid var(--content-tp-border-color);
+    display: block !important;
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-/*: force figure to 100% to keep from crashing container :*/
-figure {
-    height: auto !important;
-    width: 100% !important;
+/*
+***
+    * property: cn:flex
+    * dsc: content flexbox wrapper
+    * ver: 200318
+    * fnt: outer wrapper
+    * ref: 
+***
+*/
+.cn\:flex {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/*
+***
+    * property: cn:block
+    * dsc: content block wrapper
+    * ver: 200318
+    * fnt: inner wrapper
+    * ref: 
+***
+*/
+.cn\:block {
+    display: block;
+    padding: 1rem;
+    width: 100%;
 }
 
 /*: verify margins :*/
@@ -2131,6 +2172,6 @@ figure {
 
 /*
  * EOF:     theme/web.css
- * Build:   200315
+ * Build:   200318
  *
  */
