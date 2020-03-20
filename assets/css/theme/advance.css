@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200304
+ * Build:           200318
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -2840,6 +2840,61 @@ table.cols\:fixed {
 .wd\:4\/4,
 .wd\:5\/5 {
     width: 100% !important;
+}
+
+/*
+***
+    * property: @XxX
+    * dsc: set aspect ratio
+    * ver: 200318
+    * fnt: set aspect ratio of images / videos 
+    * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
+***
+*/
+.\@1x1 {
+    width: 100%;
+    padding-bottom: calc(960 / 960 * 100%);
+    position: relative;
+}
+.\@3x2 {
+    width: 100%;
+    padding-bottom: calc(640 / 960 * 100%);
+    position: relative;
+}
+.\@4x3 {
+    width: 100%;
+    padding-bottom: calc(720 / 960 * 100%);
+    position: relative;
+}
+.\@7x5 {
+    width: 100%;
+    padding-bottom: calc(686 / 960 * 100%);
+    position: relative;
+}
+.\@16x9 {
+    width: 100%;
+    padding-bottom: calc(540 / 960 * 100%);
+    position: relative;
+}
+.\@16x10 {
+    width: 100%;
+    padding-bottom: calc(600 / 960 * 100%);
+    position: relative;
+}
+.\@21x9 {
+    width: 100%;
+    padding-bottom: calc(411 / 960 * 100%);
+    position: relative;
+}
+.\@1x1 > div,
+.\@3x2 > div,
+.\@4x3 > div,
+.\@7x5 > div,
+.\@16x9 > div,
+.\@16x10 > div,
+.\@21x9 > div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
 }
 
 /*  # DIY flexbox components
@@ -5706,10 +5761,65 @@ table.cols\:fixed {
         -ms-flex-item-align: stretch;
         align-self: stretch;
     }
+
+    /*
+    ***
+        * property: @XxX
+        * dsc: set aspect ratio
+        * ver: 200318
+        * fnt: set aspect ratio of images / videos 
+        * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
+    ***
+    */
+    .sm\)\@1x1 {
+        width: 100%;
+        padding-bottom: calc(960 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@3x2 {
+        width: 100%;
+        padding-bottom: calc(640 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@4x3 {
+        width: 100%;
+        padding-bottom: calc(720 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@7x5 {
+        width: 100%;
+        padding-bottom: calc(686 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@16x9 {
+        width: 100%;
+        padding-bottom: calc(540 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@16x10 {
+        width: 100%;
+        padding-bottom: calc(600 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@21x9 {
+        width: 100%;
+        padding-bottom: calc(411 / 960 * 100%);
+        position: relative;
+    }
+    .sm\)\@1x1 > div,
+    .sm\)\@3x2 > div,
+    .sm\)\@4x3 > div,
+    .sm\)\@7x5 > div,
+    .sm\)\@16x9 > div,
+    .sm\)\@16x10 > div,
+    .sm\)\@21x9 > div {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+    }
 }
 
 /*
  * EOF:     theme/advance.css
- * Build:   200304
+ * Build:   200318
  *
  */
