@@ -4,7 +4,7 @@
  *
  * File Name:       single.php
  * Function:        display blog post
- * Build:           200206
+ * Build:           200318
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -62,9 +62,9 @@ if ($wp_query->have_posts()) {
     echo '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
     echo '<article class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
     echo '<div class="pad:left+1">' . "\n";
-	$v_meta_list = dsp_cat(xidipity_first_category()) . '|';
+    $v_meta_list = dsp_cat(xidipity_first_category()) . '|';
     echo '<div class="pad:vrt+0.25">' . "\n";
-	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+    echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     /*
         content title
@@ -82,9 +82,13 @@ if ($wp_query->have_posts()) {
     /*
         content
     */
-    echo '<div class="fx:cn-itm-wrapper pad:+1">' . "\n";
+    echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
+    echo '<div class="cn:flex">' . "\n";
+    echo '<div class="cn:block">' . "\n";
     the_content();
     echo '</div>' . "\n";
+    echo '</div>' . "\n";
+    echo '<!-- /xwpt: flexbox/content/wrapper         -->' . "\n";
     /*
         meta footer
     */
@@ -94,9 +98,9 @@ if ($wp_query->have_posts()) {
     {
         $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
     }
-	$v_meta_list .= dsp_tags(get_the_tags()) . '|';
+    $v_meta_list .= dsp_tags(get_the_tags()) . '|';
     echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
-	echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
+    echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
     echo '</div>' . "\n";
     echo '</article>' . "\n";
     echo '<!-- /xwpt: 90927.1a/content-post/php       -->' . "\n";
@@ -176,7 +180,7 @@ get_footer();
 
 /*
  * EOF:     single.php
- * Build:   200206
+ * Build:   200318
  *
  */
 ?>
