@@ -6,7 +6,7 @@
  *
  * File Name:       no-sidebar.php
  * Function:        display page without sidebar
- * Build:           200206
+ * Build:           200318
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -14,8 +14,8 @@
  * @author          John Baer
  * @copyright       2019-2020 John Baer
  * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
+ * @version         1.0
+ * @since           0.9
  * @link            https://developer.wordpress.org/themes/basics/
  *
  */
@@ -74,17 +74,20 @@ if ($wp_query->have_posts()) {
         content
         */
         echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
-        echo '<div class="fx:cn-itm-wrapper pad:+1">' . "\n";
+        echo '<div class="cn:flex">' . "\n";
+        echo '<div class="cn:block">' . "\n";
         the_content();
         echo '</div>' . "\n";
+        echo '</div>' . "\n";
+        echo '<!-- /xwpt: flexbox/content/wrapper         -->' . "\n";
         /*
             page footer
         */
-	    /*: edit :*/
-	    if (get_edit_post_link())
-	    {
-	        $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
-	    }
+        /*: edit :*/
+        if (get_edit_post_link())
+        {
+            $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
+        }
         /*: date :*/
         $v_meta_list .= dsp_date(get_the_date()) . '|';
         echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
@@ -127,7 +130,7 @@ get_footer();
 
 /*
  * EOF:     no-sidebar.php
- * Build:   200206
+ * Build:   200318
  *
  */
 ?>
