@@ -4,7 +4,7 @@
  *
  * File Name:       template-parts/content-none.php
  * Function:        page content not found
- * Build:           200206
+ * Build:           200318
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -58,8 +58,9 @@ else
     echo '<div class="fx:an-container">';
     echo '<p>&nbsp;</p>' . "\n";
     echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
-    echo '<div class="fx:cn-itm-wrapper pad:+1">' . "\n";
-    echo '<!-- xwpt: 200206/tmpl/an/404             -->' . "\n";
+    echo '<div class="cn:flex">' . "\n";
+    echo '<div class="cn:block">' . "\n";
+    echo '<!-- xwpt: 200318/tmpl/an/404             -->' . "\n";
     echo '<div class="bdr:solid-thin bdr:bas-300 bg:tint cnr:arch-small fx:r fxa:1 fxb:1 fxc:3 pad:+0.5">' . "\n";
     echo '<div class="fx:r fxa:3 fxb:6 fxc:3">' . "\n";
     echo '<div class="fxd:1">' . "\n";
@@ -73,7 +74,7 @@ else
     echo '<div class="bdr:bas-400 bdr:left-solid-thin fxd:2 fnt:size-small pad:left+0.5">' . "\n";
     echo '<p class="fnt:size-large sm)fnt:size-xx-large fnt:weight-normal">404 Page Error</p><p>The page you are looking for can not be found.</p></div>' . "\n";
     echo '</div>' . "\n";
-    echo '<!-- /xwpt: 200206/tmpl/an/404            -->' . "\n";
+    echo '<!-- /xwpt: 200318/tmpl/an/404            -->' . "\n";
     echo '<div class="aln:text-center sm)aln:text-left mar:top+1">' . "\n";
     echo '<button onclick="goBack()">Return to previous page</button>' . "\n";
     echo '</div>' . "\n";
@@ -84,6 +85,8 @@ else
     echo '}' . "\n";
     echo '</script>' . "\n";
     echo '</div>' . "\n";
+    echo '</div>' . "\n";
+    echo '<!-- /xwpt: flexbox/content/wrapper         -->' . "\n";
 }
 echo '<!-- /xwpt: 90915.1a/content/none/php/err   -->';
 echo '</article>' . "\n";
@@ -91,7 +94,7 @@ echo '<!-- /xwpt: 90915.1a/content/none/php       -->' . "\n";
 
 /*
  * EOF:     template-parts/content-none.php
- * Build:   200206
+ * Build:   200318
  *
  */
 ?>
