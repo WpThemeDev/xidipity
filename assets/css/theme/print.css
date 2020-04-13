@@ -3,7 +3,7 @@
  *
  * File Name:       theme/print.css
  * Function:        CSS print elements
- * Build:           200208
+ * Build:           200322
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -72,19 +72,6 @@ body {
 
 /*
 ***
-    * selector: fx
-    * dsc: flexbox
-    * ver: 190206
-    * fnt: do not print flexbox shadows
-    * ref:
-***
-*/
-.fx\:shadow {
-    box-shadow: none;
-}
-
-/*
-***
     * element: <a>
     * dsc: link
     * ver: 190206
@@ -105,19 +92,6 @@ a:hover {
     color: var(--hue-blk);
     background-color: var(--transparent);
     font-weight: var(--dft-pri-lnk-wgt);
-}
-
-/*
-***
-    * selector: break
-    * dsc: page breaks
-    * ver: 190206
-    * fnt: default page breaks
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/break-after
-***
-*/
-.fx\:cn-ct-itm {
-    break-after: always;
 }
 
 table {
@@ -249,6 +223,17 @@ table.cols\:4 {
     break-after: always;
 }
 
+.prt\[pg-break\:after\] {
+    break-after: always;
+}
+
+.prt\[box\:noshadow\] {
+    border-top: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
 /*
 ***
     * environment: prt
@@ -361,6 +346,6 @@ table.cols\:4 {
 
 /*
  * EOF:     theme/print.css
- * Build:   200208
+ * Build:   200322
  *
  */
