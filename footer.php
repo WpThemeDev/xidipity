@@ -4,7 +4,7 @@
  *
  * File Name:       footer.php
  * Function:        display page footer
- * Build:           200206
+ * Build:           200322
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -18,37 +18,60 @@
  *
  */
 
-echo '<!-- xwpt: 90920.1d/footer/php              -->' . "\n";
-echo '<!-- xwpt: flexbox/page/container/item-5    -->' . "\n";
 /*
-    footer management
+***/
+echo '<!--  file:footer.php -->' . "\n";
+/***
 */
-if (XWT_SIDEBAR_ALIGN == 'left')
-{
-    echo '<footer class="fx:pg-ct-itm-sbl fnt:size-smaller mar:bottom+1">' . "\n";
-    echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert+0.75">' . "\n";
-    echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
-}
-else
-{
-    echo '<footer class="fx:pg-ct-itm-sbr fnt:size-smaller mar:bottom+1">' . "\n";
-    echo '<div class="fx:area-ct-' . XWT_FTR_ALIGN . ' mar:vert+0.75">' . "\n";
-    echo '<div class="fx:area-itm-' . XWT_FTR_ALIGN .  '">' . "\n";
+echo '<!--  fi:4/HTML -->' . "\n";
+echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
+echo '<!--  fc:FOOTER -->' . "\n";
+if (XWT_FTR_ALIGN == 'left') {
+    echo '<footer class="fx:r fxa:1 fxc:3 ht:min6 wd:100%">' . "\n";
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<div class="aln:text-left dsp:block fnt:size-smaller">' . "\n";
+} elseif (XWT_FTR_ALIGN == 'right') {
+    echo '<footer class="fx:r fxa:2 fxc:3 ht:min6 wd:100%">' . "\n";
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<div class="aln:text-right dsp:block fnt:size-smaller">' . "\n";
+} else {
+    echo '<footer class="fx:r fxa:3 fxc:3 ht:min6 wd:100%">' . "\n";
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<div class="aln:text-center dsp:block fnt:size-smaller">' . "\n";
 }
 echo '<p>' . blog_copyright() . '</p>';
-echo '<p><a href="' . get_site_url() . '">Xidipity Theme</a> &sdot; Powered by <a href="https://wordpress.org">WordPress</a>';
+echo '<p><a href="https://xidipity.com/">Xidipity Theme</a> &sdot; Powered by <a href="https://wordpress.org">WordPress</a>';
 echo '</div>' . "\n";
-echo '</div>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
 echo '</footer>' . "\n";
-echo '<!-- /xwpt: 90920.1d/footer/php             -->' . "\n";
-/*: wordpress code :*/
+echo '<!-- /fc:FOOTER -->' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /fi:4/HTML -->' . "\n";
+
+/*
+***
+    * close htm/flex/container here / open in header
+***
+*/
+echo '</div>' . "\n";
+echo '<!-- /fc:HTML -->' . "\n";
+
+/*
+***
+    * function: wp_footer
+    * dsc: wordpress footer
+    * ver: 200322
+    * fnt: add wordpress footer code
+    * ref: developer.wordpress.org/reference/functions/wp_footer/
+***
+*/
 wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
 
 /*
  * EOF:     footer.php
- * Build:   200206
+ * Build:   200322
  *
  */
 ?>
