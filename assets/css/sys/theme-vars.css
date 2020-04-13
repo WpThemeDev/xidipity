@@ -3,7 +3,7 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200304
+ * Build:           200322
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -188,12 +188,12 @@
     --title-font-spacing: 0.0625rem;
     --title-font-style: normal;
     --title-font-weight: var(--font-wgt-normal);
-    --descr-font-color: var(--wcag-grey8);
-    --descr-font-family: var(--font-sans);
-    --descr-font-size: 1rem;
-    --descr-font-spacing: 0.5rem;
-    --descr-font-style: normal;
-    --descr-font-weight: var(--font-wgt-normal);
+    --desc-font-color: var(--wcag-grey8);
+    --desc-font-family: var(--font-sans);
+    --desc-font-size: 1rem;
+    --desc-font-spacing: 0.5rem;
+    --desc-font-style: normal;
+    --desc-font-weight: var(--font-wgt-normal);
     /*: blog footer :*/
     --blog-ft-bg-color: var(--hue-bas-050);
     /*: sys menu :*/
@@ -241,6 +241,6 @@
 
 /*
  * EOF:     sys/theme-vars.css
- * Build:   200304
+ * Build:   200322
  *
  */
