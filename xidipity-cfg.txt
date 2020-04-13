@@ -1,23 +1,11 @@
 /*
- * WordPress Xidipity Theme CFG File
- *
- * File Name:       xidipity-cfg.txt
- * Function:        xidipity configuration defaults
- * Build:           200104-1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
- * @link            https://developer.wordpress.org/themes/
- *
+ * Xidipity Theme CFG File
+ * build: 200322
  */,
+/*: favorite icon :*/,
+fav-icon=https://staging1.xidipity.com/wp-content/uploads/2019/09/xidipity-favorite-icon.png,
 /*: page header height :*/,
-hdr-height=100px,
+hdr-height=7rem,
 /*: page header image :*/,
 hdr-image=none,
 /*: page header logo :*/,
@@ -35,4 +23,4 @@ sb-align=right,
 /*: display emoji default :*/,
 emoji-display=yes,
 /*: font awesome version :*/,
-fa-version=5.12.0
+fa-version=5.12.1
