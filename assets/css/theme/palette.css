@@ -3,7 +3,7 @@
  *
  * File Name:       theme/palette.css
  * Function:        CSS palette elements
- * Build:           200304
+ * Build:           200322
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -28,6 +28,12 @@ speciality foreground colors
 }
 .fg\:disable {
     color: var(--hue-bas-400) !important;
+}
+.bg\:content {
+	background-color: var(--content-bg-color);
+}
+.fg\:content {
+	color: var(--content-fg-color);
 }
 
 /*
@@ -1374,39 +1380,39 @@ stripe even table rows
 ***
 */
 tbody.tr\:stripe-pri-dark tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-dark) !important;    
+    background-color: var(--hue-pri-tint-dark) !important;
 }
 
 tbody.tr\:stripe-sec-dark tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-dark) !important;    
+    background-color: var(--hue-sec-tint-dark) !important;
 }
 
 tbody.tr\:stripe-tint-dark tr:nth-child(even) {
-    background-color: var(--hue-bas-200) !important;    
+    background-color: var(--hue-bas-200) !important;
 }
 
 tbody.tr\:stripe-pri tr:nth-child(even) {
-    background-color: var(--hue-pri-tint) !important;    
+    background-color: var(--hue-pri-tint) !important;
 }
 
 tbody.tr\:stripe-sec tr:nth-child(even) {
-    background-color: var(--hue-sec-tint) !important;    
+    background-color: var(--hue-sec-tint) !important;
 }
 
 tbody.tr\:stripe-tint tr:nth-child(even) {
-    background-color: var(--hue-bas-100) !important;    
+    background-color: var(--hue-bas-100) !important;
 }
 
 tbody.tr\:stripe-pri-bright tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-bright) !important;    
+    background-color: var(--hue-pri-tint-bright) !important;
 }
 
 tbody.tr\:stripe-sec-bright tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-bright) !important;    
+    background-color: var(--hue-sec-tint-bright) !important;
 }
 
 tbody.tr\:stripe-tint-bright tr:nth-child(even) {
-    background-color: var(--hue-bas-050) !important;    
+    background-color: var(--hue-bas-050) !important;
 }
 
 /*
@@ -3062,11 +3068,10 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     button.sm\)fg\:wcag-blue-grey\!focus:focus {
         color: var(--wcag-blue-grey) !important;
     }
-
 }
 
 /*
  * EOF:     theme/palette.css
- * Build:   200304
+ * Build:   200322
  *
  */
