@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200315
+ * Build:           200322
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -17,6 +17,23 @@
  * @link            https://codex.wordpress.org/Template_Tags
  *
  */
+
+/*
+***
+    * ico: xidipity_icon_archive
+    * dsc: calendar
+    * ver: 200206
+    * fnt: return font awesome calendar icon
+    * ref: https://fontawesome.com/icons/calendar-alt?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_archive'))
+{
+    function xidipity_icon_archive()
+    {
+            return '<i class="fas fa-archive"></i>';
+    }
+}
 
 /*
 ***
@@ -82,7 +99,7 @@ if (!function_exists('xidipity_icon_bm'))
 {
     function xidipity_icon_bm()
     {
-            return '<i class="far fa-bookmark"></i>';         
+            return '<i class="far fa-bookmark"></i>';
     }
 }
 
@@ -256,76 +273,6 @@ if (!function_exists('xidipity_icon_comment'))
     }
 }
 
-/*  # xidipity_excerpt_banner
-    # 90728.1
-    # return excerpt banner
-**/
-
-if (!function_exists('xidipity_excerpt_banner'))
-{
-    function xidipity_excerpt_banner($atts = array())
-    {
-        /*: variables   :*/
-        $html_retval = '';
-        $v_cat = '';
-        $v_cat_id = '';
-        $v_icon = '';
-        $v_title = '';
-        $v_hdr_title = '';
-        $v_hdr_descr = '';
-        /*: attributes  :*/
-        $a_cat = '';
-        $a_icon = '';
-        $a_title = '';
-        /*: initialize attributes   :*/
-        if (isset($atts['cat']))
-        {
-            $a_cat = $atts['cat'];
-        }
-        if (isset($atts['icon']))
-        {
-            $a_icon = $atts['icon'];
-        }
-        if (isset($atts['title']))
-        {
-            $a_title = $atts['title'];
-        }
-        /*: sanitize attributes :*/
-        $v_cat = trim($a_cat);
-        $v_icon = trim($a_icon);
-        $v_title = trim($a_title);
-        if (!empty($v_cat))
-        {
-            $v_cat_id = get_cat_ID($v_cat);
-        }
-        if (!empty($v_cat_id))
-        {
-            $v_hdr_title = $v_cat;
-            $v_hdr_descr = category_description($v_cat_id);
-        }
-        if (empty($v_hdr_title))
-        {
-            $v_hdr_title = $v_title;
-        }
-        /*: go / nogo logic :*/
-        if (!empty($v_hdr_title))
-        {
-            $html_retval .= '<!-- xwpt: flexbox/content/container/item   -->' . "\n";
-            $html_retval .= '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow pad:+1">';
-            $html_retval .= '<header class="fx:cn-itm-hd">';
-            $html_retval .= '<h2>' . $v_icon . $v_hdr_title . '</h2>';
-            if (!empty($v_hdr_descr))
-            {
-                $html_retval .= '<div class="fnt:size-smaller">' . $v_hdr_descr . '</div>';
-            }
-            $html_retval .= '</header>';
-            $html_retval .= '</div>';
-        }
-        /*: return html :*/
-        return $html_retval;
-    }
-}
-
 /*  # xidipity_paginate_links
     # 90728.1
     # return pagination links
@@ -339,7 +286,6 @@ if (!function_exists('xidipity_paginate_links'))
         global $wp;
         $wp_url = add_query_arg( $wp->query_vars, home_url( $wp->request ) );
         /*: variables   :*/
-        $html_retval = '';
         $v_page = 1;
         $v_pages = 10;
         $v_url = strtolower($wp_url);
@@ -349,11 +295,11 @@ if (!function_exists('xidipity_paginate_links'))
         /*: initialize attributes   :*/
         if (isset($atts['page']))
         {
-            $a_page = $atts['page'];
+            $a_page = abs($atts['page']);
         }
         if (isset($atts['pages']))
         {
-            $a_pages = $atts['pages'];
+            $a_pages = abs($atts['pages']);
         }
         /*: sanitize attributes :*/
         if ($a_page >0) {
@@ -362,43 +308,21 @@ if (!function_exists('xidipity_paginate_links'))
         if ($a_pages >0) {
             $v_pages = $a_pages;
         }
-        /*: check url for search argument :*/
-        $wp_search = false;
-        if (!empty($v_url))
-        {
-            $wp_search = (abs(strpos($v_url, 's=')) !== 0);
-        }
-        $html_retval .= '<div class="fx:cn-ct-nav bg:bas-200 mar:vert+1 cnr:arch-small">';
-        if ($wp_search)
-        {
-            
-            $html_retval .=  paginate_links(array(
-                'after_page_number' => '</div>',
-                'base' => '%_%',
-                'before_page_number' => '<div class="fx:ct-nav-itm">',
-                'current' => $a_page,
-                'format' => '?paged=%#%',
-                'next_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_left() . '</div>',
-                'total' => $a_pages,
-            ));
-        }
-        else
-        {
-            $html_retval .=  paginate_links(array(
-                'after_page_number' => '</div>',
-                'base' => get_pagenum_link(1) . '%_%',
-                'before_page_number' => '<div class="fx:ct-nav-itm">',
-                'current' => $a_page,
-                'format' => 'page/%#%',
-                'next_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_right() . '</div>',
-                'prev_text' => '<div class="fx:ct-nav-itm">' . xidipity_icon_caret_left() . '</div>',
-                'total' => $a_pages,
-            ));
-        }
+
+        $html_retval = '<div class="fx:r fxa:5 fxb:1 fxc:3 bdr:top-solid-thin bdr:bas-300 pad:vrt+0.75 cnr:arch-small wd:100%">';
+        $html_retval .=  paginate_links(array(
+            'after_page_number' => '</div>',
+            'base' => '%_%',
+            'before_page_number' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">',
+            'current' => $a_page,
+            'format' => '?paged=%#%',
+            'next_text' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">' . xidipity_icon_caret_right() . '</div>',
+            'prev_text' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">' . xidipity_icon_caret_left() . '</div>',
+            'total' => $a_pages,
+        ));
         $html_retval .= '</div>';
+
         /*: return html :*/
-        
         return str_replace('&hellip;','<i class="fas fa-exchange-alt fg:bas-500"></i>',$html_retval);
     }
 }
@@ -431,7 +355,7 @@ if (!function_exists('xidipity_metalinks'))
             $html_retval .= '</tbody>';
             $html_retval .= '</table>';
         }
-        
+
         /*: return html :*/
         return $html_retval;
     }
@@ -457,7 +381,7 @@ if (!function_exists('xidipity_posted_on'))
         $posted_on = sprintf('<span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark"> %3$s</a>', esc_html_x('Posted on', 'post date', 'xidipity') , esc_url(get_permalink()) , $time_string);
         // Posted On HTML
         $html = '<span class="posted-on">' . $posted_on . '</span>'; // // WPCS: XSS OK.
-        
+
         /**
          * Filters the Posted On HTML.
          *
@@ -466,7 +390,7 @@ if (!function_exists('xidipity_posted_on'))
         $html = apply_filters('xidipity_posted_on_html', $html);
         // echo $html; // WPCS: XSS OK.
         return $html; // WPCS: XSS OK.
-        
+
     }
 }
 /*  # posted_by
@@ -489,7 +413,7 @@ if (!function_exists('xidipity_posted_by'))
         $byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" style="max-height:68px;max-width:68px;" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
         // Posted By HTML
         $html = '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-        
+
         /**
          * Filters the Posted By HTML.
          *
@@ -498,7 +422,7 @@ if (!function_exists('xidipity_posted_by'))
         $html = apply_filters('xidipity_posted_by_html', $html);
         // echo $html; // WPCS: XSS OK.
         return $html; // WPCS: XSS OK.
-        
+
     }
 }
 
@@ -615,7 +539,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200315
+ * Build:   200322
  *
  */
 ?>
