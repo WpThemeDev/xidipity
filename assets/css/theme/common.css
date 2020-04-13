@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200318
+ * Build:           200322
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -70,6 +70,19 @@ kbd {
     color: var(--hue-wht);
     font-size: smaller;
     padding: 2px 4px;
+}
+
+/*
+***
+    * property: html:comment
+    * dsc: html comment
+    * ver: 200322
+    * fnt: hide comment(s) from the browser (tinymce hack)
+    * ref:
+***
+*/
+.html\:comment {
+    display: none;
 }
 
 /*
@@ -226,7 +239,7 @@ a:hover {
 }
 
 a:focus {
-    outline: none;    
+    outline: none;
 }
 
 /*
@@ -235,7 +248,7 @@ a:focus {
     * dsc: icon list box
     * ver: 200308
     * fnt: replace ul bullet with icon
-    * ref: 
+    * ref:
 ***
 */
 .ul\:icon {
@@ -287,7 +300,7 @@ a:focus {
     * dsc: img list box
     * ver: 200308
     * fnt: setup (responsive) ul for image bullet
-    * ref: 
+    * ref:
 ***
 */
 .ul\:img {
@@ -393,7 +406,7 @@ a:focus {
 */
 ul {
     list-style-type: disc;
-    line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height);
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -464,7 +477,7 @@ ul.par ul ul ul ul ul {
 */
 ol {
     list-style-type: decimal;
-    line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height);
     margin-left: 1rem;
     padding-left: 1rem;
 }
@@ -591,18 +604,22 @@ ol.nested ol ol ol ol ol {
     * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 ***
 */
-.ul-fa {
-  list-style-type: none;
-  margin-left: 1rem;
-  padding-left: 1rem;
+.ul-fa,
+.ul-fa ul,
+.ul-fa ul ul,
+.ul-fa ul ul ul,
+.ul-fa ul ul ul ul {
+    list-style-type: none;
+    margin-left: 1rem;
+    padding-left: 1rem;
 }
 
 .li-fa {
-  display: inline-block; 
-  margin-left: -2rem; 
-  padding-right: 0.25rem; 
-  text-align: center; 
-  width: 2rem;
+    display: inline-block;
+    margin-left: -2rem;
+    padding-right: 0.25rem;
+    text-align: center;
+    width: 2rem;
 }
 
 /*
@@ -683,7 +700,7 @@ dt {
 }
 
 dd {
-    line-height: var(--dft-line-height);    
+    line-height: var(--dft-line-height);
     margin-left: 0;
 }
 
@@ -723,10 +740,10 @@ dd {
     -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
-} 
+}
 
 .xlst\:itm {
-    width: 100%;   
+    width: 100%;
 }
 
 .xlst\:itm:nth-child(2) {
@@ -1169,7 +1186,7 @@ h6.cnt\!alt::before {
 ***
 */
 p {
-    line-height: var(--dft-line-height); 
+    line-height: var(--dft-line-height);
 }
 
 /*
@@ -1526,7 +1543,7 @@ img {
     * dsc: wrapper for image with caption
     * ver: 200318
     * fnt: wraps image with caption
-    * ref: 
+    * ref:
 ***
 */
 figure {
@@ -1554,7 +1571,7 @@ figure {
     * dsc: alignment for image/figure
     * ver: 200318
     * fnt: floats left/right or centers
-    * ref: 
+    * ref:
 ***
 */
 .alignleft {
@@ -1825,7 +1842,7 @@ button:active {
 
 .trn\:shadow\!hover:hover,
 .trn\:shadow\!focus:focus {
-    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas-500));    
+    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas-500));
 }
 
 /*: image/button glow shadow :*/
@@ -1844,7 +1861,7 @@ button:active {
 
 .trn\:glow\!hover:hover,
 .trn\:glow\!focus:focus {
-    filter: drop-shadow(0 0 0.25rem var(--hue-bas-600));    
+    filter: drop-shadow(0 0 0.25rem var(--hue-bas-600));
 }
 
 /*: image/button drop shadow :*/
@@ -1863,7 +1880,7 @@ button:active {
 
 .trn\:drop-shadow\!hover:hover,
 .trn\:drop-shadow\!focus:focus {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));    
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
 }
 
 /*: button only float shadow :*/
@@ -1943,6 +1960,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200318
+ * Build:   200322
  *
  */
