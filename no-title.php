@@ -6,9 +6,9 @@
  *
  * File Name:       no-title.php
  * Function:        display page without page title
- * Build:           200318
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * Build:           200322
+ * GitHub:          github.com/WpThemeDev/xidipity/
+ * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
@@ -16,128 +16,149 @@
  * @license         GPL-3.0-or-later
  * @version         1.0
  * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
+ * @link            developer.wordpress.org/themes/basics/
  *
  */
 
 /*
-    set page options
+***
+    * display menus
+***
 */
-disp_sidebar('yes');
 disp_menu('yes');
+
 /*
-    system variables
-*/
-global $wp_query;
-/*: current pagination number :*/
-$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-/*: posts per page :*/
-$wp_ppp = get_option('posts_per_page');
-/*
-    local variables
-*/
-$v_cur_page = 0;
-$v_meta_list = '';
-$v_pages = 0;
-/*
-    display header
+***
+    * function: get_header
+    * descript: display page header
+    * ref: developer.wordpress.org/reference/functions/get_header/
+***
 */
 get_header();
-echo '<!-- xwpt: 90920.1d/page/php                -->' . "\n";
-echo '<!-- xwpt: flexbox/page/container/item-3    -->' . "\n";
+
+/*
+***/
+echo '<!--  file:no-title.php -->' . "\n";
+/***
+
+*/
+echo '<!--  fi:3/HTML -->' . "\n";
+echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
+echo '<!--  fc:MAIN -->' . "\n";
+
+/*
+***
+    * align sidebar
+***
+*/
 if (XWT_SIDEBAR_ALIGN == 'left')
 {
-    echo '<main class="fx:pg-ct-itm-sbl">' . "\n";
+    echo '<main class="fx:c md)fx:r-rev fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:left+0.5 wd:100%">' . "\n";
 }
 else
 {
-    echo '<main class="fx:pg-ct-itm-sbr">' . "\n";
+    echo '<main class="fx:c md)fx:r fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:right+0.5 wd:100%">' . "\n";
 }
-echo '<div class="fx:cn-ct">' . "\n";
-if ($wp_query->have_posts()) {
-    while ($wp_query->have_posts()) {
-        the_post();
-        echo '<!-- xwpt: 90915.1a/content-page/php        -->' . "\n";
-        echo '<div class="fx:cn-ct-itm fx:cn-ct-opt fx:basis-100% fx:shadow">' . "\n";
-        /*
-        content title
-        */
-        echo '<div class="pad:left+1" style="display:none;">' . "\n";
-        echo '<header class="fx:cn-itm-hd">' . "\n";
-        the_title('<h1 class="fx:cn-itm-ti">', '</h1>');
-        echo '</header>' . "\n";
-        /*
-        yoast breadcrumbs
-        */
-        if ( !is_front_page() && !is_home() )
-        {
-            if (function_exists('yoast_breadcrumb'))
-            {
-                yoast_breadcrumb('<p id="breadcrumbs" class="seo-pag-breadcrumbs">', '</p>');
-            }
-        }
-        echo '</div>' . "\n";
-        /*
-        content
-        */
-        echo '<!-- xwpt: flexbox/content/wrapper          -->' . "\n";
-        echo '<div class="cn:flex">' . "\n";
-        echo '<div class="cn:block">' . "\n";
-        the_content();
-        echo '</div>' . "\n";
-        echo '</div>' . "\n";
-        echo '<!-- /xwpt: flexbox/content/wrapper         -->' . "\n";
-        /*
-            page footer
-        */
-        /*: edit :*/
-        if (get_edit_post_link())
-        {
-            $v_meta_list .= dsp_edit(get_edit_post_link()) . '|';
-        }
-        /*: date :*/
-        $v_meta_list .= dsp_date(get_the_date()) . '|';
-        echo '<div class="pad:left+1 fnt:size-smaller prt(dsp:none)">' . "\n";
-        echo xidipity_metalinks(explode('|', $v_meta_list)) . "\n";
-        echo '</div>' . "\n";
-        echo '</div>' . "\n";
-    }
-    echo '<!-- /xwpt: 90915.1a/content-page/php       -->' . "\n";
+
+echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+
+if ($wp_query->have_posts())
+{
+
+    echo '<!--  ct:BODY -->' . "\n";
+    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+
     /*
-        pagination
+    ***
+        * yoast breadcrumbs plugin
+    ***
     */
-    $v_pages = $wp_query->max_num_pages;
-    if ($v_pages > 1)
+    if ( !is_front_page() && !is_home() )
     {
-        echo '<!-- xwpt: 90920.1d/page/php/pagination     -->' . "\n";
-        $v_cur_page = max(1, get_query_var('paged'));
-        echo xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages)) . "\n";
-        echo '<!-- /xwpt: 90920.1d/page/php/pagination    -->' . "\n";
+        if (function_exists('yoast_breadcrumb'))
+        {
+            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs mar:top+0.5">', '</div>');
+        }
     }
+
+    /*
+    ***
+        * function: the_content
+        * descript: display page content
+        * ref: developer.wordpress.org/reference/functions/the_content/
+    ***
+    */
+    the_content();
+    echo '</div>' . "\n";
+    echo '<!-- /ct:BODY -->' . "\n";
+
+    /*
+    ***
+        * page footer
+    ***
+    */
+    $footer_items = '';
+    /*: edit :*/
+    if (get_edit_post_link())
+    {
+        $footer_items .= dsp_edit(get_edit_post_link()) . '|';
+    }
+    /*: modified date :*/
+    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+    echo '</footer>' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
     get_template_part('template-parts/content', 'none');
 }
-echo '</div>' . "\n";
-echo '</main>' . "\n";
-echo '<!-- /xwpt: 90920.1d/page/php               -->' . "\n";
+echo '</article>' . "\n";
+echo '<!-- /ct:ARTICLE -->' . "\n";
+echo '</section>' . "\n";
+echo '<!-- /fi:1/SECTION 1 -->' . "\n";
+
 /*
-    display sidebar
+***
+    * function: get_sidebar
+    * descript: display sidebar
+    * ref: developer.wordpress.org/reference/functions/get_sidebar/
+***
 */
 get_sidebar();
+echo '</main>' . "\n";
+echo '<!-- /fc:MAIN -->' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /fi:3/HTML -->' . "\n";
+
 /*
-    reset post data
-*/
-wp_reset_postdata();
-/*
-    display footer
+***
+    * function: get_footer
+    * descript: display page footer
+    * ref: developer.wordpress.org/reference/functions/get_footer/
+***
 */
 get_footer();
 
 /*
+***
+    * function: wp_reset_postdata
+    * descript: reset database query
+    * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+***
+*/
+wp_reset_postdata();
+
+/*
  * EOF:     no-title.php
- * Build:   200318
+ * Build:   200322
  *
  */
 ?>
