@@ -42,6 +42,7 @@ function xidipity_mod($theme_mod = '')
     return get_theme_mod($theme_mod, xidipity_default($theme_mod));
 }
 
+/* deprecate */
 if (!function_exists('xidipity_fonts_url')) {
     /**
      * Register Google fonts for xidipity.
@@ -418,11 +419,11 @@ if (!function_exists('xidipity_the_attached_image')) {
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
- *  xlst    200315    excerpt list
- *  blst    200315    unordered list of linked blog titles
- *  clst    200315    unordered list of linked category titles
- *  imgg    200315    image gallary
- *  plst    200315    unordered list of linked page titles
+ *  xlst    200322    excerpt list
+ *  blst    200322    unordered list of linked blog titles
+ *  clst    200322    unordered list of linked category titles
+ *  imgg    200322    image gallary
+ *  plst    200322    unordered list of linked page titles
  *
  *  Utility
  *  ---------------  ---------------------------------------------------------
@@ -437,742 +438,772 @@ if (!function_exists('xidipity_the_attached_image')) {
  *  Xidipity WordPress Theme
  *
  *  name:   xlst
- *  build:  200315
- *  descrp: display list of blog excerpts
- *  attributes ($atts - array):
+ *  build:  200322
+ *  descrp: display list of blog excerpts by category
+ *  attributes ($args - array):
  *      orderby - string
  *      order - string (A/D)
- *      xclude - string (y/n)
- *      align_img - string (l/r)
- *      count - numeric      
- *      paged - string (y/n)
+ *      align_img - string (l/r/x) x=no image
+ *      cnt - numeric
  *
  *  parameters ($prm - string):
  *      category - string
  *
- *  [xlst orderby='' order='' xclude='' align_img='' count=0 paged='']category[/xlst]
+ *  [xlst align_img='' cnt=0 orderby='' order='']categories[/xlst]
  *
  *  @package WordPress
  *  @subpackage Xidipity
  *  @since 0.9.9
  *
- */
+*/
 add_shortcode('xlst', 'xlst_shortcode');
-function xlst_shortcode($atts = array() , $prms = '')
+function xlst_shortcode($args = array() , $prms = '')
 {
     /*
-        system variables
+     ***
+     * variables defaults
+     ***
     */
+    $align_image = 'l';
+    $cnt = get_option('posts_per_page');
     $html_retval = '';
-    // current pagination number
-    $wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    // posts / page
-    $wp_ppp = get_option('posts_per_page');
+    $order = '';
+    $orderby = '';
+
     /*
-        local variables
+     ***
+     * parameters
+     ***
     */
-    $v_align = 0;
-    $v_align_img = 'l';
-    $v_cats = '';
-    $v_count = 1;
-    $v_html_img = '';
-    $v_html_title = '';
-    $v_img_exists = false;
-    $v_img_size = 'large';
-    $v_meta_icon_cat = '';
-    $v_meta_link_rm = '';
-    $v_meta_list_byline = '';
-    $v_meta_list_cat = '';
-    $v_order = 'DESC';
-    $v_orderby = '';
-    $v_paged = 'n';
-    $v_ppp = 0;
+    $prm_categories = trim($prms);
+
     /*
-        attributes
+     ***
+     * initialize local arguments
+     ***
     */
-    $a_align_img = '';
-    $a_count = 4;
-    $a_fmt = 1;
-    $a_order = '';
-    $a_orderby = '';
-    $a_paged = '';
-    $a_xclude = '';    /*
-        parameters
-    */
-    $p_cat_lst = trim($prms);
-    /*
-        initialize attributes
-    */
-    if (isset($atts['order']))
+    if (isset($args['align_img']))
     {
-        $a_order = tpl_prg($atts['order']);
-    }
-    if (isset($atts['orderby']))
-    {
-        $a_orderby = tpl_prg($atts['orderby']);
-    }
-    if (isset($atts['xclude']))
-    {
-        $a_xclude = $atts['xclude'];
-    }
-    if (isset($atts['align']))
-    {
-        $a_align_img = $atts['align'];
-    }
-    if (isset($atts['count']))
-    {
-        $a_count = $atts['count'];
-    }
-    if (isset($atts['paged']))
-    {
-        $a_paged = $atts['paged'];
-    }
-    /*
-        sanitize attributes
-    */
-    if (strtoupper($a_order) == 'A')
-    {
-        $v_order = 'ASC';
-    }
-    If (!empty($a_orderby))
-    {
-        $v_orderby = val_orby($a_orderby);
-    }
-    if (strtolower($a_align_img) == 'r')
-    {
-        $v_align_img = 'r';
-    }
-    $v_ppp = abs($a_count);
-    if ($v_ppp == 0)
-    {
-        $v_ppp = $wp_ppp;
-    }
-    /*
-        sanitize parameter
-    */
-    if (strtolower($a_paged) == 'y')
-    {
-        $v_paged = 'y';
-    }
-    if (!empty($p_cat_lst))
-    {
-        if (strtolower($a_xclude) == 'y')
+        $tmp_str = no_dft($args['align_img']);
+        if (has_match('x,l,r', strtolower($tmp_str)))
         {
-            $v_cats = val_cat($p_cat_lst, 1);
-        }
-        else
-        {
-            $v_cats = val_cat($p_cat_lst, 0);            
+            $align_image = $tmp_str;
         }
     }
-    /*
-        set up db query
-    */
-    if ($v_paged == 'y')
+    if (isset($args['cnt']))
     {
-        $qry_prms = array(
-            'cat' => $v_cats,
-            'ignore_sticky_posts' => false,
-            'order' => $v_order,
-            'orderby' => $v_orderby,
-            'perm' => 'readable',
-            'paged' => $wp_paged,
-            'post_type' => 'post',
-            'posts_per_page' => $v_ppp
-        );
-    }
-    else
-    {
-        $qry_prms = array(
-            'cat' => $v_cats,
-            'ignore_sticky_posts' => false,
-            'order' => $v_order,
-            'orderby' => $v_orderby,
-            'perm' => 'readable',
-            'post_type' => 'post',
-            'posts_per_page' => $v_ppp
-        );
-    }
-    $db_query = new WP_Query($qry_prms);
-    $post_cnt = $db_query->post_count;
-    if ($db_query->have_posts())
-    {
-        while ($db_query->have_posts())
+        $tmp_num = abs($args['cnt']);
+        if ($tmp_num == 0)
         {
-            $db_query->the_post();
-            /*: post category :*/
+            $cnt = - 1;
+        }
+        elseif ($tmp_num > 0)
+        {
+            $cnt = $tmp_num;
+        }
+    }
+    if (isset($args['orderby']))
+    {
+        $tmp_str = no_dft($args['orderby']);
+        if (!empty($tmp_str))
+        {
+            $orderby = valid_orderby($tmp_str);
+        }
+    }
+    if (isset($args['order']))
+    {
+        $tmp_str = no_dft($args['order']);
+        if (strtoupper($tmp_str) == 'A')
+        {
+            $order = 'ASC';
+        }
+    }
+
+    /*
+     ***
+     * get category id's
+     ***
+    */
+    $category_ids = category_to_id($prm_categories);
+
+    /*
+     ***
+     * set up db query
+     ***
+    */
+    $qry_args = array(
+        'ignore_sticky_posts' => 1,
+        'order' => $order,
+        'orderby' => $orderby,
+        'perm' => 'readable',
+        'posts_per_page' => $cnt,
+        'cat' => $category_ids
+    );
+    $wp_data = new WP_Query($qry_args);
+
+    while ($wp_data->have_posts())
+    {
+        $wp_data->the_post();
+
+        /*
+         ***
+         * excerpt data elements
+         ***
+        */
+        $excerpt_category = '';
+        $excerpt_byline = '';
+        if ('post' == get_post_type())
+        {
+            if ($align_image == 'x')
+            {
+                $wp_img = '';
+            }
+            else
+            {
+                $wp_img = get_the_post_thumbnail(null, 'FULL', array(
+                    'class' => 'cnr:arch-small ht:auto wd:100%'
+                ));
+            }
             if (is_sticky())
             {
-                $v_meta_icon_cat = xidipity_icon_pc();
+                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_sticky(xidipity_first_category()) . '</div>';
             }
             else
             {
-                $v_meta_icon_cat = xidipity_icon_bm();
+                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
             }
-            $v_meta_list_cat =  $v_meta_icon_cat . ',' . xidipity_first_category();
-            /*: post byline :*/
-            if ($a_order == 'modified')
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+
+            /*
+             ***
+             * get post link for read more
+             ***
+            */
+            $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
+
+            /*
+             ***
+             * build article
+             ***
+            */
+            if ($align_image == 'r' && !empty($wp_img))
             {
-                $v_meta_list_byline =  '<p class="fnt:size-small">' . get_the_modified_date() . ' | Author - ' . get_the_author() . '</p>';
-            }
-            else
-            {
-                $v_meta_list_byline =  '<p class="fnt:size-small">' . get_the_date() . ' | Author - ' . get_the_author() . '</p>';
-            }
-            /*: read more :*/
-            $v_meta_link_rm = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-            /*: image :*/
-            $v_img_exists = has_post_thumbnail(get_the_ID());
-            $wp_html_img_url = get_the_post_thumbnail_url($post->ID, 'full');
-            if (!$wp_html_img_url)
-            {
-                $v_html_img = '';                             
-            }
-            else
-            {
-                $v_html_img = '<img class="xwd:100%" src="' . $wp_html_img_url . '" alt="Xidipity Blog Excerpt Shortcode" >';                
-            }            
-            /*: title :*/
-            $v_html_title = '<h1 class="fx:cn-itm-ti"><a href="' . esc_url(apply_filters('xidipity_the_permalink', get_permalink())) . '">' . get_the_title() . '</a></h1>';
-            if (!$wp_html_img_url)
-            {
-                $html_retval .= '<div class="xlst:left bg:bas-050">';
-                $html_retval .= '<div class="xlst:itm dsp:none">&nbsp;</div>';
-                $html_retval .= '<div class="xlst:itm">';
-                $html_retval .= '<p><span class="fg:wcag-grey6 pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
-                $html_retval .= $v_meta_list_byline;
-                $html_retval .= '<header>';
-                $html_retval .= '<h2>' . $v_html_title . '<h2>';
-                $html_retval .= '</header>';
-                $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= dsp_rm($v_meta_link_rm);
-                $html_retval .= '</div>';
-                $html_retval .= '</div>';
+                $html_retval .= '<article class="fx:c sm)fx:r-rev fxa:1 fxb:1 fxc:1 ht:min11 mar:vrt+0.75">';
             }
             else
             {
-                if ($v_align_img == 'l') {
-                    $html_retval .= '<div class="xlst:left bg:bas-050 mar:vrt+0">';
-                }
-                else
-                {
-                    $html_retval .= '<div class="xlst:right bg:bas-050 mar:vrt+0">';
-                }
-                $html_retval .= '<div class="xlst:itm">';
-                $html_retval .= $v_html_img;
-                $html_retval .= '</div>';
-                $html_retval .= '<div class="xlst:itm">';
-                $html_retval .= '<p><span class="fg:wcag-grey6 pad:right+0.5">' . $v_meta_icon_cat . '</span>' . xidipity_first_category() . '</p>';
-                $html_retval .= $v_meta_list_byline;
-                $html_retval .= '<header>';
-                $html_retval .= '<h2>' . $v_html_title . '<h2>';
-                $html_retval .= '</header>';
-                $html_retval .= '<p>' . get_the_excerpt() . '</p>';
-                $html_retval .= dsp_rm($v_meta_link_rm);
-                $html_retval .= '</div>';
-                $html_retval .= '</div>';
+                $html_retval .= '<article class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 ht:min11 mar:vrt+0.75">';
             }
-        
-            if ($v_count < $post_cnt)
+
+            if (!empty($wp_img))
             {
-                $html_retval .= '<p>&nbsp;</p>';
-                $v_count++;
+                $html_retval .= '<div class="fxd:1 fxe:6 sm)fxe:2 sm)wd:20%">';
+                $html_retval .= $wp_img;
+                $html_retval .= '</div>';
             }
-        }
-        /*
-            paginate flag set
-        */
-        if ($v_paged == 'y')
-        {
-            $v_pages = $db_query->max_num_pages;
-            /*: pagination :*/
-            if ($v_pages > 1)
+            $html_retval .= '<div class="fxd:1 sm)fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 sm)pad:hrz+0.5 wd:100%">';
+            if (!empty($excerpt_category))
             {
-                $v_cur_page = max(1, get_query_var('paged'));
-                $html_retval .= xidipity_paginate_links(array('page'=>$v_cur_page,'pages'=>$v_pages));
+                $html_retval .= $excerpt_category;
             }
+            if (!empty($excerpt_byline))
+            {
+                $html_retval .= $excerpt_byline;
+            }
+            $html_retval .= '<div class="pg:title">' . get_the_title() . '</div>';
+            $html_retval .= '<div>' . get_the_excerpt() . '</div>';
+            $html_retval .= dsp_rm($post_link);
+            $html_retval .= '</div>';
+            $html_retval .= '</article>';
+
         }
     }
-    else
-    {
-        $html_retval = dsp_err('[xlst] No blogs assigned to category list: ' . $p_cat_lst);
-    }
-    /*: close query :*/
+
+    /*
+    ***
+        * function: wp_reset_postdata
+        * dsc: database code
+        * ver: 200322
+        * fnt: reset database query
+        * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+    ***
+    */
     wp_reset_postdata();
-    /*: return html :*/
+
+    /*
+    ***
+        * return html
+    ***
+    */
     return $html_retval;
 }
 
 /**
  *  name:   blst
- *  build:  200315
+ *  build:  200322
  *  descrp: display unordered list of linked blog titles
- *  attributes ($atts - array):
+ *  attributes ($args - array):
  *      class - string
  *      bullet - string (font awesome)
  *      orderby - string
  *      order - string (A/D)
- *      xclude - string (y/n)
+ *      cnt - numeric
  *
  *  parameters ($prm - string):
  *      category - string
  *
- *  [blst class='' bullet='' orderby='' order='' xclude='']category[/blst]
+ *  [blst class='' bullet='' orderby='' order='' cnt=0]category[/blst]
  *
  */
 add_shortcode('blst', 'blst_shortcode');
-function blst_shortcode($atts = array(), $prms = '')
+function blst_shortcode($args = array(), $prms = '')
 {
-    // system
+    /*
+    ***
+        * variables defaults
+    ***
+    */
+    $bullet = '';
+    $class = '';
+    $cnt = -1;
     $html_retval = '';
-    // variables
-    $v_cat_lst = '';
-    $v_class = '';
-    $v_pst_itm = '';
-    $v_pre_itm = '';
-    $v_orderby = 'title';
-    $v_order = 'ASC';
-    // attributes
-    $a_class = '';
-    $a_bullet = '';
-    $a_orderby = '';
-    $a_order = '';
-    $a_xclude = 0;
-    // parameters
-    $p_cat_lst = trim($prms);
-    // initialize attributes
-    if (isset($atts['class']))
+    $order = 'ASC';
+    $orderby = 'title';
+
+    /*
+    ***
+        * parameters
+    ***
+    */
+    $prm_categories = trim($prms);
+
+    /*
+    ***
+        * save args to local variables
+    ***
+    */
+    if (isset($args['bullet']))
     {
-        $a_class = tpl_prg($atts['class']);
+        $bullet = no_dft($args['bullet']);
     }
-    if (isset($atts['bullet']))
+    if (isset($args['class']))
     {
-        $a_bullet = tpl_prg($atts['bullet']);
-    }
-    if (isset($atts['orderby']))
-    {
-        $a_orderby = tpl_prg($atts['orderby']);
-    }
-    if (isset($atts['order']))
-    {
-        $a_order = tpl_prg($atts['order']);
-    }
-    if (isset($atts['xclude']))
-    {
-        $a_xclude = tpl_prg($atts['xclude']);
-    }
-    // sanitize attributes
-    if (strtolower($a_xclude) == 'y')
-    {
-        $v_cat_lst = val_cat($p_cat_lst, 1);
-    }
-    else
-    {
-        $v_cat_lst = val_cat($p_cat_lst, 0);
-    }
-    if (strtoupper($a_order) == 'D')
-    {
-        $v_order = 'DESC';
-    }
-    if (!empty($a_orderby))
-    {
-        $v_orderby = val_orby($a_orderby);
-    }
-    $v_class = $a_class;
-    if (!empty($a_bullet))
-    {
-        $v_class = 'ul-fa ' . $a_class;
-        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
-        $v_pst_itm  = '';
-    }
-    if (empty($v_cat_lst) && !empty($p_cat_lst))
-    {
-        $html_retval = dsp_err('[blst] Invalid category list.');
-    }
-    else
-    {
-        // set up db query
-        $wp_qry = array(
-            'cat' => $v_cat_lst,
-            'offset' => 0,
-            'order' => $v_order,
-            'orderby' => $v_orderby,
-            'post_status' => 'publish',
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-            'suppress_filters' => true,
-        );
-        $wp_posts = get_posts($wp_qry);
-        if (!empty($wp_posts))
+        $tmp_str = no_dft($args['class']);
+        if (!empty($tmp_str))
         {
-            $html_retval = '<ul>';
-            if (!empty($v_class))
-            {
-                $html_retval = '<ul class="' . trim($v_class) . '">';
-            }
-            foreach ($wp_posts as $wp_post)
-            {
-                $html_retval .= '<li>';
-                $html_retval .= '<a href="' . get_permalink($wp_post) . '">'  . $v_pre_itm . $wp_post->post_title . $v_pst_itm . '</a>';
-                $html_retval .= '</li>';
-            }
-            $html_retval .= '</ul>';
-            // close query
-            wp_reset_postdata();
-        }        
-    }    
-    // return html
+            $class = $tmp_str;
+        }
+    }
+    if (isset($args['cnt']))
+    {
+        $tmp_num = abs($args['cnt']);
+        if ($tmp_num > 0)
+        {
+            $cnt = $tmp;
+        }
+    }
+    if (isset($args['orderby']))
+    {
+        $tmp_str = no_dft($args['orderby']);
+        If (!empty($tmp_str))
+        {
+            $orderby = valid_orderby($tmp_str);
+        }
+    }
+    if (isset($args['order']))
+    {
+        $tmp_str = no_dft($args['order']);
+        if (strtoupper($tmp_str) == 'D')
+        {
+            $order = 'DESC';
+        }
+    }
+
+    /*
+    ***
+        * font awesome bullet
+    ***
+    */
+    if (!empty($bullet))
+    {
+        $tmp_str = $class;
+        $class = 'ul-fa ' . $tmp_str;
+        $pre_itm  = '<span class="li-fa">' . $bullet . '</span>';
+        $pst_itm  = '';
+    }
+
+    /*
+    ***
+        * get category id's
+    ***
+    */
+    $category_ids = category_to_id($prm_categories);
+
+    /*
+    ***
+        * set up db query
+    ***
+    */
+    $qry_args = array(
+        'ignore_sticky_posts' => 1,
+        'order' => $order,
+        'orderby' => $orderby,
+        'perm' => 'readable',
+        'posts_per_page' => $cnt,
+        'cat' => $category_ids
+    );
+    $wp_data = new WP_Query($qry_args);
+
+    /*
+    ***
+        * build return html
+    ***
+    */
+    $html_retval = '<ul>';
+    if (!empty($class))
+    {
+        $html_retval = '<ul class="' . $class . '">';
+    }
+    if ($wp_data->have_posts())
+    {
+        while ($wp_data->have_posts())
+        {
+            $wp_data->the_post();
+            $html_retval .= '<li>';
+            $html_retval .= '<a href="' . get_permalink() . '">'  . $pre_itm . get_the_title() . $pst_itm . '</a>';
+            $html_retval .= '</li>';
+        }
+    }
+    else
+    {
+        $html_retval .= '<li>No posts found ...</li>';
+    }
+    $html_retval .= '</ul>';
+
+    /*
+    ***
+        * function: wp_reset_postdata
+        * dsc: database code
+        * ver: 200322
+        * fnt: reset database query
+        * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+    ***
+    */
+    wp_reset_postdata();
+
+    /*
+    ***
+        * return html
+    ***
+    */
     return $html_retval;
 }
+
 /**
  *  name:   clst
- *  build:  200315
+ *  build:  200322
  *  descrp: display unordered list of linked category titles
- *  attributes ($atts - array):
+ *  attributes ($args - array):
  *      class - string
  *      bullet - string (font awesome)
  *      depth - numeric
  *      active - string (y/n)
- *      xclude - string
  *
  *  parameters ($prm - string):
  *      category - string
  *
  *  https://developer.wordpress.org/reference/functions/wp_list_categories/
  *
- *  [clst class='' bullet='' depth=0 active='' xclude='']category[/clst]
+ *  [clst class='' bullet='' depth=0 active='']category[/clst]
  *
  */
 add_shortcode('clst', 'clst_shortcode');
-function clst_shortcode($atts = array(), $prm = '')
+function clst_shortcode($args = array(), $prm = '')
 {
-    // system
+    /*
+    ***
+        * variables defaults
+    ***
+    */
+    $active = 0;
+    $bullet = '';
+    $class = '';
+    $depth = 0;
     $html_retval = '';
-    // variables
-    $v_active = false;
-    $v_class = '';
-    $v_ct_root = '';
-    $v_depth = 0;
-    $v_pre_itm = '';
-    $v_pst_itm = '';
-    $v_xclude = '';
-    // attributes
-    $a_active = '';
-    $a_bullet = '';
-    $a_class = '';
-    $a_depth = 0;
-    $a_xclude = '';
-    // parameters
-    $p_ct_root = trim($prm);
-    // initialize attributes
-    if (isset($atts['active']))
+    $pre_itm = '';
+    $pst_itm = '';
+
+    /*
+    ***
+        * parameters
+    ***
+    */
+    $prm_categories = trim($prm);
+
+    /*
+    ***
+        * save args to local variables
+    ***
+    */
+    if (isset($args['active']))
     {
-        $a_active = $atts['active'];
-    }
-    if (isset($atts['bullet']))
-    {
-        $a_bullet = tpl_prg($atts['bullet']);
-    }
-    if (isset($atts['class']))
-    {
-        $a_class = tpl_prg($atts['class']);
-    }
-    if (isset($atts['depth']))
-    {
-        $a_depth = $atts['depth'];
-    }
-    if (isset($atts['xclude']))
-    {
-        $a_xclude = tpl_prg($atts['xclude']);
-    }
-    // sanitize attributes
-    if (strtolower($a_active) == 'y')
-    {
-        $v_active = true;
-    }
-    $v_class = $a_class;
-    if (!empty($a_bullet))
-    {
-        $v_class = 'ul-fa ' . $a_class;
-        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
-        $v_pst_itm  = '';
-    }
-    $v_depth = abs($a_depth);
-    // convert excluded category names to cateogry id's
-    if (!empty($a_xclude))
-    {
-        $xcats = explode(',', $a_xclude);
-        foreach ($xcats as $xcat)        
+        $tmp_str = strtolower(no_dft($args['active']));
+        if ($tmp_str == 'y')
         {
-            $xcat_id = get_cat_ID($xcat);
-            if (!empty($xcat_id))
-            {
-                $v_xclude .= $xcat_id . ',';
-            }            
+            $active = 1;
         }
     }
-    // update hroot
-    if (!empty($p_ct_root))
+    if (isset($args['bullet']))
     {
-        $v_ct_root = val_cat($p_ct_root, 0);
+        $bullet = no_dft($args['bullet']);
     }
-    if (empty($v_ct_root) && !empty($p_ct_root))
+    if (isset($args['class']))
     {
-        $html_retval = dsp_err('[clst] Invalid category parent: ' . $p_ct_root);
-    }
-    else
-    {
-        // set up db query
-        $wp_qry = array(
-            'child_of' => $v_ct_root,
-            'class' => $v_class,
-            'current_category' => 0,
-            'depth' => $v_depth,
-            'echo' => false,
-            'exclude' => $v_xclude,
-            'exclude_tree' => '',
-            'feed' => '',
-            'feed_image' => '',
-            'feed_type' => '',
-            'hide_empty' => $v_active,
-            'hide_title_if_empty' => false,
-            'hierarchical' => true,
-            'link_after' => $v_pst_itm,
-            'link_before' => $v_pre_itm,
-            'order' => 'ASC',
-            'orderby' => 'name',
-            'separator' => '<br />',
-            'show_count' => false,
-            'show_option_all' => '',
-            'show_option_none' => __('No categories', 'xidipity') ,
-            'style' => 'list',
-            'taxonomy' => 'category',
-            'title_li' => '',
-            'use_desc_for_title' => 0,
-            'walker' => new c_walker()
-        );
-        if (empty($v_class))
+        $tmp_str = no_dft($args['class']);
+        if (!empty($tmp_str))
         {
-            $html_retval .= '<ul>';
+            $class = $tmp_str;
+        }
+    }
+    if (isset($args['depth']))
+    {
+        $depth = abs($args['depth']);
+    }
+
+    /*
+    ***
+        * font awesome bullet
+    ***
+    */
+    if (!empty($bullet))
+    {
+        $tmp_str = $class;
+        $class = 'ul-fa ' . $tmp_str;
+        $pre_itm  = '<span class="li-fa">' . $bullet . '</span>';
+        $pst_itm  = '';
+    }
+
+    /*
+    ***
+        * get category id's
+    ***
+    */
+    $category_ids = category_to_id($prm_categories);
+
+    /*
+    ***
+        * separate include/exclude category id's
+    ***
+    */
+    $include_ids = '';
+    $exclude_ids = '';
+    $cat_ids = explode(',', $category_ids);
+    foreach ($cat_ids as $cat_id)
+    {
+        if (substr($cat_id,0,1) == '-')
+        {
+            $exclude_ids .= substr($cat_id,1) . ',';
         }
         else
         {
-            $html_retval .= '<ul class="' . $v_class . '">';
+            $include_ids .= $cat_id . ',';
         }
-        $html_retval .= wp_list_categories($wp_qry);
-        $html_retval .= '</ul>';
     }
-    // close query
+    if (!empty($include_ids))
+    {
+        $include_ids = substr($include_ids, 0, -1);
+    }
+    if (!empty($exclude_ids))
+    {
+        $exclude_ids = substr($exclude_ids, 0, -1);
+    }
+
+    /*
+    ***
+        * set up db query
+    ***
+    */
+    $wp_data = array(
+        'child_of' => $include_ids,
+        'class' => $class,
+        'current_category' => 0,
+        'depth' => $depth,
+        'echo' => false,
+        'exclude' => $exclude_ids,
+        'exclude_tree' => '',
+        'feed' => '',
+        'feed_image' => '',
+        'feed_type' => '',
+        'hide_empty' => $active,
+        'hide_title_if_empty' => false,
+        'hierarchical' => true,
+        'link_after' => $pst_itm,
+        'link_before' => $pre_itm,
+        'order' => 'ASC',
+        'orderby' => 'name',
+        'separator' => '<br />',
+        'show_count' => false,
+        'show_option_all' => '',
+        'show_option_none' => __('No categories', 'xidipity') ,
+        'style' => 'list',
+        'taxonomy' => 'category',
+        'title_li' => '',
+        'use_desc_for_title' => 0,
+        'walker' => new c_walker()
+    );
+
+    /*
+    ***
+        * build return html
+    ***
+    */
+    $html_retval = '<ul>';
+    if (!empty($class))
+    {
+        $html_retval = '<ul class="' . $class . '">';
+    }
+    $html_retval .= wp_list_categories($wp_data);
+    $html_retval .= '</ul>';
+
+    /*
+    ***
+        * function: wp_reset_postdata
+        * dsc: database code
+        * ver: 200322
+        * fnt: reset database query
+        * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+    ***
+    */
     wp_reset_postdata();
-    // return html
+
+    /*
+    ***
+        * return html
+    ***
+    */
     return $html_retval;
 }
+
 /**
  *  name: imgg
  *  build: 200315
  *  description: Gallery images by category
- *  attributes ($atts - array):
+ *  attributes ($args - array):
  *      class - string
- *      align_capt - string (l/c/r)
- *      dsp_desc - string (y/n)
+ *      caption - string (l/c/r)
+ *      content - string (y/n)
  *      columns - numeric (2-4)
  *      orderby - string
  *      order - string (A/D)
- *      xclude - string (y/n)
  *
  *  parameters ($prm - string):
  *      category - string
  *
- * [imgg class="" align_capt="" dsp_desc="" columns=0 orderby="" order="" xclude=""]category[/imgg]
+ * [imgg class="" caption="" content="" orderby="" order=""]category[/imgg]
  *
  */
 add_shortcode('imgg', 'imgg_shortcode');
-function imgg_shortcode($atts = array() , $prms = '')
+function imgg_shortcode($args = array() , $prms = '')
 {
-    // system
+    /*
+    ***
+        * variables defaults
+    ***
+    */
+    $class = '';
+    $caption = 'c';
+    $content = 'n';
     $html_retval = '';
-    // variables
-    $v_categories = '';
-    $v_class = '';
-    $v_align_capt = 'c';
-    $v_dsp_desc = 'n';
-    $v_columns = '2';    
-    $v_order = 'ASC';
-    $v_orderby = '';
-    // attributes
-    $a_class = '';
-    $a_align_capt = '';
-    $a_dsp_desc = '';
-    $a_columns = 0;    
-    $a_xclude = '';
-    $a_order = '';
-    $a_orderby = '';
-    // parameters
-    $p_cat_lst = trim($prms);
-    // initialize attributes
-    if (isset($atts['class']))
+    $order = '';
+    $orderby = '';
+    $seo = 'Xidipity WordPress Theme Gallery Image';
+
+    /*
+    ***
+        * parameters
+    ***
+    */
+    $prm_categories = trim($prms);
+
+    /*
+    ***
+        * save args to local variables
+    ***
+    */
+    if (isset($args['caption']))
     {
-        $a_class = tpl_prg($atts['class']);
+        $tmp_str = strtolower(no_dft($args['caption']));
+        if (has_match('l,c,r,x', $tmp_str))
+        {
+            $caption = $tmp_str;
+        }
     }
-    if (isset($atts['align_capt']))
+    if (isset($args['class']))
     {
-        $a_align_capt = $atts['align_capt'];
+        $tmp_str = no_dft($args['class']);
+        if (!empty($tmp_str))
+        {
+            $class = no_dft($args['class']);
+        }
     }
-    if (isset($atts['dsp_desc']))
+    if (isset($args['content']))
     {
-        $a_dsp_desc = $atts['dsp_desc'];
+        $tmp_str = strtolower(no_dft($args['content']));
+        if (has_match('y,n', $tmp_str))
+        {
+            $content = $tmp_str;
+        }
     }
-    if (isset($atts['columns']))
+    if (isset($args['orderby']))
     {
-        $a_columns = $atts['columns'];
+        $tmp_str = no_dft($args['orderby']);
+        If (!empty($tmp_str))
+        {
+            $orderby = valid_orderby($tmp_str);
+        }
     }
-    if (isset($atts['xclude']))
+    if (isset($args['order']))
     {
-        $a_xclude = $atts['xclude'];
+        $tmp_str = no_dft($args['order']);
+        if (strtoupper($tmp_str) == 'D')
+        {
+            $order = 'DESC';
+        }
     }
-    if (isset($atts['order']))
-    {
-        $a_order = tpl_prg($atts['order']);
-    }
-    if (isset($atts['orderby']))
-    {
-        $a_orderby = tpl_prg($atts['orderby']);
-    }
-    // sanitize attributes
-    $v_class = trim($a_class);
-    if (strtolower($a_xclude) == 'y')
-    {
-        $v_categories = val_cat($p_cat_lst, 1);
-    }
-    else
-    {
-        $v_categories = val_cat($p_cat_lst, 0);        
-    }
-    switch (strtolower($a_align_capt))
-    {
-        case 'l':
-            $v_align_capt = 'left';
-        break;
-        case 'c':
-            $v_align_capt = 'center';
-        break;
-        case 'r':
-            $v_align_capt = 'right';
-        break;
-        default:
-            $v_align_capt = 'center';
-    }
-    if (strtolower($a_dsp_desc) == 'y')
-    {
-        $v_dsp_desc = 'y';
-    }
-    switch (abs($a_columns))
-    {
-        case 3:
-            $v_columns = '1/3';
-        break;
-        case 4:
-            $v_columns = '1/4';
-        break;
-        default:
-            $v_columns = '1/2';
-    }
-    if (strtoupper($a_order) !== 'A')
-    {
-        $v_order = 'DESC';
-    }
-    $v_orderby = val_orby($a_orderby);
+
+    /*
+    ***
+        * get category id's
+    ***
+    */
+    $category_ids = category_to_id($prm_categories);
+
     // validate go / no go path
-    if (strlen($p_cat_lst) == 0)
+    if (empty($prm_categories))
     {
         $html_retval = dsp_err('[imgg] Missing category list');
     }
-    elseif (strlen($v_categories) == 0)
+    elseif (empty($category_ids))
     {
-        $html_retval = dsp_err('[imgg] Invalid category list: ' . $p_cat_lst);
+        $html_retval = dsp_err('[imgg] Invalid category list: ' . $prm_categories);
     }
     else
     {
-        // Set up db query
-        $wp_prms = array(
-            'cat' => $v_categories,
-            'order' => $v_order,
-            'orderby' => $v_orderby,
+        /*
+        ***
+            * set up db query
+        ***
+        */
+        $qry_args = array(
+            'cat' => $category_ids,
+            'order' => '',
+            'orderby' => '',
             'post_mime_type' => 'image',
             'post_status' => 'inherit',
             'post_type' => 'attachment',
-            'posts_per_page' => '30'
+            'posts_per_page' => '-1'
         );
-        $wp_query = new WP_Query($wp_prms);
-        if ($wp_query->have_posts())
+        $wp_data = new WP_Query($qry_args);
+
+        if ($wp_data->have_posts())
         {
-            //$html_retval .= '<div class="fx:rw fa:1 fb:1 fc:1">';
-            $html_retval .= '<div class="fx:c sm)fx:rw fxa:3 fxb:1 fxc:1">';
+            $html_retval  = '<!--  fc:GALLERY -->';
+            $html_retval .= '<div class="fx:rw fxa:1 fxb:1 fxc:1 wd:100%">';
 
-            while ($wp_query->have_posts())
+            while ($wp_data->have_posts())
             {
-                $wp_query->the_post();
-                $wp_img = wp_get_attachment_image_src(get_the_ID() , 'full');
+                $wp_data->the_post();
+                $wp_post = get_post();
+                $image_caption = $wp_post->post_excerpt;
+                $image_content = $wp_post->post_content;
 
-                //$html_retval .= '<div class="fx:c fa:1 fb:1 fc:1 pad:+0.5 wd:100% sm)wd:' . $v_columns . '">';
-                $html_retval .= '<div class="wd:100% sm)pad:+0.5 sm)wd:min20 sm)wd:' . $v_columns . '">';
-                
-                //$html_retval .= '<div class="fx:c fa:1 fb:1 fc:1">';
-                
-                //$html_retval .= '<div class="fd:1 fe:1 wd:100%">';                
-                if (empty($v_class))
+                $html_retval .= '<div class="fxd:1 fxe:1 pad:bottom+1 sm)pad:hrz+0.5 wd:100% sm)wd:1/2 md)wd:1/3 xl)wd:1/4">';
+
+                /*
+                ***
+                    * display image
+                ***
+                */
+                $html_retval .= '<div class="dsp:block wd:100%">';
+                $html_retval .= wp_get_attachment_link(get_the_ID(),'full', true, false, false, array('class'=>$class,'alt'=>$seo));
+                $html_retval .= '</div>';
+
+                /*
+                ***
+                    * display caption
+                ***
+                */
+                switch ($caption)
                 {
-                    $html_retval .= '<p><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100%" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a></p>';
+                    case 'l':
+                        $html_retval .= '<div class="aln:text-left dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
+                    break;
+                    case 'r':
+                        $html_retval .= '<div class="aln:text-right dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
+                    case 'x':
+                        $html_retval .= '<div class="dsp:none">';
+                    break;
+                    default:
+                        $html_retval .= '<div class="aln:text-center dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
                 }
-                else
+                $html_retval .= $image_caption;
+                $html_retval .= '</div>';
+
+                /*
+                ***
+                    * display content
+                ***
+                */
+                if ($content == 'y')
                 {
-                    $html_retval .= '<p><a href="' . get_attachment_link(get_post(get_post_thumbnail_id())) . '" target="_blank"><img class="xwd:100% ' . $v_class . '" src="' . $wp_img[0] . '" alt="Xidipity Gallery Image"></a></p>';
+                    $html_retval .= '<div class="aln:text-left dsp:block wd:100%">';
+                    $html_retval .= $image_content;
+                    $html_retval .= '</div>';
                 }
-                //$html_retval .= '</div>';
-                
-                //$html_retval .= '<div class="fd:1 fe:1 line:ht-2 aln:text-' . $v_align_capt . ' wd:100%">';    
-                $html_retval .= '<p class="aln:text-' . $v_align_capt . '">' . $wp_query->post->post_excerpt . '</p>';    
-                //$html_retval .= '<p>' . $wp_query->post->post_excerpt . '</p>';
-                //$html_retval .= '</div>';
-                
-                if ($v_dsp_desc == 'y')
-                {
-                    //$html_retval .= '<div class="fd:1 fe:1 wd:100%">';
-                    $html_retval .= '<p class="mar:top+0.5">' . $wp_query->post->post_content . '</p>';
-                    //$html_retval .= '</div>';
-                }
-                //$html_retval .= '</div>';
                 $html_retval .= '</div>';
             }
             $html_retval .= '</div>';
-
+            $html_retval .= '<!-- /fc:GALLERY -->';
         }
         else
         {
-            $html_retval = dsp_err('[imgg] No images assigned to category list: ' . $p_cat_lst);
+            $html_retval = dsp_err('[imgg] No images assigned to category(s): ' . $prm_categories);
         }
-        // close query
+
+        /*
+        ***
+            * function: wp_reset_postdata
+            * descript: reset database query
+            * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+        ***
+        */
         wp_reset_postdata();
     }
-    // return html
+
+    /*
+    ***
+        * return html
+    ***
+    */
     return $html_retval;
 }
+
 /*
  *  Xidipity WordPress Theme
  *
  *  name:   plst
- *  build:  200315
+ *  build:  200322
  *  descrp: display unordered list of linked page titles
- *  attributes ($atts - array):
+ *  attributes ($args - array):
  *      class - string
  *      bullet - string (font awesome/google)
  *      depth - numeric
  *      xclude - string
  *
  *  parameters ($prm - string):
- *      root page - string
+ *      page title(s) - string
  *
- *  [plst class='' pre_itm='' pst_itm='' depth=0 xclude='']root page[/plst]
+ *  [plst class='' bullet='' depth=0]titles[/plst]
  *
  *  https://developer.wordpress.org/reference/functions/wp_list_pages/
  *
@@ -1180,102 +1211,159 @@ function imgg_shortcode($atts = array() , $prms = '')
  *  @subpackage Xidipity
  *  @since 0.9.9
  *
- */
+*/
 add_shortcode('plst', 'plst_shortcode');
-function plst_shortcode($atts = array(), $prm = string)
+function plst_shortcode($args = array() , $prm = string)
 {
-    // system
+    /*
+     ***
+     * variables defaults
+     ***
+    */
+    $bullet = '';
+    $class = '';
+    $depth = 0;
     $html_retval = '';
-    // variables
-    $v_class = '';
-    $v_id_root = 0;
-    $v_pre_itm = '';
-    $v_pst_itm = '';
-    $v_depth = 1;
-    $v_xclude = '';
-    // attributes
-    $a_bullet = '';
-    $a_class = '';
-    $a_depth = 0;
-    $a_xclude = '';
-    // parameters
-    $p_pg_root = trim($prm);
-    // initialize attributes
-    if (isset($atts['class']))
+    $pre_itm = '';
+    $pst_itm = '';
+
+    /*
+     ***
+     * parameters
+     ***
+    */
+    $prm_titles = trim($prm);
+
+    /*
+     ***
+     * save args to local variables
+     ***
+    */
+    if (isset($args['bullet']))
     {
-        $a_class = tpl_prg($atts['class']);
+        $bullet = no_dft($args['bullet']);
     }
-    if (isset($atts['bullet']))
+    if (isset($args['class']))
     {
-        $a_bullet = tpl_prg($atts['bullet']);
-    }
-    if (isset($atts['depth']))
-    {
-        $a_depth = $atts['depth'];
-    }
-    if (isset($atts['xclude']))
-    {
-        $a_xclude = tpl_prg($atts['xclude']);
-    }
-    // sanitize attributes
-    $v_class = $a_class;
-    if (!empty($a_bullet))
-    {
-        $v_class = 'ul-fa ' . $a_class;
-        $v_pre_itm  = '<span class="li-fa">' . $a_bullet . '</span>';
-        $v_pst_itm  = '';
-    }
-    $v_depth = abs($a_depth);
-    // convert excluded page names to page id's
-    if (!empty($a_xclude))
-    {
-        $xpages = explode(',', $a_xclude);
-        foreach ($xpages as $xpage)        
+        $tmp_str = no_dft($args['class']);
+        if (!empty($tmp_str))
         {
-            $wp_page = get_page_by_title($xpage);
-            if ($wp_page)
-            {
-                $v_xclude .= $wp_page->ID . ',';
-            }            
+            $class = $tmp_str;
         }
     }
-    // update hroot
-    if (!empty($p_pg_root))
+    if (isset($args['depth']))
     {
-        $wp_page = get_page_by_title($p_pg_root);
-        if ($wp_page)
-        {
-            $v_id_root = $wp_page->ID;
-        }
+        $depth = abs($args['depth']);
     }
-    // set up db query
-    $wp_qry = array(
-        'class' => $v_class,
-        'depth' => $v_depth,
-        'date_format' => get_option('date_format') ,
-        'child_of' => $v_id_root,
-        'exclude' => $v_xclude,
-        'echo' => false,
-        'sort_column' => 'title',
-        'link_before' => $v_pre_itm,
-        'link_after' => $v_pst_itm,
-        'item_spacing' => 'discard',
-        'title_li' => '',
-        'walker' => new p_walker()
+
+    /*
+     ***
+     * font awesome bullet
+     ***
+    */
+    if (!empty($bullet))
+    {
+        $tmp_str = $class;
+        $class = 'ul-fa';
+        if (!empty($tmp_str))
+        {
+            $class .= ' ' . $tmp_str;
+        }
+        $pre_itm = '<span class="li-fa">' . $bullet . '</span>';
+    }
+
+    /*
+     ***
+     * sanitize page title argument
+     ***
+    */
+    $separators = array(
+        ".",
+        "/",
+        ":",
+        ";",
+        "|"
     );
-    if (empty($v_class))
+    $tmp_str = str_replace($separators, ",", $prm_titles);
+    $prm_titles = $tmp_str;
+
+    /*
+     ***
+     * build include/exclude page id list
+     ***
+    */
+    $include_ids = '';
+    $exclude_ids = '';
+    $titles = explode(',', $prm_titles);
+    foreach ($titles as $title)
     {
-        $html_retval .= '<ul>';
+        $page = get_page_by_title(str_replace('-', '', $title));
+        if ($page)
+        {
+            if (substr($title, 0, 1) == '-')
+            {
+                $exclude_ids .= $page->ID . ',';
+            }
+            else
+            {
+                $include_ids .= $page->ID . ',';
+            }
+        }
     }
-    else
+    if (!empty($include_ids))
     {
-        $html_retval .= '<ul class="' . trim($v_class) . '">';
+        $include_ids = substr($include_ids, 0, -1);
     }
-    $html_retval .= wp_list_pages($wp_qry);
+    if (!empty($exclude_ids))
+    {
+        $exclude_ids = substr($exclude_ids, 0, -1);
+    }
+
+    /*
+    ***
+        * initialize query arguments
+    ***
+    */
+    $wp_data = array(
+        'child_of' => $include_ids,
+        'depth' => $depth,
+        'echo' => false,
+        'exclude' => $exclude_ids,
+        'link_after' => $pst_itm,
+        'link_before' => $pre_itm,
+        'sort_column' => 'title',
+        'title_li' => ''
+    );
+
+    /*
+     ***
+     * build return html
+     ***
+    */
+    $html_retval = '<ul>';
+    if (!empty($class))
+    {
+        $html_retval = '<ul class="' . $class . '">';
+    }
+    $html_retval .= wp_list_pages($wp_data);
     $html_retval .= '</ul>';
-    // close query
+
+    /*
+     ***
+     * function: wp_reset_postdata
+     * dsc: database code
+     * ver: 200322
+     * fnt: reset database query
+     * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+     ***
+    */
     wp_reset_postdata();
-    // return html
+
+    /*
+     ***
+     * return html
+     ***
+    */
     return $html_retval;
 }
 
@@ -1407,7 +1495,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200315
+ * Build:   200322
  *
  */
 ?>
