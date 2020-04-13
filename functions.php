@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200315
+ * Build:           200322
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -47,6 +47,15 @@ function theme_cfg() {
                 $cfg_val = trim(substr($xwt_prm,strpos($xwt_prm, '=')+1));
                 switch ($cfg_key)
                 {
+                    case 'fav-icon':
+                        $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
+                        if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
+                        {
+                            $cfg_val = 'none';
+                        }
+                        define('XWT_FAV_ICO', $cfg_val);
+                        update_option('XWT_FAV_ICO',$cfg_val);
+                        break;
                     case 'fa-version':
                         define('XWT_FA_VER', $cfg_val);
                         break;
@@ -59,7 +68,11 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-                        define("XWT_HDR_IMG", $cfg_val);
+						if (!has_match('.',$cfg_val))
+                        {
+                            $cfg_val = 'none';
+                        }
+                        define('XWT_HDR_IMG', $cfg_val);
                         break;
                     case 'hdr-logo':
                         $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
@@ -67,49 +80,53 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-                        define("XWT_HDR_LOGO", $cfg_val);
+						if (!has_match('.',$cfg_val))
+                        {
+                            $cfg_val = 'none';
+                        }
+                        define('XWT_HDR_LOGO', $cfg_val);
                         break;
                     case 'hdr-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        define("XWT_HDR_ALIGN", $cfg_val);
+                        define('XWT_HDR_ALIGN', $cfg_val);
                         break;
                     case 'ftr-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        define("XWT_FTR_ALIGN", $cfg_val);
+                        define('XWT_FTR_ALIGN', $cfg_val);
                         break;
                     case 'mnu-width':
                         if (!has_match('70%/75%/80%/85%/90%/95%/100%',$cfg_val))
                         {
                             $cfg_val = '100%';
                         }
-                        define("XWT_MENU_WIDTH", $cfg_val);
+                        define('XWT_MENU_WIDTH', $cfg_val);
                         break;
                     case 'mnu-align':
                         if (!has_match('left/center/right',$cfg_val))
                         {
                             $cfg_val = 'center';
                         }
-                        define("XWT_MNU_ALIGN", $cfg_val);
+                        define('XWT_MNU_ALIGN', $cfg_val);
                         break;
                     case 'sb-align':
                         if (!has_match('left/right',$cfg_val))
                         {
                             $cfg_val = 'right';
                         }
-                        define("XWT_SIDEBAR_ALIGN", $cfg_val);
+                        define('XWT_SIDEBAR_ALIGN', $cfg_val);
                         break;
                     case 'emoji-display':
                         if (!has_match('no/yes',$cfg_val))
                         {
                             $cfg_val = 'yes';
                         }
-                        define("XWT_EMOJI_DSP", $cfg_val);
+                        define('XWT_EMOJI_DSP', $cfg_val);
                         break;
                 }
             }
@@ -125,6 +142,9 @@ function theme_cfg() {
     }
     if (!defined('XWT_HDR_HGT')) {
         define('XWT_HDR_HGT', '100px');
+    }
+    if (!defined('XWT_FAV_ICO')) {
+        define('XWT_FAV_ICO', 'none');
     }
     if (!defined('XWT_HDR_IMG')) {
         define('XWT_HDR_IMG', 'none');
@@ -152,18 +172,19 @@ function theme_cfg() {
     }
     return;
 }
+
 /**
  *  name: disp_menu
  *  build: 190915.1b
  *  description: set / get display menu flag
  *  attributes:
- *      $attr - string
+ *      $argr - string
  *
  */
-function disp_menu($attr='')
+function disp_menu($argr='')
 {
     $fn_val = 'yes';
-    $v_attr = trim($attr);
+    $v_attr = trim($argr);
     if (empty($v_attr))
     {
         /*: get value :*/
@@ -193,54 +214,14 @@ function disp_menu($attr='')
     return $fn_val;
 }
 /**
- *  name: disp_sidebar
- *  build: 190915.1b
- *  description: set / get display sidebar flag
- *  attributes:
- *      $attr - string
- *
- */
-function disp_sidebar($attr='')
-{
-    $fn_val = 'yes';
-    $v_attr = trim($attr);
-    if (empty($v_attr))
-    {
-        /*: get value :*/
-        if (empty($GLOBALS['$global_dsp_sidebar']))
-        {
-            /*: set default value :*/
-            $GLOBALS['$global_dsp_sidebar'] = 'yes';
-        }
-        /*: return value :*/
-        $fn_val = $GLOBALS['$global_dsp_sidebar'];
-    }
-    else
-    {
-        $v_attr = strtolower($v_attr);
-        if (has_match('no,yes',$v_attr))
-        {
-            /*: set value :*/
-            $GLOBALS['$global_dsp_sidebar'] = $v_attr;
-        }
-        else
-        {
-            /*: set default value :*/
-            $GLOBALS['$global_dsp_sidebar'] = 'yes';
-        }
-        $fn_val = $v_attr;
-    }
-    return $fn_val;
-}
-/**
  *  name: err_msg
  *  build: 190901.1a
  *  description: set / get error message
  *  attributes:
- *      $attr - string
+ *      $argr - string
  *
  */
-function err_msg($attr='')
+function err_msg($argr='')
 {
     global $xwt_err_msg;
     $fn_val = '';
@@ -248,7 +229,7 @@ function err_msg($attr='')
     {
         $xwt_err_msg = '';
     }
-    if (empty($attr))
+    if (empty($argr))
     {
         $fn_val = $xwt_err_msg;
         /*: report & clear :*/
@@ -256,7 +237,7 @@ function err_msg($attr='')
     }
     else
     {
-        $xwt_err_msg = $attr;
+        $xwt_err_msg = $argr;
     }
     return $fn_val;
 }
@@ -346,12 +327,23 @@ function blog_copyright() {
     }
     return $fn_val;
 }
+
+/**
+ *  name: com_walker
+ *  build: 200322
+ *  description: category walker extension to support font awesome icons
+ *  functions:
+ *      $args - array
+ *  doc: https://xidipity.com/reference/source-code/shortcodes/c_walker/
+ *
+ */
+
 /**
  *  name: c_walker
  *  build: 190728.1
  *  description: category walker extension to support font awesome icons
  *  functions:
- *      $atts - array
+ *      $args - array
  *  doc: https://xidipity.com/reference/source-code/shortcodes/c_walker/
  *
  */
@@ -550,15 +542,15 @@ class p_walker extends Walker
         }
         $args['link_before'] = empty($args['link_before']) ? '' : $args['link_before'];
         $args['link_after'] = empty($args['link_after']) ? '' : $args['link_after'];
-        $atts = array();
-        $atts['href'] = get_permalink($page->ID);
-        $atts['aria-current'] = ($page->ID == $current_page) ? 'page' : '';
+        $args = array();
+        $args['href'] = get_permalink($page->ID);
+        $args['aria-current'] = ($page->ID == $current_page) ? 'page' : '';
         /**
          * Filters the HTML attributes applied to a page menu item's anchor element.
          *
          * @since 4.8.0
          *
-         * @param array $atts {
+         * @param array $args {
          *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
          *
          *     @type string $href         The href attribute.
@@ -569,18 +561,18 @@ class p_walker extends Walker
          * @param array   $args         An array of arguments.
          * @param int     $current_page ID of the current page.
          */
-        $atts = apply_filters('page_menu_link_attributes', $atts, $page, $depth, $args, $current_page);
-        $attributes = '';
-        foreach ($atts as $attr => $value)
+        $args = apply_filters('page_menu_link_attributes', $args, $page, $depth, $args, $current_page);
+        $argributes = '';
+        foreach ($args as $argr => $value)
         {
             if (!empty($value))
             {
-                $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
-                $attributes .= ' ' . $attr . '="' . $value . '"';
+                $value = ('href' === $argr) ? esc_url($value) : esc_attr($value);
+                $argributes .= ' ' . $argr . '="' . $value . '"';
             }
         }
-        //$output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $attributes, $args['link_before'],
-        $output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $attributes, $args['link_before'],
+        //$output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $argributes, $args['link_before'],
+        $output .= $indent . sprintf('<li%s><a%s>%s%s%s</a>', $css_classes, $argributes, $args['link_before'],
         /** This filter is documented in wp-includes/post-template.php */
         apply_filters('the_title', $page->post_title, $page->ID) , $args['link_after']);
         if (!empty($args['show_date']))
@@ -759,9 +751,9 @@ function xidipity_widgets_init()
     register_sidebar(array(
         'name' => esc_html__('Main Sidebar', 'xidipity') ,
         'id' => 'sidebar-1',
-        'before_widget' => '<aside class="fx:sb-ct-itm fx:sb-ct-opt fx:shadow"><div class="fx:sb-itm-opt">',
-        'after_widget' => '</div></aside>',
-        'before_title' => '<p class="fx:sb-widget-ti">',
+        'before_widget' => '<aside class="bg:content fg:content box:shadow ht:min4 mar:bottom+1 pad:+0.5 pad:bottom+1">',
+        'after_widget' => '</aside>',
+        'before_title' => '<p class="fnt:size-larger fnt:weight-normal mar:bottom+0.25">',
         'after_title' => '</p>'
     ));
 }
@@ -838,10 +830,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 //require get_template_directory() . '/inc/customizer.php';
-/**
- * Short code additions.
-require get_template_directory() . '/inc/shortcodes.php';
- */
 /**
  *  Tinymce Plugins
  *
@@ -1578,16 +1566,16 @@ function remove_default_category_description()
  *  build: 200315
  *  description: Return properly formatted read more HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_rm($att = '')
+function dsp_rm($arg = '')
 {
     // system
     $fn_retval = '';
     // atributes (rm url)
-    $v_html = trim($att);
+    $v_html = trim($arg);
     if (empty($v_html))
     {
         $fn_retval = '<ul class="ul:icon mar:vrt+0.5"><li><div class="ul:icon-itm"><img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE1LjUsMTJDMTgsMTIgMjAsMTQgMjAsMTYuNUMyMCwxNy4zOCAxOS43NSwxOC4yMSAxOS4zMSwxOC45TDIyLjM5LDIyTDIxLDIzLjM5TDE3Ljg4LDIwLjMyQzE3LjE5LDIwLjc1IDE2LjM3LDIxIDE1LjUsMjFDMTMsMjEgMTEsMTkgMTEsMTYuNUMxMSwxNCAxMywxMiAxNS41LDEyTTE1LjUsMTRBMi41LDIuNSAwIDAsMCAxMywxNi41QTIuNSwyLjUgMCAwLDAgMTUuNSwxOUEyLjUsMi41IDAgMCwwIDE4LDE2LjVBMi41LDIuNSAwIDAsMCAxNS41LDE0TTYsMjJBMiwyIDAgMCwxIDQsMjBWNEM0LDIuODkgNC45LDIgNiwySDdWOUw5LjUsNy41TDEyLDlWMkgxOEEyLDIgMCAwLDEgMjAsNFYxMS44MUMxOC44MywxMC42OSAxNy4yNSwxMCAxNS41LDEwQTYuNSw2LjUgMCAwLDAgOSwxNi41QzksMTguODEgMTAuMjEsMjAuODUgMTIuMDMsMjJINloiIC8+PC9zdmc+" alt="Xidipity WordPress Theme Read More" /></div><div class="ul:icon-itm pad:left+0.5" style="padding-top:0.125rem;">No additional information</div></li></ul>';
@@ -1599,21 +1587,37 @@ function dsp_rm($att = '')
     // return html
     return $fn_retval;
 }
+
 /**
  *  name: dsp_sticky
  *  build: 200314
  *  description: Return properly formatted sticky post category HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_sticky($att = '')
+function dsp_archive()
+{
+    // return html
+    return '<p><span class="fg:wcag-grey6 pad:right+0.5">' . xidipity_icon_archive() . '</span>Archive</p>';
+}
+
+/**
+ *  name: dsp_sticky
+ *  build: 200314
+ *  description: Return properly formatted sticky post category HTML string
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_sticky($arg = '')
 {
     // system
     $fn_retval = '';
     // atributes (first category)
-    $v_html = trim($att);
+    $v_html = trim($arg);
     if (!empty($v_html))
     {
     $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5">' . xidipity_icon_pc() . '</span>' . $v_html . '</p>';
@@ -1621,24 +1625,32 @@ function dsp_sticky($att = '')
     // return html
     return $fn_retval;
 }
+
 /**
  *  name: dsp_date
  *  build: 200206
  *  description: Return properly formatted post date HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_date($att = '')
+function dsp_date($args = '')
 {
     // system
     $fn_retval = '';
     // atributes (formatted date)
-    $v_html = trim($att);
-    if (!empty($v_html))
+    if (empty($args))
     {
-    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $v_html . '</p>';
+        $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . current_time(get_option('date_format')) . '</p>';
+    }
+    elseif ($args = 'plain')
+    {
+        $fn_retval = '<p>' . current_time(get_option('date_format')) . '</p>';
+    }
+    else
+    {
+        $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#x200B;</i></span>' . $args . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1648,16 +1660,16 @@ function dsp_date($att = '')
  *  build: 200206
  *  description: Return properly formatted edit post HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_edit($att = '')
+function dsp_edit($arg = '')
 {
     // system
     $fn_retval = '';
     // atributes (page url)
-    $v_html = trim($att);
+    $v_html = trim($arg);
     if (!empty($v_html))
     {
     $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="fas fa-user-edit">&#x200B;</i></span><a href="' . $v_html . '">Edit</a></p>';
@@ -1670,16 +1682,16 @@ function dsp_edit($att = '')
  *  build: 200206
  *  description: Return properly formatted view image HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_view($att = '')
+function dsp_view($arg = '')
 {
     // system
     $fn_retval = '';
     // atributes (image url)
-    $v_html = trim($att);
+    $v_html = trim($arg);
     if (!empty($v_html))
     {
     $fn_retval = '<p><span class="pad:right+0.5"><i class="far fa-eye">&#x200B;</i></span><a href="' . $v_html . '">View</a></p>';
@@ -1692,16 +1704,16 @@ function dsp_view($att = '')
  *  build: 200206
  *  description: Return properly formatted post category HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_cat($att = '')
+function dsp_cat($arg = '')
 {
     // system
     $fn_retval = '';
     // atributes (first category)
-    $v_html = trim($att);  
+    $v_html = trim($arg);
     if (strtolower($v_html) == 'uncategorized')
     {
     $fn_retval = '<p><span class="fg:sec pad:right+0.5">' . xidipity_icon_question() . '</span>' . $v_html . '</p>';
@@ -1718,45 +1730,70 @@ function dsp_cat($att = '')
  *  build: 200206
  *  description: Return properly formatted post tags HTML string
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  comment: sized for a smaller font
  *
  */
-function dsp_tags($att = array())
+function dsp_tags()
 {
     // system
-    $fn_retval = '';
+    $fn_val = '';
     // atributes (tag array)
-    $wp_tags = $att;
-  // variables
-  $v_meta_list =  '';
+    $wp_tags = get_the_tags();
+    // variables
+    $tag_list =  '';
     if (!empty($wp_tags))
     {
       foreach( $wp_tags as $wp_tag ) {
-          $v_meta_list .= $wp_tag->name . ' ';
+          $tag_list .= $wp_tag->name . ',';
       }
-    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="fas fa-user-tag">&#x200B;</i></span>' . $v_meta_list . '</p>';
+    }
+    if (strlen($tag_list) > 1)
+    {
+        $fn_val = substr($tag_list, 0, -1);
+    }
+
+    // return html
+    return $fn_val;
+}
+/**
+ *  name: tag_count
+ *  build: 200322
+ *  description: count post tags
+ *  attributes:
+ *      $arg - string
+ *  comment: sized for a smaller font
+ *
+ */
+function cnt_tags()
+{
+    // system
+    $fn_val = 0;
+    $tags = get_the_tags();
+    if(is_array($tags))
+    {
+        $fn_val = count($tags);
     }
     // return html
-    return $fn_retval;
+    return $fn_val;
 }
 /**
  *  name: dsp_err
  *  build: 200315
  *  description: Return properly formatted error message
  *  attributes:
- *      $att - string
+ *      $arg - string
  *  ref:
  *
  */
-function dsp_err($att = '')
+function dsp_err($arg = '')
 {
     // system
     $fn_retval = '';
     // variables
     $v_msg = '';
     // atributes
-    $a_msg = trim($att);
+    $a_msg = trim($arg);
     if (empty($a_msg))
     {
         $v_msg = 'Error detected without an explanation';
@@ -1770,112 +1807,180 @@ function dsp_err($att = '')
     return $fn_retval;
 }
 /**
- *  name: val_cat
- *  build: 190728.1
- *  description: Validate one or more wordpress categories
- *  attributes:
- *      $att_list - array
- *      $att_opt - numeric
- *  doc: https://xidipity.com/reference/source-code/functions/val_cat/
- *
+ *  name: filter_categories
+ *  build: 200322
+ *  description: return string of active category ids removing those
+ *               listed in the $filter attribute
+ *  attributes: $filter
+ *  ref: developer.wordpress.org/reference/functions/get_categories/
  */
-function val_cat($att_list, $att_opt)
+function filter_categories($filter='')
 {
     // system
     $fn_val = '';
-    // variables
-    $v_cat_lst = '';
-    $v_cat_opt = '';
-    $v_cat_sep = array(
-        ".",
-        "/",
-        ":",
-        ";",
-        "|"
-    );
-    $v_lst_item = '';
-    $v_lst_items = array();
-    $v_tmp = '';
-    // attributes
-    $a_cat_lst = trim($att_list);
-    $a_cat_opt = abs($att_opt);
-    if (!empty($a_cat_lst))
+    $category_list ='';
+    $categories = get_categories( array(
+        'orderby' => 'name',
+        'order'   => 'ASC'
+    ) );
+    $category_filter = strtolower($filter);
+    foreach( $categories as $category )
     {
-        if ($a_cat_opt == 1)
+        $category_id = $category->term_id;
+        $category_name = strtolower($category->name);
+        $category_parents = strtolower(get_category_parents($category_id, false, '/'));
+
+        if (!has_match($category_parents,'media library'))
         {
-            $v_cat_opt = '-';
-        }
-        $v_tmp = str_replace($v_cat_sep, ",", $a_cat_lst);
-        // save to array
-        $v_lst_items = explode(',', $v_tmp);
-        foreach ($v_lst_items as $v_lst_item)
-        {
-            // alpha, numbers, _
-            $v_tmp = preg_replace("/[^0-9a-zA-Z ]/", "", $v_lst_item);
-            $wp_term = term_exists($v_tmp);
-            if (0 !== $wp_term && null !== $wp_term)
+            if (!has_match($category_filter,$category_name))
             {
-                $v_cat_lst .= $v_cat_opt . $wp_term . ',';
+                $category_list .= $category_id . ',';
             }
         }
-        $fn_val = substr($v_cat_lst, 0, -1);
+    }
+    if (strlen($category_list) > 1)
+    {
+        $fn_val = substr($category_list, 0, -1);
     }
     // return string
     return $fn_val;
 }
+
 /**
- *  name: val_orby
- *  build: 190728.1
- *  description: Validate orderby database argument
- *  attributes:
- *      $att - string
- *  doc: https://xidipity.com/reference/source-code/functions/val_orby/
+ * name:    category_to_id
+ * descr:   convert category name(s) to id(s)
+ * build:   200322
+ * accepts:
+ *   $arg - category name/names "-category" to exclude
+ * return:  string
  *
  */
-function val_orby($att)
+function category_to_id($args='')
 {
-    // system
-    $fn_val = 'none';
-    // variables
-    $v_list = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
-    $v_orderby = '';
-    // arguments
-    $a_orderby = trim($att);
-    // sanitize attributes
-    $v_orderby = strtolower($a_orderby);
-    if (!empty($v_orderby))
+    $fn_val = '';
+    if (!empty($args))
     {
-        if (strpos($v_list, $v_orderby) === false)
+        $separators = array(
+            ".",
+            "/",
+            ":",
+            ";",
+            "|"
+        );
+        /*: standardize separators :*/
+        $name_list = str_replace($separators, ",", $args);
+        $categories = explode(',', $name_list);
+        $id_list = '';
+        foreach ($categories as $category)
         {
-            $fn_val = 'none';
-        }
-        else
-        {
-            $fn_val = $a_orderby;
-            if ($fn_val == 'id')
+            $id_prefix = substr($category,0,1);
+            if ($id_prefix == '-')
             {
-                $fn_val = 'ID';
+                $category = substr($category,1);
+            } else {
+                $id_prefix = '';
+            }
+            $id = get_cat_ID($category);
+            if (!empty($id))
+            {
+                $id_list .= $id_prefix . $id . ',';
             }
         }
+        $fn_val = substr($id_list, 0, -1);
     }
     // return string
     return $fn_val;
 }
+
 /**
- *  name: tpl_prg
+ * name:    tag_to_id
+ * descr:   convert tag name(s) to id(s)
+ * build:   200322
+ * accepts:
+ *   $arg - tag name/names "-tag" to exclude
+ * return:  string
+ *
+ */
+function tag_to_id($args='')
+{
+    $fn_val = '';
+    if (!empty($args))
+    {
+        $separators = array(
+            ".",
+            "/",
+            ":",
+            ";",
+            "|"
+        );
+        /*: standardize separators :*/
+        $name_list = str_replace($separators, ",", $args);
+        $tags = explode(',', $name_list);
+        $id_list = '';
+        foreach ($tags as $tag)
+        {
+            $id_prefix = substr($tag,0,1);
+            if ($id_prefix == '-')
+            {
+                $tag = substr($tag,1);
+            } else {
+                $id_prefix = '';
+            }
+            $wp_tag = get_term_by('name', $tag, 'post_tag');
+            $id = $wp_tag->term_id;
+            if (!empty($id))
+            {
+                $id_list .= $id_prefix . $id . ',';
+            }
+        }
+        $fn_val = substr($id_list, 0, -1);
+    }
+    // return string
+    return $fn_val;
+}
+
+/**
+ * name:    valid_orderby
+ * descr:   validate submission
+ * build:   200322
+ * accepts:
+ *   $arg - submission
+ * return:  valid orderby / date
+ *
+ */
+function valid_orderby($arg='')
+{
+    // system
+    $fn_val = 'date';
+    $valid = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
+    $value = strtolower($arg);
+    if (has_match($valid,$value))
+    {
+        if ($value == 'id')
+        {
+            $value = 'ID';
+        }
+        $fn_val = $value;
+    }
+    // return string
+    return $fn_val;
+}
+
+/**
+ *  name: no_dft
  *  build: 191101.1
  *  description: Purge template default values (#?#)
  *  attributes:
- *      $att - string
- *  doc: https://xidipity.com/reference/source-code/functions/tpl_prg/
+ *      $arg - string
+ *  doc: https://xidipity.com/reference/source-code/functions/no_dft/
  *
  */
-function tpl_prg($att='')
+function no_dft($arg='')
 {
     // system
     $fn_val = '';
     // atributes
-    $a_prm = trim($att);
+    $a_prm = trim($arg);
     if (!empty($a_prm))
     {
         // No #?#
@@ -1936,7 +2041,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200315
+ * Build:   200322
  *
  */
 ?>
