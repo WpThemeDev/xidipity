@@ -4,7 +4,7 @@
  *
  * File Name:       search.php
  * Function:        display search results
- * Build:           200322
+ * Build:           200415
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -16,7 +16,95 @@
  * @since           0.9
  * @link            developer.wordpress.org/themes/basics/
  *
+ *  ---------------------------------------------------------------------------
+ *  Run query 1st to support re-direct
+ *  ---------------------------------------------------------------------------
+ *
  */
+
+/*
+***
+    * query data
+***
+*/
+$search_item = get_search_query();
+
+/*
+***
+    * base query
+***
+*/
+$qry_prms = array(
+    'perm' => 'readable',
+    'paged' => $wp_paged,
+    'post_type' => 'post',
+    'posts_per_page' => $wp_ppp,
+);
+
+/*
+***
+    * modify query if id
+***
+*/
+if (has_match($search_item,'#'))
+{
+    $id = str_replace(array('#'), '', $search_item);
+    $qry_prms['post_type'] = 'any';
+    $qry_prms['p'] = $id;
+}
+else
+{
+    /*
+    ***
+        * modify query if tag
+    ***
+    */
+    $tag_list = tag_to_id($search_item);
+
+    if (!empty($tag_list))
+    {
+        $tag_array = explode(',', $tag_list);
+        $qry_prms['tag__in'] = $tag_array;
+    }
+
+    /*
+    ***
+        * modify query if category
+    ***
+    */
+    $cat_list = category_to_id($search_item);
+
+    if (!empty($cat_list))
+    {
+        $qry_prms['cat'] = $cat_list;
+    }
+
+    /*
+    ***
+        * modify query if word search
+    ***
+    */
+    if (empty($tag_list) && empty($cat_list))
+    {
+        $qry_prms['post_type'] = 'any';
+        $qry_prms['s'] = $search_item;
+    }
+}
+$wp_data = new WP_Query($qry_prms);
+
+/*
+***
+    * redirect if only one
+***
+*/
+if ($wp_data->have_posts())
+{
+    if ($wp_data->post_count == 1)
+    {
+        wp_safe_redirect( get_permalink( $wp_data->post->ID ) );
+        exit;
+    }
+}
 
 /*
 ***
@@ -53,72 +141,26 @@ echo '<!--  file:search.php -->' . "\n";
 */
 
 echo '<!--  fi:3/HTML -->' . "\n";
-echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
-echo '<!--  fc:MAIN -->' . "\n";
+echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
+echo '<!--  fc:3/1/HTML -->' . "\n";
+
+/*
+***
+    * align sidebar
+***
+*/
 if (XWT_SIDEBAR_ALIGN == 'left')
 {
-    echo '<main class="fx:c md)fx:r-rev fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:left+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
 }
 else
 {
-    echo '<main class="fx:c md)fx:r fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:right+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
-
-
-/*
-***
-    * base query
-***
-*/
-$search_item = get_search_query();
-
-$qry_prms = array(
-    'perm' => 'readable',
-    'paged' => $wp_paged,
-    'post_type' => 'post',
-    'posts_per_page' => $wp_ppp,
-);
-
-/*
-***
-    * modify query if tag
-***
-*/
-$tag_list = tag_to_id($search_item);
-
-if (!empty($tag_list))
-{
-    $tag_array = explode(',', $tag_list);
-    $qry_prms['tag__in'] = $tag_array;
-}
-
-/*
-***
-    * modify query if category
-***
-*/
-$cat_list = category_to_id($search_item);
-
-if (!empty($cat_list))
-{
-    $qry_prms['cat'] = $cat_list;
-}
-
-/*
-***
-    * modify query if word search
-***
-*/
-if (empty($tag_list) && empty($cat_list))
-{
-    $qry_prms['post_type'] = 'any';
-    $qry_prms['s'] = $search_item;
-}
-$wp_data = new WP_Query($qry_prms);
 
 /*
 ***
@@ -127,8 +169,8 @@ $wp_data = new WP_Query($qry_prms);
 */
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
-if ($wp_data->have_posts()) {
-
+if ($wp_data->have_posts())
+{
     /*
     ***
         * page title
@@ -264,34 +306,33 @@ if ($wp_data->have_posts()) {
     /*: date :*/
     $footer_items = dsp_date(date(get_option('date_format'))) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
     echo '</footer>' . "\n";
     echo '<!-- /ct:FOOTER -->' . "\n";
-
 }
 else
 {
-    echo '<!--  fc:MAIN -->' . "\n";
+    echo '<!--  fc:3/1/HTML -->' . "\n";
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
     echo '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Search Error Logo" />' . "\n";
     echo '</div>' . "\n";
-    echo '<!-- /fi:1/SECTION -->' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!-- /fi:3/1/1/HTML -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:1 fxe:6 wd:100% sm)pad:+1 sm)wd:75%">' . "\n";
     echo '<h2>Search Error</h2>' . "\n";
     echo '<p>The search criteria did not return any documents.</p>' . "\n";
     echo '</div>' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '</div>' . "\n";
-    echo '<!-- /fc:MAIN -->' . "\n";
+    echo '<!-- /fc:3/1/HTML -->' . "\n";
 }
 echo '</article>' . "\n";
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
-echo '<!-- /fi:1/SECTION -->' . "\n";
+echo '<!-- /fi:3/1/1/HTML -->' . "\n";
 
 /*
 ***
@@ -304,7 +345,7 @@ echo '<!-- /fi:1/SECTION -->' . "\n";
 */
 get_sidebar();
 echo '</main>' . "\n";
-echo '<!-- /fc:MAIN -->' . "\n";
+echo '<!-- /fc:3/1/HTML -->' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /fi:3/HTML -->' . "\n";
 
@@ -332,7 +373,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     search.php
- * Build:   200322
+ * Build:   200415
  *
  */
 ?>
