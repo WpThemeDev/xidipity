@@ -130,7 +130,9 @@ body {
     }
 
     .md\)fb\:20 {
-        flex-basis: 20rem;
+        flex-basis: 320px;
+        min-width: 320px;
+        max-width: 320px;
     }
 }
 
