@@ -34,7 +34,7 @@ echo '<!--  file:sidebar.php -->' . "\n";
 ***
 */
 echo '<!--  fi:3/1/2/HTML -->' . "\n";
-echo '<section class="aln:text-left fxd:4 fxe:6 wd:0 fb:100% md)fb:20 pad:hrz+0.25 prt[dsp:none]">' . "\n";
+echo '<section class="aln:text-left fxd:4 fxe:6 wd:0 fb:100% md)fb:20 prt[dsp:none]">' . "\n";
 dynamic_sidebar( 'sidebar-1' );
 echo '</section>' . "\n";
 echo '<!-- /fi:3/1/2/HTML -->' . "\n";
