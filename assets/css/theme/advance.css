@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200322
+ * Build:           200415
  * Revision:        1
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -3107,6 +3107,7 @@ table.cols\:fixed {
         fxd:1    - 0 0 auto
         fxd:2    - 0 1 auto
         fxd:3    - 1 0 auto
+        fxd:4    - 1 1 auto
         align self (override)
         fxe:1    - auto
         fxe:2    - flex-start
@@ -3336,6 +3337,15 @@ table.cols\:fixed {
     -webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+}
+
+.fxd\:4 {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 /*: item (align self) :*/
@@ -5914,6 +5924,15 @@ table.cols\:fixed {
         flex: 1 0 auto;
     }
 
+    .sm\)fxd\:4 {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+
     /*: item (align self) :*/
     .sm\)fxe\:1 {
         -webkit-align-self: auto;
@@ -6035,6 +6054,35 @@ table.cols\:fixed {
 ***
 */
 @media (min-width: 900px) {
+    /*
+    ***
+        * property: dsp
+        * dsc: element display
+        * ver: 200107-1
+        * fnt: hide / display page elements
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
+    ***
+    */
+    .md\)dsp\:none {
+        display: none !important;
+    }
+
+    .md\)dsp\:hidden {
+        visibility: hidden !important;
+    }
+
+    .md\)dsp\:block {
+        display: block !important;
+    }
+
+    .md\)dsp\:inline {
+        display: inline !important;
+    }
+
+    .md\)dsp\:inline-block {
+        display: inline-block !important;
+    }
+
     /*
     ***
         * DIY flexbox components
@@ -6265,6 +6313,15 @@ table.cols\:fixed {
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
+    }
+
+    .md\)fxd\:4 {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
     }
 
     /*: item (align self) :*/
@@ -7821,6 +7878,35 @@ table.cols\:fixed {
 @media (min-width: 1200px) {
     /*
     ***
+        * property: dsp
+        * dsc: element display
+        * ver: 200107-1
+        * fnt: hide / display page elements
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
+    ***
+    */
+    .lg\)dsp\:none {
+        display: none !important;
+    }
+
+    .lg\)dsp\:hidden {
+        visibility: hidden !important;
+    }
+
+    .lg\)dsp\:block {
+        display: block !important;
+    }
+
+    .lg\)dsp\:inline {
+        display: inline !important;
+    }
+
+    .lg\)dsp\:inline-block {
+        display: inline-block !important;
+    }
+
+    /*
+    ***
         * DIY flexbox components
         * dsc: flexbox classes
         * ver: 200120-1
@@ -8049,6 +8135,15 @@ table.cols\:fixed {
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
+    }
+
+    .lg\)fxd\:4 {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
     }
 
     /*: item (align self) :*/
@@ -8646,6 +8741,35 @@ table.cols\:fixed {
 @media (min-width: 1800px) {
     /*
     ***
+        * property: dsp
+        * dsc: element display
+        * ver: 200107-1
+        * fnt: hide / display page elements
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
+    ***
+    */
+    .xl\)dsp\:none {
+        display: none !important;
+    }
+
+    .xl\)dsp\:hidden {
+        visibility: hidden !important;
+    }
+
+    .xl\)dsp\:block {
+        display: block !important;
+    }
+
+    .xl\)dsp\:inline {
+        display: inline !important;
+    }
+
+    .xl\)dsp\:inline-block {
+        display: inline-block !important;
+    }
+
+    /*
+    ***
         * DIY flexbox components
         * dsc: flexbox classes
         * ver: 200120-1
@@ -8874,6 +8998,15 @@ table.cols\:fixed {
         -webkit-flex: 1 0 auto;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
+    }
+
+    .xl\)fxd\:4 {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
     }
 
     /*: item (align self) :*/
@@ -9459,6 +9592,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200322
+ * Build:   200415
  *
  */
