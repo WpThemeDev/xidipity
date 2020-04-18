@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200322
+ * Build:           200415
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -109,6 +109,39 @@ body {
     top: 7px;
     width: auto;
     z-index: 999999;
+}
+
+/*
+***
+    * element: framework
+    * dsc:  flex basis / width
+    * ver:  200415
+    * fnt:  speciality classes to support framework
+    * ref:
+***
+*/
+.fb\:100\% {
+    flex-basis: 100%;
+}
+
+@media (min-width: 900px) {
+    .md\)fb\:50\% {
+        flex-basis: 50%;
+    }
+
+    .md\)fb\:20 {
+        flex-basis: 20rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .xl\)fb\:33\% {
+        flex-basis: 33.3333%;
+    }
+}
+
+.wd\:0 {
+    width: 0;
 }
 
 /*
@@ -356,7 +389,7 @@ a.comment-reply-link:hover {
 ***
 */
 /*: standard media :*/
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
     table.cols\:auto-2 td {
         column-count: 2;
         column-gap: 2%;
@@ -371,6 +404,20 @@ a.comment-reply-link:hover {
         column-count: 4;
         column-gap: 2%;
     }
+}
+
+/*
+***
+    property: scr:auto
+    * dsc: scroll content
+    * ver: 200415
+    * fnt: automaticly scroll content
+    * ref:
+***
+*/
+.scr\:auto {
+    overflow: auto;
+    white-space: nowrap;
 }
 
 /*
@@ -495,6 +542,12 @@ a.hdr\:title:hover {
 @media (min-width: 900px) {
     .pst\:title {
         font-size: var(--font-size-h2);
+    }
+}
+
+@media (min-width: 900px) {
+    .pst\:title {
+        font-size: var(--font-size-h1);
     }
 }
 
@@ -647,11 +700,17 @@ a.hdr\:title:hover {
 ***
     * property: gist
     * dsc: github gist
-    * ver: 200322
+    * ver: 200415
     * fnt: style gist
     * ref:
 ***
 */
+.gist {
+    width: 100% !important;
+    font-family: var(--font-mono) !important;
+    margin-bottom: -1rem !important;
+}
+
 .gist .line,
 .gist .line span {
     word-wrap: normal !important;
@@ -799,9 +858,19 @@ a.page-numbers:focus {
 .CodeMirror {
     border: 1px solid var(--hue-bas-300) !important;
     height: 65vh !important;
-  font-family: var(--font-mono) !important;
+    font-family: var(--font-mono) !important;
     overflow: auto;
 }
+
+/*
+***
+    * property: nav
+    * dsc: menu
+    * ver: 200322
+    * fnt: set menu attributes
+    * ref:
+***
+*/
 
 #nav {
     position: relative;
@@ -988,6 +1057,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200322
+ * Build:   200415
  *
  */
