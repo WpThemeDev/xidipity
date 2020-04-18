@@ -4,7 +4,7 @@
  *
  *  File Name:      header.php
  *  Function:       display page header
- *  Build:          200322
+ *  Build:          200415
  *  GitHub:         github.com/WpThemeDev/xidipity/
  *  License URI:    gnu.org/licenses/gpl-3.0.txt
  *  Author:         John Baer
@@ -49,10 +49,10 @@ do_action('wp_head');
 */
 if (XWT_FAV_ICO !== 'none')
 {
-	echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
-	echo '<link rel="pple-touch-icon-precomposed" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
-	echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="192x192" />' . "\n";
-	echo '<meta name="msapplication-TileImage" content="' . XWT_FAV_ICO . '" />' . "\n";
+  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
+  echo '<link rel="pple-touch-icon-precomposed" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
+  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="192x192" />' . "\n";
+  echo '<meta name="msapplication-TileImage" content="' . XWT_FAV_ICO . '" />' . "\n";
 }
 else
 {
@@ -129,7 +129,7 @@ echo '<!--  file:header.php -->' . "\n";
 ***
 */
 echo '<!--  fc:HTML -->' . "\n";
-echo '<div class="fx:c fxa:1 fxb:1 fxc:1 pad:hrz+0.5 vw:100">' . "\n";
+echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 pad:hrz+0.5">' . "\n";
 /*
 ***
     * element: header
@@ -140,7 +140,7 @@ echo '<div class="fx:c fxa:1 fxb:1 fxc:1 pad:hrz+0.5 vw:100">' . "\n";
 ***
 */
 echo '<!--  fi:1/HTML -->' . "\n";
-echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
+echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
 echo '<!--  fc:HEADER -->' . "\n";
 if (XWT_HDR_ALIGN == 'left') {
     echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img wd:100%" style="min-height:' . XWT_HDR_HGT . ';">' . "\n";
@@ -226,11 +226,11 @@ $wp_menu = (abs($wp_menus['primary']) !== 0);
 echo '<!--  fi:2/HTML -->' . "\n";
 if (disp_menu() == 'no')
 {
-    echo '<div class="dsp:none fxd:2 fxe:6 wd:100%">' . "\n";
+    echo '<div class="dsp:none fxd:1 fxe:2 fb:100%">' . "\n";
 }
 else
 {
-    echo '<div class="fxd:2 fxe:6 wd:100% prt[dsp:none]">' . "\n";
+    echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]">' . "\n";
 }
 echo '<!--  fc:NAV -->' . "\n";
 if (XWT_MNU_ALIGN == 'left') {
@@ -276,7 +276,7 @@ echo '<!-- /fi:2/HTML -->' . "\n";
 
 /*
  * EOF:     header.php
- * Build:   200322
+ * Build:   200415
  *
  */
 ?>
