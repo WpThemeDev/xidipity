@@ -6,7 +6,7 @@
  *
  * File Name:       archive.php
  * Function:        display pages assigned to archive category
- * Build:           200322
+ * Build:           200415
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -55,19 +55,40 @@ echo '<!--  file:archive.php -->' . "\n";
 */
 
 echo '<!--  fi:3/HTML -->' . "\n";
-echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
-echo '<!--  fc:MAIN -->' . "\n";
+echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
+echo '<!--  fc:3/1/HTML -->' . "\n";
+
+/*
+***
+    * align sidebar
+***
+*/
 if (XWT_SIDEBAR_ALIGN == 'left')
 {
-    echo '<main class="fx:c md)fx:r-rev fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:left+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
 }
 else
 {
-    echo '<main class="fx:c md)fx:r fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:right+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
+}
+
+/*
+***
+    * add default content
+***
+*/
+$content = get_the_content();
+if (empty($content))
+{
+    $dft_content = array(
+        'ID' => get_the_ID(),
+        'post_content' => '<h3><i class="fas fa-archive fg:sec-dark">&#x200B;</i><span class="pad:left+0.5">Archive Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display excerpts of blog posts which have been marked as "archived". The editor content is not exposed to the web but provides an opportunity to note or document the use of the template.</p>'
+    );
+    wp_update_post( $dft_content );
 }
 
 /*
@@ -84,7 +105,7 @@ $qry_prms = array(
     'post_type' => 'post',
     'posts_per_page' => $wp_ppp
 );
-$search_query = new WP_Query($qry_prms);
+$wp_data = new WP_Query($qry_prms);
 
 /*
 ***
@@ -93,7 +114,7 @@ $search_query = new WP_Query($qry_prms);
 */
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
-if ($search_query->have_posts()) {
+if ($wp_data->have_posts()) {
 
     /*
     ***
@@ -102,13 +123,22 @@ if ($search_query->have_posts()) {
     */
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="wd:100%">' . "\n";
+
+    /*
+    ***
+        * function: the_title
+        * descript: display page title
+        * ref: developer.wordpress.org/reference/functions/the_title/
+    ***
+    */
     the_title('<div class="pg:title">', '</div>');
+    echo '<hr class="bg:bas-100 mar:vrt+0.25" />' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
 
-    while ($search_query->have_posts())
+    while ($wp_data->have_posts())
     {
-        $search_query->the_post();
+        $wp_data->the_post();
         /*
         ***
             * excerpt data elements
@@ -201,7 +231,7 @@ if ($search_query->have_posts()) {
         * ref:
     ***
     */
-    $total_pages = $search_query->max_num_pages;
+    $total_pages = $wp_data->max_num_pages;
     if ($total_pages > 1)
     {
         echo '<!--  ct:PAGINATION -->' . "\n";
@@ -209,6 +239,8 @@ if ($search_query->have_posts()) {
         echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
         echo '<!-- /ct:PAGINATION -->' . "\n";
     }
+
+    echo '<hr class="bg:bas-100 mar:vrt+0.25" />' . "\n";
 
     /*
     ***
@@ -218,7 +250,7 @@ if ($search_query->have_posts()) {
     /*: date :*/
     $footer_items = dsp_date(date(get_option('date_format'))) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
     echo '</footer>' . "\n";
     echo '<!-- /ct:FOOTER -->' . "\n";
@@ -226,26 +258,26 @@ if ($search_query->have_posts()) {
 }
 else
 {
-    echo '<!--  fc:MAIN -->' . "\n";
+    echo '<!--  fc:3/1/HTML -->' . "\n";
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
     echo '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjAgMjEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iYXJjaGl2ZSIgZmlsbD0iIzQyNDI0MiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTgsMTAgQzgsOC45IDguOSw4IDEwLDggQzExLjEsOCAxMiw4LjkgMTIsMTAgQzEyLDExLjEgMTEuMSwxMiAxMCwxMiBDOC45LDEyIDgsMTEuMSA4LDEwIE01LjgsMTUuNyBMNC4zLDE0LjMgTDUuOCwxMi44IEM1LjMsMTIgNSwxMSA1LDEwIEM1LDkgNS4zLDggNS44LDcuMyBMNC4zLDUuOCBMNS44LDQuMyBMNy4yLDUuOCBDOCw1LjMgOSw1IDEwLDUgQzExLDUgMTIsNS4zIDEyLjgsNS44IEwxNC4zLDQuMyBMMTUuNyw1LjcgTDE0LjIsNy4yIEMxNC43LDggMTUsOSAxNSwxMCBDMTUsMTEgMTQuNywxMiAxNC4yLDEyLjggTDE1LjcsMTQuMyBMMTQuMywxNS43IEwxMi44LDE0LjIgQzEyLDE0LjcgMTEsMTUgMTAsMTUgQzksMTUgOCwxNC43IDcuMywxNC4yIEw1LjgsMTUuNyBNMTAsNyBDOC4zLDcgNyw4LjMgNywxMCBDNywxMS43IDguMywxMyAxMCwxMyBDMTEuNywxMyAxMywxMS43IDEzLDEwIEMxMyw4LjMgMTEuNyw3IDEwLDcgTTE4LDAgQzE5LjEsMCAyMCwwLjkgMjAsMiBMMjAsMTggQzIwLDE5LjEgMTkuMSwyMCAxOCwyMCBMMTcsMjAgTDE3LDIxIEwxMywyMSBMMTMsMjAgTDcsMjAgTDcsMjEgTDMsMjEgTDMsMjAgTDIsMjAgQzAuOSwyMCAwLDE5LjEgMCwxOCBMMCwyIEMwLDAuOSAwLjksMCAyLDAgTDE4LDAgTTE4LDE4IEwxOCwyIEwyLDIgTDIsMTggTDE4LDE4IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Archive Error Logo" />' . "\n";
     echo '</div>' . "\n";
-    echo '<!-- /fi:1/SECTION -->' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!-- /fi:3/1/1/HTML -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:1 fxe:6 wd:100% sm)pad:+1 sm)wd:75%">' . "\n";
     echo '<h2>Search Error</h2>' . "\n";
     echo '<p>The search criteria did not return any documents.</p>' . "\n";
     echo '</div>' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '</div>' . "\n";
-    echo '<!-- /fc:MAIN -->' . "\n";
+    echo '<!-- /fc:3/1/HTML -->' . "\n";
 }
 echo '</article>' . "\n";
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
-echo '<!-- /fi:1/SECTION -->' . "\n";
+echo '<!-- /fi:3/1/1/HTML -->' . "\n";
 
 /*
 ***
@@ -258,7 +290,7 @@ echo '<!-- /fi:1/SECTION -->' . "\n";
 */
 get_sidebar();
 echo '</main>' . "\n";
-echo '<!-- /fc:MAIN -->' . "\n";
+echo '<!-- /fc:3/1/HTML -->' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /fi:3/HTML -->' . "\n";
 
