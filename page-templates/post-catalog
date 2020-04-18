@@ -211,7 +211,7 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     archive.php
+ * EOF:     post-catalog.php
  * Build:   200415
  *
  */
