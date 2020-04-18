@@ -6,7 +6,7 @@
  *
  * File Name:       naked.php
  * Function:        display page without menu & sidebar
- * Build:           200322
+ * Build:           200415
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -43,8 +43,8 @@ echo '<!--  file:naked.php -->' . "\n";
 
 */
 echo '<!--  fi:3/HTML -->' . "\n";
-echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
-echo '<!--  fc:MAIN -->' . "\n";
+echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
+echo '<!--  fc:3/1/HTML -->' . "\n";
 
 /*
 ***
@@ -53,15 +53,15 @@ echo '<!--  fc:MAIN -->' . "\n";
 */
 if (XWT_SIDEBAR_ALIGN == 'left')
 {
-    echo '<main class="fx:c md)fx:r-rev fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:left+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
 }
 else
 {
-    echo '<main class="fx:c md)fx:r fxa:1 fxb:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-    echo '<!--  fi:1/SECTION -->' . "\n";
-    echo '<section class="fxd:2 fxe:6 mar:bottom+0.5 md)mar:right+0.5 wd:100%">' . "\n";
+    echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
 
 echo '<!--  ct:ARTICLE -->' . "\n";
@@ -69,7 +69,7 @@ echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:mi
 
 if ($wp_query->have_posts())
 {
-
+    the_post();
     echo '<!--  ct:BODY -->' . "\n";
     echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
@@ -114,7 +114,7 @@ else
 echo '</article>' . "\n";
 echo '<!-- /ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
-echo '<!-- /fi:1/SECTION 1 -->' . "\n";
+echo '<!-- /fi:3/1/1/HTML 1 -->' . "\n";
 
 /*
 ***
@@ -122,7 +122,7 @@ echo '<!-- /fi:1/SECTION 1 -->' . "\n";
 ***
 */
 echo '</main>' . "\n";
-echo '<!-- /fc:MAIN -->' . "\n";
+echo '<!-- /fc:3/1/HTML -->' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /fi:3/HTML -->' . "\n";
 
@@ -146,7 +146,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     naked.php
- * Build:   200322
+ * Build:   200415
  *
  */
 ?>
