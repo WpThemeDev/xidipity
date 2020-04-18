@@ -4,9 +4,9 @@
  *
  * File Name:       footer.php
  * Function:        display page footer
- * Build:           200322
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ * Build:           200415
+ * GitHub:          github.com/WpThemeDev/xidipity/
+ * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
  * @author          John Baer
@@ -14,7 +14,7 @@
  * @license         GPL-3.0-or-later
  * @version         1.0
  * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
+ * @link            developer.wordpress.org/themes/basics/
  *
  */
 
@@ -24,7 +24,7 @@ echo '<!--  file:footer.php -->' . "\n";
 /***
 */
 echo '<!--  fi:4/HTML -->' . "\n";
-echo '<div class="fxd:2 fxe:6 wd:100%">' . "\n";
+echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
 echo '<!--  fc:FOOTER -->' . "\n";
 if (XWT_FTR_ALIGN == 'left') {
     echo '<footer class="fx:r fxa:1 fxc:3 ht:min6 wd:100%">' . "\n";
@@ -60,7 +60,7 @@ echo '<!-- /fc:HTML -->' . "\n";
 ***
     * function: wp_footer
     * dsc: wordpress footer
-    * ver: 200322
+    * ver: 200415
     * fnt: add wordpress footer code
     * ref: developer.wordpress.org/reference/functions/wp_footer/
 ***
@@ -71,7 +71,7 @@ echo '</html>' . "\n";
 
 /*
  * EOF:     footer.php
- * Build:   200322
+ * Build:   200415
  *
  */
 ?>
