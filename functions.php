@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200322
+ * Build:           200415
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -68,7 +68,7 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-						if (!has_match('.',$cfg_val))
+            if (!has_match('.',$cfg_val))
                         {
                             $cfg_val = 'none';
                         }
@@ -80,7 +80,7 @@ function theme_cfg() {
                         {
                             $cfg_val = 'none';
                         }
-						if (!has_match('.',$cfg_val))
+            if (!has_match('.',$cfg_val))
                         {
                             $cfg_val = 'none';
                         }
@@ -213,55 +213,31 @@ function disp_menu($argr='')
     }
     return $fn_val;
 }
-/**
- *  name: err_msg
- *  build: 190901.1a
- *  description: set / get error message
- *  attributes:
- *      $argr - string
- *
- */
-function err_msg($argr='')
-{
-    global $xwt_err_msg;
-    $fn_val = '';
-    if (!isset($xwt_err_msg))
-    {
-        $xwt_err_msg = '';
-    }
-    if (empty($argr))
-    {
-        $fn_val = $xwt_err_msg;
-        /*: report & clear :*/
-        $xwt_err_msg = '';
-    }
-    else
-    {
-        $xwt_err_msg = $argr;
-    }
-    return $fn_val;
-}
+
 /**
  *  name: has_match
- *  build: 190915.1b
- *  description: is needle in haystack
+ *  build: 200415
+ *  description: is needle (smaller) in haystack (larger)
  *  attributes:
- *      $haystack - string
- *      $needle - string
+ *      $arg1 - string
+ *      $arg2 - string
  *  returns:
- *      nothing (error)
  *      true / false
  */
-function has_match($haystack='', $needle='')
+function has_match($arg1='', $arg2='')
 {
-    if (empty($haystack) || empty($needle))
+    $fn_val=false;
+    if (!empty($arg1) && !empty($arg2))
     {
-        $fn_val='';
-    }
-    else
-    {
-        $fn_val=false;
-        $haystack = strwrap($haystack,'#');
+        if (strlen($arg1) > strLen($arg2))
+         {
+            $haystack = strwrap($arg1,'$');
+            $needle = $arg2;
+        } else {
+            $haystack = strwrap($arg2,'$');
+            $needle = $arg1;
+        }
+
         if (strpos($haystack,$needle) > 0)
         {
             $fn_val=true;
@@ -269,6 +245,7 @@ function has_match($haystack='', $needle='')
     }
     return $fn_val;
 }
+
 /**
  *  name: strwrap
  *  build: 190915.1b
@@ -279,21 +256,23 @@ function has_match($haystack='', $needle='')
  *  returns:
  *      string
  */
-function strwrap( $str='', $first='', $last='' )
+function strwrap( $arg1='', $arg2='', $arg3='' )
 {
     $fn_val = '';
-    if (!empty($str))
+    if (!empty($arg1))
     {
-        if (empty($first) && empty($last))
+        if (empty($arg2))
         {
-            $first = '"';
-            $last = '"';
+            $fn_val = $arg3 . trim($arg1) . $arg3;
         }
-        elseif (empty($last))
+        elseif (empty($arg3))
         {
-            $last = $first;
+            $fn_val = $arg2 . trim($arg1) . $arg2;
         }
-        $fn_val = $first . trim($str) . $last;
+        else
+        {
+            $fn_val = $arg2 . trim($arg1) . $arg3;
+        }
     }
     return $fn_val;
 }
@@ -329,14 +308,25 @@ function blog_copyright() {
 }
 
 /**
- *  name: com_walker
- *  build: 200322
- *  description: category walker extension to support font awesome icons
+ *  name: wp_plugin
+ *  build: 200415
+ *  description: wrapper for is_pluging_active
  *  functions:
- *      $args - array
- *  doc: https://xidipity.com/reference/source-code/shortcodes/c_walker/
+ *      $args - boolean
+ *  doc: developer.wordpress.org/reference/functions/is_plugin_active/
  *
  */
+function wp_plugin($arg='') {
+    $fn_val = false;
+    if (!empty($arg))
+    {
+        if (function_exists('is_plugin_active'))
+        {
+            $fn_val = is_plugin_active($arg);
+        }
+    }
+    return $fn_val;
+}
 
 /**
  *  name: c_walker
@@ -344,7 +334,7 @@ function blog_copyright() {
  *  description: category walker extension to support font awesome icons
  *  functions:
  *      $args - array
- *  doc: https://xidipity.com/reference/source-code/shortcodes/c_walker/
+ *  doc: developer.wordpress.org/reference/classes/walker/
  *
  */
 class c_walker extends Walker
@@ -379,7 +369,7 @@ class c_walker extends Walker
  *      $args - array
  *    $output - html
  *     $depth - numeric
- *  doc: https://xidipity.com/reference/source-code/shortcodes/p_walker/
+ *  doc: developer.wordpress.org/reference/classes/walker/
  *
  */
 class p_walker extends Walker
@@ -460,6 +450,7 @@ class p_walker extends Walker
         $indent = str_repeat($t, $depth);
         $output .= "{$indent}</ul>{$n}";
     }
+
     /**
      * Outputs the beginning of the current element in the tree.
      *
@@ -2041,7 +2032,7 @@ function get_image_sizes($size = '')
 }
 /*
  * EOF:     functions.php
- * Build:   200322
+ * Build:   200415
  *
  */
 ?>
