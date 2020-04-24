@@ -6,7 +6,7 @@
  *
  * File Name:       no-title.php
  * Function:        display page without page title
- * Build:           200422
+ * Build:           200429
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -97,7 +97,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -160,7 +160,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     no-title.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
