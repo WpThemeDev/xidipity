@@ -4,7 +4,7 @@
  *
  * File Name:       page.php
  * Function:        display page
- * Build:           200422
+ * Build:           200429
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -78,7 +78,7 @@ if ($wp_query->have_posts())
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
     echo '<!--  bk:1/PARAGRAPH -->' . "\n";
@@ -108,7 +108,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /bk:1/PARAGRAPH -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -171,7 +171,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     page.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
