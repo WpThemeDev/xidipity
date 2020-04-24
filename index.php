@@ -4,7 +4,7 @@
  *
  * File Name:       index.php
  * Function:        display excerpt summary
- * Build:           200415
+ * Build:           200422
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -124,20 +124,6 @@ if ($wp_data->have_posts())
 
         /*
         ***
-            * category
-        ***
-        */
-        if (is_sticky())
-        {
-            $post_catagory = dsp_sticky(xidipity_first_category());
-        }
-        else
-        {
-            $post_catagory = dsp_cat(xidipity_first_category());
-        }
-
-        /*
-        ***
             * read more link
         ***
         */
@@ -169,7 +155,7 @@ if ($wp_data->have_posts())
         */
         echo '<!--  fi:3/1/1/'. $cnt . '/SECTION/EXCERPT -->' . "\n";
         echo '<article class="dsp:block pad:+0.5">' . "\n";
-        echo '<div>' . $post_catagory . '</div>' . "\n";
+        echo '<div>' . dsp_cat(xidipity_first_category()) . '</div>' . "\n";
         echo '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>'  . "\n";
         the_title('<p class="pst:title">', '</p>');
         if (xidipity_has_excerpt())
@@ -290,7 +276,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     index.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
