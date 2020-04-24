@@ -3,7 +3,7 @@
  *
  * File Name:       add-misc-opts/plugin.js
  * Function:        tinymce misc opts plugin
- * Build:           200304
+ * Build:           200422
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -34,6 +34,12 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             }
         }, {
             icon: false,
+            text: '•\xa0Frame Text',
+            onclick: function () {
+                tinymce.execCommand('mceReplaceContent', false, '<table class="wd:100%"><tr><td class="txt:frame">{$selection}</td></tr></table>');
+            }
+        }, {
+            icon: false,
             text: '•\xa0Excerpt',
             onclick: function() {
                 var dom = editor.dom;
@@ -55,6 +61,6 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
 
 /*
  * EOF:     add-misc-opts/plugin.js
- * Build:   200304
+ * Build:   200422
  *
  */
