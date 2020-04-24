@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200322
+ * Build:           200422
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -16,13 +16,143 @@
  * @since           0.9
  * @link            https://codex.wordpress.org/Template_Tags
  *
+ *
+ * Other SVG styles
+ *  h1 - width:width:3.25rem;height:3.25rem;display:inline;padding-bottom:8px;
+ *  h2 - width:2.4375rem;height:2.4375rem;display:inline;padding-bottom:5px;
+ *  h3 - width:2.125rem;height:2.125rem;display:inline;padding-bottom:4px;
+ *  h4 - width:1.8125rem;height:1.8125rem;display:inline;padding-bottom:4px;
+ *  h5 - width:1.5rem;height:1.5rem;display:inline;padding-bottom:3px;
+ *  h6 - width:1.375rem;height:1.375rem;display:inline;padding-bottom:3px;
+ *
+ *  src: https://materialdesignicons.com/
+ *
  */
+
+/*
+***
+    * ico: xidipity_x_readmore_img
+    * dsc: readmore logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_x_readmore_img'))
+{
+    function xidipity_x_readmore_img()
+    {
+        return '<img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE1LjUsMTJDMTgsMTIgMjAsMTQgMjAsMTYuNUMyMCwxNy4zOCAxOS43NSwxOC4yMSAxOS4zMSwxOC45TDIyLjM5LDIyTDIxLDIzLjM5TDE3Ljg4LDIwLjMyQzE3LjE5LDIwLjc1IDE2LjM3LDIxIDE1LjUsMjFDMTMsMjEgMTEsMTkgMTEsMTYuNUMxMSwxNCAxMywxMiAxNS41LDEyTTE1LjUsMTRBMi41LDIuNSAwIDAsMCAxMywxNi41QTIuNSwyLjUgMCAwLDAgMTUuNSwxOUEyLjUsMi41IDAgMCwwIDE4LDE2LjVBMi41LDIuNSAwIDAsMCAxNS41LDE0TTYsMjJBMiwyIDAgMCwxIDQsMjBWNEM0LDIuODkgNC45LDIgNiwySDdWOUw5LjUsNy41TDEyLDlWMkgxOEEyLDIgMCAwLDEgMjAsNFYxMS44MUMxOC44MywxMC42OSAxNy4yNSwxMCAxNS41LDEwQTYuNSw2LjUgMCAwLDAgOSwxNi41QzksMTguODEgMTAuMjEsMjAuODUgMTIuMDMsMjJINloiIC8+PC9zdmc+" alt="Xidipity WordPress Theme Read More Icon" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_readmore_img
+    * dsc: readmore logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_readmore_img'))
+{
+    function xidipity_readmore_img()
+    {
+        return '<img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_search_logo
+    * dsc: category search logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_search_logo'))
+{
+    function xidipity_search_logo()
+    {
+            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Search Logo" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_category_logo
+    * dsc: category page logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_category_logo'))
+{
+    function xidipity_category_logo()
+    {
+            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Category Logo" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_archive_logo
+    * dsc: archive page logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_archive_logo'))
+{
+    function xidipity_archive_logo()
+    {
+            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjAgMjEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iYXJjaGl2ZSIgZmlsbD0iIzQyNDI0MiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTgsMTAgQzgsOC45IDguOSw4IDEwLDggQzExLjEsOCAxMiw4LjkgMTIsMTAgQzEyLDExLjEgMTEuMSwxMiAxMCwxMiBDOC45LDEyIDgsMTEuMSA4LDEwIE01LjgsMTUuNyBMNC4zLDE0LjMgTDUuOCwxMi44IEM1LjMsMTIgNSwxMSA1LDEwIEM1LDkgNS4zLDggNS44LDcuMyBMNC4zLDUuOCBMNS44LDQuMyBMNy4yLDUuOCBDOCw1LjMgOSw1IDEwLDUgQzExLDUgMTIsNS4zIDEyLjgsNS44IEwxNC4zLDQuMyBMMTUuNyw1LjcgTDE0LjIsNy4yIEMxNC43LDggMTUsOSAxNSwxMCBDMTUsMTEgMTQuNywxMiAxNC4yLDEyLjggTDE1LjcsMTQuMyBMMTQuMywxNS43IEwxMi44LDE0LjIgQzEyLDE0LjcgMTEsMTUgMTAsMTUgQzksMTUgOCwxNC43IDcuMywxNC4yIEw1LjgsMTUuNyBNMTAsNyBDOC4zLDcgNyw4LjMgNywxMCBDNywxMS43IDguMywxMyAxMCwxMyBDMTEuNywxMyAxMywxMS43IDEzLDEwIEMxMyw4LjMgMTEuNyw3IDEwLDcgTTE4LDAgQzE5LjEsMCAyMCwwLjkgMjAsMiBMMjAsMTggQzIwLDE5LjEgMTkuMSwyMCAxOCwyMCBMMTcsMjAgTDE3LDIxIEwxMywyMSBMMTMsMjAgTDcsMjAgTDcsMjEgTDMsMjEgTDMsMjAgTDIsMjAgQzAuOSwyMCAwLDE5LjEgMCwxOCBMMCwyIEMwLDAuOSAwLjksMCAyLDAgTDE4LDAgTTE4LDE4IEwxOCwyIEwyLDIgTDIsMTggTDE4LDE4IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Archive Logo" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_404_logo
+    * dsc: 404 page logo
+    * ver: 200422
+    * fnt: return logo
+    * ref:
+***
+*/
+if (!function_exists('xidipity_404_logo'))
+{
+    function xidipity_404_logo()
+    {
+            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTkgMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0icGFnZS1lcnIiIGZpbGw9IiMwMDNDOEYiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMS40NiwxMi44OCBMMTIuODgsMTEuNDYgTDE1LDEzLjU5IEwxNy4xMiwxMS40NiBMMTguNTQsMTIuODggTDE2LjQxLDE1IEwxOC41NCwxNy4xMiBMMTcuMTIsMTguNTQgTDE1LDE2LjQxIEwxMi44OCwxOC41NCBMMTEuNDYsMTcuMTIgTDEzLjU5LDE1IEwxMS40NiwxMi44OCBNOSwxNCBMOSwxMiBMNCwxMiBMNCwxNCBMOSwxNCBNMTQsOCBMNCw4IEw0LDEwIEwxMS42OSwxMCBDMTAuMDcsMTEuMDcgOSwxMi45MSA5LDE1IEM5LDE2LjA5IDkuMjksMTcuMTIgOS44LDE4IEwyLDE4IEMwLjg5LDE4IDAsMTcuMSAwLDE2IEwwLDIgQzAsMC44OSAwLjg5LDAgMiwwIEwxNiwwIEMxNy4xMDQ1Njk1LDAgMTgsMC44OTU0MzA1IDE4LDIgTDE4LDkuOCBDMTcuMTIsOS4yOSAxNi4wOSw5IDE1LDkgTDE0LDkuMDggTDE0LDggTTE0LDYgTDE0LDQgTDQsNCBMNCw2IEwxNCw2IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme 404 Logo" />';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_arrow_lt
+    * dsc: circle arrow left
+    * ver: 200422
+    * fnt: return arrow icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_arrow_lt'))
+{
+    function xidipity_icon_arrow_lt()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
+    }
+}
 
 /*
 ***
     * ico: xidipity_icon_archive
     * dsc: calendar
-    * ver: 200206
+    * ver: 200422
     * fnt: return font awesome calendar icon
     * ref: https://fontawesome.com/icons/calendar-alt?style=regular
 ***
@@ -31,7 +161,7 @@ if (!function_exists('xidipity_icon_archive'))
 {
     function xidipity_icon_archive()
     {
-            return '<i class="fas fa-archive"></i>';
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
     }
 }
 
@@ -48,7 +178,7 @@ if (!function_exists('xidipity_icon_date'))
 {
     function xidipity_icon_date()
     {
-            return '<i class="far fa-calendar-alt"></i>';
+        return '<i class="far fa-calendar-alt"></i>';
     }
 }
 
@@ -88,9 +218,128 @@ if (!function_exists('xidipity_icon_tags'))
 
 /*
 ***
+    * ico: xidipity_icon_comment
+    * dsc: post comment
+    * ver: 200422
+    * fnt: return post comment icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_comment'))
+{
+    function xidipity_icon_comment()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_comments
+    * dsc: post comments
+    * ver: 200422
+    * fnt: return post comments icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_comments'))
+{
+    function xidipity_icon_comments()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_x_comments
+    * dsc: post comments closed
+    * ver: 200422
+    * fnt: return post comments closed icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_x_comments'))
+{
+    function xidipity_icon_x_comments()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_tag
+    * dsc: post tags
+    * ver: 200422
+    * fnt: return post tag icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_tag'))
+{
+    function xidipity_icon_tag()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_pdate
+    * dsc: post date
+    * ver: 200422
+    * fnt: return post date icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_pdate'))
+{
+    function xidipity_icon_pdate()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19,3H18V1H16V3H8V1H6V3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H10V19H5V8H19V9H21V5A2,2 0 0,0 19,3M21.7,13.35L20.7,14.35L18.65,12.35L19.65,11.35C19.85,11.14 20.19,11.13 20.42,11.35L21.7,12.63C21.89,12.83 21.89,13.15 21.7,13.35M12,18.94L18.07,12.88L20.12,14.88L14.06,21H12V18.94Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_author
+    * dsc: post author
+    * ver: 200422
+    * fnt: return author icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_author'))
+{
+    function xidipity_icon_author()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_sticky
+    * dsc: sticky post
+    * ver: 200422
+    * fnt: return font awesome pin icon
+    * ref: https://fontawesome.com/icons/thumbtack?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_sticky'))
+{
+    function xidipity_icon_sticky()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M17,21L14.25,18L15.41,16.84L17,18.43L20.59,14.84L21.75,16.25M12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21M12,15H7V17H12M17,7H7V9H17" /></svg>';
+    }
+}
+
+/*
+***
     * ico: xidipity_icon_bm
     * dsc: bookmark
-    * ver: 200206
+    * ver: 200422
     * fnt: return font awesome bookmark icon
     * ref: https://fontawesome.com/icons/bookmark?style=regular
 ***
@@ -99,7 +348,7 @@ if (!function_exists('xidipity_icon_bm'))
 {
     function xidipity_icon_bm()
     {
-            return '<i class="far fa-bookmark"></i>';
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>';
     }
 }
 
@@ -123,9 +372,9 @@ if (!function_exists('xidipity_icon_vw_img'))
 /*
 ***
     * ico: xidipity_icon_edit
-    * dsc: edit
-    * ver: 200206
-    * fnt: return font awesome file edit icon
+    * dsc: content footer edit icon
+    * ver: 200422
+    * fnt: return edit icon
     * ref: https://fontawesome.com/icons/edit?style=regular
 ***
 */
@@ -133,10 +382,9 @@ if (!function_exists('xidipity_icon_edit'))
 {
     function xidipity_icon_edit()
     {
-        return '<i class="far fa-edit"></i>';
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
     }
 }
-
 /*
 ***
     * ico: xidipity_icon_idea
@@ -253,23 +501,6 @@ if (!function_exists('xidipity_icon_discuss'))
     function xidipity_icon_discuss()
     {
         return '<i class="far fa-comments"></i>';
-    }
-}
-
-/*
-***
-    * ico: xidipity_icon_comment
-    * dsc: comment
-    * ver: 200206
-    * fnt: return font awesome file comment icon
-    * ref: https://fontawesome.com/icons/comment?style=regular
-***
-*/
-if (!function_exists('xidipity_icon_comment'))
-{
-    function xidipity_icon_comment()
-    {
-        return '<i class="far fa-comment"></i>';
     }
 }
 
@@ -539,7 +770,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200322
+ * Build:   200422
  *
  */
 ?>
