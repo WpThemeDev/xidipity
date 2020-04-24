@@ -6,7 +6,7 @@
  *
  * File Name:       archive.php
  * Function:        display pages assigned to archive category
- * Build:           200415
+ * Build:           200422
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -86,7 +86,7 @@ if (empty($content))
 {
     $dft_content = array(
         'ID' => get_the_ID(),
-        'post_content' => '<h3><i class="fas fa-archive fg:sec-dark">&#x200B;</i><span class="pad:left+0.5">Archive Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display excerpts of blog posts which have been marked as "archived". The editor content is not exposed to the web but provides an opportunity to note or document the use of the template.</p>'
+        'post_content' => '<h3><i class="fas fa-archive fg:sec-dark">&#8203;</i><span class="pad:left+0.5">Archive Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display excerpts of blog posts which have been marked as "archived". The editor content is not exposed to the web but provides an opportunity to note or document the use of the template.</p>'
     );
     wp_update_post( $dft_content );
 }
@@ -112,17 +112,10 @@ $wp_data = new WP_Query($qry_prms);
     * create block for content
 ***
 */
-echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<!--  bk:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_data->have_posts()) {
-
-    /*
-    ***
-        * page title
-    ***
-    */
-    echo '<!--  ct:HEADER -->' . "\n";
-    echo '<header class="wd:100%">' . "\n";
+    $cnt = 0;
 
     /*
     ***
@@ -131,14 +124,18 @@ if ($wp_data->have_posts()) {
         * ref: developer.wordpress.org/reference/functions/the_title/
     ***
     */
+    echo '<!--  bk:HEADER -->' . "\n";
+    echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<hr class="bg:bas-100 mar:vrt+0.25" />' . "\n";
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
-    echo '<!-- /ct:HEADER -->' . "\n";
+    echo '<!-- /bk:HEADER -->' . "\n";
 
     while ($wp_data->have_posts())
     {
         $wp_data->the_post();
+        $cnt++;
+
         /*
         ***
             * excerpt data elements
@@ -156,7 +153,7 @@ if ($wp_data->have_posts()) {
         */
         $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
-        echo '<!--  ct:BODY -->' . "\n";
+        echo '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
         echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
         /*
@@ -218,7 +215,7 @@ if ($wp_data->have_posts()) {
         echo '</div>' . "\n";
         echo '<!-- /fc:EXCERPT -->' . "\n";
         echo '</div>' . "\n";
-        echo '<!-- /ct:BODY -->' . "\n";
+        echo '<!-- /bk:' . $cnt . '/PARAGRAPH -->' . "\n";
     }
 
     /*
@@ -240,7 +237,7 @@ if ($wp_data->have_posts()) {
         echo '<!-- /ct:PAGINATION -->' . "\n";
     }
 
-    echo '<hr class="bg:bas-100 mar:vrt+0.25" />' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -262,7 +259,7 @@ else
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
     echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
-    echo '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjAgMjEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iYXJjaGl2ZSIgZmlsbD0iIzQyNDI0MiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTgsMTAgQzgsOC45IDguOSw4IDEwLDggQzExLjEsOCAxMiw4LjkgMTIsMTAgQzEyLDExLjEgMTEuMSwxMiAxMCwxMiBDOC45LDEyIDgsMTEuMSA4LDEwIE01LjgsMTUuNyBMNC4zLDE0LjMgTDUuOCwxMi44IEM1LjMsMTIgNSwxMSA1LDEwIEM1LDkgNS4zLDggNS44LDcuMyBMNC4zLDUuOCBMNS44LDQuMyBMNy4yLDUuOCBDOCw1LjMgOSw1IDEwLDUgQzExLDUgMTIsNS4zIDEyLjgsNS44IEwxNC4zLDQuMyBMMTUuNyw1LjcgTDE0LjIsNy4yIEMxNC43LDggMTUsOSAxNSwxMCBDMTUsMTEgMTQuNywxMiAxNC4yLDEyLjggTDE1LjcsMTQuMyBMMTQuMywxNS43IEwxMi44LDE0LjIgQzEyLDE0LjcgMTEsMTUgMTAsMTUgQzksMTUgOCwxNC43IDcuMywxNC4yIEw1LjgsMTUuNyBNMTAsNyBDOC4zLDcgNyw4LjMgNywxMCBDNywxMS43IDguMywxMyAxMCwxMyBDMTEuNywxMyAxMywxMS43IDEzLDEwIEMxMyw4LjMgMTEuNyw3IDEwLDcgTTE4LDAgQzE5LjEsMCAyMCwwLjkgMjAsMiBMMjAsMTggQzIwLDE5LjEgMTkuMSwyMCAxOCwyMCBMMTcsMjAgTDE3LDIxIEwxMywyMSBMMTMsMjAgTDcsMjAgTDcsMjEgTDMsMjEgTDMsMjAgTDIsMjAgQzAuOSwyMCAwLDE5LjEgMCwxOCBMMCwyIEMwLDAuOSAwLjksMCAyLDAgTDE4LDAgTTE4LDE4IEwxOCwyIEwyLDIgTDIsMTggTDE4LDE4IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Archive Error Logo" />' . "\n";
+    echo xidipity_archive_logo() . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fi:3/1/1/HTML -->' . "\n";
     echo '<!--  fi:3/1/1/HTML -->' . "\n";
@@ -275,7 +272,7 @@ else
     echo '<!-- /fc:3/1/HTML -->' . "\n";
 }
 echo '</article>' . "\n";
-echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
 echo '<!-- /fi:3/1/1/HTML -->' . "\n";
 
@@ -318,7 +315,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     archive.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
