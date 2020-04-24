@@ -6,7 +6,7 @@
  *
  * File Name:       page-catalog.php
  * Function:        display list of of pages
- * Build:           200415
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -108,7 +108,7 @@ if ($wp_data->have_posts())
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
 
@@ -153,7 +153,7 @@ if ($wp_data->have_posts())
 
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -214,7 +214,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     page-catalog.php
- * Build:   200415
+ * Build:   200429
  *
  */
 ?>
