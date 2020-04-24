@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200415
+ * Build:           200422
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -201,6 +201,23 @@ body {
     background-color: transparent;
 }
 
+/*: 320 mobile:*/
+.ad\:wrapper {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+@media (min-width: 900px) {
+    .ad\:wrapper {
+        padding: 0;
+        width: calc(100vw - 394px) !important;
+        max-width: calc(100vw - 394px) !important;
+    }
+}
+
 /*
 ***
     * element: img
@@ -276,6 +293,7 @@ a.comment-reply-link:hover {
     background-color: var(--hue-pri);
     border: thin solid transparent;
     color: var(--hue-wht);
+    margin-top: 0.5rem;
     padding: 0.5rem 1.5rem;
     text-align: center;
 }
@@ -1059,6 +1077,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200415
+ * Build:   200422
  *
  */
