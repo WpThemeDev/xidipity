@@ -4,7 +4,7 @@
  *
  * File Name:       inc/extras.php
  * Function:        xidipity extensions
- * Build:           200315
+ * Build:           200422
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -419,7 +419,7 @@ if (!function_exists('xidipity_the_attached_image')) {
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
- *  xlst    200322    excerpt list
+ *  xlst    200422    excerpt list
  *  blst    200322    unordered list of linked blog titles
  *  clst    200322    unordered list of linked category titles
  *  imgg    200322    image gallary
@@ -438,13 +438,13 @@ if (!function_exists('xidipity_the_attached_image')) {
  *  Xidipity WordPress Theme
  *
  *  name:   xlst
- *  build:  200322
+ *  build:  200422
  *  descrp: display list of blog excerpts by category
  *  attributes ($args - array):
- *      orderby - string
- *      order - string (A/D)
  *      align_img - string (l/r/x) x=no image
  *      cnt - numeric
+ *      orderby - string
+ *      order - string (a/d)
  *
  *  parameters ($prm - string):
  *      category - string
@@ -532,28 +532,30 @@ function xlst_shortcode($args = array() , $prms = '')
      ***
     */
     $qry_args = array(
+        'cat' => $category_ids,
         'ignore_sticky_posts' => 1,
         'order' => $order,
         'orderby' => $orderby,
         'perm' => 'readable',
-        'posts_per_page' => $cnt,
-        'cat' => $category_ids
+        'post_type' => 'post',
+        'posts_per_page' => $cnt
     );
     $wp_data = new WP_Query($qry_args);
 
-    while ($wp_data->have_posts())
+    if ($wp_data->have_posts())
     {
-        $wp_data->the_post();
-
-        /*
-         ***
-         * excerpt data elements
-         ***
-        */
-        $excerpt_category = '';
-        $excerpt_byline = '';
-        if ('post' == get_post_type())
+        $cnt = 0;
+        while ($wp_data->have_posts())
         {
+            $wp_data->the_post();
+            $cnt++;
+            /*
+             ***
+             * excerpt data elements
+             ***
+            */
+            $excerpt_category = '';
+            $excerpt_byline = '';
             if ($align_image == 'x')
             {
                 $wp_img = '';
@@ -564,14 +566,7 @@ function xlst_shortcode($args = array() , $prms = '')
                     'class' => 'cnr:arch-small ht:auto wd:100%'
                 ));
             }
-            if (is_sticky())
-            {
-                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_sticky(xidipity_first_category()) . '</div>';
-            }
-            else
-            {
-                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
-            }
+            $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
             $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
 
             /*
@@ -581,27 +576,45 @@ function xlst_shortcode($args = array() , $prms = '')
             */
             $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
+            $html_retval .= '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
+            $html_retval .= '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+
             /*
              ***
              * build article
              ***
             */
+            $html_retval .= '<!--  fc:EXCERPT -->' . "\n";
             if ($align_image == 'r' && !empty($wp_img))
             {
-                $html_retval .= '<article class="fx:c sm)fx:r-rev fxa:1 fxb:1 fxc:1 ht:min11 mar:vrt+0.75">';
+                $html_retval .= '<div class="fx:c md)fx:rw-rev fxa:1 fxb:1 fxc:1 wd:100%">' . "\n";
             }
             else
             {
-                $html_retval .= '<article class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 ht:min11 mar:vrt+0.75">';
+                $html_retval .= '<div class="fx:c md)fx:rw fxa:1 fxb:1 fxc:1 wd:100%">' . "\n";
             }
 
             if (!empty($wp_img))
             {
-                $html_retval .= '<div class="fxd:1 fxe:6 sm)fxe:2 sm)wd:20%">';
+                $html_retval .= '<!--  fi:1/EXCERPT  -->' . "\n";
+                $html_retval .= '<div class="fxd:2 fxe:6 wd:100% md)wd:1/3 xl)wd:1/4 ht:min10">' . "\n";
+                $html_retval .= '<!--  ex:IMAGE  -->' . "\n";
+                $html_retval .= '<div class="dsp:block pad:+1 ht:100%">' . "\n";
                 $html_retval .= $wp_img;
-                $html_retval .= '</div>';
+                $html_retval .= '</div>' . "\n";
+                $html_retval .= '<!-- /ex:IMAGE  -->' . "\n";
+                $html_retval .= '</div>' . "\n";
+                $html_retval .= '<!-- /fi:1/EXCERPT  -->' . "\n";
+                $html_retval .= '<!--  fi:2/EXCERPT  -->' . "\n";
+                $html_retval .= '<div class="fxd:1 fxe:6 wd:100% md)wd:2/3 xl)wd:3/4 ht:min10">' . "\n";
             }
-            $html_retval .= '<div class="fxd:1 sm)fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 sm)pad:hrz+0.5 wd:100%">';
+            else
+            {
+                $html_retval .= '<!--  fi:1/EXCERPT  -->' . "\n";
+                $html_retval .= '<div class="fxd:1 fxe:6 wd:100% ht:min10">' . "\n";
+            }
+            $html_retval .= '<!--  ex:TEXT  -->' . "\n";
+            $html_retval .= '<div class="dsp:block pad:+1 ht:100%">' . "\n";
             if (!empty($excerpt_category))
             {
                 $html_retval .= $excerpt_category;
@@ -610,15 +623,26 @@ function xlst_shortcode($args = array() , $prms = '')
             {
                 $html_retval .= $excerpt_byline;
             }
-            $html_retval .= '<div class="pg:title">' . get_the_title() . '</div>';
-            $html_retval .= '<div>' . get_the_excerpt() . '</div>';
+            $html_retval .= '<div class="pg:title led:x-narrow">' . get_the_title() . '</div>';
+            $html_retval .= get_the_excerpt();
             $html_retval .= dsp_rm($post_link);
-            $html_retval .= '</div>';
-            $html_retval .= '</article>';
-
+            $html_retval .= '</div>' . "\n";
+            $html_retval .= '<!-- /ex:TEXT  -->' . "\n";
+            $html_retval .= '</div>' . "\n";
+            if (empty($wp_img))
+            {
+                $html_retval .= '<!-- /fi:1/EXCERPT  -->' . "\n";
+            }
+            else
+            {
+                $html_retval .= '<!-- /fi:2/EXCERPT  -->' . "\n";
+            }
+            $html_retval .= '</div>' . "\n";
+            $html_retval .= '<!-- /fc:EXCERPT -->' . "\n";
+            $html_retval .= '</div>' . "\n";
+            $html_retval .= '<!-- /bk:' . $cnt . '/PARAGRAPH -->' . "\n";
         }
     }
-
     /*
     ***
         * function: wp_reset_postdata
@@ -992,7 +1016,6 @@ function clst_shortcode($args = array(), $prm = '')
  *      class - string
  *      caption - string (l/c/r)
  *      content - string (y/n)
- *      columns - numeric (2-4)
  *      orderby - string
  *      order - string (A/D)
  *
@@ -1480,7 +1503,7 @@ function xidipity_shortcode($atts)
         break;
         default:
             $opt = 'Name';
-            $atts['label'] = '<sup><i class="fas fa-map-marker" style="color:#c62828;">&#x200B;</i></sup>';
+            $atts['label'] = '<sup><i class="fas fa-map-marker" style="color:#c62828;">&#8203;</i></sup>';
     }
     $my_theme = wp_get_theme();
     if (empty($atts['label']))
@@ -1495,7 +1518,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200322
+ * Build:   200422
  *
  */
 ?>
