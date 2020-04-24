@@ -4,7 +4,7 @@
  *
  * File Name:       content-comments.php
  * Function:        display post comments
- * Build:           200322
+ * Build:           200422
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -283,7 +283,7 @@ comment_form(array(
     'title_reply' => xidipity_icon_discuss() . '<span class="pad:left+0.5">Your Comment</span>',
     'logged_in_as' => ''
 ));
-if ( comments_open() && is_plugin_active('akismet/akismet.php') )
+if ( comments_open() && wp_plugin('akismet/akismet.php') )
 {
     echo '<p class="fnt:size-smaller mar:vrt+1">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/">Learn how your comment data is processed.</a></p>' . "\n";
 }
@@ -292,7 +292,7 @@ echo '</div>' . "\n";
 
 /*
  * EOF:     content-comments.php
- * Build:   200322
+ * Build:   200422
  *
  */
 ?>
