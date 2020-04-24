@@ -89,6 +89,7 @@ if ($wp_query->have_posts())
     ***
     */
     the_title('<div class="pg:title">Media: ', '</div>');
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
@@ -119,6 +120,8 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+
     /*
     ***
         * page footer
@@ -126,7 +129,7 @@ if ($wp_query->have_posts())
     */
     /* file date */
     $footer_items = '';
-    $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.25">' . xidipity_icon_arrow_lt() . '</span>Go Back</a>' . '|';
+    $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.25">' . xidipity_icon_arrow_lt('fnt:size-small') . '</span>Go Back</a>' . '|';
     $footer_items .= get_the_date(get_option('date_format'),get_the_ID()) . '|';
     /*: dimensions :*/
     $footer_items .= 'Dimensions: ' . absint($wp_metadata['height']) . 'x' . absint($wp_metadata['width']) . ' pixels |';
