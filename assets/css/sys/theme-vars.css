@@ -3,9 +3,8 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200322
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Build:           200422
+ * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
@@ -14,10 +13,10 @@
  * @license         GPL-3.0-or-later
  * @version         1.0
  * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *                  https://developer.mozilla.org/en-US/docs/Web/CSS/var
- *                  https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
- *                  https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=1565c0&secondary.color=f25c02
+ * @link            developer.wordpress.org/themes/basics/
+ *                  developer.mozilla.org/en-US/docs/Web/CSS/var
+ *                  www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+ *                  material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=1565c0&secondary.color=f25c02
  *
  * Comments:        By default the base hue is grey, primary blue, and secondary
  *                  orange. WCAG hues are high contrast (4.5:1 or greater) for legibility.
@@ -120,12 +119,12 @@
     --font-cursive: "Kalam", cursive;
     --font-fancy: "Kaushan Script", cursive;
     /*: font sizes :*/
-    --font-size-h1: 2.125rem;
-    --font-size-h2: 1.875rem;
-    --font-size-h3: 1.625rem;
-    --font-size-h4: 1.5rem;
-    --font-size-h5: 1.375rem;
-    --font-size-h6: 1.25rem;
+    --font-size-h1: 2.75rem;
+    --font-size-h2: 2.4375rem;
+    --font-size-h3: 2.125rem;
+    --font-size-h4: 1.8125rem;
+    --font-size-h5: 1.5rem;
+    --font-size-h6: 1.375rem;
     --font-size-xm: 1.125rem;
     --font-size-md: 1rem;
     --font-size-sm: 0.875rem;
@@ -169,12 +168,12 @@
     --h5-font: var(--font-sans);
     --h5-size: var(--font-size-h5);
     --h5-style: var(--font-style-normal);
-    --h5-weight: var(--font-wgt-normal);
+    --h5-weight: var(--font-wgt-light);
     --h6-color: var(--hue-bas-800);
     --h6-font: var(--font-sans);
     --h6-size: var(--font-size-h6);
-    --h6-style: var(--font-style-oblique);
-    --h6-weight: var(--font-wgt-normal);
+    --h6-style: var(--font-style-normal);
+    --h6-weight: var(--font-wgt-light);
     /*
     ***
     theme attributes
@@ -241,6 +240,6 @@
 
 /*
  * EOF:     sys/theme-vars.css
- * Build:   200322
+ * Build:   200422
  *
  */
