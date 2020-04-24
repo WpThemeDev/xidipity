@@ -6,7 +6,7 @@
  *
  * File Name:       archive.php
  * Function:        display pages assigned to archive category
- * Build:           200422
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -127,7 +127,7 @@ if ($wp_data->have_posts()) {
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
 
@@ -237,7 +237,7 @@ if ($wp_data->have_posts()) {
         echo '<!-- /ct:PAGINATION -->' . "\n";
     }
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -301,7 +301,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     archive.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
