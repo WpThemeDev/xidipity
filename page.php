@@ -4,7 +4,7 @@
  *
  * File Name:       page.php
  * Function:        display page
- * Build:           200415
+ * Build:           200422
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -61,14 +61,12 @@ else
     echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
 
-echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<!--  bk:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
     the_post();
-    echo '<!--  ct:HEADER -->' . "\n";
-    echo '<header class="wd:100%">' . "\n";
 
     /*
     ***
@@ -77,10 +75,13 @@ if ($wp_query->have_posts())
         * ref: developer.wordpress.org/reference/functions/the_title/
     ***
     */
+    echo '<!--  bk:HEADER -->' . "\n";
+    echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
-    echo '<!-- /ct:HEADER -->' . "\n";
-    echo '<!--  ct:BODY -->' . "\n";
+    echo '<!-- /bk:HEADER -->' . "\n";
+    echo '<!--  bk:1/PARAGRAPH -->' . "\n";
     echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
     /*
@@ -92,20 +93,22 @@ if ($wp_query->have_posts())
     {
         if (function_exists('yoast_breadcrumb'))
         {
-            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs">', '</div>');
+            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs">', '</div>' . "\n");
         }
     }
 
     /*
     ***
-        * function: the_content
+        * function: the_content wrapper
         * descript: display page content
         * ref: developer.wordpress.org/reference/functions/the_content/
     ***
     */
-    the_content();
+    dsp_content();
     echo '</div>' . "\n";
-    echo '<!-- /ct:BODY -->' . "\n";
+    echo '<!-- /bk:1/PARAGRAPH -->' . "\n";
+
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -131,7 +134,7 @@ else
     get_template_part('template-parts/content', 'none');
 }
 echo '</article>' . "\n";
-echo '<!-- /ct:ARTICLE -->' . "\n";
+echo '<!-- /bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
 echo '<!-- /fi:3/1/1/HTML 1 -->' . "\n";
 
@@ -168,7 +171,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     page.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
