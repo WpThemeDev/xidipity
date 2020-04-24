@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200422
+ * Build:           200429
  * Revision:        1
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -36,6 +36,7 @@ body,
     font-size: var(--dft-font-size);
     font-weight: var(--dft-font-weight);
     line-height: var(--dft-line-height);
+    overflow-wrap: anywhere !important;
 }
 ins,
 mark {
@@ -104,6 +105,8 @@ pre.wrap{
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem;
     width: 100%;
 }
@@ -1922,6 +1925,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200422
+ * Build:   200429
  *
  */
