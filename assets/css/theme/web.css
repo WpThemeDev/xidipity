@@ -3,7 +3,7 @@
  *
  * File Name:       theme/web.css
  * Function:        CSS web elements
- * Build:           200422
+ * Build:           200429
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -1020,7 +1020,7 @@ a.page-numbers:focus {
 
     #nav ul li {
         position: relative;
-        text-align: center;
+        text-align: left;
         /* older flexbox */
         -ms-flex: 1;
         -webkit-box-flex: 1;
@@ -1041,7 +1041,7 @@ a.page-numbers:focus {
     }
 
     #nav ul li ul li {
-        text-align: center;
+        text-align: left;
     }
 
     #nav ul li ul li ul {
@@ -1077,6 +1077,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200422
+ * Build:   200429
  *
  */
