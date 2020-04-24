@@ -3,7 +3,7 @@
  *
  * File Name:       theme/print.css
  * Function:        CSS print elements
- * Build:           200322
+ * Build:           200422
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -333,6 +333,22 @@ table.cols\:4 {
 
 /*
 ***
+    * property: box:shadow
+    * dsc:  flexbox shadow
+    * ver:  200422
+    * fnt:  hide drop shadow to flexbox
+    * ref:
+***
+*/
+.box\:shadow {
+    border-top: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/*
+***
     * id: breadcrumbs
     * dsc: yoast breadcrumbs
     * ver: 190206
@@ -346,6 +362,6 @@ table.cols\:4 {
 
 /*
  * EOF:     theme/print.css
- * Build:   200322
+ * Build:   200422
  *
  */
