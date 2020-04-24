@@ -4,7 +4,7 @@
  *
  * File Name:       single.php
  * Function:        display blog post
- * Build:           200422
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -82,7 +82,7 @@ if ($wp_query->have_posts())
     echo '<div class="fx:r fxa:1 fxc:1">' . "\n";
     echo '<!--  ct:TEXT -->' . "\n";
     echo '<div class="aln:text-left dsp:block">' . "\n";
-    the_title('<h1>', '</h1>');
+    the_title('<div class="pg:title">', '</div>');
     echo '</div>' . "\n";
     echo '<!-- /ct:TEXT -->' . "\n";
     echo '</div>' . "\n";
@@ -99,7 +99,7 @@ if ($wp_query->have_posts())
     echo '<!--  ct:TEXT -->' . "\n";
     echo '<div class="bg:bas-050 cnr:arch-small mar:bottom+1 pad:+0.5 dsp:block ht:min10">' . "\n";
     echo '<table class="bdr:space+0.25 bdr:hidden cols:auto">' . "\n";
-    echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_cat() . '</td><td>' . xidipity_first_category() . '</td></tr>' . "\n";
+    echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_cat_icon(post_category()) . '</td><td>' . xidipity_first_category() . '</td></tr>' . "\n";
     echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_author() . '</td><td><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author_meta("display_name") . '</a></td></tr>' . "\n";
     echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_pdate() . '</td><td>' . get_the_modified_time(get_option('date_format')) . '</td></tr>' . "\n";
     if (cnt_tags() > 0)
@@ -143,14 +143,14 @@ if ($wp_query->have_posts())
         }
     }
 
-        /*
-        ***
-            * function: the_content wrapper
-            * descript: display page content
-            * ref: developer.wordpress.org/reference/functions/the_content/
-        ***
-        */
-        dsp_content();
+    /*
+    ***
+        * function: the_content wrapper
+        * descript: display page content
+        * ref: developer.wordpress.org/reference/functions/the_content/
+    ***
+    */
+    dsp_content();
 
     echo '</div>' . "\n";
     echo '<!-- /ct:TEXT -->' . "\n";
@@ -163,7 +163,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /fc:LAYOUT -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -178,7 +178,10 @@ if ($wp_query->have_posts())
             get_template_part('template-parts/content', 'comments');
         }
     }
-     /*
+
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+
+    /*
     ***
         * page footer
     ***
@@ -242,7 +245,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     single.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
