@@ -2,10 +2,9 @@
  * WordPress Xidipity Theme CSS File
  *
  * File Name:       sys/print-vars.css
- * Function:        print css data elements
- * Build:           200208
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * Function:        theme css data elements
+ * Build:           200422
+ * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
  * @package         xidipity
@@ -14,11 +13,23 @@
  * @license         GPL-3.0-or-later
  * @version         1.0
  * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
+ * @link            developer.wordpress.org/themes/basics/
+ *                  developer.mozilla.org/en-US/docs/Web/CSS/var
+ *                  www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+ *                  material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=1565c0&secondary.color=f25c02
+ *
+ * Comments:        By default the base hue is grey, primary blue, and secondary
+ *                  orange. WCAG hues are high contrast (4.5:1 or greater) for legibility.
  *
  */
 
 :root {
+    /*
+    ***
+    set base font size for rem calculations
+    ***
+    */
+    font-size: 12px;
     /*
     ***
     base, primary, secondary hue / shade
@@ -39,31 +50,196 @@
     --hue-bas-100: #f5f5f5;
     --hue-bas-050: #fafafa;
     /*: primary hue :*/
-    --hue-pri-900: #212121;
-    --hue-pri-800: #424242;
-    --hue-pri-700: #616161;
-    --hue-pri-600: #757575;
-    --hue-pri-500: #9e9e9e;
-    --hue-pri-400: #bdbdbd;
-    --hue-pri-300: #e0e0e0;
-    --hue-pri-200: #eeeeee;
-    --hue-pri-100: #f5f5f5;
-    --hue-pri-050: #fafafa;
+    --hue-pri: #1565c0;
+    --hue-pri-bright: #5e92f3;
+    --hue-pri-dark: #003c8f;
+    --hue-pri-tint: rgba(21, 101, 192, 0.1);
+    --hue-pri-tint-bright: rgba(94, 146, 243, 0.1);
+    --hue-pri-tint-dark: rgba(0, 60, 143, 0.1);
     /*: secondary hue :*/
-    --hue-sec-900: #212121;
-    --hue-sec-800: #424242;
-    --hue-sec-700: #616161;
-    --hue-sec-600: #757575;
-    --hue-sec-500: #9e9e9e;
-    --hue-sec-400: #bdbdbd;
-    --hue-sec-300: #e0e0e0;
-    --hue-sec-200: #eeeeee;
-    --hue-sec-100: #f5f5f5;
-    --hue-sec-050: #fafafa;
+    --hue-sec: #f25c02;
+    --hue-sec-bright: #ff8e3d;
+    --hue-sec-dark: #b82800;
+    --hue-sec-tint: rgba(242, 92, 2, 0.1);
+    --hue-sec-tint-bright: rgba(255, 142, 61, 0.1);
+    --hue-sec-tint-dark: rgba(184, 40, 0, 0.1);
+    /*
+    ***
+    other colors (material design palette)
+    ***
+    */
+    --wcag-grey9: #212121;
+    --wcag-grey8: #424242;
+    --wcag-grey7: #616161;
+    --wcag-grey6: #757575;
+    --hue-red: #B71C1C;
+    --wcag-red: #B50707;
+    --hue-pink: #880E4F;
+    --hue-purple: #4A148C;
+    --hue-deep-purple: #311B92;
+    --wcag-deep-purple: #783BB7;
+    --hue-indigo: #1A237E;
+    --hue-blue: #0D47A1;
+    --wcag-blue: #0051D8;
+    --hue-light-blue: #01579B;
+    --hue-cyan: #006064;
+    --hue-teal: #004D40;
+    --hue-green: #1B5E20;
+    --wcag-green: #048618;
+    --hue-light-green: #33691E;
+    --hue-lime: #827717;
+    --hue-yellow: #F57F17;
+    --hue-amber: #FF6F00;
+    --hue-orange: #E65100;
+    --hue-deep-orange: #BF360C;
+    --wcag-deep-orange: #D44511;
+    --hue-brown: #3E2723;
+    --hue-grey: #212121;
+    --hue-blue-grey: #263238;
+    --wcag-blue-grey: #263238;
+    /*
+    ***
+    special colors
+    ***
+    */
+    /*: no color :*/
+    --transparent: transparent;
+    /*: hilite plugin support :*/
+    --hue-highlight: #FFF59D;
+    /*
+    ***
+    content attributes
+    ***
+    */
+    /*: font families :*/
+    --font-sans: "Roboto", sans-serif;
+    --font-condensed: "Roboto Condensed", sans-serif;
+    --font-mono: "Roboto Mono", monospace;
+    --font-serif: "Roboto Slab", serif;
+    --font-cursive: "Kalam", cursive;
+    --font-fancy: "Kaushan Script", cursive;
+    /*: font sizes :*/
+    --font-size-h1: 2.75rem;
+    --font-size-h2: 2.4375rem;
+    --font-size-h3: 2.125rem;
+    --font-size-h4: 1.8125rem;
+    --font-size-h5: 1.5rem;
+    --font-size-h6: 1.375rem;
+    --font-size-xm: 1.125rem;
+    --font-size-md: 1rem;
+    --font-size-sm: 0.875rem;
+    --font-size-xs: 0.75rem;
+    /*: font weight :*/
+    --font-wgt-thin: 100;
+    --font-wgt-xtralight: 200;
+    --font-wgt-light: 300;
+    --font-wgt-normal: 400;
+    --font-wgt-medium: 500;
+    --font-wgt-semibold: 600;
+    --font-wgt-bold: 700;
+    --font-wgt-extrabold: 800;
+    --font-wgt-black: 900;
+    /*: font styles :*/
+    --font-style-italic: italic;
+    --font-style-normal: normal;
+    --font-style-oblique: oblique;
+    /*: headers :*/
+    --h1-color: var(--hue-bas-800);
+    --h1-font: var(--font-sans);
+    --h1-size: var(--font-size-h1);
+    --h1-style: var(--font-style-normal);
+    --h1-weight: var(--font-wgt-normal);
+    --h2-color: var(--hue-bas-800);
+    --h2-font: var(--font-sans);
+    --h2-size: var(--font-size-h2);
+    --h2-style: var(--font-style-normal);
+    --h2-weight: var(--font-wgt-normal);
+    --h3-color: var(--hue-bas-800);
+    --h3-font: var(--font-sans);
+    --h3-size: var(--font-size-h3);
+    --h3-style: var(--font-style-normal);
+    --h3-weight: var(--font-wgt-normal);
+    --h4-color: var(--hue-bas-800);
+    --h4-font: var(--font-sans);
+    --h4-size: var(--font-size-h4);
+    --h4-style: var(--font-style-normal);
+    --h4-weight: var(--font-wgt-normal);
+    --h5-color: var(--hue-bas-800);
+    --h5-font: var(--font-sans);
+    --h5-size: var(--font-size-h5);
+    --h5-style: var(--font-style-normal);
+    --h5-weight: var(--font-wgt-light);
+    --h6-color: var(--hue-bas-800);
+    --h6-font: var(--font-sans);
+    --h6-size: var(--font-size-h6);
+    --h6-style: var(--font-style-normal);
+    --h6-weight: var(--font-wgt-light);
+    /*
+    ***
+    theme attributes
+    ***
+    */
+    /*: blog header :*/
+    --blog-hdr-bg-color: var(--hue-bas-050);
+    /*: blog title & tagline :*/
+    --title-font-family: var(--font-fancy);
+    --title-font-size: 3rem;
+    --title-font-spacing: 0.0625rem;
+    --title-font-style: normal;
+    --title-font-weight: var(--font-wgt-normal);
+    --desc-font-color: var(--wcag-grey8);
+    --desc-font-family: var(--font-sans);
+    --desc-font-size: 1rem;
+    --desc-font-spacing: 0.5rem;
+    --desc-font-style: normal;
+    --desc-font-weight: var(--font-wgt-normal);
+    /*: blog footer :*/
+    --blog-ft-bg-color: var(--hue-bas-050);
+    /*: sys menu :*/
+    --mnu-bar-sm-bg: var(--transparent);
+    --mnu-bar-sm-fg: var(--hue-blk);
+    --mnu-bar-lg-bg: var(--blog-hdr-bg-color);
+    --mnu-bar-lg-fg: var(--wcag-grey7);
+    /*: sys content :*/
+    --content-bg-color: var(--hue-wht);
+    --content-fg-color: var(--hue-blk);
+    --content-tp-border-color: var(--hue-bas-300);
+    --content-bt-border-color: var(--hue-bas-300);
+    --content-counter-color: var(--wcag-grey6);
+    /*: system :*/
+    --dft-fg-color: var(--hue-blk);
+    --dft-bg-color: var(--hue-bas-050);
+    --dft-line-height: 1.5;
+    --dft-font-family: var(--font-sans);
+    --dft-font-color: var(--hue-blk);
+    --dft-font-size: 1rem;
+    --dft-font-weight: var(--font-wgt-light);
+    --dft-font-spacing: normal;
+    /*: link attributes :*/
+    --lnk-dft-fg-hue: var(--hue-pri-dark);
+    --lnk-dft-bg-hue: var(--transparent);
+    --lnk-vst-fg-hue: var(--hue-pri);
+    --lnk-vst-bg-hue: var(--transparent);
+    --lnk-hvr-fg-hue: var(--hue-sec);
+    --lnk-hvr-bg-hue: var(--transparent);
+    --lnk-dft-wgt: var(--font-wgt-normal);
+    --lnk-vst-wgt: var(--font-wgt-normal);
+    --lnk-hvr-wgt: var(--font-wgt-normal);
+    --lnk-dft-decor: none;
+    --lnk-vst-decor: none;
+    --lnk-hvr-decor: none;
+    /*
+    ***
+    plugin attributes
+    ***
+    */
+    /*: yoast :*/
+    --pag-breadcrumb-dsp: none;
+    --pst-breadcrumb-dsp: none;
 }
 
 /*
- * EOF:     sys/print-var.css
- * Build:   200208
+ * EOF:     sys/print-vars.css
+ * Build:   200422
  *
  */
