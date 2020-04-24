@@ -6,7 +6,7 @@
  *
  * File Name:       no-title.php
  * Function:        display page without page title
- * Build:           200415
+ * Build:           200422
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -82,20 +82,22 @@ if ($wp_query->have_posts())
     {
         if (function_exists('yoast_breadcrumb'))
         {
-            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs mar:top+0.5">', '</div>');
+            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs">', '</div>' . "\n");
         }
     }
 
     /*
     ***
-        * function: the_content
+        * function: the_content wrapper
         * descript: display page content
         * ref: developer.wordpress.org/reference/functions/the_content/
     ***
     */
-    the_content();
+    dsp_content();
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
+
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -158,7 +160,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     no-title.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
