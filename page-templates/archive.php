@@ -255,21 +255,7 @@ if ($wp_data->have_posts()) {
 }
 else
 {
-    echo '<!--  fc:3/1/HTML -->' . "\n";
-    echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
-    echo '<!--  fi:3/1/1/HTML -->' . "\n";
-    echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
-    echo xidipity_archive_logo() . "\n";
-    echo '</div>' . "\n";
-    echo '<!-- /fi:3/1/1/HTML -->' . "\n";
-    echo '<!--  fi:3/1/1/HTML -->' . "\n";
-    echo '<div class="fxd:1 fxe:6 wd:100% sm)pad:+1 sm)wd:75%">' . "\n";
-    echo '<h2>Search Error</h2>' . "\n";
-    echo '<p>The search criteria did not return any documents.</p>' . "\n";
-    echo '</div>' . "\n";
-    echo '<!--  fi:3/1/1/HTML -->' . "\n";
-    echo '</div>' . "\n";
-    echo '<!-- /fc:3/1/HTML -->' . "\n";
+    get_template_part('template-parts/content', 'none');
 }
 echo '</article>' . "\n";
 echo '<!--  bk:ARTICLE -->' . "\n";
