@@ -4,7 +4,7 @@
  *
  * File Name:       inc/template-tags.php
  * Function:        extended functinality
- * Build:           200422
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -28,6 +28,33 @@
  *  src: https://materialdesignicons.com/
  *
  */
+
+/*
+***
+    * ico: xidipity_icon_closed
+    * dsc: closed
+    * ver: 200422
+    * fnt: return closed icon
+    * arg: size (default is standard)
+***
+*/
+if (!function_exists('xidipity_icon_closed'))
+{
+    function xidipity_icon_closed($arg='')
+    {
+        $ret_val = '';
+        switch ($arg)
+        {
+            case 'fnt:size-small':
+                $ret_val = '<svg style="width:1.125rem;height:1.125rem;display:inline;padding-bottom:4px;" viewBox="0 0 24 24"><path fill="currentColor" d="M15.46 15.88L16.88 14.46L19 16.59L21.12 14.47L22.54 15.88L20.41 18L22.54 20.12L21.12 21.54L19 19.41L16.88 21.54L15.46 20.12L17.59 18L15.47 15.88M12 3C17.5 3 22 6.58 22 11C22 11.58 21.92 12.14 21.78 12.68C20.95 12.25 20 12 19 12C15.69 12 13 14.69 13 18L13.08 18.95L12 19C10.76 19 9.57 18.82 8.47 18.5C5.55 21 2 21 2 21C4.33 18.67 4.7 17.1 4.75 16.5C3.05 15.07 2 13.14 2 11C2 6.58 6.5 3 12 3Z" /></svg>';
+                break;
+
+            default:
+                $ret_val = '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M15.46 15.88L16.88 14.46L19 16.59L21.12 14.47L22.54 15.88L20.41 18L22.54 20.12L21.12 21.54L19 19.41L16.88 21.54L15.46 20.12L17.59 18L15.47 15.88M12 3C17.5 3 22 6.58 22 11C22 11.58 21.92 12.14 21.78 12.68C20.95 12.25 20 12 19 12C15.69 12 13 14.69 13 18L13.08 18.95L12 19C10.76 19 9.57 18.82 8.47 18.5C5.55 21 2 21 2 21C4.33 18.67 4.7 17.1 4.75 16.5C3.05 15.07 2 13.14 2 11C2 6.58 6.5 3 12 3Z" /></svg>';
+        }
+        return $ret_val;
+    }
+}
 
 /*
 ***
@@ -178,7 +205,7 @@ if (!function_exists('xidipity_icon_x_comments'))
 /*
 ***
     * ico: xidipity_icon_tag
-    * dsc: post tags
+    * dsc: post tag
     * ver: 200422
     * fnt: return post tag icon
     * ref:
@@ -231,7 +258,7 @@ if (!function_exists('xidipity_icon_author'))
     * ico: xidipity_icon_sticky
     * dsc: sticky post
     * ver: 200422
-    * fnt: return font awesome pin icon
+    * fnt: return sticky icon
     * ref: https://fontawesome.com/icons/thumbtack?style=regular
 ***
 */
@@ -248,7 +275,7 @@ if (!function_exists('xidipity_icon_sticky'))
     * ico: xidipity_icon_bm
     * dsc: bookmark
     * ver: 200422
-    * fnt: return font awesome bookmark icon
+    * fnt: return bookmark icon
     * ref: https://fontawesome.com/icons/bookmark?style=regular
 ***
 */
@@ -257,6 +284,23 @@ if (!function_exists('xidipity_icon_bm'))
     function xidipity_icon_bm()
     {
         return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>';
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_uncategorized
+    * dsc: uncategorized
+    * ver: 200429
+    * fnt: return uncategorized icon
+    * ref: https://fontawesome.com/icons/bookmark?style=regular
+***
+*/
+if (!function_exists('xidipity_icon_uncategorized'))
+{
+    function xidipity_icon_uncategorized()
+    {
+        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M22,17V19H14V17H22M12,17V15H7V17H12M17,11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11M17,9V7H7V9H17Z" /></svg>';
     }
 }
 
@@ -678,7 +722,7 @@ function xidipity_has_excerpt()
 
 /*
  * EOF:     inc/template-tags.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
