@@ -4,7 +4,7 @@
  *
  * File Name:       search.php
  * Function:        display search results
- * Build:           200415
+ * Build:           200422
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -167,20 +167,25 @@ else
     * create block for content
 ***
 */
-echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<!--  bk:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_data->have_posts())
 {
+    $cnt = 0;
+
     /*
     ***
-        * page title
+        * function: the_title
+        * descript: display page title
+        * ref: developer.wordpress.org/reference/functions/the_title/
     ***
     */
-    echo '<!--  ct:HEADER -->' . "\n";
-    echo '<header class="wd:100%">' . "\n";
-    echo '<div class="pg:title">Search Results</div>' . "\n";
+    echo '<!--  bk:HEADER -->' . "\n";
+    echo '<header class="mar:top+1 wd:100%">' . "\n";
+    echo '<div class="pg:title">Search Results: ' . $search_item . '</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
-    echo '<!-- /ct:HEADER -->' . "\n";
+    echo '<!-- /bk:HEADER -->' . "\n";
 
     while ($wp_data->have_posts())
     {
@@ -197,14 +202,7 @@ if ($wp_data->have_posts())
         $excerpt_byline = '';
         if ('post' == get_post_type())
         {
-            if (is_sticky())
-            {
-                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_sticky(xidipity_first_category()) . '</div>';
-            }
-            else
-            {
-                $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
-            }
+            $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
             $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
         }
         /*
@@ -214,7 +212,7 @@ if ($wp_data->have_posts())
         */
         $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
-        echo '<!--  ct:BODY -->' . "\n";
+        echo '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
         echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
         /*
@@ -276,7 +274,7 @@ if ($wp_data->have_posts())
         echo '</div>' . "\n";
         echo '<!-- /fc:EXCERPT -->' . "\n";
         echo '</div>' . "\n";
-        echo '<!-- /ct:BODY -->' . "\n";
+        echo '<!-- /bk:' . $cnt . '/PARAGRAPH -->' . "\n";
     }
 
     /*
@@ -298,6 +296,8 @@ if ($wp_data->have_posts())
         echo '<!-- /ct:PAGINATION -->' . "\n";
     }
 
+    echo '<div class="bg:bas-300 ln mar:top+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+
     /*
     ***
         * page footer
@@ -317,7 +317,7 @@ else
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
     echo '<!--  fi:3/1/1/HTML -->' . "\n";
     echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
-    echo '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Search Error Logo" />' . "\n";
+    echo xidipity_search_logo() . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fi:3/1/1/HTML -->' . "\n";
     echo '<!--  fi:3/1/1/HTML -->' . "\n";
@@ -330,7 +330,7 @@ else
     echo '<!-- /fc:3/1/HTML -->' . "\n";
 }
 echo '</article>' . "\n";
-echo '<!--  ct:ARTICLE -->' . "\n";
+echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
 echo '<!-- /fi:3/1/1/HTML -->' . "\n";
 
@@ -373,7 +373,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     search.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
