@@ -4,7 +4,7 @@
  *
  * File Name:       content-comments.php
  * Function:        display post comments
- * Build:           200422
+ * Build:           200429
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -269,8 +269,8 @@ if ($have_comments)
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments'))
 {
-    echo '<div class="fnt:size-smaller mar:top+0.75">' . "\n";
-    echo '<p><i class="fas fa-exclamation-circle"></i><span class="pad:left+0.5">Comments are closed.</span></p>' . "\n";
+    echo '<div class="fnt:size-smaller mar:vrt+0.75">' . "\n";
+    echo '<p><span class="fg:sec-dark pad:right+0.25">' . xidipity_icon_closed('fnt:size-small') . '</span>Comments are closed.</p>' . "\n";
     echo '</div>' . "\n";
 }
 
@@ -292,7 +292,7 @@ echo '</div>' . "\n";
 
 /*
  * EOF:     content-comments.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
