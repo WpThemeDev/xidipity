@@ -31,120 +31,28 @@
 
 /*
 ***
-    * ico: xidipity_x_readmore_img
-    * dsc: readmore logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_x_readmore_img'))
-{
-    function xidipity_x_readmore_img()
-    {
-        return '<img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE1LjUsMTJDMTgsMTIgMjAsMTQgMjAsMTYuNUMyMCwxNy4zOCAxOS43NSwxOC4yMSAxOS4zMSwxOC45TDIyLjM5LDIyTDIxLDIzLjM5TDE3Ljg4LDIwLjMyQzE3LjE5LDIwLjc1IDE2LjM3LDIxIDE1LjUsMjFDMTMsMjEgMTEsMTkgMTEsMTYuNUMxMSwxNCAxMywxMiAxNS41LDEyTTE1LjUsMTRBMi41LDIuNSAwIDAsMCAxMywxNi41QTIuNSwyLjUgMCAwLDAgMTUuNSwxOUEyLjUsMi41IDAgMCwwIDE4LDE2LjVBMi41LDIuNSAwIDAsMCAxNS41LDE0TTYsMjJBMiwyIDAgMCwxIDQsMjBWNEM0LDIuODkgNC45LDIgNiwySDdWOUw5LjUsNy41TDEyLDlWMkgxOEEyLDIgMCAwLDEgMjAsNFYxMS44MUMxOC44MywxMC42OSAxNy4yNSwxMCAxNS41LDEwQTYuNSw2LjUgMCAwLDAgOSwxNi41QzksMTguODEgMTAuMjEsMjAuODUgMTIuMDMsMjJINloiIC8+PC9zdmc+" alt="Xidipity WordPress Theme Read More Icon" />';
-    }
-}
-
-/*
-***
-    * ico: xidipity_readmore_img
-    * dsc: readmore logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_readmore_img'))
-{
-    function xidipity_readmore_img()
-    {
-        return '<img class="ht:max1.5 wd:max1.5" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xOSwyTDE0LDYuNVYxNy41TDE5LDEzVjJNNi41LDVDNC41NSw1IDIuNDUsNS40IDEsNi41VjIxLjE2QzEsMjEuNDEgMS4yNSwyMS42NiAxLjUsMjEuNjZDMS42LDIxLjY2IDEuNjUsMjEuNTkgMS43NSwyMS41OUMzLjEsMjAuOTQgNS4wNSwyMC41IDYuNSwyMC41QzguNDUsMjAuNSAxMC41NSwyMC45IDEyLDIyQzEzLjM1LDIxLjE1IDE1LjgsMjAuNSAxNy41LDIwLjVDMTkuMTUsMjAuNSAyMC44NSwyMC44MSAyMi4yNSwyMS41NkMyMi4zNSwyMS42MSAyMi40LDIxLjU5IDIyLjUsMjEuNTlDMjIuNzUsMjEuNTkgMjMsMjEuMzQgMjMsMjEuMDlWNi41QzIyLjQsNi4wNSAyMS43NSw1Ljc1IDIxLDUuNVY3LjVMMjEsMTNWMTlDMTkuOSwxOC42NSAxOC43LDE4LjUgMTcuNSwxOC41QzE1LjgsMTguNSAxMy4zNSwxOS4xNSAxMiwyMFYxM0wxMiw4LjVWNi41QzEwLjU1LDUuNCA4LjQ1LDUgNi41LDVWNVoiIHN0eWxlPSJmaWxsOiByZ2IoMTE3LCAxMTcsIDExNyk7Ii8+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Read More" />';
-    }
-}
-
-/*
-***
-    * ico: xidipity_search_logo
-    * dsc: category search logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_search_logo'))
-{
-    function xidipity_search_logo()
-    {
-            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Search Logo" />';
-    }
-}
-
-/*
-***
-    * ico: xidipity_category_logo
-    * dsc: category page logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_category_logo'))
-{
-    function xidipity_category_logo()
-    {
-            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjAgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iZmFpbGVkLXNlYXJjaCIgZmlsbD0iIzAwM0M4RiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDIsMCBDMC44OTU0MzA1LDAgMCwwLjg5NTQzMDUgMCwyIEwwLDE4IEMwLDE5LjEwNDU2OTUgMC44OTU0MzA1LDIwIDIsMjAgTDksMjAgQzguNTksMTkuNzUgOC4yLDE5LjQ0IDcuODYsMTkuMSBDNS4yMiwxNi42NyA1LjA1LDEyLjU2IDcuNSw5LjkyIEM5LjY5LDcuNSAxMy4zMyw3LjEzIDE2LDkgTDE2LDYgTDEwLDAgTTksNyBMOSwxLjUgTDE0LjUsNyBMOSw3IE0xNi4zMSwxNi45IEMxNy42NCwxNC43OSAxNywxMiAxNC45MSwxMC42OCBDMTIuOCw5LjM1IDEwLDEwIDguNjksMTIuMDggQzcuMzUsMTQuMTkgOCwxNi45NyAxMC4wOSwxOC4zIEMxMS41NSwxOS4yMyAxMy40MSwxOS4yMyAxNC44OCwxOC4zMiBMMTgsMjEuMzkgTDE5LjM5LDIwIEwxNi4zMSwxNi45IE0xMi41LDE3IEMxMS4xMTkyODgxLDE3IDEwLDE1Ljg4MDcxMTkgMTAsMTQuNSBDMTAsMTMuMTE5Mjg4MSAxMS4xMTkyODgxLDEyIDEyLjUsMTIgQzEzLjg4MDcxMTksMTIgMTUsMTMuMTE5Mjg4MSAxNSwxNC41IEMxNSwxNS44ODA3MTE5IDEzLjg4MDcxMTksMTcgMTIuNSwxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==" alt="Xidipity WordPress Theme Category Logo" />';
-    }
-}
-
-/*
-***
-    * ico: xidipity_archive_logo
-    * dsc: archive page logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_archive_logo'))
-{
-    function xidipity_archive_logo()
-    {
-            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjAgMjEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iYXJjaGl2ZSIgZmlsbD0iIzQyNDI0MiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHBhdGggZD0iTTgsMTAgQzgsOC45IDguOSw4IDEwLDggQzExLjEsOCAxMiw4LjkgMTIsMTAgQzEyLDExLjEgMTEuMSwxMiAxMCwxMiBDOC45LDEyIDgsMTEuMSA4LDEwIE01LjgsMTUuNyBMNC4zLDE0LjMgTDUuOCwxMi44IEM1LjMsMTIgNSwxMSA1LDEwIEM1LDkgNS4zLDggNS44LDcuMyBMNC4zLDUuOCBMNS44LDQuMyBMNy4yLDUuOCBDOCw1LjMgOSw1IDEwLDUgQzExLDUgMTIsNS4zIDEyLjgsNS44IEwxNC4zLDQuMyBMMTUuNyw1LjcgTDE0LjIsNy4yIEMxNC43LDggMTUsOSAxNSwxMCBDMTUsMTEgMTQuNywxMiAxNC4yLDEyLjggTDE1LjcsMTQuMyBMMTQuMywxNS43IEwxMi44LDE0LjIgQzEyLDE0LjcgMTEsMTUgMTAsMTUgQzksMTUgOCwxNC43IDcuMywxNC4yIEw1LjgsMTUuNyBNMTAsNyBDOC4zLDcgNyw4LjMgNywxMCBDNywxMS43IDguMywxMyAxMCwxMyBDMTEuNywxMyAxMywxMS43IDEzLDEwIEMxMyw4LjMgMTEuNyw3IDEwLDcgTTE4LDAgQzE5LjEsMCAyMCwwLjkgMjAsMiBMMjAsMTggQzIwLDE5LjEgMTkuMSwyMCAxOCwyMCBMMTcsMjAgTDE3LDIxIEwxMywyMSBMMTMsMjAgTDcsMjAgTDcsMjEgTDMsMjEgTDMsMjAgTDIsMjAgQzAuOSwyMCAwLDE5LjEgMCwxOCBMMCwyIEMwLDAuOSAwLjksMCAyLDAgTDE4LDAgTTE4LDE4IEwxOCwyIEwyLDIgTDIsMTggTDE4LDE4IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme Archive Logo" />';
-    }
-}
-
-/*
-***
-    * ico: xidipity_404_logo
-    * dsc: 404 page logo
-    * ver: 200422
-    * fnt: return logo
-    * ref:
-***
-*/
-if (!function_exists('xidipity_404_logo'))
-{
-    function xidipity_404_logo()
-    {
-            return '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTlweCIgaGVpZ2h0PSIxOXB4IiB2aWV3Qm94PSIwIDAgMTkgMTkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0icGFnZS1lcnIiIGZpbGw9IiMwMDNDOEYiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMS40NiwxMi44OCBMMTIuODgsMTEuNDYgTDE1LDEzLjU5IEwxNy4xMiwxMS40NiBMMTguNTQsMTIuODggTDE2LjQxLDE1IEwxOC41NCwxNy4xMiBMMTcuMTIsMTguNTQgTDE1LDE2LjQxIEwxMi44OCwxOC41NCBMMTEuNDYsMTcuMTIgTDEzLjU5LDE1IEwxMS40NiwxMi44OCBNOSwxNCBMOSwxMiBMNCwxMiBMNCwxNCBMOSwxNCBNMTQsOCBMNCw4IEw0LDEwIEwxMS42OSwxMCBDMTAuMDcsMTEuMDcgOSwxMi45MSA5LDE1IEM5LDE2LjA5IDkuMjksMTcuMTIgOS44LDE4IEwyLDE4IEMwLjg5LDE4IDAsMTcuMSAwLDE2IEwwLDIgQzAsMC44OSAwLjg5LDAgMiwwIEwxNiwwIEMxNy4xMDQ1Njk1LDAgMTgsMC44OTU0MzA1IDE4LDIgTDE4LDkuOCBDMTcuMTIsOS4yOSAxNi4wOSw5IDE1LDkgTDE0LDkuMDggTDE0LDggTTE0LDYgTDE0LDQgTDQsNCBMNCw2IEwxNCw2IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="Xidipity WordPress Theme 404 Logo" />';
-    }
-}
-
-/*
-***
     * ico: xidipity_icon_arrow_lt
     * dsc: circle arrow left
     * ver: 200422
     * fnt: return arrow icon
-    * ref:
+    * arg: size (default is standard)
 ***
 */
 if (!function_exists('xidipity_icon_arrow_lt'))
 {
-    function xidipity_icon_arrow_lt()
+    function xidipity_icon_arrow_lt($arg='')
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
+        $ret_val = '';
+        switch ($arg)
+        {
+            case 'fnt:size-small':
+                $ret_val = '<svg style="width:1.125rem;height:1.125rem;display:inline;padding-bottom:4px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
+                break;
+
+            default:
+                $ret_val = '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
+        }
+        return $ret_val;
     }
 }
 
