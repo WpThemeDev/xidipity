@@ -4,7 +4,7 @@
  *
  * File Name:       functions.php
  * Function:        xidipity functions definitions
- * Build:           200422
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -1430,9 +1430,39 @@ function dsp_view($arg = '')
     // return html
     return $fn_retval;
 }
+
+/**
+ *  name: dsp_cat_icon
+ *  build: 200429
+ *  description: Return properly formatted post category HTML string
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_cat_icon($arg = '')
+{
+    // system
+    $fn_retval = '';
+    if (is_sticky())
+    {
+        $fn_retval = xidipity_icon_sticky();
+    }
+    elseif ($arg == 'Uncategorized')
+    {
+        $fn_retval = xidipity_icon_uncategorized();
+    }
+    else
+    {
+        $fn_retval = xidipity_icon_bm();
+    }
+    // return html
+    return $fn_retval;
+}
+
 /**
  *  name: dsp_cat
- *  build: 200206
+ *  build: 200422
  *  description: Return properly formatted post category HTML string
  *  attributes:
  *      $arg - string
@@ -1441,31 +1471,23 @@ function dsp_view($arg = '')
  */
 function dsp_cat($arg = '')
 {
-    // system
-    $fn_retval = '';
-    if (is_sticky())
+    $icon = xidipity_icon_bm();
+    $fn_retval = $icon;
+    if (!empty($arg))
     {
-        $icon = xidipity_icon_sticky();
-    }
-    elseif (strtolower($arg) == 'uncategorized')
-    {
-        $icon = xidipity_icon_question();
-    }
-    else
-    {
-        $icon = xidipity_icon_bm();
-    }
-    if (empty($arg))
-    {
-       $fn_retval = $icon;
-    }
-    else
-    {
+        if (is_sticky())
+        {
+            $icon = xidipity_icon_sticky();
+        }
+        elseif (has_match($arg,'Uncategorized'))
+        {
+            $icon = xidipity_icon_uncategorized();
+        }
         $fn_retval = '<span class="pad:right+0.25">' . $icon . '</span>' . $arg;
     }
-    // return html
     return $fn_retval;
 }
+
 /**
  *  name: dsp_tags
  *  build: 200206
@@ -1856,7 +1878,7 @@ function post_category($arg='')
 
 /*
  * EOF:     functions.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
