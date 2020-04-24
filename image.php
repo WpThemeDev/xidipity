@@ -4,7 +4,7 @@
  *
  * File Name:       image.php
  * Function:        display media library image
- * Build:           200415
+ * Build:           200422
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -126,7 +126,7 @@ if ($wp_query->have_posts())
     */
     /* file date */
     $footer_items = '';
-    $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.5"><i class="fas fa-arrow-circle-left"></i></span>Go Back</a>' . '|';
+    $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.25">' . xidipity_icon_arrow_lt() . '</span>Go Back</a>' . '|';
     $footer_items .= get_the_date(get_option('date_format'),get_the_ID()) . '|';
     /*: dimensions :*/
     $footer_items .= 'Dimensions: ' . absint($wp_metadata['height']) . 'x' . absint($wp_metadata['width']) . ' pixels |';
@@ -216,7 +216,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     image.php
- * Build:   200415
+ * Build:   200422
  *
  */
 ?>
