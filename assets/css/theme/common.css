@@ -3,7 +3,7 @@
  *
  * File Name:       theme/common.css
  * Function:        shared CSS elements
- * Build:           200415
+ * Build:           200422
  * Revision:        1
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -90,17 +90,17 @@ abbr {
 ***
     * element: <pre>
     * dsc: preformatted text
-    * ver: 190910-1
+    * ver: 200422
     * fnt: preformatted text which is to be presented exactly as written
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 ***
 */
 pre,
 pre.wrap{
-    background-color: var(--hue-bas-900);
-    border: solid thin var(--hue-bas-800);
+    background-color: var(--hue-bas-050);
+    border: solid thick var(--hue-bas-300);
     border-radius: 0.3333rem;
-    color: var(--hue-wht);
+    color: var(--hue-blk);
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: normal;
@@ -1645,6 +1645,25 @@ figure {
 
 /*
 ***
+    * property: txt:frame
+    * dsc: text frame
+    * ver: 200422
+    * fnt: create a content frame using table elements
+    * ref:
+***
+*/
+.txt\:frame {
+    text-align: left;
+    border: solid thick var(--hue-bas-300);
+    background-color: var(--hue-bas-050);
+    border-radius: 0.3333rem;
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+}
+
+/*
+***
     * element: <button>
     * dsc: default button
     * ver: 200222
@@ -1903,6 +1922,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200415
+ * Build:   200422
  *
  */
