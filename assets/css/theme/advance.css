@@ -3,7 +3,7 @@
  *
  * File Name:       theme/advance.css
  * Function:        Xidipity CSS framework
- * Build:           200415
+ * Build:           200422
  * Revision:        1
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -458,6 +458,9 @@ table.cols\:fixed {
 .cnr\:arch-none {
     border-radius: 0% !important;
 }
+.cnr\:arch-x-small {
+    border-radius: 0.1666rem !important;
+}
 .cnr\:arch-small {
     border-radius: 0.3333rem !important;
 }
@@ -613,6 +616,30 @@ table.cols\:fixed {
 
 .dsp\:inline-block {
     display: inline-block !important;
+}
+
+.dsp\:tbl {
+    display: table;
+}
+
+.dsp\:tbl-hdr-grp {
+    display: table-header-group;
+}
+
+.dsp\:tbl-rw-grp {
+    display: table-row-group;
+}
+
+.dsp\:tbl-ftr-grp {
+    display: table-footer-group;
+}
+
+.dsp\:tbl-rw {
+    display: table-row;
+}
+
+.dsp\:tbl-td {
+    display: table-cell;
 }
 
 /*
@@ -9592,6 +9619,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200415
+ * Build:   200422
  *
  */
