@@ -1,22 +1,21 @@
 /*
- * WordPress Xidipity Theme CSS File
- *
- * File Name:       theme/web.css
- * Function:        CSS web elements
- * Build:           200429
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+    * WordPress Xidipity Theme CSS File
+    *
+    * File Name:       theme/web.css
+    * Function:        CSS web elements
+    * Build:           200429
+    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            https://developer.wordpress.org/themes/basics/
+    *
+*/
 
 /*
 ***
@@ -860,6 +859,22 @@ a.page-numbers:focus {
     background-color: var(--hue-sec);
     color: var(--content-fg-color);
     -webkit-tap-highlight-color: transparent;
+}
+
+/*
+***
+    * property: box:shadow
+    * dsc:  flexbox shadow
+    * ver:  200322
+    * fnt:  add drop shadow to flexbox
+    * ref:
+***
+*/
+.box\:shadow {
+    border-top: thin solid var(--hue-bas-300);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
 }
 
 /*
