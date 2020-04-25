@@ -1,22 +1,22 @@
 <?php
 /*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       functions.php
- * Function:        xidipity functions definitions
- * Build:           200429
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         3.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+    * WordPress Xidipity Theme PHP File
+    *
+    * File Name:       functions.php
+    * Function:        xidipity functions definitions
+    * Build:           200429
+    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         3.0
+    * @since           0.9
+    * @link            https://developer.wordpress.org/themes/basics/
+    *
+*/
 
 /**
  *  global variables
@@ -414,11 +414,12 @@ if (!function_exists('xidipity_setup')):
         $ed_css3 = '/assets/css/theme/palette.css';
         $ed_css4 = '/assets/css/theme/common.css';
         $ed_css5 = '/assets/css/theme/advance.css';
-        $ed_css6 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-        $ed_css7 = 'https://use.fontawesome.com/releases/v' . XWT_FA_VER . '/css/all.css';
-        $ed_css8 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
-        $ed_css9 = '/assets/css/theme/editor.css';
-        $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9 );
+        $ed_css6 = '/assets/css/theme/flexbox.css';
+        $ed_css7 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+        $ed_css8 = 'https://use.fontawesome.com/releases/v' . XWT_FA_VER . '/css/all.css';
+        $ed_css9 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
+        $ed_css10 = '/assets/css/theme/editor.css';
+        $ed_styles = array( $ed_css1, $ed_css2, $ed_css3, $ed_css4, $ed_css5, $ed_css6, $ed_css7, $ed_css8, $ed_css9, $ed_css10 );
         add_editor_style( $ed_styles );
         /*
          * Switch default core markup for search form, comment form, and comments
@@ -507,6 +508,8 @@ function xidipity_scripts()
     wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/theme/print.css', array() , wp_get_theme()
         ->get('Version') , 'print');
     wp_enqueue_style('xidipity-advance', get_stylesheet_directory_uri() . '/assets/css/theme/advance.css', array() , wp_get_theme()
+        ->get('Version') , 'all');
+    wp_enqueue_style('xidipity-flexbox', get_stylesheet_directory_uri() . '/assets/css/theme/flexbox.css', array() , wp_get_theme()
         ->get('Version') , 'all');
     wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/theme/web.css', array() , wp_get_theme()
         ->get('Version') , 'all');
