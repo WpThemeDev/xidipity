@@ -3405,19 +3405,19 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
-    .sm\)bdr\:space\+0\.sm\)25 {
+    .sm\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
-        border-spacing: 0.sm\)25rem !important;
+        border-spacing: 0.25rem !important;
     }
 
-    .sm\)bdr\:space\+0\.sm\)5 {
+    .sm\)bdr\:space\+0\.5 {
         border-collapse: separate !important;
-        border-spacing: 0.sm\)5rem !important;
+        border-spacing: 0.5rem !important;
     }
 
-    .sm\)bdr\:space\+0\.sm\)75 {
+    .sm\)bdr\:space\+0\.75 {
         border-collapse: separate !important;
-        border-spacing: 0.sm\)75rem !important;
+        border-spacing: 0.75rem !important;
     }
 
     .sm\)bdr\:space\+1 {
@@ -3425,19 +3425,19 @@ table.cols\:fixed {
         border-spacing: 1rem !important;
     }
 
-    .sm\)bdr\:space\+1\.sm\)25 {
+    .sm\)bdr\:space\+1\.25 {
         border-collapse: separate !important;
-        border-spacing: 1.sm\)25rem !important;
+        border-spacing: 1.25rem !important;
     }
 
-    .sm\)bdr\:space\+1\.sm\)5 {
+    .sm\)bdr\:space\+1\.5 {
         border-collapse: separate !important;
-        border-spacing: 1.sm\)5rem !important;
+        border-spacing: 1.5rem !important;
     }
 
-    .sm\)bdr\:space\+1\.sm\)75 {
+    .sm\)bdr\:space\+1\.75 {
         border-collapse: separate !important;
-        border-spacing: 1.sm\)75rem !important;
+        border-spacing: 1.75rem !important;
     }
 
     .sm\)bdr\:space\+2 {
@@ -3449,13 +3449,13 @@ table.cols\:fixed {
         border-radius: 0% !important;
     }
     .sm\)cnr\:arch-x-small {
-        border-radius: 0.sm\)1666rem !important;
+        border-radius: 0.1666rem !important;
     }
     .sm\)cnr\:arch-small {
-        border-radius: 0.sm\)3333rem !important;
+        border-radius: 0.3333rem !important;
     }
     .sm\)cnr\:arch-medium {
-        border-radius: 0.sm\)6666rem !important;
+        border-radius: 0.6666rem !important;
     }
     .sm\)cnr\:arch-large {
         border-radius: 1rem !important;
@@ -3465,40 +3465,40 @@ table.cols\:fixed {
     }
 
     .sm\)cnr\:arch-left-small {
-        border-radius: 0.sm\)3333rem 0 0 0.sm\)3333rem !important;
+        border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
     .sm\)cnr\:arch-left-medium {
-        border-radius: 0.sm\)6666rem 0 0 0.sm\)6666rem !important;
+        border-radius: 0.6666rem 0 0 0.6666rem !important;
     }
     .sm\)cnr\:arch-left-large {
         border-radius: 1rem 0 0 1rem !important;
     }
 
     .sm\)cnr\:arch-right-small {
-        border-radius: 0 0.sm\)3333rem 0.sm\)3333rem 0 !important;
+        border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
     .sm\)cnr\:arch-right-medium {
-        border-radius: 0 0.sm\)6666rem 0.sm\)6666rem 0 !important;
+        border-radius: 0 0.6666rem 0.6666rem 0 !important;
     }
     .sm\)cnr\:arch-right-large {
         border-radius: 0 1rem 1rem 0 !important;
     }
 
     .sm\)cnr\:arch-top-small {
-        border-radius: 0.sm\)3333rem 0.sm\)3333rem 0 0 !important;
+        border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
     .sm\)cnr\:arch-top-medium {
-        border-radius: 0.sm\)6666rem 0.sm\)6666rem 0 0 !important;
+        border-radius: 0.6666rem 0.6666rem 0 0 !important;
     }
     .sm\)cnr\:arch-top-large {
         border-radius: 1rem 1rem 0 0 !important;
     }
 
     .sm\)cnr\:arch-bottom-small {
-        border-radius: 0 0 0.sm\)3333rem 0.sm\)3333rem !important;
+        border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
     .sm\)cnr\:arch-bottom-medium {
-        border-radius: 0 0 0.sm\)6666rem 0.sm\)6666rem !important;
+        border-radius: 0 0 0.6666rem 0.6666rem !important;
     }
     .sm\)cnr\:arch-bottom-large {
         border-radius: 0 0 1rem 1rem !important;
@@ -4255,32 +4255,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:\+0\.sm\)25 {
-        margin: 0.sm\)25rem !important;
+    .sm\)mar\:\+0\.25 {
+        margin: 0.25rem !important;
     }
 
-    .sm\)mar\:\+0\.sm\)5 {
-        margin: 0.sm\)5rem !important;
+    .sm\)mar\:\+0\.5 {
+        margin: 0.5rem !important;
     }
 
-    .sm\)mar\:\+0\.sm\)75 {
-        margin: 0.sm\)75rem !important;
+    .sm\)mar\:\+0\.75 {
+        margin: 0.75rem !important;
     }
 
     .sm\)mar\:\+1 {
         margin: 1rem !important;
     }
 
-    .sm\)mar\:\+1\.sm\)25 {
-        margin: 1.sm\)25rem !important;
+    .sm\)mar\:\+1\.25 {
+        margin: 1.25rem !important;
     }
 
-    .sm\)mar\:\+1\.sm\)5 {
-        margin: 1.sm\)5rem !important;
+    .sm\)mar\:\+1\.5 {
+        margin: 1.5rem !important;
     }
 
-    .sm\)mar\:\+1\.sm\)75 {
-        margin: 1.sm\)75rem !important;
+    .sm\)mar\:\+1\.75 {
+        margin: 1.75rem !important;
     }
 
     .sm\)mar\:\+2 {
@@ -4295,32 +4295,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:-0\.sm\)25 {
-        margin: -0.sm\)25rem !important;
+    .sm\)mar\:-0\.25 {
+        margin: -0.25rem !important;
     }
 
-    .sm\)mar\:-0\.sm\)5 {
-        margin: -0.sm\)5rem !important;
+    .sm\)mar\:-0\.5 {
+        margin: -0.5rem !important;
     }
 
-    .sm\)mar\:-0\.sm\)75 {
-        margin: -0.sm\)75rem !important;
+    .sm\)mar\:-0\.75 {
+        margin: -0.75rem !important;
     }
 
     .sm\)mar\:-1 {
         margin: -1rem !important;
     }
 
-    .sm\)mar\:-1\.sm\)25 {
-        margin: -1.sm\)25rem !important;
+    .sm\)mar\:-1\.25 {
+        margin: -1.25rem !important;
     }
 
-    .sm\)mar\:-1\.sm\)5 {
-        margin: -1.sm\)5rem !important;
+    .sm\)mar\:-1\.5 {
+        margin: -1.5rem !important;
     }
 
-    .sm\)mar\:-1\.sm\)75 {
-        margin: -1.sm\)75rem !important;
+    .sm\)mar\:-1\.75 {
+        margin: -1.75rem !important;
     }
 
     .sm\)mar\:-2 {
@@ -4328,32 +4328,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:top\+0\.sm\)25 {
-        margin-top: 0.sm\)25rem !important;
+    .sm\)mar\:top\+0\.25 {
+        margin-top: 0.25rem !important;
     }
 
-    .sm\)mar\:top\+0\.sm\)5 {
-        margin-top: 0.sm\)5rem !important;
+    .sm\)mar\:top\+0\.5 {
+        margin-top: 0.5rem !important;
     }
 
-    .sm\)mar\:top\+0\.sm\)75 {
-        margin-top: 0.sm\)75rem !important;
+    .sm\)mar\:top\+0\.75 {
+        margin-top: 0.75rem !important;
     }
 
     .sm\)mar\:top\+1 {
         margin-top: 1rem !important;
     }
 
-    .sm\)mar\:top\+1\.sm\)25 {
-        margin-top: 1.sm\)25rem !important;
+    .sm\)mar\:top\+1\.25 {
+        margin-top: 1.25rem !important;
     }
 
-    .sm\)mar\:top\+1\.sm\)5 {
-        margin-top: 1.sm\)5rem !important;
+    .sm\)mar\:top\+1\.5 {
+        margin-top: 1.5rem !important;
     }
 
-    .sm\)mar\:top\+1\.sm\)75 {
-        margin-top: 1.sm\)75rem !important;
+    .sm\)mar\:top\+1\.75 {
+        margin-top: 1.75rem !important;
     }
 
     .sm\)mar\:top\+2 {
@@ -4368,32 +4368,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:top-0\.sm\)25 {
-        margin-top: -0.sm\)25rem !important;
+    .sm\)mar\:top-0\.25 {
+        margin-top: -0.25rem !important;
     }
 
-    .sm\)mar\:top-0\.sm\)5 {
-        margin-top: -0.sm\)5rem !important;
+    .sm\)mar\:top-0\.5 {
+        margin-top: -0.5rem !important;
     }
 
-    .sm\)mar\:top-0\.sm\)75 {
-        margin-top: -0.sm\)75rem !important;
+    .sm\)mar\:top-0\.75 {
+        margin-top: -0.75rem !important;
     }
 
     .sm\)mar\:top-1 {
         margin-top: -1rem !important;
     }
 
-    .sm\)mar\:top-1\.sm\)25 {
-        margin-top: -1.sm\)25rem !important;
+    .sm\)mar\:top-1\.25 {
+        margin-top: -1.25rem !important;
     }
 
-    .sm\)mar\:top-1\.sm\)5 {
-        margin-top: -1.sm\)5rem !important;
+    .sm\)mar\:top-1\.5 {
+        margin-top: -1.5rem !important;
     }
 
-    .sm\)mar\:top-1\.sm\)75 {
-        margin-top: -1.sm\)75rem !important;
+    .sm\)mar\:top-1\.75 {
+        margin-top: -1.75rem !important;
     }
 
     .sm\)mar\:top-2 {
@@ -4401,32 +4401,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:right\+0\.sm\)25 {
-        margin-right: 0.sm\)25rem !important;
+    .sm\)mar\:right\+0\.25 {
+        margin-right: 0.25rem !important;
     }
 
-    .sm\)mar\:right\+0\.sm\)5 {
-        margin-right: 0.sm\)5rem !important;
+    .sm\)mar\:right\+0\.5 {
+        margin-right: 0.5rem !important;
     }
 
-    .sm\)mar\:right\+0\.sm\)75 {
-        margin-right: 0.sm\)75rem !important;
+    .sm\)mar\:right\+0\.75 {
+        margin-right: 0.75rem !important;
     }
 
     .sm\)mar\:right\+1 {
         margin-right: 1rem !important;
     }
 
-    .sm\)mar\:right\+1\.sm\)25 {
-        margin-right: 1.sm\)25rem !important;
+    .sm\)mar\:right\+1\.25 {
+        margin-right: 1.25rem !important;
     }
 
-    .sm\)mar\:right\+1\.sm\)5 {
-        margin-right: 1.sm\)5rem !important;
+    .sm\)mar\:right\+1\.5 {
+        margin-right: 1.5rem !important;
     }
 
-    .sm\)mar\:right\+1\.sm\)75 {
-        margin-right: 1.sm\)75rem !important;
+    .sm\)mar\:right\+1\.75 {
+        margin-right: 1.75rem !important;
     }
 
     .sm\)mar\:right\+2 {
@@ -4441,32 +4441,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:right-0\.sm\)25 {
-        margin-right: -0.sm\)25rem !important;
+    .sm\)mar\:right-0\.25 {
+        margin-right: -0.25rem !important;
     }
 
-    .sm\)mar\:right-0\.sm\)5 {
-        margin-right: -0.sm\)5rem !important;
+    .sm\)mar\:right-0\.5 {
+        margin-right: -0.5rem !important;
     }
 
-    .sm\)mar\:right-0\.sm\)75 {
-        margin-right: -0.sm\)75rem !important;
+    .sm\)mar\:right-0\.75 {
+        margin-right: -0.75rem !important;
     }
 
     .sm\)mar\:right-1 {
         margin-right: -1rem !important;
     }
 
-    .sm\)mar\:right-1\.sm\)25 {
-        margin-right: -1.sm\)25rem !important;
+    .sm\)mar\:right-1\.25 {
+        margin-right: -1.25rem !important;
     }
 
-    .sm\)mar\:right-1\.sm\)5 {
-        margin-right: -1.sm\)5rem !important;
+    .sm\)mar\:right-1\.5 {
+        margin-right: -1.5rem !important;
     }
 
-    .sm\)mar\:right-1\.sm\)75 {
-        margin-right: -1.sm\)75rem !important;
+    .sm\)mar\:right-1\.75 {
+        margin-right: -1.75rem !important;
     }
 
     .sm\)mar\:right-2 {
@@ -4474,32 +4474,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:bottom\+0\.sm\)25 {
-        margin-bottom: 0.sm\)25rem !important;
+    .sm\)mar\:bottom\+0\.25 {
+        margin-bottom: 0.25rem !important;
     }
 
-    .sm\)mar\:bottom\+0\.sm\)5 {
-        margin-bottom: 0.sm\)5rem !important;
+    .sm\)mar\:bottom\+0\.5 {
+        margin-bottom: 0.5rem !important;
     }
 
-    .sm\)mar\:bottom\+0\.sm\)75 {
-        margin-bottom: 0.sm\)75rem !important;
+    .sm\)mar\:bottom\+0\.75 {
+        margin-bottom: 0.75rem !important;
     }
 
     .sm\)mar\:bottom\+1 {
         margin-bottom: 1rem !important;
     }
 
-    .sm\)mar\:bottom\+1\.sm\)25 {
-        margin-bottom: 1.sm\)25rem !important;
+    .sm\)mar\:bottom\+1\.25 {
+        margin-bottom: 1.25rem !important;
     }
 
-    .sm\)mar\:bottom\+1\.sm\)5 {
-        margin-bottom: 1.sm\)5rem !important;
+    .sm\)mar\:bottom\+1\.5 {
+        margin-bottom: 1.5rem !important;
     }
 
-    .sm\)mar\:bottom\+1\.sm\)75 {
-        margin-bottom: 1.sm\)75rem !important;
+    .sm\)mar\:bottom\+1\.75 {
+        margin-bottom: 1.75rem !important;
     }
 
     .sm\)mar\:bottom\+2 {
@@ -4514,32 +4514,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:bottom-0\.sm\)25 {
-        margin-bottom: -0.sm\)25rem !important;
+    .sm\)mar\:bottom-0\.25 {
+        margin-bottom: -0.25rem !important;
     }
 
-    .sm\)mar\:bottom-0\.sm\)5 {
-        margin-bottom: -0.sm\)5rem !important;
+    .sm\)mar\:bottom-0\.5 {
+        margin-bottom: -0.5rem !important;
     }
 
-    .sm\)mar\:bottom-0\.sm\)75 {
-        margin-bottom: -0.sm\)75rem !important;
+    .sm\)mar\:bottom-0\.75 {
+        margin-bottom: -0.75rem !important;
     }
 
     .sm\)mar\:bottom-1 {
         margin-bottom: -1rem !important;
     }
 
-    .sm\)mar\:bottom-1\.sm\)25 {
-        margin-bottom: -1.sm\)25rem !important;
+    .sm\)mar\:bottom-1\.25 {
+        margin-bottom: -1.25rem !important;
     }
 
-    .sm\)mar\:bottom-1\.sm\)5 {
-        margin-bottom: -1.sm\)5rem !important;
+    .sm\)mar\:bottom-1\.5 {
+        margin-bottom: -1.5rem !important;
     }
 
-    .sm\)mar\:bottom-1\.sm\)75 {
-        margin-bottom: -1.sm\)75rem !important;
+    .sm\)mar\:bottom-1\.75 {
+        margin-bottom: -1.75rem !important;
     }
 
     .sm\)mar\:bottom-2 {
@@ -4547,32 +4547,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:left\+0\.sm\)25 {
-        margin-left: 0.sm\)25rem !important;
+    .sm\)mar\:left\+0\.25 {
+        margin-left: 0.25rem !important;
     }
 
-    .sm\)mar\:left\+0\.sm\)5 {
-        margin-left: 0.sm\)5rem !important;
+    .sm\)mar\:left\+0\.5 {
+        margin-left: 0.5rem !important;
     }
 
-    .sm\)mar\:left\+0\.sm\)75 {
-        margin-left: 0.sm\)75rem !important;
+    .sm\)mar\:left\+0\.75 {
+        margin-left: 0.75rem !important;
     }
 
     .sm\)mar\:left\+1 {
         margin-left: 1rem !important;
     }
 
-    .sm\)mar\:left\+1\.sm\)25 {
-        margin-left: 1.sm\)25rem !important;
+    .sm\)mar\:left\+1\.25 {
+        margin-left: 1.25rem !important;
     }
 
-    .sm\)mar\:left\+1\.sm\)5 {
-        margin-left: 1.sm\)5rem !important;
+    .sm\)mar\:left\+1\.5 {
+        margin-left: 1.5rem !important;
     }
 
-    .sm\)mar\:left\+1\.sm\)75 {
-        margin-left: 1.sm\)75rem !important;
+    .sm\)mar\:left\+1\.75 {
+        margin-left: 1.75rem !important;
     }
 
     .sm\)mar\:left\+2 {
@@ -4587,32 +4587,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:left-0\.sm\)25 {
-        margin-left: -0.sm\)25rem !important;
+    .sm\)mar\:left-0\.25 {
+        margin-left: -0.25rem !important;
     }
 
-    .sm\)mar\:left-0\.sm\)5 {
-        margin-left: -0.sm\)5rem !important;
+    .sm\)mar\:left-0\.5 {
+        margin-left: -0.5rem !important;
     }
 
-    .sm\)mar\:left-0\.sm\)75 {
-        margin-left: -0.sm\)75rem !important;
+    .sm\)mar\:left-0\.75 {
+        margin-left: -0.75rem !important;
     }
 
     .sm\)mar\:left-1 {
         margin-left: -1rem !important;
     }
 
-    .sm\)mar\:left-1\.sm\)25 {
-        margin-left: -1.sm\)25rem !important;
+    .sm\)mar\:left-1\.25 {
+        margin-left: -1.25rem !important;
     }
 
-    .sm\)mar\:left-1\.sm\)5 {
-        margin-left: -1.sm\)5rem !important;
+    .sm\)mar\:left-1\.5 {
+        margin-left: -1.5rem !important;
     }
 
-    .sm\)mar\:left-1\.sm\)75 {
-        margin-left: -1.sm\)75rem !important;
+    .sm\)mar\:left-1\.75 {
+        margin-left: -1.75rem !important;
     }
 
     .sm\)mar\:left-2 {
@@ -4620,19 +4620,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:hrz\+0\.sm\)25 {
-        margin-left: 0.sm\)25rem !important;
-        margin-right: 0.sm\)25rem !important;
+    .sm\)mar\:hrz\+0\.25 {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
     }
 
-    .sm\)mar\:hrz\+0\.sm\)5 {
-        margin-left: 0.sm\)5rem !important;
-        margin-right: 0.sm\)5rem !important;
+    .sm\)mar\:hrz\+0\.5 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 
-    .sm\)mar\:hrz\+0\.sm\)75 {
-        margin-left: 0.sm\)75rem !important;
-        margin-right: 0.sm\)75rem !important;
+    .sm\)mar\:hrz\+0\.75 {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
     }
 
     .sm\)mar\:hrz\+1 {
@@ -4640,19 +4640,19 @@ table.cols\:fixed {
         margin-right: 1rem !important;
     }
 
-    .sm\)mar\:hrz\+1\.sm\)25 {
-        margin-left: 1.sm\)25rem !important;
-        margin-right: 1.sm\)25rem !important;
+    .sm\)mar\:hrz\+1\.25 {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
     }
 
-    .sm\)mar\:hrz\+1\.sm\)5 {
-        margin-left: 1.sm\)5rem !important;
-        margin-right: 1.sm\)5rem !important;
+    .sm\)mar\:hrz\+1\.5 {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
     }
 
-    .sm\)mar\:hrz\+1\.sm\)75 {
-        margin-left: 1.sm\)75rem !important;
-        margin-right: 1.sm\)75rem !important;
+    .sm\)mar\:hrz\+1\.75 {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
     }
 
     .sm\)mar\:hrz\+2 {
@@ -4669,19 +4669,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:hrz-0\.sm\)25 {
-        margin-left: -0.sm\)25rem !important;
-        margin-right: -0.sm\)25rem !important;
+    .sm\)mar\:hrz-0\.25 {
+        margin-left: -0.25rem !important;
+        margin-right: -0.25rem !important;
     }
 
-    .sm\)mar\:hrz-0\.sm\)5 {
-        margin-left: -0.sm\)5rem !important;
-        margin-right: -0.sm\)5rem !important;
+    .sm\)mar\:hrz-0\.5 {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
     }
 
-    .sm\)mar\:hrz-0\.sm\)75 {
-        margin-left: -0.sm\)75rem !important;
-        margin-right: -0.sm\)75rem !important;
+    .sm\)mar\:hrz-0\.75 {
+        margin-left: -0.75rem !important;
+        margin-right: -0.75rem !important;
     }
 
     .sm\)mar\:hrz-1 {
@@ -4689,19 +4689,19 @@ table.cols\:fixed {
         margin-right: -1rem !important;
     }
 
-    .sm\)mar\:hrz-1\.sm\)25 {
-        margin-left: -1.sm\)25rem !important;
-        margin-right: -1.sm\)25rem !important;
+    .sm\)mar\:hrz-1\.25 {
+        margin-left: -1.25rem !important;
+        margin-right: -1.25rem !important;
     }
 
-    .sm\)mar\:hrz-1\.sm\)5 {
-        margin-left: -1.sm\)5rem !important;
-        margin-right: -1.sm\)5rem !important;
+    .sm\)mar\:hrz-1\.5 {
+        margin-left: -1.5rem !important;
+        margin-right: -1.5rem !important;
     }
 
-    .sm\)mar\:hrz-1\.sm\)75 {
-        margin-left: -1.sm\)75rem !important;
-        margin-right: -1.sm\)75rem !important;
+    .sm\)mar\:hrz-1\.75 {
+        margin-left: -1.75rem !important;
+        margin-right: -1.75rem !important;
     }
 
     .sm\)mar\:hrz-2 {
@@ -4710,19 +4710,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .sm\)mar\:vrt\+0\.sm\)25 {
-        margin-top: 0.sm\)25rem !important;
-        margin-bottom: 0.sm\)25rem !important;
+    .sm\)mar\:vrt\+0\.25 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .sm\)mar\:vrt\+0\.sm\)5 {
-        margin-top: 0.sm\)5rem !important;
-        margin-bottom: 0.sm\)5rem !important;
+    .sm\)mar\:vrt\+0\.5 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    .sm\)mar\:vrt\+0\.sm\)75 {
-        margin-top: 0.sm\)75rem !important;
-        margin-bottom: 0.sm\)75rem !important;
+    .sm\)mar\:vrt\+0\.75 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .sm\)mar\:vrt\+1 {
@@ -4730,19 +4730,19 @@ table.cols\:fixed {
         margin-bottom: 1rem !important;
     }
 
-    .sm\)mar\:vrt\+1\.sm\)25 {
-        margin-top: 1.sm\)25rem !important;
-        margin-bottom: 1.sm\)25rem !important;
+    .sm\)mar\:vrt\+1\.25 {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
     }
 
-    .sm\)mar\:vrt\+1\.sm\)5 {
-        margin-top: 1.sm\)5rem !important;
-        margin-bottom: 1.sm\)5rem !important;
+    .sm\)mar\:vrt\+1\.5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .sm\)mar\:vrt\+1\.sm\)75 {
-        margin-top: 1.sm\)75rem !important;
-        margin-bottom: 1.sm\)75rem !important;
+    .sm\)mar\:vrt\+1\.75 {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
     }
 
     .sm\)mar\:vrt\+2 {
@@ -4759,19 +4759,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .sm\)mar\:vrt-0\.sm\)25 {
-        margin-top: -0.sm\)25rem !important;
-        margin-bottom: -0.sm\)25rem !important;
+    .sm\)mar\:vrt-0\.25 {
+        margin-top: -0.25rem !important;
+        margin-bottom: -0.25rem !important;
     }
 
-    .sm\)mar\:vrt-0\.sm\)5 {
-        margin-top: -0.sm\)5rem !important;
-        margin-bottom: -0.sm\)5rem !important;
+    .sm\)mar\:vrt-0\.5 {
+        margin-top: -0.5rem !important;
+        margin-bottom: -0.5rem !important;
     }
 
-    .sm\)mar\:vrt-0\.sm\)75 {
-        margin-top: -0.sm\)75rem !important;
-        margin-bottom: -0.sm\)75rem !important;
+    .sm\)mar\:vrt-0\.75 {
+        margin-top: -0.75rem !important;
+        margin-bottom: -0.75rem !important;
     }
 
     .sm\)mar\:vrt-1 {
@@ -4779,19 +4779,19 @@ table.cols\:fixed {
         margin-bottom: -1rem !important;
     }
 
-    .sm\)mar\:vrt-1\.sm\)25 {
-        margin-top: -1.sm\)25rem !important;
-        margin-bottom: -1.sm\)25rem !important;
+    .sm\)mar\:vrt-1\.25 {
+        margin-top: -1.25rem !important;
+        margin-bottom: -1.25rem !important;
     }
 
-    .sm\)mar\:vrt-1\.sm\)5 {
-        margin-top: -1.sm\)5rem !important;
-        margin-bottom: -1.sm\)5rem !important;
+    .sm\)mar\:vrt-1\.5 {
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
     }
 
-    .sm\)mar\:vrt-1\.sm\)75 {
-        margin-top: -1.sm\)75rem !important;
-        margin-bottom: -1.sm\)75rem !important;
+    .sm\)mar\:vrt-1\.75 {
+        margin-top: -1.75rem !important;
+        margin-bottom: -1.75rem !important;
     }
 
     .sm\)mar\:vrt-2 {
@@ -4805,32 +4805,32 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
-    .sm\)pad\:\+0\.sm\)25 {
-        padding: 0.sm\)25rem !important;
+    .sm\)pad\:\+0\.25 {
+        padding: 0.25rem !important;
     }
 
-    .sm\)pad\:\+0\.sm\)5 {
-        padding: 0.sm\)5rem !important;
+    .sm\)pad\:\+0\.5 {
+        padding: 0.5rem !important;
     }
 
-    .sm\)pad\:\+0\.sm\)75 {
-        padding: 0.sm\)75rem !important;
+    .sm\)pad\:\+0\.75 {
+        padding: 0.75rem !important;
     }
 
     .sm\)pad\:\+1 {
         padding: 1rem !important;
     }
 
-    .sm\)pad\:\+1\.sm\)25 {
-        padding: 1.sm\)25rem !important;
+    .sm\)pad\:\+1\.25 {
+        padding: 1.25rem !important;
     }
 
-    .sm\)pad\:\+1\.sm\)5 {
-        padding: 1.sm\)5rem !important;
+    .sm\)pad\:\+1\.5 {
+        padding: 1.5rem !important;
     }
 
-    .sm\)pad\:\+1\.sm\)75 {
-        padding: 1.sm\)75rem !important;
+    .sm\)pad\:\+1\.75 {
+        padding: 1.75rem !important;
     }
 
     .sm\)pad\:\+2 {
@@ -4843,32 +4843,32 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .sm\)pad\:top\+0\.sm\)25 {
-        padding-top: 0.sm\)25rem !important;
+    .sm\)pad\:top\+0\.25 {
+        padding-top: 0.25rem !important;
     }
 
-    .sm\)pad\:top\+0\.sm\)5 {
-        padding-top: 0.sm\)5rem !important;
+    .sm\)pad\:top\+0\.5 {
+        padding-top: 0.5rem !important;
     }
 
-    .sm\)pad\:top\+0\.sm\)75 {
-        padding-top: 0.sm\)75rem !important;
+    .sm\)pad\:top\+0\.75 {
+        padding-top: 0.75rem !important;
     }
 
     .sm\)pad\:top\+1 {
         padding-top: 1rem !important;
     }
 
-    .sm\)pad\:top\+1\.sm\)25 {
-        padding-top: 1.sm\)25rem !important;
+    .sm\)pad\:top\+1\.25 {
+        padding-top: 1.25rem !important;
     }
 
-    .sm\)pad\:top\+1\.sm\)5 {
-        padding-top: 1.sm\)5rem !important;
+    .sm\)pad\:top\+1\.5 {
+        padding-top: 1.5rem !important;
     }
 
-    .sm\)pad\:top\+1\.sm\)75 {
-        padding-top: 1.sm\)75rem !important;
+    .sm\)pad\:top\+1\.75 {
+        padding-top: 1.75rem !important;
     }
 
     .sm\)pad\:top\+2 {
@@ -4881,32 +4881,32 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .sm\)pad\:right\+0\.sm\)25 {
-        padding-right: 0.sm\)25rem !important;
+    .sm\)pad\:right\+0\.25 {
+        padding-right: 0.25rem !important;
     }
 
-    .sm\)pad\:right\+0\.sm\)5 {
-        padding-right: 0.sm\)5rem !important;
+    .sm\)pad\:right\+0\.5 {
+        padding-right: 0.5rem !important;
     }
 
-    .sm\)pad\:right\+0\.sm\)75 {
-        padding-right: 0.sm\)75rem !important;
+    .sm\)pad\:right\+0\.75 {
+        padding-right: 0.75rem !important;
     }
 
     .sm\)pad\:right\+1 {
         padding-right: 1rem !important;
     }
 
-    .sm\)pad\:right\+1\.sm\)25 {
-        padding-right: 1.sm\)25rem !important;
+    .sm\)pad\:right\+1\.25 {
+        padding-right: 1.25rem !important;
     }
 
-    .sm\)pad\:right\+1\.sm\)5 {
-        padding-right: 1.sm\)5rem !important;
+    .sm\)pad\:right\+1\.5 {
+        padding-right: 1.5rem !important;
     }
 
-    .sm\)pad\:right\+1\.sm\)75 {
-        padding-right: 1.sm\)75rem !important;
+    .sm\)pad\:right\+1\.75 {
+        padding-right: 1.75rem !important;
     }
 
     .sm\)pad\:right\+2 {
@@ -4919,32 +4919,32 @@ table.cols\:fixed {
         padding-bottom: 0 !important;
     }
 
-    .sm\)pad\:bottom\+0\.sm\)25 {
-        padding-bottom: 0.sm\)25rem !important;
+    .sm\)pad\:bottom\+0\.25 {
+        padding-bottom: 0.25rem !important;
     }
 
-    .sm\)pad\:bottom\+0\.sm\)5 {
-        padding-bottom: 0.sm\)5rem !important;
+    .sm\)pad\:bottom\+0\.5 {
+        padding-bottom: 0.5rem !important;
     }
 
-    .sm\)pad\:bottom\+0\.sm\)75 {
-        padding-bottom: 0.sm\)75rem !important;
+    .sm\)pad\:bottom\+0\.75 {
+        padding-bottom: 0.75rem !important;
     }
 
     .sm\)pad\:bottom\+1 {
         padding-bottom: 1rem !important;
     }
 
-    .sm\)pad\:bottom\+1\.sm\)25 {
-        padding-bottom: 1.sm\)25rem !important;
+    .sm\)pad\:bottom\+1\.25 {
+        padding-bottom: 1.25rem !important;
     }
 
-    .sm\)pad\:bottom\+1\.sm\)5 {
-        padding-bottom: 1.sm\)5rem !important;
+    .sm\)pad\:bottom\+1\.5 {
+        padding-bottom: 1.5rem !important;
     }
 
-    .sm\)pad\:bottom\+1\.sm\)75 {
-        padding-bottom: 1.sm\)75rem !important;
+    .sm\)pad\:bottom\+1\.75 {
+        padding-bottom: 1.75rem !important;
     }
 
     .sm\)pad\:bottom\+2 {
@@ -4957,32 +4957,32 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
-    .sm\)pad\:left\+0\.sm\)25 {
-        padding-left: 0.sm\)25rem !important;
+    .sm\)pad\:left\+0\.25 {
+        padding-left: 0.25rem !important;
     }
 
-    .sm\)pad\:left\+0\.sm\)5 {
-        padding-left: 0.sm\)5rem !important;
+    .sm\)pad\:left\+0\.5 {
+        padding-left: 0.5rem !important;
     }
 
-    .sm\)pad\:left\+0\.sm\)75 {
-        padding-left: 0.sm\)75rem !important;
+    .sm\)pad\:left\+0\.75 {
+        padding-left: 0.75rem !important;
     }
 
     .sm\)pad\:left\+1 {
         padding-left: 1rem !important;
     }
 
-    .sm\)pad\:left\+1\.sm\)25 {
-        padding-left: 1.sm\)25rem !important;
+    .sm\)pad\:left\+1\.25 {
+        padding-left: 1.25rem !important;
     }
 
-    .sm\)pad\:left\+1\.sm\)5 {
-        padding-left: 1.sm\)5rem !important;
+    .sm\)pad\:left\+1\.5 {
+        padding-left: 1.5rem !important;
     }
 
-    .sm\)pad\:left\+1\.sm\)75 {
-        padding-left: 1.sm\)75rem !important;
+    .sm\)pad\:left\+1\.75 {
+        padding-left: 1.75rem !important;
     }
 
     .sm\)pad\:left\+2 {
@@ -4996,19 +4996,19 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .sm\)pad\:hrz\+0\.sm\)25 {
-        padding-left: 0.sm\)25rem !important;
-        padding-right: 0.sm\)25rem !important;
+    .sm\)pad\:hrz\+0\.25 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
     }
 
-    .sm\)pad\:hrz\+0\.sm\)5 {
-        padding-left: 0.sm\)5rem !important;
-        padding-right: 0.sm\)5rem !important;
+    .sm\)pad\:hrz\+0\.5 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
-    .sm\)pad\:hrz\+0\.sm\)75 {
-        padding-left: 0.sm\)75rem !important;
-        padding-right: 0.sm\)75rem !important;
+    .sm\)pad\:hrz\+0\.75 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 
     .sm\)pad\:hrz\+1 {
@@ -5016,19 +5016,19 @@ table.cols\:fixed {
         padding-right: 1rem !important;
     }
 
-    .sm\)pad\:hrz\+1\.sm\)25 {
-        padding-left: 1.sm\)25rem !important;
-        padding-right: 1.sm\)25rem !important;
+    .sm\)pad\:hrz\+1\.25 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
-    .sm\)pad\:hrz\+1\.sm\)5 {
-        padding-left: 1.sm\)5rem !important;
-        padding-right: 1.sm\)5rem !important;
+    .sm\)pad\:hrz\+1\.5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
-    .sm\)pad\:hrz\+1\.sm\)75 {
-        padding-left: 1.sm\)75rem !important;
-        padding-right: 1.sm\)75rem !important;
+    .sm\)pad\:hrz\+1\.75 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
     .sm\)pad\:hrz\+2 {
@@ -5043,19 +5043,19 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .sm\)pad\:vrt\+0\.sm\)25 {
-        padding-bottom: 0.sm\)25rem !important;
-        padding-top: 0.sm\)25rem !important;
+    .sm\)pad\:vrt\+0\.25 {
+        padding-bottom: 0.25rem !important;
+        padding-top: 0.25rem !important;
     }
 
-    .sm\)pad\:vrt\+0\.sm\)5 {
-        padding-bottom: 0.sm\)5rem !important;
-        padding-top: 0.sm\)5rem !important;
+    .sm\)pad\:vrt\+0\.5 {
+        padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
-    .sm\)pad\:vrt\+0\.sm\)75 {
-        padding-bottom: 0.sm\)75rem !important;
-        padding-top: 0.sm\)75rem !important;
+    .sm\)pad\:vrt\+0\.75 {
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
     }
 
     .sm\)pad\:vrt\+1 {
@@ -5063,19 +5063,19 @@ table.cols\:fixed {
         padding-top: 1rem !important;
     }
 
-    .sm\)pad\:vrt\+1\.sm\)25 {
-        padding-bottom: 1.sm\)25rem !important;
-        padding-top: 1.sm\)25rem !important;
+    .sm\)pad\:vrt\+1\.25 {
+        padding-bottom: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
 
-    .sm\)pad\:vrt\+1\.sm\)5 {
-        padding-bottom: 1.sm\)5rem !important;
-        padding-top: 1.sm\)5rem !important;
+    .sm\)pad\:vrt\+1\.5 {
+        padding-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
     }
 
-    .sm\)pad\:vrt\+1\.sm\)75 {
-        padding-bottom: 1.sm\)75rem !important;
-        padding-top: 1.sm\)75rem !important;
+    .sm\)pad\:vrt\+1\.75 {
+        padding-bottom: 1.75rem !important;
+        padding-top: 1.75rem !important;
     }
 
     .sm\)pad\:vrt\+2 {
@@ -5144,7 +5144,7 @@ table.cols\:fixed {
     }
 
     .sm\)trk\:narrow {
-        letter-spacing: -0.sm\)01rem !important;
+        letter-spacing: -0.01rem !important;
     }
 
     .sm\)trk\:normal,
@@ -5153,11 +5153,11 @@ table.cols\:fixed {
     }
 
     .sm\)trk\:wide {
-        letter-spacing: 0.sm\)1rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
     .sm\)trk\:x-wide {
-        letter-spacing: 0.sm\)5rem !important;
+        letter-spacing: 0.5rem !important;
     }
 
     .sm\)wd\:auto {
@@ -6028,19 +6028,19 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
-    .md\)bdr\:space\+0\.md\)25 {
+    .md\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
-        border-spacing: 0.md\)25rem !important;
+        border-spacing: 0.25rem !important;
     }
 
-    .md\)bdr\:space\+0\.md\)5 {
+    .md\)bdr\:space\+0\.5 {
         border-collapse: separate !important;
-        border-spacing: 0.md\)5rem !important;
+        border-spacing: 0.5rem !important;
     }
 
-    .md\)bdr\:space\+0\.md\)75 {
+    .md\)bdr\:space\+0\.75 {
         border-collapse: separate !important;
-        border-spacing: 0.md\)75rem !important;
+        border-spacing: 0.75rem !important;
     }
 
     .md\)bdr\:space\+1 {
@@ -6048,19 +6048,19 @@ table.cols\:fixed {
         border-spacing: 1rem !important;
     }
 
-    .md\)bdr\:space\+1\.md\)25 {
+    .md\)bdr\:space\+1\.25 {
         border-collapse: separate !important;
-        border-spacing: 1.md\)25rem !important;
+        border-spacing: 1.25rem !important;
     }
 
-    .md\)bdr\:space\+1\.md\)5 {
+    .md\)bdr\:space\+1\.5 {
         border-collapse: separate !important;
-        border-spacing: 1.md\)5rem !important;
+        border-spacing: 1.5rem !important;
     }
 
-    .md\)bdr\:space\+1\.md\)75 {
+    .md\)bdr\:space\+1\.75 {
         border-collapse: separate !important;
-        border-spacing: 1.md\)75rem !important;
+        border-spacing: 1.75rem !important;
     }
 
     .md\)bdr\:space\+2 {
@@ -6072,13 +6072,13 @@ table.cols\:fixed {
         border-radius: 0% !important;
     }
     .md\)cnr\:arch-x-small {
-        border-radius: 0.md\)1666rem !important;
+        border-radius: 0.1666rem !important;
     }
     .md\)cnr\:arch-small {
-        border-radius: 0.md\)3333rem !important;
+        border-radius: 0.3333rem !important;
     }
     .md\)cnr\:arch-medium {
-        border-radius: 0.md\)6666rem !important;
+        border-radius: 0.6666rem !important;
     }
     .md\)cnr\:arch-large {
         border-radius: 1rem !important;
@@ -6088,40 +6088,40 @@ table.cols\:fixed {
     }
 
     .md\)cnr\:arch-left-small {
-        border-radius: 0.md\)3333rem 0 0 0.md\)3333rem !important;
+        border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
     .md\)cnr\:arch-left-medium {
-        border-radius: 0.md\)6666rem 0 0 0.md\)6666rem !important;
+        border-radius: 0.6666rem 0 0 0.6666rem !important;
     }
     .md\)cnr\:arch-left-large {
         border-radius: 1rem 0 0 1rem !important;
     }
 
     .md\)cnr\:arch-right-small {
-        border-radius: 0 0.md\)3333rem 0.md\)3333rem 0 !important;
+        border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
     .md\)cnr\:arch-right-medium {
-        border-radius: 0 0.md\)6666rem 0.md\)6666rem 0 !important;
+        border-radius: 0 0.6666rem 0.6666rem 0 !important;
     }
     .md\)cnr\:arch-right-large {
         border-radius: 0 1rem 1rem 0 !important;
     }
 
     .md\)cnr\:arch-top-small {
-        border-radius: 0.md\)3333rem 0.md\)3333rem 0 0 !important;
+        border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
     .md\)cnr\:arch-top-medium {
-        border-radius: 0.md\)6666rem 0.md\)6666rem 0 0 !important;
+        border-radius: 0.6666rem 0.6666rem 0 0 !important;
     }
     .md\)cnr\:arch-top-large {
         border-radius: 1rem 1rem 0 0 !important;
     }
 
     .md\)cnr\:arch-bottom-small {
-        border-radius: 0 0 0.md\)3333rem 0.md\)3333rem !important;
+        border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
     .md\)cnr\:arch-bottom-medium {
-        border-radius: 0 0 0.md\)6666rem 0.md\)6666rem !important;
+        border-radius: 0 0 0.6666rem 0.6666rem !important;
     }
     .md\)cnr\:arch-bottom-large {
         border-radius: 0 0 1rem 1rem !important;
@@ -6878,32 +6878,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:\+0\.md\)25 {
-        margin: 0.md\)25rem !important;
+    .md\)mar\:\+0\.25 {
+        margin: 0.25rem !important;
     }
 
-    .md\)mar\:\+0\.md\)5 {
-        margin: 0.md\)5rem !important;
+    .md\)mar\:\+0\.5 {
+        margin: 0.5rem !important;
     }
 
-    .md\)mar\:\+0\.md\)75 {
-        margin: 0.md\)75rem !important;
+    .md\)mar\:\+0\.75 {
+        margin: 0.75rem !important;
     }
 
     .md\)mar\:\+1 {
         margin: 1rem !important;
     }
 
-    .md\)mar\:\+1\.md\)25 {
-        margin: 1.md\)25rem !important;
+    .md\)mar\:\+1\.25 {
+        margin: 1.25rem !important;
     }
 
-    .md\)mar\:\+1\.md\)5 {
-        margin: 1.md\)5rem !important;
+    .md\)mar\:\+1\.5 {
+        margin: 1.5rem !important;
     }
 
-    .md\)mar\:\+1\.md\)75 {
-        margin: 1.md\)75rem !important;
+    .md\)mar\:\+1\.75 {
+        margin: 1.75rem !important;
     }
 
     .md\)mar\:\+2 {
@@ -6918,32 +6918,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:-0\.md\)25 {
-        margin: -0.md\)25rem !important;
+    .md\)mar\:-0\.25 {
+        margin: -0.25rem !important;
     }
 
-    .md\)mar\:-0\.md\)5 {
-        margin: -0.md\)5rem !important;
+    .md\)mar\:-0\.5 {
+        margin: -0.5rem !important;
     }
 
-    .md\)mar\:-0\.md\)75 {
-        margin: -0.md\)75rem !important;
+    .md\)mar\:-0\.75 {
+        margin: -0.75rem !important;
     }
 
     .md\)mar\:-1 {
         margin: -1rem !important;
     }
 
-    .md\)mar\:-1\.md\)25 {
-        margin: -1.md\)25rem !important;
+    .md\)mar\:-1.25 {
+        margin: -1.25rem !important;
     }
 
-    .md\)mar\:-1\.md\)5 {
-        margin: -1.md\)5rem !important;
+    .md\)mar\:-1.5 {
+        margin: -1.5rem !important;
     }
 
-    .md\)mar\:-1\.md\)75 {
-        margin: -1.md\)75rem !important;
+    .md\)mar\:-1.75 {
+        margin: -1.75rem !important;
     }
 
     .md\)mar\:-2 {
@@ -6951,32 +6951,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:top\+0\.md\)25 {
-        margin-top: 0.md\)25rem !important;
+    .md\)mar\:top\+0\.25 {
+        margin-top: 0.25rem !important;
     }
 
-    .md\)mar\:top\+0\.md\)5 {
-        margin-top: 0.md\)5rem !important;
+    .md\)mar\:top\+0\.5 {
+        margin-top: 0.5rem !important;
     }
 
-    .md\)mar\:top\+0\.md\)75 {
-        margin-top: 0.md\)75rem !important;
+    .md\)mar\:top\+0\.75 {
+        margin-top: 0.75rem !important;
     }
 
     .md\)mar\:top\+1 {
         margin-top: 1rem !important;
     }
 
-    .md\)mar\:top\+1\.md\)25 {
-        margin-top: 1.md\)25rem !important;
+    .md\)mar\:top\+1\.25 {
+        margin-top: 1.25rem !important;
     }
 
-    .md\)mar\:top\+1\.md\)5 {
-        margin-top: 1.md\)5rem !important;
+    .md\)mar\:top\+1\.5 {
+        margin-top: 1.5rem !important;
     }
 
-    .md\)mar\:top\+1\.md\)75 {
-        margin-top: 1.md\)75rem !important;
+    .md\)mar\:top\+1\.75 {
+        margin-top: 1.75rem !important;
     }
 
     .md\)mar\:top\+2 {
@@ -6991,32 +6991,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:top-0\.md\)25 {
-        margin-top: -0.md\)25rem !important;
+    .md\)mar\:top-0\.25 {
+        margin-top: -0.25rem !important;
     }
 
-    .md\)mar\:top-0\.md\)5 {
-        margin-top: -0.md\)5rem !important;
+    .md\)mar\:top-0\.5 {
+        margin-top: -0.5rem !important;
     }
 
-    .md\)mar\:top-0\.md\)75 {
-        margin-top: -0.md\)75rem !important;
+    .md\)mar\:top-0\.75 {
+        margin-top: -0.75rem !important;
     }
 
     .md\)mar\:top-1 {
         margin-top: -1rem !important;
     }
 
-    .md\)mar\:top-1\.md\)25 {
-        margin-top: -1.md\)25rem !important;
+    .md\)mar\:top-1\.25 {
+        margin-top: -1.25rem !important;
     }
 
-    .md\)mar\:top-1\.md\)5 {
-        margin-top: -1.md\)5rem !important;
+    .md\)mar\:top-1\.5 {
+        margin-top: -1.5rem !important;
     }
 
-    .md\)mar\:top-1\.md\)75 {
-        margin-top: -1.md\)75rem !important;
+    .md\)mar\:top-1\.75 {
+        margin-top: -1.75rem !important;
     }
 
     .md\)mar\:top-2 {
@@ -7024,32 +7024,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:right\+0\.md\)25 {
-        margin-right: 0.md\)25rem !important;
+    .md\)mar\:right\+0\.25 {
+        margin-right: 0.25rem !important;
     }
 
-    .md\)mar\:right\+0\.md\)5 {
-        margin-right: 0.md\)5rem !important;
+    .md\)mar\:right\+0\.5 {
+        margin-right: 0.5rem !important;
     }
 
-    .md\)mar\:right\+0\.md\)75 {
-        margin-right: 0.md\)75rem !important;
+    .md\)mar\:right\+0\.75 {
+        margin-right: 0.75rem !important;
     }
 
     .md\)mar\:right\+1 {
         margin-right: 1rem !important;
     }
 
-    .md\)mar\:right\+1\.md\)25 {
-        margin-right: 1.md\)25rem !important;
+    .md\)mar\:right\+1\.25 {
+        margin-right: 1.25rem !important;
     }
 
-    .md\)mar\:right\+1\.md\)5 {
-        margin-right: 1.md\)5rem !important;
+    .md\)mar\:right\+1\.5 {
+        margin-right: 1.5rem !important;
     }
 
-    .md\)mar\:right\+1\.md\)75 {
-        margin-right: 1.md\)75rem !important;
+    .md\)mar\:right\+1\.75 {
+        margin-right: 1.75rem !important;
     }
 
     .md\)mar\:right\+2 {
@@ -7064,32 +7064,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:right-0\.md\)25 {
-        margin-right: -0.md\)25rem !important;
+    .md\)mar\:right-0\.25 {
+        margin-right: -0.25rem !important;
     }
 
-    .md\)mar\:right-0\.md\)5 {
-        margin-right: -0.md\)5rem !important;
+    .md\)mar\:right-0\.5 {
+        margin-right: -0.5rem !important;
     }
 
-    .md\)mar\:right-0\.md\)75 {
-        margin-right: -0.md\)75rem !important;
+    .md\)mar\:right-0\.75 {
+        margin-right: -0.75rem !important;
     }
 
     .md\)mar\:right-1 {
         margin-right: -1rem !important;
     }
 
-    .md\)mar\:right-1\.md\)25 {
-        margin-right: -1.md\)25rem !important;
+    .md\)mar\:right-1\.25 {
+        margin-right: -1.25rem !important;
     }
 
-    .md\)mar\:right-1\.md\)5 {
-        margin-right: -1.md\)5rem !important;
+    .md\)mar\:right-1\.5 {
+        margin-right: -1.5rem !important;
     }
 
-    .md\)mar\:right-1\.md\)75 {
-        margin-right: -1.md\)75rem !important;
+    .md\)mar\:right-1\.75 {
+        margin-right: -1.75rem !important;
     }
 
     .md\)mar\:right-2 {
@@ -7097,32 +7097,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:bottom\+0\.md\)25 {
-        margin-bottom: 0.md\)25rem !important;
+    .md\)mar\:bottom\+0\.25 {
+        margin-bottom: 0.25rem !important;
     }
 
-    .md\)mar\:bottom\+0\.md\)5 {
-        margin-bottom: 0.md\)5rem !important;
+    .md\)mar\:bottom\+0\.5 {
+        margin-bottom: 0.5rem !important;
     }
 
-    .md\)mar\:bottom\+0\.md\)75 {
-        margin-bottom: 0.md\)75rem !important;
+    .md\)mar\:bottom\+0\.75 {
+        margin-bottom: 0.75rem !important;
     }
 
     .md\)mar\:bottom\+1 {
         margin-bottom: 1rem !important;
     }
 
-    .md\)mar\:bottom\+1\.md\)25 {
-        margin-bottom: 1.md\)25rem !important;
+    .md\)mar\:bottom\+1\.25 {
+        margin-bottom: 1.25rem !important;
     }
 
-    .md\)mar\:bottom\+1\.md\)5 {
-        margin-bottom: 1.md\)5rem !important;
+    .md\)mar\:bottom\+1\.5 {
+        margin-bottom: 1.5rem !important;
     }
 
-    .md\)mar\:bottom\+1\.md\)75 {
-        margin-bottom: 1.md\)75rem !important;
+    .md\)mar\:bottom\+1\.75 {
+        margin-bottom: 1.75rem !important;
     }
 
     .md\)mar\:bottom\+2 {
@@ -7137,32 +7137,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:bottom-0\.md\)25 {
-        margin-bottom: -0.md\)25rem !important;
+    .md\)mar\:bottom-0\.25 {
+        margin-bottom: -0.25rem !important;
     }
 
-    .md\)mar\:bottom-0\.md\)5 {
-        margin-bottom: -0.md\)5rem !important;
+    .md\)mar\:bottom-0\.5 {
+        margin-bottom: -0.5rem !important;
     }
 
-    .md\)mar\:bottom-0\.md\)75 {
-        margin-bottom: -0.md\)75rem !important;
+    .md\)mar\:bottom-0\.75 {
+        margin-bottom: -0.75rem !important;
     }
 
     .md\)mar\:bottom-1 {
         margin-bottom: -1rem !important;
     }
 
-    .md\)mar\:bottom-1\.md\)25 {
-        margin-bottom: -1.md\)25rem !important;
+    .md\)mar\:bottom-1\.25 {
+        margin-bottom: -1.25rem !important;
     }
 
-    .md\)mar\:bottom-1\.md\)5 {
-        margin-bottom: -1.md\)5rem !important;
+    .md\)mar\:bottom-1\.5 {
+        margin-bottom: -1.5rem !important;
     }
 
-    .md\)mar\:bottom-1\.md\)75 {
-        margin-bottom: -1.md\)75rem !important;
+    .md\)mar\:bottom-1\.75 {
+        margin-bottom: -1.75rem !important;
     }
 
     .md\)mar\:bottom-2 {
@@ -7170,32 +7170,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:left\+0\.md\)25 {
-        margin-left: 0.md\)25rem !important;
+    .md\)mar\:left\+0\.25 {
+        margin-left: 0.25rem !important;
     }
 
-    .md\)mar\:left\+0\.md\)5 {
-        margin-left: 0.md\)5rem !important;
+    .md\)mar\:left\+0\.5 {
+        margin-left: 0.5rem !important;
     }
 
-    .md\)mar\:left\+0\.md\)75 {
-        margin-left: 0.md\)75rem !important;
+    .md\)mar\:left\+0\.75 {
+        margin-left: 0.75rem !important;
     }
 
     .md\)mar\:left\+1 {
         margin-left: 1rem !important;
     }
 
-    .md\)mar\:left\+1\.md\)25 {
-        margin-left: 1.md\)25rem !important;
+    .md\)mar\:left\+1\.25 {
+        margin-left: 1.25rem !important;
     }
 
-    .md\)mar\:left\+1\.md\)5 {
-        margin-left: 1.md\)5rem !important;
+    .md\)mar\:left\+1\.5 {
+        margin-left: 1.5rem !important;
     }
 
-    .md\)mar\:left\+1\.md\)75 {
-        margin-left: 1.md\)75rem !important;
+    .md\)mar\:left\+1\.75 {
+        margin-left: 1.75rem !important;
     }
 
     .md\)mar\:left\+2 {
@@ -7210,32 +7210,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:left-0\.md\)25 {
-        margin-left: -0.md\)25rem !important;
+    .md\)mar\:left-0\.25 {
+        margin-left: -0.25rem !important;
     }
 
-    .md\)mar\:left-0\.md\)5 {
-        margin-left: -0.md\)5rem !important;
+    .md\)mar\:left-0\.5 {
+        margin-left: -0.5rem !important;
     }
 
-    .md\)mar\:left-0\.md\)75 {
-        margin-left: -0.md\)75rem !important;
+    .md\)mar\:left-0\.75 {
+        margin-left: -0.75rem !important;
     }
 
     .md\)mar\:left-1 {
         margin-left: -1rem !important;
     }
 
-    .md\)mar\:left-1\.md\)25 {
-        margin-left: -1.md\)25rem !important;
+    .md\)mar\:left-1\.25 {
+        margin-left: -1.25rem !important;
     }
 
-    .md\)mar\:left-1\.md\)5 {
-        margin-left: -1.md\)5rem !important;
+    .md\)mar\:left-1\.5 {
+        margin-left: -1.5rem !important;
     }
 
-    .md\)mar\:left-1\.md\)75 {
-        margin-left: -1.md\)75rem !important;
+    .md\)mar\:left-1\.75 {
+        margin-left: -1.75rem !important;
     }
 
     .md\)mar\:left-2 {
@@ -7243,19 +7243,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:hrz\+0\.md\)25 {
-        margin-left: 0.md\)25rem !important;
-        margin-right: 0.md\)25rem !important;
+    .md\)mar\:hrz\+0\.25 {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
     }
 
-    .md\)mar\:hrz\+0\.md\)5 {
-        margin-left: 0.md\)5rem !important;
-        margin-right: 0.md\)5rem !important;
+    .md\)mar\:hrz\+0\.5 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 
-    .md\)mar\:hrz\+0\.md\)75 {
-        margin-left: 0.md\)75rem !important;
-        margin-right: 0.md\)75rem !important;
+    .md\)mar\:hrz\+0\.75 {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
     }
 
     .md\)mar\:hrz\+1 {
@@ -7263,19 +7263,19 @@ table.cols\:fixed {
         margin-right: 1rem !important;
     }
 
-    .md\)mar\:hrz\+1\.md\)25 {
-        margin-left: 1.md\)25rem !important;
-        margin-right: 1.md\)25rem !important;
+    .md\)mar\:hrz\+1\.25 {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
     }
 
-    .md\)mar\:hrz\+1\.md\)5 {
-        margin-left: 1.md\)5rem !important;
-        margin-right: 1.md\)5rem !important;
+    .md\)mar\:hrz\+1\.5 {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
     }
 
-    .md\)mar\:hrz\+1\.md\)75 {
-        margin-left: 1.md\)75rem !important;
-        margin-right: 1.md\)75rem !important;
+    .md\)mar\:hrz\+1\.75 {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
     }
 
     .md\)mar\:hrz\+2 {
@@ -7292,19 +7292,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:hrz-0\.md\)25 {
-        margin-left: -0.md\)25rem !important;
-        margin-right: -0.md\)25rem !important;
+    .md\)mar\:hrz-0\.25 {
+        margin-left: -0.25rem !important;
+        margin-right: -0.25rem !important;
     }
 
-    .md\)mar\:hrz-0\.md\)5 {
-        margin-left: -0.md\)5rem !important;
-        margin-right: -0.md\)5rem !important;
+    .md\)mar\:hrz-0\.5 {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
     }
 
-    .md\)mar\:hrz-0\.md\)75 {
-        margin-left: -0.md\)75rem !important;
-        margin-right: -0.md\)75rem !important;
+    .md\)mar\:hrz-0\.75 {
+        margin-left: -0.75rem !important;
+        margin-right: -0.75rem !important;
     }
 
     .md\)mar\:hrz-1 {
@@ -7312,19 +7312,19 @@ table.cols\:fixed {
         margin-right: -1rem !important;
     }
 
-    .md\)mar\:hrz-1\.md\)25 {
-        margin-left: -1.md\)25rem !important;
-        margin-right: -1.md\)25rem !important;
+    .md\)mar\:hrz-1\.25 {
+        margin-left: -1.25rem !important;
+        margin-right: -1.25rem !important;
     }
 
-    .md\)mar\:hrz-1\.md\)5 {
-        margin-left: -1.md\)5rem !important;
-        margin-right: -1.md\)5rem !important;
+    .md\)mar\:hrz-1\.5 {
+        margin-left: -1.5rem !important;
+        margin-right: -1.5rem !important;
     }
 
-    .md\)mar\:hrz-1\.md\)75 {
-        margin-left: -1.md\)75rem !important;
-        margin-right: -1.md\)75rem !important;
+    .md\)mar\:hrz-1\.75 {
+        margin-left: -1.75rem !important;
+        margin-right: -1.75rem !important;
     }
 
     .md\)mar\:hrz-2 {
@@ -7333,19 +7333,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .md\)mar\:vrt\+0\.md\)25 {
-        margin-top: 0.md\)25rem !important;
-        margin-bottom: 0.md\)25rem !important;
+    .md\)mar\:vrt\+0\.25 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .md\)mar\:vrt\+0\.md\)5 {
-        margin-top: 0.md\)5rem !important;
-        margin-bottom: 0.md\)5rem !important;
+    .md\)mar\:vrt\+0\.5 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    .md\)mar\:vrt\+0\.md\)75 {
-        margin-top: 0.md\)75rem !important;
-        margin-bottom: 0.md\)75rem !important;
+    .md\)mar\:vrt\+0\.75 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .md\)mar\:vrt\+1 {
@@ -7353,19 +7353,19 @@ table.cols\:fixed {
         margin-bottom: 1rem !important;
     }
 
-    .md\)mar\:vrt\+1\.md\)25 {
-        margin-top: 1.md\)25rem !important;
-        margin-bottom: 1.md\)25rem !important;
+    .md\)mar\:vrt\+1\.25 {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
     }
 
-    .md\)mar\:vrt\+1\.md\)5 {
-        margin-top: 1.md\)5rem !important;
-        margin-bottom: 1.md\)5rem !important;
+    .md\)mar\:vrt\+1\.5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .md\)mar\:vrt\+1\.md\)75 {
-        margin-top: 1.md\)75rem !important;
-        margin-bottom: 1.md\)75rem !important;
+    .md\)mar\:vrt\+1\.75 {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
     }
 
     .md\)mar\:vrt\+2 {
@@ -7382,19 +7382,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .md\)mar\:vrt-0\.md\)25 {
-        margin-top: -0.md\)25rem !important;
-        margin-bottom: -0.md\)25rem !important;
+    .md\)mar\:vrt-0\.25 {
+        margin-top: -0.25rem !important;
+        margin-bottom: -0.25rem !important;
     }
 
-    .md\)mar\:vrt-0\.md\)5 {
-        margin-top: -0.md\)5rem !important;
-        margin-bottom: -0.md\)5rem !important;
+    .md\)mar\:vrt-0\.5 {
+        margin-top: -0.5rem !important;
+        margin-bottom: -0.5rem !important;
     }
 
-    .md\)mar\:vrt-0\.md\)75 {
-        margin-top: -0.md\)75rem !important;
-        margin-bottom: -0.md\)75rem !important;
+    .md\)mar\:vrt-0\.75 {
+        margin-top: -0.75rem !important;
+        margin-bottom: -0.75rem !important;
     }
 
     .md\)mar\:vrt-1 {
@@ -7402,19 +7402,19 @@ table.cols\:fixed {
         margin-bottom: -1rem !important;
     }
 
-    .md\)mar\:vrt-1\.md\)25 {
-        margin-top: -1.md\)25rem !important;
-        margin-bottom: -1.md\)25rem !important;
+    .md\)mar\:vrt-1\.25 {
+        margin-top: -1.25rem !important;
+        margin-bottom: -1.25rem !important;
     }
 
-    .md\)mar\:vrt-1\.md\)5 {
-        margin-top: -1.md\)5rem !important;
-        margin-bottom: -1.md\)5rem !important;
+    .md\)mar\:vrt-1\.5 {
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
     }
 
-    .md\)mar\:vrt-1\.md\)75 {
-        margin-top: -1.md\)75rem !important;
-        margin-bottom: -1.md\)75rem !important;
+    .md\)mar\:vrt-1\.75 {
+        margin-top: -1.75rem !important;
+        margin-bottom: -1.75rem !important;
     }
 
     .md\)mar\:vrt-2 {
@@ -7428,32 +7428,32 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
-    .md\)pad\:\+0\.md\)25 {
-        padding: 0.md\)25rem !important;
+    .md\)pad\:\+0\.25 {
+        padding: 0.25rem !important;
     }
 
-    .md\)pad\:\+0\.md\)5 {
-        padding: 0.md\)5rem !important;
+    .md\)pad\:\+0\.5 {
+        padding: 0.5rem !important;
     }
 
-    .md\)pad\:\+0\.md\)75 {
-        padding: 0.md\)75rem !important;
+    .md\)pad\:\+0\.75 {
+        padding: 0.75rem !important;
     }
 
     .md\)pad\:\+1 {
         padding: 1rem !important;
     }
 
-    .md\)pad\:\+1\.md\)25 {
-        padding: 1.md\)25rem !important;
+    .md\)pad\:\+1\.25 {
+        padding: 1.25rem !important;
     }
 
-    .md\)pad\:\+1\.md\)5 {
-        padding: 1.md\)5rem !important;
+    .md\)pad\:\+1\.5 {
+        padding: 1.5rem !important;
     }
 
-    .md\)pad\:\+1\.md\)75 {
-        padding: 1.md\)75rem !important;
+    .md\)pad\:\+1\.75 {
+        padding: 1.75rem !important;
     }
 
     .md\)pad\:\+2 {
@@ -7466,32 +7466,32 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .md\)pad\:top\+0\.md\)25 {
-        padding-top: 0.md\)25rem !important;
+    .md\)pad\:top\+0\.25 {
+        padding-top: 0.25rem !important;
     }
 
-    .md\)pad\:top\+0\.md\)5 {
-        padding-top: 0.md\)5rem !important;
+    .md\)pad\:top\+0\.5 {
+        padding-top: 0.5rem !important;
     }
 
-    .md\)pad\:top\+0\.md\)75 {
-        padding-top: 0.md\)75rem !important;
+    .md\)pad\:top\+0\.75 {
+        padding-top: 0.75rem !important;
     }
 
     .md\)pad\:top\+1 {
         padding-top: 1rem !important;
     }
 
-    .md\)pad\:top\+1\.md\)25 {
-        padding-top: 1.md\)25rem !important;
+    .md\)pad\:top\+1\.25 {
+        padding-top: 1.25rem !important;
     }
 
-    .md\)pad\:top\+1\.md\)5 {
-        padding-top: 1.md\)5rem !important;
+    .md\)pad\:top\+1\.5 {
+        padding-top: 1.5rem !important;
     }
 
-    .md\)pad\:top\+1\.md\)75 {
-        padding-top: 1.md\)75rem !important;
+    .md\)pad\:top\+1\.75 {
+        padding-top: 1.75rem !important;
     }
 
     .md\)pad\:top\+2 {
@@ -7504,32 +7504,32 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .md\)pad\:right\+0\.md\)25 {
-        padding-right: 0.md\)25rem !important;
+    .md\)pad\:right\+0\.25 {
+        padding-right: 0.25rem !important;
     }
 
-    .md\)pad\:right\+0\.md\)5 {
-        padding-right: 0.md\)5rem !important;
+    .md\)pad\:right\+0\.5 {
+        padding-right: 0.5rem !important;
     }
 
-    .md\)pad\:right\+0\.md\)75 {
-        padding-right: 0.md\)75rem !important;
+    .md\)pad\:right\+0\.75 {
+        padding-right: 0.75rem !important;
     }
 
     .md\)pad\:right\+1 {
         padding-right: 1rem !important;
     }
 
-    .md\)pad\:right\+1\.md\)25 {
-        padding-right: 1.md\)25rem !important;
+    .md\)pad\:right\+1\.25 {
+        padding-right: 1.25rem !important;
     }
 
-    .md\)pad\:right\+1\.md\)5 {
-        padding-right: 1.md\)5rem !important;
+    .md\)pad\:right\+1\.5 {
+        padding-right: 1.5rem !important;
     }
 
-    .md\)pad\:right\+1\.md\)75 {
-        padding-right: 1.md\)75rem !important;
+    .md\)pad\:right\+1\.75 {
+        padding-right: 1.75rem !important;
     }
 
     .md\)pad\:right\+2 {
@@ -7542,32 +7542,32 @@ table.cols\:fixed {
         padding-bottom: 0 !important;
     }
 
-    .md\)pad\:bottom\+0\.md\)25 {
-        padding-bottom: 0.md\)25rem !important;
+    .md\)pad\:bottom\+0\.25 {
+        padding-bottom: 0.25rem !important;
     }
 
-    .md\)pad\:bottom\+0\.md\)5 {
-        padding-bottom: 0.md\)5rem !important;
+    .md\)pad\:bottom\+0\.5 {
+        padding-bottom: 0.5rem !important;
     }
 
-    .md\)pad\:bottom\+0\.md\)75 {
-        padding-bottom: 0.md\)75rem !important;
+    .md\)pad\:bottom\+0\.75 {
+        padding-bottom: 0.75rem !important;
     }
 
     .md\)pad\:bottom\+1 {
         padding-bottom: 1rem !important;
     }
 
-    .md\)pad\:bottom\+1\.md\)25 {
-        padding-bottom: 1.md\)25rem !important;
+    .md\)pad\:bottom\+1\.25 {
+        padding-bottom: 1.25rem !important;
     }
 
-    .md\)pad\:bottom\+1\.md\)5 {
-        padding-bottom: 1.md\)5rem !important;
+    .md\)pad\:bottom\+1\.5 {
+        padding-bottom: 1.5rem !important;
     }
 
-    .md\)pad\:bottom\+1\.md\)75 {
-        padding-bottom: 1.md\)75rem !important;
+    .md\)pad\:bottom\+1\.75 {
+        padding-bottom: 1.75rem !important;
     }
 
     .md\)pad\:bottom\+2 {
@@ -7580,32 +7580,32 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
-    .md\)pad\:left\+0\.md\)25 {
-        padding-left: 0.md\)25rem !important;
+    .md\)pad\:left\+0\.25 {
+        padding-left: 0.25rem !important;
     }
 
-    .md\)pad\:left\+0\.md\)5 {
-        padding-left: 0.md\)5rem !important;
+    .md\)pad\:left\+0\.5 {
+        padding-left: 0.5rem !important;
     }
 
-    .md\)pad\:left\+0\.md\)75 {
-        padding-left: 0.md\)75rem !important;
+    .md\)pad\:left\+0\.75 {
+        padding-left: 0.75rem !important;
     }
 
     .md\)pad\:left\+1 {
         padding-left: 1rem !important;
     }
 
-    .md\)pad\:left\+1\.md\)25 {
-        padding-left: 1.md\)25rem !important;
+    .md\)pad\:left\+1\.25 {
+        padding-left: 1.25rem !important;
     }
 
-    .md\)pad\:left\+1\.md\)5 {
-        padding-left: 1.md\)5rem !important;
+    .md\)pad\:left\+1\.5 {
+        padding-left: 1.5rem !important;
     }
 
-    .md\)pad\:left\+1\.md\)75 {
-        padding-left: 1.md\)75rem !important;
+    .md\)pad\:left\+1\.75 {
+        padding-left: 1.75rem !important;
     }
 
     .md\)pad\:left\+2 {
@@ -7619,19 +7619,19 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .md\)pad\:hrz\+0\.md\)25 {
-        padding-left: 0.md\)25rem !important;
-        padding-right: 0.md\)25rem !important;
+    .md\)pad\:hrz\+0\.25 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
     }
 
-    .md\)pad\:hrz\+0\.md\)5 {
-        padding-left: 0.md\)5rem !important;
-        padding-right: 0.md\)5rem !important;
+    .md\)pad\:hrz\+0\.5 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
-    .md\)pad\:hrz\+0\.md\)75 {
-        padding-left: 0.md\)75rem !important;
-        padding-right: 0.md\)75rem !important;
+    .md\)pad\:hrz\+0\.75 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 
     .md\)pad\:hrz\+1 {
@@ -7639,19 +7639,19 @@ table.cols\:fixed {
         padding-right: 1rem !important;
     }
 
-    .md\)pad\:hrz\+1\.md\)25 {
-        padding-left: 1.md\)25rem !important;
-        padding-right: 1.md\)25rem !important;
+    .md\)pad\:hrz\+1\.25 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
-    .md\)pad\:hrz\+1\.md\)5 {
-        padding-left: 1.md\)5rem !important;
-        padding-right: 1.md\)5rem !important;
+    .md\)pad\:hrz\+1\.5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
-    .md\)pad\:hrz\+1\.md\)75 {
-        padding-left: 1.md\)75rem !important;
-        padding-right: 1.md\)75rem !important;
+    .md\)pad\:hrz\+1\.75 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
     .md\)pad\:hrz\+2 {
@@ -7666,19 +7666,19 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .md\)pad\:vrt\+0\.md\)25 {
-        padding-bottom: 0.md\)25rem !important;
-        padding-top: 0.md\)25rem !important;
+    .md\)pad\:vrt\+0\.25 {
+        padding-bottom: 0.25rem !important;
+        padding-top: 0.25rem !important;
     }
 
-    .md\)pad\:vrt\+0\.md\)5 {
-        padding-bottom: 0.md\)5rem !important;
-        padding-top: 0.md\)5rem !important;
+    .md\)pad\:vrt\+0\.5 {
+        padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
-    .md\)pad\:vrt\+0\.md\)75 {
-        padding-bottom: 0.md\)75rem !important;
-        padding-top: 0.md\)75rem !important;
+    .md\)pad\:vrt\+0\.75 {
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
     }
 
     .md\)pad\:vrt\+1 {
@@ -7686,19 +7686,19 @@ table.cols\:fixed {
         padding-top: 1rem !important;
     }
 
-    .md\)pad\:vrt\+1\.md\)25 {
-        padding-bottom: 1.md\)25rem !important;
-        padding-top: 1.md\)25rem !important;
+    .md\)pad\:vrt\+1\.25 {
+        padding-bottom: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
 
-    .md\)pad\:vrt\+1\.md\)5 {
-        padding-bottom: 1.md\)5rem !important;
-        padding-top: 1.md\)5rem !important;
+    .md\)pad\:vrt\+1\.5 {
+        padding-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
     }
 
-    .md\)pad\:vrt\+1\.md\)75 {
-        padding-bottom: 1.md\)75rem !important;
-        padding-top: 1.md\)75rem !important;
+    .md\)pad\:vrt\+1\.75 {
+        padding-bottom: 1.75rem !important;
+        padding-top: 1.75rem !important;
     }
 
     .md\)pad\:vrt\+2 {
@@ -7767,7 +7767,7 @@ table.cols\:fixed {
     }
 
     .md\)trk\:narrow {
-        letter-spacing: -0.md\)01rem !important;
+        letter-spacing: -0.01rem !important;
     }
 
     .md\)trk\:normal,
@@ -7776,11 +7776,11 @@ table.cols\:fixed {
     }
 
     .md\)trk\:wide {
-        letter-spacing: 0.md\)1rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
     .md\)trk\:x-wide {
-        letter-spacing: 0.md\)5rem !important;
+        letter-spacing: 0.5rem !important;
     }
 
     .md\)wd\:auto {
@@ -8651,19 +8651,19 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
-    .lg\)bdr\:space\+0\.lg\)25 {
+    .lg\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
-        border-spacing: 0.lg\)25rem !important;
+        border-spacing: 0.25rem !important;
     }
 
-    .lg\)bdr\:space\+0\.lg\)5 {
+    .lg\)bdr\:space\+0\.5 {
         border-collapse: separate !important;
-        border-spacing: 0.lg\)5rem !important;
+        border-spacing: 0.5rem !important;
     }
 
-    .lg\)bdr\:space\+0\.lg\)75 {
+    .lg\)bdr\:space\+0\.75 {
         border-collapse: separate !important;
-        border-spacing: 0.lg\)75rem !important;
+        border-spacing: 0.75rem !important;
     }
 
     .lg\)bdr\:space\+1 {
@@ -8671,19 +8671,19 @@ table.cols\:fixed {
         border-spacing: 1rem !important;
     }
 
-    .lg\)bdr\:space\+1\.lg\)25 {
+    .lg\)bdr\:space\+1\.25 {
         border-collapse: separate !important;
-        border-spacing: 1.lg\)25rem !important;
+        border-spacing: 1.25rem !important;
     }
 
-    .lg\)bdr\:space\+1\.lg\)5 {
+    .lg\)bdr\:space\+1\.5 {
         border-collapse: separate !important;
-        border-spacing: 1.lg\)5rem !important;
+        border-spacing: 1.5rem !important;
     }
 
-    .lg\)bdr\:space\+1\.lg\)75 {
+    .lg\)bdr\:space\+1\.75 {
         border-collapse: separate !important;
-        border-spacing: 1.lg\)75rem !important;
+        border-spacing: 1.75rem !important;
     }
 
     .lg\)bdr\:space\+2 {
@@ -8695,13 +8695,13 @@ table.cols\:fixed {
         border-radius: 0% !important;
     }
     .lg\)cnr\:arch-x-small {
-        border-radius: 0.lg\)1666rem !important;
+        border-radius: 0.1666rem !important;
     }
     .lg\)cnr\:arch-small {
-        border-radius: 0.lg\)3333rem !important;
+        border-radius: 0.3333rem !important;
     }
     .lg\)cnr\:arch-medium {
-        border-radius: 0.lg\)6666rem !important;
+        border-radius: 0.6666rem !important;
     }
     .lg\)cnr\:arch-large {
         border-radius: 1rem !important;
@@ -8711,40 +8711,40 @@ table.cols\:fixed {
     }
 
     .lg\)cnr\:arch-left-small {
-        border-radius: 0.lg\)3333rem 0 0 0.lg\)3333rem !important;
+        border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
     .lg\)cnr\:arch-left-medium {
-        border-radius: 0.lg\)6666rem 0 0 0.lg\)6666rem !important;
+        border-radius: 0.6666rem 0 0 0.6666rem !important;
     }
     .lg\)cnr\:arch-left-large {
         border-radius: 1rem 0 0 1rem !important;
     }
 
     .lg\)cnr\:arch-right-small {
-        border-radius: 0 0.lg\)3333rem 0.lg\)3333rem 0 !important;
+        border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
     .lg\)cnr\:arch-right-medium {
-        border-radius: 0 0.lg\)6666rem 0.lg\)6666rem 0 !important;
+        border-radius: 0 0.6666rem 0.6666rem 0 !important;
     }
     .lg\)cnr\:arch-right-large {
         border-radius: 0 1rem 1rem 0 !important;
     }
 
     .lg\)cnr\:arch-top-small {
-        border-radius: 0.lg\)3333rem 0.lg\)3333rem 0 0 !important;
+        border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
     .lg\)cnr\:arch-top-medium {
-        border-radius: 0.lg\)6666rem 0.lg\)6666rem 0 0 !important;
+        border-radius: 0.6666rem 0.6666rem 0 0 !important;
     }
     .lg\)cnr\:arch-top-large {
         border-radius: 1rem 1rem 0 0 !important;
     }
 
     .lg\)cnr\:arch-bottom-small {
-        border-radius: 0 0 0.lg\)3333rem 0.lg\)3333rem !important;
+        border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
     .lg\)cnr\:arch-bottom-medium {
-        border-radius: 0 0 0.lg\)6666rem 0.lg\)6666rem !important;
+        border-radius: 0 0 0.6666rem 0.6666rem !important;
     }
     .lg\)cnr\:arch-bottom-large {
         border-radius: 0 0 1rem 1rem !important;
@@ -9501,32 +9501,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:\+0\.lg\)25 {
-        margin: 0.lg\)25rem !important;
+    .lg\)mar\:\+0\.25 {
+        margin: 0.25rem !important;
     }
 
-    .lg\)mar\:\+0\.lg\)5 {
-        margin: 0.lg\)5rem !important;
+    .lg\)mar\:\+0\.5 {
+        margin: 0.5rem !important;
     }
 
-    .lg\)mar\:\+0\.lg\)75 {
-        margin: 0.lg\)75rem !important;
+    .lg\)mar\:\+0\.75 {
+        margin: 0.75rem !important;
     }
 
     .lg\)mar\:\+1 {
         margin: 1rem !important;
     }
 
-    .lg\)mar\:\+1\.lg\)25 {
-        margin: 1.lg\)25rem !important;
+    .lg\)mar\:\+1\.25 {
+        margin: 1.25rem !important;
     }
 
-    .lg\)mar\:\+1\.lg\)5 {
-        margin: 1.lg\)5rem !important;
+    .lg\)mar\:\+1\.5 {
+        margin: 1.5rem !important;
     }
 
-    .lg\)mar\:\+1\.lg\)75 {
-        margin: 1.lg\)75rem !important;
+    .lg\)mar\:\+1\.75 {
+        margin: 1.75rem !important;
     }
 
     .lg\)mar\:\+2 {
@@ -9541,32 +9541,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:-0\.lg\)25 {
-        margin: -0.lg\)25rem !important;
+    .lg\)mar\:-0\.25 {
+        margin: -0.25rem !important;
     }
 
-    .lg\)mar\:-0\.lg\)5 {
-        margin: -0.lg\)5rem !important;
+    .lg\)mar\:-0\.5 {
+        margin: -0.5rem !important;
     }
 
-    .lg\)mar\:-0\.lg\)75 {
-        margin: -0.lg\)75rem !important;
+    .lg\)mar\:-0\.75 {
+        margin: -0.75rem !important;
     }
 
     .lg\)mar\:-1 {
         margin: -1rem !important;
     }
 
-    .lg\)mar\:-1\.lg\)25 {
-        margin: -1.lg\)25rem !important;
+    .lg\)mar\:-1.25 {
+        margin: -1.25rem !important;
     }
 
-    .lg\)mar\:-1\.lg\)5 {
-        margin: -1.lg\)5rem !important;
+    .lg\)mar\:-1.5 {
+        margin: -1.5rem !important;
     }
 
-    .lg\)mar\:-1\.lg\)75 {
-        margin: -1.lg\)75rem !important;
+    .lg\)mar\:-1.75 {
+        margin: -1.75rem !important;
     }
 
     .lg\)mar\:-2 {
@@ -9574,32 +9574,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:top\+0\.lg\)25 {
-        margin-top: 0.lg\)25rem !important;
+    .lg\)mar\:top\+0\.25 {
+        margin-top: 0.25rem !important;
     }
 
-    .lg\)mar\:top\+0\.lg\)5 {
-        margin-top: 0.lg\)5rem !important;
+    .lg\)mar\:top\+0\.5 {
+        margin-top: 0.5rem !important;
     }
 
-    .lg\)mar\:top\+0\.lg\)75 {
-        margin-top: 0.lg\)75rem !important;
+    .lg\)mar\:top\+0\.75 {
+        margin-top: 0.75rem !important;
     }
 
     .lg\)mar\:top\+1 {
         margin-top: 1rem !important;
     }
 
-    .lg\)mar\:top\+1\.lg\)25 {
-        margin-top: 1.lg\)25rem !important;
+    .lg\)mar\:top\+1\.25 {
+        margin-top: 1.25rem !important;
     }
 
-    .lg\)mar\:top\+1\.lg\)5 {
-        margin-top: 1.lg\)5rem !important;
+    .lg\)mar\:top\+1\.5 {
+        margin-top: 1.5rem !important;
     }
 
-    .lg\)mar\:top\+1\.lg\)75 {
-        margin-top: 1.lg\)75rem !important;
+    .lg\)mar\:top\+1\.75 {
+        margin-top: 1.75rem !important;
     }
 
     .lg\)mar\:top\+2 {
@@ -9614,32 +9614,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:top-0\.lg\)25 {
-        margin-top: -0.lg\)25rem !important;
+    .lg\)mar\:top-0\.25 {
+        margin-top: -0.25rem !important;
     }
 
-    .lg\)mar\:top-0\.lg\)5 {
-        margin-top: -0.lg\)5rem !important;
+    .lg\)mar\:top-0\.5 {
+        margin-top: -0.5rem !important;
     }
 
-    .lg\)mar\:top-0\.lg\)75 {
-        margin-top: -0.lg\)75rem !important;
+    .lg\)mar\:top-0\.75 {
+        margin-top: -0.75rem !important;
     }
 
     .lg\)mar\:top-1 {
         margin-top: -1rem !important;
     }
 
-    .lg\)mar\:top-1\.lg\)25 {
-        margin-top: -1.lg\)25rem !important;
+    .lg\)mar\:top-1\.25 {
+        margin-top: -1.25rem !important;
     }
 
-    .lg\)mar\:top-1\.lg\)5 {
-        margin-top: -1.lg\)5rem !important;
+    .lg\)mar\:top-1\.5 {
+        margin-top: -1.5rem !important;
     }
 
-    .lg\)mar\:top-1\.lg\)75 {
-        margin-top: -1.lg\)75rem !important;
+    .lg\)mar\:top-1\.75 {
+        margin-top: -1.75rem !important;
     }
 
     .lg\)mar\:top-2 {
@@ -9647,32 +9647,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:right\+0\.lg\)25 {
-        margin-right: 0.lg\)25rem !important;
+    .lg\)mar\:right\+0\.25 {
+        margin-right: 0.25rem !important;
     }
 
-    .lg\)mar\:right\+0\.lg\)5 {
-        margin-right: 0.lg\)5rem !important;
+    .lg\)mar\:right\+0\.5 {
+        margin-right: 0.5rem !important;
     }
 
-    .lg\)mar\:right\+0\.lg\)75 {
-        margin-right: 0.lg\)75rem !important;
+    .lg\)mar\:right\+0\.75 {
+        margin-right: 0.75rem !important;
     }
 
     .lg\)mar\:right\+1 {
         margin-right: 1rem !important;
     }
 
-    .lg\)mar\:right\+1\.lg\)25 {
-        margin-right: 1.lg\)25rem !important;
+    .lg\)mar\:right\+1\.25 {
+        margin-right: 1.25rem !important;
     }
 
-    .lg\)mar\:right\+1\.lg\)5 {
-        margin-right: 1.lg\)5rem !important;
+    .lg\)mar\:right\+1\.5 {
+        margin-right: 1.5rem !important;
     }
 
-    .lg\)mar\:right\+1\.lg\)75 {
-        margin-right: 1.lg\)75rem !important;
+    .lg\)mar\:right\+1\.75 {
+        margin-right: 1.75rem !important;
     }
 
     .lg\)mar\:right\+2 {
@@ -9687,32 +9687,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:right-0\.lg\)25 {
-        margin-right: -0.lg\)25rem !important;
+    .lg\)mar\:right-0\.25 {
+        margin-right: -0.25rem !important;
     }
 
-    .lg\)mar\:right-0\.lg\)5 {
-        margin-right: -0.lg\)5rem !important;
+    .lg\)mar\:right-0\.5 {
+        margin-right: -0.5rem !important;
     }
 
-    .lg\)mar\:right-0\.lg\)75 {
-        margin-right: -0.lg\)75rem !important;
+    .lg\)mar\:right-0\.75 {
+        margin-right: -0.75rem !important;
     }
 
     .lg\)mar\:right-1 {
         margin-right: -1rem !important;
     }
 
-    .lg\)mar\:right-1\.lg\)25 {
-        margin-right: -1.lg\)25rem !important;
+    .lg\)mar\:right-1\.25 {
+        margin-right: -1.25rem !important;
     }
 
-    .lg\)mar\:right-1\.lg\)5 {
-        margin-right: -1.lg\)5rem !important;
+    .lg\)mar\:right-1\.5 {
+        margin-right: -1.5rem !important;
     }
 
-    .lg\)mar\:right-1\.lg\)75 {
-        margin-right: -1.lg\)75rem !important;
+    .lg\)mar\:right-1\.75 {
+        margin-right: -1.75rem !important;
     }
 
     .lg\)mar\:right-2 {
@@ -9720,32 +9720,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:bottom\+0\.lg\)25 {
-        margin-bottom: 0.lg\)25rem !important;
+    .lg\)mar\:bottom\+0\.25 {
+        margin-bottom: 0.25rem !important;
     }
 
-    .lg\)mar\:bottom\+0\.lg\)5 {
-        margin-bottom: 0.lg\)5rem !important;
+    .lg\)mar\:bottom\+0\.5 {
+        margin-bottom: 0.5rem !important;
     }
 
-    .lg\)mar\:bottom\+0\.lg\)75 {
-        margin-bottom: 0.lg\)75rem !important;
+    .lg\)mar\:bottom\+0\.75 {
+        margin-bottom: 0.75rem !important;
     }
 
     .lg\)mar\:bottom\+1 {
         margin-bottom: 1rem !important;
     }
 
-    .lg\)mar\:bottom\+1\.lg\)25 {
-        margin-bottom: 1.lg\)25rem !important;
+    .lg\)mar\:bottom\+1\.25 {
+        margin-bottom: 1.25rem !important;
     }
 
-    .lg\)mar\:bottom\+1\.lg\)5 {
-        margin-bottom: 1.lg\)5rem !important;
+    .lg\)mar\:bottom\+1\.5 {
+        margin-bottom: 1.5rem !important;
     }
 
-    .lg\)mar\:bottom\+1\.lg\)75 {
-        margin-bottom: 1.lg\)75rem !important;
+    .lg\)mar\:bottom\+1\.75 {
+        margin-bottom: 1.75rem !important;
     }
 
     .lg\)mar\:bottom\+2 {
@@ -9760,32 +9760,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:bottom-0\.lg\)25 {
-        margin-bottom: -0.lg\)25rem !important;
+    .lg\)mar\:bottom-0\.25 {
+        margin-bottom: -0.25rem !important;
     }
 
-    .lg\)mar\:bottom-0\.lg\)5 {
-        margin-bottom: -0.lg\)5rem !important;
+    .lg\)mar\:bottom-0\.5 {
+        margin-bottom: -0.5rem !important;
     }
 
-    .lg\)mar\:bottom-0\.lg\)75 {
-        margin-bottom: -0.lg\)75rem !important;
+    .lg\)mar\:bottom-0\.75 {
+        margin-bottom: -0.75rem !important;
     }
 
     .lg\)mar\:bottom-1 {
         margin-bottom: -1rem !important;
     }
 
-    .lg\)mar\:bottom-1\.lg\)25 {
-        margin-bottom: -1.lg\)25rem !important;
+    .lg\)mar\:bottom-1\.25 {
+        margin-bottom: -1.25rem !important;
     }
 
-    .lg\)mar\:bottom-1\.lg\)5 {
-        margin-bottom: -1.lg\)5rem !important;
+    .lg\)mar\:bottom-1\.5 {
+        margin-bottom: -1.5rem !important;
     }
 
-    .lg\)mar\:bottom-1\.lg\)75 {
-        margin-bottom: -1.lg\)75rem !important;
+    .lg\)mar\:bottom-1\.75 {
+        margin-bottom: -1.75rem !important;
     }
 
     .lg\)mar\:bottom-2 {
@@ -9793,32 +9793,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:left\+0\.lg\)25 {
-        margin-left: 0.lg\)25rem !important;
+    .lg\)mar\:left\+0\.25 {
+        margin-left: 0.25rem !important;
     }
 
-    .lg\)mar\:left\+0\.lg\)5 {
-        margin-left: 0.lg\)5rem !important;
+    .lg\)mar\:left\+0\.5 {
+        margin-left: 0.5rem !important;
     }
 
-    .lg\)mar\:left\+0\.lg\)75 {
-        margin-left: 0.lg\)75rem !important;
+    .lg\)mar\:left\+0\.75 {
+        margin-left: 0.75rem !important;
     }
 
     .lg\)mar\:left\+1 {
         margin-left: 1rem !important;
     }
 
-    .lg\)mar\:left\+1\.lg\)25 {
-        margin-left: 1.lg\)25rem !important;
+    .lg\)mar\:left\+1\.25 {
+        margin-left: 1.25rem !important;
     }
 
-    .lg\)mar\:left\+1\.lg\)5 {
-        margin-left: 1.lg\)5rem !important;
+    .lg\)mar\:left\+1\.5 {
+        margin-left: 1.5rem !important;
     }
 
-    .lg\)mar\:left\+1\.lg\)75 {
-        margin-left: 1.lg\)75rem !important;
+    .lg\)mar\:left\+1\.75 {
+        margin-left: 1.75rem !important;
     }
 
     .lg\)mar\:left\+2 {
@@ -9833,32 +9833,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:left-0\.lg\)25 {
-        margin-left: -0.lg\)25rem !important;
+    .lg\)mar\:left-0\.25 {
+        margin-left: -0.25rem !important;
     }
 
-    .lg\)mar\:left-0\.lg\)5 {
-        margin-left: -0.lg\)5rem !important;
+    .lg\)mar\:left-0\.5 {
+        margin-left: -0.5rem !important;
     }
 
-    .lg\)mar\:left-0\.lg\)75 {
-        margin-left: -0.lg\)75rem !important;
+    .lg\)mar\:left-0\.75 {
+        margin-left: -0.75rem !important;
     }
 
     .lg\)mar\:left-1 {
         margin-left: -1rem !important;
     }
 
-    .lg\)mar\:left-1\.lg\)25 {
-        margin-left: -1.lg\)25rem !important;
+    .lg\)mar\:left-1\.25 {
+        margin-left: -1.25rem !important;
     }
 
-    .lg\)mar\:left-1\.lg\)5 {
-        margin-left: -1.lg\)5rem !important;
+    .lg\)mar\:left-1\.5 {
+        margin-left: -1.5rem !important;
     }
 
-    .lg\)mar\:left-1\.lg\)75 {
-        margin-left: -1.lg\)75rem !important;
+    .lg\)mar\:left-1\.75 {
+        margin-left: -1.75rem !important;
     }
 
     .lg\)mar\:left-2 {
@@ -9866,19 +9866,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:hrz\+0\.lg\)25 {
-        margin-left: 0.lg\)25rem !important;
-        margin-right: 0.lg\)25rem !important;
+    .lg\)mar\:hrz\+0\.25 {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
     }
 
-    .lg\)mar\:hrz\+0\.lg\)5 {
-        margin-left: 0.lg\)5rem !important;
-        margin-right: 0.lg\)5rem !important;
+    .lg\)mar\:hrz\+0\.5 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 
-    .lg\)mar\:hrz\+0\.lg\)75 {
-        margin-left: 0.lg\)75rem !important;
-        margin-right: 0.lg\)75rem !important;
+    .lg\)mar\:hrz\+0\.75 {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
     }
 
     .lg\)mar\:hrz\+1 {
@@ -9886,19 +9886,19 @@ table.cols\:fixed {
         margin-right: 1rem !important;
     }
 
-    .lg\)mar\:hrz\+1\.lg\)25 {
-        margin-left: 1.lg\)25rem !important;
-        margin-right: 1.lg\)25rem !important;
+    .lg\)mar\:hrz\+1\.25 {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
     }
 
-    .lg\)mar\:hrz\+1\.lg\)5 {
-        margin-left: 1.lg\)5rem !important;
-        margin-right: 1.lg\)5rem !important;
+    .lg\)mar\:hrz\+1\.5 {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
     }
 
-    .lg\)mar\:hrz\+1\.lg\)75 {
-        margin-left: 1.lg\)75rem !important;
-        margin-right: 1.lg\)75rem !important;
+    .lg\)mar\:hrz\+1\.75 {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
     }
 
     .lg\)mar\:hrz\+2 {
@@ -9915,19 +9915,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:hrz-0\.lg\)25 {
-        margin-left: -0.lg\)25rem !important;
-        margin-right: -0.lg\)25rem !important;
+    .lg\)mar\:hrz-0\.25 {
+        margin-left: -0.25rem !important;
+        margin-right: -0.25rem !important;
     }
 
-    .lg\)mar\:hrz-0\.lg\)5 {
-        margin-left: -0.lg\)5rem !important;
-        margin-right: -0.lg\)5rem !important;
+    .lg\)mar\:hrz-0\.5 {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
     }
 
-    .lg\)mar\:hrz-0\.lg\)75 {
-        margin-left: -0.lg\)75rem !important;
-        margin-right: -0.lg\)75rem !important;
+    .lg\)mar\:hrz-0\.75 {
+        margin-left: -0.75rem !important;
+        margin-right: -0.75rem !important;
     }
 
     .lg\)mar\:hrz-1 {
@@ -9935,19 +9935,19 @@ table.cols\:fixed {
         margin-right: -1rem !important;
     }
 
-    .lg\)mar\:hrz-1\.lg\)25 {
-        margin-left: -1.lg\)25rem !important;
-        margin-right: -1.lg\)25rem !important;
+    .lg\)mar\:hrz-1\.25 {
+        margin-left: -1.25rem !important;
+        margin-right: -1.25rem !important;
     }
 
-    .lg\)mar\:hrz-1\.lg\)5 {
-        margin-left: -1.lg\)5rem !important;
-        margin-right: -1.lg\)5rem !important;
+    .lg\)mar\:hrz-1\.5 {
+        margin-left: -1.5rem !important;
+        margin-right: -1.5rem !important;
     }
 
-    .lg\)mar\:hrz-1\.lg\)75 {
-        margin-left: -1.lg\)75rem !important;
-        margin-right: -1.lg\)75rem !important;
+    .lg\)mar\:hrz-1\.75 {
+        margin-left: -1.75rem !important;
+        margin-right: -1.75rem !important;
     }
 
     .lg\)mar\:hrz-2 {
@@ -9956,19 +9956,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .lg\)mar\:vrt\+0\.lg\)25 {
-        margin-top: 0.lg\)25rem !important;
-        margin-bottom: 0.lg\)25rem !important;
+    .lg\)mar\:vrt\+0\.25 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .lg\)mar\:vrt\+0\.lg\)5 {
-        margin-top: 0.lg\)5rem !important;
-        margin-bottom: 0.lg\)5rem !important;
+    .lg\)mar\:vrt\+0\.5 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    .lg\)mar\:vrt\+0\.lg\)75 {
-        margin-top: 0.lg\)75rem !important;
-        margin-bottom: 0.lg\)75rem !important;
+    .lg\)mar\:vrt\+0\.75 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .lg\)mar\:vrt\+1 {
@@ -9976,19 +9976,19 @@ table.cols\:fixed {
         margin-bottom: 1rem !important;
     }
 
-    .lg\)mar\:vrt\+1\.lg\)25 {
-        margin-top: 1.lg\)25rem !important;
-        margin-bottom: 1.lg\)25rem !important;
+    .lg\)mar\:vrt\+1\.25 {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
     }
 
-    .lg\)mar\:vrt\+1\.lg\)5 {
-        margin-top: 1.lg\)5rem !important;
-        margin-bottom: 1.lg\)5rem !important;
+    .lg\)mar\:vrt\+1\.5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .lg\)mar\:vrt\+1\.lg\)75 {
-        margin-top: 1.lg\)75rem !important;
-        margin-bottom: 1.lg\)75rem !important;
+    .lg\)mar\:vrt\+1\.75 {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
     }
 
     .lg\)mar\:vrt\+2 {
@@ -10005,19 +10005,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .lg\)mar\:vrt-0\.lg\)25 {
-        margin-top: -0.lg\)25rem !important;
-        margin-bottom: -0.lg\)25rem !important;
+    .lg\)mar\:vrt-0\.25 {
+        margin-top: -0.25rem !important;
+        margin-bottom: -0.25rem !important;
     }
 
-    .lg\)mar\:vrt-0\.lg\)5 {
-        margin-top: -0.lg\)5rem !important;
-        margin-bottom: -0.lg\)5rem !important;
+    .lg\)mar\:vrt-0\.5 {
+        margin-top: -0.5rem !important;
+        margin-bottom: -0.5rem !important;
     }
 
-    .lg\)mar\:vrt-0\.lg\)75 {
-        margin-top: -0.lg\)75rem !important;
-        margin-bottom: -0.lg\)75rem !important;
+    .lg\)mar\:vrt-0\.75 {
+        margin-top: -0.75rem !important;
+        margin-bottom: -0.75rem !important;
     }
 
     .lg\)mar\:vrt-1 {
@@ -10025,19 +10025,19 @@ table.cols\:fixed {
         margin-bottom: -1rem !important;
     }
 
-    .lg\)mar\:vrt-1\.lg\)25 {
-        margin-top: -1.lg\)25rem !important;
-        margin-bottom: -1.lg\)25rem !important;
+    .lg\)mar\:vrt-1\.25 {
+        margin-top: -1.25rem !important;
+        margin-bottom: -1.25rem !important;
     }
 
-    .lg\)mar\:vrt-1\.lg\)5 {
-        margin-top: -1.lg\)5rem !important;
-        margin-bottom: -1.lg\)5rem !important;
+    .lg\)mar\:vrt-1\.5 {
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
     }
 
-    .lg\)mar\:vrt-1\.lg\)75 {
-        margin-top: -1.lg\)75rem !important;
-        margin-bottom: -1.lg\)75rem !important;
+    .lg\)mar\:vrt-1\.75 {
+        margin-top: -1.75rem !important;
+        margin-bottom: -1.75rem !important;
     }
 
     .lg\)mar\:vrt-2 {
@@ -10051,32 +10051,32 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
-    .lg\)pad\:\+0\.lg\)25 {
-        padding: 0.lg\)25rem !important;
+    .lg\)pad\:\+0\.25 {
+        padding: 0.25rem !important;
     }
 
-    .lg\)pad\:\+0\.lg\)5 {
-        padding: 0.lg\)5rem !important;
+    .lg\)pad\:\+0\.5 {
+        padding: 0.5rem !important;
     }
 
-    .lg\)pad\:\+0\.lg\)75 {
-        padding: 0.lg\)75rem !important;
+    .lg\)pad\:\+0\.75 {
+        padding: 0.75rem !important;
     }
 
     .lg\)pad\:\+1 {
         padding: 1rem !important;
     }
 
-    .lg\)pad\:\+1\.lg\)25 {
-        padding: 1.lg\)25rem !important;
+    .lg\)pad\:\+1\.25 {
+        padding: 1.25rem !important;
     }
 
-    .lg\)pad\:\+1\.lg\)5 {
-        padding: 1.lg\)5rem !important;
+    .lg\)pad\:\+1\.5 {
+        padding: 1.5rem !important;
     }
 
-    .lg\)pad\:\+1\.lg\)75 {
-        padding: 1.lg\)75rem !important;
+    .lg\)pad\:\+1\.75 {
+        padding: 1.75rem !important;
     }
 
     .lg\)pad\:\+2 {
@@ -10089,32 +10089,32 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .lg\)pad\:top\+0\.lg\)25 {
-        padding-top: 0.lg\)25rem !important;
+    .lg\)pad\:top\+0\.25 {
+        padding-top: 0.25rem !important;
     }
 
-    .lg\)pad\:top\+0\.lg\)5 {
-        padding-top: 0.lg\)5rem !important;
+    .lg\)pad\:top\+0\.5 {
+        padding-top: 0.5rem !important;
     }
 
-    .lg\)pad\:top\+0\.lg\)75 {
-        padding-top: 0.lg\)75rem !important;
+    .lg\)pad\:top\+0\.75 {
+        padding-top: 0.75rem !important;
     }
 
     .lg\)pad\:top\+1 {
         padding-top: 1rem !important;
     }
 
-    .lg\)pad\:top\+1\.lg\)25 {
-        padding-top: 1.lg\)25rem !important;
+    .lg\)pad\:top\+1\.25 {
+        padding-top: 1.25rem !important;
     }
 
-    .lg\)pad\:top\+1\.lg\)5 {
-        padding-top: 1.lg\)5rem !important;
+    .lg\)pad\:top\+1\.5 {
+        padding-top: 1.5rem !important;
     }
 
-    .lg\)pad\:top\+1\.lg\)75 {
-        padding-top: 1.lg\)75rem !important;
+    .lg\)pad\:top\+1\.75 {
+        padding-top: 1.75rem !important;
     }
 
     .lg\)pad\:top\+2 {
@@ -10127,32 +10127,32 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .lg\)pad\:right\+0\.lg\)25 {
-        padding-right: 0.lg\)25rem !important;
+    .lg\)pad\:right\+0\.25 {
+        padding-right: 0.25rem !important;
     }
 
-    .lg\)pad\:right\+0\.lg\)5 {
-        padding-right: 0.lg\)5rem !important;
+    .lg\)pad\:right\+0\.5 {
+        padding-right: 0.5rem !important;
     }
 
-    .lg\)pad\:right\+0\.lg\)75 {
-        padding-right: 0.lg\)75rem !important;
+    .lg\)pad\:right\+0\.75 {
+        padding-right: 0.75rem !important;
     }
 
     .lg\)pad\:right\+1 {
         padding-right: 1rem !important;
     }
 
-    .lg\)pad\:right\+1\.lg\)25 {
-        padding-right: 1.lg\)25rem !important;
+    .lg\)pad\:right\+1\.25 {
+        padding-right: 1.25rem !important;
     }
 
-    .lg\)pad\:right\+1\.lg\)5 {
-        padding-right: 1.lg\)5rem !important;
+    .lg\)pad\:right\+1\.5 {
+        padding-right: 1.5rem !important;
     }
 
-    .lg\)pad\:right\+1\.lg\)75 {
-        padding-right: 1.lg\)75rem !important;
+    .lg\)pad\:right\+1\.75 {
+        padding-right: 1.75rem !important;
     }
 
     .lg\)pad\:right\+2 {
@@ -10165,32 +10165,32 @@ table.cols\:fixed {
         padding-bottom: 0 !important;
     }
 
-    .lg\)pad\:bottom\+0\.lg\)25 {
-        padding-bottom: 0.lg\)25rem !important;
+    .lg\)pad\:bottom\+0\.25 {
+        padding-bottom: 0.25rem !important;
     }
 
-    .lg\)pad\:bottom\+0\.lg\)5 {
-        padding-bottom: 0.lg\)5rem !important;
+    .lg\)pad\:bottom\+0\.5 {
+        padding-bottom: 0.5rem !important;
     }
 
-    .lg\)pad\:bottom\+0\.lg\)75 {
-        padding-bottom: 0.lg\)75rem !important;
+    .lg\)pad\:bottom\+0\.75 {
+        padding-bottom: 0.75rem !important;
     }
 
     .lg\)pad\:bottom\+1 {
         padding-bottom: 1rem !important;
     }
 
-    .lg\)pad\:bottom\+1\.lg\)25 {
-        padding-bottom: 1.lg\)25rem !important;
+    .lg\)pad\:bottom\+1\.25 {
+        padding-bottom: 1.25rem !important;
     }
 
-    .lg\)pad\:bottom\+1\.lg\)5 {
-        padding-bottom: 1.lg\)5rem !important;
+    .lg\)pad\:bottom\+1\.5 {
+        padding-bottom: 1.5rem !important;
     }
 
-    .lg\)pad\:bottom\+1\.lg\)75 {
-        padding-bottom: 1.lg\)75rem !important;
+    .lg\)pad\:bottom\+1\.75 {
+        padding-bottom: 1.75rem !important;
     }
 
     .lg\)pad\:bottom\+2 {
@@ -10203,32 +10203,32 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
-    .lg\)pad\:left\+0\.lg\)25 {
-        padding-left: 0.lg\)25rem !important;
+    .lg\)pad\:left\+0\.25 {
+        padding-left: 0.25rem !important;
     }
 
-    .lg\)pad\:left\+0\.lg\)5 {
-        padding-left: 0.lg\)5rem !important;
+    .lg\)pad\:left\+0\.5 {
+        padding-left: 0.5rem !important;
     }
 
-    .lg\)pad\:left\+0\.lg\)75 {
-        padding-left: 0.lg\)75rem !important;
+    .lg\)pad\:left\+0\.75 {
+        padding-left: 0.75rem !important;
     }
 
     .lg\)pad\:left\+1 {
         padding-left: 1rem !important;
     }
 
-    .lg\)pad\:left\+1\.lg\)25 {
-        padding-left: 1.lg\)25rem !important;
+    .lg\)pad\:left\+1\.25 {
+        padding-left: 1.25rem !important;
     }
 
-    .lg\)pad\:left\+1\.lg\)5 {
-        padding-left: 1.lg\)5rem !important;
+    .lg\)pad\:left\+1\.5 {
+        padding-left: 1.5rem !important;
     }
 
-    .lg\)pad\:left\+1\.lg\)75 {
-        padding-left: 1.lg\)75rem !important;
+    .lg\)pad\:left\+1\.75 {
+        padding-left: 1.75rem !important;
     }
 
     .lg\)pad\:left\+2 {
@@ -10242,19 +10242,19 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .lg\)pad\:hrz\+0\.lg\)25 {
-        padding-left: 0.lg\)25rem !important;
-        padding-right: 0.lg\)25rem !important;
+    .lg\)pad\:hrz\+0\.25 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
     }
 
-    .lg\)pad\:hrz\+0\.lg\)5 {
-        padding-left: 0.lg\)5rem !important;
-        padding-right: 0.lg\)5rem !important;
+    .lg\)pad\:hrz\+0\.5 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
-    .lg\)pad\:hrz\+0\.lg\)75 {
-        padding-left: 0.lg\)75rem !important;
-        padding-right: 0.lg\)75rem !important;
+    .lg\)pad\:hrz\+0\.75 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 
     .lg\)pad\:hrz\+1 {
@@ -10262,19 +10262,19 @@ table.cols\:fixed {
         padding-right: 1rem !important;
     }
 
-    .lg\)pad\:hrz\+1\.lg\)25 {
-        padding-left: 1.lg\)25rem !important;
-        padding-right: 1.lg\)25rem !important;
+    .lg\)pad\:hrz\+1\.25 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
-    .lg\)pad\:hrz\+1\.lg\)5 {
-        padding-left: 1.lg\)5rem !important;
-        padding-right: 1.lg\)5rem !important;
+    .lg\)pad\:hrz\+1\.5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
-    .lg\)pad\:hrz\+1\.lg\)75 {
-        padding-left: 1.lg\)75rem !important;
-        padding-right: 1.lg\)75rem !important;
+    .lg\)pad\:hrz\+1\.75 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
     .lg\)pad\:hrz\+2 {
@@ -10289,19 +10289,19 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .lg\)pad\:vrt\+0\.lg\)25 {
-        padding-bottom: 0.lg\)25rem !important;
-        padding-top: 0.lg\)25rem !important;
+    .lg\)pad\:vrt\+0\.25 {
+        padding-bottom: 0.25rem !important;
+        padding-top: 0.25rem !important;
     }
 
-    .lg\)pad\:vrt\+0\.lg\)5 {
-        padding-bottom: 0.lg\)5rem !important;
-        padding-top: 0.lg\)5rem !important;
+    .lg\)pad\:vrt\+0\.5 {
+        padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
-    .lg\)pad\:vrt\+0\.lg\)75 {
-        padding-bottom: 0.lg\)75rem !important;
-        padding-top: 0.lg\)75rem !important;
+    .lg\)pad\:vrt\+0\.75 {
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
     }
 
     .lg\)pad\:vrt\+1 {
@@ -10309,19 +10309,19 @@ table.cols\:fixed {
         padding-top: 1rem !important;
     }
 
-    .lg\)pad\:vrt\+1\.lg\)25 {
-        padding-bottom: 1.lg\)25rem !important;
-        padding-top: 1.lg\)25rem !important;
+    .lg\)pad\:vrt\+1\.25 {
+        padding-bottom: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
 
-    .lg\)pad\:vrt\+1\.lg\)5 {
-        padding-bottom: 1.lg\)5rem !important;
-        padding-top: 1.lg\)5rem !important;
+    .lg\)pad\:vrt\+1\.5 {
+        padding-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
     }
 
-    .lg\)pad\:vrt\+1\.lg\)75 {
-        padding-bottom: 1.lg\)75rem !important;
-        padding-top: 1.lg\)75rem !important;
+    .lg\)pad\:vrt\+1\.75 {
+        padding-bottom: 1.75rem !important;
+        padding-top: 1.75rem !important;
     }
 
     .lg\)pad\:vrt\+2 {
@@ -10390,7 +10390,7 @@ table.cols\:fixed {
     }
 
     .lg\)trk\:narrow {
-        letter-spacing: -0.lg\)01rem !important;
+        letter-spacing: -0.01rem !important;
     }
 
     .lg\)trk\:normal,
@@ -10399,11 +10399,11 @@ table.cols\:fixed {
     }
 
     .lg\)trk\:wide {
-        letter-spacing: 0.lg\)1rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
     .lg\)trk\:x-wide {
-        letter-spacing: 0.lg\)5rem !important;
+        letter-spacing: 0.5rem !important;
     }
 
     .lg\)wd\:auto {
@@ -11274,19 +11274,19 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
-    .xl\)bdr\:space\+0\.xl\)25 {
+    .xl\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
-        border-spacing: 0.xl\)25rem !important;
+        border-spacing: 0.25rem !important;
     }
 
-    .xl\)bdr\:space\+0\.xl\)5 {
+    .xl\)bdr\:space\+0\.5 {
         border-collapse: separate !important;
-        border-spacing: 0.xl\)5rem !important;
+        border-spacing: 0.5rem !important;
     }
 
-    .xl\)bdr\:space\+0\.xl\)75 {
+    .xl\)bdr\:space\+0\.75 {
         border-collapse: separate !important;
-        border-spacing: 0.xl\)75rem !important;
+        border-spacing: 0.75rem !important;
     }
 
     .xl\)bdr\:space\+1 {
@@ -11294,19 +11294,19 @@ table.cols\:fixed {
         border-spacing: 1rem !important;
     }
 
-    .xl\)bdr\:space\+1\.xl\)25 {
+    .xl\)bdr\:space\+1\.25 {
         border-collapse: separate !important;
-        border-spacing: 1.xl\)25rem !important;
+        border-spacing: 1.25rem !important;
     }
 
-    .xl\)bdr\:space\+1\.xl\)5 {
+    .xl\)bdr\:space\+1\.5 {
         border-collapse: separate !important;
-        border-spacing: 1.xl\)5rem !important;
+        border-spacing: 1.5rem !important;
     }
 
-    .xl\)bdr\:space\+1\.xl\)75 {
+    .xl\)bdr\:space\+1\.75 {
         border-collapse: separate !important;
-        border-spacing: 1.xl\)75rem !important;
+        border-spacing: 1.75rem !important;
     }
 
     .xl\)bdr\:space\+2 {
@@ -11318,13 +11318,13 @@ table.cols\:fixed {
         border-radius: 0% !important;
     }
     .xl\)cnr\:arch-x-small {
-        border-radius: 0.xl\)1666rem !important;
+        border-radius: 0.1666rem !important;
     }
     .xl\)cnr\:arch-small {
-        border-radius: 0.xl\)3333rem !important;
+        border-radius: 0.3333rem !important;
     }
     .xl\)cnr\:arch-medium {
-        border-radius: 0.xl\)6666rem !important;
+        border-radius: 0.6666rem !important;
     }
     .xl\)cnr\:arch-large {
         border-radius: 1rem !important;
@@ -11334,40 +11334,40 @@ table.cols\:fixed {
     }
 
     .xl\)cnr\:arch-left-small {
-        border-radius: 0.xl\)3333rem 0 0 0.xl\)3333rem !important;
+        border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
     .xl\)cnr\:arch-left-medium {
-        border-radius: 0.xl\)6666rem 0 0 0.xl\)6666rem !important;
+        border-radius: 0.6666rem 0 0 0.6666rem !important;
     }
     .xl\)cnr\:arch-left-large {
         border-radius: 1rem 0 0 1rem !important;
     }
 
     .xl\)cnr\:arch-right-small {
-        border-radius: 0 0.xl\)3333rem 0.xl\)3333rem 0 !important;
+        border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
     .xl\)cnr\:arch-right-medium {
-        border-radius: 0 0.xl\)6666rem 0.xl\)6666rem 0 !important;
+        border-radius: 0 0.6666rem 0.6666rem 0 !important;
     }
     .xl\)cnr\:arch-right-large {
         border-radius: 0 1rem 1rem 0 !important;
     }
 
     .xl\)cnr\:arch-top-small {
-        border-radius: 0.xl\)3333rem 0.xl\)3333rem 0 0 !important;
+        border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
     .xl\)cnr\:arch-top-medium {
-        border-radius: 0.xl\)6666rem 0.xl\)6666rem 0 0 !important;
+        border-radius: 0.6666rem 0.6666rem 0 0 !important;
     }
     .xl\)cnr\:arch-top-large {
         border-radius: 1rem 1rem 0 0 !important;
     }
 
     .xl\)cnr\:arch-bottom-small {
-        border-radius: 0 0 0.xl\)3333rem 0.xl\)3333rem !important;
+        border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
     .xl\)cnr\:arch-bottom-medium {
-        border-radius: 0 0 0.xl\)6666rem 0.xl\)6666rem !important;
+        border-radius: 0 0 0.6666rem 0.6666rem !important;
     }
     .xl\)cnr\:arch-bottom-large {
         border-radius: 0 0 1rem 1rem !important;
@@ -12124,32 +12124,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:\+0\.xl\)25 {
-        margin: 0.xl\)25rem !important;
+    .xl\)mar\:\+0\.25 {
+        margin: 0.25rem !important;
     }
 
-    .xl\)mar\:\+0\.xl\)5 {
-        margin: 0.xl\)5rem !important;
+    .xl\)mar\:\+0\.5 {
+        margin: 0.5rem !important;
     }
 
-    .xl\)mar\:\+0\.xl\)75 {
-        margin: 0.xl\)75rem !important;
+    .xl\)mar\:\+0\.75 {
+        margin: 0.75rem !important;
     }
 
     .xl\)mar\:\+1 {
         margin: 1rem !important;
     }
 
-    .xl\)mar\:\+1\.xl\)25 {
-        margin: 1.xl\)25rem !important;
+    .xl\)mar\:\+1\.25 {
+        margin: 1.25rem !important;
     }
 
-    .xl\)mar\:\+1\.xl\)5 {
-        margin: 1.xl\)5rem !important;
+    .xl\)mar\:\+1\.5 {
+        margin: 1.5rem !important;
     }
 
-    .xl\)mar\:\+1\.xl\)75 {
-        margin: 1.xl\)75rem !important;
+    .xl\)mar\:\+1\.75 {
+        margin: 1.75rem !important;
     }
 
     .xl\)mar\:\+2 {
@@ -12164,32 +12164,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:-0\.xl\)25 {
-        margin: -0.xl\)25rem !important;
+    .xl\)mar\:-0\.25 {
+        margin: -0.25rem !important;
     }
 
-    .xl\)mar\:-0\.xl\)5 {
-        margin: -0.xl\)5rem !important;
+    .xl\)mar\:-0\.5 {
+        margin: -0.5rem !important;
     }
 
-    .xl\)mar\:-0\.xl\)75 {
-        margin: -0.xl\)75rem !important;
+    .xl\)mar\:-0\.75 {
+        margin: -0.75rem !important;
     }
 
     .xl\)mar\:-1 {
         margin: -1rem !important;
     }
 
-    .xl\)mar\:-1\.xl\)25 {
-        margin: -1.xl\)25rem !important;
+    .xl\)mar\:-1.25 {
+        margin: -1.25rem !important;
     }
 
-    .xl\)mar\:-1\.xl\)5 {
-        margin: -1.xl\)5rem !important;
+    .xl\)mar\:-1.5 {
+        margin: -1.5rem !important;
     }
 
-    .xl\)mar\:-1\.xl\)75 {
-        margin: -1.xl\)75rem !important;
+    .xl\)mar\:-1.75 {
+        margin: -1.75rem !important;
     }
 
     .xl\)mar\:-2 {
@@ -12197,32 +12197,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:top\+0\.xl\)25 {
-        margin-top: 0.xl\)25rem !important;
+    .xl\)mar\:top\+0\.25 {
+        margin-top: 0.25rem !important;
     }
 
-    .xl\)mar\:top\+0\.xl\)5 {
-        margin-top: 0.xl\)5rem !important;
+    .xl\)mar\:top\+0\.5 {
+        margin-top: 0.5rem !important;
     }
 
-    .xl\)mar\:top\+0\.xl\)75 {
-        margin-top: 0.xl\)75rem !important;
+    .xl\)mar\:top\+0\.75 {
+        margin-top: 0.75rem !important;
     }
 
     .xl\)mar\:top\+1 {
         margin-top: 1rem !important;
     }
 
-    .xl\)mar\:top\+1\.xl\)25 {
-        margin-top: 1.xl\)25rem !important;
+    .xl\)mar\:top\+1\.25 {
+        margin-top: 1.25rem !important;
     }
 
-    .xl\)mar\:top\+1\.xl\)5 {
-        margin-top: 1.xl\)5rem !important;
+    .xl\)mar\:top\+1\.5 {
+        margin-top: 1.5rem !important;
     }
 
-    .xl\)mar\:top\+1\.xl\)75 {
-        margin-top: 1.xl\)75rem !important;
+    .xl\)mar\:top\+1\.75 {
+        margin-top: 1.75rem !important;
     }
 
     .xl\)mar\:top\+2 {
@@ -12237,32 +12237,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:top-0\.xl\)25 {
-        margin-top: -0.xl\)25rem !important;
+    .xl\)mar\:top-0\.25 {
+        margin-top: -0.25rem !important;
     }
 
-    .xl\)mar\:top-0\.xl\)5 {
-        margin-top: -0.xl\)5rem !important;
+    .xl\)mar\:top-0\.5 {
+        margin-top: -0.5rem !important;
     }
 
-    .xl\)mar\:top-0\.xl\)75 {
-        margin-top: -0.xl\)75rem !important;
+    .xl\)mar\:top-0\.75 {
+        margin-top: -0.75rem !important;
     }
 
     .xl\)mar\:top-1 {
         margin-top: -1rem !important;
     }
 
-    .xl\)mar\:top-1\.xl\)25 {
-        margin-top: -1.xl\)25rem !important;
+    .xl\)mar\:top-1\.25 {
+        margin-top: -1.25rem !important;
     }
 
-    .xl\)mar\:top-1\.xl\)5 {
-        margin-top: -1.xl\)5rem !important;
+    .xl\)mar\:top-1\.5 {
+        margin-top: -1.5rem !important;
     }
 
-    .xl\)mar\:top-1\.xl\)75 {
-        margin-top: -1.xl\)75rem !important;
+    .xl\)mar\:top-1\.75 {
+        margin-top: -1.75rem !important;
     }
 
     .xl\)mar\:top-2 {
@@ -12270,32 +12270,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:right\+0\.xl\)25 {
-        margin-right: 0.xl\)25rem !important;
+    .xl\)mar\:right\+0\.25 {
+        margin-right: 0.25rem !important;
     }
 
-    .xl\)mar\:right\+0\.xl\)5 {
-        margin-right: 0.xl\)5rem !important;
+    .xl\)mar\:right\+0\.5 {
+        margin-right: 0.5rem !important;
     }
 
-    .xl\)mar\:right\+0\.xl\)75 {
-        margin-right: 0.xl\)75rem !important;
+    .xl\)mar\:right\+0\.75 {
+        margin-right: 0.75rem !important;
     }
 
     .xl\)mar\:right\+1 {
         margin-right: 1rem !important;
     }
 
-    .xl\)mar\:right\+1\.xl\)25 {
-        margin-right: 1.xl\)25rem !important;
+    .xl\)mar\:right\+1\.25 {
+        margin-right: 1.25rem !important;
     }
 
-    .xl\)mar\:right\+1\.xl\)5 {
-        margin-right: 1.xl\)5rem !important;
+    .xl\)mar\:right\+1\.5 {
+        margin-right: 1.5rem !important;
     }
 
-    .xl\)mar\:right\+1\.xl\)75 {
-        margin-right: 1.xl\)75rem !important;
+    .xl\)mar\:right\+1\.75 {
+        margin-right: 1.75rem !important;
     }
 
     .xl\)mar\:right\+2 {
@@ -12310,32 +12310,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:right-0\.xl\)25 {
-        margin-right: -0.xl\)25rem !important;
+    .xl\)mar\:right-0\.25 {
+        margin-right: -0.25rem !important;
     }
 
-    .xl\)mar\:right-0\.xl\)5 {
-        margin-right: -0.xl\)5rem !important;
+    .xl\)mar\:right-0\.5 {
+        margin-right: -0.5rem !important;
     }
 
-    .xl\)mar\:right-0\.xl\)75 {
-        margin-right: -0.xl\)75rem !important;
+    .xl\)mar\:right-0\.75 {
+        margin-right: -0.75rem !important;
     }
 
     .xl\)mar\:right-1 {
         margin-right: -1rem !important;
     }
 
-    .xl\)mar\:right-1\.xl\)25 {
-        margin-right: -1.xl\)25rem !important;
+    .xl\)mar\:right-1\.25 {
+        margin-right: -1.25rem !important;
     }
 
-    .xl\)mar\:right-1\.xl\)5 {
-        margin-right: -1.xl\)5rem !important;
+    .xl\)mar\:right-1\.5 {
+        margin-right: -1.5rem !important;
     }
 
-    .xl\)mar\:right-1\.xl\)75 {
-        margin-right: -1.xl\)75rem !important;
+    .xl\)mar\:right-1\.75 {
+        margin-right: -1.75rem !important;
     }
 
     .xl\)mar\:right-2 {
@@ -12343,32 +12343,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:bottom\+0\.xl\)25 {
-        margin-bottom: 0.xl\)25rem !important;
+    .xl\)mar\:bottom\+0\.25 {
+        margin-bottom: 0.25rem !important;
     }
 
-    .xl\)mar\:bottom\+0\.xl\)5 {
-        margin-bottom: 0.xl\)5rem !important;
+    .xl\)mar\:bottom\+0\.5 {
+        margin-bottom: 0.5rem !important;
     }
 
-    .xl\)mar\:bottom\+0\.xl\)75 {
-        margin-bottom: 0.xl\)75rem !important;
+    .xl\)mar\:bottom\+0\.75 {
+        margin-bottom: 0.75rem !important;
     }
 
     .xl\)mar\:bottom\+1 {
         margin-bottom: 1rem !important;
     }
 
-    .xl\)mar\:bottom\+1\.xl\)25 {
-        margin-bottom: 1.xl\)25rem !important;
+    .xl\)mar\:bottom\+1\.25 {
+        margin-bottom: 1.25rem !important;
     }
 
-    .xl\)mar\:bottom\+1\.xl\)5 {
-        margin-bottom: 1.xl\)5rem !important;
+    .xl\)mar\:bottom\+1\.5 {
+        margin-bottom: 1.5rem !important;
     }
 
-    .xl\)mar\:bottom\+1\.xl\)75 {
-        margin-bottom: 1.xl\)75rem !important;
+    .xl\)mar\:bottom\+1\.75 {
+        margin-bottom: 1.75rem !important;
     }
 
     .xl\)mar\:bottom\+2 {
@@ -12383,32 +12383,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:bottom-0\.xl\)25 {
-        margin-bottom: -0.xl\)25rem !important;
+    .xl\)mar\:bottom-0\.25 {
+        margin-bottom: -0.25rem !important;
     }
 
-    .xl\)mar\:bottom-0\.xl\)5 {
-        margin-bottom: -0.xl\)5rem !important;
+    .xl\)mar\:bottom-0\.5 {
+        margin-bottom: -0.5rem !important;
     }
 
-    .xl\)mar\:bottom-0\.xl\)75 {
-        margin-bottom: -0.xl\)75rem !important;
+    .xl\)mar\:bottom-0\.75 {
+        margin-bottom: -0.75rem !important;
     }
 
     .xl\)mar\:bottom-1 {
         margin-bottom: -1rem !important;
     }
 
-    .xl\)mar\:bottom-1\.xl\)25 {
-        margin-bottom: -1.xl\)25rem !important;
+    .xl\)mar\:bottom-1\.25 {
+        margin-bottom: -1.25rem !important;
     }
 
-    .xl\)mar\:bottom-1\.xl\)5 {
-        margin-bottom: -1.xl\)5rem !important;
+    .xl\)mar\:bottom-1\.5 {
+        margin-bottom: -1.5rem !important;
     }
 
-    .xl\)mar\:bottom-1\.xl\)75 {
-        margin-bottom: -1.xl\)75rem !important;
+    .xl\)mar\:bottom-1\.75 {
+        margin-bottom: -1.75rem !important;
     }
 
     .xl\)mar\:bottom-2 {
@@ -12416,32 +12416,32 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:left\+0\.xl\)25 {
-        margin-left: 0.xl\)25rem !important;
+    .xl\)mar\:left\+0\.25 {
+        margin-left: 0.25rem !important;
     }
 
-    .xl\)mar\:left\+0\.xl\)5 {
-        margin-left: 0.xl\)5rem !important;
+    .xl\)mar\:left\+0\.5 {
+        margin-left: 0.5rem !important;
     }
 
-    .xl\)mar\:left\+0\.xl\)75 {
-        margin-left: 0.xl\)75rem !important;
+    .xl\)mar\:left\+0\.75 {
+        margin-left: 0.75rem !important;
     }
 
     .xl\)mar\:left\+1 {
         margin-left: 1rem !important;
     }
 
-    .xl\)mar\:left\+1\.xl\)25 {
-        margin-left: 1.xl\)25rem !important;
+    .xl\)mar\:left\+1\.25 {
+        margin-left: 1.25rem !important;
     }
 
-    .xl\)mar\:left\+1\.xl\)5 {
-        margin-left: 1.xl\)5rem !important;
+    .xl\)mar\:left\+1\.5 {
+        margin-left: 1.5rem !important;
     }
 
-    .xl\)mar\:left\+1\.xl\)75 {
-        margin-left: 1.xl\)75rem !important;
+    .xl\)mar\:left\+1\.75 {
+        margin-left: 1.75rem !important;
     }
 
     .xl\)mar\:left\+2 {
@@ -12456,32 +12456,32 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:left-0\.xl\)25 {
-        margin-left: -0.xl\)25rem !important;
+    .xl\)mar\:left-0\.25 {
+        margin-left: -0.25rem !important;
     }
 
-    .xl\)mar\:left-0\.xl\)5 {
-        margin-left: -0.xl\)5rem !important;
+    .xl\)mar\:left-0\.5 {
+        margin-left: -0.5rem !important;
     }
 
-    .xl\)mar\:left-0\.xl\)75 {
-        margin-left: -0.xl\)75rem !important;
+    .xl\)mar\:left-0\.75 {
+        margin-left: -0.75rem !important;
     }
 
     .xl\)mar\:left-1 {
         margin-left: -1rem !important;
     }
 
-    .xl\)mar\:left-1\.xl\)25 {
-        margin-left: -1.xl\)25rem !important;
+    .xl\)mar\:left-1\.25 {
+        margin-left: -1.25rem !important;
     }
 
-    .xl\)mar\:left-1\.xl\)5 {
-        margin-left: -1.xl\)5rem !important;
+    .xl\)mar\:left-1\.5 {
+        margin-left: -1.5rem !important;
     }
 
-    .xl\)mar\:left-1\.xl\)75 {
-        margin-left: -1.xl\)75rem !important;
+    .xl\)mar\:left-1\.75 {
+        margin-left: -1.75rem !important;
     }
 
     .xl\)mar\:left-2 {
@@ -12489,19 +12489,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:hrz\+0\.xl\)25 {
-        margin-left: 0.xl\)25rem !important;
-        margin-right: 0.xl\)25rem !important;
+    .xl\)mar\:hrz\+0\.25 {
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
     }
 
-    .xl\)mar\:hrz\+0\.xl\)5 {
-        margin-left: 0.xl\)5rem !important;
-        margin-right: 0.xl\)5rem !important;
+    .xl\)mar\:hrz\+0\.5 {
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
     }
 
-    .xl\)mar\:hrz\+0\.xl\)75 {
-        margin-left: 0.xl\)75rem !important;
-        margin-right: 0.xl\)75rem !important;
+    .xl\)mar\:hrz\+0\.75 {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
     }
 
     .xl\)mar\:hrz\+1 {
@@ -12509,19 +12509,19 @@ table.cols\:fixed {
         margin-right: 1rem !important;
     }
 
-    .xl\)mar\:hrz\+1\.xl\)25 {
-        margin-left: 1.xl\)25rem !important;
-        margin-right: 1.xl\)25rem !important;
+    .xl\)mar\:hrz\+1\.25 {
+        margin-left: 1.25rem !important;
+        margin-right: 1.25rem !important;
     }
 
-    .xl\)mar\:hrz\+1\.xl\)5 {
-        margin-left: 1.xl\)5rem !important;
-        margin-right: 1.xl\)5rem !important;
+    .xl\)mar\:hrz\+1\.5 {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
     }
 
-    .xl\)mar\:hrz\+1\.xl\)75 {
-        margin-left: 1.xl\)75rem !important;
-        margin-right: 1.xl\)75rem !important;
+    .xl\)mar\:hrz\+1\.75 {
+        margin-left: 1.75rem !important;
+        margin-right: 1.75rem !important;
     }
 
     .xl\)mar\:hrz\+2 {
@@ -12538,19 +12538,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:hrz-0\.xl\)25 {
-        margin-left: -0.xl\)25rem !important;
-        margin-right: -0.xl\)25rem !important;
+    .xl\)mar\:hrz-0\.25 {
+        margin-left: -0.25rem !important;
+        margin-right: -0.25rem !important;
     }
 
-    .xl\)mar\:hrz-0\.xl\)5 {
-        margin-left: -0.xl\)5rem !important;
-        margin-right: -0.xl\)5rem !important;
+    .xl\)mar\:hrz-0\.5 {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
     }
 
-    .xl\)mar\:hrz-0\.xl\)75 {
-        margin-left: -0.xl\)75rem !important;
-        margin-right: -0.xl\)75rem !important;
+    .xl\)mar\:hrz-0\.75 {
+        margin-left: -0.75rem !important;
+        margin-right: -0.75rem !important;
     }
 
     .xl\)mar\:hrz-1 {
@@ -12558,19 +12558,19 @@ table.cols\:fixed {
         margin-right: -1rem !important;
     }
 
-    .xl\)mar\:hrz-1\.xl\)25 {
-        margin-left: -1.xl\)25rem !important;
-        margin-right: -1.xl\)25rem !important;
+    .xl\)mar\:hrz-1\.25 {
+        margin-left: -1.25rem !important;
+        margin-right: -1.25rem !important;
     }
 
-    .xl\)mar\:hrz-1\.xl\)5 {
-        margin-left: -1.xl\)5rem !important;
-        margin-right: -1.xl\)5rem !important;
+    .xl\)mar\:hrz-1\.5 {
+        margin-left: -1.5rem !important;
+        margin-right: -1.5rem !important;
     }
 
-    .xl\)mar\:hrz-1\.xl\)75 {
-        margin-left: -1.xl\)75rem !important;
-        margin-right: -1.xl\)75rem !important;
+    .xl\)mar\:hrz-1\.75 {
+        margin-left: -1.75rem !important;
+        margin-right: -1.75rem !important;
     }
 
     .xl\)mar\:hrz-2 {
@@ -12579,19 +12579,19 @@ table.cols\:fixed {
     }
 
     /*: add margin :*/
-    .xl\)mar\:vrt\+0\.xl\)25 {
-        margin-top: 0.xl\)25rem !important;
-        margin-bottom: 0.xl\)25rem !important;
+    .xl\)mar\:vrt\+0\.25 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .xl\)mar\:vrt\+0\.xl\)5 {
-        margin-top: 0.xl\)5rem !important;
-        margin-bottom: 0.xl\)5rem !important;
+    .xl\)mar\:vrt\+0\.5 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    .xl\)mar\:vrt\+0\.xl\)75 {
-        margin-top: 0.xl\)75rem !important;
-        margin-bottom: 0.xl\)75rem !important;
+    .xl\)mar\:vrt\+0\.75 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .xl\)mar\:vrt\+1 {
@@ -12599,19 +12599,19 @@ table.cols\:fixed {
         margin-bottom: 1rem !important;
     }
 
-    .xl\)mar\:vrt\+1\.xl\)25 {
-        margin-top: 1.xl\)25rem !important;
-        margin-bottom: 1.xl\)25rem !important;
+    .xl\)mar\:vrt\+1\.25 {
+        margin-top: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
     }
 
-    .xl\)mar\:vrt\+1\.xl\)5 {
-        margin-top: 1.xl\)5rem !important;
-        margin-bottom: 1.xl\)5rem !important;
+    .xl\)mar\:vrt\+1\.5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .xl\)mar\:vrt\+1\.xl\)75 {
-        margin-top: 1.xl\)75rem !important;
-        margin-bottom: 1.xl\)75rem !important;
+    .xl\)mar\:vrt\+1\.75 {
+        margin-top: 1.75rem !important;
+        margin-bottom: 1.75rem !important;
     }
 
     .xl\)mar\:vrt\+2 {
@@ -12628,19 +12628,19 @@ table.cols\:fixed {
     }
 
     /*: subtract margin :*/
-    .xl\)mar\:vrt-0\.xl\)25 {
-        margin-top: -0.xl\)25rem !important;
-        margin-bottom: -0.xl\)25rem !important;
+    .xl\)mar\:vrt-0\.25 {
+        margin-top: -0.25rem !important;
+        margin-bottom: -0.25rem !important;
     }
 
-    .xl\)mar\:vrt-0\.xl\)5 {
-        margin-top: -0.xl\)5rem !important;
-        margin-bottom: -0.xl\)5rem !important;
+    .xl\)mar\:vrt-0\.5 {
+        margin-top: -0.5rem !important;
+        margin-bottom: -0.5rem !important;
     }
 
-    .xl\)mar\:vrt-0\.xl\)75 {
-        margin-top: -0.xl\)75rem !important;
-        margin-bottom: -0.xl\)75rem !important;
+    .xl\)mar\:vrt-0\.75 {
+        margin-top: -0.75rem !important;
+        margin-bottom: -0.75rem !important;
     }
 
     .xl\)mar\:vrt-1 {
@@ -12648,19 +12648,19 @@ table.cols\:fixed {
         margin-bottom: -1rem !important;
     }
 
-    .xl\)mar\:vrt-1\.xl\)25 {
-        margin-top: -1.xl\)25rem !important;
-        margin-bottom: -1.xl\)25rem !important;
+    .xl\)mar\:vrt-1\.25 {
+        margin-top: -1.25rem !important;
+        margin-bottom: -1.25rem !important;
     }
 
-    .xl\)mar\:vrt-1\.xl\)5 {
-        margin-top: -1.xl\)5rem !important;
-        margin-bottom: -1.xl\)5rem !important;
+    .xl\)mar\:vrt-1\.5 {
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
     }
 
-    .xl\)mar\:vrt-1\.xl\)75 {
-        margin-top: -1.xl\)75rem !important;
-        margin-bottom: -1.xl\)75rem !important;
+    .xl\)mar\:vrt-1\.75 {
+        margin-top: -1.75rem !important;
+        margin-bottom: -1.75rem !important;
     }
 
     .xl\)mar\:vrt-2 {
@@ -12674,32 +12674,32 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
-    .xl\)pad\:\+0\.xl\)25 {
-        padding: 0.xl\)25rem !important;
+    .xl\)pad\:\+0\.25 {
+        padding: 0.25rem !important;
     }
 
-    .xl\)pad\:\+0\.xl\)5 {
-        padding: 0.xl\)5rem !important;
+    .xl\)pad\:\+0\.5 {
+        padding: 0.5rem !important;
     }
 
-    .xl\)pad\:\+0\.xl\)75 {
-        padding: 0.xl\)75rem !important;
+    .xl\)pad\:\+0\.75 {
+        padding: 0.75rem !important;
     }
 
     .xl\)pad\:\+1 {
         padding: 1rem !important;
     }
 
-    .xl\)pad\:\+1\.xl\)25 {
-        padding: 1.xl\)25rem !important;
+    .xl\)pad\:\+1\.25 {
+        padding: 1.25rem !important;
     }
 
-    .xl\)pad\:\+1\.xl\)5 {
-        padding: 1.xl\)5rem !important;
+    .xl\)pad\:\+1\.5 {
+        padding: 1.5rem !important;
     }
 
-    .xl\)pad\:\+1\.xl\)75 {
-        padding: 1.xl\)75rem !important;
+    .xl\)pad\:\+1\.75 {
+        padding: 1.75rem !important;
     }
 
     .xl\)pad\:\+2 {
@@ -12712,32 +12712,32 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .xl\)pad\:top\+0\.xl\)25 {
-        padding-top: 0.xl\)25rem !important;
+    .xl\)pad\:top\+0\.25 {
+        padding-top: 0.25rem !important;
     }
 
-    .xl\)pad\:top\+0\.xl\)5 {
-        padding-top: 0.xl\)5rem !important;
+    .xl\)pad\:top\+0\.5 {
+        padding-top: 0.5rem !important;
     }
 
-    .xl\)pad\:top\+0\.xl\)75 {
-        padding-top: 0.xl\)75rem !important;
+    .xl\)pad\:top\+0\.75 {
+        padding-top: 0.75rem !important;
     }
 
     .xl\)pad\:top\+1 {
         padding-top: 1rem !important;
     }
 
-    .xl\)pad\:top\+1\.xl\)25 {
-        padding-top: 1.xl\)25rem !important;
+    .xl\)pad\:top\+1\.25 {
+        padding-top: 1.25rem !important;
     }
 
-    .xl\)pad\:top\+1\.xl\)5 {
-        padding-top: 1.xl\)5rem !important;
+    .xl\)pad\:top\+1\.5 {
+        padding-top: 1.5rem !important;
     }
 
-    .xl\)pad\:top\+1\.xl\)75 {
-        padding-top: 1.xl\)75rem !important;
+    .xl\)pad\:top\+1\.75 {
+        padding-top: 1.75rem !important;
     }
 
     .xl\)pad\:top\+2 {
@@ -12750,32 +12750,32 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .xl\)pad\:right\+0\.xl\)25 {
-        padding-right: 0.xl\)25rem !important;
+    .xl\)pad\:right\+0\.25 {
+        padding-right: 0.25rem !important;
     }
 
-    .xl\)pad\:right\+0\.xl\)5 {
-        padding-right: 0.xl\)5rem !important;
+    .xl\)pad\:right\+0\.5 {
+        padding-right: 0.5rem !important;
     }
 
-    .xl\)pad\:right\+0\.xl\)75 {
-        padding-right: 0.xl\)75rem !important;
+    .xl\)pad\:right\+0\.75 {
+        padding-right: 0.75rem !important;
     }
 
     .xl\)pad\:right\+1 {
         padding-right: 1rem !important;
     }
 
-    .xl\)pad\:right\+1\.xl\)25 {
-        padding-right: 1.xl\)25rem !important;
+    .xl\)pad\:right\+1\.25 {
+        padding-right: 1.25rem !important;
     }
 
-    .xl\)pad\:right\+1\.xl\)5 {
-        padding-right: 1.xl\)5rem !important;
+    .xl\)pad\:right\+1\.5 {
+        padding-right: 1.5rem !important;
     }
 
-    .xl\)pad\:right\+1\.xl\)75 {
-        padding-right: 1.xl\)75rem !important;
+    .xl\)pad\:right\+1\.75 {
+        padding-right: 1.75rem !important;
     }
 
     .xl\)pad\:right\+2 {
@@ -12788,32 +12788,32 @@ table.cols\:fixed {
         padding-bottom: 0 !important;
     }
 
-    .xl\)pad\:bottom\+0\.xl\)25 {
-        padding-bottom: 0.xl\)25rem !important;
+    .xl\)pad\:bottom\+0\.25 {
+        padding-bottom: 0.25rem !important;
     }
 
-    .xl\)pad\:bottom\+0\.xl\)5 {
-        padding-bottom: 0.xl\)5rem !important;
+    .xl\)pad\:bottom\+0\.5 {
+        padding-bottom: 0.5rem !important;
     }
 
-    .xl\)pad\:bottom\+0\.xl\)75 {
-        padding-bottom: 0.xl\)75rem !important;
+    .xl\)pad\:bottom\+0\.75 {
+        padding-bottom: 0.75rem !important;
     }
 
     .xl\)pad\:bottom\+1 {
         padding-bottom: 1rem !important;
     }
 
-    .xl\)pad\:bottom\+1\.xl\)25 {
-        padding-bottom: 1.xl\)25rem !important;
+    .xl\)pad\:bottom\+1\.25 {
+        padding-bottom: 1.25rem !important;
     }
 
-    .xl\)pad\:bottom\+1\.xl\)5 {
-        padding-bottom: 1.xl\)5rem !important;
+    .xl\)pad\:bottom\+1\.5 {
+        padding-bottom: 1.5rem !important;
     }
 
-    .xl\)pad\:bottom\+1\.xl\)75 {
-        padding-bottom: 1.xl\)75rem !important;
+    .xl\)pad\:bottom\+1\.75 {
+        padding-bottom: 1.75rem !important;
     }
 
     .xl\)pad\:bottom\+2 {
@@ -12826,32 +12826,32 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
-    .xl\)pad\:left\+0\.xl\)25 {
-        padding-left: 0.xl\)25rem !important;
+    .xl\)pad\:left\+0\.25 {
+        padding-left: 0.25rem !important;
     }
 
-    .xl\)pad\:left\+0\.xl\)5 {
-        padding-left: 0.xl\)5rem !important;
+    .xl\)pad\:left\+0\.5 {
+        padding-left: 0.5rem !important;
     }
 
-    .xl\)pad\:left\+0\.xl\)75 {
-        padding-left: 0.xl\)75rem !important;
+    .xl\)pad\:left\+0\.75 {
+        padding-left: 0.75rem !important;
     }
 
     .xl\)pad\:left\+1 {
         padding-left: 1rem !important;
     }
 
-    .xl\)pad\:left\+1\.xl\)25 {
-        padding-left: 1.xl\)25rem !important;
+    .xl\)pad\:left\+1\.25 {
+        padding-left: 1.25rem !important;
     }
 
-    .xl\)pad\:left\+1\.xl\)5 {
-        padding-left: 1.xl\)5rem !important;
+    .xl\)pad\:left\+1\.5 {
+        padding-left: 1.5rem !important;
     }
 
-    .xl\)pad\:left\+1\.xl\)75 {
-        padding-left: 1.xl\)75rem !important;
+    .xl\)pad\:left\+1\.75 {
+        padding-left: 1.75rem !important;
     }
 
     .xl\)pad\:left\+2 {
@@ -12865,19 +12865,19 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
-    .xl\)pad\:hrz\+0\.xl\)25 {
-        padding-left: 0.xl\)25rem !important;
-        padding-right: 0.xl\)25rem !important;
+    .xl\)pad\:hrz\+0\.25 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
     }
 
-    .xl\)pad\:hrz\+0\.xl\)5 {
-        padding-left: 0.xl\)5rem !important;
-        padding-right: 0.xl\)5rem !important;
+    .xl\)pad\:hrz\+0\.5 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
-    .xl\)pad\:hrz\+0\.xl\)75 {
-        padding-left: 0.xl\)75rem !important;
-        padding-right: 0.xl\)75rem !important;
+    .xl\)pad\:hrz\+0\.75 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 
     .xl\)pad\:hrz\+1 {
@@ -12885,19 +12885,19 @@ table.cols\:fixed {
         padding-right: 1rem !important;
     }
 
-    .xl\)pad\:hrz\+1\.xl\)25 {
-        padding-left: 1.xl\)25rem !important;
-        padding-right: 1.xl\)25rem !important;
+    .xl\)pad\:hrz\+1\.25 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
     }
 
-    .xl\)pad\:hrz\+1\.xl\)5 {
-        padding-left: 1.xl\)5rem !important;
-        padding-right: 1.xl\)5rem !important;
+    .xl\)pad\:hrz\+1\.5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
-    .xl\)pad\:hrz\+1\.xl\)75 {
-        padding-left: 1.xl\)75rem !important;
-        padding-right: 1.xl\)75rem !important;
+    .xl\)pad\:hrz\+1\.75 {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
     }
 
     .xl\)pad\:hrz\+2 {
@@ -12912,19 +12912,19 @@ table.cols\:fixed {
         padding-top: 0 !important;
     }
 
-    .xl\)pad\:vrt\+0\.xl\)25 {
-        padding-bottom: 0.xl\)25rem !important;
-        padding-top: 0.xl\)25rem !important;
+    .xl\)pad\:vrt\+0\.25 {
+        padding-bottom: 0.25rem !important;
+        padding-top: 0.25rem !important;
     }
 
-    .xl\)pad\:vrt\+0\.xl\)5 {
-        padding-bottom: 0.xl\)5rem !important;
-        padding-top: 0.xl\)5rem !important;
+    .xl\)pad\:vrt\+0\.5 {
+        padding-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
     }
 
-    .xl\)pad\:vrt\+0\.xl\)75 {
-        padding-bottom: 0.xl\)75rem !important;
-        padding-top: 0.xl\)75rem !important;
+    .xl\)pad\:vrt\+0\.75 {
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
     }
 
     .xl\)pad\:vrt\+1 {
@@ -12932,19 +12932,19 @@ table.cols\:fixed {
         padding-top: 1rem !important;
     }
 
-    .xl\)pad\:vrt\+1\.xl\)25 {
-        padding-bottom: 1.xl\)25rem !important;
-        padding-top: 1.xl\)25rem !important;
+    .xl\)pad\:vrt\+1\.25 {
+        padding-bottom: 1.25rem !important;
+        padding-top: 1.25rem !important;
     }
 
-    .xl\)pad\:vrt\+1\.xl\)5 {
-        padding-bottom: 1.xl\)5rem !important;
-        padding-top: 1.xl\)5rem !important;
+    .xl\)pad\:vrt\+1\.5 {
+        padding-bottom: 1.5rem !important;
+        padding-top: 1.5rem !important;
     }
 
-    .xl\)pad\:vrt\+1\.xl\)75 {
-        padding-bottom: 1.xl\)75rem !important;
-        padding-top: 1.xl\)75rem !important;
+    .xl\)pad\:vrt\+1\.75 {
+        padding-bottom: 1.75rem !important;
+        padding-top: 1.75rem !important;
     }
 
     .xl\)pad\:vrt\+2 {
@@ -13013,7 +13013,7 @@ table.cols\:fixed {
     }
 
     .xl\)trk\:narrow {
-        letter-spacing: -0.xl\)01rem !important;
+        letter-spacing: -0.01rem !important;
     }
 
     .xl\)trk\:normal,
@@ -13022,11 +13022,11 @@ table.cols\:fixed {
     }
 
     .xl\)trk\:wide {
-        letter-spacing: 0.xl\)1rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
     .xl\)trk\:x-wide {
-        letter-spacing: 0.xl\)5rem !important;
+        letter-spacing: 0.5rem !important;
     }
 
     .xl\)wd\:auto {
