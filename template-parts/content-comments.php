@@ -1,34 +1,34 @@
 <?php
 /*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       content-comments.php
- * Function:        display post comments
- * Build:           200429
- * GitHub:          github.com/WpThemeDev/xidipity/
- * License URI:     www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @see wp_list_comments()
- * @see developer.wordpress.org/reference/functions/get_comment_author_url/
- * @see developer.wordpress.org/reference/functions/get_comment_author/
- * @see developer.wordpress.org/reference/functions/get_avatar/
- * @see developer.wordpress.org/reference/functions/get_comment_reply_link/
- * @see developer.wordpress.org/reference/functions/get_edit_comment_link/
- * @see developer.wordpress.org/reference/functions/get_comments/
- * @see developer.wordpress.org/reference/functions/get_comments_number/
- *
- */
+    * WordPress Xidipity Theme PHP File
+    *
+    * File Name:       content-comments.php
+    * Function:        display post comments
+    * Build:           200429
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @see wp_list_comments()
+    * @see developer.wordpress.org/reference/functions/get_comment_author_url/
+    * @see developer.wordpress.org/reference/functions/get_comment_author/
+    * @see developer.wordpress.org/reference/functions/get_avatar/
+    * @see developer.wordpress.org/reference/functions/get_comment_reply_link/
+    * @see developer.wordpress.org/reference/functions/get_edit_comment_link/
+    * @see developer.wordpress.org/reference/functions/get_comments/
+    * @see developer.wordpress.org/reference/functions/get_comments_number/
+    *
+*/
 
 global $wp_query, $comment_alt, $comment_depth, $comment_thread_alt, $overridden_cpage, $in_comment_loop;
 
 echo '<!--  ct:COMMENTS -->' . "\n";
-echo '<div class="bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
+echo '<div class="bg:content fg:content dsp:block pad:hrz+1 mar:bottom+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
 
 $comments_args = array(
     //'status'  => 'approved',
