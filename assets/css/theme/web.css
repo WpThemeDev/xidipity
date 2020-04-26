@@ -781,84 +781,53 @@ a.hdr\:title:hover {
 
 /*
 ***
-    * property: dots
-    * dsc: dots between page numbers
-    * ver: 200322
-    * fnt: display dots icon
-    * ref:
+    * element: pagination
+    * dsc: pagination fx item classes
+    * ver: 200429
+    * fnt: supports paginate_links
+    * ref: developer.wordpress.org/reference/functions/paginate_links/
 ***
 */
-span.dots {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: transparent;
-    color: var(--content-fg-color);
-    font-size: small;
-    height: 3rem;
-    width: 3rem;
-}
 
-/*
-***
-    * property: current
-    * dsc: current page number
-    * ver: 200322
-    * fnt: style current page numbers
-    * ref:
-***
-*/
-span.current {
-    background-color: var(--hue-bas-300);
-    border-radius: 100%;
-    color: var(--content-fg-color);
-    font-size: small;
-}
-
-/*
-***
-    * property: page-numbers
-    * dsc: page navigation
-    * ver: 200322
-    * fnt: style pagination numbers
-    * ref:
-***
-*/
+span.current,
 a.page-numbers,
-a.page-numbers:visited {
-    background-color: var(--hue-pri);
-    border-radius: 100%;
-    color: var(--hue-wht);
-    font-size: small;
-    text-decoration: none;
+span.page-numbers {
+    /*: fxd:4:*/
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    /*: fxe:6:*/
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    border-radius: 0.3333rem;
+    color: var(--content-fg-color);
+    font-weight: bolder;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    text-align: center;
 }
 
-a.page-numbers:hover {
-    background-color: var(--hue-pri-dark);
-    color: var(--hue-wht);
-    -webkit-tap-highlight-color: transparent;
+.dots {
+    font-weight: 900;
 }
 
+span.current {
+    color: var(--hue-sec-bright);
+    font-weight: bold;
+}
+
+a.page-numbers:hover,
 a.page-numbers:active,
 a.page-numbers:focus {
-    background-color: var(--hue-sec);
-    color: var(--content-fg-color);
-    -webkit-tap-highlight-color: transparent;
+    background-color: var(--hue-pri-bright);
+    color: var(--hue-wht);
+    cursor: pointer;
 }
 
 /*
