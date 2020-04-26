@@ -466,47 +466,27 @@ if (!function_exists('xidipity_paginate_links'))
 {
     function xidipity_paginate_links($atts = array())
     {
-        global $wp;
-        $wp_url = add_query_arg( $wp->query_vars, home_url( $wp->request ) );
-        /*: variables   :*/
-        $v_page = 1;
-        $v_pages = 10;
-        $v_url = strtolower($wp_url);
-        /*: attributes  :*/
-        $a_page = 0;
-        $a_pages = 0;
-        /*: initialize attributes   :*/
-        if (isset($atts['page']))
-        {
-            $a_page = abs($atts['page']);
-        }
-        if (isset($atts['pages']))
-        {
-            $a_pages = abs($atts['pages']);
-        }
-        /*: sanitize attributes :*/
-        if ($a_page >0) {
-            $v_page = $a_page;
-        }
-        if ($a_pages >0) {
-            $v_pages = $a_pages;
-        }
-
-        $html_retval = '<div class="fx:r fxa:5 fxb:1 fxc:3 bdr:top-solid-thin bdr:bas-300 pad:vrt+0.75 cnr:arch-small wd:100%">';
-        $html_retval .=  paginate_links(array(
-            'after_page_number' => '</div>',
-            'base' => '%_%',
-            'before_page_number' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">',
-            'current' => $a_page,
-            'format' => '?paged=%#%',
-            'next_text' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">' . xidipity_icon_caret_right() . '</div>',
-            'prev_text' => '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2">' . xidipity_icon_caret_left() . '</div>',
-            'total' => $a_pages,
-        ));
+        $args = array(
+            'base'               => get_pagenum_link(1) . '%_%',
+            'format'             => '/page/%#%',
+            'total'              => abs($atts['pages']),
+            'current'            => abs($atts['page']),
+            'show_all'           => false,
+            'end_size'           => 1,
+            'mid_size'           => 2,
+            'prev_next'          => true,
+            'prev_text'          => '<i class="fas fa-chevron-left"></i>',
+            'next_text'          => '<i class="fas fa-chevron-right"></i>',
+            'type'               => 'plain',
+            'add_args'           => false,
+            'add_fragment'       => '',
+            'before_page_number' => '',
+            'after_page_number'  => ''
+        );
+        $html_retval  = '<div class="fx:r fxa:4 fxb:6 fxc:1 bg:bas-050 cnr:arch-small mar:vrt+0.25 pad:+0.5">';
+        $html_retval .=  paginate_links($args);
         $html_retval .= '</div>';
-
-        /*: return html :*/
-        return str_replace('&hellip;','<i class="fas fa-exchange-alt fg:bas-500"></i>',$html_retval);
+        return $html_retval;
     }
 }
 
