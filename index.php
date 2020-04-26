@@ -4,7 +4,7 @@
  *
  * File Name:       index.php
  * Function:        display excerpt summary
- * Build:           200422
+ * Build:           200429
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -183,13 +183,18 @@ if ($wp_data->have_posts())
         * ref:
     ***
     */
-    $total_pages = $wp_data->max_num_pages;
-    if ($total_pages > 1)
+    if (function_exists('xidipity_paginate_links'))
     {
-        echo '<!--  xwpt: 190927/php/page/pagination      -->' . "\n";
-        $current_page = max(1, get_query_var('paged'));
-        echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
-        echo '<!-- /xwpt: 190927/php/page/pagination      -->' . "\n";
+        $total_pages = $wp_data->max_num_pages;
+        if ($total_pages > 1)
+        {
+            $current_page = max(1, get_query_var('paged'));
+            echo '<div class="bg:bas-300 ln mar:top+0.75">&#8203;</div>' . "\n";
+            echo '<!--  pg:PAGINATION -->' . "\n";
+            echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
+            echo '<!-- /pg:PAGINATION -->' . "\n";
+            echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+        }
     }
 }
 else
@@ -276,7 +281,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     index.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
