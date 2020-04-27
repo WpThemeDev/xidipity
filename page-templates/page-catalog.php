@@ -29,6 +29,16 @@ disp_menu('yes');
 
 /*
 ***
+    * pagination variables
+***
+*/
+/*: current pagination number :*/
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*: posts per page :*/
+$wp_ppp = 20;
+
+/*
+***
     * function: get_header
     * dsc: header code
     * ver: 200322
@@ -68,9 +78,10 @@ $qry_prms = array(
     'orderby' => 'date',
     'order'   => 'DESC',
     'perm' => 'readable',
+    'paged' => $wp_paged,
     'post_type' => 'page',
     'post_status' => 'any',
-    'posts_per_page' => -1
+    'posts_per_page' => $wp_ppp
 );
 $wp_data = new WP_Query($qry_prms);
 
@@ -153,28 +164,33 @@ if ($wp_data->have_posts())
 
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
     /*
     ***
-        * page footer
+        * function: pagination
+        * dsc: display pagination
+        * ver: 200322
+        * fnt: display pagination if paged & number of
+        *      records exceeds limit/page
+        * ref:
     ***
     */
-    $footer_items = '';
-    /*: edit :*/
-    if (get_edit_post_link())
-    {
-        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
-    }
-    /*: modified date :*/
-    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: current date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
 echo '</article>' . "\n";
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
