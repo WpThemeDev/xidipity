@@ -109,30 +109,30 @@ if ($wp_query->have_posts())
     echo '<!-- /bk:1/PARAGRAPH -->' . "\n";
 
     echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
-    /*
-    ***
-        * page footer
-    ***
-    */
-    $footer_items = '';
-    /*: edit :*/
-    if (get_edit_post_link())
-    {
-        $footer_items .= dsp_edit(get_edit_post_link()) . '|';
-    }
-    /*: modified date :*/
-    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
     get_template_part('template-parts/content', 'none');
 }
+
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+}
+/*: today's date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
 echo '</article>' . "\n";
 echo '<!-- /bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
