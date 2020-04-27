@@ -1361,38 +1361,69 @@ function dsp_sticky($arg = '')
 }
 
 /**
- *  name: dsp_date
- *  build: 200206
- *  description: Return properly formatted post date HTML string
+ *  name: dsp_today
+ *  build: 200429
+ *  description: return calendar icon || icon with date
  *  attributes:
  *      $arg - string
  *  ref:
  *
  */
-function dsp_date($args = '')
+function dsp_today($arg = '')
 {
     // system
     $fn_retval = '';
-    // atributes (formatted date)
-    if (empty($args))
+    $icon = '';
+    if (function_exists('xidipity_icon_calendar'))
     {
-        $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#8203;</i></span>' . current_time(get_option('date_format')) . '</p>';
+        $icon = xidipity_icon_today();
     }
-    elseif ($args = 'plain')
+    if (empty($arg))
     {
-        $fn_retval = '<p>' . current_time(get_option('date_format')) . '</p>';
+        $fn_retval = $icon;
     }
     else
     {
-        $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5"><i class="far fa-calendar-alt">&#8203;</i></span>' . $args . '</p>';
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
     }
     // return html
     return $fn_retval;
 }
+
+/**
+ *  name: dsp_date
+ *  build: 200429
+ *  description: return calendar icon || icon with date
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_date($arg = '')
+{
+    // system
+    $fn_retval = '';
+    $icon = '';
+    if (function_exists('xidipity_icon_calendar'))
+    {
+        $icon = xidipity_icon_calendar();
+    }
+    if (empty($arg))
+    {
+        $fn_retval = $icon;
+    }
+    else
+    {
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+    }
+    // return html
+    return $fn_retval;
+}
+
 /**
  *  name: dsp_edit
- *  build: 200206
- *  description: Return properly formatted edit post HTML string
+ *  build: 200429
+ *  description: return calendar icon || icon with post link
  *  attributes:
  *      $arg - string
  *  ref:
@@ -1402,11 +1433,18 @@ function dsp_edit($arg = '')
 {
     // system
     $fn_retval = '';
-    // atributes (page url)
-    $v_html = trim($arg);
-    if (!empty($v_html))
+    $icon = '';
+    if (function_exists('xidipity_icon_edit'))
     {
-        $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.25">' . xidipity_icon_edit() . '</span><a href="' . $v_html . '">Edit</a></p>';
+        $icon = xidipity_icon_edit();
+    }
+    if (empty($arg))
+    {
+        $fn_retval = $icon;
+    }
+    else
+    {
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
     }
     // return html
     return $fn_retval;
