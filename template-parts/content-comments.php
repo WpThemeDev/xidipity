@@ -270,7 +270,7 @@ if ($have_comments)
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments'))
 {
     echo '<div class="fnt:size-smaller mar:vrt+0.75">' . "\n";
-    echo '<p><span class="fg:sec-dark pad:right+0.25">' . xidipity_icon_closed('fnt:size-small') . '</span>Comments are closed.</p>' . "\n";
+    echo '<p><span class="fg:sec-dark pad:right+0.25">' . xidipity_icon_x_comments('small') . '</span>Comments are closed.</p>' . "\n";
     echo '</div>' . "\n";
 }
 
@@ -280,12 +280,12 @@ if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_p
  ***
 */
 comment_form(array(
-    'title_reply' => xidipity_icon_discuss() . '<span class="pad:left+0.5">Your Comment</span>',
+    'title_reply' => '<span class="fg:pri-dark pad:right+0.25">' . xidipity_icon_comments('h3') . '</span>Your Comment',
     'logged_in_as' => ''
 ));
 if ( comments_open() && wp_plugin('akismet/akismet.php') )
 {
-    echo '<p class="fnt:size-smaller mar:vrt+1">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/">Learn how your comment data is processed.</a></p>' . "\n";
+    echo '<p class="fnt:size-smaller">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/">Learn how your comment data is processed.</a></p>' . "\n";
 }
 echo '<!--  ct:COMMENTS -->' . "\n";
 echo '</div>' . "\n";
