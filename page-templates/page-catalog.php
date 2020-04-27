@@ -160,14 +160,19 @@ if ($wp_data->have_posts())
         * page footer
     ***
     */
-    /*: date :*/
-    $footer_items = dsp_date(date(get_option('date_format'))) . '|';
+    $footer_items = '';
+    /*: edit :*/
+    if (get_edit_post_link())
+    {
+        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+    }
+    /*: modified date :*/
+    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
     echo '</footer>' . "\n";
     echo '<!-- /ct:FOOTER -->' . "\n";
-
 }
 
 echo '</article>' . "\n";
