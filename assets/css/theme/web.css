@@ -219,6 +219,67 @@ body {
 
 /*
 ***
+    * property: comment-respond
+    * dsc: comment wrapper
+    * ver: 200429
+    * fnt: add vertical padding
+    * ref:
+***
+*/
+.comment-respond {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+/*
+***
+    * property: comment-notes
+    * dsc: notice
+    * ver: 200429
+    * fnt: email byline
+    * ref:
+***
+*/
+.comment-notes {
+    font-size: smaller;
+}
+
+/*
+***
+    * property: comment-form-comment
+    * dsc: label
+    * ver: 200429
+    * fnt: comment textbox lable
+    * ref:
+***
+*/
+.comment-form-comment label {
+    display: none;
+}
+
+/*
+***
+    * property: comment-form-?
+    * dsc: label
+    * ver: 200429
+    * fnt: author input lable
+    * ref:
+***
+*/
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+    display: block;
+    margin-bottom: 0.125rem;
+}
+
+.comment-form-email label,
+.comment-form-url label {
+    margin-top: 0.125rem;
+}
+
+/*
+***
     * element: img
     * dsc: comment body vcard image
     * ver: 200322
