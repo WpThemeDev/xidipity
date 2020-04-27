@@ -108,7 +108,7 @@ if ($wp_query->have_posts())
     /*: edit :*/
     if (get_edit_post_link())
     {
-        $footer_items .= dsp_edit(get_edit_post_link()) . '|';
+        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
     }
     /*: modified date :*/
     $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
