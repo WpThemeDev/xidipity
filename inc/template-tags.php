@@ -1,87 +1,36 @@
 <?php
 /*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       inc/template-tags.php
- * Function:        extended functinality
- * Build:           200429
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://codex.wordpress.org/Template_Tags
- *
- *
- * Other SVG styles
- *  h1 - width:width:3.25rem;height:3.25rem;display:inline;padding-bottom:8px;
- *  h2 - width:2.4375rem;height:2.4375rem;display:inline;padding-bottom:5px;
- *  h3 - width:2.125rem;height:2.125rem;display:inline;padding-bottom:4px;
- *  h4 - width:1.8125rem;height:1.8125rem;display:inline;padding-bottom:4px;
- *  h5 - width:1.5rem;height:1.5rem;display:inline;padding-bottom:3px;
- *  h6 - width:1.375rem;height:1.375rem;display:inline;padding-bottom:3px;
- *
- *  src: https://materialdesignicons.com/
- *
- */
-
-/*
-***
-    * ico: xidipity_icon_closed
-    * dsc: closed
-    * ver: 200422
-    * fnt: return closed icon
-    * arg: size (default is standard)
-***
+    * WordPress Xidipity Theme PHP File
+    *
+    * File Name:       inc/template-tags.php
+    * Function:        extended functinality
+    * Build:           200429
+    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            https://codex.wordpress.org/Template_Tags
+    *
+    *
+    * SVG icon sizes
+    *  h1      - svg:h1
+    *  h2      - svg:h2
+    *  h3      - svg:h3
+    *  h4      - svg:h4
+    *  h5      - svg:h5
+    *  h6      - svg:h6
+    *  large   - svg:large
+    *  medium  - svg:medium (default font size)
+    *  small   - svg:small
+    *
+    *  src: https://materialdesignicons.com/
+    *
 */
-if (!function_exists('xidipity_icon_closed'))
-{
-    function xidipity_icon_closed($arg='')
-    {
-        $ret_val = '';
-        switch ($arg)
-        {
-            case 'fnt:size-small':
-                $ret_val = '<svg style="width:1.125rem;height:1.125rem;display:inline;padding-bottom:4px;" viewBox="0 0 24 24"><path fill="currentColor" d="M15.46 15.88L16.88 14.46L19 16.59L21.12 14.47L22.54 15.88L20.41 18L22.54 20.12L21.12 21.54L19 19.41L16.88 21.54L15.46 20.12L17.59 18L15.47 15.88M12 3C17.5 3 22 6.58 22 11C22 11.58 21.92 12.14 21.78 12.68C20.95 12.25 20 12 19 12C15.69 12 13 14.69 13 18L13.08 18.95L12 19C10.76 19 9.57 18.82 8.47 18.5C5.55 21 2 21 2 21C4.33 18.67 4.7 17.1 4.75 16.5C3.05 15.07 2 13.14 2 11C2 6.58 6.5 3 12 3Z" /></svg>';
-                break;
-
-            default:
-                $ret_val = '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M15.46 15.88L16.88 14.46L19 16.59L21.12 14.47L22.54 15.88L20.41 18L22.54 20.12L21.12 21.54L19 19.41L16.88 21.54L15.46 20.12L17.59 18L15.47 15.88M12 3C17.5 3 22 6.58 22 11C22 11.58 21.92 12.14 21.78 12.68C20.95 12.25 20 12 19 12C15.69 12 13 14.69 13 18L13.08 18.95L12 19C10.76 19 9.57 18.82 8.47 18.5C5.55 21 2 21 2 21C4.33 18.67 4.7 17.1 4.75 16.5C3.05 15.07 2 13.14 2 11C2 6.58 6.5 3 12 3Z" /></svg>';
-        }
-        return $ret_val;
-    }
-}
-
-/*
-***
-    * ico: xidipity_icon_arrow_lt
-    * dsc: circle arrow left
-    * ver: 200422
-    * fnt: return arrow icon
-    * arg: size (default is standard)
-***
-*/
-if (!function_exists('xidipity_icon_arrow_lt'))
-{
-    function xidipity_icon_arrow_lt($arg='')
-    {
-        $ret_val = '';
-        switch ($arg)
-        {
-            case 'fnt:size-small':
-                $ret_val = '<svg style="width:1.125rem;height:1.125rem;display:inline;padding-bottom:4px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
-                break;
-
-            default:
-                $ret_val = '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12M18,11H10L13.5,7.5L12.08,6.08L6.16,12L12.08,17.92L13.5,16.5L10,13H18V11Z" /></svg>';
-        }
-        return $ret_val;
-    }
-}
 
 /*
 ***
@@ -94,60 +43,73 @@ if (!function_exists('xidipity_icon_arrow_lt'))
 */
 if (!function_exists('xidipity_icon_archive'))
 {
-    function xidipity_icon_archive()
+    function xidipity_icon_archive($arg='')
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
 /*
 ***
-    * ico: xidipity_icon_date
+    * ico: xidipity_icon_calendar
     * dsc: calendar
     * ver: 200206
-    * fnt: return font awesome calendar icon
-    * ref: https://fontawesome.com/icons/calendar-alt?style=regular
+    * fnt: return calendar icon
+    * ref: materialdesignicons.com
 ***
 */
-if (!function_exists('xidipity_icon_date'))
+if (!function_exists('xidipity_icon_calendar'))
 {
-    function xidipity_icon_date()
+    function xidipity_icon_calendar($arg='')
     {
-        return '<i class="far fa-calendar-alt"></i>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
 /*
 ***
-    * ico: xidipity_icon_question
-    * dsc: question mark
-    * ver: 200315
-    * fnt: return font awesome calendar icon
-    * ref: https://fontawesome.com/icons/question-circle?style=solid
+    * ico: xidipity_icon_today
+    * dsc: today calendar
+    * ver: 200429
+    * fnt: return today calendar icon
+    * ref: materialdesignicons.com
 ***
 */
-if (!function_exists('xidipity_icon_question'))
+if (!function_exists('xidipity_icon_today'))
 {
-    function xidipity_icon_question()
+    function xidipity_icon_today($arg='')
     {
-            return '<i class="fas fa-question-circle"></i>';
-    }
-}
-
-/*
-***
-    * ico: xidipity_icon_tags
-    * dsc: tags
-    * ver: 200206
-    * fnt: return font awesome tags icon
-    * ref: https://fontawesome.com/icons/tags?style=solid
-***
-*/
-if (!function_exists('xidipity_icon_tags'))
-{
-    function xidipity_icon_tags()
-    {
-            return '<i class="fas fa-tags"></i>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
@@ -155,16 +117,26 @@ if (!function_exists('xidipity_icon_tags'))
 ***
     * ico: xidipity_icon_comment
     * dsc: post comment
-    * ver: 200422
+    * ver: 200429
     * fnt: return post comment icon
     * ref:
 ***
 */
 if (!function_exists('xidipity_icon_comment'))
 {
-    function xidipity_icon_comment()
+    function xidipity_icon_comment($arg='')
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
@@ -172,16 +144,26 @@ if (!function_exists('xidipity_icon_comment'))
 ***
     * ico: xidipity_icon_comments
     * dsc: post comments
-    * ver: 200422
+    * ver: 200429
     * fnt: return post comments icon
     * ref:
 ***
 */
 if (!function_exists('xidipity_icon_comments'))
 {
-    function xidipity_icon_comments()
+    function xidipity_icon_comments($arg='')
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
@@ -196,9 +178,19 @@ if (!function_exists('xidipity_icon_comments'))
 */
 if (!function_exists('xidipity_icon_x_comments'))
 {
-    function xidipity_icon_x_comments()
+    function xidipity_icon_x_comments($arg='')
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes = 'h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 
@@ -216,23 +208,6 @@ if (!function_exists('xidipity_icon_tag'))
     function xidipity_icon_tag()
     {
         return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg>';
-    }
-}
-
-/*
-***
-    * ico: xidipity_icon_pdate
-    * dsc: post date
-    * ver: 200422
-    * fnt: return post date icon
-    * ref:
-***
-*/
-if (!function_exists('xidipity_icon_pdate'))
-{
-    function xidipity_icon_pdate()
-    {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19,3H18V1H16V3H8V1H6V3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H10V19H5V8H19V9H21V5A2,2 0 0,0 19,3M21.7,13.35L20.7,14.35L18.65,12.35L19.65,11.35C19.85,11.14 20.19,11.13 20.42,11.35L21.7,12.63C21.89,12.83 21.89,13.15 21.7,13.35M12,18.94L18.07,12.88L20.12,14.88L14.06,21H12V18.94Z" /></svg>';
     }
 }
 
@@ -324,17 +299,27 @@ if (!function_exists('xidipity_icon_vw_img'))
 /*
 ***
     * ico: xidipity_icon_edit
-    * dsc: content footer edit icon
-    * ver: 200422
-    * fnt: return edit icon
-    * ref: https://fontawesome.com/icons/edit?style=regular
+    * dsc: edit icon
+    * ver: 200429
+    * fnt: return sized edit icon
+    * ref: materialdesignicons.com/
 ***
 */
 if (!function_exists('xidipity_icon_edit'))
 {
     function xidipity_icon_edit()
     {
-        return '<svg style="width:1.5rem;height:1.5rem;display:inline;padding-bottom:5px;" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
 }
 /*
@@ -523,7 +508,44 @@ if (!function_exists('xidipity_metalinks'))
         return $html_retval;
     }
 }
-/*  # posted_on
+
+/*  # xidipity_date
+    # 200429
+    # display post
+    #   ars
+    #       cur = current (default)
+    #       mix  = published / modified
+    #       mod  = modified
+    #       pub = published (default)
+    # return date string
+**/
+if (!function_exists('xidipity_date'))
+{
+    function xidipity_date($arg='')
+    {
+        $cur = current_time(get_option('date_format'));
+        $pub = get_the_date(get_option('date_format'));
+        $mod = get_the_modified_time(get_option('date_format'));
+        $fmt = strtolower($arg);
+        switch ($fmt)
+        {
+            case 'pub':
+                $date_retval = $pub;
+            break;
+            case 'mod':
+                $date_retval = $mod;
+            break;
+            case 'mix':
+                $date_retval = $pub . ' / ' . $mod;
+            break;
+            default:
+                $date_retval = $cur;
+        }
+        return $date_retval;
+    }
+}
+
+/*  # posted_on (deprecate)
     # 90904.1a
     # core wp function
     # return posted on date
