@@ -563,52 +563,6 @@ ol.nested ol ol ol ol ol {
     padding-right: 0.5rem;
 }
 
-/* deprecate
-***
-    * property: fa-ul
-    * dsc: font awesome web icon
-    * ver: 190910-1
-    * fnt: unordered font awesome list
-    * ref: fontawesome.com/how-to-use/on-the-web/styling/icons-in-a-list
-***
-.fa-ul:nth-of-type(-n+4) {
-    padding-left: 1.375rem !important;
-}
-
-.md-ul:nth-of-type(-n+4) {
-    padding-left: 1rem !important;
-}
-
-.fa-ul {
-    margin-left: 1.375rem !important;
-}
-
-.md-ul {
-    margin-left: 0 !important;
-}
-
-.md-ul li i {
-    margin-top: -0.1875rem;
-}
-*/
-
-/* deprecate
-***
-    * property: md-ul
-    * dsc: google web icon
-    * ver: 190910-1
-    * fnt: unordered google icon list
-    * ref: material.io/resources/icons/?style=baseline
-***
-.md-ul,
-.md-ul ul,
-.md-ul ul ul,
-.md-ul ul ul ul,
-.md-ul ul ul ul ul {
-    list-style-type: none;
-}
-*/
-
 /*
 ***
     * property: ul-fa
@@ -1336,152 +1290,6 @@ img {
     filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-600));
 }
 
-/* deprecate
-***
-    * property: fbx
-    * dsc: fixed height/width boxes
-    * ver: 200222
-    * fnt: to be used in conjunction with a flexbox container
-    *      set justify content to space around (6)
-    * ref:
-***
-.fbx\:1x1 {
-    height: 135px;
-    width: 135px;
-}
-
-.fbx\:4x3 {
-    height: 101px;
-    width: 135px;
-}
-
-.fbx\:16x19 {
-    height: 76px;
-    width: 135px;
-}
-
-@media (min-width:768px) {
-    .fbx\:1x1 {
-        height: 140px;
-        width: 140px;
-    }
-
-    .fbx\:4x3 {
-        height: 105px;
-        width: 140px;
-    }
-
-    .fbx\:16x19 {
-        height: 77px;
-        width: 140px;
-    }
-}
-*/
-
-/* deprecated
-.video-aligncenter,
-.video-alignleft,
-.video-alignright {
-    clear: both;
-    border: 0;
-    height: auto;
-    width: 100%;
-}
-
-@media (min-width:768px) {
-    .video-aligncenter {
-        border-bottom: solid transparent 10px;
-        clear: both;
-        height: auto;
-        width: 100%;
-    }
-
-    .video-alignleft {
-        border-right: solid transparent 10px;
-        float: left;
-        height: auto;
-        width: 50%;
-    }
-
-    .video-alignright {
-        border-left: solid transparent 10px;
-        float: right;
-        height: auto;
-        width: 50%;
-    }
-}
-
-.img-caption,
-.wp-caption {
-    background-color: var(--hue-wht);
-    color: var(--hue-bas-600);
-    font-size: .875rem;
-    font-weight: 300;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    padding: 2px 0;
-}
-
-.img-caption {
-    padding-top: 6px;
-}
-
-.img-caption.align-left,
-.wp-caption.align-left {
-    text-align: left;
-}
-
-.img-caption.align-right,
-.wp-caption.align-right {
-    text-align: right;
-}
-
-.wp-caption .wp-caption-text {
-    margin: 8px 0;
-    text-align: center;
-}
-
-.wp-caption.alignleft {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-.wp-caption.alignright {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.wp-caption.aligncenter {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (min-width:640px) {
-
-    .wp-caption.alignleft,
-    img.alignleft {
-        float: left;
-        max-width: 50% !important;
-        padding: 0 16px 0 0;
-    }
-
-    .wp-caption.alignright,
-    img.alignright {
-        float: right;
-        max-width: 50% !important;
-        padding: 0 0 0 16px;
-    }
-
-    .wp-caption.aligncenter,
-    img.aligncenter {
-        clear: both;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-*/
-
 /*
 ***
     * element: figure
@@ -1541,39 +1349,6 @@ figure {
   display: table;
 }
 
-/*
-.wp-caption {
-    font-size: .875rem;
-    padding-top: 2px;
-}
-
-.wp-caption.alignleft {
-    margin-right: auto;
-}
-
-.alignleft img {
-    margin-right: auto;
-}
-
-.wp-caption.aligncenter {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.aligncenter img {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.wp-caption.alignright {
-    margin-left: auto;
-}
-
-.alignright img {
-    margin-left: auto;
-}
-*/
-
 .gallery {
     display: block;
     width: 100%;
@@ -1597,7 +1372,7 @@ figure {
     text-align: center;
 }
 
-@media (min-width:768px) {
+@media (min-width:900px) {
     .gallery-columns-2 .gallery-item {
         float: left;
         width: 50%;
@@ -1662,6 +1437,79 @@ figure {
     display: inline-block;
     padding: 1rem;
     width: 100%;
+}
+
+/*
+***
+    * property: svg:<size>
+    * dsc: size svg
+    * ver: 200422
+    * fnt: size svg images to fnt sizes
+    * ref:
+***
+*/
+
+.svg\:h1 {
+    display: inline;
+    height: 3.25rem;
+    padding-bottom: 0.5rem;
+    width: 3.25rem;
+}
+
+.svg\:h2 {
+    display: inline;
+    height: 2.4375rem;
+    padding-bottom: 0.3125rem;
+    width: 2.4375rem;
+}
+
+.svg\:h3 {
+    display: inline;
+    height: 2.125rem;
+    padding-bottom: 0.25rem;
+    width: 2.125rem;
+}
+
+.svg\:h4 {
+    display: inline;
+    height: 1.812rem;
+    padding-bottom: 0.25rem;
+    width: 1.812rem;
+}
+
+.svg\:h5 {
+    display: inline;
+    height: 1.5rem;
+    padding-bottom: 0.1875rem;
+    width: 1.5rem;
+}
+
+.svg\:h6 {
+    display: inline;
+    height: 1.375rem;
+    padding-bottom: 0.1875rem;
+    width: 1.375rem;
+}
+
+.svg\:large {
+    display: inline;
+    height: 1.5625rem;
+    padding-bottom: 0.3125rem;
+    width: 1.5625rem;
+}
+
+.svg\:medium {
+    display: inline;
+    height: 1.25rem;
+    padding-bottom: 0.1875rem;
+    width: 1.25rem;
+}
+
+.svg\:small {
+    display: inline;
+    height: 1rem;
+    padding-bottom: 0.125rem;
+    width: 1rem;
 }
 
 /*
