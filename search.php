@@ -35,6 +35,7 @@ $search_item = get_search_query();
 ***
 */
 $qry_prms = array(
+    'ignore_sticky_posts' => 1,
     'perm' => 'readable',
     'paged' => $wp_paged,
     'post_type' => 'post',
@@ -56,39 +57,65 @@ else
 {
     /*
     ***
-        * modify query if tag
+        * modify query if date
     ***
     */
-    $tag_list = tag_to_id($search_item);
-
-    if (!empty($tag_list))
+    if (($timestamp = strtotime($search_item)) !== false)
     {
-        $tag_array = explode(',', $tag_list);
-        $qry_prms['tag__in'] = $tag_array;
+        $year = date('Y', $timestamp);
+        $month = date('m', $timestamp);
+        $day = date('d', $timestamp);
+        $qry_prms['date_query'] = array(
+        array(
+            'year'  => $year,
+            'month' => $month,
+            'day'   => $day,
+            'column' => 'post_date',
+            ),
+        );
     }
-
-    /*
-    ***
-        * modify query if category
-    ***
-    */
-    $cat_list = category_to_id($search_item);
-
-    if (!empty($cat_list))
+    else
     {
-        $qry_prms['cat'] = $cat_list;
-    }
+        /*
+        ***
+            * modify query if tag
+        ***
+        */
+        $tag_list = tag_to_id($search_item);
 
-    /*
-    ***
-        * modify query if word search
-    ***
-    */
-    if (empty($tag_list) && empty($cat_list))
-    {
-        $qry_prms['post_type'] = 'any';
-        $qry_prms['s'] = $search_item;
-    }
+        if (!empty($tag_list))
+        {
+            $tag_array = explode(',', $tag_list);
+            $qry_prms['tag__in'] = $tag_array;
+        }
+        else
+        {
+            /*
+            ***
+                * modify query if category
+            ***
+            */
+            $cat_list = category_to_id($search_item);
+
+            if (!empty($cat_list))
+            {
+                $qry_prms['cat'] = $cat_list;
+            }
+            else
+            {
+                /*
+                ***
+                    * modify query if word search
+                ***
+                */
+                if (empty($tag_list) && empty($cat_list))
+                {
+                    $qry_prms['post_type'] = 'any';
+                    $qry_prms['s'] = $search_item;
+                }        
+            }
+        }
+    }    
 }
 $wp_data = new WP_Query($qry_prms);
 
@@ -203,7 +230,7 @@ if ($wp_data->have_posts())
         if ('post' == get_post_type())
         {
             $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         }
         /*
          ***
@@ -287,38 +314,13 @@ if ($wp_data->have_posts())
         * ref:
     ***
     */
-    if (function_exists('xidipity_paginate_links'))
-    {
-        $total_pages = $wp_query->max_num_pages;
-        if ($total_pages > 1)
-        {
-            $current_page = max(1, get_query_var('paged'));
-            echo '<div class="bg:bas-300 ln mar:top+0.75">&#8203;</div>' . "\n";
-            echo '<!--  pg:PAGINATION -->' . "\n";
-            echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
-            echo '<!-- /pg:PAGINATION -->' . "\n";
-            echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
-        }
-    }
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
 
     echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
-    /*
-    ***
-        * page footer
-    ***
-    */
-    $footer_items = '';
-    /*: modified date :*/
-    $footer_items .= dsp_date(current_time(get_option('date_format'))) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
+    echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
     echo '<!--  fc:SRC-ERR -->' . "\n";
     echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas-100 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
     echo '<!--  fc:LOGO -->' . "\n";
@@ -342,7 +344,23 @@ else
     echo '<!--  fc:MESSAGE -->' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fc:SRC-ERR -->' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
+
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: current date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
+
 echo '</article>' . "\n";
 echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
