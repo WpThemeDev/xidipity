@@ -4,7 +4,7 @@
  *
  * File Name:       template-parts/content-none.php
  * Function:        report unexpected execution of site
- * Build:           200422
+ * Build:           200429
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -22,6 +22,7 @@
 echo '<!--  file:content-none.php -->' . "\n";
 /***
 */
+echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
 echo '<!--  fc:PG-ERR -->' . "\n";
 echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas-100 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
 echo '<!--  fc:LOGO -->' . "\n";
@@ -45,10 +46,11 @@ echo '</div>' . "\n";
 echo '<!--  fc:MESSAGE -->' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /fc:PG-ERR -->' . "\n";
+echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
 /*
  * EOF:     template-parts/content-none.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
