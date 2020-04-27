@@ -101,7 +101,7 @@ if ($wp_query->have_posts())
     echo '<table class="bdr:space+0.25 bdr:hidden cols:auto">' . "\n";
     echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_cat_icon(post_category()) . '</td><td>' . xidipity_first_category() . '</td></tr>' . "\n";
     echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_author() . '</td><td><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author_meta("display_name") . '</a></td></tr>' . "\n";
-    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_pdate() . '</td><td>' . get_the_modified_time(get_option('date_format')) . '</td></tr>' . "\n";
+    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_date() . '</td><td>' . get_the_modified_time(get_option('date_format')) . '</td></tr>' . "\n";
     if (cnt_tags() > 0)
     {
         echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_tag() . '</td><td>' . dsp_tags() . '</td></tr>' . "\n";
@@ -163,8 +163,6 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /fc:LAYOUT -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
     /*
     ***
         * comments
@@ -172,7 +170,8 @@ if ($wp_query->have_posts())
     */
     if (comments_open() || get_comments_number() > 0)
     {
-        echo '<h2 id="respond">Comments</h2>' . "\n";
+        echo '<div class="bg:bas-300 ln mar:vrt+0.5">&#8203;</div>' . "\n";
+        //echo '<h2 id="respond">Comments</h2>' . "\n";
         if (!post_password_required())
         {
             get_template_part('template-parts/content', 'comments');
@@ -186,16 +185,19 @@ if ($wp_query->have_posts())
         * page footer
     ***
     */
+    $footer_items = '';
     /*: edit :*/
     if (get_edit_post_link())
     {
-        $footer_items = dsp_edit(get_edit_post_link()) . '|';
-        echo '<!--  ct:FOOTER -->' . "\n";
-        echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
-        echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-        echo '</footer>' . "\n";
-        echo '<!-- /ct:FOOTER -->' . "\n";
+        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
     }
+    /*: modified date :*/
+    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+    echo '</footer>' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
