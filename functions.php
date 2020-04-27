@@ -1338,29 +1338,6 @@ function dsp_archive()
 }
 
 /**
- *  name: dsp_sticky
- *  build: 200314
- *  description: Return properly formatted sticky post category HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_sticky($arg = '')
-{
-    // system
-    $fn_retval = '';
-    // atributes (first category)
-    $v_html = trim($arg);
-    if (!empty($v_html))
-    {
-    $fn_retval = '<p><span class="fg:wcag-grey6 pad:right+0.5">' . xidipity_icon_pc() . '</span>' . $v_html . '</p>';
-    }
-    // return html
-    return $fn_retval;
-}
-
-/**
  *  name: dsp_today
  *  build: 200429
  *  description: return calendar icon || icon with date
