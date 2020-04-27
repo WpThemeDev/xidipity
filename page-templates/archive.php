@@ -229,9 +229,7 @@ if ($wp_data->have_posts()) {
     ***
     */
     include( locate_template( 'template-parts/content-pagination.php', false, false ) );
-
     echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
 }
 else
 {
@@ -251,7 +249,6 @@ echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
 echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
 echo '</footer>' . "\n";
 echo '<!-- /ct:FOOTER -->' . "\n";
-
 echo '</article>' . "\n";
 echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
