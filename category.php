@@ -197,29 +197,35 @@ if (have_posts())
         * ref:
     ***
     */
-    $total_pages = $wp_query->max_num_pages;
-    if ($total_pages > 1)
+    if (function_exists('xidipity_paginate_links'))
     {
-        echo '<!--  ct:PAGINATION -->' . "\n";
-        $current_page = max(1, get_query_var('paged'));
-        echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
-        echo '<!-- /ct:PAGINATION -->' . "\n";
+        $total_pages = $wp_query->max_num_pages;
+        if ($total_pages > 1)
+        {
+            $current_page = max(1, get_query_var('paged'));
+            echo '<div class="bg:bas-300 ln mar:top+0.75">&#8203;</div>' . "\n";
+            echo '<!--  pg:PAGINATION -->' . "\n";
+            echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
+            echo '<!-- /pg:PAGINATION -->' . "\n";
+            echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+        }
     }
 
-    echo '<div class="bg:bas-300 ln mar:top+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
         * page footer
     ***
     */
-    /*: date :*/
-    $footer_items = dsp_date(date(get_option('date_format'))) . '|';
-    echo '<!--  bk:FOOTER -->' . "\n";
+    $footer_items = '';
+    /*: modified date :*/
+    $footer_items .= dsp_date(current_time(get_option('date_format'))) . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
     echo '</footer>' . "\n";
-    echo '<!-- /bk:FOOTER -->' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
