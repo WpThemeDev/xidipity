@@ -124,7 +124,7 @@ $footer_items = '';
 /*: edit :*/
 if (get_edit_post_link())
 {
-    $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+    $footer_items .= dsp_edit(get_edit_post_link()) . '|';
 }
 /*: today's date :*/
 $footer_items .= dsp_today(xidipity_date()) . '|';
