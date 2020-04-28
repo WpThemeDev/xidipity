@@ -1,22 +1,22 @@
 <?php
 /*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       inc/extras.php
- * Function:        xidipity extensions
- * Build:           200422
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+    * WordPress Xidipity Theme PHP File
+    *
+    * File Name:       inc/extras.php
+    * Function:        xidipity extensions
+    * Build:           200429
+    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            https://developer.wordpress.org/themes/basics/
+    *
+*/
 
 /**
  * Theme Mod Defaults
@@ -419,7 +419,7 @@ if (!function_exists('xidipity_the_attached_image')) {
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
- *  xlst    200422    excerpt list
+ *  xlst    200429    excerpt list
  *  blst    200322    unordered list of linked blog titles
  *  clst    200322    unordered list of linked category titles
  *  imgg    200322    image gallary
@@ -438,7 +438,7 @@ if (!function_exists('xidipity_the_attached_image')) {
  *  Xidipity WordPress Theme
  *
  *  name:   xlst
- *  build:  200422
+ *  build:  200429
  *  descrp: display list of blog excerpts by category
  *  attributes ($args - array):
  *      align_img - string (l/r/x) x=no image
@@ -567,7 +567,7 @@ function xlst_shortcode($args = array() , $prms = '')
                 ));
             }
             $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
 
             /*
              ***
@@ -1518,7 +1518,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>

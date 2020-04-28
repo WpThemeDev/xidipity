@@ -144,8 +144,8 @@ if ($wp_data->have_posts()) {
         $wp_img = get_the_post_thumbnail(null, 'FULL', array(
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
-        $excerpt_category = '<div class="fnt:size-smaller">' . dsp_archive() . '</div>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_category = '<p>' . dsp_archive() . '</p>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -228,40 +228,27 @@ if ($wp_data->have_posts()) {
         * ref:
     ***
     */
-    $total_pages = $wp_data->max_num_pages;
-    if ($total_pages > 1)
-    {
-        echo '<!--  ct:PAGINATION -->' . "\n";
-        $current_page = max(1, get_query_var('paged'));
-        echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
-        echo '<!-- /ct:PAGINATION -->' . "\n";
-    }
-
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
     echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
-
-    /*
-    ***
-        * page footer
-    ***
-    */
-    $footer_items = '';
-    /*: edit :*/
-    if (get_edit_post_link())
-    {
-        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
-    }
-    /*: modified date :*/
-    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
     get_template_part('template-parts/content', 'none');
 }
+
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: current date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
 echo '</article>' . "\n";
 echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";

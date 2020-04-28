@@ -155,8 +155,8 @@ if ($wp_data->have_posts())
         */
         echo '<!--  fi:3/1/1/'. $cnt . '/SECTION/EXCERPT -->' . "\n";
         echo '<article class="dsp:block pad:+0.5">' . "\n";
-        echo '<div>' . dsp_cat(xidipity_first_category()) . '</div>' . "\n";
-        echo '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>'  . "\n";
+        echo '<div>' . dsp_cat(post_category('link')) . '</div>' . "\n";
+        echo '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>'  . "\n";
         the_title('<p class="pst:title">', '</p>');
         if (xidipity_has_excerpt())
         {
@@ -183,19 +183,23 @@ if ($wp_data->have_posts())
         * ref:
     ***
     */
-    if (function_exists('xidipity_paginate_links'))
-    {
-        $total_pages = $wp_data->max_num_pages;
-        if ($total_pages > 1)
-        {
-            $current_page = max(1, get_query_var('paged'));
-            echo '<div class="bg:bas-300 ln mar:top+0.75">&#8203;</div>' . "\n";
-            echo '<!--  pg:PAGINATION -->' . "\n";
-            echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
-            echo '<!-- /pg:PAGINATION -->' . "\n";
-            echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
-        }
-    }
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
+
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+
+    /*
+    ***
+        * page footer
+    ***
+    */
+    $footer_items = '';
+    /*: current date :*/
+    $footer_items .= dsp_today(xidipity_date()) . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+    echo '</footer>' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 else
 {
@@ -206,6 +210,7 @@ else
      )
     );
 
+    echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
     echo '<!--  fc:NEW -->' . "\n";
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+0.5">' . "\n";
     echo '<!--  fi:LOGO -->' . "\n";
@@ -238,6 +243,7 @@ else
     echo '<!-- /fi:MESSAGE -->' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fc:NEW -->' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 echo '</section>' . "\n";
 echo '<!--  /fi:3/1/1/HTML -->' . "\n";

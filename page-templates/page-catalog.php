@@ -2,10 +2,10 @@
 /*
  * WordPress Xidipity Theme PHP File
  *
- * Template Name: Page Catalog
+ * Template Name: Post Catalog
  *
- * File Name:       page-catalog.php
- * Function:        display list of of pages
+ * File Name:       post-catalog.php
+ * Function:        display list of of posts
  * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -29,6 +29,16 @@ disp_menu('yes');
 
 /*
 ***
+    * pagination variables
+***
+*/
+/*: current pagination number :*/
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*: posts per page :*/
+$wp_ppp = 20;
+
+/*
+***
     * function: get_header
     * dsc: header code
     * ver: 200322
@@ -40,7 +50,7 @@ get_header();
 
 /*
 ***/
-echo '<!--  file:page-catalog.php -->' . "\n";
+echo '<!--  file:post-catalog.php -->' . "\n";
 /***
 */
 
@@ -53,24 +63,25 @@ $content = get_the_content();
 if (empty($content))
 {
     $dft_content = array(
-        'ID' => get_the_ID(),
-        'post_content' => '<h3><i class="fas fa-bookmark fg:sec-dark">&#8203;</i><span class="pad:left+0.5">Page Catalog Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display in table format a list of all pages. The editor content is not exposed to the web but provides an opportunity to capture notes or other documentation. To hide the page from the public, set the <a href="https://wordpress.org/support/article/content-visibility/">visibility to private</a>.</p>'
+        'ID'           => get_the_ID(),
+        'post_content' => '<h3><i class="fas fa-bookmark fg:sec-dark">&#8203;</i><span class="pad:left+0.5">Post Catalog Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display in table format a list of all blog posts. The editor content is not exposed to the web but provides an opportunity to note or document the use of the template. To hide the page from the public, set the <a href="https://wordpress.org/support/article/content-visibility/">visibility to private</a>.</p>'
     );
     wp_update_post( $dft_content );
 }
 
 /*
 ***
-    * setup page query
+    * setup post query
 ***
 */
 $qry_prms = array(
     'orderby' => 'date',
     'order'   => 'DESC',
     'perm' => 'readable',
-    'post_type' => 'page',
+    'paged' => $wp_paged,
+    'post_type' => 'post',
     'post_status' => 'any',
-    'posts_per_page' => -1
+    'posts_per_page' => 20
 );
 $wp_data = new WP_Query($qry_prms);
 
@@ -95,6 +106,11 @@ else
     echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
 
+/*
+***
+    * create block for content
+***
+*/
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
@@ -121,8 +137,7 @@ if ($wp_data->have_posts())
     echo '<th class="aln:text-left grd:tint-bright wd:19">Title</th>' . "\n";
     echo '<th class="aln:text-left grd:tint-bright wd:3">Status</th>' . "\n";
     echo '<th class="aln:text-left grd:tint-bright wd:9">Date</th>' . "\n";
-    echo '<th class="aln:text-left grd:tint-bright wd:14">Author</th>' . "\n";
-    echo '<th class="aln:text-left grd:tint-bright wd:5">Template</th>' . "\n";
+    echo '<th class="aln:text-left grd:tint-bright wd:19">Author</th>' . "\n";
     echo '</tr>' . "\n";
     echo '</thead>' . "\n";
     echo '<tbody class="fnt:family-mono fnt:size-x-small sm)fnt:size-small tr:stripe-tint-bright">' . "\n";
@@ -135,14 +150,12 @@ if ($wp_data->have_posts())
     while ($wp_data->have_posts())
     {
         $wp_data->the_post();
-        $page_template = get_post_meta(get_the_ID(), '_wp_page_template', true);
         echo '<tr>' . "\n";
         echo '<td>' . get_the_ID() . '</td>' . "\n";
         echo '<td>' . get_the_title() . '</td>' . "\n";
         echo '<td>' . get_post_status() . '</td>' . "\n";
         echo '<td>' . get_the_date(get_option('date_format')) . '</td>' . "\n";
         echo '<td>' . get_the_author_meta('display_name') . '</td>' . "\n";
-        echo '<td>' . str_replace(array('.php','page-templates/'), '', $page_template) . '</td>' . "\n";
         echo '</tr>' . "\n";
     }
 
@@ -150,31 +163,35 @@ if ($wp_data->have_posts())
     echo '</table>' . "\n";
     echo '<div class="aln:text-center fg:wcag-grey6 fnt:size-x-small sm)fnt:size-small md)dsp:none wd:100%"><i class="fas fa-caret-left"></i><span class="pad:hrz+0.5">scroll</span><i class="fas fa-caret-right"></i></div>' . "\n";
     echo '</div>' . "\n";
-
     echo '<!-- /ct:BODY -->' . "\n";
-
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
-        * page footer
+        * function: pagination
+        * dsc: display pagination
+        * ver: 200322
+        * fnt: display pagination if paged & number of
+        *      records exceeds limit/page
+        * ref:
     ***
     */
-    $footer_items = '';
-    /*: edit :*/
-    if (get_edit_post_link())
-    {
-        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
-    }
-    /*: modified date :*/
-    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: current date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
 echo '</article>' . "\n";
 echo '<!--  ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
@@ -218,7 +235,7 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     page-catalog.php
+ * EOF:     post-catalog.php
  * Build:   200429
  *
  */
