@@ -82,7 +82,7 @@ if ($wp_query->have_posts())
     {
         if (function_exists('yoast_breadcrumb'))
         {
-            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs">', '</div>' . "\n");
+            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs mar:top+0.5">', '</div>' . "\n");
         }
     }
 
