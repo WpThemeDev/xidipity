@@ -93,9 +93,10 @@ if (have_posts())
         * ref: developer.wordpress.org/reference/functions/the_title/
     ***
     */
+    $first_cat_name = xidipity_first_category('name');
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
-    echo '<div class="pg:title">Category: ' . post_category() . '</div>' . "\n";
+    echo '<div class="pg:title">Category: ' . $first_cat_name . '</div>' . "\n";
     echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
@@ -113,7 +114,7 @@ if (have_posts())
         $wp_img = get_the_post_thumbnail(null, 'FULL', array(
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
-        $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(post_category()) . '</div>';
+        $excerpt_category = '<div class="fnt:weight-bolder">' . dsp_cat($first_cat_name) . '</div>';
         $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
