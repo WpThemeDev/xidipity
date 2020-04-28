@@ -1368,6 +1368,36 @@ function dsp_today($arg = '')
 }
 
 /**
+ *  name: dsp_modified
+ *  build: 200429
+ *  description: return calendar icon || icon with date
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_modified($arg = '')
+{
+    // system
+    $fn_retval = '';
+    $icon = '';
+    if (function_exists('xidipity_icon_modified'))
+    {
+        $icon = xidipity_icon_modified();
+    }
+    if (empty($arg))
+    {
+        $fn_retval = $icon;
+    }
+    else
+    {
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+    }
+    // return html
+    return $fn_retval;
+}
+
+/**
  *  name: dsp_date
  *  build: 200429
  *  description: return calendar icon || icon with date
