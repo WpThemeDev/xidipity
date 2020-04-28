@@ -220,7 +220,7 @@ if (have_posts())
     */
     $footer_items = '';
     /*: modified date :*/
-    $footer_items .= dsp_date(current_time(get_option('date_format'))) . '|';
+    $footer_items .= dsp_today(xidipity_date()) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
