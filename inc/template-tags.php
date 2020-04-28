@@ -499,7 +499,7 @@ if (!function_exists('xidipity_posted_by'))
 **/
 if (!function_exists('xidipity_first_category'))
 {
-    function xidipity_first_category()
+    function xidipity_first_category($arg='')
     {
         /*
             show yoast primary category, or first category
@@ -553,7 +553,7 @@ if (!function_exists('xidipity_first_category'))
             */
             if (!empty($category_display))
             {
-                if ($useCatLink == true && !empty($category_link))
+                if ($useCatLink == true && !empty($category_link) && empty($arg))
                 {
                     $html_retval .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
                 }
