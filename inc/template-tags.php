@@ -34,11 +34,38 @@
 
 /*
 ***
+    * ico: xidipity_icon_modified
+    * dsc: modified
+    * ver: 200429
+    * fnt: return modified icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_modified'))
+{
+    function xidipity_icon_modified($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2C2.89 2 2 2.89 2 4V20A2 2 0 0 0 4 22H12.41A7 7 0 0 0 16 23A7 7 0 0 0 23 16A7 7 0 0 0 18 9.3V8L12 2H4M11 3.5L16.5 9H11V3.5M16 11A5 5 0 0 1 21 16A5 5 0 0 1 16 21A5 5 0 0 1 11 16A5 5 0 0 1 16 11M15 12V17L18.61 19.16L19.36 17.94L16.5 16.25V12H15Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2C2.89 2 2 2.89 2 4V20A2 2 0 0 0 4 22H12.41A7 7 0 0 0 16 23A7 7 0 0 0 23 16A7 7 0 0 0 18 9.3V8L12 2H4M11 3.5L16.5 9H11V3.5M16 11A5 5 0 0 1 21 16A5 5 0 0 1 16 21A5 5 0 0 1 11 16A5 5 0 0 1 16 11M15 12V17L18.61 19.16L19.36 17.94L16.5 16.25V12H15Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
     * ico: xidipity_icon_archive
-    * dsc: calendar
-    * ver: 200422
-    * fnt: return font awesome calendar icon
-    * ref: https://fontawesome.com/icons/calendar-alt?style=regular
+    * dsc: archive
+    * ver: 200429
+    * fnt: return archive icon
+    * ref: materialdesignicons.com
 ***
 */
 if (!function_exists('xidipity_icon_archive'))
