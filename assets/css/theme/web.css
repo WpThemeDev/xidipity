@@ -519,6 +519,20 @@ a.comment-reply-link:hover {
 
 /*
 ***
+    * property: wp-caption
+    * dsc: set figure / caption boundry
+    * ver: 200429
+    * fnt: set max boundry properties
+    * ref:
+***
+*/
+
+.wp-caption {
+    max-width: 100%;
+}
+
+/*
+***
     * property: hdr:title
     * dsc: site title from general settings
     * ver: 200322
