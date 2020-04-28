@@ -105,7 +105,7 @@ $footer_items = '';
 if (get_edit_post_link())
 {
     echo '<div class="bg:bas-300 ln mar:bottom+0.25">&#8203;</div>' . "\n";
-    $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+    $footer_items .= dsp_edit(get_edit_post_link()) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
