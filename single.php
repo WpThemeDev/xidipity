@@ -101,7 +101,7 @@ if ($wp_query->have_posts())
     echo '<table class="bdr:space+0.25 bdr:hidden cols:auto">' . "\n";
     echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_cat_icon(post_category()) . '</td><td>' . xidipity_first_category() . '</td></tr>' . "\n";
     echo '<tr class="led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_author() . '</td><td><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author_meta("display_name") . '</a></td></tr>' . "\n";
-    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_date() . '</td><td>' . get_the_modified_time(get_option('date_format')) . '</td></tr>' . "\n";
+    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . dsp_date() . '</td><td>' . xidipity_date('pub') . '</td></tr>' . "\n";
     if (cnt_tags() > 0)
     {
         echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas-200 cnr:arch-small wd:2">' . xidipity_icon_tag() . '</td><td>' . dsp_tags() . '</td></tr>' . "\n";
@@ -189,10 +189,18 @@ if ($wp_query->have_posts())
     /*: edit :*/
     if (get_edit_post_link())
     {
-        $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+        $footer_items .= dsp_edit(get_edit_post_link()) . '|';
     }
-    /*: modified date :*/
-    $footer_items .= dsp_date(get_the_modified_time(get_option('date_format'))) . '|';
+    if (xidipity_date('mod') !== xidipity_date('pub'))
+    {
+        /*: modified date :*/
+        $footer_items .= dsp_modified(xidipity_date('mod')) . '|';        
+    }
+    else
+    {
+        /*: current date :*/
+        $footer_items .= dsp_today(xidipity_date()) . '|';        
+    }
     echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
     echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
