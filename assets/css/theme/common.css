@@ -37,9 +37,11 @@ body,
     line-height: var(--dft-line-height);
     overflow-wrap: anywhere !important;
 }
+
 ins,
 mark {
-    background-color: var(--hue-yellow);
+    background-color: var(--hue-highlight);
+    text-decoration: none;
 }
 
 del {
@@ -65,11 +67,11 @@ var {
 }
 
 kbd {
-    background-color: var(--hue-sec-dark);
-    border-radius: 0.3333rem;
+    background-color: var(--hue-pri-dark);
+    border-radius: 0.1666rem;
     color: var(--hue-wht);
     font-size: smaller;
-    padding: 2px 4px;
+    padding: 0.125rem 0.375rem 0.125rem 0.375rem;
 }
 
 /*
