@@ -1482,7 +1482,7 @@ function dsp_view($arg = '')
 /**
  *  name: dsp_cat_icon
  *  build: 200429
- *  description: Return properly formatted post category HTML string
+ *  description: return category icon
  *  attributes:
  *      $arg - string
  *  ref:
