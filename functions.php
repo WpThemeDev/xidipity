@@ -1421,7 +1421,7 @@ function dsp_edit($arg = '')
     }
     else
     {
-        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span><a href="' . $arg . '">Edit</a></p>';
     }
     // return html
     return $fn_retval;
