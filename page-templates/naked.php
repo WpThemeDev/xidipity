@@ -71,7 +71,7 @@ if ($wp_query->have_posts())
 {
     the_post();
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+    echo '<div class="bg:content ht:min10 mar:bottom+0.5 pad:vrt+0.5 wd:100%">' . "\n";
 
     /*
     ***
@@ -89,27 +89,28 @@ if ($wp_query->have_posts())
     dsp_content();
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
-
-    /*
-    ***
-        * edit only page footer
-    ***
-    */
-    $footer_items = '';
-    /*: edit :*/
-    if (get_edit_post_link())
-    {
-        $footer_items .= dsp_edit(get_edit_post_link()) . '|';
-        echo '<!--  ct:FOOTER -->' . "\n";
-        echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
-        echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-        echo '</footer>' . "\n";
-        echo '<!-- /ct:FOOTER -->' . "\n";
-    }
 }
 else
 {
     get_template_part('template-parts/content', 'none');
+}
+
+/*
+***
+    * edit only page footer
+***
+*/
+$footer_items = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    echo '<div class="bg:bas-300 ln mar:bottom+0.25">&#8203;</div>' . "\n";
+    $footer_items .= dsp_edit('<a href="' . get_edit_post_link()) . '">Edit</a>' . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+    echo '</footer>' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
 }
 echo '</article>' . "\n";
 echo '<!-- /ct:ARTICLE -->' . "\n";
