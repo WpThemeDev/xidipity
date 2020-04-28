@@ -71,7 +71,7 @@ if ($wp_query->have_posts())
 {
     the_post();
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+    echo '<div class="bg:content ht:min10 mar:bottom+0.5 pad:top+0.5 wd:100%">' . "\n";
 
     /*
     ***
