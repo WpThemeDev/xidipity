@@ -4,7 +4,7 @@
  *
  * File Name:       category.php
  * Function:        display pages assigned to category
- * Build:           200422
+ * Build:           200429
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -114,7 +114,7 @@ if (have_posts())
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
         $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(post_category()) . '</div>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_posted_on() . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -297,7 +297,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     category.php
- * Build:   200422
+ * Build:   200429
  *
  */
 ?>
