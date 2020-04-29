@@ -77,6 +77,30 @@ kbd {
 
 /*
 ***
+    * property: btn:facade
+    * dsc: button appearance
+    * ver: 200429
+    * fnt: simulate the appearance of a button
+    * ref: 
+***
+*/
+.btn\:facade {
+    background-color: var(--hue-pri);
+    color: var(--hue-wht);
+    border-radius: 0.1666rem;
+    display: inline-block;
+    font-size: smaller;
+    font-weight: bolder;
+    padding: 0.25rem .5rem 0.25rem .5rem;
+}
+
+.btn\:facade\!hover:hover {
+    background-color: var(--hue-pri-dark);
+    cursor: pointer;
+}
+
+/*
+***
     * element: <abbr>
     * dsc: abbreviation
     * ver: 190926-1
