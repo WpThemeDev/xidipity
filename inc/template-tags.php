@@ -383,6 +383,60 @@ if (!function_exists('xidipity_icon_edit'))
     }
 }
 
+/*
+***
+    * ico: xidipity_icon_next
+    * dsc: next icon
+    * ver: 200429
+    * fnt: return sized next icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_prev'))
+{
+    function xidipity_icon_prev($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M20,3H5A2,2 0 0,0 3,5V11H7V9L11,12L7,15V13H3V19A2,2 0 0,0 5,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3M17,17H13V15H17V17M20,13H13V11H20V13M20,9H13V7H20V9M3,13H0V11H3V13Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M20,3H5A2,2 0 0,0 3,5V11H7V9L11,12L7,15V13H3V19A2,2 0 0,0 5,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3M17,17H13V15H17V17M20,13H13V11H20V13M20,9H13V7H20V9M3,13H0V11H3V13Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_prev
+    * dsc: previous icon
+    * ver: 200429
+    * fnt: return sized previous icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_prev'))
+{
+    function xidipity_icon_prev($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M4,21H19A2,2 0 0,0 21,19V13H17V15L13,12L17,9V11H21V5A2,2 0 0,0 19,3H4A2,2 0 0,0 2,5V19A2,2 0 0,0 4,21M4,15H8V17H4V15M4,11H11V13H4V11M4,7H11V9H4V7M21,11H24V13H21V11Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M4,21H19A2,2 0 0,0 21,19V13H17V15L13,12L17,9V11H21V5A2,2 0 0,0 19,3H4A2,2 0 0,0 2,5V19A2,2 0 0,0 4,21M4,15H8V17H4V15M4,11H11V13H4V11M4,7H11V9H4V7M21,11H24V13H21V11Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
 /*  # xidipity_metalinks
     # 90828.1a
     # return flexbox of metadata links
