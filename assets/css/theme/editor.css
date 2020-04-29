@@ -5,7 +5,7 @@
     * Function:        Editor specific CSS
     * Build:           200429
     * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
     * @package         xidipity
     * @author          John Baer
@@ -78,7 +78,7 @@ img {
 ***
 */
 .wp-caption img {
-    padding-bottom: 0.125rem;
+    padding-bottom: 0.25rem;
 }
 
 /*
