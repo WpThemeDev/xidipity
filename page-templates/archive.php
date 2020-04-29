@@ -144,7 +144,7 @@ if ($wp_data->have_posts()) {
         $wp_img = get_the_post_thumbnail(null, 'FULL', array(
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
-        $excerpt_category = '<p>' . dsp_archive() . '</p>';
+        $excerpt_category = '<p><span class="pad:right+0.25">' . xidipity_icon_archive() . '</span><span class="fnt:weight-bolder">Archive</span></p>';
         $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
