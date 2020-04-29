@@ -58,20 +58,16 @@ big {
 }
 
 code,
-kbd,
 samp,
 tt,
 var {
     font-family: var(--font-mono);
-    font-size: .875rem;
+    font-size: smaller;
 }
 
 kbd {
     background-color: var(--hue-pri-dark);
-    border-radius: 0.1666rem;
     color: var(--hue-wht);
-    font-size: smaller;
-    padding: 0.125rem 0.375rem 0.125rem 0.375rem;
 }
 
 /*
