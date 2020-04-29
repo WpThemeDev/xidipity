@@ -37,9 +37,11 @@ body,
     line-height: var(--dft-line-height);
     overflow-wrap: anywhere !important;
 }
+
 ins,
 mark {
-    background-color: var(--hue-yellow);
+    background-color: var(--hue-highlight);
+    text-decoration: none;
 }
 
 del {
@@ -56,20 +58,45 @@ big {
 }
 
 code,
-kbd,
 samp,
-tt,
 var {
     font-family: var(--font-mono);
-    font-size: .875rem;
+}
+
+samp {
+    border-bottom: solid medium var(--hue-sec);
+    font-weight: bolder;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 kbd {
-    background-color: var(--hue-sec-dark);
-    border-radius: 0.3333rem;
+    background-color: var(--hue-pri-dark);
     color: var(--hue-wht);
+}
+
+/*
+***
+    * property: btn:facade
+    * dsc: button appearance
+    * ver: 200429
+    * fnt: simulate the appearance of a button
+    * ref: 
+***
+*/
+.btn\:facade {
+    background-color: var(--hue-pri);
+    color: var(--hue-wht);
+    border-radius: 0.1666rem;
+    display: inline-block;
     font-size: smaller;
-    padding: 2px 4px;
+    font-weight: bolder;
+    padding: 0.125rem .5rem 0.125rem .5rem;
+}
+
+.btn\:facade\!hover:hover {
+    background-color: var(--hue-pri-dark);
+    cursor: pointer;
 }
 
 /*

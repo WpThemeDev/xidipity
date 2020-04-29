@@ -1323,21 +1323,6 @@ function dsp_rm($arg = '')
 }
 
 /**
- *  name: dsp_archive
- *  build: 200314
- *  description: Return properly formatted sticky post category HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_archive()
-{
-    // return html
-    return '<p><span class="fg:wcag-grey6 pad:right+0.25">' . xidipity_icon_archive() . '</span>Archive</p>';
-}
-
-/**
  *  name: dsp_today
  *  build: 200429
  *  description: return calendar icon || icon with date
@@ -1354,6 +1339,36 @@ function dsp_today($arg = '')
     if (function_exists('xidipity_icon_calendar'))
     {
         $icon = xidipity_icon_today();
+    }
+    if (empty($arg))
+    {
+        $fn_retval = $icon;
+    }
+    else
+    {
+        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+    }
+    // return html
+    return $fn_retval;
+}
+
+/**
+ *  name: dsp_modified
+ *  build: 200429
+ *  description: return calendar icon || icon with date
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_modified($arg = '')
+{
+    // system
+    $fn_retval = '';
+    $icon = '';
+    if (function_exists('xidipity_icon_modified'))
+    {
+        $icon = xidipity_icon_modified();
     }
     if (empty($arg))
     {
@@ -1452,7 +1467,7 @@ function dsp_view($arg = '')
 /**
  *  name: dsp_cat_icon
  *  build: 200429
- *  description: Return properly formatted post category HTML string
+ *  description: return category icon
  *  attributes:
  *      $arg - string
  *  ref:

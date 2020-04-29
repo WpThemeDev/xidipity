@@ -1,22 +1,21 @@
 /*
- * WordPress Xidipity Theme CSS File
- *
- * File Name:       theme/editor.css
- * Function:        Editor specific CSS
- * Build:           200318
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+    * WordPress Xidipity Theme CSS File
+    *
+    * File Name:       theme/editor.css
+    * Function:        Editor specific CSS
+    * Build:           200429
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            developer.wordpress.org/themes/basics/
+    *
+*/
 
 /*
 ***
@@ -24,7 +23,7 @@
     * dsc: body
     * ver: 200222
     * fnt: html body (see common.css, web.css for other property values)
-    * ref: https://developer.mozilla.org/en-US/docs/Web/API/Body
+    * ref: developer.mozilla.org/en-US/docs/Web/API/Body
 ***
 */
 .mce-content-body {
@@ -43,7 +42,7 @@ body.webkit b {
     * dsc: editor specific formatting
     * ver: 190926-1
     * fnt: apply mce formatting
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/display
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
 */
 .mce\[dsp\:none\] {
@@ -66,13 +65,29 @@ body.webkit b {
     display: inline-block;
 }
 
+img {
+}
+
+/*
+***
+    * element: img
+    * dsc: img caption
+    * ver: 200222
+    * fnt: add space to the caption text
+    * ref:
+***
+*/
+.wp-caption img {
+    padding-bottom: 0.25rem;
+}
+
 /*
 ***
     * property: vs
     * dsc: vertical space
     * ver: 200222
     * fnt: set line height
-    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
 */
 .vs\:1\/2,
@@ -90,7 +105,7 @@ body.webkit b {
     * dsc: paragraph list
     * ver: 200304
     * fnt: add custom bullet to list
-    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+    * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 ***
 */
 ul.par,
@@ -136,6 +151,6 @@ table.cols\:fixed-4 td:last-child {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200318
+ * Build:   200429
  *
  */
