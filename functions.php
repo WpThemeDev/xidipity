@@ -1323,21 +1323,6 @@ function dsp_rm($arg = '')
 }
 
 /**
- *  name: dsp_archive
- *  build: 200314
- *  description: Return properly formatted sticky post category HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_archive()
-{
-    // return html
-    return '<p><span class="fg:wcag-grey6 pad:right+0.25">' . xidipity_icon_archive() . '</span>Archive</p>';
-}
-
-/**
  *  name: dsp_today
  *  build: 200429
  *  description: return calendar icon || icon with date
