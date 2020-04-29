@@ -59,10 +59,15 @@ big {
 
 code,
 samp,
-tt,
 var {
     font-family: var(--font-mono);
-    font-size: smaller;
+}
+
+samp {
+    border-bottom: solid medium var(--hue-sec);
+    font-weight: bolder;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 kbd {
