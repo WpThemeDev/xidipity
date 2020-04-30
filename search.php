@@ -229,7 +229,7 @@ if ($wp_data->have_posts())
         $excerpt_byline = '';
         if ('post' == get_post_type())
         {
-            $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
+            $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
             $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         }
         /*
