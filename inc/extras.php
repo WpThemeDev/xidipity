@@ -566,7 +566,8 @@ function xlst_shortcode($args = array() , $prms = '')
                     'class' => 'cnr:arch-small ht:auto wd:100%'
                 ));
             }
-            $excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
+            //$excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
+            $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
             $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
 
             /*
