@@ -1611,7 +1611,7 @@ function dsp_err($arg = '')
     {
         $v_msg = $a_msg;
     }
-    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fnt:size-2x-large fg:wht pad:hrz+0.75"><i class="fas fa-bell">&#8203;</i></td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table>';
+    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fg:wht pad:top+0.5">' . xidipity_icon_err('h3')  . '</td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table>';
     // return html
     return $fn_retval;
 }
