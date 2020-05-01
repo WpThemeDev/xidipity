@@ -4,7 +4,7 @@
     *
     * File Name:       functions.php
     * Function:        xidipity functions definitions
-    * Build:           200429
+    * Build:           200501
     * GitHub:          https://github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -1924,7 +1924,7 @@ function post_category($arg='')
 
 /*
  * EOF:     functions.php
- * Build:   200429
+ * Build:   200501
  *
  */
 ?>
