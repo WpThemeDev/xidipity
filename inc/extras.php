@@ -5,7 +5,7 @@
     * File Name:       inc/extras.php
     * Function:        xidipity extensions
     * Build:           200429
-    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
     * @package         xidipity
@@ -14,7 +14,7 @@
     * @license         GPL-3.0-or-later
     * @version         1.0
     * @since           0.9
-    * @link            https://developer.wordpress.org/themes/basics/
+    * @link            developer.wordpress.org/themes/basics/
     *
 */
 
@@ -119,7 +119,7 @@ if (!function_exists('xidipity_fonts_url')) {
             $fonts_url = add_query_arg(array(
                 'family' => urlencode(implode('|', $fonts)) ,
                 'subset' => urlencode($subsets) ,
-            ) , 'https://fonts.googleapis.com/css');
+            ) , 'fonts.googleapis.com/css');
         }
 
         /**
@@ -837,7 +837,7 @@ function blst_shortcode($args = array(), $prms = '')
  *  parameters ($prm - string):
  *      category - string
  *
- *  https://developer.wordpress.org/reference/functions/wp_list_categories/
+ *  developer.wordpress.org/reference/functions/wp_list_categories/
  *
  *  [clst class='' bullet='' depth=0 active='']category[/clst]
  *
@@ -1222,14 +1222,13 @@ function imgg_shortcode($args = array() , $prms = '')
  *      class - string
  *      bullet - string (font awesome/google)
  *      depth - numeric
- *      xclude - string
  *
  *  parameters ($prm - string):
  *      page title(s) - string
  *
  *  [plst class='' bullet='' depth=0]titles[/plst]
  *
- *  https://developer.wordpress.org/reference/functions/wp_list_pages/
+ *  developer.wordpress.org/reference/functions/wp_list_pages/
  *
  *  @package WordPress
  *  @subpackage Xidipity
@@ -1413,7 +1412,7 @@ function get_db_shortcode($atts, $prms='')
 /*  # get_pg_title
     # 90905.1a
     # get page title
-    # https://developer.wordpress.org/reference/functions/get_the_title/
+    # developer.wordpress.org/reference/functions/get_the_title/
  */
 add_shortcode('get_pg_title', 'get_pg_title_shortcode');
 function get_pg_title_shortcode()
@@ -1424,7 +1423,7 @@ function get_pg_title_shortcode()
 /*  # x_fa_ver
     # 90905.1a
     # display font awesome version
-    # https://fontawesome.com/
+    # fontawesome.com/
  */
 add_shortcode('x_fa_ver', 'x_fa_ver_shortcode');
 function x_fa_ver_shortcode()
@@ -1435,7 +1434,7 @@ function x_fa_ver_shortcode()
 /*  # x_wp_ver
     # 90903.1a
     # display wordpress version
-    # https://wordpress.org/
+    # wordpress.org/
  */
 add_shortcode('x_wp_ver', 'x_wp_ver_shortcode');
 function x_wp_ver_shortcode()

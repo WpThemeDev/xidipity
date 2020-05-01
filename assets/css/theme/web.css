@@ -3,9 +3,9 @@
     *
     * File Name:       theme/web.css
     * Function:        CSS web elements
-    * Build:           200429
-    * GitHub:          https://github.com/WpThemeDev/xidipity/
-    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    * Build:           200501
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     gnu.org/licenses/gpl-3.0.txt
     *
     * @package         xidipity
     * @author          John Baer
@@ -13,7 +13,7 @@
     * @license         GPL-3.0-or-later
     * @version         1.0
     * @since           0.9
-    * @link            https://developer.wordpress.org/themes/basics/
+    * @link            developer.wordpress.org/themes/basics/
     *
 */
 
@@ -800,14 +800,20 @@ a.hdr\:title:hover {
 ***
 */
 .gist {
-    width: 100% !important;
+    border: solid thick var(--hue-bas-300);
     font-family: var(--font-mono) !important;
     margin-bottom: -1rem !important;
+    border-radius: 0.3333rem;
+    width: 100% !important;
 }
 
 .gist .line,
 .gist .line span {
     word-wrap: normal !important;
+}
+
+.gist div {
+    margin-bottom: 0 !important;
 }
 
 .gist table {
@@ -1136,6 +1142,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200429
+ * Build:   200501
  *
  */
