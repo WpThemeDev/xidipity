@@ -25,11 +25,23 @@ if ( ! class_exists( 'c_walker' ) )
         }
         public function start_el(&$output, $category, $depth = 0, $args = array() , $current_object_id = 0)
         {
-            $output .= '<li><a href="' . get_category_link( $category->term_id ) . '">' . $args['link_before'] . $category->name . "\n";
+            if ($category->count > 0) {
+                $output .= '<li><a href="' . get_category_link( $category->term_id ) . '">' . $args['link_before'] . $category->name . "\n";
+            }
+            else
+            {
+                $output .= '<li>' . $args['link_before'] . $category->name . "\n";
+            }
         }
         public function end_el(&$output, $category, $depth = 0, $args = array())
         {
-            $output .= $args['link_after'] . '</a></li>' . "\n";
+            if ($category->count > 0) {
+                $output .= $args['link_after'] . '</a></li>' . "\n";                
+            }
+            else
+            {
+                $output .= $args['link_after'] . '</li>' . "\n";
+            }
         }
     }
 }
