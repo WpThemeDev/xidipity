@@ -1921,7 +1921,6 @@ function post_category($arg='')
     }
 }
 
-
 /*
  * EOF:     functions.php
  * Build:   200501
