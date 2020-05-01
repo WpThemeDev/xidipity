@@ -1,173 +1,293 @@
 <?php
-/**
- * The main template file.
+/*
+ * WordPress Xidipity Theme PHP File
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * File Name:       index.php
+ * Function:        display excerpt summary
+ * Build:           200429
+ * GitHub:          github.com/WpThemeDev/xidipity/
+ * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
- * build: 90201.1
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version         1.0
+ * @since           0.9
+ * @link            developer.wordpress.org/themes/basics/
  *
- * @package xidipity
  */
 
-get_header(); ?>
+/*
+***
+    * set page options
+***
+*/
+disp_menu('yes');
 
-    <div class="content-area-container">
-      <div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
-        <main id="main" class="site-main">
-        <?php
-          // current pagination number
-          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*
+***
+    * pagination variables
+***
+*/
+/*: current pagination number :*/
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/*: posts per page :*/
+$wp_ppp = get_option('posts_per_page');
 
-          // sticky posts
-          $posts_sticky  = get_option( 'sticky_posts' );
-          $sticky_cnt  = count( $posts_sticky );
+/*
+***
+    * filter out exclusions from active categories
+***
+*/
+$category_ids = filter_categories('archive,featured category 1,featured category 2,featured category 3');
 
-          // posts published
-          $posts_cnt = wp_count_posts();
-          $posts_published = $posts_cnt->publish;
+if (empty($category_ids))
+{
+    $cat_array = array(0);
+}
+else
+{
+    $cat_array = explode(',', $category_ids);
+}
 
-          // posts archived
-          $args_archive = array('category_name' => 'archive');
-          $query_archive = new WP_Query( $args_archive );
-          $posts_archive = $query_archive->post_count;
+/*
+***
+    * setup & open database query
+***
+*/
+$qry_prms = array(
+    'category__in' => $cat_array,
+    'order' => 'DESC',
+    'orderby' => 'date',
+    'perm' => 'readable',
+    'paged' => $wp_paged,
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => $wp_ppp
+);
+$wp_data = new WP_Query($qry_prms);
 
-          // posts featured
-          $args_featured = array('category_name' => 'post-featured');
-          $query_featured = new WP_Query( $args_featured );
-          $posts_featured = $query_featured->post_count;
+/*
+***
+    * function: get_header
+    * dsc: header code
+    * ver: 200322
+    * fnt: load header.php
+    * ref: developer.wordpress.org/reference/functions/get_header/
+***
+*/
+get_header();
 
-          // posts spotlight
-          $args_spotlight = array('category_name' => 'post-spotlight');
-          $query_spotlight = new WP_Query( $args_spotlight );
-          $posts_spotlight = $query_spotlight->post_count;
+/*
+***/
+echo '<!--  file:index.php -->' . "\n";
+/***
+*/
+echo '<!--  fi:3/HTML -->' . "\n";
+echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
+echo '<!--  fc:3/1/HTML -->' . "\n";
 
-          // posts / page
-          $posts_page = get_option( 'posts_per_page' );
+/*
+***
+    * align sidebar
+***
+*/
+if (XWT_SIDEBAR_ALIGN == 'left')
+{
+    echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
+}
+else
+{
+    echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
+}
 
-          // posts front page (not used)
-          $posts_fp = $posts_page - $sticky_cnt;
+if ($wp_data->have_posts())
+{
+    $cnt = 0;
+    echo '<!--  fc:3/1/1/WRAPPER -->' . "\n";
+    echo '<div class="fx:rw fxa:1 fxc:1">' . "\n";
+    while ($wp_data->have_posts())
+    {
+        $wp_data->the_post();
+        $cnt++;
+        /*
+        ***
+            * featured image
+        ***
+        */
+        $featured_img = get_the_post_thumbnail(null, 'FULL', array('class' => 'cnr:arch-small ht:auto wd:100%'));
 
-          // number of pages (fractions to next whole number)
-          $pages_max = ceil(($posts_published - ( $posts_archive + $posts_featured + $posts_spotlight + $sticky_cnt ) ) / $posts_page);
+        /*
+        ***
+            * read more link
+        ***
+        */
+        $rm_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
-          // post category slugs to exclude from blog page
-          $cat = array( get_category_by_slug('archive'), get_category_by_slug('post-featured'), get_category_by_slug('post-spotlight') );
-          $cat0 = $cat[0]->term_id;
-          $cat1 = $cat[1]->term_id;
-          $cat2 = $cat[2]->term_id;
-          
-          if (is_null($cat0)) {$cat0 = '';} else {$cat0 = '-' . $cat0;}
-          if (is_null($cat1)) {$cat1 = '';} else {$cat1 = '-' . $cat1;}
-          if (is_null($cat2)) {$cat2 = '';} else {$cat2 = '-' . $cat2;}
+        echo '<!--  fi:3/1/1/'. $cnt . '/ITEM -->' . "\n";
+        echo '<div class="fxd:1 fxe:6 fb:100% md)fb:50% xl)fb:33% mar:bottom+0.5 md)pad:hrz+0.25">' . "\n";
+        echo '<!--  fi:3/1/1/'. $cnt . '/SECTION -->' . "\n";
+        echo '<section class="box:shadow bdr:solid-thin bdr:bas-200 bg:content dsp:block ht:min14">' . "\n";
 
-          if ($paged == 1 ) {
-            
-              if ( $sticky_cnt > 0 ) {
-            
-                $args = array (
-                  'post__in' => $posts_sticky,
-                  'posts_per_page' => $sticky_cnt,
-                  'cat' => array($cat0,$cat1,$cat2),
-                  'paged' => $paged
-                );
-  
-                $wp_query = new WP_Query( $args );
-                if ( $wp_query->have_posts() ) : ?>
-                  <p>&nbsp;</p>
-                  <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                  <div class="clearfix blg-pg-hd-wrapper">
-                      <div class="blg-pg-hd-icon"><i class="fas fa-comment-alt">​</i></div>
-                      <div class="blg-pg-hd-text">featured posts</div>
-                  </div>
-                  <!-- End Template -->
-                  <p>&nbsp;</p>
-                  <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                  <?php
-                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                      get_template_part( 'template-parts/content', get_post_format() );
-                    endwhile; ?>
-                  </div><!-- .post-wrapper -->
-                  <?php
-                  xidipity_the_posts_pagination( $pages_max );
-                else :
-                  get_template_part( 'template-parts/content', 'none' );
-                endif;
+        /*
+        ***
+            * featured image
+        ***
+        */
+        if ($featured_img)
+        {
+            echo '<!--  fi:3/1/1/'. $cnt . '/SECTION/IMAGE -->' . "\n";
+            echo '<div class="dsp:block pad:+0.25">' . "\n";
+            echo $featured_img;
+            echo '</div>' . "\n";
+            echo '<!-- /fi:3/1/1/'. $cnt . '/SECTION/IMAGE -->' . "\n";
+        }
 
-              }
+        /*
+        ***
+            * excerpt
+        ***
+        */
+        echo '<!--  fi:3/1/1/'. $cnt . '/SECTION/EXCERPT -->' . "\n";
+        echo '<article class="dsp:block pad:+0.5">' . "\n";
+        echo '<div>' . dsp_cat(post_category('link')) . '</div>' . "\n";
+        echo '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>'  . "\n";
+        the_title('<p class="pst:title">', '</p>');
+        if (xidipity_has_excerpt())
+        {
+            the_excerpt();
+            echo dsp_rm($rm_link) . "\n";
+        }
+        echo '</article>' . "\n";
+        echo '<!-- /fi:3/1/1/'. $cnt . '/SECTION/EXCERPT -->' . "\n";
+        echo '</section>' . "\n";
+        echo '<!-- /fi:3/1/1/'. $cnt . '/SECTION -->' . "\n";
+        echo '</div>' . "\n";
+        echo '<!-- /fi:3/1/1/'. $cnt . '/ITEM -->' . "\n";
+    }
+    echo '</div>' . "\n";
+    echo '<!-- /fc:3/1/1/WRAPPER -->' . "\n";
 
-              $args = array (
-                'post__not_in' => $posts_sticky,
-                'posts_per_page' => $posts_page,
-                'cat' => array($cat0,$cat1,$cat2),
-                'paged' => $paged
-              );
-              
+    /*
+    ***
+        * function: pagination
+        * dsc: display pagination
+        * ver: 200322
+        * fnt: display pagination if paged & number of
+        *      records exceeds limit/page
+        * ref:
+    ***
+    */
+    include( locate_template( 'template-parts/content-pagination.php', false, false ) );
 
-              $wp_query = new WP_Query( $args );
-              if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
-                </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
-                <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                <?php
-                  while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                    get_template_part( 'template-parts/content', get_post_format() );
-                  endwhile; ?>
-                </div><!-- .post-wrapper -->
-                <?php
-                xidipity_the_posts_pagination( $pages_max );
-              else :
-                get_template_part( 'template-parts/content', 'none' );
-              endif;
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
-          } else {
+    /*
+    ***
+        * page footer
+    ***
+    */
+    $footer_items = '';
+    /*: current date :*/
+    $footer_items .= dsp_today(xidipity_date()) . '|';
+    echo '<!--  ct:FOOTER -->' . "\n";
+    echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+    echo '</footer>' . "\n";
+    echo '<!-- /ct:FOOTER -->' . "\n";
+}
+else
+{
+    $wp_posts = get_posts(
+     array(
+      'numberposts' => 1,
+      'post_status' => 'any',
+     )
+    );
 
-              $args = array (
-                'post__not_in' => $posts_sticky,
-                'posts_per_page' => $posts_page,
-                'cat' => array($cat0,$cat1,$cat2),
-                'paged' => $paged
-              );
+    echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
+    echo '<!--  fc:NEW -->' . "\n";
+    echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+0.5">' . "\n";
+    echo '<!--  fi:LOGO -->' . "\n";
+    echo '<div class="fxd:3 wd:100% pad:vrt+0.5 sm)wd:25%">' . "\n";
+    echo '<img class="pad:hrz+2 wd:100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMThweCIgaGVpZ2h0PSIxN3B4IiB2aWV3Qm94PSIwIDAgMTggMTciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDY0ICg5MzUzNykgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+bm8tYmxvZ3M8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ibm8tYmxvZ3MiIGZpbGw9IiMwMDNDOEYiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNy43LDkuMzUgTDE2LjcsMTAuMzUgTDE0LjY1LDguMyBMMTUuNjUsNy4zIEMxNS44Niw3LjA5IDE2LjIxLDcuMDkgMTYuNDIsNy4zIEwxNy43LDguNTggQzE3LjkxLDguNzkgMTcuOTEsOS4xNCAxNy43LDkuMzUgTTgsMTQuOTQgTDE0LjA2LDguODggTDE2LjExLDEwLjkzIEwxMC4wNiwxNyBMOCwxNyBMOCwxNC45NCBNOCwxMCBDMy41OCwxMCAwLDExLjc5IDAsMTQgTDAsMTYgTDYsMTYgTDYsMTQuMTEgTDEwLDEwLjExIEM5LjM0LDEwLjAzIDguNjcsMTAgOCwxMCBNOCwwIEM1Ljc5MDg2MSwwIDQsMS43OTA4NjEgNCw0IEM0LDYuMjA5MTM5IDUuNzkwODYxLDggOCw4IEMxMC4yMDkxMzksOCAxMiw2LjIwOTEzOSAxMiw0IEMxMiwxLjc5MDg2MSAxMC4yMDkxMzksMCA4LDAgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="Xidipity WordPress Theme New Blog Logo" />' . "\n";
+    echo '</div>' . "\n";
+    echo '<!-- /fi:LOGO -->' . "\n";
+    echo '<!--  fi:MESSAGE -->' . "\n";
+    echo '<div class="fxd:1 fxe:6 wd:100% sm)pad:+1 sm)wd:75%">' . "\n";
+    if (is_home() && current_user_can('publish_posts') && empty($wp_posts))
+    {
+        echo '<h2>1st Post</h2>' . "\n";
+        printf('<p>' . wp_kses(
+        /* translators: 1: link to WP admin new post page. */
+        __('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'xidipity') , array(
+            'a' => array(
+                'href' => array() ,
+            ) ,
+        )) . '</p>', esc_url(admin_url('post-new.php')));
+    }
+    else
+    {
+        echo '<h2>Welcome</h2>' . "\n";
+        echo '<p>Are you ready to publish your first post? If so, please login.</p>' . "\n";
+        echo '<p>&nbsp;</p>' . "\n";
+        echo '<p>Need help?</p>' . "\n";
+        echo '<p>Submit an email to: ' . '<a href="mailto:' . get_option('admin_email') . '?subject=' . get_option('blogname') . ' New User Question">' . get_option('blogname') . ' Support</a></p>' . "\n";
+    }
+    echo '</div>' . "\n";
+    echo '<!-- /fi:MESSAGE -->' . "\n";
+    echo '</div>' . "\n";
+    echo '<!-- /fc:NEW -->' . "\n";
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+}
+echo '</section>' . "\n";
+echo '<!--  /fi:3/1/1/HTML -->' . "\n";
 
-              $wp_query = new WP_Query( $args );
-              if ( $wp_query->have_posts() ) : ?>
-                <p>&nbsp;</p>
-                <!-- 90117.1 Template: miscellaneous / speciality / header / h2 -->
-                <div class="clearfix blg-pg-hd-wrapper">
-                    <div class="blg-pg-hd-icon"><i class="fas fa-book-reader">​</i></div>
-                    <div class="blg-pg-hd-text">recent posts</div>
-                </div>
-                <!-- End Template -->
-                <p>&nbsp;</p>
-                <div id="post-wrapper" class="post-wrapper post-wrapper-archive">
-                <?php
-                  while ( $wp_query->have_posts() ) : $wp_query->the_post();
-                    get_template_part( 'template-parts/content', get_post_format() );
-                  endwhile; ?>
-                </div><!-- .post-wrapper -->
-                <?php
-                xidipity_the_posts_pagination( $pages_max );
-              else :
-                get_template_part( 'template-parts/content', 'none' );
-              endif;
-          }
-        
-        ?>
-        </main><!-- #main -->
-      </div><!-- #primary -->
-      <?php get_sidebar(); ?>
-    </div><!-- # column wrapper -->
+/*
+***
+    * function: get_sidebar
+    * dsc: sidebar code
+    * ver: 200322
+    * fnt: load sidebar.php
+    * ref: developer.wordpress.org/reference/functions/get_sidebar/
+***
+*/
+get_sidebar();
+echo '</main>' . "\n";
+echo '<!-- /fc:3/1/HTML -->' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /fi:3/HTML -->' . "\n";
 
-<?php
-// Restore original Post Data
+/*
+***
+    * function: get_footer
+    * dsc: footer code
+    * ver: 200322
+    * fnt: load footer.php
+    * ref: developer.wordpress.org/reference/functions/get_footer/
+***
+*/
+get_footer();
+
+/*
+***
+    * function: wp_reset_postdata
+    * dsc: database code
+    * ver: 200322
+    * fnt: reset database query
+    * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+***
+*/
 wp_reset_postdata();
-get_footer(); ?>
+
+/*
+ * EOF:     index.php
+ * Build:   200429
+ *
+ */
+?>

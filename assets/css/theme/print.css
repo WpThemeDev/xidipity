@@ -1,0 +1,367 @@
+/*
+ * WordPress Xidipity Theme CSS File
+ *
+ * File Name:       theme/print.css
+ * Function:        CSS print elements
+ * Build:           200422
+ * Revision:        1
+ * GitHub:          https://github.com/WpThemeDev/xidipity/
+ * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version         1.0
+ * @since           0.9
+ * @link            https://developer.wordpress.org/themes/basics/
+ *
+ */
+
+/*
+***
+    * element: body
+    * dsc: content of an HTML document
+    * ver: 200208
+    * fnt: set body attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
+***
+*/
+body {
+    -webkit-print-color-adjust: exact;
+    background: var(--hue-wht);
+    color: var(--hue-blk);
+    font-family: var(--dft-font-family);
+    font-size: var(--dft-font-size);
+    font-weight: var(--dft-font-weight);
+    line-height: var(--dft-line-height);
+}
+
+/*
+***
+    * rule: @page
+    * dsc: modify some CSS properties when printing a document
+    * ver: 200208
+    * fnt: set print page attributes
+    * ref: https://developer.mozilla.org/en-US/docs/Web/CSS/@page
+***
+*/
+@page {
+    /* auto is the initial value */
+    size: auto;
+    margin: 8%;
+}
+
+/*
+***
+    * id: excerpt, nav, sidebar, ...
+    * dsc: theme ids
+    * ver: 200208
+    * fnt: selectors to not print
+    * ref:
+***
+*/
+#excerpt,
+#nav,
+#sidebar,
+.comment-respond,
+.comments-area,
+.do-not-print {
+    display: none;
+}
+
+/*
+***
+    * element: <a>
+    * dsc: link
+    * ver: 190206
+    * fnt: disable anchor element to other web pages
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+***
+*/
+a,
+a:visited {
+    color: var(--dft-lnk-pri-color);
+    font-weight: var(--dft-pri-lnk-wgt);
+    text-decoration: var(--dft-pri-lnk-decor);
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: var(--hue-blk);
+    background-color: var(--transparent);
+    font-weight: var(--dft-pri-lnk-wgt);
+}
+
+table {
+    break-inside: auto
+}
+
+tr {
+    break-inside: avoid;
+    break-after: auto
+}
+
+/*
+***
+    * elements: <h1>–<h6>
+    * dsc: document headers
+    * ver: 190206
+    * fnt: adjust headers for print
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+***
+*/
+h1 {
+    color: var(--h1-color);
+    font-family: var(--h1-font);
+    font-size: var(--h1-size);
+    font-style: var(--h1-style);
+    font-weight: var(--h1-weight);
+}
+
+h2 {
+    color: var(--h2-color);
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+    font-style: var(--h2-style);
+    font-weight: var(--h2-weight);
+}
+
+h3 {
+    color: var(--h3-color);
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+    font-style: var(--h3-style);
+    font-weight: var(--h3-weight);
+}
+
+h4 {
+    color: var(--h4-color);
+    font-family: var(--h4-font);
+    font-size: var(--h4-size);
+    font-style: var(--h4-style);
+    font-weight: var(--h4-weight);
+}
+
+h5 {
+    color: var(--h5-color);
+    font-family: var(--h5-font);
+    font-size: var(--h5-size);
+    font-style: var(--h5-style);
+    font-weight: var(--h5-weight);
+}
+
+h6 {
+    color: var(--h6-color);
+    font-family: var(--h6-font);
+    font-size: var(--h6-size);
+    font-style: var(--h6-style);
+    font-weight: var(--h6-weight);
+}
+
+/*
+***
+    * element: table
+    * dsc: table
+    * ver: 190206
+    * fnt: adjust multi-column for print
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+***
+*/
+table.cols\:auto,
+table.cols\:2,
+table.cols\:3,
+table.cols\:4 {
+    border: none !important;
+    width: 100%;
+}
+
+.cols\:auto td,
+.cols\:2 td {
+    column-count: 2;
+    column-gap: 2%;
+    break-inside: avoid;
+}
+
+.cols\:3 td {
+    column-count: 3;
+    column-gap: 2%;
+}
+
+.cols\:4 td {
+    column-count: 4;
+    column-gap: 2%;
+}
+
+/*
+***
+    * environment: prt
+    * dsc: display
+    * ver: 190206
+    * fnt: print specific display options
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+***
+*/
+.prt\[dsp\:none\] {
+    display: none !important;
+}
+
+.prt\[dsp\:hidden\] {
+    visibility: hidden !important;
+}
+
+.prt\[dsp\:inline\] {
+    display: inline !important;
+}
+
+.prt\[dsp\:inline-block\] {
+    display: inline-block !important;
+}
+
+.prt\[pg-break\:after\] {
+    break-after: always;
+}
+
+.prt\[pg-break\:after\] {
+    break-after: always;
+}
+
+.prt\[box\:noshadow\] {
+    border-top: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/*
+***
+    * environment: prt
+    * dsc: palette adjustments
+    * ver: 190206
+    * fnt: print specific palette adjustments
+    * ref: theme print-vars.css
+***
+*/
+.prt\[fg-blk\] {
+    color: var(--hue-blk) !important;
+}
+
+.prt\[fg-wht\] {
+    color: var(--hue-wht) !important;
+}
+
+.prt\[fg-bas-900\] {
+    color: var(--hue-bas-900) !important;
+}
+
+.prt\[fg-bas-800\] {
+    color: var(--hue-bas-800) !important;
+}
+
+.prt\[fg-bas-700\] {
+    color: var(--hue-bas-700) !important;
+}
+
+.prt\[fg-bas-600\] {
+    color: var(--hue-bas-600) !important;
+}
+
+.prt\[fg-bas-500\] {
+    color: var(--hue-bas-500) !important;
+}
+
+.prt\[fg-bas-400\] {
+    color: var(--hue-bas-400) !important;
+}
+
+.prt\[fg-bas-300\] {
+    color: var(--hue-bas-300) !important;
+}
+
+.prt\[fg-bas-200\] {
+    color: var(--hue-bas-200) !important;
+}
+
+.prt\[fg-bas-100\] {
+    color: var(--hue-bas-100) !important;
+}
+
+.prt\[fg-bas-050\] {
+    color: var(--hue-bas-050) !important;
+}
+
+.prt\[bg-bas-900\] {
+    background-color: var(--hue-bas-900) !important;
+}
+
+.prt\[bg-bas-800\] {
+    background-color: var(--hue-bas-800) !important;
+}
+
+.prt\[bg-bas-700\] {
+    background-color: var(--hue-bas-700) !important;
+}
+
+.prt\[bg-bas-600\] {
+    background-color: var(--hue-bas-600) !important;
+}
+
+.prt\[bg-bas-500\] {
+    background-color: var(--hue-bas-500) !important;
+}
+
+.prt\[bg-bas-400\] {
+    background-color: var(--hue-bas-400) !important;
+}
+
+.prt\[bg-bas-300\] {
+    background-color: var(--hue-bas-300) !important;
+}
+
+.prt\[bg-bas-200\] {
+    background-color: var(--hue-bas-200) !important;
+}
+
+.prt\[bg-bas-100\] {
+    background-color: var(--hue-bas-100) !important;
+}
+
+.prt\[bg-bas-050\] {
+    background-color: var(--hue-bas-050) !important;
+}
+
+/*
+***
+    * property: box:shadow
+    * dsc:  flexbox shadow
+    * ver:  200422
+    * fnt:  hide drop shadow to flexbox
+    * ref:
+***
+*/
+.box\:shadow {
+    border-top: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/*
+***
+    * id: breadcrumbs
+    * dsc: yoast breadcrumbs
+    * ver: 190206
+    * fnt: do not display breadcrumbs on print
+    * ref: https://kb.yoast.com/kb/implement-wordpress-seo-breadcrumbs/
+***
+*/
+#breadcrumbs {
+    display: none;
+}
+
+/*
+ * EOF:     theme/print.css
+ * Build:   200422
+ *
+ */

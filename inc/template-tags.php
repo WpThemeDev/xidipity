@@ -1,321 +1,687 @@
 <?php
-/**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * build: 90226.1
- *
- * @package xidipity
- */
+/*
+    * WordPress Xidipity Theme PHP File
+    *
+    * File Name:       inc/template-tags.php
+    * Function:        extended functinality
+    * Build:           200429
+    * GitHub:          https://github.com/WpThemeDev/xidipity/
+    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            https://codex.wordpress.org/Template_Tags
+    *
+    *
+    * SVG icon sizes
+    *  h1      - svg:h1
+    *  h2      - svg:h2
+    *  h3      - svg:h3
+    *  h4      - svg:h4
+    *  h5      - svg:h5
+    *  h6      - svg:h6
+    *  large   - svg:large
+    *  medium  - svg:medium (default font size)
+    *  small   - svg:small
+    *
+    *  src: https://materialdesignicons.com/
+    *
+*/
 
-if (!function_exists('xidipity_the_posts_pagination')):
-    /**
-     * Display navigation to next/previous set of posts when applicable.
-     *
-     * @see https://codex.wordpress.org/Function_Reference/the_posts_pagination
-     * @return void
-     */
-    function xidipity_the_posts_pagination($max_pg)
+/*
+***
+    * ico: xidipity_icon_err
+    * dsc: error
+    * ver: 200429
+    * fnt: return error icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_err'))
+{
+    function xidipity_icon_err($arg='')
     {
-
-        // Previous/next posts navigation @since 4.1.0
-
-        the_posts_pagination(array(
-            'mid_size' => 1,
-            'total' => $max_pg,
-            'prev_text' => '<span class="screen-reader-text">' . esc_html__('Previous Page', 'xidipity') . '</span>',
-            'next_text' => '<span class="screen-reader-text">' . esc_html__('Next Page', 'xidipity') . '</span>',
-
-            // 'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'xidipity' ) . ' </span>',
-
-        ));
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21M19.75,3.19L18.33,4.61C20.04,6.3 21,8.6 21,11H23C23,8.07 21.84,5.25 19.75,3.19M1,11H3C3,8.6 3.96,6.3 5.67,4.61L4.25,3.19C2.16,5.25 1,8.07 1,11Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21M19.75,3.19L18.33,4.61C20.04,6.3 21,8.6 21,11H23C23,8.07 21.84,5.25 19.75,3.19M1,11H3C3,8.6 3.96,6.3 5.67,4.61L4.25,3.19C2.16,5.25 1,8.07 1,11Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_the_post_navigation')):
-    /**
-     * Previous/next post navigation.
-     *
-     * @see https://developer.wordpress.org/reference/functions/the_post_navigation/
-     * @return void
-     */
-    function xidipity_the_post_navigation()
+/*
+***
+    * ico: xidipity_icon_readmore
+    * dsc: read more
+    * ver: 200429
+    * fnt: return readmore icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_readmore'))
+{
+    function xidipity_icon_readmore($arg='')
     {
-
-        // Previous/next post navigation @since 4.1.0.
-
-        the_post_navigation(array(
-            'next_text' => '<span class="meta-nav">' . esc_html__('Next', 'xidipity') . '</span> ' . '<span class="post-title">%title</span>',
-            'prev_text' => '<span class="meta-nav">' . esc_html__('Prev', 'xidipity') . '</span> ' . '<span class="post-title">%title</span>',
-        ));
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" /></svg>';
+            }
+        }
+        return $ret_val;
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_posted_on')):
-    /**
-     * Prints HTML with meta information for the current post-date/time and author.
-     */
-    function xidipity_posted_on()
+/*
+***
+    * ico: xidipity_icon_modified
+    * dsc: modified
+    * ver: 200429
+    * fnt: return modified icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_modified'))
+{
+    function xidipity_icon_modified($arg='')
     {
-        $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-        if (get_the_time('U') !== get_the_modified_time('U')) {
-            $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2C2.89 2 2 2.89 2 4V20A2 2 0 0 0 4 22H12.41A7 7 0 0 0 16 23A7 7 0 0 0 23 16A7 7 0 0 0 18 9.3V8L12 2H4M11 3.5L16.5 9H11V3.5M16 11A5 5 0 0 1 21 16A5 5 0 0 1 16 21A5 5 0 0 1 11 16A5 5 0 0 1 16 11M15 12V17L18.61 19.16L19.36 17.94L16.5 16.25V12H15Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M4 2C2.89 2 2 2.89 2 4V20A2 2 0 0 0 4 22H12.41A7 7 0 0 0 16 23A7 7 0 0 0 23 16A7 7 0 0 0 18 9.3V8L12 2H4M11 3.5L16.5 9H11V3.5M16 11A5 5 0 0 1 21 16A5 5 0 0 1 16 21A5 5 0 0 1 11 16A5 5 0 0 1 16 11M15 12V17L18.61 19.16L19.36 17.94L16.5 16.25V12H15Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_archive
+    * dsc: archive
+    * ver: 200429
+    * fnt: return archive icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_archive'))
+{
+    function xidipity_icon_archive($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M3,3H21V7H3V3M4,8H20V21H4V8M9.5,11A0.5,0.5 0 0,0 9,11.5V13H15V11.5A0.5,0.5 0 0,0 14.5,11H9.5Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_calendar
+    * dsc: calendar
+    * ver: 200206
+    * fnt: return calendar icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_calendar'))
+{
+    function xidipity_icon_calendar($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_today
+    * dsc: today calendar
+    * ver: 200429
+    * fnt: return today calendar icon
+    * ref: materialdesignicons.com
+***
+*/
+if (!function_exists('xidipity_icon_today'))
+{
+    function xidipity_icon_today($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_comment
+    * dsc: post comment
+    * ver: 200429
+    * fnt: return post comment icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_comment'))
+{
+    function xidipity_icon_comment($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_comments
+    * dsc: post comments
+    * ver: 200429
+    * fnt: return post comments icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_comments'))
+{
+    function xidipity_icon_comments($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M12,23A1,1 0 0,1 11,22V19H7A2,2 0 0,1 5,17V7A2,2 0 0,1 7,5H21A2,2 0 0,1 23,7V17A2,2 0 0,1 21,19H16.9L13.2,22.71C13,22.89 12.76,23 12.5,23H12M3,15H1V3A2,2 0 0,1 3,1H19V3H3V15Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_x_comments
+    * dsc: post comments closed
+    * ver: 200422
+    * fnt: return post comments closed icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_x_comments'))
+{
+    function xidipity_icon_x_comments($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes = 'h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M9.41,6L8,7.41L10.59,10L8,12.59L9.41,14L12,11.41L14.59,14L16,12.59L13.41,10L16,7.41L14.59,6L12,8.59L9.41,6Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_tag
+    * dsc: post tag
+    * ver: 200422
+    * fnt: return post tag icon
+    * ref:
+***
+*/
+if (!function_exists('xidipity_icon_tag'))
+{
+    function xidipity_icon_tag($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_author
+    * dsc: post author
+    * ver: 200422
+    * fnt: return author icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_author'))
+{
+    function xidipity_icon_author($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_sticky
+    * dsc: sticky post
+    * ver: 200422
+    * fnt: return sticky icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_sticky'))
+{
+    function xidipity_icon_sticky($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M17,21L14.25,18L15.41,16.84L17,18.43L20.59,14.84L21.75,16.25M12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21M12,15H7V17H12M17,7H7V9H17" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M17,21L14.25,18L15.41,16.84L17,18.43L20.59,14.84L21.75,16.25M12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21M12,15H7V17H12M17,7H7V9H17" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_bm
+    * dsc: bookmark
+    * ver: 200422
+    * fnt: return bookmark icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_bm'))
+{
+    function xidipity_icon_bm($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_uncategorized
+    * dsc: uncategorized
+    * ver: 200429
+    * fnt: return uncategorized icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_uncategorized'))
+{
+    function xidipity_icon_uncategorized($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M22,17V19H14V17H22M12,17V15H7V17H12M17,11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11M17,9V7H7V9H17Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M22,17V19H14V17H22M12,17V15H7V17H12M17,11H7V13H14.69C13.07,14.07 12,15.91 12,18C12,19.09 12.29,20.12 12.8,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19A2,2 0 0,1 21,5V12.8C20.12,12.29 19.09,12 18,12L17,12.08V11M17,9V7H7V9H17Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_edit
+    * dsc: edit icon
+    * ver: 200429
+    * fnt: return sized edit icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_edit'))
+{
+    function xidipity_icon_edit($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H10V20.1L20 10.1V8L14 2H6M13 3.5L18.5 9H13V3.5M20.1 13C20 13 19.8 13.1 19.7 13.2L18.7 14.2L20.8 16.3L21.8 15.3C22 15.1 22 14.7 21.8 14.5L20.5 13.2C20.4 13.1 20.3 13 20.1 13M18.1 14.8L12 20.9V23H14.1L20.2 16.9L18.1 14.8Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_next
+    * dsc: next icon
+    * ver: 200429
+    * fnt: return sized next icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_next'))
+{
+    function xidipity_icon_next($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M20,3H5A2,2 0 0,0 3,5V11H7V9L11,12L7,15V13H3V19A2,2 0 0,0 5,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3M17,17H13V15H17V17M20,13H13V11H20V13M20,9H13V7H20V9M3,13H0V11H3V13Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M20,3H5A2,2 0 0,0 3,5V11H7V9L11,12L7,15V13H3V19A2,2 0 0,0 5,21H20A2,2 0 0,0 22,19V5A2,2 0 0,0 20,3M17,17H13V15H17V17M20,13H13V11H20V13M20,9H13V7H20V9M3,13H0V11H3V13Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*
+***
+    * ico: xidipity_icon_prev
+    * dsc: previous icon
+    * ver: 200429
+    * fnt: return sized previous icon
+    * ref: materialdesignicons.com/
+***
+*/
+if (!function_exists('xidipity_icon_prev'))
+{
+    function xidipity_icon_prev($arg='')
+    {
+        $size = strtolower($arg);
+        $ret_val = '<svg class="svg:medium" viewBox="0 0 24 24"><path fill="currentColor" d="M4,21H19A2,2 0 0,0 21,19V13H17V15L13,12L17,9V11H21V5A2,2 0 0,0 19,3H4A2,2 0 0,0 2,5V19A2,2 0 0,0 4,21M4,15H8V17H4V15M4,11H11V13H4V11M4,7H11V9H4V7M21,11H24V13H21V11Z" /></svg>';
+        if (!empty($size))
+        {
+            $sizes ='h1,h2,h3,h4,h5,h6,large,small';
+            if (has_match($sizes,$size))
+            {
+                $ret_val = '<svg class="svg:' . $size . '" viewBox="0 0 24 24"><path fill="currentColor" d="M4,21H19A2,2 0 0,0 21,19V13H17V15L13,12L17,9V11H21V5A2,2 0 0,0 19,3H4A2,2 0 0,0 2,5V19A2,2 0 0,0 4,21M4,15H8V17H4V15M4,11H11V13H4V11M4,7H11V9H4V7M21,11H24V13H21V11Z" /></svg>';
+            }
+        }
+        return $ret_val;
+    }
+}
+
+/*  # xidipity_metalinks
+    # 90828.1a
+    # return flexbox of metadata links
+**/
+if (!function_exists('xidipity_metalinks'))
+{
+    function xidipity_metalinks($atts = array())
+    {
+        /*: variables   :*/
+        $html_retval = '';
+        $v_cnt = count($atts);
+        /*: go / no go  :*/
+        if ($v_cnt > 0)
+        {
+            $html_retval .= '<table class="bdr:collapse">';
+            $html_retval .= '<tbody>';
+            $html_retval .= '<tr>';
+            foreach ($atts as $att)
+            {
+                if (!empty(trim($att)))
+                {
+                    $html_retval .= '<td class="aln:text-left aln:middle">' . trim($att) . '</td>';
+                }
+            }
+            $html_retval .= '</tr>';
+            $html_retval .= '</tbody>';
+            $html_retval .= '</table>';
         }
 
-        $time_string = sprintf($time_string, esc_attr(get_the_date('c')) , esc_html(get_the_date()) , esc_attr(get_the_modified_date('c')) , esc_html(get_the_modified_date()));
-        $posted_on = sprintf('<span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark"> %3$s</a>', esc_html_x('Posted on', 'post date', 'xidipity') , esc_url(get_permalink()) , $time_string);
-
-        // Posted On HTML
-
-        $html = '<span class="posted-on">' . $posted_on . '</span>'; // // WPCS: XSS OK.
-        /**
-         * Filters the Posted On HTML.
-         *
-         * @param string $html Posted On HTML.
-         */
-        $html = apply_filters('xidipity_posted_on_html', $html);
-        echo $html; // WPCS: XSS OK.
+        /*: return html :*/
+        return $html_retval;
     }
+}
 
-endif;
+/*  # xidipity_date
+    # 200429
+    # display post
+    #   ars
+    #       cur = current (default)
+    #       mix  = published / modified
+    #       mod  = modified
+    #       pub = published (default)
+    # return date string
+**/
+if (!function_exists('xidipity_date'))
+{
+    function xidipity_date($arg='')
+    {
+        $cur = current_time(get_option('date_format'));
+        $pub = get_the_date(get_option('date_format'));
+        $mod = get_the_modified_time(get_option('date_format'));
+        $fmt = strtolower($arg);
+        switch ($fmt)
+        {
+            case 'pub':
+                $date_retval = $pub;
+            break;
+            case 'mod':
+                $date_retval = $mod;
+            break;
+            case 'mix':
+                if ($pub !== $mod)
+                {
+                    $date_retval = $pub . ' / ' . $mod;
+                }
+                else
+                {
+                    $date_retval = $pub;                    
+                }
+            break;
+            default:
+                $date_retval = $cur;
+        }
+        return $date_retval;
+    }
+}
 
-if (!function_exists('xidipity_posted_by')):
+/*  # posted_by
+    # 90904.1a
+    # core wp function
+    # return posted author
+**/
+if (!function_exists('xidipity_posted_by'))
+{
     /**
      * Prints author.
      */
     function xidipity_posted_by()
     {
-
         // Global Post
-
         global $post;
-
         // We need to get author meta data from both inside/outside the loop.
-
         $post_author_id = get_post_field('post_author', $post->ID);
-
         // Byline
-
-        $byline = sprintf(esc_html_x('by %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('display_name', $post_author_id)) . '</a></span>');
-
+        $byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" style="max-height:68px;max-width:68px;" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
         // Posted By HTML
-
         $html = '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
         /**
          * Filters the Posted By HTML.
          *
          * @param string $html Posted By HTML.
          */
         $html = apply_filters('xidipity_posted_by_html', $html);
-        echo $html; // WPCS: XSS OK.
+        // echo $html; // WPCS: XSS OK.
+        return $html; // WPCS: XSS OK.
+
     }
+}
 
-endif;
-
-if (!function_exists('xidipity_post_first_category')):
-    /**
-     * Prints first category for the current post.
-     *
-     * @return void
-     */
-    function xidipity_post_first_category()
+/*  # xidipity_first_category
+    # 90728.1
+    # return html
+**/
+if (!function_exists('xidipity_first_category'))
+{
+    function xidipity_first_category($arg='')
     {
-
-        // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
-
+        /*
+            show yoast primary category, or first category
+        */
         $category = get_the_category();
         $useCatLink = true;
-
-        // If post has a category assigned.
-
-        if ($category) {
+        $html_retval = '';
+        /*
+            if post has a category assigned
+        */
+        if ($category)
+        {
             $category_display = '';
             $category_link = '';
-            if (class_exists('WPSEO_Primary_Term')) {
-
-                // Show the post's 'Primary' category, if this Yoast feature is available, & one is set
-
+            if (class_exists('WPSEO_Primary_Term'))
+            {
+                /*
+                    show the post's 'primary' category, if this yoast feature
+                    is available, & one is set
+                */
                 $wpseo_primary_term = new WPSEO_Primary_Term('category', get_the_id());
                 $wpseo_primary_term = $wpseo_primary_term->get_primary_term();
                 $term = get_term($wpseo_primary_term);
-                if (is_wp_error($term)) {
-
-                    // Default to first category (not Yoast) if an error is returned
-
+                if (is_wp_error($term))
+                {
+                    /*
+                        default to first category (not yoast) if an error is returned
+                    */
                     $category_display = $category[0]->name;
                     $category_link = get_category_link($category[0]->term_id);
                 }
-                else {
-
-                    // Yoast Primary category
-
+                else
+                {
+                    /*
+                        yoast primary category
+                    */
                     $category_display = $term->name;
                     $category_link = get_category_link($term->term_id);
                 }
             }
-            else {
-
-                // Default, display the first category in WP's list of assigned categories
-
+            else
+            {
+                /*
+                    default, display the first category in wp's list of assigned categories
+                */
                 $category_display = $category[0]->name;
                 $category_link = get_category_link($category[0]->term_id);
             }
-
-            // Display category
-
-            if (!empty($category_display)) {
-                if ($useCatLink == true && !empty($category_link)) {
-                    echo '<span class="post-category">';
-                    echo '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
-                    echo '</span>';
+            /*
+                return category
+            */
+            if (!empty($category_display))
+            {
+                if ($useCatLink == true && !empty($category_link) && empty($arg))
+                {
+                    $html_retval .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
                 }
-                else {
-                    echo '<span class="post-category">' . htmlspecialchars($category_display) . '</span>';
+                else
+                {
+                    $html_retval = htmlspecialchars($category_display);
                 }
             }
+            /*: return html :*/
+            return $html_retval;
         }
-    }
-
-endif;
-
-if (!function_exists('xidipity_entry_footer')):
-    /**
-     * Prints HTML with meta information for the categories, tags and comments.
-     */
-    function xidipity_entry_footer()
-    {
-
-        // Hide category and tag text for pages.
-
-        if ('post' === get_post_type()) {
-            /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__(', ', 'xidipity'));
-            if ($categories_list && xidipity_categorized_blog()) {
-                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'xidipity') . '</span>', $categories_list); // WPCS: XSS OK.
-            }
-
-            /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list('', esc_html__(', ', 'xidipity'));
-            if ($tags_list) {
-                printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'xidipity') . '</span>', $tags_list); // WPCS: XSS OK.
-            }
-        }
-
-        edit_post_link(sprintf(
-        /* translators: %s: Name of current post */
-        esc_html__('Edit %s', 'xidipity') , the_title('<span class="screen-reader-text">"', '"</span>', false)) , '<span class="edit-link">', '</span>');
-    }
-
-endif;
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-
-function xidipity_categorized_blog()
-{
-    if (false === ($all_the_cool_cats = get_transient('xidipity_categories'))) {
-
-        // Create an array of all the categories that are attached to posts.
-
-        $all_the_cool_cats = get_categories(array(
-            'fields' => 'ids',
-            'hide_empty' => 1,
-
-            // We only need to know if there is more than one category.
-
-            'number' => 2,
-        ));
-
-        // Count the number of categories that are attached to the posts.
-
-        $all_the_cool_cats = count($all_the_cool_cats);
-        set_transient('xidipity_categories', $all_the_cool_cats);
-    }
-
-    if ($all_the_cool_cats > 1) {
-
-        // This blog has more than 1 category so xidipity_categorized_blog should return true.
-
-        return true;
-    }
-    else {
-
-        // This blog has only 1 category so xidipity_categorized_blog should return false.
-
-        return false;
     }
 }
 
-/**
- * Flush out the transients used in xidipity_categorized_blog.
- */
-
-function xidipity_category_transient_flusher()
+/*  # custom logo
+    # 90904.1a
+    # core wordpress process
+**/
+if (!function_exists('xidipity_the_custom_logo'))
 {
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-
-    // Like, beat it. Dig?
-
-    delete_transient('xidipity_categories');
-}
-
-add_action('edit_category', 'xidipity_category_transient_flusher');
-add_action('save_post', 'xidipity_category_transient_flusher');
-
-if (!function_exists('xidipity_post_thumbnail')):
-    /**
-     * Display an optional post thumbnail.
-     *
-     * Wraps the post thumbnail in an anchor element.
-     *
-     * @return void
-     */
-    function xidipity_post_thumbnail()
-    {
-
-        // Post Thumbnail HTML
-
-        $html = '';
-
-        // Get Post Thumbnail
-
-        $post_thumbnail = get_the_post_thumbnail(null, 'xidipity-featured', array(
-            'class' => 'post-thumbnail-fmt'
-        ));
-
-        // Validation
-
-        if (!empty($post_thumbnail)) {
-
-            // Post Thumbnail HTML
-
-            $html = sprintf('<div class="post-thumbnail-wrapper post-thumbnail-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>', esc_attr(esc_url(get_the_permalink())) , $post_thumbnail);
-        }
-
-        /**
-         * Filters the Post Thumbnail HTML.
-         *
-         * @param string $html Post Thumbnail HTML.
-         */
-        $html = apply_filters('xidipity_post_thumbnail_html', $html);
-
-        // Print HTML
-
-        if (!empty($html)) {
-            echo $html; // WPCS: XSS OK.
-        }
-    }
-
-endif;
-
-if (!function_exists('xidipity_the_custom_logo')):
     /**
      * Displays the optional custom logo.
      *
@@ -323,27 +689,20 @@ if (!function_exists('xidipity_the_custom_logo')):
      */
     function xidipity_the_custom_logo()
     {
-        if (function_exists('the_custom_logo')) {
+        if (function_exists('the_custom_logo'))
+        {
             the_custom_logo();
         }
     }
-
-endif;
-/**
- * A helper conditional function.
- * Theme has Excerpt or Not
- *
- * https://codex.wordpress.org/Function_Reference/get_the_excerpt
- * This function must be used within The Loop.
- *
- * @return bool
- */
-
+}
+/*  # does excerpt exist
+    # 90904.1a
+    # core wordpress process
+    # returns bool
+**/
 function xidipity_has_excerpt()
 {
-
     // Post Excerpt
-
     $post_excerpt = get_the_excerpt();
     /**
      * Filters the Post has excerpt.
@@ -353,79 +712,9 @@ function xidipity_has_excerpt()
     return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
 
-/**
- * A helper conditional function.
- * Theme has Sidebar or Not
+/*
+ * EOF:     inc/template-tags.php
+ * Build:   200429
  *
- * @return bool
  */
-
-function xidipity_has_sidebar()
-{
-    /**
-     * Filters the theme has active sidebar.
-     *
-     * @param bool
-     */
-    return apply_filters('xidipity_has_sidebar', is_active_sidebar('sidebar-1'));
-}
-
-/**
- * Display the layout classes.
- *
- * @param string $section - Name of the section to retrieve the classes
- * @return void
- */
-
-function xidipity_layout_class($section = 'content')
-{
-
-    // Sidebar Position
-
-    $sidebar_position = xidipity_mod('xidipity_sidebar_position');
-    if (!xidipity_has_sidebar()) {
-        $sidebar_position = 'no';
-    }
-
-    // Layout Skeleton
-
-    $layout_skeleton = array(
-        'content' => array(
-            'content' => '',
-        ) ,
-        'content-sidebar' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-        'sidebar-content' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-        'sidebar-content-rtl' => array(
-            'content' => '',
-            'sidebar' => 'sidebar-widget-area',
-        ) ,
-    );
-
-    // Layout Classes
-
-    switch ($sidebar_position) {
-    case 'no':
-        $layout_classes = $layout_skeleton['content']['content'];
-        break;
-
-    case 'left':
-        $layout_classes = ('sidebar' === $section) ? $layout_skeleton['sidebar-content']['sidebar'] : $layout_skeleton['sidebar-content']['content'];
-        if (is_rtl()) {
-            $layout_classes = ('sidebar' === $section) ? $layout_skeleton['sidebar-content-rtl']['sidebar'] : $layout_skeleton['sidebar-content-rtl']['content'];
-        }
-
-        break;
-
-    case 'right':
-    default:
-        $layout_classes = ('sidebar' === $section) ? $layout_skeleton['content-sidebar']['sidebar'] : $layout_skeleton['content-sidebar']['content'];
-    }
-
-    echo esc_attr($layout_classes);
-}
+?>

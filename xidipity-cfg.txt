@@ -1,0 +1,26 @@
+/*
+ * Xidipity Theme CFG File
+ * build: 200322
+ */,
+/*: favorite icon :*/,
+fav-icon=https://staging1.xidipity.com/wp-content/uploads/2019/09/xidipity-favorite-icon.png,
+/*: page header height :*/,
+hdr-height=7rem,
+/*: page header image :*/,
+hdr-image=none,
+/*: page header logo :*/,
+hdr-logo=none,
+/*: page header align :*/,
+hdr-align=center,
+/*: page footer align :*/,
+ftr-align=center,
+/*: menu width :*/,
+mnu-width=80%,
+/*: menu align :*/,
+mnu-align=center,
+/*: align sidebar default :*/,
+sb-align=right,
+/*: display emoji default :*/,
+emoji-display=yes,
+/*: font awesome version :*/,
+fa-version=5.12.1

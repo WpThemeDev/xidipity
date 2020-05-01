@@ -1,0 +1,156 @@
+/*
+    * WordPress Xidipity Theme CSS File
+    *
+    * File Name:       theme/editor.css
+    * Function:        Editor specific CSS
+    * Build:           200429
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            developer.wordpress.org/themes/basics/
+    *
+*/
+
+/*
+***
+    * element: <body>
+    * dsc: body
+    * ver: 200222
+    * fnt: html body (see common.css, web.css for other property values)
+    * ref: developer.mozilla.org/en-US/docs/Web/API/Body
+***
+*/
+.mce-content-body {
+    margin: 1rem;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body.webkit strong,
+body.webkit b {
+    font-weight: bolder !important;
+}
+
+/*
+***
+    property: mce
+    * dsc: editor specific formatting
+    * ver: 190926-1
+    * fnt: apply mce formatting
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
+***
+*/
+.mce\[dsp\:none\] {
+    display: none;
+}
+
+.mce\[dsp\:hidden\] {
+    visibility: hidden;
+}
+
+.mce\[dsp\:block\] {
+    display: block;
+}
+
+.mce\[dsp\:inline\] {
+    display: inline;
+}
+
+.mce\[dsp\:inline-block\] {
+    display: inline-block;
+}
+
+img {
+}
+
+/*
+***
+    * element: img
+    * dsc: img caption
+    * ver: 200222
+    * fnt: add space to the caption text
+    * ref:
+***
+*/
+.wp-caption img {
+    padding-bottom: 0.25rem;
+}
+
+/*
+***
+    * property: vs
+    * dsc: vertical space
+    * ver: 200222
+    * fnt: set line height
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
+***
+*/
+.vs\:1\/2,
+.vs\:3\/4,
+.vs\:1-1\/2,
+.vs\:2,
+.vs\:2-1\/2,
+.vs\:3 {
+    background-color: var(--hue-bas-100);
+}
+
+/*
+***
+    * element: <ul>
+    * dsc: paragraph list
+    * ver: 200304
+    * fnt: add custom bullet to list
+    * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+***
+*/
+ul.par,
+ul.par ul,
+ul.par ul ul,
+ul.par ul ul ul,
+ul.par ul ul ul ul,
+ul.par ul ul ul ul ul {
+    border-left: 0.25rem solid var(--hue-pri-tint-dark);
+    margin-left: 1.75rem;
+    padding-left: 0.5rem !important;
+}
+
+/*
+***
+    property: cols
+    * dsc: table multi-column
+    * ver: 190315
+    * fnt: turn borders on in editor
+    * ref:
+***
+*/
+table.cols\:auto-2,
+table.cols\:auto-3,
+table.cols\:auto-4,
+table.cols\:auto-2 td,
+table.cols\:auto-3 td,
+table.cols\:auto-4 td {
+    width: 100%;
+}
+
+table.cols\:fixed-2 td,
+table.cols\:fixed-3 td,
+table.cols\:fixed-4 td {
+    border-right: 1px dashed var(--hue-bas-400) !important;
+}
+
+table.cols\:fixed-2 td:last-child,
+table.cols\:fixed-3 td:last-child,
+table.cols\:fixed-4 td:last-child {
+    border-right-style: none;
+}
+
+/*
+ * EOF:     theme/editor.css
+ * Build:   200429
+ *
+ */

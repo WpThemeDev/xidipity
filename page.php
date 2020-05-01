@@ -1,40 +1,177 @@
 <?php
-/**
- * The template for displaying all pages.
+/*
+ * WordPress Xidipity Theme PHP File
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * File Name:       page.php
+ * Function:        display page
+ * Build:           200429
+ * GitHub:          github.com/WpThemeDev/xidipity/
+ * License URI:     www.gnu.org/licenses/gpl-3.0.txt
  *
- * @package xidipity
+ * @package         xidipity
+ * @author          John Baer
+ * @copyright       2019-2020 John Baer
+ * @license         GPL-3.0-or-later
+ * @version         1.0
+ * @since           0.9
+ * @link            developer.wordpress.org/themes/basics/
+ *
  */
 
-get_header(); ?>
+/*
+***
+    * display menus
+***
+*/
+disp_menu('yes');
 
-    <div class="content-area-container">
-			<div id="primary" class="content-area <?php xidipity_layout_class( 'content' ); ?>">
-				<main id="main" class="site-main">
-					<div id="post-wrapper" class="post-wrapper post-wrapper-single">
-          <?php
-          //  $wp_query is global
-				  if ( $wp_query->have_posts() ) {
-					  while ( $wp_query->have_posts() ) : the_post();
-						  get_template_part( 'template-parts/content', 'page' );
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || '0' != get_comments_number() ) :
-								comments_template();
-							endif;
-					  endwhile; // end of the loop.
-				  }
-					?>
-					</div><!-- .post-wrapper -->
-				</main><!-- #main -->
-			</div><!-- #primary -->
-			<?php get_sidebar(); ?>
-		</div><!-- # column wrapper -->
+/*
+***
+    * function: get_header
+    * descript: display page header
+    * ref: developer.wordpress.org/reference/functions/get_header/
+***
+*/
+get_header();
 
-<?php
-// Restore original Post Data
+/*
+***/
+echo '<!--  file:page.php -->' . "\n";
+/***
+*/
+echo '<!--  fi:3/HTML -->' . "\n";
+echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
+echo '<!--  fc:3/1/HTML -->' . "\n";
+
+/*
+***
+    * align sidebar
+***
+*/
+if (XWT_SIDEBAR_ALIGN == 'left')
+{
+    echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
+}
+else
+{
+    echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
+    echo '<!--  fi:3/1/1/HTML -->' . "\n";
+    echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
+}
+
+echo '<!--  bk:ARTICLE -->' . "\n";
+echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+
+if ($wp_query->have_posts())
+{
+    the_post();
+
+    /*
+    ***
+        * function: the_title
+        * descript: display page title
+        * ref: developer.wordpress.org/reference/functions/the_title/
+    ***
+    */
+    echo '<!--  bk:HEADER -->' . "\n";
+    echo '<header class="mar:top+1 wd:100%">' . "\n";
+    the_title('<div class="pg:title">', '</div>');
+    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '</header>' . "\n";
+    echo '<!-- /bk:HEADER -->' . "\n";
+    echo '<!--  bk:1/PARAGRAPH -->' . "\n";
+    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+
+    /*
+    ***
+        * yoast breadcrumbs plugin
+    ***
+    */
+    if ( !is_front_page() && !is_home() )
+    {
+        if (function_exists('yoast_breadcrumb'))
+        {
+            yoast_breadcrumb('<div id="breadcrumbs" class="seo-pag-breadcrumbs">', '</div>' . "\n");
+        }
+    }
+
+    /*
+    ***
+        * function: the_content wrapper
+        * descript: display page content
+        * ref: developer.wordpress.org/reference/functions/the_content/
+    ***
+    */
+    dsp_content();
+    echo '</div>' . "\n";
+    echo '<!-- /bk:1/PARAGRAPH -->' . "\n";
+
+    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+}
+else
+{
+    get_template_part('template-parts/content', 'none');
+}
+
+/*
+***
+    * page footer
+***
+*/
+$footer_items = '';
+/*: edit :*/
+if (get_edit_post_link())
+{
+    $footer_items .= dsp_edit(get_edit_post_link()) . '|';
+}
+/*: today's date :*/
+$footer_items .= dsp_today(xidipity_date()) . '|';
+echo '<!--  ct:FOOTER -->' . "\n";
+echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
+echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
+echo '</footer>' . "\n";
+echo '<!-- /ct:FOOTER -->' . "\n";
+echo '</article>' . "\n";
+echo '<!-- /bk:ARTICLE -->' . "\n";
+echo '</section>' . "\n";
+echo '<!-- /fi:3/1/1/HTML 1 -->' . "\n";
+
+/*
+***
+    * function: get_sidebar
+    * descript: display sidebar
+    * ref: developer.wordpress.org/reference/functions/get_sidebar/
+***
+*/
+get_sidebar();
+echo '</main>' . "\n";
+echo '<!-- /fc:3/1/HTML -->' . "\n";
+echo '</div>' . "\n";
+echo '<!-- /fi:3/HTML -->' . "\n";
+
+/*
+***
+    * function: get_footer
+    * descript: display page footer
+    * ref: developer.wordpress.org/reference/functions/get_footer/
+***
+*/
+get_footer();
+
+/*
+***
+    * function: wp_reset_postdata
+    * descript: reset database query
+    * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+***
+*/
 wp_reset_postdata();
-get_footer(); ?>
+
+/*
+ * EOF:     page.php
+ * Build:   200429
+ *
+ */
+?>
