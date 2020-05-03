@@ -4,7 +4,7 @@
  *
  * File Name:       image.php
  * Function:        display media library image
- * Build:           200429
+ * Build:           200502
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -101,7 +101,8 @@ if ($wp_query->have_posts())
     ***
     */
     $caption = wp_get_attachment_caption(get_the_ID());
-    $content = get_the_content();
+    $content_post = get_post(get_the_ID());
+    $content = $content_post->post_content;
     echo '<div class="mar:vrt+0.5">' . "\n";
     echo '<!--  fc:MEDIA -->' . "\n";
     echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%">' . "\n";
@@ -114,7 +115,9 @@ if ($wp_query->have_posts())
     }
     if (!empty($content))
     {
-    echo get_the_content() . "\n";
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        echo $content . "\n";
     }
     echo '</div>' . "\n";
     echo '</div>' . "\n";
@@ -219,7 +222,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     image.php
- * Build:   200429
+ * Build:   200502
  *
  */
 ?>
