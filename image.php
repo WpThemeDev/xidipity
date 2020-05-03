@@ -135,7 +135,7 @@ if ($wp_query->have_posts())
     $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.25">' . xidipity_icon_prev('small') . '</span>Go Back</a>' . '|';
     $footer_items .= get_the_date(get_option('date_format'),get_the_ID()) . '|';
     /*: dimensions :*/
-    $footer_items .= 'Dimensions: ' . absint($wp_metadata['height']) . 'x' . absint($wp_metadata['width']) . ' pixels |';
+    $footer_items .= 'Dimensions: ' . absint($wp_metadata['width']) . 'x' . absint($wp_metadata['height']) . ' pixels |';
     $ratio = round(absint($wp_metadata['height']) / absint($wp_metadata['width']) , 4);
     switch ($ratio)
     {
