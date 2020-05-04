@@ -3,7 +3,7 @@
     *
     * File Name:       theme/advance.css
     * Function:        Xidipity CSS framework
-    * Build:           200429
+    * Build:           200502
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -397,6 +397,11 @@ table.cols\:fixed {
 .bdr\:space\+0 {
     border-collapse: separate !important;
     border-spacing: 0 !important;
+}
+
+.bdr\:space\+0\.125 {
+    border-collapse: separate !important;
+    border-spacing: 0.25rem !important;
 }
 
 .bdr\:space\+0\.25 {
@@ -3459,6 +3464,11 @@ table.cols\:fixed {
     .sm\)bdr\:space\+0 {
         border-collapse: separate !important;
         border-spacing: 0 !important;
+    }
+
+    .sm\)bdr\:space\+0\.125 {
+        border-collapse: separate !important;
+        border-spacing: 0.25rem !important;
     }
 
     .sm\)bdr\:space\+0\.25 {
@@ -6525,6 +6535,11 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
+    .md\)bdr\:space\+0\.125 {
+        border-collapse: separate !important;
+        border-spacing: 0.25rem !important;
+    }
+
     .md\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
         border-spacing: 0.25rem !important;
@@ -9587,6 +9602,11 @@ table.cols\:fixed {
     .lg\)bdr\:space\+0 {
         border-collapse: separate !important;
         border-spacing: 0 !important;
+    }
+
+    .lg\)bdr\:space\+0\.125 {
+        border-collapse: separate !important;
+        border-spacing: 0.25rem !important;
     }
 
     .lg\)bdr\:space\+0\.25 {
@@ -12653,6 +12673,11 @@ table.cols\:fixed {
         border-spacing: 0 !important;
     }
 
+    .xl\)bdr\:space\+0\.125 {
+        border-collapse: separate !important;
+        border-spacing: 0.25rem !important;
+    }
+
     .xl\)bdr\:space\+0\.25 {
         border-collapse: separate !important;
         border-spacing: 0.25rem !important;
@@ -15344,11 +15369,10 @@ table.cols\:fixed {
         position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
     }
-
 }
 
 /*
  * EOF:     theme/advance.css
- * Build:   200429
+ * Build:   200502
  *
  */
