@@ -1,22 +1,21 @@
 /*
- * WordPress Xidipity Theme CSS File
- *
- * File Name:       theme/palette.css
- * Function:        CSS palette elements
- * Build:           200322
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+    * WordPress Xidipity Theme CSS File
+    *
+    * File Name:       theme/palette.css
+    * Function:        CSS palette elements
+    * Build:           200502
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            developer.wordpress.org/themes/basics/
+    *
+*/
 
 /*
 ***
@@ -759,36 +758,68 @@ button.bg\:blue-grey\!focus:focus {
 background tints
 ***
 */
-.bg\:tint-2,
-.bg\:tint-2\!hover:hover,
-button.bg\:tint-2\!active:active,
-button.bg\:tint-2\!focus:focus {
-    filter: brightness(70%) !important;
+
+.bas\:tint,
+.bas\:tint\!hover:hover,
+button.bas\:tint\!active:active,
+button.bas\:tint\!focus:focus {
+    background-color: var(--hue-bas-200) !important;
 }
 
-.bg\:tint-1,
-.bg\:tint-1\!hover:hover,
-button.bg\:tint-1\!active:active,
-button.bg\:tint-1\!focus:focus {
-    filter: brightness(85%) !important;
+.bas\:tint\+1,
+.bas\:tint\+1\!hover:hover,
+button.bas\:tint\+1\!active:active,
+button.bas\:tint\+1\!focus:focus {
+    background-color: var(--hue-bas-050) !important;
 }
 
-.bg\:tint {
-    background-color: var(--hue-bas-100);
+.bas\:tint-1,
+.bas\:tint-1\!hover:hover,
+button.bas\:tint-1\!active:active,
+button.bas\:tint-1\!focus:focus {
+    background-color: var(--hue-bas-400) !important;
 }
 
-.bg\:tint\+1,
-.bg\:tint\+1\!hover:hover,
-button.bg\:tint\+1\!active:active,
-button.bg\:tint\+1\!focus:focus {
-    filter: brightness(115%) !important;
+.pri\:tint,
+.pri\:tint\!hover:hover,
+button.pri\:tint\!active:active,
+button.pri\:tint\!focus:focus {
+    background-color: var(--hue-pri-tint) !important;
 }
 
-.bg\:tint\+2,
-.bg\:tint\+2\!hover:hover,
-button.bg\:tint\+2\!active:active,
-button.bg\:tint\+2\!focus:focus {
-    filter: brightness(130%) !important;
+.pri\:tint\+1,
+.pri\:tint\+1\!hover:hover,
+button.pri\:tint\+1\!active:active,
+button.pri\:tint\+1\!focus:focus {
+    background-color: var(--hue-pri-tint-bright) !important;
+}
+
+.pri\:tint-1,
+.pri\:tint-1\!hover:hover,
+button.pri\:tint-1\!active:active,
+button.pri\:tint-1\!focus:focus {
+    background-color: var(--hue-pri-tint-dark) !important;
+}
+
+.sec\:tint,
+.sec\:tint\!hover:hover,
+button.sec\:tint\!active:active,
+button.sec\:tint\!focus:focus {
+    background-color: var(--hue-sec-tint) !important;
+}
+
+.sec\:tint\+1,
+.sec\:tint\+1\!hover:hover,
+button.sec\:tint\+1\!active:active,
+button.sec\:tint\+1\!focus:focus {
+    background-color: var(--hue-sec-tint-bright) !important;
+}
+
+.sec\:tint-1,
+.sec\:tint-1\!hover:hover,
+button.sec\:tint-1\!active:active,
+button.sec\:tint-1\!focus:focus {
+    background-color: var(--hue-sec-tint-dark) !important;
 }
 
 /*: hilite mce plugin support :*/
@@ -3072,6 +3103,6 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
 
 /*
  * EOF:     theme/palette.css
- * Build:   200322
+ * Build:   200502
  *
  */
