@@ -3,7 +3,7 @@
  *
  * File Name:       sys/theme-vars.css
  * Function:        theme css data elements
- * Build:           200422
+ * Build:           200502
  * GitHub:          github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -53,16 +53,16 @@
     --hue-pri: #1565c0;
     --hue-pri-bright: #5e92f3;
     --hue-pri-dark: #003c8f;
-    --hue-pri-tint: rgba(21, 101, 192, 0.1);
-    --hue-pri-tint-bright: rgba(94, 146, 243, 0.1);
-    --hue-pri-tint-dark: rgba(0, 60, 143, 0.1);
+    --hue-pri-tint: #b9d1ec;
+    --hue-pri-tint-bright: #e8f0f9;
+    --hue-pri-tint-dark: #8ab2e0;
     /*: secondary hue :*/
     --hue-sec: #f25c02;
     --hue-sec-bright: #ff8e3d;
     --hue-sec-dark: #b82800;
-    --hue-sec-tint: rgba(242, 92, 2, 0.1);
-    --hue-sec-tint-bright: rgba(255, 142, 61, 0.1);
-    --hue-sec-tint-dark: rgba(184, 40, 0, 0.1);
+    --hue-sec-tint: #fbceb3;
+    --hue-sec-tint-bright: #feefe6;
+    --hue-sec-tint-dark: #f9ae81;
     /*
     ***
     other colors (material design palette)
@@ -240,6 +240,6 @@
 
 /*
  * EOF:     sys/theme-vars.css
- * Build:   200422
+ * Build:   200502
  *
  */
