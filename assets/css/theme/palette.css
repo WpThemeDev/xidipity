@@ -763,21 +763,21 @@ background tints
 .bas\:tint\!hover:hover,
 button.bas\:tint\!active:active,
 button.bas\:tint\!focus:focus {
-    background-color: var(--hue-bas-200) !important;
+    background-color: var(--hue-bas-tint) !important;
 }
 
 .bas\:tint\+1,
 .bas\:tint\+1\!hover:hover,
 button.bas\:tint\+1\!active:active,
 button.bas\:tint\+1\!focus:focus {
-    background-color: var(--hue-bas-050) !important;
+    background-color: var(--hue-bas-tint-bright) !important;
 }
 
 .bas\:tint-1,
 .bas\:tint-1\!hover:hover,
 button.bas\:tint-1\!active:active,
 button.bas\:tint-1\!focus:focus {
-    background-color: var(--hue-bas-400) !important;
+    background-color: var(--hue-bas-tint-dark) !important;
 }
 
 .pri\:tint,
