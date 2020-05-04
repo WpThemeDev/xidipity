@@ -401,7 +401,7 @@ table.cols\:fixed {
 
 .bdr\:space\+0\.125 {
     border-collapse: separate !important;
-    border-spacing: 0.25rem !important;
+    border-spacing: 0.125rem !important;
 }
 
 .bdr\:space\+0\.25 {
@@ -3468,7 +3468,7 @@ table.cols\:fixed {
 
     .sm\)bdr\:space\+0\.125 {
         border-collapse: separate !important;
-        border-spacing: 0.25rem !important;
+        border-spacing: 0.125rem !important;
     }
 
     .sm\)bdr\:space\+0\.25 {
@@ -6537,7 +6537,7 @@ table.cols\:fixed {
 
     .md\)bdr\:space\+0\.125 {
         border-collapse: separate !important;
-        border-spacing: 0.25rem !important;
+        border-spacing: 0.125rem !important;
     }
 
     .md\)bdr\:space\+0\.25 {
@@ -9606,7 +9606,7 @@ table.cols\:fixed {
 
     .lg\)bdr\:space\+0\.125 {
         border-collapse: separate !important;
-        border-spacing: 0.25rem !important;
+        border-spacing: 0.125rem !important;
     }
 
     .lg\)bdr\:space\+0\.25 {
@@ -12675,7 +12675,7 @@ table.cols\:fixed {
 
     .xl\)bdr\:space\+0\.125 {
         border-collapse: separate !important;
-        border-spacing: 0.25rem !important;
+        border-spacing: 0.125rem !important;
     }
 
     .xl\)bdr\:space\+0\.25 {
