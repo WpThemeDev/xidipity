@@ -4,7 +4,7 @@
  *
  * File Name:       image.php
  * Function:        display media library image
- * Build:           200429
+ * Build:           200502
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -101,7 +101,8 @@ if ($wp_query->have_posts())
     ***
     */
     $caption = wp_get_attachment_caption(get_the_ID());
-    $content = get_the_content();
+    $content_post = get_post(get_the_ID());
+    $content = $content_post->post_content;
     echo '<div class="mar:vrt+0.5">' . "\n";
     echo '<!--  fc:MEDIA -->' . "\n";
     echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%">' . "\n";
@@ -114,7 +115,9 @@ if ($wp_query->have_posts())
     }
     if (!empty($content))
     {
-    echo get_the_content() . "\n";
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        echo $content . "\n";
     }
     echo '</div>' . "\n";
     echo '</div>' . "\n";
@@ -132,7 +135,7 @@ if ($wp_query->have_posts())
     $footer_items .= '<a href="javascript:history.back()"><span class="pad:right+0.25">' . xidipity_icon_prev('small') . '</span>Go Back</a>' . '|';
     $footer_items .= get_the_date(get_option('date_format'),get_the_ID()) . '|';
     /*: dimensions :*/
-    $footer_items .= 'Dimensions: ' . absint($wp_metadata['height']) . 'x' . absint($wp_metadata['width']) . ' pixels |';
+    $footer_items .= 'Dimensions: ' . absint($wp_metadata['width']) . 'x' . absint($wp_metadata['height']) . ' pixels |';
     $ratio = round(absint($wp_metadata['height']) / absint($wp_metadata['width']) , 4);
     switch ($ratio)
     {
@@ -219,7 +222,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     image.php
- * Build:   200429
+ * Build:   200502
  *
  */
 ?>
