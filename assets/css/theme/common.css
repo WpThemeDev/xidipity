@@ -81,7 +81,7 @@ kbd {
     * dsc: button appearance
     * ver: 200429
     * fnt: simulate the appearance of a button
-    * ref: 
+    * ref:
 ***
 */
 .btn\:facade {
@@ -1267,13 +1267,13 @@ td .ratio-container {
     * dsc: adjust icon
     * ver: 200508
     * fnt: material icon hack to align icons to font size
-    * ref: 
+    *      !important to override defaults
 ***
 */
 .material-icons {
-    position: relative; 
-    top: 0.3125rem; 
-    font-size: calc(100% + 0.375rem);
+    position: relative !important;
+    top: 4px !important;
+    font-size: calc(100% + 2px) !important;
 }
 
 /*
