@@ -4,7 +4,7 @@
     *
     * File Name:       functions.php
     * Function:        xidipity functions definitions
-    * Build:           200501
+    * Build:           200508
     * GitHub:          https://github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -1599,22 +1599,19 @@ function dsp_err($arg = '')
 {
     // system
     $fn_retval = '';
-    // variables
-    $v_msg = '';
-    // atributes
-    $a_msg = trim($arg);
-    if (empty($a_msg))
+    if (empty($arg))
     {
-        $v_msg = 'Error detected without an explanation';
+        $msg = 'Error detected without an explanation';
     }
     else
     {
-        $v_msg = $a_msg;
+        $msg = $arg;
     }
-    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fg:wht pad:top+0.5">' . xidipity_icon_err('h3')  . '</td><td class="aln:text-left aln:middle bg:tint cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($v_msg) . '</td></tr></tbody></table>';
+    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fnt:size-2x-large fg:wht pad:hrz+0.75">' . xidipity_icon_err('h3')  . '</td><td class="aln:text-left aln:middle bas:tint+1 cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table>';
     // return html
     return $fn_retval;
 }
+
 /**
  *  name: filter_categories
  *  build: 200322
@@ -1923,7 +1920,7 @@ function post_category($arg='')
 
 /*
  * EOF:     functions.php
- * Build:   200501
+ * Build:   200508
  *
  */
 ?>
