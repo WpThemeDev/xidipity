@@ -3,7 +3,7 @@
     *
     * File Name:       theme/palette.css
     * Function:        CSS palette elements
-    * Build:           200502
+    * Build:           200513
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -759,66 +759,66 @@ background tints
 ***
 */
 
-.bas\:tint,
-.bas\:tint\!hover:hover,
-button.bas\:tint\!active:active,
-button.bas\:tint\!focus:focus {
+.bg\:tint-bas,
+.bg\:tint-bas\!hover:hover,
+button.bg\:tint-bas\!active:active,
+button.bg\:tint-bas\!focus:focus {
     background-color: var(--hue-bas-tint) !important;
 }
 
-.bas\:tint\+1,
-.bas\:tint\+1\!hover:hover,
-button.bas\:tint\+1\!active:active,
-button.bas\:tint\+1\!focus:focus {
+.bg\:tint-bas\+1,
+.bg\:tint-bas\+1\!hover:hover,
+button.bg\:tint-bas\+1\!active:active,
+button.bg\:tint-bas\+1\!focus:focus {
     background-color: var(--hue-bas-tint-bright) !important;
 }
 
-.bas\:tint-1,
-.bas\:tint-1\!hover:hover,
-button.bas\:tint-1\!active:active,
-button.bas\:tint-1\!focus:focus {
+.bg\:tint-bas-1,
+.bg\:tint-bas-1\!hover:hover,
+button.bg\:tint-bas-1\!active:active,
+button.bg\:tint-bas-1\!focus:focus {
     background-color: var(--hue-bas-tint-dark) !important;
 }
 
-.pri\:tint,
-.pri\:tint\!hover:hover,
-button.pri\:tint\!active:active,
-button.pri\:tint\!focus:focus {
+.bg\:tint-pri,
+.bg\:tint-pri\!hover:hover,
+button.bg\:tint-pri\!active:active,
+button.bg\:tint-pri\!focus:focus {
     background-color: var(--hue-pri-tint) !important;
 }
 
-.pri\:tint\+1,
-.pri\:tint\+1\!hover:hover,
-button.pri\:tint\+1\!active:active,
-button.pri\:tint\+1\!focus:focus {
+.bg\:tint-pri\+1,
+.bg\:tint-pri\+1\!hover:hover,
+button.bg\:tint-pri\+1\!active:active,
+button.bg\:tint-pri\+1\!focus:focus {
     background-color: var(--hue-pri-tint-bright) !important;
 }
 
-.pri\:tint-1,
-.pri\:tint-1\!hover:hover,
-button.pri\:tint-1\!active:active,
-button.pri\:tint-1\!focus:focus {
+.bg\:tint-pri-1,
+.bg\:tint-pri-1\!hover:hover,
+button.bg\:tint-pri-1\!active:active,
+button.bg\:tint-pri-1\!focus:focus {
     background-color: var(--hue-pri-tint-dark) !important;
 }
 
-.sec\:tint,
-.sec\:tint\!hover:hover,
-button.sec\:tint\!active:active,
-button.sec\:tint\!focus:focus {
+.bg\:tint-sec,
+.bg\:tint-sec\!hover:hover,
+button.bg\:tint-sec\!active:active,
+button.bg\:tint-sec\!focus:focus {
     background-color: var(--hue-sec-tint) !important;
 }
 
-.sec\:tint\+1,
-.sec\:tint\+1\!hover:hover,
-button.sec\:tint\+1\!active:active,
-button.sec\:tint\+1\!focus:focus {
+.bg\:tint-sec\+1,
+.bg\:tint-sec\+1\!hover:hover,
+button.bg\:tint-sec\+1\!active:active,
+button.bg\:tint-sec\+1\!focus:focus {
     background-color: var(--hue-sec-tint-bright) !important;
 }
 
-.sec\:tint-1,
-.sec\:tint-1\!hover:hover,
-button.sec\:tint-1\!active:active,
-button.sec\:tint-1\!focus:focus {
+.bg\:tint-sec-1,
+.bg\:tint-sec-1\!hover:hover,
+button.bg\:tint-sec-1\!active:active,
+button.bg\:tint-sec-1\!focus:focus {
     background-color: var(--hue-sec-tint-dark) !important;
 }
 
@@ -3103,6 +3103,6 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
 
 /*
  * EOF:     theme/palette.css
- * Build:   200502
+ * Build:   200513
  *
  */
