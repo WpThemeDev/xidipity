@@ -3,7 +3,7 @@
     *
     * File Name:       theme/web.css
     * Function:        CSS web elements
-    * Build:           200501
+    * Build:           200508
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     gnu.org/licenses/gpl-3.0.txt
     *
@@ -931,13 +931,13 @@ a.page-numbers:focus {
 ***
     * element: codemirror
     * dsc: set attributes
-    * ver: 200226
+    * ver: 200508
     * fnt: set height, etc...
     * ref: codemirror.net/
 ***
 */
 .CodeMirror-activeline-background {
-    background-color: #FFF59D !important;
+    background-color: #E8F0F9 !important;
 }
 
 .CodeMirror {
@@ -945,6 +945,7 @@ a.page-numbers:focus {
     height: 65vh !important;
     font-family: var(--font-mono) !important;
     overflow: auto;
+    padding-right: 0.25rem;
 }
 
 /*
@@ -1142,6 +1143,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200501
+ * Build:   200508
  *
  */
