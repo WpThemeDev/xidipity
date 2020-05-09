@@ -3771,7 +3771,7 @@ table.cols\:fixed {
 
     .sm\)fnt\:size-x-medium,
     .sm\)icon\:size-x-medium {
-        font-size: var(--font-size-xr) !important;
+        font-size: var(--font-size-xm) !important;
     }
 
     .sm\)fnt\:size-medium,
@@ -6840,7 +6840,7 @@ table.cols\:fixed {
 
     .md\)fnt\:size-x-medium,
     .md\)icon\:size-x-medium {
-        font-size: var(--font-size-xr) !important;
+        font-size: var(--font-size-xm) !important;
     }
 
     .md\)fnt\:size-medium,
@@ -9909,7 +9909,7 @@ table.cols\:fixed {
 
     .lg\)fnt\:size-x-medium,
     .lg\)icon\:size-x-medium {
-        font-size: var(--font-size-xr) !important;
+        font-size: var(--font-size-xm) !important;
     }
 
     .lg\)fnt\:size-medium,
@@ -12978,7 +12978,7 @@ table.cols\:fixed {
 
     .xl\)fnt\:size-x-medium,
     .xl\)icon\:size-x-medium {
-        font-size: var(--font-size-xr) !important;
+        font-size: var(--font-size-xm) !important;
     }
 
     .xl\)fnt\:size-medium,
