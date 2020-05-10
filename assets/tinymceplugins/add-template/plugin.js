@@ -3,7 +3,7 @@
  *
  * File Name:       add-template/plugin.js
  * Function:        tinymce HTML embed plugin
- * Build:           200104-1
+ * Build:           200513
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -25,7 +25,7 @@ tinymce.PluginManager.add('add_template', function( editor, url ) {
         onclick: function() {
           editor.windowManager.open({
             name: 'embed',
-            title: 'Embed',
+            title: 'Add Template',
             width: window.outerWidth * .5,
             minWidth: 320,
             height: window.outerHeight * .6,
@@ -50,6 +50,6 @@ tinymce.PluginManager.add('add_template', function( editor, url ) {
 
 /*
  * EOF:     add-template/plugin.js
- * Build:   200104-1
+ * Build:   200513
  *
  */
