@@ -3,7 +3,7 @@
  *
  * File Name:       add-horizontal-rule/plugin.js
  * Function:        tinymce horizontal rule plugin
- * Build:           200208
+ * Build:           200513
  * Revision:        1
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
@@ -67,13 +67,13 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
             text: '•\xa0Emblem Narrow',
             icon: false,
             onclick: function() {
-                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:pri-dark"><i class="fab fa-wordpress fnt:size-x-large">&#x200B;</i></div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div></div>');
+                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:bas-500 fnt:weight-bold">//</div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div></div>');
             }
         }, {
             text: '•\xa0Emblem Wide',
             icon: false,
             onclick: function() {
-                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:pri-dark"><i class="fab fa-wordpress fnt:size-x-large">&#x200B;</i></div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div></div>');
+                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:bas-500 fnt:weight-bold">//</div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div></div>');
             }
         }],
 
@@ -87,6 +87,6 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
 
 /*
  * EOF:     add-horizontal-rule/plugin.js
- * Build:   200208
+ * Build:   200513
  *
  */
