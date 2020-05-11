@@ -3,7 +3,7 @@
     *
     * File Name:       theme/common.css
     * Function:        shared CSS elements
-    * Build:           200508
+    * Build:           200513
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -167,6 +167,19 @@ code {
     font-family: var(--font-mono) !important;
     font-size: smaller !important;
     font-weight: var(--dft-font-weight) !important;
+}
+
+/*
+***
+    * property: cmt:html
+    * dsc: html comments
+    * ver: 200513
+    * fnt: alternate method to "<!--"
+    * ref: 
+***
+*/
+.cmt\:html {
+    display: none;
 }
 
 /*
@@ -1802,6 +1815,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200508
+ * Build:   200513
  *
  */
