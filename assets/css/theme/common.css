@@ -132,8 +132,16 @@ pre.wrap{
     font-weight: normal;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
+}
+
+/*: table media :*/
+@media (min-width: 640px) {
+    pre,
+    pre.wrap{
+        padding: 1rem;
+    }
 }
 
 pre {
