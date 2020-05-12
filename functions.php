@@ -1644,7 +1644,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fnt:size-2x-large fg:wht pad:hrz+0.75">' . xidipity_icon_err('h3')  . '</td><td class="aln:text-left aln:middle bas:tint+1 cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table>';
+    $fn_retval = '<!--  tmpl:ANNOTATION --><table class="bdr:collapse bdr:hidden cols:auto mar:vrt+1.25 wd:100%"><tbody class="aln:middle bg:tint-bas+1"><tr><td class="aln:text-center bg:wcag-red cnr:arch-left-small fg:wht fnt:size-3x-large wd:min4">' . xidipity_icon_err('h3') . '</td><td class="aln:text-left cnr:arch-right-small fnt:size-medium pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table><!-- /tmpl:ANNOTATION -->';
     // return html
     return $fn_retval;
 }
