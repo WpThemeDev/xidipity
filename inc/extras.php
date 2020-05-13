@@ -4,7 +4,7 @@
     *
     * File Name:       inc/extras.php
     * Function:        xidipity extensions
-    * Build:           200429
+    * Build:           200513
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -419,6 +419,7 @@ if (!function_exists('xidipity_the_attached_image')) {
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
+ *  bexc    200513    blog excerpt
  *  xlst    200429    excerpt list
  *  blst    200322    unordered list of linked blog titles
  *  clst    200322    unordered list of linked category titles
@@ -433,6 +434,89 @@ if (!function_exists('xidipity_the_attached_image')) {
  *  wp-ver           get wordpess version
  *
  */
+
+/*
+ *  Xidipity WordPress Theme
+ *
+ *  name:   bexc
+ *  build:  200513
+ *  descrp: display blog excerpt
+ *  attributes ($args - array):
+ *      readmore - string (n/y)
+ *
+ *  parameters ($prm - string):
+ *      post title - string
+ *
+ *  [bexc readmore='']post[/bexc]
+ *
+ *  @package WordPress
+ *  @subpackage Xidipity
+ *  @since 1.0
+ *
+*/
+add_shortcode('bexc', 'bexc_shortcode');
+function bexc_shortcode($args = array(), $prm = '')
+{
+    /*
+     ***
+     * variables defaults
+     ***
+    */
+    $html_retval = '';
+    $readmore = 'n';
+
+    /*
+     ***
+     * parameters
+     ***
+    */
+    $page_title = $prm;
+
+    /*
+     ***
+     * initialize local arguments
+     ***
+    */
+    if (isset($args['readmore']))
+    {
+        $tmp_str = no_dft($args['readmore']);
+        if (has_match('y,n', strtolower($tmp_str)))
+        {
+            $readmore = $tmp_str;
+        }
+    }
+
+    if (!empty($page_title))
+    {
+        $page = get_page_by_title($page_title, OBJECT, array('post_type' => 'post'));
+        if ( !empty($page) )
+        {
+            $bexc = get_the_excerpt($page->ID);
+            if (!empty($bexc))
+            {
+                $html_retval = $bexc;
+            }
+            else
+            {
+                $html_retval = dsp_err('[bexc] Blog excerpt not found');
+            }
+            if ($readmore == 'y')
+            {
+                $page_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink($page->ID)));
+                $html_retval .= dsp_rm($page_link);
+            }
+        }
+        else
+        {
+            $html_retval = dsp_err('[bexc] Blog post not found');
+        }
+    }
+    else
+    {
+        $html_retval = dsp_err('[bexc] Missing blog title parameter');
+    }
+    return $html_retval;
+}
 
 /*
  *  Xidipity WordPress Theme
@@ -1518,7 +1602,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200429
+ * Build:   200513
  *
  */
 ?>
