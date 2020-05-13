@@ -1,22 +1,22 @@
 /*
- * WordPress Xidipity Theme JS File
- *
- * File Name:       add-horizontal-rule/plugin.js
- * Function:        tinymce horizontal rule plugin
- * Build:           200208
- * Revision:        1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://www.tiny.cloud/docs/
- *
- */
+    * WordPress Xidipity Theme JS File
+    *
+    * File Name:       add-horizontal-rule/plugin.js
+    * Function:        tinymce horizontal rule plugin
+    * Build:           200513
+    * Revision:        1
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    *
+    * @package         xidipity
+    * @author          John Baer
+    * @copyright       2019-2020 John Baer
+    * @license         GPL-3.0-or-later
+    * @version         1.0
+    * @since           0.9
+    * @link            www.tiny.cloud/docs/
+    *
+*/
 
 tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
     editor.addButton('add_horz_rule', {
@@ -67,13 +67,13 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
             text: '•\xa0Emblem Narrow',
             icon: false,
             onclick: function() {
-                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:pri-dark"><i class="fab fa-wordpress fnt:size-x-large">&#x200B;</i></div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:25% sm)wd:30%"><hr class="wd:100%" /></div></div>');
+                editor.insertContent('<div class="fx:r fxa:3 fxc:3 wd:100%"><div class="fx:r fxa:2 fxc:3 wd:25% sm)wd:30%"><div class="bg:bas-400 ln wd:100%">&#8203;</div></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 fg:bas-500 fnt:weight-bold wd:3">/<span style="width:1px;">&#8203;</span>/</div><div class="fx:r fxa:1 fxc:3 wd:25% sm)wd:30%"><div class="bg:bas-400 ln wd:100%">&#8203;</div></div></div>');
             }
         }, {
             text: '•\xa0Emblem Wide',
             icon: false,
             onclick: function() {
-                editor.insertContent('<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100%"><div class="fx:r fxa:2 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxb:1 fxc:3 mar:hrz+1.5 fg:pri-dark"><i class="fab fa-wordpress fnt:size-x-large">&#x200B;</i></div><div class="fx:r fxa:1 fxb:1 fxc:3 wd:50%"><hr class="wd:100%" /></div></div>');
+                editor.insertContent('<div class="fx:r fxa:3 fxc:3 wd:100%"><div class="fx:r fxa:2 fxc:3 wd:50%"><div class="bg:bas-400 ln wd:100%">&#8203;</div></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 fg:bas-500 fnt:weight-bold wd:3">/<span style="width:1px;">&#8203;</span>/</div><div class="fx:r fxa:1 fxc:3 wd:50%"><div class="bg:bas-400 ln wd:100%">&#8203;</div></div></div>');
             }
         }],
 
@@ -87,6 +87,6 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
 
 /*
  * EOF:     add-horizontal-rule/plugin.js
- * Build:   200208
+ * Build:   200513
  *
  */

@@ -4,9 +4,9 @@
     *
     * File Name:       functions.php
     * Function:        xidipity functions definitions
-    * Build:           200508
-    * GitHub:          https://github.com/WpThemeDev/xidipity/
-    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
+    * Build:           200513
+    * GitHub:          github.com/WpThemeDev/xidipity/
+    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
     * @package         xidipity
     * @author          John Baer
@@ -14,7 +14,7 @@
     * @license         GPL-3.0-or-later
     * @version         3.0
     * @since           0.9
-    * @link            https://developer.wordpress.org/themes/basics/
+    * @link            developer.wordpress.org/themes/basics/
     *
 */
 
@@ -1126,6 +1126,43 @@ function register_mce_add_template_button($buttons)
     return $buttons;
 }
 /**
+ *  plugin: add icon
+ *  build:  200513
+ *  descr:  add icon code to HTML
+ *
+ */
+add_action('admin_head', 'mce_add_icon_button');
+function mce_add_icon_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_add_icon_plugin");
+        add_filter('mce_buttons', 'register_mce_add_icon_button');
+    }
+}
+function add_tinymce_add_icon_plugin($plugin_array)
+{
+    $plugin_array['add_icon'] = get_template_directory_uri() . '/assets/tinymceplugins/add-icon/plugin.js';
+    return $plugin_array;
+}
+function register_mce_add_icon_button($buttons)
+{
+    array_push($buttons, "add_icon");
+    return $buttons;
+}
+/**
  *  plugin: toggle fullscreen
  *  build:  91215.1a
  *  descr:  toggle editor full screen mode
@@ -1213,7 +1250,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,add_mnu_div,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,toggle_fullscreen';
+    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,add_mnu_div,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -1607,7 +1644,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<table class="bdr:collapse bdr:hidden cols:auto wd:100%"><tbody><tr><td class="aln:middle bg:wcag-red cnr:arch-left-small fnt:size-2x-large fg:wht pad:hrz+0.75">' . xidipity_icon_err('h3')  . '</td><td class="aln:text-left aln:middle bas:tint+1 cnr:arch-right-small fnt:size-smaller pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table>';
+    $fn_retval = '<!--  tmpl:ANNOTATION --><table class="bdr:collapse bdr:hidden cols:auto mar:vrt+1.25 wd:100%"><tbody class="aln:middle bg:tint-bas+1"><tr><td class="aln:text-center bg:wcag-red cnr:arch-left-small fg:wht fnt:size-3x-large wd:min4">' . xidipity_icon_err('h3') . '</td><td class="aln:text-left cnr:arch-right-small fnt:size-medium pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table><!-- /tmpl:ANNOTATION -->';
     // return html
     return $fn_retval;
 }
@@ -1920,7 +1957,7 @@ function post_category($arg='')
 
 /*
  * EOF:     functions.php
- * Build:   200508
+ * Build:   200513
  *
  */
 ?>

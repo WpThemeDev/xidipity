@@ -3,7 +3,7 @@
     *
     * File Name:       theme/common.css
     * Function:        shared CSS elements
-    * Build:           200508
+    * Build:           200513
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -132,8 +132,16 @@ pre.wrap{
     font-weight: normal;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
+}
+
+/*: table media :*/
+@media (min-width: 640px) {
+    pre,
+    pre.wrap{
+        padding: 1rem;
+    }
 }
 
 pre {
@@ -159,6 +167,19 @@ code {
     font-family: var(--font-mono) !important;
     font-size: smaller !important;
     font-weight: var(--dft-font-weight) !important;
+}
+
+/*
+***
+    * property: cmt:html
+    * dsc: html comments
+    * ver: 200513
+    * fnt: alternate method to "<!--"
+    * ref: 
+***
+*/
+.cmt\:html {
+    display: none;
 }
 
 /*
@@ -1794,6 +1815,6 @@ button:active {
 
 /*
  * EOF:     theme/common.css
- * Build:   200508
+ * Build:   200513
  *
  */

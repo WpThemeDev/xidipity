@@ -3,7 +3,7 @@
     *
     * File Name:       theme/advance.css
     * Function:        Xidipity CSS framework
-    * Build:           200508
+    * Build:           200513
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -739,6 +739,35 @@ table.cols\:fixed {
 .fnt\:size-smaller,
 .icon\:size-smaller {
     font-size: var(--font-size-sm)er !important;
+}
+
+/*
+***
+    * property: fnt:< caps >
+    * dsc: display caps
+    * ver: 200513
+    * fnt: style as variant caps
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+***
+*/
+.fnt\:caps-small-all {
+    font-variant-caps: all-small-caps !important;
+}
+
+.fnt\:caps-petite {
+    font-variant-caps: petite-caps !important;
+}
+
+.fnt\:caps-small {
+    font-variant-caps: small-caps !important;
+}
+
+.fnt\:caps-titling {
+    font-variant-caps: titling-caps !important;
+}
+
+.fnt\:caps-unicase {
+    font-variant-caps: unicase !important;
 }
 
 /*
@@ -3810,6 +3839,35 @@ table.cols\:fixed {
 
     /*
     ***
+        * property: fnt:< caps >
+        * dsc: display caps
+        * ver: 200513
+        * fnt: style as variant caps
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+    ***
+    */
+    .sm\)fnt\:caps-small-all {
+        font-variant-caps: all-small-caps !important;
+    }
+
+    .sm\)fnt\:caps-petite {
+        font-variant-caps: petite-caps !important;
+    }
+
+    .sm\)fnt\:caps-small {
+        font-variant-caps: small-caps !important;
+    }
+
+    .sm\)fnt\:caps-titling {
+        font-variant-caps: titling-caps !important;
+    }
+
+    .sm\)fnt\:caps-unicase {
+        font-variant-caps: unicase !important;
+    }
+    
+    /*
+    ***
         * property: fnt
         * dsc: font drop shadow
         * ver: 200107
@@ -6877,6 +6935,35 @@ table.cols\:fixed {
         font-size: var(--font-size-sm)er !important;
     }
 
+    /*
+    ***
+        * property: fnt:< caps >
+        * dsc: display caps
+        * ver: 200513
+        * fnt: style as variant caps
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+    ***
+    */
+    .md\)fnt\:caps-small-all {
+        font-variant-caps: all-small-caps !important;
+    }
+
+    .md\)fnt\:caps-petite {
+        font-variant-caps: petite-caps !important;
+    }
+
+    .sm\)fnt\:caps-small {
+        font-variant-caps: small-caps !important;
+    }
+
+    .md\)fnt\:caps-titling {
+        font-variant-caps: titling-caps !important;
+    }
+
+    .md\)fnt\:caps-unicase {
+        font-variant-caps: unicase !important;
+    }
+    
     /*
     ***
         * property: fnt
@@ -9948,6 +10035,35 @@ table.cols\:fixed {
 
     /*
     ***
+        * property: fnt:< caps >
+        * dsc: display caps
+        * ver: 200513
+        * fnt: style as variant caps
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+    ***
+    */
+    .lg\)fnt\:caps-small-all {
+        font-variant-caps: all-small-caps !important;
+    }
+
+    .lg\)fnt\:caps-petite {
+        font-variant-caps: petite-caps !important;
+    }
+
+    .lg\)fnt\:caps-small {
+        font-variant-caps: small-caps !important;
+    }
+
+    .lg\)fnt\:caps-titling {
+        font-variant-caps: titling-caps !important;
+    }
+
+    .lg\)fnt\:caps-unicase {
+        font-variant-caps: unicase !important;
+    }
+    
+    /*
+    ***
         * property: fnt
         * dsc: font drop shadow
         * ver: 200107
@@ -13017,6 +13133,35 @@ table.cols\:fixed {
 
     /*
     ***
+        * property: fnt:< caps >
+        * dsc: display caps
+        * ver: 200513
+        * fnt: style as variant caps
+        * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
+    ***
+    */
+    .xl\)fnt\:caps-small-all {
+        font-variant-caps: all-small-caps !important;
+    }
+
+    .xl\)fnt\:caps-petite {
+        font-variant-caps: petite-caps !important;
+    }
+
+    .xl\)fnt\:caps-small {
+        font-variant-caps: small-caps !important;
+    }
+
+    .xl\)fnt\:caps-titling {
+        font-variant-caps: titling-caps !important;
+    }
+
+    .xl\)fnt\:caps-unicase {
+        font-variant-caps: unicase !important;
+    }
+    
+    /*
+    ***
         * property: fnt
         * dsc: font drop shadow
         * ver: 200107
@@ -15373,6 +15518,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200508
+ * Build:   200513
  *
  */
