@@ -83,15 +83,23 @@ img {
 
 /*
 ***
-    * element: pre <rwd>
-    * dsc: responsive cue
+    * element: add:dot
+    * dsc: mark pre
     * ver: 200315
-    * fnt: change color of border in editor
-    * ref:
+    * fnt: add dot to pre in editor
+    * ref: supports code_container template
 ***
 */
-pre.rwd {
-    border: solid thick var(--hue-sec-tint);    
+.mce\[add\:dot\]::before {
+    color: var(--hue-sec);
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-size: x-small;
+    font-weight: 900;
+    margin-left: -0.9375rem;
+    margin-top: -1.125rem;
+    position: absolute;
+    z-index: 1;
 }
 
 /*
