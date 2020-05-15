@@ -3,7 +3,7 @@
     *
     * File Name:       theme/web.css
     * Function:        CSS web elements
-    * Build:           200508
+    * Build:           200315
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     gnu.org/licenses/gpl-3.0.txt
     *
@@ -862,6 +862,27 @@ a.hdr\:title:hover {
 
 /*
 ***
+    * element: pre:dot
+    * dsc: mark pre
+    * ver: 200315
+    * fnt: add dot to pre on web
+    * ref: supports code_container template
+***
+*/
+.web\[pre\:dot\]::before {
+    color: var(--hue-sec);
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-size: x-small;
+    font-weight: 900;
+    margin-left: -0.9375rem;
+    margin-top: -1.125rem;
+    position: absolute;
+    z-index: 1;
+}
+
+/*
+***
     * element: pagination
     * dsc: pagination fx item classes
     * ver: 200429
@@ -1143,6 +1164,6 @@ a.page-numbers:focus {
 
 /*
  * EOF:     theme/web.css
- * Build:   200508
+ * Build:   200315
  *
  */
