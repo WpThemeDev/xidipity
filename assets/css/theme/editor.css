@@ -83,14 +83,14 @@ img {
 
 /*
 ***
-    * element: add:dot
+    * element: pre:dot
     * dsc: mark pre
     * ver: 200315
     * fnt: add dot to pre in editor
     * ref: supports code_container template
 ***
 */
-.mce\[add\:dot\]::before {
+.mce\[pre\:dot\]::before {
     color: var(--hue-sec);
     content: "\f111";
     font-family: "Font Awesome 5 Free";
