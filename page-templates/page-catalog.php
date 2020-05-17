@@ -1,24 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * Template Name: Post Catalog
- *
- * File Name:       post-catalog.php
- * Function:        display list of of posts
- * Build:           200429
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           1.0
- * @link            developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying page catalog
+    *
+    * ###:  page-catalog.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***
@@ -124,7 +114,7 @@ if ($wp_data->have_posts())
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
 
@@ -176,7 +166,7 @@ if ($wp_data->have_posts())
     ***
     */
     include( locate_template( 'template-parts/content-pagination.php', false, false ) );
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 
 /*
@@ -235,8 +225,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     post-catalog.php
- * Build:   200429
- *
+ * EOF: page-catalog.php / 24200520
  */
 ?>
