@@ -3,7 +3,7 @@
     *
     * File Name:       theme/editor.css
     * Function:        Editor specific CSS
-    * Build:           200429
+    * Build:           200315
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -83,6 +83,27 @@ img {
 
 /*
 ***
+    * element: pre:dot
+    * dsc: mark pre
+    * ver: 200315
+    * fnt: add dot to pre in editor
+    * ref: supports code_container template
+***
+*/
+.mce\[pre\:dot\]::before {
+    color: var(--hue-sec);
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-size: x-small;
+    font-weight: 900;
+    margin-left: -0.9375rem;
+    margin-top: -1.125rem;
+    position: absolute;
+    z-index: 1;
+}
+
+/*
+***
     * property: vs
     * dsc: vertical space
     * ver: 200222
@@ -151,6 +172,6 @@ table.cols\:fixed-4 td:last-child {
 
 /*
  * EOF:     theme/editor.css
- * Build:   200429
+ * Build:   200315
  *
  */

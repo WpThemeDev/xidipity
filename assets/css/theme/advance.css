@@ -3,7 +3,7 @@
     *
     * File Name:       theme/advance.css
     * Function:        Xidipity CSS framework
-    * Build:           200513
+    * Build:           200515
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -481,6 +481,9 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
+.cnr\:arch-left-x-small {
+    border-radius: 0.1666rem 0 0 0.1666rem !important;
+}
 .cnr\:arch-left-small {
     border-radius: 0.3333rem 0 0 0.3333rem !important;
 }
@@ -500,6 +503,9 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
+.cnr\:arch-right-x-small {
+    border-radius: 0 0.1666rem 0.1666rem 0 !important;
+}
 .cnr\:arch-right-small {
     border-radius: 0 0.3333rem 0.3333rem 0 !important;
 }
@@ -519,6 +525,9 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
+.cnr\:arch-top-x-small {
+    border-radius: 0.1666rem 0.1666rem 0 0 !important;
+}
 .cnr\:arch-top-small {
     border-radius: 0.3333rem 0.3333rem 0 0 !important;
 }
@@ -538,6 +547,9 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
+.cnr\:arch-bottom-x-small {
+    border-radius: 0 0 0.1666rem 0.1666rem !important;
+}
 .cnr\:arch-bottom-small {
     border-radius: 0 0 0.3333rem 0.3333rem !important;
 }
@@ -3555,6 +3567,9 @@ table.cols\:fixed {
     .sm\)cnr\:arch-x-small {
         border-radius: 0.1666rem !important;
     }
+    .sm\)cnr\:arch-x-small {
+        border-radius: 0.1666rem !important;
+    }
     .sm\)cnr\:arch-small {
         border-radius: 0.3333rem !important;
     }
@@ -3577,6 +3592,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .sm\)cnr\:arch-left-x-small {
+        border-radius: 0.1666rem 0 0 0.1666rem !important;
+    }
     .sm\)cnr\:arch-left-small {
         border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
@@ -3596,6 +3614,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .sm\)cnr\:arch-right-x-small {
+        border-radius: 0 0.1666rem 0.1666rem 0 !important;
+    }
     .sm\)cnr\:arch-right-small {
         border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
@@ -3615,6 +3636,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .sm\)cnr\:arch-top-x-small {
+        border-radius: 0.1666rem 0.1666rem 0 0 !important;
+    }
     .sm\)cnr\:arch-top-small {
         border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
@@ -3634,6 +3658,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .sm\)cnr\:arch-bottom-x-small {
+        border-radius: 0 0 0.1666rem 0.1666rem !important;
+    }
     .sm\)cnr\:arch-bottom-small {
         border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
@@ -3865,7 +3892,7 @@ table.cols\:fixed {
     .sm\)fnt\:caps-unicase {
         font-variant-caps: unicase !important;
     }
-    
+
     /*
     ***
         * property: fnt
@@ -6675,6 +6702,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .md\)cnr\:arch-left-x-small {
+        border-radius: 0.1666rem 0 0 0.1666rem !important;
+    }
     .md\)cnr\:arch-left-small {
         border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
@@ -6694,6 +6724,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .md\)cnr\:arch-right-x-small {
+        border-radius: 0 0.1666rem 0.1666rem 0 !important;
+    }
     .md\)cnr\:arch-right-small {
         border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
@@ -6713,6 +6746,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .md\)cnr\:arch-top-x-small {
+        border-radius: 0.1666rem 0.1666rem 0 0 !important;
+    }
     .md\)cnr\:arch-top-small {
         border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
@@ -6732,6 +6768,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .md\)cnr\:arch-bottom-x-small {
+        border-radius: 0 0 0.1666rem 0.1666rem !important;
+    }
     .md\)cnr\:arch-bottom-small {
         border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
@@ -6963,7 +7002,7 @@ table.cols\:fixed {
     .md\)fnt\:caps-unicase {
         font-variant-caps: unicase !important;
     }
-    
+
     /*
     ***
         * property: fnt
@@ -9773,6 +9812,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .lg\)cnr\:arch-left-x-small {
+        border-radius: 0.1666rem 0 0 0.1666rem !important;
+    }
     .lg\)cnr\:arch-left-small {
         border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
@@ -9792,6 +9834,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .lg\)cnr\:arch-right-x-small {
+        border-radius: 0 0.1666rem 0.1666rem 0 !important;
+    }
     .lg\)cnr\:arch-right-small {
         border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
@@ -9811,6 +9856,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .lg\)cnr\:arch-top-x-small {
+        border-radius: 0.1666rem 0.1666rem 0 0 !important;
+    }
     .lg\)cnr\:arch-top-small {
         border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
@@ -9830,6 +9878,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .lg\)cnr\:arch-bottom-x-small {
+        border-radius: 0 0 0.1666rem 0.1666rem !important;
+    }
     .lg\)cnr\:arch-bottom-small {
         border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
@@ -10061,7 +10112,7 @@ table.cols\:fixed {
     .lg\)fnt\:caps-unicase {
         font-variant-caps: unicase !important;
     }
-    
+
     /*
     ***
         * property: fnt
@@ -12871,6 +12922,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .xl\)cnr\:arch-left-x-small {
+        border-radius: 0.1666rem 0 0 0.1666rem !important;
+    }
     .xl\)cnr\:arch-left-small {
         border-radius: 0.3333rem 0 0 0.3333rem !important;
     }
@@ -12890,6 +12944,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .xl\)cnr\:arch-right-x-small {
+        border-radius: 0 0.1666rem 0.1666rem 0 !important;
+    }
     .xl\)cnr\:arch-right-small {
         border-radius: 0 0.3333rem 0.3333rem 0 !important;
     }
@@ -12909,6 +12966,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .xl\)cnr\:arch-top-x-small {
+        border-radius: 0.1666rem 0.1666rem 0 0 !important;
+    }
     .xl\)cnr\:arch-top-small {
         border-radius: 0.3333rem 0.3333rem 0 0 !important;
     }
@@ -12928,6 +12988,9 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
+    .xl\)cnr\:arch-bottom-x-small {
+        border-radius: 0 0 0.1666rem 0.1666rem !important;
+    }
     .xl\)cnr\:arch-bottom-small {
         border-radius: 0 0 0.3333rem 0.3333rem !important;
     }
@@ -13159,7 +13222,7 @@ table.cols\:fixed {
     .xl\)fnt\:caps-unicase {
         font-variant-caps: unicase !important;
     }
-    
+
     /*
     ***
         * property: fnt
@@ -15518,6 +15581,6 @@ table.cols\:fixed {
 
 /*
  * EOF:     theme/advance.css
- * Build:   200513
+ * Build:   200515
  *
  */
