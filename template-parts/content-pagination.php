@@ -1,21 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       template-parts/content-pagination.php
- * Function:        present pagination toolbar
- * Build:           200429
- * GitHub:          github.com/WpThemeDev/xidipity/
- * License URI:     www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           1.0
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying pagination controls
+    *
+    * ###:  content-pagination.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***/
@@ -45,15 +38,13 @@ if ($total_pages > 1)
         'before_page_number' => '',
         'after_page_number'  => ''
     );
-    echo '<div class="fx:r fxa:4 fxb:6 fxc:1 bg:bas-050 cnr:arch-small mar:vrt+0.5 pad:+0.5">' . "\n";
+    echo '<div class="fx:r fxa:4 fxb:6 fxc:1 bg:bas+5 cnr:arch-small mar:vrt+0.5 pad:+0.5">' . "\n";
     echo paginate_links($args);
     echo '</div>' . "\n";
     echo '<!-- /ct:PAGINATION -->' . "\n";
 }
 
 /*
- * EOF:     template-parts/content-pagination.php
- * Build:   200429
- *
+ * EOF: content-pagination.php / 24200520
  */
 ?>
