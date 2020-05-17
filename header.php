@@ -1,22 +1,15 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- *  File Name:      header.php
- *  Function:       display page header
- *  Build:          200415
- *  GitHub:         github.com/WpThemeDev/xidipity/
- *  License URI:    gnu.org/licenses/gpl-3.0.txt
- *  Author:         John Baer
- *  Copyright:      2019-2020 John Baer
- *  License:        GPL-3.0-or-later
- *  Ref:            developer.wordpress.org/themes/basics/
- *
- *  Comments:       page/flex/container is the root
- *                      - header components are children of page/flex/item 1
- *                      - menu components are children of page/flex/item 2
- *
-**/
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying page header
+    *
+    * ###:  header.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
+
 echo '<!doctype html>' . "\n";
 ?>
 <html <?php
@@ -275,8 +268,6 @@ echo '</div>' . "\n";
 echo '<!-- /fi:2/HTML -->' . "\n";
 
 /*
- * EOF:     header.php
- * Build:   200415
- *
+ * EOF: header.php / 24200520
  */
 ?>
