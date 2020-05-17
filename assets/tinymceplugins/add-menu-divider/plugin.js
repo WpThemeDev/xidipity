@@ -1,21 +1,13 @@
-/*
- * WordPress Xidipity Theme JS File
- *
- * File Name:       add-menu-divider/plugin.js
- * Function:        tinymce menu divider plugin
- * Build:           200104-1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
- * @link            https://www.tiny.cloud/docs/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * Tinymce add-menu-divider plugin 
+    *
+    * ###:  plugin.js
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 tinymce.PluginManager.add('add_mnu_div', function (editor, url) {
     editor.addButton('add_mnu_div', {
@@ -26,7 +18,5 @@ tinymce.PluginManager.add('add_mnu_div', function (editor, url) {
 });
 
 /*
- * EOF:     add-menu-divider/plugin.js
- * Build:   200104-1
- *
+ * EOF: add-menu-divider / plugin.js / 24200520
  */
