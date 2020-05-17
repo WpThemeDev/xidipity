@@ -3,7 +3,7 @@
     *
     * File Name:       author.php
     * Function:        display author info
-    * Build:           200429
+    * Build:           200520
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -84,7 +84,7 @@ if ($wp_query->have_posts())
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="mar:bottom+1 wd:100%">' . "\n";
     echo '<div class="pg:title">Author: ' . __(get_the_author_meta('nickname')) . '</div>';
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
@@ -150,7 +150,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -429,7 +429,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     author.php
- * Build:   200429
+ * Build:   200520
  *
  */
 ?>
