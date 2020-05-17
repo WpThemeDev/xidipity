@@ -1,24 +1,14 @@
 <?php
-/*
- * Template Name: No Title
- *
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       no-title.php
- * Function:        display page without page title
- * Build:           200429
- * GitHub:          github.com/WpThemeDev/xidipity/
- * License URI:     www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying page without page title
+    *
+    * ###:  no-title.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***
@@ -96,7 +86,7 @@ if ($wp_query->have_posts())
     dsp_content();
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -158,8 +148,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     no-title.php
- * Build:   200429
- *
+ * EOF: no-title.php / 24200520
  */
 ?>
