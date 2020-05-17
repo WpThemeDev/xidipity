@@ -77,5 +77,5 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
 });
 
 /*
- * EOF: plugin.js / 24200520
+ * EOF: add-horizontal-rule / plugin.js / 24200520
  */
