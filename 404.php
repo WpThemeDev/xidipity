@@ -4,7 +4,7 @@
  *
  * File Name:       404.php
  * Function:        display 404 page
- * Build:           200415
+ * Build:           200520
  * GitHub:          https://github.com/WpThemeDev/xidipity/
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  *
@@ -63,7 +63,7 @@ else
 echo '<!--  fi:3/1/1/ARTICLE -->' . "\n";
 echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 echo '<!--  fc:404 -->' . "\n";
-echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas-100 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
+echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
 echo '<!--  fc:LOGO -->' . "\n";
 echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
 echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
@@ -123,7 +123,7 @@ wp_reset_postdata();
 
 /*
  * EOF:     404.php
- * Build:   200415
+ * Build:   200520
  *
  */
 ?>
