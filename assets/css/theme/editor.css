@@ -1,19 +1,11 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Editor specific css classes 
     *
-    * File Name:       theme/editor.css
-    * Function:        Editor specific CSS
-    * Build:           200315
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  editor.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -171,7 +163,5 @@ table.cols\:fixed-4 td:last-child {
 }
 
 /*
- * EOF:     theme/editor.css
- * Build:   200315
- *
+ * EOF: editor.css / 24200520
  */
