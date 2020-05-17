@@ -1,22 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       index.php
- * Function:        display excerpt summary
- * Build:           200429
- * GitHub:          github.com/WpThemeDev/xidipity/
- * License URI:     www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying blog excerpts 
+    *
+    * ###:  index.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***
@@ -132,7 +124,7 @@ if ($wp_data->have_posts())
         echo '<!--  fi:3/1/1/'. $cnt . '/ITEM -->' . "\n";
         echo '<div class="fxd:1 fxe:6 fb:100% md)fb:50% xl)fb:33% mar:bottom+0.5 md)pad:hrz+0.25">' . "\n";
         echo '<!--  fi:3/1/1/'. $cnt . '/SECTION -->' . "\n";
-        echo '<section class="box:shadow bdr:solid-thin bdr:bas-200 bg:content dsp:block ht:min14">' . "\n";
+        echo '<section class="box:shadow bdr:solid-thin bdr:bas+3 bg:content dsp:block ht:min14">' . "\n";
 
         /*
         ***
@@ -185,7 +177,7 @@ if ($wp_data->have_posts())
     */
     include( locate_template( 'template-parts/content-pagination.php', false, false ) );
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -210,7 +202,7 @@ else
      )
     );
 
-    echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
     echo '<!--  fc:NEW -->' . "\n";
     echo '<div class="fx:c sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+0.5">' . "\n";
     echo '<!--  fi:LOGO -->' . "\n";
@@ -243,7 +235,7 @@ else
     echo '<!-- /fi:MESSAGE -->' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fc:NEW -->' . "\n";
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 echo '</section>' . "\n";
 echo '<!--  /fi:3/1/1/HTML -->' . "\n";
@@ -286,8 +278,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     index.php
- * Build:   200429
- *
+ * EOF: index.php / 24200520
  */
 ?>
