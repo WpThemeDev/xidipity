@@ -1,20 +1,12 @@
 <?php
-/*
-    * WordPress Xidipity Theme PHP File
+/**
+    * WordPress Xidipity Theme
+    * Theme functions
     *
-    * File Name:       functions.php
-    * Function:        xidipity functions definitions
-    * Build:           200513
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         3.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  functions.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -1956,8 +1948,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF:     functions.php
- * Build:   200513
- *
+ * EOF: functions.php / 24200520
  */
 ?>
