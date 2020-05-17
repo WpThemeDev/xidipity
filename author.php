@@ -1,19 +1,13 @@
 <?php
-/*  WordPress Xidipity Theme PHP File
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying author info
     *
-    * File Name:       author.php
-    * Function:        display author info
-    * Build:           200520
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    * ###:  author.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
 */
 
 /*
@@ -428,8 +422,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     author.php
- * Build:   200520
- *
+ * EOF: author.php / 24200520
  */
 ?>
