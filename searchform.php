@@ -1,22 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       searchform.php
- * Function:        search form elements
- * Build:           200104-1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version			1.0
- * @since			0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying searchform (widget)
+    *
+    * ###:  searchform.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 echo '<!-- xwpt:90708.1/searchform.php      -->' . "\n";
 echo '<div class="search-frm-container">' . "\n";
@@ -31,8 +23,6 @@ echo '</div>' . "\n";
 echo '<!-- /xwpt:90708.1/searchform.php     -->' . "\n";
 
 /*
- * EOF:     searchform.php
- * Build:   200104-1
- *
+ * EOF: searchform.php / 24200520
  */
 ?>
