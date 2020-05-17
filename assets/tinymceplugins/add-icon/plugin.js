@@ -1,19 +1,11 @@
-/*
-    * WordPress Xidipity Theme JS File
+/**
+    * WordPress Xidipity Theme
+    * Tinymce add-icon plugin 
     *
-    * File Name:       add-icon/plugin.js
-    * Function:        tinymce HTML embed plugin
-    * Build:           200513
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            www.tiny.cloud/docs/
+    * ###:  plugin.js
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -58,7 +50,5 @@ tinymce.PluginManager.add('add_icon', function( editor, url ) {
 });
 
 /*
- * EOF:     add-template/plugin.js
- * Build:   200513
- *
+ * EOF: add-icon / plugin.js / 24200520
  */
