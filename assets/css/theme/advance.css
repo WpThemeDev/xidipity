@@ -3069,50 +3069,51 @@ table.cols\:fixed {
     * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
 ***
 */
-.\@1x1 {
-    width: 100%;
-    padding-bottom: calc(960 / 960 * 100%);
+.ar\:1x1,
+.ar\:3x2,
+.ar\:4x3,
+.ar\:7x5,
+.ar\:16x9,
+.ar\:16x10,
+.ar\:21x9 {
+    height: 0;
     position: relative;
-}
-.\@3x2 {
     width: 100%;
-    padding-bottom: calc(640 / 960 * 100%);
-    position: relative;
 }
-.\@4x3 {
-    width: 100%;
-    padding-bottom: calc(720 / 960 * 100%);
-    position: relative;
+
+.ar\:1x1 {
+    padding-top: 100%;
 }
-.\@7x5 {
-    width: 100%;
-    padding-bottom: calc(686 / 960 * 100%);
-    position: relative;
+
+.ar\:3x2 {
+    padding-top: 66.6666%;
 }
-.\@16x9 {
-    width: 100%;
-    padding-bottom: calc(540 / 960 * 100%);
-    position: relative;
+
+.ar\:4x3 {
+    padding-top: 75%;
 }
-.\@16x10 {
-    width: 100%;
-    padding-bottom: calc(600 / 960 * 100%);
-    position: relative;
+
+.ar\:7x5 {
+    padding-top: 71.4286%;
 }
-.\@21x9 {
-    width: 100%;
-    padding-bottom: calc(411 / 960 * 100%);
-    position: relative;
+
+.ar\:16x9 {
+    padding-top: 56.25%;
 }
-.\@1x1 > div,
-.\@3x2 > div,
-.\@4x3 > div,
-.\@7x5 > div,
-.\@16x9 > div,
-.\@16x10 > div,
-.\@21x9 > div {
+
+.ar\:16x10 {
+    padding-top: 62.5%;
+}
+
+.ar\:21x9 {
+    padding-top: 42.8571%;
+}
+
+.ar\:content {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /*
@@ -6180,52 +6181,52 @@ table.cols\:fixed {
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .sm\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .sm)ar\:1x1,
+    .sm)ar\:3x2,
+    .sm)ar\:4x3,
+    .sm)ar\:7x5,
+    .sm)ar\:16x9,
+    .sm)ar\:16x10,
+    .sm)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .sm\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@1x1 > div,
-    .sm\)\@3x2 > div,
-    .sm\)\@4x3 > div,
-    .sm\)\@7x5 > div,
-    .sm\)\@16x9 > div,
-    .sm\)\@16x10 > div,
-    .sm\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .sm)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .sm)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .sm)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .sm)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .sm)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .sm)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .sm)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .sm)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -9290,52 +9291,52 @@ table.cols\:fixed {
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .md\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .md)ar\:1x1,
+    .md)ar\:3x2,
+    .md)ar\:4x3,
+    .md)ar\:7x5,
+    .md)ar\:16x9,
+    .md)ar\:16x10,
+    .md)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .md\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@1x1 > div,
-    .md\)\@3x2 > div,
-    .md\)\@4x3 > div,
-    .md\)\@7x5 > div,
-    .md\)\@16x9 > div,
-    .md\)\@16x10 > div,
-    .md\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .md)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .md)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .md)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .md)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .md)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .md)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .md)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .md)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -12400,52 +12401,52 @@ table.cols\:fixed {
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .lg\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .lg)ar\:1x1,
+    .lg)ar\:3x2,
+    .lg)ar\:4x3,
+    .lg)ar\:7x5,
+    .lg)ar\:16x9,
+    .lg)ar\:16x10,
+    .lg)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .lg\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@1x1 > div,
-    .lg\)\@3x2 > div,
-    .lg\)\@4x3 > div,
-    .lg\)\@7x5 > div,
-    .lg\)\@16x9 > div,
-    .lg\)\@16x10 > div,
-    .lg\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .lg)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .lg)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .lg)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .lg)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .lg)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .lg)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .lg)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .lg)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -15510,50 +15511,51 @@ table.cols\:fixed {
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .xl\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .xl)ar\:1x1,
+    .xl)ar\:3x2,
+    .xl)ar\:4x3,
+    .xl)ar\:7x5,
+    .xl)ar\:16x9,
+    .xl)ar\:16x10,
+    .xl)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .xl\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
     }
-    .xl\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:1x1 {
+        padding-top: 100%;
     }
-    .xl\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:3x2 {
+        padding-top: 66.6666%;
     }
-    .xl\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:4x3 {
+        padding-top: 75%;
     }
-    .xl\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:7x5 {
+        padding-top: 71.4286%;
     }
-    .xl\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:16x9 {
+        padding-top: 56.25%;
     }
-    .xl\)\@1x1 > div,
-    .xl\)\@3x2 > div,
-    .xl\)\@4x3 > div,
-    .xl\)\@7x5 > div,
-    .xl\)\@16x9 > div,
-    .xl\)\@16x10 > div,
-    .xl\)\@21x9 > div {
+
+    .xl)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .xl)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .xl)ar\:content {
         position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
