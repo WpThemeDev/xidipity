@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Web specific css classes 
+    * Web specific css classes
     *
     * ###:  web.css
     * bld:  24200520
@@ -497,15 +497,14 @@ a.comment-reply-link:hover {
 
 /*
 ***
-    * property: video-embed
+    * property: vid:iframe
     * dsc: set iframe attributes
-    * ver: 200322
-    * fnt: expand facebook & youtube iframe to fill available space
+    * ver: 200520
+    * fnt: expand iframe to fill available space
     * ref:
 ***
 */
-.facebook-embed iframe,
-.youtube-embed iframe {
+.vid\:iframe iframe {
     height: 100%;
     overflow: hidden;
     position: absolute;
@@ -521,7 +520,6 @@ a.comment-reply-link:hover {
     * ref:
 ***
 */
-
 .wp-caption {
     max-width: 100%;
 }
@@ -549,6 +547,7 @@ a.hdr\:title,
 a.hdr\:title:visited {
     color: var(--title-lnk-pri-color);
     color: var(--hue-pri-dark);
+    text-decoration: none;
 }
 
 a.hdr\:title:hover {
