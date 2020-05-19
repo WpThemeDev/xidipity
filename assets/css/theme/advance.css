@@ -3075,6 +3075,7 @@ table.cols\:fixed {
 .ar\:7x5,
 .ar\:16x9,
 .ar\:16x10,
+.ar\:17x9,
 .ar\:21x9 {
     height: 0;
     position: relative;
@@ -3103,6 +3104,10 @@ table.cols\:fixed {
 
 .ar\:16x10 {
     padding-top: 62.5%;
+}
+
+.ar\:17x9 {
+    padding-top: 52.9412%;
 }
 
 .ar\:21x9 {
@@ -6187,6 +6192,7 @@ table.cols\:fixed {
     .sm)ar\:7x5,
     .sm)ar\:16x9,
     .sm)ar\:16x10,
+    .sm)ar\:17x9,
     .sm)ar\:21x9 {
         height: 0;
         position: relative;
@@ -6215,6 +6221,10 @@ table.cols\:fixed {
 
     .sm)ar\:16x10 {
         padding-top: 62.5%;
+    }
+
+    .sm)ar\:17x9 {
+        padding-top: 52.9412%;
     }
 
     .sm)ar\:21x9 {
@@ -9297,6 +9307,7 @@ table.cols\:fixed {
     .md)ar\:7x5,
     .md)ar\:16x9,
     .md)ar\:16x10,
+    .md)ar\:17x9,
     .md)ar\:21x9 {
         height: 0;
         position: relative;
@@ -9325,6 +9336,10 @@ table.cols\:fixed {
 
     .md)ar\:16x10 {
         padding-top: 62.5%;
+    }
+
+    .md)ar\:17x9 {
+        padding-top: 52.9412%;
     }
 
     .md)ar\:21x9 {
@@ -12407,6 +12422,7 @@ table.cols\:fixed {
     .lg)ar\:7x5,
     .lg)ar\:16x9,
     .lg)ar\:16x10,
+    .lg)ar\:17x9,
     .lg)ar\:21x9 {
         height: 0;
         position: relative;
@@ -12435,6 +12451,10 @@ table.cols\:fixed {
 
     .lg)ar\:16x10 {
         padding-top: 62.5%;
+    }
+
+    .lg)ar\:17x9 {
+        padding-top: 52.9412%;
     }
 
     .lg)ar\:21x9 {
@@ -15517,6 +15537,7 @@ table.cols\:fixed {
     .xl)ar\:7x5,
     .xl)ar\:16x9,
     .xl)ar\:16x10,
+    .xl)ar\:17x9,
     .xl)ar\:21x9 {
         height: 0;
         position: relative;
@@ -15545,6 +15566,10 @@ table.cols\:fixed {
 
     .xl)ar\:16x10 {
         padding-top: 62.5%;
+    }
+
+    .xl)ar\:17x9 {
+        padding-top: 52.9412%;
     }
 
     .xl)ar\:21x9 {
