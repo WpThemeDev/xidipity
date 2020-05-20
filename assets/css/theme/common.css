@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Shared css classes 
+    * Shared css clases 
     *
     * ###:  common.css
     * bld:  24200520
@@ -108,15 +108,15 @@ abbr {
 ***
     * element: <pre>
     * dsc: preformatted text
-    * ver: 200422
+    * ver: 200520
     * fnt: preformatted text which is to be presented exactly as written
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 ***
 */
 pre,
 pre.wrap{
+    border: solid thick var(--hue-bas-200);
     background-color: var(--hue-bas-050);
-    border: solid thick var(--hue-bas-300);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
@@ -225,9 +225,9 @@ hr,
 
 /*
 ***
-    * element: ln:std/thin/medium/thick
+    * element: ln:std/thin/medium/thick/x-thick
     * dsc: horizontal line
-    * ver: 200415
+    * ver: 200520
     * fnt: simliar but different than hr
     *      these are the default values
     * ref:
@@ -251,6 +251,119 @@ hr,
 .ln\:thick {
     background-color: var(--hue-bas-200);
     height: 0.25rem;
+}
+
+.ln\:x-thick {
+    background-color: var(--hue-bas-200);
+    height: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .sm\)ln,
+    .sm\)ln\:thin,
+    .sm\)ln\:medium,
+    .sm\)ln\:thick {
+        background-color: var(--hue-bas-400);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .sm\)ln\:medium {
+        background-color: var(--hue-bas-300);
+        height: 0.125rem;
+    }
+
+    .sm\)ln\:thick {
+        background-color: var(--hue-bas-200);
+        height: 0.25rem;
+    }
+
+    .sm\)ln\:x-thick {
+        background-color: var(--hue-bas-200);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .md\)ln,
+    .md\)ln\:thin,
+    .md\)ln\:medium,
+    .md\)ln\:thick {
+        background-color: var(--hue-bas-400);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .md\)ln\:medium {
+        background-color: var(--hue-bas-300);
+        height: 0.125rem;
+    }
+
+    .md\)ln\:thick {
+        background-color: var(--hue-bas-200);
+        height: 0.25rem;
+    }
+
+    .md\)ln\:x-thick {
+        background-color: var(--hue-bas-200);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .lg\)ln,
+    .lg\)ln\:thin,
+    .lg\)ln\:medium,
+    .lg\)ln\:thick {
+        background-color: var(--hue-bas-400);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .lg\)ln\:medium {
+        background-color: var(--hue-bas-300);
+        height: 0.125rem;
+    }
+
+    .lg\)ln\:thick {
+        background-color: var(--hue-bas-200);
+        height: 0.25rem;
+    }
+
+    .lg\)ln\:x-thick {
+        background-color: var(--hue-bas-200);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .xl\)ln,
+    .xl\)ln\:thin,
+    .xl\)ln\:medium,
+    .xl\)ln\:thick {
+        background-color: var(--hue-bas-400);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .xl\)ln\:medium {
+        background-color: var(--hue-bas-300);
+        height: 0.125rem;
+    }
+
+    .xl\)ln\:thick {
+        background-color: var(--hue-bas-200);
+        height: 0.25rem;
+    }
+
+    .xl\)ln\:x-thick {
+        background-color: var(--hue-bas-200);
+        height: 0.5rem;
+    }
 }
 
 /*
@@ -1459,18 +1572,18 @@ figure {
 ***
     * property: txt:frame
     * dsc: text frame
-    * ver: 200422
+    * ver: 200520
     * fnt: create a content frame using table elements
     * ref:
 ***
 */
 .txt\:frame {
-    text-align: left;
-    border: solid thick var(--hue-bas-300);
+    border: solid thick var(--hue-bas-200);
     background-color: var(--hue-bas-050);
     border-radius: 0.3333rem;
     display: inline-block;
     padding: 1rem;
+    text-align: left;
     width: 100%;
 }
 
