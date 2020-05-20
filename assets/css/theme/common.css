@@ -61,6 +61,16 @@ samp {
     padding-right: 0.25rem;
 }
 
+strong {
+    border-bottom: solid thin var(--hue-pri);
+    font-style: oblique;
+    font-weight: var(--lnk-dft-wgt);
+}
+
+strong:hover {
+    border-bottom-color: var(--lnk-hvr-fg-hue);
+}
+
 kbd {
     background-color: var(--hue-pri-dark);
     color: var(--hue-wht);
