@@ -71,6 +71,11 @@ strong:hover {
     border-bottom-color: var(--lnk-hvr-fg-hue);
 }
 
+u {
+    border-bottom: solid thin;
+    text-decoration: none;
+}
+
 kbd {
     background-color: var(--hue-pri-dark);
     color: var(--hue-wht);
