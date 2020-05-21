@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Tinymce apply-text-format plugin 
+    * Tinymce apply-text-format plugin
     *
     * ###:  plugin.js
     * bld:  24200520
@@ -41,6 +41,12 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor, url) {
             text: '•\xa0Sub script',
             onclick: function() {
                 editor.execCommand('subscript');
+            }
+        }, {
+            icon: false,
+            text: '•\xa0Strong',
+            onclick: function() {
+                editor.execCommand('mceReplaceContent', false, '<strong>{$selection}</strong>');
             }
         }, {
             icon: false,
