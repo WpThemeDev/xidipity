@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Xidipity css variables 
+    * Xidipity css variables
     *
     * ###:  theme-vars.php
     * bld:  24200520
@@ -26,32 +26,35 @@
     --hue-wht: #ffffff;
     /*: base hue :*/
     --hue-bas-900: #212121;
-    --hue-bas-800: #424242;
-    --hue-bas-700: #616161;
-    --hue-bas-600: #757575;
-    --hue-bas-500: #9e9e9e;
-    --hue-bas-400: #bdbdbd;
-    --hue-bas-300: #e0e0e0;
-    --hue-bas-200: #eeeeee;
-    --hue-bas-100: #f5f5f5;
-    --hue-bas-050: #fafafa;
+    --hue-bas-dn4: #212121;
+    --hue-bas-dn3: #424242;
+    --hue-bas-dn2: #616161;
+    --hue-bas-dn1: #757575;
+    --hue-bas: #9e9e9e;
+    --hue-bas-up1: #bdbdbd;
+    --hue-bas-up2: #e0e0e0;
+    --hue-bas-up3: #eeeeee;
+    --hue-bas-up4: #f5f5f5;
+    --hue-bas-up5: #fafafa;
     --hue-bas-tint: #ebebeb;
-    --hue-bas-tint-bright: #f2f2f2;
-    --hue-bas-tint-dark: #e0e0e0;
+    --hue-bas-tint-up1: #f2f2f2;
+    --hue-bas-tint-dn1: #e0e0e0;
     /*: primary hue :*/
     --hue-pri: #1565c0;
-    --hue-pri-bright: #5e92f3;
-    --hue-pri-dark: #003c8f;
+    --hue-pri-up1: #5e92f3;
+    --hue-pri-dn1: #003c8f;
     --hue-pri-tint: #b9d1ec;
-    --hue-pri-tint-bright: #e8f0f9;
-    --hue-pri-tint-dark: #8ab2e0;
+    --hue-pri-tint-up1: #e8f0f9;
+    --hue-pri-tint-dn1: #8ab2e0;
     /*: secondary hue :*/
     --hue-sec: #f25c02;
-    --hue-sec-bright: #ff8e3d;
-    --hue-sec-dark: #b82800;
+    --hue-sec-up1: #ff8e3d;
+    --hue-sec-dn1: #b82800;
     --hue-sec-tint: #fbceb3;
     --hue-sec-tint-bright: #feefe6;
+    --hue-sec-tint-up1: #feefe6;
     --hue-sec-tint-dark: #f9ae81;
+    --hue-sec-tint-dn1: #f9ae81;
     /*
     ***
     wcag colors
@@ -138,32 +141,32 @@
     --font-style-normal: normal;
     --font-style-oblique: oblique;
     /*: headers :*/
-    --h1-color: var(--hue-bas-800);
+    --h1-color: var(--hue-bas-dn3);
     --h1-font: var(--font-sans);
     --h1-size: var(--font-size-h1);
     --h1-style: var(--font-style-normal);
     --h1-weight: var(--font-wgt-normal);
-    --h2-color: var(--hue-bas-800);
+    --h2-color: var(--hue-bas-dn3);
     --h2-font: var(--font-sans);
     --h2-size: var(--font-size-h2);
     --h2-style: var(--font-style-normal);
     --h2-weight: var(--font-wgt-normal);
-    --h3-color: var(--hue-bas-800);
+    --h3-color: var(--hue-bas-dn3);
     --h3-font: var(--font-sans);
     --h3-size: var(--font-size-h3);
     --h3-style: var(--font-style-normal);
     --h3-weight: var(--font-wgt-normal);
-    --h4-color: var(--hue-bas-800);
+    --h4-color: var(--hue-bas-dn3);
     --h4-font: var(--font-sans);
     --h4-size: var(--font-size-h4);
     --h4-style: var(--font-style-normal);
     --h4-weight: var(--font-wgt-normal);
-    --h5-color: var(--hue-bas-800);
+    --h5-color: var(--hue-bas-dn3);
     --h5-font: var(--font-sans);
     --h5-size: var(--font-size-h5);
     --h5-style: var(--font-style-normal);
     --h5-weight: var(--font-wgt-light);
-    --h6-color: var(--hue-bas-800);
+    --h6-color: var(--hue-bas-dn3);
     --h6-font: var(--font-sans);
     --h6-size: var(--font-size-h6);
     --h6-style: var(--font-style-normal);
@@ -174,7 +177,7 @@
     ***
     */
     /*: blog header :*/
-    --blog-hdr-bg-color: var(--hue-bas-050);
+    --blog-hdr-bg-color: var(--hue-bas-up5);
     /*: blog title & tagline :*/
     --title-font-family: var(--font-fancy);
     --title-font-size: 3rem;
@@ -188,7 +191,7 @@
     --desc-font-style: normal;
     --desc-font-weight: var(--font-wgt-normal);
     /*: blog footer :*/
-    --blog-ft-bg-color: var(--hue-bas-050);
+    --blog-ft-bg-color: var(--hue-bas-up5);
     /*: sys menu :*/
     --mnu-bar-sm-bg: var(--transparent);
     --mnu-bar-sm-fg: var(--hue-blk);
@@ -197,12 +200,12 @@
     /*: sys content :*/
     --content-bg-color: var(--hue-wht);
     --content-fg-color: var(--hue-blk);
-    --content-tp-border-color: var(--hue-bas-300);
-    --content-bt-border-color: var(--hue-bas-300);
+    --content-tp-border-color: var(--hue-bas-up2);
+    --content-bt-border-color: var(--hue-bas-up2);
     --content-counter-color: var(--wcag-grey6);
     /*: system :*/
     --dft-fg-color: var(--hue-blk);
-    --dft-bg-color: var(--hue-bas-050);
+    --dft-bg-color: var(--hue-bas-up5);
     --dft-line-height: 1.5;
     --dft-font-family: var(--font-sans);
     --dft-font-color: var(--hue-blk);
