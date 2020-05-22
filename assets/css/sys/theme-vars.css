@@ -2,7 +2,7 @@
     * WordPress Xidipity Theme
     * Xidipity css variables 
     *
-    * ###:  theme-vars.css
+    * ###:  theme-vars.php
     * bld:  24200520
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
@@ -54,38 +54,43 @@
     --hue-sec-tint-dark: #f9ae81;
     /*
     ***
-    other colors (material design palette)
+    wcag colors
     ***
     */
     --wcag-grey9: #212121;
     --wcag-grey8: #424242;
     --wcag-grey7: #616161;
     --wcag-grey6: #757575;
-    --hue-red: #B71C1C;
-    --wcag-red: #B50707;
-    --hue-pink: #880E4F;
-    --hue-purple: #4A148C;
-    --hue-deep-purple: #311B92;
-    --wcag-deep-purple: #783BB7;
-    --hue-indigo: #1A237E;
-    --hue-blue: #0D47A1;
-    --wcag-blue: #0051D8;
-    --hue-light-blue: #01579B;
-    --hue-cyan: #006064;
-    --hue-teal: #004D40;
-    --hue-green: #1B5E20;
-    --wcag-green: #048618;
-    --hue-light-green: #33691E;
-    --hue-lime: #827717;
-    --hue-yellow: #F57F17;
-    --hue-amber: #FF6F00;
-    --hue-orange: #E65100;
-    --hue-deep-orange: #BF360C;
-    --wcag-deep-orange: #D44511;
-    --hue-brown: #3E2723;
-    --hue-grey: #212121;
-    --hue-blue-grey: #263238;
-    --wcag-blue-grey: #263238;
+    --wcag-red: #8b0000;
+    --wcag-deep-purple: #663399;
+    --wcag-blue: #0000ff;
+    --wcag-green: #008000;
+    --wcag-deep-orange: #D03E06;
+    --wcag-blue-grey: #2f4f4f;
+    /*
+    ***
+    named colors
+    ***
+    */
+    --hue-red: #dc143c;
+    --hue-pink: #ff1493;
+    --hue-purple: #9400d3;
+    --hue-deep-purple: #800080;
+    --hue-indigo: #4b0082;
+    --hue-blue: #0000ff;
+    --hue-light-blue: #add8e6;
+    --hue-cyan: #00ffff;
+    --hue-teal: #008080;
+    --hue-green: #008000;
+    --hue-light-green: #90ee90;
+    --hue-lime: #32cd32;
+    --hue-yellow: #ffff00;
+    --hue-amber: #FFBA00;
+    --hue-orange: #E4641C;
+    --hue-deep-orange: #DD4714;
+    --hue-brown: #654320;
+    --hue-grey: #808080;
+    --hue-blue-grey: #708090;
     /*
     ***
     special colors
@@ -214,7 +219,7 @@
     --lnk-dft-wgt: var(--font-wgt-normal);
     --lnk-vst-wgt: var(--font-wgt-normal);
     --lnk-hvr-wgt: var(--font-wgt-normal);
-    --lnk-dft-decor: none;
+    --lnk-dft-decor: underline;
     --lnk-vst-decor: none;
     --lnk-hvr-decor: none;
     /*
@@ -228,5 +233,5 @@
 }
 
 /*
- * EOF: theme-vars.css / 24200520
+ * EOF: theme-vars.php / 24200520
  */
