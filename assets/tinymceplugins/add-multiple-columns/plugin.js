@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Tinymce add-multiple-columns plugin 
+    * Tinymce add-multiple-columns plugin
     *
     * ###:  plugin.js
     * bld:  24200520
@@ -17,7 +17,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
         onclick: function() {
             var dom = editor.dom;
             var uniqueID = dom.uniqueId();
-            var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+            var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
             editor.insertContent(html);
             var newTwoColumn = dom.select('td#' + uniqueID)[0];
             editor.selection.setCursorLocation(newTwoColumn);
@@ -28,7 +28,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
               var dom = editor.dom;
               var uniqueID = dom.uniqueId();
-              var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+              var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
               editor.insertContent(html);
               var newTwoColumn = dom.select('td#' + uniqueID)[0];
               editor.selection.setCursorLocation(newTwoColumn);
@@ -39,7 +39,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+                var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
                 editor.insertContent(html);
                 var newTwoColumn = dom.select('td#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newTwoColumn);
@@ -50,7 +50,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+                var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
                 editor.insertContent(html);
                 var newTwoColumn = dom.select('td#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newTwoColumn);
@@ -61,7 +61,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+                var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
                 editor.insertContent(html);
                 var newTwoColumn = dom.select('td#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newTwoColumn);
@@ -72,7 +72,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+                var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
                 editor.insertContent(html);
                 var newTwoColumn = dom.select('td#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newTwoColumn);
@@ -83,7 +83,7 @@ tinymce.PluginManager.add('add_multi_cols', function (editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<!-- xwpt: 91108.1a/mce/toolbar/multi-col   --><table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table><!-- /xwpt: 91108.1a/mce/toolbar/multi-col  -->';
+                var html = '<!--  xwp:EDITOR/MULTI/COL --><table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table><!-- /xwp:EDITOR/MULTI/COL -->';
                 editor.insertContent(html);
                 var newTwoColumn = dom.select('td#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newTwoColumn);
