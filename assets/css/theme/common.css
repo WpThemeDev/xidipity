@@ -938,39 +938,96 @@ dd {
     * ver: 200520
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+    *
+    * <table>
+    *   <thead>
+    *       <tr>
+    *           <th>Header</th>
+    *       </tr>
+    *   </thead>
+    *   <tbody>
+    *       <tr>
+    *           <td>Cell</td>
+    *       </tr>
+    *   </tbody>
+    *   <tfoot>
+    *       <tr>
+    *           <td>Footer</td>
+    *       </tr>
+    *   </tfoot>
+    *   <caption>
+    * </table>
+    *
 ***
 */
 table {
     background-color: transparent;
     border-color: transparent;
+    font-size: var(--font-size-sm);
     table-layout: fixed;
 }
 
 table caption {
     caption-side: bottom;
-    font-size: smaller;
+    font-size: var(--font-size-xs);
+    text-align: center;
 }
 
-table td,
-table th {
+/*: sm)media :*/
+@media (min-width: 600px) {
+    table {
+        font-size: var(--font-size-md);
+    }
+
+    table caption {
+        font-size: var(--font-size-sm);
+    }
+}
+
+table > thead > tr > td,
+table > thead > tr > th {
+    font-weight: 500;
+    text-align: left;
     padding: 0.25rem 0.5rem;
 }
 
-table thead th {
-    background: var(--hue-bas-tint);
-    font-weight: bolder;
+table > thead > tr > td {
+    background-color: var(--hue-bas-tint-dark);
 }
 
-table thead th:not(:last-child) {
+table > thead > tr > th {
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(to bottom, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+
+table > thead > tr > td:not(:last-child) {
+    border-right: 1px solid var(--content-bg-color);
+}
+
+table > thead > tr > th:not(:last-child) {
     border-right: 1px solid var(--hue-bas-300);
 }
 
-table tr:not(:last-child) td {
+table > tbody > tr:not(:last-child) > td {
     border-bottom: 1px solid var(--hue-bas-300);
 }
 
-table td:not(:last-child) {
+table > tbody > tr > td:not(:last-child) {
     border-right: 1px solid var(--hue-bas-300);
+}
+
+table > tbody > tr > td {
+    vertical-align: top;
+    padding: 0.25rem 0.5rem;
+}
+
+table > tfoot > tr > td {
+    font-weight: 500;
+    text-align: left;
+    padding: 0.25rem 0.5rem;
 }
 
 /*
