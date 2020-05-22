@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Shared css clases 
+    * Shared css clases
     *
     * ###:  common.css
     * bld:  24200520
@@ -182,7 +182,7 @@ code {
     * dsc: html comments
     * ver: 200513
     * fnt: alternate method to "<!--"
-    * ref: 
+    * ref:
 ***
 */
 .cmt\:html {
@@ -935,7 +935,7 @@ dd {
 ***
     * element: <table>
     * dsc: html table
-    * ver: 200304
+    * ver: 200520
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
@@ -943,7 +943,7 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    table-layout: auto;
+    table-layout: fixed;
 }
 
 table caption {
@@ -957,12 +957,7 @@ table th {
 }
 
 table thead th {
-    background: #e0e0e0;
-    background: -moz-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
-    color: var(--hue-blk);
+    background: var(--hue-bas-tint);
     font-weight: bolder;
 }
 
@@ -1007,137 +1002,122 @@ tbody.bdr\:none tr {
 
 /*
 ***
-    property: cols
-    * dsc: table multi-column
-    * ver: 190315
-    * fnt: apply multi-column formatting
-    * ref:
+    property: cols:<type>
+    * dsc: multi-columns
+    * ver: 190520
+    * fnt: common multi-column classes
+    * ref: see web.css
 ***
 */
-table.cols\:auto-2,
-table.cols\:auto-3,
-table.cols\:auto-4,
-table.cols\:fixed-2,
-table.cols\:fixed-3,
-table.cols\:fixed-4 {
+.cols\:auto-2,
+.cols\:auto-2 > tbody,
+.cols\:auto-2 > tbody > tr,
+.cols\:auto-2 > tbody > tr > td,
+.cols\:auto-3,
+.cols\:auto-3 > tbody,
+.cols\:auto-3 > tbody > tr,
+.cols\:auto-3 > tbody > tr > td,
+.cols\:auto-4,
+.cols\:auto-4 > tbody,
+.cols\:auto-4 > tbody > tr,
+.cols\:auto-4 > tbody > tr > td,
+.cols\:fixed-2,
+.cols\:fixed-2 > tbody,
+.cols\:fixed-2 > tbody > tr,
+.cols\:fixed-2 > tbody > tr > td,
+.cols\:fixed-3,
+.cols\:fixed-3 > tbody,
+.cols\:fixed-3 > tbody > tr,
+.cols\:fixed-3 > tbody > tr > td,
+.cols\:fixed-4,
+.cols\:fixed-4 > tbody,
+.cols\:fixed-4 > tbody > tr,
+.cols\:fixed-4 > tbody > tr > td {
     display: block;
+    margin: 0;
+    padding:0;
     width: 100%;
 }
 
-table.cols\:auto-2 tr,
-table.cols\:auto-3 tr,
-table.cols\:auto-4 tr,
-table.cols\:fixed-2 tr,
-table.cols\:fixed-3 tr,
-table.cols\:fixed-4 tr {
-    display: block;
-    width: 100%;
+.cols\:fixed-2 > tbody > tr > td:not(:last-child),
+.cols\:fixed-3 > tbody > tr > td:not(:last-child),
+.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
+    padding-right: 0.5rem;
 }
 
-table.cols\:auto-2 td,
-table.cols\:auto-3 td,
-table.cols\:auto-4 td,
-table.cols\:fixed-2 td,
-table.cols\:fixed-3 td,
-table.cols\:fixed-4 td {
-    display: block;
-    padding-bottom: 1rem;
-    width: 100%;
+.cols\:fixed-2 > tbody > tr > td:not(:first-child),
+.cols\:fixed-3 > tbody > tr > td:not(:first-child),
+.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
+    padding-left: 0.5rem;
 }
 
-table.cols\:auto-2 td,
-table.cols\:auto-3 td,
-table.cols\:auto-4 td,
-table.cols\:fixed-2 td:last-child,
-table.cols\:fixed-3 td:last-child,
-table.cols\:fixed-4 td:last-child {
-    padding-bottom: 0;
-}
-
-/*: standard media :*/
-@media (min-width: 1024px) {
-    table.cols\:auto-2,
-    table.cols\:auto-3,
-    table.cols\:auto-4,
-    table.cols\:fixed-2,
-    table.cols\:fixed-3,
-    table.cols\:fixed-4 {
+/*: md)media :*/
+@media (min-width: 900px) {
+    .cols\:fixed-2,
+    .cols\:fixed-3,
+    .cols\:fixed-4 {
         display: table;
     }
 
-    table.cols\:auto-2 tr,
-    table.cols\:auto-3 tr,
-    table.cols\:auto-4 tr,
-    table.cols\:fixed-2 tr,
-    table.cols\:fixed-3 tr,
-    table.cols\:fixed-4 tr {
+    .cols\:fixed-2 > tbody,
+    .cols\:fixed-3 > tbody,
+    .cols\:fixed-4 > tbody {
+        display: table-row-group;
+    }
+
+    .cols\:fixed-2 > tbody > tr,
+    .cols\:fixed-3 > tbody > tr,
+    .cols\:fixed-4 > tbody > tr {
         display: table-row;
     }
 
-    table.cols\:auto-2 td,
-    table.cols\:auto-3 td,
-    table.cols\:auto-4 td,
-    table.cols\:fixed-2 td,
-    table.cols\:fixed-3 td,
-    table.cols\:fixed-4 td {
+    .cols\:fixed-2 > tbody > tr > td,
+    .cols\:fixed-3 > tbody > tr > td,
+    .cols\:fixed-4 > tbody > tr > td {
         border-style: none !important;
         display: table-cell;
-        padding-bottom: 0;
         vertical-align: top;
     }
 
-    table.cols\:fixed-2 td {
+    .cols\:fixed-2 > tbody > tr > td {
         width: 50%;
     }
 
-    table.cols\:fixed-3 td {
+    .cols\:fixed-3 > tbody > tr > td {
         width: 33.3333%;
     }
 
-    table.cols\:fixed-4 td {
+    .cols\:fixed-4 > tbody > tr > td {
         width: 25%;
     }
 }
 
 /*: embedded table :*/
 
-table.cols\:auto-2 table,
-table.cols\:auto-3 table,
-table.cols\:auto-4 table,
-table.cols\:fixed-2 table,
-table.cols\:fixed-3 table,
-table.cols\:fixed-4 table {
+.cols\:fixed-2 > table,
+.cols\:fixed-3 > table,
+.cols\:fixed-4 > table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 1rem 0;
-    table-layout: auto;
 }
 
-table.cols\:auto-2 table thead th:not(:last-child),
-table.cols\:auto-3 table thead th:not(:last-child),
-table.cols\:auto-4 table thead th:not(:last-child),
-table.cols\:fixed-2 table thead th:not(:last-child),
-table.cols\:fixed-3 table thead th:not(:last-child),
-table.cols\:fixed-4 table thead th:not(:last-child) {
+.cols\:fixed-2 table thead th:not(:last-child),
+.cols\:fixed-3 table thead th:not(:last-child),
+.cols\:fixed-4 table thead th:not(:last-child) {
     border-right: 1px solid var(--hue-bas-300) !important;
 }
 
-table.cols\:auto-2 table tr:not(:last-child) td,
-table.cols\:auto-3 table tr:not(:last-child) td,
-table.cols\:auto-4 table tr:not(:last-child) td,
-table.cols\:fixed-2 table tr:not(:last-child) td,
-table.cols\:fixed-3 table tr:not(:last-child) td,
-table.cols\:fixed-4 table tr:not(:last-child) td {
+.cols\:fixed-2 table tr:not(:last-child) td,
+.cols\:fixed-3 table tr:not(:last-child) td,
+.cols\:fixed-4 table tr:not(:last-child) td {
     border-bottom: 1px solid var(--hue-bas-300) !important;
 }
 
-table.cols\:auto-2 table td:not(:last-child),
-table.cols\:auto-3 table td:not(:last-child),
-table.cols\:auto-4 table td:not(:last-child),
-table.cols\:fixed-2 table td:not(:last-child),
-table.cols\:fixed-3 table td:not(:last-child),
-table.cols\:fixed-4 table td:not(:last-child) {
+.cols\:fixed-2 table td:not(:last-child),
+.cols\:fixed-3 table td:not(:last-child),
+.cols\:fixed-4 table td:not(:last-child) {
     border-right: 1px solid var(--hue-bas-300) !important;
 }
 
@@ -1470,14 +1450,14 @@ figure {
 ***
     property: wp-caption
     * dsc: image caption
-    * ver: 190318
+    * ver: 190520
     * fnt: center image caption
     * ref:
 ***
 */
 .wp-caption {
-    font-size: .875rem;
-    line-height: calc(var(--dft-line-height) * 120%);
+    background-color: var(--hue-bas-100);
+    font-size: var(--font-size-sm);
     text-align: center;
 }
 
