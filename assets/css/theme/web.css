@@ -456,29 +456,28 @@ a.comment-reply-link:hover {
 
 /*
 ***
-    property: cols
-    * dsc: table multi-column
-    * ver: 190315
-    * fnt: add auto formatting here
-    * ref:
+    property: cols:<type>
+    * dsc: multi-columns
+    * ver: 190520
+    * fnt: web multi-column classes
+    * ref: see common.css
 ***
 */
-/*: medium media & larger :*/
 @media (min-width: 900px) {
-    table.cols\:auto-2 td {
+    .cols\:auto-2 > tbody > tr > td {
         column-count: 2;
         column-gap: 2%;
     }
 
-    table.cols\:auto-3 td {
+    .cols\:auto-3 > tbody > tr > td {
         column-count: 3;
         column-gap: 2%;
     }
 
-    table.cols\:auto-4 td {
+    .cols\:auto-4 > tbody > tr > td {
         column-count: 4;
         column-gap: 2%;
-    }
+    }    
 }
 
 /*
@@ -509,19 +508,6 @@ a.comment-reply-link:hover {
     overflow: hidden;
     position: absolute;
     width: 100%;
-}
-
-/*
-***
-    * property: wp-caption
-    * dsc: set figure / caption boundry
-    * ver: 200429
-    * fnt: set max boundry properties
-    * ref:
-***
-*/
-.wp-caption {
-    max-width: 100%;
 }
 
 /*
