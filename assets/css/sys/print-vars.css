@@ -39,27 +39,33 @@
     --hue-bas-tint: #ececec;
     --hue-bas-tint-dn1: #e2e2e2;
     /*: primary hue :*/
-    --hue-pri-up3: #a1c1e6;
-    --hue-pri-up2: #73a3d9;
-    --hue-pri-up1: #4484cd;
-    --hue-pri: #1565c0;
-    --hue-pri-dn1: #11519a;
-    --hue-pri-dn2: #0d3d73;
-    --hue-pri-dn3: #08284d;
-    --hue-pri-tint-up1: #e8f0f9;
-    --hue-pri-tint: #d0e0f2;
-    --hue-pri-tint-dn1: #b9d1ec;
+    --hue-pri-up5: #f5f5f5;
+    --hue-pri-up4: #ececec;
+    --hue-pri-up3: #d8d8d8;
+    --hue-pri-up2: #c5c5c5;
+    --hue-pri-up1: #b1b1b1;
+    --hue-pri: #9e9e9e;
+    --hue-pri-dn1: #7e7e7e;
+    --hue-pri-dn2: #5f5f5f;
+    --hue-pri-dn3: #3f3f3f;
+    --hue-pri-dn4: #202020;
+    --hue-pri-tint-up1: #f5f5f5;
+    --hue-pri-tint: #ececec;
+    --hue-pri-tint-dn1: #e2e2e2;
     /*: secondary hue :*/
-    --hue-sec-up3: #fabe9a;
-    --hue-sec-up2: #f79d67;
-    --hue-sec-up1: #f57d35;
-    --hue-sec: #f25c02;
-    --hue-sec-dn1: #c24a02;
-    --hue-sec-dn2: #913701;
-    --hue-sec-dn3: #612501;
-    --hue-sec-tint-up1: #feefe6;
-    --hue-sec-tint: #fcdecc;
-    --hue-sec-tint-dn1: #fbceb3;
+    --hue-sec-up5: #f5f5f5;
+    --hue-sec-up4: #ececec;
+    --hue-sec-up3: #d8d8d8;
+    --hue-sec-up2: #c5c5c5;
+    --hue-sec-up1: #b1b1b1;
+    --hue-sec: #9e9e9e;
+    --hue-sec-dn1: #7e7e7e;
+    --hue-sec-dn2: #5f5f5f;
+    --hue-sec-dn3: #3f3f3f;
+    --hue-sec-dn4: #202020;
+    --hue-sec-tint-up1: #f5f5f5;
+    --hue-sec-tint: #ececec;
+    --hue-sec-tint-dn1: #e2e2e2;
     /*
     ***
     wcag colors
@@ -69,36 +75,36 @@
     --wcag-grey8: #424242;
     --wcag-grey7: #616161;
     --wcag-grey6: #757575;
-    --wcag-red: #8b0000;
-    --wcag-deep-purple: #663399;
-    --wcag-blue: #0000ff;
-    --wcag-green: #008000;
-    --wcag-deep-orange: #D03E06;
-    --wcag-blue-grey: #2f4f4f;
+    --wcag-red: #212121;
+    --wcag-deep-purple: #212121;
+    --wcag-blue: #212121;
+    --wcag-green: #212121;
+    --wcag-deep-orange: #212121;
+    --wcag-blue-grey: #212121;
     /*
     ***
     named colors
     ***
     */
-    --hue-red: #dc143c;
-    --hue-pink: #ff1493;
-    --hue-purple: #9400d3;
-    --hue-deep-purple: #800080;
-    --hue-indigo: #4b0082;
-    --hue-blue: #0000ff;
-    --hue-light-blue: #add8e6;
-    --hue-cyan: #00ffff;
-    --hue-teal: #008080;
-    --hue-green: #008000;
-    --hue-light-green: #90ee90;
-    --hue-lime: #32cd32;
-    --hue-yellow: #ffff00;
-    --hue-amber: #FFBA00;
-    --hue-orange: #E4641C;
-    --hue-deep-orange: #DD4714;
-    --hue-brown: #654320;
-    --hue-grey: #808080;
-    --hue-blue-grey: #708090;
+    --hue-red: #757575;
+    --hue-pink: #757575;
+    --hue-purple: #757575;
+    --hue-deep-purple: #757575;
+    --hue-indigo: #757575;
+    --hue-blue: #757575;
+    --hue-light-blue: #757575;
+    --hue-cyan: #757575;
+    --hue-teal: #757575;
+    --hue-green: #757575;
+    --hue-light-green: #757575;
+    --hue-lime: #757575;
+    --hue-yellow: #757575;
+    --hue-amber: #757575;
+    --hue-orange: #757575;
+    --hue-deep-orange: #757575;
+    --hue-brown: #757575;
+    --hue-grey: #757575;
+    --hue-blue-grey: #757575;
     /*
     ***
     special colors
@@ -107,7 +113,7 @@
     /*: no color :*/
     --transparent: transparent;
     /*: hilite plugin support :*/
-    --hue-highlight: #FFF59D;
+    --hue-highlight: #f5f5f5;
     /*
     ***
     content attributes
