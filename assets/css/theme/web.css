@@ -72,7 +72,7 @@ body {
 }
 
 .site .skip-link {
-    background-color: var(--hue-bas-100);
+    background-color: var(--hue-bas-up4);
     -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .2);
     color: #4527a0;
@@ -296,7 +296,7 @@ body {
 ***
 */
 .comment-body {
-	background-color: var(--hue-bas-050);
+	background-color: var(--hue-bas-up5);
 	margin-bottom: 0.5rem;
 	margin-top: 0.5rem;
 	padding: 1rem;
@@ -332,7 +332,7 @@ a.comment-reply-link {
 }
 
 a.comment-reply-link:hover {
-    background-color: var(--hue-pri-dark);
+    background-color: var(--hue-pri-dn1);
 }
 
 /*
@@ -355,7 +355,7 @@ a.comment-reply-link:hover {
 
 #submit:hover {
     cursor: pointer;
-    background-color: var(--hue-pri-dark);
+    background-color: var(--hue-pri-dn1);
     /*filter: brightness(110%);*/
 }
 
@@ -419,7 +419,7 @@ a.comment-reply-link:hover {
 .comment-navigation .nav-next a,
 .comment-navigation .nav-next a:visited,
 .comment-navigation .nav-previous a:visited {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     display: block;
     font-size: 13px;
     font-size: .8125rem;
@@ -477,7 +477,7 @@ a.comment-reply-link:hover {
     .cols\:auto-4 > tbody > tr > td {
         column-count: 4;
         column-gap: 2%;
-    }    
+    }
 }
 
 /*
@@ -521,7 +521,7 @@ a.comment-reply-link:hover {
 */
 .hdr\:title {
     color: var(--title-lnk-pri-color);
-    color: var(--hue-pri-dark);
+    color: var(--hue-pri-dn1);
     font-family: var(--title-font-family);
     font-size: var(--title-font-size);
     font-style: var(--title-font-style);
@@ -532,13 +532,13 @@ a.comment-reply-link:hover {
 a.hdr\:title,
 a.hdr\:title:visited {
     color: var(--title-lnk-pri-color);
-    color: var(--hue-pri-dark);
+    color: var(--hue-pri-dn1);
     text-decoration: none;
 }
 
 a.hdr\:title:hover {
     color: var(--title-lnk-sec-color);
-    color: var(--hue-sec-dark);
+    color: var(--hue-sec-dn1);
 }
 
 /*
@@ -658,7 +658,7 @@ a.hdr\:title:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--hue-pri-dark);
+    background-color: var(--hue-pri-dn1);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -704,7 +704,7 @@ a.hdr\:title:hover {
 }
 
 .search-frm .search-fld {
-	background-color: var(--hue-bas-100);
+	background-color: var(--hue-bas-up4);
     border-radius: .25rem;
     height: 3rem;
     padding-right: 0.625rem;
@@ -717,7 +717,7 @@ a.hdr\:title:hover {
     background-color: var(--content-bg-color);
     border-radius: .25rem;
     border: 1px solid transparent;
-    color: var(--hue-sec-dark);
+    color: var(--hue-sec-dn1);
     position: relative;
     display: inline-block;
     float: right;
@@ -744,7 +744,7 @@ a.hdr\:title:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--hue-sec-dark);
+    background-color: var(--hue-sec-dn1);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -780,7 +780,7 @@ a.hdr\:title:hover {
 ***
 */
 .gist {
-    border: solid thick var(--hue-bas-300);
+    border: solid thick var(--hue-bas-up2);
     font-family: var(--font-mono) !important;
     margin-bottom: -1rem !important;
     border-radius: 0.3333rem;
@@ -915,14 +915,14 @@ span.page-numbers {
 }
 
 span.current {
-    color: var(--hue-sec-bright);
+    color: var(--hue-sec-up1);
     font-weight: bold;
 }
 
 a.page-numbers:hover,
 a.page-numbers:active,
 a.page-numbers:focus {
-    background-color: var(--hue-pri-bright);
+    background-color: var(--hue-pri-up1);
     color: var(--hue-wht);
     cursor: pointer;
 }
@@ -937,7 +937,7 @@ a.page-numbers:focus {
 ***
 */
 .box\:shadow {
-    border-top: thin solid var(--hue-bas-300);
+    border-top: thin solid var(--hue-bas-up2);
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
@@ -957,7 +957,7 @@ a.page-numbers:focus {
 }
 
 .CodeMirror {
-    border: 1px solid var(--hue-bas-300) !important;
+    border: 1px solid var(--hue-bas-up2) !important;
     height: 65vh !important;
     font-family: var(--font-mono) !important;
     overflow: auto;
@@ -1048,7 +1048,7 @@ a.page-numbers:focus {
 }
 
 #nav input.trigger:checked  + label {
-	box-shadow: 0 0 1px 1px var(--hue-bas-100);
+	box-shadow: 0 0 1px 1px var(--hue-bas-up4);
 	color: var(--hue-sec);
 	margin-bottom: 0.25rem;
 }
