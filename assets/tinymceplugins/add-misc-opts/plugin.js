@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Tinymce add-misc-opts plugin 
+    * Tinymce add-misc-opts plugin
     *
     * ###:  plugin.js
     * bld:  24200527
@@ -28,11 +28,18 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             icon: false,
             text: '•\xa0Content Frame',
             onclick: function () {
-                var dom = editor.dom;
-                var uniqueID = dom.uniqueId();
-                tinymce.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
-                var newTag = dom.select('p#' + uniqueID)[0];
-                editor.selection.setCursorLocation(newTag);
+                var seltxt = editor.selection.getContent({format : 'text'});
+                if (seltxt.length > 0)
+                    {
+                        editor.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+                    } else {
+                        var dom = editor.dom;
+                        var uniqueID = dom.uniqueId();
+                        var html = '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->';
+                        editor.insertContent(html);
+                        var newTag = dom.select('p#' + uniqueID)[0];
+                        editor.selection.setCursorLocation(newTag);
+                    }
             }
         }, {
             icon: false,
@@ -49,7 +56,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             icon: false,
             text: '•\xa0Acronym',
             onclick: function () {
-                tinymce.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
+                editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
             }
         }],
     });
