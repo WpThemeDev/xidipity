@@ -130,8 +130,8 @@ abbr {
 */
 pre,
 pre.wrap{
-    border: solid thick var(--hue-bas-200);
-    background-color: var(--hue-bas-050);
+    border: solid thick var(--hue-bas-up3);
+    background-color: var(--hue-bas-up5);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
@@ -200,7 +200,7 @@ code {
 ***
 */
 .rul\:solid-thin {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.0625rem;
     margin: 0.6875rem auto 0.8125rem auto;
     width: 100%;
@@ -209,7 +209,7 @@ code {
 hr,
 .rul\:solid-medium,
 .rul\:gradient {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.125rem;
     margin: 0.625rem auto 0.75rem auto;
     width: 100%;
@@ -217,7 +217,7 @@ hr,
 
 .rul\:solid-thick,
 .rul\:double {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.25rem;
     margin: 0.5625rem auto 0.625rem auto;
     width: 100%;
@@ -226,8 +226,8 @@ hr,
 .rul\:double {
     background-color: transparent;
     border: 0;
-    border-top: 0.0625rem solid var(--hue-bas-400);
-    border-bottom:  0.0625rem solid var(--hue-bas-400);
+    border-top: 0.0625rem solid var(--hue-bas-up1);
+    border-bottom:  0.0625rem solid var(--hue-bas-up1);
 }
 
 .rul\:gradient {
@@ -252,24 +252,24 @@ hr,
 .ln\:thin,
 .ln\:medium,
 .ln\:thick {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     content: "\200B";
     height: 0.0625rem;
     width: 100%;
 }
 
 .ln\:medium {
-    background-color: var(--hue-bas-300);
+    background-color: var(--hue-bas-up2);
     height: 0.125rem;
 }
 
 .ln\:thick {
-    background-color: var(--hue-bas-200);
+    background-color: var(--hue-bas-up3);
     height: 0.25rem;
 }
 
 .ln\:x-thick {
-    background-color: var(--hue-bas-200);
+    background-color: var(--hue-bas-up3);
     height: 0.5rem;
 }
 
@@ -278,24 +278,24 @@ hr,
     .sm\)ln\:thin,
     .sm\)ln\:medium,
     .sm\)ln\:thick {
-        background-color: var(--hue-bas-400);
+        background-color: var(--hue-bas-up1);
         content: "\200B";
         height: 0.0625rem;
         width: 100%;
     }
 
     .sm\)ln\:medium {
-        background-color: var(--hue-bas-300);
+        background-color: var(--hue-bas-up2);
         height: 0.125rem;
     }
 
     .sm\)ln\:thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.25rem;
     }
 
     .sm\)ln\:x-thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.5rem;
     }
 }
@@ -305,24 +305,24 @@ hr,
     .md\)ln\:thin,
     .md\)ln\:medium,
     .md\)ln\:thick {
-        background-color: var(--hue-bas-400);
+        background-color: var(--hue-bas-up1);
         content: "\200B";
         height: 0.0625rem;
         width: 100%;
     }
 
     .md\)ln\:medium {
-        background-color: var(--hue-bas-300);
+        background-color: var(--hue-bas-up2);
         height: 0.125rem;
     }
 
     .md\)ln\:thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.25rem;
     }
 
     .md\)ln\:x-thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.5rem;
     }
 }
@@ -332,24 +332,24 @@ hr,
     .lg\)ln\:thin,
     .lg\)ln\:medium,
     .lg\)ln\:thick {
-        background-color: var(--hue-bas-400);
+        background-color: var(--hue-bas-up1);
         content: "\200B";
         height: 0.0625rem;
         width: 100%;
     }
 
     .lg\)ln\:medium {
-        background-color: var(--hue-bas-300);
+        background-color: var(--hue-bas-up2);
         height: 0.125rem;
     }
 
     .lg\)ln\:thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.25rem;
     }
 
     .lg\)ln\:x-thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.5rem;
     }
 }
@@ -359,24 +359,24 @@ hr,
     .xl\)ln\:thin,
     .xl\)ln\:medium,
     .xl\)ln\:thick {
-        background-color: var(--hue-bas-400);
+        background-color: var(--hue-bas-up1);
         content: "\200B";
         height: 0.0625rem;
         width: 100%;
     }
 
     .xl\)ln\:medium {
-        background-color: var(--hue-bas-300);
+        background-color: var(--hue-bas-up2);
         height: 0.125rem;
     }
 
     .xl\)ln\:thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.25rem;
     }
 
     .xl\)ln\:x-thick {
-        background-color: var(--hue-bas-200);
+        background-color: var(--hue-bas-up3);
         height: 0.5rem;
     }
 }
@@ -1008,23 +1008,25 @@ table > thead > tr > td:not(:last-child) {
 }
 
 table > thead > tr > th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300);
+    border-right: 1px solid var(--hue-bas-up2);
 }
 
 table > tbody > tr:not(:last-child) > td {
-    border-bottom: 1px solid var(--hue-bas-300);
+    border-bottom: 1px solid var(--hue-bas-up2);
 }
 
 table > tbody > tr > td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300);
+    border-right: 1px solid var(--hue-bas-up2);
 }
 
 table > tbody > tr > td {
+    background-color: var(--content-bg-color);
     vertical-align: top;
     padding: 0.25rem 0.5rem;
 }
 
 table > tfoot > tr > td {
+    background-color: var(--content-bg-color);
     font-weight: 500;
     text-align: left;
     padding: 0.25rem 0.5rem;
@@ -1040,7 +1042,7 @@ table > tfoot > tr > td {
 ***
 */
 tbody.bdr\:xls td {
-    border: 1px solid var(--hue-bas-400) !important;
+    border: 1px solid var(--hue-bas-up1) !important;
 }
 
 /*
@@ -1163,19 +1165,19 @@ tbody.bdr\:none tr {
 .cols\:fixed-2 table thead th:not(:last-child),
 .cols\:fixed-3 table thead th:not(:last-child),
 .cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
 .cols\:fixed-2 table tr:not(:last-child) td,
 .cols\:fixed-3 table tr:not(:last-child) td,
 .cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--hue-bas-300) !important;
+    border-bottom: 1px solid var(--hue-bas-up2) !important;
 }
 
 .cols\:fixed-2 table td:not(:last-child),
 .cols\:fixed-3 table td:not(:last-child),
 .cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
+    border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
 /*
@@ -1291,7 +1293,7 @@ p {
 ***
 */
 blockquote {
-    color: var(--hue-bas-700);
+    color: var(--hue-bas-dn2);
     border-left: 6px solid var(--hue-pri-tint-dark);
     font-weight: 300;
     margin-top: 1em;
@@ -1359,20 +1361,20 @@ legend {
 }
 
 :-webkit-input-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 :-moz-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 :-moz-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     opacity: 1
 }
 
 :-ms-input-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 input[type=email],
@@ -1383,8 +1385,8 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    color: var(--hue-bas-700);
-    border: 1px solid var(--hue-bas-400);
+    color: var(--hue-bas-dn2);
+    border: 1px solid var(--hue-bas-up1);
     border-radius: 0.3333rem;
 }
 
@@ -1396,7 +1398,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 select:focus,
 textarea:focus {
-    color: var(--hue-bas-900);
+    color: var(--hue-bas-dn4);
 }
 
 input[type=email],
@@ -1428,7 +1430,7 @@ pre#textarea {
     background: 0 0;
     box-shadow: none;
     border: 0;
-    color: var(--hue-bas-900);
+    color: var(--hue-bas-dn4);
     font-family: var(--font-mono);
     font-size: .875rem !important;
     padding: 0;
@@ -1437,7 +1439,7 @@ pre#textarea {
 
 .pre-caption {
     background-color: var(--hue-wht);
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     font-size: .875rem;
     letter-spacing: 6px;
     letter-spacing: .375rem;
@@ -1480,14 +1482,14 @@ td .ratio-container {
 ***
 */
 .drp\:shadow-light {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-400));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-up1));
 }
 .drp\:shadow,
 .drp\:shadow-medium {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
 }
 .drp\:shadow-dark {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-600));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-dn1));
 }
 
 /*
@@ -1513,7 +1515,7 @@ figure {
 ***
 */
 .wp-caption {
-    background-color: var(--hue-bas-100);
+    background-color: var(--hue-bas-up4);
     font-size: var(--font-size-sm);
     text-align: center;
 }
@@ -1564,7 +1566,7 @@ figure {
 }
 
 .gallery .gallery-caption {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     display: block;
     font-size: 14px;
     font-size: .875em;
@@ -1630,8 +1632,8 @@ figure {
 ***
 */
 .txt\:frame {
-    border: solid thick var(--hue-bas-200);
-    background-color: var(--hue-bas-050);
+    border: solid thick var(--hue-bas-up3);
+    background-color: var(--hue-bas-up5);
     border-radius: 0.3333rem;
     display: inline-block;
     padding: 1rem;
@@ -1854,7 +1856,7 @@ button:active {
 
 .trn\:shadow\!hover:hover,
 .trn\:shadow\!focus:focus {
-    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas));
 }
 
 /*: image/button glow shadow :*/
@@ -1873,7 +1875,7 @@ button:active {
 
 .trn\:glow\!hover:hover,
 .trn\:glow\!focus:focus {
-    filter: drop-shadow(0 0 0.25rem var(--hue-bas-600));
+    filter: drop-shadow(0 0 0.25rem var(--hue-bas-dn1));
 }
 
 /*: image/button drop shadow :*/
@@ -1892,7 +1894,7 @@ button:active {
 
 .trn\:drop-shadow\!hover:hover,
 .trn\:drop-shadow\!focus:focus {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
 }
 
 /*: button only float shadow :*/
