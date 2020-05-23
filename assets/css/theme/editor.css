@@ -1,19 +1,11 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Editor specific css classes
     *
-    * File Name:       theme/editor.css
-    * Function:        Editor specific CSS
-    * Build:           200315
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  editor.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -21,12 +13,14 @@
 ***
     * element: <body>
     * dsc: body
-    * ver: 200222
+    * ver: 200520
     * fnt: html body (see common.css, web.css for other property values)
     * ref: developer.mozilla.org/en-US/docs/Web/API/Body
 ***
 */
 .mce-content-body {
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-dn4);
     margin: 1rem;
     -webkit-font-smoothing: antialiased !important;
 }
@@ -70,19 +64,6 @@ img {
 
 /*
 ***
-    * element: img
-    * dsc: img caption
-    * ver: 200222
-    * fnt: add space to the caption text
-    * ref:
-***
-*/
-.wp-caption img {
-    padding-bottom: 0.25rem;
-}
-
-/*
-***
     * element: pre:dot
     * dsc: mark pre
     * ver: 200315
@@ -117,7 +98,7 @@ img {
 .vs\:2,
 .vs\:2-1\/2,
 .vs\:3 {
-    background-color: var(--hue-bas-100);
+    background-color: var(--hue-bas-up4);
 }
 
 /*
@@ -135,43 +116,32 @@ ul.par ul ul,
 ul.par ul ul ul,
 ul.par ul ul ul ul,
 ul.par ul ul ul ul ul {
-    border-left: 0.25rem solid var(--hue-pri-tint-dark);
+    border-left: 0.25rem solid var(--hue-pri-tint-dn1);
     margin-left: 1.75rem;
     padding-left: 0.5rem !important;
 }
 
 /*
 ***
-    property: cols
-    * dsc: table multi-column
-    * ver: 190315
-    * fnt: turn borders on in editor
-    * ref:
+    property: cols:<type>
+    * dsc: multi-columns
+    * ver: 190520
+    * fnt: common multi-column classes
+    * ref: see common.css
 ***
 */
-table.cols\:auto-2,
-table.cols\:auto-3,
-table.cols\:auto-4,
-table.cols\:auto-2 td,
-table.cols\:auto-3 td,
-table.cols\:auto-4 td {
-    width: 100%;
+.cols\:fixed-2 > tbody > tr > td:not(:last-child),
+.cols\:fixed-3 > tbody > tr > td:not(:last-child),
+.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
+    border-right: dashed 1px var(--hue-bas-up1) !important;
 }
 
-table.cols\:fixed-2 td,
-table.cols\:fixed-3 td,
-table.cols\:fixed-4 td {
-    border-right: 1px dashed var(--hue-bas-400) !important;
-}
-
-table.cols\:fixed-2 td:last-child,
-table.cols\:fixed-3 td:last-child,
-table.cols\:fixed-4 td:last-child {
-    border-right-style: none;
+.cols\:fixed-2 > tbody > tr > td:not(:first-child),
+.cols\:fixed-3 > tbody > tr > td:not(:first-child),
+.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
+    border-left: dashed 1px var(--hue-bas-up1) !important;
 }
 
 /*
- * EOF:     theme/editor.css
- * Build:   200315
- *
+ * EOF: editor.css / 24200520
  */
