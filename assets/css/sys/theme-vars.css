@@ -209,7 +209,7 @@
     --content-bt-border-color: var(--hue-bas-up2);
     --content-counter-color: var(--wcag-grey6);
     /*: system :*/
-    --dft-fg-color: var(--hue-blk);
+    --dft-fg-color: var(--hue-bas-dn4);
     --dft-bg-color: var(--hue-bas-up5);
     --dft-line-height: 1.5;
     --dft-font-family: var(--font-sans);
