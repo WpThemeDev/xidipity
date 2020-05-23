@@ -7,6 +7,10 @@
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
+    * ref:  noeldelgado.github.io/shadowlord/#bebbb9
+    *                                       /#0047ab
+    *                                       /#f77219
+    *
 */
 
 :root {
@@ -25,41 +29,47 @@
     --hue-blk: #000000;
     --hue-wht: #ffffff;
     /*: base hue :*/
-    --hue-bas-up5: #f7f7f6;
-    --hue-bas-up4: #f0eeee;
-    --hue-bas-up3: #e0dedc;
-    --hue-bas-up2: #d1cdcb;
-    --hue-bas-up1: #c1bdb9;
-    --hue-bas: #b2aca8;
+    --hue-bas-up5: #f9f8f8;
+    --hue-bas-up4: #f2f1f1;
+    --hue-bas-up3: #e5e4e3;
+    --hue-bas-up2: #d8d6d5;
+    --hue-bas-up1: #cbc9c7;
+    --hue-bas: #bebbb9;
     --hue-bas-dn1: #8e8a86;
     --hue-bas-dn2: #6b6765;
     --hue-bas-dn3: #474543;
     --hue-bas-dn4: #242222;
-    --hue-bas-tint-up1: #f7f7f6;
-    --hue-bas-tint: #f0eeee;
-    --hue-bas-tint-dn1: #e8e6e5;
+    --hue-bas-tint-up1: #f9f8f8;
+    --hue-bas-tint: #f2f1f1;
+    --hue-bas-tint-dn1: #ecebea;
     /*: primary hue :*/
-    --hue-pri-up3: #a1c1e6;
-    --hue-pri-up2: #73a3d9;
-    --hue-pri-up1: #4484cd;
-    --hue-pri: #1565c0;
-    --hue-pri-dn1: #11519a;
-    --hue-pri-dn2: #0d3d73;
-    --hue-pri-dn3: #08284d;
-    --hue-pri-tint-up1: #e8f0f9;
-    --hue-pri-tint: #d0e0f2;
-    --hue-pri-tint-dn1: #b9d1ec;
+    --hue-pri-up5: #e6edf7;
+    --hue-pri-up4: #ccdaee;
+    --hue-pri-up3: #99b5dd;
+    --hue-pri-up2: #6691cd;
+    --hue-pri-up1: #336cbc;
+    --hue-pri: #0047ab;
+    --hue-pri-dn1: #003989;
+    --hue-pri-dn2: #002b67;
+    --hue-pri-dn3: #001c44;
+    --hue-pri-dn4: #000e22;
+    --hue-pri-tint-up1: #e6edf7;
+    --hue-pri-tint: #ccdaee;
+    --hue-pri-tint-dn1: #b3c8e6;
     /*: secondary hue :*/
-    --hue-sec-up3: #fabe9a;
-    --hue-sec-up2: #f79d67;
-    --hue-sec-up1: #f57d35;
-    --hue-sec: #f25c02;
-    --hue-sec-dn1: #c24a02;
-    --hue-sec-dn2: #913701;
-    --hue-sec-dn3: #612501;
-    --hue-sec-tint-up1: #feefe6;
-    --hue-sec-tint: #fcdecc;
-    --hue-sec-tint-dn1: #fbceb3;
+    --hue-sec-up5: #fef1e8;
+    --hue-sec-up4: #fde3d1;
+    --hue-sec-up3: #fcc7a3;
+    --hue-sec-up2: #faaa75;
+    --hue-sec-up1: #f98e47;
+    --hue-sec: #f77219;
+    --hue-sec-dn1: #c65b14;
+    --hue-sec-dn2: #94440f;
+    --hue-sec-dn3: #632e0a;
+    --hue-sec-dn3: #311705;
+    --hue-sec-tint-up1: #fef1e8;
+    --hue-sec-tint: #fde3d1;
+    --hue-sec-tint-dn1: #fdd5ba;
     /*
     ***
     wcag colors
