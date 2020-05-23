@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Palette specific css classes 
+    * Palette specific css classes
     *
     * ###:  palette.css
     * bld:  24200520
@@ -18,7 +18,7 @@ speciality foreground colors
     color: var(--wcag-grey6) !important;
 }
 .fg\:disable {
-    color: var(--hue-bas-400) !important;
+    color: var(--hue-bas-up1) !important;
 }
 .bg\:content {
 	background-color: var(--content-bg-color);
@@ -65,7 +65,7 @@ a.fg\:bas-4\!active:active,
 a.fg\:bas-4\!focus:focus,
 button.fg\:bas-4\!active:active,
 button.fg\:bas-4\!focus:focus {
-    color: var(--hue-bas-900) !important;
+    color: var(--hue-bas-dn4) !important;
 }
 
 .fg\:bas-3,
@@ -74,7 +74,7 @@ a.fg\:bas-3\!active:active,
 a.fg\:bas-3\!focus:focus,
 button.fg\:bas-3\!active:active,
 button.fg\:bas-3\!focus:focus {
-    color: var(--hue-bas-800) !important;
+    color: var(--hue-bas-dn3) !important;
 }
 
 .fg\:bas-2,
@@ -83,7 +83,7 @@ a.fg\:bas-2\!active:active,
 a.fg\:bas-2\!focus:focus,
 button.fg\:bas-2\!active:active,
 button.fg\:bas-2\!focus:focus {
-    color: var(--hue-bas-700) !important;
+    color: var(--hue-bas-dn2) !important;
 }
 
 .fg\:bas-1,
@@ -92,7 +92,7 @@ a.fg\:bas-1\!active:active,
 a.fg\:bas-1\!focus:focus,
 button.fg\:bas-1\!active:active,
 button.fg\:bas-1\!focus:focus {
-    color: var(--hue-bas-600) !important;
+    color: var(--hue-bas-dn1) !important;
 }
 
 .fg\:bas,
@@ -101,7 +101,7 @@ a.fg\:bas\!active:active,
 a.fg\:bas\!focus:focus,
 button.fg\:bas\!active:active,
 button.fg\:bas\!focus:focus {
-    color: var(--hue-bas-500) !important;
+    color: var(--hue-bas) !important;
 }
 
 .fg\:bas\+1,
@@ -110,7 +110,7 @@ a.fg\:bas\+1\!active:active,
 a.fg\:bas\+1\!focus:focus,
 button.fg\:bas\+1\!active:active,
 button.fg\:bas\+1\!focus:focus {
-    color: var(--hue-bas-400) !important;
+    color: var(--hue-bas-up1) !important;
 }
 
 .fg\:bas\+2,
@@ -119,7 +119,7 @@ a.fg\:bas\+2\!active:active,
 a.fg\:bas\+2\!focus:focus,
 button.fg\:bas\+2\!active:active,
 button.fg\:bas\+2\!focus:focus {
-    color: var(--hue-bas-300) !important;
+    color: var(--hue-bas-up2) !important;
 }
 
 .fg\:bas\+3,
@@ -128,7 +128,7 @@ a.fg\:bas\+3\!active:active,
 a.fg\:bas\+3\!focus:focus,
 button.fg\:bas\+3\!active:active,
 button.fg\:bas\+3\!focus:focus {
-    color: var(--hue-bas-200) !important;
+    color: var(--hue-bas-up3) !important;
 }
 
 .fg\:bas\+4,
@@ -137,7 +137,7 @@ a.fg\:bas\+4\!active:active,
 a.fg\:bas\+4\!focus:focus,
 button.fg\:bas\+4\!active:active,
 button.fg\:bas\+4\!focus:focus {
-    color: var(--hue-bas-100) !important;
+    color: var(--hue-bas-up4) !important;
 }
 
 .fg\:bas\+5,
@@ -146,7 +146,7 @@ a.fg\:bas\+5\!active:active,
 a.fg\:bas\+5\!focus:focus,
 button.fg\:bas\+5\!active:active,
 button.fg\:bas\+5\!focus:focus {
-    color: var(--hue-bas-050) !important;
+    color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -169,7 +169,7 @@ a.fg\:pri\+1\!active:active,
 a.fg\:pri\+1\!focus:focus,
 button.fg\:pri\+1\!active:active,
 button.fg\:pri\+1\!focus:focus {
-    color: var(--hue-pri-bright) !important;
+    color: var(--hue-pri-up1) !important;
 }
 
 .fg\:pri-1,
@@ -178,7 +178,7 @@ a.fg\:pri-1\!active:active,
 a.fg\:pri-1\!focus:focus,
 button.fg\:pri-1\!active:active,
 button.fg\:pri-1\!focus:focus {
-    color: var(--hue-pri-dark) !important;
+    color: var(--hue-pri-dn1) !important;
 }
 
 /*
@@ -201,7 +201,7 @@ a.fg\:sec\+1\!active:active,
 a.fg\:sec\+1\!focus:focus,
 button.fg\:sec\+1\!active:active,
 button.fg\:sec\+1\!focus:focus {
-    color: var(--hue-sec-bright) !important;
+    color: var(--hue-sec-up1) !important;
 }
 
 .fg\:sec-1,
@@ -210,7 +210,7 @@ a.fg\:sec-1\!active:active,
 a.fg\:sec-1\!focus:focus,
 button.fg\:sec-1\!active:active,
 button.fg\:sec-1\!focus:focus {
-    color: var(--hue-sec-dark) !important;
+    color: var(--hue-sec-dn1) !important;
 }
 
 /*
@@ -251,7 +251,7 @@ a.bg\:bas-4\!active:active,
 a.bg\:bas-4\!focus:focus,
 button.bg\:bas-4\!active:active,
 button.bg\:bas-4\!focus:focus {
-    background-color: var(--hue-bas-900) !important;
+    background-color: var(--hue-bas-dn4) !important;
 }
 
 .bg\:bas-3,
@@ -260,7 +260,7 @@ a.bg\:bas-3\!active:active,
 a.bg\:bas-3\!focus:focus,
 button.bg\:bas-3\!active:active,
 button.bg\:bas-3\!focus:focus {
-    background-color: var(--hue-bas-800) !important;
+    background-color: var(--hue-bas-dn3) !important;
 }
 
 .bg\:bas-2,
@@ -269,7 +269,7 @@ a.bg\:bas-2\!active:active,
 a.bg\:bas-2\!focus:focus,
 button.bg\:bas-2\!active:active,
 button.bg\:bas-2\!focus:focus {
-    background-color: var(--hue-bas-700) !important;
+    background-color: var(--hue-bas-dn2) !important;
 }
 
 .bg\:bas-1,
@@ -278,7 +278,7 @@ a.bg\:bas-1\!active:active,
 a.bg\:bas-1\!focus:focus,
 button.bg\:bas-1\!active:active,
 button.bg\:bas-1\!focus:focus {
-    background-color: var(--hue-bas-600) !important;
+    background-color: var(--hue-bas-dn1) !important;
 }
 
 .bg\:bas,
@@ -287,7 +287,7 @@ a.bg\:bas\!active:active,
 a.bg\:bas\!focus:focus,
 button.bg\:bas\!active:active,
 button.bg\:bas\!focus:focus {
-    background-color: var(--hue-bas-500) !important;
+    background-color: var(--hue-bas) !important;
 }
 
 .bg\:bas\+1,
@@ -296,7 +296,7 @@ a.bg\:bas\+1\!active:active,
 a.bg\:bas\+1\!focus:focus,
 button.bg\:bas\+1\!active:active,
 button.bg\:bas\+1\!focus:focus {
-    background-color: var(--hue-bas-400) !important;
+    background-color: var(--hue-bas-up1) !important;
 }
 
 .bg\:bas\+2,
@@ -305,7 +305,7 @@ a.bg\:bas\+2\!active:active,
 a.bg\:bas\+2\!focus:focus,
 button.bg\:bas\+2\!active:active,
 button.bg\:bas\+2\!focus:focus {
-    background-color: var(--hue-bas-300) !important;
+    background-color: var(--hue-bas-up2) !important;
 }
 
 .bg\:bas\+3,
@@ -314,7 +314,7 @@ a.bg\:bas\+3\!active:active,
 a.bg\:bas\+3\!focus:focus,
 button.bg\:bas\+3\!active:active,
 button.bg\:bas\+3\!focus:focus {
-    background-color: var(--hue-bas-200) !important;
+    background-color: var(--hue-bas-up3) !important;
 }
 
 .bg\:bas\+4,
@@ -323,7 +323,7 @@ a.bg\:bas\+4\!active:active,
 a.bg\:bas\+4\!focus:focus,
 button.bg\:bas\+4\!active:active,
 button.bg\:bas\+4\!focus:focus {
-    background-color: var(--hue-bas-100) !important;
+    background-color: var(--hue-bas-up4) !important;
 }
 
 .bg\:bas\+5,
@@ -332,7 +332,7 @@ a.bg\:bas\+5\!active:active,
 a.bg\:bas\+5\!focus:focus,
 button.bg\:bas\+5\!active:active,
 button.bg\:bas\+5\!focus:focus {
-    background-color: var(--hue-bas-050) !important;
+    background-color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -355,7 +355,7 @@ a.bg\:pri\+1\!active:active,
 a.bg\:pri\+1\!focus:focus,
 button.bg\:pri\+1\!active:active,
 button.bg\:pri\+1\!focus:focus {
-    background-color: var(--hue-pri-bright) !important;
+    background-color: var(--hue-pri-up1) !important;
 }
 
 .bg\:pri-1,
@@ -364,7 +364,7 @@ a.bg\:pri-1\!active:active,
 a.bg\:pri-1\!focus:focus,
 button.bg\:pri-1\!active:active,
 button.bg\:pri-1\!focus:focus {
-    background-color: var(--hue-pri-dark) !important;
+    background-color: var(--hue-pri-dn1) !important;
 }
 
 /*
@@ -387,7 +387,7 @@ a.bg\:sec\+1\!active:active,
 a.bg\:sec\+1\!focus:focus,
 button.bg\:sec\+1\!active:active,
 button.bg\:sec\+1\!focus:focus {
-    background-color: var(--hue-sec-bright) !important;
+    background-color: var(--hue-sec-up1) !important;
 }
 
 .bg\:sec-1,
@@ -396,12 +396,12 @@ a.bg\:sec-1\!active:active,
 a.bg\:sec-1\!focus:focus,
 button.bg\:sec-1\!active:active,
 button.bg\:sec-1\!focus:focus {
-    background-color: var(--hue-sec-dark) !important;
+    background-color: var(--hue-sec-dn1) !important;
 }
 
 /*
 ***
-google md colors
+named colors
 ***
 */
 .fg\:red,
@@ -762,14 +762,14 @@ button.bg\:tint-bas\!focus:focus {
 .bg\:tint-bas\+1\!hover:hover,
 button.bg\:tint-bas\+1\!active:active,
 button.bg\:tint-bas\+1\!focus:focus {
-    background-color: var(--hue-bas-tint-bright) !important;
+    background-color: var(--hue-bas-tint-up1) !important;
 }
 
 .bg\:tint-bas-1,
 .bg\:tint-bas-1\!hover:hover,
 button.bg\:tint-bas-1\!active:active,
 button.bg\:tint-bas-1\!focus:focus {
-    background-color: var(--hue-bas-tint-dark) !important;
+    background-color: var(--hue-bas-tint-dn1) !important;
 }
 
 .bg\:tint-pri,
@@ -783,14 +783,14 @@ button.bg\:tint-pri\!focus:focus {
 .bg\:tint-pri\+1\!hover:hover,
 button.bg\:tint-pri\+1\!active:active,
 button.bg\:tint-pri\+1\!focus:focus {
-    background-color: var(--hue-pri-tint-bright) !important;
+    background-color: var(--hue-pri-tint-up1) !important;
 }
 
 .bg\:tint-pri-1,
 .bg\:tint-pri-1\!hover:hover,
 button.bg\:tint-pri-1\!active:active,
 button.bg\:tint-pri-1\!focus:focus {
-    background-color: var(--hue-pri-tint-dark) !important;
+    background-color: var(--hue-pri-tint-dn1) !important;
 }
 
 .bg\:tint-sec,
@@ -804,14 +804,14 @@ button.bg\:tint-sec\!focus:focus {
 .bg\:tint-sec\+1\!hover:hover,
 button.bg\:tint-sec\+1\!active:active,
 button.bg\:tint-sec\+1\!focus:focus {
-    background-color: var(--hue-sec-tint-bright) !important;
+    background-color: var(--hue-sec-tint-up1) !important;
 }
 
 .bg\:tint-sec-1,
 .bg\:tint-sec-1\!hover:hover,
 button.bg\:tint-sec-1\!active:active,
 button.bg\:tint-sec-1\!focus:focus {
-    background-color: var(--hue-sec-tint-dark) !important;
+    background-color: var(--hue-sec-tint-dn1) !important;
 }
 
 /*: hilite mce plugin support :*/
@@ -943,7 +943,7 @@ a.bdr\:bas-4\!focus:focus,
 a.bdr\:bas-4,
 button.bdr\:bas-4\!hover:hover,
 button.bdr\:bas-4\!focus:focus {
-    border-color: var(--hue-bas-900) !important;
+    border-color: var(--hue-bas-dn4) !important;
 }
 
 .bdr\:bas-3,
@@ -952,7 +952,7 @@ a.bdr\:bas-3\!focus:focus,
 a.bdr\:bas-3,
 button.bdr\:bas-3\!hover:hover,
 button.bdr\:bas-3\!focus:focus {
-    border-color: var(--hue-bas-800) !important;
+    border-color: var(--hue-bas-dn3) !important;
 }
 
 .bdr\:bas-2,
@@ -961,7 +961,7 @@ a.bdr\:bas-2\!focus:focus,
 a.bdr\:bas-2,
 button.bdr\:bas-2\!hover:hover,
 button.bdr\:bas-2\!focus:focus {
-    border-color: var(--hue-bas-700) !important;
+    border-color: var(--hue-bas-dn2) !important;
 }
 
 .bdr\:bas-1,
@@ -970,7 +970,7 @@ a.bdr\:bas-1\!focus:focus,
 a.bdr\:bas-1,
 button.bdr\:bas-1\!hover:hover,
 button.bdr\:bas-1\!focus:focus {
-    border-color: var(--hue-bas-600) !important;
+    border-color: var(--hue-bas-dn1) !important;
 }
 
 .bdr\:bas,
@@ -979,7 +979,7 @@ a.bdr\:bas\!focus:focus,
 a.bdr\:bas,
 button.bdr\:bas\!hover:hover,
 button.bdr\:bas\!focus:focus {
-    border-color: var(--hue-bas-500) !important;
+    border-color: var(--hue-bas) !important;
 }
 
 .bdr\:bas\+1,
@@ -988,7 +988,7 @@ a.bdr\:bas\+1\!focus:focus,
 a.bdr\:bas\+1,
 button.bdr\:bas\+1\!hover:hover,
 button.bdr\:bas\+1\!focus:focus {
-    border-color: var(--hue-bas-400) !important;
+    border-color: var(--hue-bas-up1) !important;
 }
 
 .bdr\:bas\+2,
@@ -997,7 +997,7 @@ a.bdr\:bas\+2\!focus:focus,
 a.bdr\:bas\+2,
 button.bdr\:bas\+2\!hover:hover,
 button.bdr\:bas\+2\!focus:focus {
-    border-color: var(--hue-bas-300) !important;
+    border-color: var(--hue-bas-up2) !important;
 }
 
 .bdr\:bas\+3,
@@ -1006,7 +1006,7 @@ a.bdr\:bas\+3\!focus:focus,
 a.bdr\:bas\+3,
 button.bdr\:bas\+3\!hover:hover,
 button.bdr\:bas\+3\!focus:focus {
-    border-color: var(--hue-bas-200) !important;
+    border-color: var(--hue-bas-up3) !important;
 }
 
 .bdr\:bas\+4,
@@ -1015,7 +1015,7 @@ a.bdr\:bas\+4\!focus:focus,
 a.bdr\:bas\+4,
 button.bdr\:bas\+4\!hover:hover,
 button.bdr\:bas\+4\!focus:focus {
-    border-color: var(--hue-bas-100) !important;
+    border-color: var(--hue-bas-up4) !important;
 }
 
 .bdr\:bas\+5,
@@ -1024,7 +1024,7 @@ a.bdr\:bas\+5\!focus:focus,
 a.bdr\:bas\+5,
 button.bdr\:bas\+5\!hover:hover,
 button.bdr\:bas\+5\!focus:focus {
-    border-color: var(--hue-bas-050) !important;
+    border-color: var(--hue-bas-up5) !important;
 }
 
 .bdr\:pri,
@@ -1042,7 +1042,7 @@ a.bdr\:pri\+1\!focus:focus,
 a.bdr\:pri\+1,
 button.bdr\:pri\+1\!hover:hover,
 button.bdr\:pri\+1\!focus:focus {
-    border-color: var(--hue-pri-bright) !important;
+    border-color: var(--hue-pri-up1) !important;
 }
 
 .bdr\:pri-1,
@@ -1051,7 +1051,7 @@ a.bdr\:pri-1\!focus:focus,
 a.bdr\:pri-1,
 button.bdr\:pri-1\!hover:hover,
 button.bdr\:pri-1\!focus:focus {
-    border-color: var(--hue-pri-dark) !important;
+    border-color: var(--hue-pri-dn1) !important;
 }
 
 .bdr\:sec,
@@ -1069,7 +1069,7 @@ a.bdr\:sec\+1\!focus:focus,
 a.bdr\:sec\+1,
 button.bdr\:sec\+1\!hover:hover,
 button.bdr\:sec\+1\!focus:focus {
-    border-color: var(--hue-sec-bright) !important;
+    border-color: var(--hue-sec-up1) !important;
 }
 
 .bdr\:sec-1,
@@ -1078,7 +1078,7 @@ a.bdr\:sec-1\!focus:focus,
 a.bdr\:sec-1,
 button.bdr\:sec-1\!hover:hover,
 button.bdr\:sec-1\!focus:focus {
-    border-color: var(--hue-sec-dark) !important;
+    border-color: var(--hue-sec-dn1) !important;
 }
 
 .bdr\:red,
@@ -1403,15 +1403,15 @@ stripe even table rows
 ***
 */
 tbody.tr\:stripe-pri-dark tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-dark) !important;
+    background-color: var(--hue-pri-tint-dn1) !important;
 }
 
 tbody.tr\:stripe-sec-dark tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-dark) !important;
+    background-color: var(--hue-sec-tint-dn1) !important;
 }
 
 tbody.tr\:stripe-tint-dark tr:nth-child(even) {
-    background-color: var(--hue-bas-200) !important;
+    background-color: var(--hue-bas-up3) !important;
 }
 
 tbody.tr\:stripe-pri tr:nth-child(even) {
@@ -1423,19 +1423,19 @@ tbody.tr\:stripe-sec tr:nth-child(even) {
 }
 
 tbody.tr\:stripe-tint tr:nth-child(even) {
-    background-color: var(--hue-bas-100) !important;
+    background-color: var(--hue-bas-up4) !important;
 }
 
 tbody.tr\:stripe-pri-bright tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-bright) !important;
+    background-color: var(--hue-pri-tint-up1) !important;
 }
 
 tbody.tr\:stripe-sec-bright tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-bright) !important;
+    background-color: var(--hue-sec-tint-up1) !important;
 }
 
 tbody.tr\:stripe-tint-bright tr:nth-child(even) {
-    background-color: var(--hue-bas-050) !important;
+    background-color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -1485,7 +1485,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas-4\!focus:focus,
     button.sm\)fg\:bas-4\!active:active,
     button.sm\)fg\:bas-4\!focus:focus {
-        color: var(--hue-bas-900) !important;
+        color: var(--hue-bas-dn4) !important;
     }
 
     .sm\)fg\:bas-3,
@@ -1494,7 +1494,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas-3\!focus:focus,
     button.sm\)fg\:bas-3\!active:active,
     button.sm\)fg\:bas-3\!focus:focus {
-        color: var(--hue-bas-800) !important;
+        color: var(--hue-bas-dn3) !important;
     }
 
     .sm\)fg\:bas-2,
@@ -1503,7 +1503,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas-2\!focus:focus,
     button.sm\)fg\:bas-2\!active:active,
     button.sm\)fg\:bas-2\!focus:focus {
-        color: var(--hue-bas-700) !important;
+        color: var(--hue-bas-dn2) !important;
     }
 
     .sm\)fg\:bas-1,
@@ -1512,7 +1512,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas-1\!focus:focus,
     button.sm\)fg\:bas-1\!active:active,
     button.sm\)fg\:bas-1\!focus:focus {
-        color: var(--hue-bas-600) !important;
+        color: var(--hue-bas-dn1) !important;
     }
 
     .sm\)fg\:bas,
@@ -1521,7 +1521,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\!focus:focus,
     button.sm\)fg\:bas\!active:active,
     button.sm\)fg\:bas\!focus:focus {
-        color: var(--hue-bas-500) !important;
+        color: var(--hue-bas) !important;
     }
 
     .sm\)fg\:bas\+1,
@@ -1530,7 +1530,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\+1\!focus:focus,
     button.sm\)fg\:bas\+1\!active:active,
     button.sm\)fg\:bas\+1\!focus:focus {
-        color: var(--hue-bas-400) !important;
+        color: var(--hue-bas-up1) !important;
     }
 
     .sm\)fg\:bas\+2,
@@ -1539,7 +1539,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\+2\!focus:focus,
     button.sm\)fg\:bas\+2\!active:active,
     button.sm\)fg\:bas\+2\!focus:focus {
-        color: var(--hue-bas-300) !important;
+        color: var(--hue-bas-up2) !important;
     }
 
     .sm\)fg\:bas\+3,
@@ -1548,7 +1548,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\+3\!focus:focus,
     button.sm\)fg\:bas\+3\!active:active,
     button.sm\)fg\:bas\+3\!focus:focus {
-        color: var(--hue-bas-200) !important;
+        color: var(--hue-bas-up3) !important;
     }
 
     .sm\)fg\:bas\+4,
@@ -1557,7 +1557,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\+4\!focus:focus,
     button.sm\)fg\:bas\+4\!active:active,
     button.sm\)fg\:bas\+4\!focus:focus {
-        color: var(--hue-bas-100) !important;
+        color: var(--hue-bas-up4) !important;
     }
 
     .sm\)fg\:bas\+5,
@@ -1566,7 +1566,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)fg\:bas\+5\!focus:focus,
     button.sm\)fg\:bas\+5\!active:active,
     button.sm\)fg\:bas\+5\!focus:focus {
-        color: var(--hue-bas-050) !important;
+        color: var(--hue-bas-up5) !important;
     }
 
     .sm\)fg\:pri-900,
@@ -1787,7 +1787,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas-4\!focus:focus,
     button.sm\)bg\:bas-4\!active:active,
     button.sm\)bg\:bas-4\!focus:focus {
-        background-color: var(--hue-bas-900) !important;
+        background-color: var(--hue-bas-dn4) !important;
     }
 
     .sm\)bg\:bas-3,
@@ -1796,7 +1796,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas-3\!focus:focus,
     button.sm\)bg\:bas-3\!active:active,
     button.sm\)bg\:bas-3\!focus:focus {
-        background-color: var(--hue-bas-800) !important;
+        background-color: var(--hue-bas-dn3) !important;
     }
 
     .sm\)bg\:bas-2,
@@ -1805,7 +1805,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas-2\!focus:focus,
     button.sm\)bg\:bas-2\!active:active,
     button.sm\)bg\:bas-2\!focus:focus {
-        background-color: var(--hue-bas-700) !important;
+        background-color: var(--hue-bas-dn2) !important;
     }
 
     .sm\)bg\:bas-1,
@@ -1814,7 +1814,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas-1\!focus:focus,
     button.sm\)bg\:bas-1\!active:active,
     button.sm\)bg\:bas-1\!focus:focus {
-        background-color: var(--hue-bas-600) !important;
+        background-color: var(--hue-bas-dn1) !important;
     }
 
     .sm\)bg\:bas,
@@ -1823,7 +1823,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\!focus:focus,
     button.sm\)bg\:bas\!active:active,
     button.sm\)bg\:bas\!focus:focus {
-        background-color: var(--hue-bas-500) !important;
+        background-color: var(--hue-bas) !important;
     }
 
     .sm\)bg\:bas\+1,
@@ -1832,7 +1832,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\+1\!focus:focus,
     button.sm\)bg\:bas\+1\!active:active,
     button.sm\)bg\:bas\+1\!focus:focus {
-        background-color: var(--hue-bas-400) !important;
+        background-color: var(--hue-bas-up1) !important;
     }
 
     .sm\)bg\:bas\+2,
@@ -1841,7 +1841,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\+2\!focus:focus,
     button.sm\)bg\:bas\+2\!active:active,
     button.sm\)bg\:bas\+2\!focus:focus {
-        background-color: var(--hue-bas-300) !important;
+        background-color: var(--hue-bas-up2) !important;
     }
 
     .sm\)bg\:bas\+3,
@@ -1850,7 +1850,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\+3\!focus:focus,
     button.sm\)bg\:bas\+3\!active:active,
     button.sm\)bg\:bas\+3\!focus:focus {
-        background-color: var(--hue-bas-200) !important;
+        background-color: var(--hue-bas-up3) !important;
     }
 
     .sm\)bg\:bas\+4,
@@ -1859,7 +1859,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\+4\!focus:focus,
     button.sm\)bg\:bas\+4\!active:active,
     button.sm\)bg\:bas\+4\!focus:focus {
-        background-color: var(--hue-bas-100) !important;
+        background-color: var(--hue-bas-up4) !important;
     }
 
     .sm\)bg\:bas\+5,
@@ -1868,7 +1868,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bg\:bas\+5\!focus:focus,
     button.sm\)bg\:bas\+5\!active:active,
     button.sm\)bg\:bas\+5\!focus:focus {
-        background-color: var(--hue-bas-050) !important;
+        background-color: var(--hue-bas-up5) !important;
     }
 
     .sm\)bg\:pri-900,
@@ -2436,7 +2436,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas-4,
     button.sm\)bdr\:bas-4\!hover:hover,
     button.sm\)bdr\:bas-4\!focus:focus {
-        border-color: var(--hue-bas-900) !important;
+        border-color: var(--hue-bas-dn4) !important;
     }
 
     .sm\)bdr\:bas-3,
@@ -2445,7 +2445,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas-3,
     button.sm\)bdr\:bas-3\!hover:hover,
     button.sm\)bdr\:bas-3\!focus:focus {
-        border-color: var(--hue-bas-800) !important;
+        border-color: var(--hue-bas-dn3) !important;
     }
 
     .sm\)bdr\:bas-2,
@@ -2454,7 +2454,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas-2,
     button.sm\)bdr\:bas-2\!hover:hover,
     button.sm\)bdr\:bas-2\!focus:focus {
-        border-color: var(--hue-bas-700) !important;
+        border-color: var(--hue-bas-dn2) !important;
     }
 
     .sm\)bdr\:bas-1,
@@ -2463,7 +2463,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas-1,
     button.sm\)bdr\:bas-1\!hover:hover,
     button.sm\)bdr\:bas-1\!focus:focus {
-        border-color: var(--hue-bas-600) !important;
+        border-color: var(--hue-bas-dn1) !important;
     }
 
     .sm\)bdr\:bas,
@@ -2472,7 +2472,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas,
     button.sm\)bdr\:bas\!hover:hover,
     button.sm\)bdr\:bas\!focus:focus {
-        border-color: var(--hue-bas-500) !important;
+        border-color: var(--hue-bas) !important;
     }
 
     .sm\)bdr\:bas\+1,
@@ -2481,7 +2481,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas\+1,
     button.sm\)bdr\:bas\+1\!hover:hover,
     button.sm\)bdr\:bas\+1\!focus:focus {
-        border-color: var(--hue-bas-400) !important;
+        border-color: var(--hue-bas-up1) !important;
     }
 
     .sm\)bdr\:bas\+2,
@@ -2490,7 +2490,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas\+2,
     button.sm\)bdr\:bas\+2\!hover:hover,
     button.sm\)bdr\:bas\+2\!focus:focus {
-        border-color: var(--hue-bas-300) !important;
+        border-color: var(--hue-bas-up2) !important;
     }
 
     .sm\)bdr\:bas\+3,
@@ -2499,7 +2499,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas\+3,
     button.sm\)bdr\:bas\+3\!hover:hover,
     button.sm\)bdr\:bas\+3\!focus:focus {
-        border-color: var(--hue-bas-200) !important;
+        border-color: var(--hue-bas-up3) !important;
     }
 
     .sm\)bdr\:bas\+4,
@@ -2508,7 +2508,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas\+4,
     button.sm\)bdr\:bas\+4\!hover:hover,
     button.sm\)bdr\:bas\+4\!focus:focus {
-        border-color: var(--hue-bas-100) !important;
+        border-color: var(--hue-bas-up4) !important;
     }
 
     .sm\)bdr\:bas\+5,
@@ -2517,7 +2517,7 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
     a.sm\)bdr\:bas\+5,
     button.sm\)bdr\:bas\+5\!hover:hover,
     button.sm\)bdr\:bas\+5\!focus:focus {
-        border-color: var(--hue-bas-050) !important;
+        border-color: var(--hue-bas-up5) !important;
     }
 
     .sm\)bdr\:pri-900,
