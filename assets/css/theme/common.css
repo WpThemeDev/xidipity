@@ -1,19 +1,11 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Shared css clases
     *
-    * File Name:       theme/common.css
-    * Function:        shared CSS elements
-    * Build:           200513
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  common.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -69,6 +61,21 @@ samp {
     padding-right: 0.25rem;
 }
 
+strong {
+    border-bottom: solid thin var(--hue-pri);
+    font-style: oblique;
+    font-weight: var(--lnk-dft-wgt);
+}
+
+strong:hover {
+    border-bottom-color: var(--lnk-hvr-fg-hue);
+}
+
+u {
+    border-bottom: solid thin;
+    text-decoration: none;
+}
+
 kbd {
     background-color: var(--hue-pri-dark);
     color: var(--hue-wht);
@@ -116,15 +123,15 @@ abbr {
 ***
     * element: <pre>
     * dsc: preformatted text
-    * ver: 200422
+    * ver: 200520
     * fnt: preformatted text which is to be presented exactly as written
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
 ***
 */
 pre,
 pre.wrap{
-    background-color: var(--hue-bas-050);
-    border: solid thick var(--hue-bas-300);
+    border: solid thick var(--hue-bas-up3);
+    background-color: var(--hue-bas-up5);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
@@ -175,7 +182,7 @@ code {
     * dsc: html comments
     * ver: 200513
     * fnt: alternate method to "<!--"
-    * ref: 
+    * ref:
 ***
 */
 .cmt\:html {
@@ -193,7 +200,7 @@ code {
 ***
 */
 .rul\:solid-thin {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.0625rem;
     margin: 0.6875rem auto 0.8125rem auto;
     width: 100%;
@@ -202,7 +209,7 @@ code {
 hr,
 .rul\:solid-medium,
 .rul\:gradient {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.125rem;
     margin: 0.625rem auto 0.75rem auto;
     width: 100%;
@@ -210,7 +217,7 @@ hr,
 
 .rul\:solid-thick,
 .rul\:double {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     height: 0.25rem;
     margin: 0.5625rem auto 0.625rem auto;
     width: 100%;
@@ -219,8 +226,8 @@ hr,
 .rul\:double {
     background-color: transparent;
     border: 0;
-    border-top: 0.0625rem solid var(--hue-bas-400);
-    border-bottom:  0.0625rem solid var(--hue-bas-400);
+    border-top: 0.0625rem solid var(--hue-bas-up1);
+    border-bottom:  0.0625rem solid var(--hue-bas-up1);
 }
 
 .rul\:gradient {
@@ -233,9 +240,9 @@ hr,
 
 /*
 ***
-    * element: ln:std/thin/medium/thick
+    * element: ln:std/thin/medium/thick/x-thick
     * dsc: horizontal line
-    * ver: 200415
+    * ver: 200520
     * fnt: simliar but different than hr
     *      these are the default values
     * ref:
@@ -245,20 +252,133 @@ hr,
 .ln\:thin,
 .ln\:medium,
 .ln\:thick {
-    background-color: var(--hue-bas-400);
+    background-color: var(--hue-bas-up1);
     content: "\200B";
     height: 0.0625rem;
     width: 100%;
 }
 
 .ln\:medium {
-    background-color: var(--hue-bas-300);
+    background-color: var(--hue-bas-up2);
     height: 0.125rem;
 }
 
 .ln\:thick {
-    background-color: var(--hue-bas-200);
+    background-color: var(--hue-bas-up3);
     height: 0.25rem;
+}
+
+.ln\:x-thick {
+    background-color: var(--hue-bas-up3);
+    height: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .sm\)ln,
+    .sm\)ln\:thin,
+    .sm\)ln\:medium,
+    .sm\)ln\:thick {
+        background-color: var(--hue-bas-up1);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .sm\)ln\:medium {
+        background-color: var(--hue-bas-up2);
+        height: 0.125rem;
+    }
+
+    .sm\)ln\:thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.25rem;
+    }
+
+    .sm\)ln\:x-thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .md\)ln,
+    .md\)ln\:thin,
+    .md\)ln\:medium,
+    .md\)ln\:thick {
+        background-color: var(--hue-bas-up1);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .md\)ln\:medium {
+        background-color: var(--hue-bas-up2);
+        height: 0.125rem;
+    }
+
+    .md\)ln\:thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.25rem;
+    }
+
+    .md\)ln\:x-thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .lg\)ln,
+    .lg\)ln\:thin,
+    .lg\)ln\:medium,
+    .lg\)ln\:thick {
+        background-color: var(--hue-bas-up1);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .lg\)ln\:medium {
+        background-color: var(--hue-bas-up2);
+        height: 0.125rem;
+    }
+
+    .lg\)ln\:thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.25rem;
+    }
+
+    .lg\)ln\:x-thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.5rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .xl\)ln,
+    .xl\)ln\:thin,
+    .xl\)ln\:medium,
+    .xl\)ln\:thick {
+        background-color: var(--hue-bas-up1);
+        content: "\200B";
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .xl\)ln\:medium {
+        background-color: var(--hue-bas-up2);
+        height: 0.125rem;
+    }
+
+    .xl\)ln\:thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.25rem;
+    }
+
+    .xl\)ln\:x-thick {
+        background-color: var(--hue-bas-up3);
+        height: 0.5rem;
+    }
 }
 
 /*
@@ -815,47 +935,104 @@ dd {
 ***
     * element: <table>
     * dsc: html table
-    * ver: 200304
+    * ver: 200520
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+    *
+    * <table>
+    *   <thead>
+    *       <tr>
+    *           <th>Header</th>
+    *       </tr>
+    *   </thead>
+    *   <tbody>
+    *       <tr>
+    *           <td>Cell</td>
+    *       </tr>
+    *   </tbody>
+    *   <tfoot>
+    *       <tr>
+    *           <td>Footer</td>
+    *       </tr>
+    *   </tfoot>
+    *   <caption>
+    * </table>
+    *
 ***
 */
 table {
     background-color: transparent;
     border-color: transparent;
-    table-layout: auto;
+    font-size: var(--font-size-sm);
+    table-layout: fixed;
 }
 
 table caption {
     caption-side: bottom;
-    font-size: smaller;
+    font-size: var(--font-size-xs);
+    text-align: center;
 }
 
-table td,
-table th {
+/*: sm)media :*/
+@media (min-width: 600px) {
+    table {
+        font-size: var(--font-size-md);
+    }
+
+    table caption {
+        font-size: var(--font-size-sm);
+    }
+}
+
+table > thead > tr > td,
+table > tbody > tr > th,
+table > thead > tr > th {
+    font-weight: 500;
+    text-align: left;
     padding: 0.25rem 0.5rem;
 }
 
-table thead th {
-    background: #e0e0e0;
-    background: -moz-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
-    color: var(--hue-blk);
-    font-weight: bolder;
+table > thead > tr > td {
+    background-color: var(--hue-bas-tint-dark);
 }
 
-table thead th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300);
+table > thead > tr > th {
+    background: var(--hue-bas-up4);
+    background: -moz-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--hue-bas-up5), endColorstr=var(--hue-bas-up4), GradientType=0);
 }
 
-table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--hue-bas-300);
+table > thead > tr > td:not(:last-child) {
+    border-right: 1px solid var(--content-bg-color);
 }
 
-table td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300);
+table > thead > tr > th:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-up2);
+}
+
+table > tbody > tr:not(:last-child) > td,
+table > tbody > tr:not(:last-child) > th {
+    border-bottom: 1px solid var(--hue-bas-up2);
+}
+
+table > tbody > tr > td:not(:last-child),
+table > tbody > tr > th:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-up2);
+}
+
+table > tbody > tr > td {
+    background-color: var(--content-bg-color);
+    vertical-align: top;
+    padding: 0.25rem 0.5rem;
+}
+
+table > tfoot > tr > td {
+    background-color: var(--content-bg-color);
+    font-weight: 500;
+    text-align: left;
+    padding: 0.25rem 0.5rem;
 }
 
 /*
@@ -868,7 +1045,7 @@ table td:not(:last-child) {
 ***
 */
 tbody.bdr\:xls td {
-    border: 1px solid var(--hue-bas-400) !important;
+    border: 1px solid var(--hue-bas-up1) !important;
 }
 
 /*
@@ -887,138 +1064,123 @@ tbody.bdr\:none tr {
 
 /*
 ***
-    property: cols
-    * dsc: table multi-column
-    * ver: 190315
-    * fnt: apply multi-column formatting
-    * ref:
+    property: cols:<type>
+    * dsc: multi-columns
+    * ver: 190520
+    * fnt: common multi-column classes
+    * ref: see web.css
 ***
 */
-table.cols\:auto-2,
-table.cols\:auto-3,
-table.cols\:auto-4,
-table.cols\:fixed-2,
-table.cols\:fixed-3,
-table.cols\:fixed-4 {
+.cols\:auto-2,
+.cols\:auto-2 > tbody,
+.cols\:auto-2 > tbody > tr,
+.cols\:auto-2 > tbody > tr > td,
+.cols\:auto-3,
+.cols\:auto-3 > tbody,
+.cols\:auto-3 > tbody > tr,
+.cols\:auto-3 > tbody > tr > td,
+.cols\:auto-4,
+.cols\:auto-4 > tbody,
+.cols\:auto-4 > tbody > tr,
+.cols\:auto-4 > tbody > tr > td,
+.cols\:fixed-2,
+.cols\:fixed-2 > tbody,
+.cols\:fixed-2 > tbody > tr,
+.cols\:fixed-2 > tbody > tr > td,
+.cols\:fixed-3,
+.cols\:fixed-3 > tbody,
+.cols\:fixed-3 > tbody > tr,
+.cols\:fixed-3 > tbody > tr > td,
+.cols\:fixed-4,
+.cols\:fixed-4 > tbody,
+.cols\:fixed-4 > tbody > tr,
+.cols\:fixed-4 > tbody > tr > td {
     display: block;
+    margin: 0;
+    padding:0;
     width: 100%;
 }
 
-table.cols\:auto-2 tr,
-table.cols\:auto-3 tr,
-table.cols\:auto-4 tr,
-table.cols\:fixed-2 tr,
-table.cols\:fixed-3 tr,
-table.cols\:fixed-4 tr {
-    display: block;
-    width: 100%;
+.cols\:fixed-2 > tbody > tr > td:not(:last-child),
+.cols\:fixed-3 > tbody > tr > td:not(:last-child),
+.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
+    padding-right: 0.5rem;
 }
 
-table.cols\:auto-2 td,
-table.cols\:auto-3 td,
-table.cols\:auto-4 td,
-table.cols\:fixed-2 td,
-table.cols\:fixed-3 td,
-table.cols\:fixed-4 td {
-    display: block;
-    padding-bottom: 1rem;
-    width: 100%;
+.cols\:fixed-2 > tbody > tr > td:not(:first-child),
+.cols\:fixed-3 > tbody > tr > td:not(:first-child),
+.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
+    padding-left: 0.5rem;
 }
 
-table.cols\:auto-2 td,
-table.cols\:auto-3 td,
-table.cols\:auto-4 td,
-table.cols\:fixed-2 td:last-child,
-table.cols\:fixed-3 td:last-child,
-table.cols\:fixed-4 td:last-child {
-    padding-bottom: 0;
-}
-
-/*: standard media :*/
-@media (min-width: 1024px) {
-    table.cols\:auto-2,
-    table.cols\:auto-3,
-    table.cols\:auto-4,
-    table.cols\:fixed-2,
-    table.cols\:fixed-3,
-    table.cols\:fixed-4 {
+/*: md)media :*/
+@media (min-width: 900px) {
+    .cols\:fixed-2,
+    .cols\:fixed-3,
+    .cols\:fixed-4 {
         display: table;
     }
 
-    table.cols\:auto-2 tr,
-    table.cols\:auto-3 tr,
-    table.cols\:auto-4 tr,
-    table.cols\:fixed-2 tr,
-    table.cols\:fixed-3 tr,
-    table.cols\:fixed-4 tr {
+    .cols\:fixed-2 > tbody,
+    .cols\:fixed-3 > tbody,
+    .cols\:fixed-4 > tbody {
+        display: table-row-group;
+    }
+
+    .cols\:fixed-2 > tbody > tr,
+    .cols\:fixed-3 > tbody > tr,
+    .cols\:fixed-4 > tbody > tr {
         display: table-row;
     }
 
-    table.cols\:auto-2 td,
-    table.cols\:auto-3 td,
-    table.cols\:auto-4 td,
-    table.cols\:fixed-2 td,
-    table.cols\:fixed-3 td,
-    table.cols\:fixed-4 td {
+    .cols\:fixed-2 > tbody > tr > td,
+    .cols\:fixed-3 > tbody > tr > td,
+    .cols\:fixed-4 > tbody > tr > td {
         border-style: none !important;
         display: table-cell;
-        padding-bottom: 0;
         vertical-align: top;
     }
 
-    table.cols\:fixed-2 td {
+    .cols\:fixed-2 > tbody > tr > td {
         width: 50%;
     }
 
-    table.cols\:fixed-3 td {
+    .cols\:fixed-3 > tbody > tr > td {
         width: 33.3333%;
     }
 
-    table.cols\:fixed-4 td {
+    .cols\:fixed-4 > tbody > tr > td {
         width: 25%;
     }
 }
 
 /*: embedded table :*/
 
-table.cols\:auto-2 table,
-table.cols\:auto-3 table,
-table.cols\:auto-4 table,
-table.cols\:fixed-2 table,
-table.cols\:fixed-3 table,
-table.cols\:fixed-4 table {
+.cols\:fixed-2 > table,
+.cols\:fixed-3 > table,
+.cols\:fixed-4 > table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 1rem 0;
-    table-layout: auto;
 }
 
-table.cols\:auto-2 table thead th:not(:last-child),
-table.cols\:auto-3 table thead th:not(:last-child),
-table.cols\:auto-4 table thead th:not(:last-child),
-table.cols\:fixed-2 table thead th:not(:last-child),
-table.cols\:fixed-3 table thead th:not(:last-child),
-table.cols\:fixed-4 table thead th:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
+.cols\:fixed-2 table thead th:not(:last-child),
+.cols\:fixed-3 table thead th:not(:last-child),
+.cols\:fixed-4 table thead th:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
-table.cols\:auto-2 table tr:not(:last-child) td,
-table.cols\:auto-3 table tr:not(:last-child) td,
-table.cols\:auto-4 table tr:not(:last-child) td,
-table.cols\:fixed-2 table tr:not(:last-child) td,
-table.cols\:fixed-3 table tr:not(:last-child) td,
-table.cols\:fixed-4 table tr:not(:last-child) td {
-    border-bottom: 1px solid var(--hue-bas-300) !important;
+.cols\:fixed-2 table tr:not(:last-child) td,
+.cols\:fixed-3 table tr:not(:last-child) td,
+.cols\:fixed-4 table tr:not(:last-child) td {
+    border-bottom: 1px solid var(--hue-bas-up2) !important;
 }
 
-table.cols\:auto-2 table td:not(:last-child),
-table.cols\:auto-3 table td:not(:last-child),
-table.cols\:auto-4 table td:not(:last-child),
-table.cols\:fixed-2 table td:not(:last-child),
-table.cols\:fixed-3 table td:not(:last-child),
-table.cols\:fixed-4 table td:not(:last-child) {
-    border-right: 1px solid var(--hue-bas-300) !important;
+.cols\:fixed-2 table td:not(:last-child),
+.cols\:fixed-3 table td:not(:last-child),
+.cols\:fixed-4 table td:not(:last-child) {
+    border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
 /*
@@ -1134,7 +1296,7 @@ p {
 ***
 */
 blockquote {
-    color: var(--hue-bas-700);
+    color: var(--hue-bas-dn2);
     border-left: 6px solid var(--hue-pri-tint-dark);
     font-weight: 300;
     margin-top: 1em;
@@ -1202,20 +1364,20 @@ legend {
 }
 
 :-webkit-input-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 :-moz-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 :-moz-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     opacity: 1
 }
 
 :-ms-input-placeholder {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
 }
 
 input[type=email],
@@ -1226,8 +1388,8 @@ input[type=text],
 input[type=url],
 select,
 textarea {
-    color: var(--hue-bas-700);
-    border: 1px solid var(--hue-bas-400);
+    color: var(--hue-bas-dn2);
+    border: 1px solid var(--hue-bas-up1);
     border-radius: 0.3333rem;
 }
 
@@ -1239,7 +1401,7 @@ input[type=text]:focus,
 input[type=url]:focus,
 select:focus,
 textarea:focus {
-    color: var(--hue-bas-900);
+    color: var(--hue-bas-dn4);
 }
 
 input[type=email],
@@ -1271,7 +1433,7 @@ pre#textarea {
     background: 0 0;
     box-shadow: none;
     border: 0;
-    color: var(--hue-bas-900);
+    color: var(--hue-bas-dn4);
     font-family: var(--font-mono);
     font-size: .875rem !important;
     padding: 0;
@@ -1280,7 +1442,7 @@ pre#textarea {
 
 .pre-caption {
     background-color: var(--hue-wht);
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     font-size: .875rem;
     letter-spacing: 6px;
     letter-spacing: .375rem;
@@ -1323,14 +1485,14 @@ td .ratio-container {
 ***
 */
 .drp\:shadow-light {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-400));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-up1));
 }
 .drp\:shadow,
 .drp\:shadow-medium {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
 }
 .drp\:shadow-dark {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-600));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-dn1));
 }
 
 /*
@@ -1350,14 +1512,14 @@ figure {
 ***
     property: wp-caption
     * dsc: image caption
-    * ver: 190318
+    * ver: 190520
     * fnt: center image caption
     * ref:
 ***
 */
 .wp-caption {
-    font-size: .875rem;
-    line-height: calc(var(--dft-line-height) * 120%);
+    background-color: var(--hue-bas-up4);
+    font-size: var(--font-size-sm);
     text-align: center;
 }
 
@@ -1407,7 +1569,7 @@ figure {
 }
 
 .gallery .gallery-caption {
-    color: var(--hue-bas-600);
+    color: var(--hue-bas-dn1);
     display: block;
     font-size: 14px;
     font-size: .875em;
@@ -1467,18 +1629,18 @@ figure {
 ***
     * property: txt:frame
     * dsc: text frame
-    * ver: 200422
+    * ver: 200520
     * fnt: create a content frame using table elements
     * ref:
 ***
 */
 .txt\:frame {
-    text-align: left;
-    border: solid thick var(--hue-bas-300);
-    background-color: var(--hue-bas-050);
+    border: solid thick var(--hue-bas-up3);
+    background-color: var(--hue-bas-up5);
     border-radius: 0.3333rem;
     display: inline-block;
     padding: 1rem;
+    text-align: left;
     width: 100%;
 }
 
@@ -1697,7 +1859,7 @@ button:active {
 
 .trn\:shadow\!hover:hover,
 .trn\:shadow\!focus:focus {
-    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0 0.25rem 0.25rem var(--hue-bas));
 }
 
 /*: image/button glow shadow :*/
@@ -1716,7 +1878,7 @@ button:active {
 
 .trn\:glow\!hover:hover,
 .trn\:glow\!focus:focus {
-    filter: drop-shadow(0 0 0.25rem var(--hue-bas-600));
+    filter: drop-shadow(0 0 0.25rem var(--hue-bas-dn1));
 }
 
 /*: image/button drop shadow :*/
@@ -1735,7 +1897,7 @@ button:active {
 
 .trn\:drop-shadow\!hover:hover,
 .trn\:drop-shadow\!focus:focus {
-    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-500));
+    filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
 }
 
 /*: button only float shadow :*/
@@ -1814,7 +1976,5 @@ button:active {
 }
 
 /*
- * EOF:     theme/common.css
- * Build:   200513
- *
+ * EOF: common.css / 24200520
  */
