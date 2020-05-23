@@ -1643,16 +1643,23 @@ table.frame {
     width: 100%;
 }
 
-table.frame > tbody {
-    border: solid medium var(--hue-bas-up3);
-    border-radius: 0.1666rem;
-}
-
 table.frame > tbody > tr > td {
-    background-color: var(--hue-bas-up5);
-    padding: 0.5rem;
+    padding: 0;
     text-align: left;
     width: 100%;
+}
+
+/*: sm)table media :*/
+@media (min-width: 600px) {
+    table.frame > tbody {
+        border: solid medium var(--hue-bas-up3);
+        border-radius: 0.1666rem;
+    }
+
+    table.frame > tbody > tr > td {
+        background-color: var(--hue-bas-up5);
+        padding: 0.5rem;
+    }
 }
 
 /*
