@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  common.css
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -130,9 +130,9 @@ abbr {
 */
 pre,
 pre.wrap{
-    border: solid thick var(--hue-bas-up3);
+    border: solid medium var(--hue-bas-up3);
     background-color: var(--hue-bas-up5);
-    border-radius: 0.3333rem;
+    border-radius: 0.1666rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
     font-size: smaller;
@@ -143,8 +143,8 @@ pre.wrap{
     width: 100%;
 }
 
-/*: table media :*/
-@media (min-width: 640px) {
+/*: sm)table media :*/
+@media (min-width: 600px) {
     pre,
     pre.wrap{
         padding: 1rem;
@@ -537,8 +537,8 @@ a:focus {
     padding-top: 0.5rem;
 }
 
-/*: table media :*/
-@media (min-width: 640px) {
+/*: sm)table media :*/
+@media (min-width: 600px) {
     .ul\:img {
         margin-left: -0.25rem;
     }
@@ -1627,19 +1627,30 @@ figure {
 
 /*
 ***
-    * property: txt:frame
-    * dsc: text frame
-    * ver: 200520
-    * fnt: create a content frame using table elements
-    * ref:
+    * property: frame
+    * dsc: table frame
+    * ver: 200527
+    * fnt: create a content frame using table element
+    * ref: same design as pre element
 ***
 */
-.txt\:frame {
-    border: solid thick var(--hue-bas-up3);
+table.frame {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table.frame > tbody {
+    border: solid medium var(--hue-bas-up3);
+    border-radius: 0.1666rem;
+}
+
+table.frame > tbody > tr > td {
     background-color: var(--hue-bas-up5);
-    border-radius: 0.3333rem;
-    display: inline-block;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: left;
     width: 100%;
 }
@@ -1653,7 +1664,6 @@ figure {
     * ref:
 ***
 */
-
 .svg\:h1 {
     display: inline;
     height: 3.25rem;
@@ -1976,5 +1986,5 @@ button:active {
 }
 
 /*
- * EOF: common.css / 24200520
+ * EOF: common.css / 24200527
  */
