@@ -28,7 +28,11 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             icon: false,
             text: '•\xa0Content Frame',
             onclick: function () {
-                tinymce.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+                var dom = editor.dom;
+                var uniqueID = dom.uniqueId();
+                tinymce.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+                var newTag = dom.select('p#' + uniqueID)[0];
+                editor.selection.setCursorLocation(newTag);
             }
         }, {
             icon: false,
