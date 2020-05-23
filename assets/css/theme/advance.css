@@ -1,33 +1,11 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Xidipity css framework 
     *
-    * File Name:       theme/advance.css
-    * Function:        Xidipity CSS framework
-    * Build:           200515
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
-    *
-    *
-    * COMMENTS
-    *
-    * The use of !important is intentional as the purpose of
-    * using these classes is to overwrite the current setting
-    * if one has been set.
-    *
-    * Current @media break points
-    *                  default (no prefix)     (mobile media)
-    *                  sm  = min-width: 600px  (small)
-    *                  md  = min-width: 900px  (medium)
-    *                  lg  = min-width: 1200px (large)
-    *                  xl  = min-width: 1800px (xlarge)
+    * ###:  advance.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -35,7 +13,7 @@
 ***
     * property: aln
     * dsc: alignment
-    * ver: 200120
+    * bld: 200120
     * fnt: set alignment
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     *      developer.mozilla.org/en-US/docs/Web/CSS/vertical-align
@@ -109,7 +87,7 @@
 ***
     * property: bdr
     * dsc: border
-    * ver: 200120
+    * bld: 200120
     * fnt: set border style (not color)
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border
     *      developer.mozilla.org/en-US/docs/Web/CSS/border-style
@@ -320,7 +298,7 @@
 ***
     * property: bdr
     * dsc: table borders
-    * ver: 200120
+    * bld: 200120
     * fnt: set table border attribute
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -337,7 +315,7 @@
 ***
     * property: bdr
     * dsc: hide table border(s)
-    * ver: 190208
+    * bld: 190208
     * fnt: hide, but preserve space of table border(s)
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
@@ -354,7 +332,7 @@ table.bdr\:hidden tr td {
 ***
     * property: bdr
     * dsc: display all table borders
-    * ver: 190208
+    * bld: 190208
     * fnt: spreadsheet styled table borders
     * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
 ***
@@ -371,7 +349,7 @@ table.bdr\:full tr td {
 ***
     * property: cols
     * dsc: table layout options
-    * ver: 200229
+    * bld: 200229
     * fnt: control table column attributes
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -388,7 +366,7 @@ table.cols\:fixed {
 ***
     * property: bdr
     * dsc: cell space
-    * ver: 200229
+    * bld: 200229
     * fnt: set table border cell spacing attributes
     * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
@@ -448,7 +426,7 @@ table.cols\:fixed {
 ***
     * property: cnr
     * dsc: box corner
-    * ver: 200120
+    * bld: 200120
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
@@ -476,7 +454,7 @@ table.cols\:fixed {
 ***
     * property: cnr
     * dsc: left box corner
-    * ver: 200120
+    * bld: 200120
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
@@ -498,7 +476,7 @@ table.cols\:fixed {
 ***
     * property: cnr
     * dsc: right box corner
-    * ver: 200120
+    * bld: 200120
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
@@ -520,7 +498,7 @@ table.cols\:fixed {
 ***
     * property: cnr
     * dsc: top box corner
-    * ver: 200120
+    * bld: 200120
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
@@ -542,7 +520,7 @@ table.cols\:fixed {
 ***
     * property: cnr
     * dsc: bottom box corner
-    * ver: 200120
+    * bld: 200120
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
@@ -564,7 +542,7 @@ table.cols\:fixed {
 ***
     * property: cur
     * dsc: cursor display
-    * ver: 200107
+    * bld: 200107
     * fnt: control cursor display
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/cursor
 ***
@@ -603,7 +581,7 @@ table.cols\:fixed {
 ***
     * property: dsp
     * dsc: element display
-    * ver: 200107
+    * bld: 200107
     * fnt: hide / display page elements
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
@@ -656,7 +634,7 @@ table.cols\:fixed {
 ***
     * property: fnt
     * dsc: font family
-    * ver: 200107
+    * bld: 200107
     * fnt: font attributes
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
 ***
@@ -689,7 +667,7 @@ table.cols\:fixed {
 ***
     * property: fnt
     * dsc: font size
-    * ver: 200508
+    * bld: 200508
     * fnt: set font / font icon size
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
@@ -757,7 +735,7 @@ table.cols\:fixed {
 ***
     * property: fnt:< caps >
     * dsc: display caps
-    * ver: 200513
+    * bld: 200513
     * fnt: style as variant caps
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
 ***
@@ -786,7 +764,7 @@ table.cols\:fixed {
 ***
     * property: fnt
     * dsc: font drop shadow
-    * ver: 200107
+    * bld: 200107
     * fnt: set font drop shadow hue
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
 ***
@@ -806,7 +784,7 @@ table.cols\:fixed {
 ***
     * property: fnt
     * dsc: font style
-    * ver: 200107
+    * bld: 200107
     * fnt: italic / normal / oblique
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-style
 ***
@@ -827,7 +805,7 @@ table.cols\:fixed {
 ***
     * property: fnt
     * dsc: font weight
-    * ver: 200107
+    * bld: 200107
     * fnt: set named weights
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 ***
@@ -866,7 +844,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: fixed height presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed heights
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -979,7 +957,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: minimum fixed height presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed heights
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -1088,7 +1066,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: maximum fixed width presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -1197,7 +1175,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: % height presets
-    * ver: 200107
+    * bld: 200107
     * fnt: set of predefined % heights
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -1286,7 +1264,7 @@ table.cols\:fixed {
 ***
     * property: ht
     * dsc: fraction height presets
-    * ver: 200107
+    * bld: 200107
     * fnt: set height to predefined fraction
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
 ***
@@ -1338,7 +1316,7 @@ table.cols\:fixed {
 ***
     * property: vh
     * dsc: viewport
-    * ver: 200322
+    * bld: 200322
     * fnt: set height to viewport
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
 ***
@@ -1427,7 +1405,7 @@ table.cols\:fixed {
 ***
     * property: led
     * dsc: leading
-    * ver: 200229
+    * bld: 200229
     * fnt: set line height
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
@@ -1469,7 +1447,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin
-    * ver: 200120
+    * bld: 200120
     * fnt: set all margins
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1551,7 +1529,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin top
-    * ver: 200229
+    * bld: 200229
     * fnt: set top margin
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1633,7 +1611,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin right
-    * ver: 200229
+    * bld: 200229
     * fnt: set right margin
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1716,7 +1694,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin bottom
-    * ver: 200229
+    * bld: 200229
     * fnt: set bottom margin
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1799,7 +1777,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin left
-    * ver: 200229
+    * bld: 200229
     * fnt: set left margin
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1882,7 +1860,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin horzontal
-    * ver: 200229
+    * bld: 200229
     * fnt: set left / right margins
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -1982,7 +1960,7 @@ table.cols\:fixed {
 ***
     * property: mar
     * dsc: margin vertical
-    * ver: 200229
+    * bld: 200229
     * fnt: set top / bottom margins
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
@@ -2082,7 +2060,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: padding
-    * ver: 200229
+    * bld: 200229
     * fnt: set all padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2129,7 +2107,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: top
-    * ver: 200120
+    * bld: 200120
     * fnt: set top padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2176,7 +2154,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: right
-    * ver: 200120
+    * bld: 200120
     * fnt: set right padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2223,7 +2201,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: bottom
-    * ver: 200120
+    * bld: 200120
     * fnt: set bottom padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2270,7 +2248,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: left
-    * ver: 200120
+    * bld: 200120
     * fnt: set left padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2317,7 +2295,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: hrz
-    * ver: 200229
+    * bld: 200229
     * fnt: set left/right (horizontal) padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2373,7 +2351,7 @@ table.cols\:fixed {
 ***
     * property: pad
     * dsc: vrt
-    * ver: 200120
+    * bld: 200120
     * fnt: set top/bottom (vertical) padding
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
@@ -2429,7 +2407,7 @@ table.cols\:fixed {
 ***
     * property: tdc
     * dsc: text decoration
-    * ver: 200229
+    * bld: 200229
     * fnt: set predefined text decoration
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
 ***
@@ -2499,7 +2477,7 @@ table.cols\:fixed {
 ***
     * property: trk
     * dsc: tracking
-    * ver: 200229
+    * bld: 200229
     * fnt: adjust letter spacing
     * ref: developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
 ***
@@ -2525,7 +2503,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: fixed width presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2638,7 +2616,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: minimum fixed width presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2747,7 +2725,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: maximum fixed width presets
-    * ver: 200229
+    * bld: 200229
     * fnt: set of predefined fixed widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2856,7 +2834,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: % width presets
-    * ver: 200107
+    * bld: 200107
     * fnt: set of predefined % widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2945,7 +2923,7 @@ table.cols\:fixed {
 ***
     * property: wd
     * dsc: fraction width presets
-    * ver: 200107
+    * bld: 200107
     * fnt: set width to predefined fraction
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
 ***
@@ -2997,7 +2975,7 @@ table.cols\:fixed {
 ***
     * property: vw
     * dsc: viewport
-    * ver: 200322
+    * bld: 200322
     * fnt: set width to viewport
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
 ***
@@ -3086,55 +3064,61 @@ table.cols\:fixed {
 ***
     * property: @XxX
     * dsc: set aspect ratio
-    * ver: 200318
+    * bld: 200318
     * fnt: set aspect ratio of images / videos
     * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
 ***
 */
-.\@1x1 {
-    width: 100%;
-    padding-bottom: calc(960 / 960 * 100%);
+.ar\:1x1,
+.ar\:3x2,
+.ar\:4x3,
+.ar\:7x5,
+.ar\:16x9,
+.ar\:16x10,
+.ar\:17x9,
+.ar\:21x9 {
+    height: 0;
     position: relative;
-}
-.\@3x2 {
     width: 100%;
-    padding-bottom: calc(640 / 960 * 100%);
-    position: relative;
 }
-.\@4x3 {
-    width: 100%;
-    padding-bottom: calc(720 / 960 * 100%);
-    position: relative;
+
+.ar\:1x1 {
+    padding-top: 100%;
 }
-.\@7x5 {
-    width: 100%;
-    padding-bottom: calc(686 / 960 * 100%);
-    position: relative;
+
+.ar\:3x2 {
+    padding-top: 66.6666%;
 }
-.\@16x9 {
-    width: 100%;
-    padding-bottom: calc(540 / 960 * 100%);
-    position: relative;
+
+.ar\:4x3 {
+    padding-top: 75%;
 }
-.\@16x10 {
-    width: 100%;
-    padding-bottom: calc(600 / 960 * 100%);
-    position: relative;
+
+.ar\:7x5 {
+    padding-top: 71.4286%;
 }
-.\@21x9 {
-    width: 100%;
-    padding-bottom: calc(411 / 960 * 100%);
-    position: relative;
+
+.ar\:16x9 {
+    padding-top: 56.25%;
 }
-.\@1x1 > div,
-.\@3x2 > div,
-.\@4x3 > div,
-.\@7x5 > div,
-.\@16x9 > div,
-.\@16x10 > div,
-.\@21x9 > div {
+
+.ar\:16x10 {
+    padding-top: 62.5%;
+}
+
+.ar\:17x9 {
+    padding-top: 52.9412%;
+}
+
+.ar\:21x9 {
+    padding-top: 42.8571%;
+}
+
+.ar\:content {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /*
@@ -3217,7 +3201,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: border
-        * ver: 200120
+        * bld: 200120
         * fnt: set border style (not color)
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-style
@@ -3428,7 +3412,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: table borders
-        * ver: 200120
+        * bld: 200120
         * fnt: set table border attribute
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -3445,7 +3429,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: hide table border(s)
-        * ver: 190208
+        * bld: 190208
         * fnt: hide, but preserve space of table border(s)
         * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     ***
@@ -3462,7 +3446,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: display all table borders
-        * ver: 190208
+        * bld: 190208
         * fnt: spreadsheet styled table borders
         * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
     ***
@@ -3479,7 +3463,7 @@ table.cols\:fixed {
     ***
         * property: cols
         * dsc: table layout options
-        * ver: 200229
+        * bld: 200229
         * fnt: control table column attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -3496,7 +3480,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: cell space
-        * ver: 200229
+        * bld: 200229
         * fnt: set table border cell spacing attributes
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -3556,7 +3540,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -3587,7 +3571,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: left box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -3609,7 +3593,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: right box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -3631,7 +3615,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: top box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -3653,7 +3637,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: bottom box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -3675,7 +3659,7 @@ table.cols\:fixed {
     ***
         * property: cur
         * dsc: cursor display
-        * ver: 200107
+        * bld: 200107
         * fnt: control cursor display
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/cursor
     ***
@@ -3714,7 +3698,7 @@ table.cols\:fixed {
     ***
         * property: dsp
         * dsc: element display
-        * ver: 200107
+        * bld: 200107
         * fnt: hide / display page elements
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
@@ -3767,7 +3751,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font family
-        * ver: 200107
+        * bld: 200107
         * fnt: font attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
@@ -3800,7 +3784,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font size
-        * ver: 200107
+        * bld: 200107
         * fnt: set font / font icon size
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
@@ -3868,7 +3852,7 @@ table.cols\:fixed {
     ***
         * property: fnt:< caps >
         * dsc: display caps
-        * ver: 200513
+        * bld: 200513
         * fnt: style as variant caps
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
@@ -3897,7 +3881,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font drop shadow
-        * ver: 200107
+        * bld: 200107
         * fnt: set font drop shadow hue
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
     ***
@@ -3917,7 +3901,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font style
-        * ver: 200107
+        * bld: 200107
         * fnt: italic / normal / oblique
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-style
     ***
@@ -3938,7 +3922,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font weight
-        * ver: 200107
+        * bld: 200107
         * fnt: set named weights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
@@ -3977,7 +3961,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -4090,7 +4074,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: minimum fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -4199,7 +4183,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -4308,7 +4292,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: % height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -4397,7 +4381,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fraction height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set height to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -4449,7 +4433,7 @@ table.cols\:fixed {
     ***
         * property: vh
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set height to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -4538,7 +4522,7 @@ table.cols\:fixed {
     ***
         * property: led
         * dsc: leading
-        * ver: 200229
+        * bld: 200229
         * fnt: set line height
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
@@ -4580,7 +4564,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin
-        * ver: 200120
+        * bld: 200120
         * fnt: set all margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4662,7 +4646,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin top
-        * ver: 200229
+        * bld: 200229
         * fnt: set top margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4744,7 +4728,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin right
-        * ver: 200229
+        * bld: 200229
         * fnt: set right margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4827,7 +4811,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin bottom
-        * ver: 200229
+        * bld: 200229
         * fnt: set bottom margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4910,7 +4894,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin left
-        * ver: 200229
+        * bld: 200229
         * fnt: set left margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -4993,7 +4977,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin horzontal
-        * ver: 200229
+        * bld: 200229
         * fnt: set left / right margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -5093,7 +5077,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin vertical
-        * ver: 200229
+        * bld: 200229
         * fnt: set top / bottom margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -5193,7 +5177,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: padding
-        * ver: 200229
+        * bld: 200229
         * fnt: set all padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5240,7 +5224,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: top
-        * ver: 200120
+        * bld: 200120
         * fnt: set top padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5287,7 +5271,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: right
-        * ver: 200120
+        * bld: 200120
         * fnt: set right padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5334,7 +5318,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: bottom
-        * ver: 200120
+        * bld: 200120
         * fnt: set bottom padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5381,7 +5365,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: left
-        * ver: 200120
+        * bld: 200120
         * fnt: set left padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5428,7 +5412,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: hrz
-        * ver: 200229
+        * bld: 200229
         * fnt: set left/right (horizontal) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5484,7 +5468,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: vrt
-        * ver: 200120
+        * bld: 200120
         * fnt: set top/bottom (vertical) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -5540,7 +5524,7 @@ table.cols\:fixed {
     ***
         * property: tdc
         * dsc: text decoration
-        * ver: 200229
+        * bld: 200229
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
@@ -5610,7 +5594,7 @@ table.cols\:fixed {
     ***
         * property: trk
         * dsc: tracking
-        * ver: 200229
+        * bld: 200229
         * fnt: adjust letter spacing
         * ref: developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
     ***
@@ -5636,7 +5620,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -5749,7 +5733,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: minimum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -5858,7 +5842,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -5967,7 +5951,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: % width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -6056,7 +6040,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fraction width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set width to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -6108,7 +6092,7 @@ table.cols\:fixed {
     ***
         * property: vw
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set width to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -6197,57 +6181,62 @@ table.cols\:fixed {
     ***
         * property: @XxX
         * dsc: set aspect ratio
-        * ver: 200318
+        * bld: 200318
         * fnt: set aspect ratio of images / videos
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .sm\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .sm)ar\:1x1,
+    .sm)ar\:3x2,
+    .sm)ar\:4x3,
+    .sm)ar\:7x5,
+    .sm)ar\:16x9,
+    .sm)ar\:16x10,
+    .sm)ar\:17x9,
+    .sm)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .sm\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .sm\)\@1x1 > div,
-    .sm\)\@3x2 > div,
-    .sm\)\@4x3 > div,
-    .sm\)\@7x5 > div,
-    .sm\)\@16x9 > div,
-    .sm\)\@16x10 > div,
-    .sm\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .sm)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .sm)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .sm)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .sm)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .sm)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .sm)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .sm)ar\:17x9 {
+        padding-top: 52.9412%;
+    }
+
+    .sm)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .sm)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -6330,7 +6319,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: border
-        * ver: 200120
+        * bld: 200120
         * fnt: set border style (not color)
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-style
@@ -6541,7 +6530,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: table borders
-        * ver: 200120
+        * bld: 200120
         * fnt: set table border attribute
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -6558,7 +6547,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: hide table border(s)
-        * ver: 190208
+        * bld: 190208
         * fnt: hide, but preserve space of table border(s)
         * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     ***
@@ -6575,7 +6564,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: display all table borders
-        * ver: 190208
+        * bld: 190208
         * fnt: spreadsheet styled table borders
         * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
     ***
@@ -6592,7 +6581,7 @@ table.cols\:fixed {
     ***
         * property: cols
         * dsc: table layout options
-        * ver: 200229
+        * bld: 200229
         * fnt: control table column attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -6609,7 +6598,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: cell space
-        * ver: 200229
+        * bld: 200229
         * fnt: set table border cell spacing attributes
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -6669,7 +6658,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -6697,7 +6686,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: left box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -6719,7 +6708,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: right box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -6741,7 +6730,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: top box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -6763,7 +6752,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: bottom box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -6785,7 +6774,7 @@ table.cols\:fixed {
     ***
         * property: cur
         * dsc: cursor display
-        * ver: 200107
+        * bld: 200107
         * fnt: control cursor display
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/cursor
     ***
@@ -6824,7 +6813,7 @@ table.cols\:fixed {
     ***
         * property: dsp
         * dsc: element display
-        * ver: 200107
+        * bld: 200107
         * fnt: hide / display page elements
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
@@ -6877,7 +6866,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font family
-        * ver: 200107
+        * bld: 200107
         * fnt: font attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
@@ -6910,7 +6899,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font size
-        * ver: 200107
+        * bld: 200107
         * fnt: set font / font icon size
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
@@ -6978,7 +6967,7 @@ table.cols\:fixed {
     ***
         * property: fnt:< caps >
         * dsc: display caps
-        * ver: 200513
+        * bld: 200513
         * fnt: style as variant caps
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
@@ -7007,7 +6996,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font drop shadow
-        * ver: 200107
+        * bld: 200107
         * fnt: set font drop shadow hue
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
     ***
@@ -7027,7 +7016,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font style
-        * ver: 200107
+        * bld: 200107
         * fnt: italic / normal / oblique
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-style
     ***
@@ -7048,7 +7037,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font weight
-        * ver: 200107
+        * bld: 200107
         * fnt: set named weights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
@@ -7087,7 +7076,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -7200,7 +7189,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: minimum fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -7309,7 +7298,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -7418,7 +7407,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: % height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -7507,7 +7496,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fraction height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set height to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -7559,7 +7548,7 @@ table.cols\:fixed {
     ***
         * property: vh
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set height to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -7648,7 +7637,7 @@ table.cols\:fixed {
     ***
         * property: led
         * dsc: leading
-        * ver: 200229
+        * bld: 200229
         * fnt: set line height
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
@@ -7690,7 +7679,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin
-        * ver: 200120
+        * bld: 200120
         * fnt: set all margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -7772,7 +7761,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin top
-        * ver: 200229
+        * bld: 200229
         * fnt: set top margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -7854,7 +7843,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin right
-        * ver: 200229
+        * bld: 200229
         * fnt: set right margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -7937,7 +7926,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin bottom
-        * ver: 200229
+        * bld: 200229
         * fnt: set bottom margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -8020,7 +8009,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin left
-        * ver: 200229
+        * bld: 200229
         * fnt: set left margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -8103,7 +8092,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin horzontal
-        * ver: 200229
+        * bld: 200229
         * fnt: set left / right margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -8203,7 +8192,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin vertical
-        * ver: 200229
+        * bld: 200229
         * fnt: set top / bottom margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -8303,7 +8292,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: padding
-        * ver: 200229
+        * bld: 200229
         * fnt: set all padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8350,7 +8339,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: top
-        * ver: 200120
+        * bld: 200120
         * fnt: set top padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8397,7 +8386,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: right
-        * ver: 200120
+        * bld: 200120
         * fnt: set right padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8444,7 +8433,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: bottom
-        * ver: 200120
+        * bld: 200120
         * fnt: set bottom padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8491,7 +8480,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: left
-        * ver: 200120
+        * bld: 200120
         * fnt: set left padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8538,7 +8527,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: hrz
-        * ver: 200229
+        * bld: 200229
         * fnt: set left/right (horizontal) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8594,7 +8583,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: vrt
-        * ver: 200120
+        * bld: 200120
         * fnt: set top/bottom (vertical) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -8650,7 +8639,7 @@ table.cols\:fixed {
     ***
         * property: tdc
         * dsc: text decoration
-        * ver: 200229
+        * bld: 200229
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
@@ -8720,7 +8709,7 @@ table.cols\:fixed {
     ***
         * property: trk
         * dsc: tracking
-        * ver: 200229
+        * bld: 200229
         * fnt: adjust letter spacing
         * ref: developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
     ***
@@ -8746,7 +8735,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -8859,7 +8848,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: minimum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -8968,7 +8957,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -9077,7 +9066,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: % width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -9166,7 +9155,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fraction width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set width to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -9218,7 +9207,7 @@ table.cols\:fixed {
     ***
         * property: vw
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set width to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -9307,57 +9296,62 @@ table.cols\:fixed {
     ***
         * property: @XxX
         * dsc: set aspect ratio
-        * ver: 200318
+        * bld: 200318
         * fnt: set aspect ratio of images / videos
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .md\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .md)ar\:1x1,
+    .md)ar\:3x2,
+    .md)ar\:4x3,
+    .md)ar\:7x5,
+    .md)ar\:16x9,
+    .md)ar\:16x10,
+    .md)ar\:17x9,
+    .md)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .md\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .md\)\@1x1 > div,
-    .md\)\@3x2 > div,
-    .md\)\@4x3 > div,
-    .md\)\@7x5 > div,
-    .md\)\@16x9 > div,
-    .md\)\@16x10 > div,
-    .md\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .md)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .md)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .md)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .md)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .md)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .md)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .md)ar\:17x9 {
+        padding-top: 52.9412%;
+    }
+
+    .md)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .md)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -9440,7 +9434,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: border
-        * ver: 200120
+        * bld: 200120
         * fnt: set border style (not color)
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-style
@@ -9651,7 +9645,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: table borders
-        * ver: 200120
+        * bld: 200120
         * fnt: set table border attribute
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -9668,7 +9662,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: hide table border(s)
-        * ver: 190208
+        * bld: 190208
         * fnt: hide, but preserve space of table border(s)
         * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     ***
@@ -9685,7 +9679,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: display all table borders
-        * ver: 190208
+        * bld: 190208
         * fnt: spreadsheet styled table borders
         * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
     ***
@@ -9702,7 +9696,7 @@ table.cols\:fixed {
     ***
         * property: cols
         * dsc: table layout options
-        * ver: 200229
+        * bld: 200229
         * fnt: control table column attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -9719,7 +9713,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: cell space
-        * ver: 200229
+        * bld: 200229
         * fnt: set table border cell spacing attributes
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -9779,7 +9773,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -9807,7 +9801,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: left box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -9829,7 +9823,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: right box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -9851,7 +9845,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: top box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -9873,7 +9867,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: bottom box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -9895,7 +9889,7 @@ table.cols\:fixed {
     ***
         * property: cur
         * dsc: cursor display
-        * ver: 200107
+        * bld: 200107
         * fnt: control cursor display
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/cursor
     ***
@@ -9934,7 +9928,7 @@ table.cols\:fixed {
     ***
         * property: dsp
         * dsc: element display
-        * ver: 200107
+        * bld: 200107
         * fnt: hide / display page elements
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
@@ -9987,7 +9981,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font family
-        * ver: 200107
+        * bld: 200107
         * fnt: font attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
@@ -10020,7 +10014,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font size
-        * ver: 200107
+        * bld: 200107
         * fnt: set font / font icon size
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
@@ -10088,7 +10082,7 @@ table.cols\:fixed {
     ***
         * property: fnt:< caps >
         * dsc: display caps
-        * ver: 200513
+        * bld: 200513
         * fnt: style as variant caps
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
@@ -10117,7 +10111,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font drop shadow
-        * ver: 200107
+        * bld: 200107
         * fnt: set font drop shadow hue
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
     ***
@@ -10137,7 +10131,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font style
-        * ver: 200107
+        * bld: 200107
         * fnt: italic / normal / oblique
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-style
     ***
@@ -10158,7 +10152,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font weight
-        * ver: 200107
+        * bld: 200107
         * fnt: set named weights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
@@ -10197,7 +10191,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -10310,7 +10304,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: minimum fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -10419,7 +10413,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -10528,7 +10522,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: % height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -10617,7 +10611,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fraction height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set height to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -10669,7 +10663,7 @@ table.cols\:fixed {
     ***
         * property: vh
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set height to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -10758,7 +10752,7 @@ table.cols\:fixed {
     ***
         * property: led
         * dsc: leading
-        * ver: 200229
+        * bld: 200229
         * fnt: set line height
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
@@ -10800,7 +10794,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin
-        * ver: 200120
+        * bld: 200120
         * fnt: set all margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -10882,7 +10876,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin top
-        * ver: 200229
+        * bld: 200229
         * fnt: set top margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -10964,7 +10958,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin right
-        * ver: 200229
+        * bld: 200229
         * fnt: set right margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -11047,7 +11041,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin bottom
-        * ver: 200229
+        * bld: 200229
         * fnt: set bottom margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -11130,7 +11124,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin left
-        * ver: 200229
+        * bld: 200229
         * fnt: set left margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -11213,7 +11207,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin horzontal
-        * ver: 200229
+        * bld: 200229
         * fnt: set left / right margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -11313,7 +11307,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin vertical
-        * ver: 200229
+        * bld: 200229
         * fnt: set top / bottom margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -11413,7 +11407,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: padding
-        * ver: 200229
+        * bld: 200229
         * fnt: set all padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11460,7 +11454,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: top
-        * ver: 200120
+        * bld: 200120
         * fnt: set top padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11507,7 +11501,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: right
-        * ver: 200120
+        * bld: 200120
         * fnt: set right padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11554,7 +11548,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: bottom
-        * ver: 200120
+        * bld: 200120
         * fnt: set bottom padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11601,7 +11595,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: left
-        * ver: 200120
+        * bld: 200120
         * fnt: set left padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11648,7 +11642,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: hrz
-        * ver: 200229
+        * bld: 200229
         * fnt: set left/right (horizontal) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11704,7 +11698,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: vrt
-        * ver: 200120
+        * bld: 200120
         * fnt: set top/bottom (vertical) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -11760,7 +11754,7 @@ table.cols\:fixed {
     ***
         * property: tdc
         * dsc: text decoration
-        * ver: 200229
+        * bld: 200229
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
@@ -11830,7 +11824,7 @@ table.cols\:fixed {
     ***
         * property: trk
         * dsc: tracking
-        * ver: 200229
+        * bld: 200229
         * fnt: adjust letter spacing
         * ref: developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
     ***
@@ -11856,7 +11850,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -11969,7 +11963,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: minimum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -12078,7 +12072,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -12187,7 +12181,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: % width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -12276,7 +12270,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fraction width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set width to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -12328,7 +12322,7 @@ table.cols\:fixed {
     ***
         * property: vw
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set width to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -12417,57 +12411,62 @@ table.cols\:fixed {
     ***
         * property: @XxX
         * dsc: set aspect ratio
-        * ver: 200318
+        * bld: 200318
         * fnt: set aspect ratio of images / videos
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .lg\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .lg)ar\:1x1,
+    .lg)ar\:3x2,
+    .lg)ar\:4x3,
+    .lg)ar\:7x5,
+    .lg)ar\:16x9,
+    .lg)ar\:16x10,
+    .lg)ar\:17x9,
+    .lg)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .lg\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
-    }
-    .lg\)\@1x1 > div,
-    .lg\)\@3x2 > div,
-    .lg\)\@4x3 > div,
-    .lg\)\@7x5 > div,
-    .lg\)\@16x9 > div,
-    .lg\)\@16x10 > div,
-    .lg\)\@21x9 > div {
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
     }
 
+    .lg)ar\:1x1 {
+        padding-top: 100%;
+    }
+
+    .lg)ar\:3x2 {
+        padding-top: 66.6666%;
+    }
+
+    .lg)ar\:4x3 {
+        padding-top: 75%;
+    }
+
+    .lg)ar\:7x5 {
+        padding-top: 71.4286%;
+    }
+
+    .lg)ar\:16x9 {
+        padding-top: 56.25%;
+    }
+
+    .lg)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .lg)ar\:17x9 {
+        padding-top: 52.9412%;
+    }
+
+    .lg)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .lg)ar\:content {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*
@@ -12550,7 +12549,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: border
-        * ver: 200120
+        * bld: 200120
         * fnt: set border style (not color)
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-style
@@ -12761,7 +12760,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: table borders
-        * ver: 200120
+        * bld: 200120
         * fnt: set table border attribute
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -12778,7 +12777,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: hide table border(s)
-        * ver: 190208
+        * bld: 190208
         * fnt: hide, but preserve space of table border(s)
         * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     ***
@@ -12795,7 +12794,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: display all table borders
-        * ver: 190208
+        * bld: 190208
         * fnt: spreadsheet styled table borders
         * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
     ***
@@ -12812,7 +12811,7 @@ table.cols\:fixed {
     ***
         * property: cols
         * dsc: table layout options
-        * ver: 200229
+        * bld: 200229
         * fnt: control table column attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -12829,7 +12828,7 @@ table.cols\:fixed {
     ***
         * property: bdr
         * dsc: cell space
-        * ver: 200229
+        * bld: 200229
         * fnt: set table border cell spacing attributes
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
@@ -12889,7 +12888,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -12917,7 +12916,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: left box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -12939,7 +12938,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: right box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -12961,7 +12960,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: top box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -12983,7 +12982,7 @@ table.cols\:fixed {
     ***
         * property: cnr
         * dsc: bottom box corner
-        * ver: 200120
+        * bld: 200120
         * fnt: control curvature of corners
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
@@ -13005,7 +13004,7 @@ table.cols\:fixed {
     ***
         * property: cur
         * dsc: cursor display
-        * ver: 200107
+        * bld: 200107
         * fnt: control cursor display
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/cursor
     ***
@@ -13044,7 +13043,7 @@ table.cols\:fixed {
     ***
         * property: dsp
         * dsc: element display
-        * ver: 200107
+        * bld: 200107
         * fnt: hide / display page elements
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
@@ -13097,7 +13096,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font family
-        * ver: 200107
+        * bld: 200107
         * fnt: font attributes
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
@@ -13130,7 +13129,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font size
-        * ver: 200107
+        * bld: 200107
         * fnt: set font / font icon size
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
@@ -13198,7 +13197,7 @@ table.cols\:fixed {
     ***
         * property: fnt:< caps >
         * dsc: display caps
-        * ver: 200513
+        * bld: 200513
         * fnt: style as variant caps
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
@@ -13227,7 +13226,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font drop shadow
-        * ver: 200107
+        * bld: 200107
         * fnt: set font drop shadow hue
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
     ***
@@ -13247,7 +13246,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font style
-        * ver: 200107
+        * bld: 200107
         * fnt: italic / normal / oblique
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-style
     ***
@@ -13268,7 +13267,7 @@ table.cols\:fixed {
     ***
         * property: fnt
         * dsc: font weight
-        * ver: 200107
+        * bld: 200107
         * fnt: set named weights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
@@ -13307,7 +13306,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -13420,7 +13419,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: minimum fixed height presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -13529,7 +13528,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -13638,7 +13637,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: % height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % heights
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -13727,7 +13726,7 @@ table.cols\:fixed {
     ***
         * property: ht
         * dsc: fraction height presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set height to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/height
     ***
@@ -13779,7 +13778,7 @@ table.cols\:fixed {
     ***
         * property: vh
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set height to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -13868,7 +13867,7 @@ table.cols\:fixed {
     ***
         * property: led
         * dsc: leading
-        * ver: 200229
+        * bld: 200229
         * fnt: set line height
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
@@ -13910,7 +13909,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin
-        * ver: 200120
+        * bld: 200120
         * fnt: set all margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -13992,7 +13991,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin top
-        * ver: 200229
+        * bld: 200229
         * fnt: set top margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14074,7 +14073,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin right
-        * ver: 200229
+        * bld: 200229
         * fnt: set right margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14157,7 +14156,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin bottom
-        * ver: 200229
+        * bld: 200229
         * fnt: set bottom margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14240,7 +14239,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin left
-        * ver: 200229
+        * bld: 200229
         * fnt: set left margin
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14323,7 +14322,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin horzontal
-        * ver: 200229
+        * bld: 200229
         * fnt: set left / right margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14423,7 +14422,7 @@ table.cols\:fixed {
     ***
         * property: mar
         * dsc: margin vertical
-        * ver: 200229
+        * bld: 200229
         * fnt: set top / bottom margins
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
@@ -14523,7 +14522,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: padding
-        * ver: 200229
+        * bld: 200229
         * fnt: set all padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14570,7 +14569,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: top
-        * ver: 200120
+        * bld: 200120
         * fnt: set top padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14617,7 +14616,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: right
-        * ver: 200120
+        * bld: 200120
         * fnt: set right padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14664,7 +14663,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: bottom
-        * ver: 200120
+        * bld: 200120
         * fnt: set bottom padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14711,7 +14710,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: left
-        * ver: 200120
+        * bld: 200120
         * fnt: set left padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14758,7 +14757,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: hrz
-        * ver: 200229
+        * bld: 200229
         * fnt: set left/right (horizontal) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14814,7 +14813,7 @@ table.cols\:fixed {
     ***
         * property: pad
         * dsc: vrt
-        * ver: 200120
+        * bld: 200120
         * fnt: set top/bottom (vertical) padding
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
@@ -14870,7 +14869,7 @@ table.cols\:fixed {
     ***
         * property: tdc
         * dsc: text decoration
-        * ver: 200229
+        * bld: 200229
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
@@ -14940,7 +14939,7 @@ table.cols\:fixed {
     ***
         * property: trk
         * dsc: tracking
-        * ver: 200229
+        * bld: 200229
         * fnt: adjust letter spacing
         * ref: developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing
     ***
@@ -14966,7 +14965,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -15079,7 +15078,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: minimum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -15188,7 +15187,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: maximum fixed width presets
-        * ver: 200229
+        * bld: 200229
         * fnt: set of predefined fixed widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -15297,7 +15296,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: % width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set of predefined % widths
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -15386,7 +15385,7 @@ table.cols\:fixed {
     ***
         * property: wd
         * dsc: fraction width presets
-        * ver: 200107
+        * bld: 200107
         * fnt: set width to predefined fraction
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/width
     ***
@@ -15438,7 +15437,7 @@ table.cols\:fixed {
     ***
         * property: vw
         * dsc: viewport
-        * ver: 200322
+        * bld: 200322
         * fnt: set width to viewport
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts
     ***
@@ -15527,60 +15526,64 @@ table.cols\:fixed {
     ***
         * property: @XxX
         * dsc: set aspect ratio
-        * ver: 200318
+        * bld: 200318
         * fnt: set aspect ratio of images / videos
         * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
     ***
     */
-    .xl\)\@1x1 {
-        width: 100%;
-        padding-bottom: calc(960 / 960 * 100%);
+    .xl)ar\:1x1,
+    .xl)ar\:3x2,
+    .xl)ar\:4x3,
+    .xl)ar\:7x5,
+    .xl)ar\:16x9,
+    .xl)ar\:16x10,
+    .xl)ar\:17x9,
+    .xl)ar\:21x9 {
+        height: 0;
         position: relative;
-    }
-    .xl\)\@3x2 {
         width: 100%;
-        padding-bottom: calc(640 / 960 * 100%);
-        position: relative;
     }
-    .xl\)\@4x3 {
-        width: 100%;
-        padding-bottom: calc(720 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:1x1 {
+        padding-top: 100%;
     }
-    .xl\)\@7x5 {
-        width: 100%;
-        padding-bottom: calc(686 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:3x2 {
+        padding-top: 66.6666%;
     }
-    .xl\)\@16x9 {
-        width: 100%;
-        padding-bottom: calc(540 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:4x3 {
+        padding-top: 75%;
     }
-    .xl\)\@16x10 {
-        width: 100%;
-        padding-bottom: calc(600 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:7x5 {
+        padding-top: 71.4286%;
     }
-    .xl\)\@21x9 {
-        width: 100%;
-        padding-bottom: calc(411 / 960 * 100%);
-        position: relative;
+
+    .xl)ar\:16x9 {
+        padding-top: 56.25%;
     }
-    .xl\)\@1x1 > div,
-    .xl\)\@3x2 > div,
-    .xl\)\@4x3 > div,
-    .xl\)\@7x5 > div,
-    .xl\)\@16x9 > div,
-    .xl\)\@16x10 > div,
-    .xl\)\@21x9 > div {
+
+    .xl)ar\:16x10 {
+        padding-top: 62.5%;
+    }
+
+    .xl)ar\:17x9 {
+        padding-top: 52.9412%;
+    }
+
+    .xl)ar\:21x9 {
+        padding-top: 42.8571%;
+    }
+
+    .xl)ar\:content {
         position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
 /*
- * EOF:     theme/advance.css
- * Build:   200515
- *
+ * EOF: advance.css / 24200520
  */

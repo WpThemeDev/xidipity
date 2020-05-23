@@ -1,30 +1,23 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       template-parts/content-none.php
- * Function:        report unexpected execution of site
- * Build:           200429
- * GitHub:          github.com/WpThemeDev/xidipity/
- * License URI:     www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           1.0
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying missing page error
+    *
+    * ###:  content-none.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***/
 echo '<!--  file:content-none.php -->' . "\n";
 /***
 */
-echo '<div class="bg:bas-300 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
+echo '<div class="bg:bas+2 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
 echo '<!--  fc:PG-ERR -->' . "\n";
-echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas-100 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
+echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
 echo '<!--  fc:LOGO -->' . "\n";
 echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
 echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
@@ -46,11 +39,9 @@ echo '</div>' . "\n";
 echo '<!--  fc:MESSAGE -->' . "\n";
 echo '</div>' . "\n";
 echo '<!-- /fc:PG-ERR -->' . "\n";
-echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
 /*
- * EOF:     template-parts/content-none.php
- * Build:   200429
- *
+ * EOF: content-none.php / 24200520
  */
 ?>

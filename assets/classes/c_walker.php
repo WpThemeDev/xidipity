@@ -1,11 +1,14 @@
 <?php
 /**
- *  name: c_walker
- *  build: 200501
- *  description: category walker extension to support font awesome icons
- *  doc: developer.wordpress.org/reference/classes/walker/
- *
- */
+    * WordPress Xidipity Theme
+    * Format category list
+    *
+    * ###:  c_walker.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 if ( ! class_exists( 'c_walker' ) )
 {
     class c_walker extends Walker
@@ -47,8 +50,6 @@ if ( ! class_exists( 'c_walker' ) )
 }
 
 /*
- * EOF:     c_walker.php
- * Build:   200501
- *
+ * EOF: c_walker.php / 24200520
  */
 ?>

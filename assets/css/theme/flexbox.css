@@ -1,76 +1,12 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Flexbox specific css classes 
     *
-    * File Name:    theme/flexbox.css
-    * Function:     Xidipity Flex framework
-    * Build:        200429
-    * GitHub:       github.com/WpThemeDev/xidipity/
-    * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
+    * ###:  flexbox.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
-    * @package      xidipity
-    * @author       John Baer
-    * @copyright    2019-2020 John Baer
-    * @license      GPL-3.0-or-later
-    * @version      1.0
-    * @since        0.9
-    * @link         developer.wordpress.org/themes/basics/
-    *
-    * Current @media break points
-    *               default (no prefix)     (mobile media)
-    *               sm  = min-width: 600px  (small)
-    *               md  = min-width: 900px  (medium)
-    *               lg  = min-width: 1200px (large)
-    *               xl  = min-width: 1800px (xlarge)
-    *
-    * -------------------------------------------------------------------------
-    *
-    * DIY flexbox components
-    * 200429
-    * classes to build flexbox
-    * developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-    *
-    * -------------------------------------------------------------------------
-    *
-    * flex                              ---------------------------------------
-    *   fx:c        - column no wrap
-    *   fx:c-rev    - column reverse no wrap
-    *   fx:cw       - column wrap
-    *   fx:cw-rev   - column wrap reverse
-    *   fx:r        - row no wrap
-    *   fx:r-rev    - row reverse no wrap
-    *   fx:rw       - row wrap
-    *   fx:rw-rev   - row wrap reverse
-    * justify content                   ---------------------------------------
-    *   fxa:1       - flex-start
-    *   fxa:2       - flex-end
-    *   fxa:3       - center
-    *   fxa:4       - space-between
-    *   fxa:5       - space-around
-    * align content                     ---------------------------------------
-    *   fxb:1       - flex-start
-    *   fxb:2       - flex-end
-    *   fxb:3       - center
-    *   fxb:4       - between
-    *   fxb:5       - around
-    *   fxb:6       - stretch
-    * align items                       ---------------------------------------
-    *   fxc:1       - flex-start
-    *   fxc:2       - flex-end
-    *   fxc:3       - center
-    *   fxc:4       - baseline
-    *   fxc:5       - stretch
-    * item attributes (auto basis)      ---------------------------------------
-    *   fxd:1       - 0 0 auto
-    *   fxd:2       - 0 1 auto
-    *   fxd:3       - 1 0 auto
-    *   fxd:4       - 1 1 auto
-    * align self (override)             ---------------------------------------
-    *   fxe:1       - auto
-    *   fxe:2       - flex-start
-    *   fxe:3       - flex-end
-    *   fxe:4       - center
-    *   fxe:5       - baseline
-    *   fxe:6       - stretch
 */
 
 .fx\:c {
@@ -1479,7 +1415,5 @@
 }
 
 /*
- * EOF:     theme/flexbox.css
- * Build:   200429
- *
+ * EOF: flexbox.css / 24200520
  */

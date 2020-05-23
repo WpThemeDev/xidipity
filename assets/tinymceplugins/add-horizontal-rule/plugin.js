@@ -1,20 +1,11 @@
-/*
-    * WordPress Xidipity Theme JS File
+/**
+    * WordPress Xidipity Theme
+    * Tinymce add-horizontal-rule plugin 
     *
-    * File Name:       add-horizontal-rule/plugin.js
-    * Function:        tinymce horizontal rule plugin
-    * Build:           200513
-    * Revision:        1
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            www.tiny.cloud/docs/
+    * ###:  plugin.js
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -86,7 +77,5 @@ tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
 });
 
 /*
- * EOF:     add-horizontal-rule/plugin.js
- * Build:   200513
- *
+ * EOF: add-horizontal-rule / plugin.js / 24200520
  */

@@ -1,19 +1,11 @@
-/*
-    * WordPress Xidipity Theme CSS File
+/**
+    * WordPress Xidipity Theme
+    * Palette specific css classes
     *
-    * File Name:       theme/palette.css
-    * Function:        CSS palette elements
-    * Build:           200513
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  palette.css
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -26,7 +18,7 @@ speciality foreground colors
     color: var(--wcag-grey6) !important;
 }
 .fg\:disable {
-    color: var(--hue-bas-400) !important;
+    color: var(--hue-bas-up1) !important;
 }
 .bg\:content {
 	background-color: var(--content-bg-color);
@@ -67,94 +59,94 @@ button.fg\:wht\!focus:focus {
     color: var(--hue-wht) !important;
 }
 
-.fg\:bas-900,
-.fg\:bas-900\!hover:hover,
-a.fg\:bas-900\!active:active,
-a.fg\:bas-900\!focus:focus,
-button.fg\:bas-900\!active:active,
-button.fg\:bas-900\!focus:focus {
-    color: var(--hue-bas-900) !important;
+.fg\:bas-4,
+.fg\:bas-4\!hover:hover,
+a.fg\:bas-4\!active:active,
+a.fg\:bas-4\!focus:focus,
+button.fg\:bas-4\!active:active,
+button.fg\:bas-4\!focus:focus {
+    color: var(--hue-bas-dn4) !important;
 }
 
-.fg\:bas-800,
-.fg\:bas-800\!hover:hover,
-a.fg\:bas-800\!active:active,
-a.fg\:bas-800\!focus:focus,
-button.fg\:bas-800\!active:active,
-button.fg\:bas-800\!focus:focus {
-    color: var(--hue-bas-800) !important;
+.fg\:bas-3,
+.fg\:bas-3\!hover:hover,
+a.fg\:bas-3\!active:active,
+a.fg\:bas-3\!focus:focus,
+button.fg\:bas-3\!active:active,
+button.fg\:bas-3\!focus:focus {
+    color: var(--hue-bas-dn3) !important;
 }
 
-.fg\:bas-700,
-.fg\:bas-700\!hover:hover,
-a.fg\:bas-700\!active:active,
-a.fg\:bas-700\!focus:focus,
-button.fg\:bas-700\!active:active,
-button.fg\:bas-700\!focus:focus {
-    color: var(--hue-bas-700) !important;
+.fg\:bas-2,
+.fg\:bas-2\!hover:hover,
+a.fg\:bas-2\!active:active,
+a.fg\:bas-2\!focus:focus,
+button.fg\:bas-2\!active:active,
+button.fg\:bas-2\!focus:focus {
+    color: var(--hue-bas-dn2) !important;
 }
 
-.fg\:bas-600,
-.fg\:bas-600\!hover:hover,
-a.fg\:bas-600\!active:active,
-a.fg\:bas-600\!focus:focus,
-button.fg\:bas-600\!active:active,
-button.fg\:bas-600\!focus:focus {
-    color: var(--hue-bas-600) !important;
+.fg\:bas-1,
+.fg\:bas-1\!hover:hover,
+a.fg\:bas-1\!active:active,
+a.fg\:bas-1\!focus:focus,
+button.fg\:bas-1\!active:active,
+button.fg\:bas-1\!focus:focus {
+    color: var(--hue-bas-dn1) !important;
 }
 
-.fg\:bas-500,
-.fg\:bas-500\!hover:hover,
-a.fg\:bas-500\!active:active,
-a.fg\:bas-500\!focus:focus,
-button.fg\:bas-500\!active:active,
-button.fg\:bas-500\!focus:focus {
-    color: var(--hue-bas-500) !important;
+.fg\:bas,
+.fg\:bas\!hover:hover,
+a.fg\:bas\!active:active,
+a.fg\:bas\!focus:focus,
+button.fg\:bas\!active:active,
+button.fg\:bas\!focus:focus {
+    color: var(--hue-bas) !important;
 }
 
-.fg\:bas-400,
-.fg\:bas-400\!hover:hover,
-a.fg\:bas-400\!active:active,
-a.fg\:bas-400\!focus:focus,
-button.fg\:bas-400\!active:active,
-button.fg\:bas-400\!focus:focus {
-    color: var(--hue-bas-400) !important;
+.fg\:bas\+1,
+.fg\:bas\+1\!hover:hover,
+a.fg\:bas\+1\!active:active,
+a.fg\:bas\+1\!focus:focus,
+button.fg\:bas\+1\!active:active,
+button.fg\:bas\+1\!focus:focus {
+    color: var(--hue-bas-up1) !important;
 }
 
-.fg\:bas-300,
-.fg\:bas-300\!hover:hover,
-a.fg\:bas-300\!active:active,
-a.fg\:bas-300\!focus:focus,
-button.fg\:bas-300\!active:active,
-button.fg\:bas-300\!focus:focus {
-    color: var(--hue-bas-300) !important;
+.fg\:bas\+2,
+.fg\:bas\+2\!hover:hover,
+a.fg\:bas\+2\!active:active,
+a.fg\:bas\+2\!focus:focus,
+button.fg\:bas\+2\!active:active,
+button.fg\:bas\+2\!focus:focus {
+    color: var(--hue-bas-up2) !important;
 }
 
-.fg\:bas-200,
-.fg\:bas-200\!hover:hover,
-a.fg\:bas-200\!active:active,
-a.fg\:bas-200\!focus:focus,
-button.fg\:bas-200\!active:active,
-button.fg\:bas-200\!focus:focus {
-    color: var(--hue-bas-200) !important;
+.fg\:bas\+3,
+.fg\:bas\+3\!hover:hover,
+a.fg\:bas\+3\!active:active,
+a.fg\:bas\+3\!focus:focus,
+button.fg\:bas\+3\!active:active,
+button.fg\:bas\+3\!focus:focus {
+    color: var(--hue-bas-up3) !important;
 }
 
-.fg\:bas-100,
-.fg\:bas-100\!hover:hover,
-a.fg\:bas-100\!active:active,
-a.fg\:bas-100\!focus:focus,
-button.fg\:bas-100\!active:active,
-button.fg\:bas-100\!focus:focus {
-    color: var(--hue-bas-100) !important;
+.fg\:bas\+4,
+.fg\:bas\+4\!hover:hover,
+a.fg\:bas\+4\!active:active,
+a.fg\:bas\+4\!focus:focus,
+button.fg\:bas\+4\!active:active,
+button.fg\:bas\+4\!focus:focus {
+    color: var(--hue-bas-up4) !important;
 }
 
-.fg\:bas-050,
-.fg\:bas-050\!hover:hover,
-a.fg\:bas-050\!active:active,
-a.fg\:bas-050\!focus:focus,
-button.fg\:bas-050\!active:active,
-button.fg\:bas-050\!focus:focus {
-    color: var(--hue-bas-050) !important;
+.fg\:bas\+5,
+.fg\:bas\+5\!hover:hover,
+a.fg\:bas\+5\!active:active,
+a.fg\:bas\+5\!focus:focus,
+button.fg\:bas\+5\!active:active,
+button.fg\:bas\+5\!focus:focus {
+    color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -171,22 +163,22 @@ button.fg\:pri\!focus:focus {
     color: var(--hue-pri) !important;
 }
 
-.fg\:pri-bright,
-.fg\:pri-bright\!hover:hover,
-a.fg\:pri-bright\!active:active,
-a.fg\:pri-bright\!focus:focus,
-button.fg\:pri-bright\!active:active,
-button.fg\:pri-bright\!focus:focus {
-    color: var(--hue-pri-bright) !important;
+.fg\:pri\+1,
+.fg\:pri\+1\!hover:hover,
+a.fg\:pri\+1\!active:active,
+a.fg\:pri\+1\!focus:focus,
+button.fg\:pri\+1\!active:active,
+button.fg\:pri\+1\!focus:focus {
+    color: var(--hue-pri-up1) !important;
 }
 
-.fg\:pri-dark,
-.fg\:pri-dark\!hover:hover,
-a.fg\:pri-dark\!active:active,
-a.fg\:pri-dark\!focus:focus,
-button.fg\:pri-dark\!active:active,
-button.fg\:pri-dark\!focus:focus {
-    color: var(--hue-pri-dark) !important;
+.fg\:pri-1,
+.fg\:pri-1\!hover:hover,
+a.fg\:pri-1\!active:active,
+a.fg\:pri-1\!focus:focus,
+button.fg\:pri-1\!active:active,
+button.fg\:pri-1\!focus:focus {
+    color: var(--hue-pri-dn1) !important;
 }
 
 /*
@@ -203,22 +195,22 @@ button.fg\:sec\!focus:focus {
     color: var(--hue-sec) !important;
 }
 
-.fg\:sec-bright,
-.fg\:sec-bright\!hover:hover,
-a.fg\:sec-bright\!active:active,
-a.fg\:sec-bright\!focus:focus,
-button.fg\:sec-bright\!active:active,
-button.fg\:sec-bright\!focus:focus {
-    color: var(--hue-sec-bright) !important;
+.fg\:sec\+1,
+.fg\:sec\+1\!hover:hover,
+a.fg\:sec\+1\!active:active,
+a.fg\:sec\+1\!focus:focus,
+button.fg\:sec\+1\!active:active,
+button.fg\:sec\+1\!focus:focus {
+    color: var(--hue-sec-up1) !important;
 }
 
-.fg\:sec-dark,
-.fg\:sec-dark\!hover:hover,
-a.fg\:sec-dark\!active:active,
-a.fg\:sec-dark\!focus:focus,
-button.fg\:sec-dark\!active:active,
-button.fg\:sec-dark\!focus:focus {
-    color: var(--hue-sec-dark) !important;
+.fg\:sec-1,
+.fg\:sec-1\!hover:hover,
+a.fg\:sec-1\!active:active,
+a.fg\:sec-1\!focus:focus,
+button.fg\:sec-1\!active:active,
+button.fg\:sec-1\!focus:focus {
+    color: var(--hue-sec-dn1) !important;
 }
 
 /*
@@ -253,94 +245,94 @@ button.bg\:wht\!focus:focus {
     background-color: var(--hue-wht) !important;
 }
 
-.bg\:bas-900,
-.bg\:bas-900\!hover:hover,
-a.bg\:bas-900\!active:active,
-a.bg\:bas-900\!focus:focus,
-button.bg\:bas-900\!active:active,
-button.bg\:bas-900\!focus:focus {
-    background-color: var(--hue-bas-900) !important;
+.bg\:bas-4,
+.bg\:bas-4\!hover:hover,
+a.bg\:bas-4\!active:active,
+a.bg\:bas-4\!focus:focus,
+button.bg\:bas-4\!active:active,
+button.bg\:bas-4\!focus:focus {
+    background-color: var(--hue-bas-dn4) !important;
 }
 
-.bg\:bas-800,
-.bg\:bas-800\!hover:hover,
-a.bg\:bas-800\!active:active,
-a.bg\:bas-800\!focus:focus,
-button.bg\:bas-800\!active:active,
-button.bg\:bas-800\!focus:focus {
-    background-color: var(--hue-bas-800) !important;
+.bg\:bas-3,
+.bg\:bas-3\!hover:hover,
+a.bg\:bas-3\!active:active,
+a.bg\:bas-3\!focus:focus,
+button.bg\:bas-3\!active:active,
+button.bg\:bas-3\!focus:focus {
+    background-color: var(--hue-bas-dn3) !important;
 }
 
-.bg\:bas-700,
-.bg\:bas-700\!hover:hover,
-a.bg\:bas-700\!active:active,
-a.bg\:bas-700\!focus:focus,
-button.bg\:bas-700\!active:active,
-button.bg\:bas-700\!focus:focus {
-    background-color: var(--hue-bas-700) !important;
+.bg\:bas-2,
+.bg\:bas-2\!hover:hover,
+a.bg\:bas-2\!active:active,
+a.bg\:bas-2\!focus:focus,
+button.bg\:bas-2\!active:active,
+button.bg\:bas-2\!focus:focus {
+    background-color: var(--hue-bas-dn2) !important;
 }
 
-.bg\:bas-600,
-.bg\:bas-600\!hover:hover,
-a.bg\:bas-600\!active:active,
-a.bg\:bas-600\!focus:focus,
-button.bg\:bas-600\!active:active,
-button.bg\:bas-600\!focus:focus {
-    background-color: var(--hue-bas-600) !important;
+.bg\:bas-1,
+.bg\:bas-1\!hover:hover,
+a.bg\:bas-1\!active:active,
+a.bg\:bas-1\!focus:focus,
+button.bg\:bas-1\!active:active,
+button.bg\:bas-1\!focus:focus {
+    background-color: var(--hue-bas-dn1) !important;
 }
 
-.bg\:bas-500,
-.bg\:bas-500\!hover:hover,
-a.bg\:bas-500\!active:active,
-a.bg\:bas-500\!focus:focus,
-button.bg\:bas-500\!active:active,
-button.bg\:bas-500\!focus:focus {
-    background-color: var(--hue-bas-500) !important;
+.bg\:bas,
+.bg\:bas\!hover:hover,
+a.bg\:bas\!active:active,
+a.bg\:bas\!focus:focus,
+button.bg\:bas\!active:active,
+button.bg\:bas\!focus:focus {
+    background-color: var(--hue-bas) !important;
 }
 
-.bg\:bas-400,
-.bg\:bas-400\!hover:hover,
-a.bg\:bas-400\!active:active,
-a.bg\:bas-400\!focus:focus,
-button.bg\:bas-400\!active:active,
-button.bg\:bas-400\!focus:focus {
-    background-color: var(--hue-bas-400) !important;
+.bg\:bas\+1,
+.bg\:bas\+1\!hover:hover,
+a.bg\:bas\+1\!active:active,
+a.bg\:bas\+1\!focus:focus,
+button.bg\:bas\+1\!active:active,
+button.bg\:bas\+1\!focus:focus {
+    background-color: var(--hue-bas-up1) !important;
 }
 
-.bg\:bas-300,
-.bg\:bas-300\!hover:hover,
-a.bg\:bas-300\!active:active,
-a.bg\:bas-300\!focus:focus,
-button.bg\:bas-300\!active:active,
-button.bg\:bas-300\!focus:focus {
-    background-color: var(--hue-bas-300) !important;
+.bg\:bas\+2,
+.bg\:bas\+2\!hover:hover,
+a.bg\:bas\+2\!active:active,
+a.bg\:bas\+2\!focus:focus,
+button.bg\:bas\+2\!active:active,
+button.bg\:bas\+2\!focus:focus {
+    background-color: var(--hue-bas-up2) !important;
 }
 
-.bg\:bas-200,
-.bg\:bas-200\!hover:hover,
-a.bg\:bas-200\!active:active,
-a.bg\:bas-200\!focus:focus,
-button.bg\:bas-200\!active:active,
-button.bg\:bas-200\!focus:focus {
-    background-color: var(--hue-bas-200) !important;
+.bg\:bas\+3,
+.bg\:bas\+3\!hover:hover,
+a.bg\:bas\+3\!active:active,
+a.bg\:bas\+3\!focus:focus,
+button.bg\:bas\+3\!active:active,
+button.bg\:bas\+3\!focus:focus {
+    background-color: var(--hue-bas-up3) !important;
 }
 
-.bg\:bas-100,
-.bg\:bas-100\!hover:hover,
-a.bg\:bas-100\!active:active,
-a.bg\:bas-100\!focus:focus,
-button.bg\:bas-100\!active:active,
-button.bg\:bas-100\!focus:focus {
-    background-color: var(--hue-bas-100) !important;
+.bg\:bas\+4,
+.bg\:bas\+4\!hover:hover,
+a.bg\:bas\+4\!active:active,
+a.bg\:bas\+4\!focus:focus,
+button.bg\:bas\+4\!active:active,
+button.bg\:bas\+4\!focus:focus {
+    background-color: var(--hue-bas-up4) !important;
 }
 
-.bg\:bas-050,
-.bg\:bas-050\!hover:hover,
-a.bg\:bas-050\!active:active,
-a.bg\:bas-050\!focus:focus,
-button.bg\:bas-050\!active:active,
-button.bg\:bas-050\!focus:focus {
-    background-color: var(--hue-bas-050) !important;
+.bg\:bas\+5,
+.bg\:bas\+5\!hover:hover,
+a.bg\:bas\+5\!active:active,
+a.bg\:bas\+5\!focus:focus,
+button.bg\:bas\+5\!active:active,
+button.bg\:bas\+5\!focus:focus {
+    background-color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -357,22 +349,22 @@ button.bg\:pri\!focus:focus {
     background-color: var(--hue-pri) !important;
 }
 
-.bg\:pri-bright,
-.bg\:pri-bright\!hover:hover,
-a.bg\:pri-bright\!active:active,
-a.bg\:pri-bright\!focus:focus,
-button.bg\:pri-bright\!active:active,
-button.bg\:pri-bright\!focus:focus {
-    background-color: var(--hue-pri-bright) !important;
+.bg\:pri\+1,
+.bg\:pri\+1\!hover:hover,
+a.bg\:pri\+1\!active:active,
+a.bg\:pri\+1\!focus:focus,
+button.bg\:pri\+1\!active:active,
+button.bg\:pri\+1\!focus:focus {
+    background-color: var(--hue-pri-up1) !important;
 }
 
-.bg\:pri-dark,
-.bg\:pri-dark\!hover:hover,
-a.bg\:pri-dark\!active:active,
-a.bg\:pri-dark\!focus:focus,
-button.bg\:pri-dark\!active:active,
-button.bg\:pri-dark\!focus:focus {
-    background-color: var(--hue-pri-dark) !important;
+.bg\:pri-1,
+.bg\:pri-1\!hover:hover,
+a.bg\:pri-1\!active:active,
+a.bg\:pri-1\!focus:focus,
+button.bg\:pri-1\!active:active,
+button.bg\:pri-1\!focus:focus {
+    background-color: var(--hue-pri-dn1) !important;
 }
 
 /*
@@ -389,27 +381,27 @@ button.bg\:sec\!focus:focus {
     background-color: var(--hue-sec) !important;
 }
 
-.bg\:sec-bright,
-.bg\:sec-bright\!hover:hover,
-a.bg\:sec-bright\!active:active,
-a.bg\:sec-bright\!focus:focus,
-button.bg\:sec-bright\!active:active,
-button.bg\:sec-bright\!focus:focus {
-    background-color: var(--hue-sec-bright) !important;
+.bg\:sec\+1,
+.bg\:sec\+1\!hover:hover,
+a.bg\:sec\+1\!active:active,
+a.bg\:sec\+1\!focus:focus,
+button.bg\:sec\+1\!active:active,
+button.bg\:sec\+1\!focus:focus {
+    background-color: var(--hue-sec-up1) !important;
 }
 
-.bg\:sec-dark,
-.bg\:sec-dark\!hover:hover,
-a.bg\:sec-dark\!active:active,
-a.bg\:sec-dark\!focus:focus,
-button.bg\:sec-dark\!active:active,
-button.bg\:sec-dark\!focus:focus {
-    background-color: var(--hue-sec-dark) !important;
+.bg\:sec-1,
+.bg\:sec-1\!hover:hover,
+a.bg\:sec-1\!active:active,
+a.bg\:sec-1\!focus:focus,
+button.bg\:sec-1\!active:active,
+button.bg\:sec-1\!focus:focus {
+    background-color: var(--hue-sec-dn1) !important;
 }
 
 /*
 ***
-google md colors
+named colors
 ***
 */
 .fg\:red,
@@ -770,14 +762,14 @@ button.bg\:tint-bas\!focus:focus {
 .bg\:tint-bas\+1\!hover:hover,
 button.bg\:tint-bas\+1\!active:active,
 button.bg\:tint-bas\+1\!focus:focus {
-    background-color: var(--hue-bas-tint-bright) !important;
+    background-color: var(--hue-bas-tint-up1) !important;
 }
 
 .bg\:tint-bas-1,
 .bg\:tint-bas-1\!hover:hover,
 button.bg\:tint-bas-1\!active:active,
 button.bg\:tint-bas-1\!focus:focus {
-    background-color: var(--hue-bas-tint-dark) !important;
+    background-color: var(--hue-bas-tint-dn1) !important;
 }
 
 .bg\:tint-pri,
@@ -791,14 +783,14 @@ button.bg\:tint-pri\!focus:focus {
 .bg\:tint-pri\+1\!hover:hover,
 button.bg\:tint-pri\+1\!active:active,
 button.bg\:tint-pri\+1\!focus:focus {
-    background-color: var(--hue-pri-tint-bright) !important;
+    background-color: var(--hue-pri-tint-up1) !important;
 }
 
 .bg\:tint-pri-1,
 .bg\:tint-pri-1\!hover:hover,
 button.bg\:tint-pri-1\!active:active,
 button.bg\:tint-pri-1\!focus:focus {
-    background-color: var(--hue-pri-tint-dark) !important;
+    background-color: var(--hue-pri-tint-dn1) !important;
 }
 
 .bg\:tint-sec,
@@ -812,14 +804,14 @@ button.bg\:tint-sec\!focus:focus {
 .bg\:tint-sec\+1\!hover:hover,
 button.bg\:tint-sec\+1\!active:active,
 button.bg\:tint-sec\+1\!focus:focus {
-    background-color: var(--hue-sec-tint-bright) !important;
+    background-color: var(--hue-sec-tint-up1) !important;
 }
 
 .bg\:tint-sec-1,
 .bg\:tint-sec-1\!hover:hover,
 button.bg\:tint-sec-1\!active:active,
 button.bg\:tint-sec-1\!focus:focus {
-    background-color: var(--hue-sec-tint-dark) !important;
+    background-color: var(--hue-sec-tint-dn1) !important;
 }
 
 /*: hilite mce plugin support :*/
@@ -833,83 +825,83 @@ gradient backgrounds
 ***
 */
 .grd\:pri {
-    background: #1565c0;
-    background: -moz-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
-    background: -webkit-linear-gradient(top, #8ab2df 0%, #1565c0 100%);
-    background: linear-gradient(to bottom, #8ab2df 0%, #1565c0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ab2df', endColorstr='#1565c0', GradientType=0);
+    background: var(--hue-pri);
+    background: -moz-linear-gradient(top, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
+    background: linear-gradient(to bottom, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up1)', endColorstr='var(--hue-pri)', GradientType=0);
     color: var(--hue-wht);
 }
 
-.grd\:pri-bright {
-    background: #5e92f3;
-    background: -moz-linear-gradient(top, #aec8f9 0%, #5e92f3 100%);
-    background: -webkit-linear-gradient(top, #aec8f9 0%, #5e92f3 100%);
-    background: linear-gradient(to bottom, #aec8f9 0%, #5e92f3 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#5e92f3', GradientType=0);
+.grd\:pri\+1 {
+    background: var(--hue-pri-up1);
+    background: -moz-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
+    background: linear-gradient(to bottom, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up2)', endColorstr='var(--hue-pri-up1)', GradientType=0);
     color: var(--hue-blk);
 }
 
-.grd\:pri-dark {
-    background: #5e92f3;
-    background: -moz-linear-gradient(top, #7f9dc7 0%, #003c8f 100%);
-    background: -webkit-linear-gradient(top, #7f9dc7 0%, #003c8f 100%);
-    background: linear-gradient(to bottom, #7f9dc7 0%, #003c8f 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f9dc7', endColorstr='#003c8f', GradientType=0);
+.grd\:pri-1 {
+    background: var(--hue-pri-dn2);
+    background: -moz-linear-gradient(top, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
+    background: linear-gradient(to bottom, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-dn1)', endColorstr='var(--hue-pri-dn2)', GradientType=0);
     color: var(--hue-wht);
 }
 
 .grd\:sec {
-    background: #1565c0;
-    background: -moz-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
-    background: -webkit-linear-gradient(top, #f8ae80 0%, #f25c02 100%);
-    background: linear-gradient(to bottom, #f8ae80 0%, #f25c02 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ae80', endColorstr='#f25c02', GradientType=0);
+    background: var(--hue-sec);
+    background: -moz-linear-gradient(top, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
+    background: linear-gradient(to bottom, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up1)', endColorstr='var(--hue-sec)', GradientType=0);
     color: var(--hue-wht);
 }
 
-.grd\:sec-bright {
-    background: #5e92f3;
-    background: -moz-linear-gradient(top, #ffc69e 0%, #ff8e3d 100%);
-    background: -webkit-linear-gradient(top, #ffc69e 0%, #ff8e3d 100%);
-    background: linear-gradient(to bottom, #ffc69e 0%, #ff8e3d 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aec8f9', endColorstr='#ff8e3d', GradientType=0);
+.grd\:sec\+1 {
+    background: var(--hue-sec-up1);
+    background: -moz-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
+    background: linear-gradient(to bottom, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up2)', endColorstr='var(--hue-sec-up1)', GradientType=0);
     color: var(--hue-blk);
 }
 
-.grd\:sec-dark {
-    background: #5e92f3;
-    background: -moz-linear-gradient(top, #db937f 0%, #b82800 100%);
-    background: -webkit-linear-gradient(top, #db937f 0%, #b82800 100%);
-    background: linear-gradient(to bottom, #db937f 0%, #b82800 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db937f', endColorstr='#003c8f', GradientType=0);
+.grd\:sec-1 {
+    background: var(--hue-sec-dn2);
+    background: -moz-linear-gradient(top, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
+    background: linear-gradient(to bottom, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-dn1)', endColorstr='var(--hue-sec-dn2)', GradientType=0);
     color: var(--hue-wht);
 }
 
-.grd\:tint {
-    background: #e0e0e0;
-    background: -moz-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: -webkit-linear-gradient(top, #eeeeee 0%, #e0e0e0 100%);
-    background: linear-gradient(to bottom, #eeeeee 0%, #e0e0e0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#e0e0e0', GradientType=0);
+.grd\:bas {
+    background: var(--hue-bas);
+    background: -moz-linear-gradient(top, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up1)', endColorstr='var(--hue-bas)', GradientType=0);
+    color: var(--hue-wht);
+}
+
+.grd\:bas\+1 {
+    background: var(--hue-bas-up1);
+    background: -moz-linear-gradient(top, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up2)', endColorstr='var(--hue-bas-up1)', GradientType=0);
     color: var(--hue-blk);
 }
 
-.grd\:tint-bright {
-    background: #f5f5f5;
-    background: -moz-linear-gradient(top, #fafafa 0%, #f5f5f5 100%);
-    background: -webkit-linear-gradient(top, #fafafa 0%, #f5f5f5 100%);
-    background: linear-gradient(to bottom, #fafafa 0%, #f5f5f5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#f5f5f5', GradientType=0);
-    color: var(--hue-blk);
-}
-
-.grd\:tint-dark {
-    background: #616161;
-    background: -moz-linear-gradient(top, #757575 0%, #616161 100%);
-    background: -webkit-linear-gradient(top, #757575 0%, #616161 100%);
-    background: linear-gradient(to bottom, #757575 0%, #616161 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#757575', endColorstr='#616161', GradientType=0);
+.grd\:bas-1 {
+    background: var(--hue-bas-dn2);
+    background: -moz-linear-gradient(top, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-dn1)', endColorstr='var(--hue-bas-dn2)', GradientType=0);
     color: var(--hue-wht);
 }
 
@@ -945,94 +937,94 @@ button.bdr\:wht\!focus:focus {
     border-color: var(--hue-wht) !important;
 }
 
-.bdr\:bas-900,
-.bdr\:bas-900\!hover:hover,
-a.bdr\:bas-900\!focus:focus,
-a.bdr\:bas-900,
-button.bdr\:bas-900\!hover:hover,
-button.bdr\:bas-900\!focus:focus {
-    border-color: var(--hue-bas-900) !important;
+.bdr\:bas-4,
+.bdr\:bas-4\!hover:hover,
+a.bdr\:bas-4\!focus:focus,
+a.bdr\:bas-4,
+button.bdr\:bas-4\!hover:hover,
+button.bdr\:bas-4\!focus:focus {
+    border-color: var(--hue-bas-dn4) !important;
 }
 
-.bdr\:bas-800,
-.bdr\:bas-800\!hover:hover,
-a.bdr\:bas-800\!focus:focus,
-a.bdr\:bas-800,
-button.bdr\:bas-800\!hover:hover,
-button.bdr\:bas-800\!focus:focus {
-    border-color: var(--hue-bas-800) !important;
+.bdr\:bas-3,
+.bdr\:bas-3\!hover:hover,
+a.bdr\:bas-3\!focus:focus,
+a.bdr\:bas-3,
+button.bdr\:bas-3\!hover:hover,
+button.bdr\:bas-3\!focus:focus {
+    border-color: var(--hue-bas-dn3) !important;
 }
 
-.bdr\:bas-700,
-.bdr\:bas-700\!hover:hover,
-a.bdr\:bas-700\!focus:focus,
-a.bdr\:bas-700,
-button.bdr\:bas-700\!hover:hover,
-button.bdr\:bas-700\!focus:focus {
-    border-color: var(--hue-bas-700) !important;
+.bdr\:bas-2,
+.bdr\:bas-2\!hover:hover,
+a.bdr\:bas-2\!focus:focus,
+a.bdr\:bas-2,
+button.bdr\:bas-2\!hover:hover,
+button.bdr\:bas-2\!focus:focus {
+    border-color: var(--hue-bas-dn2) !important;
 }
 
-.bdr\:bas-600,
-.bdr\:bas-600\!hover:hover,
-a.bdr\:bas-600\!focus:focus,
-a.bdr\:bas-600,
-button.bdr\:bas-600\!hover:hover,
-button.bdr\:bas-600\!focus:focus {
-    border-color: var(--hue-bas-600) !important;
+.bdr\:bas-1,
+.bdr\:bas-1\!hover:hover,
+a.bdr\:bas-1\!focus:focus,
+a.bdr\:bas-1,
+button.bdr\:bas-1\!hover:hover,
+button.bdr\:bas-1\!focus:focus {
+    border-color: var(--hue-bas-dn1) !important;
 }
 
-.bdr\:bas-500,
-.bdr\:bas-500\!hover:hover,
-a.bdr\:bas-500\!focus:focus,
-a.bdr\:bas-500,
-button.bdr\:bas-500\!hover:hover,
-button.bdr\:bas-500\!focus:focus {
-    border-color: var(--hue-bas-500) !important;
+.bdr\:bas,
+.bdr\:bas\!hover:hover,
+a.bdr\:bas\!focus:focus,
+a.bdr\:bas,
+button.bdr\:bas\!hover:hover,
+button.bdr\:bas\!focus:focus {
+    border-color: var(--hue-bas) !important;
 }
 
-.bdr\:bas-400,
-.bdr\:bas-400\!hover:hover,
-a.bdr\:bas-400\!focus:focus,
-a.bdr\:bas-400,
-button.bdr\:bas-400\!hover:hover,
-button.bdr\:bas-400\!focus:focus {
-    border-color: var(--hue-bas-400) !important;
+.bdr\:bas\+1,
+.bdr\:bas\+1\!hover:hover,
+a.bdr\:bas\+1\!focus:focus,
+a.bdr\:bas\+1,
+button.bdr\:bas\+1\!hover:hover,
+button.bdr\:bas\+1\!focus:focus {
+    border-color: var(--hue-bas-up1) !important;
 }
 
-.bdr\:bas-300,
-.bdr\:bas-300\!hover:hover,
-a.bdr\:bas-300\!focus:focus,
-a.bdr\:bas-300,
-button.bdr\:bas-300\!hover:hover,
-button.bdr\:bas-300\!focus:focus {
-    border-color: var(--hue-bas-300) !important;
+.bdr\:bas\+2,
+.bdr\:bas\+2\!hover:hover,
+a.bdr\:bas\+2\!focus:focus,
+a.bdr\:bas\+2,
+button.bdr\:bas\+2\!hover:hover,
+button.bdr\:bas\+2\!focus:focus {
+    border-color: var(--hue-bas-up2) !important;
 }
 
-.bdr\:bas-200,
-.bdr\:bas-200\!hover:hover,
-a.bdr\:bas-200\!focus:focus,
-a.bdr\:bas-200,
-button.bdr\:bas-200\!hover:hover,
-button.bdr\:bas-200\!focus:focus {
-    border-color: var(--hue-bas-200) !important;
+.bdr\:bas\+3,
+.bdr\:bas\+3\!hover:hover,
+a.bdr\:bas\+3\!focus:focus,
+a.bdr\:bas\+3,
+button.bdr\:bas\+3\!hover:hover,
+button.bdr\:bas\+3\!focus:focus {
+    border-color: var(--hue-bas-up3) !important;
 }
 
-.bdr\:bas-100,
-.bdr\:bas-100\!hover:hover,
-a.bdr\:bas-100\!focus:focus,
-a.bdr\:bas-100,
-button.bdr\:bas-100\!hover:hover,
-button.bdr\:bas-100\!focus:focus {
-    border-color: var(--hue-bas-100) !important;
+.bdr\:bas\+4,
+.bdr\:bas\+4\!hover:hover,
+a.bdr\:bas\+4\!focus:focus,
+a.bdr\:bas\+4,
+button.bdr\:bas\+4\!hover:hover,
+button.bdr\:bas\+4\!focus:focus {
+    border-color: var(--hue-bas-up4) !important;
 }
 
-.bdr\:bas-050,
-.bdr\:bas-050\!hover:hover,
-a.bdr\:bas-050\!focus:focus,
-a.bdr\:bas-050,
-button.bdr\:bas-050\!hover:hover,
-button.bdr\:bas-050\!focus:focus {
-    border-color: var(--hue-bas-050) !important;
+.bdr\:bas\+5,
+.bdr\:bas\+5\!hover:hover,
+a.bdr\:bas\+5\!focus:focus,
+a.bdr\:bas\+5,
+button.bdr\:bas\+5\!hover:hover,
+button.bdr\:bas\+5\!focus:focus {
+    border-color: var(--hue-bas-up5) !important;
 }
 
 .bdr\:pri,
@@ -1044,22 +1036,22 @@ button.bdr\:pri\!focus:focus {
     border-color: var(--hue-pri) !important;
 }
 
-.bdr\:pri-bright,
-.bdr\:pri-bright\!hover:hover,
-a.bdr\:pri-bright\!focus:focus,
-a.bdr\:pri-bright,
-button.bdr\:pri-bright\!hover:hover,
-button.bdr\:pri-bright\!focus:focus {
-    border-color: var(--hue-pri-bright) !important;
+.bdr\:pri\+1,
+.bdr\:pri\+1\!hover:hover,
+a.bdr\:pri\+1\!focus:focus,
+a.bdr\:pri\+1,
+button.bdr\:pri\+1\!hover:hover,
+button.bdr\:pri\+1\!focus:focus {
+    border-color: var(--hue-pri-up1) !important;
 }
 
-.bdr\:pri-dark,
-.bdr\:pri-dark\!hover:hover,
-a.bdr\:pri-dark\!focus:focus,
-a.bdr\:pri-dark,
-button.bdr\:pri-dark\!hover:hover,
-button.bdr\:pri-dark\!focus:focus {
-    border-color: var(--hue-pri-dark) !important;
+.bdr\:pri-1,
+.bdr\:pri-1\!hover:hover,
+a.bdr\:pri-1\!focus:focus,
+a.bdr\:pri-1,
+button.bdr\:pri-1\!hover:hover,
+button.bdr\:pri-1\!focus:focus {
+    border-color: var(--hue-pri-dn1) !important;
 }
 
 .bdr\:sec,
@@ -1071,22 +1063,22 @@ button.bdr\:sec\!focus:focus {
     border-color: var(--hue-sec) !important;
 }
 
-.bdr\:sec-bright,
-.bdr\:sec-bright\!hover:hover,
-a.bdr\:sec-bright\!focus:focus,
-a.bdr\:sec-bright,
-button.bdr\:sec-bright\!hover:hover,
-button.bdr\:sec-bright\!focus:focus {
-    border-color: var(--hue-sec-bright) !important;
+.bdr\:sec\+1,
+.bdr\:sec\+1\!hover:hover,
+a.bdr\:sec\+1\!focus:focus,
+a.bdr\:sec\+1,
+button.bdr\:sec\+1\!hover:hover,
+button.bdr\:sec\+1\!focus:focus {
+    border-color: var(--hue-sec-up1) !important;
 }
 
-.bdr\:sec-dark,
-.bdr\:sec-dark\!hover:hover,
-a.bdr\:sec-dark\!focus:focus,
-a.bdr\:sec-dark,
-button.bdr\:sec-dark\!hover:hover,
-button.bdr\:sec-dark\!focus:focus {
-    border-color: var(--hue-sec-dark) !important;
+.bdr\:sec-1,
+.bdr\:sec-1\!hover:hover,
+a.bdr\:sec-1\!focus:focus,
+a.bdr\:sec-1,
+button.bdr\:sec-1\!hover:hover,
+button.bdr\:sec-1\!focus:focus {
+    border-color: var(--hue-sec-dn1) !important;
 }
 
 .bdr\:red,
@@ -1411,15 +1403,15 @@ stripe even table rows
 ***
 */
 tbody.tr\:stripe-pri-dark tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-dark) !important;
+    background-color: var(--hue-pri-tint-dn1) !important;
 }
 
 tbody.tr\:stripe-sec-dark tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-dark) !important;
+    background-color: var(--hue-sec-tint-dn1) !important;
 }
 
 tbody.tr\:stripe-tint-dark tr:nth-child(even) {
-    background-color: var(--hue-bas-200) !important;
+    background-color: var(--hue-bas-up3) !important;
 }
 
 tbody.tr\:stripe-pri tr:nth-child(even) {
@@ -1431,19 +1423,19 @@ tbody.tr\:stripe-sec tr:nth-child(even) {
 }
 
 tbody.tr\:stripe-tint tr:nth-child(even) {
-    background-color: var(--hue-bas-100) !important;
+    background-color: var(--hue-bas-up4) !important;
 }
 
 tbody.tr\:stripe-pri-bright tr:nth-child(even) {
-    background-color: var(--hue-pri-tint-bright) !important;
+    background-color: var(--hue-pri-tint-up1) !important;
 }
 
 tbody.tr\:stripe-sec-bright tr:nth-child(even) {
-    background-color: var(--hue-sec-tint-bright) !important;
+    background-color: var(--hue-sec-tint-up1) !important;
 }
 
 tbody.tr\:stripe-tint-bright tr:nth-child(even) {
-    background-color: var(--hue-bas-050) !important;
+    background-color: var(--hue-bas-up5) !important;
 }
 
 /*
@@ -1487,94 +1479,94 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
         color: var(--hue-wht) !important;
     }
 
-    .sm\)fg\:bas-900,
-    .sm\)fg\:bas-900\!hover:hover,
-    a.sm\)fg\:bas-900\!active:active,
-    a.sm\)fg\:bas-900\!focus:focus,
-    button.sm\)fg\:bas-900\!active:active,
-    button.sm\)fg\:bas-900\!focus:focus {
-        color: var(--hue-bas-900) !important;
+    .sm\)fg\:bas-4,
+    .sm\)fg\:bas-4\!hover:hover,
+    a.sm\)fg\:bas-4\!active:active,
+    a.sm\)fg\:bas-4\!focus:focus,
+    button.sm\)fg\:bas-4\!active:active,
+    button.sm\)fg\:bas-4\!focus:focus {
+        color: var(--hue-bas-dn4) !important;
     }
 
-    .sm\)fg\:bas-800,
-    .sm\)fg\:bas-800\!hover:hover,
-    a.sm\)fg\:bas-800\!active:active,
-    a.sm\)fg\:bas-800\!focus:focus,
-    button.sm\)fg\:bas-800\!active:active,
-    button.sm\)fg\:bas-800\!focus:focus {
-        color: var(--hue-bas-800) !important;
+    .sm\)fg\:bas-3,
+    .sm\)fg\:bas-3\!hover:hover,
+    a.sm\)fg\:bas-3\!active:active,
+    a.sm\)fg\:bas-3\!focus:focus,
+    button.sm\)fg\:bas-3\!active:active,
+    button.sm\)fg\:bas-3\!focus:focus {
+        color: var(--hue-bas-dn3) !important;
     }
 
-    .sm\)fg\:bas-700,
-    .sm\)fg\:bas-700\!hover:hover,
-    a.sm\)fg\:bas-700\!active:active,
-    a.sm\)fg\:bas-700\!focus:focus,
-    button.sm\)fg\:bas-700\!active:active,
-    button.sm\)fg\:bas-700\!focus:focus {
-        color: var(--hue-bas-700) !important;
+    .sm\)fg\:bas-2,
+    .sm\)fg\:bas-2\!hover:hover,
+    a.sm\)fg\:bas-2\!active:active,
+    a.sm\)fg\:bas-2\!focus:focus,
+    button.sm\)fg\:bas-2\!active:active,
+    button.sm\)fg\:bas-2\!focus:focus {
+        color: var(--hue-bas-dn2) !important;
     }
 
-    .sm\)fg\:bas-600,
-    .sm\)fg\:bas-600\!hover:hover,
-    a.sm\)fg\:bas-600\!active:active,
-    a.sm\)fg\:bas-600\!focus:focus,
-    button.sm\)fg\:bas-600\!active:active,
-    button.sm\)fg\:bas-600\!focus:focus {
-        color: var(--hue-bas-600) !important;
+    .sm\)fg\:bas-1,
+    .sm\)fg\:bas-1\!hover:hover,
+    a.sm\)fg\:bas-1\!active:active,
+    a.sm\)fg\:bas-1\!focus:focus,
+    button.sm\)fg\:bas-1\!active:active,
+    button.sm\)fg\:bas-1\!focus:focus {
+        color: var(--hue-bas-dn1) !important;
     }
 
-    .sm\)fg\:bas-500,
-    .sm\)fg\:bas-500\!hover:hover,
-    a.sm\)fg\:bas-500\!active:active,
-    a.sm\)fg\:bas-500\!focus:focus,
-    button.sm\)fg\:bas-500\!active:active,
-    button.sm\)fg\:bas-500\!focus:focus {
-        color: var(--hue-bas-500) !important;
+    .sm\)fg\:bas,
+    .sm\)fg\:bas\!hover:hover,
+    a.sm\)fg\:bas\!active:active,
+    a.sm\)fg\:bas\!focus:focus,
+    button.sm\)fg\:bas\!active:active,
+    button.sm\)fg\:bas\!focus:focus {
+        color: var(--hue-bas) !important;
     }
 
-    .sm\)fg\:bas-400,
-    .sm\)fg\:bas-400\!hover:hover,
-    a.sm\)fg\:bas-400\!active:active,
-    a.sm\)fg\:bas-400\!focus:focus,
-    button.sm\)fg\:bas-400\!active:active,
-    button.sm\)fg\:bas-400\!focus:focus {
-        color: var(--hue-bas-400) !important;
+    .sm\)fg\:bas\+1,
+    .sm\)fg\:bas\+1\!hover:hover,
+    a.sm\)fg\:bas\+1\!active:active,
+    a.sm\)fg\:bas\+1\!focus:focus,
+    button.sm\)fg\:bas\+1\!active:active,
+    button.sm\)fg\:bas\+1\!focus:focus {
+        color: var(--hue-bas-up1) !important;
     }
 
-    .sm\)fg\:bas-300,
-    .sm\)fg\:bas-300\!hover:hover,
-    a.sm\)fg\:bas-300\!active:active,
-    a.sm\)fg\:bas-300\!focus:focus,
-    button.sm\)fg\:bas-300\!active:active,
-    button.sm\)fg\:bas-300\!focus:focus {
-        color: var(--hue-bas-300) !important;
+    .sm\)fg\:bas\+2,
+    .sm\)fg\:bas\+2\!hover:hover,
+    a.sm\)fg\:bas\+2\!active:active,
+    a.sm\)fg\:bas\+2\!focus:focus,
+    button.sm\)fg\:bas\+2\!active:active,
+    button.sm\)fg\:bas\+2\!focus:focus {
+        color: var(--hue-bas-up2) !important;
     }
 
-    .sm\)fg\:bas-200,
-    .sm\)fg\:bas-200\!hover:hover,
-    a.sm\)fg\:bas-200\!active:active,
-    a.sm\)fg\:bas-200\!focus:focus,
-    button.sm\)fg\:bas-200\!active:active,
-    button.sm\)fg\:bas-200\!focus:focus {
-        color: var(--hue-bas-200) !important;
+    .sm\)fg\:bas\+3,
+    .sm\)fg\:bas\+3\!hover:hover,
+    a.sm\)fg\:bas\+3\!active:active,
+    a.sm\)fg\:bas\+3\!focus:focus,
+    button.sm\)fg\:bas\+3\!active:active,
+    button.sm\)fg\:bas\+3\!focus:focus {
+        color: var(--hue-bas-up3) !important;
     }
 
-    .sm\)fg\:bas-100,
-    .sm\)fg\:bas-100\!hover:hover,
-    a.sm\)fg\:bas-100\!active:active,
-    a.sm\)fg\:bas-100\!focus:focus,
-    button.sm\)fg\:bas-100\!active:active,
-    button.sm\)fg\:bas-100\!focus:focus {
-        color: var(--hue-bas-100) !important;
+    .sm\)fg\:bas\+4,
+    .sm\)fg\:bas\+4\!hover:hover,
+    a.sm\)fg\:bas\+4\!active:active,
+    a.sm\)fg\:bas\+4\!focus:focus,
+    button.sm\)fg\:bas\+4\!active:active,
+    button.sm\)fg\:bas\+4\!focus:focus {
+        color: var(--hue-bas-up4) !important;
     }
 
-    .sm\)fg\:bas-050,
-    .sm\)fg\:bas-050\!hover:hover,
-    a.sm\)fg\:bas-050\!active:active,
-    a.sm\)fg\:bas-050\!focus:focus,
-    button.sm\)fg\:bas-050\!active:active,
-    button.sm\)fg\:bas-050\!focus:focus {
-        color: var(--hue-bas-050) !important;
+    .sm\)fg\:bas\+5,
+    .sm\)fg\:bas\+5\!hover:hover,
+    a.sm\)fg\:bas\+5\!active:active,
+    a.sm\)fg\:bas\+5\!focus:focus,
+    button.sm\)fg\:bas\+5\!active:active,
+    button.sm\)fg\:bas\+5\!focus:focus {
+        color: var(--hue-bas-up5) !important;
     }
 
     .sm\)fg\:pri-900,
@@ -1789,94 +1781,94 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
         background-color: var(--hue-wht) !important;
     }
 
-    .sm\)bg\:bas-900,
-    .sm\)bg\:bas-900\!hover:hover,
-    a.sm\)bg\:bas-900\!active:active,
-    a.sm\)bg\:bas-900\!focus:focus,
-    button.sm\)bg\:bas-900\!active:active,
-    button.sm\)bg\:bas-900\!focus:focus {
-        background-color: var(--hue-bas-900) !important;
+    .sm\)bg\:bas-4,
+    .sm\)bg\:bas-4\!hover:hover,
+    a.sm\)bg\:bas-4\!active:active,
+    a.sm\)bg\:bas-4\!focus:focus,
+    button.sm\)bg\:bas-4\!active:active,
+    button.sm\)bg\:bas-4\!focus:focus {
+        background-color: var(--hue-bas-dn4) !important;
     }
 
-    .sm\)bg\:bas-800,
-    .sm\)bg\:bas-800\!hover:hover,
-    a.sm\)bg\:bas-800\!active:active,
-    a.sm\)bg\:bas-800\!focus:focus,
-    button.sm\)bg\:bas-800\!active:active,
-    button.sm\)bg\:bas-800\!focus:focus {
-        background-color: var(--hue-bas-800) !important;
+    .sm\)bg\:bas-3,
+    .sm\)bg\:bas-3\!hover:hover,
+    a.sm\)bg\:bas-3\!active:active,
+    a.sm\)bg\:bas-3\!focus:focus,
+    button.sm\)bg\:bas-3\!active:active,
+    button.sm\)bg\:bas-3\!focus:focus {
+        background-color: var(--hue-bas-dn3) !important;
     }
 
-    .sm\)bg\:bas-700,
-    .sm\)bg\:bas-700\!hover:hover,
-    a.sm\)bg\:bas-700\!active:active,
-    a.sm\)bg\:bas-700\!focus:focus,
-    button.sm\)bg\:bas-700\!active:active,
-    button.sm\)bg\:bas-700\!focus:focus {
-        background-color: var(--hue-bas-700) !important;
+    .sm\)bg\:bas-2,
+    .sm\)bg\:bas-2\!hover:hover,
+    a.sm\)bg\:bas-2\!active:active,
+    a.sm\)bg\:bas-2\!focus:focus,
+    button.sm\)bg\:bas-2\!active:active,
+    button.sm\)bg\:bas-2\!focus:focus {
+        background-color: var(--hue-bas-dn2) !important;
     }
 
-    .sm\)bg\:bas-600,
-    .sm\)bg\:bas-600\!hover:hover,
-    a.sm\)bg\:bas-600\!active:active,
-    a.sm\)bg\:bas-600\!focus:focus,
-    button.sm\)bg\:bas-600\!active:active,
-    button.sm\)bg\:bas-600\!focus:focus {
-        background-color: var(--hue-bas-600) !important;
+    .sm\)bg\:bas-1,
+    .sm\)bg\:bas-1\!hover:hover,
+    a.sm\)bg\:bas-1\!active:active,
+    a.sm\)bg\:bas-1\!focus:focus,
+    button.sm\)bg\:bas-1\!active:active,
+    button.sm\)bg\:bas-1\!focus:focus {
+        background-color: var(--hue-bas-dn1) !important;
     }
 
-    .sm\)bg\:bas-500,
-    .sm\)bg\:bas-500\!hover:hover,
-    a.sm\)bg\:bas-500\!active:active,
-    a.sm\)bg\:bas-500\!focus:focus,
-    button.sm\)bg\:bas-500\!active:active,
-    button.sm\)bg\:bas-500\!focus:focus {
-        background-color: var(--hue-bas-500) !important;
+    .sm\)bg\:bas,
+    .sm\)bg\:bas\!hover:hover,
+    a.sm\)bg\:bas\!active:active,
+    a.sm\)bg\:bas\!focus:focus,
+    button.sm\)bg\:bas\!active:active,
+    button.sm\)bg\:bas\!focus:focus {
+        background-color: var(--hue-bas) !important;
     }
 
-    .sm\)bg\:bas-400,
-    .sm\)bg\:bas-400\!hover:hover,
-    a.sm\)bg\:bas-400\!active:active,
-    a.sm\)bg\:bas-400\!focus:focus,
-    button.sm\)bg\:bas-400\!active:active,
-    button.sm\)bg\:bas-400\!focus:focus {
-        background-color: var(--hue-bas-400) !important;
+    .sm\)bg\:bas\+1,
+    .sm\)bg\:bas\+1\!hover:hover,
+    a.sm\)bg\:bas\+1\!active:active,
+    a.sm\)bg\:bas\+1\!focus:focus,
+    button.sm\)bg\:bas\+1\!active:active,
+    button.sm\)bg\:bas\+1\!focus:focus {
+        background-color: var(--hue-bas-up1) !important;
     }
 
-    .sm\)bg\:bas-300,
-    .sm\)bg\:bas-300\!hover:hover,
-    a.sm\)bg\:bas-300\!active:active,
-    a.sm\)bg\:bas-300\!focus:focus,
-    button.sm\)bg\:bas-300\!active:active,
-    button.sm\)bg\:bas-300\!focus:focus {
-        background-color: var(--hue-bas-300) !important;
+    .sm\)bg\:bas\+2,
+    .sm\)bg\:bas\+2\!hover:hover,
+    a.sm\)bg\:bas\+2\!active:active,
+    a.sm\)bg\:bas\+2\!focus:focus,
+    button.sm\)bg\:bas\+2\!active:active,
+    button.sm\)bg\:bas\+2\!focus:focus {
+        background-color: var(--hue-bas-up2) !important;
     }
 
-    .sm\)bg\:bas-200,
-    .sm\)bg\:bas-200\!hover:hover,
-    a.sm\)bg\:bas-200\!active:active,
-    a.sm\)bg\:bas-200\!focus:focus,
-    button.sm\)bg\:bas-200\!active:active,
-    button.sm\)bg\:bas-200\!focus:focus {
-        background-color: var(--hue-bas-200) !important;
+    .sm\)bg\:bas\+3,
+    .sm\)bg\:bas\+3\!hover:hover,
+    a.sm\)bg\:bas\+3\!active:active,
+    a.sm\)bg\:bas\+3\!focus:focus,
+    button.sm\)bg\:bas\+3\!active:active,
+    button.sm\)bg\:bas\+3\!focus:focus {
+        background-color: var(--hue-bas-up3) !important;
     }
 
-    .sm\)bg\:bas-100,
-    .sm\)bg\:bas-100\!hover:hover,
-    a.sm\)bg\:bas-100\!active:active,
-    a.sm\)bg\:bas-100\!focus:focus,
-    button.sm\)bg\:bas-100\!active:active,
-    button.sm\)bg\:bas-100\!focus:focus {
-        background-color: var(--hue-bas-100) !important;
+    .sm\)bg\:bas\+4,
+    .sm\)bg\:bas\+4\!hover:hover,
+    a.sm\)bg\:bas\+4\!active:active,
+    a.sm\)bg\:bas\+4\!focus:focus,
+    button.sm\)bg\:bas\+4\!active:active,
+    button.sm\)bg\:bas\+4\!focus:focus {
+        background-color: var(--hue-bas-up4) !important;
     }
 
-    .sm\)bg\:bas-050,
-    .sm\)bg\:bas-050\!hover:hover,
-    a.sm\)bg\:bas-050\!active:active,
-    a.sm\)bg\:bas-050\!focus:focus,
-    button.sm\)bg\:bas-050\!active:active,
-    button.sm\)bg\:bas-050\!focus:focus {
-        background-color: var(--hue-bas-050) !important;
+    .sm\)bg\:bas\+5,
+    .sm\)bg\:bas\+5\!hover:hover,
+    a.sm\)bg\:bas\+5\!active:active,
+    a.sm\)bg\:bas\+5\!focus:focus,
+    button.sm\)bg\:bas\+5\!active:active,
+    button.sm\)bg\:bas\+5\!focus:focus {
+        background-color: var(--hue-bas-up5) !important;
     }
 
     .sm\)bg\:pri-900,
@@ -2438,94 +2430,94 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
         border-color: var(--hue-wht) !important;
     }
 
-    .sm\)bdr\:bas-900,
-    .sm\)bdr\:bas-900\!hover:hover,
-    a.sm\)bdr\:bas-900\!focus:focus,
-    a.sm\)bdr\:bas-900,
-    button.sm\)bdr\:bas-900\!hover:hover,
-    button.sm\)bdr\:bas-900\!focus:focus {
-        border-color: var(--hue-bas-900) !important;
+    .sm\)bdr\:bas-4,
+    .sm\)bdr\:bas-4\!hover:hover,
+    a.sm\)bdr\:bas-4\!focus:focus,
+    a.sm\)bdr\:bas-4,
+    button.sm\)bdr\:bas-4\!hover:hover,
+    button.sm\)bdr\:bas-4\!focus:focus {
+        border-color: var(--hue-bas-dn4) !important;
     }
 
-    .sm\)bdr\:bas-800,
-    .sm\)bdr\:bas-800\!hover:hover,
-    a.sm\)bdr\:bas-800\!focus:focus,
-    a.sm\)bdr\:bas-800,
-    button.sm\)bdr\:bas-800\!hover:hover,
-    button.sm\)bdr\:bas-800\!focus:focus {
-        border-color: var(--hue-bas-800) !important;
+    .sm\)bdr\:bas-3,
+    .sm\)bdr\:bas-3\!hover:hover,
+    a.sm\)bdr\:bas-3\!focus:focus,
+    a.sm\)bdr\:bas-3,
+    button.sm\)bdr\:bas-3\!hover:hover,
+    button.sm\)bdr\:bas-3\!focus:focus {
+        border-color: var(--hue-bas-dn3) !important;
     }
 
-    .sm\)bdr\:bas-700,
-    .sm\)bdr\:bas-700\!hover:hover,
-    a.sm\)bdr\:bas-700\!focus:focus,
-    a.sm\)bdr\:bas-700,
-    button.sm\)bdr\:bas-700\!hover:hover,
-    button.sm\)bdr\:bas-700\!focus:focus {
-        border-color: var(--hue-bas-700) !important;
+    .sm\)bdr\:bas-2,
+    .sm\)bdr\:bas-2\!hover:hover,
+    a.sm\)bdr\:bas-2\!focus:focus,
+    a.sm\)bdr\:bas-2,
+    button.sm\)bdr\:bas-2\!hover:hover,
+    button.sm\)bdr\:bas-2\!focus:focus {
+        border-color: var(--hue-bas-dn2) !important;
     }
 
-    .sm\)bdr\:bas-600,
-    .sm\)bdr\:bas-600\!hover:hover,
-    a.sm\)bdr\:bas-600\!focus:focus,
-    a.sm\)bdr\:bas-600,
-    button.sm\)bdr\:bas-600\!hover:hover,
-    button.sm\)bdr\:bas-600\!focus:focus {
-        border-color: var(--hue-bas-600) !important;
+    .sm\)bdr\:bas-1,
+    .sm\)bdr\:bas-1\!hover:hover,
+    a.sm\)bdr\:bas-1\!focus:focus,
+    a.sm\)bdr\:bas-1,
+    button.sm\)bdr\:bas-1\!hover:hover,
+    button.sm\)bdr\:bas-1\!focus:focus {
+        border-color: var(--hue-bas-dn1) !important;
     }
 
-    .sm\)bdr\:bas-500,
-    .sm\)bdr\:bas-500\!hover:hover,
-    a.sm\)bdr\:bas-500\!focus:focus,
-    a.sm\)bdr\:bas-500,
-    button.sm\)bdr\:bas-500\!hover:hover,
-    button.sm\)bdr\:bas-500\!focus:focus {
-        border-color: var(--hue-bas-500) !important;
+    .sm\)bdr\:bas,
+    .sm\)bdr\:bas\!hover:hover,
+    a.sm\)bdr\:bas\!focus:focus,
+    a.sm\)bdr\:bas,
+    button.sm\)bdr\:bas\!hover:hover,
+    button.sm\)bdr\:bas\!focus:focus {
+        border-color: var(--hue-bas) !important;
     }
 
-    .sm\)bdr\:bas-400,
-    .sm\)bdr\:bas-400\!hover:hover,
-    a.sm\)bdr\:bas-400\!focus:focus,
-    a.sm\)bdr\:bas-400,
-    button.sm\)bdr\:bas-400\!hover:hover,
-    button.sm\)bdr\:bas-400\!focus:focus {
-        border-color: var(--hue-bas-400) !important;
+    .sm\)bdr\:bas\+1,
+    .sm\)bdr\:bas\+1\!hover:hover,
+    a.sm\)bdr\:bas\+1\!focus:focus,
+    a.sm\)bdr\:bas\+1,
+    button.sm\)bdr\:bas\+1\!hover:hover,
+    button.sm\)bdr\:bas\+1\!focus:focus {
+        border-color: var(--hue-bas-up1) !important;
     }
 
-    .sm\)bdr\:bas-300,
-    .sm\)bdr\:bas-300\!hover:hover,
-    a.sm\)bdr\:bas-300\!focus:focus,
-    a.sm\)bdr\:bas-300,
-    button.sm\)bdr\:bas-300\!hover:hover,
-    button.sm\)bdr\:bas-300\!focus:focus {
-        border-color: var(--hue-bas-300) !important;
+    .sm\)bdr\:bas\+2,
+    .sm\)bdr\:bas\+2\!hover:hover,
+    a.sm\)bdr\:bas\+2\!focus:focus,
+    a.sm\)bdr\:bas\+2,
+    button.sm\)bdr\:bas\+2\!hover:hover,
+    button.sm\)bdr\:bas\+2\!focus:focus {
+        border-color: var(--hue-bas-up2) !important;
     }
 
-    .sm\)bdr\:bas-200,
-    .sm\)bdr\:bas-200\!hover:hover,
-    a.sm\)bdr\:bas-200\!focus:focus,
-    a.sm\)bdr\:bas-200,
-    button.sm\)bdr\:bas-200\!hover:hover,
-    button.sm\)bdr\:bas-200\!focus:focus {
-        border-color: var(--hue-bas-200) !important;
+    .sm\)bdr\:bas\+3,
+    .sm\)bdr\:bas\+3\!hover:hover,
+    a.sm\)bdr\:bas\+3\!focus:focus,
+    a.sm\)bdr\:bas\+3,
+    button.sm\)bdr\:bas\+3\!hover:hover,
+    button.sm\)bdr\:bas\+3\!focus:focus {
+        border-color: var(--hue-bas-up3) !important;
     }
 
-    .sm\)bdr\:bas-100,
-    .sm\)bdr\:bas-100\!hover:hover,
-    a.sm\)bdr\:bas-100\!focus:focus,
-    a.sm\)bdr\:bas-100,
-    button.sm\)bdr\:bas-100\!hover:hover,
-    button.sm\)bdr\:bas-100\!focus:focus {
-        border-color: var(--hue-bas-100) !important;
+    .sm\)bdr\:bas\+4,
+    .sm\)bdr\:bas\+4\!hover:hover,
+    a.sm\)bdr\:bas\+4\!focus:focus,
+    a.sm\)bdr\:bas\+4,
+    button.sm\)bdr\:bas\+4\!hover:hover,
+    button.sm\)bdr\:bas\+4\!focus:focus {
+        border-color: var(--hue-bas-up4) !important;
     }
 
-    .sm\)bdr\:bas-050,
-    .sm\)bdr\:bas-050\!hover:hover,
-    a.sm\)bdr\:bas-050\!focus:focus,
-    a.sm\)bdr\:bas-050,
-    button.sm\)bdr\:bas-050\!hover:hover,
-    button.sm\)bdr\:bas-050\!focus:focus {
-        border-color: var(--hue-bas-050) !important;
+    .sm\)bdr\:bas\+5,
+    .sm\)bdr\:bas\+5\!hover:hover,
+    a.sm\)bdr\:bas\+5\!focus:focus,
+    a.sm\)bdr\:bas\+5,
+    button.sm\)bdr\:bas\+5\!hover:hover,
+    button.sm\)bdr\:bas\+5\!focus:focus {
+        border-color: var(--hue-bas-up5) !important;
     }
 
     .sm\)bdr\:pri-900,
@@ -3102,7 +3094,5 @@ tbody.tr\:stripe-tint-bright tr:nth-child(even) {
 }
 
 /*
- * EOF:     theme/palette.css
- * Build:   200513
- *
+ * EOF: palette.css / 24200520
  */

@@ -1,21 +1,13 @@
-/*
- * WordPress Xidipity Theme JS File
- *
- * File Name:       add-table/plugin.js
- * Function:        tinymce table plugin
- * Build:           200104-1
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version      	1.0
- * @since      		0.9
- * @link            https://www.tiny.cloud/docs/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * Tinymce add-table plugin 
+    *
+    * ###:  plugin.js
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 ! function() {
   "use strict";
@@ -7016,7 +7008,5 @@
 }();
 
 /*
- * EOF:     add-table/plugin.js
- * Build:   200104-1
- *
+ * EOF: add-table / plugin.js / 24200520
  */

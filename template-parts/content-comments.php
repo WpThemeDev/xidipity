@@ -1,27 +1,12 @@
 <?php
-/*
-    * WordPress Xidipity Theme PHP File
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying comments
     *
-    * File Name:       content-comments.php
-    * Function:        display post comments
-    * Build:           200429
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @see wp_list_comments()
-    * @see developer.wordpress.org/reference/functions/get_comment_author_url/
-    * @see developer.wordpress.org/reference/functions/get_comment_author/
-    * @see developer.wordpress.org/reference/functions/get_avatar/
-    * @see developer.wordpress.org/reference/functions/get_comment_reply_link/
-    * @see developer.wordpress.org/reference/functions/get_edit_comment_link/
-    * @see developer.wordpress.org/reference/functions/get_comments/
-    * @see developer.wordpress.org/reference/functions/get_comments_number/
+    * ###:  content-comments.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -291,8 +276,6 @@ echo '<!--  ct:COMMENTS -->' . "\n";
 echo '</div>' . "\n";
 
 /*
- * EOF:     content-comments.php
- * Build:   200429
- *
+ * EOF: content-comments.php / 24200520
  */
 ?>

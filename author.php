@@ -1,19 +1,13 @@
 <?php
-/*  WordPress Xidipity Theme PHP File
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying author info
     *
-    * File Name:       author.php
-    * Function:        display author info
-    * Build:           200429
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     www.gnu.org/licenses/gpl-3.0.txt
+    * ###:  author.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
 */
 
 /*
@@ -84,7 +78,7 @@ if ($wp_query->have_posts())
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="mar:bottom+1 wd:100%">' . "\n";
     echo '<div class="pg:title">Author: ' . __(get_the_author_meta('nickname')) . '</div>';
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
@@ -150,7 +144,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -428,8 +422,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     author.php
- * Build:   200429
- *
+ * EOF: author.php / 24200520
  */
 ?>

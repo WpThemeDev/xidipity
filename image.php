@@ -1,22 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       image.php
- * Function:        display media library image
- * Build:           200502
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         1.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying media library image 
+    *
+    * ###:  image.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***
@@ -89,7 +81,7 @@ if ($wp_query->have_posts())
     ***
     */
     the_title('<div class="pg:title">Media: ', '</div>');
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
@@ -123,7 +115,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -221,8 +213,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     image.php
- * Build:   200502
- *
+ * EOF: image.php / 24200520
  */
 ?>

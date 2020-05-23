@@ -1,22 +1,14 @@
 <?php
-/*
- * WordPress Xidipity Theme PHP File
- *
- * File Name:       category.php
- * Function:        display pages assigned to category
- * Build:           200429
- * GitHub:          https://github.com/WpThemeDev/xidipity/
- * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
- *
- * @package         xidipity
- * @author          John Baer
- * @copyright       2019-2020 John Baer
- * @license         GPL-3.0-or-later
- * @version         2.0
- * @since           0.9
- * @link            https://developer.wordpress.org/themes/basics/
- *
- */
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying pages assigned to category
+    *
+    * ###:  category.php
+    * bld:  24200520
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
+    *
+*/
 
 /*
 ***
@@ -97,7 +89,7 @@ if (have_posts())
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     echo '<div class="pg:title">Category: ' . $first_cat_name . '</div>' . "\n";
-    echo '<div class="bg:bas-300 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
 
@@ -204,15 +196,15 @@ if (have_posts())
         if ($total_pages > 1)
         {
             $current_page = max(1, get_query_var('paged'));
-            echo '<div class="bg:bas-300 ln mar:top+0.75">&#8203;</div>' . "\n";
+            echo '<div class="bg:bas+2 ln mar:top+0.75">&#8203;</div>' . "\n";
             echo '<!--  pg:PAGINATION -->' . "\n";
             echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
             echo '<!-- /pg:PAGINATION -->' . "\n";
-            echo '<div class="bg:bas-300 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+            echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
         }
     }
 
-    echo '<div class="bg:bas-300 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -231,7 +223,7 @@ if (have_posts())
 else
 {
     echo '<!--  fc:CAT-ERR -->' . "\n";
-    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas-100 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
+    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
     echo '<!--  fc:LOGO -->' . "\n";
     echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
     echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
@@ -297,8 +289,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF:     category.php
- * Build:   200429
- *
+ * EOF: category.php / 24200520
  */
 ?>
