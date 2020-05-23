@@ -25,36 +25,41 @@
     --hue-blk: #000000;
     --hue-wht: #ffffff;
     /*: base hue :*/
-    --hue-bas-900: #212121;
-    --hue-bas-dn4: #212121;
-    --hue-bas-dn3: #424242;
-    --hue-bas-dn2: #616161;
-    --hue-bas-dn1: #757575;
+    --hue-bas-up5: #f5f5f5;
+    --hue-bas-up4: #ececec;
+    --hue-bas-up3: #d8d8d8;
+    --hue-bas-up2: #c5c5c5;
+    --hue-bas-up1: #b1b1b1;
     --hue-bas: #9e9e9e;
-    --hue-bas-up1: #bdbdbd;
-    --hue-bas-up2: #e0e0e0;
-    --hue-bas-up3: #eeeeee;
-    --hue-bas-up4: #f5f5f5;
-    --hue-bas-up5: #fafafa;
-    --hue-bas-tint: #ebebeb;
-    --hue-bas-tint-up1: #f2f2f2;
-    --hue-bas-tint-dn1: #e0e0e0;
+    --hue-bas-dn1: #7e7e7e;
+    --hue-bas-dn2: #5f5f5f;
+    --hue-bas-dn3: #3f3f3f;
+    --hue-bas-dn4: #202020;
+    --hue-bas-tint-up1: #f5f5f5;
+    --hue-bas-tint: #ececec;
+    --hue-bas-tint-dn1: #e2e2e2;
     /*: primary hue :*/
+    --hue-pri-up3: #a1c1e6;
+    --hue-pri-up2: #73a3d9;
+    --hue-pri-up1: #4484cd;
     --hue-pri: #1565c0;
-    --hue-pri-up1: #5e92f3;
-    --hue-pri-dn1: #003c8f;
-    --hue-pri-tint: #b9d1ec;
+    --hue-pri-dn1: #11519a;
+    --hue-pri-dn2: #0d3d73;
+    --hue-pri-dn3: #08284d;
     --hue-pri-tint-up1: #e8f0f9;
-    --hue-pri-tint-dn1: #8ab2e0;
+    --hue-pri-tint: #d0e0f2;
+    --hue-pri-tint-dn1: #b9d1ec;
     /*: secondary hue :*/
+    --hue-sec-up3: #fabe9a;
+    --hue-sec-up2: #f79d67;
+    --hue-sec-up1: #f57d35;
     --hue-sec: #f25c02;
-    --hue-sec-up1: #ff8e3d;
-    --hue-sec-dn1: #b82800;
-    --hue-sec-tint: #fbceb3;
-    --hue-sec-tint-bright: #feefe6;
+    --hue-sec-dn1: #c24a02;
+    --hue-sec-dn2: #913701;
+    --hue-sec-dn3: #612501;
     --hue-sec-tint-up1: #feefe6;
-    --hue-sec-tint-dark: #f9ae81;
-    --hue-sec-tint-dn1: #f9ae81;
+    --hue-sec-tint: #fcdecc;
+    --hue-sec-tint-dn1: #fbceb3;
     /*
     ***
     wcag colors
@@ -213,16 +218,16 @@
     --dft-font-weight: var(--font-wgt-light);
     --dft-font-spacing: normal;
     /*: link attributes :*/
-    --lnk-dft-fg-hue: var(--hue-pri-dark);
+    --lnk-dft-fg-hue: var(--hue-pri-dn1);
     --lnk-dft-bg-hue: var(--transparent);
-    --lnk-vst-fg-hue: var(--hue-pri);
+    --lnk-vst-fg-hue: var(--hue-pri-up2);
     --lnk-vst-bg-hue: var(--transparent);
     --lnk-hvr-fg-hue: var(--hue-sec);
     --lnk-hvr-bg-hue: var(--transparent);
     --lnk-dft-wgt: var(--font-wgt-normal);
     --lnk-vst-wgt: var(--font-wgt-normal);
     --lnk-hvr-wgt: var(--font-wgt-normal);
-    --lnk-dft-decor: underline;
+    --lnk-dft-decor: none;
     --lnk-vst-decor: none;
     --lnk-hvr-decor: none;
     /*
