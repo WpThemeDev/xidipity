@@ -13,12 +13,14 @@
 ***
     * element: <body>
     * dsc: body
-    * ver: 200222
+    * ver: 200520
     * fnt: html body (see common.css, web.css for other property values)
     * ref: developer.mozilla.org/en-US/docs/Web/API/Body
 ***
 */
 .mce-content-body {
+    background-color: var(--hue-wht);
+    color: var(--hue-bas-dn4);
     margin: 1rem;
     -webkit-font-smoothing: antialiased !important;
 }
