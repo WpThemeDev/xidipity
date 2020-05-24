@@ -1,6 +1,6 @@
 /**
     * WordPress Xidipity Theme
-    * Tinymce apply-text-alignment plugin 
+    * Tinymce apply-text-alignment plugin
     *
     * ###:  plugin.js
     * bld:  24200520
@@ -46,19 +46,19 @@ tinymce.PluginManager.add('apply_txt_align', function(editor, url) {
             icon: false,
             text: '•\xa0Indent >',
             onclick: function() {
-                tinymce.execCommand('mceReplaceContent', false, '<ul class="par"><li>{$selection}</li></ul>');
+                editor.execCommand('mceReplaceContent', false, '<ul class="par"><li>{$selection}</li></ul>');
             }
         }, {
             icon: false,
             text: '•\xa0Hanging Indent >',
             onclick: function() {
-                tinymce.execCommand('mceReplaceContent', false, '<span class="dsp:block pad:left+2" style="text-indent: -2rem;">{$selection}</span>');
+                editor.execCommand('mceReplaceContent', false, '<span class="dsp:block pad:left+2" style="text-indent: -2rem;">{$selection}</span>');
             }
         }, {
             icon: false,
             text: '•\xa0Paragraph Indent >',
             onclick: function() {
-                tinymce.execCommand('mceReplaceContent', false, '<span style="display:block;text-indent:2rem;">{$selection}</span>');
+                editor.execCommand('mceReplaceContent', false, '<span style="display:block;text-indent:2rem;">{$selection}</span>');
             }
         }],
     });
