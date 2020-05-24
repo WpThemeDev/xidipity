@@ -3,7 +3,7 @@
     * Tinymce apply-text-alignment plugin
     *
     * ###:  plugin.js
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -65,5 +65,5 @@ tinymce.PluginManager.add('apply_txt_align', function(editor, url) {
 });
 
 /*
- * EOF: apply-text-alignment / plugin.js / 24200520
+ * EOF: apply-text-alignment / plugin.js / 24200527
  */
