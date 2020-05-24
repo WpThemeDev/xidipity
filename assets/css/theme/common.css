@@ -1071,115 +1071,117 @@ tbody.bdr\:none tr {
     * ref: see web.css
 ***
 */
-.cols\:auto-2,
-.cols\:auto-2 > tbody,
-.cols\:auto-2 > tbody > tr,
-.cols\:auto-2 > tbody > tr > td,
-.cols\:auto-3,
-.cols\:auto-3 > tbody,
-.cols\:auto-3 > tbody > tr,
-.cols\:auto-3 > tbody > tr > td,
-.cols\:auto-4,
-.cols\:auto-4 > tbody,
-.cols\:auto-4 > tbody > tr,
-.cols\:auto-4 > tbody > tr > td,
-.cols\:fixed-2,
-.cols\:fixed-2 > tbody,
-.cols\:fixed-2 > tbody > tr,
-.cols\:fixed-2 > tbody > tr > td,
-.cols\:fixed-3,
-.cols\:fixed-3 > tbody,
-.cols\:fixed-3 > tbody > tr,
-.cols\:fixed-3 > tbody > tr > td,
-.cols\:fixed-4,
-.cols\:fixed-4 > tbody,
-.cols\:fixed-4 > tbody > tr,
-.cols\:fixed-4 > tbody > tr > td {
+table.cols\:auto-2,
+table.cols\:auto-2 > tbody,
+table.cols\:auto-2 > tbody > tr,
+table.cols\:auto-2 > tbody > tr > td,
+table.cols\:auto-3,
+table.cols\:auto-3 > tbody,
+table.cols\:auto-3 > tbody > tr,
+table.cols\:auto-3 > tbody > tr > td,
+table.cols\:auto-4,
+table.cols\:auto-4 > tbody,
+table.cols\:auto-4 > tbody > tr,
+table.cols\:auto-4 > tbody > tr > td,
+table.cols\:fixed-2,
+table.cols\:fixed-2 > tbody,
+table.cols\:fixed-2 > tbody > tr,
+table.cols\:fixed-2 > tbody > tr > td,
+table.cols\:fixed-3,
+table.cols\:fixed-3 > tbody,
+table.cols\:fixed-3 > tbody > tr,
+table.cols\:fixed-3 > tbody > tr > td,
+table.cols\:fixed-4,
+table.cols\:fixed-4 > tbody,
+table.cols\:fixed-4 > tbody > tr,
+table.cols\:fixed-4 > tbody > tr > td {
+    border: none !important;
     display: block;
     margin: 0;
-    padding:0;
+    padding: 0;
     width: 100%;
-}
-
-.cols\:fixed-2 > tbody > tr > td:not(:last-child),
-.cols\:fixed-3 > tbody > tr > td:not(:last-child),
-.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
-    padding-right: 0.5rem;
-}
-
-.cols\:fixed-2 > tbody > tr > td:not(:first-child),
-.cols\:fixed-3 > tbody > tr > td:not(:first-child),
-.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
-    padding-left: 0.5rem;
 }
 
 /*: md)media :*/
 @media (min-width: 900px) {
-    .cols\:fixed-2,
-    .cols\:fixed-3,
-    .cols\:fixed-4 {
+    table.cols\:fixed-2,
+    table.cols\:fixed-3,
+    table.cols\:fixed-4 {
+        border-collapse: collapse;
         display: table;
     }
 
-    .cols\:fixed-2 > tbody,
-    .cols\:fixed-3 > tbody,
-    .cols\:fixed-4 > tbody {
+    table.cols\:fixed-2 > tbody,
+    table.cols\:fixed-3 > tbody,
+    table.cols\:fixed-4 > tbody {
         display: table-row-group;
     }
 
-    .cols\:fixed-2 > tbody > tr,
-    .cols\:fixed-3 > tbody > tr,
-    .cols\:fixed-4 > tbody > tr {
+    table.cols\:fixed-2 > tbody > tr,
+    table.cols\:fixed-3 > tbody > tr,
+    table.cols\:fixed-4 > tbody > tr {
         display: table-row;
     }
 
-    .cols\:fixed-2 > tbody > tr > td,
-    .cols\:fixed-3 > tbody > tr > td,
-    .cols\:fixed-4 > tbody > tr > td {
-        border-style: none !important;
+    table.cols\:fixed-2 > tbody > tr > td,
+    table.cols\:fixed-3 > tbody > tr > td,
+    table.cols\:fixed-4 > tbody > tr > td {
+        border: none !important;
         display: table-cell;
         vertical-align: top;
     }
 
-    .cols\:fixed-2 > tbody > tr > td {
+    table.cols\:fixed-2 > tbody > tr > td:not(:last-child),
+    table.cols\:fixed-3 > tbody > tr > td:not(:last-child),
+    table.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
+        padding-right: 0.5rem;
+    }
+
+    table.cols\:fixed-2 > tbody > tr > td:not(:first-child),
+    table.cols\:fixed-3 > tbody > tr > td:not(:first-child),
+    table.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
+        padding-left: 0.5rem;
+    }
+
+    table.cols\:fixed-2 > tbody > tr > td {
         width: 50%;
     }
 
-    .cols\:fixed-3 > tbody > tr > td {
+    table.cols\:fixed-3 > tbody > tr > td {
         width: 33.3333%;
     }
 
-    .cols\:fixed-4 > tbody > tr > td {
+    table.cols\:fixed-4 > tbody > tr > td {
         width: 25%;
     }
 }
 
 /*: embedded table :*/
 
-.cols\:fixed-2 > table,
-.cols\:fixed-3 > table,
-.cols\:fixed-4 > table {
+table.cols\:fixed-2 table,
+table.cols\:fixed-3 table,
+table.cols\:fixed-4 table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 1rem 0;
 }
 
-.cols\:fixed-2 table thead th:not(:last-child),
-.cols\:fixed-3 table thead th:not(:last-child),
-.cols\:fixed-4 table thead th:not(:last-child) {
+table.cols\:fixed-2 table thead th:not(:last-child),
+table.cols\:fixed-3 table thead th:not(:last-child),
+table.cols\:fixed-4 table thead th:not(:last-child) {
     border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
-.cols\:fixed-2 table tr:not(:last-child) td,
-.cols\:fixed-3 table tr:not(:last-child) td,
-.cols\:fixed-4 table tr:not(:last-child) td {
+table.cols\:fixed-2 table tr:not(:last-child) td,
+table.cols\:fixed-3 table tr:not(:last-child) td,
+table.cols\:fixed-4 table tr:not(:last-child) td {
     border-bottom: 1px solid var(--hue-bas-up2) !important;
 }
 
-.cols\:fixed-2 table td:not(:last-child),
-.cols\:fixed-3 table td:not(:last-child),
-.cols\:fixed-4 table td:not(:last-child) {
+table.cols\:fixed-2 table td:not(:last-child),
+table.cols\:fixed-3 table td:not(:last-child),
+table.cols\:fixed-4 table td:not(:last-child) {
     border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
