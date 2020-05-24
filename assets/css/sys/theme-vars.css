@@ -72,13 +72,13 @@
     --hue-sec-tint-dn1: #fdd5ba;
     /*
     ***
-    wcag colors
+    wcag colors (dim grey #6b6765)
     ***
     */
-    --wcag-grey9: #212121;
-    --wcag-grey8: #424242;
-    --wcag-grey7: #616161;
-    --wcag-grey6: #757575;
+    --wcag-grey9: #131312;
+    --wcag-grey8: #242222;
+    --wcag-grey7: #474543;
+    --wcag-grey6: #6b6765;
     --wcag-red: #8b0000;
     --wcag-deep-purple: #663399;
     --wcag-blue: #0000ff;
@@ -103,11 +103,10 @@
     --hue-light-green: #90ee90;
     --hue-lime: #32cd32;
     --hue-yellow: #ffff00;
-    --hue-amber: #FFBA00;
-    --hue-orange: #E4641C;
-    --hue-deep-orange: #DD4714;
+    --hue-amber: #ffba00;
+    --hue-orange: #e4641c;
+    --hue-deep-orange: #dd4714;
     --hue-brown: #654320;
-    --hue-grey: #808080;
     --hue-blue-grey: #708090;
     /*
     ***
