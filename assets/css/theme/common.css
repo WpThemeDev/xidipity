@@ -49,8 +49,7 @@ big {
     font-size: larger;
 }
 
-samp,
-var {
+samp {
     font-family: var(--font-mono);
 }
 
@@ -178,22 +177,34 @@ code {
 
 /*
 ***
-    * element: <pre><code>
-    * dsc: display code inside of pre
+    * element: <pre><var>
+    * dsc: format inside of pre
     * ver: 200527
     * fnt: add line numbers (1-999)
     * ref: 
 ***
 */
-pre.code:before {
+var {
+    color: var(--hue-pri-dn1);
+    font-family: var(--font-mono);
+    font-style: normal;
+}
+
+pre.var {
+    font-family: var(--font-mono);
+    font-size: smaller;
+    font-weight: var(--dft-font-weight);    
+}
+
+pre.var:before {
     counter-reset: listing;
 }
 
-pre.code code {
+pre.var var {
     counter-increment: listing;
 }
 
-pre.code code::before {
+pre.var var::before {
     content: counter(listing) ". ";
     display: inline-block;
     width: 2rem;
