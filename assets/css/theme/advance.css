@@ -3943,13 +3943,13 @@ table.cols\:fixed {
     */
     .sm\)fnt\:shadow,
     .sm\)fnt\:shadow-light {
-        text-shadow: 2px 3px 3px #BDBDBD;
+        text-shadow: 2px 3px 3px var(--hue-bas-up1);
     }
     .sm\)fnt\:shadow-medium {
-        text-shadow: 2px 3px 3px #9E9E9E;
+        text-shadow: 2px 3px 3px var(--hue-bas);
     }
     .sm\)fnt\:shadow-dark {
-        text-shadow: 2px 3px 3px #757575;
+        text-shadow: 2px 3px 3px var(--hue-bas-dn1);
     }
 
     /*
