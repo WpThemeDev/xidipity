@@ -704,7 +704,8 @@ a.hdr\:title:hover {
 }
 
 .search-frm .search-fld {
-    border-radius: .13333rem;
+    border-color: var(--hue-bas-up2);
+    border-radius: 0.3333rem 0 0 0.3333rem;
     height: 3rem;
     padding-right: 0.625rem;
     text-align: left;
@@ -714,7 +715,7 @@ a.hdr\:title:hover {
 
 .search-frm .search-sub {
     background-color: var(--content-bg-color);
-    border-radius: .13333rem;
+    border-radius: 0 0.3333rem 0.3333rem 0;
     border: none;
     color: var(--hue-sec-dn1);
     position: relative;
@@ -930,16 +931,16 @@ a.page-numbers:focus {
 ***
     * property: box:shadow
     * dsc:  flexbox shadow
-    * ver:  200322
+    * ver:  200527
     * fnt:  add drop shadow to flexbox
     * ref:
 ***
 */
 .box\:shadow {
     border-top: thin solid var(--hue-bas-up2);
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
-    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
+    -moz-box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
+    box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
 }
 
 /*
