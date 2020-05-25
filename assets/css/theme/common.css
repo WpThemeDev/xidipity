@@ -1298,15 +1298,45 @@ p {
 ***
 */
 blockquote {
-    color: var(--hue-bas-dn2);
-    border-left: 6px solid var(--hue-pri-tint-dark);
-    font-weight: 300;
-    margin-top: 1em;
-    margin-right: auto;
-    margin-bottom: 1em;
-    margin-left: 3%;
+    background: var(--hue-bas-up3);
+    background: -moz-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up4)', endColorstr='var(--hue-bas-up3)', GradientType=0);
+    border-top: solid 12px var(--hue-pri-up3);
+    border-radius: 0 0 0.3333rem 0.3333rem;
+    display: block;
+    font-style: oblique;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+blockquote.modern {
+    background: transparent;
+    border-left: 6px solid var(--hue-pri-up3);
+    border-radius: 0;
+    border-top: none;
+    display: block;
+    font-style: normal;
+    margin: 1rem 0 1rem 0;
     padding: 1em;
-    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    blockquote {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3rem;
+        width: 80%;
+    }
+    blockquote.modern {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3em;
+        width: 80%;
+    }
 }
 
 cite {
@@ -1579,7 +1609,7 @@ figure {
     text-align: center;
 }
 
-@media (min-width:900px) {
+@media (min-width: 900px) {
     .gallery-columns-2 .gallery-item {
         float: left;
         width: 50%;
