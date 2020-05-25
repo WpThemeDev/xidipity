@@ -3,7 +3,7 @@
     * Web specific css classes
     *
     * ###:  web.css
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -704,8 +704,7 @@ a.hdr\:title:hover {
 }
 
 .search-frm .search-fld {
-	background-color: var(--hue-bas-up4);
-    border-radius: .25rem;
+    border-radius: .13333rem;
     height: 3rem;
     padding-right: 0.625rem;
     text-align: left;
@@ -715,8 +714,8 @@ a.hdr\:title:hover {
 
 .search-frm .search-sub {
     background-color: var(--content-bg-color);
-    border-radius: .25rem;
-    border: 1px solid transparent;
+    border-radius: .13333rem;
+    border: none;
     color: var(--hue-sec-dn1);
     position: relative;
     display: inline-block;
@@ -1160,5 +1159,5 @@ a.page-numbers:focus {
 }
 
 /*
- * EOF: web.css / 24200520
+ * EOF: web.css / 24200527
  */
