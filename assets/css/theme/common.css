@@ -1298,29 +1298,11 @@ p {
 ***
 */
 blockquote {
-    background: var(--hue-bas-up3);
-    background: -moz-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
-    background: -webkit-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
-    background: linear-gradient(to bottom, var(--hue-bas-up4) 0%, var(--hue-bas-up3) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up4)', endColorstr='var(--hue-bas-up3)', GradientType=0);
-    border-top: solid 12px var(--hue-pri-up3);
-    border-radius: 0 0 0.3333rem 0.3333rem;
-    display: block;
+    border-left: solid thick var(--hue-pri-up3);
+    border-radius: 0.6666rem;
     font-style: oblique;
     margin: 1rem 0 1rem 0;
     padding: 1rem;
-    width: 100%;
-}
-
-blockquote.modern {
-    background: transparent;
-    border-left: 6px solid var(--hue-pri-up3);
-    border-radius: 0;
-    border-top: none;
-    display: block;
-    font-style: normal;
-    margin: 1rem 0 1rem 0;
-    padding: 1em;
     width: 100%;
 }
 
@@ -1328,13 +1310,13 @@ blockquote.modern {
     blockquote {
         margin-left: auto;
         margin-right: auto;
-        padding: 3rem;
-        width: 80%;
+        padding: 2rem;
+        width: 90%;
     }
-    blockquote.modern {
-        margin-left: auto;
-        margin-right: auto;
-        padding: 3em;
+}
+
+@media (min-width: 900px) {
+    blockquote {
         width: 80%;
     }
 }
