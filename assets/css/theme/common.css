@@ -178,6 +178,32 @@ code {
 
 /*
 ***
+    * element: <pre><code>
+    * dsc: display code inside of pre
+    * ver: 200527
+    * fnt: add line numbers (1-999)
+    * ref: 
+***
+*/
+pre.code:before {
+    counter-reset: listing;
+}
+
+pre.code code {
+    counter-increment: listing;
+}
+
+pre.code code::before {
+    content: counter(listing) ". ";
+    display: inline-block;
+    width: 2rem;
+    padding-left: auto;
+    margin-left: auto;
+    text-align: right;
+}
+
+/*
+***
     * property: cmt:html
     * dsc: html comments
     * ver: 200513
