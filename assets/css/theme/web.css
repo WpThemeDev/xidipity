@@ -699,7 +699,7 @@ a.hdr\:title:hover {
 }
 
 .search-frm {
-    padding-top: 0.5rem;
+    padding: 0.5rem 0.125rem 0.5rem 0.125rem;
     position: relative;
 }
 
@@ -722,8 +722,9 @@ a.hdr\:title:hover {
     display: inline-block;
     float: right;
     font-size: 1.25rem;
-    width: 4rem;
+    width: 3.75rem;
     height: 3rem;
+    margin-right: 0.25rem;
     padding: 0;
     text-align: center;
     -webkit-transform: perspective(1px) translateZ(0);
