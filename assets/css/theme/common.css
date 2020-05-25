@@ -205,12 +205,13 @@ pre.var var {
 }
 
 pre.var var::before {
+    color: var(--hue-bas-dn1);
     content: counter(listing) ". ";
     display: inline-block;
-    width: 2rem;
-    padding-left: auto;
     margin-left: auto;
+    padding-left: auto;
     text-align: right;
+    width: 2rem;
 }
 
 /*
