@@ -190,21 +190,21 @@ var {
     font-style: normal;
 }
 
-pre.var {
+pre.ln\:nums {
     font-family: var(--font-mono);
     font-size: smaller;
     font-weight: var(--dft-font-weight);    
 }
 
-pre.var:before {
+pre.ln\:nums:before {
     counter-reset: listing;
 }
 
-pre.var var {
+pre.ln\:nums var {
     counter-increment: listing;
 }
 
-pre.var var::before {
+pre.ln\:nums var::before {
     color: var(--hue-bas-dn1);
     content: counter(listing) ". ";
     display: inline-block;
