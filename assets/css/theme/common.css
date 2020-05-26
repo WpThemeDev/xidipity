@@ -134,7 +134,7 @@ pre.wrap{
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
-    font-size: var(--font-size-smaller);
+    font-size: var(--font-size-xs);
     font-weight: normal;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -1000,7 +1000,7 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    font-size: var(--font-size-sm);
+    /*font-size: var(--font-size-sm);*/
     table-layout: fixed;
 }
 
