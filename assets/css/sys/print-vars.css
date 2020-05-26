@@ -136,7 +136,10 @@
     --font-size-xm: 1.125rem;
     --font-size-md: 1rem;
     --font-size-sm: 0.875rem;
-    --font-size-xs: 0.75rem;
+    --font-size-xs: 0.8125rem;
+    --font-size-2xs: 0.75rem;
+    --font-size-larger: 106.25%;
+    --font-size-smaller: 93.75%;
     /*: font weight :*/
     --font-wgt-thin: 100;
     --font-wgt-xtralight: 200;
