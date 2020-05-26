@@ -1688,7 +1688,7 @@ figure {
 */
 table.frame {
     border-spacing: 0;
-    border-collapse: separate;
+    border-collapse: collapse;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     table-layout: fixed;
@@ -1696,14 +1696,17 @@ table.frame {
 }
 
 table.frame > tbody > tr > td {
+    border: none;
     padding: 0;
     text-align: left;
     width: 100%;
 }
 
-/*: sm)table media :*/
+/*: sm)media :*/
 @media (min-width: 600px) {
-    table.frame > tbody {
+    table.frame {
+        border-spacing: 0.125rem;
+        border-collapse: separate;
     }
 
     table.frame > tbody > tr > td {
