@@ -42,11 +42,11 @@ del {
 }
 
 small {
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
 }
 
 big {
-    font-size: larger;
+    font-size: var(--font-size-larger);
 }
 
 samp {
@@ -94,7 +94,7 @@ kbd {
     color: var(--hue-wht);
     border-radius: 0.1666rem;
     display: inline-block;
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
     font-weight: bolder;
     padding: 0.125rem .5rem 0.125rem .5rem;
 }
@@ -134,7 +134,7 @@ pre.wrap{
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
     font-weight: normal;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -171,7 +171,7 @@ code {
     background-color: transparent !important;
     color: var(--hue-pri) !important;
     font-family: var(--font-mono) !important;
-    font-size: smaller !important;
+    font-size: var(--font-size-smaller) !important;
     font-weight: var(--dft-font-weight) !important;
 }
 
@@ -190,21 +190,20 @@ var {
     font-style: normal;
 }
 
-pre.ln\:nums {
+pre.dsp\:line-nums {
     font-family: var(--font-mono);
-    font-size: smaller;
     font-weight: var(--dft-font-weight);    
 }
 
-pre.ln\:nums:before {
+pre.dsp\:line-nums:before {
     counter-reset: listing;
 }
 
-pre.ln\:nums var {
+pre.dsp\:line-nums var {
     counter-increment: listing;
 }
 
-pre.ln\:nums var::before {
+pre.dsp\:line-nums var::before {
     color: var(--hue-bas-dn1);
     content: counter(listing) ". ";
     display: inline-block;
@@ -857,7 +856,7 @@ ol.nested ol ol ol ol ol {
 ***
 */
 dt {
-    font-size: larger;
+    font-size: var(--font-size-larger);
     font-weight: bolder;
 }
 
@@ -1360,7 +1359,7 @@ blockquote {
 }
 
 cite {
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
     font-style: normal;
 }
 
@@ -1689,6 +1688,7 @@ figure {
 table.frame {
     border-spacing: 0;
     border-collapse: collapse;
+    font-size: var(--font-size-md);
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     table-layout: fixed;
