@@ -737,7 +737,7 @@ Set root font size based on media
 ***
 */
 html {
-    font-size: 14px;
+    font-size: 15px;
 }
 @media (min-width: 600px) {
     html {
