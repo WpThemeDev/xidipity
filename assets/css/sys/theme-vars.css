@@ -2,7 +2,7 @@
     * WordPress Xidipity Theme
     * Xidipity css variables
     *
-    * ###:  theme-vars.php
+    * ###:  theme-vars.css
     * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
@@ -23,19 +23,19 @@
     --hue-blk: #000000;
     --hue-wht: #ffffff;
     /*: base hue :*/
-    --hue-bas-up5: #f9f8f8;
-    --hue-bas-up4: #f2f1f1;
-    --hue-bas-up3: #e5e4e3;
-    --hue-bas-up2: #d8d6d5;
-    --hue-bas-up1: #cbc9c7;
-    --hue-bas: #bebbb9;
-    --hue-bas-dn1: #8e8a86;
-    --hue-bas-dn2: #6b6765;
-    --hue-bas-dn3: #474543;
-    --hue-bas-dn4: #242222;
-    --hue-bas-tint-up1: #f9f8f8;
-    --hue-bas-tint: #f2f1f1;
-    --hue-bas-tint-dn1: #ecebea;
+    --hue-bas-up5: #fafafa;
+    --hue-bas-up4: #f5f5f5;
+    --hue-bas-up3: #ebebeb;
+    --hue-bas-up2: #e2e2e2;
+    --hue-bas-up1: #d8d8d8;
+    --hue-bas: #cecece;
+    --hue-bas-dn1: #a5a5a5;
+    --hue-bas-dn2: #7c7c7c;
+    --hue-bas-dn3: #525252;
+    --hue-bas-dn4: #292929;
+    --hue-bas-tint-up1: #EDEDED;
+    --hue-bas-tint: #E8E8E8;
+    --hue-bas-tint-dn1: #E3E3E3;
     /*: primary hue :*/
     --hue-pri-up5: #e6edf7;
     --hue-pri-up4: #ccdaee;
@@ -247,5 +247,5 @@
 }
 
 /*
- * EOF: theme-vars.php / 24200527
+ * EOF: theme-vars.css / 24200527
  */
