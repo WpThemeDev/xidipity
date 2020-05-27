@@ -775,13 +775,13 @@ a.hdr\:title:hover {
 ***
     * property: gist
     * dsc: github gist
-    * ver: 200415
+    * ver: 200527
     * fnt: style gist
     * ref:
 ***
 */
 .gist {
-    border: solid medium var(--hue-bas-up3);
+    border: solid 0.125rem var(--hue-bas-up3);
     font-family: var(--font-mono) !important;
     font-size: var(--font-size-xs);
     margin-bottom: -1rem !important;
