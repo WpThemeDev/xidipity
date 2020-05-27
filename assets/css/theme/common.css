@@ -129,8 +129,8 @@ abbr {
 */
 pre,
 pre.wrap{
-    border: solid medium var(--hue-bas-up3);
-    background-color: var(--hue-bas-up5);
+    border-left: solid thick var(--hue-bas-up3);
+    background-color: var(--content-bg-color);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
