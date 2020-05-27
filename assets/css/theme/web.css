@@ -3,7 +3,7 @@
     * Web specific css classes
     *
     * ###:  web.css
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -115,7 +115,7 @@ body {
     flex-basis: 100%;
 }
 
-/*: medium media & larger :*/
+/*: md)media :*/
 @media (min-width: 900px) {
     .md\)fb\:50\% {
         flex-basis: 50%;
@@ -128,7 +128,7 @@ body {
     }
 }
 
-/*: x-large media & larger :*/
+/*: xl)media  :*/
 @media (min-width: 1800px) {
     .xl\)fb\:33\% {
         flex-basis: 33.3333%;
@@ -203,7 +203,7 @@ body {
     width: 100% !important;
 }
 
-/*: medium media & larger :*/
+/*: md)media :*/
 @media (min-width: 900px) {
     .ad\:wrapper {
         padding: 0;
@@ -699,13 +699,13 @@ a.hdr\:title:hover {
 }
 
 .search-frm {
-    padding-top: 0.5rem;
+    padding: 0.5rem 0.125rem 0.5rem 0.125rem;
     position: relative;
 }
 
 .search-frm .search-fld {
-	background-color: var(--hue-bas-up4);
-    border-radius: .25rem;
+    border-color: var(--hue-bas-up2);
+    border-radius: 0.3333rem 0 0 0.3333rem;
     height: 3rem;
     padding-right: 0.625rem;
     text-align: left;
@@ -715,15 +715,16 @@ a.hdr\:title:hover {
 
 .search-frm .search-sub {
     background-color: var(--content-bg-color);
-    border-radius: .25rem;
-    border: 1px solid transparent;
+    border-radius: 0 0.3333rem 0.3333rem 0;
+    border: none;
     color: var(--hue-sec-dn1);
     position: relative;
     display: inline-block;
     float: right;
     font-size: 1.25rem;
-    width: 4rem;
+    width: 3.75rem;
     height: 3rem;
+    margin-right: 0.25rem;
     padding: 0;
     text-align: center;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -774,47 +775,56 @@ a.hdr\:title:hover {
 ***
     * property: gist
     * dsc: github gist
-    * ver: 200415
+    * ver: 200527
     * fnt: style gist
     * ref:
 ***
 */
-.gist {
-    border: solid thick var(--hue-bas-up2);
-    font-family: var(--font-mono) !important;
-    margin-bottom: -1rem !important;
+body .gist .gist-file {
+    border: solid medium var(--hue-bas-up3);
     border-radius: 0.3333rem;
-    width: 100% !important;
+    margin-bottom: -1rem;
 }
 
-.gist .line,
-.gist .line span {
-    word-wrap: normal !important;
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #fefefe;
 }
 
-.gist div {
-    margin-bottom: 0 !important;
+body .gist .blob-wrapper {
+    border-radius: 0;
 }
 
-.gist table {
-    margin-bottom: 0 !important;
-    table-layout: auto !important;
+body .gist .highlight {
+    background-color: var(--content-bg-color);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
 }
 
-.gist .line-numbers {
-    width: 4em !important;
+body .gist .highlight td {
+    border: solid 2px var(--content-bg-color) !important;
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
 }
 
-.gist .line,
-.gist .line-number {
-    font-size: 12px !important;
-    height: 18px !important;
-    line-height: 18px !important;
+body .gist tr:first-child td {
+    padding-top: 15px !important;
 }
 
-.gist .line {
-    white-space: pre !important;
-    width: auto !important;
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: var(--hue-bas-dn1);
+    pointer-events: none;
+}
+
+body .gist .gist-meta {
+    background-color: var(--hue-bas-up3);
 }
 
 /*
@@ -861,7 +871,7 @@ a.hdr\:title:hover {
     z-index: 1;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     .web\[pre\:dot\]::before {
         color: var(--hue-sec);
@@ -931,16 +941,16 @@ a.page-numbers:focus {
 ***
     * property: box:shadow
     * dsc:  flexbox shadow
-    * ver:  200322
+    * ver:  200527
     * fnt:  add drop shadow to flexbox
     * ref:
 ***
 */
 .box\:shadow {
     border-top: thin solid var(--hue-bas-up2);
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
-    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .14);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
+    -moz-box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
+    box-shadow: 0 2px 4px 0 rgba(19, 19, 18, .14);
 }
 
 /*
@@ -1000,7 +1010,7 @@ a.page-numbers:focus {
     transition: all 0.5s ease;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav ul {
         background-color: transparent;
@@ -1053,7 +1063,7 @@ a.page-numbers:focus {
 	margin-bottom: 0.25rem;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav input.trigger:checked ~ ul,
     #nav input.trigger:checked ~ ul li ul {
@@ -1085,7 +1095,7 @@ a.page-numbers:focus {
     filter: brightness(80%);
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav ul {
         /* older flexbox */
@@ -1160,5 +1170,5 @@ a.page-numbers:focus {
 }
 
 /*
- * EOF: web.css / 24200520
+ * EOF: web.css / 24200527
  */
