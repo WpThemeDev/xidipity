@@ -115,7 +115,7 @@ body {
     flex-basis: 100%;
 }
 
-/*: medium media & larger :*/
+/*: md)media :*/
 @media (min-width: 900px) {
     .md\)fb\:50\% {
         flex-basis: 50%;
@@ -128,7 +128,7 @@ body {
     }
 }
 
-/*: x-large media & larger :*/
+/*: xl)media  :*/
 @media (min-width: 1800px) {
     .xl\)fb\:33\% {
         flex-basis: 33.3333%;
@@ -203,7 +203,7 @@ body {
     width: 100% !important;
 }
 
-/*: medium media & larger :*/
+/*: md)media :*/
 @media (min-width: 900px) {
     .ad\:wrapper {
         padding: 0;
@@ -781,12 +781,19 @@ a.hdr\:title:hover {
 ***
 */
 .gist {
-    border: solid 0.125rem var(--hue-bas-up3);
+    border: none;
     font-family: var(--font-mono) !important;
     font-size: var(--font-size-xs);
     margin-bottom: -1rem !important;
-    border-radius: 0.3333rem;
     width: 100% !important;
+}
+
+/*: sm) media :*/
+@media (min-width: 600px) {
+    .gist {
+        border: solid 0.125rem var(--hue-bas-up3);
+        border-radius: 0.3333rem;
+    }
 }
 
 .gist .line,
@@ -863,7 +870,7 @@ a.hdr\:title:hover {
     z-index: 1;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     .web\[pre\:dot\]::before {
         color: var(--hue-sec);
@@ -1002,7 +1009,7 @@ a.page-numbers:focus {
     transition: all 0.5s ease;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav ul {
         background-color: transparent;
@@ -1055,7 +1062,7 @@ a.page-numbers:focus {
 	margin-bottom: 0.25rem;
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav input.trigger:checked ~ ul,
     #nav input.trigger:checked ~ ul li ul {
@@ -1087,7 +1094,7 @@ a.page-numbers:focus {
     filter: brightness(80%);
 }
 
-/*: small media & larger :*/
+/*: sm) media :*/
 @media (min-width: 600px) {
     #nav ul {
         /* older flexbox */
