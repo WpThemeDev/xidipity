@@ -781,8 +781,9 @@ a.hdr\:title:hover {
 ***
 */
 .gist {
-    border: solid thick var(--hue-bas-up2);
+    border: solid medium var(--hue-bas-up3);
     font-family: var(--font-mono) !important;
+    font-size: var(--font-size-xs);
     margin-bottom: -1rem !important;
     border-radius: 0.3333rem;
     width: 100% !important;
