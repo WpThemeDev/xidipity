@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  common.css
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -42,15 +42,14 @@ del {
 }
 
 small {
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
 }
 
 big {
-    font-size: larger;
+    font-size: var(--font-size-larger);
 }
 
-samp,
-var {
+samp {
     font-family: var(--font-mono);
 }
 
@@ -95,7 +94,7 @@ kbd {
     color: var(--hue-wht);
     border-radius: 0.1666rem;
     display: inline-block;
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
     font-weight: bolder;
     padding: 0.125rem .5rem 0.125rem .5rem;
 }
@@ -130,21 +129,21 @@ abbr {
 */
 pre,
 pre.wrap{
-    border: solid thick var(--hue-bas-up3);
-    background-color: var(--hue-bas-up5);
+    border-left: solid thick var(--hue-bas-up3);
+    background-color: var(--content-bg-color);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
-    font-size: smaller;
+    font-size: var(--font-size-xs);
     font-weight: normal;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     padding: 0.5rem;
     width: 100%;
 }
 
-/*: table media :*/
-@media (min-width: 640px) {
+/*: sm)table media :*/
+@media (min-width: 600px) {
     pre,
     pre.wrap{
         padding: 1rem;
@@ -172,8 +171,46 @@ code {
     background-color: transparent !important;
     color: var(--hue-pri) !important;
     font-family: var(--font-mono) !important;
-    font-size: smaller !important;
+    font-size: var(--font-size-smaller) !important;
     font-weight: var(--dft-font-weight) !important;
+}
+
+/*
+***
+    * element: <pre><var>
+    * dsc: format inside of pre
+    * ver: 200527
+    * fnt: add line numbers (1-999)
+    * ref: 
+***
+*/
+var {
+    color: var(--hue-pri-dn1);
+    font-family: var(--font-mono);
+    font-style: normal;
+}
+
+pre.dsp\:line-nums {
+    font-family: var(--font-mono);
+    font-weight: var(--dft-font-weight);    
+}
+
+pre.dsp\:line-nums:before {
+    counter-reset: listing;
+}
+
+pre.dsp\:line-nums var {
+    counter-increment: listing;
+}
+
+pre.dsp\:line-nums var::before {
+    color: var(--hue-bas-dn1);
+    content: counter(listing) ". ";
+    display: inline-block;
+    margin-left: auto;
+    padding-left: auto;
+    text-align: right;
+    width: 2rem;
 }
 
 /*
@@ -537,8 +574,8 @@ a:focus {
     padding-top: 0.5rem;
 }
 
-/*: table media :*/
-@media (min-width: 640px) {
+/*: sm)table media :*/
+@media (min-width: 600px) {
     .ul\:img {
         margin-left: -0.25rem;
     }
@@ -819,7 +856,7 @@ ol.nested ol ol ol ol ol {
 ***
 */
 dt {
-    font-size: larger;
+    font-size: var(--font-size-larger);
     font-weight: bolder;
 }
 
@@ -963,7 +1000,7 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    font-size: var(--font-size-sm);
+    /*font-size: var(--font-size-sm);*/
     table-layout: fixed;
 }
 
@@ -1071,115 +1108,117 @@ tbody.bdr\:none tr {
     * ref: see web.css
 ***
 */
-.cols\:auto-2,
-.cols\:auto-2 > tbody,
-.cols\:auto-2 > tbody > tr,
-.cols\:auto-2 > tbody > tr > td,
-.cols\:auto-3,
-.cols\:auto-3 > tbody,
-.cols\:auto-3 > tbody > tr,
-.cols\:auto-3 > tbody > tr > td,
-.cols\:auto-4,
-.cols\:auto-4 > tbody,
-.cols\:auto-4 > tbody > tr,
-.cols\:auto-4 > tbody > tr > td,
-.cols\:fixed-2,
-.cols\:fixed-2 > tbody,
-.cols\:fixed-2 > tbody > tr,
-.cols\:fixed-2 > tbody > tr > td,
-.cols\:fixed-3,
-.cols\:fixed-3 > tbody,
-.cols\:fixed-3 > tbody > tr,
-.cols\:fixed-3 > tbody > tr > td,
-.cols\:fixed-4,
-.cols\:fixed-4 > tbody,
-.cols\:fixed-4 > tbody > tr,
-.cols\:fixed-4 > tbody > tr > td {
+table.cols\:auto-2,
+table.cols\:auto-2 > tbody,
+table.cols\:auto-2 > tbody > tr,
+table.cols\:auto-2 > tbody > tr > td,
+table.cols\:auto-3,
+table.cols\:auto-3 > tbody,
+table.cols\:auto-3 > tbody > tr,
+table.cols\:auto-3 > tbody > tr > td,
+table.cols\:auto-4,
+table.cols\:auto-4 > tbody,
+table.cols\:auto-4 > tbody > tr,
+table.cols\:auto-4 > tbody > tr > td,
+table.cols\:fixed-2,
+table.cols\:fixed-2 > tbody,
+table.cols\:fixed-2 > tbody > tr,
+table.cols\:fixed-2 > tbody > tr > td,
+table.cols\:fixed-3,
+table.cols\:fixed-3 > tbody,
+table.cols\:fixed-3 > tbody > tr,
+table.cols\:fixed-3 > tbody > tr > td,
+table.cols\:fixed-4,
+table.cols\:fixed-4 > tbody,
+table.cols\:fixed-4 > tbody > tr,
+table.cols\:fixed-4 > tbody > tr > td {
+    border: none !important;
     display: block;
     margin: 0;
-    padding:0;
+    padding: 0;
     width: 100%;
-}
-
-.cols\:fixed-2 > tbody > tr > td:not(:last-child),
-.cols\:fixed-3 > tbody > tr > td:not(:last-child),
-.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
-    padding-right: 0.5rem;
-}
-
-.cols\:fixed-2 > tbody > tr > td:not(:first-child),
-.cols\:fixed-3 > tbody > tr > td:not(:first-child),
-.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
-    padding-left: 0.5rem;
 }
 
 /*: md)media :*/
 @media (min-width: 900px) {
-    .cols\:fixed-2,
-    .cols\:fixed-3,
-    .cols\:fixed-4 {
+    table.cols\:fixed-2,
+    table.cols\:fixed-3,
+    table.cols\:fixed-4 {
+        border-collapse: collapse;
         display: table;
     }
 
-    .cols\:fixed-2 > tbody,
-    .cols\:fixed-3 > tbody,
-    .cols\:fixed-4 > tbody {
+    table.cols\:fixed-2 > tbody,
+    table.cols\:fixed-3 > tbody,
+    table.cols\:fixed-4 > tbody {
         display: table-row-group;
     }
 
-    .cols\:fixed-2 > tbody > tr,
-    .cols\:fixed-3 > tbody > tr,
-    .cols\:fixed-4 > tbody > tr {
+    table.cols\:fixed-2 > tbody > tr,
+    table.cols\:fixed-3 > tbody > tr,
+    table.cols\:fixed-4 > tbody > tr {
         display: table-row;
     }
 
-    .cols\:fixed-2 > tbody > tr > td,
-    .cols\:fixed-3 > tbody > tr > td,
-    .cols\:fixed-4 > tbody > tr > td {
-        border-style: none !important;
+    table.cols\:fixed-2 > tbody > tr > td,
+    table.cols\:fixed-3 > tbody > tr > td,
+    table.cols\:fixed-4 > tbody > tr > td {
+        border: none !important;
         display: table-cell;
         vertical-align: top;
     }
 
-    .cols\:fixed-2 > tbody > tr > td {
+    table.cols\:fixed-2 > tbody > tr > td:not(:last-child),
+    table.cols\:fixed-3 > tbody > tr > td:not(:last-child),
+    table.cols\:fixed-4 > tbody > tr > td:not(:last-child) {
+        padding-right: 0.5rem;
+    }
+
+    table.cols\:fixed-2 > tbody > tr > td:not(:first-child),
+    table.cols\:fixed-3 > tbody > tr > td:not(:first-child),
+    table.cols\:fixed-4 > tbody > tr > td:not(:first-child) {
+        padding-left: 0.5rem;
+    }
+
+    table.cols\:fixed-2 > tbody > tr > td {
         width: 50%;
     }
 
-    .cols\:fixed-3 > tbody > tr > td {
+    table.cols\:fixed-3 > tbody > tr > td {
         width: 33.3333%;
     }
 
-    .cols\:fixed-4 > tbody > tr > td {
+    table.cols\:fixed-4 > tbody > tr > td {
         width: 25%;
     }
 }
 
 /*: embedded table :*/
 
-.cols\:fixed-2 > table,
-.cols\:fixed-3 > table,
-.cols\:fixed-4 > table {
+table.cols\:fixed-2 table,
+table.cols\:fixed-3 table,
+table.cols\:fixed-4 table {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 1rem 0;
 }
 
-.cols\:fixed-2 table thead th:not(:last-child),
-.cols\:fixed-3 table thead th:not(:last-child),
-.cols\:fixed-4 table thead th:not(:last-child) {
+table.cols\:fixed-2 table thead th:not(:last-child),
+table.cols\:fixed-3 table thead th:not(:last-child),
+table.cols\:fixed-4 table thead th:not(:last-child) {
     border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
-.cols\:fixed-2 table tr:not(:last-child) td,
-.cols\:fixed-3 table tr:not(:last-child) td,
-.cols\:fixed-4 table tr:not(:last-child) td {
+table.cols\:fixed-2 table tr:not(:last-child) td,
+table.cols\:fixed-3 table tr:not(:last-child) td,
+table.cols\:fixed-4 table tr:not(:last-child) td {
     border-bottom: 1px solid var(--hue-bas-up2) !important;
 }
 
-.cols\:fixed-2 table td:not(:last-child),
-.cols\:fixed-3 table td:not(:last-child),
-.cols\:fixed-4 table td:not(:last-child) {
+table.cols\:fixed-2 table td:not(:last-child),
+table.cols\:fixed-3 table td:not(:last-child),
+table.cols\:fixed-4 table td:not(:last-child) {
     border-right: 1px solid var(--hue-bas-up2) !important;
 }
 
@@ -1296,19 +1335,31 @@ p {
 ***
 */
 blockquote {
-    color: var(--hue-bas-dn2);
-    border-left: 6px solid var(--hue-pri-tint-dark);
-    font-weight: 300;
-    margin-top: 1em;
-    margin-right: auto;
-    margin-bottom: 1em;
-    margin-left: 3%;
-    padding: 1em;
-    position: relative;
+    border-left: solid thick var(--hue-pri-up3);
+    border-radius: 0.6666rem;
+    font-style: oblique;
+    margin: 0.75rem 0 0.75rem 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    blockquote {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        width: 90%;
+    }
+}
+
+@media (min-width: 900px) {
+    blockquote {
+        width: 80%;
+    }
 }
 
 cite {
-    font-size: smaller;
+    font-size: var(--font-size-smaller);
     font-style: normal;
 }
 
@@ -1577,7 +1628,7 @@ figure {
     text-align: center;
 }
 
-@media (min-width:900px) {
+@media (min-width: 900px) {
     .gallery-columns-2 .gallery-item {
         float: left;
         width: 50%;
@@ -1627,21 +1678,43 @@ figure {
 
 /*
 ***
-    * property: txt:frame
-    * dsc: text frame
-    * ver: 200520
-    * fnt: create a content frame using table elements
-    * ref:
+    * property: frame
+    * dsc: table frame
+    * ver: 200527
+    * fnt: create a content frame using table element
+    * ref: same design as pre element
 ***
 */
-.txt\:frame {
-    border: solid thick var(--hue-bas-up3);
-    background-color: var(--hue-bas-up5);
-    border-radius: 0.3333rem;
-    display: inline-block;
-    padding: 1rem;
+table.frame {
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: var(--font-size-md);
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table.frame > tbody > tr > td {
+    border: none;
+    padding: 0;
     text-align: left;
     width: 100%;
+}
+
+/*: sm)media :*/
+@media (min-width: 600px) {
+    table.frame {
+        border-spacing: 0.125rem;
+        border-collapse: separate;
+    }
+
+    table.frame > tbody > tr > td {
+        border: solid medium var(--hue-bas-up3);
+        background-color: var(--hue-bas-up5);
+        border-radius: 0.3333rem;
+        padding: 1rem;
+    }
 }
 
 /*
@@ -1653,7 +1726,6 @@ figure {
     * ref:
 ***
 */
-
 .svg\:h1 {
     display: inline;
     height: 3.25rem;
@@ -1976,5 +2048,5 @@ button:active {
 }
 
 /*
- * EOF: common.css / 24200520
+ * EOF: common.css / 24200527
  */
