@@ -129,25 +129,13 @@ abbr {
 */
 pre,
 pre.wrap{
-    border-left: solid thick var(--hue-bas-up3);
     background-color: var(--content-bg-color);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
     font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     font-weight: normal;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
     width: 100%;
-}
-
-/*: sm)table media :*/
-@media (min-width: 600px) {
-    pre,
-    pre.wrap{
-        padding: 1rem;
-    }
 }
 
 pre {
