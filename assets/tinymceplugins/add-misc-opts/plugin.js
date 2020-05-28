@@ -1,9 +1,9 @@
 /**
     * WordPress Xidipity Theme
-    * Tinymce add-misc-opts plugin 
+    * Tinymce add-misc-opts plugin
     *
     * ###:  plugin.js
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -26,9 +26,20 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             }
         }, {
             icon: false,
-            text: '•\xa0Frame Text',
+            text: '•\xa0Content Frame',
             onclick: function () {
-                tinymce.execCommand('mceReplaceContent', false, '<table class="wd:100%"><tr><td class="txt:frame">{$selection}</td></tr></table>');
+                var seltxt = editor.selection.getContent({format : 'text'});
+                if (seltxt.length > 0)
+                    {
+                        editor.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+                    } else {
+                        var dom = editor.dom;
+                        var uniqueID = dom.uniqueId();
+                        var html = '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->';
+                        editor.insertContent(html);
+                        var newTag = dom.select('p#' + uniqueID)[0];
+                        editor.selection.setCursorLocation(newTag);
+                    }
             }
         }, {
             icon: false,
@@ -36,7 +47,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             onclick: function() {
                 var dom = editor.dom;
                 var uniqueID = dom.uniqueId();
-                var html = '<table class="bdr:collapse mar:top-0 mar:bottom+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bg:tint cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table>';
+                var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:top-0 mar:bottom+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bg:tint cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
                 editor.insertContent(html);
                 var newExcerpt = dom.select('p#' + uniqueID)[0];
                 editor.selection.setCursorLocation(newExcerpt);
@@ -45,12 +56,12 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             icon: false,
             text: '•\xa0Acronym',
             onclick: function () {
-                tinymce.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
+                editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
             }
         }],
     });
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 24200520
+ * EOF: add-misc-opts / plugin.js / 24200527
  */

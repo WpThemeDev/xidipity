@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1251,7 +1251,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "212121", "Grey 9", "424242", "Grey 8", "616161", "Grey 7", "757575", "Grey 6", "B50707", "Red", "783BB7", "Deep Purple", "0051D8", "Blue", "048618", "Green", "D44511", "Deep Orange", "263238", "Blue Grey", "FFFFFF", "White", ]';
+    $in['textcolor_map'] = '["000000", "Black", "131312", "Grey 9", "242222", "Grey 8", "474543", "Grey 7", "6b6765", "Grey 6", "dc143c", "Red", "ff1493", "Pink", "9400d3", "Purple", "800080", "Dp Purple", "4b0082", "Indigo", "0000ff", "Blue", "add8e6", "Lt Blue", "00ffff", "Cyan", "008080", "Teal", "008000", "Green", "90ee90", "Lt Green", "32cd32", "Lime", "ffff00", "Yellow", "ffba00", "Amber", "e4641c", "Orange", "dd4714", "Dp Orange", "654320", "Brown", "708090", "Bl Grey", "FFFFFF", "White", ]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
     $in['textcolor_cols'] = '5';
     return $in;
@@ -1948,6 +1948,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 24200520
+ * EOF: functions.php / 24200527
  */
 ?>

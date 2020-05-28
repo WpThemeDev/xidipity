@@ -1,9 +1,9 @@
 /**
     * WordPress Xidipity Theme
-    * Xidipity css framework 
+    * Xidipity css framework
     *
     * ###:  advance.css
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -672,63 +672,50 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
 */
-.fnt\:size-3x-large,
-.icon\:size-3x-large {
+.fnt\:size-3x-large {
     font-size: var(--font-size-h3) !important;
 }
 
-.fnt\:size-2x-large,
-.icon\:size-2x-large {
+.fnt\:size-2x-large {
     font-size: var(--font-size-h4) !important;
 }
 
-.fnt\:size-x-large,
-.icon\:size-x-large {
+.fnt\:size-x-large {
     font-size: var(--font-size-h5) !important;
 }
 
-.fnt\:size-large,
-.icon\:size-large {
+.fnt\:size-large {
     font-size: var(--font-size-h6) !important;
 }
 
-.fnt\:size-x-medium,
-.icon\:size-x-medium {
+.fnt\:size-x-medium {
     font-size: var(--font-size-xm) !important;
 }
 
 .fnt\:size-medium,
 .fnt\:size-normal,
-.fnt\:size-default,
-.icon\:size-medium,
-.icon\:size-normal,
-.icon\:size-default {
+.fnt\:size-default {
     font-size: var(--font-size-md) !important;
 }
 
-.fnt\:size-small,
-.icon\:size-small {
+.fnt\:size-small {
     font-size: var(--font-size-sm) !important;
 }
 
-.fnt\:size-x-small,
-.icon\:size-x-small {
+.fnt\:size-x-small {
     font-size: var(--font-size-xs) !important;
 }
 
-.fnt\:size-2x-small,
-.icon\:size-2x-small {
-    font-size: xx-small !important;
+.fnt\:size-2x-small {
+    font-size: var(--font-size-2xs) !important;
 }
 
-.fnt\:size-larger,
-.icon\:size-larger {
-    font-size: var(--font-size-h6)r !important;
+.fnt\:size-larger {
+    font-size: var(--font-size-larger) !important;
 }
 
-.fnt\:size-smaller,
-.icon\:size-smaller {
-    font-size: var(--font-size-sm)er !important;
+.fnt\:size-smaller {
+    font-size: var(--font-size-smaller) !important;
 }
 
 /*
@@ -1453,6 +1440,10 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
+.mar\:\+0\.125 {
+    margin: 0.125rem !important;
+}
+
 .mar\:\+0\.25 {
     margin: 0.25rem !important;
 }
@@ -1535,6 +1526,10 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
+.mar\:top\+0\.125 {
+    margin-top: 0.125rem !important;
+}
+
 .mar\:top\+0\.25 {
     margin-top: 0.25rem !important;
 }
@@ -1616,8 +1611,11 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
-
 /*: add margin :*/
+.mar\:right\+0\.125 {
+    margin-right: 0.125rem !important;
+}
+
 .mar\:right\+0\.25 {
     margin-right: 0.25rem !important;
 }
@@ -1699,8 +1697,11 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
-
 /*: add margin :*/
+.mar\:bottom\+0\.125 {
+    margin-bottom: 0.125rem !important;
+}
+
 .mar\:bottom\+0\.25 {
     margin-bottom: 0.25rem !important;
 }
@@ -1782,8 +1783,11 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
-
 /*: add margin :*/
+.mar\:left\+0\.125 {
+    margin-left: 0.125rem !important;
+}
+
 .mar\:left\+0\.25 {
     margin-left: 0.25rem !important;
 }
@@ -1865,8 +1869,12 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
-
 /*: add margin :*/
+.mar\:hrz\+0\.125 {
+    margin-left: 0.125rem !important;
+    margin-right: 0.125rem !important;
+}
+
 .mar\:hrz\+0\.25 {
     margin-left: 0.25rem !important;
     margin-right: 0.25rem !important;
@@ -1965,8 +1973,12 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
 ***
 */
-
 /*: add margin :*/
+.mar\:vrt\+0\.125 {
+    margin-top: 0.125rem !important;
+    margin-bottom: 0.125rem !important;
+}
+
 .mar\:vrt\+0\.25 {
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
@@ -2071,6 +2083,10 @@ table.cols\:fixed {
     padding: 0 !important;
 }
 
+.pad\:\+0\.125 {
+    padding: 0.125rem !important;
+}
+
 .pad\:\+0\.25 {
     padding: 0.25rem !important;
 }
@@ -2116,6 +2132,10 @@ table.cols\:fixed {
 .pad\:top-0,
 .pad\:top\+0 {
     padding-top: 0 !important;
+}
+
+.pad\:top\+0\.125 {
+    padding-top: 0.125rem !important;
 }
 
 .pad\:top\+0\.25 {
@@ -2165,6 +2185,10 @@ table.cols\:fixed {
     padding-right: 0 !important;
 }
 
+.pad\:right\+0\.125 {
+    padding-right: 0.125rem !important;
+}
+
 .pad\:right\+0\.25 {
     padding-right: 0.25rem !important;
 }
@@ -2210,6 +2234,10 @@ table.cols\:fixed {
 .pad\:bottom-0,
 .pad\:bottom\+0 {
     padding-bottom: 0 !important;
+}
+
+.pad\:bottom\+0\.125 {
+    padding-bottom: 0.125rem !important;
 }
 
 .pad\:bottom\+0\.25 {
@@ -2259,6 +2287,10 @@ table.cols\:fixed {
     padding-left: 0 !important;
 }
 
+.pad\:left\+0\.125 {
+    padding-left: 0.125rem !important;
+}
+
 .pad\:left\+0\.25 {
     padding-left: 0.25rem !important;
 }
@@ -2305,6 +2337,11 @@ table.cols\:fixed {
 .pad\:hrz\+0 {
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+.pad\:hrz\+0\.125 {
+    padding-left: 0.125rem !important;
+    padding-right: 0.125rem !important;
 }
 
 .pad\:hrz\+0\.25 {
@@ -2361,6 +2398,11 @@ table.cols\:fixed {
 .pad\:vrt\+0 {
     padding-bottom: 0 !important;
     padding-top: 0 !important;
+}
+
+.pad\:vrt\+0\.125 {
+    padding-bottom: 0.125rem !important;
+    padding-top: 0.125rem !important;
 }
 
 .pad\:vrt\+0\.25 {
@@ -2422,7 +2464,7 @@ table.cols\:fixed {
 .tdc\:underline-red,
 .tdc\:underline-red\!hover:hover,
 .tdc\:underline-red\!focus:focus {
-    text-decoration: underline solid #B50707;
+    text-decoration: underline solid var(--hue-red);
 }
 
 .tdc\:line-through,
@@ -2434,7 +2476,7 @@ table.cols\:fixed {
 .tdc\:line-through-red,
 .tdc\:line-through-red\!hover:hover,
 .tdc\:line-through-red\!focus:focus {
-    text-decoration: line-through solid #B50707;
+    text-decoration: line-through var(--hue-red);
 }
 
 .tdc\:underline-double,
@@ -2446,7 +2488,7 @@ table.cols\:fixed {
 .tdc\:underline-double-red,
 .tdc\:underline-double-red\!hover:hover,
 .tdc\:underline-double-red\!focus:focus {
-    text-decoration: underline double #B50707;
+    text-decoration: underline double var(--hue-red);
 }
 
 .tdc\:underline-dotted,
@@ -2458,7 +2500,7 @@ table.cols\:fixed {
 .tdc\:underline-dotted-red,
 .tdc\:underline-dotted-red\!hover:hover,
 .tdc\:underline-dotted-red\!focus:focus {
-    text-decoration: underline dotted #B50707;
+    text-decoration: underline dotted var(--hue-red);
 }
 
 .tdc\:underline-wavy,
@@ -2470,7 +2512,7 @@ table.cols\:fixed {
 .tdc\:underline-wavy-red,
 .tdc\:underline-wavy-red\!hover:hover,
 .tdc\:underline-wavy-red\!focus:focus {
-    text-decoration: underline wavy #B50707;
+    text-decoration: underline wavy var(--hue-red);
 }
 
 /*
@@ -3835,17 +3877,17 @@ table.cols\:fixed {
 
     .sm\)fnt\:size-2x-small,
     .sm\)icon\:size-2x-small {
-        font-size: xx-small !important;
+        font-size: var(--font-size-2xs) !important;
     }
 
     .sm\)fnt\:size-larger,
     .sm\)icon\:size-larger {
-        font-size: var(--font-size-h6)r !important;
+        font-size: var(--font-size-larger) !important;
     }
 
     .sm\)fnt\:size-smaller,
     .sm\)icon\:size-smaller {
-        font-size: var(--font-size-sm)er !important;
+        font-size: var(--font-size-smaller) !important;
     }
 
     /*
@@ -3888,13 +3930,13 @@ table.cols\:fixed {
     */
     .sm\)fnt\:shadow,
     .sm\)fnt\:shadow-light {
-        text-shadow: 2px 3px 3px #BDBDBD;
+        text-shadow: 2px 3px 3px var(--hue-bas-up1);
     }
     .sm\)fnt\:shadow-medium {
-        text-shadow: 2px 3px 3px #9E9E9E;
+        text-shadow: 2px 3px 3px var(--hue-bas);
     }
     .sm\)fnt\:shadow-dark {
-        text-shadow: 2px 3px 3px #757575;
+        text-shadow: 2px 3px 3px var(--hue-bas-dn1);
     }
 
     /*
@@ -4570,8 +4612,8 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
-    .sm\)mar\:\+0\.25 {
-        margin: 0.25rem !important;
+    .sm\)mar\:\+0\.125 {
+        margin: 0.125rem !important;
     }
 
     .sm\)mar\:\+0\.5 {
@@ -4652,6 +4694,10 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
+    .sm\)mar\:top\+0\.125 {
+        margin-top: 0.125rem !important;
+    }
+
     .sm\)mar\:top\+0\.25 {
         margin-top: 0.25rem !important;
     }
@@ -4735,6 +4781,10 @@ table.cols\:fixed {
     */
 
     /*: add margin :*/
+    .sm\)mar\:right\+0\.125 {
+        margin-right: 0.125rem !important;
+    }
+
     .sm\)mar\:right\+0\.25 {
         margin-right: 0.25rem !important;
     }
@@ -4816,8 +4866,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .sm\)mar\:bottom\+0\.125 {
+        margin-bottom: 0.125rem !important;
+    }
+
     .sm\)mar\:bottom\+0\.25 {
         margin-bottom: 0.25rem !important;
     }
@@ -4899,8 +4952,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .sm\)mar\:left\+0\.125 {
+        margin-left: 0.125rem !important;
+    }
+
     .sm\)mar\:left\+0\.25 {
         margin-left: 0.25rem !important;
     }
@@ -4982,8 +5038,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .sm\)mar\:hrz\+0\.125 {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+
     .sm\)mar\:hrz\+0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
@@ -5082,8 +5142,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .sm\)mar\:vrt\+0\.125 {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+
     .sm\)mar\:vrt\+0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
@@ -5188,6 +5252,10 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
+    .sm\)pad\:\+0\.125 {
+        padding: 0.125rem !important;
+    }
+
     .sm\)pad\:\+0\.25 {
         padding: 0.25rem !important;
     }
@@ -5233,6 +5301,10 @@ table.cols\:fixed {
     .sm\)pad\:top-0,
     .sm\)pad\:top\+0 {
         padding-top: 0 !important;
+    }
+
+    .sm\)pad\:top\+0\.125 {
+        padding-top: 0.125rem !important;
     }
 
     .sm\)pad\:top\+0\.25 {
@@ -5282,6 +5354,10 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
+    .sm\)pad\:right\+0\.125 {
+        padding-right: 0.125rem !important;
+    }
+
     .sm\)pad\:right\+0\.25 {
         padding-right: 0.25rem !important;
     }
@@ -5327,6 +5403,10 @@ table.cols\:fixed {
     .sm\)pad\:bottom-0,
     .sm\)pad\:bottom\+0 {
         padding-bottom: 0 !important;
+    }
+
+    .sm\)pad\:bottom\+0\.125 {
+        padding-bottom: 0.125rem !important;
     }
 
     .sm\)pad\:bottom\+0\.25 {
@@ -5376,6 +5456,10 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
+    .sm\)pad\:left\+0\.125 {
+        padding-left: 0.125rem !important;
+    }
+
     .sm\)pad\:left\+0\.25 {
         padding-left: 0.25rem !important;
     }
@@ -5422,6 +5506,11 @@ table.cols\:fixed {
     .sm\)pad\:hrz\+0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    .sm\)pad\:hrz\+0\.125 {
+        padding-left: 0.125rem !important;
+        padding-right: 0.125rem !important;
     }
 
     .sm\)pad\:hrz\+0\.25 {
@@ -5478,6 +5567,11 @@ table.cols\:fixed {
     .sm\)pad\:vrt\+0 {
         padding-bottom: 0 !important;
         padding-top: 0 !important;
+    }
+
+    .sm\)pad\:vrt\+0\.125 {
+        padding-bottom: 0.125rem !important;
+        padding-top: 0.125rem !important;
     }
 
     .sm\)pad\:vrt\+0\.25 {
@@ -5539,7 +5633,7 @@ table.cols\:fixed {
     .sm\)tdc\:underline-red,
     .sm\)tdc\:underline-red\!hover:hover,
     .sm\)tdc\:underline-red\!focus:focus {
-        text-decoration: underline solid #B50707;
+        text-decoration: underline solid var(--hue-red);
     }
 
     .sm\)tdc\:line-through,
@@ -5551,7 +5645,7 @@ table.cols\:fixed {
     .sm\)tdc\:line-through-red,
     .sm\)tdc\:line-through-red\!hover:hover,
     .sm\)tdc\:line-through-red\!focus:focus {
-        text-decoration: line-through solid #B50707;
+        text-decoration: line-through solid var(--hue-red);
     }
 
     .sm\)tdc\:underline-double,
@@ -5563,7 +5657,7 @@ table.cols\:fixed {
     .sm\)tdc\:underline-double-red,
     .sm\)tdc\:underline-double-red\!hover:hover,
     .sm\)tdc\:underline-double-red\!focus:focus {
-        text-decoration: underline double #B50707;
+        text-decoration: underline double var(--hue-red);
     }
 
     .sm\)tdc\:underline-dotted,
@@ -5575,7 +5669,7 @@ table.cols\:fixed {
     .sm\)tdc\:underline-dotted-red,
     .sm\)tdc\:underline-dotted-red\!hover:hover,
     .sm\)tdc\:underline-dotted-red\!focus:focus {
-        text-decoration: underline dotted #B50707;
+        text-decoration: underline dotted var(--hue-red);
     }
 
     .sm\)tdc\:underline-wavy,
@@ -5587,7 +5681,7 @@ table.cols\:fixed {
     .sm\)tdc\:underline-wavy-red,
     .sm\)tdc\:underline-wavy-red\!hover:hover,
     .sm\)tdc\:underline-wavy-red\!focus:focus {
-        text-decoration: underline wavy #B50707;
+        text-decoration: underline wavy var(--hue-red);
     }
 
     /*
@@ -6950,17 +7044,17 @@ table.cols\:fixed {
 
     .md\)fnt\:size-2x-small,
     .md\)icon\:size-2x-small {
-        font-size: xx-small !important;
+        font-size: var(--font-size-2xs) !important;
     }
 
     .md\)fnt\:size-larger,
     .md\)icon\:size-larger {
-        font-size: var(--font-size-h6)r !important;
+        font-size: var(--font-size-larger) !important;
     }
 
     .md\)fnt\:size-smaller,
     .md\)icon\:size-smaller {
-        font-size: var(--font-size-sm)er !important;
+        font-size: var(--font-size-smaller) !important;
     }
 
     /*
@@ -8303,6 +8397,10 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
+    .md\)pad\:\+0\.125 {
+        padding: 0.125rem !important;
+    }
+
     .md\)pad\:\+0\.25 {
         padding: 0.25rem !important;
     }
@@ -8348,6 +8446,10 @@ table.cols\:fixed {
     .md\)pad\:top-0,
     .md\)pad\:top\+0 {
         padding-top: 0 !important;
+    }
+
+    .md\)pad\:top\+0\.125 {
+        padding-top: 0.125rem !important;
     }
 
     .md\)pad\:top\+0\.25 {
@@ -8397,6 +8499,10 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
+    .md\)pad\:right\+0\.125 {
+        padding-right: 0.125rem !important;
+    }
+
     .md\)pad\:right\+0\.25 {
         padding-right: 0.25rem !important;
     }
@@ -8442,6 +8548,10 @@ table.cols\:fixed {
     .md\)pad\:bottom-0,
     .md\)pad\:bottom\+0 {
         padding-bottom: 0 !important;
+    }
+
+    .md\)pad\:bottom\+0\.125 {
+        padding-bottom: 0.125rem !important;
     }
 
     .md\)pad\:bottom\+0\.25 {
@@ -8491,6 +8601,10 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
+    .md\)pad\:left\+0\.125 {
+        padding-left: 0.125rem !important;
+    }
+
     .md\)pad\:left\+0\.25 {
         padding-left: 0.25rem !important;
     }
@@ -8537,6 +8651,11 @@ table.cols\:fixed {
     .md\)pad\:hrz\+0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    .md\)pad\:hrz\+0\.125 {
+        padding-left: 0.125rem !important;
+        padding-right: 0.125rem !important;
     }
 
     .md\)pad\:hrz\+0\.25 {
@@ -8593,6 +8712,11 @@ table.cols\:fixed {
     .md\)pad\:vrt\+0 {
         padding-bottom: 0 !important;
         padding-top: 0 !important;
+    }
+
+    .md\)pad\:vrt\+0\.125 {
+        padding-bottom: 0.125rem !important;
+        padding-top: 0.125rem !important;
     }
 
     .md\)pad\:vrt\+0\.25 {
@@ -8654,7 +8778,7 @@ table.cols\:fixed {
     .md\)tdc\:underline-red,
     .md\)tdc\:underline-red\!hover:hover,
     .md\)tdc\:underline-red\!focus:focus {
-        text-decoration: underline solid #B50707;
+        text-decoration: underline solid var(--hue-red);
     }
 
     .md\)tdc\:line-through,
@@ -8666,7 +8790,7 @@ table.cols\:fixed {
     .md\)tdc\:line-through-red,
     .md\)tdc\:line-through-red\!hover:hover,
     .md\)tdc\:line-through-red\!focus:focus {
-        text-decoration: line-through solid #B50707;
+        text-decoration: line-through solid var(--hue-red);
     }
 
     .md\)tdc\:underline-double,
@@ -8678,7 +8802,7 @@ table.cols\:fixed {
     .md\)tdc\:underline-double-red,
     .md\)tdc\:underline-double-red\!hover:hover,
     .md\)tdc\:underline-double-red\!focus:focus {
-        text-decoration: underline double #B50707;
+        text-decoration: underline double var(--hue-red);
     }
 
     .md\)tdc\:underline-dotted,
@@ -8690,7 +8814,7 @@ table.cols\:fixed {
     .md\)tdc\:underline-dotted-red,
     .md\)tdc\:underline-dotted-red\!hover:hover,
     .md\)tdc\:underline-dotted-red\!focus:focus {
-        text-decoration: underline dotted #B50707;
+        text-decoration: underline dotted var(--hue-red);
     }
 
     .md\)tdc\:underline-wavy,
@@ -8702,7 +8826,7 @@ table.cols\:fixed {
     .md\)tdc\:underline-wavy-red,
     .md\)tdc\:underline-wavy-red\!hover:hover,
     .md\)tdc\:underline-wavy-red\!focus:focus {
-        text-decoration: underline wavy #B50707;
+        text-decoration: underline wavy var(--hue-red);
     }
 
     /*
@@ -10065,17 +10189,17 @@ table.cols\:fixed {
 
     .lg\)fnt\:size-2x-small,
     .lg\)icon\:size-2x-small {
-        font-size: xx-small !important;
+        font-size: var(--font-size-2xs) !important;
     }
 
     .lg\)fnt\:size-larger,
     .lg\)icon\:size-larger {
-        font-size: var(--font-size-h6)r !important;
+        font-size: var(--font-size-larger) !important;
     }
 
     .lg\)fnt\:size-smaller,
     .lg\)icon\:size-smaller {
-        font-size: var(--font-size-sm)er !important;
+        font-size: var(--font-size-smaller) !important;
     }
 
     /*
@@ -10800,6 +10924,10 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
+    .lg\)mar\:\+0\.125 {
+        margin: 0.125rem !important;
+    }
+
     .lg\)mar\:\+0\.25 {
         margin: 0.25rem !important;
     }
@@ -10882,6 +11010,10 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
+    .lg\)mar\:top\+0\.125 {
+        margin-top: 0.125rem !important;
+    }
+
     .lg\)mar\:top\+0\.25 {
         margin-top: 0.25rem !important;
     }
@@ -10963,8 +11095,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .lg\)mar\:right\+0\.125 {
+        margin-right: 0.125rem !important;
+    }
+
     .lg\)mar\:right\+0\.25 {
         margin-right: 0.25rem !important;
     }
@@ -11046,8 +11181,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .lg\)mar\:bottom\+0\.125 {
+        margin-bottom: 0.125rem !important;
+    }
+
     .lg\)mar\:bottom\+0\.25 {
         margin-bottom: 0.25rem !important;
     }
@@ -11129,8 +11267,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .lg\)mar\:left\+0\.125 {
+        margin-left: 0.125rem !important;
+    }
+
     .lg\)mar\:left\+0\.25 {
         margin-left: 0.25rem !important;
     }
@@ -11212,8 +11353,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .lg\)mar\:hrz\+0\.125 {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+
     .lg\)mar\:hrz\+0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
@@ -11312,8 +11457,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .lg\)mar\:vrt\+0\.125 {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+
     .lg\)mar\:vrt\+0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
@@ -11418,6 +11567,10 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
+    .lg\)pad\:\+0\.125 {
+        padding: 0.125rem !important;
+    }
+
     .lg\)pad\:\+0\.25 {
         padding: 0.25rem !important;
     }
@@ -11463,6 +11616,10 @@ table.cols\:fixed {
     .lg\)pad\:top-0,
     .lg\)pad\:top\+0 {
         padding-top: 0 !important;
+    }
+
+    .lg\)pad\:top\+0\.125 {
+        padding-top: 0.125rem !important;
     }
 
     .lg\)pad\:top\+0\.25 {
@@ -11512,6 +11669,10 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
+    .lg\)pad\:right\+0\.125 {
+        padding-right: 0.125rem !important;
+    }
+
     .lg\)pad\:right\+0\.25 {
         padding-right: 0.25rem !important;
     }
@@ -11557,6 +11718,10 @@ table.cols\:fixed {
     .lg\)pad\:bottom-0,
     .lg\)pad\:bottom\+0 {
         padding-bottom: 0 !important;
+    }
+
+    .lg\)pad\:bottom\+0\.125 {
+        padding-bottom: 0.125rem !important;
     }
 
     .lg\)pad\:bottom\+0\.25 {
@@ -11606,6 +11771,10 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
+    .lg\)pad\:left\+0\.125 {
+        padding-left: 0.125rem !important;
+    }
+
     .lg\)pad\:left\+0\.25 {
         padding-left: 0.25rem !important;
     }
@@ -11652,6 +11821,11 @@ table.cols\:fixed {
     .lg\)pad\:hrz\+0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    .lg\)pad\:hrz\+0\.125 {
+        padding-left: 0.125rem !important;
+        padding-right: 0.125rem !important;
     }
 
     .lg\)pad\:hrz\+0\.25 {
@@ -11708,6 +11882,11 @@ table.cols\:fixed {
     .lg\)pad\:vrt\+0 {
         padding-bottom: 0 !important;
         padding-top: 0 !important;
+    }
+
+    .lg\)pad\:vrt\+0\.125 {
+        padding-bottom: 0.125rem !important;
+        padding-top: 0.125rem !important;
     }
 
     .lg\)pad\:vrt\+0\.25 {
@@ -11769,7 +11948,7 @@ table.cols\:fixed {
     .lg\)tdc\:underline-red,
     .lg\)tdc\:underline-red\!hover:hover,
     .lg\)tdc\:underline-red\!focus:focus {
-        text-decoration: underline solid #B50707;
+        text-decoration: underline solid var(--hue-red);
     }
 
     .lg\)tdc\:line-through,
@@ -11781,7 +11960,7 @@ table.cols\:fixed {
     .lg\)tdc\:line-through-red,
     .lg\)tdc\:line-through-red\!hover:hover,
     .lg\)tdc\:line-through-red\!focus:focus {
-        text-decoration: line-through solid #B50707;
+        text-decoration: line-through solid var(--hue-red);
     }
 
     .lg\)tdc\:underline-double,
@@ -11793,7 +11972,7 @@ table.cols\:fixed {
     .lg\)tdc\:underline-double-red,
     .lg\)tdc\:underline-double-red\!hover:hover,
     .lg\)tdc\:underline-double-red\!focus:focus {
-        text-decoration: underline double #B50707;
+        text-decoration: underline double var(--hue-red);
     }
 
     .lg\)tdc\:underline-dotted,
@@ -11805,7 +11984,7 @@ table.cols\:fixed {
     .lg\)tdc\:underline-dotted-red,
     .lg\)tdc\:underline-dotted-red\!hover:hover,
     .lg\)tdc\:underline-dotted-red\!focus:focus {
-        text-decoration: underline dotted #B50707;
+        text-decoration: underline dotted var(--hue-red);
     }
 
     .lg\)tdc\:underline-wavy,
@@ -11817,7 +11996,7 @@ table.cols\:fixed {
     .lg\)tdc\:underline-wavy-red,
     .lg\)tdc\:underline-wavy-red\!hover:hover,
     .lg\)tdc\:underline-wavy-red\!focus:focus {
-        text-decoration: underline wavy #B50707;
+        text-decoration: underline wavy var(--hue-red);
     }
 
     /*
@@ -13180,17 +13359,17 @@ table.cols\:fixed {
 
     .xl\)fnt\:size-2x-small,
     .xl\)icon\:size-2x-small {
-        font-size: xx-small !important;
+        font-size: var(--font-size-2xs) !important;
     }
 
     .xl\)fnt\:size-larger,
     .xl\)icon\:size-larger {
-        font-size: var(--font-size-h6)r !important;
+        font-size: var(--font-size-larger) !important;
     }
 
     .xl\)fnt\:size-smaller,
     .xl\)icon\:size-smaller {
-        font-size: var(--font-size-sm)er !important;
+        font-size: var(--font-size-smaller) !important;
     }
 
     /*
@@ -13915,6 +14094,10 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
+    .xl\)mar\:\+0\.125 {
+        margin: 0.125rem !important;
+    }
+
     .xl\)mar\:\+0\.25 {
         margin: 0.25rem !important;
     }
@@ -13997,6 +14180,10 @@ table.cols\:fixed {
     ***
     */
     /*: add margin :*/
+    .xl\)mar\:top\+0\.125 {
+        margin-top: 0.125rem !important;
+    }
+
     .xl\)mar\:top\+0\.25 {
         margin-top: 0.25rem !important;
     }
@@ -14078,8 +14265,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .xl\)mar\:right\+0\.125 {
+        margin-right: 0.125rem !important;
+    }
+
     .xl\)mar\:right\+0\.25 {
         margin-right: 0.25rem !important;
     }
@@ -14161,8 +14351,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .xl\)mar\:bottom\+0\.125 {
+        margin-bottom: 0.125rem !important;
+    }
+
     .xl\)mar\:bottom\+0\.25 {
         margin-bottom: 0.25rem !important;
     }
@@ -14244,8 +14437,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .xl\)mar\:left\+0\.125 {
+        margin-left: 0.125rem !important;
+    }
+
     .xl\)mar\:left\+0\.25 {
         margin-left: 0.25rem !important;
     }
@@ -14327,8 +14523,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .xl\)mar\:hrz\+0\.125 {
+        margin-left: 0.125rem !important;
+        margin-right: 0.125rem !important;
+    }
+
     .xl\)mar\:hrz\+0\.25 {
         margin-left: 0.25rem !important;
         margin-right: 0.25rem !important;
@@ -14427,8 +14627,12 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/margin
     ***
     */
-
     /*: add margin :*/
+    .xl\)mar\:vrt\+0\.125 {
+        margin-top: 0.125rem !important;
+        margin-bottom: 0.125rem !important;
+    }
+
     .xl\)mar\:vrt\+0\.25 {
         margin-top: 0.25rem !important;
         margin-bottom: 0.25rem !important;
@@ -14533,6 +14737,10 @@ table.cols\:fixed {
         padding: 0 !important;
     }
 
+    .xl\)pad\:\+0\.125 {
+        padding: 0.125rem !important;
+    }
+
     .xl\)pad\:\+0\.25 {
         padding: 0.25rem !important;
     }
@@ -14578,6 +14786,10 @@ table.cols\:fixed {
     .xl\)pad\:top-0,
     .xl\)pad\:top\+0 {
         padding-top: 0 !important;
+    }
+
+    .xl\)pad\:top\+0\.125 {
+        padding-top: 0.125rem !important;
     }
 
     .xl\)pad\:top\+0\.25 {
@@ -14627,6 +14839,10 @@ table.cols\:fixed {
         padding-right: 0 !important;
     }
 
+    .xl\)pad\:right\+0\.125 {
+        padding-right: 0.125rem !important;
+    }
+
     .xl\)pad\:right\+0\.25 {
         padding-right: 0.25rem !important;
     }
@@ -14672,6 +14888,10 @@ table.cols\:fixed {
     .xl\)pad\:bottom-0,
     .xl\)pad\:bottom\+0 {
         padding-bottom: 0 !important;
+    }
+
+    .xl\)pad\:bottom\+0\.125 {
+        padding-bottom: 0.125rem !important;
     }
 
     .xl\)pad\:bottom\+0\.25 {
@@ -14721,6 +14941,10 @@ table.cols\:fixed {
         padding-left: 0 !important;
     }
 
+    .xl\)pad\:left\+0\.125 {
+        padding-left: 0.125rem !important;
+    }
+
     .xl\)pad\:left\+0\.25 {
         padding-left: 0.25rem !important;
     }
@@ -14767,6 +14991,11 @@ table.cols\:fixed {
     .xl\)pad\:hrz\+0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    .xl\)pad\:hrz\+0\.125 {
+        padding-left: 0.125rem !important;
+        padding-right: 0.125rem !important;
     }
 
     .xl\)pad\:hrz\+0\.25 {
@@ -14823,6 +15052,11 @@ table.cols\:fixed {
     .xl\)pad\:vrt\+0 {
         padding-bottom: 0 !important;
         padding-top: 0 !important;
+    }
+
+    .xl\)pad\:vrt\+0\.125 {
+        padding-bottom: 0.125rem !important;
+        padding-top: 0.125rem !important;
     }
 
     .xl\)pad\:vrt\+0\.25 {
@@ -14884,7 +15118,7 @@ table.cols\:fixed {
     .xl\)tdc\:underline-red,
     .xl\)tdc\:underline-red\!hover:hover,
     .xl\)tdc\:underline-red\!focus:focus {
-        text-decoration: underline solid #B50707;
+        text-decoration: underline solid var(--hue-red);
     }
 
     .xl\)tdc\:line-through,
@@ -14896,7 +15130,7 @@ table.cols\:fixed {
     .xl\)tdc\:line-through-red,
     .xl\)tdc\:line-through-red\!hover:hover,
     .xl\)tdc\:line-through-red\!focus:focus {
-        text-decoration: line-through solid #B50707;
+        text-decoration: line-through solid var(--hue-red);
     }
 
     .xl\)tdc\:underline-double,
@@ -14908,7 +15142,7 @@ table.cols\:fixed {
     .xl\)tdc\:underline-double-red,
     .xl\)tdc\:underline-double-red\!hover:hover,
     .xl\)tdc\:underline-double-red\!focus:focus {
-        text-decoration: underline double #B50707;
+        text-decoration: underline double var(--hue-red);
     }
 
     .xl\)tdc\:underline-dotted,
@@ -14920,7 +15154,7 @@ table.cols\:fixed {
     .xl\)tdc\:underline-dotted-red,
     .xl\)tdc\:underline-dotted-red\!hover:hover,
     .xl\)tdc\:underline-dotted-red\!focus:focus {
-        text-decoration: underline dotted #B50707;
+        text-decoration: underline dotted var(--hue-red);
     }
 
     .xl\)tdc\:underline-wavy,
@@ -14932,7 +15166,7 @@ table.cols\:fixed {
     .xl\)tdc\:underline-wavy-red,
     .xl\)tdc\:underline-wavy-red\!hover:hover,
     .xl\)tdc\:underline-wavy-red\!focus:focus {
-        text-decoration: underline wavy #B50707;
+        text-decoration: underline wavy var(--hue-red);
     }
 
     /*
@@ -15585,5 +15819,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: advance.css / 24200520
+ * EOF: advance.css / 24200527
  */

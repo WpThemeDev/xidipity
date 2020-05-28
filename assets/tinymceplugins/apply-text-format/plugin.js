@@ -3,7 +3,7 @@
     * Tinymce apply-text-format plugin
     *
     * ###:  plugin.js
-    * bld:  24200520
+    * bld:  24200527
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -52,12 +52,12 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor, url) {
             icon: false,
             text: '•\xa0Drop Shadow',
             onclick: function() {
-                tinymce.execCommand('mceReplaceContent', false, '<span class="fnt:shadow-medium">{$selection}</span>');
+                editor.execCommand('mceReplaceContent', false, '<span class="fnt:shadow-medium">{$selection}</span>');
             }
         }, ],
     });
 });
 
 /*
- * EOF: apply-text-format / plugin.js / 24200520
+ * EOF: apply-text-format / plugin.js / 24200527
  */
