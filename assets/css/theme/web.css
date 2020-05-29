@@ -3,7 +3,7 @@
     * Web specific css classes
     *
     * ###:  web.css
-    * bld:  24200527
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -584,12 +584,15 @@ a.hdr\:title:hover {
     * property: pg:title
     * dsc: page title
     * ver: 200322
-    * fnt: optional styling
+    * fnt: mimics h1 by default
     * ref:
 ***
 */
 .pg\:title {
+    color: var(--hue-bas-dn3);
+    font-family: var(--font-serif);
 	font-size: var(--font-size-h1);
+    font-style: var(--font-style-normal);
 	font-weight: var(--font-wgt-normal);
 }
 
@@ -1170,5 +1173,5 @@ a.page-numbers:focus {
 }
 
 /*
- * EOF: web.css / 24200527
+ * EOF: web.css / 24200531
  */
