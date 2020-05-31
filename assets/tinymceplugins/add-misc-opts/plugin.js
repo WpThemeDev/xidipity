@@ -26,9 +26,9 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
                 editor.execCommand('mceBlockQuote');
             }
         }, {
-            icon: false,
+            icon: true,
             image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMyA1aDJWM2MtMS4xIDAtMiAuOS0yIDJ6bTAgOGgydi0ySDN2MnptNCA4aDJ2LTJIN3Yyek0zIDloMlY3SDN2MnptMTAtNmgtMnYyaDJWM3ptNiAwdjJoMmMwLTEuMS0uOS0yLTItMnpNNSAyMXYtMkgzYzAgMS4xLjkgMiAyIDJ6bS0yLTRoMnYtMkgzdjJ6TTkgM0g3djJoMlYzem0yIDE4aDJ2LTJoLTJ2MnptOC04aDJ2LTJoLTJ2MnptMCA4YzEuMSAwIDItLjkgMi0yaC0ydjJ6bTAtMTJoMlY3aC0ydjJ6bTAgOGgydi0yaC0ydjJ6bS00IDRoMnYtMmgtMnYyem0wLTE2aDJWM2gtMnYyek03IDE3aDEwVjdIN3YxMHptMi04aDZ2Nkg5Vjl6Ii8+PC9zdmc+',
-            text: '\xa0Content Frame',
+            text: '\xa0Frame Content',
             onclick: function () {
                 var seltxt = editor.selection.getContent({format : 'text'});
                 if (seltxt.length > 0)
@@ -77,7 +77,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
         }, {
             icon: true,
             image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNSAxN3YyaDE0di0ySDV6bTQuNS00LjJoNWwuOSAyLjJoMi4xTDEyLjc1IDRoLTEuNUw2LjUgMTVoMi4xbC45LTIuMnpNMTIgNS45OEwxMy44NyAxMWgtMy43NEwxMiA1Ljk4eiIvPjwvc3ZnPg==',
-            text: '\xa0Acronym',
+            text: '\xa0Text To Acronym',
             onclick: function () {
                 editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
             }
