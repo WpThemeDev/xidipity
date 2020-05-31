@@ -1,10 +1,12 @@
 <?php
 /**
+    * Template Name: NoSidebar
+    *
     * WordPress Xidipity Theme
     * The template for displaying page without sidebar
     *
     * ###:  no-sidebar.php
-    * bld:  24200520
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -159,6 +161,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: no-sidebar.php / 24200520
+ * EOF: no-sidebar.php / 24200531
  */
 ?>
