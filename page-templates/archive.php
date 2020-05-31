@@ -1,10 +1,12 @@
 <?php
 /**
+    * Template Name: Archive
+    *
     * WordPress Xidipity Theme
     * The template for displaying archive blog posts
     *
     * ###:  archive.php
-    * bld:  24200520
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -282,6 +284,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: archive.php / 24200520
+ * EOF: archive.php / 24200531
  */
 ?>
