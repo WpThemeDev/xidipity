@@ -1,10 +1,12 @@
 <?php
 /**
+    * Template Name: FrontPage
+    *
     * WordPress Xidipity Theme
     * The template for displaying font page
     *
     * ###:  font-page.php
-    * bld:  24200520
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -141,6 +143,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: font-page.php / 24200520
+ * EOF: font-page.php / 24200531
  */
 ?>
