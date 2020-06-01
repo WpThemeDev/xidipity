@@ -214,6 +214,26 @@ body {
 
 /*
 ***
+    * element: <ul>
+    * dsc: paragraph list
+    * ver: 200531
+    * fnt: use list for block indentation
+    * ref: 
+***
+*/
+ul.par,
+ul.par ul,
+ul.par ul ul,
+ul.par ul ul ul,
+ul.par ul ul ul ul,
+ul.par ul ul ul ul ul {
+    border-left: thin solid transparent;
+    margin-left: 1.25rem;
+    padding-left: 0.5rem !important;
+}
+
+/*
+***
     * property: comment-respond
     * dsc: comment wrapper
     * ver: 200429
