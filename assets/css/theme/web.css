@@ -971,7 +971,7 @@ a.page-numbers:focus {
 
 .CodeMirror {
     border: 1px solid var(--hue-bas-up2) !important;
-    height: 50vh !important;
+    height: 55.5vh !important;
     font-family: var(--font-mono) !important;
     font-size: smaller !important;
     overflow: auto;
