@@ -105,9 +105,9 @@ img {
 ***
     * element: <ul>
     * dsc: paragraph list
-    * ver: 200304
-    * fnt: add custom bullet to list
-    * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+    * ver: 200531
+    * fnt: use list for block indentation
+    * ref: 
 ***
 */
 ul.par,
@@ -117,7 +117,7 @@ ul.par ul ul ul,
 ul.par ul ul ul ul,
 ul.par ul ul ul ul ul {
     border-left: thin solid var(--hue-pri-tint-up1);
-    margin-left: 1.75rem;
+    margin-left: 1.25rem;
     padding-left: 0.5rem !important;
 }
 
