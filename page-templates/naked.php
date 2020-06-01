@@ -1,10 +1,12 @@
 <?php
 /**
+    * Template Name: Naked
+    *
     * WordPress Xidipity Theme
     * The template for displaying page without menu / page title / sidebar
     *
     * ###:  naked.php
-    * bld:  24200520
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -136,6 +138,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: naked.php / 24200520
+ * EOF: naked.php / 24200531
  */
 ?>

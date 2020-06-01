@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  24200527
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1615,6 +1615,37 @@ function cnt_tags()
     // return html
     return $fn_val;
 }
+
+/**
+ *  name: dsp_warning
+ *  build: 200531
+ *  description: return warning icon || icon with message
+ *  attributes:
+ *      $arg - string
+ *  ref:
+ *
+ */
+function dsp_warning($arg = '')
+{
+    // system
+    $fn_retval = '';
+    $icon = '';
+    if (function_exists('xidipity_icon_err'))
+    {
+        $icon = xidipity_icon_err();
+    }
+    if (empty($arg))
+    {
+        $fn_retval = $icon;
+    }
+    else
+    {
+        $fn_retval = '<p><span class="fg:red pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+    }
+    // return html
+    return $fn_retval;
+}
+
 /**
  *  name: dsp_err
  *  build: 200315
@@ -1948,6 +1979,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 24200527
+ * EOF: functions.php / 24200531
  */
 ?>

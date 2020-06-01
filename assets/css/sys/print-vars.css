@@ -3,13 +3,19 @@
     * Xidipity css print variables
     *
     * ###:  print-vars.css
-    * bld:  24200527
+    * bld:  24200531
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
 */
 
 :root {
+    /*
+    ***
+    set base font size for rem calculations
+    ***
+    */
+    font-size: 13px;
     /*
     ***
     base, primary, secondary hue / shade
@@ -150,22 +156,22 @@
     --font-style-oblique: oblique;
     /*: headers :*/
     --h1-color: var(--hue-bas-dn3);
-    --h1-font: var(--font-sans);
+    --h1-font: var(--font-serif);
     --h1-size: var(--font-size-h1);
     --h1-style: var(--font-style-normal);
     --h1-weight: var(--font-wgt-normal);
     --h2-color: var(--hue-bas-dn3);
-    --h2-font: var(--font-sans);
+    --h2-font: var(--font-serif);
     --h2-size: var(--font-size-h2);
     --h2-style: var(--font-style-normal);
     --h2-weight: var(--font-wgt-normal);
     --h3-color: var(--hue-bas-dn3);
-    --h3-font: var(--font-sans);
+    --h3-font: var(--font-serif);
     --h3-size: var(--font-size-h3);
     --h3-style: var(--font-style-normal);
     --h3-weight: var(--font-wgt-normal);
     --h4-color: var(--hue-bas-dn3);
-    --h4-font: var(--font-sans);
+    --h4-font: var(--font-serif);
     --h4-size: var(--font-size-h4);
     --h4-style: var(--font-style-normal);
     --h4-weight: var(--font-wgt-normal);
@@ -173,12 +179,12 @@
     --h5-font: var(--font-sans);
     --h5-size: var(--font-size-h5);
     --h5-style: var(--font-style-normal);
-    --h5-weight: var(--font-wgt-light);
+    --h5-weight: var(--font-wgt-normal);
     --h6-color: var(--hue-bas-dn3);
     --h6-font: var(--font-sans);
     --h6-size: var(--font-size-h6);
     --h6-style: var(--font-style-normal);
-    --h6-weight: var(--font-wgt-light);
+    --h6-weight: var(--font-wgt-normal);
     /*
     ***
     theme attributes
@@ -239,5 +245,5 @@
 }
 
 /*
- * EOF: print-vars.css / 24200527
+ * EOF: print-vars.css / 24200531
  */
