@@ -1640,7 +1640,7 @@ function dsp_warning($arg = '')
     }
     else
     {
-        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+        $fn_retval = '<p><span class="fg:red pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
     }
     // return html
     return $fn_retval;
