@@ -48,7 +48,7 @@ tinymce.PluginManager.add('apply_txt_align', function(editor, url) {
             }
         }, {
             icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTIuNzUgM2gtMS41TDYuNSAxNGgyLjFsLjktMi4yaDVsLjkgMi4yaDIuMUwxMi43NSAzem0tMi42MiA3TDEyIDQuOTggMTMuODcgMTBoLTMuNzR6bTEwLjM3IDhsLTMtM3YySDV2MmgxMi41djJsMy0zeiIvPjwvc3ZnPg==',
+            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNS41OSA3LjQxTDEwLjE4IDEybC00LjU5IDQuNTlMNyAxOGw2LTYtNi02ek0xNiA2aDJ2MTJoLTJ6Ii8+PC9zdmc+',
             text: '\xa0Indent',
             onclick: function() {
                 editor.execCommand('mceReplaceContent', false, '<ul class="par"><li>{$selection}</li></ul>');
