@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  common.css
-    * bld:  24200527
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -76,8 +76,12 @@ u {
 }
 
 kbd {
-    background-color: var(--hue-pri-dark);
-    color: var(--hue-wht);
+	border-left: solid thin var(--hue-bas-dn3);
+	border-right: solid thin var(--hue-bas-dn3);
+	border-radius: 0.3333rem;
+	font-size: var(--font-size-smaller);
+	font-weight: normal;
+	padding: 0.125rem 0.25rem 0.125rem 0.25rem;
 }
 
 /*
@@ -2037,5 +2041,5 @@ button:active {
 }
 
 /*
- * EOF: common.css / 24200527
+ * EOF: common.css / 26200615
  */
