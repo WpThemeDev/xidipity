@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  advance.css
-    * bld:  24200527
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -3589,9 +3589,6 @@ table.cols\:fixed {
     */
     .sm\)cnr\:arch-none {
         border-radius: 0% !important;
-    }
-    .sm\)cnr\:arch-x-small {
-        border-radius: 0.1666rem !important;
     }
     .sm\)cnr\:arch-x-small {
         border-radius: 0.1666rem !important;
@@ -15819,5 +15816,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: advance.css / 24200527
+ * EOF: advance.css / 26200615
  */
