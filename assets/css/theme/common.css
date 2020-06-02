@@ -76,8 +76,8 @@ u {
 }
 
 kbd {
-	border-left: solid thin var(--hue-bas-dn3);
-	border-right: solid thin var(--hue-bas-dn3);
+	border-left: solid thin;
+	border-right: solid thin;
 	border-radius: 0.3333rem;
 	font-size: var(--font-size-smaller);
 	font-weight: normal;
