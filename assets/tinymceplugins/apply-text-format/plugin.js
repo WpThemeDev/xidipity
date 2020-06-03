@@ -3,7 +3,7 @@
     * Tinymce apply-text-format plugin
     *
     * ###:  plugin.js
-    * bld:  24200531
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -55,6 +55,13 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor, url) {
             }
         }, {
             icon: true,
+            image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTExLjE0IDRMNi40MyAxNkg4LjM2TDkuMzIgMTMuNDNIMTQuNjdMMTUuNjQgMTZIMTcuNTdMMTIuODYgNE0xMiA2LjI5TDE0LjAzIDExLjcxSDkuOTZNMjAgMTRWMThINFYxNUgyVjIwSDIyVjE0WiIgLz48L3N2Zz4=',
+            text: '\xa0Keyboard',
+            onclick: function() {
+                editor.execCommand('mceReplaceContent', false, '<kbd>{$selection}</kbd>');
+            }
+        }, {
+            icon: true,
             image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImJsYWNrIiB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOHB4Ij48Zz48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB3aWR0aD0iMjQiLz48L2c+PGc+PGc+PHBhdGggZD0iTTIwLDZ2MTRINnYyaDE0YzEuMSwwLDItMC45LDItMlY2SDIweiIvPjxwYXRoIGQ9Ik0xNiwySDRDMi45LDIsMiwyLjksMiw0djEyYzAsMS4xLDAuOSwyLDIsMmgxMmMxLjEsMCwyLTAuOSwyLTJWNEMxOCwyLjksMTcuMSwyLDE2LDJ6IE05LDE2SDR2LTVoNVYxNnogTTE2LDE2aC01di01aDUgVjE2eiBNMTYsOUg0VjRoMTJWOXoiLz48L2c+PC9nPjwvc3ZnPg==',
             text: '\xa0Drop Shadow',
             onclick: function() {
@@ -65,5 +72,5 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor, url) {
 });
 
 /*
- * EOF: apply-text-format / plugin.js / 24200531
+ * EOF: apply-text-format / plugin.js / 26200615
  */
