@@ -640,27 +640,27 @@ table.cols\:fixed {
 ***
 */
 .fnt\:family-sans {
-    font-family: var(--font-sans) !important;
+    font-family: var(--font-family-sans) !important;
 }
 
 .fnt\:family-serif {
-    font-family: var(--font-serif) !important;
+    font-family: var(--font-family-serif) !important;
 }
 
 .fnt\:family-mono {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-family-mono) !important;
 }
 
 .fnt\:family-condensed {
-    font-family: var(--font-condensed) !important;
+    font-family: var(--font-family-condensed) !important;
 }
 
 .fnt\:family-cursive {
-    font-family: var(--font-cursive) !important;
+    font-family: var(--font-family-cursive) !important;
 }
 
 .fnt\:family-fancy {
-    font-family: var(--font-fancy) !important;
+    font-family: var(--font-family-fancy) !important;
 }
 
 /*
@@ -3796,27 +3796,27 @@ table.cols\:fixed {
     ***
     */
     .sm\)fnt\:family-sans {
-        font-family: var(--font-sans) !important;
+        font-family: var(--font-family-sans) !important;
     }
 
     .sm\)fnt\:family-serif {
-        font-family: var(--font-serif) !important;
+        font-family: var(--font-family-serif) !important;
     }
 
     .sm\)fnt\:family-mono {
-        font-family: var(--font-mono) !important;
+        font-family: var(--font-family-mono) !important;
     }
 
     .sm\)fnt\:family-condensed {
-        font-family: var(--font-condensed) !important;
+        font-family: var(--font-family-condensed) !important;
     }
 
     .sm\)fnt\:family-cursive {
-        font-family: var(--font-cursive) !important;
+        font-family: var(--font-family-cursive) !important;
     }
 
     .sm\)fnt\:family-fancy {
-        font-family: var(--font-fancy) !important;
+        font-family: var(--font-family-fancy) !important;
     }
 
     /*
@@ -6963,27 +6963,27 @@ table.cols\:fixed {
     ***
     */
     .md\)fnt\:family-sans {
-        font-family: var(--font-sans) !important;
+        font-family: var(--font-family-sans) !important;
     }
 
     .md\)fnt\:family-serif {
-        font-family: var(--font-serif) !important;
+        font-family: var(--font-family-serif) !important;
     }
 
     .md\)fnt\:family-mono {
-        font-family: var(--font-mono) !important;
+        font-family: var(--font-family-mono) !important;
     }
 
     .md\)fnt\:family-condensed {
-        font-family: var(--font-condensed) !important;
+        font-family: var(--font-family-condensed) !important;
     }
 
     .md\)fnt\:family-cursive {
-        font-family: var(--font-cursive) !important;
+        font-family: var(--font-family-cursive) !important;
     }
 
     .md\)fnt\:family-fancy {
-        font-family: var(--font-fancy) !important;
+        font-family: var(--font-family-fancy) !important;
     }
 
     /*
@@ -10108,27 +10108,27 @@ table.cols\:fixed {
     ***
     */
     .lg\)fnt\:family-sans {
-        font-family: var(--font-sans) !important;
+        font-family: var(--font-family-sans) !important;
     }
 
     .lg\)fnt\:family-serif {
-        font-family: var(--font-serif) !important;
+        font-family: var(--font-family-serif) !important;
     }
 
     .lg\)fnt\:family-mono {
-        font-family: var(--font-mono) !important;
+        font-family: var(--font-family-mono) !important;
     }
 
     .lg\)fnt\:family-condensed {
-        font-family: var(--font-condensed) !important;
+        font-family: var(--font-family-condensed) !important;
     }
 
     .lg\)fnt\:family-cursive {
-        font-family: var(--font-cursive) !important;
+        font-family: var(--font-family-cursive) !important;
     }
 
     .lg\)fnt\:family-fancy {
-        font-family: var(--font-fancy) !important;
+        font-family: var(--font-family-fancy) !important;
     }
 
     /*
@@ -13278,27 +13278,27 @@ table.cols\:fixed {
     ***
     */
     .xl\)fnt\:family-sans {
-        font-family: var(--font-sans) !important;
+        font-family: var(--font-family-sans) !important;
     }
 
     .xl\)fnt\:family-serif {
-        font-family: var(--font-serif) !important;
+        font-family: var(--font-family-serif) !important;
     }
 
     .xl\)fnt\:family-mono {
-        font-family: var(--font-mono) !important;
+        font-family: var(--font-family-mono) !important;
     }
 
     .xl\)fnt\:family-condensed {
-        font-family: var(--font-condensed) !important;
+        font-family: var(--font-family-condensed) !important;
     }
 
     .xl\)fnt\:family-cursive {
-        font-family: var(--font-cursive) !important;
+        font-family: var(--font-family-cursive) !important;
     }
 
     .xl\)fnt\:family-fancy {
-        font-family: var(--font-fancy) !important;
+        font-family: var(--font-family-fancy) !important;
     }
 
     /*
