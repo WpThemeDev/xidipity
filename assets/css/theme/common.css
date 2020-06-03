@@ -50,7 +50,7 @@ big {
 }
 
 samp {
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
 }
 
 samp {
@@ -80,6 +80,7 @@ kbd {
 	border-right: solid thin;
 	border-radius: 0.3333rem;
 	font-size: var(--font-size-smaller);
+	font-family: var(--font-family-mono);
 	font-weight: normal;
 	padding: 0.125rem 0.25rem 0.125rem 0.25rem;
 }
@@ -136,7 +137,7 @@ pre.wrap{
     background-color: var(--content-bg-color);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-size: var(--font-size-sm);
     font-weight: normal;
     padding: 0.5rem 0 0.5rem 0; 
@@ -163,7 +164,7 @@ pre.wrap {
 code {
     background-color: transparent !important;
     color: var(--hue-pri) !important;
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-smaller) !important;
     font-weight: var(--dft-font-weight) !important;
 }
@@ -179,12 +180,12 @@ code {
 */
 var {
     color: var(--hue-pri-dn1);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-style: normal;
 }
 
 pre.dsp\:line-nums {
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-weight: var(--dft-font-weight);    
 }
 
@@ -1478,7 +1479,7 @@ pre#textarea {
     box-shadow: none;
     border: 0;
     color: var(--hue-bas-dn4);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-size: .875rem !important;
     padding: 0;
     white-space: pre-wrap;
