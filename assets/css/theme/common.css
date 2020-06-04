@@ -1808,12 +1808,11 @@ button a:focus {
 }
 
 button:hover {
-    background-color: var(--hue-pri-up1);
+    background-color: var(--hue-pri-dn1);
 }
 
 button:active {
-    /* background-color: var(--hue-pri-dark); */
-    filter: brightness(85%);
+    opacity: 0.80;
 }
 
 /*
