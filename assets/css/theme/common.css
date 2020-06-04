@@ -1812,6 +1812,7 @@ button:hover {
 }
 
 button:active {
+	color: var(--hue-bas);
     opacity: 0.80;
 }
 
