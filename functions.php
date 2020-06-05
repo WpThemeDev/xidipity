@@ -21,7 +21,7 @@ $global_dsp_sidebar = '';
 
 /**
  *  name: theme_cfg
- *  build: 190915.1b
+ *  build: 26200615
  *  description: set global configuration defaults
  *
  */
@@ -40,13 +40,15 @@ function theme_cfg() {
                 switch ($cfg_key)
                 {
                     case 'fav-icon':
-                        $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
-                        if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
-                        {
-                            $cfg_val = 'none';
-                        }
+						if ($cfg_val !== 'default') 
+						{
+							$cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
+							if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
+							{
+								$cfg_val = 'default';
+							}							
+						}
                         define('XWT_FAV_ICO', $cfg_val);
-                        update_option('XWT_FAV_ICO',$cfg_val);
                         break;
                     case 'fa-version':
                         define('XWT_FA_VER', $cfg_val);
@@ -136,7 +138,7 @@ function theme_cfg() {
         define('XWT_HDR_HGT', '100px');
     }
     if (!defined('XWT_FAV_ICO')) {
-        define('XWT_FAV_ICO', 'none');
+        define('XWT_FAV_ICO', 'default');
     }
     if (!defined('XWT_HDR_IMG')) {
         define('XWT_HDR_IMG', 'none');
