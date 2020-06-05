@@ -1,9 +1,9 @@
 /*
  * Xidipity Theme CFG File
- * build: 200322
+ * build: 24200615
  */,
 /*: favorite icon :*/,
-fav-icon=https://staging1.xidipity.com/wp-content/uploads/2019/09/xidipity-favorite-icon.png,
+default,
 /*: page header height :*/,
 hdr-height=7rem,
 /*: page header image :*/,
