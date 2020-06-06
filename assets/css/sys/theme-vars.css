@@ -7,9 +7,10 @@
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
-    * ref:  noeldelgado.github.io/shadowlord/#bebbb9
-    *                                       /#0047ab
-    *                                       /#f77219
+    * ref:  noeldelgado.github.io/shadowlord/
+	*			base: #bebbb9
+    *           pri:  #0047ab
+    *           sec:  #ff6200 (paletton pri triad)
     *
 */
 
@@ -33,9 +34,9 @@
     --hue-bas-dn2: #7c7c7c;
     --hue-bas-dn3: #525252;
     --hue-bas-dn4: #292929;
-    --hue-bas-tint-up1: #EDEDED;
-    --hue-bas-tint: #E8E8E8;
-    --hue-bas-tint-dn1: #E3E3E3;
+    --hue-bas-tint-up1: #f5f5f5;
+    --hue-bas-tint: #f0f0f0;
+    --hue-bas-tint-dn1: #ebebeb;
     /*: primary hue :*/
     --hue-pri-up5: #e6edf7;
     --hue-pri-up4: #ccdaee;
@@ -51,16 +52,16 @@
     --hue-pri-tint: #ccdaee;
     --hue-pri-tint-dn1: #b3c8e6;
     /*: secondary hue :*/
-    --hue-sec-up5: #fef1e8;
-    --hue-sec-up4: #fde3d1;
-    --hue-sec-up3: #fcc7a3;
-    --hue-sec-up2: #faaa75;
-    --hue-sec-up1: #f98e47;
-    --hue-sec: #f77219;
-    --hue-sec-dn1: #c65b14;
-    --hue-sec-dn2: #94440f;
-    --hue-sec-dn3: #632e0a;
-    --hue-sec-dn3: #311705;
+    --hue-sec-up5: #ffefe6;
+    --hue-sec-up4: #ffe0cc;
+    --hue-sec-up3: #ffc099;
+    --hue-sec-up2: #ffa166;
+    --hue-sec-up1: #ff8133;
+    --hue-sec: #ff6200;
+    --hue-sec-dn1: #cc4e00;
+    --hue-sec-dn2: #993b00;
+    --hue-sec-dn3: #662700;
+    --hue-sec-dn4: #331400;
     --hue-sec-tint-up1: #fef1e8;
     --hue-sec-tint: #fde3d1;
     --hue-sec-tint-dn1: #fdd5ba;
