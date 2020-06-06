@@ -966,7 +966,7 @@ dd {
 ***
     * element: <table>
     * dsc: html table
-    * ver: 200520
+    * ver: 26200515
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     *
@@ -994,7 +994,6 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    /*font-size: var(--font-size-sm);*/
     table-layout: fixed;
 }
 
@@ -1023,16 +1022,8 @@ table > thead > tr > th {
     padding: 0.25rem 0.5rem;
 }
 
-table > thead > tr > td {
-    background-color: var(--hue-bas-tint-dark);
-}
-
 table > thead > tr > th {
-    background: var(--hue-bas-up4);
-    background: -moz-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
-    background: -webkit-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
-    background: linear-gradient(to bottom, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--hue-bas-up4), endColorstr=var(--hue-bas-up2), GradientType=0);
+    background-color: var(--hue-bas-up3);
 }
 
 table > thead > tr > td:not(:last-child) {
