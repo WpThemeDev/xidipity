@@ -1029,10 +1029,10 @@ table > thead > tr > td {
 
 table > thead > tr > th {
     background: var(--hue-bas-up4);
-    background: -moz-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    background: -webkit-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    background: linear-gradient(to bottom, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--hue-bas-up5), endColorstr=var(--hue-bas-up4), GradientType=0);
+    background: -moz-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
+    background: -webkit-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
+    background: linear-gradient(to bottom, var(--hue-bas-up4) 0%, var(--hue-bas-up2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--hue-bas-up4), endColorstr=var(--hue-bas-up2), GradientType=0);
 }
 
 table > thead > tr > td:not(:last-child) {
@@ -1514,10 +1514,10 @@ td .ratio-container {
     *      !important to override defaults
 ***
 */
-.material-icons {
+span.material-icons {
     position: relative !important;
-    top: 4px !important;
-    font-size: calc(100% + 2px) !important;
+    top: 2px !important;
+    font-size: 104% !important;
 }
 
 /*
