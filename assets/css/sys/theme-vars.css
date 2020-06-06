@@ -2,10 +2,10 @@
 	* WordPress Xidipity Theme
 	* Xidipity css variables
 	*
-	* ###:  theme-vars.css
-	* bld:  26200615
-	* src:  github.com/WpThemeDev/xidipity/
-	* (C)   2019-2020 John Baer
+	* ###:	theme-vars.css
+	* bld:	26200615
+	* src:	github.com/WpThemeDev/xidipity/
+	* (C) 	2019-2020 John Baer
 	*
 	* ref:  noeldelgado.github.io/shadowlord/
 	*			base: #cecece
@@ -15,7 +15,7 @@
 */
 
 :root {
-	/*
+/*
 ***
 base, primary, secondary hue / shade
 ***
