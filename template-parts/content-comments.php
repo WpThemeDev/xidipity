@@ -4,7 +4,7 @@
     * The template for displaying comments
     *
     * ###:  content-comments.php
-    * bld:  24200520
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -268,14 +268,10 @@ comment_form(array(
     'title_reply' => '<span class="fg:pri-dark pad:right+0.25">' . xidipity_icon_comments('h3') . '</span>Your Comment',
     'logged_in_as' => ''
 ));
-if ( comments_open() && wp_plugin('akismet/akismet.php') )
-{
-    echo '<p class="fnt:size-smaller">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/">Learn how your comment data is processed.</a></p>' . "\n";
-}
 echo '<!--  ct:COMMENTS -->' . "\n";
 echo '</div>' . "\n";
 
 /*
- * EOF: content-comments.php / 24200520
+ * EOF: content-comments.php / 26200615
  */
 ?>
