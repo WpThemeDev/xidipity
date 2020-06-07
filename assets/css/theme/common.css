@@ -76,13 +76,12 @@ u {
 }
 
 kbd {
-	border-left: solid thin;
-	border-right: solid thin;
-	border-radius: 0.3333rem;
+	background-color: var(--hue-pri-up5);
+	border-radius: 0.1666rem;
 	font-size: var(--font-size-smaller);
 	font-family: var(--font-family-mono);
 	font-weight: normal;
-	padding: 0.125rem 0.25rem 0.125rem 0.25rem;
+	padding: 0 0.125rem 0 0.125rem;
 }
 
 /*
