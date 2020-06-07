@@ -1802,8 +1802,8 @@ button:hover {
 }
 
 button:active {
-	color: var(--hue-bas);
-    opacity: 0.80;
+	background-color: var(--hue-bas-dn4);
+    border: thin solid var(--hue-bas-dn4);
 }
 
 /*
