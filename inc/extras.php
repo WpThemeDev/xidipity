@@ -4,7 +4,7 @@
     *
     * File Name:       inc/extras.php
     * Function:        xidipity extensions
-    * Build:           200513
+    * Build:           26200615
     * GitHub:          github.com/WpThemeDev/xidipity/
     * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
     *
@@ -1379,52 +1379,55 @@ function plst_shortcode($args = array() , $prm = string)
         $pre_itm = '<span class="li-fa">' . $bullet . '</span>';
     }
 
-    /*
+	/*
      ***
      * sanitize page title argument
      ***
     */
-    $separators = array(
-        ".",
-        "/",
-        ":",
-        ";",
-        "|"
-    );
-    $tmp_str = str_replace($separators, ",", $prm_titles);
-    $prm_titles = $tmp_str;
-
-    /*
-     ***
-     * build include/exclude page id list
-     ***
-    */
     $include_ids = '';
     $exclude_ids = '';
-    $titles = explode(',', $prm_titles);
-    foreach ($titles as $title)
-    {
-        $page = get_page_by_title(str_replace('-', '', $title));
-        if ($page)
-        {
-            if (substr($title, 0, 1) == '-')
-            {
-                $exclude_ids .= $page->ID . ',';
-            }
-            else
-            {
-                $include_ids .= $page->ID . ',';
-            }
-        }
-    }
-    if (!empty($include_ids))
-    {
-        $include_ids = substr($include_ids, 0, -1);
-    }
-    if (!empty($exclude_ids))
-    {
-        $exclude_ids = substr($exclude_ids, 0, -1);
-    }
+	if (!empty($prm_titles))
+	{
+		$separators = array(
+			".",
+			"/",
+			":",
+			";",
+			"|"
+		);
+		$tmp_str = str_replace($separators, ",", $prm_titles);
+		$prm_titles = $tmp_str;
+
+		/*
+		 ***
+		 * build include/exclude page id list
+		 ***
+		*/
+		$titles = explode(',', $prm_titles);
+		foreach ($titles as $title)
+		{
+			$page = get_page_by_title(str_replace('-', '', $title));
+			if ($page)
+			{
+				if (substr($title, 0, 1) == '-')
+				{
+					$exclude_ids .= $page->ID . ',';
+				}
+				else
+				{
+					$include_ids .= $page->ID . ',';
+				}
+			}
+		}
+		if (!empty($include_ids))
+		{
+			$include_ids = substr($include_ids, 0, -1);
+		}
+		if (!empty($exclude_ids))
+		{
+			$exclude_ids = substr($exclude_ids, 0, -1);
+		}		
+	}
 
     /*
     ***
@@ -1602,7 +1605,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   200513
+ * Build:   26200615
  *
  */
 ?>
