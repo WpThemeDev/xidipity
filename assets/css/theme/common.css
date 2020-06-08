@@ -798,10 +798,9 @@ ol.nested ol ol ol ol ol {
 
 .li-fa {
     display: inline-block;
-    margin-left: -2rem;
-    padding-right: 0.25rem;
-    text-align: center;
-    width: 2rem;
+    margin-left: -1.75rem;
+    text-align: left;
+    width: 1.75rem;
 }
 
 /*
