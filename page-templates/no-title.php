@@ -6,7 +6,7 @@
     * The template for displaying page without page title
     *
     * ###:  no-title.php
-    * bld:  24200531
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -57,13 +57,13 @@ else
 }
 
 echo '<!--  ct:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
     the_post();
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+    echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
     /*
     ***
@@ -88,7 +88,7 @@ if ($wp_query->have_posts())
     dsp_content();
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -150,6 +150,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: no-title.php / 24200531
+ * EOF: no-title.php / 27200615
  */
 ?>
