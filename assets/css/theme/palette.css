@@ -1651,43 +1651,43 @@ button.fg\:wcag-blue-grey\!focus:focus {
 
 /*
 ***
-stripe even table rows
+tint even table rows
 ***
 */
-tbody.tr\:stripe-pri-dark tr:nth-child(even) {
+tbody.tr\:tint-pri-1 tr:nth-child(even) {
     background-color: var(--hue-pri-tint-dn1) !important;
 }
 
-tbody.tr\:stripe-sec-dark tr:nth-child(even) {
+tbody.tr\:tint-sec-1 tr:nth-child(even) {
     background-color: var(--hue-sec-tint-dn1) !important;
 }
 
-tbody.tr\:stripe-tint-dark tr:nth-child(even) {
-    background-color: var(--hue-bas-up3) !important;
+tbody.tr\:tint-bas-1 tr:nth-child(even) {
+    background-color: var(--hue-bas-tint-dn1) !important;
 }
 
-tbody.tr\:stripe-pri tr:nth-child(even) {
+tbody.tr\:tint-pri tr:nth-child(even) {
     background-color: var(--hue-pri-tint) !important;
 }
 
-tbody.tr\:stripe-sec tr:nth-child(even) {
+tbody.tr\:tint-sec tr:nth-child(even) {
     background-color: var(--hue-sec-tint) !important;
 }
 
-tbody.tr\:stripe-tint tr:nth-child(even) {
-    background-color: var(--hue-bas-up4) !important;
+tbody.tr\:tint-bas tr:nth-child(even) {
+    background-color: var(--hue-bas-tint) !important;
 }
 
-tbody.tr\:stripe-pri-bright tr:nth-child(even) {
+tbody.tr\:tint-pri\+1 tr:nth-child(even) {
     background-color: var(--hue-pri-tint-up1) !important;
 }
 
-tbody.tr\:stripe-sec-bright tr:nth-child(even) {
+tbody.tr\:tint-sec\+1 tr:nth-child(even) {
     background-color: var(--hue-sec-tint-up1) !important;
 }
 
-tbody.tr\:stripe-tint-bright tr:nth-child(even) {
-    background-color: var(--hue-bas-up5) !important;
+tbody.tr\:tint-bas\+1 tr:nth-child(even) {
+    background-color: var(--hue-bas-tint-up1) !important;
 }
 
 /*
