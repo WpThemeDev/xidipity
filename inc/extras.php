@@ -644,7 +644,7 @@ function xlst_shortcode($args = array() , $prms = '')
             }
             //$excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
             $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
 
             /*
              ***
@@ -654,7 +654,7 @@ function xlst_shortcode($args = array() , $prms = '')
             $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
             $html_retval .= '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
-            $html_retval .= '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+            $html_retval .= '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
             /*
              ***
