@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  24200615
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -474,7 +474,7 @@ function xidipity_widgets_init()
     register_sidebar(array(
         'name' => esc_html__('Main Sidebar', 'xidipity') ,
         'id' => 'sidebar-1',
-        'before_widget' => '<aside class="bg:content fg:content box:shadow ht:min4 mar:bottom+1 pad:+0.5 pad:bottom+1">',
+        'before_widget' => '<aside class="bkg:content txt:content box:shadow ht:min4 mar:bottom+1 pad:+0.5 pad:bottom+1">',
         'after_widget' => '</aside>',
         'before_title' => '<p class="fnt:size-larger fnt:weight-normal mar:bottom+0.25">',
         'after_title' => '</p>'
@@ -1356,11 +1356,11 @@ function dsp_rm($arg = '')
     }
     if (empty($arg) && !empty($err))
     {
-        $fn_retval = '<p class="mar:vrt+0.5"><span class="fg:red pad:right+0.25">' . $err . '</span>Additional information not available.</p>';
+        $fn_retval = '<p class="mar:vrt+0.5"><span class="txt:red pad:right+0.25">' . $err . '</span>Additional information not available.</p>';
     }
     elseif (!empty($icon))
     {
-        $fn_retval = '<p class="mar:vrt+0.5"><span class="fg:pri pad:right+0.25">' . $icon . '</span><a href="' . $arg . '" >Read more &hellip;</a></p>';
+        $fn_retval = '<p class="mar:vrt+0.5"><span class="txt:pri pad:right+0.25">' . $icon . '</span><a href="' . $arg . '" >Read more &hellip;</a></p>';
     }
     // return html
     return $fn_retval;
@@ -1642,7 +1642,7 @@ function dsp_warning($arg = '')
     }
     else
     {
-        $fn_retval = '<p><span class="fg:red pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+        $fn_retval = '<p><span class="txt:red pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1669,7 +1669,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bg:tint-bas+1 cnr:arch-small">	<div class="fnt:size-3x-large pad:+0.5"><span class="material-icons">support_agent</span></div>	<div class="pad:+0.5">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
+    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas+1 cnr:arch-small">	<div class="fnt:size-3x-large pad:+0.5"><span class="material-icons">support_agent</span></div>	<div class="pad:+0.5">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
     // return html
     return $fn_retval;
 }
@@ -1981,6 +1981,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 24200615
+ * EOF: functions.php / 27200615
  */
 ?>
