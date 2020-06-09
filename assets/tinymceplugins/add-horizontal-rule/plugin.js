@@ -8,7 +8,8 @@
  * (C)   2019-2020 John Baer
  *
  */
-tinymce.PluginManager.add('add_horz_rule', function(editor, url) {
+tinymce.PluginManager.add('add_horz_rule', function(editor) {
+	'use strict';
 	editor.addButton('add_horz_rule', {
 		type: 'splitbutton',
 		title: 'Horizontal Rule',
