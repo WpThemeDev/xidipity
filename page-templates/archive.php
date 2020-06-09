@@ -6,7 +6,7 @@
     * The template for displaying archive blog posts
     *
     * ###:  archive.php
-    * bld:  24200531
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -137,7 +137,7 @@ if ($wp_data->have_posts()) {
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
         $excerpt_category = '<p><span class="pad:right+0.25">' . xidipity_icon_archive() . '</span><span class="fnt:weight-bolder">Archive</span></p>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -284,6 +284,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: archive.php / 24200531
+ * EOF: archive.php / 27200615
  */
 ?>
