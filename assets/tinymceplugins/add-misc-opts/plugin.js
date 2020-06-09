@@ -8,7 +8,8 @@
  * (C)   2019-2020 John Baer
  *
  */
-tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
+tinymce.PluginManager.add('add_misc_opts', function(editor) {
+	'use strict';
 	editor.addButton('add_misc_opts', {
 		type: 'splitbutton',
 		title: 'Block Quote',
