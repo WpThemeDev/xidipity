@@ -1,15 +1,15 @@
 /**
-    * WordPress Xidipity Theme
-    * Tinymce toggle-fullscreen plugin 
-    *
-    * ###:  plugin.js
-    * bld:  24200520
-    * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
-    *
-*/
-
-tinymce.PluginManager.add('toggle_fullscreen', function(editor, url) {
+ * WordPress Xidipity Theme
+ * Tinymce toggle-fullscreen plugin 
+ *
+ * ###:  plugin.js
+ * bld:  27200615
+ * src:  github.com/WpThemeDev/xidipity/
+ * (C)   2019-2020 John Baer
+ *
+ */
+tinymce.PluginManager.add('toggle_fullscreen', function(editor) {
+	'use strict';
 	editor.addButton('toggle_fullscreen', {
 		title: 'Toggle Full Screen',
 		icon: false,
@@ -21,5 +21,5 @@ tinymce.PluginManager.add('toggle_fullscreen', function(editor, url) {
 });
 
 /*
- * EOF: toggle-fullscreen / plugin.js / 24200520
+ * EOF: toggle-fullscreen / plugin.js / 27200615
  */
