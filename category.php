@@ -73,7 +73,7 @@ else
 ***
 */
 echo '<!--  bk:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if (have_posts())
 {
     $cnt = 0;
@@ -89,7 +89,7 @@ if (have_posts())
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     echo '<div class="pg:title">Category: ' . $first_cat_name . '</div>' . "\n";
-    echo '<div class="bg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
 
@@ -107,7 +107,7 @@ if (have_posts())
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
         $excerpt_category = '<div class="fnt:weight-bolder">' . dsp_cat($first_cat_name) . '</div>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:bas-1 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="txt:bas-1 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -116,7 +116,7 @@ if (have_posts())
         $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
         echo '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
-        echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+        echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
         /*
         ***
@@ -196,15 +196,15 @@ if (have_posts())
         if ($total_pages > 1)
         {
             $current_page = max(1, get_query_var('paged'));
-            echo '<div class="bg:bas+2 ln mar:top+0.75">&#8203;</div>' . "\n";
+            echo '<div class="bkg:bas+2 ln mar:top+0.75">&#8203;</div>' . "\n";
             echo '<!--  pg:PAGINATION -->' . "\n";
             echo xidipity_paginate_links(array('page'=>$current_page,'pages'=>$total_pages)) . "\n";
             echo '<!-- /pg:PAGINATION -->' . "\n";
-            echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+            echo '<div class="bkg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
         }
     }
 
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -223,7 +223,7 @@ if (have_posts())
 else
 {
     echo '<!--  fc:CAT-ERR -->' . "\n";
-    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
+    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bkg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
     echo '<!--  fc:LOGO -->' . "\n";
     echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
     echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
