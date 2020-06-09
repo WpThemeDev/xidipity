@@ -4,7 +4,7 @@
     * The template for displaying searchs results
     *
     * ###:  search.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -218,7 +218,7 @@ if ($wp_data->have_posts())
         if ('post' == get_post_type())
         {
             $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         }
         /*
          ***
@@ -392,6 +392,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: search.php / 24200520
+ * EOF: search.php / 27200615
  */
 ?>
