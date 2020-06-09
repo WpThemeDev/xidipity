@@ -4,7 +4,7 @@
     * The template for displaying media library image 
     *
     * ###:  image.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -65,7 +65,7 @@ else
 }
 
 echo '<!--  ct:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
@@ -81,11 +81,11 @@ if ($wp_query->have_posts())
     ***
     */
     the_title('<div class="pg:title">Media: ', '</div>');
-    echo '<div class="bg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+    echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
     /*
     ***
@@ -115,7 +115,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
 
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25 mce[dsp:none]">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -213,6 +213,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: image.php / 24200520
+ * EOF: image.php / 27200615
  */
 ?>
