@@ -1,251 +1,252 @@
 /**
-    * WordPress Xidipity Theme
-    * Xidipity css variables
-    *
-    * ###:  theme-vars.css
-    * bld:  24200531
-    * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
-    *
-    * ref:  noeldelgado.github.io/shadowlord/#bebbb9
-    *                                       /#0047ab
-    *                                       /#f77219
-    *
+	* WordPress Xidipity Theme
+	* Xidipity css variables
+	*
+	* ###:	theme-vars.css
+	* bld:	26200615
+	* src:	github.com/WpThemeDev/xidipity/
+	* (C) 	2019-2020 John Baer
+	*
+	* ref:  noeldelgado.github.io/shadowlord/
+	*	base: #cecece
+	*	pri:  #0047ab
+	*	sec:  #ff6200 (paletton pri triad)
+	*
 */
 
 :root {
-    /*
-    ***
-    base, primary, secondary hue / shade
-    ***
-    */
-    /*: black & white :*/
-    --hue-blk: #000000;
-    --hue-wht: #ffffff;
-    /*: base hue :*/
-    --hue-bas-up5: #fafafa;
-    --hue-bas-up4: #f5f5f5;
-    --hue-bas-up3: #ebebeb;
-    --hue-bas-up2: #e2e2e2;
-    --hue-bas-up1: #d8d8d8;
-    --hue-bas: #cecece;
-    --hue-bas-dn1: #a5a5a5;
-    --hue-bas-dn2: #7c7c7c;
-    --hue-bas-dn3: #525252;
-    --hue-bas-dn4: #292929;
-    --hue-bas-tint-up1: #EDEDED;
-    --hue-bas-tint: #E8E8E8;
-    --hue-bas-tint-dn1: #E3E3E3;
-    /*: primary hue :*/
-    --hue-pri-up5: #e6edf7;
-    --hue-pri-up4: #ccdaee;
-    --hue-pri-up3: #99b5dd;
-    --hue-pri-up2: #6691cd;
-    --hue-pri-up1: #336cbc;
-    --hue-pri: #0047ab;
-    --hue-pri-dn1: #003989;
-    --hue-pri-dn2: #002b67;
-    --hue-pri-dn3: #001c44;
-    --hue-pri-dn4: #000e22;
-    --hue-pri-tint-up1: #e6edf7;
-    --hue-pri-tint: #ccdaee;
-    --hue-pri-tint-dn1: #b3c8e6;
-    /*: secondary hue :*/
-    --hue-sec-up5: #fef1e8;
-    --hue-sec-up4: #fde3d1;
-    --hue-sec-up3: #fcc7a3;
-    --hue-sec-up2: #faaa75;
-    --hue-sec-up1: #f98e47;
-    --hue-sec: #f77219;
-    --hue-sec-dn1: #c65b14;
-    --hue-sec-dn2: #94440f;
-    --hue-sec-dn3: #632e0a;
-    --hue-sec-dn3: #311705;
-    --hue-sec-tint-up1: #fef1e8;
-    --hue-sec-tint: #fde3d1;
-    --hue-sec-tint-dn1: #fdd5ba;
-    /*
-    ***
-    wcag colors (dim grey #6b6765)
-    ***
-    */
-    --wcag-grey9: #131312;
-    --wcag-grey8: #242222;
-    --wcag-grey7: #474543;
-    --wcag-grey6: #6b6765;
-    --wcag-red: #8b0000;
-    --wcag-deep-purple: #663399;
-    --wcag-blue: #0000ff;
-    --wcag-green: #008000;
-    --wcag-deep-orange: #D03E06;
-    --wcag-blue-grey: #2f4f4f;
-    /*
-    ***
-    named colors
-    ***
-    */
-    --hue-red: #dc143c;
-    --hue-pink: #ff1493;
-    --hue-purple: #9400d3;
-    --hue-deep-purple: #800080;
-    --hue-indigo: #4b0082;
-    --hue-blue: #0000ff;
-    --hue-light-blue: #add8e6;
-    --hue-cyan: #00ffff;
-    --hue-teal: #008080;
-    --hue-green: #008000;
-    --hue-light-green: #90ee90;
-    --hue-lime: #32cd32;
-    --hue-yellow: #ffff00;
-    --hue-amber: #ffba00;
-    --hue-orange: #e4641c;
-    --hue-deep-orange: #dd4714;
-    --hue-brown: #654320;
-    --hue-blue-grey: #708090;
-    /*
-    ***
-    special colors
-    ***
-    */
-    /*: no color :*/
-    --transparent: transparent;
-    /*: hilite plugin support :*/
-    --hue-highlight: #FFF59D;
-    /*
-    ***
-    content attributes
-    ***
-    */
-    /*: font families :*/
-    --font-sans: "Roboto", sans-serif;
-    --font-condensed: "Roboto Condensed", sans-serif;
-    --font-mono: "Roboto Mono", monospace;
-    --font-serif: "Roboto Slab", serif;
-    --font-cursive: "Kalam", cursive;
-    --font-fancy: "Kaushan Script", cursive;
-    /*: font sizes :*/
-    --font-size-h1: 2.75rem;
-    --font-size-h2: 2.4375rem;
-    --font-size-h3: 2.125rem;
-    --font-size-h4: 1.8125rem;
-    --font-size-h5: 1.5rem;
-    --font-size-h6: 1.375rem;
-    --font-size-xm: 1.125rem;
-    --font-size-md: 1rem;
-    --font-size-sm: 0.875rem;
-    --font-size-xs: 0.8125rem;
-    --font-size-2xs: 0.75rem;
-    --font-size-larger: 106.25%;
-    --font-size-smaller: 93.75%;
-    /*: font weight :*/
-    --font-wgt-thin: 100;
-    --font-wgt-xtralight: 200;
-    --font-wgt-light: 300;
-    --font-wgt-normal: 400;
-    --font-wgt-medium: 500;
-    --font-wgt-semibold: 600;
-    --font-wgt-bold: 700;
-    --font-wgt-extrabold: 800;
-    --font-wgt-black: 900;
-    /*: font styles :*/
-    --font-style-italic: italic;
-    --font-style-normal: normal;
-    --font-style-oblique: oblique;
-    /*: headers :*/
-    --h1-color: var(--hue-bas-dn3);
-    --h1-font: var(--font-serif);
-    --h1-size: var(--font-size-h1);
-    --h1-style: var(--font-style-normal);
-    --h1-weight: var(--font-wgt-normal);
-    --h2-color: var(--hue-bas-dn3);
-    --h2-font: var(--font-serif);
-    --h2-size: var(--font-size-h2);
-    --h2-style: var(--font-style-normal);
-    --h2-weight: var(--font-wgt-normal);
-    --h3-color: var(--hue-bas-dn3);
-    --h3-font: var(--font-serif);
-    --h3-size: var(--font-size-h3);
-    --h3-style: var(--font-style-normal);
-    --h3-weight: var(--font-wgt-normal);
-    --h4-color: var(--hue-bas-dn3);
-    --h4-font: var(--font-serif);
-    --h4-size: var(--font-size-h4);
-    --h4-style: var(--font-style-normal);
-    --h4-weight: var(--font-wgt-normal);
-    --h5-color: var(--hue-bas-dn3);
-    --h5-font: var(--font-sans);
-    --h5-size: var(--font-size-h5);
-    --h5-style: var(--font-style-normal);
-    --h5-weight: var(--font-wgt-normal);
-    --h6-color: var(--hue-bas-dn3);
-    --h6-font: var(--font-sans);
-    --h6-size: var(--font-size-h6);
-    --h6-style: var(--font-style-normal);
-    --h6-weight: var(--font-wgt-normal);
-    /*
-    ***
-    theme attributes
-    ***
-    */
-    /*: blog header :*/
-    --blog-hdr-bg-color: var(--hue-bas-up5);
-    /*: blog title & tagline :*/
-    --title-font-family: var(--font-fancy);
-    --title-font-size: 3rem;
-    --title-font-spacing: 0.0625rem;
-    --title-font-style: normal;
-    --title-font-weight: var(--font-wgt-normal);
-    --desc-font-color: var(--wcag-grey8);
-    --desc-font-family: var(--font-sans);
-    --desc-font-size: 1rem;
-    --desc-font-spacing: 0.5rem;
-    --desc-font-style: normal;
-    --desc-font-weight: var(--font-wgt-normal);
-    /*: blog footer :*/
-    --blog-ft-bg-color: var(--hue-bas-up5);
-    /*: sys menu :*/
-    --mnu-bar-sm-bg: var(--transparent);
-    --mnu-bar-sm-fg: var(--hue-blk);
-    --mnu-bar-lg-bg: var(--blog-hdr-bg-color);
-    --mnu-bar-lg-fg: var(--wcag-grey7);
-    /*: sys content :*/
-    --content-bg-color: var(--hue-wht);
-    --content-fg-color: var(--hue-blk);
-    --content-tp-border-color: var(--hue-bas-up2);
-    --content-bt-border-color: var(--hue-bas-up2);
-    --content-counter-color: var(--wcag-grey6);
-    /*: system :*/
-    --dft-fg-color: var(--hue-bas-dn4);
-    --dft-bg-color: var(--hue-bas-up5);
-    --dft-line-height: 1.5;
-    --dft-font-family: var(--font-sans);
-    --dft-font-color: var(--hue-blk);
-    --dft-font-size: 1rem;
-    --dft-font-weight: var(--font-wgt-light);
-    --dft-font-spacing: normal;
-    /*: link attributes :*/
-    --lnk-dft-fg-hue: var(--hue-pri-dn1);
-    --lnk-dft-bg-hue: var(--transparent);
-    --lnk-vst-fg-hue: var(--hue-pri-up2);
-    --lnk-vst-bg-hue: var(--transparent);
-    --lnk-hvr-fg-hue: var(--hue-sec);
-    --lnk-hvr-bg-hue: var(--transparent);
-    --lnk-dft-wgt: var(--font-wgt-normal);
-    --lnk-vst-wgt: var(--font-wgt-normal);
-    --lnk-hvr-wgt: var(--font-wgt-normal);
-    --lnk-dft-decor: none;
-    --lnk-vst-decor: none;
-    --lnk-hvr-decor: none;
-    /*
-    ***
-    plugin attributes
-    ***
-    */
-    /*: yoast :*/
-    --pag-breadcrumb-dsp: block;
-    --pst-breadcrumb-dsp: none;
+/*
+***
+base, primary, secondary hue / shade
+***
+*/
+	/*: black & white :*/
+	--hue-blk: #000000;
+	--hue-wht: #ffffff;
+	/*: base hue :*/
+	--hue-bas-up5: #fafafa;
+	--hue-bas-up4: #f5f5f5;
+	--hue-bas-up3: #ebebeb;
+	--hue-bas-up2: #e2e2e2;
+	--hue-bas-up1: #d8d8d8;
+	--hue-bas: #cecece;
+	--hue-bas-dn1: #a5a5a5;
+	--hue-bas-dn2: #7c7c7c;
+	--hue-bas-dn3: #525252;
+	--hue-bas-dn4: #292929;
+	--hue-bas-tint-up1: #f5f5f5;
+	--hue-bas-tint: #f0f0f0;
+	--hue-bas-tint-dn1: #ebebeb;
+	/*: primary hue :*/
+	--hue-pri-up5: #e6edf7;
+	--hue-pri-up4: #ccdaee;
+	--hue-pri-up3: #99b5dd;
+	--hue-pri-up2: #6691cd;
+	--hue-pri-up1: #336cbc;
+	--hue-pri: #0047ab;
+	--hue-pri-dn1: #003989;
+	--hue-pri-dn2: #002b67;
+	--hue-pri-dn3: #001c44;
+	--hue-pri-dn4: #000e22;
+	--hue-pri-tint-up1: #e6edf7;
+	--hue-pri-tint: #ccdaee;
+	--hue-pri-tint-dn1: #b3c8e6;
+	/*: secondary hue :*/
+	--hue-sec-up5: #ffefe6;
+	--hue-sec-up4: #ffe0cc;
+	--hue-sec-up3: #ffc099;
+	--hue-sec-up2: #ffa166;
+	--hue-sec-up1: #ff8133;
+	--hue-sec: #ff6200;
+	--hue-sec-dn1: #cc4e00;
+	--hue-sec-dn2: #993b00;
+	--hue-sec-dn3: #662700;
+	--hue-sec-dn4: #331400;
+	--hue-sec-tint-up1: #fef1e8;
+	--hue-sec-tint: #fde3d1;
+	--hue-sec-tint-dn1: #fdd5ba;
+	/*
+***
+wcag colors (dim grey #6b6765)
+***
+*/
+	--wcag-grey9: #131312;
+	--wcag-grey8: #242222;
+	--wcag-grey7: #474543;
+	--wcag-grey6: #6b6765;
+	--wcag-red: #8b0000;
+	--wcag-deep-purple: #663399;
+	--wcag-blue: #0000ff;
+	--wcag-green: #008000;
+	--wcag-deep-orange: #D03E06;
+	--wcag-blue-grey: #2f4f4f;
+	/*
+***
+named colors
+***
+*/
+	--hue-red: #dc143c;
+	--hue-pink: #ff1493;
+	--hue-purple: #9400d3;
+	--hue-deep-purple: #800080;
+	--hue-indigo: #4b0082;
+	--hue-blue: #0000ff;
+	--hue-light-blue: #add8e6;
+	--hue-cyan: #00ffff;
+	--hue-teal: #008080;
+	--hue-green: #008000;
+	--hue-light-green: #90ee90;
+	--hue-lime: #32cd32;
+	--hue-yellow: #ffff00;
+	--hue-amber: #ffba00;
+	--hue-orange: #e4641c;
+	--hue-deep-orange: #dd4714;
+	--hue-brown: #654320;
+	--hue-blue-grey: #708090;
+	/*
+***
+special colors
+***
+*/
+	/*: no color :*/
+	--transparent: transparent;
+	/*: hilite plugin support :*/
+	--hue-highlight: #FFF59D;
+	/*
+***
+content attributes
+***
+*/
+	/*: font families :*/
+	--font-family-sans: "Roboto", sans-serif;
+	--font-family-condensed: "Roboto Condensed", sans-serif;
+	--font-family-mono: "Roboto Mono", monospace;
+	--font-family-serif: "Roboto Slab", serif;
+	--font-family-cursive: "Kalam", cursive;
+	--font-family-fancy: "Kaushan Script", cursive;
+	/*: font sizes :*/
+	--font-size-h1: 2.75rem;
+	--font-size-h2: 2.4375rem;
+	--font-size-h3: 2.125rem;
+	--font-size-h4: 1.8125rem;
+	--font-size-h5: 1.5rem;
+	--font-size-h6: 1.375rem;
+	--font-size-xm: 1.125rem;
+	--font-size-md: 1rem;
+	--font-size-sm: 0.875rem;
+	--font-size-xs: 0.8125rem;
+	--font-size-2xs: 0.75rem;
+	--font-size-larger: 106.25%;
+	--font-size-smaller: 93.75%;
+	/*: font weight :*/
+	--font-wgt-thin: 100;
+	--font-wgt-xtralight: 200;
+	--font-wgt-light: 300;
+	--font-wgt-normal: 400;
+	--font-wgt-medium: 500;
+	--font-wgt-semibold: 600;
+	--font-wgt-bold: 700;
+	--font-wgt-extrabold: 800;
+	--font-wgt-black: 900;
+	/*: font styles :*/
+	--font-style-italic: italic;
+	--font-style-normal: normal;
+	--font-style-oblique: oblique;
+	/*: headers :*/
+	--h1-color: var(--hue-bas-dn3);
+	--h1-font: var(--font-family-serif);
+	--h1-size: var(--font-size-h1);
+	--h1-style: var(--font-style-normal);
+	--h1-weight: var(--font-wgt-normal);
+	--h2-color: var(--hue-bas-dn3);
+	--h2-font: var(--font-family-serif);
+	--h2-size: var(--font-size-h2);
+	--h2-style: var(--font-style-normal);
+	--h2-weight: var(--font-wgt-normal);
+	--h3-color: var(--hue-bas-dn3);
+	--h3-font: var(--font-family-serif);
+	--h3-size: var(--font-size-h3);
+	--h3-style: var(--font-style-normal);
+	--h3-weight: var(--font-wgt-normal);
+	--h4-color: var(--hue-bas-dn3);
+	--h4-font: var(--font-family-serif);
+	--h4-size: var(--font-size-h4);
+	--h4-style: var(--font-style-normal);
+	--h4-weight: var(--font-wgt-normal);
+	--h5-color: var(--hue-bas-dn3);
+	--h5-font: var(--font-family-sans);
+	--h5-size: var(--font-size-h5);
+	--h5-style: var(--font-style-normal);
+	--h5-weight: var(--font-wgt-normal);
+	--h6-color: var(--hue-bas-dn3);
+	--h6-font: var(--font-family-sans);
+	--h6-size: var(--font-size-h6);
+	--h6-style: var(--font-style-normal);
+	--h6-weight: var(--font-wgt-normal);
+	/*
+***
+theme attributes
+***
+*/
+	/*: blog header :*/
+	--blog-hdr-bg-color: var(--hue-bas-up5);
+	/*: blog title & tagline :*/
+	--title-font-family: var(--font-family-fancy);
+	--title-font-size: 3rem;
+	--title-font-spacing: 0.0625rem;
+	--title-font-style: normal;
+	--title-font-weight: var(--font-wgt-normal);
+	--desc-font-color: var(--wcag-grey8);
+	--desc-font-family: var(--font-family-sans);
+	--desc-font-size: 1rem;
+	--desc-font-spacing: 0.5rem;
+	--desc-font-style: normal;
+	--desc-font-weight: var(--font-wgt-normal);
+	/*: blog footer :*/
+	--blog-ft-bg-color: var(--hue-bas-up5);
+	/*: sys menu :*/
+	--mnu-bar-sm-bg: var(--transparent);
+	--mnu-bar-sm-fg: var(--hue-blk);
+	--mnu-bar-lg-bg: var(--blog-hdr-bg-color);
+	--mnu-bar-lg-fg: var(--wcag-grey7);
+	/*: sys content :*/
+	--content-bg-color: var(--hue-wht);
+	--content-fg-color: var(--hue-blk);
+	--content-tp-border-color: var(--hue-bas-up2);
+	--content-bt-border-color: var(--hue-bas-up2);
+	--content-counter-color: var(--wcag-grey6);
+	/*: system :*/
+	--dft-fg-color: var(--hue-bas-dn4);
+	--dft-bg-color: var(--hue-bas-up5);
+	--dft-line-height: 1.5;
+	--dft-font-family: var(--font-family-sans);
+	--dft-font-color: var(--hue-blk);
+	--dft-font-size: 1rem;
+	--dft-font-weight: var(--font-wgt-light);
+	--dft-font-spacing: normal;
+	/*: link attributes :*/
+	--lnk-dft-fg-hue: var(--hue-pri-dn1);
+	--lnk-dft-bg-hue: var(--transparent);
+	--lnk-vst-fg-hue: var(--hue-pri-up2);
+	--lnk-vst-bg-hue: var(--transparent);
+	--lnk-hvr-fg-hue: var(--hue-sec);
+	--lnk-hvr-bg-hue: var(--transparent);
+	--lnk-dft-wgt: var(--font-wgt-normal);
+	--lnk-vst-wgt: var(--font-wgt-normal);
+	--lnk-hvr-wgt: var(--font-wgt-normal);
+	--lnk-dft-decor: none;
+	--lnk-vst-decor: none;
+	--lnk-hvr-decor: none;
+	/*
+***
+plugin attributes
+***
+*/
+	/*: yoast :*/
+	--pag-breadcrumb-dsp: block;
+	--pst-breadcrumb-dsp: none;
 }
 
 /*
- * EOF: theme-vars.css / 24200531
- */
+* EOF: theme-vars.css / 26200615
+*/

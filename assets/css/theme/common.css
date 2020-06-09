@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  common.css
-    * bld:  24200527
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -50,7 +50,7 @@ big {
 }
 
 samp {
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
 }
 
 samp {
@@ -76,8 +76,12 @@ u {
 }
 
 kbd {
-    background-color: var(--hue-pri-dark);
-    color: var(--hue-wht);
+	background-color: var(--hue-pri-up5);
+	border-radius: 0.1666rem;
+	font-size: var(--font-size-smaller);
+	font-family: var(--font-family-mono);
+	font-weight: normal;
+	padding: 0 0.125rem 0 0.125rem;
 }
 
 /*
@@ -132,7 +136,7 @@ pre.wrap{
     background-color: var(--content-bg-color);
     border-radius: 0.3333rem;
     color: var(--dft-fg-color);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-size: var(--font-size-sm);
     font-weight: normal;
     padding: 0.5rem 0 0.5rem 0; 
@@ -159,7 +163,7 @@ pre.wrap {
 code {
     background-color: transparent !important;
     color: var(--hue-pri) !important;
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-smaller) !important;
     font-weight: var(--dft-font-weight) !important;
 }
@@ -175,12 +179,12 @@ code {
 */
 var {
     color: var(--hue-pri-dn1);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-style: normal;
 }
 
 pre.dsp\:line-nums {
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-weight: var(--dft-font-weight);    
 }
 
@@ -794,10 +798,9 @@ ol.nested ol ol ol ol ol {
 
 .li-fa {
     display: inline-block;
-    margin-left: -2rem;
-    padding-right: 0.25rem;
-    text-align: center;
-    width: 2rem;
+    margin-left: -1.75rem;
+    text-align: left;
+    width: 1.75rem;
 }
 
 /*
@@ -961,7 +964,7 @@ dd {
 ***
     * element: <table>
     * dsc: html table
-    * ver: 200520
+    * ver: 26200515
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
     *
@@ -989,7 +992,6 @@ dd {
 table {
     background-color: transparent;
     border-color: transparent;
-    /*font-size: var(--font-size-sm);*/
     table-layout: fixed;
 }
 
@@ -1018,16 +1020,8 @@ table > thead > tr > th {
     padding: 0.25rem 0.5rem;
 }
 
-table > thead > tr > td {
-    background-color: var(--hue-bas-tint-dark);
-}
-
 table > thead > tr > th {
-    background: var(--hue-bas-up4);
-    background: -moz-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    background: -webkit-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    background: linear-gradient(to bottom, var(--hue-bas-up5) 0%, var(--hue-bas-up4) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--hue-bas-up5), endColorstr=var(--hue-bas-up4), GradientType=0);
+    background-color: var(--hue-bas-up3);
 }
 
 table > thead > tr > td:not(:last-child) {
@@ -1474,7 +1468,7 @@ pre#textarea {
     box-shadow: none;
     border: 0;
     color: var(--hue-bas-dn4);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-size: .875rem !important;
     padding: 0;
     white-space: pre-wrap;
@@ -1509,10 +1503,10 @@ td .ratio-container {
     *      !important to override defaults
 ***
 */
-.material-icons {
+span.material-icons {
     position: relative !important;
-    top: 4px !important;
-    font-size: calc(100% + 2px) !important;
+    top: 2px !important;
+    font-size: 104% !important;
 }
 
 /*
@@ -1788,8 +1782,9 @@ table.frame > tbody > tr > td {
 ***
 */
 button {
-    background-color: var(--hue-pri);
-    border: thin solid transparent;
+    background-color: var(--hue-pri-up1);
+    border: thin solid var(--hue-pri);
+	border-radius: 0.3333rem;
     color: var(--hue-wht);
     padding: 0.5rem 1.5rem;
     text-align: center;
@@ -1802,12 +1797,12 @@ button a:focus {
 }
 
 button:hover {
-    filter: brightness(115%);
+    background-color: var(--hue-pri);
 }
 
 button:active {
-    /* background-color: var(--hue-pri-dark); */
-    filter: brightness(85%);
+	background-color: var(--hue-bas-dn4);
+    border: thin solid var(--hue-bas-dn4);
 }
 
 /*
@@ -2037,5 +2032,5 @@ button:active {
 }
 
 /*
- * EOF: common.css / 24200527
+ * EOF: common.css / 26200615
  */

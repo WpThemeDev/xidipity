@@ -3,7 +3,7 @@
     * Web specific css classes
     *
     * ###:  web.css
-    * bld:  24200531
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -610,7 +610,7 @@ a.hdr\:title:hover {
 */
 .pg\:title {
     color: var(--hue-bas-dn3);
-    font-family: var(--font-serif);
+    font-family: var(--font-family-serif);
 	font-size: var(--font-size-h1);
     font-style: var(--font-style-normal);
 	font-weight: var(--font-wgt-normal);
@@ -821,7 +821,7 @@ body .gist .blob-wrapper {
 
 body .gist .highlight {
     background-color: var(--content-bg-color);
-    font-family: var(--font-mono);
+    font-family: var(--font-family-mono);
     font-size: var(--font-size-xs);
 }
 
@@ -992,7 +992,7 @@ a.page-numbers:focus {
 .CodeMirror {
     border: 1px solid var(--hue-bas-up2) !important;
     height: 55.5vh !important;
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-family-mono) !important;
     font-size: smaller !important;
     overflow: auto;
     padding-right: 0.25rem;
@@ -1194,5 +1194,5 @@ a.page-numbers:focus {
 }
 
 /*
- * EOF: web.css / 24200531
+ * EOF: web.css / 26200615
  */

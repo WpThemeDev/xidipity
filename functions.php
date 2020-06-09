@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  24200531
+    * bld:  24200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -21,7 +21,7 @@ $global_dsp_sidebar = '';
 
 /**
  *  name: theme_cfg
- *  build: 190915.1b
+ *  build: 26200615
  *  description: set global configuration defaults
  *
  */
@@ -40,13 +40,15 @@ function theme_cfg() {
                 switch ($cfg_key)
                 {
                     case 'fav-icon':
-                        $cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
-                        if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
-                        {
-                            $cfg_val = 'none';
-                        }
+						if ($cfg_val !== 'default') 
+						{
+							$cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
+							if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
+							{
+								$cfg_val = 'default';
+							}							
+						}
                         define('XWT_FAV_ICO', $cfg_val);
-                        update_option('XWT_FAV_ICO',$cfg_val);
                         break;
                     case 'fa-version':
                         define('XWT_FA_VER', $cfg_val);
@@ -136,7 +138,7 @@ function theme_cfg() {
         define('XWT_HDR_HGT', '100px');
     }
     if (!defined('XWT_FAV_ICO')) {
-        define('XWT_FAV_ICO', 'none');
+        define('XWT_FAV_ICO', 'default');
     }
     if (!defined('XWT_HDR_IMG')) {
         define('XWT_HDR_IMG', 'none');
@@ -1648,7 +1650,7 @@ function dsp_warning($arg = '')
 
 /**
  *  name: dsp_err
- *  build: 200315
+ *  build: 200615
  *  description: Return properly formatted error message
  *  attributes:
  *      $arg - string
@@ -1667,7 +1669,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<!--  tmpl:ANNOTATION --><table class="bdr:collapse bdr:hidden cols:auto mar:vrt+1.25 wd:100%"><tbody class="aln:middle bg:tint-bas+1"><tr><td class="aln:text-center bg:wcag-red cnr:arch-left-small fg:wht fnt:size-3x-large wd:min4">' . xidipity_icon_err('h3') . '</td><td class="aln:text-left cnr:arch-right-small fnt:size-medium pad:vrt+0.5 wd:100%">' . __($msg) . '</td></tr></tbody></table><!-- /tmpl:ANNOTATION -->';
+    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bg:tint-bas+1 cnr:arch-small">	<div class="fnt:size-3x-large pad:+0.5"><span class="material-icons">support_agent</span></div>	<div class="pad:+0.5">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
     // return html
     return $fn_retval;
 }
@@ -1979,6 +1981,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 24200531
+ * EOF: functions.php / 24200615
  */
 ?>

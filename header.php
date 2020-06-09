@@ -4,7 +4,7 @@
     * The template for displaying page header
     *
     * ###:  header.php
-    * bld:  24200520
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -40,16 +40,19 @@ do_action('wp_head');
     * ref:
 ***
 */
-if (XWT_FAV_ICO !== 'none')
+if (XWT_FAV_ICO == 'default')
 {
-  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
-  echo '<link rel="pple-touch-icon-precomposed" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
-  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="192x192" />' . "\n";
-  echo '<meta name="msapplication-TileImage" content="' . XWT_FAV_ICO . '" />' . "\n";
+  echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
+  echo '<link rel="apple-touch-icon-precomposed" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
+  echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="192x192" />' . "\n";
+  echo '<meta name="msapplication-TileImage" content="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" />' . "\n";
 }
 else
 {
-    echo '<!--  err:###MISSING FAV-ICON DECLARATION### -->' . "\n";
+  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
+  echo '<link rel="apple-touch-icon-precomposed" href="' . XWT_FAV_ICO . '" sizes="32x32" />' . "\n";
+  echo '<link rel="icon" href="' . XWT_FAV_ICO . '" sizes="192x192" />' . "\n";
+  echo '<meta name="msapplication-TileImage" content="' . XWT_FAV_ICO . '" />' . "\n";
 }
 
 /*
@@ -268,6 +271,6 @@ echo '</div>' . "\n";
 echo '<!-- /fi:2/HTML -->' . "\n";
 
 /*
- * EOF: header.php / 24200520
+ * EOF: header.php / 26200615
  */
 ?>

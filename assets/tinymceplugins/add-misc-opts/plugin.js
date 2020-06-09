@@ -3,7 +3,7 @@
     * Tinymce add-misc-opts plugin
     *
     * ###:  plugin.js
-    * bld:  24200531
+    * bld:  26200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -76,8 +76,8 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
             }
         }, {
             icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNSAxN3YyaDE0di0ySDV6bTQuNS00LjJoNWwuOSAyLjJoMi4xTDEyLjc1IDRoLTEuNUw2LjUgMTVoMi4xbC45LTIuMnpNMTIgNS45OEwxMy44NyAxMWgtMy43NEwxMiA1Ljk4eiIvPjwvc3ZnPg==',
-            text: '\xa0Text To Acronym',
+            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDguNDFMMTYuNTkgMTMgMTggMTEuNTlsLTYtNi02IDZMNy40MSAxMyAxMiA4LjQxek02IDE4aDEydi0ySDZ2MnoiLz48L3N2Zz4=',
+            text: '\xa0Acronym',
             onclick: function () {
                 editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
             }
@@ -86,5 +86,5 @@ tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 24200531
+ * EOF: add-misc-opts / plugin.js / 26200615
  */
