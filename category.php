@@ -4,7 +4,7 @@
     * The template for displaying pages assigned to category
     *
     * ###:  category.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -107,7 +107,7 @@ if (have_posts())
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
         $excerpt_category = '<div class="fnt:weight-bolder">' . dsp_cat($first_cat_name) . '</div>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:bas-1 pad:hrz+0.5">&bull;</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -289,6 +289,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: category.php / 24200520
+ * EOF: category.php / 27200615
  */
 ?>
