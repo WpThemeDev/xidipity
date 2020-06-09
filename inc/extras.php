@@ -1,20 +1,12 @@
 <?php
-/*
-    * WordPress Xidipity Theme PHP File
+/**
+    * WordPress Xidipity Theme
+    * The template for displaying searchs results
     *
-    * File Name:       inc/extras.php
-    * Function:        xidipity extensions
-    * Build:           26200615
-    * GitHub:          github.com/WpThemeDev/xidipity/
-    * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
-    *
-    * @package         xidipity
-    * @author          John Baer
-    * @copyright       2019-2020 John Baer
-    * @license         GPL-3.0-or-later
-    * @version         1.0
-    * @since           0.9
-    * @link            developer.wordpress.org/themes/basics/
+    * ###:  inc/extras.php
+    * bld:  27200615
+    * src:  github.com/WpThemeDev/xidipity/
+    * (C)   2019-2020 John Baer
     *
 */
 
@@ -652,7 +644,7 @@ function xlst_shortcode($args = array() , $prms = '')
             }
             //$excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
             $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="fg:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
 
             /*
              ***
@@ -1605,7 +1597,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   26200615
+ * Build:   27200615
  *
  */
 ?>
