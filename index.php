@@ -4,7 +4,7 @@
     * The template for displaying blog excerpts 
     *
     * ###:  index.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -148,7 +148,7 @@ if ($wp_data->have_posts())
         echo '<!--  fi:3/1/1/'. $cnt . '/SECTION/EXCERPT -->' . "\n";
         echo '<article class="dsp:block pad:+0.5">' . "\n";
         echo '<div>' . dsp_cat(post_category('link')) . '</div>' . "\n";
-        echo '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>'  . "\n";
+        echo '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>'  . "\n";
         the_title('<p class="pst:title">', '</p>');
         if (xidipity_has_excerpt())
         {
@@ -278,6 +278,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: index.php / 24200520
+ * EOF: index.php / 27200615
  */
 ?>
