@@ -3,7 +3,7 @@
     * Print specific css classes 
     *
     * ###:  print.css
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -19,13 +19,13 @@
 ***
 */
 body {
-    -webkit-print-color-adjust: exact;
-    background: var(--hue-wht);
-    color: var(--hue-blk);
-    font-family: var(--dft-font-family);
-    font-size: var(--dft-font-size);
-    font-weight: var(--dft-font-weight);
-    line-height: var(--dft-line-height);
+	-webkit-print-color-adjust: exact;
+	background: var(--hue-wht);
+	color: var(--hue-blk);
+	font-family: var(--dft-font-family);
+	font-size: var(--dft-font-size);
+	font-weight: var(--dft-font-weight);
+	line-height: var(--dft-line-height);
 }
 
 /*
@@ -38,9 +38,9 @@ body {
 ***
 */
 @page {
-    /* auto is the initial value */
-    size: auto;
-    margin: 8%;
+	/* auto is the initial value */
+	size: auto;
+	margin: 8%;
 }
 
 /*
@@ -58,7 +58,7 @@ body {
 .comment-respond,
 .comments-area,
 .do-not-print {
-    display: none;
+	display: none;
 }
 
 /*
@@ -72,26 +72,26 @@ body {
 */
 a,
 a:visited {
-    color: var(--dft-lnk-pri-color);
-    font-weight: var(--dft-pri-lnk-wgt);
-    text-decoration: var(--dft-pri-lnk-decor);
+	color: var(--dft-lnk-pri-color);
+	font-weight: var(--dft-pri-lnk-wgt);
+	text-decoration: var(--dft-pri-lnk-decor);
 }
 
 a:active,
 a:focus,
 a:hover {
-    color: var(--hue-blk);
-    background-color: var(--transparent);
-    font-weight: var(--dft-pri-lnk-wgt);
+	color: var(--hue-blk);
+	background-color: var(--transparent);
+	font-weight: var(--dft-pri-lnk-wgt);
 }
 
 table {
-    break-inside: auto
+	break-inside: auto
 }
 
 tr {
-    break-inside: avoid;
-    break-after: auto
+	break-inside: avoid;
+	break-after: auto
 }
 
 /*
@@ -104,51 +104,51 @@ tr {
 ***
 */
 h1 {
-    color: var(--h1-color);
-    font-family: var(--h1-font);
-    font-size: var(--h1-size);
-    font-style: var(--h1-style);
-    font-weight: var(--h1-weight);
+	color: var(--h1-color);
+	font-family: var(--h1-font);
+	font-size: var(--h1-size);
+	font-style: var(--h1-style);
+	font-weight: var(--h1-weight);
 }
 
 h2 {
-    color: var(--h2-color);
-    font-family: var(--h2-font);
-    font-size: var(--h2-size);
-    font-style: var(--h2-style);
-    font-weight: var(--h2-weight);
+	color: var(--h2-color);
+	font-family: var(--h2-font);
+	font-size: var(--h2-size);
+	font-style: var(--h2-style);
+	font-weight: var(--h2-weight);
 }
 
 h3 {
-    color: var(--h3-color);
-    font-family: var(--h3-font);
-    font-size: var(--h3-size);
-    font-style: var(--h3-style);
-    font-weight: var(--h3-weight);
+	color: var(--h3-color);
+	font-family: var(--h3-font);
+	font-size: var(--h3-size);
+	font-style: var(--h3-style);
+	font-weight: var(--h3-weight);
 }
 
 h4 {
-    color: var(--h4-color);
-    font-family: var(--h4-font);
-    font-size: var(--h4-size);
-    font-style: var(--h4-style);
-    font-weight: var(--h4-weight);
+	color: var(--h4-color);
+	font-family: var(--h4-font);
+	font-size: var(--h4-size);
+	font-style: var(--h4-style);
+	font-weight: var(--h4-weight);
 }
 
 h5 {
-    color: var(--h5-color);
-    font-family: var(--h5-font);
-    font-size: var(--h5-size);
-    font-style: var(--h5-style);
-    font-weight: var(--h5-weight);
+	color: var(--h5-color);
+	font-family: var(--h5-font);
+	font-size: var(--h5-size);
+	font-style: var(--h5-style);
+	font-weight: var(--h5-weight);
 }
 
 h6 {
-    color: var(--h6-color);
-    font-family: var(--h6-font);
-    font-size: var(--h6-size);
-    font-style: var(--h6-style);
-    font-weight: var(--h6-weight);
+	color: var(--h6-color);
+	font-family: var(--h6-font);
+	font-size: var(--h6-size);
+	font-style: var(--h6-style);
+	font-weight: var(--h6-weight);
 }
 
 /*
@@ -164,25 +164,25 @@ table.cols\:auto,
 table.cols\:2,
 table.cols\:3,
 table.cols\:4 {
-    border: none !important;
-    width: 100%;
+	border: none !important;
+	width: 100%;
 }
 
 .cols\:auto td,
 .cols\:2 td {
-    column-count: 2;
-    column-gap: 2%;
-    break-inside: avoid;
+	column-count: 2;
+	column-gap: 2%;
+	break-inside: avoid;
 }
 
 .cols\:3 td {
-    column-count: 3;
-    column-gap: 2%;
+	column-count: 3;
+	column-gap: 2%;
 }
 
 .cols\:4 td {
-    column-count: 4;
-    column-gap: 2%;
+	column-count: 4;
+	column-gap: 2%;
 }
 
 /*
@@ -195,34 +195,34 @@ table.cols\:4 {
 ***
 */
 .prt\[dsp\:none\] {
-    display: none !important;
+	display: none !important;
 }
 
 .prt\[dsp\:hidden\] {
-    visibility: hidden !important;
+	visibility: hidden !important;
 }
 
 .prt\[dsp\:inline\] {
-    display: inline !important;
+	display: inline !important;
 }
 
 .prt\[dsp\:inline-block\] {
-    display: inline-block !important;
+	display: inline-block !important;
 }
 
 .prt\[pg-break\:after\] {
-    break-after: always;
+	break-after: always;
 }
 
 .prt\[pg-break\:after\] {
-    break-after: always;
+	break-after: always;
 }
 
 .prt\[box\:noshadow\] {
-    border-top: none !important;
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
+	border-top: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 /*
@@ -235,91 +235,91 @@ table.cols\:4 {
 ***
 */
 .prt\[fg-blk\] {
-    color: var(--hue-blk) !important;
+	color: var(--hue-blk) !important;
 }
 
 .prt\[fg-wht\] {
-    color: var(--hue-wht) !important;
+	color: var(--hue-wht) !important;
 }
 
 .prt\[fg-bas-900\] {
-    color: var(--hue-bas-900) !important;
+	color: var(--hue-bas-900) !important;
 }
 
 .prt\[fg-bas-800\] {
-    color: var(--hue-bas-800) !important;
+	color: var(--hue-bas-800) !important;
 }
 
 .prt\[fg-bas-700\] {
-    color: var(--hue-bas-700) !important;
+	color: var(--hue-bas-700) !important;
 }
 
 .prt\[fg-bas-600\] {
-    color: var(--hue-bas-600) !important;
+	color: var(--hue-bas-600) !important;
 }
 
 .prt\[fg-bas-500\] {
-    color: var(--hue-bas-500) !important;
+	color: var(--hue-bas-500) !important;
 }
 
 .prt\[fg-bas-400\] {
-    color: var(--hue-bas-400) !important;
+	color: var(--hue-bas-400) !important;
 }
 
 .prt\[fg-bas-300\] {
-    color: var(--hue-bas-300) !important;
+	color: var(--hue-bas-300) !important;
 }
 
 .prt\[fg-bas-200\] {
-    color: var(--hue-bas-200) !important;
+	color: var(--hue-bas-200) !important;
 }
 
 .prt\[fg-bas-100\] {
-    color: var(--hue-bas-100) !important;
+	color: var(--hue-bas-100) !important;
 }
 
 .prt\[fg-bas-050\] {
-    color: var(--hue-bas-050) !important;
+	color: var(--hue-bas-050) !important;
 }
 
 .prt\[bg-bas-900\] {
-    background-color: var(--hue-bas-900) !important;
+	background-color: var(--hue-bas-900) !important;
 }
 
 .prt\[bg-bas-800\] {
-    background-color: var(--hue-bas-800) !important;
+	background-color: var(--hue-bas-800) !important;
 }
 
 .prt\[bg-bas-700\] {
-    background-color: var(--hue-bas-700) !important;
+	background-color: var(--hue-bas-700) !important;
 }
 
 .prt\[bg-bas-600\] {
-    background-color: var(--hue-bas-600) !important;
+	background-color: var(--hue-bas-600) !important;
 }
 
 .prt\[bg-bas-500\] {
-    background-color: var(--hue-bas-500) !important;
+	background-color: var(--hue-bas-500) !important;
 }
 
 .prt\[bg-bas-400\] {
-    background-color: var(--hue-bas-400) !important;
+	background-color: var(--hue-bas-400) !important;
 }
 
 .prt\[bg-bas-300\] {
-    background-color: var(--hue-bas-300) !important;
+	background-color: var(--hue-bas-300) !important;
 }
 
 .prt\[bg-bas-200\] {
-    background-color: var(--hue-bas-200) !important;
+	background-color: var(--hue-bas-200) !important;
 }
 
 .prt\[bg-bas-100\] {
-    background-color: var(--hue-bas-100) !important;
+	background-color: var(--hue-bas-100) !important;
 }
 
 .prt\[bg-bas-050\] {
-    background-color: var(--hue-bas-050) !important;
+	background-color: var(--hue-bas-050) !important;
 }
 
 /*
@@ -332,10 +332,10 @@ table.cols\:4 {
 ***
 */
 .box\:shadow {
-    border-top: none !important;
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
+	border-top: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 /*
@@ -348,9 +348,9 @@ table.cols\:4 {
 ***
 */
 #breadcrumbs {
-    display: none;
+	display: none;
 }
 
 /*
- * EOF: print.css / 24200520
+ * EOF: print.css / 27200615
  */
