@@ -4,7 +4,7 @@
     * The template for displaying blog post
     *
     * ###:  single.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -61,7 +61,7 @@ else
 ***
 */
 echo '<!--  ct:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
@@ -79,7 +79,7 @@ if ($wp_query->have_posts())
     echo '<!-- /ct:TEXT -->' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fc:WRAPPER -->' . "\n";
-    echo '<div class="bg:bas+2 ln mar:bottom+1">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+1">&#8203;</div>' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fi:1/TITLE -->' . "\n";
     echo '<!--  fi:2/BLOG -->' . "\n";
@@ -87,15 +87,15 @@ if ($wp_query->have_posts())
     echo '<!--  fc:WRAPPER -->' . "\n";
     echo '<div class="fx:c-rev md)fx:r fxa:1 fxb:1 fxc:1 wd:100%">' . "\n";
     echo '<!--  fi:1/STATS -->' . "\n";
-    echo '<div class="bg:content fxd:2 fxe:6 wd:100% md)wd:15%">' . "\n";
+    echo '<div class="bkg:content fxd:2 fxe:6 wd:100% md)wd:15%">' . "\n";
     echo '<!--  ct:TEXT -->' . "\n";
-    echo '<div class="bg:bas+5 cnr:arch-small mar:bottom+1 pad:+0.5 dsp:block ht:min10">' . "\n";
+    echo '<div class="bkg:bas+5 cnr:arch-small mar:bottom+1 pad:+0.5 dsp:block ht:min10">' . "\n";
     echo '<table class="bdr:space+0.25 bdr:hidden cols:auto">' . "\n";
     
     $first_cat_link = xidipity_first_category();
     $first_cat_name = xidipity_first_category('name');
     $categories = get_the_category();
-    echo '<tr class="led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . dsp_cat_icon($first_cat) . '</td><td><p>' . $first_cat_link . '</p>' . "\n";
+    echo '<tr class="led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . dsp_cat_icon($first_cat) . '</td><td><p>' . $first_cat_link . '</p>' . "\n";
     if ( count( $categories ) > 1 ) 
     {
         echo '<ul class="fnt:size-smaller">' . "\n";
@@ -109,26 +109,26 @@ if ($wp_query->have_posts())
         echo '</ul>' . "\n";        
     }
     echo '</td></tr>' . "\n";
-    echo '<tr class="led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_author() . '</td><td><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author_meta("display_name") . '</a></td></tr>' . "\n";
-    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . dsp_date() . '</td><td>' . xidipity_date('pub') . '</td></tr>' . "\n";
+    echo '<tr class="led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_author() . '</td><td><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . get_the_author_meta("display_name") . '</a></td></tr>' . "\n";
+    echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . dsp_date() . '</td><td>' . xidipity_date('pub') . '</td></tr>' . "\n";
     if (cnt_tags() > 0)
     {
-        echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_tag() . '</td><td>' . dsp_tags() . '</td></tr>' . "\n";
+        echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_tag() . '</td><td>' . dsp_tags() . '</td></tr>' . "\n";
     }
     if (comments_open() || get_comments_number() > 0)
     {
         if (get_comments_number() == 0)
         {
-            echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_comment() . '</td><td><a href="' . get_permalink() . '#respond">Comments</a></td></tr>' . "\n";
+            echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_comment() . '</td><td><a href="' . get_permalink() . '#respond">Comments</a></td></tr>' . "\n";
         }
         else
         {
-            echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_comments() . '</td><td><a href="' . get_permalink() . '#respond">(' . get_comments_number() . ') Comments</a></td></tr>' . "\n";
+            echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' . xidipity_icon_comments() . '</td><td><a href="' . get_permalink() . '#respond">(' . get_comments_number() . ') Comments</a></td></tr>' . "\n";
         }
     }
     else
     {
-        echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bg:bas+3 cnr:arch-small wd:2">' .  xidipity_icon_x_comments() . '</td><td>Comments</td></tr>' . "\n";
+        echo '<tr class="fnt:size-smaller led:wide"><td class="aln:text-center bkg:bas+3 cnr:arch-small wd:2">' .  xidipity_icon_x_comments() . '</td><td>Comments</td></tr>' . "\n";
     }
     echo '</table>' . "\n";
     echo '</div>' . "\n";
@@ -136,7 +136,7 @@ if ($wp_query->have_posts())
     echo '</div>' . "\n";
     echo '<!-- /fi:1/STATS -->' . "\n";
     echo '<!--  fi:2/CONTENT -->' . "\n";
-    echo '<div class="bg:content fxd:3 fxe:6 wd:100% md)wd:80% md)mar:left+0.25">' . "\n";
+    echo '<div class="bkg:content fxd:3 fxe:6 wd:100% md)wd:80% md)mar:left+0.25">' . "\n";
     echo '<!--  ct:TEXT -->' . "\n";
     echo '<div class="aln:text-left dsp:block md)pad:left+0.5 ht:min10">' . "\n";
      /*
@@ -179,7 +179,7 @@ if ($wp_query->have_posts())
     */
     if (comments_open() || get_comments_number() > 0)
     {
-        echo '<div class="bg:bas+2 ln mar:vrt+0.5">&#8203;</div>' . "\n";
+        echo '<div class="bkg:bas+2 ln mar:vrt+0.5">&#8203;</div>' . "\n";
         //echo '<h2 id="respond">Comments</h2>' . "\n";
         if (!post_password_required())
         {
@@ -187,7 +187,7 @@ if ($wp_query->have_posts())
         }
     }
 
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 
     /*
     ***
@@ -263,6 +263,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: single.php / 24200520
+ * EOF: single.php / 27200615
  */
 ?>
