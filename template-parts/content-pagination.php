@@ -4,7 +4,7 @@
     * The template for displaying pagination controls
     *
     * ###:  content-pagination.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -38,13 +38,13 @@ if ($total_pages > 1)
         'before_page_number' => '',
         'after_page_number'  => ''
     );
-    echo '<div class="fx:r fxa:4 fxb:6 fxc:1 bg:bas+5 cnr:arch-small mar:vrt+0.5 pad:+0.5">' . "\n";
+    echo '<div class="fx:r fxa:4 fxb:6 fxc:1 bkg:bas+5 cnr:arch-small mar:vrt+0.5 pad:+0.5">' . "\n";
     echo paginate_links($args);
     echo '</div>' . "\n";
     echo '<!-- /ct:PAGINATION -->' . "\n";
 }
 
 /*
- * EOF: content-pagination.php / 24200520
+ * EOF: content-pagination.php / 27200615
  */
 ?>
