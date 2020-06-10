@@ -84,6 +84,15 @@ kbd {
 	padding: 0 0.125rem 0 0.125rem;
 }
 
+i {
+	font-style: italic;
+}
+
+em {
+	font-style: oblique;	
+	font-weight: bolder;	
+}
+
 /*
 ***
     * property: btn:facade
