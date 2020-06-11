@@ -493,7 +493,7 @@ a.bkg\:pri\+2\!active:active,
 a.bkg\:pri\+2\!focus:focus,
 button.bkg\:pri\+2\!active:active,
 button.bkg\:pri\+2\!focus:focus {
-	color: var(--hue-pri-up2) !important;
+	background-color: var(--hue-pri-up2) !important;
 }
 
 .bkg\:pri\+3,
@@ -502,7 +502,7 @@ a.bkg\:pri\+3\!active:active,
 a.bkg\:pri\+3\!focus:focus,
 button.bkg\:pri\+3\!active:active,
 button.bkg\:pri\+3\!focus:focus {
-	color: var(--hue-pri-up3) !important;
+	background-color: var(--hue-pri-up3) !important;
 }
 
 .bkg\:pri\+4,
@@ -511,7 +511,7 @@ a.bkg\:pri\+4\!active:active,
 a.bkg\:pri\+4\!focus:focus,
 button.bkg\:pri\+4\!active:active,
 button.bkg\:pri\+4\!focus:focus {
-	color: var(--hue-pri-up4) !important;
+	background-color: var(--hue-pri-up4) !important;
 }
 
 .bkg\:pri\+5,
@@ -520,7 +520,7 @@ a.bkg\:pri\+5\!active:active,
 a.bkg\:pri\+5\!focus:focus,
 button.bkg\:pri\+5\!active:active,
 button.bkg\:pri\+5\!focus:focus {
-	color: var(--hue-pri-up5) !important;
+	background-color: var(--hue-pri-up5) !important;
 }
 
 .bkg\:pri-1,
@@ -538,7 +538,7 @@ a.bkg\:pri-2\!active:active,
 a.bkg\:pri-2\!focus:focus,
 button.bkg\:pri-2\!active:active,
 button.bkg\:pri-2\!focus:focus {
-	color: var(--hue-pri-dn2) !important;
+	background-color: var(--hue-pri-dn2) !important;
 }
 
 .bkg\:pri-3,
@@ -547,7 +547,7 @@ a.bkg\:pri-3\!active:active,
 a.bkg\:pri-3\!focus:focus,
 button.bkg\:pri-3\!active:active,
 button.bkg\:pri-3\!focus:focus {
-	color: var(--hue-pri-dn3) !important;
+	background-color: var(--hue-pri-dn3) !important;
 }
 
 .bkg\:pri-4,
@@ -556,7 +556,7 @@ a.bkg\:pri-4\!active:active,
 a.bkg\:pri-4\!focus:focus,
 button.bkg\:pri-4\!active:active,
 button.bkg\:pri-4\!focus:focus {
-	color: var(--hue-pri-dn4) !important;
+	background-color: var(--hue-pri-dn4) !important;
 }
 
 /*
@@ -588,7 +588,7 @@ a.bkg\:sec\+2\!active:active,
 a.bkg\:sec\+2\!focus:focus,
 button.bkg\:sec\+2\!active:active,
 button.bkg\:sec\+2\!focus:focus {
-	color: var(--hue-sec-up2) !important;
+	background-color: var(--hue-sec-up2) !important;
 }
 
 .bkg\:sec\+3,
@@ -597,7 +597,7 @@ a.bkg\:sec\+3\!active:active,
 a.bkg\:sec\+3\!focus:focus,
 button.bkg\:sec\+3\!active:active,
 button.bkg\:sec\+3\!focus:focus {
-	color: var(--hue-sec-up3) !important;
+	background-color: var(--hue-sec-up3) !important;
 }
 
 .bkg\:sec\+4,
@@ -606,7 +606,7 @@ a.bkg\:sec\+4\!active:active,
 a.bkg\:sec\+4\!focus:focus,
 button.bkg\:sec\+4\!active:active,
 button.bkg\:sec\+4\!focus:focus {
-	color: var(--hue-sec-up4) !important;
+	background-color: var(--hue-sec-up4) !important;
 }
 
 .bkg\:sec\+5,
@@ -615,7 +615,7 @@ a.bkg\:sec\+5\!active:active,
 a.bkg\:sec\+5\!focus:focus,
 button.bkg\:sec\+5\!active:active,
 button.bkg\:sec\+5\!focus:focus {
-	color: var(--hue-sec-up5) !important;
+	background-color: var(--hue-sec-up5) !important;
 }
 
 .bkg\:sec-1,
@@ -633,7 +633,7 @@ a.bkg\:sec-2\!active:active,
 a.bkg\:sec-2\!focus:focus,
 button.bkg\:sec-2\!active:active,
 button.bkg\:sec-2\!focus:focus {
-	color: var(--hue-sec-dn2) !important;
+	background-color: var(--hue-sec-dn2) !important;
 }
 
 .bkg\:sec-3,
@@ -642,7 +642,7 @@ a.bkg\:sec-3\!active:active,
 a.bkg\:sec-3\!focus:focus,
 button.bkg\:sec-3\!active:active,
 button.bkg\:sec-3\!focus:focus {
-	color: var(--hue-sec-dn3) !important;
+	background-color: var(--hue-sec-dn3) !important;
 }
 
 .bkg\:sec-4,
@@ -651,7 +651,7 @@ a.bkg\:sec-4\!active:active,
 a.bkg\:sec-4\!focus:focus,
 button.bkg\:sec-4\!active:active,
 button.bkg\:sec-4\!focus:focus {
-	color: var(--hue-sec-dn4) !important;
+	background-color: var(--hue-sec-dn4) !important;
 }
 
 /*
