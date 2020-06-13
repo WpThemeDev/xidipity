@@ -689,6 +689,14 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
 */
+.fnt\:size-5x-large {
+	font-size: var(--font-size-h1) !important;
+}
+
+.fnt\:size-4x-large {
+	font-size: var(--font-size-h2) !important;
+}
+
 .fnt\:size-3x-large {
 	font-size: var(--font-size-h3) !important;
 }
@@ -3867,62 +3875,57 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
-	.sm\)fnt\:size-3x-large,
-	.sm\)icon\:size-3x-large {
+	.sm\)fnt\:size-5x-large {
+		font-size: var(--font-size-h1) !important;
+	}
+
+	.sm\)fnt\:size-4x-large {
+		font-size: var(--font-size-h2) !important;
+	}
+
+	.sm\)fnt\:size-3x-large {
 		font-size: var(--font-size-h3) !important;
 	}
 
-	.sm\)fnt\:size-2x-large,
-	.sm\)icon\:size-2x-large {
+	.sm\)fnt\:size-2x-large {
 		font-size: var(--font-size-h4) !important;
 	}
 
-	.sm\)fnt\:size-x-large,
-	.sm\)icon\:size-x-large {
+	.sm\)fnt\:size-x-large {
 		font-size: var(--font-size-h5) !important;
 	}
 
-	.sm\)fnt\:size-large,
-	.sm\)icon\:size-large {
+	.sm\)fnt\:size-large {
 		font-size: var(--font-size-h6) !important;
 	}
 
-	.sm\)fnt\:size-x-medium,
-	.sm\)icon\:size-x-medium {
+	.sm\)fnt\:size-x-medium {
 		font-size: var(--font-size-xm) !important;
 	}
 
 	.sm\)fnt\:size-medium,
 	.sm\)fnt\:size-normal,
-	.sm\)fnt\:size-default,
-	.sm\)icon\:size-medium,
-	.sm\)icon\:size-normal,
-	.sm\)icon\:size-default {
+	.sm\)fnt\:size-default {
 		font-size: var(--font-size-md) !important;
 	}
 
-	.sm\)fnt\:size-small,
-	.sm\)icon\:size-small {
+	.sm\)fnt\:size-small {
 		font-size: var(--font-size-sm) !important;
 	}
 
-	.sm\)fnt\:size-x-small,
-	.sm\)icon\:size-x-small {
+	.sm\)fnt\:size-x-small {
 		font-size: var(--font-size-xs) !important;
 	}
 
-	.sm\)fnt\:size-2x-small,
-	.sm\)icon\:size-2x-small {
+	.sm\)fnt\:size-2x-small {
 		font-size: var(--font-size-2xs) !important;
 	}
 
-	.sm\)fnt\:size-larger,
-	.sm\)icon\:size-larger {
+	.sm\)fnt\:size-larger {
 		font-size: var(--font-size-larger) !important;
 	}
 
-	.sm\)fnt\:size-smaller,
-	.sm\)icon\:size-smaller {
+	.sm\)fnt\:size-smaller {
 		font-size: var(--font-size-smaller) !important;
 	}
 
@@ -7056,62 +7059,57 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
-	.md\)fnt\:size-3x-large,
-	.md\)icon\:size-3x-large {
+	.md\)fnt\:size-5x-large {
+		font-size: var(--font-size-h1) !important;
+	}
+
+	.md\)fnt\:size-4x-large {
+		font-size: var(--font-size-h2) !important;
+	}
+
+	.md\)fnt\:size-3x-large {
 		font-size: var(--font-size-h3) !important;
 	}
 
-	.md\)fnt\:size-2x-large,
-	.md\)icon\:size-2x-large {
+	.md\)fnt\:size-2x-large {
 		font-size: var(--font-size-h4) !important;
 	}
 
-	.md\)fnt\:size-x-large,
-	.md\)icon\:size-x-large {
+	.md\)fnt\:size-x-large {
 		font-size: var(--font-size-h5) !important;
 	}
 
-	.md\)fnt\:size-large,
-	.md\)icon\:size-large {
+	.md\)fnt\:size-large {
 		font-size: var(--font-size-h6) !important;
 	}
 
-	.md\)fnt\:size-x-medium,
-	.md\)icon\:size-x-medium {
+	.md\)fnt\:size-x-medium {
 		font-size: var(--font-size-xm) !important;
 	}
 
 	.md\)fnt\:size-medium,
 	.md\)fnt\:size-normal,
-	.md\)fnt\:size-default,
-	.md\)icon\:size-medium,
-	.md\)icon\:size-normal,
-	.md\)icon\:size-default {
+	.md\)fnt\:size-default {
 		font-size: var(--font-size-md) !important;
 	}
 
-	.md\)fnt\:size-small,
-	.md\)icon\:size-small {
+	.md\)fnt\:size-small {
 		font-size: var(--font-size-sm) !important;
 	}
 
-	.md\)fnt\:size-x-small,
-	.md\)icon\:size-x-small {
+	.md\)fnt\:size-x-small {
 		font-size: var(--font-size-xs) !important;
 	}
 
-	.md\)fnt\:size-2x-small,
-	.md\)icon\:size-2x-small {
+	.md\)fnt\:size-2x-small {
 		font-size: var(--font-size-2xs) !important;
 	}
 
-	.md\)fnt\:size-larger,
-	.md\)icon\:size-larger {
+	.md\)fnt\:size-larger {
 		font-size: var(--font-size-larger) !important;
 	}
 
-	.md\)fnt\:size-smaller,
-	.md\)icon\:size-smaller {
+	.md\)fnt\:size-smaller {
 		font-size: var(--font-size-smaller) !important;
 	}
 
@@ -10223,62 +10221,57 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
-	.lg\)fnt\:size-3x-large,
-	.lg\)icon\:size-3x-large {
+	.lg\)fnt\:size-5x-large {
+		font-size: var(--font-size-h1) !important;
+	}
+
+	.lg\)fnt\:size-4x-large {
+		font-size: var(--font-size-h2) !important;
+	}
+
+	.lg\)fnt\:size-3x-large {
 		font-size: var(--font-size-h3) !important;
 	}
 
-	.lg\)fnt\:size-2x-large,
-	.lg\)icon\:size-2x-large {
+	.lg\)fnt\:size-2x-large {
 		font-size: var(--font-size-h4) !important;
 	}
 
-	.lg\)fnt\:size-x-large,
-	.lg\)icon\:size-x-large {
+	.lg\)fnt\:size-x-large {
 		font-size: var(--font-size-h5) !important;
 	}
 
-	.lg\)fnt\:size-large,
-	.lg\)icon\:size-large {
+	.lg\)fnt\:size-large {
 		font-size: var(--font-size-h6) !important;
 	}
 
-	.lg\)fnt\:size-x-medium,
-	.lg\)icon\:size-x-medium {
+	.lg\)fnt\:size-x-medium {
 		font-size: var(--font-size-xm) !important;
 	}
 
 	.lg\)fnt\:size-medium,
 	.lg\)fnt\:size-normal,
-	.lg\)fnt\:size-default,
-	.lg\)icon\:size-medium,
-	.lg\)icon\:size-normal,
-	.lg\)icon\:size-default {
+	.lg\)fnt\:size-default {
 		font-size: var(--font-size-md) !important;
 	}
 
-	.lg\)fnt\:size-small,
-	.lg\)icon\:size-small {
+	.lg\)fnt\:size-small {
 		font-size: var(--font-size-sm) !important;
 	}
 
-	.lg\)fnt\:size-x-small,
-	.lg\)icon\:size-x-small {
+	.lg\)fnt\:size-x-small {
 		font-size: var(--font-size-xs) !important;
 	}
 
-	.lg\)fnt\:size-2x-small,
-	.lg\)icon\:size-2x-small {
+	.lg\)fnt\:size-2x-small {
 		font-size: var(--font-size-2xs) !important;
 	}
 
-	.lg\)fnt\:size-larger,
-	.lg\)icon\:size-larger {
+	.lg\)fnt\:size-larger {
 		font-size: var(--font-size-larger) !important;
 	}
 
-	.lg\)fnt\:size-smaller,
-	.lg\)icon\:size-smaller {
+	.lg\)fnt\:size-smaller {
 		font-size: var(--font-size-smaller) !important;
 	}
 
@@ -13415,62 +13408,57 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
-	.xl\)fnt\:size-3x-large,
-	.xl\)icon\:size-3x-large {
+	.xl\)fnt\:size-5x-large {
+		font-size: var(--font-size-h1) !important;
+	}
+
+	.xl\)fnt\:size-4x-large {
+		font-size: var(--font-size-h2) !important;
+	}
+
+	.xl\)fnt\:size-3x-large {
 		font-size: var(--font-size-h3) !important;
 	}
 
-	.xl\)fnt\:size-2x-large,
-	.xl\)icon\:size-2x-large {
+	.xl\)fnt\:size-2x-large {
 		font-size: var(--font-size-h4) !important;
 	}
 
-	.xl\)fnt\:size-x-large,
-	.xl\)icon\:size-x-large {
+	.xl\)fnt\:size-x-large {
 		font-size: var(--font-size-h5) !important;
 	}
 
-	.xl\)fnt\:size-large,
-	.xl\)icon\:size-large {
+	.xl\)fnt\:size-large {
 		font-size: var(--font-size-h6) !important;
 	}
 
-	.xl\)fnt\:size-x-medium,
-	.xl\)icon\:size-x-medium {
+	.xl\)fnt\:size-x-medium {
 		font-size: var(--font-size-xm) !important;
 	}
 
 	.xl\)fnt\:size-medium,
 	.xl\)fnt\:size-normal,
-	.xl\)fnt\:size-default,
-	.xl\)icon\:size-medium,
-	.xl\)icon\:size-normal,
-	.xl\)icon\:size-default {
+	.xl\)fnt\:size-default {
 		font-size: var(--font-size-md) !important;
 	}
 
-	.xl\)fnt\:size-small,
-	.xl\)icon\:size-small {
+	.xl\)fnt\:size-small {
 		font-size: var(--font-size-sm) !important;
 	}
 
-	.xl\)fnt\:size-x-small,
-	.xl\)icon\:size-x-small {
+	.xl\)fnt\:size-x-small {
 		font-size: var(--font-size-xs) !important;
 	}
 
-	.xl\)fnt\:size-2x-small,
-	.xl\)icon\:size-2x-small {
+	.xl\)fnt\:size-2x-small {
 		font-size: var(--font-size-2xs) !important;
 	}
 
-	.xl\)fnt\:size-larger,
-	.xl\)icon\:size-larger {
+	.xl\)fnt\:size-larger {
 		font-size: var(--font-size-larger) !important;
 	}
 
-	.xl\)fnt\:size-smaller,
-	.xl\)icon\:size-smaller {
+	.xl\)fnt\:size-smaller {
 		font-size: var(--font-size-smaller) !important;
 	}
 
