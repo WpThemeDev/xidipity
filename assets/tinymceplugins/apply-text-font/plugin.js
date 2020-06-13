@@ -15,9 +15,6 @@ tinymce.PluginManager.add('apply_txt_font', function(editor) {
 		title: 'Fonts',
 		icon: false,
 		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0LjMsMTZMMTMuNiwxNEgxMC40TDkuNywxNkg3LjhMMTEsN0gxM0wxNi4yLDE2SDE0LjNNMjAsOC42OVY0SDE1LjMxTDEyLDAuNjlMOC42OSw0SDRWOC42OUwwLjY5LDEyTDQsMTUuMzFWMjBIOC42OUwxMiwyMy4zMUwxNS4zMSwyMEgyMFYxNS4zMUwyMy4zMSwxMkwyMCw4LjY5TTEwLjg1LDEyLjY1SDEzLjE1TDEyLDlMMTAuODUsMTIuNjVaIiAvPjwvc3ZnPg==',
-		onclick: function() {
-			editor.execCommand('mceReplaceContent', false, '<span class="fnt:family-sans">{$selection}</span>');
-		},
 		menu: [{
 			icon: false,
 			text: '•\xa0Sans',
