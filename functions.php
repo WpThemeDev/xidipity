@@ -737,6 +737,56 @@ function register_mce_apply_txt_font_button($buttons)
     return $buttons;
 }
 /**
+ *  plugin: apply text size
+ *  build:  27200615
+ *  descr:  apply the following sizes
+ *      - 5x large
+ *      - 4x large
+ *      - 3x large
+ *      - 2x large
+ *      - x large
+ *		- large
+ *		- 1½ default
+ *		- default
+ *		- small
+ *		- x small
+ *		- 2x small
+ *		- larger
+ *		- smaller
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_size_button');
+function mce_add_apply_txt_size_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_size_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_size_button');
+    }
+}
+function add_tinymce_apply_txt_size_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_size'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-size/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_size_button($buttons)
+{
+    array_push($buttons, "apply_txt_size");
+    return $buttons;
+}
+/**
  *  plugin: apply text highlight
  *  build:  91215.1a
  *  descr:  apply highlight background color to selected text
@@ -1287,11 +1337,10 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,formatselect,fontsizeselect,add_mnu_div,apply_txt_font,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
+    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,add_mnu_div,apply_txt_size,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
-    $in['fontsize_formats'] = '12px 14px 16px 18px 20px 22px 24px 26px 30px 34px';
     $in['fontsize'] = '16px';
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
