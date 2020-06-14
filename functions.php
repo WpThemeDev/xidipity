@@ -620,8 +620,8 @@ function register_mce_apply_txt_weight_button($buttons)
  *  descr:  apply/remove text italic
  *
  */
-add_action('admin_head', 'mce_add_toggle_italic_button');
-function mce_add_toggle_italic_button()
+add_action('admin_head', 'mce_add_apply_txt_italic_button');
+function mce_add_apply_txt_italic_button()
 {
     global $typenow;
     // check user permissions
@@ -637,18 +637,18 @@ function mce_add_toggle_italic_button()
     // check if WYSIWYG is enabled
     if (get_user_option('rich_editing') == 'true')
     {
-        add_filter("mce_external_plugins", "add_tinymce_toggle_italic_plugin");
-        add_filter('mce_buttons', 'register_mce_toggle_italic_button');
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_italic_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_italic_button');
     }
 }
-function add_tinymce_toggle_italic_plugin($plugin_array)
+function add_tinymce_apply_txt_italic_plugin($plugin_array)
 {
-    $plugin_array['toggle_italic'] = get_template_directory_uri() . '/assets/tinymceplugins/toggle-italic/plugin.js';
+    $plugin_array['apply_txt_italic'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-italic/plugin.js';
     return $plugin_array;
 }
-function register_mce_toggle_italic_button($buttons)
+function register_mce_apply_txt_italic_button($buttons)
 {
-    array_push($buttons, 'toggle_italic');
+    array_push($buttons, 'apply_txt_italic');
     return $buttons;
 }
 /**
@@ -734,6 +734,51 @@ function add_tinymce_apply_txt_font_plugin($plugin_array)
 function register_mce_apply_txt_font_button($buttons)
 {
     array_push($buttons, "apply_txt_font");
+    return $buttons;
+}
+/**
+ *  plugin: apply text color
+ *  build:  27200615
+ *  descr:  apply the following text colors
+ *      - black
+ *      - grey (dim)
+ *      - red
+ *      - primary
+ *      - secondary
+ *		- green
+ *		- purple
+ *		- blue
+ *
+ */
+add_action('admin_head', 'mce_add_apply_txt_color_button');
+function mce_add_apply_txt_color_button()
+{
+    global $typenow;
+    // check user permissions
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+    {
+        return;
+    }
+    // verify the post type
+    if (!in_array($typenow, array(
+        'post',
+        'page'
+    ))) return;
+    // check if WYSIWYG is enabled
+    if (get_user_option('rich_editing') == 'true')
+    {
+        add_filter("mce_external_plugins", "add_tinymce_apply_txt_color_plugin");
+        add_filter('mce_buttons', 'register_mce_apply_txt_color_button');
+    }
+}
+function add_tinymce_apply_txt_color_plugin($plugin_array)
+{
+    $plugin_array['apply_txt_color'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-color/plugin.js';
+    return $plugin_array;
+}
+function register_mce_apply_txt_color_button($buttons)
+{
+    array_push($buttons, "apply_txt_color");
     return $buttons;
 }
 /**
@@ -1337,7 +1382,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,add_mnu_div,apply_txt_size,apply_txt_weight,toggle_italic,apply_txt_formats,forecolor,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
+    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,add_mnu_div,apply_txt_size,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
@@ -1345,9 +1390,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['table_toolbar'] = '';
     $in['min_height'] = '375';
     $in['max_height'] = '450';
-    $in['textcolor_map'] = '["000000", "Black", "131312", "Grey 9", "242222", "Grey 8", "474543", "Grey 7", "6b6765", "Grey 6", "dc143c", "Red", "ff1493", "Pink", "9400d3", "Purple", "800080", "Dp Purple", "4b0082", "Indigo", "0000ff", "Blue", "add8e6", "Lt Blue", "00ffff", "Cyan", "008080", "Teal", "008000", "Green", "90ee90", "Lt Green", "32cd32", "Lime", "ffff00", "Yellow", "ffba00", "Amber", "e4641c", "Orange", "dd4714", "Dp Orange", "654320", "Brown", "708090", "Bl Grey", "FFFFFF", "White", ]';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
-    $in['textcolor_cols'] = '5';
     return $in;
 }
 , 15, 2);
