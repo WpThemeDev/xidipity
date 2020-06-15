@@ -1382,7 +1382,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,add_mnu_div,apply_txt_size,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
+    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,apply_txt_size,add_mnu_div,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
