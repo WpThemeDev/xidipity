@@ -1332,43 +1332,6 @@ function register_mce_toggle_fullscreen_button($buttons)
     return $buttons;
 }
 /**
- *  plugin: add menu divider
- *  build:  91215.1a
- *  descr:  add "|" to toolbar menu
- *
- */
-add_action('admin_head', 'mce_add_mnu_div_button');
-function mce_add_mnu_div_button()
-{
-    global $typenow;
-    // check user permissions
-    if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-    {
-        return;
-    }
-    // verify the post type
-    if (!in_array($typenow, array(
-        'post',
-        'page'
-    ))) return;
-    // check if WYSIWYG is enabled
-    if (get_user_option('rich_editing') == 'true')
-    {
-        add_filter("mce_external_plugins", "add_tinymce_add_mnu_div_plugin");
-        add_filter('mce_buttons', 'register_mce_add_mnu_div_button');
-    }
-}
-function add_tinymce_add_mnu_div_plugin($plugin_array)
-{
-    $plugin_array['add_mnu_div'] = get_template_directory_uri() . '/assets/tinymceplugins/add-menu-divider/plugin.js';
-    return $plugin_array;
-}
-function register_mce_add_mnu_div_button($buttons)
-{
-    array_push($buttons, 'add_mnu_div');
-    return $buttons;
-}
-/**
  * Change TinyMCE configuration
  *
  */
@@ -1382,7 +1345,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['tadv_noautop'] = false;
     $in['apply_source_formatting'] = true;
     $in['menubar'] = '';
-    $in['toolbar1'] = 'undo,redo,add_mnu_div,apply_txt_font,formatselect,apply_txt_size,add_mnu_div,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,add_mnu_div,apply_txt_align,add_mnu_div,add_lst_order,add_lst_unorder,add_mnu_div,add_misc_opts,add_vert_space,add_horz_rule,add_mnu_div,table,add_multi_cols,add_template,add_icon,toggle_fullscreen';
+    $in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,toggle_fullscreen,dfw';
     $in['toolbar2'] = '';
     $in['toolbar3'] = '';
     $in['toolbar4'] = '';
