@@ -14,84 +14,240 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		type: 'splitbutton',
 		title: 'Font Size',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTJweCIgaGVpZ2h0PSI1MnB4IiB2aWV3Qm94PSIwIDAgNTIgNTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+aWNvbnM4LXRleHQtaGVpZ2h0LTUwPC90aXRsZT4KICAgIDxkZWZzPgogICAgICAgIDxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgaWQ9InJlY3QtMSI+PC9yZWN0PgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Imljb25zOC10ZXh0LWhlaWdodC01MCI+CiAgICAgICAgICAgIDxpbWFnZSB4PSIxIiB5PSIxIiB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRElBQUFBeUNBWUFBQUFlUDRpeEFBQUFBWE5TUjBJQXJzNGM2UUFBQUVSbFdFbG1UVTBBS2dBQUFBZ0FBWWRwQUFRQUFBQUJBQUFBR2dBQUFBQUFBNkFCQUFNQUFBQUJBQUVBQUtBQ0FBUUFBQUFCQUFBQU1xQURBQVFBQUFBQkFBQUFNZ0FBQUFCMXk2K3JBQUFCaVVsRVFWUm9CZTFaeTA0RE1Rd3MvQU1JL3Y5TDRORHlLRDJVQTUvVGVzVE9LcldTYnVYVUFjUllzcHhzNG5FOGp2YmdyRllTTVNBR3hJQVkrR0VHM2l6K1liQytYSkR6dmUzNU1OMmFZcndvbzVOZ3ZITUh1N1BGdlNuM2Z0bjQ4WndEMXJoNXRHMmR5eWZCY3kwbXc0MmpiUzBSWEtIUGlWeGFuSXRqMk9ZMUc1MEE0OW1aVHFTc0JOaC9NT1ZldjFhOVpxK0ZBeDJ6N2VZa2hlL0orM1NPa25XZUF6dkthdUVIMVMwRTk3WVhHTW41UHhSakVCdkpZTTlNeEExWEFoYmdOZW5Cck9IaEcyTTFzVzlibm4vdHV4TDViUlZUUlZTUkpBWjB0WktJRGNPcUltSHFraHhWa1NSaXc3Q3FTSmk2SkVkVkpJbllNS3dxRXFZdXlWRVZTU0kyREt1S2hLbExjbFJGa29nRjdMT3BiOUQ1Y0dqUXJVMmYvRUprenU2ZnR4R3Mwb2Z2TkplMFROSG03UmFmQU9lOXdMVkdOYkg5R2hyYzNVSndiN3VCRGFCc1ZQTXBBWEU0THF2VkhjOG53SGszOEFSUXNrOXNXRDQxWEN2Ty9HWlJCc0g0bXVLVFdYeXRpZ1N2dmFmTWJmNElZTU1IeWVBdnRqUEZsWk9JQVRId254azRBcUVLS29OVEMzRk1BQUFBQUVsRlRrU3VRbUNDIj48L2ltYWdlPgogICAgICAgICAgICA8dXNlIHN0cm9rZS1vcGFjaXR5PSIwLjAxIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIgeGxpbms6aHJlZj0iI3JlY3QtMSI+PC91c2U+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=',
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjUycHgiIHZpZXdCb3g9IjAgMCA1NiA1MiIgd2lkdGg9IjU2cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6bTAgMGgyNHYyNEgwVjB6bS43NS43NWgyMi41djIyLjVILjc1eiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0gMzUuOTU1IDcuODM5IEwgMjQuMjc3IDcuODM5IEwgMzAuMTE2IDIgWiBNIDI0LjM1MSA0NC4yMzUgTCAzNS44ODEgNDQuMjM1IEwgMzAuMTE2IDUwIFogTSAxNC4wODMgMTEuODIzIEwgMi45NDkgNDAuMTc3IEwgNy41MDIgNDAuMTc3IEwgOS43NzggMzQuMTE1IEwgMjIuNDIxIDM0LjExNSBMIDI0LjY5NyA0MC4xNzcgTCAyOS4yNSA0MC4xNzcgTCAxOC4xNDEgMTEuODIzIEwgMTQuMDgzIDExLjgyMyBaIE0gMTEuMjg3IDMwLjA1OCBMIDE2LjA4NyAxNy4yNDEgTCAyMC44ODcgMzAuMDU4IEwgMTEuMjg3IDMwLjA1OCBaIE0gMzcuOTEgMzYuMjQzIEwgNTMuMDUyIDM2LjI0MyBMIDUzLjA1MiA0MC4xNzcgTCAzMS45NDcgNDAuMTc3IEwgMzEuOTQ3IDM2Ljk4NiBMIDQ2LjU5NCAxNS44MDYgTCAzMi4wNDYgMTUuODA2IEwgMzIuMDQ2IDExLjg0NyBMIDUyLjU4MiAxMS44NDcgTCA1Mi41ODIgMTQuOTY1IEwgMzcuOTEgMzYuMjQzIFoiLz4KPC9zdmc+',
 		menu: [{
 			icon: false,
 			text: '•\xa05x Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-5x-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-5x-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-5x-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa04x Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-4x-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-4x-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-4x-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa03x Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-3x-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-3x-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-3x-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa02x Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-2x-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0x Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-x-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0Large',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-large">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-large">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-large">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa01½ Default',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-medium">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-medium">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-x-medium">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0Default',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-size-medium">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-medium">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-medium">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0Small',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-small">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-small">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-small">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0x Small',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-small">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-small">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-x-small">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa02x Small',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-small">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-small">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-2x-small">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0Larger',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-larger">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-larger">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-larger">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, {
 			icon: false,
 			text: '•\xa0Smaller',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-smaller">{$selection}</span>');
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-smaller">{$selection}</span>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<span id="' + uniqueID + '" class="fnt:size-smaller">&nbsp;</span>';
+					editor.insertContent(html);
+					var newTag = dom.select('span#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
 			}
 		}, ],
 	});
