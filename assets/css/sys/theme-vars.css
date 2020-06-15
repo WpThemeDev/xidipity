@@ -67,42 +67,13 @@ base, primary, secondary hue / shade
 	--hue-sec-tint-dn1: #fdd5ba;
 	/*
 ***
-wcag colors (dim grey #6b6765)
-***
-*/
-	--wcag-grey9: #131312;
-	--wcag-grey8: #242222;
-	--wcag-grey7: #474543;
-	--wcag-grey6: #6b6765;
-	--wcag-red: #8b0000;
-	--wcag-deep-purple: #663399;
-	--wcag-blue: #0000ff;
-	--wcag-green: #008000;
-	--wcag-deep-orange: #D03E06;
-	--wcag-blue-grey: #2f4f4f;
-	/*
-***
-named colors
+text colors
 ***
 */
 	--hue-red: #dc143c;
-	--hue-pink: #ff1493;
-	--hue-purple: #9400d3;
-	--hue-deep-purple: #800080;
-	--hue-indigo: #4b0082;
+	--hue-purple: #800080;
 	--hue-blue: #0000ff;
-	--hue-light-blue: #add8e6;
-	--hue-cyan: #00ffff;
-	--hue-teal: #008080;
-	--hue-green: #008000;
-	--hue-light-green: #90ee90;
-	--hue-lime: #32cd32;
-	--hue-yellow: #ffff00;
-	--hue-amber: #ffba00;
-	--hue-orange: #e4641c;
-	--hue-deep-orange: #dd4714;
-	--hue-brown: #654320;
-	--hue-blue-grey: #708090;
+	--hue-green: #006400;
 	/*
 ***
 special colors
@@ -111,7 +82,7 @@ special colors
 	/*: no color :*/
 	--transparent: transparent;
 	/*: hilite plugin support :*/
-	--hue-highlight: #FFF59D;
+	--hue-highlight: #FFFF33;
 	/*
 ***
 content attributes
