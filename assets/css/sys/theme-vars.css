@@ -38,33 +38,33 @@ base, primary, secondary hue / shade
 	--hue-bas-tint: #f9f9f9;
 	--hue-bas-tint-dn1: #f7f7f7;
 	/*: primary hue :*/
-	--hue-pri-up5: #e6ebf5;
-	--hue-pri-up4: #ccd6eb;
-	--hue-pri-up3: #99add6;
-	--hue-pri-up2: #6685c2;
-	--hue-pri-up1: #335cad;
-	--hue-pri: #003399;
-	--hue-pri-dn1: #00297a;
-	--hue-pri-dn2: #001f5c;
-	--hue-pri-dn3: #00143d;
-	--hue-pri-dn4: #000a1f;
-	--hue-pri-tint-up1: #f5f7fb;
-	--hue-pri-tint: #f0f3f9;
-	--hue-pri-tint-dn1: #ebeff7;
+	--hue-pri-up5: #e6f0f5;
+	--hue-pri-up4: #cce0eb;
+	--hue-pri-up3: #99c2d6;
+	--hue-pri-up2: #66a3c2;
+	--hue-pri-up1: #3385ad;
+	--hue-pri: #006699;
+	--hue-pri-dn1: #00527a;
+	--hue-pri-dn2: #003d5c;
+	--hue-pri-dn3: #00293d;
+	--hue-pri-dn4: #00141f;
+	--hue-pri-tint-up1: #f5f9fb;
+	--hue-pri-tint: #f0f6f9;
+	--hue-pri-tint-dn1: #ebf3f7;
 	/*: secondary hue :*/
-	--hue-sec-up5: #faf0e6;
-	--hue-sec-up4: #f5e0cc;
-	--hue-sec-up3: #ebc299;
-	--hue-sec-up2: #e0a366;
-	--hue-sec-up1: #d68533;
-	--hue-sec: #cc6600;
-	--hue-sec-dn1: #a35200;
-	--hue-sec-dn2: #7a3d00;
-	--hue-sec-dn3: #522900;
-	--hue-sec-dn4: #291400;
-	--hue-sec-tint-up1: #fdf9f5;
-	--hue-sec-tint: #fcf6f0;
-	--hue-sec-tint-dn1: #fbf3eb;
+	--hue-sec-up5: #f5ebe6;
+	--hue-sec-up4: #ebd6cc;
+	--hue-sec-up3: #d6ad99;
+	--hue-sec-up2: #c28566;
+	--hue-sec-up1: #ad5c33;
+	--hue-sec: #993300;
+	--hue-sec-dn1: #7a2900;
+	--hue-sec-dn2: #5c1f00;
+	--hue-sec-dn3: #3d1400;
+	--hue-sec-dn4: #1f0a00;
+	--hue-sec-tint-up1: #fbf7f5;
+	--hue-sec-tint: #f9f3f0;
+	--hue-sec-tint-dn1: #f7efeb;
 	/*
 ***
 text colors
