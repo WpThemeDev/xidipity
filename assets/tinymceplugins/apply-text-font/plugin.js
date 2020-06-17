@@ -14,7 +14,7 @@ tinymce.PluginManager.add('apply_txt_font', function(editor) {
 		type: 'splitbutton',
 		title: 'Fonts',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MnB4IiBoZWlnaHQ9IjUycHgiIHZpZXdCb3g9IjAgMCA1MiA1MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNIDQwLjQgNTAgQyA0My4wNTEgNTAgNDUuMiA0Ny44NTEgNDUuMiA0NS4yIEwgNDUuMiA2LjggQyA0NS4yIDQuMTM2IDQzLjA0IDIgNDAuNCAyIEwgMjYgMiBMIDI2IDE4LjggTCAyMCAxNS4yIEwgMTQgMTguOCBMIDE0IDIgTCAxMS42IDIgQyA4Ljk0OSAyIDYuOCA0LjE0OSA2LjggNi44IEwgNi44IDQ1LjIgQyA2LjggNDcuODUxIDguOTQ5IDUwIDExLjYgNTAgTCA0MC40IDUwIFoiLz4KPC9zdmc+',
+		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE3IDNIN2MtMS4xIDAtMS45OS45LTEuOTkgMkw1IDIxbDctMyA3IDNWNWMwLTEuMS0uOS0yLTItMnptMCAxNWwtNS0yLjE4TDcgMThWNWgxMHYxM3oiLz48L3N2Zz4=',
 		menu: [{
 			icon: false,
 			text: '•\xa0Sans',
