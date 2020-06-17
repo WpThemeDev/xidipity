@@ -1,21 +1,22 @@
 /**
-	* WordPress Xidipity Theme
-	* Xidipity css variables
-	*
-	* ###:	theme-vars.css
-	* bld:	26200615
-	* src:	github.com/WpThemeDev/xidipity/
-	* (C) 	2019-2020 John Baer
-	*
-	* ref:  noeldelgado.github.io/shadowlord/
-	*	base: #cecece
-	*	pri:  #0047ab
-	*	sec:  #ff6200 (paletton pri triad)
-	*
+* WordPress Xidipity Theme
+* Xidipity css print variables
+*
+* ###:  print-vars.css
+* bld:  27200615
+* src:  github.com/WpThemeDev/xidipity/
+* (C)   2019-2020 John Baer
+*
 */
 
 :root {
-/*
+	/*
+***
+set base font size for rem calculations
+***
+*/
+	font-size: 13px;
+	/*
 ***
 base, primary, secondary hue / shade
 ***
@@ -76,13 +77,37 @@ text colors
 	--hue-green: #006400;
 	/*
 ***
+named colors
+***
+*/
+	--hue-red: #757575;
+	--hue-pink: #757575;
+	--hue-purple: #757575;
+	--hue-deep-purple: #757575;
+	--hue-indigo: #757575;
+	--hue-blue: #757575;
+	--hue-light-blue: #757575;
+	--hue-cyan: #757575;
+	--hue-teal: #757575;
+	--hue-green: #757575;
+	--hue-light-green: #757575;
+	--hue-lime: #757575;
+	--hue-yellow: #757575;
+	--hue-amber: #757575;
+	--hue-orange: #757575;
+	--hue-deep-orange: #757575;
+	--hue-brown: #757575;
+	--hue-grey: #757575;
+	--hue-blue-grey: #757575;
+	/*
+***
 special colors
 ***
 */
 	/*: no color :*/
 	--transparent: transparent;
 	/*: hilite plugin support :*/
-	--hue-highlight: #FFFF33;
+	--hue-highlight: #f5f5f5;
 	/*
 ***
 content attributes
@@ -175,11 +200,6 @@ theme attributes
 	--desc-font-weight: var(--font-wgt-normal);
 	/*: blog footer :*/
 	--blog-ft-bg-color: var(--hue-bas-up5);
-	/*: sys menu :*/
-	--mnu-bar-sm-bg: var(--transparent);
-	--mnu-bar-sm-fg: var(--hue-blk);
-	--mnu-bar-lg-bg: var(--blog-hdr-bg-color);
-	--mnu-bar-lg-fg: var(--wcag-grey7);
 	/*: sys content :*/
 	--content-bg-color: var(--hue-wht);
 	--content-fg-color: var(--hue-blk);
@@ -187,8 +207,8 @@ theme attributes
 	--content-bt-border-color: var(--hue-bas-up2);
 	--content-counter-color: var(--wcag-grey6);
 	/*: system :*/
-	--dft-fg-color: var(--hue-bas-dn4);
-	--dft-bg-color: var(--hue-bas-up5);
+	--dft-fg-color: var(--hue-blk);
+	--dft-bg-color: var(--hue-wht);
 	--dft-line-height: 1.5;
 	--dft-font-family: var(--font-family-sans);
 	--dft-font-color: var(--hue-blk);
@@ -214,10 +234,10 @@ plugin attributes
 ***
 */
 	/*: yoast :*/
-	--pag-breadcrumb-dsp: block;
+	--pag-breadcrumb-dsp: none;
 	--pst-breadcrumb-dsp: none;
 }
 
 /*
-* EOF: theme-vars.css / 26200615
+* EOF: print-vars.css / 27200615
 */
