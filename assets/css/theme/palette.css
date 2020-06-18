@@ -1070,8 +1070,29 @@ button.bkg\:tint-sec-1\!focus:focus {
 }
 
 /*: hilite mce plugin support :*/
-.bkg\:highlight {
-	background-color: var(--hue-highlight);
+.bkg\:highlight-yellow {
+	background-color: var(--hue-highlight-yellow);
+	font-weight: var(--font-wgt-normal);
+}
+
+.bkg\:highlight-cyan {
+	background-color: var(--hue-highlight-cyan);
+	font-weight: var(--font-wgt-normal);
+}
+
+.bkg\:highlight-magenta {
+	background-color: var(--hue-highlight-magenta);
+	font-weight: var(--font-wgt-normal);
+}
+
+.bkg\:highlight-green {
+	background-color: var(--hue-highlight-green);
+	font-weight: var(--font-wgt-normal);
+}
+
+.bkg\:highlight-orange {
+	background-color: var(--hue-highlight-orange);
+	font-weight: var(--font-wgt-normal);
 }
 
 /*
