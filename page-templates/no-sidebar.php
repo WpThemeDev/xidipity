@@ -6,7 +6,7 @@
     * The template for displaying page without sidebar
     *
     * ###:  no-sidebar.php
-    * bld:  24200531
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -57,7 +57,7 @@ else
 }
 
 echo '<!--  ct:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
@@ -73,11 +73,11 @@ if ($wp_query->have_posts())
     echo '<!--  ct:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /ct:HEADER -->' . "\n";
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+    echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
     /*
     ***
@@ -102,7 +102,7 @@ if ($wp_query->have_posts())
     dsp_content();
     echo '</div>' . "\n";
     echo '<!-- /ct:BODY -->' . "\n";
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -161,6 +161,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: no-sidebar.php / 24200531
+ * EOF: no-sidebar.php / 27200615
  */
 ?>

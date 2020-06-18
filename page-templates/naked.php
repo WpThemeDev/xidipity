@@ -6,7 +6,7 @@
     * The template for displaying page without menu / page title / sidebar
     *
     * ###:  naked.php
-    * bld:  24200531
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -57,13 +57,13 @@ else
 }
 
 echo '<!--  ct:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 
 if ($wp_query->have_posts())
 {
     the_post();
     echo '<!--  ct:BODY -->' . "\n";
-    echo '<div class="bg:content ht:min10 mar:bottom+0.5 pad:vrt+0.5 wd:100%">' . "\n";
+    echo '<div class="bkg:content ht:min10 mar:bottom+0.5 pad:vrt+0.5 wd:100%">' . "\n";
 
     /*
     ***
@@ -96,7 +96,7 @@ $footer_items = '';
 /*: edit :*/
 if (get_edit_post_link())
 {
-    echo '<div class="bg:bas+2 ln mar:bottom+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.25">&#8203;</div>' . "\n";
     $footer_items .= dsp_edit(get_edit_post_link()) . '|';
     echo '<!--  ct:FOOTER -->' . "\n";
     echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
@@ -138,6 +138,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: naked.php / 24200531
+ * EOF: naked.php / 27200615
  */
 ?>

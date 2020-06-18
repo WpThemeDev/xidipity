@@ -4,7 +4,7 @@
     * The template for displaying searchs results
     *
     * ###:  search.php
-    * bld:  24200520
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -183,7 +183,7 @@ else
 ***
 */
 echo '<!--  bk:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_data->have_posts())
 {
     $cnt = 0;
@@ -198,7 +198,7 @@ if ($wp_data->have_posts())
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     echo '<div class="pg:title">Search Results: ' . $search_item . '</div>' . "\n";
-    echo '<div class="bg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.75 mce[dsp:none]">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
 
@@ -218,7 +218,7 @@ if ($wp_data->have_posts())
         if ('post' == get_post_type())
         {
             $excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
-            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+            $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         }
         /*
          ***
@@ -228,7 +228,7 @@ if ($wp_data->have_posts())
         $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
         echo '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
-        echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+        echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
         /*
         ***
@@ -304,13 +304,13 @@ if ($wp_data->have_posts())
     */
     include( locate_template( 'template-parts/content-pagination.php', false, false ) );
 
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
-    echo '<div class="bg:bas+2 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:top+0.5 mar:bottom+0.25">&#8203;</div>' . "\n";
     echo '<!--  fc:SRC-ERR -->' . "\n";
-    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
+    echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bkg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
     echo '<!--  fc:LOGO -->' . "\n";
     echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
     echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
@@ -332,7 +332,7 @@ else
     echo '<!--  fc:MESSAGE -->' . "\n";
     echo '</div>' . "\n";
     echo '<!-- /fc:SRC-ERR -->' . "\n";
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 
 /*
@@ -392,6 +392,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: search.php / 24200520
+ * EOF: search.php / 27200615
  */
 ?>

@@ -1,90 +1,88 @@
 /**
-    * WordPress Xidipity Theme
-    * Tinymce add-misc-opts plugin
-    *
-    * ###:  plugin.js
-    * bld:  26200615
-    * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
-    *
-*/
-
-tinymce.PluginManager.add('add_misc_opts', function(editor, url) {
-    editor.addButton('add_misc_opts', {
-        type: 'splitbutton',
-        title: 'Block Quote',
-        icon: false,
-        image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAxN2gzbDItNFY3SDR2NmgzbC0yIDR6bTEwIDBoM2wyLTRWN2gtNnY2aDNsLTIgNHoiLz48L3N2Zz4=',
-        onclick: function() {
-            editor.execCommand('mceBlockQuote');
-        },
-        menu: [{
-            icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAxN2gzbDItNFY3SDR2NmgzbC0yIDR6bTEwIDBoM2wyLTRWN2gtNnY2aDNsLTIgNHoiLz48L3N2Zz4=',
-            text: '\xa0Block Quote',
-            onclick: function() {
-                editor.execCommand('mceBlockQuote');
-            }
-        }, {
-            icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMyA1aDJWM2MtMS4xIDAtMiAuOS0yIDJ6bTAgOGgydi0ySDN2MnptNCA4aDJ2LTJIN3Yyek0zIDloMlY3SDN2MnptMTAtNmgtMnYyaDJWM3ptNiAwdjJoMmMwLTEuMS0uOS0yLTItMnpNNSAyMXYtMkgzYzAgMS4xLjkgMiAyIDJ6bS0yLTRoMnYtMkgzdjJ6TTkgM0g3djJoMlYzem0yIDE4aDJ2LTJoLTJ2MnptOC04aDJ2LTJoLTJ2MnptMCA4YzEuMSAwIDItLjkgMi0yaC0ydjJ6bTAtMTJoMlY3aC0ydjJ6bTAgOGgydi0yaC0ydjJ6bS00IDRoMnYtMmgtMnYyem0wLTE2aDJWM2gtMnYyek03IDE3aDEwVjdIN3YxMHptMi04aDZ2Nkg5Vjl6Ii8+PC9zdmc+',
-            text: '\xa0Frame Content',
-            onclick: function () {
-                var seltxt = editor.selection.getContent({format : 'text'});
-                if (seltxt.length > 0)
-                    {
-                        editor.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
-                    } else {
-                        var dom = editor.dom;
-                        var uniqueID = dom.uniqueId();
-                        var html = '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->';
-                        editor.insertContent(html);
-                        var newTag = dom.select('td#' + uniqueID)[0];
-                        editor.selection.setCursorLocation(newTag);
-                    }
-            }
-        }, {
-
-            icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik05LjQgMTYuNkw0LjggMTJsNC42LTQuNkw4IDZsLTYgNiA2IDYgMS40LTEuNHptNS4yIDBsNC42LTQuNi00LjYtNC42TDE2IDZsNiA2LTYgNi0xLjQtMS40eiIvPjwvc3ZnPg==',
-            text: '\xa0Code',
-            onclick: function () {
-                var seltxt = editor.selection.getContent({format : 'text'});
-                if (seltxt.length > 0)
-                    {
-                        editor.execCommand('mceReplaceContent', false, '<code>{$selection}</code>');
-                    } else {
-                        var dom = editor.dom;
-                        var uniqueID = dom.uniqueId();
-                        var html = '<code id="' + uniqueID + '">&nbsp;</code>';
-                        editor.insertContent(html);
-                        var newTag = dom.select('code#' + uniqueID)[0];
-                        editor.selection.setCursorLocation(newTag);
-                    }
-            }
-        }, {
-            icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iYmxhY2siIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zIDE4aDEydi0ySDN2MnpNMyA2djJoMThWNkgzem0wIDdoMTh2LTJIM3YyeiIvPjwvc3ZnPg==',
-            text: '\xa0Insert Excerpt',
-            onclick: function() {
-                var dom = editor.dom;
-                var uniqueID = dom.uniqueId();
-                var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:top-0 mar:bottom+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bg:tint cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
-                editor.insertContent(html);
-                var newExcerpt = dom.select('td#' + uniqueID)[0];
-                editor.selection.setCursorLocation(newExcerpt);
-            }
-        }, {
-            icon: true,
-            image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDguNDFMMTYuNTkgMTMgMTggMTEuNTlsLTYtNi02IDZMNy40MSAxMyAxMiA4LjQxek02IDE4aDEydi0ySDZ2MnoiLz48L3N2Zz4=',
-            text: '\xa0Acronym',
-            onclick: function () {
-                editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
-            }
-        }],
-    });
+ * WordPress Xidipity Theme
+ * Tinymce add-misc-opts plugin
+ *
+ * ###:  plugin.js
+ * bld:  27200615
+ * src:  github.com/WpThemeDev/xidipity/
+ * (C)   2019-2020 John Baer
+ *
+ */
+tinymce.PluginManager.add('add_misc_opts', function(editor) {
+	'use strict';
+	editor.addButton('add_misc_opts', {
+		type: 'splitbutton',
+		title: 'Misc Opts',
+		icon: false,
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE2Ljg0LDIuNzNDMTYuNDUsMi43MyAxNi4wNywyLjg4IDE1Ljc3LDMuMTdMMTMuNjUsNS4yOUwxOC45NSwxMC42TDIxLjA3LDguNUMyMS42Nyw3Ljg5IDIxLjY3LDYuOTQgMjEuMDcsNi4zNkwxNy45LDMuMTdDMTcuNiwyLjg4IDE3LjIyLDIuNzMgMTYuODQsMi43M00xMi45NCw2TDQuODQsMTQuMTFMNy40LDE0LjM5TDcuNTgsMTYuNjhMOS44NiwxNi44NUwxMC4xNSwxOS40MUwxOC4yNSwxMS4zTTQuMjUsMTUuMDRMMi41LDIxLjczTDkuMiwxOS45NEw4Ljk2LDE3Ljc4TDYuNjUsMTcuNjFMNi40NywxNS4yOSIgLz48L3N2Zz4=',
+		menu: [{
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTYgMTdoM2wyLTRWN0g1djZoM3ptOCAwaDNsMi00VjdoLTZ2NmgzeiIvPjwvc3ZnPg==',
+			text: '\xa0Block Quote',
+			onclick: function() {
+				editor.execCommand('mceBlockQuote');
+			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGJhc2VQcm9maWxlPSJ0aW55IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTkuOTMgMTMuNWg0LjE0TDEyIDcuOTh6TTIwIDJINGMtMS4xIDAtMiAuOS0yIDJ2MTZjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY0YzAtMS4xLS45LTItMi0yem0tNC4wNSAxNi41bC0xLjE0LTNIOS4xN2wtMS4xMiAzSDUuOTZsNS4xMS0xM2gxLjg2bDUuMTEgMTNoLTIuMDl6Ii8+PC9zdmc+',
+			text: '\xa0Frame Text',
+			onclick: function() {
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->';
+					editor.insertContent(html);
+					var newTag = dom.select('td#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
+			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNOS40IDE2LjZMNC44IDEybDQuNi00LjZMOCA2bC02IDYgNiA2IDEuNC0xLjR6bTUuMiAwbDQuNi00LjYtNC42LTQuNkwxNiA2bDYgNi02IDYtMS40LTEuNHoiLz48L3N2Zz4=',
+			text: '\xa0Code',
+			onclick: function() {
+				var seltxt = editor.selection.getContent({
+					format: 'text'
+				});
+				if (seltxt.length > 0) {
+					editor.execCommand('mceReplaceContent', false, '<code>{$selection}</code>');
+				} else {
+					var dom = editor.dom;
+					var uniqueID = dom.uniqueId();
+					var html = '<code id="' + uniqueID + '">&nbsp;</code>';
+					editor.insertContent(html);
+					var newTag = dom.select('code#' + uniqueID)[0];
+					editor.selection.setCursorLocation(newTag);
+				}
+			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE4IDExdjJoNHYtMmgtNHptLTIgNi42MWMuOTYuNzEgMi4yMSAxLjY1IDMuMiAyLjM5LjQtLjUzLjgtMS4wNyAxLjItMS42LS45OS0uNzQtMi4yNC0xLjY4LTMuMi0yLjQtLjQuNTQtLjggMS4wOC0xLjIgMS42MXpNMjAuNCA1LjZjLS40LS41My0uOC0xLjA3LTEuMi0xLjYtLjk5Ljc0LTIuMjQgMS42OC0zLjIgMi40LjQuNTMuOCAxLjA3IDEuMiAxLjYuOTYtLjcyIDIuMjEtMS42NSAzLjItMi40ek00IDljLTEuMSAwLTIgLjktMiAydjJjMCAxLjEuOSAyIDIgMmgxdjRoMnYtNGgxbDUgM1Y2TDggOUg0em0xMS41IDNjMC0xLjMzLS41OC0yLjUzLTEuNS0zLjM1djYuNjljLjkyLS44MSAxLjUtMi4wMSAxLjUtMy4zNHoiLz48L3N2Zz4=',
+			text: '\xa0Insert Excerpt',
+			onclick: function() {
+				var dom = editor.dom;
+				var uniqueID = dom.uniqueId();
+				var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:top-0 mar:bottom+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
+				editor.insertContent(html);
+				var newExcerpt = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(newExcerpt);
+			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDguNDFMMTYuNTkgMTMgMTggMTEuNTlsLTYtNi02IDZMNy40MSAxMyAxMiA4LjQxek02IDE4aDEydi0ySDZ2MnoiLz48L3N2Zz4=',
+			text: '\xa0Acronym',
+			onclick: function() {
+				editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
+			}
+		}],
+	});
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 26200615
+ * EOF: add-misc-opts / plugin.js / 27200615
  */

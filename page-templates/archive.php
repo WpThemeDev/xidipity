@@ -6,7 +6,7 @@
     * The template for displaying archive blog posts
     *
     * ###:  archive.php
-    * bld:  24200531
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -78,7 +78,7 @@ if (empty($content))
 {
     $dft_content = array(
         'ID' => get_the_ID(),
-        'post_content' => '<h3><i class="fas fa-archive fg:sec-dark">&#8203;</i><span class="pad:left+0.5">Archive Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display excerpts of blog posts which have been marked as "archived". The editor content is not exposed to the web but provides an opportunity to note or document the use of the template.</p>'
+        'post_content' => '<h3><i class="fas fa-archive txt:sec-dark">&#8203;</i><span class="pad:left+0.5">Archive Template</span></h3><p>&nbsp;</p><p>The purpose of this template is to display excerpts of blog posts which have been marked as "archived". The editor content is not exposed to the web but provides an opportunity to note or document the use of the template.</p>'
     );
     wp_update_post( $dft_content );
 }
@@ -105,7 +105,7 @@ $wp_data = new WP_Query($qry_prms);
 ***
 */
 echo '<!--  bk:ARTICLE -->' . "\n";
-echo '<article class="box:shadow bg:content fg:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_data->have_posts()) {
     $cnt = 0;
 
@@ -119,7 +119,7 @@ if ($wp_data->have_posts()) {
     echo '<!--  bk:HEADER -->' . "\n";
     echo '<header class="mar:top+1 wd:100%">' . "\n";
     the_title('<div class="pg:title">', '</div>');
-    echo '<div class="bg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:bottom+0.75">&#8203;</div>' . "\n";
     echo '</header>' . "\n";
     echo '<!-- /bk:HEADER -->' . "\n";
 
@@ -137,7 +137,7 @@ if ($wp_data->have_posts()) {
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
         $excerpt_category = '<p><span class="pad:right+0.25">' . xidipity_icon_archive() . '</span><span class="fnt:weight-bolder">Archive</span></p>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="fg:wcag-grey6 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
         /*
          ***
          * get post link for read more
@@ -146,7 +146,7 @@ if ($wp_data->have_posts()) {
         $post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
 
         echo '<!--  bk:' . $cnt . '/PARAGRAPH -->' . "\n";
-        echo '<div class="bg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+        echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
 
         /*
         ***
@@ -221,7 +221,7 @@ if ($wp_data->have_posts()) {
     ***
     */
     include( locate_template( 'template-parts/content-pagination.php', false, false ) );
-    echo '<div class="bg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
+    echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -284,6 +284,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: archive.php / 24200531
+ * EOF: archive.php / 27200615
  */
 ?>

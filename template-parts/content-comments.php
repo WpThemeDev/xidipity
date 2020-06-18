@@ -4,7 +4,7 @@
     * The template for displaying comments
     *
     * ###:  content-comments.php
-    * bld:  26200615
+    * bld:  27200615
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -13,7 +13,7 @@
 global $wp_query, $comment_alt, $comment_depth, $comment_thread_alt, $overridden_cpage, $in_comment_loop;
 
 echo '<!--  ct:COMMENTS -->' . "\n";
-echo '<div class="bg:content fg:content dsp:block pad:hrz+1 mar:bottom+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
+echo '<div class="bkg:content txt:content dsp:block pad:hrz+1 mar:bottom+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
 
 $comments_args = array(
     //'status'  => 'approved',
@@ -255,7 +255,7 @@ if ($have_comments)
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments'))
 {
     echo '<div class="fnt:size-smaller mar:vrt+0.75">' . "\n";
-    echo '<p><span class="fg:sec-dark pad:right+0.25">' . xidipity_icon_x_comments('small') . '</span>Comments are closed.</p>' . "\n";
+    echo '<p><span class="txt:sec-dark pad:right+0.25">' . xidipity_icon_x_comments('small') . '</span>Comments are closed.</p>' . "\n";
     echo '</div>' . "\n";
 }
 
@@ -265,13 +265,13 @@ if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_p
  ***
 */
 comment_form(array(
-    'title_reply' => '<span class="fg:pri-dark pad:right+0.25">' . xidipity_icon_comments('h3') . '</span>Your Comment',
+    'title_reply' => '<span class="txt:pri-dark pad:right+0.25">' . xidipity_icon_comments('h3') . '</span>Your Comment',
     'logged_in_as' => ''
 ));
 echo '<!--  ct:COMMENTS -->' . "\n";
 echo '</div>' . "\n";
 
 /*
- * EOF: content-comments.php / 26200615
+ * EOF: content-comments.php / 27200615
  */
 ?>
