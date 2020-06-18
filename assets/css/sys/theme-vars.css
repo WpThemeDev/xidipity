@@ -20,6 +20,8 @@
 base, primary, secondary hue / shade
 ***
 */
+	/*: no color :*/
+	--transparent: transparent;
 	/*: black & white :*/
 	--hue-blk: #000000;
 	--hue-wht: #ffffff;
@@ -76,13 +78,14 @@ text colors
 	--hue-green: #006600;
 	/*
 ***
-special colors
+highlight colors
 ***
 */
-	/*: no color :*/
-	--transparent: transparent;
-	/*: hilite plugin support :*/
-	--hue-highlight: #FFFF33;
+	--hue-highlight-yellow: #ffff66;
+	--hue-highlight-cyan: #ccffff;
+	--hue-highlight-magenta: #ffccff;
+	--hue-highlight-green: #99ff99;
+	--hue-highlight-orange: #ffd280;
 	/*
 ***
 content attributes
