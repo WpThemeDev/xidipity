@@ -115,13 +115,22 @@ kbd {
 	padding: 0 0.125rem 0 0.125rem;
 }
 
-ins,
 mark {
-	background-color: var(--hue-highlight);
+	background-color: var(--hue-pri-tint-dn1);
+	text-decoration: none;
+}
+
+ins {
+	background-color: var(--hue-highlight-green);
 	text-decoration: none;
 }
 
 del {
+	background-color: var(--hue-highlight-red);
+	text-decoration: none;
+}
+
+s {
 	text-decoration: line-through;
 	text-decoration-color: var(--hue-red);
 }
