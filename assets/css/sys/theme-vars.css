@@ -183,15 +183,15 @@ theme attributes
 	--mnu-bar-sm-bg: var(--transparent);
 	--mnu-bar-sm-fg: var(--hue-blk);
 	--mnu-bar-lg-bg: var(--blog-hdr-bg-color);
-	--mnu-bar-lg-fg: var(--wcag-grey7);
+	--mnu-bar-lg-fg: var(--hue-bas-dn4);
 	/*: sys content :*/
 	--content-bg-color: var(--hue-wht);
 	--content-fg-color: var(--hue-blk);
 	--content-tp-border-color: var(--hue-bas-up2);
 	--content-bt-border-color: var(--hue-bas-up2);
-	--content-counter-color: var(--wcag-grey6);
+	--content-counter-color: var(--hue-bas-dn2);
 	/*: system :*/
-	--dft-fg-color: var(--hue-bas-dn4);
+	--dft-fg-color: var(--hue-blk);
 	--dft-bg-color: var(--hue-bas-up5);
 	--dft-line-height: 1.5;
 	--dft-font-family: var(--font-family-sans);
