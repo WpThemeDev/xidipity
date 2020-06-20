@@ -3,14 +3,14 @@
 	* Xidipity css variables
 	*
 	* ###:	theme-vars.css
-	* bld:	26200615
+	* bld:	28200701
 	* src:	github.com/WpThemeDev/xidipity/
 	* (C) 	2019-2020 John Baer
 	*
 	* ref:  noeldelgado.github.io/shadowlord/
-	*	base: #cecece
-	*	pri:  #0047ab
-	*	sec:  #ff6200 (paletton pri triad)
+	*	base: #c9c3bc	(Greyish orange)
+	*	pri:  #007fa3	(Dark cyan)
+	*	sec:  #f04318	(Vivid red) (adobe split complementary)
 	*
 */
 
@@ -26,47 +26,47 @@ base, primary, secondary hue / shade
 	--hue-blk: #000000;
 	--hue-wht: #ffffff;
 	/*: base hue :*/
-	--hue-bas-up5: #fafafa;
-	--hue-bas-up4: #f5f5f5;
-	--hue-bas-up3: #ebebeb;
-	--hue-bas-up2: #e0e0e0;
-	--hue-bas-up1: #d6d6d6;
-	--hue-bas: #cccccc;
-	--hue-bas-dn1: #a3a3a3;
-	--hue-bas-dn2: #7a7a7a;
-	--hue-bas-dn3: #525252;
-	--hue-bas-dn4: #292929;
-	--hue-bas-tint-up1: #fbfbfb;
-	--hue-bas-tint: #f9f9f9;
-	--hue-bas-tint-dn1: #f7f7f7;
+	--hue-bas-up5: #faf9f8;
+	--hue-bas-up4: #f4f3f2;
+	--hue-bas-up3: #e9e7e4;
+	--hue-bas-up2: #dfdbd7;
+	--hue-bas-up1: #d4cfc9;
+	--hue-bas: #c9c3bc;
+	--hue-bas-dn1: #a19c96;
+	--hue-bas-dn2: #797571;
+	--hue-bas-dn3: #504e4b;
+	--hue-bas-dn4: #282726;
+	--hue-bas-tint-up1: #fdfdfc;
+	--hue-bas-tint: #fbfafa;
+	--hue-bas-tint-dn1: #f8f8f7;
 	/*: primary hue :*/
-	--hue-pri-up5: #e6f0f5;
-	--hue-pri-up4: #cce0eb;
-	--hue-pri-up3: #99c2d6;
-	--hue-pri-up2: #66a3c2;
-	--hue-pri-up1: #3385ad;
-	--hue-pri: #006699;
-	--hue-pri-dn1: #00527a;
-	--hue-pri-dn2: #003d5c;
-	--hue-pri-dn3: #00293d;
-	--hue-pri-dn4: #00141f;
-	--hue-pri-tint-up1: #f5f9fb;
-	--hue-pri-tint: #f0f6f9;
-	--hue-pri-tint-dn1: #ebf3f7;
+	--hue-pri-up5: #e6f2f6;
+	--hue-pri-up4: #cce5ed;
+	--hue-pri-up3: #99ccda;
+	--hue-pri-up2: #66b2c8;
+	--hue-pri-up1: #3399b5;
+	--hue-pri: #007fa3;
+	--hue-pri-dn1: #006682;
+	--hue-pri-dn2: #004c62;
+	--hue-pri-dn3: #003341;
+	--hue-pri-dn4: #001921;
+	--hue-pri-tint-up1: #f5fafb;
+	--hue-pri-tint: #ebf5f8;
+	--hue-pri-tint-dn1: #e0eff4;
 	/*: secondary hue :*/
-	--hue-sec-up5: #f5ebe6;
-	--hue-sec-up4: #ebd6cc;
-	--hue-sec-up3: #d6ad99;
-	--hue-sec-up2: #c28566;
-	--hue-sec-up1: #ad5c33;
-	--hue-sec: #993300;
-	--hue-sec-dn1: #7a2900;
-	--hue-sec-dn2: #5c1f00;
-	--hue-sec-dn3: #3d1400;
-	--hue-sec-dn4: #1f0a00;
-	--hue-sec-tint-up1: #fbf7f5;
-	--hue-sec-tint: #f9f3f0;
-	--hue-sec-tint-dn1: #f7efeb;
+	--hue-sec-up5: #feece8;
+	--hue-sec-up4: #fcd9d1;
+	--hue-sec-up3: #f9b4a3;
+	--hue-sec-up2: #f68e74;
+	--hue-sec-up1: #f36946;
+	--hue-sec: #f04318;
+	--hue-sec-dn1: #c03613;
+	--hue-sec-dn2: #90280e;
+	--hue-sec-dn3: #601b0a;
+	--hue-sec-dn4: #300d05;
+	--hue-sec-tint-up1: #fef7f6;
+	--hue-sec-tint: #fef0ed;
+	--hue-sec-tint-dn1: #fde8e3;
 	/*
 ***
 text colors
@@ -166,11 +166,12 @@ theme attributes
 	--blog-hdr-bg-color: var(--hue-bas-up5);
 	/*: blog title & tagline :*/
 	--title-font-family: var(--font-family-fancy);
+	--title-font-color: var(--hue-pri-dn2);
 	--title-font-size: 3rem;
 	--title-font-spacing: 0.0625rem;
 	--title-font-style: normal;
+	--desc-font-color: var(--hue-bas-dn2);
 	--title-font-weight: var(--font-wgt-normal);
-	--desc-font-color: var(--wcag-grey8);
 	--desc-font-family: var(--font-family-sans);
 	--desc-font-size: 1rem;
 	--desc-font-spacing: 0.5rem;
@@ -201,9 +202,9 @@ theme attributes
 	/*: link attributes :*/
 	--lnk-dft-fg-hue: var(--hue-pri-dn1);
 	--lnk-dft-bg-hue: var(--transparent);
-	--lnk-vst-fg-hue: var(--hue-pri-up2);
+	--lnk-vst-fg-hue: var(--hue-pri-dn2);
 	--lnk-vst-bg-hue: var(--transparent);
-	--lnk-hvr-fg-hue: var(--hue-sec);
+	--lnk-hvr-fg-hue: var(--hue-sec-dn1);
 	--lnk-hvr-bg-hue: var(--transparent);
 	--lnk-dft-wgt: var(--font-wgt-normal);
 	--lnk-vst-wgt: var(--font-wgt-normal);
@@ -222,5 +223,5 @@ plugin attributes
 }
 
 /*
-* EOF: theme-vars.css / 26200615
+* EOF: theme-vars.css / 28200701
 */
