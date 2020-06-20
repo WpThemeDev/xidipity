@@ -193,17 +193,17 @@ abbr {
 ***
 */
 .btn\:facade {
-	background-color: var(--hue-pri);
+	background-color: var(--hue-pri-dn1);
 	color: var(--hue-wht);
 	border-radius: 0.1666rem;
 	display: inline-block;
-	font-size: var(--font-size-smaller);
-	font-weight: bolder;
-	padding: 0.125rem .5rem 0.125rem .5rem;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-wgt-normal);
+	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
 }
 
 .btn\:facade\!hover:hover {
-	background-color: var(--hue-pri-dark);
+	background-color: var(--hue-pri);
 	cursor: pointer;
 }
 
