@@ -1776,14 +1776,14 @@ table.frame>tbody>tr>td {
 ***
     * element: <button>
     * dsc: default button
-    * ver: 200222
+    * ver: 28200701
     * fnt: style button
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
 */
 button {
-	background-color: var(--hue-pri-up1);
-	border: thin solid var(--hue-pri);
+	background-color: var(--hue-pri-dn2);
+	border: thin solid var(--hue-pri-dn2);
 	border-radius: 0.3333rem;
 	color: var(--hue-wht);
 	padding: 0.5rem 1.5rem;
@@ -1797,12 +1797,13 @@ button a:focus {
 }
 
 button:hover {
-	background-color: var(--hue-pri);
+	background-color: var(--hue-pri-dn1);
+	border: thin solid var(--hue-pri-dn1);
 }
 
 button:active {
-	background-color: var(--hue-bas-dn4);
-	border: thin solid var(--hue-bas-dn4);
+	background-color: var(--hue-pri-dn3);
+	border: thin solid var(--hue-pri-dn3);
 }
 
 /*
