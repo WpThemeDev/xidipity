@@ -185,7 +185,7 @@ theme attributes
 	--content-fg-color: var(--hue-blk);
 	--content-tp-border-color: var(--hue-bas-up2);
 	--content-bt-border-color: var(--hue-bas-up2);
-	--content-counter-color: var(--wcag-grey6);
+	--content-counter-color: var(--hue-bas-dn2);
 	/*: system :*/
 	--dft-fg-color: var(--hue-blk);
 	--dft-bg-color: var(--hue-wht);
