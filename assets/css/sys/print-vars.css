@@ -3,7 +3,7 @@
 * Xidipity css print variables
 *
 * ###:  print-vars.css
-* bld:  27200615
+* bld:  28200701
 * src:  github.com/WpThemeDev/xidipity/
 * (C)   2019-2020 John Baer
 *
@@ -27,66 +27,66 @@ base, primary, secondary hue / shade
 	--hue-blk: #000000;
 	--hue-wht: #ffffff;
 	/*: base hue :*/
-	--hue-bas-up5: #fafafa;
-	--hue-bas-up4: #f5f5f5;
-	--hue-bas-up3: #ebebeb;
-	--hue-bas-up2: #e0e0e0;
-	--hue-bas-up1: #d6d6d6;
-	--hue-bas: #cccccc;
-	--hue-bas-dn1: #a3a3a3;
-	--hue-bas-dn2: #7a7a7a;
-	--hue-bas-dn3: #525252;
-	--hue-bas-dn4: #292929;
-	--hue-bas-tint-up1: #fbfbfb;
-	--hue-bas-tint: #f9f9f9;
-	--hue-bas-tint-dn1: #f7f7f7;
+	--hue-bas-up5: #faf9f8;
+	--hue-bas-up4: #f4f3f2;
+	--hue-bas-up3: #e9e7e4;
+	--hue-bas-up2: #dfdbd7;
+	--hue-bas-up1: #d4cfc9;
+	--hue-bas: #c9c3bc;
+	--hue-bas-dn1: #a19c96;
+	--hue-bas-dn2: #797571;
+	--hue-bas-dn3: #504e4b;
+	--hue-bas-dn4: #282726;
+	--hue-bas-tint-up1: #fdfdfc;
+	--hue-bas-tint: #fbfafa;
+	--hue-bas-tint-dn1: #f8f8f7;
 	/*: primary hue :*/
-	--hue-pri-up5: #e6f0f5;
-	--hue-pri-up4: #cce0eb;
-	--hue-pri-up3: #99c2d6;
-	--hue-pri-up2: #66a3c2;
-	--hue-pri-up1: #3385ad;
-	--hue-pri: #006699;
-	--hue-pri-dn1: #00527a;
-	--hue-pri-dn2: #003d5c;
-	--hue-pri-dn3: #00293d;
-	--hue-pri-dn4: #00141f;
-	--hue-pri-tint-up1: #f5f9fb;
-	--hue-pri-tint: #f0f6f9;
-	--hue-pri-tint-dn1: #ebf3f7;
+	--hue-pri-up5: #efefef;
+	--hue-pri-up4: #dedede;
+	--hue-pri-up3: #bebebe;
+	--hue-pri-up2: #9e9e9e;
+	--hue-pri-up1: #7d7d7d;
+	--hue-pri: #5d5d5d;
+	--hue-pri-dn1: #4a4a4a;
+	--hue-pri-dn2: #383838;
+	--hue-pri-dn3: #252525;
+	--hue-pri-dn4: #121212;
+	--hue-pri-tint-up1: #f9f9f9;
+	--hue-pri-tint: #f2f2f2;
+	--hue-pri-tint-dn1: #ebebeb;
 	/*: secondary hue :*/
-	--hue-sec-up5: #f5ebe6;
-	--hue-sec-up4: #ebd6cc;
-	--hue-sec-up3: #d6ad99;
-	--hue-sec-up2: #c28566;
-	--hue-sec-up1: #ad5c33;
-	--hue-sec: #993300;
-	--hue-sec-dn1: #7a2900;
-	--hue-sec-dn2: #5c1f00;
-	--hue-sec-dn3: #3d1400;
-	--hue-sec-dn4: #1f0a00;
-	--hue-sec-tint-up1: #fbf7f5;
-	--hue-sec-tint: #f9f3f0;
-	--hue-sec-tint-dn1: #f7efeb;
+	--hue-sec-up5: #f1f1f1;
+	--hue-sec-up4: #e3e3e3;
+	--hue-sec-up3: #c7c7c7;
+	--hue-sec-up2: #aaaaaa;
+	--hue-sec-up1: #8f8f8f;
+	--hue-sec: #727272;
+	--hue-sec-dn1: #5c5c5c;
+	--hue-sec-dn2: #444444;
+	--hue-sec-dn3: #2e2e2e;
+	--hue-sec-dn4: #171717;
+	--hue-sec-tint-up1: #f9f9f9;
+	--hue-sec-tint: #f4f4f4;
+	--hue-sec-tint-dn1: #eeeeee;
 	/*
 ***
 text colors
 ***
 */
-	--hue-red: #b30000;
-	--hue-purple: #800080;
-	--hue-blue: #0000ff;
-	--hue-green: #006600;
+	--hue-red: #363636;
+	--hue-purple: #343434;
+	--hue-blue: #1c1c1c;
+	--hue-green: #3c3c3c;
 	/*
 ***
 highlight colors
 ***
 */
-	--hue-highlight-yellow: #ffff66;
-	--hue-highlight-cyan: #ccffff;
-	--hue-highlight-magenta: #ffccff;
-	--hue-highlight-green: #99ff99;
-	--hue-highlight-orange: #ffd280;
+	--hue-highlight-yellow: #eeeeee;
+	--hue-highlight-cyan: #f0f0f0;
+	--hue-highlight-magenta: #e1e1e1;
+	--hue-highlight-green: #d5d5d5;
+	--hue-highlight-orange: #d6d6d6;
 	/*
 ***
 content attributes
@@ -166,12 +166,13 @@ theme attributes
 	/*: blog header :*/
 	--blog-hdr-bg-color: var(--hue-bas-up5);
 	/*: blog title & tagline :*/
+	--title-font-color: var(--hue-pri-dn2);
 	--title-font-family: var(--font-family-fancy);
 	--title-font-size: 3rem;
 	--title-font-spacing: 0.0625rem;
 	--title-font-style: normal;
 	--title-font-weight: var(--font-wgt-normal);
-	--desc-font-color: var(--wcag-grey8);
+	--desc-font-color: var(--hue-bas-dn2);
 	--desc-font-family: var(--font-family-sans);
 	--desc-font-size: 1rem;
 	--desc-font-spacing: 0.5rem;
@@ -218,5 +219,5 @@ plugin attributes
 }
 
 /*
-* EOF: print-vars.css / 27200615
+* EOF: print-vars.css / 28200701
 */
