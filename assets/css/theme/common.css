@@ -121,18 +121,19 @@ mark {
 }
 
 ins {
-	background-color: var(--hue-highlight-green);
+	border-bottom: solid thin var(--hue-blue);
+	color: var(--hue-blue);
 	text-decoration: none;
 }
 
-del {
-	background-color: var(--hue-highlight-red);
-	text-decoration: none;
-}
-
+del,
 s {
 	text-decoration: line-through;
 	text-decoration-color: var(--hue-red);
+}
+
+del {
+	color: var(--hue-red);
 }
 
 small {
