@@ -3,7 +3,7 @@
  * Tinymce add-template plugin 
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  28200701
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -29,11 +29,11 @@ tinymce.PluginManager.add('add_template', function(editor) {
 					multiline: !0,
 					minWidth: window.innerWidth * .4,
 					minHeight: window.innerHeight * .61,
-					style: "direction: ltr; text-align: left; height: 100%; font-family: 'Roboto Mono', monospace; color: #212121; border: 1px solid #f5f5f5;"
+					style: "direction: ltr; text-align: left; height: 100%; color: #504e4b; border: 1px solid #e9e7e4; font-family: monospace; white-space: pre-wrap;"
 				},
 				onSubmit: function() {
 					var html = document.getElementsByClassName("mce-textbox")[0].value.trim();
-					editor.insertContent(html);
+					editor.insertContent(html.replace("`t\s*`t","`t"));
 				}
 			}, {});
 		}
@@ -41,5 +41,5 @@ tinymce.PluginManager.add('add_template', function(editor) {
 });
 
 /*
- * EOF: add-template / plugin.js / 27200615
+ * EOF: add-template / plugin.js / 28200701
  */
