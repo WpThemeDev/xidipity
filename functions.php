@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  27200615
+    * bld:  28200701
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1748,7 +1748,7 @@ function dsp_warning($arg = '')
 
 /**
  *  name: dsp_err
- *  build: 200615
+ *  build: 28200701
  *  description: Return properly formatted error message
  *  attributes:
  *      $arg - string
@@ -1767,7 +1767,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas+1 cnr:arch-small">	<div class="fnt:size-3x-large pad:+0.5"><span class="material-icons">support_agent</span></div>	<div class="pad:+0.5">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
+    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small"><div class="fnt:size-3x-large pad:+0.5 txt:blk"><span class="material-icons">support_agent</span></div><div class="pad:+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
     // return html
     return $fn_retval;
 }
@@ -2079,6 +2079,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 27200615
+ * EOF: functions.php / 28200701
  */
 ?>
