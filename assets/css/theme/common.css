@@ -690,11 +690,7 @@ ul.mixed ul ul ul ul {
 ***
 */
 ul.par,
-ul.par ul,
-ul.par ul ul,
-ul.par ul ul ul,
-ul.par ul ul ul ul,
-ul.par ul ul ul ul ul {
+ul.par li > ul {
 	list-style-type: none;
 	margin-left: 2.5rem;
 	padding: 0;
@@ -769,11 +765,7 @@ ol.outline ol ol ol ol>li:before {
     # mzl.la/2ps8ua3
 **/
 ol.nested,
-ol.nested ol,
-ol.nested ol ol,
-ol.nested ol ol ol,
-ol.nested ol ol ol ol,
-ol.nested ol ol ol ol ol {
+ol.nested li > ol {
 	counter-reset: nested;
 	list-style-type: none;
 }
@@ -794,9 +786,9 @@ ol.nested ol ol ol ol ol {
 ***
 */
 .dsp\:hrz-list {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
 	-webkit-flex-direction: row;
 	-ms-flex-direction: row;
 	flex-direction: row;
@@ -808,16 +800,29 @@ ol.nested ol ol ol ol ol {
 	justify-content: flex-start;
 }
 
-.dsp\:hrz-list ul,
-.dsp\:hrz-list ul ul, 
-.dsp\:hrz-list ul ul ul,
-.dsp\:hrz-list ul ul ul ul {
-	display:inline-flex;
+.dsp\:hrz-list li > ul {
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 	margin-left: -0.75rem;
 	margin-right: -0.5rem;
 }
 
 .dsp\:hrz-list li {
+	margin-left: 1.5rem;
+	padding-right: 0.5rem;
+}
+
+.dsp\:hrz-list li > ul li {
 	margin-left: 1.5rem;
 	padding-right: 0.5rem;
 }
@@ -830,11 +835,17 @@ ol.nested ol ol ol ol ol {
 	padding-left: 1rem;
 }
 
+.dsp\:vrt-list li > ul {
+	display: block;
+	list-style-type: disc;
+	line-height: var(--dft-line-height);
+}
+
 @media (min-width:600px) {
 	.sm\)dsp\:hrz-list {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -846,7 +857,29 @@ ol.nested ol ol ol ol ol {
 		justify-content: flex-start;
 	}
 
+	.sm\)dsp\:hrz-list li > ul {
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin-left: -0.75rem;
+		margin-right: -0.5rem;
+	}
+
 	.sm\)dsp\:hrz-list li {
+		margin-left: 1.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.sm\)dsp\:hrz-list li > ul li {
 		margin-left: 1.5rem;
 		padding-right: 0.5rem;
 	}
@@ -858,13 +891,19 @@ ol.nested ol ol ol ol ol {
 		margin-left: 1rem;
 		padding-left: 1rem;
 	}
+	
+	.sm\)dsp\:vrt-list li > ul {
+		display: block;
+		list-style-type: disc;
+		line-height: var(--dft-line-height);
+	}
 }
 
 @media (min-width:900px) {
 	.md\)dsp\:hrz-list {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -876,7 +915,29 @@ ol.nested ol ol ol ol ol {
 		justify-content: flex-start;
 	}
 
+	.md\)dsp\:hrz-list li > ul {
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin-left: -0.75rem;
+		margin-right: -0.5rem;
+	}
+
 	.md\)dsp\:hrz-list li {
+		margin-left: 1.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.md\)dsp\:hrz-list li > ul li {
 		margin-left: 1.5rem;
 		padding-right: 0.5rem;
 	}
@@ -888,13 +949,20 @@ ol.nested ol ol ol ol ol {
 		margin-left: 1rem;
 		padding-left: 1rem;
 	}
+	
+	.md\)dsp\:vrt-list li > ul {
+		display: block;
+		list-style-type: disc;
+		line-height: var(--dft-line-height);
+	}
+	
 }
 
 @media (min-width:1200px) {
 	.lg\)dsp\:hrz-list {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -906,7 +974,29 @@ ol.nested ol ol ol ol ol {
 		justify-content: flex-start;
 	}
 
+	.lg\)dsp\:hrz-list li > ul {
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin-left: -0.75rem;
+		margin-right: -0.5rem;
+	}
+
 	.lg\)dsp\:hrz-list li {
+		margin-left: 1.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.lg\)dsp\:hrz-list li > ul li {
 		margin-left: 1.5rem;
 		padding-right: 0.5rem;
 	}
@@ -918,13 +1008,19 @@ ol.nested ol ol ol ol ol {
 		margin-left: 1rem;
 		padding-left: 1rem;
 	}
+	
+	.lg\)dsp\:vrt-list li > ul {
+		display: block;
+		list-style-type: disc;
+		line-height: var(--dft-line-height);
+	}
 }
 
 @media (min-width:1800px) {
 	.xl\)dsp\:hrz-list {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -936,7 +1032,29 @@ ol.nested ol ol ol ol ol {
 		justify-content: flex-start;
 	}
 
+	.xl\)dsp\:hrz-list li > ul {
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		margin-left: -0.75rem;
+		margin-right: -0.5rem;
+	}
+
 	.xl\)dsp\:hrz-list li {
+		margin-left: 1.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.xl\)dsp\:hrz-list li > ul li {
 		margin-left: 1.5rem;
 		padding-right: 0.5rem;
 	}
@@ -948,6 +1066,12 @@ ol.nested ol ol ol ol ol {
 		margin-left: 1rem;
 		padding-left: 1rem;
 	}
+	
+	.xl\)dsp\:vrt-list li > ul {
+		display: block;
+		list-style-type: disc;
+		line-height: var(--dft-line-height);
+	}	
 }
 
 /*
@@ -960,10 +1084,7 @@ ol.nested ol ol ol ol ol {
 ***
 */
 .ul-fa,
-.ul-fa ul,
-.ul-fa ul ul,
-.ul-fa ul ul ul,
-.ul-fa ul ul ul ul {
+.ul-fa li > ul {
 	list-style-type: none;
 	margin-left: 1rem;
 	padding-left: 1rem;
@@ -985,15 +1106,9 @@ ol.nested ol ol ol ol ol {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 ***
 */
-.no-bullet {
-	list-style-type: none;
-}
-
+.no-bullet,
 .no-bullets,
-.no-bullets ul,
-.no-bullets ul ul,
-.no-bullets ul ul ul,
-.no-bullets ul ul ul ul {
+.no-bullets li > ul {
 	list-style-type: none;
 }
 
