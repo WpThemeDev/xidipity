@@ -778,17 +778,27 @@ ol.nested li > ol {
 
 /*
 ***
-    * property: ul-hrz
+    * property: li-hrz
     * dsc: horizontal list
     * ver: 28200701
     * fnt: display list horizontally
     * ref: 
 ***
 */
-.dsp\:hrz-list {
+.dsp\:li-hrz {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.dsp\:li-hrz li > ul {
 	display: -webkit-inline-flex;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
+}
+
+.dsp\:li-hrz,
+.dsp\:li-hrz li > ul {
 	-webkit-flex-direction: row;
 	-ms-flex-direction: row;
 	flex-direction: row;
@@ -800,52 +810,54 @@ ol.nested li > ol {
 	justify-content: flex-start;
 }
 
-.dsp\:hrz-list li > ul {
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-webkit-justify-content: flex-start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	margin-left: -0.75rem;
-	margin-right: -0.5rem;
+.dsp\:li-hrz li:not(:last-child) {
+	padding-right: 1.75rem;
 }
 
-.dsp\:hrz-list li {
-	margin-left: 1.5rem;
-	padding-right: 0.5rem;
+.dsp\:li-hrz li > ul li:first-child {
+	margin-left: -0.5rem;
 }
 
-.dsp\:hrz-list li > ul li {
-	margin-left: 1.5rem;
-	padding-right: 0.5rem;
-}
-
-.dsp\:vrt-list {
+/*
+***
+    * property: li-vrt
+    * dsc: vertical list
+    * ver: 28200701
+    * fnt: display list virtually
+    * ref: 
+***
+*/
+.dsp\:li-vrt,
+.dsp\:li-vrt li > ul {
 	display: block;
-	list-style-type: disc;
-	line-height: var(--dft-line-height);
-	margin-left: 1rem;
-	padding-left: 1rem;
 }
 
-.dsp\:vrt-list li > ul {
-	display: block;
-	list-style-type: disc;
+.dsp\:li-vrt li:nth-child(1n) {
 	line-height: var(--dft-line-height);
+	margin-left: 0;
+	padding-left: 0;
 }
 
-@media (min-width:600px) {
-	.sm\)dsp\:hrz-list {
+/* hack:( corrects line 817 when this class follows li-hrz */
+.dsp\:li-hrz li > ul li:first-child {
+	margin-left: 0;
+}
+
+@media (min-width:600px) {	
+	.sm\)dsp\:li-hrz {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.sm\)dsp\:li-hrz li > ul {
 		display: -webkit-inline-flex;
 		display: -ms-inline-flexbox;
 		display: inline-flex;
+	}
+
+	.sm\)dsp\:li-hrz,
+	.sm\)dsp\:li-hrz li > ul {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -857,53 +869,41 @@ ol.nested li > ol {
 		justify-content: flex-start;
 	}
 
-	.sm\)dsp\:hrz-list li > ul {
-		display: -webkit-inline-flex;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
-		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
-		flex-direction: row;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-justify-content: flex-start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		margin-left: -0.75rem;
-		margin-right: -0.5rem;
+	.sm\)dsp\:li-hrz li:not(:last-child) {
+		padding-right: 1.75rem;
 	}
 
-	.sm\)dsp\:hrz-list li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
+	.sm\)dsp\:li-hrz li > ul li:first-child {
+		margin-left: -0.5rem;
 	}
 
-	.sm\)dsp\:hrz-list li > ul li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
-	}
-
-	.sm\)dsp\:vrt-list {
+	.sm\)dsp\:li-vrt,
+	.sm\)dsp\:li-vrt li > ul {
 		display: block;
-		list-style-type: disc;
-		line-height: var(--dft-line-height);
-		margin-left: 1rem;
-		padding-left: 1rem;
 	}
-	
-	.sm\)dsp\:vrt-list li > ul {
-		display: block;
-		list-style-type: disc;
+
+	.sm\)dsp\:li-vrt li:nth-child(1n) {
 		line-height: var(--dft-line-height);
+		margin-left: 0;
+		padding-left: 0;
 	}
 }
 
 @media (min-width:900px) {
-	.md\)dsp\:hrz-list {
+	.md\)dsp\:li-hrz {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.md\)dsp\:li-hrz li > ul {
 		display: -webkit-inline-flex;
 		display: -ms-inline-flexbox;
 		display: inline-flex;
+	}
+
+	.md\)dsp\:li-hrz,
+	.md\)dsp\:li-hrz li > ul {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -915,54 +915,41 @@ ol.nested li > ol {
 		justify-content: flex-start;
 	}
 
-	.md\)dsp\:hrz-list li > ul {
-		display: -webkit-inline-flex;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
-		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
-		flex-direction: row;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-justify-content: flex-start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		margin-left: -0.75rem;
-		margin-right: -0.5rem;
+	.md\)dsp\:li-hrz li:not(:last-child) {
+		padding-right: 1.75rem;
 	}
 
-	.md\)dsp\:hrz-list li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
+	.md\)dsp\:li-hrz li > ul li:first-child {
+		margin-left: -0.5rem;
 	}
 
-	.md\)dsp\:hrz-list li > ul li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
-	}
-
-	.md\)dsp\:vrt-list {
+	.md\)dsp\:li-vrt,
+	.md\)dsp\:li-vrt li > ul {
 		display: block;
-		list-style-type: disc;
-		line-height: var(--dft-line-height);
-		margin-left: 1rem;
-		padding-left: 1rem;
 	}
-	
-	.md\)dsp\:vrt-list li > ul {
-		display: block;
-		list-style-type: disc;
+
+	.md\)dsp\:li-vrt li:nth-child(1n) {
 		line-height: var(--dft-line-height);
+		margin-left: 0;
+		padding-left: 0;
 	}
-	
 }
 
 @media (min-width:1200px) {
-	.lg\)dsp\:hrz-list {
+	.lg\)dsp\:li-hrz {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.lg\)dsp\:li-hrz li > ul {
 		display: -webkit-inline-flex;
 		display: -ms-inline-flexbox;
 		display: inline-flex;
+	}
+
+	.lg\)dsp\:li-hrz,
+	.lg\)dsp\:li-hrz li > ul {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -974,53 +961,41 @@ ol.nested li > ol {
 		justify-content: flex-start;
 	}
 
-	.lg\)dsp\:hrz-list li > ul {
-		display: -webkit-inline-flex;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
-		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
-		flex-direction: row;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-justify-content: flex-start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		margin-left: -0.75rem;
-		margin-right: -0.5rem;
+	.lg\)dsp\:li-hrz li:not(:last-child) {
+		padding-right: 1.75rem;
 	}
 
-	.lg\)dsp\:hrz-list li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
+	.lg\)dsp\:li-hrz li > ul li:first-child {
+		margin-left: -0.5rem;
 	}
 
-	.lg\)dsp\:hrz-list li > ul li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
-	}
-
-	.lg\)dsp\:vrt-list {
+	.lg\)dsp\:li-vrt,
+	.lg\)dsp\:li-vrt li > ul {
 		display: block;
-		list-style-type: disc;
-		line-height: var(--dft-line-height);
-		margin-left: 1rem;
-		padding-left: 1rem;
 	}
-	
-	.lg\)dsp\:vrt-list li > ul {
-		display: block;
-		list-style-type: disc;
+
+	.lg\)dsp\:li-vrt li:nth-child(1n) {
 		line-height: var(--dft-line-height);
+		margin-left: 0;
+		padding-left: 0;
 	}
 }
 
 @media (min-width:1800px) {
-	.xl\)dsp\:hrz-list {
+	.xl\)dsp\:li-hrz {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.xl\)dsp\:li-hrz li > ul {
 		display: -webkit-inline-flex;
 		display: -ms-inline-flexbox;
 		display: inline-flex;
+	}
+
+	.xl\)dsp\:li-hrz,
+	.xl\)dsp\:li-hrz li > ul {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
@@ -1032,46 +1007,24 @@ ol.nested li > ol {
 		justify-content: flex-start;
 	}
 
-	.xl\)dsp\:hrz-list li > ul {
-		display: -webkit-inline-flex;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
-		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
-		flex-direction: row;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-justify-content: flex-start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		margin-left: -0.75rem;
-		margin-right: -0.5rem;
+	.xl\)dsp\:li-hrz li:not(:last-child) {
+		padding-right: 1.75rem;
 	}
 
-	.xl\)dsp\:hrz-list li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
+	.xl\)dsp\:li-hrz li > ul li:first-child {
+		margin-left: -0.5rem;
 	}
 
-	.xl\)dsp\:hrz-list li > ul li {
-		margin-left: 1.5rem;
-		padding-right: 0.5rem;
-	}
-
-	.xl\)dsp\:vrt-list {
+	.xl\)dsp\:li-vrt,
+	.xl\)dsp\:li-vrt li > ul {
 		display: block;
-		list-style-type: disc;
-		line-height: var(--dft-line-height);
-		margin-left: 1rem;
-		padding-left: 1rem;
 	}
-	
-	.xl\)dsp\:vrt-list li > ul {
-		display: block;
-		list-style-type: disc;
+
+	.xl\)dsp\:li-vrt li:nth-child(1n) {
 		line-height: var(--dft-line-height);
-	}	
+		margin-left: 0;
+		padding-left: 0;
+	}
 }
 
 /*
