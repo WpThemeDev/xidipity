@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  advance.css
-    * bld:  27200615
+    * bld:  28200701
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -2978,6 +2978,22 @@ table.cols\:fixed {
 
 .wd\:80\% {
 	width: 80% !important;
+}
+
+.wd\:82\% {
+	width: 82% !important;
+}
+
+.wd\:84\% {
+	width: 84% !important;
+}
+
+.wd\:86\% {
+	width: 86% !important;
+}
+
+.wd\:88\% {
+	width: 88% !important;
 }
 
 .wd\:90\% {
@@ -6163,6 +6179,21 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.sm\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.sm\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.sm\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.sm\)wd\:88\% {
+		width: 88% !important;
+	}
 	.sm\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -9323,6 +9354,38 @@ table.cols\:fixed {
 
 	.md\)wd\:80\% {
 		width: 80% !important;
+	}
+
+	.md\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.md\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.md\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.md\)wd\:88\% {
+		width: 88% !important;
+	}
+
+	.lg\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.lg\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.lg\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.lg\)wd\:88\% {
+		width: 88% !important;
 	}
 
 	.md\)wd\:90\% {
@@ -12512,6 +12575,22 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.lg\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.lg\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.lg\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.lg\)wd\:88\% {
+		width: 88% !important;
+	}
+
 	.lg\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -15699,6 +15778,22 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.xl\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.xl\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.xl\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.xl\)wd\:88\% {
+		width: 88% !important;
+	}
+
 	.xl\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -15914,5 +16009,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: advance.css / 27200615
+ * EOF: advance.css / 28200701
  */
