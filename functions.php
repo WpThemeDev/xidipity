@@ -487,7 +487,7 @@ add_action('widgets_init', 'xidipity_widgets_init');
 function xidipity_scripts()
 {
     /*: googlefonts.css :*/
-    wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap', array() , wp_get_theme()->get('Version') , 'all');
+    wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900,&display=swap', array() , wp_get_theme()->get('Version') , 'all');
     /*: style.css :*/
     wp_enqueue_style('xidipity-style', get_stylesheet_uri());
     /*: xidipity css :*/
