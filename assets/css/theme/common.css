@@ -60,6 +60,7 @@ pre.wrap {
 
 pre.dsp\:line-nums {
 	font-family: var(--font-family-mono);
+	font-size: var(--font-size-smaller);
 	font-weight: var(--dft-font-weight);
 }
 
@@ -73,10 +74,13 @@ pre.dsp\:line-nums var {
 
 pre.dsp\:line-nums var::before {
 	color: var(--hue-bas-dn1);
-	content: counter(listing) ". ";
+	content: counter(listing);
+	border-right: solid thin var(--hue-sec-up3);
 	display: inline-block;
 	margin-left: auto;
+	margin-right: 0.5rem;
 	padding-left: auto;
+	padding-right: 0.5rem;
 	text-align: right;
 	width: 2rem;
 }
