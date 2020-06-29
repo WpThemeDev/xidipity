@@ -75,7 +75,7 @@ pre.dsp\:line-nums var {
 pre.dsp\:line-nums var::before {
 	color: var(--hue-bas-dn1);
 	content: counter(listing);
-	border-right: solid thin var(--hue-sec-up3);
+	border-right: solid thin var(--hue-sec-up1);
 	display: inline-block;
 	margin-left: auto;
 	margin-right: 0.5rem;
