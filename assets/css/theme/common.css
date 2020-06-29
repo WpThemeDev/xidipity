@@ -1581,15 +1581,9 @@ blockquote {
 	}
 }
 
-@media (min-width: 900px) {
-	blockquote {
-		width: 80%;
-	}
-}
-
 cite {
 	font-size: var(--font-size-smaller);
-	font-style: normal;
+	font-style: var(--font-wgt-normal);
 }
 
 /*
