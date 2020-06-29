@@ -187,13 +187,13 @@ body {
 ***
     * property: adsbygoogle
     * dsc: adsense background
-    * ver: 200322
+    * ver: 28200701
     * fnt: set background to transparent
     * ref:
 ***
 */
-.adsbygoogle {
-	background-color: transparent;
+ins.adsbygoogle {
+	background: transparent !important;
 }
 
 /*: 320 mobile:*/
