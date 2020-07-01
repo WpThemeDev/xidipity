@@ -423,7 +423,7 @@ hr,
 
 /*
 ***
-    * elements: <figure> / <audio> / <canvas> / <iframe>
+    * elements: <audio> / <canvas> / <iframe>
     *           <object> / <progress> / <video>
     * dsc: wrappers
     * ver: 190910-1
@@ -431,7 +431,6 @@ hr,
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-figure,
 audio,
 canvas,
 embed,
@@ -1797,6 +1796,7 @@ figure {
 	background-color: var(--hue-bas-up4);
 	font-size: var(--font-size-sm);
 	text-align: center;
+	width: auto !important;
 }
 
 /*
