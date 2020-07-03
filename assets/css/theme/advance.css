@@ -689,6 +689,14 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
 */
+.fnt\:size-7x-large {
+	font-size: var(--font-size-7x) !important;
+}
+
+.fnt\:size-6x-large {
+	font-size: var(--font-size-6x) !important;
+}
+
 .fnt\:size-5x-large {
 	font-size: var(--font-size-h1) !important;
 }
@@ -3933,6 +3941,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.sm\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.sm\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.sm\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -7174,6 +7190,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.md\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.md\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.md\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -10410,6 +10434,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.lg\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.lg\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.lg\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -13655,6 +13687,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.xl\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.xl\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.xl\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
