@@ -4,7 +4,7 @@
     * The template for displaying searchs results
     *
     * ###:  inc/extras.php
-    * bld:  27200615
+    * bld:  28200710
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1087,14 +1087,14 @@ function clst_shortcode($args = array(), $prm = '')
 
 /**
  *  name: imgg
- *  build: 200315
+ *  build: 28200710
  *  description: Gallery images by category
  *  attributes ($args - array):
- *      class - string
- *      caption - string (l/c/r)
- *      content - string (y/n)
- *      orderby - string
- *      order - string (A/D)
+ *      class	- string
+ *      caption	- string (l/c/r)
+ *      content	- string (y/n)
+ *      orderby	- string
+ *      order	- string (A/D)
  *
  *  parameters ($prm - string):
  *      category - string
@@ -1207,7 +1207,7 @@ function imgg_shortcode($args = array() , $prms = '')
 
         if ($wp_data->have_posts())
         {
-            $html_retval  = '<!--  fc:GALLERY -->';
+            $html_retval .= '<!--  28200701:GALLERY -->';
             $html_retval .= '<div class="fx:rw fxa:1 fxb:1 fxc:1 wd:100%">';
 
             while ($wp_data->have_posts())
@@ -1218,13 +1218,18 @@ function imgg_shortcode($args = array() , $prms = '')
                 $image_content = $wp_post->post_content;
 
                 $html_retval .= '<div class="fxd:1 fxe:1 pad:bottom+1 sm)pad:hrz+0.5 wd:100% sm)wd:1/2 md)wd:1/3 xl)wd:1/4">';
-
+                /*
+                ***
+                    * display details as column
+                ***
+                */
+				$html_retval .= '<div class="fx:c fxa:1 fxb:6 fxc:5">';
                 /*
                 ***
                     * display image
                 ***
                 */
-                $html_retval .= '<div class="dsp:block wd:100%">';
+                $html_retval .= '<div class="fxd:1 fxe:1">';
                 $html_retval .= wp_get_attachment_link(get_the_ID(),'full', true, false, false, array('class'=>$class,'alt'=>$seo));
                 $html_retval .= '</div>';
 
@@ -1233,18 +1238,26 @@ function imgg_shortcode($args = array() , $prms = '')
                     * display caption
                 ***
                 */
-                switch ($caption)
+				if (empty($image_caption))
+				{
+					$show_caption = 'x';
+				}
+				else
+				{
+					$show_caption = $caption;
+				}
+                switch ($show_caption)
                 {
                     case 'l':
-                        $html_retval .= '<div class="aln:text-left dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
+                        $html_retval .= '<div class="aln:text-left fxd:1 fxe:1 fnt:size-smaller">';
                     break;
                     case 'r':
-                        $html_retval .= '<div class="aln:text-right dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
+                        $html_retval .= '<div class="aln:text-right fxd:1 fxe:1 fnt:size-smaller">';
                     case 'x':
                         $html_retval .= '<div class="dsp:none">';
                     break;
                     default:
-                        $html_retval .= '<div class="aln:text-center dsp:block fnt:size-smaller mar:top+0.25 wd:100%">';
+                        $html_retval .= '<div class="aln:text-center fxd:1 fxe:1 fnt:size-smaller">';
                 }
                 $html_retval .= $image_caption;
                 $html_retval .= '</div>';
@@ -1256,14 +1269,15 @@ function imgg_shortcode($args = array() , $prms = '')
                 */
                 if ($content == 'y')
                 {
-                    $html_retval .= '<div class="aln:text-left dsp:block wd:100%">';
+                    $html_retval .= '<div class="aln:text-left fxd:1 fxe:1">';
                     $html_retval .= $image_content;
                     $html_retval .= '</div>';
                 }
                 $html_retval .= '</div>';
+                $html_retval .= '</div>';
             }
             $html_retval .= '</div>';
-            $html_retval .= '<!-- /fc:GALLERY -->';
+            $html_retval .= '<!-- /28200701:GALLERY -->';
         }
         else
         {
@@ -1597,7 +1611,7 @@ function xidipity_shortcode($atts)
 
 /*
  * EOF:     inc/extras.php
- * Build:   27200615
+ * Build:   28200710
  *
  */
 ?>

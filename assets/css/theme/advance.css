@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  advance.css
-    * bld:  27200615
+    * bld:  28200701
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -689,6 +689,14 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
 ***
 */
+.fnt\:size-7x-large {
+	font-size: var(--font-size-7x) !important;
+}
+
+.fnt\:size-6x-large {
+	font-size: var(--font-size-6x) !important;
+}
+
 .fnt\:size-5x-large {
 	font-size: var(--font-size-h1) !important;
 }
@@ -824,12 +832,6 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 ***
 */
-.fnt\:weight-bold,
-.fnt\:weight-bold\!hover:hover,
-.fnt\:weight-bold\!focus:focus {
-	font-weight: bold !important;
-}
-
 .fnt\:weight-bolder,
 .fnt\:weight-bolder\!hover:hover,
 .fnt\:weight-bolder\!focus:focus {
@@ -842,16 +844,64 @@ table.cols\:fixed {
 	font-weight: lighter !important;
 }
 
-.fnt\:weight-normal,
-.fnt\:weight-normal\!hover:hover,
-.fnt\:weight-normal\!focus:focus {
-	font-weight: normal !important;
-}
-
 .fnt\:weight-default,
 .fnt\:weight-default\!hover:hover,
 .fnt\:weight-default\!focus:focus {
 	font-weight: var(--dft-font-weight) !important;
+}
+
+.fnt\:weight-thin,
+.fnt\:weight-thin\!hover:hover,
+.fnt\:weight-thin\!focus:focus {
+	font-weight: var(--font-wgt-thin) !important;
+}
+
+.fnt\:weight-xtralight,
+.fnt\:weight-xtralight\!hover:hover,
+.fnt\:weight-xtralight\!focus:focus {
+	font-weight: var(--font-wgt-xtralight) !important;
+}
+
+.fnt\:weight-light,
+.fnt\:weight-light\!hover:hover,
+.fnt\:weight-light\!focus:focus {
+	font-weight: var(--font-wgt-light) !important;
+}
+
+.fnt\:weight-normal,
+.fnt\:weight-normal\!hover:hover,
+.fnt\:weight-normal\!focus:focus {
+	font-weight: var(--font-wgt-normal) !important;
+}
+
+.fnt\:weight-medium,
+.fnt\:weight-medium\!hover:hover,
+.fnt\:weight-medium\!focus:focus {
+	font-weight: var(--font-wgt-medium) !important;
+}
+
+.fnt\:weight-semibold,
+.fnt\:weight-semibold\!hover:hover,
+.fnt\:weight-semibold\!focus:focus {
+	font-weight: var(--font-wgt-semibold) !important;
+}
+
+.fnt\:weight-bold,
+.fnt\:weight-bold\!hover:hover,
+.fnt\:weight-bold\!focus:focus {
+	font-weight: var(--font-wgt-bold) !important;
+}
+
+.fnt\:weight-xtrabold,
+.fnt\:weight-xtrabold\!hover:hover,
+.fnt\:weight-xtrabold\!focus:focus {
+	font-weight: var(--font-wgt-xtrabold) !important;
+}
+
+.fnt\:weight-black,
+.fnt\:weight-black\!hover:hover,
+.fnt\:weight-black\!focus:focus {
+	font-weight: var(--font-wgt-bold) !important;
 }
 
 /*
@@ -2980,6 +3030,22 @@ table.cols\:fixed {
 	width: 80% !important;
 }
 
+.wd\:82\% {
+	width: 82% !important;
+}
+
+.wd\:84\% {
+	width: 84% !important;
+}
+
+.wd\:86\% {
+	width: 86% !important;
+}
+
+.wd\:88\% {
+	width: 88% !important;
+}
+
 .wd\:90\% {
 	width: 90% !important;
 }
@@ -3875,6 +3941,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.sm\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.sm\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.sm\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -4010,12 +4084,6 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
     */
-	.sm\)fnt\:weight-bold,
-	.sm\)fnt\:weight-bold\!hover:hover,
-	.sm\)fnt\:weight-bold\!focus:focus {
-		font-weight: bold !important;
-	}
-
 	.sm\)fnt\:weight-bolder,
 	.sm\)fnt\:weight-bolder\!hover:hover,
 	.sm\)fnt\:weight-bolder\!focus:focus {
@@ -4028,16 +4096,64 @@ table.cols\:fixed {
 		font-weight: lighter !important;
 	}
 
-	.sm\)fnt\:weight-normal,
-	.sm\)fnt\:weight-normal\!hover:hover,
-	.sm\)fnt\:weight-normal\!focus:focus {
-		font-weight: normal !important;
-	}
-
 	.sm\)fnt\:weight-default,
 	.sm\)fnt\:weight-default\!hover:hover,
 	.sm\)fnt\:weight-default\!focus:focus {
 		font-weight: var(--dft-font-weight) !important;
+	}
+
+	.sm\)fnt\:weight-thin,
+	.sm\)fnt\:weight-thin\!hover:hover,
+	.sm\)fnt\:weight-thin\!focus:focus {
+		font-weight: var(--font-wgt-thin) !important;
+	}
+
+	.sm\)fnt\:weight-xtralight,
+	.sm\)fnt\:weight-xtralight\!hover:hover,
+	.sm\)fnt\:weight-xtralight\!focus:focus {
+		font-weight: var(--font-wgt-xtralight) !important;
+	}
+
+	.sm\)fnt\:weight-light,
+	.sm\)fnt\:weight-light\!hover:hover,
+	.sm\)fnt\:weight-light\!focus:focus {
+		font-weight: var(--font-wgt-light) !important;
+	}
+
+	.sm\)fnt\:weight-normal,
+	.sm\)fnt\:weight-normal\!hover:hover,
+	.sm\)fnt\:weight-normal\!focus:focus {
+		font-weight: var(--font-wgt-normal) !important;
+	}
+
+	.sm\)fnt\:weight-medium,
+	.sm\)fnt\:weight-medium\!hover:hover,
+	.sm\)fnt\:weight-medium\!focus:focus {
+		font-weight: var(--font-wgt-medium) !important;
+	}
+
+	.sm\)fnt\:weight-semibold,
+	.sm\)fnt\:weight-semibold\!hover:hover,
+	.sm\)fnt\:weight-semibold\!focus:focus {
+		font-weight: var(--font-wgt-semibold) !important;
+	}
+
+	.sm\)fnt\:weight-bold,
+	.sm\)fnt\:weight-bold\!hover:hover,
+	.sm\)fnt\:weight-bold\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
+	}
+
+	.sm\)fnt\:weight-xtrabold,
+	.sm\)fnt\:weight-xtrabold\!hover:hover,
+	.sm\)fnt\:weight-xtrabold\!focus:focus {
+		font-weight: var(--font-wgt-xtrabold) !important;
+	}
+
+	.sm\)fnt\:weight-black,
+	.sm\)fnt\:weight-black\!hover:hover,
+	.sm\)fnt\:weight-black\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
 	}
 
 	/*
@@ -6163,6 +6279,21 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.sm\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.sm\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.sm\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.sm\)wd\:88\% {
+		width: 88% !important;
+	}
 	.sm\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -7059,6 +7190,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.md\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.md\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.md\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -7194,12 +7333,6 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
     */
-	.md\)fnt\:weight-bold,
-	.md\)fnt\:weight-bold\!hover:hover,
-	.md\)fnt\:weight-bold\!focus:focus {
-		font-weight: bold !important;
-	}
-
 	.md\)fnt\:weight-bolder,
 	.md\)fnt\:weight-bolder\!hover:hover,
 	.md\)fnt\:weight-bolder\!focus:focus {
@@ -7212,16 +7345,64 @@ table.cols\:fixed {
 		font-weight: lighter !important;
 	}
 
-	.md\)fnt\:weight-normal,
-	.md\)fnt\:weight-normal\!hover:hover,
-	.md\)fnt\:weight-normal\!focus:focus {
-		font-weight: normal !important;
-	}
-
 	.md\)fnt\:weight-default,
 	.md\)fnt\:weight-default\!hover:hover,
 	.md\)fnt\:weight-default\!focus:focus {
 		font-weight: var(--dft-font-weight) !important;
+	}
+
+	.md\)fnt\:weight-thin,
+	.md\)fnt\:weight-thin\!hover:hover,
+	.md\)fnt\:weight-thin\!focus:focus {
+		font-weight: var(--font-wgt-thin) !important;
+	}
+
+	.md\)fnt\:weight-xtralight,
+	.md\)fnt\:weight-xtralight\!hover:hover,
+	.md\)fnt\:weight-xtralight\!focus:focus {
+		font-weight: var(--font-wgt-xtralight) !important;
+	}
+
+	.md\)fnt\:weight-light,
+	.md\)fnt\:weight-light\!hover:hover,
+	.md\)fnt\:weight-light\!focus:focus {
+		font-weight: var(--font-wgt-light) !important;
+	}
+
+	.md\)fnt\:weight-normal,
+	.md\)fnt\:weight-normal\!hover:hover,
+	.md\)fnt\:weight-normal\!focus:focus {
+		font-weight: var(--font-wgt-normal) !important;
+	}
+
+	.md\)fnt\:weight-medium,
+	.md\)fnt\:weight-medium\!hover:hover,
+	.md\)fnt\:weight-medium\!focus:focus {
+		font-weight: var(--font-wgt-medium) !important;
+	}
+
+	.md\)fnt\:weight-semibold,
+	.md\)fnt\:weight-semibold\!hover:hover,
+	.md\)fnt\:weight-semibold\!focus:focus {
+		font-weight: var(--font-wgt-semibold) !important;
+	}
+
+	.md\)fnt\:weight-bold,
+	.md\)fnt\:weight-bold\!hover:hover,
+	.md\)fnt\:weight-bold\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
+	}
+
+	.md\)fnt\:weight-xtrabold,
+	.md\)fnt\:weight-xtrabold\!hover:hover,
+	.md\)fnt\:weight-xtrabold\!focus:focus {
+		font-weight: var(--font-wgt-xtrabold) !important;
+	}
+
+	.md\)fnt\:weight-black,
+	.md\)fnt\:weight-black\!hover:hover,
+	.md\)fnt\:weight-black\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
 	}
 
 	/*
@@ -9325,6 +9506,38 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.md\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.md\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.md\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.md\)wd\:88\% {
+		width: 88% !important;
+	}
+
+	.lg\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.lg\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.lg\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.lg\)wd\:88\% {
+		width: 88% !important;
+	}
+
 	.md\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -10221,6 +10434,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.lg\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.lg\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.lg\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -10356,12 +10577,6 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
     */
-	.lg\)fnt\:weight-bold,
-	.lg\)fnt\:weight-bold\!hover:hover,
-	.lg\)fnt\:weight-bold\!focus:focus {
-		font-weight: bold !important;
-	}
-
 	.lg\)fnt\:weight-bolder,
 	.lg\)fnt\:weight-bolder\!hover:hover,
 	.lg\)fnt\:weight-bolder\!focus:focus {
@@ -10374,16 +10589,64 @@ table.cols\:fixed {
 		font-weight: lighter !important;
 	}
 
-	.lg\)fnt\:weight-normal,
-	.lg\)fnt\:weight-normal\!hover:hover,
-	.lg\)fnt\:weight-normal\!focus:focus {
-		font-weight: normal !important;
-	}
-
 	.lg\)fnt\:weight-default,
 	.lg\)fnt\:weight-default\!hover:hover,
 	.lg\)fnt\:weight-default\!focus:focus {
 		font-weight: var(--dft-font-weight) !important;
+	}
+
+	.lg\)fnt\:weight-thin,
+	.lg\)fnt\:weight-thin\!hover:hover,
+	.lg\)fnt\:weight-thin\!focus:focus {
+		font-weight: var(--font-wgt-thin) !important;
+	}
+
+	.lg\)fnt\:weight-xtralight,
+	.lg\)fnt\:weight-xtralight\!hover:hover,
+	.lg\)fnt\:weight-xtralight\!focus:focus {
+		font-weight: var(--font-wgt-xtralight) !important;
+	}
+
+	.lg\)fnt\:weight-light,
+	.lg\)fnt\:weight-light\!hover:hover,
+	.lg\)fnt\:weight-light\!focus:focus {
+		font-weight: var(--font-wgt-light) !important;
+	}
+
+	.lg\)fnt\:weight-normal,
+	.lg\)fnt\:weight-normal\!hover:hover,
+	.lg\)fnt\:weight-normal\!focus:focus {
+		font-weight: var(--font-wgt-normal) !important;
+	}
+
+	.lg\)fnt\:weight-medium,
+	.lg\)fnt\:weight-medium\!hover:hover,
+	.lg\)fnt\:weight-medium\!focus:focus {
+		font-weight: var(--font-wgt-medium) !important;
+	}
+
+	.lg\)fnt\:weight-semibold,
+	.lg\)fnt\:weight-semibold\!hover:hover,
+	.lg\)fnt\:weight-semibold\!focus:focus {
+		font-weight: var(--font-wgt-semibold) !important;
+	}
+
+	.lg\)fnt\:weight-bold,
+	.lg\)fnt\:weight-bold\!hover:hover,
+	.lg\)fnt\:weight-bold\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
+	}
+
+	.lg\)fnt\:weight-xtrabold,
+	.lg\)fnt\:weight-xtrabold\!hover:hover,
+	.lg\)fnt\:weight-xtrabold\!focus:focus {
+		font-weight: var(--font-wgt-xtrabold) !important;
+	}
+
+	.lg\)fnt\:weight-black,
+	.lg\)fnt\:weight-black\!hover:hover,
+	.lg\)fnt\:weight-black\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
 	}
 
 	/*
@@ -12512,6 +12775,22 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.lg\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.lg\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.lg\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.lg\)wd\:88\% {
+		width: 88% !important;
+	}
+
 	.lg\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -13408,6 +13687,14 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-size
     ***
     */
+	.xl\)fnt\:size-7x-large {
+		font-size: var(--font-size-7x) !important;
+	}
+
+	.xl\)fnt\:size-6x-large {
+		font-size: var(--font-size-6x) !important;
+	}
+
 	.xl\)fnt\:size-5x-large {
 		font-size: var(--font-size-h1) !important;
 	}
@@ -13543,12 +13830,6 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-weight
     ***
     */
-	.xl\)fnt\:weight-bold,
-	.xl\)fnt\:weight-bold\!hover:hover,
-	.xl\)fnt\:weight-bold\!focus:focus {
-		font-weight: bold !important;
-	}
-
 	.xl\)fnt\:weight-bolder,
 	.xl\)fnt\:weight-bolder\!hover:hover,
 	.xl\)fnt\:weight-bolder\!focus:focus {
@@ -13561,16 +13842,64 @@ table.cols\:fixed {
 		font-weight: lighter !important;
 	}
 
-	.xl\)fnt\:weight-normal,
-	.xl\)fnt\:weight-normal\!hover:hover,
-	.xl\)fnt\:weight-normal\!focus:focus {
-		font-weight: normal !important;
-	}
-
 	.xl\)fnt\:weight-default,
 	.xl\)fnt\:weight-default\!hover:hover,
 	.xl\)fnt\:weight-default\!focus:focus {
 		font-weight: var(--dft-font-weight) !important;
+	}
+
+	.xl\)fnt\:weight-thin,
+	.xl\)fnt\:weight-thin\!hover:hover,
+	.xl\)fnt\:weight-thin\!focus:focus {
+		font-weight: var(--font-wgt-thin) !important;
+	}
+
+	.xl\)fnt\:weight-xtralight,
+	.xl\)fnt\:weight-xtralight\!hover:hover,
+	.xl\)fnt\:weight-xtralight\!focus:focus {
+		font-weight: var(--font-wgt-xtralight) !important;
+	}
+
+	.xl\)fnt\:weight-light,
+	.xl\)fnt\:weight-light\!hover:hover,
+	.xl\)fnt\:weight-light\!focus:focus {
+		font-weight: var(--font-wgt-light) !important;
+	}
+
+	.xl\)fnt\:weight-normal,
+	.xl\)fnt\:weight-normal\!hover:hover,
+	.xl\)fnt\:weight-normal\!focus:focus {
+		font-weight: var(--font-wgt-normal) !important;
+	}
+
+	.xl\)fnt\:weight-medium,
+	.xl\)fnt\:weight-medium\!hover:hover,
+	.xl\)fnt\:weight-medium\!focus:focus {
+		font-weight: var(--font-wgt-medium) !important;
+	}
+
+	.xl\)fnt\:weight-semibold,
+	.xl\)fnt\:weight-semibold\!hover:hover,
+	.xl\)fnt\:weight-semibold\!focus:focus {
+		font-weight: var(--font-wgt-semibold) !important;
+	}
+
+	.xl\)fnt\:weight-bold,
+	.xl\)fnt\:weight-bold\!hover:hover,
+	.xl\)fnt\:weight-bold\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
+	}
+
+	.xl\)fnt\:weight-xtrabold,
+	.xl\)fnt\:weight-xtrabold\!hover:hover,
+	.xl\)fnt\:weight-xtrabold\!focus:focus {
+		font-weight: var(--font-wgt-xtrabold) !important;
+	}
+
+	.xl\)fnt\:weight-black,
+	.xl\)fnt\:weight-black\!hover:hover,
+	.xl\)fnt\:weight-black\!focus:focus {
+		font-weight: var(--font-wgt-bold) !important;
 	}
 
 	/*
@@ -15699,6 +16028,22 @@ table.cols\:fixed {
 		width: 80% !important;
 	}
 
+	.xl\)wd\:82\% {
+		width: 82% !important;
+	}
+
+	.xl\)wd\:84\% {
+		width: 84% !important;
+	}
+
+	.xl\)wd\:86\% {
+		width: 86% !important;
+	}
+
+	.xl\)wd\:88\% {
+		width: 88% !important;
+	}
+
 	.xl\)wd\:90\% {
 		width: 90% !important;
 	}
@@ -15914,5 +16259,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: advance.css / 27200615
+ * EOF: advance.css / 28200701
  */

@@ -3,7 +3,7 @@
     * Editor specific css classes
     *
     * ###:  editor.css
-    * bld:  27200615
+    * bld:  28200701
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -110,12 +110,8 @@ img {}
 ***
 */
 ul.par,
-ul.par ul,
-ul.par ul ul,
-ul.par ul ul ul,
-ul.par ul ul ul ul,
-ul.par ul ul ul ul ul {
-	border-left: thin solid var(--hue-pri-tint-up1);
+ul.par li > ul {
+	border-left: thin dashed var(--hue-pri-up3);
 	margin-left: 1.25rem;
 	padding-left: 0.5rem !important;
 }
@@ -142,5 +138,5 @@ ul.par ul ul ul ul ul {
 }
 
 /*
- * EOF: editor.css / 27200615
+ * EOF: editor.css / 28200701
  */

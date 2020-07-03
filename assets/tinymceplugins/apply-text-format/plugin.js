@@ -3,7 +3,7 @@
  * Tinymce apply-text-format plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  28200701
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -27,7 +27,7 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor) {
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDE5aDR2LTNoLTR2M3pNNSA0djNoNXYzaDRWN2g1VjRINXpNMyAxNGgxOHYtMkgzdjJ6Ii8+PC9zdmc+',
 			text: '\xa0Strike through',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<del>{$selection}</del>');
+				editor.execCommand('mceReplaceContent', false, '<s>{$selection}</s>');
 			}
 		}, {
 			icon: true,
@@ -69,5 +69,5 @@ tinymce.PluginManager.add('apply_txt_formats', function(editor) {
 });
 
 /*
- * EOF: apply-text-format / plugin.js / 27200615
+ * EOF: apply-text-format / plugin.js / 28200701
  */
