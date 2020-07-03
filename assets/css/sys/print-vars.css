@@ -101,6 +101,8 @@ content attributes
 	--font-family-cursive: "Kalam", cursive;
 	--font-family-fancy: "Kaushan Script", cursive;
 	/*: font sizes :*/
+	--font-size-7x: 5rem;
+	--font-size-6x: 3.875rem;
 	--font-size-h1: 2.75rem;
 	--font-size-h2: 2.4375rem;
 	--font-size-h3: 2.125rem;
