@@ -3,7 +3,7 @@
  * Tinymce add-icon plugin 
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  28200715
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -33,13 +33,10 @@ tinymce.PluginManager.add('add_icon', function(editor, url) {
 				},
 				onSubmit: function() {
 					var html = document.getElementsByClassName("mce-textbox")[0].value.trim();
-					if (html.includes('fa-')) {
-						html = html.replace('</i>', '&#8203;</i>');
-					} else if (html.includes('<img')) {
+					if (html.includes('<img')) {
 						html = html.replace('<img', '<img class="dsp:inline-block"');
 					}
-					html = html.concat('&nbsp;');
-					editor.insertContent(html);
+					editor.insertContent(html.replace("`t\s*`t","`t"));
 				}
 			}, {});
 		}
@@ -47,5 +44,5 @@ tinymce.PluginManager.add('add_icon', function(editor, url) {
 });
 
 /*
- * EOF: add-icon / plugin.js / 27200615
+ * EOF: add-icon / plugin.js / 28200715
  */
