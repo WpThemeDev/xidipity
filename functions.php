@@ -4,7 +4,7 @@
     * Theme functions
     *
     * ###:  functions.php
-    * bld:  28200701
+    * bld:  28200715
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1354,6 +1354,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
     $in['min_height'] = '375';
     $in['max_height'] = '450';
     $in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
+	$in['verify_html'] = false;
     return $in;
 }
 , 15, 2);
@@ -2079,6 +2080,6 @@ function post_category($arg='')
 }
 
 /*
- * EOF: functions.php / 28200701
+ * EOF: functions.php / 28200715
  */
 ?>
