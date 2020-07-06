@@ -3,7 +3,7 @@
  * Tinymce apply-text-font plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  28200715
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -14,7 +14,7 @@ tinymce.PluginManager.add('apply_txt_font', function(editor) {
 		type: 'splitbutton',
 		title: 'Fonts',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE3IDNIN2MtMS4xIDAtMS45OS45LTEuOTkgMkw1IDIxbDctMyA3IDNWNWMwLTEuMS0uOS0yLTItMnptMCAxNWwtNS0yLjE4TDcgMThWNWgxMHYxM3oiLz48L3N2Zz4=',
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE1LjU0LDMuNUwyMC41LDguNDdMMTkuMDcsOS44OEwxNC4xMiw0LjkzTDE1LjU0LDMuNU0zLjUsMTkuNzhMMTAsMTMuMzFDOS45LDEzIDkuOTcsMTIuNjEgMTAuMjMsMTIuMzVDMTAuNjIsMTEuOTYgMTEuMjYsMTEuOTYgMTEuNjUsMTIuMzVDMTIuMDQsMTIuNzUgMTIuMDQsMTMuMzggMTEuNjUsMTMuNzdDMTEuMzksMTQuMDMgMTEsMTQuMSAxMC42OSwxNEw0LjIyLDIwLjVMMTQuODMsMTYuOTVMMTguMzYsMTAuNTlMMTMuNDIsNS42NEw3LjA1LDkuMTdMMy41LDE5Ljc4WiIgLz48L3N2Zz4=',
 		menu: [{
 			icon: false,
 			text: '•\xa0Sans',
@@ -56,5 +56,5 @@ tinymce.PluginManager.add('apply_txt_font', function(editor) {
 });
 
 /*
- * EOF: apply-text-font / plugin.js / 27200615
+ * EOF: apply-text-font / plugin.js / 28200715
  */
