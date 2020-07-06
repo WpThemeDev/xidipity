@@ -89,21 +89,10 @@ else
 
 /*
 ***
-    * edit only page footer
+    * content footer
 ***
 */
-$footer_items = '';
-/*: edit :*/
-if (get_edit_post_link())
-{
-    echo '<div class="bkg:bas+2 ln mar:bottom+0.25">&#8203;</div>' . "\n";
-    $footer_items .= dsp_edit(get_edit_post_link()) . '|';
-    echo '<!--  ct:FOOTER -->' . "\n";
-    echo '<footer class="pad:left+1 fnt:size-smaller prt[dsp:none]">' . "\n";
-    echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-    echo '</footer>' . "\n";
-    echo '<!-- /ct:FOOTER -->' . "\n";
-}
+//get_template_part('template-parts/content', 'footer');
 echo '</article>' . "\n";
 echo '<!-- /ct:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
