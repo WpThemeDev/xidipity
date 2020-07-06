@@ -466,7 +466,7 @@ if (!function_exists('xidipity_icon_prev'))
 
 /*  # xidipity_metalinks
     # 90828.1a
-    # return flexbox of metadata links
+    # return table of metadata links
 **/
 if (!function_exists('xidipity_metalinks'))
 {
@@ -494,6 +494,28 @@ if (!function_exists('xidipity_metalinks'))
         }
 
         /*: return html :*/
+        return $html_retval;
+    }
+}
+
+/*  # xidipity_content_footer
+    # 28200715
+    # return html of content footer
+**/
+if (!function_exists('xidipity_content_footer'))
+{
+    function xidipity_content_footer($items = array())
+    {
+		$html_retval = '<div class="fx:r fxa:1 fxb:1 fxc:3 fnt:size-medium fnt:size-smaller pad:bottom+0.25 prt[dsp:none]">';
+		foreach ($items as $item)
+		{
+			if ($item == '^')
+			{
+				$item = '<span class="pad:hrz+0.5 txt:bas+2">&#65372;</span>';
+			}
+			$html_retval .= '<div>' . $item . '</div>';
+		}
+		$html_retval .= '</div>';
         return $html_retval;
     }
 }
