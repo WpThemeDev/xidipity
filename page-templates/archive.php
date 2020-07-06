@@ -6,7 +6,7 @@
     * The template for displaying archive blog posts
     *
     * ###:  archive.php
-    * bld:  27200615
+    * bld:  28200715
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -230,17 +230,10 @@ else
 
 /*
 ***
-    * page footer
+    * content footer
 ***
 */
-$footer_items = '';
-/*: current date :*/
-$footer_items .= dsp_today(xidipity_date()) . '|';
-echo '<!--  ct:FOOTER -->' . "\n";
-echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-echo '</footer>' . "\n";
-echo '<!-- /ct:FOOTER -->' . "\n";
+get_template_part('template-parts/content', 'footer');
 echo '</article>' . "\n";
 echo '<!--  bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
@@ -284,6 +277,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: archive.php / 27200615
+ * EOF: archive.php / 28200715
  */
 ?>
