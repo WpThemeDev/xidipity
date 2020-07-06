@@ -4,7 +4,7 @@
     * The template for displaying pages 
     *
     * ###:  page.php
-    * bld:  27200615
+    * bld:  28200715
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -109,22 +109,10 @@ else
 
 /*
 ***
-    * page footer
+    * content footer
 ***
 */
-$footer_items = '';
-/*: edit :*/
-if (get_edit_post_link())
-{
-    $footer_items .= dsp_edit(get_edit_post_link()) . '|';
-}
-/*: today's date :*/
-$footer_items .= dsp_today(xidipity_date()) . '|';
-echo '<!--  ct:FOOTER -->' . "\n";
-echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
-echo xidipity_metalinks(explode('|', $footer_items)) . "\n";
-echo '</footer>' . "\n";
-echo '<!-- /ct:FOOTER -->' . "\n";
+get_template_part('template-parts/content', 'footer');
 echo '</article>' . "\n";
 echo '<!-- /bk:ARTICLE -->' . "\n";
 echo '</section>' . "\n";
@@ -162,6 +150,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: page.php / 27200615
+ * EOF: page.php / 28200715
  */
 ?>
