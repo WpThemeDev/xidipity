@@ -1432,7 +1432,7 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_rm
- *  build: 200315
+ *  build: 28200715
  *  description: Return properly formatted read more HTML string
  *  attributes:
  *      $arg - string
@@ -1443,23 +1443,13 @@ function dsp_rm($arg = '')
 {
     // system
     $fn_retval = '';
-    $icon = '';
-    $err = '';
-    if (function_exists('xidipity_icon_err'))
+    if (empty($arg))
     {
-        $err = xidipity_icon_err();
+        $fn_retval = '<p class="mar:vrt+0.5"><span class="fnt:size-large pad:right+0.25"><i class="icon:book_closed_solid"></i></span>Additional information not available.</p>';
     }
-    if (function_exists('xidipity_icon_readmore'))
+    else
     {
-        $icon = xidipity_icon_readmore();
-    }
-    if (empty($arg) && !empty($err))
-    {
-        $fn_retval = '<p class="mar:vrt+0.5"><span class="txt:red pad:right+0.25">' . $err . '</span>Additional information not available.</p>';
-    }
-    elseif (!empty($icon))
-    {
-        $fn_retval = '<p class="mar:vrt+0.5"><span class="txt:pri pad:right+0.25">' . $icon . '</span><a href="' . $arg . '" >Read more &hellip;</a></p>';
+        $fn_retval = '<p class="mar:vrt+0.5"><span class="fnt:size-large pad:right+0.5"><i class="icon:book_open_solid"></i></span><a href="' . $arg . '" >Read more &hellip;</a></p>';
     }
     // return html
     return $fn_retval;
@@ -1478,18 +1468,13 @@ function dsp_today($arg = '')
 {
     // system
     $fn_retval = '';
-    $icon = '';
-    if (function_exists('xidipity_icon_calendar'))
-    {
-        $icon = xidipity_icon_today();
-    }
     if (empty($arg))
     {
-        $fn_retval = $icon;
+        $fn_retval = '<span class="aln:middle fnt:size-larger"><i class="icon:calendar_today_outline"></i></span>';
     }
     else
     {
-        $fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
+        $fn_retval = '<p><span class="aln:middle fnt:size-larger pad:right+0.5"><i class="icon:calendar_today_outline"></i></span>' . $arg . '</p>';
     }
     // return html
     return $fn_retval;
@@ -1718,36 +1703,6 @@ function cnt_tags()
 }
 
 /**
- *  name: dsp_warning
- *  build: 200531
- *  description: return warning icon || icon with message
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_warning($arg = '')
-{
-    // system
-    $fn_retval = '';
-    $icon = '';
-    if (function_exists('xidipity_icon_err'))
-    {
-        $icon = xidipity_icon_err();
-    }
-    if (empty($arg))
-    {
-        $fn_retval = $icon;
-    }
-    else
-    {
-        $fn_retval = '<p><span class="txt:red pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
-    }
-    // return html
-    return $fn_retval;
-}
-
-/**
  *  name: dsp_err
  *  build: 28200701
  *  description: Return properly formatted error message
@@ -1768,7 +1723,7 @@ function dsp_err($arg = '')
     {
         $msg = $arg;
     }
-    $fn_retval = '<!--  sys:NOTIFICATION --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small"><div class="fnt:size-3x-large pad:+0.5 txt:blk"><span class="material-icons">support_agent</span></div><div class="pad:+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /sys:NOTIFICATION -->';
+    $fn_retval = '<!--  28200715:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:size-5x-large pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /28200715:ALERT -->';
     // return html
     return $fn_retval;
 }
