@@ -3,7 +3,7 @@
  * Tinymce add-multiple-columns plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  28200715
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -13,7 +13,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 	editor.addButton('add_multi_cols', {
 		type: 'splitbutton',
 		title: 'Multi Column',
-		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNLTc0IDI5aDQ4djQ4aC00OFYyOXpNMCAwaDI0djI0SDBWMHptMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTMgMTJoN3YxLjVoLTd6bTAtMi41aDdWMTFoLTd6bTAgNWg3VjE2aC03ek0yMSA0SDNjLTEuMSAwLTIgLjktMiAydjEzYzAgMS4xLjkgMiAyIDJoMThjMS4xIDAgMi0uOSAyLTJWNmMwLTEuMS0uOS0yLTItMnptMCAxNWgtOVY2aDl2MTN6Ii8+PC9zdmc+',
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0xNCwySDZBMiwyIDAgMCwwIDQsNFYyMEEyLDIgMCAwLDAgNiwyMkgxOEEyLDIgMCAwLDAgMjAsMjBWOEwxNCwyTTE4LDIwSDZWNEgxM1Y5SDE4VjIwWiIvPgogIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsIDAsIDAsIDEsIDAuNDcyNSwgMC4wNDgpIj4KICAgIDxwYXRoIGQ9Ik0gMTIuNDIyIDEwLjY2NiBMIDE1LjkyMiAxMC42NjYgTCAxNS45MjIgMTguNDQzIEwgMTIuNDIyIDE4LjQ0MyBMIDEyLjQyMiAxMC42NjYgWiIvPgogICAgPHBhdGggZD0iTSA3LjEzMyAxMC42NTIgTCAxMC42MzMgMTAuNjUyIEwgMTAuNjMzIDE4LjQyOSBMIDcuMTMzIDE4LjQyOSBMIDcuMTMzIDEwLjY1MiBaIi8+CiAgPC9nPgo8L3N2Zz4=',
 		menu: [{
 			icon: false,
 			text: '•\xa0Auto 2 Column',
@@ -85,5 +85,5 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 });
 
 /*
- * EOF: add-multiple-columns / plugin.js / 27200615
+ * EOF: add-multiple-columns / plugin.js / 28200715
  */
