@@ -4,7 +4,7 @@
     * The template for displaying the 404 error
     *
     * ###:  404.php
-    * bld:  27200615
+    * bld:  28200715
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -54,29 +54,20 @@ else
 }
 echo '<!--  fi:3/1/1/ARTICLE -->' . "\n";
 echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
-echo '<!--  fc:404 -->' . "\n";
-echo '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 bkg:bas+4 cnr:arch-small mar:vrt+0.5 pad:vrt+1">' . "\n";
-echo '<!--  fc:LOGO -->' . "\n";
-echo '<div class="fx:r fxa:3 fxb:1 fxc:3 wd:100% sm)wd:6">' . "\n";
-echo '<svg class="ht:5 wd:5" viewBox="0 0 24 24">
-<path fill="#003c8f" d="M9,13A3,3 0 0,0 12,16A3,3 0 0,0 15,13A3,3 0 0,0 12,10A3,3 0 0,0 9,13M20,19.59V8L14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18C18.45,22 18.85,21.85 19.19,21.6L14.76,17.17C13.96,17.69 13,18 12,18A5,5 0 0,1 7,13A5,5 0 0,1 12,8A5,5 0 0,1 17,13C17,14 16.69,14.96 16.17,15.75L20,19.59Z" /></svg>' . "\n";
-echo '</div>' . "\n";
-echo '<!-- /fc:LOGO -->' . "\n";
-echo '<!--  fc:MESSAGE -->' . "\n";
-echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 wd:100%">' . "\n";
-echo '<h2 class="aln:text-center sm)aln:text-left wd:100%">System Page Error</h2>' . "\n";
-echo '<p class="aln:text-center sm)aln:text-left wd:100%">The page you are looking for can not be found.</p>' . "\n";
-echo '<!--  fc:BUTTON -->' . "\n";
-echo '<div class="fx:r fxa:3 sm)fxa:1 fxb:1 fxc:1 wd:100%">' . "\n";
-echo '<div class="aln:text-center sm)aln:text-left mar:top+1">' . "\n";
-echo '<button onclick="javascript:history.back()">Return to previous page</button>' . "\n";
+echo '<!--  28200715:404 -->' . "\n";
+echo '<div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:pri-2 bkg:tint-bas-1 cnr:arch-small">' . "\n";
+echo '<div class="fnt:size-7x-large pad:hrz+0.5"><i class="icon:attendant_solid"></i></div>' . "\n";
+echo '<div class="pad:right+0.5 pad:vrt+0.5 txt:bas-3">' . "\n";
+echo '<p class="fnt:family-serif fnt:size-2x-large sm)fnt:size-3x-large fnt:weight-medium wd:100%">404 Error</p>' . "\n";
+echo '<p>The requested page cannot be found.</p>' . "\n";
+echo '<div class="mar:vrt+0.5 pad:vrt+0.5">' . "\n";
+echo '<!--  28200715:BUTTON -->' . "\n";
+echo '<button class="aln:text-center fnt:size-x-small sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button>' . "\n";
+echo '<!-- /28200715:BUTTON -->' . "\n";
 echo '</div>' . "\n";
 echo '</div>' . "\n";
-echo '<!-- /fc:BUTTON -->' . "\n";
 echo '</div>' . "\n";
-echo '<!--  fc:MESSAGE -->' . "\n";
-echo '</div>' . "\n";
-echo '<!-- /fc:404 -->' . "\n";
+echo '<!-- /28200715:404 -->' . "\n";
 echo '</article>' . "\n";
 echo '<!-- /fi:3/1/1/ARTICLE -->' . "\n";
 echo '</section>' . "\n";
@@ -114,6 +105,6 @@ get_footer();
 wp_reset_postdata();
 
 /*
- * EOF: 404.php / 27200615
+ * EOF: 404.php / 28200715
  */
 ?>
