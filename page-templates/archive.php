@@ -136,8 +136,24 @@ if ($wp_data->have_posts()) {
         $wp_img = get_the_post_thumbnail(null, 'FULL', array(
             'class' => 'cnr:arch-small ht:auto wd:100%'
         ));
-        $excerpt_category = '<p><span class="pad:right+0.25">' . xidipity_icon_archive() . '</span><span class="fnt:weight-bolder">Archive</span></p>';
-        $excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+        //$excerpt_category = '<p><span class="pad:right+0.25">' . xidipity_icon_archive() . '</span><span class="fnt:weight-bolder">Archive</span></p>';
+        //$excerpt_category = '<p><span class="pad:right+0.25"><i class="icon:category_archive_solid"></i></span><span class="fnt:weight-normal">Archive</span></p>';
+        //$excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('mix') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+		$published = git_published();
+		$meta_items  = '<span class="fnt:size-large pad:right+0.5"><i class="icon:category_archive_solid"></i></span>' . '|';
+		$meta_items .= '<span class="fnt:size-x-medium fnt:weight-normal">Archive</span>' . '|';
+		$excerpt_category = xidipity_metalinks(explode('|', $meta_items));
+		if ($published['date'] == $published['revision']) {
+			$meta_items  = '<span class="fnt:size-large pad:right+0.5"><i class="icon:calendar_outline"></i></span>' . '|';
+		} else {
+			$meta_items  = '<span class="fnt:size-large pad:right+0.5"><i class="icon:calendar_update_outline"></i></span>' . '|';			
+		}
+		$meta_items .= '<span class="fnt:size-small">' . $published['revision'] . '</span>' . '|';
+		$meta_items .= '^' . '|';
+		$meta_items .= '<span class="fnt:size-large pad:right+0.5"><i class="icon:user_author_solid"></i></span>' . '|';
+		//$meta_items .= '<span class="fnt:size-small">' . esc_html(get_the_author_meta('nickname', get_post_field('post_author', $post->ID))) . '</span>' . '|';
+		$meta_items .= '<span class="fnt:size-small">' . git_author() . '</span>' . '|';
+		$excerpt_byline = xidipity_metalinks(explode('|', $meta_items));
         /*
          ***
          * get post link for read more
@@ -190,9 +206,8 @@ if ($wp_data->have_posts()) {
         }
         /* excerpt title */
         the_title('<div class="pg:title">', '</div>');
-        the_excerpt();
+		echo '<p class="fnt:size-medium">' . get_the_excerpt() . '</p>' . "\n";
         echo dsp_rm($post_link) . "\n";
-
         echo '</div>' . "\n";
         echo '<!-- /ct:TEXT  -->' . "\n";
         echo '</div>' . "\n";
