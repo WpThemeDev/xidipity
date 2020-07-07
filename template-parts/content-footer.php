@@ -23,10 +23,10 @@ if (current_user_can( 'edit_pages' ))
 }
 /*: today's date :*/
 $footer_items .= '<span class="fnt:size-larger pad:right+0.5"><i class="icon:calendar_today_outline"></i></span>' . '|';
-$footer_items .= xidipity_date() . '|';
-echo '<!--  ct:FOOTER -->' . "\n";
-echo xidipity_content_footer(explode('|', $footer_items)) . "\n";
-echo '<!-- /ct:FOOTER -->' . "\n";
+$footer_items .= git_date() . '|';
+echo '<!--  28200715:FOOTER -->' . "\n";
+echo git_content_footer(explode('|', $footer_items)) . "\n";
+echo '<!-- /28200715:FOOTER -->' . "\n";
 
 /*
  * EOF: content-footer.php / 27200615
