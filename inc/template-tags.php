@@ -464,13 +464,13 @@ if (!function_exists('xidipity_icon_prev'))
     }
 }
 
-/*  # xidipity_metalinks
+/*  # deprecated xidipity_metalinks
     # 90828.1a
     # return table of metadata links
 **/
-if (!function_exists('xidipity_metalinks'))
+if (!function_exists('deprecated_xidipity_metalinks'))
 {
-    function xidipity_metalinks($atts = array())
+    function deprecated_xidipity_metalinks($atts = array())
     {
         /*: variables   :*/
         $html_retval = '';
@@ -498,15 +498,15 @@ if (!function_exists('xidipity_metalinks'))
     }
 }
 
-/*  # xidipity_content_footer
+/*  # xidipity_metalinks
     # 28200715
-    # return html of content footer
+    # return html of links
 **/
-if (!function_exists('xidipity_content_footer'))
+if (!function_exists('xidipity_metalinks'))
 {
-    function xidipity_content_footer($items = array())
+    function xidipity_metalinks($items = array())
     {
-		$html_retval = '<div class="fx:r fxa:1 fxb:1 fxc:3 fnt:size-medium fnt:size-smaller pad:bottom+0.25 prt[dsp:none]">';
+		$html_retval = '<div class="fx:r fxa:1 fxb:1 fxc:3 fnt:size-medium">';
 		foreach ($items as $item)
 		{
 			if ($item == '^')
@@ -520,50 +520,74 @@ if (!function_exists('xidipity_content_footer'))
     }
 }
 
-/*  # xidipity_date
-    # 200429
-    # display post
-    #   ars
-    #       cur = current (default)
-    #       mix  = published / modified
-    #       mod  = modified
-    #       pub = published (default)
-    # return date string
+/*  # git_content_footer
+    # 28200715
+    # return html of content footer
 **/
-if (!function_exists('xidipity_date'))
+if (!function_exists('git_content_footer'))
 {
-    function xidipity_date($arg='')
+    function git_content_footer($items = array())
     {
-        $cur = current_time(get_option('date_format'));
-        $pub = get_the_date(get_option('date_format'));
-        $mod = get_the_modified_time(get_option('date_format'));
-        $fmt = strtolower($arg);
-        switch ($fmt)
-        {
-            case 'pub':
-                $date_retval = $pub;
-            break;
-            case 'mod':
-                $date_retval = $mod;
-            break;
-            case 'mix':
-                if ($pub !== $mod)
-                {
-                    $date_retval = $pub . ' / ' . $mod;
-                }
-                else
-                {
-                    $date_retval = $pub;                    
-                }
-            break;
-            default:
-                $date_retval = $cur;
-        }
-        return $date_retval;
+		$html_retval = '<div class="fx:r fxa:1 fxb:1 fxc:3 fnt:size-medium fnt:size-smaller mar:bottom+0.25 prt[dsp:none]">';
+		foreach ($items as $item)
+		{
+			if ($item == '^')
+			{
+				$item = '<span class="pad:hrz+0.5 txt:bas+2">&#65372;</span>';
+			}
+			$html_retval .= '<div>' . $item . '</div>';
+		}
+		$html_retval .= '</div>';
+        return $html_retval;
     }
 }
 
-/*  # posted_by
+/*  # git_date
+    # 28200715
+    # return current date string
+**/
+if (!function_exists('git_date'))
+{
+    function git_date()
+    {
+        return current_time(get_option('date_format'));
+    }
+}
+
+/*  # git_published
+    # 28200715
+    # return date array
+**/
+if (!function_exists('git_published'))
+{
+    function git_published()
+    {
+		return array (
+			"date" => get_the_date(get_option('date_format')),
+			"revision" => get_the_modified_time(get_option('date_format'))
+		);
+    }
+}
+
+/*  # git_author
+    # 28200715
+    # return post author
+**/
+if (!function_exists('git_author'))
+{
+    /**
+     * Prints author.
+     */
+    function git_author()
+    {
+        // Global Post
+        global $post;
+        $post_author_id = get_post_field('post_author', $post->ID);
+        return '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a>';
+    }
+}
+
+/*  # deprecate
     # 90904.1a
     # core wp function
     # return posted author
