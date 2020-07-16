@@ -933,13 +933,11 @@ span.page-numbers {
 	-webkit-align-self: stretch;
 	-ms-flex-item-align: stretch;
 	align-self: stretch;
-	border-radius: 0.3333rem;
+	border-radius: 0.1667rem;
 	color: var(--content-fg-color);
 	font-weight: bolder;
 	margin-left: 0.25rem;
 	margin-right: 0.25rem;
-	padding-bottom: 0.25rem;
-	padding-top: 0.25rem;
 	text-align: center;
 }
 
@@ -955,7 +953,7 @@ span.current {
 a.page-numbers:hover,
 a.page-numbers:active,
 a.page-numbers:focus {
-	background-color: var(--hue-pri-up1);
+	background-color: var(--hue-pri);
 	color: var(--hue-wht);
 	cursor: pointer;
 }
