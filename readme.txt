@@ -1,7 +1,7 @@
 === Xidipity ===
 Contributors:       john baer
 Requires at least:  WordPress 4.6
-Tested up to:       WordPress 4.9.x
+Tested up to:       WordPress 5.4.x
 License:            GPLv2 or later
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html
 Tags:               blog,custom-background,custom-colors,custom-header,custom-logo,custom-menu,editor-style,featured-images,food-and-drink,footer-widgets,front-page-post-form,full-width-template,grid-layout,news,one column,post-formats,right-sidebar,rtl-language-support,sticky-post,theme-options,threaded-comments,two-columns
@@ -16,7 +16,7 @@ design icons, Google adsense enabled, gallery/catalog support, and extensive vid
 experience, Xidipity leverages the latest web technologies to deliver fast performance which include the use of the
 Cloudflare content delivery network  and compressed local resource files. For those who like to customize the details
 of their blog design Xidity includes the Tailwind CSS framework. Sidebar, no sidebar, custom menus, translation ready,
-and SEO friendly. See it in action at "Xidipity.com".
+and SEO friendly. See it in action at "xidipity.com" or the knowledge base at "doc.xidipity.com".
 
 * Mobile-first responsive layout
 * Greater control over text formatting
@@ -47,7 +47,7 @@ Primary Menu supports up to three levels.
 
 == Copyright ==
 
-Xidipity WordPress Theme, Copyright 2018 xidipity.com
+Xidipity WordPress Theme, Copyright 2018 - 2020 xidipity.com
 Xidipity is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ Please see the file headers for more information.
 
 = FONTS =
 
-Font Awesome v5.2.0, Copyright: Dave Gandy, https://twitter.com/davegandy
+Font Awesome v5.12.0, Copyright: Dave Gandy, https://twitter.com/davegandy
 License: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io - @fontawesome
+Source: http://fontawesome.com - @fontawesome
 
 Google Fonts
 License: Apache License, version 2.0
@@ -78,11 +78,6 @@ Source: https://fonts.google.com/
 Google Material Design
 License: Apache License, version 2.0
 Source: https://material.io/
-
-= CSS =
-
-Trailwind CSS
-Source: https://tailwindcss.com/
 
 = JS =
 
@@ -95,14 +90,8 @@ Clipboardjs
 License: MIT
 Source: https://clipboardjs.com/
 
-= IMAGES =
-
-Images used on Xidipity.com
-License: Unsplash
-License: GPLv2 or later
-
 == Changelog ==
 
-= 0.9 =
-Released: October 26, 2018
+= 1.0 =
+Released: August 15, 2020
 
