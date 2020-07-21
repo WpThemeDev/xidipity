@@ -3,8 +3,8 @@
  * WordPress Xidipity Theme
  * The template for displaying blog excerpts
  *
- * ###:  content-precis.php
- * bld:  27200615
+ * ###:  template-parts/content-precis.php
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -37,7 +37,7 @@ else
 	/*
 	 *** call support agent ***
 	*/
-	echo xty_support_agent(sup_msg());
+	echo xty_support_agent(xty('msg'));
 }
 /*
  *** template-parts/content-pagination/php ***
@@ -59,6 +59,6 @@ echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-PRECIS/PHP</cmt>' . "\n";
 /*
- * EOF: content-precis.php / 27200615
+ * EOF: template-parts/content-precis.php / 28200801
 */
 ?>
