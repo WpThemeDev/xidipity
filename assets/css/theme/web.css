@@ -2,8 +2,8 @@
     * WordPress Xidipity Theme
     * Web specific css classes
     *
-    * ###:  web.css
-    * bld:  28200701
+    * ###:  assets/css/theme/web.css
+    * bld:  28200801
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -187,7 +187,7 @@ body {
 ***
     * property: adsbygoogle
     * dsc: adsense background
-    * ver: 28200701
+    * ver: 28200801
     * fnt: set background to transparent
     * ref:
 ***
@@ -1192,5 +1192,5 @@ a.page-numbers:focus {
 .textwidget {}
 
 /*
- * EOF: web.css / 28200701
+ * EOF: assets/css/theme/web.css / 28200801
  */
