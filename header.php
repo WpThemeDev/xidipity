@@ -4,7 +4,7 @@
  * The template for displaying page header
  *
  * ###:  header.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -25,7 +25,7 @@ do_action('wp_head');
 /*
  *** set site favorite icon
 */
-if (XTY_FAV_ICO == 'default')
+if (xty('fav-ico') == 'default')
 {
 	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
 	echo '<link rel="apple-touch-icon-precomposed" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
@@ -34,20 +34,20 @@ if (XTY_FAV_ICO == 'default')
 }
 else
 {
-	echo '<link rel="icon" href="' . XTY_FAV_ICO . '" sizes="32x32" />' . "\n";
-	echo '<link rel="apple-touch-icon-precomposed" href="' . XTY_FAV_ICO . '" sizes="32x32" />' . "\n";
-	echo '<link rel="icon" href="' . XTY_FAV_ICO . '" sizes="192x192" />' . "\n";
-	echo '<meta name="msapplication-TileImage" content="' . XTY_FAV_ICO . '" />' . "\n";
+	echo '<link rel="icon" href="' . xty('fav-ico') . '" sizes="32x32" />' . "\n";
+	echo '<link rel="apple-touch-icon-precomposed" href="' . xty('fav-ico') . '" sizes="32x32" />' . "\n";
+	echo '<link rel="icon" href="' . xty('fav-ico') . '" sizes="192x192" />' . "\n";
+	echo '<meta name="msapplication-TileImage" content="' . xty('fav-ico') . '" />' . "\n";
 }
 /*
  *** set background image url
 */
-if (XTY_HDR_IMG !== 'none')
+if (xty('hdr-img') !== 'none')
 {
 	echo '<!--  img:HEADER/BACKGROUND -->' . "\n";
 	echo '<style type="text/css">' . "\n";
 	echo '.hdr\:bg-img {' . "\n";
-	echo 'background-image: url("' . XTY_HDR_IMG . '");' . "\n";
+	echo 'background-image: url("' . xty('hdr-img') . '");' . "\n";
 	echo '}' . "\n";
 	echo '</style>' . "\n";
 	echo '<!-- /img:HEADER/BACKGROUND -->' . "\n";
@@ -55,7 +55,7 @@ if (XTY_HDR_IMG !== 'none')
 /*
  *** create emoji styles
 */
-if (XTY_EMOJI_DSP == 'yes')
+if (xty('emoji-dsp') == 'yes')
 {
 	echo '<style type="text/css">' . "\n";
 	echo 'img.wp-smiley,' . "\n";
@@ -93,31 +93,31 @@ echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 pad:hrz+0.5">' . "\n";
 */
 echo '<cmt name="begin">PAGE/HEADER</cmt>' . "\n";
 echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
-if (XTY_HDR_ALIGN == 'left')
+if (xty('hdr-aln') == 'left')
 {
-	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img wd:100%" style="min-height:' . XTY_HDR_HGT . ';">' . "\n";
+	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
-elseif (XTY_HDR_ALIGN == 'right')
+elseif (xty('hdr-aln') == 'right')
 {
-	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img wd:100%" style="min-height:' . XTY_HDR_HGT . ';">' . "\n";
+	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 else
 {
-	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img wd:100%" style="min-height:' . XTY_HDR_HGT . ';">' . "\n";
+	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
-if (XTY_HDR_LOGO == 'none')
+if (xty('hdr-logo') == 'none')
 {
 	if (is_front_page() || is_home())
 	{
-		if (XTY_HDR_ALIGN == 'left')
+		if (xty('hdr-aln') == 'left')
 		{
 			echo '<div class="aln:text-left dsp:block">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
-		elseif (XTY_HDR_ALIGN == 'right')
+		elseif (xty('hdr-aln') == 'right')
 		{
 			echo '<div class="aln:text-right dsp:block">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
@@ -134,14 +134,14 @@ if (XTY_HDR_LOGO == 'none')
 	}
 	else
 	{
-		if (XTY_HDR_ALIGN == 'left')
+		if (xty('hdr-aln') == 'left')
 		{
 			echo '<div class="aln:text-left dsp:block">' . "\n";
 			echo '<p><a class="hdr:title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
-		elseif (XTY_HDR_ALIGN == 'right')
+		elseif (xty('hdr-aln') == 'right')
 		{
 			echo '<div class="aln:text-right dsp:block">' . "\n";
 			echo '<p><a class="hdr:title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
@@ -162,11 +162,11 @@ else
 	echo '<div class="dsp:block">' . "\n";
 	if (is_front_page() || is_home())
 	{
-		echo '<img src="' . XTY_HDR_LOGO . '" alt="' . get_bloginfo('name') . ' Theme">' . "\n";
+		echo '<img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Theme">' . "\n";
 	}
 	else
 	{
-		echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . XTY_HDR_LOGO . '" alt="' . get_bloginfo('name') . '"></a>' . "\n";
+		echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . '"></a>' . "\n";
 	}
 	echo '</div>' . "\n";
 }
@@ -180,7 +180,7 @@ $wp_page  = get_page_by_path('xidipity-toc');
 $wp_menus = get_nav_menu_locations();
 $wp_menu  = (abs($wp_menus['primary']) !== 0);
 echo '<cmt name="begin">HEADER/MENU</cmt>' . "\n";
-if (dsp_menu() == 'no')
+if (xty('mnu-dsp') == 'no')
 {
 	echo '<div class="dsp:none fxd:1 fxe:2 fb:100%">' . "\n";
 }
@@ -188,11 +188,11 @@ else
 {
 	echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]">' . "\n";
 }
-if (XTY_MNU_ALIGN == 'left')
+if (xty('mnu-aln') == 'left')
 {
 	echo '<nav class="fx:r fxa:1 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
 }
-elseif (XTY_MNU_ALIGN == 'right')
+elseif (xty('mnu-aln') == 'right')
 {
 	echo '<nav class="fx:r fxa:2 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
 }
@@ -200,7 +200,7 @@ else
 {
 	echo '<nav class="fx:r fxa:3 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
 }
-echo '<div role="navigation" id="nav" class="dsp:block" style="width: ' . XTY_MENU_WIDTH . '">' . "\n";
+echo '<div role="navigation" id="nav" class="dsp:block" style="width: ' . xty('mnu-wd') . '">' . "\n";
 if ($wp_menu || $wp_page)
 {
 	if ($wp_page)
@@ -232,6 +232,6 @@ echo '</div>' . "\n";
 echo '<cmt name="end">HEADER/MENU</cmt>' . "\n";
 echo '<cmt name="end">HEADER/PHP</cmt>' . "\n";
 /*
- * EOF: header.php / 28200715
+ * EOF: header.php / 28200801
 */
 ?>
