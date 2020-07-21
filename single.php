@@ -4,7 +4,7 @@
  * The template for displaying blog post
  *
  * ###:  single.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -12,7 +12,7 @@
 /*
  *** set page options
 */
-dsp_menu('yes');
+xty('mnu-dsp','yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -28,7 +28,7 @@ echo '<cmt name="begin">PAGE/BODY/POST</cmt>' . "\n";
 /*
  *** align sidebar
 */
-if (XTY_SIDEBAR_ALIGN == 'left')
+if (xty('sb-aln') == 'left')
 {
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/POST/CONTENT</cmt>' . "\n";
@@ -55,6 +55,10 @@ if (have_posts())
 	echo '<cmt name="end">PAGE/BODY/POST/HEADER</cmt>' . "\n";
 	$category       = xty_category();
 	$tags           = xty_tags(get_the_ID());
+	if (empty($tags)) 
+	{
+		$tags = 'No tags';
+	}	
 	$published      = xty_published();
 	if ($published['date'] == $published['revision'])
 	{
@@ -90,7 +94,7 @@ if (have_posts())
 			yoast_breadcrumb('<div id="breadcrumbs" class="seo-pst-breadcrumbs">', '</div>');
 		}
 	}
-	echo '<div class="fx:rw-rev md)fx:rw fxa:1 fxb:1 fxc:1">' . "\n";
+	echo '<div class="fx:rw-rev md)fx:rw fxa:1 fxb:1 fxc:1 mar:bottom+0.75">' . "\n";
 	echo '<cmt name="begin">POST/PANEL/LEFT</cmt>' . "\n";
 	echo '<div class="fxd:1 fxe:1 fb:100% md)fb:25% lg)fb:20% mar:top+0.5 md)mar:top+0">' . "\n";
 	echo '<div class="fx:rw fxa:1 fxb:1 fxc:3">' . "\n";
@@ -121,7 +125,7 @@ if (have_posts())
 	echo '<div class="fxd:1 fxe:1">' . "\n";
 	echo '<div class="fnt:size-small pad:left+0.5">' . $tags . '</div>' . "\n";
 	echo '</div>' . "\n";
-	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";
+	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";		
 	echo '<div class="fxd:1 fxe:1">' . "\n";
 	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2">' . $comment_icon . '</div>' . "\n";
 	echo '</div>' . "\n";
@@ -153,7 +157,6 @@ if (have_posts())
 			echo '<cmt name="end">PAGE/BODY/POST/CONTENT/COMMENTS</cmt>' . "\n";
 		}
 	}
-	echo '<div class="bkg:bas+2 ln mar:vrt+0.25"></div>' . "\n";
 	/*
 	 *** CONTENT/FOOTER/PHP
 	*/
@@ -190,6 +193,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: single.php / 28200715
+ * EOF: single.php / 28200801
 */
 ?>
