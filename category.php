@@ -4,7 +4,7 @@
  * The template for displaying pages assigned to category
  *
  * ###:  category.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -15,19 +15,16 @@
 global $wp_query;
 $wp_data = $wp_query;
 /*
- *** set page options
-*/
-dsp_menu('yes');
-sup_msg('The catgory is missing or I was unable to load the category page template.');
-/*
  *** set pagination variables
 */
-/*: current pagination number :*/
 $wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-/*: posts per page :*/
 $wp_ppp = get_option('posts_per_page');
-/*: total pages :*/
-$wp_total = $wp_query->max_num_pages;
+$wp_total = $wp_data->max_num_pages;
+/*
+ *** set page options
+*/
+xty('mnu-dsp','yes');
+xty('msg','The catgory is missing or I was unable to load the category page template.');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -37,7 +34,7 @@ echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
 */
-if (XTY_SIDEBAR_ALIGN == 'left')
+if (xty('sb-aln') == 'left')
 {
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
@@ -67,6 +64,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: category.php / 28200715
+ * EOF: category.php / 28200801
 */
 ?>
