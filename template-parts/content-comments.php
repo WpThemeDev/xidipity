@@ -3,7 +3,7 @@
  * WordPress Xidipity Theme
  * The template for displaying comments
  *
- * ###:  content-comments.php
+ * ###:  template-parts/content-comments.php
  * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
@@ -288,6 +288,6 @@ comment_form(array(
 echo '</div>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-COMMENTS/PHP</cmt>' . "\n";
 /*
- * EOF: content-comments.php / 28200801
+ * EOF: template-parts/content-comments.php / 28200801
 */
 ?>
