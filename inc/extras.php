@@ -1,7 +1,7 @@
 <?php
 /**
  * WordPress Xidipity Theme
- * The template for displaying searchs results
+ * Theme Extended Functionality
  *
  * ###:  inc/extras.php
  * bld:  28200801
