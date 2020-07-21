@@ -3,8 +3,8 @@
  * WordPress Xidipity Theme
  * The template for displaying excerpt list
  *
- * ###:  content-excerpts.php
- * bld:  28200715
+ * ###:  template-parts/content-excerpts.php
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -18,10 +18,10 @@ echo '<cmt name="begin">TEMPLATE-PARTS/CONTENT-EXCERPT/PHP' . $cnt . '/</cmt>' .
 echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 mar:vrt+1">' . "\n";
 if (!empty($wp_img))
 {
-	echo '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% sm)pad:right+0.75">' . "\n";
+	echo '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% lg)fb:20% sm)pad:right+0.75">' . "\n";
 	echo $wp_img . "\n";
 	echo '</div>' . "\n";
-	echo '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100% sm)fb:70%">' . "\n";
+	echo '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100% sm)fb:70% lg)fb:80%">' . "\n";
 }
 else
 {
@@ -82,6 +82,6 @@ echo '</div>' . "\n";
 echo '</div>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-EXCERPT/PHP' . $cnt . '/</cmt>' . "\n";
 /*
- * EOF: content-excerpts.php / 27200615
+ * EOF: template-parts/content-excerpts.php / 27200615
 */
 ?>
