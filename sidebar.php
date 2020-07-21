@@ -4,7 +4,7 @@
  * The template for displaying sidebar
  *
  * ###:  sidebar.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -15,6 +15,6 @@ dynamic_sidebar('sidebar-1');
 echo '</section>' . "\n";
 echo '<cmt name="end">SIDEBAR/PHP</cmt>' . "\n";
 /*
- * EOF: sidebar.php / 28200715
+ * EOF: sidebar.php / 28200801
 */
 ?>
