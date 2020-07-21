@@ -4,20 +4,20 @@
  * The template for displaying page footer
  *
  * ###:  footer.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
  */
 echo '<cmt name="begin">FOOTER/PHP</cmt>' . "\n";
 echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
-if (XTY_FTR_ALIGN == 'left')
+if (xty('ftr-aln') == 'left')
 {
 	echo '<footer class="fx:r fxa:1 fxc:3 ht:min6 wd:100%">' . "\n";
 	echo '<!--  ct:FOOTER -->' . "\n";
 	echo '<div class="aln:text-left dsp:block fnt:size-smaller">' . "\n";
 }
-elseif (XTY_FTR_ALIGN == 'right')
+elseif (xty('ftr-aln') == 'right')
 {
 	echo '<footer class="fx:r fxa:2 fxc:3 ht:min6 wd:100%">' . "\n";
 	echo '<!--  ct:FOOTER -->' . "\n";
@@ -55,6 +55,6 @@ wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
 /*
- * EOF: footer.php / 28200715
+ * EOF: footer.php / 28200801
 */
 ?>
