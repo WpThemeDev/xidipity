@@ -4,7 +4,7 @@
  * The template for displaying comments
  *
  * ###:  content-comments.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -288,6 +288,6 @@ comment_form(array(
 echo '</div>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-COMMENTS/PHP</cmt>' . "\n";
 /*
- * EOF: content-comments.php / 28200715
+ * EOF: content-comments.php / 28200801
 */
 ?>
