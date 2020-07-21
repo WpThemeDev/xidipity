@@ -15,19 +15,16 @@
 global $wp_query;
 $wp_data = $wp_query;
 /*
+ *** set pagination variables
+*/
+$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$wp_ppp = get_option('posts_per_page');
+$wp_total = $wp_query->max_num_pages;
+/*
  *** set page options
 */
 xty('mnu-dsp','yes');
 xty('msg','I was unable to load the archive page template.');
-/*
- *** set pagination variables
-*/
-/*: current pagination number :*/
-$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-/*: posts per page :*/
-$wp_ppp = get_option('posts_per_page');
-/*: total pages :*/
-$wp_total = $wp_query->max_num_pages;
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
