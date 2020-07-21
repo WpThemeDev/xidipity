@@ -4,7 +4,7 @@
  * The template for displaying author info
  *
  * ###:  author.php
- * bld:  27200615
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -12,7 +12,7 @@
 /*
  *** set page options
 */
-dsp_menu('yes');
+xty('mnu-dsp','yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -28,7 +28,7 @@ echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
 */
-if (XTY_SIDEBAR_ALIGN == 'left')
+if (xty('sb-aln') == 'left')
 {
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
