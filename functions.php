@@ -4,314 +4,158 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
  */
 /**
- *  global variables
- *  build: 28200715
+ *  global variables / constants
+ *  build: 28200801
  *
  */
-$xty_dsp_menu = '';
-$xty_dsp_sidebar = '';
-$xty_msg = '';
+$xty = array();
+define('EmojiDisplay', 'yes');
+define('FontAwesomeVersion', '5.12.1');
+define('FavoriteIcon', 'default');
+define('FooterAlignment', 'center');
+define('HeaderAlignment', 'center');
+define('HeaderHeight', '7rem');
+define('HeaderImage', 'none');
+define('HeaderLogo', 'none');
+define('MenuAlignment', 'center');
+define('MenuDisplay', 'yes');
+define('MenuWidth', '80%');
+define('MessageDefault', 'Hello :)');
+define('SidebarAlignment', 'right');
 /**
- *  name: theme_cfg
- *  build: 26200615
- *  description: set global configuration defaults
+ *  name: xty
+ *  build: 28200801
+ *  description: set / get xty varables
+ *  attributes:
+ *      $key - array key
+ *		$value - array key value
  *
  */
-function theme_cfg()
+function xty($key = '', $value = '')
 {
-	$xwt_file = get_template_directory() . '/xidipity-cfg.txt';
-	if (file_exists($xwt_file))
+	global $xty;
+	$ret_val = '';
+	if (!empty($key))
 	{
-		$xwt_prms = file_get_contents($xwt_file);
-		$cfg_items = explode(',', $xwt_prms);
-		foreach ($cfg_items as $cfg_item)
+		if (empty($value))
 		{
-			$xwt_prm = trim($cfg_item);
-			if (!has_match($xwt_prm, '*'))
+			/*: get value :*/
+			if (array_key_exists($key, $xty))
 			{
-				$cfg_key = trim(substr($xwt_prm, 0, strpos($xwt_prm, '=')));
-				$cfg_val = trim(substr($xwt_prm, strpos($xwt_prm, '=') + 1));
-				switch ($cfg_key)
-				{
-					case 'fav-icon':
-						if ($cfg_val !== 'default')
-						{
-							$cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
-							if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
-							{
-								$cfg_val = 'default';
-							}
-						}
-						define('XTY_FAV_ICO', $cfg_val);
-					break;
-					case 'fa-version':
-						define('XTY_FA_VER', $cfg_val);
-					break;
-					case 'hdr-height':
-						define('XTY_HDR_HGT', $cfg_val);
-					break;
-					case 'hdr-image':
-						$cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
-						if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
-						{
-							$cfg_val = 'none';
-						}
-						if (!has_match('.', $cfg_val))
-						{
-							$cfg_val = 'none';
-						}
-						define('XTY_HDR_IMG', $cfg_val);
-					break;
-					case 'hdr-logo':
-						$cfg_val = filter_var($cfg_val, FILTER_SANITIZE_URL);
-						if (filter_var($cfg_val, FILTER_VALIDATE_URL) == false)
-						{
-							$cfg_val = 'none';
-						}
-						if (!has_match('.', $cfg_val))
-						{
-							$cfg_val = 'none';
-						}
-						define('XTY_HDR_LOGO', $cfg_val);
-					break;
-					case 'hdr-align':
-						if (!has_match('left/center/right', $cfg_val))
-						{
-							$cfg_val = 'center';
-						}
-						define('XTY_HDR_ALIGN', $cfg_val);
-					break;
-					case 'ftr-align':
-						if (!has_match('left/center/right', $cfg_val))
-						{
-							$cfg_val = 'center';
-						}
-						define('XTY_FTR_ALIGN', $cfg_val);
-					break;
-					case 'mnu-width':
-						if (!has_match('70%/75%/80%/85%/90%/95%/100%', $cfg_val))
-						{
-							$cfg_val = '100%';
-						}
-						define('XTY_MENU_WIDTH', $cfg_val);
-					break;
-					case 'mnu-align':
-						if (!has_match('left/center/right', $cfg_val))
-						{
-							$cfg_val = 'center';
-						}
-						define('XTY_MNU_ALIGN', $cfg_val);
-					break;
-					case 'sb-align':
-						if (!has_match('left/right', $cfg_val))
-						{
-							$cfg_val = 'right';
-						}
-						define('XTY_SIDEBAR_ALIGN', $cfg_val);
-					break;
-					case 'emoji-display':
-						if (!has_match('no/yes', $cfg_val))
-						{
-							$cfg_val = 'yes';
-						}
-						define('XTY_EMOJI_DSP', $cfg_val);
-					break;
-				}
+				$ret_val = $xty[$key];
 			}
-		}
-	}
-	/**
-	 *  theme needs to work even if the
-	 *  xidipity-cfg.txt file is missing
-	 *
-	 */
-	if (!defined('XTY_FA_VER'))
-	{
-		define('XTY_FA_VER', '5.12.0');
-	}
-	if (!defined('XTY_HDR_HGT'))
-	{
-		define('XTY_HDR_HGT', '100px');
-	}
-	if (!defined('XTY_FAV_ICO'))
-	{
-		define('XTY_FAV_ICO', 'default');
-	}
-	if (!defined('XTY_HDR_IMG'))
-	{
-		define('XTY_HDR_IMG', 'none');
-	}
-	if (!defined('XTY_HDR_LOGO'))
-	{
-		define('XTY_HDR_LOGO', 'none');
-	}
-	if (!defined('XTY_HDR_ALIGN'))
-	{
-		define('XTY_HDR_ALIGN', 'center');
-	}
-	if (!defined('XTY_FTR_ALIGN'))
-	{
-		define('XTY_FTR_ALIGN', 'center');
-	}
-	if (!defined('XTY_MENU_WIDTH'))
-	{
-		define('XTY_MENU_WIDTH', '100%');
-	}
-	if (!defined('XTY_MNU_ALIGN'))
-	{
-		define('XTY_MNU_ALIGN', 'center');
-	}
-	if (!defined('XTY_SIDEBAR_ALIGN'))
-	{
-		define('XTY_SIDEBAR_ALIGN', 'right');
-	}
-	if (!defined('XTY_EMOJI_DSP'))
-	{
-		define('XTY_EMOJI_DSP', 'yes');
-	}
-	return;
-}
-/**
- *  name: sup_msg
- *  build: 28200715
- *  description: set / get support message
- *  attributes:
- *      $atts - string
- *
- */
-function sup_msg($atts = '')
-{
-	$msg = 'Hello :)';
-	if (empty($atts))
-	{
-		/*: get value :*/
-		if (!empty($GLOBALS['$xty_msg']))
-		{
-			/*: set default value :*/
-			$msg = $GLOBALS['$xty_msg'];
-		}
-	}
-	else
-	{
-		/*: set value :*/
-		$GLOBALS['$xty_msg'] = $atts;
-		$msg = '';
-	}
-	return $msg;
-}
-/**
- *  name: dsp_menu
- *  build: 190915.1b
- *  description: set / get display menu flag
- *  attributes:
- *      $atts - string
- *
- */
-function dsp_menu($atts = '')
-{
-	$fn_val = 'yes';
-	$v_attr = trim($atts);
-	if (empty($v_attr))
-	{
-		/*: get value :*/
-		if (empty($GLOBALS['$xty_dsp_menu']))
-		{
-			/*: set default value :*/
-			$GLOBALS['$xty_dsp_menu'] = 'yes';
-		}
-		/*: return value :*/
-		$fn_val = $GLOBALS['$xty_dsp_menu'];
-	}
-	else
-	{
-		$v_attr = strtolower($v_attr);
-		if (has_match('no,yes', $v_attr))
-		{
-			/*: set value :*/
-			$GLOBALS['$xty_dsp_menu'] = $v_attr;
+			/*: if empty, set to default value :*/
+			if (empty($ret_val))
+			{
+				switch ($key)
+				{
+					case ('emoji-dsp'):
+						$xty[$key] = EmojiDisplay;
+					break;
+					case ('fa-ver'):
+						$xty[$key] = FontAwesomeVersion;
+					break;
+					case ('fav-ico'):
+						$xty[$key] = FavoriteIcon;
+					break;
+					case ('ftr-aln'):
+						$xty[$key] = FooterAlignment;
+					break;
+					case ('hdr-aln'):
+						$xty[$key] = HeaderAlignment;
+					break;
+					case ('hdr-ht'):
+						$xty[$key] = HeaderHeight;
+					break;
+					case ('hdr-img'):
+						$xty[$key] = HeaderImage;
+					break;
+					case ('hdr-logo'):
+						$xty[$key] = HeaderLogo;
+					break;
+					case ('mnu-aln'):
+						$xty[$key] = MenuAlignment;
+					break;
+					case ('mnu-dsp'):
+						$xty[$key] = MenuDisplay;
+					break;
+					case ('mnu-wd'):
+						$xty[$key] = MenuWidth;
+					break;
+					case ('msg'):
+						$xty[$key] = MessageDefault;
+					break;
+					case ('sb-aln'):
+						$xty[$key] = SidebarAlignment;
+					break;
+					default:
+						$xty[$key] = '';
+				}
+				$ret_val = $xty[$key];
+			}
 		}
 		else
 		{
-			/*: set default value :*/
-			$GLOBALS['$xty_dsp_menu'] = 'yes';
+			/*: set value :*/
+			$xty[$key] = $value;
 		}
-		$fn_val = $v_attr;
 	}
-	return $fn_val;
+	return $ret_val;
 }
 /**
  *  name: has_match
- *  build: 200415
+ *  build: 28200801
  *  description: is needle (smaller) in haystack (larger)
  *  attributes:
- *      $arg1 - string
- *      $arg2 - string
- *  returns:
- *      true / false
+ *      $arg1 - string (needle)
+ *      $arg2 - string (haystack)
+ *  returns: true / false
  */
-function has_match($arg1 = '', $arg2 = '')
+function has_match($atts1 = '', $atts2 = '')
 {
-	$fn_val = false;
-	if (!empty($arg1) && !empty($arg2))
+	$ret_val = false;
+	if (!empty($atts1) && !empty($atts2))
 	{
-		if (strlen($arg1) > strLen($arg2))
-		{
-			$haystack = strwrap($arg1, '$');
-			$needle = $arg2;
-		}
-		else
-		{
-			$haystack = strwrap($arg2, '$');
-			$needle = $arg1;
-		}
-		if (strpos($haystack, $needle) > 0)
-		{
-			$fn_val = true;
-		}
+		$needle = strtolower($atts1);
+		$haystack = '⁗' . strtolower($atts2) . '⁗';
+		$ret_val = (strpos($haystack, $needle) > 0);
 	}
-	return $fn_val;
+	return $ret_val;
 }
 /**
  *  name: strwrap
- *  build: 190915.1b
+ *  build: 28200801
  *  description: add chr(s) to beginning & end of string
  *  attributes:
  *      $str - string
- *      $wrap - string
+ *      $pre - string
+ *      $pst - string (optional)
  *  returns:
  *      string
  */
-function strwrap($arg1 = '', $arg2 = '', $arg3 = '')
+function strwrap($str = '', $pre = '', $pst = '')
 {
-	$fn_val = '';
-	if (!empty($arg1))
+	if (empty($pst))
 	{
-		if (empty($arg2))
-		{
-			$fn_val = $arg3 . trim($arg1) . $arg3;
-		}
-		elseif (empty($arg3))
-		{
-			$fn_val = $arg2 . trim($arg1) . $arg2;
-		}
-		else
-		{
-			$fn_val = $arg2 . trim($arg1) . $arg3;
-		}
+		$ret_val = $pre . $str . $pre;
 	}
-	return $fn_val;
+	else
+	{
+		$ret_val = $pre . $str . $pst;
+	}
+	return $ret_val;
 }
 /**
  *  name: blog_copyright
  *  build: 190925.1a
  *  description: return copyright
- *  url: https://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
+ *  url: www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
  */
 function blog_copyright()
@@ -326,7 +170,7 @@ function blog_copyright()
     WHERE
         post_status = 'publish'
     ");
-	$fn_val = '';
+	$ret_val = '';
 	if ($db_val)
 	{
 		$fn_copyright = "&copy; " . $db_val[0]->firstdate;
@@ -334,48 +178,73 @@ function blog_copyright()
 		{
 			$fn_copyright .= '-' . $db_val[0]->lastdate;
 		}
-		$fn_val = $fn_copyright;
+		$ret_val = $fn_copyright;
 	}
-	return $fn_val;
+	return $ret_val;
 }
 /**
- *  name: wp_plugin
- *  build: 200415
- *  description: wrapper for is_pluging_active
- *  functions:
- *      $args - boolean
- *  doc: developer.wordpress.org/reference/functions/is_plugin_active/
+ *  name: get_tag_ID
+ *  build: 28200801
+ *  description: return tag id
+ *  url:
  *
  */
-function wp_plugin($arg = '')
+function get_tag_ID($tag_name = '')
 {
-	$fn_val = false;
-	if (!empty($arg))
+	$tag = get_term_by('name', $tag_name, 'post_tag');
+	if ($tag)
 	{
-		if (function_exists('is_plugin_active'))
+		return $tag->term_id;
+	}
+	else
+	{
+		return 0;
+	}
+}
+/**
+ *  name: xty_srch_fl
+ *  build: 28200801
+ *  description: modify wp_query prior to running
+ *  url: developer.wordpress.org/reference/hooks/pre_get_posts/
+ *
+ */
+function xty_srch_fl($query)
+{
+	if (!is_admin() && $query->is_main_query())
+	{
+		if ($query->is_search)
 		{
-			$fn_val = is_plugin_active($arg);
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$query->set('paged', $paged);
+			$query->set('post_status', 'publish');
 		}
 	}
-	return $fn_val;
 }
+add_action('pre_get_posts', 'xty_srch_fl', 1);
 /**
- *  name: dsp_content
- *  build: 200422
- *  description: wrapper for the_content
- *  functions: remove wpautop before displaying content
- *  doc: developer.wordpress.org/reference/functions/is_plugin_active/
+ *  name: xty_srch_url
+ *  build: 28200801
+ *  description: modify search url format
+ *  url:
  *
  */
-function dsp_content()
+function xty_srch_url()
 {
-	remove_filter('the_content', 'wpautop');
-	echo '<!--  dsp:CONTENT -->' . "\n";
-	the_content();
-	echo "\n" . '<!-- /dsp:CONTENT -->' . "\n";
-	return;
+	if (is_search() && !empty($_GET['s']))
+	{
+		wp_redirect(home_url("/search/") . urlencode(get_query_var('s')));
+		exit();
+	}
 }
-if (!function_exists('xidipity_setup')):
+add_action('template_redirect', 'xty_srch_url');
+/**
+ *  name: xty_setup
+ *  build: 28200801
+ *  description: set up Xidipity environment
+ *  url:
+ *
+ */
+if (!function_exists('xty_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -383,7 +252,7 @@ if (!function_exists('xidipity_setup')):
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function xidipity_setup()
+	function xty_setup()
 	{
 		/*
 		 * Make theme available for translation.
@@ -428,12 +297,6 @@ if (!function_exists('xidipity_setup')):
 		register_nav_menus(array(
 			'primary' => esc_html__('Primary Menu', 'xidipity')
 		));
-		/**
-		 *  name: configuration
-		 *  build: 190925.1a
-		 *  description: read configuration file
-		 */
-		theme_cfg();
 		/*
 		 * Registers an editor stylesheet for the theme.
 		 * https://developer.wordpress.org/reference/functions/add_editor_style/
@@ -447,7 +310,7 @@ if (!function_exists('xidipity_setup')):
 		$ed_css5 = '/assets/css/theme/advance.css';
 		$ed_css6 = '/assets/css/theme/flexbox.css';
 		$ed_css7 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-		$ed_css8 = 'https://use.fontawesome.com/releases/v' . XTY_FA_VER . '/css/all.css';
+		$ed_css8 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
 		$ed_css9 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
 		$ed_css10 = '/assets/css/theme/editor.css';
 		$ed_styles = array(
@@ -493,13 +356,13 @@ if (!function_exists('xidipity_setup')):
 		 *  build: 190929.1a
 		 *  description: disable emoji prefetch
 		 */
-		if (XTY_EMOJI_DSP == 'no')
+		if (xty('emoji-dsp') == 'no')
 		{
 			add_filter('emoji_svg_url', '__return_false');
 		}
 	}
-endif; // xidipity_setup
-add_action('after_setup_theme', 'xidipity_setup');
+endif; // xty_setup
+add_action('after_setup_theme', 'xty_setup');
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -558,7 +421,7 @@ function xidipity_scripts()
 		->get('Version') , 'all');
 	/*: fontawesome css :*/
 	// version set @ fa_ver
-	wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . XTY_FA_VER . '/css/all.css', array() , XTY_FA_VER, 'all');
+	wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css', array() , xty('fa-ver') , 'all');
 	/*: google material design icons :*/
 	wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
 		->get('Version') , 'all');
@@ -1483,265 +1346,6 @@ function remove_default_category_description()
 	}
 }
 /**
- *  name: deprecate dsp_rm
- *  build: 28200715
- *  description: Return properly formatted read more HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_rm($arg = '')
-{
-	// system
-	$fn_retval = '';
-	if (empty($arg))
-	{
-		$fn_retval = '<p class="mar:vrt+0.5"><span class="fnt:size-large pad:right+0.25"><i class="icon:book_closed_solid"></i></span>Additional information not available.</p>';
-	}
-	else
-	{
-		$fn_retval = '<p class="mar:vrt+0.5"><span class="fnt:size-large pad:right+0.5"><i class="icon:book_open_solid"></i></span><a href="' . $arg . '" >Read more &hellip;</a></p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_today
- *  build: 200429
- *  description: return calendar icon || icon with date
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_today($arg = '')
-{
-	// system
-	$fn_retval = '';
-	if (empty($arg))
-	{
-		$fn_retval = '<span class="aln:middle fnt:size-larger"><i class="icon:calendar_today_outline"></i></span>';
-	}
-	else
-	{
-		$fn_retval = '<p><span class="aln:middle fnt:size-larger pad:right+0.5"><i class="icon:calendar_today_outline"></i></span>' . $arg . '</p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_modified
- *  build: 200429
- *  description: return calendar icon || icon with date
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_modified($arg = '')
-{
-	// system
-	$fn_retval = '';
-	$icon = '';
-	if (function_exists('xidipity_icon_modified'))
-	{
-		$icon = xidipity_icon_modified();
-	}
-	if (empty($arg))
-	{
-		$fn_retval = $icon;
-	}
-	else
-	{
-		$fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_date
- *  build: 200429
- *  description: return calendar icon || icon with date
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_date($arg = '')
-{
-	// system
-	$fn_retval = '';
-	$icon = '';
-	if (function_exists('xidipity_icon_calendar'))
-	{
-		$icon = xidipity_icon_calendar();
-	}
-	if (empty($arg))
-	{
-		$fn_retval = $icon;
-	}
-	else
-	{
-		$fn_retval = '<p><span class="pad:right+0.25">' . $icon . '</span>' . $arg . '</p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_edit
- *  build: 200429
- *  description: return calendar icon || icon with post link
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_edit($arg = '')
-{
-	// system
-	$fn_retval = '';
-	if (empty($arg))
-	{
-		$fn_retval = '<span class="aln:middle fnt:size-larger"><i class="icon:doc_edit_solid"></i></span>';
-	}
-	else
-	{
-		$fn_retval = '<p><span class="aln:middle fnt:size-larger pad:right+0.5"><i class="icon:doc_edit_solid"></i></span><a href="' . $arg . '">Edit</a></p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_view
- *  build: 200206
- *  description: Return properly formatted view image HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_view($arg = '')
-{
-	// system
-	$fn_retval = '';
-	// atributes (image url)
-	$v_html = trim($arg);
-	if (!empty($v_html))
-	{
-		$fn_retval = '<p><span class="pad:right+0.5"><i class="far fa-eye">&#8203;</i></span><a href="' . $v_html . '">View</a></p>';
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: deprecate dsp_cat_icon
- *  build: 200429
- *  description: return category icon
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_cat_icon($arg = '')
-{
-	// system
-	$fn_retval = '';
-	if (is_sticky())
-	{
-		$fn_retval = xidipity_icon_sticky();
-	}
-	elseif ($arg == 'Uncategorized')
-	{
-		$fn_retval = xidipity_icon_uncategorized();
-	}
-	else
-	{
-		$fn_retval = xidipity_icon_bm();
-	}
-	// return html
-	return $fn_retval;
-}
-/**
- *  name: dsp_cat
- *  build: 200422
- *  description: Return properly formatted post category HTML string
- *  attributes:
- *      $arg - string
- *  ref:
- *
- */
-function dsp_cat($arg = '')
-{
-	$icon = xidipity_icon_bm();
-	$fn_retval = $icon;
-	if (!empty($arg))
-	{
-		if (is_sticky())
-		{
-			$icon = xidipity_icon_sticky();
-		}
-		elseif (has_match($arg, 'Uncategorized'))
-		{
-			$icon = xidipity_icon_uncategorized();
-		}
-		$fn_retval = '<span class="pad:right+0.25">' . $icon . '</span>' . $arg;
-	}
-	return $fn_retval;
-}
-/**
- *  name: deprecate dsp_tags
- *  build: 200206
- *  description: Return properly formatted post tags HTML string
- *  attributes:
- *      $arg - string
- *  comment: sized for a smaller font
- *
- */
-function dsp_tags()
-{
-	// system
-	$fn_val = '';
-	// atributes (tag array)
-	$wp_tags = get_the_tags();
-	// variables
-	$tag_list = '';
-	if (!empty($wp_tags))
-	{
-		foreach ($wp_tags as $wp_tag)
-		{
-			$tag_list .= $wp_tag->name . ',';
-		}
-	}
-	if (strlen($tag_list) > 1)
-	{
-		$fn_val = substr($tag_list, 0, -1);
-	}
-	// return html
-	return $fn_val;
-}
-/**
- *  name: tag_count
- *  build: 200322
- *  description: count post tags
- *  attributes:
- *      $arg - string
- *  comment: sized for a smaller font
- *
- */
-function cnt_tags()
-{
-	// system
-	$fn_val = 0;
-	$tags = get_the_tags();
-	if (is_array($tags))
-	{
-		$fn_val = count($tags);
-	}
-	// return html
-	return $fn_val;
-}
-/**
  *  name: dsp_err
  *  build: 28200701
  *  description: Return properly formatted error message
@@ -1777,7 +1381,7 @@ function dsp_err($arg = '')
 function filter_categories($filter = '')
 {
 	// system
-	$fn_val = '';
+	$ret_val = '';
 	$category_list = '';
 	$categories = get_categories(array(
 		'orderby' => 'name',
@@ -1799,10 +1403,10 @@ function filter_categories($filter = '')
 	}
 	if (strlen($category_list) > 1)
 	{
-		$fn_val = substr($category_list, 0, -1);
+		$ret_val = substr($category_list, 0, -1);
 	}
 	// return string
-	return $fn_val;
+	return $ret_val;
 }
 /**
  * name:    category_to_id
@@ -1815,7 +1419,7 @@ function filter_categories($filter = '')
  */
 function category_to_id($args = '')
 {
-	$fn_val = '';
+	$ret_val = '';
 	if (!empty($args))
 	{
 		$separators = array(
@@ -1846,58 +1450,10 @@ function category_to_id($args = '')
 				$id_list .= $id_prefix . $id . ',';
 			}
 		}
-		$fn_val = substr($id_list, 0, -1);
+		$ret_val = substr($id_list, 0, -1);
 	}
 	// return string
-	return $fn_val;
-}
-/**
- * name:    tag_to_id
- * descr:   convert tag name(s) to id(s)
- * build:   200322
- * accepts:
- *   $arg - tag name/names "-tag" to exclude
- * return:  string
- *
- */
-function tag_to_id($args = '')
-{
-	$fn_val = '';
-	if (!empty($args))
-	{
-		$separators = array(
-			".",
-			"/",
-			":",
-			";",
-			"|"
-		);
-		/*: standardize separators :*/
-		$name_list = str_replace($separators, ",", $args);
-		$tags = explode(',', $name_list);
-		$id_list = '';
-		foreach ($tags as $tag)
-		{
-			$id_prefix = substr($tag, 0, 1);
-			if ($id_prefix == '-')
-			{
-				$tag = substr($tag, 1);
-			}
-			else
-			{
-				$id_prefix = '';
-			}
-			$wp_tag = get_term_by('name', $tag, 'post_tag');
-			$id = $wp_tag->term_id;
-			if (!empty($id))
-			{
-				$id_list .= $id_prefix . $id . ',';
-			}
-		}
-		$fn_val = substr($id_list, 0, -1);
-	}
-	// return string
-	return $fn_val;
+	return $ret_val;
 }
 /**
  * name:    valid_orderby
@@ -1911,33 +1467,33 @@ function tag_to_id($args = '')
 function valid_orderby($arg = '')
 {
 	// system
-	$fn_val = 'date';
+	$ret_val = 'date';
 	$valid = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
 	$value = strtolower($arg);
-	if (has_match($valid, $value))
+	if (has_match($value, $valid))
 	{
 		if ($value == 'id')
 		{
 			$value = 'ID';
 		}
-		$fn_val = $value;
+		$ret_val = $value;
 	}
 	// return string
-	return $fn_val;
+	return $ret_val;
 }
 /**
- *  name: no_dft
+ *  name: purge_tmpl_mrker
  *  build: 191101.1
- *  description: Purge template default values (#?#)
+ *  description: Purge template default markers (#?#)
  *  attributes:
  *      $arg - string
- *  doc: https://xidipity.com/reference/source-code/functions/no_dft/
+ *  doc: https://xidipity.com/reference/source-code/functions/purge_tmpl_mrker/
  *
  */
-function no_dft($arg = '')
+function purge_tmpl_mrker($arg = '')
 {
 	// system
-	$fn_val = '';
+	$ret_val = '';
 	// atributes
 	$a_prm = trim($arg);
 	if (!empty($a_prm))
@@ -1945,58 +1501,11 @@ function no_dft($arg = '')
 		// No #?#
 		if (substr_count($a_prm, '#') < 2)
 		{
-			$fn_val = $a_prm;
+			$ret_val = $a_prm;
 		}
 	}
 	// return string
-	return $fn_val;
-}
-/**
- *  name: get_image_sizes
- *  build: 190728.1
- *  description: return reg image demensions
- *
- */
-function get_image_sizes($size = '')
-{
-	global $_wp_additional_image_sizes;
-	$sizes = array();
-	$get_intermediate_image_sizes = get_intermediate_image_sizes();
-	// Create the full array with sizes and crop info
-	foreach ($get_intermediate_image_sizes as $_size)
-	{
-		if (in_array($_size, array(
-			'thumbnail',
-			'medium',
-			'large'
-		)))
-		{
-			$sizes[$_size]['width'] = get_option($_size . '_size_w');
-			$sizes[$_size]['height'] = get_option($_size . '_size_h');
-			$sizes[$_size]['crop'] = (bool)get_option($_size . '_crop');
-		}
-		elseif (isset($_wp_additional_image_sizes[$_size]))
-		{
-			$sizes[$_size] = array(
-				'width' => $_wp_additional_image_sizes[$_size]['width'],
-				'height' => $_wp_additional_image_sizes[$_size]['height'],
-				'crop' => $_wp_additional_image_sizes[$_size]['crop']
-			);
-		}
-	}
-	// Get only 1 size if found
-	if ($size)
-	{
-		if (isset($sizes[$size]))
-		{
-			return $sizes[$size];
-		}
-		else
-		{
-			return false;
-		}
-	}
-	return $sizes;
+	return $ret_val;
 }
 /*  # post_category
     # 200422
@@ -2070,6 +1579,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 28200715
+ * EOF: functions.php / 28200801
 */
 ?>
