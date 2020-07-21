@@ -2,8 +2,8 @@
     * WordPress Xidipity Theme
     * Flexbox specific css classes 
     *
-    * ###:  flexbox.css
-    * bld:  28200715
+    * ###:  assets/css/theme/flexbox.css
+    * bld:  28200801
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -282,7 +282,7 @@
 ***
     * property: fx:break
     * dsc: acts like a CR
-    * bld: 28200715
+    * bld: 28200801
     * fnt: break flex items
     * ref: 
 ***
@@ -296,7 +296,7 @@
 ***
     * property: fb
     * dsc: flex-basis presets
-    * bld: 28200715
+    * bld: 28200801
     * fnt: set of predefined % flex-basis classes
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
 ***
@@ -405,7 +405,7 @@
 ***
     * property: fb
     * dsc: fixed width presets
-    * bld: 28200715
+    * bld: 28200801
     * fnt: set of predefined fixed widths
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
 ***
@@ -2468,5 +2468,5 @@
 }
 
 /*
- * EOF: flexbox.css / 28200715
+ * EOF: assets/css/theme/flexbox.css / 28200801
  */
