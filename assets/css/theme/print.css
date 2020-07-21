@@ -2,8 +2,8 @@
     * WordPress Xidipity Theme
     * Print specific css classes 
     *
-    * ###:  print.css
-    * bld:  28200715
+    * ###:  assets/css/theme/print.css
+    * bld:  28200801
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -352,5 +352,5 @@ table.cols\:4 {
 }
 
 /*
- * EOF: print.css / 28200715
+ * EOF: assets/css/theme/print.css / 28200801
  */
