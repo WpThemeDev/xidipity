@@ -4,7 +4,7 @@
  * The template for displaying searchs results
  *
  * ###:  inc/extras.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -422,8 +422,8 @@ function bexc_shortcode($args = array() , $prm = '')
 	*/
 	if (isset($args['readmore']))
 	{
-		$tmp_str = no_dft($args['readmore']);
-		if (has_match('y,n', strtolower($tmp_str)))
+		$tmp_str = purge_tmpl_mrker($args['readmore']);
+		if (has_match(strtolower($tmp_str),'y,n'))
 		{
 			$readmore = $tmp_str;
 		}
@@ -447,7 +447,7 @@ function bexc_shortcode($args = array() , $prm = '')
 			if ($readmore == 'y')
 			{
 				$page_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink($page->ID)));
-				$html_retval .= dsp_rm($page_link);
+				$html_retval .= xty_readmore($page_link);
 			}
 		}
 		else
@@ -509,8 +509,8 @@ function xlst_shortcode($args = array() , $prms = '')
 	*/
 	if (isset($args['align_img']))
 	{
-		$tmp_str = no_dft($args['align_img']);
-		if (has_match('x,l,r', strtolower($tmp_str)))
+		$tmp_str = purge_tmpl_mrker($args['align_img']);
+		if (has_match(strtolower($tmp_str),'x,l,r'))
 		{
 			$align_image = $tmp_str;
 		}
@@ -529,7 +529,7 @@ function xlst_shortcode($args = array() , $prms = '')
 	}
 	if (isset($args['orderby']))
 	{
-		$tmp_str = no_dft($args['orderby']);
+		$tmp_str = purge_tmpl_mrker($args['orderby']);
 		if (!empty($tmp_str))
 		{
 			$orderby = valid_orderby($tmp_str);
@@ -537,7 +537,7 @@ function xlst_shortcode($args = array() , $prms = '')
 	}
 	if (isset($args['order']))
 	{
-		$tmp_str = no_dft($args['order']);
+		$tmp_str = purge_tmpl_mrker($args['order']);
 		if (strtoupper($tmp_str) == 'A')
 		{
 			$order = 'ASC';
@@ -588,9 +588,9 @@ function xlst_shortcode($args = array() , $prms = '')
 					'class' => 'cnr:arch-small ht:auto wd:100%'
 				));
 			}
-			//$excerpt_category = '<div class="fnt:size-smaller">' . dsp_cat(xidipity_first_category()) . '</div>';
-			$excerpt_category = '<p>' . dsp_cat(xidipity_first_category()) . '</p>';
-			$excerpt_byline = '<div class="fnt:size-smaller">' . xidipity_date('pub') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
+			//$excerpt_category = '<div class="fnt:size-smaller">' . xty_category(xidipity_first_category()) . '</div>';
+			$excerpt_category = '<p>' . xty_category(xidipity_first_category()) . '</p>';
+			$excerpt_byline = '<div class="fnt:size-smaller">' . xty_date('pub') . '<span class="txt:bas-1 pad:hrz+0.5">|</span>' . xidipity_posted_by() . '</div>';
 			/*
 			 ***
 			 * get post link for read more
@@ -644,7 +644,7 @@ function xlst_shortcode($args = array() , $prms = '')
 			}
 			$html_retval .= '<div class="pg:title led:x-narrow">' . get_the_title() . '</div>';
 			$html_retval .= get_the_excerpt();
-			$html_retval .= dsp_rm($post_link);
+			$html_retval .= xty_readmore($post_link);
 			$html_retval .= '</div>' . "\n";
 			$html_retval .= '<!-- /ex:TEXT  -->' . "\n";
 			$html_retval .= '</div>' . "\n";
@@ -723,11 +723,11 @@ function blst_shortcode($args = array() , $prms = '')
 	*/
 	if (isset($args['bullet']))
 	{
-		$bullet = no_dft($args['bullet']);
+		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
 	if (isset($args['class']))
 	{
-		$tmp_str = no_dft($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
 		{
 			$class = $tmp_str;
@@ -743,7 +743,7 @@ function blst_shortcode($args = array() , $prms = '')
 	}
 	if (isset($args['orderby']))
 	{
-		$tmp_str = no_dft($args['orderby']);
+		$tmp_str = purge_tmpl_mrker($args['orderby']);
 		if (!empty($tmp_str))
 		{
 			$orderby = valid_orderby($tmp_str);
@@ -751,7 +751,7 @@ function blst_shortcode($args = array() , $prms = '')
 	}
 	if (isset($args['order']))
 	{
-		$tmp_str = no_dft($args['order']);
+		$tmp_str = purge_tmpl_mrker($args['order']);
 		if (strtoupper($tmp_str) == 'D')
 		{
 			$order = 'DESC';
@@ -877,7 +877,7 @@ function clst_shortcode($args = array() , $prm = '')
 	*/
 	if (isset($args['active']))
 	{
-		$tmp_str = strtolower(no_dft($args['active']));
+		$tmp_str = strtolower(purge_tmpl_mrker($args['active']));
 		if ($tmp_str == 'y')
 		{
 			$active = 1;
@@ -885,11 +885,11 @@ function clst_shortcode($args = array() , $prm = '')
 	}
 	if (isset($args['bullet']))
 	{
-		$bullet = no_dft($args['bullet']);
+		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
 	if (isset($args['class']))
 	{
-		$tmp_str = no_dft($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
 		{
 			$class = $tmp_str;
@@ -1051,31 +1051,31 @@ function imgg_shortcode($args = array() , $prms = '')
 	*/
 	if (isset($args['caption']))
 	{
-		$tmp_str = strtolower(no_dft($args['caption']));
-		if (has_match('l,c,r,x', $tmp_str))
+		$tmp_str = strtolower(purge_tmpl_mrker($args['caption']));
+		if (has_match($tmp_str,'l,c,r,x'))
 		{
 			$caption = $tmp_str;
 		}
 	}
 	if (isset($args['class']))
 	{
-		$tmp_str = no_dft($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
 		{
-			$class = no_dft($args['class']);
+			$class = purge_tmpl_mrker($args['class']);
 		}
 	}
 	if (isset($args['content']))
 	{
-		$tmp_str = strtolower(no_dft($args['content']));
-		if (has_match('y,n', $tmp_str))
+		$tmp_str = strtolower(purge_tmpl_mrker($args['content']));
+		if (has_match($tmp_str,'y,n'))
 		{
 			$content = $tmp_str;
 		}
 	}
 	if (isset($args['orderby']))
 	{
-		$tmp_str = no_dft($args['orderby']);
+		$tmp_str = purge_tmpl_mrker($args['orderby']);
 		if (!empty($tmp_str))
 		{
 			$orderby = valid_orderby($tmp_str);
@@ -1083,7 +1083,7 @@ function imgg_shortcode($args = array() , $prms = '')
 	}
 	if (isset($args['order']))
 	{
-		$tmp_str = no_dft($args['order']);
+		$tmp_str = purge_tmpl_mrker($args['order']);
 		if (strtoupper($tmp_str) == 'D')
 		{
 			$order = 'DESC';
@@ -1264,11 +1264,11 @@ function plst_shortcode($args = array() , $prm = string)
 	*/
 	if (isset($args['bullet']))
 	{
-		$bullet = no_dft($args['bullet']);
+		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
 	if (isset($args['class']))
 	{
-		$tmp_str = no_dft($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
 		{
 			$class = $tmp_str;
@@ -1420,7 +1420,7 @@ function get_pg_title_shortcode()
 add_shortcode('x_fa_ver', 'x_fa_ver_shortcode');
 function x_fa_ver_shortcode()
 {
-	return XTY_FA_VER;
+	return xty('fa-ver');
 }
 /*  # x_wp_ver
     # 90903.1a
@@ -1507,7 +1507,7 @@ function xidipity_shortcode($atts)
 }
 /*
  * EOF:     inc/extras.php
- * Build:   28200715
+ * Build:   28200801
  *
 */
 ?>
