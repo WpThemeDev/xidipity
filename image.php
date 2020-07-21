@@ -4,7 +4,7 @@
  * The template for displaying media library image
  *
  * ###:  image.php
- * bld:  27200615
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -16,7 +16,7 @@ $aspect_ratio = '';
 $ratio        = 0;
 $seo          = 'Xidipity WordPress Theme Media Library Image';
 $wp_metadata  = wp_get_attachment_metadata();
-dsp_menu('yes');
+xty('mnu-dsp','yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -31,7 +31,7 @@ echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
 */
-if (XTY_SIDEBAR_ALIGN == 'left')
+if (xty('sb-aln') == 'left')
 {
 	echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
@@ -89,19 +89,19 @@ if ($wp_query->have_posts())
 	 *** page footer
 	*/
 	/* file date */
-	$meta_items = '';
-	$meta_items .= '<div class="fnt:size-large pad:right+0.5"><i class="icon:page_previous_solid"></i></div>^';
-	$meta_items .= '<div class="fnt:size-small"><a href="javascript:history.back()">Go Back</a></div>^';
-	$meta_items .= '<div class="txt:transparent sm)txt:bas pad:hrz+0.5">|</div>^';
-	$meta_items .= '<div class="fx:break sm)dsp:none"></div>^';
+	$data_item = array();
+	$data_item['ico_1'] .= '<i class="icon:page_previous_solid"></i>';
+	$data_item['txt_1'] .= '<a href="javascript:history.back()">Go Back</a>';
+	$data_item['div_1'] .= '&#65372;';
+	$data_item['raw_1'] .= '<div class="fx:break sm)dsp:none"></div>';
 	/*: date :*/
-	$meta_items .= '<div class="fnt:size-large pad:right+0.5"><i class="icon:calendar_today_outline"></i></div>^';
-	$meta_items .= '<div class="fnt:size-small">' . get_the_date(get_option('date_format') , get_the_ID()) . '</div>^';
-	$meta_items .= '<div class="txt:transparent sm)txt:bas pad:hrz+0.5">|</div>^';
-	$meta_items .= '<div class="fx:break sm)dsp:none"></div>^';
+	$data_item['ico_2'] .= '<i class="icon:calendar_today_outline"></i>';
+	$data_item['txt_2'] .= get_the_date(get_option('date_format') , get_the_ID());
+	$data_item['div_2'] .= '&#65372;';
+	$data_item['raw_2'] .= '<div class="fx:break sm)dsp:none"></div>';
 	/*: dimensions :*/
-	$meta_items .= '<div class="fnt:size-large pad:right+0.5"><i class="icon:dimension_solid"></i></div>^';
-	$meta_items .= '<div class="fnt:size-small">' . absint($wp_metadata['width']) . 'x' . absint($wp_metadata['height']) . ' pixels</div>^';
+	$data_item['ico_3'] .= '<i class="icon:dimension_solid"></i>';
+	$data_item['txt_3'] .= absint($wp_metadata['width']) . 'x' . absint($wp_metadata['height']) . ' pixels';
 	$ratio        = round(absint($wp_metadata['height']) / absint($wp_metadata['width']) , 4);
 	switch ($ratio)
 	{
@@ -131,22 +131,22 @@ if ($wp_query->have_posts())
 	}
 	if (!empty($aspect_ratio))
 	{
-		$meta_items .= '<div class="txt:transparent sm)txt:bas pad:hrz+0.5">|</div>^';
-		$meta_items .= '<div class="fx:break sm)dsp:none"></div>^';
-		$meta_items .= '<div class="fnt:size-large pad:right+0.5"><i class="icon:aspect_ratio_outline"></i></div>^';
-		$meta_items .= '<div class="fnt:size-small">' . $aspect_ratio . '</div>^';
+		$data_item['div_3'] .= '&#65372;';
+		$data_item['raw_3'] .= '<div class="fx:break sm)dsp:none"></div>';
+		$data_item['ico_4'] .= '<i class="icon:aspect_ratio_outline"></i>';
+		$data_item['txt_4'] .= $aspect_ratio;
 	}
 	$url = wp_get_attachment_url();
 	if (!empty($url))
 	{
-		$meta_items .= '<div class="txt:transparent sm)txt:bas pad:hrz+0.5">|</div>^';
-		$meta_items .= '<div class="fx:break sm)dsp:none"></div>^';
-		$meta_items .= '<div class="fnt:size-small">File Type: ' . substr($url, -3) . '</div>^';
+		$data_item['div_4'] .= '&#65372;';
+		$data_item['raw_4'] .= '<div class="fx:break sm)dsp:none"></div>';
+		$data_item['txt_5'] .= 'File Type: ' . substr($url, -3);
 	}
 	echo '<cmt name="begin">PAGE/BODY/CONTENT/FOOTER</cmt>' . "\n";
 	echo '<footer class="pad:left+0.5 fnt:size-smaller prt[dsp:none]">' . "\n";
 	echo '<div class="fnt:size-medium fnt:size-smaller pad:bottom+0.25">' . "\n";
-	echo xty_metalinks(explode('^', $meta_items)) . "\n";
+	echo xty_dsp_meta($data_item) . "\n";
 	echo '</div>' . "\n";
 	echo '</footer>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/CONTENT/FOOTER</cmt>' . "\n";
@@ -180,6 +180,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: image.php / 27200615
+ * EOF: image.php / 28200801
 */
 ?>
