@@ -1,7 +1,7 @@
 <?php
 /**
  * WordPress Xidipity Theme
- * Theme Extended Functinality
+ * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
  * bld:  28200801
