@@ -2,8 +2,8 @@
     * WordPress Xidipity Theme
     * Palette specific css classes
     *
-    * ###:  palette.css
-    * bld:  28200715
+    * ###:  assets/css/theme/palette.css
+    * bld:  28200801
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1055,7 +1055,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 /*
 ***
     # small displays
-    # 28200715
+    # 28200801
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 ***
 */
@@ -1951,7 +1951,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 /*
 ***
     # medium displays
-    # 28200715
+    # 28200801
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 ***
 */
@@ -2847,7 +2847,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 /*
 ***
     # large displays
-    # 28200715
+    # 28200801
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 ***
 */
@@ -3743,7 +3743,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 /*
 ***
     # extra large displays
-    # 28200715
+    # 28200801
     # https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 ***
 */
@@ -4637,5 +4637,5 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 }
 
 /*
- * EOF: palette.css / 28200715
+ * EOF: assets/css/theme/palette.css / 28200801
  */
