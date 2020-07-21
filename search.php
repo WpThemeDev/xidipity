@@ -4,118 +4,55 @@
  * The template for displaying searchs results
  *
  * ###:  search.php
- * bld:  28200715
+ * bld:  28200801
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
  */
 /*
- *** query data
+ *** setup database query
 */
-$search_item = get_search_query();
+global $wp_query;
+$wp_data = $wp_query;
 /*
- *** base query
+*** redirect if category
 */
-$qry_prms = array(
-	'ignore_sticky_posts' => 1,
-	'perm' => 'readable',
-	'paged' => $wp_paged,
-	'post_type' => 'post',
-	'posts_per_page' => $wp_ppp,
-);
-/*
- *** modify query if id
-*/
-if (has_match($search_item, '#'))
+$cat_id = get_cat_ID(get_query_var('s'));
+if ($cat_id > 0)
 {
-	$id = str_replace(array(
-		'#'
-	) , '', $search_item);
-	$qry_prms['post_type'] = 'any';
-	$qry_prms['p'] = $id;
-}
-else
-{
-	/*
-	 *** modify query if date
-	*/
-	if (($timestamp = strtotime($search_item)) !== false)
-	{
-		$year = date('Y', $timestamp);
-		$month = date('m', $timestamp);
-		$day = date('d', $timestamp);
-		$qry_prms['date_query'] = array(
-			array(
-				'year' => $year,
-				'month' => $month,
-				'day' => $day,
-				'column' => 'post_date',
-			) ,
-		);
-	}
-	else
-	{
-		/*
-		 *** modify query if tag
-		*/
-		$tag_list = tag_to_id($search_item);
-		if (!empty($tag_list))
-		{
-			$tag_array = explode(',', $tag_list);
-			$qry_prms['tag__in'] = $tag_array;
-		}
-		else
-		{
-			/*
-			 *** modify query if category
-			*/
-			$cat_list = category_to_id($search_item);
-			if (!empty($cat_list))
-			{
-				$qry_prms['cat'] = $cat_list;
-			}
-			else
-			{
-				/*
-				 *** modify query if word search
-				*/
-				if (empty($tag_list) && empty($cat_list))
-				{
-					$qry_prms['post_type'] = 'any';
-					$qry_prms['s'] = $search_item;
-				}
-			}
-		}
-	}
-}
-$wp_data = new WP_Query($qry_prms);
-/*
- *** redirect if only one
-*/
-if ($wp_data->have_posts())
-{
-	if ($wp_data->post_count == 1)
-	{
-		wp_safe_redirect(get_permalink($wp_data
-			->post
-			->ID));
-		exit;
-	}
+	wp_safe_redirect( get_category_link($cat_id) );
+	exit;
 }
 /*
- *** set page options
+*** redirect if tag
 */
-dsp_menu('yes');
-sup_msg('I was unable to find the requested informaton.');
+$tag_id = get_tag_ID(get_query_var('s'));
+if ($tag_id > 0)
+{
+	wp_safe_redirect( get_tag_link($tag_id) );
+	exit;
+}
+/*
+*** redirect if only 1
+*/
+$cnt = $wp_data->post_count;
+if ($cnt == 1)
+{
+	wp_safe_redirect( get_permalink() );
+	exit;
+}
+
 /*
  *** set pagination variables
 */
-/*: current pagination number :*/
 $wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-/*: posts per page :*/
 $wp_ppp = get_option('posts_per_page');
-/*: total pages :*/
 $wp_total = $wp_data->max_num_pages;
+/*
+ *** set page options
+*/
+xty('mnu-dsp','yes');
+xty('msg','I was unable to find the requested informaton.');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -125,7 +62,7 @@ echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
 */
-if (XTY_SIDEBAR_ALIGN == 'left')
+if (xty('sb-aln') == 'left')
 {
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
@@ -155,6 +92,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: search.php / 28200715
+ * EOF: search.php / 28200801
 */
 ?>
