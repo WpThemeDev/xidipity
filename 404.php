@@ -12,7 +12,7 @@
 /*
  *** set page options
 */
-xty('mnu-dsp','yes');
+xty('mnu-dsp', 'yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -33,13 +33,28 @@ else
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
 echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+/*
+ *** inc/templage-tags/xty_support_agent
+*/
 echo xty_support_agent('The page is not available at the provided URL.');
 /*
- *** CONTENT/FOOTER/PHP
+ *** inc/templage-tags/xty_content_footer
 */
-echo '<cmt name="begin">TEMPLATE-PARTS/CONTENT-FOOTER/PHP</cmt>' . "\n";
-get_template_part('template-parts/content', 'footer');
-echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-FOOTER/PHP</cmt>' . "\n";
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
+}
 echo '</article>' . "\n";
 echo '</section>' . "\n";
 /*
