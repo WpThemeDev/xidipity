@@ -1,20 +1,20 @@
 <?php
 /**
-    * Template Name: NoSidebar
-    *
-    * WordPress Xidipity Theme
-    * The template for displaying page without sidebar
-    *
-    * ###:  page-templates/no-sidebar.php
-    * bld:  28200801
-    * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
-    *
-*/
+ * Template Name: NoSidebar
+ *
+ * WordPress Xidipity Theme
+ * The template for displaying page without sidebar
+ *
+ * ###:  page-templates/no-sidebar.php
+ * bld:  28200801
+ * src:  github.com/WpThemeDev/xidipity/
+ * (C)   2019-2020 John Baer
+ *
+ */
 /*
  *** set page options
 */
-xty('mnu-dsp','yes');
+xty('mnu-dsp', 'yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -60,16 +60,28 @@ if (have_posts())
 else
 {
 	/*
-	 *** call support agent ***
+	 *** inc/templage-tags/xty_support_agent
 	*/
-	echo xty_support_agent('I was unable to load the page template.');
+	echo xty_support_agent('No-sidebar/php was unable to load the requested template.');
 }
 /*
- *** CONTENT/FOOTER/PHP
+ *** inc/templage-tags/xty_content_footer
 */
-echo '<cmt name="begin">PAGE/BODY/FOOTER</cmt>' . "\n";
-get_template_part('template-parts/content', 'footer');
-echo '<cmt name="end">PAGE/BODY/FOOTER</cmt>' . "\n";
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
+}
 echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '</main>' . "\n";
@@ -85,5 +97,5 @@ get_footer();
 wp_reset_postdata();
 /*
  * EOF: page-templates/no-sidebar.php / 28200801
- */
+*/
 ?>
