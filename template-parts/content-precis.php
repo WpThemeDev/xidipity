@@ -25,8 +25,11 @@ if ($wp_data->have_posts())
 	while ($wp_data->have_posts())
 	{
 		$wp_data->the_post();
+		/*
+		 *** inc/template-tags/xty_excerpt
+		*/
 		echo '<div class="mar:bottom+2">' . "\n";
-		include (locate_template('template-parts/content-excerpts.php', false, false));
+		echo xty_excerpt();
 		echo '</div>' . "\n";
 	}
 	echo '</div>' . "\n";
@@ -35,26 +38,32 @@ if ($wp_data->have_posts())
 else
 {
 	/*
-	 *** call support agent ***
+	 *** inc/template-tags/xty_support_agent
 	*/
 	echo xty_support_agent(xty('msg'));
 }
 /*
- *** template-parts/content-pagination/php ***
+ *** template-tags/xty_pagination
 */
-if ($wp_total > 1)
-{
-	echo '<div class="bkg:bas+2 ln"></div>';
-	echo '<div class="mar:vrt+0.25 prt[dsp:none]">' . "\n";
-	include (locate_template('template-parts/content-pagination.php', false, false));
-	echo '</div>' . "\n";
-}
+echo xty_pagination($cur_paged, $tot_paged);
 /*
- *** template-parts/content-footer/php ***
+ *** inc/templage-tags/xty_content_footer
 */
-echo '<cmt name="begin">PRECIS/BODY/FOOTER</cmt>' . "\n";
-get_template_part('template-parts/content', 'footer');
-echo '<cmt name="end">PRECIS/BODY/FOOTER</cmt>' . "\n";
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
+}
 echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-PRECIS/PHP</cmt>' . "\n";
