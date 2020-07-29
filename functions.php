@@ -28,6 +28,8 @@ define('MenuDisplay', 'yes');
 define('MenuWidth', '80%');
 define('MessageDefault', 'Hello :)');
 define('SidebarAlignment', 'right');
+define('FeaturedImage', 'left');
+define('ThemeSEO', 'Xidipity WordPress Theme');
 /**
  *  name: xty
  *  build: 28200801
@@ -43,15 +45,15 @@ function xty($key = '', $value = '')
 	$ret_val = '';
 	if (!empty($key))
 	{
-		if (empty($value))
+		if (empty($value) || $value == 'default')
 		{
 			/*: get value :*/
 			if (array_key_exists($key, $xty))
 			{
 				$ret_val = $xty[$key];
 			}
-			/*: if empty, set to default value :*/
-			if (empty($ret_val))
+			/*: if empty/default, set to default value :*/
+			if (empty($ret_val) || $value == 'default')
 			{
 				switch ($key)
 				{
@@ -94,6 +96,12 @@ function xty($key = '', $value = '')
 					case ('sb-aln'):
 						$xty[$key] = SidebarAlignment;
 					break;
+					case ('fea-img'):
+						$xty[$key] = FeaturedImage;
+					break;
+					case ('seo'):
+						$xty[$key] = ThemeSEO;
+					break;
 					default:
 						$xty[$key] = '';
 				}
@@ -113,20 +121,28 @@ function xty($key = '', $value = '')
  *  build: 28200801
  *  description: is needle (smaller) in haystack (larger)
  *  attributes:
- *      $arg1 - string (needle)
- *      $arg2 - string (haystack)
+ *      $needle - string (smaller value)
+ *      $haystack - string (larger value)
+ *		$rigid - case sensitivity (default is false)
  *  returns: true / false
  */
-function has_match($atts1 = '', $atts2 = '')
+function has_match($needle = '', $haystack = '', $rigid=false)
 {
-	$ret_val = false;
-	if (!empty($atts1) && !empty($atts2))
+	$result = false;
+	if (!empty($needle) && !empty($haystack))
 	{
-		$needle = strtolower($atts1);
-		$haystack = '⁗' . strtolower($atts2) . '⁗';
-		$ret_val = (strpos($haystack, $needle) > 0);
+		$haystack = strwrap($haystack,'⁗');
+		if ($rigid)
+		{
+			$result = (strpos($haystack, $needle) > 0);
+			
+		}
+		else
+		{
+			$result = (stripos($haystack, $needle) > 0);
+		}
 	}
-	return $ret_val;
+	return $result;
 }
 /**
  *  name: strwrap
@@ -1409,76 +1425,81 @@ function filter_categories($filter = '')
 	return $ret_val;
 }
 /**
- * name:    category_to_id
- * descr:   convert category name(s) to id(s)
- * build:   200322
+ * name:    get_cat_IDs
+ * descr:   convert one or more category name(s) to id(s)
+ * build:   28200801
  * accepts:
  *   $arg - category name/names "-category" to exclude
- * return:  string
+ * return:  sorted string of IDs
  *
  */
-function category_to_id($args = '')
+function get_cat_IDs($args = '')
 {
 	$ret_val = '';
 	if (!empty($args))
 	{
-		$separators = array(
+		$delimiters = array(
 			".",
 			"/",
 			":",
 			";",
 			"|"
 		);
-		/*: standardize separators :*/
-		$name_list = str_replace($separators, ",", $args);
-		$categories = explode(',', $name_list);
-		$id_list = '';
+		// make delimiter a comma
+		$delimited_names = str_replace($delimiters, ",", $args);
+		$categories = explode(',', $delimited_names);
+		$cnt=0;
+		$IDs = array();
 		foreach ($categories as $category)
 		{
-			$id_prefix = substr($category, 0, 1);
-			if ($id_prefix == '-')
+			if ($category[0] == '-')
 			{
-				$category = substr($category, 1);
+				$category_id = get_cat_ID(substr($category, 1));
+				if (abs($category_id) > 0)
+				{
+					$IDs[$cnt] = '-' . $category_id;
+				}
 			}
 			else
 			{
-				$id_prefix = '';
+				$category_id = get_cat_ID($category);
+				if (abs($category_id) > 0)
+				{
+					$IDs[$cnt] = $category_id;
+				}
 			}
-			$id = get_cat_ID($category);
-			if (!empty($id))
-			{
-				$id_list .= $id_prefix . $id . ',';
-			}
+			$cnt++;
 		}
-		$ret_val = substr($id_list, 0, -1);
+		sort($IDs,SORT_REGULAR);
+		$ret_val = implode(",",$IDs);
 	}
 	// return string
 	return $ret_val;
 }
 /**
  * name:    valid_orderby
- * descr:   validate submission
- * build:   200322
+ * descr:   validate query orderby
+ * build:   28200801
  * accepts:
- *   $arg - submission
+ *   $orderby - orderby
  * return:  valid orderby / date
  *
  */
-function valid_orderby($arg = '')
+function valid_orderby($orderby = '')
 {
-	// system
+	// default
 	$ret_val = 'date';
-	$valid = 'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title';
-	$value = strtolower($arg);
-	if (has_match($value, $valid))
+	if (has_match($orderby,'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title'))
 	{
-		if ($value == 'id')
+		if ($orderby == 'id')
 		{
-			$value = 'ID';
+			$ret_val = 'ID';
 		}
-		$ret_val = $value;
+		else
+		{
+			$ret_val = strtolower($orderby);
+		}
 	}
-	// return string
 	return $ret_val;
 }
 /**
