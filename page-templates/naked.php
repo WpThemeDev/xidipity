@@ -42,9 +42,9 @@ if (have_posts())
 else
 {
 	/*
-	 *** call support agent ***
+	 *** inc/templage-tags/xty_support_agent
 	*/
-	echo xty_support_agent('I was unable to load the page template naked.');
+	echo xty_support_agent('Naked/php was unable to load the requested template.');
 }
 echo '</article>' . "\n";
 echo '</section>' . "\n";
