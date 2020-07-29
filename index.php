@@ -50,7 +50,10 @@ if (wp_count_posts()->publish < 1)
 	}
 	else
 	{
-		echo xty_support_agent('Unable to load Blog Posts.');
+		/*
+		 *** inc/templage-tags/xty_support_agent
+		*/
+		echo xty_support_agent('Index/php was unable to load Blog Posts.');
 	}
 }
 else
@@ -58,37 +61,26 @@ else
 	/*
 	 *** set pagination variables
 	*/
-	/*: current pagination number :*/
-	$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	/*: posts per page :*/
-	$wp_ppp = get_option('posts_per_page');
+	$per_paged = get_option('posts_per_page');
+	$cur_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	/*
 	 *** setup database query
 	*/
-	$xclude_1 = get_cat_ID('archive');
-	$xclude_2 = get_cat_ID('Special group 1');
-	$xclude_3 = get_cat_ID('Special group 2');
-	$xclude_4 = get_cat_ID('Special group 3');
+	$category_ids = get_cat_IDs('-archive,-special group 1,-special group 2,-special group 3');
 	$qry_prms = array(
-		'category__not_in' => array(
-			$xclude_1,
-			$xclude_2,
-			$xclude_3,
-			$xclude_4
-		) ,
+		'cat' => $category_ids,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'perm' => 'readable',
-		'paged' => $wp_paged,
+		'paged' => $cur_paged,
 		'post_type' => 'post',
 		'post_status' => 'any',
-		'posts_per_page' => $wp_ppp
+		'posts_per_page' => $per_paged
 	);
 	$wp_data = new WP_Query($qry_prms);
-	/*: total pages :*/
-	$wp_total = $wp_data->max_num_pages;
+	$tot_paged = $wp_data->max_num_pages;
 	/*
-	 *** template-parts/content-precis/php ***
+	 *** template-parts/content-precis/php
 	*/
 	include (locate_template('template-parts/content-precis.php', false, false));
 }
