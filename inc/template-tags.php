@@ -9,63 +9,160 @@
  * (C)   2019-2020 John Baer
  *
  */
-/*  # xty_dsp_meta
+/*  # xty_excerpt
     # 28200801
-    # return html row of meta items
+    # return html excerpt
 **/
-if (!function_exists('xty_dsp_meta'))
+if (!function_exists('xty_excerpt'))
 {
-	function xty_dsp_meta($items = array())
+	function xty_excerpt()
 	{
-		$html_retval = '';
-		if (count($items) > 0)
+		$cnt++;
+		$html = '';
+		$post_thumbnail_id = get_post_thumbnail_id();
+		$wp_img = get_the_post_thumbnail(null, 'FULL', array(
+			'class' => 'cnr:arch-x-small ht:auto wd:100%',
+			'alt' => xty('seo')
+		));
+		$attachment_page_url = get_attachment_link($post_thumbnail_id);
+		if (empty($attachment_page_url))
 		{
-			$html_retval .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
-			foreach ($items as $key => $item)
-			{
-				$key_type = substr($key, 0, 3);
-				switch ($key_type)
-				{
-					case 'raw':
-						$html_retval .= $item;
-					break;
-					case 'txt':
-						$html_retval .= '<div class="fnt:size-2x-small">' . $item . '</div>';
-					break;
-					case 'div':
-						$html_retval .= '<div class="txt:bas dsp:none sm)dsp:block pad:hrz+0.5">' . $item . '</div>';
-					break;
-					default:
-						$html_retval .= '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium pad:right+0.5">' . $item . '</div></div>';
-				}
-			}
-			$html_retval .= '</div>';
+			$attachment_page_url = wp_get_attachment_url();
 		}
-		return $html_retval;
+		$post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
+		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $cnt . '/</cmt>';
+		if (xty('fea-img') == 'right')
+		{
+			$html .= '<div class="fx:rw sm)fx:r-rev fxa:1 fxb:1 fxc:1 mar:vrt+1">';
+		}
+		else
+		{
+			$html .= '<div class="fx:rw sm)fx:r fxa:1 fxb:1 fxc:1 mar:vrt+1">';
+		}
+		if (!empty($wp_img) && xty('fea-img') !== 'none')
+		{
+			$html .= '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% lg)fb:20% sm)pad:right+0.75">';
+			$html .= '<a href="' . $attachment_page_url . '">' . $wp_img . '</a>';
+			$html .= '</div>';
+			$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100% sm)fb:70% lg)fb:80%">';
+		}
+		else
+		{
+			$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100%">';
+		}
+		$html .= '<div class="fx:c fxa:1 fxb:1 fxc:1 ht:100%">';
+		$html .= '<div class="fxd:3 fxe:6">';
+		/*
+		 *** developer.wordpress.org/reference/functions/the_title/
+		*/
+		$html .= '<h3>' . get_the_title() . '</h3>';
+		$html .= '<p class="fnt:size-medium">' . get_the_excerpt() . '</p>';
+		$html .= '<div class="mar:top+0.5">';
+		$html .= xty_readmore($post_link);
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0">';
+		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3 fnt:size-x-small lg)fnt:size-small xl)fnt:size-medium">';
+		$html .= '<div class="bkg:bas ln mar:bottom+0.75 sm)dsp:none wd:100%"></div>';
+		$post_type = get_post_type();
+		$data_item = array();
+		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium pad:right+0.5">';
+		$ico_pst = '</div></div>';
+		$txt_pre = '<div class="fnt:size-2x-small pad:left+0.25 pad:top+0.25">';
+		$txt_pst = '</div>';
+		$div_pre = '<div class="txt:bas dsp:none sm)dsp:block aln:text-center pad:hrz+0.25">';
+		$div_pst = '</div>';
+		$bar_items = array();
+		if ($post_type == 'post')
+		{
+			$category = xty_category();
+			array_push($bar_items, 'category');
+			$tags = xty_tags(get_the_ID());
+			if (!empty($tags))
+			{
+				array_push($bar_items, 'tags');
+			}
+		}
+		$published = xty_published();
+		if ($published['date'] == $published['revision'])
+		{
+			array_push($bar_items, 'publish');
+		}
+		else
+		{
+			array_push($bar_items, 'modified');
+		}
+		array_push($bar_items, 'author');
+		$html .= xty_info_bar($bar_items) . "\n";
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $cnt . '/</cmt>';
+		/*
+		 *** return html
+		*/
+		return $html;
 	}
 }
-/*  # xty_metalinks
+/*  # xty_pagination
     # 28200801
-    # return html of links
+    # return html pagination
 **/
-if (!function_exists('xty_metalinks'))
+if (!function_exists('xty_pagination'))
 {
-	function xty_metalinks($items = array())
+	function xty_pagination($cur_paged = 0, $tot_paged = 0)
 	{
-		$html_retval = '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
-		foreach ($items as $item)
+		$html = '';
+		if (($cur_paged + $tot_paged) > 2)
 		{
-			if (has_match('div', $item))
-			{
-				$html_retval .= $item;
-			}
-			else
-			{
-				$html_retval .= '<div>' . $item . '</div>';
-			}
+			$args = array(
+				'base' => get_pagenum_link(1) . '%_%',
+				'format' => '/page/%#%/',
+				'total' => $tot_paged,
+				'current' => $cur_paged,
+				'show_all' => false,
+				'end_size' => 1,
+				'mid_size' => 2,
+				'prev_next' => true,
+				'prev_text' => '<b><</b>',
+				'next_text' => '<b>></b>',
+				'type' => 'plain',
+				'add_args' => false,
+				'add_fragment' => '',
+				'before_page_number' => '',
+				'after_page_number' => ''
+			);
+			$html .= '<div class="mar:vrt+0.25 prt[dsp:none]">';
+			$html .= '<cmt name="begin">TEMPLATE-TAGS/XTY_PAGINATION</cmt>';
+			$html .= '<div class="fx:r fxa:4 fxb:6 fxc:3 bkg:bas+4 cnr:arch-x-small pad:vrt+0.25">';
+			$html .= paginate_links($args);
+			$html .= '</div>';
+			$html .= '<cmt name="end">TEMPLATE-TAGS/XTY_PAGINATION</cmt>';
+			$html .= '</div>';
 		}
-		$html_retval .= '</div>';
-		return $html_retval;
+		return $html;
+	}
+}
+/*  # xty_content_footer
+    # 28200801
+    # return html
+**/
+if (!function_exists('xty_content_footer'))
+{
+	function xty_content_footer($items = array())
+	{
+		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>';
+		$html .= '<div class="mar:vrt+0.25">';
+		$html .= '<div class="bkg:bas+2 ln"></div>';
+		$html .= xty_info_bar($items);
+		$html .= '</div>';
+		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>' . "\n";
+		/*
+		 *** return html
+		*/
+		return $html;
 	}
 }
 /*  # xty_date
@@ -87,12 +184,12 @@ if (!function_exists('xty_comment_cnt'))
 {
 	function xty_comment_cnt()
 	{
-		$html_retval = 0;
+		$html = 0;
 		if (comments_open())
 		{
-			$html_retval = get_comments_number();
+			$html = get_comments_number();
 		}
-		return $html_retval;
+		return $html;
 	}
 }
 /*  # xty_dsp_content
@@ -209,78 +306,349 @@ if (!function_exists('xty_readmore'))
 {
 	function xty_readmore($arg = '')
 	{
+		$html = '';
+		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
+		$html .= '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+5 cnr:arch-x-small">';
+		$html .= '<div class="fnt:size-x-medium fxd:1 fxe:1">';
 		if (empty($arg))
 		{
-			$html_retval = '<div class="fnt:size-medium mar:vrt+0.5"><span class="fnt:size-large pad:right+0.25"><i class="icon:comment_outline"></i></span>Additional information not available.</div>';
+			$html .= '<i class="icon:comment_outline"></i>';
 		}
 		else
 		{
-			$html_retval = '<div class="fnt:size-medium mar:vrt+0.5"><span class="fnt:size-large pad:right+0.5"><i class="icon:book_open_solid"></i></span><a href="' . $arg . '" >Read more &hellip;</a></div>';
+			$html .= '<i class="icon:book_open_solid"></i>';			
 		}
-		return $html_retval;
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '<div class="fnt:size-x-small fxd:1 fxe:1 pad:left+0.5 pad:top+0.125">';
+		if (empty($arg))
+		{
+			$html .= '<p>Additional information not available.</p>';
+		}
+		else
+		{
+			$html .= '<a href="' . $arg . '" >Read more &hellip;</a>';			
+		}		
+		$html .= '</div>';
+		$html .= '</div>';
+		return $html;
 	}
 }
-/*  # deprecate xidipity_posted_by
-    # 90904.1a
-    # core wp function
-    # return posted author
-**/
-if (!function_exists('xidipity_posted_by'))
-{
-	/**
-	 * Prints author.
-	 */
-	function xidipity_posted_by()
-	{
-		// Global Post
-		global $post;
-		// We need to get author meta data from both inside/outside the loop.
-		$post_author_id = get_post_field('post_author', $post->ID);
-		// Byline
-		$byline = sprintf(esc_html_x('Author -  %s', 'post author', 'xidipity') , '<span class="author vcard"><a class="url fn n" style="max-height:68px;max-width:68px;" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . esc_html(get_the_author_meta('nickname', $post_author_id)) . '</a></span>');
-		// Posted By HTML
-		$html = '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-		
-		/**
-		 * Filters the Posted By HTML.
-		 *
-		 * @param string $html Posted By HTML.
-		 */
-		$html = apply_filters('xidipity_posted_by_html', $html);
-		// echo $html; // WPCS: XSS OK.
-		return $html; // WPCS: XSS OK.
-		
-	}
-}
-/*  # xty_category_icon
+/*  # xty_info_pole
     # 28200801
-    # return category icon
+    # returns html flexbox of items
 **/
-if (!function_exists('xty_category_icon'))
+if (!function_exists('xty_info_pole'))
 {
-	function xty_category_icon($arg = '')
+	function xty_info_pole($items = array())
 	{
-		// system
-		$category = trim(get_cat_name(get_option('default_category')));
-		$html_retval = '<i class="icon:category_solid"></i>';
-		if (is_sticky())
+		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+3 cnr:arch-x-small"><div class="fnt:size-x-medium fxd:1 fxe:1">';
+		$ico_pst = '</div></div>';
+		$txt_pre = '<div class="fnt:size-x-small fxd:1 fxe:1 pad:left+0.5">';
+		$txt_pst = '</div>';
+		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_POLE</cmt>';
+		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
+		$end_item = end($items);
+		foreach ($items as $item)
 		{
-			$html_retval = '<i class="icon:category_sticky_solid"></i>';
+			$add_divider = ($item !== $end_item);
+			switch ($item)
+			{
+				case ('author'):
+					$author = xty_author();
+					if (empty($author))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:user_author_solid"></i>' . $ico_pst;
+						$html .= $txt_pre . $author . $txt_pst;
+					}
+				break;
+				case ('category'):
+					$cat = xty_category();
+					if (empty($cat))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$cat_dft = get_cat_name(get_option('default_category'));
+						if (is_sticky())
+						{
+							$html .= $ico_pre . '<i class="icon:category_sticky_outline"></i>' . $ico_pst;								
+						} elseif (has_match($cat_dft,$cat))
+						{
+							$html .= $ico_pre . '<i class="icon:category_default_outline"></i>' . $ico_pst;
+						} elseif (has_match('archive', $cat))
+						{
+							$html .= $ico_pre . '<i class="icon:category_archive_solid"></i>' . $ico_pst;
+						} else
+						{
+							$html .= $ico_pre . '<i class="icon:category_general_outline"></i>' . $ico_pst;
+						}
+						$html .= $txt_pre . $cat . $txt_pst;	
+					}
+				break;
+				case ('comments'):
+					$comment_cnt = xty_comment_cnt();
+					$comment_msg = 'No Comments';
+					$comment_icon = '<i class="icon:comment_none_outline"></i>';
+					if ($comment_cnt > 1)
+					{
+						$comment_icon = '<i class="icon:comment_outline"></i>';
+						$comment_msg = $comment_cnt . ' Comments';
+					}
+					elseif ($comment_cnt == 1)
+					{
+						$comment_icon = '<i class="icon:comment_outline"></i>';
+						$comment_msg = '1 Comment';
+					}
+					$html .= $ico_pre . $comment_icon . $ico_pst;
+					$html .= $txt_pre . $comment_msg . $txt_pst;
+				break;
+					/*: publish | modified date :*/
+				case ('publish'):
+					$published = xty_published();
+					if ($published['date'] == $published['revision'])
+					{
+						$html .= $ico_pre . '<i class="icon:calendar_outline"></i>' . $ico_pst;
+						$html .= $txt_pre . $published['date'] . $txt_pst;						
+					}
+					else
+					{						
+						$html .= $ico_pre . '<i class="icon:calendar_update_outline"></i>' . $ico_pst;
+						$html .= $txt_pre . $published['revision'] . $txt_pst;
+					}
+				break;
+				case ('tags'):
+					$tags = xty_tags(get_the_ID());
+					if (empty($tags))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:tag_outline"></i>' . $ico_pst;
+						$html .= $txt_pre . $tags . $txt_pst;
+					}
+				break;
+				case ('readmore'):
+					$html .= $ico_pre . '<i class="icon:tag_outline"></i>' . $ico_pst;
+					$html .= $txt_pre . $tags . $txt_pst;
+				break;
+					/*: error :*/
+				default:
+					$html .= $ico_pre . '<i class="icon:error_solid"></i>' . $ico_pst;
+					$html .= $txt_pre . $item . $txt_pst;
+			}
+			if ($add_divider)
+			{
+				$html .= '<div class="fx:break mar:vrt+0.25"></div>';
+			}
 		}
-		elseif (has_match($arg, $category))
+		$html .= '</div>';
+		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_INFO_POLE</cmt>' . "\n";
+		/*
+		 *** return html
+		*/
+		return $html;
+	}
+}
+/*  # xty_info_bar
+    # 28200801
+    # returns html flexbox of items
+**/
+if (!function_exists('xty_info_bar'))
+{
+	function xty_info_bar($items = array())
+	{
+		$ico_pre = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium">';
+		$ico_pst = '</div></div>';
+		$ico_prt = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2 prt[dsp:none]"><div class="fnt:size-x-medium">';
+		$txt_pre = '<div class="fnt:size-2x-small pad:left+0.5">';
+		$txt_pst = '</div>';
+		$txt_prt = '<div class="fnt:size-2x-small pad:left+0.5 prt[dsp:none]">';
+		$div_pre = '<div class="aln:text-center dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
+		$div_pst = '</div>';
+		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>';
+		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
+		$end_item = end($items);
+		foreach ($items as $item)
 		{
-			$html_retval = '<i class="icon:category_solid"></i>';
+			$add_divider = ($item !== $end_item);
+			switch ($item)
+			{
+				case ('author'):
+					$author = xty_author();
+					if (empty($author))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:user_author_solid"></i>' . $ico_pst;
+						$html .= $txt_pre . $author . $txt_pst;
+					}
+				break;
+					/*: browser back :*/
+				case ('back'):
+					$html .= $ico_prt . '<i class="icon:page_previous_solid"></i>' . $ico_pst;
+					$html .= $txt_prt . '<a href="javascript:history.back()">Go Back</a>' . $txt_pst;
+				break;
+				case ('category'):
+					$cat = xty_category();
+					if (empty($cat))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$cat_dft = get_cat_name(get_option('default_category'));
+						if (is_sticky())
+						{
+							$html .= $ico_pre . '<i class="icon:category_sticky_outline"></i>' . $ico_pst;								
+						} elseif (has_match($cat_dft,$cat))
+						{
+							$html .= $ico_pre . '<i class="icon:category_default_outline"></i>' . $ico_pst;
+						} elseif (has_match('archive', $cat))
+						{
+							$html .= $ico_pre . '<i class="icon:category_archive_solid"></i>' . $ico_pst;
+						} else
+						{
+							$html .= $ico_pre . '<i class="icon:category_general_outline"></i>' . $ico_pst;
+						}
+						$html .= $txt_pre . $cat . $txt_pst;	
+					}
+				break;
+				case ('file_type'):
+					$url = wp_get_attachment_url();
+					if (empty($url))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $txt_pre . 'File Type: ' . substr($url, -3) . $txt_pst;
+					}
+				break;
+				case ('img_ratio'):
+					$aspect_ratio = '';
+					$att_metadata = wp_get_attachment_metadata();
+					if (!empty($att_metadata))
+					{
+						$ratio = round(absint($att_metadata['height']) / absint($att_metadata['width']) , 4);
+						switch ($ratio)
+						{
+							case 1:
+								$aspect_ratio = '1x1';
+							break;
+							case 0.75:
+								$aspect_ratio = '4x3';
+							break;
+							case 0.6667:
+								$aspect_ratio = '6x4 (classic film)';
+							break;
+							case 0.7146:
+								$aspect_ratio = '7x5';
+							break;
+							case 0.625:
+								$aspect_ratio = '16x10';
+							break;
+							case 0.5625:
+								$aspect_ratio = '16x9 (high definition)';
+							break;
+							case 0.4281:
+								$aspect_ratio = '21x9 (cinemascope)';
+							break;
+						}
+					}
+					if (empty($aspect_ratio))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:aspect_ratio_outline"></i>' . $ico_pst;
+						$html .= $txt_pre . $aspect_ratio . $txt_pst;
+					}
+				break;
+				case ('img_size'):
+					$att_metadata = wp_get_attachment_metadata();
+					if (empty($att_metadata))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:dimension_solid"></i>' . $ico_pst;
+						$html .= $txt_pre . absint($att_metadata['width']) . 'x' . absint($att_metadata['height']) . ' pixels' . $txt_pst;
+					}
+				break;
+					/*: modified date :*/
+				case ('modified'):
+					$published = xty_published();
+					$html .= $ico_pre . '<i class="icon:calendar_update_outline"></i>' . $ico_pst;
+					$html .= $txt_pre . $published['revision'] . $txt_pst;
+				break;
+				case ('print'):
+					$html .= $ico_prt . '<i class="icon:printer_solid"></i>' . $ico_pst;
+					$html .= $txt_prt . '<a href="javascript:window.print()">Print</a>' . $txt_pst;
+				break;
+					/*: publish date :*/
+				case ('publish'):
+					$published = xty_published();
+					$html .= $ico_pre . '<i class="icon:calendar_outline"></i>' . $ico_pst;
+					$html .= $txt_pre . $published['date'] . $txt_pst;
+				break;
+				case ('tags'):
+					$tags = xty_tags(get_the_ID());
+					if (empty($tags))
+					{
+						$add_divider = false;
+					}
+					else
+					{
+						$html .= $ico_pre . '<i class="icon:tag_outline"></i>' . $ico_pst;
+						$html .= $txt_pre . $tags . $txt_pst;
+					}
+				break;
+					/*: today's date :*/
+				case ('today'):
+					$html .= $ico_pre . '<i class="icon:calendar_today_outline"></i>' . $ico_pst;
+					$html .= $txt_pre . xty_date() . $txt_pst;
+				break;
+					/*: current user :*/
+				case ('user'):
+					$current_user = xty_user();
+					if (!empty($current_user))
+					{
+						$html .= $ico_pre . '<i class="icon:user_solid"></i>' . $ico_pst;
+						$html .= $txt_pre . __($current_user) . $txt_pst;
+					}
+					else
+					{
+						$add_divider = false;
+					}
+				break;
+					/*: error :*/
+				default:
+					$html .= $ico_pre . '<i class="icon:error_solid"></i>' . $ico_pst;
+					$html .= $txt_pre . $item . $txt_pst;
+			}
+			if ($add_divider)
+			{
+				$html .= $div_pre . '&#65372;' . $div_pst;
+				$html .= '<div class="fx:break sm)dsp:none"></div>';
+			}
 		}
-		elseif (has_match(strtolower($arg) , 'archive'))
-		{
-			$html_retval = '<i class="icon:category_archive_solid"></i>';
-		}
-		else
-		{
-			$html_retval = '<i class="icon:category_outline"></i>';
-		}
-		// return html
-		return $html_retval;
+		$html .= '</div>';
+		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>' . "\n";
+		/*
+		 *** return html
+		*/
+		return $html;
 	}
 }
 /*  # xty_category
@@ -289,14 +657,14 @@ if (!function_exists('xty_category_icon'))
 **/
 if (!function_exists('xty_category'))
 {
-	function xty_category($arg = '')
+	function xty_category($lnk = true)
 	{
 		/*
 		          show yoast primary category, or first category
 		*/
 		$category = get_the_category();
 		$useCatLink = true;
-		$html_retval = '';
+		$html = '';
 		/*
 		          if post has a category assigned
 		*/
@@ -343,17 +711,17 @@ if (!function_exists('xty_category'))
 			*/
 			if (!empty($category_display))
 			{
-				if ($useCatLink == true && !empty($category_link) && empty($arg))
+				if ($useCatLink == true && !empty($category_link) && $lnk)
 				{
-					$html_retval .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
+					$html .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
 				}
 				else
 				{
-					$html_retval = htmlspecialchars($category_display);
+					$html = htmlspecialchars($category_display);
 				}
 			}
 			/*: return html :*/
-			return $html_retval;
+			return $html;
 		}
 	}
 }
@@ -370,7 +738,7 @@ if (!function_exists('xidipity_first_category'))
 		*/
 		$category = get_the_category();
 		$useCatLink = true;
-		$html_retval = '';
+		$html = '';
 		/*
 		          if post has a category assigned
 		*/
@@ -419,15 +787,15 @@ if (!function_exists('xidipity_first_category'))
 			{
 				if ($useCatLink == true && !empty($category_link) && empty($arg))
 				{
-					$html_retval .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
+					$html .= '<a href="' . $category_link . '">' . htmlspecialchars($category_display) . '</a>';
 				}
 				else
 				{
-					$html_retval = htmlspecialchars($category_display);
+					$html = htmlspecialchars($category_display);
 				}
 			}
 			/*: return html :*/
-			return $html_retval;
+			return $html;
 		}
 	}
 }
