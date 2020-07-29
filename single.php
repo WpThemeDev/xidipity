@@ -53,37 +53,6 @@ if (have_posts())
 	echo '<div class="bkg:bas+2 ln mar:bottom+0.75"></div>' . "\n";
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/POST/HEADER</cmt>' . "\n";
-	$category       = xty_category();
-	$tags           = xty_tags(get_the_ID());
-	if (empty($tags)) 
-	{
-		$tags = 'No tags';
-	}	
-	$published      = xty_published();
-	if ($published['date'] == $published['revision'])
-	{
-		$pub_icon       = '<i class="icon:calendar_outline"></i>';
-		$published_date = $published['date'];
-	}
-	else
-	{
-		$pub_icon       = '<i class="icon:calendar_update_outline"></i>';
-		$published_date = $published['revision'];
-	}
-	$author         = xty_author();
-	$comment_cnt    = xty_comment_cnt();
-	$comment        = 'No Comments';
-	$comment_icon   = '<i class="icon:comment_none_outline"></i>';
-	if ($comment_cnt > 1)
-	{
-		$comment        = $comment_cnt . ' Comments';
-		$comment_icon   = '<i class="icon:comment_outline"></i>';
-	}
-	elseif ($comment_cnt == 1)
-	{
-		$comment        = '1 Comment';
-		$comment_icon   = '<i class="icon:comment_outline"></i>';
-	}
 	/*
 	 *** yoast breadcrumbs plugin
 	*/
@@ -94,45 +63,20 @@ if (have_posts())
 			yoast_breadcrumb('<div id="breadcrumbs" class="seo-pst-breadcrumbs">', '</div>');
 		}
 	}
+	$options = array(
+		'category',
+		'author',
+		'publish',
+		'tags',
+		'comments'
+	);
 	echo '<div class="fx:rw-rev md)fx:rw fxa:1 fxb:1 fxc:1 mar:bottom+0.75">' . "\n";
 	echo '<cmt name="begin">POST/PANEL/LEFT</cmt>' . "\n";
 	echo '<div class="fxd:1 fxe:1 fb:100% md)fb:25% lg)fb:20% mar:top+0.5 md)mar:top+0">' . "\n";
-	echo '<div class="fx:rw fxa:1 fxb:1 fxc:3">' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2">' . xty_category_icon($category) . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="fnt:size-small pad:left+0.5">' . $category . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2"><i class="icon:user_author_solid"></i></div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="fnt:size-small pad:left+0.5">' . $author . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2">' . $pub_icon . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="fnt:size-small pad:left+0.5">' . $published_date . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2"><i class="icon:tag_outline"></i></div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="fnt:size-small pad:left+0.5">' . $tags . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fx:break mar:vrt+0.25"></div>' . "\n";		
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="aln:text-center bkg:bas+2 cnr:arch-small fnt:size-large ht:2 wd:2">' . $comment_icon . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '<div class="fxd:1 fxe:1">' . "\n";
-	echo '<div class="fnt:size-small pad:left+0.5">' . $comment . '</div>' . "\n";
-	echo '</div>' . "\n";
-	echo '</div>' . "\n";
+	/*
+	 *** left column stats
+	*/
+	echo xty_info_pole($options) . "\n";
 	echo '</div>' . "\n";
 	echo '<cmt name="end">POST/PANEL/LEFT</cmt>' . "\n";
 	echo '<cmt name="begin">POST/PANEL/RIGHT</cmt>' . "\n";
@@ -157,19 +101,31 @@ if (have_posts())
 			echo '<cmt name="end">PAGE/BODY/POST/CONTENT/COMMENTS</cmt>' . "\n";
 		}
 	}
-	/*
-	 *** CONTENT/FOOTER/PHP
-	*/
-	echo '<cmt name="begin">PAGE/BODY/POST/CONTENT/FOOTER</cmt>' . "\n";
-	get_template_part('template-parts/content', 'footer');
-	echo '<cmt name="end">PAGE/BODY/POST/CONTENT/FOOTER</cmt>' . "\n";
 }
 else
 {
 	/*
-	 *** call support agent ***
+	 *** inc/templage-tags/xty_support_agent
 	*/
-	echo xty_support_agent('I was unable to load the blog post.');
+	echo xty_support_agent('Single/php was unable to load the requested blog post.');
+}
+/*
+ *** inc/templage-tags/xty_content_footer
+*/
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
 }
 echo '</article>' . "\n";
 echo '</section>' . "\n";
