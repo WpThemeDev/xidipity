@@ -110,7 +110,6 @@ if (have_posts())
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:bas+2 ln mar:vrt+0.25">&#8203;</div>' . "\n";
 }
 else
 {
@@ -120,11 +119,23 @@ else
 	echo xty_support_agent('I was unable to load the author page template.');
 }
 /*
- *** CONTENT/FOOTER/PHP
+ *** inc/templage-tags/xty_content_footer
 */
-echo '<cmt name="begin">PAGE/BODY/FOOTER</cmt>' . "\n";
-get_template_part('template-parts/content', 'footer');
-echo '<cmt name="end">PAGE/BODY/FOOTER</cmt>' . "\n";
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
+}
 echo '</article>' . "\n";
 echo '</section>' . "\n";
 /*
@@ -146,8 +157,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF:     author.php
- * Build:   200415
- *
+ * EOF: author.php / 28200801
 */
 ?>
