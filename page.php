@@ -12,7 +12,7 @@
 /*
  *** set page options
 */
-xty('mnu-dsp','yes');
+xty('mnu-dsp', 'yes');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -69,16 +69,28 @@ if (have_posts())
 else
 {
 	/*
-	 *** call support agent ***
+	 *** inc/templage-tags/xty_support_agent
 	*/
-	echo xty_support_agent('I was unable to load the page template.');
+	echo xty_support_agent('Page/php was unable to load the requested template.');
 }
 /*
- *** CONTENT/FOOTER/PHP
+ *** inc/templage-tags/xty_content_footer
 */
-echo '<cmt name="begin">PAGE/BODY/FOOTER</cmt>' . "\n";
-get_template_part('template-parts/content', 'footer');
-echo '<cmt name="end">PAGE/BODY/FOOTER</cmt>' . "\n";
+if (empty(xty_user()))
+{
+	echo xty_content_footer(array(
+		'today',
+		'print'
+	));
+}
+else
+{
+	echo xty_content_footer(array(
+		'user',
+		'today',
+		'print'
+	));
+}
 echo '</article>' . "\n";
 echo '</section>' . "\n";
 /*
