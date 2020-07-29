@@ -17,14 +17,15 @@ $wp_data = $wp_query;
 /*
  *** set pagination variables
 */
-$wp_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$wp_ppp = get_option('posts_per_page');
-$wp_total = $wp_query->max_num_pages;
+$per_paged = get_option('posts_per_page');
+$cur_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$tot_paged = $wp_data->max_num_pages;
+
 /*
  *** set page options
 */
 xty('mnu-dsp','yes');
-xty('msg','I was unable to load the archive page template.');
+xty('msg','Archive/php was unable to load the requested template.');
 /*
  *** developer.wordpress.org/reference/functions/get_header/
 */
@@ -45,7 +46,7 @@ else
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
 }
 /*
- *** template-parts/content-precis/php ***
+ *** template-parts/content-precis/php
 */
 include (locate_template('template-parts/content-precis.php', false, false));
 /*
