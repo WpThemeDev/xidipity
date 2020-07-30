@@ -786,10 +786,6 @@ function imgg_shortcode($args = array() , $prm = '')
  *
  *  developer.wordpress.org/reference/functions/wp_list_pages/
  *
- *  @package WordPress
- *  @subpackage Xidipity
- *  @since 0.9.9
- *
 */
 add_shortcode('plst', 'plst_shortcode');
 function plst_shortcode($args = array() , $prm = string)
@@ -802,7 +798,7 @@ function plst_shortcode($args = array() , $prm = string)
 	$bullet = '';
 	$class = '';
 	$depth = 0;
-	$html_retval = '';
+	$html = '';
 	$pre_itm = '';
 	$pst_itm = '';
 	/*
@@ -847,45 +843,35 @@ function plst_shortcode($args = array() , $prm = string)
 		}
 		$pre_itm = '<span class="li-fa">' . $bullet . '</span>';
 	}
-	/*
-	 ***
-	 * sanitize page title argument
-	 ***
-	*/
+	// build list of include / exclude page ids
 	$include_ids = '';
 	$exclude_ids = '';
 	if (!empty($prm_titles))
 	{
-		$separators = array(
-			".",
-			"/",
-			":",
-			";",
-			"|"
-		);
-		$tmp_str = str_replace($separators, ",", $prm_titles);
-		$prm_titles = $tmp_str;
-		/*
-		 ***
-		 * build include/exclude page id list
-		 ***
-		*/
+		// scrub list to standard format
+		$prm_titles = scrub_list($prm_titles);
 		$titles = explode(',', $prm_titles);
+		$end_title = end($titles);
 		foreach ($titles as $title)
 		{
-			$page = get_page_by_title(str_replace('-', '', $title));
-			if ($page)
+			if ($title[0] == '-')
 			{
-				if (substr($title, 0, 1) == '-')
+				$result = get_page_by_title(substr($title, 1));
+				if (abs($result) > 0)
 				{
-					$exclude_ids .= $page->ID . ',';
-				}
-				else
-				{
-					$include_ids .= $page->ID . ',';
+					$exclude_ids .= $result->ID . ',';
 				}
 			}
+			else
+			{
+				$result = get_page_by_title($title);
+				if (abs($result) > 0)
+				{
+					$include_ids .= $result->ID . ',';
+				}				
+			}
 		}
+		// strip last comma
 		if (!empty($include_ids))
 		{
 			$include_ids = substr($include_ids, 0, -1);
@@ -915,13 +901,13 @@ function plst_shortcode($args = array() , $prm = string)
 	 * build return html
 	 ***
 	*/
-	$html_retval = '<ul>';
+	$html = '<ul>';
 	if (!empty($class))
 	{
-		$html_retval = '<ul class="' . $class . '">';
+		$html = '<ul class="' . $class . '">';
 	}
-	$html_retval .= wp_list_pages($wp_data);
-	$html_retval .= '</ul>';
+	$html .= wp_list_pages($wp_data);
+	$html .= '</ul>';
 	/*
 	 ***
 	 * function: wp_reset_postdata
@@ -937,7 +923,7 @@ function plst_shortcode($args = array() , $prm = string)
 	 * return html
 	 ***
 	*/
-	return $html_retval;
+	return $html;
 }
 /**
  *  Utilities
