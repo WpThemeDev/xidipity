@@ -167,6 +167,46 @@ function strwrap($str = '', $pre = '', $pst = '')
 	}
 	return $ret_val;
 }
+
+/**
+ *  name: scrub_list
+ *  build: 28200801
+ *  description:	standardize item separators to comma
+ *					alphabetize
+ *					remove dups
+ *  attributes:
+ *      $arg - string
+ *  returns:
+ *      string
+ */
+function scrub_list($arg = '', $case = '')
+{
+	$list = $arg;
+	if (!empty($list))
+	{
+		$seps = array(
+			".",
+			"/",
+			":",
+			";",
+			"|"
+		);
+		$list = str_replace($seps, ",", $list);
+		$list = implode(',',array_unique(explode(',', $list)));
+		$itms = explode(',', $list);
+		switch (strtolower($case))
+		{
+		    case 'l':
+		        $itms = array_map('strtolower', $itms);
+		        break;
+		    case 'u':
+		        $itms = array_map('strtoupper', $itms);
+		}
+		natcasesort($itms);
+		$list = implode(',',$itms);
+	}
+	return $list;
+}
 /**
  *  name: blog_copyright
  *  build: 190925.1a
@@ -1435,46 +1475,39 @@ function filter_categories($filter = '')
  */
 function get_cat_IDs($args = '')
 {
-	$ret_val = '';
+	$list = '';
 	if (!empty($args))
 	{
-		$delimiters = array(
-			".",
-			"/",
-			":",
-			";",
-			"|"
-		);
-		// make delimiter a comma
-		$delimited_names = str_replace($delimiters, ",", $args);
-		$categories = explode(',', $delimited_names);
-		$cnt=0;
-		$IDs = array();
+		// scrub list to standard format
+		$cat_list = scrub_list($args);
+		$categories = explode(',', $cat_list);
+		$end_category = end($categories);
 		foreach ($categories as $category)
 		{
 			if ($category[0] == '-')
 			{
-				$category_id = get_cat_ID(substr($category, 1));
-				if (abs($category_id) > 0)
+				$result = get_cat_ID(substr($category, 1));
+				if (abs($result) > 0)
 				{
-					$IDs[$cnt] = '-' . $category_id;
+					$list .= '-' . $result;
 				}
 			}
 			else
 			{
-				$category_id = get_cat_ID($category);
+				$result = get_cat_ID($category);
 				if (abs($category_id) > 0)
 				{
-					$IDs[$cnt] = $category_id;
+					$list .= $result;
 				}
 			}
-			$cnt++;
+			if ($category !== $end_category)
+			{
+				$list .= ',';
+			}
 		}
-		sort($IDs,SORT_REGULAR);
-		$ret_val = implode(",",$IDs);
 	}
 	// return string
-	return $ret_val;
+	return $list;
 }
 /**
  * name:    valid_orderby
@@ -1488,19 +1521,23 @@ function get_cat_IDs($args = '')
 function valid_orderby($orderby = '')
 {
 	// default
-	$ret_val = 'date';
-	if (has_match($orderby,'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title'))
+	$result = '';
+	if (!empty($orderby))
 	{
-		if ($orderby == 'id')
+		$orderby = strtolower($orderby);
+		if (has_match($orderby,'author,comment_count,date,id,menu_order,modified,name,none,parent,post_date,post_modified,post_parent,post_title,rand,relevance,title'))
 		{
-			$ret_val = 'ID';
-		}
-		else
-		{
-			$ret_val = strtolower($orderby);
+			if ($orderby == 'id')
+			{
+				$result = 'ID';
+			}
+			else
+			{
+				$result = $orderby;
+			}
 		}
 	}
-	return $ret_val;
+	return $result;
 }
 /**
  *  name: purge_tmpl_mrker
