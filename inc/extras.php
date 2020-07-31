@@ -8,9 +8,6 @@
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
- */
-/*
- *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
  *  bexc    200513    blog excerpt
@@ -27,83 +24,63 @@
  *  lst_theme        get theme info
  *  wp-ver           get wordpess version
  *
-*/
+ */
 /*
- *  Xidipity WordPress Theme
  *
- *  name:   bexc
+ *  name:   excerpt
  *  build:  200513
  *  descrp: display blog excerpt
  *  attributes ($args - array):
  *      readmore - string (n/y)
  *
- *  parameters ($prm - string):
- *      post title - string
+ *  parameters
+ *		$arg - array
+ *      $prm - string
  *
- *  [bexc readmore='']post[/bexc]
+ *  [excerpt readmore='']post[/excerpt]
  *
 */
-add_shortcode('bexc', 'bexc_shortcode');
-function bexc_shortcode($args = array() , $prm = '')
+add_shortcode('excerpt', 'excerpt_shortcode');
+function excerpt_shortcode($args = array() , $prm = '')
 {
-	/*
-	 ***
-	 * variables defaults
-	 ***
-	*/
-	$html_retval = '';
+	$html = '';
 	$readmore = 'n';
-	/*
-	 ***
-	 * parameters
-	 ***
-	*/
-	$page_title = $prm;
-	/*
-	 ***
-	 * initialize local arguments
-	 ***
-	*/
-	if (isset($args['readmore']))
+	if (!empty($prm))
 	{
-		$tmp_str = purge_tmpl_mrker($args['readmore']);
-		if (has_match(strtolower($tmp_str) , 'y,n'))
+		if (array_key_exists('readmore', $args))
 		{
-			$readmore = $tmp_str;
+			$tmp_str = purge_tmpl_mrker($args['readmore']);
+			if (has_match($tmp_str, 'y,n'))
+			{
+				$readmore = $tmp_str;
+			}
 		}
-	}
-	if (!empty($page_title))
-	{
-		$page = get_page_by_title($page_title, OBJECT, array(
+		$page = get_page_by_title($prm, OBJECT, array(
 			'post_type' => 'post'
 		));
 		if (!empty($page))
 		{
-			$bexc = get_the_excerpt($page->ID);
-			if (!empty($bexc))
+			$excerpt = get_the_excerpt($page->ID);
+			if (!empty($excerpt))
 			{
-				$html_retval = $bexc;
-			}
-			else
-			{
-				$html_retval = dsp_err('[bexc] Blog excerpt not found');
-			}
-			if ($readmore == 'y')
-			{
-				$page_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink($page->ID)));
-				$html_retval .= xty_readmore($page_link);
+				$html .= $excerpt;
+				if ($readmore == 'y')
+				{
+					$page_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink($page->ID)));
+					$html .= xty_readmore($page_link);
+				}
 			}
 		}
 		else
 		{
-			$html_retval = dsp_err('[bexc] Blog post not found');
+			$html = dsp_err('Could not find blog title.');
 		}
 	}
 	else
 	{
-		$html_retval = dsp_err('[bexc] Missing blog title parameter');
+		$html = dsp_err('Missing blog title.');
 	}
-	return $html_retval;
+	return $html;
 }
 /*
  *
@@ -130,7 +107,7 @@ function xlst_shortcode($args = array() , $prm = '')
 	 *** initialize arguments
 	*/
 	$args = array_map('strtolower', $args);
-	if (isset($args['align_img']))
+	if (array_key_exists('align_img', $args))
 	{
 		$result = purge_tmpl_mrker($args['align_img']);
 		if (has_match($result, 'x,l,r'))
@@ -149,7 +126,7 @@ function xlst_shortcode($args = array() , $prm = '')
 		}
 	}
 	$pst_per_page = get_option('posts_per_page');
-	if (isset($args['cnt']))
+	if (array_key_exists('cnt', $args))
 	{
 		$result = abs($args['cnt']);
 		if ($result > 0)
@@ -163,7 +140,7 @@ function xlst_shortcode($args = array() , $prm = '')
 	}
 	$order = 'DESC';
 	$orderby = 'date';
-	if (isset($args['orderby']))
+	if (array_key_exists('orderby', $args))
 	{
 		$result = purge_tmpl_mrker($args['orderby']);
 		if (!empty($result))
@@ -175,7 +152,7 @@ function xlst_shortcode($args = array() , $prm = '')
 	{
 		$order = 'ASC';
 	}
-	if (isset($args['order']))
+	if (array_key_exists('order', $args))
 	{
 		$result = purge_tmpl_mrker($args['order']);
 		if (!empty($result) && $result[0] == 'a')
@@ -239,7 +216,7 @@ function xlst_shortcode($args = array() , $prm = '')
 }
 /**
  *  name:   blst
- *  build:  200322
+ *  build:  28200801
  *  descrp: display unordered list of linked blog titles
  *  attributes ($args - array):
  *      class - string
@@ -258,32 +235,22 @@ add_shortcode('blst', 'blst_shortcode');
 function blst_shortcode($args = array() , $prms = '')
 {
 	/*
-	 ***
-	 * variables defaults
-	 ***
+	 *** variables defaults
 	*/
 	$bullet = '';
 	$class = '';
 	$cnt = - 1;
-	$html_retval = '';
+	$html = '';
 	$order = 'ASC';
 	$orderby = 'title';
 	/*
-	 ***
-	 * parameters
-	 ***
+	 *** save args to local variables
 	*/
-	$prm_categories = trim($prms);
-	/*
-	 ***
-	 * save args to local variables
-	 ***
-	*/
-	if (isset($args['bullet']))
+	if (array_key_exists('bullet', $args))
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
-	if (isset($args['class']))
+	if (array_key_exists('class', $args))
 	{
 		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
@@ -291,7 +258,7 @@ function blst_shortcode($args = array() , $prms = '')
 			$class = $tmp_str;
 		}
 	}
-	if (isset($args['cnt']))
+	if (array_key_exists('cnt', $args))
 	{
 		$tmp_num = abs($args['cnt']);
 		if ($tmp_num > 0)
@@ -299,7 +266,7 @@ function blst_shortcode($args = array() , $prms = '')
 			$cnt = $tmp;
 		}
 	}
-	if (isset($args['orderby']))
+	if (array_key_exists('orderby', $args))
 	{
 		$tmp_str = purge_tmpl_mrker($args['orderby']);
 		if (!empty($tmp_str))
@@ -307,7 +274,7 @@ function blst_shortcode($args = array() , $prms = '')
 			$orderby = valid_orderby($tmp_str);
 		}
 	}
-	if (isset($args['order']))
+	if (array_key_exists('order', $args))
 	{
 		$tmp_str = purge_tmpl_mrker($args['order']);
 		if (strtoupper($tmp_str) == 'D')
@@ -316,9 +283,7 @@ function blst_shortcode($args = array() , $prms = '')
 		}
 	}
 	/*
-	 ***
-	 * font awesome bullet
-	 ***
+	 *** font awesome bullet
 	*/
 	if (!empty($bullet))
 	{
@@ -328,70 +293,63 @@ function blst_shortcode($args = array() , $prms = '')
 		$pst_itm = '';
 	}
 	/*
-	 ***
-	 * get category id's
-	 ***
+	 *** get category id's
 	*/
-	$category_ids = get_cat_IDs($prm_categories);
-	/*
-	 ***
-	 * set up db query
-	 ***
-	*/
-	$qry_args = array(
-		'ignore_sticky_posts' => 1,
-		'order' => $order,
-		'orderby' => $orderby,
-		'perm' => 'readable',
-		'posts_per_page' => $cnt,
-		'cat' => $category_ids
-	);
-	$wp_data = new WP_Query($qry_args);
-	/*
-	 ***
-	 * build return html
-	 ***
-	*/
-	$html_retval = '<ul>';
-	if (!empty($class))
+	$category_ids = get_cat_IDs($prms);
+	if (empty($category_ids) && !empty($prms))
 	{
-		$html_retval = '<ul class="' . $class . '">';
-	}
-	if ($wp_data->have_posts())
-	{
-		while ($wp_data->have_posts())
-		{
-			$wp_data->the_post();
-			$html_retval .= '<li>';
-			$html_retval .= '<a href="' . get_permalink() . '">' . $pre_itm . get_the_title() . $pst_itm . '</a>';
-			$html_retval .= '</li>';
-		}
+		$html = dsp_err('Category/s not found!');
 	}
 	else
 	{
-		$html_retval .= '<li>No posts found ...</li>';
+		/*
+		 *** set up db query
+		*/
+		$qry_args = array(
+			'ignore_sticky_posts' => 1,
+			'order' => $order,
+			'orderby' => $orderby,
+			'perm' => 'readable',
+			'posts_per_page' => $cnt,
+			'cat' => $category_ids
+		);
+		$wp_data = new WP_Query($qry_args);
+		if ($wp_data->have_posts())
+		{
+			/*
+			 *** build html
+			*/
+			$html = '<ul>';
+			if (!empty($class))
+			{
+				$html = '<ul class="' . $class . '">';
+			}
+			while ($wp_data->have_posts())
+			{
+				$wp_data->the_post();
+				$html .= '<li>';
+				$html .= '<a href="' . get_permalink() . '">' . $pre_itm . get_the_title() . $pst_itm . '</a>';
+				$html .= '</li>';
+			}
+			$html .= '</ul>';		
+		}
+		else
+		{
+			$html = dsp_err('No posts found for category/s ' . $prms . '.');
+		}
+		/*
+		 *** ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+		*/
+		wp_reset_postdata();
 	}
-	$html_retval .= '</ul>';
 	/*
-	 ***
-	 * function: wp_reset_postdata
-	 * dsc: database code
-	 * ver: 200322
-	 * fnt: reset database query
-	 * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
-	 ***
+	 *** return html
 	*/
-	wp_reset_postdata();
-	/*
-	 ***
-	 * return html
-	 ***
-	*/
-	return $html_retval;
+	return $html;
 }
 /**
  *  name:   clst
- *  build:  200322
+ *  build:  28200801
  *  descrp: display unordered list of linked category titles
  *  attributes ($args - array):
  *      class - string
@@ -411,29 +369,16 @@ add_shortcode('clst', 'clst_shortcode');
 function clst_shortcode($args = array() , $prm = '')
 {
 	/*
-	 ***
-	 * variables defaults
-	 ***
+	 *** variables defaults
 	*/
-	$active = 0;
-	$bullet = '';
-	$class = '';
-	$depth = 0;
-	$html_retval = '';
+	$html = '';
 	$pre_itm = '';
 	$pst_itm = '';
 	/*
-	 ***
-	 * parameters
-	 ***
+	 *** save args to local variables
 	*/
-	$prm_categories = trim($prm);
-	/*
-	 ***
-	 * save args to local variables
-	 ***
-	*/
-	if (isset($args['active']))
+	$active = 0;
+	if (array_key_exists('active', $args))
 	{
 		$tmp_str = strtolower(purge_tmpl_mrker($args['active']));
 		if ($tmp_str == 'y')
@@ -441,11 +386,13 @@ function clst_shortcode($args = array() , $prm = '')
 			$active = 1;
 		}
 	}
-	if (isset($args['bullet']))
+	$bullet = '';
+	if (array_key_exists('bullet', $args))
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
-	if (isset($args['class']))
+	$class = '';
+	if (array_key_exists('class', $args))
 	{
 		$tmp_str = purge_tmpl_mrker($args['class']);
 		if (!empty($tmp_str))
@@ -453,14 +400,13 @@ function clst_shortcode($args = array() , $prm = '')
 			$class = $tmp_str;
 		}
 	}
-	if (isset($args['depth']))
+	$depth = 0;
+	if (array_key_exists('depth', $args))
 	{
 		$depth = abs($args['depth']);
 	}
 	/*
-	 ***
-	 * font awesome bullet
-	 ***
+	 *** font awesome bullet
 	*/
 	if (!empty($bullet))
 	{
@@ -470,100 +416,96 @@ function clst_shortcode($args = array() , $prm = '')
 		$pst_itm = '';
 	}
 	/*
-	 ***
-	 * get category id's
-	 ***
+	 *** get category id's
 	*/
-	$category_ids = get_cat_IDs($prm_categories);
-	/*
-	 ***
-	 * separate include/exclude category id's
-	 ***
-	*/
-	$include_ids = '';
 	$exclude_ids = '';
-	$cat_ids = explode(',', $category_ids);
-	foreach ($cat_ids as $cat_id)
+	$include_ids = '';
+	$category_ids = get_cat_IDs($prm);
+	if (empty($category_ids) && !empty($prms))
 	{
-		if (substr($cat_id, 0, 1) == '-')
+		$html = dsp_err('Category/s not found!');
+	}
+	elseif (!empty($category_ids))
+	{
+		$cat_ids = explode(',', $category_ids);
+		foreach ($cat_ids as $cat_id)
 		{
-			$exclude_ids .= substr($cat_id, 1) . ',';
+			if ($cat_id[0] == '-')
+			{
+				$exclude_ids .= substr($cat_id, 1) . ',';
+			}
+			else
+			{
+				$include_ids .= $cat_id . ',';
+			}
 		}
-		else
+		// strip last comma
+		if (!empty($exclude_ids))
 		{
-			$include_ids .= $cat_id . ',';
+			$exclude_ids = substr($exclude_ids, 0, -1);
 		}
+		if (!empty($include_ids))
+		{
+			$include_ids = substr($include_ids, 0, -1);
+		}
+		/*
+		 *** set up db query
+		*/
+		$wp_data = array(
+			'child_of' => $include_ids,
+			'class' => $class,
+			'current_category' => 0,
+			'depth' => $depth,
+			'echo' => false,
+			'exclude' => $exclude_ids,
+			'exclude_tree' => '',
+			'feed' => '',
+			'feed_image' => '',
+			'feed_type' => '',
+			'hide_empty' => $active,
+			'hide_title_if_empty' => false,
+			'hierarchical' => true,
+			'link_after' => $pst_itm,
+			'link_before' => $pre_itm,
+			'order' => 'ASC',
+			'orderby' => 'name',
+			'separator' => '<br />',
+			'show_count' => false,
+			'show_option_all' => '',
+			'show_option_none' => __('No categories', 'xidipity') ,
+			'style' => 'list',
+			'taxonomy' => 'category',
+			'title_li' => '',
+			'use_desc_for_title' => 0,
+			'walker' => new c_walker()
+		);
+		/*
+		 *** build html
+		*/
+		$html = '';
+		$html .= '<ul>';
+		if (!empty($class))
+		{
+			$html .= '<ul class="' . $class . '">';
+		}
+		$html .= wp_list_categories($wp_data);
+		$html .= '</ul>';
 	}
-	if (!empty($include_ids))
+	else
 	{
-		$include_ids = substr($include_ids, 0, -1);
-	}
-	if (!empty($exclude_ids))
-	{
-		$exclude_ids = substr($exclude_ids, 0, -1);
+		$html = dsp_err('Category/s not found.');
 	}
 	/*
-	 ***
-	 * set up db query
-	 ***
-	*/
-	$wp_data = array(
-		'child_of' => $include_ids,
-		'class' => $class,
-		'current_category' => 0,
-		'depth' => $depth,
-		'echo' => false,
-		'exclude' => $exclude_ids,
-		'exclude_tree' => '',
-		'feed' => '',
-		'feed_image' => '',
-		'feed_type' => '',
-		'hide_empty' => $active,
-		'hide_title_if_empty' => false,
-		'hierarchical' => true,
-		'link_after' => $pst_itm,
-		'link_before' => $pre_itm,
-		'order' => 'ASC',
-		'orderby' => 'name',
-		'separator' => '<br />',
-		'show_count' => false,
-		'show_option_all' => '',
-		'show_option_none' => __('No categories', 'xidipity') ,
-		'style' => 'list',
-		'taxonomy' => 'category',
-		'title_li' => '',
-		'use_desc_for_title' => 0,
-		'walker' => new c_walker()
-	);
-	/*
-	 ***
-	 * build return html
-	 ***
-	*/
-	$html_retval = '<ul>';
-	if (!empty($class))
-	{
-		$html_retval = '<ul class="' . $class . '">';
-	}
-	$html_retval .= wp_list_categories($wp_data);
-	$html_retval .= '</ul>';
-	/*
-	 ***
-	 * function: wp_reset_postdata
-	 * dsc: database code
-	 * ver: 200322
-	 * fnt: reset database query
-	 * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
-	 ***
+	 *** ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
 	*/
 	wp_reset_postdata();
 	/*
 	 *** return html
 	*/
-	return $html_retval;
+	return $html;
 }
 /**
- *  name: imgg (scratchpad)
+ *  name: imgg
  *  build: 28200801
  *  description: Gallery images by category
  *  attributes ($args - array):
@@ -590,7 +532,7 @@ function imgg_shortcode($args = array() , $prm = '')
 	*/
 	$args = array_map('strtolower', $args);
 	$caption = 'c';
-	if (isset($args['caption']))
+	if (array_key_exists('caption', $args))
 	{
 		$result = purge_tmpl_mrker($args['caption']);
 		if (has_match($result, 'l,c,r,x'))
@@ -599,7 +541,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		}
 	}
 	$class = '';
-	if (isset($args['class']))
+	if (array_key_exists('class', $args))
 	{
 		$result = purge_tmpl_mrker($args['class']);
 		if (!empty($result))
@@ -608,7 +550,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		}
 	}
 	$content = 'n';
-	if (isset($args['content']))
+	if (array_key_exists('content', $args))
 	{
 		$result = purge_tmpl_mrker($args['content']);
 		if (has_match($result, 'y,n'))
@@ -617,7 +559,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		}
 	}
 	$pst_per_page = get_option('posts_per_page');
-	if (isset($args['cnt']))
+	if (array_key_exists('cnt', $args))
 	{
 		$result = abs($args['cnt']);
 		if ($result > 0)
@@ -630,7 +572,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		}
 	}
 	$orderby = 'date';
-	if (isset($args['orderby']))
+	if (array_key_exists('orderby', $args))
 	{
 		$result = purge_tmpl_mrker($args['orderby']);
 		if (!empty($result))
@@ -639,7 +581,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		}
 	}
 	$order = 'DESC';
-	if (isset($args['order']))
+	if (array_key_exists('order', $args))
 	{
 		$result = purge_tmpl_mrker($args['order']);
 		if (!empty($result) && $result[0] == 'a')
@@ -754,7 +696,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		/*
 		 *** template-tags/xty_support_agent
 		*/
-		$html = xty_support_agent('There are no images are assigned to the category/s: ' . $prm);
+		$html = dsp_err('There are no images are assigned to the category/s: ' . $prm);
 	}
 	/*
 	 *** template-tags/xty_pagination
@@ -791,9 +733,7 @@ add_shortcode('plst', 'plst_shortcode');
 function plst_shortcode($args = array() , $prm = string)
 {
 	/*
-	 ***
-	 * variables defaults
-	 ***
+	 *** variables defaults
 	*/
 	$bullet = '';
 	$class = '';
@@ -801,18 +741,15 @@ function plst_shortcode($args = array() , $prm = string)
 	$html = '';
 	$pre_itm = '';
 	$pst_itm = '';
+	$prm_titles = '';
 	/*
-	 ***
-	 * parameters
-	 ***
+	 *** save args to local variables
 	*/
-	$prm_titles = trim($prm);
-	/*
-	 ***
-	 * save args to local variables
-	 ***
-	*/
-	if (isset($args['bullet']))
+	if (array_key_exists('class', $args))
+	{
+		$class = purge_tmpl_mrker($args['class']);
+	}
+	if (array_key_exists('bullet', $args))
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
@@ -824,14 +761,12 @@ function plst_shortcode($args = array() , $prm = string)
 			$class = $tmp_str;
 		}
 	}
-	if (isset($args['depth']))
+	if (array_key_exists('depth', $args))
 	{
 		$depth = abs($args['depth']);
 	}
 	/*
-	 ***
-	 * font awesome bullet
-	 ***
+	 *** font awesome bullet
 	*/
 	if (!empty($bullet))
 	{
@@ -846,12 +781,11 @@ function plst_shortcode($args = array() , $prm = string)
 	// build list of include / exclude page ids
 	$include_ids = '';
 	$exclude_ids = '';
-	if (!empty($prm_titles))
+	if (!empty($prm))
 	{
 		// scrub list to standard format
-		$prm_titles = scrub_list($prm_titles);
+		$prm_titles = scrub_list($prm);
 		$titles = explode(',', $prm_titles);
-		$end_title = end($titles);
 		foreach ($titles as $title)
 		{
 			if ($title[0] == '-')
@@ -868,7 +802,7 @@ function plst_shortcode($args = array() , $prm = string)
 				if (abs($result) > 0)
 				{
 					$include_ids .= $result->ID . ',';
-				}				
+				}
 			}
 		}
 		// strip last comma
@@ -881,43 +815,40 @@ function plst_shortcode($args = array() , $prm = string)
 			$exclude_ids = substr($exclude_ids, 0, -1);
 		}
 	}
-	/*
-	 ***
-	 * initialize query arguments
-	 ***
-	*/
-	$wp_data = array(
-		'child_of' => $include_ids,
-		'depth' => $depth,
-		'echo' => false,
-		'exclude' => $exclude_ids,
-		'link_after' => $pst_itm,
-		'link_before' => $pre_itm,
-		'sort_column' => 'title',
-		'title_li' => ''
-	);
-	/*
-	 ***
-	 * build return html
-	 ***
-	*/
-	$html = '<ul>';
-	if (!empty($class))
+	if (empty($include_ids . $exclude_ids) && !empty($prm))
 	{
-		$html = '<ul class="' . $class . '">';
+		$html = dsp_err('Page title/s ' . $prm . ' not found.');
 	}
-	$html .= wp_list_pages($wp_data);
-	$html .= '</ul>';
-	/*
-	 ***
-	 * function: wp_reset_postdata
-	 * dsc: database code
-	 * ver: 200322
-	 * fnt: reset database query
-	 * ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
-	 ***
-	*/
-	wp_reset_postdata();
+	else
+	{
+		/*
+		 *** initialize query arguments
+		*/
+		$wp_data = array(
+			'child_of' => $include_ids,
+			'depth' => $depth,
+			'echo' => false,
+			'exclude' => $exclude_ids,
+			'link_after' => $pst_itm,
+			'link_before' => $pre_itm,
+			'sort_column' => 'title',
+			'title_li' => ''
+		);
+		/*
+		 *** build return html
+		*/
+		$html = '<ul>';
+		if (!empty($class))
+		{
+			$html = '<ul class="' . $class . '">';
+		}
+		$html .= wp_list_pages($wp_data);
+		$html .= '</ul>';
+		/*
+		 *** ref: developer.wordpress.org/reference/functions/wp_reset_postdata/
+		*/
+		wp_reset_postdata();		
+	}
 	/*
 	 ***
 	 * return html
@@ -926,9 +857,9 @@ function plst_shortcode($args = array() , $prm = string)
 	return $html;
 }
 /**
+ *  ---------------------------------------------------------------------------
  *  Utilities
  *  ---------------------------------------------------------------------------
- *
  */
 /*  # fa_ver
     # 28200801
