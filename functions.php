@@ -1481,7 +1481,6 @@ function get_cat_IDs($args = '')
 		// scrub list to standard format
 		$cat_list = scrub_list($args);
 		$categories = explode(',', $cat_list);
-		$end_category = end($categories);
 		foreach ($categories as $category)
 		{
 			if ($category[0] == '-')
@@ -1489,21 +1488,21 @@ function get_cat_IDs($args = '')
 				$result = get_cat_ID(substr($category, 1));
 				if (abs($result) > 0)
 				{
-					$list .= '-' . $result;
+					$list .= '-' . $result . ',';
 				}
 			}
 			else
 			{
 				$result = get_cat_ID($category);
-				if (abs($category_id) > 0)
+				if (abs($result) > 0)
 				{
-					$list .= $result;
+					$list .= $result . ',';
 				}
 			}
-			if ($category !== $end_category)
-			{
-				$list .= ',';
-			}
+		}
+		if (!empty($list))
+		{
+			$list = substr($list, 0, -1);
 		}
 	}
 	// return string
