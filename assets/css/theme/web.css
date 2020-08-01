@@ -185,37 +185,6 @@ body {
 
 /*
 ***
-    * property: adsbygoogle
-    * dsc: adsense background
-    * ver: 28200801
-    * fnt: set background to transparent
-    * ref:
-***
-*/
-ins.adsbygoogle {
-	background: transparent !important;
-}
-
-/*: 320 mobile:*/
-.ad\:wrapper {
-	display: block;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	text-align: center !important;
-	width: 100% !important;
-}
-
-/*: md)media :*/
-@media (min-width: 900px) {
-	.ad\:wrapper {
-		padding: 0;
-		width: calc(100vw - 394px) !important;
-		max-width: calc(100vw - 394px) !important;
-	}
-}
-
-/*
-***
     * element: <ul>
     * dsc: paragraph list
     * ver: 200531
