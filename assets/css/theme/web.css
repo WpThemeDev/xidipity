@@ -578,11 +578,11 @@ a.hdr\:title:hover {
 ***
 */
 .pg\:title {
-	color: var(--hue-bas-dn3);
+	color: var(--hue-bas-dn4);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-h1);
 	font-style: var(--font-style-normal);
-	font-weight: var(--font-wgt-normal);
+	font-weight: var(--font-wgt-medium);
 }
 
 /*
