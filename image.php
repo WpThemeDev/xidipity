@@ -53,7 +53,7 @@ if ($wp_query->have_posts())
 	/*
 	 *** developer.wordpress.org/reference/functions/the_title/
 	*/
-	the_title('<div class="pg:title fnt:size-large sm)fnt:size-3x-large">Media: ', '</div>');
+	the_title('<div class="pg:title">', '</div>');
 	echo '<div class="bkg:bas+2 ln mce[dsp:none]"></div>' . "\n";
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
