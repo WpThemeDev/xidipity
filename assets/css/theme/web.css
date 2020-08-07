@@ -775,7 +775,7 @@ a.hdr\:title:hover {
 body .gist .gist-file {
 	border: solid medium var(--hue-bas-up3);
 	border-radius: 0.3333rem;
-	margin-bottom: -1rem;
+	margin-bottom: 0;
 }
 
 body .gist .gist-data {
