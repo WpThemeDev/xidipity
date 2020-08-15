@@ -10,9 +10,7 @@
 */
 
 /*
-***
-speciality foreground colors
-***
+*** speciality foreground colors
 */
 .txt\:dim {
 	color: var(--hue-bas-dn3);
@@ -31,9 +29,7 @@ speciality foreground colors
 }
 
 /*
-***
-base colors
-***
+*** base colors
 */
 [class~="txt\:bas-4\!active"]:active,
 [class~="txt\:bas-4\!focus"]:focus,
@@ -246,9 +242,7 @@ base colors
 }
 
 /*
-***
-primary hues
-***
+*** primary hues
 */
 [class~="txt\:pri-4\!active"]:active,
 [class~="txt\:pri-4\!focus"]:focus,
@@ -461,9 +455,7 @@ primary hues
 }
 
 /*
-***
-secondary hues
-***
+*** secondary hues
 */
 [class~="txt\:sec-4\!active"]:active,
 [class~="txt\:sec-4\!focus"]:focus,
@@ -676,9 +668,7 @@ secondary hues
 }
 
 /*
-***
-named colors
-***
+*** named colors
 */
 [class~="txt\:transparent\!active"]:active,
 [class~="txt\:transparent\!focus"]:focus,
@@ -828,9 +818,7 @@ named colors
 }
 
 /*
-***
-background tints
-***
+*** background tints
 */
 [class~="bkg\:tint-bas\!active"]:active,
 [class~="bkg\:tint-bas\!focus"]:focus,
@@ -896,9 +884,7 @@ background tints
 }
 
 /*
-***
-hilite mce plugin support
-***
+*** hilite mce plugin support
 */
 .bkg\:highlight-yellow {
 	background-color: var(--hue-highlight-yellow);
@@ -926,129 +912,165 @@ hilite mce plugin support
 }
 
 /*
-***
-gradient backgrounds
-***
+*** gradient backgrounds
 */
 .grd\:pri {
-	background: var(--hue-pri);
-	background: -moz-linear-gradient(top, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
-	background: linear-gradient(to bottom, var(--hue-pri-up1) 0%, var(--hue-pri) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up1)', endColorstr='var(--hue-pri)', GradientType=0);
-	color: var(--hue-wht);
-}
-
-.grd\:pri\+1 {
 	background: var(--hue-pri-up1);
-	background: -moz-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
-	background: linear-gradient(to bottom, var(--hue-pri-up2) 0%, var(--hue-pri-up1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up2)', endColorstr='var(--hue-pri-up1)', GradientType=0);
+	background: -moz-linear-gradient(top, var(--hue-pri-up3) 0%, var(--hue-pri-up1) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-pri-up3) 0%, var(--hue-pri-up1) 100%);
+	background: linear-gradient(to bottom, var(--hue-pri-up3) 0%, var(--hue-pri-up1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up3)', endColorstr='var(--hue-pri-up1)', GradientType=0);
 	color: var(--hue-blk);
 }
 
+table>thead>tr>th.grd\:bas:not(:last-child),
+table>thead>tr>td.grd\:bas:not(:last-child) {
+	border-right: 1px solid var(--hue-pri);
+}
+
+.grd\:pri\+1 {
+	background: var(--hue-pri-up3);
+	background: -moz-linear-gradient(top, var(--hue-pri-up4) 0%, var(--hue-pri-up3) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-pri-up4) 0%, var(--hue-pri-up3) 100%);
+	background: linear-gradient(to bottom, var(--hue-pri-up4) 0%, var(--hue-pri-up3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up4)', endColorstr='var(--hue-pri-up3)', GradientType=0);
+	color: var(--hue-blk);
+}
+
+table>thead>tr>th.grd\:pri\+1:not(:last-child),
+table>thead>tr>td.grd\:pri\+:not(:last-child) {
+	border-right: 1px solid var(--hue-pri-up2);
+}
+
 .grd\:pri-1 {
-	background: var(--hue-pri-dn2);
-	background: -moz-linear-gradient(top, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
-	background: linear-gradient(to bottom, var(--hue-pri-dn1) 0%, var(--hue-pri-dn2) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-dn1)', endColorstr='var(--hue-pri-dn2)', GradientType=0);
+	background: var(--hue-pri);
+	background: -moz-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-pri-up2) 0%, var(--hue-pri) 100%);
+	background: linear-gradient(to bottom, var(--hue-pri-up2) 0%, var(--hue-pri) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-pri-up2)', endColorstr='var(--hue-pri)', GradientType=0);
 	color: var(--hue-wht);
 }
 
 .grd\:sec {
-	background: var(--hue-sec);
-	background: -moz-linear-gradient(top, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
-	background: linear-gradient(to bottom, var(--hue-sec-up1) 0%, var(--hue-sec) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up1)', endColorstr='var(--hue-sec)', GradientType=0);
-	color: var(--hue-wht);
+	background: var(--hue-sec-up1);
+	background: -moz-linear-gradient(top, var(--hue-sec-up3) 0%, var(--hue-sec-up1) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-sec-up3) 0%, var(--hue-sec-up1) 100%);
+	background: linear-gradient(to bottom, var(--hue-sec-up3) 0%, var(--hue-sec-up1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up3)', endColorstr='var(--hue-sec-up1)', GradientType=0);
+	color: var(--hue-blk);
+}
+
+table>thead>tr>th.grd\:bas:not(:last-child),
+table>thead>tr>td.grd\:bas:not(:last-child) {
+	border-right: 1px solid var(--hue-sec);
 }
 
 .grd\:sec\+1 {
-	background: var(--hue-sec-up1);
-	background: -moz-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
-	background: linear-gradient(to bottom, var(--hue-sec-up2) 0%, var(--hue-sec-up1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up2)', endColorstr='var(--hue-sec-up1)', GradientType=0);
+	background: var(--hue-sec-up3);
+	background: -moz-linear-gradient(top, var(--hue-sec-up4) 0%, var(--hue-sec-up3) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-sec-up4) 0%, var(--hue-sec-up3) 100%);
+	background: linear-gradient(to bottom, var(--hue-sec-up4) 0%, var(--hue-sec-up3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up4)', endColorstr='var(--hue-sec-up3)', GradientType=0);
 	color: var(--hue-blk);
+}
+
+table>thead>tr>th.grd\:sec\+1:not(:last-child),
+table>thead>tr>td.grd\:sec\+:not(:last-child) {
+	border-right: 1px solid var(--hue-sec-up2);
 }
 
 .grd\:sec-1 {
-	background: var(--hue-sec-dn2);
-	background: -moz-linear-gradient(top, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
-	background: linear-gradient(to bottom, var(--hue-sec-dn1) 0%, var(--hue-sec-dn2) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-dn1)', endColorstr='var(--hue-sec-dn2)', GradientType=0);
+	background: var(--hue-sec);
+	background: -moz-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-sec-up2) 0%, var(--hue-sec) 100%);
+	background: linear-gradient(to bottom, var(--hue-sec-up2) 0%, var(--hue-sec) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-sec-up2)', endColorstr='var(--hue-sec)', GradientType=0);
 	color: var(--hue-wht);
+}
+
+table>thead>tr>th.grd\:sec-1:not(:last-child),
+table>thead>tr>td.grd\:sec-1:not(:last-child) {
+	border-right: 1px solid var(--hue-sec-dn1);
 }
 
 .grd\:bas {
-	background: var(--hue-bas);
-	background: -moz-linear-gradient(top, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
-	background: linear-gradient(to bottom, var(--hue-bas-up1) 0%, var(--hue-bas) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up1)', endColorstr='var(--hue-bas)', GradientType=0);
-	color: var(--hue-wht);
-}
-
-.grd\:bas\+1 {
 	background: var(--hue-bas-up1);
-	background: -moz-linear-gradient(top, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
-	background: linear-gradient(to bottom, var(--hue-bas-up2) 0%, var(--hue-bas-up1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up2)', endColorstr='var(--hue-bas-up1)', GradientType=0);
+	background: -moz-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up1) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-bas-up4) 0%, var(--hue-bas-up1) 100%);
+	background: linear-gradient(to bottom, var(--hue-bas-up4) 0%, var(--hue-bas-up1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up4)', endColorstr='var(--hue-bas-up1)', GradientType=0);
 	color: var(--hue-blk);
 }
 
+table>thead>tr>th.grd\:bas:not(:last-child),
+table>thead>tr>td.grd\:bas:not(:last-child) {
+	border-right: 1px solid var(--hue-bas);
+}
+
+.grd\:bas\+1 {
+	background: var(--hue-bas-up3);
+	background: -moz-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up3) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-bas-up5) 0%, var(--hue-bas-up3) 100%);
+	background: linear-gradient(to bottom, var(--hue-bas-up5) 0%, var(--hue-bas-up3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up5)', endColorstr='var(--hue-bas-up3)', GradientType=0);
+	color: var(--hue-blk);
+}
+
+table>thead>tr>th.grd\:bas\+1:not(:last-child),
+table>thead>tr>td.grd\:bas\+1:not(:last-child) {
+	border-right: 1px solid var(--hue-bas-up2);
+}
+
 .grd\:bas-1 {
-	background: var(--hue-bas-dn2);
-	background: -moz-linear-gradient(top, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
-	background: -webkit-linear-gradient(top, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
-	background: linear-gradient(to bottom, var(--hue-bas-dn1) 0%, var(--hue-bas-dn2) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-dn1)', endColorstr='var(--hue-bas-dn2)', GradientType=0);
-	color: var(--hue-wht);
+	background: var(--hue-bas);
+	background: -moz-linear-gradient(top, var(--hue-bas-up3) 0%, var(--hue-bas) 100%);
+	background: -webkit-linear-gradient(top, var(--hue-bas-up3) 0%, var(--hue-bas) 100%);
+	background: linear-gradient(to bottom, var(--hue-bas-up3) 0%, var(--hue-bas) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--hue-bas-up3)', endColorstr='var(--hue-bas)', GradientType=0);
+	color: var(--hue-blk);
+}
+
+table>thead>tr>th.grd\:bas-1:not(:last-child),
+table>thead>tr>td.grd\:bas-1:not(:last-child) {
+	border-right: 1px solid var(--hue-bas-dn1);
 }
 
 /*
-***
-table tint even table rows
-***
+*** tint even tbody rows
 */
-tbody.tr\:tint-pri-1 tr:nth-child(even) {
+tbody.tint-pri-1>tr:nth-child(even) {
 	background-color: var(--hue-pri-tint-dn1);
 }
 
-tbody.tr\:tint-sec-1 tr:nth-child(even) {
+tbody.tint-sec-1>tr:nth-child(even) {
 	background-color: var(--hue-sec-tint-dn1);
 }
 
-tbody.tr\:tint-bas-1 tr:nth-child(even) {
+tbody.tint-bas-1>tr:nth-child(even) {
 	background-color: var(--hue-bas-tint-dn1);
 }
 
-tbody.tr\:tint-pri tr:nth-child(even) {
+tbody.tint-pri>tr:nth-child(even) {
 	background-color: var(--hue-pri-tint);
 }
 
-tbody.tr\:tint-sec tr:nth-child(even) {
+tbody.tint-sec>tr:nth-child(even) {
 	background-color: var(--hue-sec-tint);
 }
 
-tbody.tr\:tint-bas tr:nth-child(even) {
+tbody.tint-bas>tr:nth-child(even) {
 	background-color: var(--hue-bas-tint);
 }
 
-tbody.tr\:tint-pri\+1 tr:nth-child(even) {
+tbody.tint-pri\+1>tr:nth-child(even) {
 	background-color: var(--hue-pri-tint-up1);
 }
 
-tbody.tr\:tint-sec\+1 tr:nth-child(even) {
+tbody.tint-sec\+1>tr:nth-child(even) {
 	background-color: var(--hue-sec-tint-up1);
 }
 
-tbody.tr\:tint-bas\+1 tr:nth-child(even) {
+tbody.tint-bas\+1>tr:nth-child(even) {
 	background-color: var(--hue-bas-tint-up1);
 }
 
@@ -1062,9 +1084,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 @media (min-width:640px) {
 
 	/*
-	***
-	speciality foreground colors
-	***
+	*** speciality foreground colors
 	*/
 	.sm\)txt\:dim {
 		color: var(--hue-bas-dn3);
@@ -1083,9 +1103,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	base colors
-	***
+	*** base colors
 	*/
 	[class~="sm\)txt\:bas-4\!active"]:active,
 	[class~="sm\)txt\:bas-4\!focus"]:focus,
@@ -1298,9 +1316,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	primary hues
-	***
+	*** primary hues
 	*/
 	[class~="sm\)txt\:pri-4\!active"]:active,
 	[class~="sm\)txt\:pri-4\!focus"]:focus,
@@ -1513,9 +1529,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	secondary hues
-	***
+	*** secondary hues
 	*/
 	[class~="sm\)txt\:sec-4\!active"]:active,
 	[class~="sm\)txt\:sec-4\!focus"]:focus,
@@ -1728,9 +1742,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	named colors
-	***
+	*** named colors
 	*/
 	[class~="sm\)txt\:transparent\!active"]:active,
 	[class~="sm\)txt\:transparent\!focus"]:focus,
@@ -1880,9 +1892,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	background tints
-	***
+	*** background tints
 	*/
 	[class~="sm\)bkg\:tint-bas\!active"]:active,
 	[class~="sm\)bkg\:tint-bas\!focus"]:focus,
@@ -1958,9 +1968,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 @media (min-width:900px) {
 
 	/*
-	***
-	speciality foreground colors
-	***
+	*** speciality foreground colors
 	*/
 	.md\)txt\:dim {
 		color: var(--hue-bas-dn3);
@@ -1979,9 +1987,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	base colors
-	***
+	*** base colors
 	*/
 	[class~="md\)txt\:bas-4\!active"]:active,
 	[class~="md\)txt\:bas-4\!focus"]:focus,
@@ -2194,9 +2200,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	primary hues
-	***
+	*** primary hues
 	*/
 	[class~="md\)txt\:pri-4\!active"]:active,
 	[class~="md\)txt\:pri-4\!focus"]:focus,
@@ -2409,9 +2413,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	secondary hues
-	***
+	*** secondary hues
 	*/
 	[class~="md\)txt\:sec-4\!active"]:active,
 	[class~="md\)txt\:sec-4\!focus"]:focus,
@@ -2624,9 +2626,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	named colors
-	***
+	*** named colors
 	*/
 	[class~="md\)txt\:transparent\!active"]:active,
 	[class~="md\)txt\:transparent\!focus"]:focus,
@@ -2776,9 +2776,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	background tints
-	***
+	*** background tints
 	*/
 	[class~="md\)bkg\:tint-bas\!active"]:active,
 	[class~="md\)bkg\:tint-bas\!focus"]:focus,
@@ -2854,9 +2852,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 @media (min-width:1200px) {
 
 	/*
-	***
-	speciality foreground colors
-	***
+	*** speciality foreground colors
 	*/
 	.lg\)txt\:dim {
 		color: var(--hue-bas-dn3);
@@ -2875,9 +2871,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	base colors
-	***
+	*** base colors
 	*/
 	[class~="lg\)txt\:bas-4\!active"]:active,
 	[class~="lg\)txt\:bas-4\!focus"]:focus,
@@ -3090,9 +3084,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	primary hues
-	***
+	*** primary hues
 	*/
 	[class~="lg\)txt\:pri-4\!active"]:active,
 	[class~="lg\)txt\:pri-4\!focus"]:focus,
@@ -3305,9 +3297,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	secondary hues
-	***
+	*** secondary hues
 	*/
 	[class~="lg\)txt\:sec-4\!active"]:active,
 	[class~="lg\)txt\:sec-4\!focus"]:focus,
@@ -3520,9 +3510,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	named colors
-	***
+	*** named colors
 	*/
 	[class~="lg\)txt\:transparent\!active"]:active,
 	[class~="lg\)txt\:transparent\!focus"]:focus,
@@ -3672,9 +3660,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	background tints
-	***
+	*** background tints
 	*/
 	[class~="lg\)bkg\:tint-bas\!active"]:active,
 	[class~="lg\)bkg\:tint-bas\!focus"]:focus,
@@ -3750,9 +3736,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 @media (min-width:1800px) {
 
 	/*
-	***
-	speciality foreground colors
-	***
+	*** speciality foreground colors
 	*/
 	.xl\)txt\:dim {
 		color: var(--hue-bas-dn3);
@@ -3771,9 +3755,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	base colors
-	***
+	*** base colors
 	*/
 	[class~="xl\)txt\:bas-4\!active"]:active,
 	[class~="xl\)txt\:bas-4\!focus"]:focus,
@@ -3986,9 +3968,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	primary hues
-	***
+	*** primary hues
 	*/
 	[class~="xl\)txt\:pri-4\!active"]:active,
 	[class~="xl\)txt\:pri-4\!focus"]:focus,
@@ -4201,9 +4181,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	secondary hues
-	***
+	*** secondary hues
 	*/
 	[class~="xl\)txt\:sec-4\!active"]:active,
 	[class~="xl\)txt\:sec-4\!focus"]:focus,
@@ -4416,9 +4394,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	named colors
-	***
+	*** named colors
 	*/
 	[class~="xl\)txt\:transparent\!active"]:active,
 	[class~="xl\)txt\:transparent\!focus"]:focus,
@@ -4568,9 +4544,7 @@ tbody.tr\:tint-bas\+1 tr:nth-child(even) {
 	}
 
 	/*
-	***
-	background tints
-	***
+	*** background tints
 	*/
 	[class~="xl\)bkg\:tint-bas\!active"]:active,
 	[class~="xl\)bkg\:tint-bas\!focus"]:focus,
