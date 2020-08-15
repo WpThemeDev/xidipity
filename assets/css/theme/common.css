@@ -1273,7 +1273,7 @@ table caption {
 table>thead>tr>td,
 table>tbody>tr>th,
 table>thead>tr>th {
-	font-weight: 500;
+	font-weight: var(--font-wgt-medium);
 	text-align: left;
 	padding: 0.25rem 0.5rem;
 }
@@ -1282,11 +1282,8 @@ table>thead>tr>th {
 	background-color: var(--hue-bas-up4);
 }
 
+table>thead>tr>th:not(:last-child),
 table>thead>tr>td:not(:last-child) {
-	border-right: 1px solid var(--content-bg-color);
-}
-
-table>thead>tr>th:not(:last-child) {
 	border-right: 1px solid var(--hue-bas-up2);
 }
 
@@ -1301,7 +1298,6 @@ table>tbody>tr>th:not(:last-child) {
 }
 
 table>tbody>tr>td {
-	background-color: var(--content-bg-color);
 	vertical-align: top;
 	padding: 0.25rem 0.5rem;
 }
@@ -1449,19 +1445,19 @@ table.cols\:fixed-4 table {
 table.cols\:fixed-2 table thead th:not(:last-child),
 table.cols\:fixed-3 table thead th:not(:last-child),
 table.cols\:fixed-4 table thead th:not(:last-child) {
-	border-right: 1px solid var(--hue-bas-up2) !important;
+	border-right: 1px solid var(--hue-bas-up2);
 }
 
 table.cols\:fixed-2 table tr:not(:last-child) td,
 table.cols\:fixed-3 table tr:not(:last-child) td,
 table.cols\:fixed-4 table tr:not(:last-child) td {
-	border-bottom: 1px solid var(--hue-bas-up2) !important;
+	border-bottom: 1px solid var(--hue-bas-up2);
 }
 
 table.cols\:fixed-2 table td:not(:last-child),
 table.cols\:fixed-3 table td:not(:last-child),
 table.cols\:fixed-4 table td:not(:last-child) {
-	border-right: 1px solid var(--hue-bas-up2) !important;
+	border-right: 1px solid var(--hue-bas-up2);
 }
 
 /*
