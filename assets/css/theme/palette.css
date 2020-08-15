@@ -923,8 +923,8 @@
 	color: var(--hue-blk);
 }
 
-table>thead>tr>th.grd\:bas:not(:last-child),
-table>thead>tr>td.grd\:bas:not(:last-child) {
+table>thead>tr>th.grd\:pri:not(:last-child),
+table>thead>tr>td.grd\:pri:not(:last-child) {
 	border-right: 1px solid var(--hue-pri);
 }
 
@@ -951,6 +951,11 @@ table>thead>tr>td.grd\:pri\+:not(:last-child) {
 	color: var(--hue-wht);
 }
 
+table>thead>tr>th.grd\:pri-1:not(:last-child),
+table>thead>tr>td.grd\:pri-1:not(:last-child) {
+	border-right: 1px solid var(--hue-pri-dn1);
+}
+
 .grd\:sec {
 	background: var(--hue-sec-up1);
 	background: -moz-linear-gradient(top, var(--hue-sec-up3) 0%, var(--hue-sec-up1) 100%);
@@ -960,8 +965,8 @@ table>thead>tr>td.grd\:pri\+:not(:last-child) {
 	color: var(--hue-blk);
 }
 
-table>thead>tr>th.grd\:bas:not(:last-child),
-table>thead>tr>td.grd\:bas:not(:last-child) {
+table>thead>tr>th.grd\:sec:not(:last-child),
+table>thead>tr>td.grd\:sec:not(:last-child) {
 	border-right: 1px solid var(--hue-sec);
 }
 
