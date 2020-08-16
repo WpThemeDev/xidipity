@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -442,9 +442,9 @@ function xidipity_widgets_init()
 	register_sidebar(array(
 		'name' => esc_html__('Main Sidebar', 'xidipity') ,
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside class="bkg:content txt:content box:shadow ht:min4 mar:bottom+1 pad:+0.5 pad:bottom+1">',
+		'before_widget' => '<aside class="bkg:content txt:content box:shadow ht:min4 mar:bt+1 pad:+0.5 pad:bt+1">',
 		'after_widget' => '</aside>',
-		'before_title' => '<p class="fnt:size-larger fnt:weight-normal mar:bottom+0.25">',
+		'before_title' => '<p class="fnt:size-larger fnt:weight-normal mar:bt+0.25">',
 		'after_title' => '</p>'
 	));
 }
@@ -1636,6 +1636,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 28200801
+ * EOF: functions.php / 29200815
 */
 ?>
