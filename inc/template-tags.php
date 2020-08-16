@@ -835,6 +835,6 @@ function xidipity_has_excerpt()
 	return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
 /*
- * EOF:     inc/template-tags.php / 29200815
+ * EOF: inc/template-tags.php / 29200815
 */
 ?>
