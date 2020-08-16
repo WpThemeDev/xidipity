@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  assets/css/theme/advance.css
-    * bld:  28200801
+    * bld:  29200815
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -94,53 +94,33 @@
     *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
 ***
 */
-.bdr\:none {
-	border-color: transparent !important;
-}
-
-.bdr\:top-none {
-	border-top-color: transparent !important;
-}
-
-.bdr\:right-none {
-	border-right-color: transparent !important;
-}
-
-.bdr\:bottom-none {
-	border-bottom-color: transparent !important;
-}
-
-.bdr\:left-none {
-	border-left-color: transparent !important;
-}
-
 .bdr\:dashed-thin,
 .bdr\:dashed-medium,
 .bdr\:dashed-thick {
 	border-style: dashed !important;
 }
 
-.bdr\:top-dashed-thin,
-.bdr\:top-dashed-medium,
-.bdr\:top-dashed-thick {
+.bdr\:tp-dashed-thin,
+.bdr\:tp-dashed-medium,
+.bdr\:tp-dashed-thick {
 	border-top-style: dashed !important;
 }
 
-.bdr\:right-dashed-thin,
-.bdr\:right-dashed-medium,
-.bdr\:right-dashed-thick {
+.bdr\:rt-dashed-thin,
+.bdr\:rt-dashed-medium,
+.bdr\:rt-dashed-thick {
 	border-right-style: dashed !important;
 }
 
-.bdr\:bottom-dashed-thin,
-.bdr\:bottom-dashed-medium,
-.bdr\:bottom-dashed-thick {
+.bdr\:bt-dashed-thin,
+.bdr\:bt-dashed-medium,
+.bdr\:bt-dashed-thick {
 	border-bottom-style: dashed !important;
 }
 
-.bdr\:left-dashed-thin,
-.bdr\:left-dashed-medium,
-.bdr\:left-dashed-thick {
+.bdr\:lt-dashed-thin,
+.bdr\:lt-dashed-medium,
+.bdr\:lt-dashed-thick {
 	border-left-style: dashed !important;
 }
 
@@ -150,27 +130,27 @@
 	border-style: dotted !important;
 }
 
-.bdr\:top-dotted-thin,
-.bdr\:top-dotted-medium,
-.bdr\:top-dotted-thick {
+.bdr\:tp-dotted-thin,
+.bdr\:tp-dotted-medium,
+.bdr\:tp-dotted-thick {
 	border-top-style: dotted !important;
 }
 
-.bdr\:right-dotted-thin,
-.bdr\:right-dotted-medium,
-.bdr\:right-dotted-thick {
+.bdr\:rt-dotted-thin,
+.bdr\:rt-dotted-medium,
+.bdr\:rt-dotted-thick {
 	border-right-style: dotted !important;
 }
 
-.bdr\:bottom-dotted-thin,
-.bdr\:bottom-dotted-medium,
-.bdr\:bottom-dotted-thick {
+.bdr\:bt-dotted-thin,
+.bdr\:bt-dotted-medium,
+.bdr\:bt-dotted-thick {
 	border-bottom-style: dotted !important;
 }
 
-.bdr\:left-dotted-thin,
-.bdr\:left-dotted-medium,
-.bdr\:left-dotted-thick {
+.bdr\:lt-dotted-thin,
+.bdr\:lt-dotted-medium,
+.bdr\:lt-dotted-thick {
 	border-left-style: dotted !important;
 }
 
@@ -180,27 +160,27 @@
 	border-style: solid !important;
 }
 
-.bdr\:top-solid-thin,
-.bdr\:top-solid-medium,
-.bdr\:top-solid-thick {
+.bdr\:tp-solid-thin,
+.bdr\:tp-solid-medium,
+.bdr\:tp-solid-thick {
 	border-top-style: solid !important;
 }
 
-.bdr\:right-solid-thin,
-.bdr\:right-solid-medium,
-.bdr\:right-solid-thick {
+.bdr\:rt-solid-thin,
+.bdr\:rt-solid-medium,
+.bdr\:rt-solid-thick {
 	border-right-style: solid !important;
 }
 
-.bdr\:bottom-solid-thin,
-.bdr\:bottom-solid-medium,
-.bdr\:bottom-solid-thick {
+.bdr\:bt-solid-thin,
+.bdr\:bt-solid-medium,
+.bdr\:bt-solid-thick {
 	border-bottom-style: solid !important;
 }
 
-.bdr\:left-solid-thin,
-.bdr\:left-solid-medium,
-.bdr\:left-solid-thick {
+.bdr\:lt-solid-thin,
+.bdr\:lt-solid-medium,
+.bdr\:lt-solid-thick {
 	border-left-style: solid !important;
 }
 
@@ -210,27 +190,27 @@
 	border-width: thin !important;
 }
 
-.bdr\:top-dashed-thin,
-.bdr\:top-dotted-thin,
-.bdr\:top-solid-thin {
+.bdr\:tp-dashed-thin,
+.bdr\:tp-dotted-thin,
+.bdr\:tp-solid-thin {
 	border-top-width: thin !important;
 }
 
-.bdr\:right-dashed-thin,
-.bdr\:right-dotted-thin,
-.bdr\:right-solid-thin {
+.bdr\:rt-dashed-thin,
+.bdr\:rt-dotted-thin,
+.bdr\:rt-solid-thin {
 	border-right-width: thin !important;
 }
 
-.bdr\:bottom-dashed-thin,
-.bdr\:bottom-dotted-thin,
-.bdr\:bottom-solid-thin {
+.bdr\:bt-dashed-thin,
+.bdr\:bt-dotted-thin,
+.bdr\:bt-solid-thin {
 	border-bottom-width: thin !important;
 }
 
-.bdr\:left-dashed-thin,
-.bdr\:left-dotted-thin,
-.bdr\:left-solid-thin {
+.bdr\:lt-dashed-thin,
+.bdr\:lt-dotted-thin,
+.bdr\:lt-solid-thin {
 	border-left-width: thin !important;
 }
 
@@ -240,27 +220,27 @@
 	border-width: medium !important;
 }
 
-.bdr\:top-dashed-medium,
-.bdr\:top-dotted-medium,
-.bdr\:top-solid-medium {
+.bdr\:tp-dashed-medium,
+.bdr\:tp-dotted-medium,
+.bdr\:tp-solid-medium {
 	border-top-width: medium !important;
 }
 
-.bdr\:right-dashed-medium,
-.bdr\:right-dotted-medium,
-.bdr\:right-solid-medium {
+.bdr\:rt-dashed-medium,
+.bdr\:rt-dotted-medium,
+.bdr\:rt-solid-medium {
 	border-right-width: medium !important;
 }
 
-.bdr\:bottom-dashed-medium,
-.bdr\:bottom-dotted-medium,
-.bdr\:bottom-solid-medium {
+.bdr\:bt-dashed-medium,
+.bdr\:bt-dotted-medium,
+.bdr\:bt-solid-medium {
 	border-bottom-width: medium !important;
 }
 
-.bdr\:left-dashed-medium,
-.bdr\:left-dotted-medium,
-.bdr\:left-solid-medium {
+.bdr\:lt-dashed-medium,
+.bdr\:lt-dotted-medium,
+.bdr\:lt-solid-medium {
 	border-left-width: medium !important;
 }
 
@@ -270,27 +250,27 @@
 	border-width: thick !important;
 }
 
-.bdr\:top-dashed-thick,
-.bdr\:top-dotted-thick,
-.bdr\:top-solid-thick {
+.bdr\:tp-dashed-thick,
+.bdr\:tp-dotted-thick,
+.bdr\:tp-solid-thick {
 	border-top-width: thick !important;
 }
 
-.bdr\:right-dashed-thick,
-.bdr\:right-dotted-thick,
-.bdr\:right-solid-thick {
+.bdr\:rt-dashed-thick,
+.bdr\:rt-dotted-thick,
+.bdr\:rt-solid-thick {
 	border-right-width: thick !important;
 }
 
-.bdr\:bottom-dashed-thick,
-.bdr\:bottom-dotted-thick,
-.bdr\:bottom-solid-thick {
+.bdr\:bt-dashed-thick,
+.bdr\:bt-dotted-thick,
+.bdr\:bt-solid-thick {
 	border-bottom-width: thick !important;
 }
 
-.bdr\:left-dashed-thick,
-.bdr\:left-dotted-thick,
-.bdr\:left-solid-thick {
+.bdr\:lt-dashed-thick,
+.bdr\:lt-dotted-thick,
+.bdr\:lt-solid-thick {
 	border-left-width: thick !important;
 }
 
@@ -1603,79 +1583,79 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:top\+0\.125 {
+.mar\:tp\+0\.125 {
 	margin-top: 0.125rem !important;
 }
 
-.mar\:top\+0\.25 {
+.mar\:tp\+0\.25 {
 	margin-top: 0.25rem !important;
 }
 
-.mar\:top\+0\.5 {
+.mar\:tp\+0\.5 {
 	margin-top: 0.5rem !important;
 }
 
-.mar\:top\+0\.75 {
+.mar\:tp\+0\.75 {
 	margin-top: 0.75rem !important;
 }
 
-.mar\:top\+1 {
+.mar\:tp\+1 {
 	margin-top: 1rem !important;
 }
 
-.mar\:top\+1\.25 {
+.mar\:tp\+1\.25 {
 	margin-top: 1.25rem !important;
 }
 
-.mar\:top\+1\.5 {
+.mar\:tp\+1\.5 {
 	margin-top: 1.5rem !important;
 }
 
-.mar\:top\+1\.75 {
+.mar\:tp\+1\.75 {
 	margin-top: 1.75rem !important;
 }
 
-.mar\:top\+2 {
+.mar\:tp\+2 {
 	margin-top: 2rem !important;
 }
 
 /*: 0 margin :*/
-.mar\:top0,
-.mar\:top-0,
-.mar\:top\+0 {
+.mar\:tp0,
+.mar\:tp-0,
+.mar\:tp\+0 {
 	margin-top: 0 !important;
 }
 
 /*: subtract margin :*/
-.mar\:top-0\.25 {
+.mar\:tp-0\.25 {
 	margin-top: -0.25rem !important;
 }
 
-.mar\:top-0\.5 {
+.mar\:tp-0\.5 {
 	margin-top: -0.5rem !important;
 }
 
-.mar\:top-0\.75 {
+.mar\:tp-0\.75 {
 	margin-top: -0.75rem !important;
 }
 
-.mar\:top-1 {
+.mar\:tp-1 {
 	margin-top: -1rem !important;
 }
 
-.mar\:top-1\.25 {
+.mar\:tp-1\.25 {
 	margin-top: -1.25rem !important;
 }
 
-.mar\:top-1\.5 {
+.mar\:tp-1\.5 {
 	margin-top: -1.5rem !important;
 }
 
-.mar\:top-1\.75 {
+.mar\:tp-1\.75 {
 	margin-top: -1.75rem !important;
 }
 
-.mar\:top-2 {
+.mar\:tp-2 {
 	margin-top: -2rem !important;
 }
 
@@ -1689,79 +1669,79 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:right\+0\.125 {
+.mar\:rt\+0\.125 {
 	margin-right: 0.125rem !important;
 }
 
-.mar\:right\+0\.25 {
+.mar\:rt\+0\.25 {
 	margin-right: 0.25rem !important;
 }
 
-.mar\:right\+0\.5 {
+.mar\:rt\+0\.5 {
 	margin-right: 0.5rem !important;
 }
 
-.mar\:right\+0\.75 {
+.mar\:rt\+0\.75 {
 	margin-right: 0.75rem !important;
 }
 
-.mar\:right\+1 {
+.mar\:rt\+1 {
 	margin-right: 1rem !important;
 }
 
-.mar\:right\+1\.25 {
+.mar\:rt\+1\.25 {
 	margin-right: 1.25rem !important;
 }
 
-.mar\:right\+1\.5 {
+.mar\:rt\+1\.5 {
 	margin-right: 1.5rem !important;
 }
 
-.mar\:right\+1\.75 {
+.mar\:rt\+1\.75 {
 	margin-right: 1.75rem !important;
 }
 
-.mar\:right\+2 {
+.mar\:rt\+2 {
 	margin-right: 2rem !important;
 }
 
 /*: 0 margin :*/
-.mar\:right0,
-.mar\:right-0,
-.mar\:right\+0 {
+.mar\:rt0,
+.mar\:rt-0,
+.mar\:rt\+0 {
 	margin-right: 0 !important;
 }
 
 /*: subtract margin :*/
-.mar\:right-0\.25 {
+.mar\:rt-0\.25 {
 	margin-right: -0.25rem !important;
 }
 
-.mar\:right-0\.5 {
+.mar\:rt-0\.5 {
 	margin-right: -0.5rem !important;
 }
 
-.mar\:right-0\.75 {
+.mar\:rt-0\.75 {
 	margin-right: -0.75rem !important;
 }
 
-.mar\:right-1 {
+.mar\:rt-1 {
 	margin-right: -1rem !important;
 }
 
-.mar\:right-1\.25 {
+.mar\:rt-1\.25 {
 	margin-right: -1.25rem !important;
 }
 
-.mar\:right-1\.5 {
+.mar\:rt-1\.5 {
 	margin-right: -1.5rem !important;
 }
 
-.mar\:right-1\.75 {
+.mar\:rt-1\.75 {
 	margin-right: -1.75rem !important;
 }
 
-.mar\:right-2 {
+.mar\:rt-2 {
 	margin-right: -2rem !important;
 }
 
@@ -1775,79 +1755,79 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:bottom\+0\.125 {
+.mar\:bt\+0\.125 {
 	margin-bottom: 0.125rem !important;
 }
 
-.mar\:bottom\+0\.25 {
+.mar\:bt\+0\.25 {
 	margin-bottom: 0.25rem !important;
 }
 
-.mar\:bottom\+0\.5 {
+.mar\:bt\+0\.5 {
 	margin-bottom: 0.5rem !important;
 }
 
-.mar\:bottom\+0\.75 {
+.mar\:bt\+0\.75 {
 	margin-bottom: 0.75rem !important;
 }
 
-.mar\:bottom\+1 {
+.mar\:bt\+1 {
 	margin-bottom: 1rem !important;
 }
 
-.mar\:bottom\+1\.25 {
+.mar\:bt\+1\.25 {
 	margin-bottom: 1.25rem !important;
 }
 
-.mar\:bottom\+1\.5 {
+.mar\:bt\+1\.5 {
 	margin-bottom: 1.5rem !important;
 }
 
-.mar\:bottom\+1\.75 {
+.mar\:bt\+1\.75 {
 	margin-bottom: 1.75rem !important;
 }
 
-.mar\:bottom\+2 {
+.mar\:bt\+2 {
 	margin-bottom: 2rem !important;
 }
 
 /*: 0 margin :*/
-.mar\:bottom0,
-.mar\:bottom-0,
-.mar\:bottom\+0 {
+.mar\:bt0,
+.mar\:bt-0,
+.mar\:bt\+0 {
 	margin-bottom: 0 !important;
 }
 
 /*: subtract margin :*/
-.mar\:bottom-0\.25 {
+.mar\:bt-0\.25 {
 	margin-bottom: -0.25rem !important;
 }
 
-.mar\:bottom-0\.5 {
+.mar\:bt-0\.5 {
 	margin-bottom: -0.5rem !important;
 }
 
-.mar\:bottom-0\.75 {
+.mar\:bt-0\.75 {
 	margin-bottom: -0.75rem !important;
 }
 
-.mar\:bottom-1 {
+.mar\:bt-1 {
 	margin-bottom: -1rem !important;
 }
 
-.mar\:bottom-1\.25 {
+.mar\:bt-1\.25 {
 	margin-bottom: -1.25rem !important;
 }
 
-.mar\:bottom-1\.5 {
+.mar\:bt-1\.5 {
 	margin-bottom: -1.5rem !important;
 }
 
-.mar\:bottom-1\.75 {
+.mar\:bt-1\.75 {
 	margin-bottom: -1.75rem !important;
 }
 
-.mar\:bottom-2 {
+.mar\:bt-2 {
 	margin-bottom: -2rem !important;
 }
 
@@ -1861,79 +1841,79 @@ table.cols\:fixed {
 ***
 */
 /*: add margin :*/
-.mar\:left\+0\.125 {
+.mar\:lt\+0\.125 {
 	margin-left: 0.125rem !important;
 }
 
-.mar\:left\+0\.25 {
+.mar\:lt\+0\.25 {
 	margin-left: 0.25rem !important;
 }
 
-.mar\:left\+0\.5 {
+.mar\:lt\+0\.5 {
 	margin-left: 0.5rem !important;
 }
 
-.mar\:left\+0\.75 {
+.mar\:lt\+0\.75 {
 	margin-left: 0.75rem !important;
 }
 
-.mar\:left\+1 {
+.mar\:lt\+1 {
 	margin-left: 1rem !important;
 }
 
-.mar\:left\+1\.25 {
+.mar\:lt\+1\.25 {
 	margin-left: 1.25rem !important;
 }
 
-.mar\:left\+1\.5 {
+.mar\:lt\+1\.5 {
 	margin-left: 1.5rem !important;
 }
 
-.mar\:left\+1\.75 {
+.mar\:lt\+1\.75 {
 	margin-left: 1.75rem !important;
 }
 
-.mar\:left\+2 {
+.mar\:lt\+2 {
 	margin-left: 2rem !important;
 }
 
 /*: 0 margin :*/
-.mar\:left0,
-.mar\:left-0,
-.mar\:left\+0 {
+.mar\:lt0,
+.mar\:lt-0,
+.mar\:lt\+0 {
 	margin-left: 0 !important;
 }
 
 /*: subtract margin :*/
-.mar\:left-0\.25 {
+.mar\:lt-0\.25 {
 	margin-left: -0.25rem !important;
 }
 
-.mar\:left-0\.5 {
+.mar\:lt-0\.5 {
 	margin-left: -0.5rem !important;
 }
 
-.mar\:left-0\.75 {
+.mar\:lt-0\.75 {
 	margin-left: -0.75rem !important;
 }
 
-.mar\:left-1 {
+.mar\:lt-1 {
 	margin-left: -1rem !important;
 }
 
-.mar\:left-1\.25 {
+.mar\:lt-1\.25 {
 	margin-left: -1.25rem !important;
 }
 
-.mar\:left-1\.5 {
+.mar\:lt-1\.5 {
 	margin-left: -1.5rem !important;
 }
 
-.mar\:left-1\.75 {
+.mar\:lt-1\.75 {
 	margin-left: -1.75rem !important;
 }
 
-.mar\:left-2 {
+.mar\:lt-2 {
 	margin-left: -2rem !important;
 }
 
@@ -2205,45 +2185,45 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
-.pad\:top0,
-.pad\:top-0,
-.pad\:top\+0 {
+.pad\:tp0,
+.pad\:tp-0,
+.pad\:tp\+0 {
 	padding-top: 0 !important;
 }
 
-.pad\:top\+0\.125 {
+.pad\:tp\+0\.125 {
 	padding-top: 0.125rem !important;
 }
 
-.pad\:top\+0\.25 {
+.pad\:tp\+0\.25 {
 	padding-top: 0.25rem !important;
 }
 
-.pad\:top\+0\.5 {
+.pad\:tp\+0\.5 {
 	padding-top: 0.5rem !important;
 }
 
-.pad\:top\+0\.75 {
+.pad\:tp\+0\.75 {
 	padding-top: 0.75rem !important;
 }
 
-.pad\:top\+1 {
+.pad\:tp\+1 {
 	padding-top: 1rem !important;
 }
 
-.pad\:top\+1\.25 {
+.pad\:tp\+1\.25 {
 	padding-top: 1.25rem !important;
 }
 
-.pad\:top\+1\.5 {
+.pad\:tp\+1\.5 {
 	padding-top: 1.5rem !important;
 }
 
-.pad\:top\+1\.75 {
+.pad\:tp\+1\.75 {
 	padding-top: 1.75rem !important;
 }
 
-.pad\:top\+2 {
+.pad\:tp\+2 {
 	padding-top: 2rem !important;
 }
 
@@ -2256,45 +2236,45 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
-.pad\:right0,
-.pad\:right-0,
-.pad\:right\+0 {
+.pad\:rt0,
+.pad\:rt-0,
+.pad\:rt\+0 {
 	padding-right: 0 !important;
 }
 
-.pad\:right\+0\.125 {
+.pad\:rt\+0\.125 {
 	padding-right: 0.125rem !important;
 }
 
-.pad\:right\+0\.25 {
+.pad\:rt\+0\.25 {
 	padding-right: 0.25rem !important;
 }
 
-.pad\:right\+0\.5 {
+.pad\:rt\+0\.5 {
 	padding-right: 0.5rem !important;
 }
 
-.pad\:right\+0\.75 {
+.pad\:rt\+0\.75 {
 	padding-right: 0.75rem !important;
 }
 
-.pad\:right\+1 {
+.pad\:rt\+1 {
 	padding-right: 1rem !important;
 }
 
-.pad\:right\+1\.25 {
+.pad\:rt\+1\.25 {
 	padding-right: 1.25rem !important;
 }
 
-.pad\:right\+1\.5 {
+.pad\:rt\+1\.5 {
 	padding-right: 1.5rem !important;
 }
 
-.pad\:right\+1\.75 {
+.pad\:rt\+1\.75 {
 	padding-right: 1.75rem !important;
 }
 
-.pad\:right\+2 {
+.pad\:rt\+2 {
 	padding-right: 2rem !important;
 }
 
@@ -2307,45 +2287,45 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
-.pad\:bottom0,
-.pad\:bottom-0,
-.pad\:bottom\+0 {
+.pad\:bt0,
+.pad\:bt-0,
+.pad\:bt\+0 {
 	padding-bottom: 0 !important;
 }
 
-.pad\:bottom\+0\.125 {
+.pad\:bt\+0\.125 {
 	padding-bottom: 0.125rem !important;
 }
 
-.pad\:bottom\+0\.25 {
+.pad\:bt\+0\.25 {
 	padding-bottom: 0.25rem !important;
 }
 
-.pad\:bottom\+0\.5 {
+.pad\:bt\+0\.5 {
 	padding-bottom: 0.5rem !important;
 }
 
-.pad\:bottom\+0\.75 {
+.pad\:bt\+0\.75 {
 	padding-bottom: 0.75rem !important;
 }
 
-.pad\:bottom\+1 {
+.pad\:bt\+1 {
 	padding-bottom: 1rem !important;
 }
 
-.pad\:bottom\+1\.25 {
+.pad\:bt\+1\.25 {
 	padding-bottom: 1.25rem !important;
 }
 
-.pad\:bottom\+1\.5 {
+.pad\:bt\+1\.5 {
 	padding-bottom: 1.5rem !important;
 }
 
-.pad\:bottom\+1\.75 {
+.pad\:bt\+1\.75 {
 	padding-bottom: 1.75rem !important;
 }
 
-.pad\:bottom\+2 {
+.pad\:bt\+2 {
 	padding-bottom: 2rem !important;
 }
 
@@ -2358,45 +2338,45 @@ table.cols\:fixed {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
-.pad\:left0,
-.pad\:left-0,
-.pad\:left\+0 {
+.pad\:lt0,
+.pad\:lt-0,
+.pad\:lt\+0 {
 	padding-left: 0 !important;
 }
 
-.pad\:left\+0\.125 {
+.pad\:lt\+0\.125 {
 	padding-left: 0.125rem !important;
 }
 
-.pad\:left\+0\.25 {
+.pad\:lt\+0\.25 {
 	padding-left: 0.25rem !important;
 }
 
-.pad\:left\+0\.5 {
+.pad\:lt\+0\.5 {
 	padding-left: 0.5rem !important;
 }
 
-.pad\:left\+0\.75 {
+.pad\:lt\+0\.75 {
 	padding-left: 0.75rem !important;
 }
 
-.pad\:left\+1 {
+.pad\:lt\+1 {
 	padding-left: 1rem !important;
 }
 
-.pad\:left\+1\.25 {
+.pad\:lt\+1\.25 {
 	padding-left: 1.25rem !important;
 }
 
-.pad\:left\+1\.5 {
+.pad\:lt\+1\.5 {
 	padding-left: 1.5rem !important;
 }
 
-.pad\:left\+1\.75 {
+.pad\:lt\+1\.75 {
 	padding-left: 1.75rem !important;
 }
 
-.pad\:left\+2 {
+.pad\:lt\+2 {
 	padding-left: 2rem !important;
 }
 
@@ -3350,19 +3330,19 @@ table.cols\:fixed {
 		border-color: transparent !important;
 	}
 
-	.sm\)bdr\:top-none {
+	.sm\)bdr\:tp-none {
 		border-top-color: transparent !important;
 	}
 
-	.sm\)bdr\:right-none {
+	.sm\)bdr\:rt-none {
 		border-right-color: transparent !important;
 	}
 
-	.sm\)bdr\:bottom-none {
+	.sm\)bdr\:bt-none {
 		border-bottom-color: transparent !important;
 	}
 
-	.sm\)bdr\:left-none {
+	.sm\)bdr\:lt-none {
 		border-left-color: transparent !important;
 	}
 
@@ -3372,27 +3352,27 @@ table.cols\:fixed {
 		border-style: dashed !important;
 	}
 
-	.sm\)bdr\:top-dashed-thin,
-	.sm\)bdr\:top-dashed-medium,
-	.sm\)bdr\:top-dashed-thick {
+	.sm\)bdr\:tp-dashed-thin,
+	.sm\)bdr\:tp-dashed-medium,
+	.sm\)bdr\:tp-dashed-thick {
 		border-top-style: dashed !important;
 	}
 
-	.sm\)bdr\:right-dashed-thin,
-	.sm\)bdr\:right-dashed-medium,
-	.sm\)bdr\:right-dashed-thick {
+	.sm\)bdr\:rt-dashed-thin,
+	.sm\)bdr\:rt-dashed-medium,
+	.sm\)bdr\:rt-dashed-thick {
 		border-right-style: dashed !important;
 	}
 
-	.sm\)bdr\:bottom-dashed-thin,
-	.sm\)bdr\:bottom-dashed-medium,
-	.sm\)bdr\:bottom-dashed-thick {
+	.sm\)bdr\:bt-dashed-thin,
+	.sm\)bdr\:bt-dashed-medium,
+	.sm\)bdr\:bt-dashed-thick {
 		border-bottom-style: dashed !important;
 	}
 
-	.sm\)bdr\:left-dashed-thin,
-	.sm\)bdr\:left-dashed-medium,
-	.sm\)bdr\:left-dashed-thick {
+	.sm\)bdr\:lt-dashed-thin,
+	.sm\)bdr\:lt-dashed-medium,
+	.sm\)bdr\:lt-dashed-thick {
 		border-left-style: dashed !important;
 	}
 
@@ -3402,27 +3382,27 @@ table.cols\:fixed {
 		border-style: dotted !important;
 	}
 
-	.sm\)bdr\:top-dotted-thin,
-	.sm\)bdr\:top-dotted-medium,
-	.sm\)bdr\:top-dotted-thick {
+	.sm\)bdr\:tp-dotted-thin,
+	.sm\)bdr\:tp-dotted-medium,
+	.sm\)bdr\:tp-dotted-thick {
 		border-top-style: dotted !important;
 	}
 
-	.sm\)bdr\:right-dotted-thin,
-	.sm\)bdr\:right-dotted-medium,
-	.sm\)bdr\:right-dotted-thick {
+	.sm\)bdr\:rt-dotted-thin,
+	.sm\)bdr\:rt-dotted-medium,
+	.sm\)bdr\:rt-dotted-thick {
 		border-right-style: dotted !important;
 	}
 
-	.sm\)bdr\:bottom-dotted-thin,
-	.sm\)bdr\:bottom-dotted-medium,
-	.sm\)bdr\:bottom-dotted-thick {
+	.sm\)bdr\:bt-dotted-thin,
+	.sm\)bdr\:bt-dotted-medium,
+	.sm\)bdr\:bt-dotted-thick {
 		border-bottom-style: dotted !important;
 	}
 
-	.sm\)bdr\:left-dotted-thin,
-	.sm\)bdr\:left-dotted-medium,
-	.sm\)bdr\:left-dotted-thick {
+	.sm\)bdr\:lt-dotted-thin,
+	.sm\)bdr\:lt-dotted-medium,
+	.sm\)bdr\:lt-dotted-thick {
 		border-left-style: dotted !important;
 	}
 
@@ -3432,27 +3412,27 @@ table.cols\:fixed {
 		border-style: solid !important;
 	}
 
-	.sm\)bdr\:top-solid-thin,
-	.sm\)bdr\:top-solid-medium,
-	.sm\)bdr\:top-solid-thick {
+	.sm\)bdr\:tp-solid-thin,
+	.sm\)bdr\:tp-solid-medium,
+	.sm\)bdr\:tp-solid-thick {
 		border-top-style: solid !important;
 	}
 
-	.sm\)bdr\:right-solid-thin,
-	.sm\)bdr\:right-solid-medium,
-	.sm\)bdr\:right-solid-thick {
+	.sm\)bdr\:rt-solid-thin,
+	.sm\)bdr\:rt-solid-medium,
+	.sm\)bdr\:rt-solid-thick {
 		border-right-style: solid !important;
 	}
 
-	.sm\)bdr\:bottom-solid-thin,
-	.sm\)bdr\:bottom-solid-medium,
-	.sm\)bdr\:bottom-solid-thick {
+	.sm\)bdr\:bt-solid-thin,
+	.sm\)bdr\:bt-solid-medium,
+	.sm\)bdr\:bt-solid-thick {
 		border-bottom-style: solid !important;
 	}
 
-	.sm\)bdr\:left-solid-thin,
-	.sm\)bdr\:left-solid-medium,
-	.sm\)bdr\:left-solid-thick {
+	.sm\)bdr\:lt-solid-thin,
+	.sm\)bdr\:lt-solid-medium,
+	.sm\)bdr\:lt-solid-thick {
 		border-left-style: solid !important;
 	}
 
@@ -3462,27 +3442,27 @@ table.cols\:fixed {
 		border-width: thin !important;
 	}
 
-	.sm\)bdr\:top-dashed-thin,
-	.sm\)bdr\:top-dotted-thin,
-	.sm\)bdr\:top-solid-thin {
+	.sm\)bdr\:tp-dashed-thin,
+	.sm\)bdr\:tp-dotted-thin,
+	.sm\)bdr\:tp-solid-thin {
 		border-top-width: thin !important;
 	}
 
-	.sm\)bdr\:right-dashed-thin,
-	.sm\)bdr\:right-dotted-thin,
-	.sm\)bdr\:right-solid-thin {
+	.sm\)bdr\:rt-dashed-thin,
+	.sm\)bdr\:rt-dotted-thin,
+	.sm\)bdr\:rt-solid-thin {
 		border-right-width: thin !important;
 	}
 
-	.sm\)bdr\:bottom-dashed-thin,
-	.sm\)bdr\:bottom-dotted-thin,
-	.sm\)bdr\:bottom-solid-thin {
+	.sm\)bdr\:bt-dashed-thin,
+	.sm\)bdr\:bt-dotted-thin,
+	.sm\)bdr\:bt-solid-thin {
 		border-bottom-width: thin !important;
 	}
 
-	.sm\)bdr\:left-dashed-thin,
-	.sm\)bdr\:left-dotted-thin,
-	.sm\)bdr\:left-solid-thin {
+	.sm\)bdr\:lt-dashed-thin,
+	.sm\)bdr\:lt-dotted-thin,
+	.sm\)bdr\:lt-solid-thin {
 		border-left-width: thin !important;
 	}
 
@@ -3492,27 +3472,27 @@ table.cols\:fixed {
 		border-width: medium !important;
 	}
 
-	.sm\)bdr\:top-dashed-medium,
-	.sm\)bdr\:top-dotted-medium,
-	.sm\)bdr\:top-solid-medium {
+	.sm\)bdr\:tp-dashed-medium,
+	.sm\)bdr\:tp-dotted-medium,
+	.sm\)bdr\:tp-solid-medium {
 		border-top-width: medium !important;
 	}
 
-	.sm\)bdr\:right-dashed-medium,
-	.sm\)bdr\:right-dotted-medium,
-	.sm\)bdr\:right-solid-medium {
+	.sm\)bdr\:rt-dashed-medium,
+	.sm\)bdr\:rt-dotted-medium,
+	.sm\)bdr\:rt-solid-medium {
 		border-right-width: medium !important;
 	}
 
-	.sm\)bdr\:bottom-dashed-medium,
-	.sm\)bdr\:bottom-dotted-medium,
-	.sm\)bdr\:bottom-solid-medium {
+	.sm\)bdr\:bt-dashed-medium,
+	.sm\)bdr\:bt-dotted-medium,
+	.sm\)bdr\:bt-solid-medium {
 		border-bottom-width: medium !important;
 	}
 
-	.sm\)bdr\:left-dashed-medium,
-	.sm\)bdr\:left-dotted-medium,
-	.sm\)bdr\:left-solid-medium {
+	.sm\)bdr\:lt-dashed-medium,
+	.sm\)bdr\:lt-dotted-medium,
+	.sm\)bdr\:lt-solid-medium {
 		border-left-width: medium !important;
 	}
 
@@ -3522,27 +3502,27 @@ table.cols\:fixed {
 		border-width: thick !important;
 	}
 
-	.sm\)bdr\:top-dashed-thick,
-	.sm\)bdr\:top-dotted-thick,
-	.sm\)bdr\:top-solid-thick {
+	.sm\)bdr\:tp-dashed-thick,
+	.sm\)bdr\:tp-dotted-thick,
+	.sm\)bdr\:tp-solid-thick {
 		border-top-width: thick !important;
 	}
 
-	.sm\)bdr\:right-dashed-thick,
-	.sm\)bdr\:right-dotted-thick,
-	.sm\)bdr\:right-solid-thick {
+	.sm\)bdr\:rt-dashed-thick,
+	.sm\)bdr\:rt-dotted-thick,
+	.sm\)bdr\:rt-solid-thick {
 		border-right-width: thick !important;
 	}
 
-	.sm\)bdr\:bottom-dashed-thick,
-	.sm\)bdr\:bottom-dotted-thick,
-	.sm\)bdr\:bottom-solid-thick {
+	.sm\)bdr\:bt-dashed-thick,
+	.sm\)bdr\:bt-dotted-thick,
+	.sm\)bdr\:bt-solid-thick {
 		border-bottom-width: thick !important;
 	}
 
-	.sm\)bdr\:left-dashed-thick,
-	.sm\)bdr\:left-dotted-thick,
-	.sm\)bdr\:left-solid-thick {
+	.sm\)bdr\:lt-dashed-thick,
+	.sm\)bdr\:lt-dotted-thick,
+	.sm\)bdr\:lt-solid-thick {
 		border-left-width: thick !important;
 	}
 
@@ -4851,79 +4831,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.sm\)mar\:top\+0\.125 {
+	.sm\)mar\:tp\+0\.125 {
 		margin-top: 0.125rem !important;
 	}
 
-	.sm\)mar\:top\+0\.25 {
+	.sm\)mar\:tp\+0\.25 {
 		margin-top: 0.25rem !important;
 	}
 
-	.sm\)mar\:top\+0\.5 {
+	.sm\)mar\:tp\+0\.5 {
 		margin-top: 0.5rem !important;
 	}
 
-	.sm\)mar\:top\+0\.75 {
+	.sm\)mar\:tp\+0\.75 {
 		margin-top: 0.75rem !important;
 	}
 
-	.sm\)mar\:top\+1 {
+	.sm\)mar\:tp\+1 {
 		margin-top: 1rem !important;
 	}
 
-	.sm\)mar\:top\+1\.25 {
+	.sm\)mar\:tp\+1\.25 {
 		margin-top: 1.25rem !important;
 	}
 
-	.sm\)mar\:top\+1\.5 {
+	.sm\)mar\:tp\+1\.5 {
 		margin-top: 1.5rem !important;
 	}
 
-	.sm\)mar\:top\+1\.75 {
+	.sm\)mar\:tp\+1\.75 {
 		margin-top: 1.75rem !important;
 	}
 
-	.sm\)mar\:top\+2 {
+	.sm\)mar\:tp\+2 {
 		margin-top: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.sm\)mar\:top0,
-	.sm\)mar\:top-0,
-	.sm\)mar\:top\+0 {
+	.sm\)mar\:tp0,
+	.sm\)mar\:tp-0,
+	.sm\)mar\:tp\+0 {
 		margin-top: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.sm\)mar\:top-0\.25 {
+	.sm\)mar\:tp-0\.25 {
 		margin-top: -0.25rem !important;
 	}
 
-	.sm\)mar\:top-0\.5 {
+	.sm\)mar\:tp-0\.5 {
 		margin-top: -0.5rem !important;
 	}
 
-	.sm\)mar\:top-0\.75 {
+	.sm\)mar\:tp-0\.75 {
 		margin-top: -0.75rem !important;
 	}
 
-	.sm\)mar\:top-1 {
+	.sm\)mar\:tp-1 {
 		margin-top: -1rem !important;
 	}
 
-	.sm\)mar\:top-1\.25 {
+	.sm\)mar\:tp-1\.25 {
 		margin-top: -1.25rem !important;
 	}
 
-	.sm\)mar\:top-1\.5 {
+	.sm\)mar\:tp-1\.5 {
 		margin-top: -1.5rem !important;
 	}
 
-	.sm\)mar\:top-1\.75 {
+	.sm\)mar\:tp-1\.75 {
 		margin-top: -1.75rem !important;
 	}
 
-	.sm\)mar\:top-2 {
+	.sm\)mar\:tp-2 {
 		margin-top: -2rem !important;
 	}
 
@@ -4938,79 +4918,79 @@ table.cols\:fixed {
     */
 
 	/*: add margin :*/
-	.sm\)mar\:right\+0\.125 {
+	.sm\)mar\:rt\+0\.125 {
 		margin-right: 0.125rem !important;
 	}
 
-	.sm\)mar\:right\+0\.25 {
+	.sm\)mar\:rt\+0\.25 {
 		margin-right: 0.25rem !important;
 	}
 
-	.sm\)mar\:right\+0\.5 {
+	.sm\)mar\:rt\+0\.5 {
 		margin-right: 0.5rem !important;
 	}
 
-	.sm\)mar\:right\+0\.75 {
+	.sm\)mar\:rt\+0\.75 {
 		margin-right: 0.75rem !important;
 	}
 
-	.sm\)mar\:right\+1 {
+	.sm\)mar\:rt\+1 {
 		margin-right: 1rem !important;
 	}
 
-	.sm\)mar\:right\+1\.25 {
+	.sm\)mar\:rt\+1\.25 {
 		margin-right: 1.25rem !important;
 	}
 
-	.sm\)mar\:right\+1\.5 {
+	.sm\)mar\:rt\+1\.5 {
 		margin-right: 1.5rem !important;
 	}
 
-	.sm\)mar\:right\+1\.75 {
+	.sm\)mar\:rt\+1\.75 {
 		margin-right: 1.75rem !important;
 	}
 
-	.sm\)mar\:right\+2 {
+	.sm\)mar\:rt\+2 {
 		margin-right: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.sm\)mar\:right0,
-	.sm\)mar\:right-0,
-	.sm\)mar\:right\+0 {
+	.sm\)mar\:rt0,
+	.sm\)mar\:rt-0,
+	.sm\)mar\:rt\+0 {
 		margin-right: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.sm\)mar\:right-0\.25 {
+	.sm\)mar\:rt-0\.25 {
 		margin-right: -0.25rem !important;
 	}
 
-	.sm\)mar\:right-0\.5 {
+	.sm\)mar\:rt-0\.5 {
 		margin-right: -0.5rem !important;
 	}
 
-	.sm\)mar\:right-0\.75 {
+	.sm\)mar\:rt-0\.75 {
 		margin-right: -0.75rem !important;
 	}
 
-	.sm\)mar\:right-1 {
+	.sm\)mar\:rt-1 {
 		margin-right: -1rem !important;
 	}
 
-	.sm\)mar\:right-1\.25 {
+	.sm\)mar\:rt-1\.25 {
 		margin-right: -1.25rem !important;
 	}
 
-	.sm\)mar\:right-1\.5 {
+	.sm\)mar\:rt-1\.5 {
 		margin-right: -1.5rem !important;
 	}
 
-	.sm\)mar\:right-1\.75 {
+	.sm\)mar\:rt-1\.75 {
 		margin-right: -1.75rem !important;
 	}
 
-	.sm\)mar\:right-2 {
+	.sm\)mar\:rt-2 {
 		margin-right: -2rem !important;
 	}
 
@@ -5024,79 +5004,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.sm\)mar\:bottom\+0\.125 {
+	.sm\)mar\:bt\+0\.125 {
 		margin-bottom: 0.125rem !important;
 	}
 
-	.sm\)mar\:bottom\+0\.25 {
+	.sm\)mar\:bt\+0\.25 {
 		margin-bottom: 0.25rem !important;
 	}
 
-	.sm\)mar\:bottom\+0\.5 {
+	.sm\)mar\:bt\+0\.5 {
 		margin-bottom: 0.5rem !important;
 	}
 
-	.sm\)mar\:bottom\+0\.75 {
+	.sm\)mar\:bt\+0\.75 {
 		margin-bottom: 0.75rem !important;
 	}
 
-	.sm\)mar\:bottom\+1 {
+	.sm\)mar\:bt\+1 {
 		margin-bottom: 1rem !important;
 	}
 
-	.sm\)mar\:bottom\+1\.25 {
+	.sm\)mar\:bt\+1\.25 {
 		margin-bottom: 1.25rem !important;
 	}
 
-	.sm\)mar\:bottom\+1\.5 {
+	.sm\)mar\:bt\+1\.5 {
 		margin-bottom: 1.5rem !important;
 	}
 
-	.sm\)mar\:bottom\+1\.75 {
+	.sm\)mar\:bt\+1\.75 {
 		margin-bottom: 1.75rem !important;
 	}
 
-	.sm\)mar\:bottom\+2 {
+	.sm\)mar\:bt\+2 {
 		margin-bottom: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.sm\)mar\:bottom0,
-	.sm\)mar\:bottom-0,
-	.sm\)mar\:bottom\+0 {
+	.sm\)mar\:bt0,
+	.sm\)mar\:bt-0,
+	.sm\)mar\:bt\+0 {
 		margin-bottom: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.sm\)mar\:bottom-0\.25 {
+	.sm\)mar\:bt-0\.25 {
 		margin-bottom: -0.25rem !important;
 	}
 
-	.sm\)mar\:bottom-0\.5 {
+	.sm\)mar\:bt-0\.5 {
 		margin-bottom: -0.5rem !important;
 	}
 
-	.sm\)mar\:bottom-0\.75 {
+	.sm\)mar\:bt-0\.75 {
 		margin-bottom: -0.75rem !important;
 	}
 
-	.sm\)mar\:bottom-1 {
+	.sm\)mar\:bt-1 {
 		margin-bottom: -1rem !important;
 	}
 
-	.sm\)mar\:bottom-1\.25 {
+	.sm\)mar\:bt-1\.25 {
 		margin-bottom: -1.25rem !important;
 	}
 
-	.sm\)mar\:bottom-1\.5 {
+	.sm\)mar\:bt-1\.5 {
 		margin-bottom: -1.5rem !important;
 	}
 
-	.sm\)mar\:bottom-1\.75 {
+	.sm\)mar\:bt-1\.75 {
 		margin-bottom: -1.75rem !important;
 	}
 
-	.sm\)mar\:bottom-2 {
+	.sm\)mar\:bt-2 {
 		margin-bottom: -2rem !important;
 	}
 
@@ -5110,79 +5090,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.sm\)mar\:left\+0\.125 {
+	.sm\)mar\:lt\+0\.125 {
 		margin-left: 0.125rem !important;
 	}
 
-	.sm\)mar\:left\+0\.25 {
+	.sm\)mar\:lt\+0\.25 {
 		margin-left: 0.25rem !important;
 	}
 
-	.sm\)mar\:left\+0\.5 {
+	.sm\)mar\:lt\+0\.5 {
 		margin-left: 0.5rem !important;
 	}
 
-	.sm\)mar\:left\+0\.75 {
+	.sm\)mar\:lt\+0\.75 {
 		margin-left: 0.75rem !important;
 	}
 
-	.sm\)mar\:left\+1 {
+	.sm\)mar\:lt\+1 {
 		margin-left: 1rem !important;
 	}
 
-	.sm\)mar\:left\+1\.25 {
+	.sm\)mar\:lt\+1\.25 {
 		margin-left: 1.25rem !important;
 	}
 
-	.sm\)mar\:left\+1\.5 {
+	.sm\)mar\:lt\+1\.5 {
 		margin-left: 1.5rem !important;
 	}
 
-	.sm\)mar\:left\+1\.75 {
+	.sm\)mar\:lt\+1\.75 {
 		margin-left: 1.75rem !important;
 	}
 
-	.sm\)mar\:left\+2 {
+	.sm\)mar\:lt\+2 {
 		margin-left: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.sm\)mar\:left0,
-	.sm\)mar\:left-0,
-	.sm\)mar\:left\+0 {
+	.sm\)mar\:lt0,
+	.sm\)mar\:lt-0,
+	.sm\)mar\:lt\+0 {
 		margin-left: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.sm\)mar\:left-0\.25 {
+	.sm\)mar\:lt-0\.25 {
 		margin-left: -0.25rem !important;
 	}
 
-	.sm\)mar\:left-0\.5 {
+	.sm\)mar\:lt-0\.5 {
 		margin-left: -0.5rem !important;
 	}
 
-	.sm\)mar\:left-0\.75 {
+	.sm\)mar\:lt-0\.75 {
 		margin-left: -0.75rem !important;
 	}
 
-	.sm\)mar\:left-1 {
+	.sm\)mar\:lt-1 {
 		margin-left: -1rem !important;
 	}
 
-	.sm\)mar\:left-1\.25 {
+	.sm\)mar\:lt-1\.25 {
 		margin-left: -1.25rem !important;
 	}
 
-	.sm\)mar\:left-1\.5 {
+	.sm\)mar\:lt-1\.5 {
 		margin-left: -1.5rem !important;
 	}
 
-	.sm\)mar\:left-1\.75 {
+	.sm\)mar\:lt-1\.75 {
 		margin-left: -1.75rem !important;
 	}
 
-	.sm\)mar\:left-2 {
+	.sm\)mar\:lt-2 {
 		margin-left: -2rem !important;
 	}
 
@@ -5454,45 +5434,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.sm\)pad\:top0,
-	.sm\)pad\:top-0,
-	.sm\)pad\:top\+0 {
+	.sm\)pad\:tp0,
+	.sm\)pad\:tp-0,
+	.sm\)pad\:tp\+0 {
 		padding-top: 0 !important;
 	}
 
-	.sm\)pad\:top\+0\.125 {
+	.sm\)pad\:tp\+0\.125 {
 		padding-top: 0.125rem !important;
 	}
 
-	.sm\)pad\:top\+0\.25 {
+	.sm\)pad\:tp\+0\.25 {
 		padding-top: 0.25rem !important;
 	}
 
-	.sm\)pad\:top\+0\.5 {
+	.sm\)pad\:tp\+0\.5 {
 		padding-top: 0.5rem !important;
 	}
 
-	.sm\)pad\:top\+0\.75 {
+	.sm\)pad\:tp\+0\.75 {
 		padding-top: 0.75rem !important;
 	}
 
-	.sm\)pad\:top\+1 {
+	.sm\)pad\:tp\+1 {
 		padding-top: 1rem !important;
 	}
 
-	.sm\)pad\:top\+1\.25 {
+	.sm\)pad\:tp\+1\.25 {
 		padding-top: 1.25rem !important;
 	}
 
-	.sm\)pad\:top\+1\.5 {
+	.sm\)pad\:tp\+1\.5 {
 		padding-top: 1.5rem !important;
 	}
 
-	.sm\)pad\:top\+1\.75 {
+	.sm\)pad\:tp\+1\.75 {
 		padding-top: 1.75rem !important;
 	}
 
-	.sm\)pad\:top\+2 {
+	.sm\)pad\:tp\+2 {
 		padding-top: 2rem !important;
 	}
 
@@ -5505,45 +5485,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.sm\)pad\:right0,
-	.sm\)pad\:right-0,
-	.sm\)pad\:right\+0 {
+	.sm\)pad\:rt0,
+	.sm\)pad\:rt-0,
+	.sm\)pad\:rt\+0 {
 		padding-right: 0 !important;
 	}
 
-	.sm\)pad\:right\+0\.125 {
+	.sm\)pad\:rt\+0\.125 {
 		padding-right: 0.125rem !important;
 	}
 
-	.sm\)pad\:right\+0\.25 {
+	.sm\)pad\:rt\+0\.25 {
 		padding-right: 0.25rem !important;
 	}
 
-	.sm\)pad\:right\+0\.5 {
+	.sm\)pad\:rt\+0\.5 {
 		padding-right: 0.5rem !important;
 	}
 
-	.sm\)pad\:right\+0\.75 {
+	.sm\)pad\:rt\+0\.75 {
 		padding-right: 0.75rem !important;
 	}
 
-	.sm\)pad\:right\+1 {
+	.sm\)pad\:rt\+1 {
 		padding-right: 1rem !important;
 	}
 
-	.sm\)pad\:right\+1\.25 {
+	.sm\)pad\:rt\+1\.25 {
 		padding-right: 1.25rem !important;
 	}
 
-	.sm\)pad\:right\+1\.5 {
+	.sm\)pad\:rt\+1\.5 {
 		padding-right: 1.5rem !important;
 	}
 
-	.sm\)pad\:right\+1\.75 {
+	.sm\)pad\:rt\+1\.75 {
 		padding-right: 1.75rem !important;
 	}
 
-	.sm\)pad\:right\+2 {
+	.sm\)pad\:rt\+2 {
 		padding-right: 2rem !important;
 	}
 
@@ -5556,45 +5536,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.sm\)pad\:bottom0,
-	.sm\)pad\:bottom-0,
-	.sm\)pad\:bottom\+0 {
+	.sm\)pad\:bt0,
+	.sm\)pad\:bt-0,
+	.sm\)pad\:bt\+0 {
 		padding-bottom: 0 !important;
 	}
 
-	.sm\)pad\:bottom\+0\.125 {
+	.sm\)pad\:bt\+0\.125 {
 		padding-bottom: 0.125rem !important;
 	}
 
-	.sm\)pad\:bottom\+0\.25 {
+	.sm\)pad\:bt\+0\.25 {
 		padding-bottom: 0.25rem !important;
 	}
 
-	.sm\)pad\:bottom\+0\.5 {
+	.sm\)pad\:bt\+0\.5 {
 		padding-bottom: 0.5rem !important;
 	}
 
-	.sm\)pad\:bottom\+0\.75 {
+	.sm\)pad\:bt\+0\.75 {
 		padding-bottom: 0.75rem !important;
 	}
 
-	.sm\)pad\:bottom\+1 {
+	.sm\)pad\:bt\+1 {
 		padding-bottom: 1rem !important;
 	}
 
-	.sm\)pad\:bottom\+1\.25 {
+	.sm\)pad\:bt\+1\.25 {
 		padding-bottom: 1.25rem !important;
 	}
 
-	.sm\)pad\:bottom\+1\.5 {
+	.sm\)pad\:bt\+1\.5 {
 		padding-bottom: 1.5rem !important;
 	}
 
-	.sm\)pad\:bottom\+1\.75 {
+	.sm\)pad\:bt\+1\.75 {
 		padding-bottom: 1.75rem !important;
 	}
 
-	.sm\)pad\:bottom\+2 {
+	.sm\)pad\:bt\+2 {
 		padding-bottom: 2rem !important;
 	}
 
@@ -5607,45 +5587,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.sm\)pad\:left0,
-	.sm\)pad\:left-0,
-	.sm\)pad\:left\+0 {
+	.sm\)pad\:lt0,
+	.sm\)pad\:lt-0,
+	.sm\)pad\:lt\+0 {
 		padding-left: 0 !important;
 	}
 
-	.sm\)pad\:left\+0\.125 {
+	.sm\)pad\:lt\+0\.125 {
 		padding-left: 0.125rem !important;
 	}
 
-	.sm\)pad\:left\+0\.25 {
+	.sm\)pad\:lt\+0\.25 {
 		padding-left: 0.25rem !important;
 	}
 
-	.sm\)pad\:left\+0\.5 {
+	.sm\)pad\:lt\+0\.5 {
 		padding-left: 0.5rem !important;
 	}
 
-	.sm\)pad\:left\+0\.75 {
+	.sm\)pad\:lt\+0\.75 {
 		padding-left: 0.75rem !important;
 	}
 
-	.sm\)pad\:left\+1 {
+	.sm\)pad\:lt\+1 {
 		padding-left: 1rem !important;
 	}
 
-	.sm\)pad\:left\+1\.25 {
+	.sm\)pad\:lt\+1\.25 {
 		padding-left: 1.25rem !important;
 	}
 
-	.sm\)pad\:left\+1\.5 {
+	.sm\)pad\:lt\+1\.5 {
 		padding-left: 1.5rem !important;
 	}
 
-	.sm\)pad\:left\+1\.75 {
+	.sm\)pad\:lt\+1\.75 {
 		padding-left: 1.75rem !important;
 	}
 
-	.sm\)pad\:left\+2 {
+	.sm\)pad\:lt\+2 {
 		padding-left: 2rem !important;
 	}
 
@@ -6600,19 +6580,19 @@ table.cols\:fixed {
 		border-color: transparent !important;
 	}
 
-	.md\)bdr\:top-none {
+	.md\)bdr\:tp-none {
 		border-top-color: transparent !important;
 	}
 
-	.md\)bdr\:right-none {
+	.md\)bdr\:rt-none {
 		border-right-color: transparent !important;
 	}
 
-	.md\)bdr\:bottom-none {
+	.md\)bdr\:bt-none {
 		border-bottom-color: transparent !important;
 	}
 
-	.md\)bdr\:left-none {
+	.md\)bdr\:lt-none {
 		border-left-color: transparent !important;
 	}
 
@@ -6622,27 +6602,27 @@ table.cols\:fixed {
 		border-style: dashed !important;
 	}
 
-	.md\)bdr\:top-dashed-thin,
-	.md\)bdr\:top-dashed-medium,
-	.md\)bdr\:top-dashed-thick {
+	.md\)bdr\:tp-dashed-thin,
+	.md\)bdr\:tp-dashed-medium,
+	.md\)bdr\:tp-dashed-thick {
 		border-top-style: dashed !important;
 	}
 
-	.md\)bdr\:right-dashed-thin,
-	.md\)bdr\:right-dashed-medium,
-	.md\)bdr\:right-dashed-thick {
+	.md\)bdr\:rt-dashed-thin,
+	.md\)bdr\:rt-dashed-medium,
+	.md\)bdr\:rt-dashed-thick {
 		border-right-style: dashed !important;
 	}
 
-	.md\)bdr\:bottom-dashed-thin,
-	.md\)bdr\:bottom-dashed-medium,
-	.md\)bdr\:bottom-dashed-thick {
+	.md\)bdr\:bt-dashed-thin,
+	.md\)bdr\:bt-dashed-medium,
+	.md\)bdr\:bt-dashed-thick {
 		border-bottom-style: dashed !important;
 	}
 
-	.md\)bdr\:left-dashed-thin,
-	.md\)bdr\:left-dashed-medium,
-	.md\)bdr\:left-dashed-thick {
+	.md\)bdr\:lt-dashed-thin,
+	.md\)bdr\:lt-dashed-medium,
+	.md\)bdr\:lt-dashed-thick {
 		border-left-style: dashed !important;
 	}
 
@@ -6652,27 +6632,27 @@ table.cols\:fixed {
 		border-style: dotted !important;
 	}
 
-	.md\)bdr\:top-dotted-thin,
-	.md\)bdr\:top-dotted-medium,
-	.md\)bdr\:top-dotted-thick {
+	.md\)bdr\:tp-dotted-thin,
+	.md\)bdr\:tp-dotted-medium,
+	.md\)bdr\:tp-dotted-thick {
 		border-top-style: dotted !important;
 	}
 
-	.md\)bdr\:right-dotted-thin,
-	.md\)bdr\:right-dotted-medium,
-	.md\)bdr\:right-dotted-thick {
+	.md\)bdr\:rt-dotted-thin,
+	.md\)bdr\:rt-dotted-medium,
+	.md\)bdr\:rt-dotted-thick {
 		border-right-style: dotted !important;
 	}
 
-	.md\)bdr\:bottom-dotted-thin,
-	.md\)bdr\:bottom-dotted-medium,
-	.md\)bdr\:bottom-dotted-thick {
+	.md\)bdr\:bt-dotted-thin,
+	.md\)bdr\:bt-dotted-medium,
+	.md\)bdr\:bt-dotted-thick {
 		border-bottom-style: dotted !important;
 	}
 
-	.md\)bdr\:left-dotted-thin,
-	.md\)bdr\:left-dotted-medium,
-	.md\)bdr\:left-dotted-thick {
+	.md\)bdr\:lt-dotted-thin,
+	.md\)bdr\:lt-dotted-medium,
+	.md\)bdr\:lt-dotted-thick {
 		border-left-style: dotted !important;
 	}
 
@@ -6682,27 +6662,27 @@ table.cols\:fixed {
 		border-style: solid !important;
 	}
 
-	.md\)bdr\:top-solid-thin,
-	.md\)bdr\:top-solid-medium,
-	.md\)bdr\:top-solid-thick {
+	.md\)bdr\:tp-solid-thin,
+	.md\)bdr\:tp-solid-medium,
+	.md\)bdr\:tp-solid-thick {
 		border-top-style: solid !important;
 	}
 
-	.md\)bdr\:right-solid-thin,
-	.md\)bdr\:right-solid-medium,
-	.md\)bdr\:right-solid-thick {
+	.md\)bdr\:rt-solid-thin,
+	.md\)bdr\:rt-solid-medium,
+	.md\)bdr\:rt-solid-thick {
 		border-right-style: solid !important;
 	}
 
-	.md\)bdr\:bottom-solid-thin,
-	.md\)bdr\:bottom-solid-medium,
-	.md\)bdr\:bottom-solid-thick {
+	.md\)bdr\:bt-solid-thin,
+	.md\)bdr\:bt-solid-medium,
+	.md\)bdr\:bt-solid-thick {
 		border-bottom-style: solid !important;
 	}
 
-	.md\)bdr\:left-solid-thin,
-	.md\)bdr\:left-solid-medium,
-	.md\)bdr\:left-solid-thick {
+	.md\)bdr\:lt-solid-thin,
+	.md\)bdr\:lt-solid-medium,
+	.md\)bdr\:lt-solid-thick {
 		border-left-style: solid !important;
 	}
 
@@ -6712,27 +6692,27 @@ table.cols\:fixed {
 		border-width: thin !important;
 	}
 
-	.md\)bdr\:top-dashed-thin,
-	.md\)bdr\:top-dotted-thin,
-	.md\)bdr\:top-solid-thin {
+	.md\)bdr\:tp-dashed-thin,
+	.md\)bdr\:tp-dotted-thin,
+	.md\)bdr\:tp-solid-thin {
 		border-top-width: thin !important;
 	}
 
-	.md\)bdr\:right-dashed-thin,
-	.md\)bdr\:right-dotted-thin,
-	.md\)bdr\:right-solid-thin {
+	.md\)bdr\:rt-dashed-thin,
+	.md\)bdr\:rt-dotted-thin,
+	.md\)bdr\:rt-solid-thin {
 		border-right-width: thin !important;
 	}
 
-	.md\)bdr\:bottom-dashed-thin,
-	.md\)bdr\:bottom-dotted-thin,
-	.md\)bdr\:bottom-solid-thin {
+	.md\)bdr\:bt-dashed-thin,
+	.md\)bdr\:bt-dotted-thin,
+	.md\)bdr\:bt-solid-thin {
 		border-bottom-width: thin !important;
 	}
 
-	.md\)bdr\:left-dashed-thin,
-	.md\)bdr\:left-dotted-thin,
-	.md\)bdr\:left-solid-thin {
+	.md\)bdr\:lt-dashed-thin,
+	.md\)bdr\:lt-dotted-thin,
+	.md\)bdr\:lt-solid-thin {
 		border-left-width: thin !important;
 	}
 
@@ -6742,27 +6722,27 @@ table.cols\:fixed {
 		border-width: medium !important;
 	}
 
-	.md\)bdr\:top-dashed-medium,
-	.md\)bdr\:top-dotted-medium,
-	.md\)bdr\:top-solid-medium {
+	.md\)bdr\:tp-dashed-medium,
+	.md\)bdr\:tp-dotted-medium,
+	.md\)bdr\:tp-solid-medium {
 		border-top-width: medium !important;
 	}
 
-	.md\)bdr\:right-dashed-medium,
-	.md\)bdr\:right-dotted-medium,
-	.md\)bdr\:right-solid-medium {
+	.md\)bdr\:rt-dashed-medium,
+	.md\)bdr\:rt-dotted-medium,
+	.md\)bdr\:rt-solid-medium {
 		border-right-width: medium !important;
 	}
 
-	.md\)bdr\:bottom-dashed-medium,
-	.md\)bdr\:bottom-dotted-medium,
-	.md\)bdr\:bottom-solid-medium {
+	.md\)bdr\:bt-dashed-medium,
+	.md\)bdr\:bt-dotted-medium,
+	.md\)bdr\:bt-solid-medium {
 		border-bottom-width: medium !important;
 	}
 
-	.md\)bdr\:left-dashed-medium,
-	.md\)bdr\:left-dotted-medium,
-	.md\)bdr\:left-solid-medium {
+	.md\)bdr\:lt-dashed-medium,
+	.md\)bdr\:lt-dotted-medium,
+	.md\)bdr\:lt-solid-medium {
 		border-left-width: medium !important;
 	}
 
@@ -6772,27 +6752,27 @@ table.cols\:fixed {
 		border-width: thick !important;
 	}
 
-	.md\)bdr\:top-dashed-thick,
-	.md\)bdr\:top-dotted-thick,
-	.md\)bdr\:top-solid-thick {
+	.md\)bdr\:tp-dashed-thick,
+	.md\)bdr\:tp-dotted-thick,
+	.md\)bdr\:tp-solid-thick {
 		border-top-width: thick !important;
 	}
 
-	.md\)bdr\:right-dashed-thick,
-	.md\)bdr\:right-dotted-thick,
-	.md\)bdr\:right-solid-thick {
+	.md\)bdr\:rt-dashed-thick,
+	.md\)bdr\:rt-dotted-thick,
+	.md\)bdr\:rt-solid-thick {
 		border-right-width: thick !important;
 	}
 
-	.md\)bdr\:bottom-dashed-thick,
-	.md\)bdr\:bottom-dotted-thick,
-	.md\)bdr\:bottom-solid-thick {
+	.md\)bdr\:bt-dashed-thick,
+	.md\)bdr\:bt-dotted-thick,
+	.md\)bdr\:bt-solid-thick {
 		border-bottom-width: thick !important;
 	}
 
-	.md\)bdr\:left-dashed-thick,
-	.md\)bdr\:left-dotted-thick,
-	.md\)bdr\:left-solid-thick {
+	.md\)bdr\:lt-dashed-thick,
+	.md\)bdr\:lt-dotted-thick,
+	.md\)bdr\:lt-solid-thick {
 		border-left-width: thick !important;
 	}
 
@@ -8101,75 +8081,75 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.md\)mar\:top\+0\.25 {
+	.md\)mar\:tp\+0\.25 {
 		margin-top: 0.25rem !important;
 	}
 
-	.md\)mar\:top\+0\.5 {
+	.md\)mar\:tp\+0\.5 {
 		margin-top: 0.5rem !important;
 	}
 
-	.md\)mar\:top\+0\.75 {
+	.md\)mar\:tp\+0\.75 {
 		margin-top: 0.75rem !important;
 	}
 
-	.md\)mar\:top\+1 {
+	.md\)mar\:tp\+1 {
 		margin-top: 1rem !important;
 	}
 
-	.md\)mar\:top\+1\.25 {
+	.md\)mar\:tp\+1\.25 {
 		margin-top: 1.25rem !important;
 	}
 
-	.md\)mar\:top\+1\.5 {
+	.md\)mar\:tp\+1\.5 {
 		margin-top: 1.5rem !important;
 	}
 
-	.md\)mar\:top\+1\.75 {
+	.md\)mar\:tp\+1\.75 {
 		margin-top: 1.75rem !important;
 	}
 
-	.md\)mar\:top\+2 {
+	.md\)mar\:tp\+2 {
 		margin-top: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.md\)mar\:top0,
-	.md\)mar\:top-0,
-	.md\)mar\:top\+0 {
+	.md\)mar\:tp0,
+	.md\)mar\:tp-0,
+	.md\)mar\:tp\+0 {
 		margin-top: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.md\)mar\:top-0\.25 {
+	.md\)mar\:tp-0\.25 {
 		margin-top: -0.25rem !important;
 	}
 
-	.md\)mar\:top-0\.5 {
+	.md\)mar\:tp-0\.5 {
 		margin-top: -0.5rem !important;
 	}
 
-	.md\)mar\:top-0\.75 {
+	.md\)mar\:tp-0\.75 {
 		margin-top: -0.75rem !important;
 	}
 
-	.md\)mar\:top-1 {
+	.md\)mar\:tp-1 {
 		margin-top: -1rem !important;
 	}
 
-	.md\)mar\:top-1\.25 {
+	.md\)mar\:tp-1\.25 {
 		margin-top: -1.25rem !important;
 	}
 
-	.md\)mar\:top-1\.5 {
+	.md\)mar\:tp-1\.5 {
 		margin-top: -1.5rem !important;
 	}
 
-	.md\)mar\:top-1\.75 {
+	.md\)mar\:tp-1\.75 {
 		margin-top: -1.75rem !important;
 	}
 
-	.md\)mar\:top-2 {
+	.md\)mar\:tp-2 {
 		margin-top: -2rem !important;
 	}
 
@@ -8184,75 +8164,75 @@ table.cols\:fixed {
     */
 
 	/*: add margin :*/
-	.md\)mar\:right\+0\.25 {
+	.md\)mar\:rt\+0\.25 {
 		margin-right: 0.25rem !important;
 	}
 
-	.md\)mar\:right\+0\.5 {
+	.md\)mar\:rt\+0\.5 {
 		margin-right: 0.5rem !important;
 	}
 
-	.md\)mar\:right\+0\.75 {
+	.md\)mar\:rt\+0\.75 {
 		margin-right: 0.75rem !important;
 	}
 
-	.md\)mar\:right\+1 {
+	.md\)mar\:rt\+1 {
 		margin-right: 1rem !important;
 	}
 
-	.md\)mar\:right\+1\.25 {
+	.md\)mar\:rt\+1\.25 {
 		margin-right: 1.25rem !important;
 	}
 
-	.md\)mar\:right\+1\.5 {
+	.md\)mar\:rt\+1\.5 {
 		margin-right: 1.5rem !important;
 	}
 
-	.md\)mar\:right\+1\.75 {
+	.md\)mar\:rt\+1\.75 {
 		margin-right: 1.75rem !important;
 	}
 
-	.md\)mar\:right\+2 {
+	.md\)mar\:rt\+2 {
 		margin-right: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.md\)mar\:right0,
-	.md\)mar\:right-0,
-	.md\)mar\:right\+0 {
+	.md\)mar\:rt0,
+	.md\)mar\:rt-0,
+	.md\)mar\:rt\+0 {
 		margin-right: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.md\)mar\:right-0\.25 {
+	.md\)mar\:rt-0\.25 {
 		margin-right: -0.25rem !important;
 	}
 
-	.md\)mar\:right-0\.5 {
+	.md\)mar\:rt-0\.5 {
 		margin-right: -0.5rem !important;
 	}
 
-	.md\)mar\:right-0\.75 {
+	.md\)mar\:rt-0\.75 {
 		margin-right: -0.75rem !important;
 	}
 
-	.md\)mar\:right-1 {
+	.md\)mar\:rt-1 {
 		margin-right: -1rem !important;
 	}
 
-	.md\)mar\:right-1\.25 {
+	.md\)mar\:rt-1\.25 {
 		margin-right: -1.25rem !important;
 	}
 
-	.md\)mar\:right-1\.5 {
+	.md\)mar\:rt-1\.5 {
 		margin-right: -1.5rem !important;
 	}
 
-	.md\)mar\:right-1\.75 {
+	.md\)mar\:rt-1\.75 {
 		margin-right: -1.75rem !important;
 	}
 
-	.md\)mar\:right-2 {
+	.md\)mar\:rt-2 {
 		margin-right: -2rem !important;
 	}
 
@@ -8267,75 +8247,75 @@ table.cols\:fixed {
     */
 
 	/*: add margin :*/
-	.md\)mar\:bottom\+0\.25 {
+	.md\)mar\:bt\+0\.25 {
 		margin-bottom: 0.25rem !important;
 	}
 
-	.md\)mar\:bottom\+0\.5 {
+	.md\)mar\:bt\+0\.5 {
 		margin-bottom: 0.5rem !important;
 	}
 
-	.md\)mar\:bottom\+0\.75 {
+	.md\)mar\:bt\+0\.75 {
 		margin-bottom: 0.75rem !important;
 	}
 
-	.md\)mar\:bottom\+1 {
+	.md\)mar\:bt\+1 {
 		margin-bottom: 1rem !important;
 	}
 
-	.md\)mar\:bottom\+1\.25 {
+	.md\)mar\:bt\+1\.25 {
 		margin-bottom: 1.25rem !important;
 	}
 
-	.md\)mar\:bottom\+1\.5 {
+	.md\)mar\:bt\+1\.5 {
 		margin-bottom: 1.5rem !important;
 	}
 
-	.md\)mar\:bottom\+1\.75 {
+	.md\)mar\:bt\+1\.75 {
 		margin-bottom: 1.75rem !important;
 	}
 
-	.md\)mar\:bottom\+2 {
+	.md\)mar\:bt\+2 {
 		margin-bottom: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.md\)mar\:bottom0,
-	.md\)mar\:bottom-0,
-	.md\)mar\:bottom\+0 {
+	.md\)mar\:bt0,
+	.md\)mar\:bt-0,
+	.md\)mar\:bt\+0 {
 		margin-bottom: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.md\)mar\:bottom-0\.25 {
+	.md\)mar\:bt-0\.25 {
 		margin-bottom: -0.25rem !important;
 	}
 
-	.md\)mar\:bottom-0\.5 {
+	.md\)mar\:bt-0\.5 {
 		margin-bottom: -0.5rem !important;
 	}
 
-	.md\)mar\:bottom-0\.75 {
+	.md\)mar\:bt-0\.75 {
 		margin-bottom: -0.75rem !important;
 	}
 
-	.md\)mar\:bottom-1 {
+	.md\)mar\:bt-1 {
 		margin-bottom: -1rem !important;
 	}
 
-	.md\)mar\:bottom-1\.25 {
+	.md\)mar\:bt-1\.25 {
 		margin-bottom: -1.25rem !important;
 	}
 
-	.md\)mar\:bottom-1\.5 {
+	.md\)mar\:bt-1\.5 {
 		margin-bottom: -1.5rem !important;
 	}
 
-	.md\)mar\:bottom-1\.75 {
+	.md\)mar\:bt-1\.75 {
 		margin-bottom: -1.75rem !important;
 	}
 
-	.md\)mar\:bottom-2 {
+	.md\)mar\:bt-2 {
 		margin-bottom: -2rem !important;
 	}
 
@@ -8350,75 +8330,75 @@ table.cols\:fixed {
     */
 
 	/*: add margin :*/
-	.md\)mar\:left\+0\.25 {
+	.md\)mar\:lt\+0\.25 {
 		margin-left: 0.25rem !important;
 	}
 
-	.md\)mar\:left\+0\.5 {
+	.md\)mar\:lt\+0\.5 {
 		margin-left: 0.5rem !important;
 	}
 
-	.md\)mar\:left\+0\.75 {
+	.md\)mar\:lt\+0\.75 {
 		margin-left: 0.75rem !important;
 	}
 
-	.md\)mar\:left\+1 {
+	.md\)mar\:lt\+1 {
 		margin-left: 1rem !important;
 	}
 
-	.md\)mar\:left\+1\.25 {
+	.md\)mar\:lt\+1\.25 {
 		margin-left: 1.25rem !important;
 	}
 
-	.md\)mar\:left\+1\.5 {
+	.md\)mar\:lt\+1\.5 {
 		margin-left: 1.5rem !important;
 	}
 
-	.md\)mar\:left\+1\.75 {
+	.md\)mar\:lt\+1\.75 {
 		margin-left: 1.75rem !important;
 	}
 
-	.md\)mar\:left\+2 {
+	.md\)mar\:lt\+2 {
 		margin-left: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.md\)mar\:left0,
-	.md\)mar\:left-0,
-	.md\)mar\:left\+0 {
+	.md\)mar\:lt0,
+	.md\)mar\:lt-0,
+	.md\)mar\:lt\+0 {
 		margin-left: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.md\)mar\:left-0\.25 {
+	.md\)mar\:lt-0\.25 {
 		margin-left: -0.25rem !important;
 	}
 
-	.md\)mar\:left-0\.5 {
+	.md\)mar\:lt-0\.5 {
 		margin-left: -0.5rem !important;
 	}
 
-	.md\)mar\:left-0\.75 {
+	.md\)mar\:lt-0\.75 {
 		margin-left: -0.75rem !important;
 	}
 
-	.md\)mar\:left-1 {
+	.md\)mar\:lt-1 {
 		margin-left: -1rem !important;
 	}
 
-	.md\)mar\:left-1\.25 {
+	.md\)mar\:lt-1\.25 {
 		margin-left: -1.25rem !important;
 	}
 
-	.md\)mar\:left-1\.5 {
+	.md\)mar\:lt-1\.5 {
 		margin-left: -1.5rem !important;
 	}
 
-	.md\)mar\:left-1\.75 {
+	.md\)mar\:lt-1\.75 {
 		margin-left: -1.75rem !important;
 	}
 
-	.md\)mar\:left-2 {
+	.md\)mar\:lt-2 {
 		margin-left: -2rem !important;
 	}
 
@@ -8682,45 +8662,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.md\)pad\:top0,
-	.md\)pad\:top-0,
-	.md\)pad\:top\+0 {
+	.md\)pad\:tp0,
+	.md\)pad\:tp-0,
+	.md\)pad\:tp\+0 {
 		padding-top: 0 !important;
 	}
 
-	.md\)pad\:top\+0\.125 {
+	.md\)pad\:tp\+0\.125 {
 		padding-top: 0.125rem !important;
 	}
 
-	.md\)pad\:top\+0\.25 {
+	.md\)pad\:tp\+0\.25 {
 		padding-top: 0.25rem !important;
 	}
 
-	.md\)pad\:top\+0\.5 {
+	.md\)pad\:tp\+0\.5 {
 		padding-top: 0.5rem !important;
 	}
 
-	.md\)pad\:top\+0\.75 {
+	.md\)pad\:tp\+0\.75 {
 		padding-top: 0.75rem !important;
 	}
 
-	.md\)pad\:top\+1 {
+	.md\)pad\:tp\+1 {
 		padding-top: 1rem !important;
 	}
 
-	.md\)pad\:top\+1\.25 {
+	.md\)pad\:tp\+1\.25 {
 		padding-top: 1.25rem !important;
 	}
 
-	.md\)pad\:top\+1\.5 {
+	.md\)pad\:tp\+1\.5 {
 		padding-top: 1.5rem !important;
 	}
 
-	.md\)pad\:top\+1\.75 {
+	.md\)pad\:tp\+1\.75 {
 		padding-top: 1.75rem !important;
 	}
 
-	.md\)pad\:top\+2 {
+	.md\)pad\:tp\+2 {
 		padding-top: 2rem !important;
 	}
 
@@ -8733,45 +8713,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.md\)pad\:right0,
-	.md\)pad\:right-0,
-	.md\)pad\:right\+0 {
+	.md\)pad\:rt0,
+	.md\)pad\:rt-0,
+	.md\)pad\:rt\+0 {
 		padding-right: 0 !important;
 	}
 
-	.md\)pad\:right\+0\.125 {
+	.md\)pad\:rt\+0\.125 {
 		padding-right: 0.125rem !important;
 	}
 
-	.md\)pad\:right\+0\.25 {
+	.md\)pad\:rt\+0\.25 {
 		padding-right: 0.25rem !important;
 	}
 
-	.md\)pad\:right\+0\.5 {
+	.md\)pad\:rt\+0\.5 {
 		padding-right: 0.5rem !important;
 	}
 
-	.md\)pad\:right\+0\.75 {
+	.md\)pad\:rt\+0\.75 {
 		padding-right: 0.75rem !important;
 	}
 
-	.md\)pad\:right\+1 {
+	.md\)pad\:rt\+1 {
 		padding-right: 1rem !important;
 	}
 
-	.md\)pad\:right\+1\.25 {
+	.md\)pad\:rt\+1\.25 {
 		padding-right: 1.25rem !important;
 	}
 
-	.md\)pad\:right\+1\.5 {
+	.md\)pad\:rt\+1\.5 {
 		padding-right: 1.5rem !important;
 	}
 
-	.md\)pad\:right\+1\.75 {
+	.md\)pad\:rt\+1\.75 {
 		padding-right: 1.75rem !important;
 	}
 
-	.md\)pad\:right\+2 {
+	.md\)pad\:rt\+2 {
 		padding-right: 2rem !important;
 	}
 
@@ -8784,45 +8764,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.md\)pad\:bottom0,
-	.md\)pad\:bottom-0,
-	.md\)pad\:bottom\+0 {
+	.md\)pad\:bt0,
+	.md\)pad\:bt-0,
+	.md\)pad\:bt\+0 {
 		padding-bottom: 0 !important;
 	}
 
-	.md\)pad\:bottom\+0\.125 {
+	.md\)pad\:bt\+0\.125 {
 		padding-bottom: 0.125rem !important;
 	}
 
-	.md\)pad\:bottom\+0\.25 {
+	.md\)pad\:bt\+0\.25 {
 		padding-bottom: 0.25rem !important;
 	}
 
-	.md\)pad\:bottom\+0\.5 {
+	.md\)pad\:bt\+0\.5 {
 		padding-bottom: 0.5rem !important;
 	}
 
-	.md\)pad\:bottom\+0\.75 {
+	.md\)pad\:bt\+0\.75 {
 		padding-bottom: 0.75rem !important;
 	}
 
-	.md\)pad\:bottom\+1 {
+	.md\)pad\:bt\+1 {
 		padding-bottom: 1rem !important;
 	}
 
-	.md\)pad\:bottom\+1\.25 {
+	.md\)pad\:bt\+1\.25 {
 		padding-bottom: 1.25rem !important;
 	}
 
-	.md\)pad\:bottom\+1\.5 {
+	.md\)pad\:bt\+1\.5 {
 		padding-bottom: 1.5rem !important;
 	}
 
-	.md\)pad\:bottom\+1\.75 {
+	.md\)pad\:bt\+1\.75 {
 		padding-bottom: 1.75rem !important;
 	}
 
-	.md\)pad\:bottom\+2 {
+	.md\)pad\:bt\+2 {
 		padding-bottom: 2rem !important;
 	}
 
@@ -8835,45 +8815,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.md\)pad\:left0,
-	.md\)pad\:left-0,
-	.md\)pad\:left\+0 {
+	.md\)pad\:lt0,
+	.md\)pad\:lt-0,
+	.md\)pad\:lt\+0 {
 		padding-left: 0 !important;
 	}
 
-	.md\)pad\:left\+0\.125 {
+	.md\)pad\:lt\+0\.125 {
 		padding-left: 0.125rem !important;
 	}
 
-	.md\)pad\:left\+0\.25 {
+	.md\)pad\:lt\+0\.25 {
 		padding-left: 0.25rem !important;
 	}
 
-	.md\)pad\:left\+0\.5 {
+	.md\)pad\:lt\+0\.5 {
 		padding-left: 0.5rem !important;
 	}
 
-	.md\)pad\:left\+0\.75 {
+	.md\)pad\:lt\+0\.75 {
 		padding-left: 0.75rem !important;
 	}
 
-	.md\)pad\:left\+1 {
+	.md\)pad\:lt\+1 {
 		padding-left: 1rem !important;
 	}
 
-	.md\)pad\:left\+1\.25 {
+	.md\)pad\:lt\+1\.25 {
 		padding-left: 1.25rem !important;
 	}
 
-	.md\)pad\:left\+1\.5 {
+	.md\)pad\:lt\+1\.5 {
 		padding-left: 1.5rem !important;
 	}
 
-	.md\)pad\:left\+1\.75 {
+	.md\)pad\:lt\+1\.75 {
 		padding-left: 1.75rem !important;
 	}
 
-	.md\)pad\:left\+2 {
+	.md\)pad\:lt\+2 {
 		padding-left: 2rem !important;
 	}
 
@@ -9844,19 +9824,19 @@ table.cols\:fixed {
 		border-color: transparent !important;
 	}
 
-	.lg\)bdr\:top-none {
+	.lg\)bdr\:tp-none {
 		border-top-color: transparent !important;
 	}
 
-	.lg\)bdr\:right-none {
+	.lg\)bdr\:rt-none {
 		border-right-color: transparent !important;
 	}
 
-	.lg\)bdr\:bottom-none {
+	.lg\)bdr\:bt-none {
 		border-bottom-color: transparent !important;
 	}
 
-	.lg\)bdr\:left-none {
+	.lg\)bdr\:lt-none {
 		border-left-color: transparent !important;
 	}
 
@@ -9866,27 +9846,27 @@ table.cols\:fixed {
 		border-style: dashed !important;
 	}
 
-	.lg\)bdr\:top-dashed-thin,
-	.lg\)bdr\:top-dashed-medium,
-	.lg\)bdr\:top-dashed-thick {
+	.lg\)bdr\:tp-dashed-thin,
+	.lg\)bdr\:tp-dashed-medium,
+	.lg\)bdr\:tp-dashed-thick {
 		border-top-style: dashed !important;
 	}
 
-	.lg\)bdr\:right-dashed-thin,
-	.lg\)bdr\:right-dashed-medium,
-	.lg\)bdr\:right-dashed-thick {
+	.lg\)bdr\:rt-dashed-thin,
+	.lg\)bdr\:rt-dashed-medium,
+	.lg\)bdr\:rt-dashed-thick {
 		border-right-style: dashed !important;
 	}
 
-	.lg\)bdr\:bottom-dashed-thin,
-	.lg\)bdr\:bottom-dashed-medium,
-	.lg\)bdr\:bottom-dashed-thick {
+	.lg\)bdr\:bt-dashed-thin,
+	.lg\)bdr\:bt-dashed-medium,
+	.lg\)bdr\:bt-dashed-thick {
 		border-bottom-style: dashed !important;
 	}
 
-	.lg\)bdr\:left-dashed-thin,
-	.lg\)bdr\:left-dashed-medium,
-	.lg\)bdr\:left-dashed-thick {
+	.lg\)bdr\:lt-dashed-thin,
+	.lg\)bdr\:lt-dashed-medium,
+	.lg\)bdr\:lt-dashed-thick {
 		border-left-style: dashed !important;
 	}
 
@@ -9896,27 +9876,27 @@ table.cols\:fixed {
 		border-style: dotted !important;
 	}
 
-	.lg\)bdr\:top-dotted-thin,
-	.lg\)bdr\:top-dotted-medium,
-	.lg\)bdr\:top-dotted-thick {
+	.lg\)bdr\:tp-dotted-thin,
+	.lg\)bdr\:tp-dotted-medium,
+	.lg\)bdr\:tp-dotted-thick {
 		border-top-style: dotted !important;
 	}
 
-	.lg\)bdr\:right-dotted-thin,
-	.lg\)bdr\:right-dotted-medium,
-	.lg\)bdr\:right-dotted-thick {
+	.lg\)bdr\:rt-dotted-thin,
+	.lg\)bdr\:rt-dotted-medium,
+	.lg\)bdr\:rt-dotted-thick {
 		border-right-style: dotted !important;
 	}
 
-	.lg\)bdr\:bottom-dotted-thin,
-	.lg\)bdr\:bottom-dotted-medium,
-	.lg\)bdr\:bottom-dotted-thick {
+	.lg\)bdr\:bt-dotted-thin,
+	.lg\)bdr\:bt-dotted-medium,
+	.lg\)bdr\:bt-dotted-thick {
 		border-bottom-style: dotted !important;
 	}
 
-	.lg\)bdr\:left-dotted-thin,
-	.lg\)bdr\:left-dotted-medium,
-	.lg\)bdr\:left-dotted-thick {
+	.lg\)bdr\:lt-dotted-thin,
+	.lg\)bdr\:lt-dotted-medium,
+	.lg\)bdr\:lt-dotted-thick {
 		border-left-style: dotted !important;
 	}
 
@@ -9926,27 +9906,27 @@ table.cols\:fixed {
 		border-style: solid !important;
 	}
 
-	.lg\)bdr\:top-solid-thin,
-	.lg\)bdr\:top-solid-medium,
-	.lg\)bdr\:top-solid-thick {
+	.lg\)bdr\:tp-solid-thin,
+	.lg\)bdr\:tp-solid-medium,
+	.lg\)bdr\:tp-solid-thick {
 		border-top-style: solid !important;
 	}
 
-	.lg\)bdr\:right-solid-thin,
-	.lg\)bdr\:right-solid-medium,
-	.lg\)bdr\:right-solid-thick {
+	.lg\)bdr\:rt-solid-thin,
+	.lg\)bdr\:rt-solid-medium,
+	.lg\)bdr\:rt-solid-thick {
 		border-right-style: solid !important;
 	}
 
-	.lg\)bdr\:bottom-solid-thin,
-	.lg\)bdr\:bottom-solid-medium,
-	.lg\)bdr\:bottom-solid-thick {
+	.lg\)bdr\:bt-solid-thin,
+	.lg\)bdr\:bt-solid-medium,
+	.lg\)bdr\:bt-solid-thick {
 		border-bottom-style: solid !important;
 	}
 
-	.lg\)bdr\:left-solid-thin,
-	.lg\)bdr\:left-solid-medium,
-	.lg\)bdr\:left-solid-thick {
+	.lg\)bdr\:lt-solid-thin,
+	.lg\)bdr\:lt-solid-medium,
+	.lg\)bdr\:lt-solid-thick {
 		border-left-style: solid !important;
 	}
 
@@ -9956,27 +9936,27 @@ table.cols\:fixed {
 		border-width: thin !important;
 	}
 
-	.lg\)bdr\:top-dashed-thin,
-	.lg\)bdr\:top-dotted-thin,
-	.lg\)bdr\:top-solid-thin {
+	.lg\)bdr\:tp-dashed-thin,
+	.lg\)bdr\:tp-dotted-thin,
+	.lg\)bdr\:tp-solid-thin {
 		border-top-width: thin !important;
 	}
 
-	.lg\)bdr\:right-dashed-thin,
-	.lg\)bdr\:right-dotted-thin,
-	.lg\)bdr\:right-solid-thin {
+	.lg\)bdr\:rt-dashed-thin,
+	.lg\)bdr\:rt-dotted-thin,
+	.lg\)bdr\:rt-solid-thin {
 		border-right-width: thin !important;
 	}
 
-	.lg\)bdr\:bottom-dashed-thin,
-	.lg\)bdr\:bottom-dotted-thin,
-	.lg\)bdr\:bottom-solid-thin {
+	.lg\)bdr\:bt-dashed-thin,
+	.lg\)bdr\:bt-dotted-thin,
+	.lg\)bdr\:bt-solid-thin {
 		border-bottom-width: thin !important;
 	}
 
-	.lg\)bdr\:left-dashed-thin,
-	.lg\)bdr\:left-dotted-thin,
-	.lg\)bdr\:left-solid-thin {
+	.lg\)bdr\:lt-dashed-thin,
+	.lg\)bdr\:lt-dotted-thin,
+	.lg\)bdr\:lt-solid-thin {
 		border-left-width: thin !important;
 	}
 
@@ -9986,27 +9966,27 @@ table.cols\:fixed {
 		border-width: medium !important;
 	}
 
-	.lg\)bdr\:top-dashed-medium,
-	.lg\)bdr\:top-dotted-medium,
-	.lg\)bdr\:top-solid-medium {
+	.lg\)bdr\:tp-dashed-medium,
+	.lg\)bdr\:tp-dotted-medium,
+	.lg\)bdr\:tp-solid-medium {
 		border-top-width: medium !important;
 	}
 
-	.lg\)bdr\:right-dashed-medium,
-	.lg\)bdr\:right-dotted-medium,
-	.lg\)bdr\:right-solid-medium {
+	.lg\)bdr\:rt-dashed-medium,
+	.lg\)bdr\:rt-dotted-medium,
+	.lg\)bdr\:rt-solid-medium {
 		border-right-width: medium !important;
 	}
 
-	.lg\)bdr\:bottom-dashed-medium,
-	.lg\)bdr\:bottom-dotted-medium,
-	.lg\)bdr\:bottom-solid-medium {
+	.lg\)bdr\:bt-dashed-medium,
+	.lg\)bdr\:bt-dotted-medium,
+	.lg\)bdr\:bt-solid-medium {
 		border-bottom-width: medium !important;
 	}
 
-	.lg\)bdr\:left-dashed-medium,
-	.lg\)bdr\:left-dotted-medium,
-	.lg\)bdr\:left-solid-medium {
+	.lg\)bdr\:lt-dashed-medium,
+	.lg\)bdr\:lt-dotted-medium,
+	.lg\)bdr\:lt-solid-medium {
 		border-left-width: medium !important;
 	}
 
@@ -10016,27 +9996,27 @@ table.cols\:fixed {
 		border-width: thick !important;
 	}
 
-	.lg\)bdr\:top-dashed-thick,
-	.lg\)bdr\:top-dotted-thick,
-	.lg\)bdr\:top-solid-thick {
+	.lg\)bdr\:tp-dashed-thick,
+	.lg\)bdr\:tp-dotted-thick,
+	.lg\)bdr\:tp-solid-thick {
 		border-top-width: thick !important;
 	}
 
-	.lg\)bdr\:right-dashed-thick,
-	.lg\)bdr\:right-dotted-thick,
-	.lg\)bdr\:right-solid-thick {
+	.lg\)bdr\:rt-dashed-thick,
+	.lg\)bdr\:rt-dotted-thick,
+	.lg\)bdr\:rt-solid-thick {
 		border-right-width: thick !important;
 	}
 
-	.lg\)bdr\:bottom-dashed-thick,
-	.lg\)bdr\:bottom-dotted-thick,
-	.lg\)bdr\:bottom-solid-thick {
+	.lg\)bdr\:bt-dashed-thick,
+	.lg\)bdr\:bt-dotted-thick,
+	.lg\)bdr\:bt-solid-thick {
 		border-bottom-width: thick !important;
 	}
 
-	.lg\)bdr\:left-dashed-thick,
-	.lg\)bdr\:left-dotted-thick,
-	.lg\)bdr\:left-solid-thick {
+	.lg\)bdr\:lt-dashed-thick,
+	.lg\)bdr\:lt-dotted-thick,
+	.lg\)bdr\:lt-solid-thick {
 		border-left-width: thick !important;
 	}
 
@@ -11349,79 +11329,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.lg\)mar\:top\+0\.125 {
+	.lg\)mar\:tp\+0\.125 {
 		margin-top: 0.125rem !important;
 	}
 
-	.lg\)mar\:top\+0\.25 {
+	.lg\)mar\:tp\+0\.25 {
 		margin-top: 0.25rem !important;
 	}
 
-	.lg\)mar\:top\+0\.5 {
+	.lg\)mar\:tp\+0\.5 {
 		margin-top: 0.5rem !important;
 	}
 
-	.lg\)mar\:top\+0\.75 {
+	.lg\)mar\:tp\+0\.75 {
 		margin-top: 0.75rem !important;
 	}
 
-	.lg\)mar\:top\+1 {
+	.lg\)mar\:tp\+1 {
 		margin-top: 1rem !important;
 	}
 
-	.lg\)mar\:top\+1\.25 {
+	.lg\)mar\:tp\+1\.25 {
 		margin-top: 1.25rem !important;
 	}
 
-	.lg\)mar\:top\+1\.5 {
+	.lg\)mar\:tp\+1\.5 {
 		margin-top: 1.5rem !important;
 	}
 
-	.lg\)mar\:top\+1\.75 {
+	.lg\)mar\:tp\+1\.75 {
 		margin-top: 1.75rem !important;
 	}
 
-	.lg\)mar\:top\+2 {
+	.lg\)mar\:tp\+2 {
 		margin-top: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.lg\)mar\:top0,
-	.lg\)mar\:top-0,
-	.lg\)mar\:top\+0 {
+	.lg\)mar\:tp0,
+	.lg\)mar\:tp-0,
+	.lg\)mar\:tp\+0 {
 		margin-top: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.lg\)mar\:top-0\.25 {
+	.lg\)mar\:tp-0\.25 {
 		margin-top: -0.25rem !important;
 	}
 
-	.lg\)mar\:top-0\.5 {
+	.lg\)mar\:tp-0\.5 {
 		margin-top: -0.5rem !important;
 	}
 
-	.lg\)mar\:top-0\.75 {
+	.lg\)mar\:tp-0\.75 {
 		margin-top: -0.75rem !important;
 	}
 
-	.lg\)mar\:top-1 {
+	.lg\)mar\:tp-1 {
 		margin-top: -1rem !important;
 	}
 
-	.lg\)mar\:top-1\.25 {
+	.lg\)mar\:tp-1\.25 {
 		margin-top: -1.25rem !important;
 	}
 
-	.lg\)mar\:top-1\.5 {
+	.lg\)mar\:tp-1\.5 {
 		margin-top: -1.5rem !important;
 	}
 
-	.lg\)mar\:top-1\.75 {
+	.lg\)mar\:tp-1\.75 {
 		margin-top: -1.75rem !important;
 	}
 
-	.lg\)mar\:top-2 {
+	.lg\)mar\:tp-2 {
 		margin-top: -2rem !important;
 	}
 
@@ -11435,79 +11415,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.lg\)mar\:right\+0\.125 {
+	.lg\)mar\:rt\+0\.125 {
 		margin-right: 0.125rem !important;
 	}
 
-	.lg\)mar\:right\+0\.25 {
+	.lg\)mar\:rt\+0\.25 {
 		margin-right: 0.25rem !important;
 	}
 
-	.lg\)mar\:right\+0\.5 {
+	.lg\)mar\:rt\+0\.5 {
 		margin-right: 0.5rem !important;
 	}
 
-	.lg\)mar\:right\+0\.75 {
+	.lg\)mar\:rt\+0\.75 {
 		margin-right: 0.75rem !important;
 	}
 
-	.lg\)mar\:right\+1 {
+	.lg\)mar\:rt\+1 {
 		margin-right: 1rem !important;
 	}
 
-	.lg\)mar\:right\+1\.25 {
+	.lg\)mar\:rt\+1\.25 {
 		margin-right: 1.25rem !important;
 	}
 
-	.lg\)mar\:right\+1\.5 {
+	.lg\)mar\:rt\+1\.5 {
 		margin-right: 1.5rem !important;
 	}
 
-	.lg\)mar\:right\+1\.75 {
+	.lg\)mar\:rt\+1\.75 {
 		margin-right: 1.75rem !important;
 	}
 
-	.lg\)mar\:right\+2 {
+	.lg\)mar\:rt\+2 {
 		margin-right: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.lg\)mar\:right0,
-	.lg\)mar\:right-0,
-	.lg\)mar\:right\+0 {
+	.lg\)mar\:rt0,
+	.lg\)mar\:rt-0,
+	.lg\)mar\:rt\+0 {
 		margin-right: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.lg\)mar\:right-0\.25 {
+	.lg\)mar\:rt-0\.25 {
 		margin-right: -0.25rem !important;
 	}
 
-	.lg\)mar\:right-0\.5 {
+	.lg\)mar\:rt-0\.5 {
 		margin-right: -0.5rem !important;
 	}
 
-	.lg\)mar\:right-0\.75 {
+	.lg\)mar\:rt-0\.75 {
 		margin-right: -0.75rem !important;
 	}
 
-	.lg\)mar\:right-1 {
+	.lg\)mar\:rt-1 {
 		margin-right: -1rem !important;
 	}
 
-	.lg\)mar\:right-1\.25 {
+	.lg\)mar\:rt-1\.25 {
 		margin-right: -1.25rem !important;
 	}
 
-	.lg\)mar\:right-1\.5 {
+	.lg\)mar\:rt-1\.5 {
 		margin-right: -1.5rem !important;
 	}
 
-	.lg\)mar\:right-1\.75 {
+	.lg\)mar\:rt-1\.75 {
 		margin-right: -1.75rem !important;
 	}
 
-	.lg\)mar\:right-2 {
+	.lg\)mar\:rt-2 {
 		margin-right: -2rem !important;
 	}
 
@@ -11521,79 +11501,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.lg\)mar\:bottom\+0\.125 {
+	.lg\)mar\:bt\+0\.125 {
 		margin-bottom: 0.125rem !important;
 	}
 
-	.lg\)mar\:bottom\+0\.25 {
+	.lg\)mar\:bt\+0\.25 {
 		margin-bottom: 0.25rem !important;
 	}
 
-	.lg\)mar\:bottom\+0\.5 {
+	.lg\)mar\:bt\+0\.5 {
 		margin-bottom: 0.5rem !important;
 	}
 
-	.lg\)mar\:bottom\+0\.75 {
+	.lg\)mar\:bt\+0\.75 {
 		margin-bottom: 0.75rem !important;
 	}
 
-	.lg\)mar\:bottom\+1 {
+	.lg\)mar\:bt\+1 {
 		margin-bottom: 1rem !important;
 	}
 
-	.lg\)mar\:bottom\+1\.25 {
+	.lg\)mar\:bt\+1\.25 {
 		margin-bottom: 1.25rem !important;
 	}
 
-	.lg\)mar\:bottom\+1\.5 {
+	.lg\)mar\:bt\+1\.5 {
 		margin-bottom: 1.5rem !important;
 	}
 
-	.lg\)mar\:bottom\+1\.75 {
+	.lg\)mar\:bt\+1\.75 {
 		margin-bottom: 1.75rem !important;
 	}
 
-	.lg\)mar\:bottom\+2 {
+	.lg\)mar\:bt\+2 {
 		margin-bottom: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.lg\)mar\:bottom0,
-	.lg\)mar\:bottom-0,
-	.lg\)mar\:bottom\+0 {
+	.lg\)mar\:bt0,
+	.lg\)mar\:bt-0,
+	.lg\)mar\:bt\+0 {
 		margin-bottom: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.lg\)mar\:bottom-0\.25 {
+	.lg\)mar\:bt-0\.25 {
 		margin-bottom: -0.25rem !important;
 	}
 
-	.lg\)mar\:bottom-0\.5 {
+	.lg\)mar\:bt-0\.5 {
 		margin-bottom: -0.5rem !important;
 	}
 
-	.lg\)mar\:bottom-0\.75 {
+	.lg\)mar\:bt-0\.75 {
 		margin-bottom: -0.75rem !important;
 	}
 
-	.lg\)mar\:bottom-1 {
+	.lg\)mar\:bt-1 {
 		margin-bottom: -1rem !important;
 	}
 
-	.lg\)mar\:bottom-1\.25 {
+	.lg\)mar\:bt-1\.25 {
 		margin-bottom: -1.25rem !important;
 	}
 
-	.lg\)mar\:bottom-1\.5 {
+	.lg\)mar\:bt-1\.5 {
 		margin-bottom: -1.5rem !important;
 	}
 
-	.lg\)mar\:bottom-1\.75 {
+	.lg\)mar\:bt-1\.75 {
 		margin-bottom: -1.75rem !important;
 	}
 
-	.lg\)mar\:bottom-2 {
+	.lg\)mar\:bt-2 {
 		margin-bottom: -2rem !important;
 	}
 
@@ -11607,79 +11587,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.lg\)mar\:left\+0\.125 {
+	.lg\)mar\:lt\+0\.125 {
 		margin-left: 0.125rem !important;
 	}
 
-	.lg\)mar\:left\+0\.25 {
+	.lg\)mar\:lt\+0\.25 {
 		margin-left: 0.25rem !important;
 	}
 
-	.lg\)mar\:left\+0\.5 {
+	.lg\)mar\:lt\+0\.5 {
 		margin-left: 0.5rem !important;
 	}
 
-	.lg\)mar\:left\+0\.75 {
+	.lg\)mar\:lt\+0\.75 {
 		margin-left: 0.75rem !important;
 	}
 
-	.lg\)mar\:left\+1 {
+	.lg\)mar\:lt\+1 {
 		margin-left: 1rem !important;
 	}
 
-	.lg\)mar\:left\+1\.25 {
+	.lg\)mar\:lt\+1\.25 {
 		margin-left: 1.25rem !important;
 	}
 
-	.lg\)mar\:left\+1\.5 {
+	.lg\)mar\:lt\+1\.5 {
 		margin-left: 1.5rem !important;
 	}
 
-	.lg\)mar\:left\+1\.75 {
+	.lg\)mar\:lt\+1\.75 {
 		margin-left: 1.75rem !important;
 	}
 
-	.lg\)mar\:left\+2 {
+	.lg\)mar\:lt\+2 {
 		margin-left: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.lg\)mar\:left0,
-	.lg\)mar\:left-0,
-	.lg\)mar\:left\+0 {
+	.lg\)mar\:lt0,
+	.lg\)mar\:lt-0,
+	.lg\)mar\:lt\+0 {
 		margin-left: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.lg\)mar\:left-0\.25 {
+	.lg\)mar\:lt-0\.25 {
 		margin-left: -0.25rem !important;
 	}
 
-	.lg\)mar\:left-0\.5 {
+	.lg\)mar\:lt-0\.5 {
 		margin-left: -0.5rem !important;
 	}
 
-	.lg\)mar\:left-0\.75 {
+	.lg\)mar\:lt-0\.75 {
 		margin-left: -0.75rem !important;
 	}
 
-	.lg\)mar\:left-1 {
+	.lg\)mar\:lt-1 {
 		margin-left: -1rem !important;
 	}
 
-	.lg\)mar\:left-1\.25 {
+	.lg\)mar\:lt-1\.25 {
 		margin-left: -1.25rem !important;
 	}
 
-	.lg\)mar\:left-1\.5 {
+	.lg\)mar\:lt-1\.5 {
 		margin-left: -1.5rem !important;
 	}
 
-	.lg\)mar\:left-1\.75 {
+	.lg\)mar\:lt-1\.75 {
 		margin-left: -1.75rem !important;
 	}
 
-	.lg\)mar\:left-2 {
+	.lg\)mar\:lt-2 {
 		margin-left: -2rem !important;
 	}
 
@@ -11951,45 +11931,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.lg\)pad\:top0,
-	.lg\)pad\:top-0,
-	.lg\)pad\:top\+0 {
+	.lg\)pad\:tp0,
+	.lg\)pad\:tp-0,
+	.lg\)pad\:tp\+0 {
 		padding-top: 0 !important;
 	}
 
-	.lg\)pad\:top\+0\.125 {
+	.lg\)pad\:tp\+0\.125 {
 		padding-top: 0.125rem !important;
 	}
 
-	.lg\)pad\:top\+0\.25 {
+	.lg\)pad\:tp\+0\.25 {
 		padding-top: 0.25rem !important;
 	}
 
-	.lg\)pad\:top\+0\.5 {
+	.lg\)pad\:tp\+0\.5 {
 		padding-top: 0.5rem !important;
 	}
 
-	.lg\)pad\:top\+0\.75 {
+	.lg\)pad\:tp\+0\.75 {
 		padding-top: 0.75rem !important;
 	}
 
-	.lg\)pad\:top\+1 {
+	.lg\)pad\:tp\+1 {
 		padding-top: 1rem !important;
 	}
 
-	.lg\)pad\:top\+1\.25 {
+	.lg\)pad\:tp\+1\.25 {
 		padding-top: 1.25rem !important;
 	}
 
-	.lg\)pad\:top\+1\.5 {
+	.lg\)pad\:tp\+1\.5 {
 		padding-top: 1.5rem !important;
 	}
 
-	.lg\)pad\:top\+1\.75 {
+	.lg\)pad\:tp\+1\.75 {
 		padding-top: 1.75rem !important;
 	}
 
-	.lg\)pad\:top\+2 {
+	.lg\)pad\:tp\+2 {
 		padding-top: 2rem !important;
 	}
 
@@ -12002,45 +11982,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.lg\)pad\:right0,
-	.lg\)pad\:right-0,
-	.lg\)pad\:right\+0 {
+	.lg\)pad\:rt0,
+	.lg\)pad\:rt-0,
+	.lg\)pad\:rt\+0 {
 		padding-right: 0 !important;
 	}
 
-	.lg\)pad\:right\+0\.125 {
+	.lg\)pad\:rt\+0\.125 {
 		padding-right: 0.125rem !important;
 	}
 
-	.lg\)pad\:right\+0\.25 {
+	.lg\)pad\:rt\+0\.25 {
 		padding-right: 0.25rem !important;
 	}
 
-	.lg\)pad\:right\+0\.5 {
+	.lg\)pad\:rt\+0\.5 {
 		padding-right: 0.5rem !important;
 	}
 
-	.lg\)pad\:right\+0\.75 {
+	.lg\)pad\:rt\+0\.75 {
 		padding-right: 0.75rem !important;
 	}
 
-	.lg\)pad\:right\+1 {
+	.lg\)pad\:rt\+1 {
 		padding-right: 1rem !important;
 	}
 
-	.lg\)pad\:right\+1\.25 {
+	.lg\)pad\:rt\+1\.25 {
 		padding-right: 1.25rem !important;
 	}
 
-	.lg\)pad\:right\+1\.5 {
+	.lg\)pad\:rt\+1\.5 {
 		padding-right: 1.5rem !important;
 	}
 
-	.lg\)pad\:right\+1\.75 {
+	.lg\)pad\:rt\+1\.75 {
 		padding-right: 1.75rem !important;
 	}
 
-	.lg\)pad\:right\+2 {
+	.lg\)pad\:rt\+2 {
 		padding-right: 2rem !important;
 	}
 
@@ -12053,45 +12033,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.lg\)pad\:bottom0,
-	.lg\)pad\:bottom-0,
-	.lg\)pad\:bottom\+0 {
+	.lg\)pad\:bt0,
+	.lg\)pad\:bt-0,
+	.lg\)pad\:bt\+0 {
 		padding-bottom: 0 !important;
 	}
 
-	.lg\)pad\:bottom\+0\.125 {
+	.lg\)pad\:bt\+0\.125 {
 		padding-bottom: 0.125rem !important;
 	}
 
-	.lg\)pad\:bottom\+0\.25 {
+	.lg\)pad\:bt\+0\.25 {
 		padding-bottom: 0.25rem !important;
 	}
 
-	.lg\)pad\:bottom\+0\.5 {
+	.lg\)pad\:bt\+0\.5 {
 		padding-bottom: 0.5rem !important;
 	}
 
-	.lg\)pad\:bottom\+0\.75 {
+	.lg\)pad\:bt\+0\.75 {
 		padding-bottom: 0.75rem !important;
 	}
 
-	.lg\)pad\:bottom\+1 {
+	.lg\)pad\:bt\+1 {
 		padding-bottom: 1rem !important;
 	}
 
-	.lg\)pad\:bottom\+1\.25 {
+	.lg\)pad\:bt\+1\.25 {
 		padding-bottom: 1.25rem !important;
 	}
 
-	.lg\)pad\:bottom\+1\.5 {
+	.lg\)pad\:bt\+1\.5 {
 		padding-bottom: 1.5rem !important;
 	}
 
-	.lg\)pad\:bottom\+1\.75 {
+	.lg\)pad\:bt\+1\.75 {
 		padding-bottom: 1.75rem !important;
 	}
 
-	.lg\)pad\:bottom\+2 {
+	.lg\)pad\:bt\+2 {
 		padding-bottom: 2rem !important;
 	}
 
@@ -12104,45 +12084,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.lg\)pad\:left0,
-	.lg\)pad\:left-0,
-	.lg\)pad\:left\+0 {
+	.lg\)pad\:lt0,
+	.lg\)pad\:lt-0,
+	.lg\)pad\:lt\+0 {
 		padding-left: 0 !important;
 	}
 
-	.lg\)pad\:left\+0\.125 {
+	.lg\)pad\:lt\+0\.125 {
 		padding-left: 0.125rem !important;
 	}
 
-	.lg\)pad\:left\+0\.25 {
+	.lg\)pad\:lt\+0\.25 {
 		padding-left: 0.25rem !important;
 	}
 
-	.lg\)pad\:left\+0\.5 {
+	.lg\)pad\:lt\+0\.5 {
 		padding-left: 0.5rem !important;
 	}
 
-	.lg\)pad\:left\+0\.75 {
+	.lg\)pad\:lt\+0\.75 {
 		padding-left: 0.75rem !important;
 	}
 
-	.lg\)pad\:left\+1 {
+	.lg\)pad\:lt\+1 {
 		padding-left: 1rem !important;
 	}
 
-	.lg\)pad\:left\+1\.25 {
+	.lg\)pad\:lt\+1\.25 {
 		padding-left: 1.25rem !important;
 	}
 
-	.lg\)pad\:left\+1\.5 {
+	.lg\)pad\:lt\+1\.5 {
 		padding-left: 1.5rem !important;
 	}
 
-	.lg\)pad\:left\+1\.75 {
+	.lg\)pad\:lt\+1\.75 {
 		padding-left: 1.75rem !important;
 	}
 
-	.lg\)pad\:left\+2 {
+	.lg\)pad\:lt\+2 {
 		padding-left: 2rem !important;
 	}
 
@@ -13097,19 +13077,19 @@ table.cols\:fixed {
 		border-color: transparent !important;
 	}
 
-	.xl\)bdr\:top-none {
+	.xl\)bdr\:tp-none {
 		border-top-color: transparent !important;
 	}
 
-	.xl\)bdr\:right-none {
+	.xl\)bdr\:rt-none {
 		border-right-color: transparent !important;
 	}
 
-	.xl\)bdr\:bottom-none {
+	.xl\)bdr\:bt-none {
 		border-bottom-color: transparent !important;
 	}
 
-	.xl\)bdr\:left-none {
+	.xl\)bdr\:lt-none {
 		border-left-color: transparent !important;
 	}
 
@@ -13119,27 +13099,27 @@ table.cols\:fixed {
 		border-style: dashed !important;
 	}
 
-	.xl\)bdr\:top-dashed-thin,
-	.xl\)bdr\:top-dashed-medium,
-	.xl\)bdr\:top-dashed-thick {
+	.xl\)bdr\:tp-dashed-thin,
+	.xl\)bdr\:tp-dashed-medium,
+	.xl\)bdr\:tp-dashed-thick {
 		border-top-style: dashed !important;
 	}
 
-	.xl\)bdr\:right-dashed-thin,
-	.xl\)bdr\:right-dashed-medium,
-	.xl\)bdr\:right-dashed-thick {
+	.xl\)bdr\:rt-dashed-thin,
+	.xl\)bdr\:rt-dashed-medium,
+	.xl\)bdr\:rt-dashed-thick {
 		border-right-style: dashed !important;
 	}
 
-	.xl\)bdr\:bottom-dashed-thin,
-	.xl\)bdr\:bottom-dashed-medium,
-	.xl\)bdr\:bottom-dashed-thick {
+	.xl\)bdr\:bt-dashed-thin,
+	.xl\)bdr\:bt-dashed-medium,
+	.xl\)bdr\:bt-dashed-thick {
 		border-bottom-style: dashed !important;
 	}
 
-	.xl\)bdr\:left-dashed-thin,
-	.xl\)bdr\:left-dashed-medium,
-	.xl\)bdr\:left-dashed-thick {
+	.xl\)bdr\:lt-dashed-thin,
+	.xl\)bdr\:lt-dashed-medium,
+	.xl\)bdr\:lt-dashed-thick {
 		border-left-style: dashed !important;
 	}
 
@@ -13149,27 +13129,27 @@ table.cols\:fixed {
 		border-style: dotted !important;
 	}
 
-	.xl\)bdr\:top-dotted-thin,
-	.xl\)bdr\:top-dotted-medium,
-	.xl\)bdr\:top-dotted-thick {
+	.xl\)bdr\:tp-dotted-thin,
+	.xl\)bdr\:tp-dotted-medium,
+	.xl\)bdr\:tp-dotted-thick {
 		border-top-style: dotted !important;
 	}
 
-	.xl\)bdr\:right-dotted-thin,
-	.xl\)bdr\:right-dotted-medium,
-	.xl\)bdr\:right-dotted-thick {
+	.xl\)bdr\:rt-dotted-thin,
+	.xl\)bdr\:rt-dotted-medium,
+	.xl\)bdr\:rt-dotted-thick {
 		border-right-style: dotted !important;
 	}
 
-	.xl\)bdr\:bottom-dotted-thin,
-	.xl\)bdr\:bottom-dotted-medium,
-	.xl\)bdr\:bottom-dotted-thick {
+	.xl\)bdr\:bt-dotted-thin,
+	.xl\)bdr\:bt-dotted-medium,
+	.xl\)bdr\:bt-dotted-thick {
 		border-bottom-style: dotted !important;
 	}
 
-	.xl\)bdr\:left-dotted-thin,
-	.xl\)bdr\:left-dotted-medium,
-	.xl\)bdr\:left-dotted-thick {
+	.xl\)bdr\:lt-dotted-thin,
+	.xl\)bdr\:lt-dotted-medium,
+	.xl\)bdr\:lt-dotted-thick {
 		border-left-style: dotted !important;
 	}
 
@@ -13179,27 +13159,27 @@ table.cols\:fixed {
 		border-style: solid !important;
 	}
 
-	.xl\)bdr\:top-solid-thin,
-	.xl\)bdr\:top-solid-medium,
-	.xl\)bdr\:top-solid-thick {
+	.xl\)bdr\:tp-solid-thin,
+	.xl\)bdr\:tp-solid-medium,
+	.xl\)bdr\:tp-solid-thick {
 		border-top-style: solid !important;
 	}
 
-	.xl\)bdr\:right-solid-thin,
-	.xl\)bdr\:right-solid-medium,
-	.xl\)bdr\:right-solid-thick {
+	.xl\)bdr\:rt-solid-thin,
+	.xl\)bdr\:rt-solid-medium,
+	.xl\)bdr\:rt-solid-thick {
 		border-right-style: solid !important;
 	}
 
-	.xl\)bdr\:bottom-solid-thin,
-	.xl\)bdr\:bottom-solid-medium,
-	.xl\)bdr\:bottom-solid-thick {
+	.xl\)bdr\:bt-solid-thin,
+	.xl\)bdr\:bt-solid-medium,
+	.xl\)bdr\:bt-solid-thick {
 		border-bottom-style: solid !important;
 	}
 
-	.xl\)bdr\:left-solid-thin,
-	.xl\)bdr\:left-solid-medium,
-	.xl\)bdr\:left-solid-thick {
+	.xl\)bdr\:lt-solid-thin,
+	.xl\)bdr\:lt-solid-medium,
+	.xl\)bdr\:lt-solid-thick {
 		border-left-style: solid !important;
 	}
 
@@ -13209,27 +13189,27 @@ table.cols\:fixed {
 		border-width: thin !important;
 	}
 
-	.xl\)bdr\:top-dashed-thin,
-	.xl\)bdr\:top-dotted-thin,
-	.xl\)bdr\:top-solid-thin {
+	.xl\)bdr\:tp-dashed-thin,
+	.xl\)bdr\:tp-dotted-thin,
+	.xl\)bdr\:tp-solid-thin {
 		border-top-width: thin !important;
 	}
 
-	.xl\)bdr\:right-dashed-thin,
-	.xl\)bdr\:right-dotted-thin,
-	.xl\)bdr\:right-solid-thin {
+	.xl\)bdr\:rt-dashed-thin,
+	.xl\)bdr\:rt-dotted-thin,
+	.xl\)bdr\:rt-solid-thin {
 		border-right-width: thin !important;
 	}
 
-	.xl\)bdr\:bottom-dashed-thin,
-	.xl\)bdr\:bottom-dotted-thin,
-	.xl\)bdr\:bottom-solid-thin {
+	.xl\)bdr\:bt-dashed-thin,
+	.xl\)bdr\:bt-dotted-thin,
+	.xl\)bdr\:bt-solid-thin {
 		border-bottom-width: thin !important;
 	}
 
-	.xl\)bdr\:left-dashed-thin,
-	.xl\)bdr\:left-dotted-thin,
-	.xl\)bdr\:left-solid-thin {
+	.xl\)bdr\:lt-dashed-thin,
+	.xl\)bdr\:lt-dotted-thin,
+	.xl\)bdr\:lt-solid-thin {
 		border-left-width: thin !important;
 	}
 
@@ -13239,27 +13219,27 @@ table.cols\:fixed {
 		border-width: medium !important;
 	}
 
-	.xl\)bdr\:top-dashed-medium,
-	.xl\)bdr\:top-dotted-medium,
-	.xl\)bdr\:top-solid-medium {
+	.xl\)bdr\:tp-dashed-medium,
+	.xl\)bdr\:tp-dotted-medium,
+	.xl\)bdr\:tp-solid-medium {
 		border-top-width: medium !important;
 	}
 
-	.xl\)bdr\:right-dashed-medium,
-	.xl\)bdr\:right-dotted-medium,
-	.xl\)bdr\:right-solid-medium {
+	.xl\)bdr\:rt-dashed-medium,
+	.xl\)bdr\:rt-dotted-medium,
+	.xl\)bdr\:rt-solid-medium {
 		border-right-width: medium !important;
 	}
 
-	.xl\)bdr\:bottom-dashed-medium,
-	.xl\)bdr\:bottom-dotted-medium,
-	.xl\)bdr\:bottom-solid-medium {
+	.xl\)bdr\:bt-dashed-medium,
+	.xl\)bdr\:bt-dotted-medium,
+	.xl\)bdr\:bt-solid-medium {
 		border-bottom-width: medium !important;
 	}
 
-	.xl\)bdr\:left-dashed-medium,
-	.xl\)bdr\:left-dotted-medium,
-	.xl\)bdr\:left-solid-medium {
+	.xl\)bdr\:lt-dashed-medium,
+	.xl\)bdr\:lt-dotted-medium,
+	.xl\)bdr\:lt-solid-medium {
 		border-left-width: medium !important;
 	}
 
@@ -13269,27 +13249,27 @@ table.cols\:fixed {
 		border-width: thick !important;
 	}
 
-	.xl\)bdr\:top-dashed-thick,
-	.xl\)bdr\:top-dotted-thick,
-	.xl\)bdr\:top-solid-thick {
+	.xl\)bdr\:tp-dashed-thick,
+	.xl\)bdr\:tp-dotted-thick,
+	.xl\)bdr\:tp-solid-thick {
 		border-top-width: thick !important;
 	}
 
-	.xl\)bdr\:right-dashed-thick,
-	.xl\)bdr\:right-dotted-thick,
-	.xl\)bdr\:right-solid-thick {
+	.xl\)bdr\:rt-dashed-thick,
+	.xl\)bdr\:rt-dotted-thick,
+	.xl\)bdr\:rt-solid-thick {
 		border-right-width: thick !important;
 	}
 
-	.xl\)bdr\:bottom-dashed-thick,
-	.xl\)bdr\:bottom-dotted-thick,
-	.xl\)bdr\:bottom-solid-thick {
+	.xl\)bdr\:bt-dashed-thick,
+	.xl\)bdr\:bt-dotted-thick,
+	.xl\)bdr\:bt-solid-thick {
 		border-bottom-width: thick !important;
 	}
 
-	.xl\)bdr\:left-dashed-thick,
-	.xl\)bdr\:left-dotted-thick,
-	.xl\)bdr\:left-solid-thick {
+	.xl\)bdr\:lt-dashed-thick,
+	.xl\)bdr\:lt-dotted-thick,
+	.xl\)bdr\:lt-solid-thick {
 		border-left-width: thick !important;
 	}
 
@@ -14602,79 +14582,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.xl\)mar\:top\+0\.125 {
+	.xl\)mar\:tp\+0\.125 {
 		margin-top: 0.125rem !important;
 	}
 
-	.xl\)mar\:top\+0\.25 {
+	.xl\)mar\:tp\+0\.25 {
 		margin-top: 0.25rem !important;
 	}
 
-	.xl\)mar\:top\+0\.5 {
+	.xl\)mar\:tp\+0\.5 {
 		margin-top: 0.5rem !important;
 	}
 
-	.xl\)mar\:top\+0\.75 {
+	.xl\)mar\:tp\+0\.75 {
 		margin-top: 0.75rem !important;
 	}
 
-	.xl\)mar\:top\+1 {
+	.xl\)mar\:tp\+1 {
 		margin-top: 1rem !important;
 	}
 
-	.xl\)mar\:top\+1\.25 {
+	.xl\)mar\:tp\+1\.25 {
 		margin-top: 1.25rem !important;
 	}
 
-	.xl\)mar\:top\+1\.5 {
+	.xl\)mar\:tp\+1\.5 {
 		margin-top: 1.5rem !important;
 	}
 
-	.xl\)mar\:top\+1\.75 {
+	.xl\)mar\:tp\+1\.75 {
 		margin-top: 1.75rem !important;
 	}
 
-	.xl\)mar\:top\+2 {
+	.xl\)mar\:tp\+2 {
 		margin-top: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.xl\)mar\:top0,
-	.xl\)mar\:top-0,
-	.xl\)mar\:top\+0 {
+	.xl\)mar\:tp0,
+	.xl\)mar\:tp-0,
+	.xl\)mar\:tp\+0 {
 		margin-top: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.xl\)mar\:top-0\.25 {
+	.xl\)mar\:tp-0\.25 {
 		margin-top: -0.25rem !important;
 	}
 
-	.xl\)mar\:top-0\.5 {
+	.xl\)mar\:tp-0\.5 {
 		margin-top: -0.5rem !important;
 	}
 
-	.xl\)mar\:top-0\.75 {
+	.xl\)mar\:tp-0\.75 {
 		margin-top: -0.75rem !important;
 	}
 
-	.xl\)mar\:top-1 {
+	.xl\)mar\:tp-1 {
 		margin-top: -1rem !important;
 	}
 
-	.xl\)mar\:top-1\.25 {
+	.xl\)mar\:tp-1\.25 {
 		margin-top: -1.25rem !important;
 	}
 
-	.xl\)mar\:top-1\.5 {
+	.xl\)mar\:tp-1\.5 {
 		margin-top: -1.5rem !important;
 	}
 
-	.xl\)mar\:top-1\.75 {
+	.xl\)mar\:tp-1\.75 {
 		margin-top: -1.75rem !important;
 	}
 
-	.xl\)mar\:top-2 {
+	.xl\)mar\:tp-2 {
 		margin-top: -2rem !important;
 	}
 
@@ -14688,79 +14668,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.xl\)mar\:right\+0\.125 {
+	.xl\)mar\:rt\+0\.125 {
 		margin-right: 0.125rem !important;
 	}
 
-	.xl\)mar\:right\+0\.25 {
+	.xl\)mar\:rt\+0\.25 {
 		margin-right: 0.25rem !important;
 	}
 
-	.xl\)mar\:right\+0\.5 {
+	.xl\)mar\:rt\+0\.5 {
 		margin-right: 0.5rem !important;
 	}
 
-	.xl\)mar\:right\+0\.75 {
+	.xl\)mar\:rt\+0\.75 {
 		margin-right: 0.75rem !important;
 	}
 
-	.xl\)mar\:right\+1 {
+	.xl\)mar\:rt\+1 {
 		margin-right: 1rem !important;
 	}
 
-	.xl\)mar\:right\+1\.25 {
+	.xl\)mar\:rt\+1\.25 {
 		margin-right: 1.25rem !important;
 	}
 
-	.xl\)mar\:right\+1\.5 {
+	.xl\)mar\:rt\+1\.5 {
 		margin-right: 1.5rem !important;
 	}
 
-	.xl\)mar\:right\+1\.75 {
+	.xl\)mar\:rt\+1\.75 {
 		margin-right: 1.75rem !important;
 	}
 
-	.xl\)mar\:right\+2 {
+	.xl\)mar\:rt\+2 {
 		margin-right: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.xl\)mar\:right0,
-	.xl\)mar\:right-0,
-	.xl\)mar\:right\+0 {
+	.xl\)mar\:rt0,
+	.xl\)mar\:rt-0,
+	.xl\)mar\:rt\+0 {
 		margin-right: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.xl\)mar\:right-0\.25 {
+	.xl\)mar\:rt-0\.25 {
 		margin-right: -0.25rem !important;
 	}
 
-	.xl\)mar\:right-0\.5 {
+	.xl\)mar\:rt-0\.5 {
 		margin-right: -0.5rem !important;
 	}
 
-	.xl\)mar\:right-0\.75 {
+	.xl\)mar\:rt-0\.75 {
 		margin-right: -0.75rem !important;
 	}
 
-	.xl\)mar\:right-1 {
+	.xl\)mar\:rt-1 {
 		margin-right: -1rem !important;
 	}
 
-	.xl\)mar\:right-1\.25 {
+	.xl\)mar\:rt-1\.25 {
 		margin-right: -1.25rem !important;
 	}
 
-	.xl\)mar\:right-1\.5 {
+	.xl\)mar\:rt-1\.5 {
 		margin-right: -1.5rem !important;
 	}
 
-	.xl\)mar\:right-1\.75 {
+	.xl\)mar\:rt-1\.75 {
 		margin-right: -1.75rem !important;
 	}
 
-	.xl\)mar\:right-2 {
+	.xl\)mar\:rt-2 {
 		margin-right: -2rem !important;
 	}
 
@@ -14774,79 +14754,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.xl\)mar\:bottom\+0\.125 {
+	.xl\)mar\:bt\+0\.125 {
 		margin-bottom: 0.125rem !important;
 	}
 
-	.xl\)mar\:bottom\+0\.25 {
+	.xl\)mar\:bt\+0\.25 {
 		margin-bottom: 0.25rem !important;
 	}
 
-	.xl\)mar\:bottom\+0\.5 {
+	.xl\)mar\:bt\+0\.5 {
 		margin-bottom: 0.5rem !important;
 	}
 
-	.xl\)mar\:bottom\+0\.75 {
+	.xl\)mar\:bt\+0\.75 {
 		margin-bottom: 0.75rem !important;
 	}
 
-	.xl\)mar\:bottom\+1 {
+	.xl\)mar\:bt\+1 {
 		margin-bottom: 1rem !important;
 	}
 
-	.xl\)mar\:bottom\+1\.25 {
+	.xl\)mar\:bt\+1\.25 {
 		margin-bottom: 1.25rem !important;
 	}
 
-	.xl\)mar\:bottom\+1\.5 {
+	.xl\)mar\:bt\+1\.5 {
 		margin-bottom: 1.5rem !important;
 	}
 
-	.xl\)mar\:bottom\+1\.75 {
+	.xl\)mar\:bt\+1\.75 {
 		margin-bottom: 1.75rem !important;
 	}
 
-	.xl\)mar\:bottom\+2 {
+	.xl\)mar\:bt\+2 {
 		margin-bottom: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.xl\)mar\:bottom0,
-	.xl\)mar\:bottom-0,
-	.xl\)mar\:bottom\+0 {
+	.xl\)mar\:bt0,
+	.xl\)mar\:bt-0,
+	.xl\)mar\:bt\+0 {
 		margin-bottom: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.xl\)mar\:bottom-0\.25 {
+	.xl\)mar\:bt-0\.25 {
 		margin-bottom: -0.25rem !important;
 	}
 
-	.xl\)mar\:bottom-0\.5 {
+	.xl\)mar\:bt-0\.5 {
 		margin-bottom: -0.5rem !important;
 	}
 
-	.xl\)mar\:bottom-0\.75 {
+	.xl\)mar\:bt-0\.75 {
 		margin-bottom: -0.75rem !important;
 	}
 
-	.xl\)mar\:bottom-1 {
+	.xl\)mar\:bt-1 {
 		margin-bottom: -1rem !important;
 	}
 
-	.xl\)mar\:bottom-1\.25 {
+	.xl\)mar\:bt-1\.25 {
 		margin-bottom: -1.25rem !important;
 	}
 
-	.xl\)mar\:bottom-1\.5 {
+	.xl\)mar\:bt-1\.5 {
 		margin-bottom: -1.5rem !important;
 	}
 
-	.xl\)mar\:bottom-1\.75 {
+	.xl\)mar\:bt-1\.75 {
 		margin-bottom: -1.75rem !important;
 	}
 
-	.xl\)mar\:bottom-2 {
+	.xl\)mar\:bt-2 {
 		margin-bottom: -2rem !important;
 	}
 
@@ -14860,79 +14840,79 @@ table.cols\:fixed {
     ***
     */
 	/*: add margin :*/
-	.xl\)mar\:left\+0\.125 {
+	.xl\)mar\:lt\+0\.125 {
 		margin-left: 0.125rem !important;
 	}
 
-	.xl\)mar\:left\+0\.25 {
+	.xl\)mar\:lt\+0\.25 {
 		margin-left: 0.25rem !important;
 	}
 
-	.xl\)mar\:left\+0\.5 {
+	.xl\)mar\:lt\+0\.5 {
 		margin-left: 0.5rem !important;
 	}
 
-	.xl\)mar\:left\+0\.75 {
+	.xl\)mar\:lt\+0\.75 {
 		margin-left: 0.75rem !important;
 	}
 
-	.xl\)mar\:left\+1 {
+	.xl\)mar\:lt\+1 {
 		margin-left: 1rem !important;
 	}
 
-	.xl\)mar\:left\+1\.25 {
+	.xl\)mar\:lt\+1\.25 {
 		margin-left: 1.25rem !important;
 	}
 
-	.xl\)mar\:left\+1\.5 {
+	.xl\)mar\:lt\+1\.5 {
 		margin-left: 1.5rem !important;
 	}
 
-	.xl\)mar\:left\+1\.75 {
+	.xl\)mar\:lt\+1\.75 {
 		margin-left: 1.75rem !important;
 	}
 
-	.xl\)mar\:left\+2 {
+	.xl\)mar\:lt\+2 {
 		margin-left: 2rem !important;
 	}
 
 	/*: 0 margin :*/
-	.xl\)mar\:left0,
-	.xl\)mar\:left-0,
-	.xl\)mar\:left\+0 {
+	.xl\)mar\:lt0,
+	.xl\)mar\:lt-0,
+	.xl\)mar\:lt\+0 {
 		margin-left: 0 !important;
 	}
 
 	/*: subtract margin :*/
-	.xl\)mar\:left-0\.25 {
+	.xl\)mar\:lt-0\.25 {
 		margin-left: -0.25rem !important;
 	}
 
-	.xl\)mar\:left-0\.5 {
+	.xl\)mar\:lt-0\.5 {
 		margin-left: -0.5rem !important;
 	}
 
-	.xl\)mar\:left-0\.75 {
+	.xl\)mar\:lt-0\.75 {
 		margin-left: -0.75rem !important;
 	}
 
-	.xl\)mar\:left-1 {
+	.xl\)mar\:lt-1 {
 		margin-left: -1rem !important;
 	}
 
-	.xl\)mar\:left-1\.25 {
+	.xl\)mar\:lt-1\.25 {
 		margin-left: -1.25rem !important;
 	}
 
-	.xl\)mar\:left-1\.5 {
+	.xl\)mar\:lt-1\.5 {
 		margin-left: -1.5rem !important;
 	}
 
-	.xl\)mar\:left-1\.75 {
+	.xl\)mar\:lt-1\.75 {
 		margin-left: -1.75rem !important;
 	}
 
-	.xl\)mar\:left-2 {
+	.xl\)mar\:lt-2 {
 		margin-left: -2rem !important;
 	}
 
@@ -15204,45 +15184,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.xl\)pad\:top0,
-	.xl\)pad\:top-0,
-	.xl\)pad\:top\+0 {
+	.xl\)pad\:tp0,
+	.xl\)pad\:tp-0,
+	.xl\)pad\:tp\+0 {
 		padding-top: 0 !important;
 	}
 
-	.xl\)pad\:top\+0\.125 {
+	.xl\)pad\:tp\+0\.125 {
 		padding-top: 0.125rem !important;
 	}
 
-	.xl\)pad\:top\+0\.25 {
+	.xl\)pad\:tp\+0\.25 {
 		padding-top: 0.25rem !important;
 	}
 
-	.xl\)pad\:top\+0\.5 {
+	.xl\)pad\:tp\+0\.5 {
 		padding-top: 0.5rem !important;
 	}
 
-	.xl\)pad\:top\+0\.75 {
+	.xl\)pad\:tp\+0\.75 {
 		padding-top: 0.75rem !important;
 	}
 
-	.xl\)pad\:top\+1 {
+	.xl\)pad\:tp\+1 {
 		padding-top: 1rem !important;
 	}
 
-	.xl\)pad\:top\+1\.25 {
+	.xl\)pad\:tp\+1\.25 {
 		padding-top: 1.25rem !important;
 	}
 
-	.xl\)pad\:top\+1\.5 {
+	.xl\)pad\:tp\+1\.5 {
 		padding-top: 1.5rem !important;
 	}
 
-	.xl\)pad\:top\+1\.75 {
+	.xl\)pad\:tp\+1\.75 {
 		padding-top: 1.75rem !important;
 	}
 
-	.xl\)pad\:top\+2 {
+	.xl\)pad\:tp\+2 {
 		padding-top: 2rem !important;
 	}
 
@@ -15255,45 +15235,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.xl\)pad\:right0,
-	.xl\)pad\:right-0,
-	.xl\)pad\:right\+0 {
+	.xl\)pad\:rt0,
+	.xl\)pad\:rt-0,
+	.xl\)pad\:rt\+0 {
 		padding-right: 0 !important;
 	}
 
-	.xl\)pad\:right\+0\.125 {
+	.xl\)pad\:rt\+0\.125 {
 		padding-right: 0.125rem !important;
 	}
 
-	.xl\)pad\:right\+0\.25 {
+	.xl\)pad\:rt\+0\.25 {
 		padding-right: 0.25rem !important;
 	}
 
-	.xl\)pad\:right\+0\.5 {
+	.xl\)pad\:rt\+0\.5 {
 		padding-right: 0.5rem !important;
 	}
 
-	.xl\)pad\:right\+0\.75 {
+	.xl\)pad\:rt\+0\.75 {
 		padding-right: 0.75rem !important;
 	}
 
-	.xl\)pad\:right\+1 {
+	.xl\)pad\:rt\+1 {
 		padding-right: 1rem !important;
 	}
 
-	.xl\)pad\:right\+1\.25 {
+	.xl\)pad\:rt\+1\.25 {
 		padding-right: 1.25rem !important;
 	}
 
-	.xl\)pad\:right\+1\.5 {
+	.xl\)pad\:rt\+1\.5 {
 		padding-right: 1.5rem !important;
 	}
 
-	.xl\)pad\:right\+1\.75 {
+	.xl\)pad\:rt\+1\.75 {
 		padding-right: 1.75rem !important;
 	}
 
-	.xl\)pad\:right\+2 {
+	.xl\)pad\:rt\+2 {
 		padding-right: 2rem !important;
 	}
 
@@ -15306,45 +15286,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.xl\)pad\:bottom0,
-	.xl\)pad\:bottom-0,
-	.xl\)pad\:bottom\+0 {
+	.xl\)pad\:bt0,
+	.xl\)pad\:bt-0,
+	.xl\)pad\:bt\+0 {
 		padding-bottom: 0 !important;
 	}
 
-	.xl\)pad\:bottom\+0\.125 {
+	.xl\)pad\:bt\+0\.125 {
 		padding-bottom: 0.125rem !important;
 	}
 
-	.xl\)pad\:bottom\+0\.25 {
+	.xl\)pad\:bt\+0\.25 {
 		padding-bottom: 0.25rem !important;
 	}
 
-	.xl\)pad\:bottom\+0\.5 {
+	.xl\)pad\:bt\+0\.5 {
 		padding-bottom: 0.5rem !important;
 	}
 
-	.xl\)pad\:bottom\+0\.75 {
+	.xl\)pad\:bt\+0\.75 {
 		padding-bottom: 0.75rem !important;
 	}
 
-	.xl\)pad\:bottom\+1 {
+	.xl\)pad\:bt\+1 {
 		padding-bottom: 1rem !important;
 	}
 
-	.xl\)pad\:bottom\+1\.25 {
+	.xl\)pad\:bt\+1\.25 {
 		padding-bottom: 1.25rem !important;
 	}
 
-	.xl\)pad\:bottom\+1\.5 {
+	.xl\)pad\:bt\+1\.5 {
 		padding-bottom: 1.5rem !important;
 	}
 
-	.xl\)pad\:bottom\+1\.75 {
+	.xl\)pad\:bt\+1\.75 {
 		padding-bottom: 1.75rem !important;
 	}
 
-	.xl\)pad\:bottom\+2 {
+	.xl\)pad\:bt\+2 {
 		padding-bottom: 2rem !important;
 	}
 
@@ -15357,45 +15337,45 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
     ***
     */
-	.xl\)pad\:left0,
-	.xl\)pad\:left-0,
-	.xl\)pad\:left\+0 {
+	.xl\)pad\:lt0,
+	.xl\)pad\:lt-0,
+	.xl\)pad\:lt\+0 {
 		padding-left: 0 !important;
 	}
 
-	.xl\)pad\:left\+0\.125 {
+	.xl\)pad\:lt\+0\.125 {
 		padding-left: 0.125rem !important;
 	}
 
-	.xl\)pad\:left\+0\.25 {
+	.xl\)pad\:lt\+0\.25 {
 		padding-left: 0.25rem !important;
 	}
 
-	.xl\)pad\:left\+0\.5 {
+	.xl\)pad\:lt\+0\.5 {
 		padding-left: 0.5rem !important;
 	}
 
-	.xl\)pad\:left\+0\.75 {
+	.xl\)pad\:lt\+0\.75 {
 		padding-left: 0.75rem !important;
 	}
 
-	.xl\)pad\:left\+1 {
+	.xl\)pad\:lt\+1 {
 		padding-left: 1rem !important;
 	}
 
-	.xl\)pad\:left\+1\.25 {
+	.xl\)pad\:lt\+1\.25 {
 		padding-left: 1.25rem !important;
 	}
 
-	.xl\)pad\:left\+1\.5 {
+	.xl\)pad\:lt\+1\.5 {
 		padding-left: 1.5rem !important;
 	}
 
-	.xl\)pad\:left\+1\.75 {
+	.xl\)pad\:lt\+1\.75 {
 		padding-left: 1.75rem !important;
 	}
 
-	.xl\)pad\:left\+2 {
+	.xl\)pad\:lt\+2 {
 		padding-left: 2rem !important;
 	}
 
@@ -16260,5 +16240,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: assets/css/theme/advance.css / 28200801
+ * EOF: assets/css/theme/advance.css / 29200815
  */
