@@ -950,7 +950,6 @@ function xidipity_shortcode($atts = array())
 	}
 }
 /*
- * EOF:     inc/extras.php
- * Build:   29200815
+ * EOF:     inc/extras.php / 29200815
 */
 ?>
