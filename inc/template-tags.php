@@ -4,7 +4,7 @@
  * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -41,14 +41,14 @@ if (!function_exists('xty_excerpt'))
 		}
 		if (!empty($wp_img) && xty('fea-img') !== 'none')
 		{
-			$html .= '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% lg)fb:20% sm)pad:right+0.75">';
+			$html .= '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% lg)fb:20% sm)pad:rt+0.75">';
 			$html .= '<a href="' . $attachment_page_url . '">' . $wp_img . '</a>';
 			$html .= '</div>';
-			$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100% sm)fb:70% lg)fb:80%">';
+			$html .= '<div class="fxd:2 fxe:6 pad:tp+0.5 sm)pad:tp+0 fb:100% sm)fb:70% lg)fb:80%">';
 		}
 		else
 		{
-			$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0 fb:100%">';
+			$html .= '<div class="fxd:2 fxe:6 pad:tp+0.5 sm)pad:tp+0 fb:100%">';
 		}
 		$html .= '<div class="fx:c fxa:1 fxb:1 fxc:1 ht:100%">';
 		$html .= '<div class="fxd:3 fxe:6">';
@@ -57,18 +57,18 @@ if (!function_exists('xty_excerpt'))
 		*/
 		$html .= '<h3>' . get_the_title() . '</h3>';
 		$html .= '<p class="fnt:size-medium">' . get_the_excerpt() . '</p>';
-		$html .= '<div class="mar:top+0.5">';
+		$html .= '<div class="mar:tp+0.5">';
 		$html .= xty_readmore($post_link);
 		$html .= '</div>';
 		$html .= '</div>';
-		$html .= '<div class="fxd:2 fxe:6 pad:top+0.5 sm)pad:top+0">';
+		$html .= '<div class="fxd:2 fxe:6 pad:tp+0.5 sm)pad:tp+0">';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3 fnt:size-x-small lg)fnt:size-small xl)fnt:size-medium">';
-		$html .= '<div class="bkg:bas ln mar:bottom+0.75 sm)dsp:none wd:100%"></div>';
+		$html .= '<div class="bkg:bas ln mar:bt+0.75 sm)dsp:none wd:100%"></div>';
 		$post_type = get_post_type();
 		$data_item = array();
-		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium pad:right+0.5">';
+		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium pad:rt+0.5">';
 		$ico_pst = '</div></div>';
-		$txt_pre = '<div class="fnt:size-2x-small pad:left+0.25 pad:top+0.25">';
+		$txt_pre = '<div class="fnt:size-2x-small pad:lt+0.25 pad:tp+0.25">';
 		$txt_pst = '</div>';
 		$div_pre = '<div class="txt:bas dsp:none sm)dsp:block aln:text-center pad:hrz+0.25">';
 		$div_pst = '</div>';
@@ -227,7 +227,7 @@ if (!function_exists('xty_support_agent'))
 {
 	function xty_support_agent($msg = '')
 	{
-		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:pri-2 bkg:tint-bas-1 cnr:arch-small"><div class="fnt:size-7x-large pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:right+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:size-2x-large sm)fnt:size-3x-large fnt:weight-medium wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  28200801:BUTTON --><button class="aln:text-center fnt:size-x-small sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /28200801:BUTTON --></div></div></div></div>' . "\n";
+		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:pri-2 bkg:tint-bas-1 cnr:arch-small"><div class="fnt:size-7x-large pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:rt+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:size-2x-large sm)fnt:size-3x-large fnt:weight-medium wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  28200801:BUTTON --><button class="aln:text-center fnt:size-x-small sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /28200801:BUTTON --></div></div></div></div>' . "\n";
 	}
 }
 /*  # xty_author
@@ -320,7 +320,7 @@ if (!function_exists('xty_readmore'))
 		}
 		$html .= '</div>';
 		$html .= '</div>';
-		$html .= '<div class="fnt:size-x-small fxd:1 fxe:1 pad:left+0.5 pad:top+0.125">';
+		$html .= '<div class="fnt:size-x-small fxd:1 fxe:1 pad:lt+0.5 pad:tp+0.125">';
 		if (empty($arg))
 		{
 			$html .= '<p>Additional information not available.</p>';
@@ -344,7 +344,7 @@ if (!function_exists('xty_info_pole'))
 	{
 		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+3 cnr:arch-x-small"><div class="fnt:size-x-medium fxd:1 fxe:1">';
 		$ico_pst = '</div></div>';
-		$txt_pre = '<div class="fnt:size-x-small fxd:1 fxe:1 pad:left+0.5">';
+		$txt_pre = '<div class="fnt:size-x-small fxd:1 fxe:1 pad:lt+0.5">';
 		$txt_pst = '</div>';
 		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_POLE</cmt>';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
@@ -467,9 +467,9 @@ if (!function_exists('xty_info_bar'))
 		$ico_pre = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2"><div class="fnt:size-x-medium">';
 		$ico_pst = '</div></div>';
 		$ico_prt = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2 prt[dsp:none]"><div class="fnt:size-x-medium">';
-		$txt_pre = '<div class="fnt:size-2x-small pad:left+0.5">';
+		$txt_pre = '<div class="fnt:size-2x-small pad:lt+0.5">';
 		$txt_pst = '</div>';
-		$txt_prt = '<div class="fnt:size-2x-small pad:left+0.5 prt[dsp:none]">';
+		$txt_prt = '<div class="fnt:size-2x-small pad:lt+0.5 prt[dsp:none]">';
 		$div_pre = '<div class="aln:text-center dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
 		$div_pst = '</div>';
 		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>';
@@ -836,7 +836,6 @@ function xidipity_has_excerpt()
 }
 /*
  * EOF:     inc/template-tags.php
- * Build:   28200801
- *
+ * Build:   29200815
 */
 ?>
