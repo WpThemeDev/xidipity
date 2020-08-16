@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  28200801
+    * bld:  28200815
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1318,8 +1318,8 @@ table>tfoot>tr>td {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
 */
-tbody.bdr\:xls td {
-	border: 1px solid var(--hue-bas-up1) !important;
+table>tbody.bdr\:xls>tr>td {
+	border: 1px solid var(--hue-bas-up1);
 }
 
 /*
@@ -1331,9 +1331,9 @@ tbody.bdr\:xls td {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
 ***
 */
-tbody.bdr\:none td,
-tbody.bdr\:none tr {
-	border-color: transparent !important;
+table>tbody.bdr\:none>tr,
+table>tbody.bdr\:none>tr>td {
+	border-color: transparent;
 }
 
 /*
@@ -2582,5 +2582,5 @@ button:active {
 }
 
 /*
- * EOF: assets/css/theme/common.css / 28200801
+ * EOF: assets/css/theme/common.css / 28200815
  */
