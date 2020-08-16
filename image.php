@@ -4,7 +4,7 @@
  * The template for displaying media library image
  *
  * ###:  image.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -36,20 +36,20 @@ if (xty('sb-aln') == 'left')
 	echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:left+0.5">' . "\n";
+	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:lt+0.5">' . "\n";
 }
 else
 {
 	echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
 	echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5 md)mar:right+0.5">' . "\n";
+	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:rt+0.5">' . "\n";
 }
 echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_query->have_posts())
 {
 	echo '<cmt name="begin">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<header class="mar:top+1 wd:100%">' . "\n";
+	echo '<header class="mar:tp+1 wd:100%">' . "\n";
 	/*
 	 *** developer.wordpress.org/reference/functions/the_title/
 	*/
@@ -58,7 +58,7 @@ if ($wp_query->have_posts())
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/IMAGE</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** display image
 	*/
@@ -73,7 +73,7 @@ if ($wp_query->have_posts())
 	echo '</div>' . "\n";
 	if (!empty($caption))
 	{
-		echo '<div class="aln:text-center fnt:size-smaller mar:bottom+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
+		echo '<div class="aln:text-center fnt:size-smaller mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
 	}
 	if (!empty($content))
 	{
@@ -140,6 +140,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: image.php / 28200801
+ * EOF: image.php / 29200815
 */
 ?>
