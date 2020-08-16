@@ -4,7 +4,7 @@
  * Theme Extended Functionality
  *
  * ###:  inc/extras.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -193,7 +193,7 @@ function xlst_shortcode($args = array() , $prm = '')
 			/*
 			 *** inc/template-tags/xty_excerpt
 			*/
-			$html .= '<div class="mar:bottom+2">' . "\n";
+			$html .= '<div class="mar:bt+2">' . "\n";
 			$html .= xty_excerpt();
 			$html .= '</div>' . "\n";
 		}
@@ -636,7 +636,7 @@ function imgg_shortcode($args = array() , $prm = '')
 			$wp_post = get_post();
 			$image_caption = $wp_post->post_excerpt;
 			$image_content = $wp_post->post_content;
-			$html .= '<div class="fxd:1 fxe:1 pad:bottom+1 sm)pad:hrz+0.5 wd:100% sm)wd:1/2 md)wd:1/3 xl)wd:1/4">';
+			$html .= '<div class="fxd:1 fxe:1 pad:bt+1 sm)pad:hrz+0.5 wd:100% sm)wd:1/2 md)wd:1/3 xl)wd:1/4">';
 			/*
 			 *** display details as column
 			*/
@@ -664,15 +664,15 @@ function imgg_shortcode($args = array() , $prm = '')
 			switch ($show_caption)
 			{
 				case 'l':
-					$html .= '<div class="aln:text-left fxd:1 fxe:1 fnt:size-smaller mar:top+0.25">';
+					$html .= '<div class="aln:text-left fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
 				break;
 				case 'r':
-					$html .= '<div class="aln:text-right fxd:1 fxe:1 fnt:size-smaller mar:top+0.25">';
+					$html .= '<div class="aln:text-right fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
 				case 'x':
 					$html .= '<div class="dsp:none">';
 				break;
 				default:
-					$html .= '<div class="aln:text-center fxd:1 fxe:1 fnt:size-smaller mar:top+0.25">';
+					$html .= '<div class="aln:text-center fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
 			}
 			$html .= $image_caption;
 			$html .= '</div>';
@@ -681,7 +681,7 @@ function imgg_shortcode($args = array() , $prm = '')
 			*/
 			if ($content == 'y')
 			{
-				$html .= '<div class="aln:text-left fxd:1 fxe:1 mar:top+0.25">';
+				$html .= '<div class="aln:text-left fxd:1 fxe:1 mar:tp+0.25">';
 				$html .= $image_content;
 				$html .= '</div>';
 			}
@@ -951,7 +951,6 @@ function xidipity_shortcode($atts = array())
 }
 /*
  * EOF:     inc/extras.php
- * Build:   28200801
- *
+ * Build:   29200815
 */
 ?>
