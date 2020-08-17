@@ -4,7 +4,7 @@
  * The template for displaying blog excerpts
  *
  * ###:  template-parts/content-precis.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -17,7 +17,7 @@ if ($wp_data->have_posts())
 	 *** X developer.wordpress.org/reference/functions/the_title/
 	*/
 	echo '<cmt name="begin">PRECIS/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** X yoast breadcrumbs plugin
 	*/
@@ -28,7 +28,7 @@ if ($wp_data->have_posts())
 		/*
 		 *** inc/template-tags/xty_excerpt
 		*/
-		echo '<div class="mar:bottom+2">' . "\n";
+		echo '<div class="mar:bt+2">' . "\n";
 		echo xty_excerpt();
 		echo '</div>' . "\n";
 	}
@@ -68,6 +68,6 @@ echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-PRECIS/PHP</cmt>' . "\n";
 /*
- * EOF: template-parts/content-precis.php / 28200801
+ * EOF: template-parts/content-precis.php / 29200815
 */
 ?>
