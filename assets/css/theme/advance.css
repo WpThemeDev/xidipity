@@ -94,183 +94,183 @@
     *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
 ***
 */
-.bdr\:dashed-thin,
-.bdr\:dashed-medium,
-.bdr\:dashed-thick {
+.bdr\:da-1x,
+.bdr\:da-2x,
+.bdr\:da-3x {
 	border-style: dashed !important;
 }
 
-.bdr\:tp-dashed-thin,
-.bdr\:tp-dashed-medium,
-.bdr\:tp-dashed-thick {
+.bdr\:tp-da-1x,
+.bdr\:tp-da-2x,
+.bdr\:tp-da-3x {
 	border-top-style: dashed !important;
 }
 
-.bdr\:rt-dashed-thin,
-.bdr\:rt-dashed-medium,
-.bdr\:rt-dashed-thick {
+.bdr\:rt-da-1x,
+.bdr\:rt-da-2x,
+.bdr\:rt-da-3x {
 	border-right-style: dashed !important;
 }
 
-.bdr\:bt-dashed-thin,
-.bdr\:bt-dashed-medium,
-.bdr\:bt-dashed-thick {
+.bdr\:bt-da-1x,
+.bdr\:bt-da-2x,
+.bdr\:bt-da-3x {
 	border-bottom-style: dashed !important;
 }
 
-.bdr\:lt-dashed-thin,
-.bdr\:lt-dashed-medium,
-.bdr\:lt-dashed-thick {
+.bdr\:lt-da-1x,
+.bdr\:lt-da-2x,
+.bdr\:lt-da-3x {
 	border-left-style: dashed !important;
 }
 
-.bdr\:dotted-thin,
-.bdr\:dotted-medium,
-.bdr\:dotted-thick {
+.bdr\:do-1x,
+.bdr\:do-2x,
+.bdr\:do-3x {
 	border-style: dotted !important;
 }
 
-.bdr\:tp-dotted-thin,
-.bdr\:tp-dotted-medium,
-.bdr\:tp-dotted-thick {
+.bdr\:tp-do-1x,
+.bdr\:tp-do-2x,
+.bdr\:tp-do-3x {
 	border-top-style: dotted !important;
 }
 
-.bdr\:rt-dotted-thin,
-.bdr\:rt-dotted-medium,
-.bdr\:rt-dotted-thick {
+.bdr\:rt-do-1x,
+.bdr\:rt-do-2x,
+.bdr\:rt-do-3x {
 	border-right-style: dotted !important;
 }
 
-.bdr\:bt-dotted-thin,
-.bdr\:bt-dotted-medium,
-.bdr\:bt-dotted-thick {
+.bdr\:bt-do-1x,
+.bdr\:bt-do-2x,
+.bdr\:bt-do-3x {
 	border-bottom-style: dotted !important;
 }
 
-.bdr\:lt-dotted-thin,
-.bdr\:lt-dotted-medium,
-.bdr\:lt-dotted-thick {
+.bdr\:lt-do-1x,
+.bdr\:lt-do-2x,
+.bdr\:lt-do-3x {
 	border-left-style: dotted !important;
 }
 
-.bdr\:solid-thin,
-.bdr\:solid-medium,
-.bdr\:solid-thick {
+.bdr\:so-1x,
+.bdr\:so-2x,
+.bdr\:so-3x {
 	border-style: solid !important;
 }
 
-.bdr\:tp-solid-thin,
-.bdr\:tp-solid-medium,
-.bdr\:tp-solid-thick {
+.bdr\:tp-so-1x,
+.bdr\:tp-so-2x,
+.bdr\:tp-so-3x {
 	border-top-style: solid !important;
 }
 
-.bdr\:rt-solid-thin,
-.bdr\:rt-solid-medium,
-.bdr\:rt-solid-thick {
+.bdr\:rt-so-1x,
+.bdr\:rt-so-2x,
+.bdr\:rt-so-3x {
 	border-right-style: solid !important;
 }
 
-.bdr\:bt-solid-thin,
-.bdr\:bt-solid-medium,
-.bdr\:bt-solid-thick {
+.bdr\:bt-so-1x,
+.bdr\:bt-so-2x,
+.bdr\:bt-so-3x {
 	border-bottom-style: solid !important;
 }
 
-.bdr\:lt-solid-thin,
-.bdr\:lt-solid-medium,
-.bdr\:lt-solid-thick {
+.bdr\:lt-so-1x,
+.bdr\:lt-so-2x,
+.bdr\:lt-so-3x {
 	border-left-style: solid !important;
 }
 
-.bdr\:dashed-thin,
-.bdr\:dotted-thin,
-.bdr\:solid-thin {
+.bdr\:da-1x,
+.bdr\:do-1x,
+.bdr\:so-1x {
 	border-width: thin !important;
 }
 
-.bdr\:tp-dashed-thin,
-.bdr\:tp-dotted-thin,
-.bdr\:tp-solid-thin {
+.bdr\:tp-da-1x,
+.bdr\:tp-do-1x,
+.bdr\:tp-so-1x {
 	border-top-width: thin !important;
 }
 
-.bdr\:rt-dashed-thin,
-.bdr\:rt-dotted-thin,
-.bdr\:rt-solid-thin {
+.bdr\:rt-da-1x,
+.bdr\:rt-do-1x,
+.bdr\:rt-so-1x {
 	border-right-width: thin !important;
 }
 
-.bdr\:bt-dashed-thin,
-.bdr\:bt-dotted-thin,
-.bdr\:bt-solid-thin {
+.bdr\:bt-da-1x,
+.bdr\:bt-do-1x,
+.bdr\:bt-so-1x {
 	border-bottom-width: thin !important;
 }
 
-.bdr\:lt-dashed-thin,
-.bdr\:lt-dotted-thin,
-.bdr\:lt-solid-thin {
+.bdr\:lt-da-1x,
+.bdr\:lt-do-1x,
+.bdr\:lt-so-1x {
 	border-left-width: thin !important;
 }
 
-.bdr\:dashed-medium,
-.bdr\:dotted-medium,
-.bdr\:solid-medium {
+.bdr\:da-2x,
+.bdr\:do-2x,
+.bdr\:so-2x {
 	border-width: medium !important;
 }
 
-.bdr\:tp-dashed-medium,
-.bdr\:tp-dotted-medium,
-.bdr\:tp-solid-medium {
+.bdr\:tp-da-2x,
+.bdr\:tp-do-2x,
+.bdr\:tp-so-2x {
 	border-top-width: medium !important;
 }
 
-.bdr\:rt-dashed-medium,
-.bdr\:rt-dotted-medium,
-.bdr\:rt-solid-medium {
+.bdr\:rt-da-2x,
+.bdr\:rt-do-2x,
+.bdr\:rt-so-2x {
 	border-right-width: medium !important;
 }
 
-.bdr\:bt-dashed-medium,
-.bdr\:bt-dotted-medium,
-.bdr\:bt-solid-medium {
+.bdr\:bt-da-2x,
+.bdr\:bt-do-2x,
+.bdr\:bt-so-2x {
 	border-bottom-width: medium !important;
 }
 
-.bdr\:lt-dashed-medium,
-.bdr\:lt-dotted-medium,
-.bdr\:lt-solid-medium {
+.bdr\:lt-da-2x,
+.bdr\:lt-do-2x,
+.bdr\:lt-so-2x {
 	border-left-width: medium !important;
 }
 
-.bdr\:dashed-thick,
-.bdr\:dotted-thick,
-.bdr\:solid-thick {
+.bdr\:da-3x,
+.bdr\:do-3x,
+.bdr\:so-3x {
 	border-width: thick !important;
 }
 
-.bdr\:tp-dashed-thick,
-.bdr\:tp-dotted-thick,
-.bdr\:tp-solid-thick {
+.bdr\:tp-da-3x,
+.bdr\:tp-do-3x,
+.bdr\:tp-so-3x {
 	border-top-width: thick !important;
 }
 
-.bdr\:rt-dashed-thick,
-.bdr\:rt-dotted-thick,
-.bdr\:rt-solid-thick {
+.bdr\:rt-da-3x,
+.bdr\:rt-do-3x,
+.bdr\:rt-so-3x {
 	border-right-width: thick !important;
 }
 
-.bdr\:bt-dashed-thick,
-.bdr\:bt-dotted-thick,
-.bdr\:bt-solid-thick {
+.bdr\:bt-da-3x,
+.bdr\:bt-do-3x,
+.bdr\:bt-so-3x {
 	border-bottom-width: thick !important;
 }
 
-.bdr\:lt-dashed-thick,
-.bdr\:lt-dotted-thick,
-.bdr\:lt-solid-thick {
+.bdr\:lt-da-3x,
+.bdr\:lt-do-3x,
+.bdr\:lt-so-3x {
 	border-left-width: thick !important;
 }
 
@@ -289,40 +289,6 @@
 
 .bdr\:separate {
 	border-collapse: separate !important;
-}
-
-/*
-***
-    * property: bdr
-    * dsc: hide table border(s)
-    * bld: 190208
-    * fnt: hide, but preserve space of table border(s)
-    * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-***
-*/
-tr.bdr\:hidden,
-td.bdr\:hidden,
-table.bdr\:hidden,
-table.bdr\:hidden tr,
-table.bdr\:hidden tr td {
-	border-color: transparent !important;
-}
-
-/*
-***
-    * property: bdr
-    * dsc: display all table borders
-    * bld: 190208
-    * fnt: spreadsheet styled table borders
-    * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-***
-*/
-tr.bdr\:full,
-td.bdr\:full,
-table.bdr\:full,
-table.bdr\:full tr,
-table.bdr\:full tr td {
-	border: 1px solid var(--hue-bas-300);
 }
 
 /*
@@ -3326,203 +3292,183 @@ table.cols\:fixed {
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
     ***
     */
-	.sm\)bdr\:none {
-		border-color: transparent !important;
-	}
-
-	.sm\)bdr\:tp-none {
-		border-top-color: transparent !important;
-	}
-
-	.sm\)bdr\:rt-none {
-		border-right-color: transparent !important;
-	}
-
-	.sm\)bdr\:bt-none {
-		border-bottom-color: transparent !important;
-	}
-
-	.sm\)bdr\:lt-none {
-		border-left-color: transparent !important;
-	}
-
-	.sm\)bdr\:dashed-thin,
-	.sm\)bdr\:dashed-medium,
-	.sm\)bdr\:dashed-thick {
+	.sm\)bdr\:da-1x,
+	.sm\)bdr\:da-2x,
+	.sm\)bdr\:da-3x {
 		border-style: dashed !important;
 	}
 
-	.sm\)bdr\:tp-dashed-thin,
-	.sm\)bdr\:tp-dashed-medium,
-	.sm\)bdr\:tp-dashed-thick {
+	.sm\)bdr\:tp-da-1x,
+	.sm\)bdr\:tp-da-2x,
+	.sm\)bdr\:tp-da-3x {
 		border-top-style: dashed !important;
 	}
 
-	.sm\)bdr\:rt-dashed-thin,
-	.sm\)bdr\:rt-dashed-medium,
-	.sm\)bdr\:rt-dashed-thick {
+	.sm\)bdr\:rt-da-1x,
+	.sm\)bdr\:rt-da-2x,
+	.sm\)bdr\:rt-da-3x {
 		border-right-style: dashed !important;
 	}
 
-	.sm\)bdr\:bt-dashed-thin,
-	.sm\)bdr\:bt-dashed-medium,
-	.sm\)bdr\:bt-dashed-thick {
+	.sm\)bdr\:bt-da-1x,
+	.sm\)bdr\:bt-da-2x,
+	.sm\)bdr\:bt-da-3x {
 		border-bottom-style: dashed !important;
 	}
 
-	.sm\)bdr\:lt-dashed-thin,
-	.sm\)bdr\:lt-dashed-medium,
-	.sm\)bdr\:lt-dashed-thick {
+	.sm\)bdr\:lt-da-1x,
+	.sm\)bdr\:lt-da-2x,
+	.sm\)bdr\:lt-da-3x {
 		border-left-style: dashed !important;
 	}
 
-	.sm\)bdr\:dotted-thin,
-	.sm\)bdr\:dotted-medium,
-	.sm\)bdr\:dotted-thick {
+	.sm\)bdr\:do-1x,
+	.sm\)bdr\:do-2x,
+	.sm\)bdr\:do-3x {
 		border-style: dotted !important;
 	}
 
-	.sm\)bdr\:tp-dotted-thin,
-	.sm\)bdr\:tp-dotted-medium,
-	.sm\)bdr\:tp-dotted-thick {
+	.sm\)bdr\:tp-do-1x,
+	.sm\)bdr\:tp-do-2x,
+	.sm\)bdr\:tp-do-3x {
 		border-top-style: dotted !important;
 	}
 
-	.sm\)bdr\:rt-dotted-thin,
-	.sm\)bdr\:rt-dotted-medium,
-	.sm\)bdr\:rt-dotted-thick {
+	.sm\)bdr\:rt-do-1x,
+	.sm\)bdr\:rt-do-2x,
+	.sm\)bdr\:rt-do-3x {
 		border-right-style: dotted !important;
 	}
 
-	.sm\)bdr\:bt-dotted-thin,
-	.sm\)bdr\:bt-dotted-medium,
-	.sm\)bdr\:bt-dotted-thick {
+	.sm\)bdr\:bt-do-1x,
+	.sm\)bdr\:bt-do-2x,
+	.sm\)bdr\:bt-do-3x {
 		border-bottom-style: dotted !important;
 	}
 
-	.sm\)bdr\:lt-dotted-thin,
-	.sm\)bdr\:lt-dotted-medium,
-	.sm\)bdr\:lt-dotted-thick {
+	.sm\)bdr\:lt-do-1x,
+	.sm\)bdr\:lt-do-2x,
+	.sm\)bdr\:lt-do-3x {
 		border-left-style: dotted !important;
 	}
 
-	.sm\)bdr\:solid-thin,
-	.sm\)bdr\:solid-medium,
-	.sm\)bdr\:solid-thick {
+	.sm\)bdr\:so-1x,
+	.sm\)bdr\:so-2x,
+	.sm\)bdr\:so-3x {
 		border-style: solid !important;
 	}
 
-	.sm\)bdr\:tp-solid-thin,
-	.sm\)bdr\:tp-solid-medium,
-	.sm\)bdr\:tp-solid-thick {
+	.sm\)bdr\:tp-so-1x,
+	.sm\)bdr\:tp-so-2x,
+	.sm\)bdr\:tp-so-3x {
 		border-top-style: solid !important;
 	}
 
-	.sm\)bdr\:rt-solid-thin,
-	.sm\)bdr\:rt-solid-medium,
-	.sm\)bdr\:rt-solid-thick {
+	.sm\)bdr\:rt-so-1x,
+	.sm\)bdr\:rt-so-2x,
+	.sm\)bdr\:rt-so-3x {
 		border-right-style: solid !important;
 	}
 
-	.sm\)bdr\:bt-solid-thin,
-	.sm\)bdr\:bt-solid-medium,
-	.sm\)bdr\:bt-solid-thick {
+	.sm\)bdr\:bt-so-1x,
+	.sm\)bdr\:bt-so-2x,
+	.sm\)bdr\:bt-so-3x {
 		border-bottom-style: solid !important;
 	}
 
-	.sm\)bdr\:lt-solid-thin,
-	.sm\)bdr\:lt-solid-medium,
-	.sm\)bdr\:lt-solid-thick {
+	.sm\)bdr\:lt-so-1x,
+	.sm\)bdr\:lt-so-2x,
+	.sm\)bdr\:lt-so-3x {
 		border-left-style: solid !important;
 	}
 
-	.sm\)bdr\:dashed-thin,
-	.sm\)bdr\:dotted-thin,
-	.sm\)bdr\:solid-thin {
+	.sm\)bdr\:da-1x,
+	.sm\)bdr\:do-1x,
+	.sm\)bdr\:so-1x {
 		border-width: thin !important;
 	}
 
-	.sm\)bdr\:tp-dashed-thin,
-	.sm\)bdr\:tp-dotted-thin,
-	.sm\)bdr\:tp-solid-thin {
+	.sm\)bdr\:tp-da-1x,
+	.sm\)bdr\:tp-do-1x,
+	.sm\)bdr\:tp-so-1x {
 		border-top-width: thin !important;
 	}
 
-	.sm\)bdr\:rt-dashed-thin,
-	.sm\)bdr\:rt-dotted-thin,
-	.sm\)bdr\:rt-solid-thin {
+	.sm\)bdr\:rt-da-1x,
+	.sm\)bdr\:rt-do-1x,
+	.sm\)bdr\:rt-so-1x {
 		border-right-width: thin !important;
 	}
 
-	.sm\)bdr\:bt-dashed-thin,
-	.sm\)bdr\:bt-dotted-thin,
-	.sm\)bdr\:bt-solid-thin {
+	.sm\)bdr\:bt-da-1x,
+	.sm\)bdr\:bt-do-1x,
+	.sm\)bdr\:bt-so-1x {
 		border-bottom-width: thin !important;
 	}
 
-	.sm\)bdr\:lt-dashed-thin,
-	.sm\)bdr\:lt-dotted-thin,
-	.sm\)bdr\:lt-solid-thin {
+	.sm\)bdr\:lt-da-1x,
+	.sm\)bdr\:lt-do-1x,
+	.sm\)bdr\:lt-so-1x {
 		border-left-width: thin !important;
 	}
 
-	.sm\)bdr\:dashed-medium,
-	.sm\)bdr\:dotted-medium,
-	.sm\)bdr\:solid-medium {
+	.sm\)bdr\:da-2x,
+	.sm\)bdr\:do-2x,
+	.sm\)bdr\:so-2x {
 		border-width: medium !important;
 	}
 
-	.sm\)bdr\:tp-dashed-medium,
-	.sm\)bdr\:tp-dotted-medium,
-	.sm\)bdr\:tp-solid-medium {
+	.sm\)bdr\:tp-da-2x,
+	.sm\)bdr\:tp-do-2x,
+	.sm\)bdr\:tp-so-2x {
 		border-top-width: medium !important;
 	}
 
-	.sm\)bdr\:rt-dashed-medium,
-	.sm\)bdr\:rt-dotted-medium,
-	.sm\)bdr\:rt-solid-medium {
+	.sm\)bdr\:rt-da-2x,
+	.sm\)bdr\:rt-do-2x,
+	.sm\)bdr\:rt-so-2x {
 		border-right-width: medium !important;
 	}
 
-	.sm\)bdr\:bt-dashed-medium,
-	.sm\)bdr\:bt-dotted-medium,
-	.sm\)bdr\:bt-solid-medium {
+	.sm\)bdr\:bt-da-2x,
+	.sm\)bdr\:bt-do-2x,
+	.sm\)bdr\:bt-so-2x {
 		border-bottom-width: medium !important;
 	}
 
-	.sm\)bdr\:lt-dashed-medium,
-	.sm\)bdr\:lt-dotted-medium,
-	.sm\)bdr\:lt-solid-medium {
+	.sm\)bdr\:lt-da-2x,
+	.sm\)bdr\:lt-do-2x,
+	.sm\)bdr\:lt-so-2x {
 		border-left-width: medium !important;
 	}
 
-	.sm\)bdr\:dashed-thick,
-	.sm\)bdr\:dotted-thick,
-	.sm\)bdr\:solid-thick {
+	.sm\)bdr\:da-3x,
+	.sm\)bdr\:do-3x,
+	.sm\)bdr\:so-3x {
 		border-width: thick !important;
 	}
 
-	.sm\)bdr\:tp-dashed-thick,
-	.sm\)bdr\:tp-dotted-thick,
-	.sm\)bdr\:tp-solid-thick {
+	.sm\)bdr\:tp-da-3x,
+	.sm\)bdr\:tp-do-3x,
+	.sm\)bdr\:tp-so-3x {
 		border-top-width: thick !important;
 	}
 
-	.sm\)bdr\:rt-dashed-thick,
-	.sm\)bdr\:rt-dotted-thick,
-	.sm\)bdr\:rt-solid-thick {
+	.sm\)bdr\:rt-da-3x,
+	.sm\)bdr\:rt-do-3x,
+	.sm\)bdr\:rt-so-3x {
 		border-right-width: thick !important;
 	}
 
-	.sm\)bdr\:bt-dashed-thick,
-	.sm\)bdr\:bt-dotted-thick,
-	.sm\)bdr\:bt-solid-thick {
+	.sm\)bdr\:bt-da-3x,
+	.sm\)bdr\:bt-do-3x,
+	.sm\)bdr\:bt-so-3x {
 		border-bottom-width: thick !important;
 	}
 
-	.sm\)bdr\:lt-dashed-thick,
-	.sm\)bdr\:lt-dotted-thick,
-	.sm\)bdr\:lt-solid-thick {
+	.sm\)bdr\:lt-da-3x,
+	.sm\)bdr\:lt-do-3x,
+	.sm\)bdr\:lt-so-3x {
 		border-left-width: thick !important;
 	}
 
@@ -3541,40 +3487,6 @@ table.cols\:fixed {
 
 	.sm\)bdr\:separate {
 		border-collapse: separate !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: hide table border(s)
-        * bld: 190208
-        * fnt: hide, but preserve space of table border(s)
-        * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-    ***
-    */
-	tr.sm\)bdr\:hidden,
-	td.sm\)bdr\:hidden,
-	table.sm\)bdr\:hidden,
-	table.sm\)bdr\:hidden tr,
-	table.sm\)bdr\:hidden tr td {
-		border-color: transparent !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: display all table borders
-        * bld: 190208
-        * fnt: spreadsheet styled table borders
-        * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-    ***
-    */
-	tr.sm\)bdr\:full,
-	td.sm\)bdr\:full,
-	table.sm\)bdr\:full,
-	table.sm\)bdr\:full tr,
-	table.sm\)bdr\:full tr td {
-		border: 1px solid var(--hue-bas-300);
 	}
 
 	/*
@@ -6576,203 +6488,183 @@ table.cols\:fixed {
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
     ***
     */
-	.md\)bdr\:none {
-		border-color: transparent !important;
-	}
-
-	.md\)bdr\:tp-none {
-		border-top-color: transparent !important;
-	}
-
-	.md\)bdr\:rt-none {
-		border-right-color: transparent !important;
-	}
-
-	.md\)bdr\:bt-none {
-		border-bottom-color: transparent !important;
-	}
-
-	.md\)bdr\:lt-none {
-		border-left-color: transparent !important;
-	}
-
-	.md\)bdr\:dashed-thin,
-	.md\)bdr\:dashed-medium,
-	.md\)bdr\:dashed-thick {
+	.md\)bdr\:da-1x,
+	.md\)bdr\:da-2x,
+	.md\)bdr\:da-3x {
 		border-style: dashed !important;
 	}
 
-	.md\)bdr\:tp-dashed-thin,
-	.md\)bdr\:tp-dashed-medium,
-	.md\)bdr\:tp-dashed-thick {
+	.md\)bdr\:tp-da-1x,
+	.md\)bdr\:tp-da-2x,
+	.md\)bdr\:tp-da-3x {
 		border-top-style: dashed !important;
 	}
 
-	.md\)bdr\:rt-dashed-thin,
-	.md\)bdr\:rt-dashed-medium,
-	.md\)bdr\:rt-dashed-thick {
+	.md\)bdr\:rt-da-1x,
+	.md\)bdr\:rt-da-2x,
+	.md\)bdr\:rt-da-3x {
 		border-right-style: dashed !important;
 	}
 
-	.md\)bdr\:bt-dashed-thin,
-	.md\)bdr\:bt-dashed-medium,
-	.md\)bdr\:bt-dashed-thick {
+	.md\)bdr\:bt-da-1x,
+	.md\)bdr\:bt-da-2x,
+	.md\)bdr\:bt-da-3x {
 		border-bottom-style: dashed !important;
 	}
 
-	.md\)bdr\:lt-dashed-thin,
-	.md\)bdr\:lt-dashed-medium,
-	.md\)bdr\:lt-dashed-thick {
+	.md\)bdr\:lt-da-1x,
+	.md\)bdr\:lt-da-2x,
+	.md\)bdr\:lt-da-3x {
 		border-left-style: dashed !important;
 	}
 
-	.md\)bdr\:dotted-thin,
-	.md\)bdr\:dotted-medium,
-	.md\)bdr\:dotted-thick {
+	.md\)bdr\:do-1x,
+	.md\)bdr\:do-2x,
+	.md\)bdr\:do-3x {
 		border-style: dotted !important;
 	}
 
-	.md\)bdr\:tp-dotted-thin,
-	.md\)bdr\:tp-dotted-medium,
-	.md\)bdr\:tp-dotted-thick {
+	.md\)bdr\:tp-do-1x,
+	.md\)bdr\:tp-do-2x,
+	.md\)bdr\:tp-do-3x {
 		border-top-style: dotted !important;
 	}
 
-	.md\)bdr\:rt-dotted-thin,
-	.md\)bdr\:rt-dotted-medium,
-	.md\)bdr\:rt-dotted-thick {
+	.md\)bdr\:rt-do-1x,
+	.md\)bdr\:rt-do-2x,
+	.md\)bdr\:rt-do-3x {
 		border-right-style: dotted !important;
 	}
 
-	.md\)bdr\:bt-dotted-thin,
-	.md\)bdr\:bt-dotted-medium,
-	.md\)bdr\:bt-dotted-thick {
+	.md\)bdr\:bt-do-1x,
+	.md\)bdr\:bt-do-2x,
+	.md\)bdr\:bt-do-3x {
 		border-bottom-style: dotted !important;
 	}
 
-	.md\)bdr\:lt-dotted-thin,
-	.md\)bdr\:lt-dotted-medium,
-	.md\)bdr\:lt-dotted-thick {
+	.md\)bdr\:lt-do-1x,
+	.md\)bdr\:lt-do-2x,
+	.md\)bdr\:lt-do-3x {
 		border-left-style: dotted !important;
 	}
 
-	.md\)bdr\:solid-thin,
-	.md\)bdr\:solid-medium,
-	.md\)bdr\:solid-thick {
+	.md\)bdr\:so-1x,
+	.md\)bdr\:so-2x,
+	.md\)bdr\:so-3x {
 		border-style: solid !important;
 	}
 
-	.md\)bdr\:tp-solid-thin,
-	.md\)bdr\:tp-solid-medium,
-	.md\)bdr\:tp-solid-thick {
+	.md\)bdr\:tp-so-1x,
+	.md\)bdr\:tp-so-2x,
+	.md\)bdr\:tp-so-3x {
 		border-top-style: solid !important;
 	}
 
-	.md\)bdr\:rt-solid-thin,
-	.md\)bdr\:rt-solid-medium,
-	.md\)bdr\:rt-solid-thick {
+	.md\)bdr\:rt-so-1x,
+	.md\)bdr\:rt-so-2x,
+	.md\)bdr\:rt-so-3x {
 		border-right-style: solid !important;
 	}
 
-	.md\)bdr\:bt-solid-thin,
-	.md\)bdr\:bt-solid-medium,
-	.md\)bdr\:bt-solid-thick {
+	.md\)bdr\:bt-so-1x,
+	.md\)bdr\:bt-so-2x,
+	.md\)bdr\:bt-so-3x {
 		border-bottom-style: solid !important;
 	}
 
-	.md\)bdr\:lt-solid-thin,
-	.md\)bdr\:lt-solid-medium,
-	.md\)bdr\:lt-solid-thick {
+	.md\)bdr\:lt-so-1x,
+	.md\)bdr\:lt-so-2x,
+	.md\)bdr\:lt-so-3x {
 		border-left-style: solid !important;
 	}
 
-	.md\)bdr\:dashed-thin,
-	.md\)bdr\:dotted-thin,
-	.md\)bdr\:solid-thin {
+	.md\)bdr\:da-1x,
+	.md\)bdr\:do-1x,
+	.md\)bdr\:so-1x {
 		border-width: thin !important;
 	}
 
-	.md\)bdr\:tp-dashed-thin,
-	.md\)bdr\:tp-dotted-thin,
-	.md\)bdr\:tp-solid-thin {
+	.md\)bdr\:tp-da-1x,
+	.md\)bdr\:tp-do-1x,
+	.md\)bdr\:tp-so-1x {
 		border-top-width: thin !important;
 	}
 
-	.md\)bdr\:rt-dashed-thin,
-	.md\)bdr\:rt-dotted-thin,
-	.md\)bdr\:rt-solid-thin {
+	.md\)bdr\:rt-da-1x,
+	.md\)bdr\:rt-do-1x,
+	.md\)bdr\:rt-so-1x {
 		border-right-width: thin !important;
 	}
 
-	.md\)bdr\:bt-dashed-thin,
-	.md\)bdr\:bt-dotted-thin,
-	.md\)bdr\:bt-solid-thin {
+	.md\)bdr\:bt-da-1x,
+	.md\)bdr\:bt-do-1x,
+	.md\)bdr\:bt-so-1x {
 		border-bottom-width: thin !important;
 	}
 
-	.md\)bdr\:lt-dashed-thin,
-	.md\)bdr\:lt-dotted-thin,
-	.md\)bdr\:lt-solid-thin {
+	.md\)bdr\:lt-da-1x,
+	.md\)bdr\:lt-do-1x,
+	.md\)bdr\:lt-so-1x {
 		border-left-width: thin !important;
 	}
 
-	.md\)bdr\:dashed-medium,
-	.md\)bdr\:dotted-medium,
-	.md\)bdr\:solid-medium {
+	.md\)bdr\:da-2x,
+	.md\)bdr\:do-2x,
+	.md\)bdr\:so-2x {
 		border-width: medium !important;
 	}
 
-	.md\)bdr\:tp-dashed-medium,
-	.md\)bdr\:tp-dotted-medium,
-	.md\)bdr\:tp-solid-medium {
+	.md\)bdr\:tp-da-2x,
+	.md\)bdr\:tp-do-2x,
+	.md\)bdr\:tp-so-2x {
 		border-top-width: medium !important;
 	}
 
-	.md\)bdr\:rt-dashed-medium,
-	.md\)bdr\:rt-dotted-medium,
-	.md\)bdr\:rt-solid-medium {
+	.md\)bdr\:rt-da-2x,
+	.md\)bdr\:rt-do-2x,
+	.md\)bdr\:rt-so-2x {
 		border-right-width: medium !important;
 	}
 
-	.md\)bdr\:bt-dashed-medium,
-	.md\)bdr\:bt-dotted-medium,
-	.md\)bdr\:bt-solid-medium {
+	.md\)bdr\:bt-da-2x,
+	.md\)bdr\:bt-do-2x,
+	.md\)bdr\:bt-so-2x {
 		border-bottom-width: medium !important;
 	}
 
-	.md\)bdr\:lt-dashed-medium,
-	.md\)bdr\:lt-dotted-medium,
-	.md\)bdr\:lt-solid-medium {
+	.md\)bdr\:lt-da-2x,
+	.md\)bdr\:lt-do-2x,
+	.md\)bdr\:lt-so-2x {
 		border-left-width: medium !important;
 	}
 
-	.md\)bdr\:dashed-thick,
-	.md\)bdr\:dotted-thick,
-	.md\)bdr\:solid-thick {
+	.md\)bdr\:da-3x,
+	.md\)bdr\:do-3x,
+	.md\)bdr\:so-3x {
 		border-width: thick !important;
 	}
 
-	.md\)bdr\:tp-dashed-thick,
-	.md\)bdr\:tp-dotted-thick,
-	.md\)bdr\:tp-solid-thick {
+	.md\)bdr\:tp-da-3x,
+	.md\)bdr\:tp-do-3x,
+	.md\)bdr\:tp-so-3x {
 		border-top-width: thick !important;
 	}
 
-	.md\)bdr\:rt-dashed-thick,
-	.md\)bdr\:rt-dotted-thick,
-	.md\)bdr\:rt-solid-thick {
+	.md\)bdr\:rt-da-3x,
+	.md\)bdr\:rt-do-3x,
+	.md\)bdr\:rt-so-3x {
 		border-right-width: thick !important;
 	}
 
-	.md\)bdr\:bt-dashed-thick,
-	.md\)bdr\:bt-dotted-thick,
-	.md\)bdr\:bt-solid-thick {
+	.md\)bdr\:bt-da-3x,
+	.md\)bdr\:bt-do-3x,
+	.md\)bdr\:bt-so-3x {
 		border-bottom-width: thick !important;
 	}
 
-	.md\)bdr\:lt-dashed-thick,
-	.md\)bdr\:lt-dotted-thick,
-	.md\)bdr\:lt-solid-thick {
+	.md\)bdr\:lt-da-3x,
+	.md\)bdr\:lt-do-3x,
+	.md\)bdr\:lt-so-3x {
 		border-left-width: thick !important;
 	}
 
@@ -6791,40 +6683,6 @@ table.cols\:fixed {
 
 	.md\)bdr\:separate {
 		border-collapse: separate !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: hide table border(s)
-        * bld: 190208
-        * fnt: hide, but preserve space of table border(s)
-        * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-    ***
-    */
-	tr.md\)bdr\:hidden,
-	td.md\)bdr\:hidden,
-	table.md\)bdr\:hidden,
-	table.md\)bdr\:hidden tr,
-	table.md\)bdr\:hidden tr td {
-		border-color: transparent !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: display all table borders
-        * bld: 190208
-        * fnt: spreadsheet styled table borders
-        * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-    ***
-    */
-	tr.md\)bdr\:full,
-	td.md\)bdr\:full,
-	table.md\)bdr\:full,
-	table.md\)bdr\:full tr,
-	table.md\)bdr\:full tr td {
-		border: 1px solid var(--hue-bas-300);
 	}
 
 	/*
@@ -9820,203 +9678,183 @@ table.cols\:fixed {
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
     ***
     */
-	.lg\)bdr\:none {
-		border-color: transparent !important;
-	}
-
-	.lg\)bdr\:tp-none {
-		border-top-color: transparent !important;
-	}
-
-	.lg\)bdr\:rt-none {
-		border-right-color: transparent !important;
-	}
-
-	.lg\)bdr\:bt-none {
-		border-bottom-color: transparent !important;
-	}
-
-	.lg\)bdr\:lt-none {
-		border-left-color: transparent !important;
-	}
-
-	.lg\)bdr\:dashed-thin,
-	.lg\)bdr\:dashed-medium,
-	.lg\)bdr\:dashed-thick {
+	.lg\)bdr\:da-1x,
+	.lg\)bdr\:da-2x,
+	.lg\)bdr\:da-3x {
 		border-style: dashed !important;
 	}
 
-	.lg\)bdr\:tp-dashed-thin,
-	.lg\)bdr\:tp-dashed-medium,
-	.lg\)bdr\:tp-dashed-thick {
+	.lg\)bdr\:tp-da-1x,
+	.lg\)bdr\:tp-da-2x,
+	.lg\)bdr\:tp-da-3x {
 		border-top-style: dashed !important;
 	}
 
-	.lg\)bdr\:rt-dashed-thin,
-	.lg\)bdr\:rt-dashed-medium,
-	.lg\)bdr\:rt-dashed-thick {
+	.lg\)bdr\:rt-da-1x,
+	.lg\)bdr\:rt-da-2x,
+	.lg\)bdr\:rt-da-3x {
 		border-right-style: dashed !important;
 	}
 
-	.lg\)bdr\:bt-dashed-thin,
-	.lg\)bdr\:bt-dashed-medium,
-	.lg\)bdr\:bt-dashed-thick {
+	.lg\)bdr\:bt-da-1x,
+	.lg\)bdr\:bt-da-2x,
+	.lg\)bdr\:bt-da-3x {
 		border-bottom-style: dashed !important;
 	}
 
-	.lg\)bdr\:lt-dashed-thin,
-	.lg\)bdr\:lt-dashed-medium,
-	.lg\)bdr\:lt-dashed-thick {
+	.lg\)bdr\:lt-da-1x,
+	.lg\)bdr\:lt-da-2x,
+	.lg\)bdr\:lt-da-3x {
 		border-left-style: dashed !important;
 	}
 
-	.lg\)bdr\:dotted-thin,
-	.lg\)bdr\:dotted-medium,
-	.lg\)bdr\:dotted-thick {
+	.lg\)bdr\:do-1x,
+	.lg\)bdr\:do-2x,
+	.lg\)bdr\:do-3x {
 		border-style: dotted !important;
 	}
 
-	.lg\)bdr\:tp-dotted-thin,
-	.lg\)bdr\:tp-dotted-medium,
-	.lg\)bdr\:tp-dotted-thick {
+	.lg\)bdr\:tp-do-1x,
+	.lg\)bdr\:tp-do-2x,
+	.lg\)bdr\:tp-do-3x {
 		border-top-style: dotted !important;
 	}
 
-	.lg\)bdr\:rt-dotted-thin,
-	.lg\)bdr\:rt-dotted-medium,
-	.lg\)bdr\:rt-dotted-thick {
+	.lg\)bdr\:rt-do-1x,
+	.lg\)bdr\:rt-do-2x,
+	.lg\)bdr\:rt-do-3x {
 		border-right-style: dotted !important;
 	}
 
-	.lg\)bdr\:bt-dotted-thin,
-	.lg\)bdr\:bt-dotted-medium,
-	.lg\)bdr\:bt-dotted-thick {
+	.lg\)bdr\:bt-do-1x,
+	.lg\)bdr\:bt-do-2x,
+	.lg\)bdr\:bt-do-3x {
 		border-bottom-style: dotted !important;
 	}
 
-	.lg\)bdr\:lt-dotted-thin,
-	.lg\)bdr\:lt-dotted-medium,
-	.lg\)bdr\:lt-dotted-thick {
+	.lg\)bdr\:lt-do-1x,
+	.lg\)bdr\:lt-do-2x,
+	.lg\)bdr\:lt-do-3x {
 		border-left-style: dotted !important;
 	}
 
-	.lg\)bdr\:solid-thin,
-	.lg\)bdr\:solid-medium,
-	.lg\)bdr\:solid-thick {
+	.lg\)bdr\:so-1x,
+	.lg\)bdr\:so-2x,
+	.lg\)bdr\:so-3x {
 		border-style: solid !important;
 	}
 
-	.lg\)bdr\:tp-solid-thin,
-	.lg\)bdr\:tp-solid-medium,
-	.lg\)bdr\:tp-solid-thick {
+	.lg\)bdr\:tp-so-1x,
+	.lg\)bdr\:tp-so-2x,
+	.lg\)bdr\:tp-so-3x {
 		border-top-style: solid !important;
 	}
 
-	.lg\)bdr\:rt-solid-thin,
-	.lg\)bdr\:rt-solid-medium,
-	.lg\)bdr\:rt-solid-thick {
+	.lg\)bdr\:rt-so-1x,
+	.lg\)bdr\:rt-so-2x,
+	.lg\)bdr\:rt-so-3x {
 		border-right-style: solid !important;
 	}
 
-	.lg\)bdr\:bt-solid-thin,
-	.lg\)bdr\:bt-solid-medium,
-	.lg\)bdr\:bt-solid-thick {
+	.lg\)bdr\:bt-so-1x,
+	.lg\)bdr\:bt-so-2x,
+	.lg\)bdr\:bt-so-3x {
 		border-bottom-style: solid !important;
 	}
 
-	.lg\)bdr\:lt-solid-thin,
-	.lg\)bdr\:lt-solid-medium,
-	.lg\)bdr\:lt-solid-thick {
+	.lg\)bdr\:lt-so-1x,
+	.lg\)bdr\:lt-so-2x,
+	.lg\)bdr\:lt-so-3x {
 		border-left-style: solid !important;
 	}
 
-	.lg\)bdr\:dashed-thin,
-	.lg\)bdr\:dotted-thin,
-	.lg\)bdr\:solid-thin {
+	.lg\)bdr\:da-1x,
+	.lg\)bdr\:do-1x,
+	.lg\)bdr\:so-1x {
 		border-width: thin !important;
 	}
 
-	.lg\)bdr\:tp-dashed-thin,
-	.lg\)bdr\:tp-dotted-thin,
-	.lg\)bdr\:tp-solid-thin {
+	.lg\)bdr\:tp-da-1x,
+	.lg\)bdr\:tp-do-1x,
+	.lg\)bdr\:tp-so-1x {
 		border-top-width: thin !important;
 	}
 
-	.lg\)bdr\:rt-dashed-thin,
-	.lg\)bdr\:rt-dotted-thin,
-	.lg\)bdr\:rt-solid-thin {
+	.lg\)bdr\:rt-da-1x,
+	.lg\)bdr\:rt-do-1x,
+	.lg\)bdr\:rt-so-1x {
 		border-right-width: thin !important;
 	}
 
-	.lg\)bdr\:bt-dashed-thin,
-	.lg\)bdr\:bt-dotted-thin,
-	.lg\)bdr\:bt-solid-thin {
+	.lg\)bdr\:bt-da-1x,
+	.lg\)bdr\:bt-do-1x,
+	.lg\)bdr\:bt-so-1x {
 		border-bottom-width: thin !important;
 	}
 
-	.lg\)bdr\:lt-dashed-thin,
-	.lg\)bdr\:lt-dotted-thin,
-	.lg\)bdr\:lt-solid-thin {
+	.lg\)bdr\:lt-da-1x,
+	.lg\)bdr\:lt-do-1x,
+	.lg\)bdr\:lt-so-1x {
 		border-left-width: thin !important;
 	}
 
-	.lg\)bdr\:dashed-medium,
-	.lg\)bdr\:dotted-medium,
-	.lg\)bdr\:solid-medium {
+	.lg\)bdr\:da-2x,
+	.lg\)bdr\:do-2x,
+	.lg\)bdr\:so-2x {
 		border-width: medium !important;
 	}
 
-	.lg\)bdr\:tp-dashed-medium,
-	.lg\)bdr\:tp-dotted-medium,
-	.lg\)bdr\:tp-solid-medium {
+	.lg\)bdr\:tp-da-2x,
+	.lg\)bdr\:tp-do-2x,
+	.lg\)bdr\:tp-so-2x {
 		border-top-width: medium !important;
 	}
 
-	.lg\)bdr\:rt-dashed-medium,
-	.lg\)bdr\:rt-dotted-medium,
-	.lg\)bdr\:rt-solid-medium {
+	.lg\)bdr\:rt-da-2x,
+	.lg\)bdr\:rt-do-2x,
+	.lg\)bdr\:rt-so-2x {
 		border-right-width: medium !important;
 	}
 
-	.lg\)bdr\:bt-dashed-medium,
-	.lg\)bdr\:bt-dotted-medium,
-	.lg\)bdr\:bt-solid-medium {
+	.lg\)bdr\:bt-da-2x,
+	.lg\)bdr\:bt-do-2x,
+	.lg\)bdr\:bt-so-2x {
 		border-bottom-width: medium !important;
 	}
 
-	.lg\)bdr\:lt-dashed-medium,
-	.lg\)bdr\:lt-dotted-medium,
-	.lg\)bdr\:lt-solid-medium {
+	.lg\)bdr\:lt-da-2x,
+	.lg\)bdr\:lt-do-2x,
+	.lg\)bdr\:lt-so-2x {
 		border-left-width: medium !important;
 	}
 
-	.lg\)bdr\:dashed-thick,
-	.lg\)bdr\:dotted-thick,
-	.lg\)bdr\:solid-thick {
+	.lg\)bdr\:da-3x,
+	.lg\)bdr\:do-3x,
+	.lg\)bdr\:so-3x {
 		border-width: thick !important;
 	}
 
-	.lg\)bdr\:tp-dashed-thick,
-	.lg\)bdr\:tp-dotted-thick,
-	.lg\)bdr\:tp-solid-thick {
+	.lg\)bdr\:tp-da-3x,
+	.lg\)bdr\:tp-do-3x,
+	.lg\)bdr\:tp-so-3x {
 		border-top-width: thick !important;
 	}
 
-	.lg\)bdr\:rt-dashed-thick,
-	.lg\)bdr\:rt-dotted-thick,
-	.lg\)bdr\:rt-solid-thick {
+	.lg\)bdr\:rt-da-3x,
+	.lg\)bdr\:rt-do-3x,
+	.lg\)bdr\:rt-so-3x {
 		border-right-width: thick !important;
 	}
 
-	.lg\)bdr\:bt-dashed-thick,
-	.lg\)bdr\:bt-dotted-thick,
-	.lg\)bdr\:bt-solid-thick {
+	.lg\)bdr\:bt-da-3x,
+	.lg\)bdr\:bt-do-3x,
+	.lg\)bdr\:bt-so-3x {
 		border-bottom-width: thick !important;
 	}
 
-	.lg\)bdr\:lt-dashed-thick,
-	.lg\)bdr\:lt-dotted-thick,
-	.lg\)bdr\:lt-solid-thick {
+	.lg\)bdr\:lt-da-3x,
+	.lg\)bdr\:lt-do-3x,
+	.lg\)bdr\:lt-so-3x {
 		border-left-width: thick !important;
 	}
 
@@ -10035,40 +9873,6 @@ table.cols\:fixed {
 
 	.lg\)bdr\:separate {
 		border-collapse: separate !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: hide table border(s)
-        * bld: 190208
-        * fnt: hide, but preserve space of table border(s)
-        * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-    ***
-    */
-	tr.lg\)bdr\:hidden,
-	td.lg\)bdr\:hidden,
-	table.lg\)bdr\:hidden,
-	table.lg\)bdr\:hidden tr,
-	table.lg\)bdr\:hidden tr td {
-		border-color: transparent !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: display all table borders
-        * bld: 190208
-        * fnt: spreadsheet styled table borders
-        * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-    ***
-    */
-	tr.lg\)bdr\:full,
-	td.lg\)bdr\:full,
-	table.lg\)bdr\:full,
-	table.lg\)bdr\:full tr,
-	table.lg\)bdr\:full tr td {
-		border: 1px solid var(--hue-bas-300);
 	}
 
 	/*
@@ -13073,203 +12877,183 @@ table.cols\:fixed {
         *      developer.mozilla.org/en-US/docs/Web/CSS/border-width
     ***
     */
-	.xl\)bdr\:none {
-		border-color: transparent !important;
-	}
-
-	.xl\)bdr\:tp-none {
-		border-top-color: transparent !important;
-	}
-
-	.xl\)bdr\:rt-none {
-		border-right-color: transparent !important;
-	}
-
-	.xl\)bdr\:bt-none {
-		border-bottom-color: transparent !important;
-	}
-
-	.xl\)bdr\:lt-none {
-		border-left-color: transparent !important;
-	}
-
-	.xl\)bdr\:dashed-thin,
-	.xl\)bdr\:dashed-medium,
-	.xl\)bdr\:dashed-thick {
+	.xl\)bdr\:da-1x,
+	.xl\)bdr\:da-2x,
+	.xl\)bdr\:da-3x {
 		border-style: dashed !important;
 	}
 
-	.xl\)bdr\:tp-dashed-thin,
-	.xl\)bdr\:tp-dashed-medium,
-	.xl\)bdr\:tp-dashed-thick {
+	.xl\)bdr\:tp-da-1x,
+	.xl\)bdr\:tp-da-2x,
+	.xl\)bdr\:tp-da-3x {
 		border-top-style: dashed !important;
 	}
 
-	.xl\)bdr\:rt-dashed-thin,
-	.xl\)bdr\:rt-dashed-medium,
-	.xl\)bdr\:rt-dashed-thick {
+	.xl\)bdr\:rt-da-1x,
+	.xl\)bdr\:rt-da-2x,
+	.xl\)bdr\:rt-da-3x {
 		border-right-style: dashed !important;
 	}
 
-	.xl\)bdr\:bt-dashed-thin,
-	.xl\)bdr\:bt-dashed-medium,
-	.xl\)bdr\:bt-dashed-thick {
+	.xl\)bdr\:bt-da-1x,
+	.xl\)bdr\:bt-da-2x,
+	.xl\)bdr\:bt-da-3x {
 		border-bottom-style: dashed !important;
 	}
 
-	.xl\)bdr\:lt-dashed-thin,
-	.xl\)bdr\:lt-dashed-medium,
-	.xl\)bdr\:lt-dashed-thick {
+	.xl\)bdr\:lt-da-1x,
+	.xl\)bdr\:lt-da-2x,
+	.xl\)bdr\:lt-da-3x {
 		border-left-style: dashed !important;
 	}
 
-	.xl\)bdr\:dotted-thin,
-	.xl\)bdr\:dotted-medium,
-	.xl\)bdr\:dotted-thick {
+	.xl\)bdr\:do-1x,
+	.xl\)bdr\:do-2x,
+	.xl\)bdr\:do-3x {
 		border-style: dotted !important;
 	}
 
-	.xl\)bdr\:tp-dotted-thin,
-	.xl\)bdr\:tp-dotted-medium,
-	.xl\)bdr\:tp-dotted-thick {
+	.xl\)bdr\:tp-do-1x,
+	.xl\)bdr\:tp-do-2x,
+	.xl\)bdr\:tp-do-3x {
 		border-top-style: dotted !important;
 	}
 
-	.xl\)bdr\:rt-dotted-thin,
-	.xl\)bdr\:rt-dotted-medium,
-	.xl\)bdr\:rt-dotted-thick {
+	.xl\)bdr\:rt-do-1x,
+	.xl\)bdr\:rt-do-2x,
+	.xl\)bdr\:rt-do-3x {
 		border-right-style: dotted !important;
 	}
 
-	.xl\)bdr\:bt-dotted-thin,
-	.xl\)bdr\:bt-dotted-medium,
-	.xl\)bdr\:bt-dotted-thick {
+	.xl\)bdr\:bt-do-1x,
+	.xl\)bdr\:bt-do-2x,
+	.xl\)bdr\:bt-do-3x {
 		border-bottom-style: dotted !important;
 	}
 
-	.xl\)bdr\:lt-dotted-thin,
-	.xl\)bdr\:lt-dotted-medium,
-	.xl\)bdr\:lt-dotted-thick {
+	.xl\)bdr\:lt-do-1x,
+	.xl\)bdr\:lt-do-2x,
+	.xl\)bdr\:lt-do-3x {
 		border-left-style: dotted !important;
 	}
 
-	.xl\)bdr\:solid-thin,
-	.xl\)bdr\:solid-medium,
-	.xl\)bdr\:solid-thick {
+	.xl\)bdr\:so-1x,
+	.xl\)bdr\:so-2x,
+	.xl\)bdr\:so-3x {
 		border-style: solid !important;
 	}
 
-	.xl\)bdr\:tp-solid-thin,
-	.xl\)bdr\:tp-solid-medium,
-	.xl\)bdr\:tp-solid-thick {
+	.xl\)bdr\:tp-so-1x,
+	.xl\)bdr\:tp-so-2x,
+	.xl\)bdr\:tp-so-3x {
 		border-top-style: solid !important;
 	}
 
-	.xl\)bdr\:rt-solid-thin,
-	.xl\)bdr\:rt-solid-medium,
-	.xl\)bdr\:rt-solid-thick {
+	.xl\)bdr\:rt-so-1x,
+	.xl\)bdr\:rt-so-2x,
+	.xl\)bdr\:rt-so-3x {
 		border-right-style: solid !important;
 	}
 
-	.xl\)bdr\:bt-solid-thin,
-	.xl\)bdr\:bt-solid-medium,
-	.xl\)bdr\:bt-solid-thick {
+	.xl\)bdr\:bt-so-1x,
+	.xl\)bdr\:bt-so-2x,
+	.xl\)bdr\:bt-so-3x {
 		border-bottom-style: solid !important;
 	}
 
-	.xl\)bdr\:lt-solid-thin,
-	.xl\)bdr\:lt-solid-medium,
-	.xl\)bdr\:lt-solid-thick {
+	.xl\)bdr\:lt-so-1x,
+	.xl\)bdr\:lt-so-2x,
+	.xl\)bdr\:lt-so-3x {
 		border-left-style: solid !important;
 	}
 
-	.xl\)bdr\:dashed-thin,
-	.xl\)bdr\:dotted-thin,
-	.xl\)bdr\:solid-thin {
+	.xl\)bdr\:da-1x,
+	.xl\)bdr\:do-1x,
+	.xl\)bdr\:so-1x {
 		border-width: thin !important;
 	}
 
-	.xl\)bdr\:tp-dashed-thin,
-	.xl\)bdr\:tp-dotted-thin,
-	.xl\)bdr\:tp-solid-thin {
+	.xl\)bdr\:tp-da-1x,
+	.xl\)bdr\:tp-do-1x,
+	.xl\)bdr\:tp-so-1x {
 		border-top-width: thin !important;
 	}
 
-	.xl\)bdr\:rt-dashed-thin,
-	.xl\)bdr\:rt-dotted-thin,
-	.xl\)bdr\:rt-solid-thin {
+	.xl\)bdr\:rt-da-1x,
+	.xl\)bdr\:rt-do-1x,
+	.xl\)bdr\:rt-so-1x {
 		border-right-width: thin !important;
 	}
 
-	.xl\)bdr\:bt-dashed-thin,
-	.xl\)bdr\:bt-dotted-thin,
-	.xl\)bdr\:bt-solid-thin {
+	.xl\)bdr\:bt-da-1x,
+	.xl\)bdr\:bt-do-1x,
+	.xl\)bdr\:bt-so-1x {
 		border-bottom-width: thin !important;
 	}
 
-	.xl\)bdr\:lt-dashed-thin,
-	.xl\)bdr\:lt-dotted-thin,
-	.xl\)bdr\:lt-solid-thin {
+	.xl\)bdr\:lt-da-1x,
+	.xl\)bdr\:lt-do-1x,
+	.xl\)bdr\:lt-so-1x {
 		border-left-width: thin !important;
 	}
 
-	.xl\)bdr\:dashed-medium,
-	.xl\)bdr\:dotted-medium,
-	.xl\)bdr\:solid-medium {
+	.xl\)bdr\:da-2x,
+	.xl\)bdr\:do-2x,
+	.xl\)bdr\:so-2x {
 		border-width: medium !important;
 	}
 
-	.xl\)bdr\:tp-dashed-medium,
-	.xl\)bdr\:tp-dotted-medium,
-	.xl\)bdr\:tp-solid-medium {
+	.xl\)bdr\:tp-da-2x,
+	.xl\)bdr\:tp-do-2x,
+	.xl\)bdr\:tp-so-2x {
 		border-top-width: medium !important;
 	}
 
-	.xl\)bdr\:rt-dashed-medium,
-	.xl\)bdr\:rt-dotted-medium,
-	.xl\)bdr\:rt-solid-medium {
+	.xl\)bdr\:rt-da-2x,
+	.xl\)bdr\:rt-do-2x,
+	.xl\)bdr\:rt-so-2x {
 		border-right-width: medium !important;
 	}
 
-	.xl\)bdr\:bt-dashed-medium,
-	.xl\)bdr\:bt-dotted-medium,
-	.xl\)bdr\:bt-solid-medium {
+	.xl\)bdr\:bt-da-2x,
+	.xl\)bdr\:bt-do-2x,
+	.xl\)bdr\:bt-so-2x {
 		border-bottom-width: medium !important;
 	}
 
-	.xl\)bdr\:lt-dashed-medium,
-	.xl\)bdr\:lt-dotted-medium,
-	.xl\)bdr\:lt-solid-medium {
+	.xl\)bdr\:lt-da-2x,
+	.xl\)bdr\:lt-do-2x,
+	.xl\)bdr\:lt-so-2x {
 		border-left-width: medium !important;
 	}
 
-	.xl\)bdr\:dashed-thick,
-	.xl\)bdr\:dotted-thick,
-	.xl\)bdr\:solid-thick {
+	.xl\)bdr\:da-3x,
+	.xl\)bdr\:do-3x,
+	.xl\)bdr\:so-3x {
 		border-width: thick !important;
 	}
 
-	.xl\)bdr\:tp-dashed-thick,
-	.xl\)bdr\:tp-dotted-thick,
-	.xl\)bdr\:tp-solid-thick {
+	.xl\)bdr\:tp-da-3x,
+	.xl\)bdr\:tp-do-3x,
+	.xl\)bdr\:tp-so-3x {
 		border-top-width: thick !important;
 	}
 
-	.xl\)bdr\:rt-dashed-thick,
-	.xl\)bdr\:rt-dotted-thick,
-	.xl\)bdr\:rt-solid-thick {
+	.xl\)bdr\:rt-da-3x,
+	.xl\)bdr\:rt-do-3x,
+	.xl\)bdr\:rt-so-3x {
 		border-right-width: thick !important;
 	}
 
-	.xl\)bdr\:bt-dashed-thick,
-	.xl\)bdr\:bt-dotted-thick,
-	.xl\)bdr\:bt-solid-thick {
+	.xl\)bdr\:bt-da-3x,
+	.xl\)bdr\:bt-do-3x,
+	.xl\)bdr\:bt-so-3x {
 		border-bottom-width: thick !important;
 	}
 
-	.xl\)bdr\:lt-dashed-thick,
-	.xl\)bdr\:lt-dotted-thick,
-	.xl\)bdr\:lt-solid-thick {
+	.xl\)bdr\:lt-da-3x,
+	.xl\)bdr\:lt-do-3x,
+	.xl\)bdr\:lt-so-3x {
 		border-left-width: thick !important;
 	}
 
@@ -13288,40 +13072,6 @@ table.cols\:fixed {
 
 	.xl\)bdr\:separate {
 		border-collapse: separate !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: hide table border(s)
-        * bld: 190208
-        * fnt: hide, but preserve space of table border(s)
-        * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-    ***
-    */
-	tr.xl\)bdr\:hidden,
-	td.xl\)bdr\:hidden,
-	table.xl\)bdr\:hidden,
-	table.xl\)bdr\:hidden tr,
-	table.xl\)bdr\:hidden tr td {
-		border-color: transparent !important;
-	}
-
-	/*
-    ***
-        * property: bdr
-        * dsc: display all table borders
-        * bld: 190208
-        * fnt: spreadsheet styled table borders
-        * ref: developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
-    ***
-    */
-	tr.xl\)bdr\:full,
-	td.xl\)bdr\:full,
-	table.xl\)bdr\:full,
-	table.xl\)bdr\:full tr,
-	table.xl\)bdr\:full tr td {
-		border: 1px solid var(--hue-bas-300);
 	}
 
 	/*
