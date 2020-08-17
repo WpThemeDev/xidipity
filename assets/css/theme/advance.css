@@ -20,34 +20,34 @@
     *      developer.mozilla.org/en-US/docs/Web/CSS/text-align
 ***
 */
-.aln\:center {
+.aln\:ct {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
 
-.aln\:left {
+.aln\:lt {
 	margin-left: 0 !important;
 	margin-right: auto !important;
 }
 
-.aln\:right {
+.aln\:rt {
 	margin-left: auto !important;
 	margin-right: 0 !important;
 }
 
-.aln\:baseline {
+.aln\:bl {
 	vertical-align: baseline !important;
 }
 
-.aln\:top {
+.aln\:tp {
 	vertical-align: top !important;
 }
 
-.aln\:middle {
+.aln\:md {
 	vertical-align: middle !important;
 }
 
-.aln\:bottom {
+.aln\:bt {
 	vertical-align: bottom !important;
 }
 
@@ -59,27 +59,27 @@
 	vertical-align: super !important;
 }
 
-.aln\:text-bottom {
+.aln\:txt-bt {
 	vertical-align: text-bottom !important;
 }
 
-.aln\:text-top {
+.aln\:txt-tp {
 	vertical-align: text-top !important;
 }
 
-.aln\:text-center {
+.aln\:txt-ct {
 	text-align: center !important;
 }
 
-.aln\:text-left {
+.aln\:txt-lt {
 	text-align: left !important;
 }
 
-.aln\:text-right {
+.aln\:txt-rt {
 	text-align: right !important;
 }
 
-.aln\:text-justify {
+.aln\:txt-jt {
 	text-align: justify !important;
 }
 
@@ -3252,34 +3252,34 @@ table.cols\:fixed {
 */
 @media (min-width: 600px) {
 
-	.sm\)aln\:center {
+	.sm\)aln\:ct {
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
 
-	.sm\)aln\:left {
+	.sm\)aln\:lt {
 		margin-left: 0 !important;
 		margin-right: auto !important;
 	}
 
-	.sm\)aln\:right {
+	.sm\)aln\:rt {
 		margin-left: auto !important;
 		margin-right: 0 !important;
 	}
 
-	.sm\)aln\:baseline {
+	.sm\)aln\:bl {
 		vertical-align: baseline !important;
 	}
 
-	.sm\)aln\:top {
+	.sm\)aln\:tp {
 		vertical-align: top !important;
 	}
 
-	.sm\)aln\:middle {
+	.sm\)aln\:md {
 		vertical-align: middle !important;
 	}
 
-	.sm\)aln\:bottom {
+	.sm\)aln\:bt {
 		vertical-align: bottom !important;
 	}
 
@@ -3291,27 +3291,27 @@ table.cols\:fixed {
 		vertical-align: super !important;
 	}
 
-	.sm\)aln\:text-bottom {
+	.sm\)aln\:txt-bt {
 		vertical-align: text-bottom !important;
 	}
 
-	.sm\)aln\:text-top {
+	.sm\)aln\:txt-tp {
 		vertical-align: text-top !important;
 	}
 
-	.sm\)aln\:text-center {
+	.sm\)aln\:txt-ct {
 		text-align: center !important;
 	}
 
-	.sm\)aln\:text-left {
+	.sm\)aln\:txt-lt {
 		text-align: left !important;
 	}
 
-	.sm\)aln\:text-right {
+	.sm\)aln\:txt-rt {
 		text-align: right !important;
 	}
 
-	.sm\)aln\:text-justify {
+	.sm\)aln\:txt-jt {
 		text-align: justify !important;
 	}
 
@@ -6502,34 +6502,34 @@ table.cols\:fixed {
 */
 @media (min-width: 900px) {
 
-	.md\)aln\:center {
+	.md\)aln\:ct {
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
 
-	.md\)aln\:left {
+	.md\)aln\:lt {
 		margin-left: 0 !important;
 		margin-right: auto !important;
 	}
 
-	.md\)aln\:right {
+	.md\)aln\:rt {
 		margin-left: auto !important;
 		margin-right: 0 !important;
 	}
 
-	.md\)aln\:baseline {
+	.md\)aln\:bl {
 		vertical-align: baseline !important;
 	}
 
-	.md\)aln\:top {
+	.md\)aln\:tp {
 		vertical-align: top !important;
 	}
 
-	.md\)aln\:middle {
+	.md\)aln\:md {
 		vertical-align: middle !important;
 	}
 
-	.md\)aln\:bottom {
+	.md\)aln\:bt {
 		vertical-align: bottom !important;
 	}
 
@@ -6541,27 +6541,27 @@ table.cols\:fixed {
 		vertical-align: super !important;
 	}
 
-	.md\)aln\:text-bottom {
+	.md\)aln\:txt-bt {
 		vertical-align: text-bottom !important;
 	}
 
-	.md\)aln\:text-top {
+	.md\)aln\:txt-tp {
 		vertical-align: text-top !important;
 	}
 
-	.md\)aln\:text-center {
+	.md\)aln\:txt-ct {
 		text-align: center !important;
 	}
 
-	.md\)aln\:text-left {
+	.md\)aln\:txt-lt {
 		text-align: left !important;
 	}
 
-	.md\)aln\:text-right {
+	.md\)aln\:txt-rt {
 		text-align: right !important;
 	}
 
-	.md\)aln\:text-justify {
+	.md\)aln\:txt-jt {
 		text-align: justify !important;
 	}
 
@@ -9746,34 +9746,34 @@ table.cols\:fixed {
 */
 @media (min-width: 1200px) {
 
-	.lg\)aln\:center {
+	.lg\)aln\:ct {
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
 
-	.lg\)aln\:left {
+	.lg\)aln\:lt {
 		margin-left: 0 !important;
 		margin-right: auto !important;
 	}
 
-	.lg\)aln\:right {
+	.lg\)aln\:rt {
 		margin-left: auto !important;
 		margin-right: 0 !important;
 	}
 
-	.lg\)aln\:baseline {
+	.lg\)aln\:bl {
 		vertical-align: baseline !important;
 	}
 
-	.lg\)aln\:top {
+	.lg\)aln\:tp {
 		vertical-align: top !important;
 	}
 
-	.lg\)aln\:middle {
+	.lg\)aln\:md {
 		vertical-align: middle !important;
 	}
 
-	.lg\)aln\:bottom {
+	.lg\)aln\:bt {
 		vertical-align: bottom !important;
 	}
 
@@ -9785,27 +9785,27 @@ table.cols\:fixed {
 		vertical-align: super !important;
 	}
 
-	.lg\)aln\:text-bottom {
+	.lg\)aln\:txt-bt {
 		vertical-align: text-bottom !important;
 	}
 
-	.lg\)aln\:text-top {
+	.lg\)aln\:txt-tp {
 		vertical-align: text-top !important;
 	}
 
-	.lg\)aln\:text-center {
+	.lg\)aln\:txt-ct {
 		text-align: center !important;
 	}
 
-	.lg\)aln\:text-left {
+	.lg\)aln\:txt-lt {
 		text-align: left !important;
 	}
 
-	.lg\)aln\:text-right {
+	.lg\)aln\:txt-rt {
 		text-align: right !important;
 	}
 
-	.lg\)aln\:text-justify {
+	.lg\)aln\:txt-jt {
 		text-align: justify !important;
 	}
 
@@ -12999,34 +12999,34 @@ table.cols\:fixed {
 */
 @media (min-width: 1800px) {
 
-	.xl\)aln\:center {
+	.xl\)aln\:ct {
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
 
-	.xl\)aln\:left {
+	.xl\)aln\:lt {
 		margin-left: 0 !important;
 		margin-right: auto !important;
 	}
 
-	.xl\)aln\:right {
+	.xl\)aln\:rt {
 		margin-left: auto !important;
 		margin-right: 0 !important;
 	}
 
-	.xl\)aln\:baseline {
+	.xl\)aln\:bl {
 		vertical-align: baseline !important;
 	}
 
-	.xl\)aln\:top {
+	.xl\)aln\:tp {
 		vertical-align: top !important;
 	}
 
-	.xl\)aln\:middle {
+	.xl\)aln\:md {
 		vertical-align: middle !important;
 	}
 
-	.xl\)aln\:bottom {
+	.xl\)aln\:bt {
 		vertical-align: bottom !important;
 	}
 
@@ -13038,27 +13038,27 @@ table.cols\:fixed {
 		vertical-align: super !important;
 	}
 
-	.xl\)aln\:text-bottom {
+	.xl\)aln\:txt-bt {
 		vertical-align: text-bottom !important;
 	}
 
-	.xl\)aln\:text-top {
+	.xl\)aln\:txt-tp {
 		vertical-align: text-top !important;
 	}
 
-	.xl\)aln\:text-center {
+	.xl\)aln\:txt-ct {
 		text-align: center !important;
 	}
 
-	.xl\)aln\:text-left {
+	.xl\)aln\:txt-lt {
 		text-align: left !important;
 	}
 
-	.xl\)aln\:text-right {
+	.xl\)aln\:txt-rt {
 		text-align: right !important;
 	}
 
-	.xl\)aln\:text-justify {
+	.xl\)aln\:txt-jt {
 		text-align: justify !important;
 	}
 
