@@ -3,7 +3,7 @@
     * Palette specific css classes
     *
     * ###:  assets/css/theme/palette.css
-    * bld:  28200815
+    * bld:  29200815
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1533,38 +1533,38 @@
 	background-color: transparent;
 }
 
-[class~="bdr\:transparent\!active"]:active,
-[class~="bdr\:transparent\!focus"]:focus,
-[class~="bdr\:transparent\!hover"]:hover,
-[class~="bdr\:transparent"] {
+[class~="bdr\:none\!active"]:active,
+[class~="bdr\:none\!focus"]:focus,
+[class~="bdr\:none\!hover"]:hover,
+[class~="bdr\:none"] {
 	border-color: transparent !important;
 }
 
-[class~="bdr\:tp-transparent\!active"]:active,
-[class~="bdr\:tp-transparent\!focus"]:focus,
-[class~="bdr\:tp-transparent\!hover"]:hover,
-[class~="bdr\:tp-transparent"] {
+[class~="bdr\:tp-none\!active"]:active,
+[class~="bdr\:tp-none\!focus"]:focus,
+[class~="bdr\:tp-none\!hover"]:hover,
+[class~="bdr\:tp-none"] {
 	border-top-color: transparent !important;
 }
 
-[class~="bdr\:rt-transparent\!active"]:active,
-[class~="bdr\:rt-transparent\!focus"]:focus,
-[class~="bdr\:rt-transparent\!hover"]:hover,
-[class~="bdr\:rt-transparent"] {
+[class~="bdr\:rt-none\!active"]:active,
+[class~="bdr\:rt-none\!focus"]:focus,
+[class~="bdr\:rt-none\!hover"]:hover,
+[class~="bdr\:rt-none"] {
 	border-right-color: transparent !important;
 }
 
-[class~="bdr\:bt-transparent\!active"]:active,
-[class~="bdr\:bt-transparent\!focus"]:focus,
-[class~="bdr\:bt-transparent\!hover"]:hover,
-[class~="bdr\:bt-transparent"] {
+[class~="bdr\:bt-none\!active"]:active,
+[class~="bdr\:bt-none\!focus"]:focus,
+[class~="bdr\:bt-none\!hover"]:hover,
+[class~="bdr\:bt-none"] {
 	border-bottom-color: transparent !important;
 }
 
-[class~="bdr\:lt-transparent\!active"]:active,
-[class~="bdr\:lt-transparent\!focus"]:focus,
-[class~="bdr\:lt-transparent\!hover"]:hover,
-[class~="bdr\:lt-transparent"] {
+[class~="bdr\:lt-none\!active"]:active,
+[class~="bdr\:lt-none\!focus"]:focus,
+[class~="bdr\:lt-none\!hover"]:hover,
+[class~="bdr\:lt-none"] {
 	border-left-color: transparent !important;
 }
 
@@ -2118,5 +2118,5 @@ tbody.bas-bar\+1>tr:nth-child(even) {
 }
 
 /*
- * EOF: assets/css/theme/palette.css / 28200815
+ * EOF: assets/css/theme/palette.css / 29200815
  */
