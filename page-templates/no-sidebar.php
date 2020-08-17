@@ -6,7 +6,7 @@
  * The template for displaying page without sidebar
  *
  * ###:  page-templates/no-sidebar.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -27,7 +27,7 @@ echo '<cmt>### PAGE-TEMPLATE/NO-SIDEBAR/PHP ###</cmt>' . "\n";
 echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bottom+0.5">' . "\n";
+echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5">' . "\n";
 echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if (have_posts())
 {
@@ -36,13 +36,13 @@ if (have_posts())
 	 *** developer.wordpress.org/reference/functions/the_title/
 	*/
 	echo '<cmt name="begin">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<header class="mar:top+1 wd:100%">' . "\n";
+	echo '<header class="mar:tp+1 wd:100%">' . "\n";
 	the_title('<div class="pg:title">', '</div>');
-	echo '<div class="bkg:bas+2 ln mar:bottom+0.75"></div>' . "\n";
+	echo '<div class="bkg:bas+2 ln mar:bt+0.75"></div>' . "\n";
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bottom+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** yoast breadcrumbs plugin
 	*/
@@ -96,6 +96,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/no-sidebar.php / 28200801
+ * EOF: page-templates/no-sidebar.php / 29200815
 */
 ?>
