@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  28200815
+    * bld:  29200815
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1324,20 +1324,6 @@ table>tbody.bdr\:xls>tr>td {
 
 /*
 ***
-    * element: <tbody>
-    * dsc: html table tbody
-    * ver: 200304
-    * fnt: hide all borders
-    * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
-***
-*/
-table>tbody.bdr\:none>tr,
-table>tbody.bdr\:none>tr>td {
-	border-color: transparent;
-}
-
-/*
-***
     property: cols:<type>
     * dsc: multi-columns
     * ver: 190520
@@ -2582,5 +2568,5 @@ button:active {
 }
 
 /*
- * EOF: assets/css/theme/common.css / 28200815
+ * EOF: assets/css/theme/common.css / 29200815
  */
