@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  28200715
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -48,7 +48,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:top-0 mar:bottom+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
+				var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
 				editor.insertContent(html);
 				var newExcerpt = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newExcerpt);
@@ -122,5 +122,5 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 28200715
+ * EOF: add-misc-opts / plugin.js / 29200815
  */
