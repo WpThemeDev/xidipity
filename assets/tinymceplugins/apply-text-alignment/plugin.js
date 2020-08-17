@@ -3,7 +3,7 @@
  * Tinymce apply-text-alignment plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -55,7 +55,7 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTkgMTB2NWgyVjRoMnYxMWgyVjRoMlYySDlDNi43OSAyIDUgMy43OSA1IDZzMS43OSA0IDQgNHptMTIgOGwtNC00djNINXYyaDEydjNsNC00eiIvPjwvc3ZnPg==',
 			text: '\xa0Hanging Indent',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="dsp:block pad:left+2" style="text-indent: -2rem;">{$selection}</span>');
+				editor.execCommand('mceReplaceContent', false, '<span class="dsp:block pad:lt+2" style="text-indent: -2rem;">{$selection}</span>');
 			}
 		}, {
 			icon: true,
@@ -69,5 +69,5 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 });
 
 /*
- * EOF: apply-text-alignment / plugin.js / 24200531
+ * EOF: apply-text-alignment / plugin.js / 29200815
  */
