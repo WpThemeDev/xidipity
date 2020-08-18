@@ -15,6 +15,7 @@
  *
  */
 $xty = array();
+define('CopyRightHolder', get_bloginfo( 'name' ));
 define('EmojiDisplay', 'yes');
 define('FontAwesomeVersion', '5.12.1');
 define('FavoriteIcon', 'default');
@@ -57,6 +58,9 @@ function xty($key = '', $value = '')
 			{
 				switch ($key)
 				{
+					case ('copyrightholder'):
+						$xty[$key] = CopyRightHolder;
+					break;
 					case ('emoji-dsp'):
 						$xty[$key] = EmojiDisplay;
 					break;
@@ -209,7 +213,7 @@ function scrub_list($arg = '', $case = '')
 }
 /**
  *  name: blog_copyright
- *  build: 190925.1a
+ *  build: 29200815
  *  description: return copyright
  *  url: www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
@@ -234,7 +238,7 @@ function blog_copyright()
 		{
 			$fn_copyright .= '-' . $db_val[0]->lastdate;
 		}
-		$ret_val = $fn_copyright;
+		$ret_val = '<span class="pad:rt+0.5">' . $fn_copyright . '</span>' . xty('copyrightholder');
 	}
 	return $ret_val;
 }
