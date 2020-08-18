@@ -4,7 +4,7 @@
  * The template for displaying page header
  *
  * ###:  header.php
- * bld:  28200801
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -95,15 +95,15 @@ echo '<cmt name="begin">PAGE/HEADER</cmt>' . "\n";
 echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
 if (xty('hdr-aln') == 'left')
 {
-	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 elseif (xty('hdr-aln') == 'right')
 {
-	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 else
 {
-	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img wd:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 if (xty('hdr-logo') == 'none')
@@ -112,21 +112,21 @@ if (xty('hdr-logo') == 'none')
 	{
 		if (xty('hdr-aln') == 'left')
 		{
-			echo '<div class="aln:text-left dsp:block">' . "\n";
+			echo '<div class="aln:txt-lt dsp:block">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
-		elseif (xty('hdr-aln') == 'right')
+		elseif (xty('hdr-aln') == 'rt')
 		{
-			echo '<div class="aln:text-right dsp:block">' . "\n";
+			echo '<div class="aln:txt-right dsp:block">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
 		else
 		{
-			echo '<div class="aln:text-center dsp:block">' . "\n";
+			echo '<div class="aln:txt-ct dsp:block">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
@@ -190,15 +190,15 @@ else
 }
 if (xty('mnu-aln') == 'left')
 {
-	echo '<nav class="fx:r fxa:1 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
+	echo '<nav class="fx:r fxa:1 fxc:3 ht:auto sm)mar:vrt+0.25 fb:100%">' . "\n";
 }
 elseif (xty('mnu-aln') == 'right')
 {
-	echo '<nav class="fx:r fxa:2 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
+	echo '<nav class="fx:r fxa:2 fxc:3 ht:auto sm)mar:vrt+0.25 fb:100%">' . "\n";
 }
 else
 {
-	echo '<nav class="fx:r fxa:3 fxc:3 ht:auto sm)mar:vrt+0.25 wd:100%">' . "\n";
+	echo '<nav class="fx:r fxa:3 fxc:3 ht:auto sm)mar:vrt+0.25 fb:100%">' . "\n";
 }
 echo '<div role="navigation" id="nav" class="dsp:block" style="width: ' . xty('mnu-wd') . '">' . "\n";
 if ($wp_menu || $wp_page)
@@ -232,6 +232,6 @@ echo '</div>' . "\n";
 echo '<cmt name="end">HEADER/MENU</cmt>' . "\n";
 echo '<cmt name="end">HEADER/PHP</cmt>' . "\n";
 /*
- * EOF: header.php / 28200801
+ * EOF: header.php / 29200815
 */
 ?>
