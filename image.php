@@ -73,7 +73,7 @@ if ($wp_query->have_posts())
 	echo '</div>' . "\n";
 	if (!empty($caption))
 	{
-		echo '<div class="aln:text-center fnt:size-smaller mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
+		echo '<div class="aln:text-center fnt:siz-1 mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
 	}
 	if (!empty($content))
 	{
