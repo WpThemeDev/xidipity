@@ -249,7 +249,7 @@ abbr {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-.rul\:so-1x {
+.rul\:1x {
 	background-color: var(--hue-bas-up1);
 	height: 0.0625rem;
 	margin: 0.6875rem auto 0.8125rem auto;
@@ -257,7 +257,7 @@ abbr {
 }
 
 hr,
-.rul\:so-2x,
+.rul\:2x,
 .rul\:grd {
 	background-color: var(--hue-bas-up1);
 	height: 0.125rem;
@@ -265,7 +265,7 @@ hr,
 	width: 100%;
 }
 
-.rul\:so-3x,
+.rul\:3x,
 .rul\:dbl {
 	background-color: var(--hue-bas-up1);
 	height: 0.25rem;
