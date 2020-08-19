@@ -225,7 +225,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:siz-lgr">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz+1">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -243,7 +243,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:siz-smer">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-1">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
