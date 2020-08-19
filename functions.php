@@ -448,7 +448,7 @@ function xidipity_widgets_init()
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside class="bkg:content txt:content box:shadow ht:min4 mar:bt+1 pad:+0.5 pad:bt+1">',
 		'after_widget' => '</aside>',
-		'before_title' => '<p class="fnt:siz-lgr fnt:wgt-400 mar:bt+0.25">',
+		'before_title' => '<p class="fnt:siz+1 fnt:wgt-400 mar:bt+0.25">',
 		'after_title' => '</p>'
 	));
 }
