@@ -272,7 +272,7 @@ if ($have_comments)
 */
 if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type() , 'comments'))
 {
-	echo '<div class="fnt:size-smaller mar:vrt+0.75">' . "\n";
+	echo '<div class="fnt:siz-1 mar:vrt+0.75">' . "\n";
 	echo '<p><span class="pad:rt+0.5"><i class="icon:comment_closed_outline"></i></span>Comments are closed.</p>' . "\n";
 	echo '</div>' . "\n";
 }
