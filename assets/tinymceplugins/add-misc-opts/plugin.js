@@ -31,11 +31,11 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->');
+					editor.execCommand('mceReplaceContent', false, '<!--  TMPL:CONTENT/FRAME --><table class="frame"><tr><td>{$selection}</td></tr></table><!-- /TMPL:CONTENT/FRAME -->');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<!--  xwp:EDITOR/CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /xwp:EDITOR/CONTENT/FRAME -->';
+					var html = '<!--  TMPL:CONTENT/FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /TMPL:CONTENT/FRAME -->';
 					editor.insertContent(html);
 					var newTag = dom.select('td#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -48,7 +48,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  xwp:EDITOR/EXCERPT --><table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small fnt:size-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /xwp:EDITOR/EXCERPT -->';
+				var html = '<!--  TMPL:EXCERPT --><table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small fnt:siz-sm pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></table><!-- /TMPL:EXCERPT -->';
 				editor.insertContent(html);
 				var newExcerpt = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newExcerpt);
