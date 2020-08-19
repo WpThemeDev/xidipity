@@ -664,15 +664,15 @@ function imgg_shortcode($args = array() , $prm = '')
 			switch ($show_caption)
 			{
 				case 'l':
-					$html .= '<div class="aln:text-left fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
+					$html .= '<div class="aln:text-left fxd:1 fxe:1 fnt:siz-1 mar:tp+0.25">';
 				break;
 				case 'r':
-					$html .= '<div class="aln:text-right fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
+					$html .= '<div class="aln:text-right fxd:1 fxe:1 fnt:siz-1 mar:tp+0.25">';
 				case 'x':
 					$html .= '<div class="dsp:none">';
 				break;
 				default:
-					$html .= '<div class="aln:text-center fxd:1 fxe:1 fnt:size-smaller mar:tp+0.25">';
+					$html .= '<div class="aln:text-center fxd:1 fxe:1 fnt:siz-1 mar:tp+0.25">';
 			}
 			$html .= $image_caption;
 			$html .= '</div>';
