@@ -448,7 +448,7 @@ function xidipity_widgets_init()
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside class="bkg:content txt:content box:shadow ht:min4 mar:bt+1 pad:+0.5 pad:bt+1">',
 		'after_widget' => '</aside>',
-		'before_title' => '<p class="fnt:size-larger fnt:weight-normal mar:bt+0.25">',
+		'before_title' => '<p class="fnt:siz-lgr fnt:wgt-400 mar:bt+0.25">',
 		'after_title' => '</p>'
 	));
 }
@@ -1426,7 +1426,7 @@ function dsp_err($arg = '')
 	{
 		$msg = $arg;
 	}
-	$fn_retval = '<!--  28200715:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:size-5x-large pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /28200715:ALERT -->';
+	$fn_retval = '<!--  28200715:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-5x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /28200715:ALERT -->';
 	// return html
 	return $fn_retval;
 }
