@@ -3,7 +3,7 @@
  * Tinymce apply-text-size plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -23,11 +23,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-5x-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg-5x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-5x-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg-5x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -41,11 +41,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-4x-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg-4x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-4x-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg-4x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -59,11 +59,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-3x-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg-3x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-3x-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg-3x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -77,11 +77,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg-2x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-2x-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg-2x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -95,11 +95,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg-1x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-x-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg-1x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -113,11 +113,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-large">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-lg">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-large">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lg">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -131,11 +131,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-medium">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-md-1x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-x-medium">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-md-1x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -149,11 +149,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-medium">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-md">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-medium">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-md">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -167,11 +167,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-small">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-sm">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-small">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-sm">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -185,11 +185,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-x-small">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-sm-1x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-x-small">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-sm-1x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -203,11 +203,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-2x-small">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-sm-2x">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-2x-small">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-sm-2x">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -221,11 +221,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-larger">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz+1">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-larger">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-lgr">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -239,11 +239,11 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					format: 'text'
 				});
 				if (seltxt.length > 0) {
-					editor.execCommand('mceReplaceContent', false, '<span class="fnt:size-smaller">{$selection}</span>');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:siz-sm-1">{$selection}</span>');
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<span id="' + uniqueID + '" class="fnt:size-smaller">&nbsp;</span>';
+					var html = '<span id="' + uniqueID + '" class="fnt:siz-smer">&nbsp;</span>';
 					editor.insertContent(html);
 					var newTag = dom.select('span#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -254,5 +254,5 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 });
 
 /*
- * EOF: apply-text-size / plugin.js / 27200615
+ * EOF: apply-text-size / plugin.js / 29200815
  */
