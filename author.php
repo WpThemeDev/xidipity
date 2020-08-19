@@ -50,7 +50,7 @@ if (have_posts())
 	$avatar_link = esc_url(get_avatar_url(get_the_author_meta('user_email')));
 	if (empty($avatar_link))
 	{
-		$avatar__img = '<div class="fnt:size-4x-large pad:rt+0.5"><i class="icon:user_solid"></i></div>';
+		$avatar__img = '<div class="fnt:siz-lg-4x pad:rt+0.5"><i class="icon:user_solid"></i></div>';
 	}
 	else
 	{
