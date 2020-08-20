@@ -2576,6 +2576,11 @@ table.cols\:fixed {
 	width: auto !important;
 }
 
+/*: 0px :*/
+.wd\:0 {
+	width: 0 !important;
+}
+
 /*: 16px :*/
 .wd\:1 {
 	width: 1rem !important;
@@ -5771,6 +5776,11 @@ table.cols\:fixed {
 		width: auto !important;
 	}
 
+	/*: 0px :*/
+	.sm\)wd\:0 {
+		width: 0 !important;
+	}
+
 	/*: 16px :*/
 	.sm\)wd\:1 {
 		width: 1rem !important;
@@ -8943,6 +8953,11 @@ table.cols\:fixed {
     */
 	.md\)wd\:auto {
 		width: auto !important;
+	}
+
+	/*: 0px :*/
+	.md\)wd\:0 {
+		width: 0 !important;
 	}
 
 	/*: 16px :*/
@@ -12160,6 +12175,11 @@ table.cols\:fixed {
 		width: auto !important;
 	}
 
+	/*: 0px :*/
+	.lg\)wd\:0 {
+		width: 0 !important;
+	}
+
 	/*: 16px :*/
 	.lg\)wd\:1 {
 		width: 1rem !important;
@@ -15357,6 +15377,11 @@ table.cols\:fixed {
     */
 	.xl\)wd\:auto {
 		width: auto !important;
+	}
+
+	/*: 0px :*/
+	.xl\)wd\:0 {
+		width: 0 !important;
 	}
 
 	/*: 16px :*/
