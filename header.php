@@ -95,15 +95,15 @@ echo '<cmt name="begin">PAGE/HEADER</cmt>' . "\n";
 echo '<div class="fxd:1 fxe:2 fb:100% wd:0">' . "\n";
 if (xty('hdr-aln') == 'left')
 {
-	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100% wd:0" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 elseif (xty('hdr-aln') == 'right')
 {
-	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img fb:100% wd:0" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 else
 {
-	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img fb:100% wd:0" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
 }
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 if (xty('hdr-logo') == 'none')
@@ -112,21 +112,21 @@ if (xty('hdr-logo') == 'none')
 	{
 		if (xty('hdr-aln') == 'left')
 		{
-			echo '<div class="aln:txt-lt dsp:block">' . "\n";
+			echo '<div class="aln:txt-lt">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
 		elseif (xty('hdr-aln') == 'rt')
 		{
-			echo '<div class="aln:txt-rt dsp:block">' . "\n";
+			echo '<div class="aln:txt-rt">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
 		else
 		{
-			echo '<div class="aln:txt-ct dsp:block">' . "\n";
+			echo '<div class="aln:txt-ct">' . "\n";
 			echo '<p class="hdr:title">' . get_bloginfo('name') . '</p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
@@ -136,21 +136,21 @@ if (xty('hdr-logo') == 'none')
 	{
 		if (xty('hdr-aln') == 'left')
 		{
-			echo '<div class="aln:text-lt dsp:block">' . "\n";
+			echo '<div class="aln:txt-lt">' . "\n";
 			echo '<p><a class="hdr:title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
 		elseif (xty('hdr-aln') == 'right')
 		{
-			echo '<div class="aln:text-rt dsp:block">' . "\n";
+			echo '<div class="aln:txt-rt">' . "\n";
 			echo '<p><a class="hdr:title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
 		}
 		else
 		{
-			echo '<div class="aln:text-ct dsp:block">' . "\n";
+			echo '<div class="aln:txt-ct">' . "\n";
 			echo '<p><a class="hdr:title" href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a></p>' . "\n";
 			echo '<p class="hdr:desc">' . get_bloginfo('description') . '</p>' . "\n";
 			echo '</div>' . "\n";
