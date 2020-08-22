@@ -249,8 +249,8 @@ abbr {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-.rul\:1x,
-.rul\:grd {
+hr.rul\:1x,
+hr.rul\:grd {
 	background-color: var(--hue-bas);
 	border: 0;
 	height: 0.0625rem;
@@ -259,7 +259,7 @@ abbr {
 }
 
 hr,
-.rul\:2x {
+hr.rul\:2x {
 	background-color: var(--hue-bas);
 	border: 0;
 	height: 0.125rem;
@@ -267,8 +267,8 @@ hr,
 	width: 100%;
 }
 
-.rul\:3x,
-.rul\:dbl {
+hr.rul\:3x,
+hr.rul\:dbl {
 	background-color: var(--hue-bas);
 	border: 0;
 	height: 0.25rem;
@@ -276,7 +276,7 @@ hr,
 	width: 100%;
 }
 
-.rul\:dbl {
+hr.rul\:dbl {
 	background-color: transparent;
 	border: 0;
 	border-top: 0.0625rem solid var(--hue-bas);
@@ -284,7 +284,7 @@ hr,
 	margin-bottom: 0.5625rem;
 }
 
-.rul\:grd {
+hr.rul\:grd {
 	background-image: linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -o-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -moz-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
