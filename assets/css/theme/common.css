@@ -249,12 +249,11 @@ abbr {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
 ***
 */
-hr.rul\:1x,
-hr.rul\:grd {
+hr.rul\:1x {
 	background-color: var(--hue-bas);
 	border: 0;
 	height: 0.0625rem;
-	margin: 0.625rem auto 0.6875rem auto;
+	margin: 0.6875rem auto 0.625rem auto;
 	width: 100%;
 }
 
@@ -267,30 +266,36 @@ hr.rul\:2x {
 	width: 100%;
 }
 
-hr.rul\:3x,
-hr.rul\:dbl {
+hr.rul\:3x {
 	background-color: var(--hue-bas);
 	border: 0;
 	height: 0.25rem;
-	margin: 0.625rem auto 0.625rem auto;
+	margin: 0.625rem auto 0.5625rem auto;
 	width: 100%;
 }
 
 hr.rul\:dbl {
 	background-color: transparent;
 	border: 0;
-	border-top: 0.0625rem solid var(--hue-bas);
 	border-bottom: 0.0625rem solid var(--hue-bas);
-	margin-bottom: 0.5625rem;
+	margin-bottom: 0.5rem;
+	border-top: 0.0625rem solid var(--hue-bas);
+	height: 0.25rem;
+	margin-top: 0.5625rem;
 }
 
 hr.rul\:grd {
+	background-color: transparent;
 	background-image: linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -o-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -moz-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -webkit-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -ms-linear-gradient(left , white 2%, #c9c3bc 50%, white 98%);
 	background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) );
+	border: 0;
+	height: 0.0625rem;
+	margin: 0.6875rem auto 0.6875rem auto;
+	width: 100%;
 }
 
 /*
