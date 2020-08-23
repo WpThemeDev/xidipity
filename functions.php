@@ -1426,7 +1426,7 @@ function dsp_err($arg = '')
 	{
 		$msg = $arg;
 	}
-	$fn_retval = '<!--  TMPL:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:bas-2 bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-5x pad:hrz+0.5"><i class="icon:error_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /TMPL:ALERT -->';
+	$fn_retval = '<!--  TMPL:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:bas-2 bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-3x pad:hrz+0.75"><i class="icon:error_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /TMPL:ALERT -->';
 	// return html
 	return $fn_retval;
 }
