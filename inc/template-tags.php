@@ -70,7 +70,7 @@ if (!function_exists('xty_excerpt'))
 		$ico_pst = '</div></div>';
 		$txt_pre = '<div class="fnt:siz-sm-2x pad:lt+0.25 pad:tp+0.25">';
 		$txt_pst = '</div>';
-		$div_pre = '<div class="txt:bas dsp:none sm)dsp:block aln:text-center pad:hrz+0.25">';
+		$div_pre = '<div class="txt:bas dsp:none sm)dsp:block aln:txt-ct pad:hrz+0.25">';
 		$div_pst = '</div>';
 		$bar_items = array();
 		if ($post_type == 'post')
@@ -227,7 +227,7 @@ if (!function_exists('xty_support_agent'))
 {
 	function xty_support_agent($msg = '')
 	{
-		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:pri-2 bkg:tint-bas-1 cnr:arch-small"><div class="fnt:siz-lg-7x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:rt+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:siz-lg-2x sm)fnt:siz-lg-3x fnt:wgt-500 wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  28200801:BUTTON --><button class="aln:text-center fnt:siz-sm-1x sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /28200801:BUTTON --></div></div></div></div>' . "\n";
+		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:pri-2 bkg:tint-bas-1 cnr:arch-small"><div class="fnt:siz-lg-7x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:rt+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:siz-lg-2x sm)fnt:siz-lg-3x fnt:wgt-500 wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  TMPL:BUTTON --><button class="aln:txt-ct fnt:siz-sm-1x sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /TMPL:BUTTON --></div></div></div></div>' . "\n";
 	}
 }
 /*  # xty_author
@@ -470,7 +470,7 @@ if (!function_exists('xty_info_bar'))
 		$txt_pre = '<div class="fnt:siz-sm-2x pad:lt+0.5">';
 		$txt_pst = '</div>';
 		$txt_prt = '<div class="fnt:siz-sm-2x pad:lt+0.5 prt[dsp:none]">';
-		$div_pre = '<div class="aln:text-center dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
+		$div_pre = '<div class="aln:txt-ct dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
 		$div_pst = '</div>';
 		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
