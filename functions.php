@@ -1407,7 +1407,7 @@ function remove_default_category_description()
 }
 /**
  *  name: dsp_err
- *  build: 28200701
+ *  build: 29200815
  *  description: Return properly formatted error message
  *  attributes:
  *      $arg - string
@@ -1420,13 +1420,13 @@ function dsp_err($arg = '')
 	$fn_retval = '';
 	if (empty($arg))
 	{
-		$msg = 'Error detected without an explanation';
+		$msg = 'Error detected without explanation';
 	}
 	else
 	{
 		$msg = $arg;
 	}
-	$fn_retval = '<!--  28200715:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:left-solid-thick bdr:red bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-5x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /28200715:ALERT -->';
+	$fn_retval = '<!--  TMPL:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:bas-2 bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-5x pad:hrz+0.5"><i class="icon:error_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /TMPL:ALERT -->';
 	// return html
 	return $fn_retval;
 }
