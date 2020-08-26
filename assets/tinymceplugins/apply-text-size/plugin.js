@@ -14,10 +14,10 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		type: 'splitbutton',
 		title: 'Text Size',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHptMCAwaDI0djI0SDBWMHptLjc1Ljc1aDIyLjV2MjIuNUguNzV6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE0Ljk0IDQuNjZoLTQuNzJsMi4zNi0yLjM2em0tNC42OSAxNC43MWg0LjY2bC0yLjMzIDIuMzN6TTYuMSA2LjI3TDEuNiAxNy43M2gxLjg0bC45Mi0yLjQ1aDUuMTFsLjkyIDIuNDVoMS44NEw3Ljc0IDYuMjdINi4xem0tMS4xMyA3LjM3bDEuOTQtNS4xOCAxLjk0IDUuMThINC45N3ptMTAuNzYgMi41aDYuMTJ2MS41OWgtOC41M3YtMS4yOWw1LjkyLTguNTZoLTUuODh2LTEuNmg4LjN2MS4yNmwtNS45MyA4LjZ6Ii8+PC9zdmc+',
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0gNi4wMzUgMTQgTCA4LjQzNSA3LjcgTCAxMC44MzUgMTQgTSA3LjQzNSA1IEwgMS45MzUgMTkgTCA0LjEzNSAxOSBMIDUuMjM1IDE2IEwgMTEuNDM1IDE2IEwgMTIuNTM1IDE5IEwgMTQuNzM1IDE5IEwgOS40MzUgNSBMIDcuNDM1IDUgWiIvPgogIDxwYXRoIGQ9Ik0gMTguNzUgNy41NDUgTCAyMS4wNCA5LjgzNSBMIDIyLjA1OSA4LjgxNSBMIDE4Ljc1IDUuNSBMIDE1LjQzNSA4LjgxNSBMIDE2LjQ2IDkuODM1IEwgMTguNzUgNy41NDUgWiBNIDE4Ljc1IDE2LjQ1NSBMIDE2LjQ2IDE0LjE2NSBMIDE1LjQ0MiAxNS4xODUgTCAxOC43NSAxOC41IEwgMjIuMDY1IDE1LjE4NSBMIDIxLjA0IDE0LjE2NSBMIDE4Ljc1IDE2LjQ1NSBaIi8+Cjwvc3ZnPg==',
 		menu: [{
 			icon: false,
-			text: '•\xa05x Large',
+			text: '+\xa06',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -35,7 +35,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa04x Large',
+			text: '+\xa05',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -53,7 +53,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa03x Large',
+			text: '+\xa04',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -71,7 +71,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa02x Large',
+			text: '+\xa03',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -89,7 +89,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0x Large',
+			text: '+\xa02',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -107,7 +107,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Large',
+			text: '+\xa01',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -125,7 +125,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa01½ Default',
+			text: '+\xa0½',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -142,8 +142,9 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				}
 			}
 		}, {
-			icon: false,
-			text: '•\xa0Default',
+			icon: true,
+			text: 'Default',
+			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNiwxNEwxMiw3LjdMMTQuNCwxNE0xMSw1TDUuNSwxOUg3LjdMOC44LDE2SDE1TDE2LjEsMTlIMTguM0wxMyw1SDExWiIgLz48L3N2Zz4=',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -161,7 +162,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Small',
+			text: '-\xa01',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -179,7 +180,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0x Small',
+			text: '-\xa02',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -197,7 +198,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa02x Small',
+			text: '-\xa03',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -214,8 +215,9 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				}
 			}
 		}, {
-			icon: false,
-			text: '•\xa0Larger',
+			icon: true,
+			text: 'Larger',
+			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUuMTIsMTRMNy41LDcuNjdMOS44NywxNE02LjUsNUwxLDE5SDMuMjVMNC4zNywxNkgxMC42MkwxMS43NSwxOUgxNEw4LjUsNUg2LjVNMTgsN0wxMywxMi4wN0wxNC40MSwxMy41TDE3LDEwLjlWMTdIMTlWMTAuOUwyMS41OSwxMy41TDIzLDEyLjA3TDE4LDdaIiAvPjwvc3ZnPg==',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
@@ -232,8 +234,9 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				}
 			}
 		}, {
-			icon: false,
-			text: '•\xa0Smaller',
+			icon: true,
+			text: 'Smaller',
+			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUuMTIsMTRMNy41LDcuNjdMOS44NywxNE02LjUsNUwxLDE5SDMuMjVMNC4zNywxNkgxMC42MkwxMS43NSwxOUgxNEw4LjUsNUg2LjVNMTgsMTdMMjMsMTEuOTNMMjEuNTksMTAuNUwxOSwxMy4xVjdIMTdWMTMuMUwxNC40MSwxMC41TDEzLDExLjkzTDE4LDE3WiIgLz48L3N2Zz4=',
 			onclick: function() {
 				var seltxt = editor.selection.getContent({
 					format: 'text'
