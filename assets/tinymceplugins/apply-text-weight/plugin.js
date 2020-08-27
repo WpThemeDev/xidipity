@@ -3,7 +3,7 @@
  * Tinymce apply-text-weight plugin 
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -20,65 +20,65 @@ tinymce.PluginManager.add('apply_txt_weight', function(editor) {
 		},
 		menu: [{
 				icon: false,
-				text: '•\xa0Thin',
+				text: '100\xa0-\xa0Thin',
 				onclick: function() {
-					editor.formatter.toggle('wgt100');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-100">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Xtra Light',
+				text: '200\xa0-\xa0Xtra Light',
 				onclick: function() {
-					editor.formatter.toggle('wgt200');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-200">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Light',
+				text: '300\xa0-\xa0Light',
 				onclick: function() {
-					editor.formatter.toggle('wgt300');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-300">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Normal',
+				text: '400\xa0-\xa0Normal',
 				onclick: function() {
-					editor.formatter.toggle('wgt400');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-400">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Medium',
+				text: '500\xa0-\xa0Medium',
 				onclick: function() {
-					editor.formatter.toggle('wgt500');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-500">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Semi Bold',
+				text: '600\xa0-\xa0Semi Bold',
 				onclick: function() {
-					editor.formatter.toggle('wgt600');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-600">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Bold',
+				text: '700\xa0-\xa0Bold',
 				onclick: function() {
-					editor.formatter.toggle('wgt700');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-700">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Xtra Bold',
+				text: '800\xa0-\xa0Xtra Bold',
 				onclick: function() {
-					editor.formatter.toggle('wgt800');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-800">{$selection}</span>');
 				}
 			},
 			{
 				icon: false,
-				text: '•\xa0Black',
+				text: '900\xa0-\xa0Black',
 				onclick: function() {
-					editor.formatter.toggle('wgt900');
+					editor.execCommand('mceReplaceContent', false, '<span class="fnt:wgt-900">{$selection}</span>');
 				}
 			}
 		]
@@ -86,5 +86,5 @@ tinymce.PluginManager.add('apply_txt_weight', function(editor) {
 });
 
 /*
- * EOF: apply-text-weight / plugin.js / 27200615
+ * EOF: apply-text-weight / plugin.js / 29200815
  */
