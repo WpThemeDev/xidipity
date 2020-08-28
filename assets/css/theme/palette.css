@@ -1666,6 +1666,20 @@
 	border-left-color: var(--hue-wht) !important;
 }
 
+[class~="txt\:red\!active"]:active,
+[class~="txt\:red\!focus"]:focus,
+[class~="txt\:red\!hover"]:hover,
+[class~="txt\:red"] {
+	color: var(--hue-red);
+}
+
+[class~="bkg\:red\!active"]:active,
+[class~="bkg\:red\!focus"]:focus,
+[class~="bkg\:red\!hover"]:hover,
+[class~="bkg\:red"] {
+	background-color: var(--hue-red);
+}
+
 [class~="bdr\:red\!active"]:active,
 [class~="bdr\:red\!focus"]:focus,
 [class~="bdr\:red\!hover"]:hover,
@@ -1699,13 +1713,6 @@
 [class~="bdr\:lt-red\!hover"]:hover,
 [class~="bdr\:lt-red"] {
 	border-left-color: var(--hue-red) !important;
-}
-
-[class~="bkg\:red\!active"]:active,
-[class~="bkg\:red\!focus"]:focus,
-[class~="bkg\:red\!hover"]:hover,
-[class~="bkg\:red"] {
-	background-color: var(--hue-red);
 }
 
 [class~="txt\:purple\!active"]:active,
