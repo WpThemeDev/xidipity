@@ -155,7 +155,7 @@ if (!function_exists('xty_content_footer'))
 	{
 		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>';
 		$html .= '<div class="mar:vrt+0.25">';
-		$html .= '<div class="bkg:bas+2 ln"></div>';
+		//$html .= '<hr class="bdr:bas+3 mar:bt-0 rul:1x wd:100%" />';
 		$html .= xty_info_bar($items);
 		$html .= '</div>';
 		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>' . "\n";
