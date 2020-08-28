@@ -250,27 +250,39 @@ abbr {
 ***
 */
 hr.rul\:1x {
-	background-color: var(--hue-bas);
+	background-color: transparent;
 	border: 0;
-	height: 0.0625rem;
-	margin: 0.6875rem auto 0.625rem auto;
+	border-bottom: 0.0625rem solid var(--hue-bas);
+	margin-bottom: 0.6875rem;
+	margin-top: 0.6875rem;
 	width: 100%;
 }
 
 hr,
 hr.rul\:2x {
-	background-color: var(--hue-bas);
+	background-color: transparent;
 	border: 0;
-	height: 0.125rem;
-	margin: 0.625rem auto 0.6875rem auto;
+	border-bottom: 0.125rem solid var(--hue-bas);
+	margin-bottom: 0.6875rem;
+	margin-top: 0.625rem;
 	width: 100%;
 }
 
 hr.rul\:3x {
-	background-color: var(--hue-bas);
+	background-color: transparent;
 	border: 0;
-	height: 0.25rem;
-	margin: 0.625rem auto 0.5625rem auto;
+	border-bottom: 0.1875rem solid var(--hue-bas);
+	margin-bottom: 0.6875rem;
+	margin-top: 0.5625rem;
+	width: 100%;
+}
+
+hr.rul\:4x {
+	background-color: transparent;
+	border: 0;
+	border-bottom: 0.25rem solid var(--hue-bas);
+	margin-bottom: 0.6275rem;
+	margin-top: 0.5625rem;
 	width: 100%;
 }
 
