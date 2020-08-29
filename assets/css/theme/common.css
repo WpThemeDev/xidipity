@@ -654,18 +654,23 @@ ol.outline ol ol ol ol>li:before {
 /*  # nested
     # 91108.1a
     # nested ordered list
-    # mzl.la/2ps8ua3
+    # developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
 **/
-ol.nested,
-ol.nested li>ol {
-	counter-reset: nested;
+ol.nested {
+	line-height: var(--dft-line-height);
 	list-style-type: none;
+	margin-left: 1rem;
+	padding-left: 1rem;	
 }
 
-.nested li::before {
-	counter-increment: nested;
-	content: counters(nested, ".");
-	padding-right: 0.5rem;
+ol.nested,
+ol.nested li>ol {
+	counter-reset: xty;
+}
+
+ol.nested li::before {
+	counter-increment: xty;
+	content: counters(xty, ".") " ";
 }
 
 /*
