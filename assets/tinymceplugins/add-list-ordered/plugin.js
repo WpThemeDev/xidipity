@@ -3,7 +3,7 @@
  * Tinymce add-list-ordered plugin 
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -40,7 +40,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="nested"><li id="' + uniqueID + '"></li></ol>';
+				var html = '<ol class="nested"><li id="' + uniqueID + '">&#8203;</li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -83,5 +83,5 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 });
 
 /*
- * EOF: add-list-ordered / plugin.js / 27200615
+ * EOF: add-list-ordered / plugin.js / 29200815
  */
