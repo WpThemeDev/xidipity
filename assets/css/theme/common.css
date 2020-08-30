@@ -597,7 +597,8 @@ ul.par li>ul {
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
 ***
 */
-ol {
+ol,
+ol.dec-dot {
 	list-style-type: decimal;
 	line-height: var(--dft-line-height);
 	margin-left: 1rem;
@@ -651,21 +652,33 @@ ol.outline ol ol ol ol>li:before {
 	margin-right: .25em;
 }
 
-/*  # nested
+/*  # dec-dot
     # 29200815
-    # nested ordered list
-    # developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+    # x.x ordered list
+    # developer.mozilla.org/en-US/docs/Web/CSS/counters
 **/
-ol.nested,
-ol.nested li>ol.nested {
-	counter-reset: nested;
-	list-style-type: none;
+
+ol.dec-dot {
+	counter-reset: listCounter;
 }
 
-.nested li::before {
-	counter-increment: nested;
-	content: counters(nested, ".") "";
-	padding-right: 0.5rem;
+ol.dec-dot li {
+	counter-increment: listCounter;
+}
+
+ol.dec-dot li ol.dec-dot {
+	list-style-type: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+ol.dec-dot li ol.dec-dot li ol.dec-dot {
+	margin-left: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+ol.dec-dot li ol.dec-dot li::before {
+	content:  counters(listCounter, ".") "\a0\a0";
 }
 
 /*
