@@ -29,18 +29,18 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol><li id="' + uniqueID + '">Standard</li></ol>';
+				var html = '<ol><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Nested',
+			text: '•\xa0Decimal Dot',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="nested"><li id="' + uniqueID + '">Nested</li></ol>';
+				var html = '<ol class="dec-dot"><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -51,7 +51,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="alpha"><li id="' + uniqueID + '">Alpha</li></ol>';
+				var html = '<ol class="alpha"><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -62,7 +62,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="roman"><li id="' + uniqueID + '">Roman</li></ol>';
+				var html = '<ol class="roman"><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -73,7 +73,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="outline"><li id="' + uniqueID + '">Outline</li></ol>';
+				var html = '<ol class="outline"><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
