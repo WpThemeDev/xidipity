@@ -668,13 +668,13 @@ ol.dec-dot li {
 
 ol.dec-dot li ol.dec-dot {
 	list-style-type: none;
-	margin-left: 0px;
-	padding-left: 0px;
+	margin-left: 0.5625rem;
+	padding-left: 0.5625rem;
 }
 
 ol.dec-dot li ol.dec-dot li ol.dec-dot {
-	margin-left: 0.5rem;
-	padding-left: 0.5rem;
+	margin-left: 1rem;
+	padding-left: 1rem;
 }
 
 ol.dec-dot li ol.dec-dot li::before {
