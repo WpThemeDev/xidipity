@@ -18,7 +18,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 		onclick: function() {
 			var dom = editor.dom;
 			var uniqueID = dom.uniqueId();
-			var html = '<ul><li id="' + uniqueID + '"></li></ul>';
+			var html = '<ul><li id="' + uniqueID + '">Standard</li></ul>';
 			editor.insertContent(html);
 			var newListItem = dom.select('li#' + uniqueID)[0];
 			editor.selection.setCursorLocation(newListItem);
@@ -29,7 +29,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ul><li id="' + uniqueID + '"></li></ul>';
+				var html = '<ul><li id="' + uniqueID + '">Standard</li></ul>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -40,7 +40,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ul class="circle"><li id="' + uniqueID + '"></li></ul>';
+				var html = '<ul class="circle"><li id="' + uniqueID + '">Circle</li></ul>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -51,7 +51,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ul class="dash"><li id="' + uniqueID + '"></li></ul>';
+				var html = '<ul class="dash"><li id="' + uniqueID + '">Dash</li></ul>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -62,7 +62,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ul class="square"><li id="' + uniqueID + '"></li></ul>';
+				var html = '<ul class="square"><li id="' + uniqueID + '">Square</li></ul>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -73,7 +73,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ul class="mixed"><li id="' + uniqueID + '"></li></ul>';
+				var html = '<ul class="mixed"><li id="' + uniqueID + '">Mixed</li></ul>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
