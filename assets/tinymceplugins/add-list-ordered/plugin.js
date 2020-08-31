@@ -3,7 +3,7 @@
  * Tinymce add-list-ordered plugin 
  *
  * ###:  plugin.js
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -83,5 +83,5 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 });
 
 /*
- * EOF: add-list-ordered / plugin.js / 29200815
+ * EOF: add-list-ordered / plugin.js / 29200901
  */
