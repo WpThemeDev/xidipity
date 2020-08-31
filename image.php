@@ -4,7 +4,7 @@
  * The template for displaying media library image
  *
  * ###:  image.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -58,7 +58,7 @@ if ($wp_query->have_posts())
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/IMAGE</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** display image
 	*/
@@ -140,6 +140,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: image.php / 29200815
+ * EOF: image.php / 29200901
 */
 ?>
