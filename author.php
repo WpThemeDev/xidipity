@@ -4,7 +4,7 @@
  * The template for displaying author info
  *
  * ###:  author.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -66,7 +66,7 @@ if (have_posts())
 	echo '</header>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** content
 	*/
@@ -157,6 +157,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: author.php / 29200815
+ * EOF: author.php / 29200901
 */
 ?>
