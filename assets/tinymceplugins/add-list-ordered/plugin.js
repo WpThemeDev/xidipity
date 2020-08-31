@@ -36,11 +36,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Decimal Dot',
+			text: '•\xa0Decimal',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<ol class="dec-dot"><li id="' + uniqueID + '"></li></ol>';
+				var html = '<ol class="decimal"><li id="' + uniqueID + '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
