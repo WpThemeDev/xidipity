@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  assets/css/theme/advance.css
-    * bld:  29200815
+    * bld:  29200901
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -591,6 +591,10 @@ table.cols\:fixed {
 
 .dsp\:tbl-td {
 	display: table-cell;
+}
+
+.dsp\:flw-rt {
+	display: flow-root;
 }
 
 /*
@@ -3795,6 +3799,10 @@ table.cols\:fixed {
 		display: table-cell;
 	}
 
+	.sm\)dsp\:flw-rt {
+		display: flow-root;
+	}
+
 	/*
     ***
         * property: fnt
@@ -6996,6 +7004,10 @@ table.cols\:fixed {
 		display: table-cell;
 	}
 
+	.md\)dsp\:flw-rt {
+		display: flow-root;
+	}
+
 	/*
     ***
         * property: fnt
@@ -10189,6 +10201,10 @@ table.cols\:fixed {
 
 	.lg\)dsp\:tbl-td {
 		display: table-cell;
+	}
+
+	.lg\)dsp\:flw-rt {
+		display: flow-root;
 	}
 
 	/*
@@ -13395,6 +13411,10 @@ table.cols\:fixed {
 		display: table-cell;
 	}
 
+	.xl\)dsp\:flw-rt {
+		display: flow-root;
+	}
+
 	/*
     ***
         * property: fnt
@@ -16014,5 +16034,5 @@ table.cols\:fixed {
 }
 
 /*
- * EOF: assets/css/theme/advance.css / 29200815
+ * EOF: assets/css/theme/advance.css / 29200901
  */
