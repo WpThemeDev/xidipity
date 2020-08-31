@@ -1,21 +1,21 @@
 /**
-    * WordPress Xidipity Theme
-    * Palette specific css classes
-    *
-    * ###:  assets/css/theme/palette.css
-    * bld:  29200815
-    * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
-    *
-    * ###:	abbreviations
-    * txt - text
-    * bkg - background
+	* WordPress Xidipity Theme
+	* Palette specific css classes
+	*
+	* ###:  assets/css/theme/palette.css
+	* bld:  29200901
+	* src:  github.com/WpThemeDev/xidipity/
+	* (C)   2019-2020 John Baer
+	*
+	* ###:	abbreviations
+	* txt - text
+	* bkg - background
 	* bdr - border
-    * tp  - top
-    * rt  - right
-    * bt  - bottom
-    * lt  - left
-    *
+	* tp  - top
+	* rt  - right
+	* bt  - bottom
+	* lt  - left
+	*
 */
 
 /*
@@ -2125,5 +2125,5 @@ tbody.bas-bar\+1>tr:nth-child(even) {
 }
 
 /*
- * EOF: assets/css/theme/palette.css / 29200815
+ * EOF: assets/css/theme/palette.css / 29200901
  */
