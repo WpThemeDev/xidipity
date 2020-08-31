@@ -6,7 +6,7 @@
  * The template for displaying font page
  *
  * ###:  page-templates/font-page.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -45,7 +45,7 @@ if (have_posts())
 	the_post();
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bt+0.5 wd:100%">' . "\n";
+	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	echo xty_dsp_content();
 	echo '</div>' . "\n";
 	echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
@@ -95,6 +95,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/font-page.php / 29200815
+ * EOF: page-templates/font-page.php / 29200901
 */
 ?>
