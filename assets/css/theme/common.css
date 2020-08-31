@@ -598,7 +598,7 @@ ul.par li>ul {
 ***
 */
 ol,
-ol.dec-dot {
+ol.decimal {
 	list-style-type: decimal;
 	line-height: var(--dft-line-height);
 	margin-left: 1rem;
@@ -658,26 +658,26 @@ ol.outline ol ol ol ol>li:before {
     # developer.mozilla.org/en-US/docs/Web/CSS/counters
 **/
 
-ol.dec-dot {
+ol.decimal {
 	counter-reset: listCounter;
 }
 
-ol.dec-dot li {
+ol.decimal li {
 	counter-increment: listCounter;
 }
 
-ol.dec-dot li ol.dec-dot {
+ol.decimal li ol.decimal {
 	list-style-type: none;
 	margin-left: 0.5625rem;
 	padding-left: 0.5625rem;
 }
 
-ol.dec-dot li ol.dec-dot li ol.dec-dot {
+ol.decimal li ol.decimal li ol.decimal {
 	margin-left: 1rem;
 	padding-left: 1rem;
 }
 
-ol.dec-dot li ol.dec-dot li::before {
+ol.decimal li ol.decimal li::before {
 	content:  counters(listCounter, ".") "\a0\a0";
 }
 
@@ -1440,7 +1440,7 @@ p {
 ***
     * element: <blockquote>
     * dsc: block quote
-    * ver: 190910-1
+    * ver: 29200815
     * fnt: present content as block quote
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
 ***
@@ -1448,7 +1448,6 @@ p {
 blockquote {
 	border-left: solid thick var(--hue-pri-up3);
 	border-radius: 0.6666rem;
-	font-style: oblique;
 	margin: 0.75rem 0 0.75rem 0;
 	padding: 1rem;
 	width: 100%;
@@ -1464,8 +1463,7 @@ blockquote {
 }
 
 cite {
-	font-size: var(--font-size-smaller);
-	font-style: var(--font-wgt-normal);
+	font-style: oblique;
 }
 
 /*
@@ -2428,7 +2426,7 @@ button:active {
 }
 
 .icon\:tb_add_misc_opts_outline::before {
-	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYgMkM0Ljg5IDIgNCAyLjkgNCA0VjIwQzQgMjEuMTEgNC44OSAyMiA2IDIySDEyVjIwSDZWNEgxM1Y5SDE4VjEySDIwVjhMMTQgMk0xOCAxNEMxNy44NyAxNCAxNy43NiAxNC4wOSAxNy43NCAxNC4yMUwxNy41NSAxNS41M0MxNy4yNSAxNS42NiAxNi45NiAxNS44MiAxNi43IDE2TDE1LjQ2IDE1LjVDMTUuMzUgMTUuNSAxNS4yMiAxNS41IDE1LjE1IDE1LjYzTDE0LjE1IDE3LjM2QzE0LjA5IDE3LjQ3IDE0LjExIDE3LjYgMTQuMjEgMTcuNjhMMTUuMjcgMTguNUMxNS4yNSAxOC42NyAxNS4yNCAxOC44MyAxNS4yNCAxOUMxNS4yNCAxOS4xNyAxNS4yNSAxOS4zMyAxNS4yNyAxOS41TDE0LjIxIDIwLjMyQzE0LjEyIDIwLjQgMTQuMDkgMjAuNTMgMTQuMTUgMjAuNjRMMTUuMTUgMjIuMzdDMTUuMjEgMjIuNSAxNS4zNCAyMi41IDE1LjQ2IDIyLjVMMTYuNyAyMkMxNi45NiAyMi4xOCAxNy4yNCAyMi4zNSAxNy41NSAyMi40N0wxNy43NCAyMy43OUMxNy43NiAyMy45MSAxNy44NiAyNCAxOCAyNEgyMEMyMC4xMSAyNCAyMC4yMiAyMy45MSAyMC4yNCAyMy43OUwyMC40MyAyMi40N0MyMC43MyAyMi4zNCAyMSAyMi4xOCAyMS4yNyAyMkwyMi41IDIyLjVDMjIuNjMgMjIuNSAyMi43NiAyMi41IDIyLjgzIDIyLjM3TDIzLjgzIDIwLjY0QzIzLjg5IDIwLjUzIDIzLjg2IDIwLjQgMjMuNzcgMjAuMzJMMjIuNyAxOS41QzIyLjcyIDE5LjMzIDIyLjc0IDE5LjE3IDIyLjc0IDE5QzIyLjc0IDE4LjgzIDIyLjczIDE4LjY3IDIyLjcgMTguNUwyMy43NiAxNy42OEMyMy44NSAxNy42IDIzLjg4IDE3LjQ3IDIzLjgyIDE3LjM2TDIyLjgyIDE1LjYzQzIyLjc2IDE1LjUgMjIuNjMgMTUuNSAyMi41IDE1LjVMMjEuMjcgMTZDMjEgMTUuODIgMjAuNzMgMTUuNjUgMjAuNDIgMTUuNTNMMjAuMjMgMTQuMjFDMjAuMjIgMTQuMDkgMjAuMTEgMTQgMjAgMTRNMTkgMTcuNUMxOS44MyAxNy41IDIwLjUgMTguMTcgMjAuNSAxOUMyMC41IDE5LjgzIDE5LjgzIDIwLjUgMTkgMjAuNUMxOC4xNiAyMC41IDE3LjUgMTkuODMgMTcuNSAxOUMxNy41IDE4LjE3IDE4LjE3IDE3LjUgMTkgMTcuNVoiIC8+PC9zdmc+");
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImJsYWNrIiB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4Ij48Zz48cmVjdCBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiB3aWR0aD0iMjQiLz48L2c+PGc+PGc+PGc+PHBhdGggZD0iTTIxLjY3LDE4LjE3bC01LjMtNS4zaC0wLjk5bC0yLjU0LDIuNTR2MC45OWw1LjMsNS4zYzAuMzksMC4zOSwxLjAyLDAuMzksMS40MSwwbDIuMTItMi4xMiBDMjIuMDYsMTkuMiwyMi4wNiwxOC41NiwyMS42NywxOC4xN3oiLz48L2c+PGc+PHBhdGggZD0iTTE3LjM0LDEwLjE5bDEuNDEtMS40MWwyLjEyLDIuMTJjMS4xNy0xLjE3LDEuMTctMy4wNywwLTQuMjRsLTMuNTQtMy41NGwtMS40MSwxLjQxVjEuNzFMMTUuMjIsMWwtMy41NCwzLjU0bDAuNzEsMC43MSBoMi44M2wtMS40MSwxLjQxbDEuMDYsMS4wNmwtMi44OSwyLjg5TDcuODUsNi40OFY1LjA2TDQuODMsMi4wNEwyLDQuODdsMy4wMywzLjAzaDEuNDFsNC4xMyw0LjEzbC0wLjg1LDAuODVINy42bC01LjMsNS4zIGMtMC4zOSwwLjM5LTAuMzksMS4wMiwwLDEuNDFsMi4xMiwyLjEyYzAuMzksMC4zOSwxLjAyLDAuMzksMS40MSwwbDUuMy01LjN2LTIuMTJsNS4xNS01LjE1TDE3LjM0LDEwLjE5eiIvPjwvZz48L2c+PC9nPjwvc3ZnPg==");
 }
 
 .icon\:tb_add_multi_cols_solid::before {
