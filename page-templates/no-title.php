@@ -6,7 +6,7 @@
  * The template for displaying page without page title
  *
  * ###:  page-templates/no-title.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -45,7 +45,9 @@ if (have_posts())
 	the_post();
 	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
 	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
-	echo '<div class="bkg:content ht:min10 mar:bt+0.5 pad:tp+1 wd:100%">' . "\n";
+	//echo '<div class="bkg:content ht:min10 mar:bt+0.5 pad:tp+1 wd:100%">' . "\n";
+	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 pad:tp+1 wd:100%">' . "\n";
+	
 	/*
 	 *** yoast breadcrumbs plugin
 	*/
@@ -105,6 +107,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/no-title.php / 29200815
+ * EOF: page-templates/no-title.php / 29200901
 */
 ?>
