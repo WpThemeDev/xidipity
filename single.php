@@ -4,7 +4,7 @@
  * The template for displaying blog post
  *
  * ###:  single.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -81,7 +81,9 @@ if (have_posts())
 	echo '<cmt name="end">POST/PANEL/LEFT</cmt>' . "\n";
 	echo '<cmt name="begin">POST/PANEL/RIGHT</cmt>' . "\n";
 	echo '<div class="fxd:1 fxe:1 fb:100% md)fb:75% lg)fb:80%">' . "\n";
+	echo '<div class="dsp:flw-rt">' . "\n";
 	echo xty_dsp_content();
+	echo '</div>' . "\n";
 	echo '</div>' . "\n";
 	echo '<cmt name="end">POST/PANEL/RIGHT</cmt>' . "\n";
 	echo '</div>' . "\n";
@@ -149,6 +151,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: single.php / 29200815
+ * EOF: single.php / 29200901
 */
 ?>
