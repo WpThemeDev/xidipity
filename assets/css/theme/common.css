@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  29200815
+    * bld:  29200901
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1682,6 +1682,21 @@ figure {
 
 /*
 ***
+    * property: clearfix
+    * dsc: floats hack
+    * ver: 29200815
+    * fnt: clear floats
+    * ref: css-tricks.com/snippets/css/clear-fix/
+***
+*/
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/*
+***
     * property: alignleft/center/right
     * dsc: alignment for image/figure
     * ver: 200318
@@ -1695,20 +1710,12 @@ figure {
 }
 
 .aligncenter {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0.5rem auto 0.5rem auto;
 }
 
 .alignright {
 	float: right;
 	margin-left: 0.5rem;
-}
-
-.alignleft::after,
-.alignright::after {
-	content: "";
-	clear: both;
-	display: table;
 }
 
 .gallery {
@@ -2498,5 +2505,5 @@ button:active {
 }
 
 /*
- * EOF: assets/css/theme/common.css / 29200815
+ * EOF: assets/css/theme/common.css / 29200901
  */
