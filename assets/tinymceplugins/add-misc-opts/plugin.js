@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -105,5 +105,5 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 29200815
+ * EOF: add-misc-opts / plugin.js / 29200901
  */
