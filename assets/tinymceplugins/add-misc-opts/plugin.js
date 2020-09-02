@@ -54,7 +54,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 				} else {
 					var dom = editor.dom;
 					var uniqueID = dom.uniqueId();
-					var html = '<table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table>';
+					var html = '<!--  TMPL:FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /TMPL:FRAME -->';
 					editor.insertContent(html);
 					var newTag = dom.select('td#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
