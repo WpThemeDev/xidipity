@@ -86,7 +86,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:PANEL/COL --><table class="panelx2" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:50%;"></td><td style="width:50%;"></td></tr></tbody></table><!--  TMPL:PANEL/COL -->';
+				var html = '<!--  TMPL:PANEL/COL --><table class="panelx2" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:50%;"></td><td style="width:50%;"></td></tr></tbody></table><!-- /TMPL:PANEL/COL -->';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -97,7 +97,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:PANEL/COL --><table class="panelx3" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:33.3333%;"></td><td style="width:33.3333%;"></td><td style="width:33.3333%;"></td></tr></tbody></table><!--  TMPL:PANEL/COL -->';
+				var html = '<!--  TMPL:PANEL/COL --><table class="panelx3" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:33.3333%;"></td><td style="width:33.3333%;"></td><td style="width:33.3333%;"></td></tr></tbody></table><!-- /TMPL:PANEL/COL -->';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
