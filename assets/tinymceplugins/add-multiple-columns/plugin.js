@@ -20,7 +20,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
+				var html = '<table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -31,7 +31,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
+				var html = '<table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -42,7 +42,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
+				var html = '<table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -53,7 +53,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
+				var html = '<table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -64,7 +64,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
+				var html = '<table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
@@ -75,7 +75,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
+				var html = '<table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table>';
 				editor.insertContent(html);
 				var FirstTD = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(FirstTD);
