@@ -3,7 +3,7 @@
  * Tinymce add-multiple-columns plugin
  *
  * ###:  plugin.js
- * bld:  28200801
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -20,10 +20,10 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-2"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, {
 			icon: false,
@@ -31,10 +31,10 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-3"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, {
 			icon: false,
@@ -42,10 +42,10 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:AUTO/COL --><table class="cols:auto-4"><tr><td id="' + uniqueID + '"></td></tr></table><!-- /TMPL:AUTO/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, {
 			icon: false,
@@ -53,10 +53,10 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-2"><tr><td id="' + uniqueID + '"></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, {
 			icon: false,
@@ -64,10 +64,10 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-3"><tr><td id="' + uniqueID + '"></td><td></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, {
 			icon: false,
@@ -75,15 +75,37 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = dom.uniqueId();
-				var html = '<!--  TMPL:MULTI/COL --><table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table><!-- /TMPL:MULTI/COL -->';
+				var html = '<!--  TMPL:FIXED/COL --><table class="cols:fixed-4"><tr><td id="' + uniqueID + '"></td><td></td><td></td><td></td></tr></table><!-- /TMPL:FIXED/COL -->';
 				editor.insertContent(html);
-				var newTwoColumn = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTwoColumn);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
+			}
+		}, {
+			icon: false,
+			text: '•\xa0Panel 2 Column',
+			onclick: function() {
+				var dom = editor.dom;
+				var uniqueID = dom.uniqueId();
+				var html = '<!--  TMPL:PANEL/COL --><table class="panelx2" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:50%;"></td><td style="width:50%;"></td></tr></tbody></table><!--  TMPL:PANEL/COL -->';
+				editor.insertContent(html);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
+			}
+		}, {
+			icon: false,
+			text: '•\xa0Panel 3 Column',
+			onclick: function() {
+				var dom = editor.dom;
+				var uniqueID = dom.uniqueId();
+				var html = '<!--  TMPL:PANEL/COL --><table class="panelx3" style="width:100%;"><tbody><tr><td id="' + uniqueID + '" style="width:33.3333%;"></td><td style="width:33.3333%;"></td><td style="width:33.3333%;"></td></tr></tbody></table><!--  TMPL:PANEL/COL -->';
+				editor.insertContent(html);
+				var FirstTD = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(FirstTD);
 			}
 		}, ],
 	});
 });
 
 /*
- * EOF: add-multiple-columns / plugin.js / 28200715
+ * EOF: add-multiple-columns / plugin.js / 29200901
  */
