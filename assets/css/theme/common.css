@@ -1221,6 +1221,7 @@ table>tbody.bdr\:none>tr>td {
 table.panelx2>tbody>tr>td,
 table.panelx3>tbody>tr>td {
 	border-color: transparent !important;
+	vertical-align: top;
 }
 
 @media (max-width: 599px) {
@@ -1271,6 +1272,7 @@ table.cols\:fixed-2>tbody>tr>td,
 table.cols\:fixed-3>tbody>tr>td,
 table.cols\:fixed-4>tbody>tr>td {
 	border-color: transparent !important;
+	vertical-align: top;
 }
 
 @media (max-width: 599px) {
