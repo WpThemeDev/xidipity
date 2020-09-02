@@ -1825,34 +1825,35 @@ figure {
     * ref: same design as pre element
 ***
 */
-table.frame {
-	border-spacing: 0;
-	border-collapse: collapse;
-	font-size: var(--font-size-md);
-	margin-bottom: 0.5rem;
-	margin-top: 0.5rem;
-	table-layout: fixed;
-	width: 100%;
-}
-
-table.frame>tbody>tr>td {
-	border: none;
-	padding: 0;
-	text-align: left;
-	width: 100%;
+@media (max-width: 599px) {
+	table.frame {
+		width: 100% !important;		
+	}
+	table.frame>tbody>tr>td {
+		border: solid thin var(--hue-bas-up3);
+		background-color: var(--hue-bas-up5);
+		border-radius: 0.1666rem;
+		display: block;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 1rem;
+		width: 100% !important;
+	}
 }
 
 /*: sm)media :*/
 @media (min-width: 600px) {
 	table.frame {
-		border-spacing: 0.125rem;
-		border-collapse: separate;
+		border-collapse: collapse;
+		margin: 0.5rem 0 0.5rem 0;
+		table-layout: auto;
+		width: 100%;
 	}
 
 	table.frame>tbody>tr>td {
+		border-color: transparent;
 		border: solid medium var(--hue-bas-up3);
 		background-color: var(--hue-bas-up5);
-		border-radius: 0.3333rem;
+		border-radius: 0.1666rem;
 		padding: 1rem;
 	}
 }
