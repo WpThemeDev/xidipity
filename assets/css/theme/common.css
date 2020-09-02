@@ -1702,7 +1702,6 @@ figure {
 ***
 */
 .wp-caption {
-	background-color: var(--hue-bas-up4);
 	font-size: var(--font-size-sm);
 	text-align: center;
 	width: auto !important;
