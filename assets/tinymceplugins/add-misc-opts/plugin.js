@@ -29,9 +29,11 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					var dom = editor.dom;
 					var uniqueID = 'tag';
 					uniqueID += Math.floor(Math.random() * 1000);				
-					var html = '<blockquote><p id="';
+					var html = '<!--  TMPL:BLOCKQUOTE -->';
+					html += '<blockquote><p id="';
 					html += uniqueID;
 					html += '"></p></blockquote>';
+					html += '<!-- /TMPL:BLOCKQUOTE -->';
 					editor.insertContent(html);
 					var newTag = dom.select('p#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
