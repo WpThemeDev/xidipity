@@ -17,8 +17,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIgMTdoMnYuNUgzdjFoMXYuNUgydjFoM3YtNEgydjF6bTEtOWgxVjRIMnYxaDF2M3ptLTEgM2gxLjhMMiAxMy4xdi45aDN2LTFIMy4yTDUgMTAuOVYxMEgydjF6bTUtNnYyaDE0VjVIN3ptMCAxNGgxNHYtMkg3djJ6bTAtNmgxNHYtMkg3djJ6Ii8+PC9zdmc+',
 		onclick: function() {
 			var dom = editor.dom;
-			var uniqueID = dom.uniqueId();
-			var html = '<ol><li id="' + uniqueID + '"></li></ol>';
+			var uniqueID = 'tag';
+			uniqueID += Math.floor(Math.random() * 1000);				
+			var html = '<ol><li id="';
+			html += uniqueID;
+			html += '"></li></ol>';
 			editor.insertContent(html);
 			var newListItem = dom.select('li#' + uniqueID)[0];
 			editor.selection.setCursorLocation(newListItem);
@@ -28,8 +31,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Standard',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<ol><li id="' + uniqueID + '"></li></ol>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<ol><li id="';
+				html += uniqueID;
+				html += '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -39,8 +45,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Decimal',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<ol class="decimal"><li id="' + uniqueID + '"></li></ol>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<ol class="decimal"><li id="';
+				html += uniqueID;
+				html += '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -50,8 +59,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Alpha',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<ol class="alpha"><li id="' + uniqueID + '"></li></ol>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<ol class="alpha"><li id="';
+				html += uniqueID;
+				html += '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -61,8 +73,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Roman',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<ol class="roman"><li id="' + uniqueID + '"></li></ol>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<ol class="roman"><li id="';
+				html += uniqueID;
+				html += '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
@@ -72,8 +87,11 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Outline',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<ol class="outline"><li id="' + uniqueID + '"></li></ol>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<ol class="outline"><li id="';
+				html += uniqueID;
+				html += '"></li></ol>';
 				editor.insertContent(html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
