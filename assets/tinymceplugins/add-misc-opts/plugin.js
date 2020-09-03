@@ -27,8 +27,11 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<blockquote><p>{$selection}</p></blockquote>')
 				} else {
 					var dom = editor.dom;
-					var uniqueID = dom.uniqueId();
-					var html = '<blockquote><p id="' + uniqueID + '">&nbsp;</p></blockquote>';
+					var uniqueID = 'tag';
+					uniqueID += Math.floor(Math.random() * 1000);				
+					var html = '<blockquote><p id="';
+					html += uniqueID;
+					html += '"></p></blockquote>';
 					editor.insertContent(html);
 					var newTag = dom.select('p#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -53,8 +56,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<table class="frame"><tr><td>{$selection}</td></tr></table>');
 				} else {
 					var dom = editor.dom;
-					var uniqueID = dom.uniqueId();
-					var html = '<!--  TMPL:FRAME --><table class="frame"><tr><td id="' + uniqueID + '">&nbsp;</td></tr></table><!-- /TMPL:FRAME -->';
+					var uniqueID = 'tag';
+					uniqueID += Math.floor(Math.random() * 1000);				
+					var html = '<!--  TMPL:FRAME -->';
+					html += '<table class="frame"><tr><td id="';
+					html += uniqueID;
+					html += '"></td></tr></table>';
+					html += '<!-- /TMPL:FRAME -->';
 					editor.insertContent(html);
 					var newTag = dom.select('td#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
@@ -66,11 +74,16 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			text: '\xa0Insert Excerpt',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = dom.uniqueId();
-				var html = '<table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tbody class="fnt:siz-1"><tr><td class="bdr:solid-thin bdr:bas-300 bkg:tint-bas+1 cnr:arch-small pad:+0.5" id="' + uniqueID + '"></td><td class="mce[dsp:none]"><!--more--></td></tr></tbody></table>';
+				var uniqueID = 'tag';
+				uniqueID += Math.floor(Math.random() * 1000);				
+				var html = '<!--  TMPL:EXCERPT -->';
+				html += '<table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tbody class="fnt:siz-1"><tr><td class="bdr:so-1x bdr:bas+3 bkg:tint-bas+1 cnr:arch-x-small pad:+0.5" id="';
+				html += uniqueID;
+				html += '"></td><td class="mce[dsp:none]"><!--more--></td></tr></tbody></table>';
+				html += '<!-- /TMPL:EXCERPT -->';
 				editor.insertContent(html);
-				var newExcerpt = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newExcerpt);
+				var newTag = dom.select('td#' + uniqueID)[0];
+				editor.selection.setCursorLocation(newTag);
 			}
 		}, {
 			icon: true,
