@@ -125,18 +125,23 @@ ul.par li>ul {
     * ref: see common.css
 ***
 */
-.cols\:fixed-2>tbody>tr>td:not(:last-child),
-.cols\:fixed-3>tbody>tr>td:not(:last-child),
-.cols\:fixed-4>tbody>tr>td:not(:last-child) {
-	border-right: dashed 1px var(--hue-bas-up1) !important;
+
+table.cols\:auto-2>tbody>tr>td,
+table.cols\:auto-3>tbody>tr>td,
+table.cols\:auto-4>tbody>tr>td, 
+table.cols\:fixed-2>tbody>tr>td,
+table.cols\:fixed-3>tbody>tr>td,
+table.cols\:fixed-4>tbody>tr>td {
+	background-color: var(--hue-bas-tint);
 }
 
-.cols\:fixed-2>tbody>tr>td:not(:first-child),
-.cols\:fixed-3>tbody>tr>td:not(:first-child),
-.cols\:fixed-4>tbody>tr>td:not(:first-child) {
-	border-left: dashed 1px var(--hue-bas-up1) !important;
+table.cols\:fixed-2>tbody>tr>td:not(:last-child),
+table.cols\:fixed-3>tbody>tr>td:not(:last-child),
+table.cols\:fixed-4>tbody>tr>td:not(:last-child) {
+	border-right: solid 4px var(--content-bg-color) !important;
 }
 
+*/
 /*
 ***
     * element: panel
@@ -146,11 +151,15 @@ ul.par li>ul {
     * ref:
 ***
 */
-table.panelx2>tbody>tr>td:not(:last-child),
-table.panelx3>tbody>tr>td:not(:last-child) {
-	border-right: 1px dashed var(--hue-bas-up2) !important;
+table.panelx2>tbody>tr>td,
+table.panelx3>tbody>tr>td {
+	background-color: var(--hue-bas-tint);
 }
 
+table.panelx2>tbody>tr>td:not(:last-child),
+table.panelx3>tbody>tr>td:not(:last-child) {
+	border-right: solid 4px var(--content-bg-color) !important;
+}
 /*
  * EOF: assets/css/theme/editor.css / 29200901
  */
