@@ -3,7 +3,7 @@
  * Tinymce add-horizontal-rule plugin
  *
  * ###:  plugin.js
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -19,7 +19,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 			text: '•\xa0Single Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:1x wd:70%" />');
+				editor.insertContent('<hr class="aln:ct rul:1x wd:70%" />');
 			}
 		}, {
 			text: '•\xa0Single Wide',
@@ -31,7 +31,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 			text: '•\xa0Double Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:dbl wd:70%" />');
+				editor.insertContent('<hr class="aln:ct rul:dbl wd:70%" />');
 			}
 		}, {
 			text: '•\xa0Double Wide',
@@ -43,7 +43,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 			text: '•\xa0Gradient Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:grd wd:70%" />');
+				editor.insertContent('<hr class="aln:ct rul:grd wd:70%" />');
 			}
 		}, {
 			text: '•\xa0Gradient Wide',
@@ -72,5 +72,5 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 });
 
 /*
- * EOF: add-horizontal-rule / plugin.js / 29200815
+ * EOF: add-horizontal-rule / plugin.js / 29200901
  */
