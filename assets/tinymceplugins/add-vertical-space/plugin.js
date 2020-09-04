@@ -3,7 +3,7 @@
  * Tinymce add-vertical-space plugin 
  *
  * ###:  plugin.js
- * bld:  28200715
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -19,48 +19,48 @@ tinymce.PluginManager.add('add_vert_space', function(editor) {
 			text: '•\xa0\xBD Line',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:1/2">&nbsp;</p>');
+				editor.insertContent('<div class="vs:1/2">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa0\xBE Line',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:3/4">&nbsp;</p>');
+				editor.insertContent('<div class="vs:3/4">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa01 Line',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p>&nbsp;</p>');
+				editor.insertContent('<div class="vs:1">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa01\xBD Lines',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:1-1/2">&nbsp;</p>');
+				editor.insertContent('<div class="vs:1-1/2">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa02 Lines',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:2">&nbsp;</p>');
+				editor.insertContent('<div class="vs:2">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa02\xBD Lines',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:2-1/2">&nbsp;</p>');
+				editor.insertContent('<div class="vs:2-1/2">&nbsp;</div>');
 			}
 		}, {
 			text: '•\xa03 Lines',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<p class="vs:3">&nbsp;</p>');
+				editor.insertContent('<div class="vs:3">&nbsp;</div>');
 			}
 		}]
 	});
 });
 
 /*
- * EOF: add-vertical-space / plugin.js / 28200715
+ * EOF: add-vertical-space / plugin.js / 29200901
  */
