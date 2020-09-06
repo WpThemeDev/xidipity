@@ -8,7 +8,7 @@
  * (C)   2019-2020 John Baer
  *
  */
-tinymce.PluginManager.add('add_template', function(editor) {
+tinymce.PluginManager.add('add_template', function (editor) {
 	'use strict';
 	editor.addButton('add_template', {
 		title: 'Add Template',
@@ -19,13 +19,28 @@ tinymce.PluginManager.add('add_template', function(editor) {
 				title: 'Add Template',
 				body: [{
 					type: "container",
-					html: '<form method="post" style="font-family:sans-serif;font-size:16px;">	<label for="tmpl" style="display:block;">Code:</label><br /><textarea type="text" id="tmpl_id" name="txt_tag" value="" rows="10" cols="60" style="font-family:monospace; border: 1px solid #e9e7e4; white-space: pre-wrap;"></textarea></form>'
+					html: '<form method="post" style="font-family:sans-serif;font-size:16px;"> <label for="tmpl">Code:</label><br /><textarea type="text" id="tmpl_id" name="txt_tag" value="" rows="10" cols="60" style="font-family:monospace; border: 1px solid #e9e7e4; margin-bottom:10px; white-space:pre-wrap;"></textarea><br /><input type="checkbox" id="blk_id" name="code_block" value=""><label for="code_block" style="font-size:smaller;margin-left:6px;">Add as code block</label></form>'
 					}],
 				onSubmit: function () {
 					var tmpl_tag = document.getElementById("tmpl_id").value;
+					var tmpl_content = '';
 					if (tmpl_tag.length > 0) {
-						var tmpl_content = tmpl_tag.replace("`t\s*`t","`t");
-						editor.insertContent(tmpl_content, {format: 'raw'});
+						if (document.getElementById("blk_id").checked) {
+							var lines = tmpl_tag.split('\n');
+							tmpl_content = '<pre class="dsp:line-nums">';
+							var i;
+							for (i = 0; i < lines.length; i++) {
+								tmpl_content += '<var>';
+								tmpl_content += encodeURI(lines[i]).replace(/%(\w\w)/g, '&#x$1;');
+								tmpl_content += '</var>\n';
+							}
+							tmpl_content += '</pre>';
+						} else {
+							tmpl_content = tmpl_tag.replace("`t\s*`t", "`t");
+						}
+						editor.insertContent(tmpl_content, {
+							format: 'raw'
+						});
 					}
 				}
 			});
