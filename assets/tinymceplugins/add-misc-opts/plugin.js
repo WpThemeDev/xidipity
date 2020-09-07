@@ -92,7 +92,11 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNOS40IDE2LjZMNC44IDEybDQuNi00LjZMOCA2bC02IDYgNiA2IDEuNC0xLjR6bTUuMiAwbDQuNi00LjYtNC42LTQuNkwxNiA2bDYgNi02IDYtMS40LTEuNHoiLz48L3N2Zz4=',
 			text: '\xa0Code',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<code>{$selection}</code>');
+				var txt = editor.selection.getContent({format : 'text'});
+				var html = '<code>';
+				html += encodeURI(txt).replace(/%(\w\w)/g, '&#x$1;');
+				html += '</code>';
+				editor.execCommand('mceReplaceContent', false, html);
 			}
 		}, {
 			icon: true,
