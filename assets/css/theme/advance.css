@@ -283,11 +283,11 @@
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
 */
-.bdr\:collapse {
+table.bdr\:collapse {
 	border-collapse: collapse !important;
 }
 
-.bdr\:separate {
+table.bdr\:separate {
 	border-collapse: separate !important;
 }
 
@@ -317,53 +317,53 @@ table.cols\:fixed {
     * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
 ***
 */
-.bdr\:space-0,
-.bdr\:space\+0 {
+table.bdr\:space-0,
+table.bdr\:space\+0 {
 	border-collapse: separate !important;
 	border-spacing: 0 !important;
 }
 
-.bdr\:space\+0\.125 {
+table.bdr\:space\+0\.125 {
 	border-collapse: separate !important;
 	border-spacing: 0.125rem !important;
 }
 
-.bdr\:space\+0\.25 {
+table.bdr\:space\+0\.25 {
 	border-collapse: separate !important;
 	border-spacing: 0.25rem !important;
 }
 
-.bdr\:space\+0\.5 {
+table.bdr\:space\+0\.5 {
 	border-collapse: separate !important;
 	border-spacing: 0.5rem !important;
 }
 
-.bdr\:space\+0\.75 {
+table.bdr\:space\+0\.75 {
 	border-collapse: separate !important;
 	border-spacing: 0.75rem !important;
 }
 
-.bdr\:space\+1 {
+table.bdr\:space\+1 {
 	border-collapse: separate !important;
 	border-spacing: 1rem !important;
 }
 
-.bdr\:space\+1\.25 {
+table.bdr\:space\+1\.25 {
 	border-collapse: separate !important;
 	border-spacing: 1.25rem !important;
 }
 
-.bdr\:space\+1\.5 {
+table.bdr\:space\+1\.5 {
 	border-collapse: separate !important;
 	border-spacing: 1.5rem !important;
 }
 
-.bdr\:space\+1\.75 {
+table.bdr\:space\+1\.75 {
 	border-collapse: separate !important;
 	border-spacing: 1.75rem !important;
 }
 
-.bdr\:space\+2 {
+table.bdr\:space\+2 {
 	border-collapse: separate !important;
 	border-spacing: 2rem !important;
 }
@@ -626,8 +626,8 @@ table.cols\:fixed {
 	font-family: var(--font-family-cursive) !important;
 }
 
-.fnt\:family-fancy {
-	font-family: var(--font-family-fancy) !important;
+.fnt\:family-fantasy {
+	font-family: var(--font-family-fantasy) !important;
 }
 
 /*
@@ -3489,11 +3489,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.sm\)bdr\:collapse {
+	table.sm\)bdr\:collapse {
 		border-collapse: collapse !important;
 	}
 
-	.sm\)bdr\:separate {
+	table.sm\)bdr\:separate {
 		border-collapse: separate !important;
 	}
 
@@ -3523,53 +3523,53 @@ table.cols\:fixed {
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.sm\)bdr\:space-0,
-	.sm\)bdr\:space\+0 {
+	table.sm\)bdr\:space-0,
+	table.sm\)bdr\:space\+0 {
 		border-collapse: separate !important;
 		border-spacing: 0 !important;
 	}
 
-	.sm\)bdr\:space\+0\.125 {
+	table.sm\)bdr\:space\+0\.125 {
 		border-collapse: separate !important;
 		border-spacing: 0.125rem !important;
 	}
 
-	.sm\)bdr\:space\+0\.25 {
+	table.sm\)bdr\:space\+0\.25 {
 		border-collapse: separate !important;
 		border-spacing: 0.25rem !important;
 	}
 
-	.sm\)bdr\:space\+0\.5 {
+	table.sm\)bdr\:space\+0\.5 {
 		border-collapse: separate !important;
 		border-spacing: 0.5rem !important;
 	}
 
-	.sm\)bdr\:space\+0\.75 {
+	table.sm\)bdr\:space\+0\.75 {
 		border-collapse: separate !important;
 		border-spacing: 0.75rem !important;
 	}
 
-	.sm\)bdr\:space\+1 {
+	table.sm\)bdr\:space\+1 {
 		border-collapse: separate !important;
 		border-spacing: 1rem !important;
 	}
 
-	.sm\)bdr\:space\+1\.25 {
+	table.sm\)bdr\:space\+1\.25 {
 		border-collapse: separate !important;
 		border-spacing: 1.25rem !important;
 	}
 
-	.sm\)bdr\:space\+1\.5 {
+	table.sm\)bdr\:space\+1\.5 {
 		border-collapse: separate !important;
 		border-spacing: 1.5rem !important;
 	}
 
-	.sm\)bdr\:space\+1\.75 {
+	table.sm\)bdr\:space\+1\.75 {
 		border-collapse: separate !important;
 		border-spacing: 1.75rem !important;
 	}
 
-	.sm\)bdr\:space\+2 {
+	table.sm\)bdr\:space\+2 {
 		border-collapse: separate !important;
 		border-spacing: 2rem !important;
 	}
@@ -3832,8 +3832,8 @@ table.cols\:fixed {
 		font-family: var(--font-family-cursive) !important;
 	}
 
-	.sm\)fnt\:family-fancy {
-		font-family: var(--font-family-fancy) !important;
+	.sm\)fnt\:family-fantasy {
+		font-family: var(--font-family-fantasy) !important;
 	}
 
 	/*
@@ -6694,11 +6694,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.md\)bdr\:collapse {
+	table.md\)bdr\:collapse {
 		border-collapse: collapse !important;
 	}
 
-	.md\)bdr\:separate {
+	table.md\)bdr\:separate {
 		border-collapse: separate !important;
 	}
 
@@ -6728,53 +6728,53 @@ table.cols\:fixed {
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.md\)bdr\:space-0,
-	.md\)bdr\:space\+0 {
+	table.md\)bdr\:space-0,
+	table.md\)bdr\:space\+0 {
 		border-collapse: separate !important;
 		border-spacing: 0 !important;
 	}
 
-	.md\)bdr\:space\+0\.125 {
+	table.md\)bdr\:space\+0\.125 {
 		border-collapse: separate !important;
 		border-spacing: 0.125rem !important;
 	}
 
-	.md\)bdr\:space\+0\.25 {
+	table.md\)bdr\:space\+0\.25 {
 		border-collapse: separate !important;
 		border-spacing: 0.25rem !important;
 	}
 
-	.md\)bdr\:space\+0\.5 {
+	table.md\)bdr\:space\+0\.5 {
 		border-collapse: separate !important;
 		border-spacing: 0.5rem !important;
 	}
 
-	.md\)bdr\:space\+0\.75 {
+	table.md\)bdr\:space\+0\.75 {
 		border-collapse: separate !important;
 		border-spacing: 0.75rem !important;
 	}
 
-	.md\)bdr\:space\+1 {
+	table.md\)bdr\:space\+1 {
 		border-collapse: separate !important;
 		border-spacing: 1rem !important;
 	}
 
-	.md\)bdr\:space\+1\.25 {
+	table.md\)bdr\:space\+1\.25 {
 		border-collapse: separate !important;
 		border-spacing: 1.25rem !important;
 	}
 
-	.md\)bdr\:space\+1\.5 {
+	table.md\)bdr\:space\+1\.5 {
 		border-collapse: separate !important;
 		border-spacing: 1.5rem !important;
 	}
 
-	.md\)bdr\:space\+1\.75 {
+	table.md\)bdr\:space\+1\.75 {
 		border-collapse: separate !important;
 		border-spacing: 1.75rem !important;
 	}
 
-	.md\)bdr\:space\+2 {
+	table.md\)bdr\:space\+2 {
 		border-collapse: separate !important;
 		border-spacing: 2rem !important;
 	}
@@ -7037,8 +7037,8 @@ table.cols\:fixed {
 		font-family: var(--font-family-cursive) !important;
 	}
 
-	.md\)fnt\:family-fancy {
-		font-family: var(--font-family-fancy) !important;
+	.md\)fnt\:family-fantasy {
+		font-family: var(--font-family-fantasy) !important;
 	}
 
 	/*
@@ -9893,11 +9893,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.lg\)bdr\:collapse {
+	table.lg\)bdr\:collapse {
 		border-collapse: collapse !important;
 	}
 
-	.lg\)bdr\:separate {
+	table.lg\)bdr\:separate {
 		border-collapse: separate !important;
 	}
 
@@ -9927,53 +9927,53 @@ table.cols\:fixed {
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.lg\)bdr\:space-0,
-	.lg\)bdr\:space\+0 {
+	table.lg\)bdr\:space-0,
+	table.lg\)bdr\:space\+0 {
 		border-collapse: separate !important;
 		border-spacing: 0 !important;
 	}
 
-	.lg\)bdr\:space\+0\.125 {
+	table.lg\)bdr\:space\+0\.125 {
 		border-collapse: separate !important;
 		border-spacing: 0.125rem !important;
 	}
 
-	.lg\)bdr\:space\+0\.25 {
+	table.lg\)bdr\:space\+0\.25 {
 		border-collapse: separate !important;
 		border-spacing: 0.25rem !important;
 	}
 
-	.lg\)bdr\:space\+0\.5 {
+	table.lg\)bdr\:space\+0\.5 {
 		border-collapse: separate !important;
 		border-spacing: 0.5rem !important;
 	}
 
-	.lg\)bdr\:space\+0\.75 {
+	table.lg\)bdr\:space\+0\.75 {
 		border-collapse: separate !important;
 		border-spacing: 0.75rem !important;
 	}
 
-	.lg\)bdr\:space\+1 {
+	table.lg\)bdr\:space\+1 {
 		border-collapse: separate !important;
 		border-spacing: 1rem !important;
 	}
 
-	.lg\)bdr\:space\+1\.25 {
+	table.lg\)bdr\:space\+1\.25 {
 		border-collapse: separate !important;
 		border-spacing: 1.25rem !important;
 	}
 
-	.lg\)bdr\:space\+1\.5 {
+	table.lg\)bdr\:space\+1\.5 {
 		border-collapse: separate !important;
 		border-spacing: 1.5rem !important;
 	}
 
-	.lg\)bdr\:space\+1\.75 {
+	table.lg\)bdr\:space\+1\.75 {
 		border-collapse: separate !important;
 		border-spacing: 1.75rem !important;
 	}
 
-	.lg\)bdr\:space\+2 {
+	table.lg\)bdr\:space\+2 {
 		border-collapse: separate !important;
 		border-spacing: 2rem !important;
 	}
@@ -10236,8 +10236,8 @@ table.cols\:fixed {
 		font-family: var(--font-family-cursive) !important;
 	}
 
-	.lg\)fnt\:family-fancy {
-		font-family: var(--font-family-fancy) !important;
+	.lg\)fnt\:family-fantasy {
+		font-family: var(--font-family-fantasy) !important;
 	}
 
 	/*
@@ -13101,11 +13101,11 @@ table.cols\:fixed {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.xl\)bdr\:collapse {
+	table.xl\)bdr\:collapse {
 		border-collapse: collapse !important;
 	}
 
-	.xl\)bdr\:separate {
+	table.xl\)bdr\:separate {
 		border-collapse: separate !important;
 	}
 
@@ -13135,53 +13135,53 @@ table.cols\:fixed {
         * Spec: developer.mozilla.org/en-US/docs/Web/CSS/table-layout
     ***
     */
-	.xl\)bdr\:space-0,
-	.xl\)bdr\:space\+0 {
+	table.xl\)bdr\:space-0,
+	table.xl\)bdr\:space\+0 {
 		border-collapse: separate !important;
 		border-spacing: 0 !important;
 	}
 
-	.xl\)bdr\:space\+0\.125 {
+	table.xl\)bdr\:space\+0\.125 {
 		border-collapse: separate !important;
 		border-spacing: 0.125rem !important;
 	}
 
-	.xl\)bdr\:space\+0\.25 {
+	table.xl\)bdr\:space\+0\.25 {
 		border-collapse: separate !important;
 		border-spacing: 0.25rem !important;
 	}
 
-	.xl\)bdr\:space\+0\.5 {
+	table.xl\)bdr\:space\+0\.5 {
 		border-collapse: separate !important;
 		border-spacing: 0.5rem !important;
 	}
 
-	.xl\)bdr\:space\+0\.75 {
+	table.xl\)bdr\:space\+0\.75 {
 		border-collapse: separate !important;
 		border-spacing: 0.75rem !important;
 	}
 
-	.xl\)bdr\:space\+1 {
+	table.xl\)bdr\:space\+1 {
 		border-collapse: separate !important;
 		border-spacing: 1rem !important;
 	}
 
-	.xl\)bdr\:space\+1\.25 {
+	table.xl\)bdr\:space\+1\.25 {
 		border-collapse: separate !important;
 		border-spacing: 1.25rem !important;
 	}
 
-	.xl\)bdr\:space\+1\.5 {
+	table.xl\)bdr\:space\+1\.5 {
 		border-collapse: separate !important;
 		border-spacing: 1.5rem !important;
 	}
 
-	.xl\)bdr\:space\+1\.75 {
+	table.xl\)bdr\:space\+1\.75 {
 		border-collapse: separate !important;
 		border-spacing: 1.75rem !important;
 	}
 
-	.xl\)bdr\:space\+2 {
+	table.xl\)bdr\:space\+2 {
 		border-collapse: separate !important;
 		border-spacing: 2rem !important;
 	}
@@ -13444,8 +13444,8 @@ table.cols\:fixed {
 		font-family: var(--font-family-cursive) !important;
 	}
 
-	.xl\)fnt\:family-fancy {
-		font-family: var(--font-family-fancy) !important;
+	.xl\)fnt\:family-fantasy {
+		font-family: var(--font-family-fantasy) !important;
 	}
 
 	/*
