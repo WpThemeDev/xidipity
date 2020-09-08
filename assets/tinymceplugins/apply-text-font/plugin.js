@@ -3,7 +3,7 @@
  * Tinymce apply-text-font plugin
  *
  * ###:  plugin.js
- * bld:  28200715
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -47,14 +47,14 @@ tinymce.PluginManager.add('apply_txt_font', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Fancy',
+			text: '•\xa0Fantasy',
 			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="fnt:family-fancy">{$selection}</span>');
+				editor.execCommand('mceReplaceContent', false, '<span class="fnt:family-fantasy">{$selection}</span>');
 			}
 		}, ],
 	});
 });
 
 /*
- * EOF: apply-text-font / plugin.js / 28200715
+ * EOF: apply-text-font / plugin.js / 29200901
  */
