@@ -806,43 +806,6 @@ function register_mce_apply_txt_size_button($buttons)
 	return $buttons;
 }
 /**
- *  plugin: apply text highlight
- *  build:  91215.1a
- *  descr:  apply highlight background color to selected text
- *
- */
-add_action('admin_head', 'mce_add_apply_txt_hilight_button');
-function mce_add_apply_txt_hilight_button()
-{
-	global $typenow;
-	// check user permissions
-	if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
-	{
-		return;
-	}
-	// verify the post type
-	if (!in_array($typenow, array(
-		'post',
-		'page'
-	))) return;
-	// check if WYSIWYG is enabled
-	if (get_user_option('rich_editing') == 'true')
-	{
-		add_filter("mce_external_plugins", "add_tinymce_apply_txt_hilight_plugin");
-		add_filter('mce_buttons', 'register_mce_apply_txt_hilight_button');
-	}
-}
-function add_tinymce_apply_txt_hilight_plugin($plugin_array)
-{
-	$plugin_array['apply_txt_hilight'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-highlight/plugin.js';
-	return $plugin_array;
-}
-function register_mce_apply_txt_hilight_button($buttons)
-{
-	array_push($buttons, 'apply_txt_hilight');
-	return $buttons;
-}
-/**
  *  plugin: clear format
  *  build:  91215.1a
  *  descr:  remove all formatting from selected text
