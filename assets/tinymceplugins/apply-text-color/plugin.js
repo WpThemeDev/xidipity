@@ -3,85 +3,81 @@
  * Tinymce apply-text-color plugin
  *
  * ###:  plugin.js
- * bld:  28200715
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
  */
-tinymce.PluginManager.add('apply_txt_color', function(editor) {
+tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 	'use strict';
 	editor.addButton('apply_txt_color', {
-		type: 'splitbutton',
-		title: 'Text Color',
-		icon: true,
-		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU5LjEgKDg2MTQ0KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5pY19mbHVlbnRfdGV4dF9jb2xvcl8yNF9maWxsZWQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0i8J+UjS1Qcm9kdWN0LUljb25zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iaWNfZmx1ZW50X3RleHRfY29sb3JfMjRfZmlsbGVkIiBmaWxsPSIjMjEyMTIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICAgICAgICA8cGF0aCBkPSJNMTcuNzUsMTQuNTAwNTQzIEMxOC45OTI2NDA3LDE0LjUwMDU0MyAyMCwxNS41MDc5MDIzIDIwLDE2Ljc1MDU0MyBMMjAsMTkuNzUwMzgzNyBDMjAsMjAuOTkzMDI0MyAxOC45OTI2NDA3LDIyLjAwMDM4MzcgMTcuNzUsMjIuMDAwMzgzNyBMNS4yNSwyMi4wMDAzODM3IEM0LjAwNzM1OTMxLDIyLjAwMDM4MzcgMywyMC45OTMwMjQzIDMsMTkuNzUwMzgzNyBMMywxNi43NTA1NDMgQzMsMTUuNTA3OTAyMyA0LjAwNzM1OTMxLDE0LjUwMDU0MyA1LjI1LDE0LjUwMDU0MyBMMTcuNzUsMTQuNTAwNTQzIFogTTcuMDUyNTIyMjQsMTEuOTY5NDI5OSBMMTAuODA2MTMzNCwyLjQ3NDI3NDExIEMxMS4wNDE1MjE2LDEuODc4ODM0NzEgMTEuODQ4NjM3NiwxLjg0NDE0NTgzIDEyLjE1MDgzOTgsMi4zNjk3NTAxMiBMMTIuMjAxMzIyOSwyLjQ3NDg2Njc1IEwxNS45NDc3MTE4LDExLjk3NTM1MjcgQzE2LjA5OTY2MzcsMTIuMzYwNjg4MyAxNS45MTA0Njg4LDEyLjc5NjI0NTggMTUuNTI1MTMzMiwxMi45NDgxOTc3IEMxNS4xNzE5MDksMTMuMDg3NDg3IDE0Ljc3NjQ4NDMsMTIuOTQwMTE4MiAxNC41OTU5OTE1LDEyLjYxNzc4MjkgTDE0LjU1MjI4ODIsMTIuNTI1NjE5MiBMMTMuNTU2LDEwIEw5LjQ0MywxMCBMOC40NDc0Nzc3NiwxMi41MjA4ODE3IEM4LjMwNzg4ODQ5LDEyLjg3Mzk4NzUgNy45MzAxMzE4LDEzLjA2MjA3ODIgNy41NzE0MzQ3NiwxMi45NzM2ODA4IEw3LjQ3NDI3NDExLDEyLjk0MjYzMzYgQzcuMTIxMTY4MywxMi44MDMwNDQzIDYuOTMzMDc3NTgsMTIuNDI1Mjg3NiA3LjAyMTQ3NTAxLDEyLjA2NjU5MDYgTDcuMDUyNTIyMjQsMTEuOTY5NDI5OSBMMTAuODA2MTMzNCwyLjQ3NDI3NDExIEw3LjA1MjUyMjI0LDExLjk2OTQyOTkgWiBNMTEuNTAyNzQzNiw0Ljc5MjI2NDAyIEwxMC4wMzYsOC41IEwxMi45NjQsOC41IEwxMS41MDI3NDM2LDQuNzkyMjY0MDIgWiIgaWQ9IvCfjqgtQ29sb3IiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==',
-		menu: [{
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiLz4KPC9zdmc+' ,
-			text: '\xa0Black',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:blk">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoODIsIDgyLCA4Mik7Ii8+Cjwvc3ZnPg==',
-			text: '\xa0Grey',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:bas-3">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMjIwLCAyMCwgNjApOyIvPgo8L3N2Zz4=',
-			text: '\xa0Red',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:red">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgNzEsIDE3MSk7Ii8+Cjwvc3ZnPg==',
-			text: '\xa0Primary',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:pri">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMjU1LCA5OCwgMCk7Ii8+Cjwvc3ZnPg==',
-			text: '\xa0Secondary',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:sec">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMTAwLCAwKTsiLz4KPC9zdmc+',
-			text: '\xa0Green',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:green">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMTI4LCAwLCAxMjgpOyIvPgo8L3N2Zz4=',
-			text: '\xa0Purple',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:purple">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMzIgMyAzIDcuMDMyIDMgMTIgQyAzIDE2Ljk2OCA3LjAzMiAyMSAxMiAyMSBDIDE2Ljk2OCAyMSAyMSAxNi45NjggMjEgMTIgQyAyMSA3LjAzMiAxNi45NjggMyAxMiAzIFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMjU1KTsiLz4KPC9zdmc+',
-			text: '\xa0Blue',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:blue">{$selection}</span>');
-			}
-		}, {
-			icon: true,
-			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTSAxMiAzIEMgNy4wMjMgMyAzIDcuMDIzIDMgMTIgQyAzIDE2Ljk3NyA3LjAyMyAyMSAxMiAyMSBDIDE2Ljk3NyAyMSAyMSAxNi45NzcgMjEgMTIgQyAyMSA3LjAyMyAxNi45NzcgMyAxMiAzIFogTSAxMiAxOS4yIEMgOC4wMzEgMTkuMiA0LjggMTUuOTY5IDQuOCAxMiBDIDQuOCA4LjAzMSA4LjAzMSA0LjggMTIgNC44IEMgMTUuOTY5IDQuOCAxOS4yIDguMDMxIDE5LjIgMTIgQyAxOS4yIDE1Ljk2OSAxNS45NjkgMTkuMiAxMiAxOS4yIFoiIHN0eWxlPSJzdHJva2U6IHJnYigwLCAwLCAwKTsiLz4KPC9zdmc+',
-			text: '\xa0White',
-			onclick: function() {
-				editor.execCommand('mceReplaceContent', false, '<span class="txt:wht">{$selection}</span>');
-			}
-		}, ],
+		title: 'Apply Color',
+		icon: false,
+		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE4IDRWM2MwLS41NS0uNDUtMS0xLTFINWMtLjU1IDAtMSAuNDUtMSAxdjRjMCAuNTUuNDUgMSAxIDFoMTJjLjU1IDAgMS0uNDUgMS0xVjZoMXY0SDl2MTFjMCAuNTUuNDUgMSAxIDFoMmMuNTUgMCAxLS40NSAxLTF2LTloOFY0aC0zeiIvPjwvc3ZnPg==',
+		onClick: function () {
+			editor.windowManager.open({
+				title: 'Apply Color',
+				body: [{
+					type: 'container',
+					html: '<table style="border-collapse: collapse; table-layout:fixed; width:400px;"><tbody><tr><td><button id="#282726" style="background-color:#282726; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#504e4b" style="background-color:#504e4b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#797571" style="background-color:#797571; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a19c96" style="background-color:#a19c96; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c9c3bc" style="background-color:#c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d4cfc9" style="background-color:#d4cfc9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#dfdbd7" style="background-color:#dfdbd7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e9e7e4" style="background-color:#e9e7e4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f4f3f2" style="background-color:#f4f3f2; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#faf9f8" style="background-color:#faf9f8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#980000" style="background-color:#980000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff0000" style="background-color:#ff0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff9900" style="background-color:#ff9900; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffff00" style="background-color:#ffff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#00ff00" style="background-color:#00ff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#00ffff" style="background-color:#00ffff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#4a86e8" style="background-color:#4a86e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0000ff" style="background-color:#0000ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#9900ff" style="background-color:#9900ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff00ff" style="background-color:#ff00ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#e6b8af" style="background-color:#e6b8af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f4cccc" style="background-color:#f4cccc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#fce5cd" style="background-color:#fce5cd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#fff2cc" style="background-color:#fff2cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d9ead3" style="background-color:#d9ead3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d0e0e3" style="background-color:#d0e0e3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c9daf8" style="background-color:#c9daf8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#cfe2f3" style="background-color:#cfe2f3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d9d2e9" style="background-color:#d9d2e9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ead1dc" style="background-color:#ead1dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#dd7e6b" style="background-color:#dd7e6b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ea9999" style="background-color:#ea9999; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f9cb9c" style="background-color:#f9cb9c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffe599" style="background-color:#ffe599; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b6d7a8" style="background-color:#b6d7a8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a2c4c9" style="background-color:#a2c4c9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a4c2f4" style="background-color:#a4c2f4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#9fc5e8" style="background-color:#9fc5e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b4a7d6" style="background-color:#b4a7d6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d5a6bd" style="background-color:#d5a6bd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#cc4125" style="background-color:#cc4125; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e06666" style="background-color:#e06666; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f6b26b" style="background-color:#f6b26b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffd966" style="background-color:#ffd966; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#93c47d" style="background-color:#93c47d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#76a5af" style="background-color:#76a5af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6d9eeb" style="background-color:#6d9eeb; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6fa8dc" style="background-color:#6fa8dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#8e7cc3" style="background-color:#8e7cc3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c27ba0" style="background-color:#c27ba0; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#a61c00" style="background-color:#a61c00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#cc0000" style="background-color:#cc0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e69138" style="background-color:#e69138; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f1c232" style="background-color:#f1c232; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6aa84f" style="background-color:#6aa84f; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#45818e" style="background-color:#45818e; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3c78d8" style="background-color:#3c78d8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3d85c6" style="background-color:#3d85c6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#674ea7" style="background-color:#674ea7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a64d79" style="background-color:#a64d79; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#85200c" style="background-color:#85200c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#990000" style="background-color:#990000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b45f06" style="background-color:#b45f06; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#bf9000" style="background-color:#bf9000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#38761d" style="background-color:#38761d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#134f5c" style="background-color:#134f5c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#1155cc" style="background-color:#1155cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0b5394" style="background-color:#0b5394; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#351c75" style="background-color:#351c75; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#741b47" style="background-color:#741b47; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#5b0f00" style="background-color:#5b0f00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#660000" style="background-color:#660000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#783f04" style="background-color:#783f04; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#7f6000" style="background-color:#7f6000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#274e13" style="background-color:#274e13; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0c343d" style="background-color:#0c343d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#1c4587" style="background-color:#1c4587; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#073763" style="background-color:#073763; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#20124d" style="background-color:#20124d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#4c1130" style="background-color:#4c1130; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#000000" style="background-color:#000000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffffff" style="background-color:#ffffff; border:solid 1px #c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#006682" style="background-color:#006682; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#007fa3" style="background-color:#007fa3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3399b5" style="background-color:#3399b5; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#66b2c8" style="background-color:#66b2c8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c03613" style="background-color:#c03613; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f04318" style="background-color:#f04318; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f36946" style="background-color:#f36946; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f68e74" style="background-color:#f68e74; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td colspan="10">&nbsp;</td></tr><tr><td style="vertical-align:middle;" colspan="6"><label for="icon" style="line-height:200%; margin-right: 8px;"><button id="swatch" style="background-color:#ffffff; border:solid 1px #c9c3bc; height:30px; width:30px;" type="submit">&nbsp;</button></label><input type="text" id="hex_id" name="ico_tag" value="" style="font-family:monospace; border: 1px solid #c9c3bc; width:125px;"></td><td style="vertical-align:middle;" colspan="4"><input type="checkbox" id="bkg_id" name="bkg" value=""><label for="bkg" style="margin-left:6px;">Background color</label></tr></tbody></table>'
+					}],
+				onClick: function (event) {
+					var swatch = document.getElementById('swatch');
+					var hex_input = document.getElementById('hex_id');
+					var hex_val = event.target.id;
+					if (hex_val.substring(0, 1) == '#' && hex_val.length == 7) {
+						hex_input.value = hex_val;
+					}
+					if (hex_input.value.substring(0, 1) == '#' && hex_input.value.length == 7) {
+						swatch.style.backgroundColor = hex_input.value;
+						swatch.style.borderColor = 'transparent';
+					} else {
+						swatch.style.backgroundColor = '#ffffff';
+						swatch.style.borderColor = '#c9c3bc';
+					}
+				},
+				onSubmit: function () {
+					var nodeSelection = editor.selection.getNode();
+					var textSelection = editor.selection.getContent({
+						format: 'text'
+					});
+					var selTxt = nodeSelection.outerHTML;
+					var inHTML = nodeSelection.innerHTML;
+					var dcHTML = inHTML.replace(/&nbsp;/ig, " ");
+					var dcSEL = textSelection.replace(/[^\x00-\x7F]/g, " ");
+					var curStyle = '';
+					if (selTxt.match(/style/i) !== null) {
+						var selStyle = selTxt.match(/"(.*?)"/);
+						if (selStyle !== null && dcHTML == dcSEL) {
+							curStyle = selStyle[1] + ';';
+						}
+					}
+					//if (decodeSEL == decodeHTML) {alert(decodeSEL + ' , ' + decodeHTML);}
+					//alert(decodeSEL.split(' ').length);
+					var hex_code = document.getElementById("hex_id").value.trim();
+					var html = '';
+					if (hex_code !== '') {
+						if (document.getElementById("bkg_id").checked) {
+							html += '<span style="background-color:';
+							html += hex_code;
+							html += ';';
+							html += curStyle;
+							html += '">{$selection}</span>';
+						} else {
+							html += '<span style="color:';
+							html += hex_code;
+							html += ';';
+							html += curStyle;
+							html += '">{$selection}</span>';
+						}
+						editor.execCommand('mceReplaceContent', false, html);
+					}
+				},
+			});
+		}
 	});
 });
 
 /*
- * EOF: apply-text-color / plugin.js / 28200715
+ * EOF: apply-text-color / plugin.js / 29200901
  */
