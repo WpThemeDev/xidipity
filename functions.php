@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  29200815
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -1319,7 +1319,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
 	$in['tadv_noautop'] = false;
 	$in['apply_source_formatting'] = true;
 	$in['menubar'] = '';
-	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,apply_txt_hilight,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,toggle_fullscreen,dfw';
+	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,toggle_fullscreen,dfw';
 	$in['toolbar2'] = '';
 	$in['toolbar3'] = '';
 	$in['toolbar4'] = '';
@@ -1640,6 +1640,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 29200815
+ * EOF: functions.php / 29200901
 */
 ?>
