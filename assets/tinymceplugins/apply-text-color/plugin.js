@@ -30,10 +30,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 					}
 					if (hex_input.value.substring(0, 1) == '#' && hex_input.value.length == 7) {
 						swatch.style.backgroundColor = hex_input.value;
-						swatch.style.borderColor = 'transparent';
 					} else {
 						swatch.style.backgroundColor = '#ffffff';
-						swatch.style.borderColor = '#c9c3bc';
 					}
 				},
 				onSubmit: function () {
@@ -52,8 +50,6 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 							curStyle = selStyle[1] + ';';
 						}
 					}
-					//if (decodeSEL == decodeHTML) {alert(decodeSEL + ' , ' + decodeHTML);}
-					//alert(decodeSEL.split(' ').length);
 					var hex_code = document.getElementById("hex_id").value.trim();
 					var html = '';
 					if (hex_code !== '') {
