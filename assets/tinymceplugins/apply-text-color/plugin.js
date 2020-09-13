@@ -39,34 +39,134 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 					var textSelection = editor.selection.getContent({
 						format: 'text'
 					});
-					var selTxt = nodeSelection.outerHTML;
-					var inHTML = nodeSelection.innerHTML;
-					var dcHTML = inHTML.replace(/&nbsp;/ig, " ");
-					var dcSEL = textSelection.replace(/[^\x00-\x7F]/g, " ");
-					var curStyle = '';
-					if (selTxt.match(/style/i) !== null) {
-						var selStyle = selTxt.match(/"(.*?)"/);
-						if (selStyle !== null && dcHTML == dcSEL) {
-							curStyle = selStyle[1] + ';';
+					var iHTML = nodeSelection.innerHTML;
+					var oHTML = nodeSelection.outerHTML;
+					var curSTYLE = '';
+					var curCLASS = '';
+					var preTAG = '';
+					var pstTAG = '';
+					// if entire block is selected
+					if (iHTML == textSelection) {
+						// test for existing tags
+						if (oHTML.match(/<i>|<em>|<strong>|<u>|<s>|<sup>|<sub>|<kbd>/g) !== null) {
+							switch (false) {
+								case (oHTML.match(/<i>/g) == null):
+									preTAG = '<i>';
+									pstTAG = '</i>';
+									break;
+								case (oHTML.match(/<em>/g) == null):
+									preTAG = '<em>';
+									pstTAG = '</em>';
+									break;
+								case (oHTML.match(/<strong>/g) == null):
+									preTAG = '<strong>';
+									pstTAG = '</strong>';
+									break;
+								case (oHTML.match(/<u>/g) == null):
+									preTAG = '<u>';
+									pstTAG = '</u>';
+									break;
+								case (oHTML.match(/<s>/g) == null):
+									preTAG = '<s>';
+									pstTAG = '</s>';
+									break;
+								case (oHTML.match(/<sup>/g) == null):
+									preTAG = '<sup>';
+									pstTAG = '</sup>';
+									break;
+								case (oHTML.match(/<sub>/g) == null):
+									preTAG = '<sub>';
+									pstTAG = '</sub>';
+									break;
+								case (oHTML.match(/<kbd>/g) == null):
+									preTAG = '<kbd>';
+									pstTAG = '</kbd>';
+									break;
+							}
+						}
+						// test for existing style
+						var idxPre = oHTML.indexOf('style');
+						var idxPst;
+						if (idxPre > 1) {
+							var qFLAG = false;
+							for (idxPst = idxPre; idxPst < oHTML.length; idxPst++) {
+								if (oHTML.substring(idxPst, idxPst + 1) == '"') {
+									if (qFLAG) {
+										break;
+									} else {
+										idxPre = idxPst + 1;
+										qFLAG = true;
+									}
+								}
+							}
+							curSTYLE = oHTML.substring(idxPre, idxPst);
+						}
+						// test for existing class
+						idxPre = oHTML.indexOf('class');
+						if (idxPre > 1) {
+							qFLAG = false;
+							for (idxPst = idxPre; idxPst < oHTML.length; idxPst++) {
+								if (oHTML.substring(idxPst, idxPst + 1) == '"') {
+									if (qFLAG) {
+										break;
+									} else {
+										qFLAG = true;
+									}
+								}
+							}
+							curCLASS = ' ' + oHTML.substring(idxPre, idxPst + 1);
 						}
 					}
 					var hex_code = document.getElementById("hex_id").value.trim();
 					var html = '';
 					if (hex_code !== '') {
-						if (document.getElementById("bkg_id").checked) {
-							html += '<span style="background-color:';
-							html += hex_code;
-							html += ';';
-							html += curStyle;
-							html += '">{$selection}</span>';
+						if (iHTML == textSelection) {
+							html += preTAG;
+							if (document.getElementById("bkg_id").checked) {
+								html += '<span';
+								html += curCLASS;
+								html += ' style="background-color:';
+								html += hex_code;
+								html += ';';
+								html += curSTYLE;
+								html += '">';
+								html += textSelection;
+								html += '</span>';
+							} else {
+								html += '<span';
+								html += curCLASS;
+								html += ' style="color:';
+								html += hex_code;
+								html += ';';
+								html += curSTYLE;
+								html += '">';
+								html += textSelection;
+								html += '</span>';
+							}
+							html += pstTAG;
+							editor.setContent(html);
 						} else {
-							html += '<span style="color:';
-							html += hex_code;
-							html += ';';
-							html += curStyle;
-							html += '">{$selection}</span>';
+							html += preTAG;
+							if (document.getElementById("bkg_id").checked) {
+								html += '<span';
+								html += curCLASS;
+								html += ' style="background-color:';
+								html += hex_code;
+								html += ';';
+								html += curSTYLE;
+								html += '">{$selection}</span>';
+							} else {
+								html += '<span';
+								html += curCLASS;
+								html += ' style="color:';
+								html += hex_code;
+								html += ';';
+								html += curSTYLE;
+								html += '">{$selection}</span>';
+							}
+							html += pstTAG;
+							editor.execCommand('mceReplaceContent', false, html);
 						}
-						editor.execCommand('mceReplaceContent', false, html);
 					}
 				},
 			});
