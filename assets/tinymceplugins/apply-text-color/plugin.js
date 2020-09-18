@@ -10,6 +10,120 @@
  */
 tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 	'use strict';
+
+	function setTag(argTAG) {
+		var mceNODE = editor.selection.getNode();
+		// selected contents
+		var textSELECTED = editor.selection.getContent({
+			format: 'text'
+		});
+		var textHTML = editor.selection.getContent({
+			format: 'html'
+		});
+		// node text
+		var textNODE = clrMCE(mceNODE.innerHTML);
+		// node html
+		var htmlNODE = mceNODE.outerHTML;
+		if (textHTML == textNODE) {
+			// full node
+			var nodeTARGET = htmlNODE.substring(0, htmlNODE.indexOf('>') + 1); // selector (ie. <span>...</span>)
+			var htmlUPDATE = ''; // new html
+			var tagTARGET = ''; // tag selector
+			var tagUPDATE = '';
+			switch (true) {
+				case (nodeTARGET.match(/style/g) !== null):
+					tagTARGET = getTag(nodeTARGET, 'style');
+					tagUPDATE = tagTARGET.slice(0, -1) + ' ' + argTAG + ';"';
+					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+					break;
+				case (nodeTARGET.match(/class/g) !== null):
+					tagTARGET = getTag(nodeTARGET, 'class');
+					tagUPDATE = tagTARGET + ' style="' + argTAG + ';"';
+					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+					break;
+				default:
+					tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
+					tagUPDATE = tagTARGET.slice(0, -1) + ' style="' + argTAG + ';">';
+					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+			}
+			// remove mce style data tags
+			htmlUPDATE = clrMCE(htmlUPDATE);
+			mceNODE.remove();
+		} else {
+			// partical node
+			htmlUPDATE = '<span style="' + argTAG + '">';
+			htmlUPDATE += textSELECTED;
+			htmlUPDATE += '</span>';
+		}
+		editor.selection.setContent(htmlUPDATE);
+		editor.undoManager.add();
+		return;
+	}
+
+	function getTag(argTARGET, argSELECTOR) {
+		// arguments
+		// 	argTARGET		nodeTARGET
+		// 	argSELECTOR		node selector (style/class)
+		var retVAL = '';
+		if (argTARGET !== '') {
+			var idxLT = 0; // starting index
+			var idxRT = 0; // ending index
+			var qFLAG = false; // quote flag
+			switch (argSELECTOR) {
+				case ('style'):
+					idxLT = argTARGET.indexOf('style');
+					break;
+				case ('class'):
+					idxLT = argTARGET.indexOf('class');
+					break;
+				default:
+					idxLT = 0;
+			}
+			if (idxLT > 0) {
+				qFLAG = false;
+				for (idxRT = idxLT; idxRT < argTARGET.length; idxRT++) {
+					if (argTARGET.substring(idxRT, idxRT + 1) == '"') {
+						if (qFLAG) {
+							break;
+						} else {
+							qFLAG = true;
+						}
+					}
+				}
+				retVAL = argTARGET.substring(idxLT, idxRT + 1);
+			}
+		}
+		return retVAL;
+	}
+
+	function clrMCE(argHTML) {
+		var htmlUPDATE = ''; // updated html
+		if (argHTML !== '') {
+			var idxLT = argHTML.indexOf('data-mce-style'); // starting index
+			var idxRT = 0; // ending index
+			var qFLAG = false; // quote flag
+			var mceTARGET = ''; // mce tag
+			if (idxLT > 0) {
+				qFLAG = false;
+				for (idxRT = idxLT; idxRT < argHTML.length; idxRT++) {
+					if (argHTML.substring(idxRT, idxRT + 1) == '"') {
+						if (qFLAG) {
+							break;
+						} else {
+							qFLAG = true;
+						}
+					}
+				}
+				mceTARGET = argHTML.substring(idxLT - 1, idxRT + 1);
+				htmlUPDATE = argHTML.replace(mceTARGET, '');
+			} else {
+				htmlUPDATE = argHTML;
+			}
+		} else {
+			htmlUPDATE = argHTML;
+		}
+		return htmlUPDATE;
+	}
 	editor.addButton('apply_txt_color', {
 		title: 'Apply Color',
 		icon: false,
@@ -37,73 +151,11 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 				onSubmit: function () {
 					var hexCODE = document.getElementById("hex_id").value.trim();
 					if (hexCODE !== '') {
-						var mceNODE = editor.selection.getNode();
-						var mceCONTENT = editor.selection.getContent({
-							format: 'text'
-						});
-						// html  
-						var oHTML = mceNODE.outerHTML;
-						var newTAGs = '';
-						// is everything within the node selected
-						if (mceCONTENT == mceNODE.innerHTML) {
-							var curTAGs = oHTML.substring(0, oHTML.indexOf('>') + 1);
-							var curSTYLE = '';
-							var newSTYLE = '';
-							// capture current style if one exists
-							var eIDX;
-							var sIDX = curTAGs.indexOf('style');
-							if (sIDX > 1) {
-								var qFLAG = false;
-								for (eIDX = sIDX; eIDX < curTAGs.length; eIDX++) {
-									if (curTAGs.substring(eIDX, eIDX + 1) == '"') {
-										if (qFLAG) {
-											break;
-										} else {
-											sIDX = eIDX + 1;
-											qFLAG = true;
-										}
-									}
-								}
-								curSTYLE = curTAGs.substring(sIDX, eIDX);
-								newSTYLE = curSTYLE;
-								if (document.getElementById("bkg_id").checked) {
-									newSTYLE += 'background-color:';
-								} else {
-									newSTYLE += 'color:';
-								}
-								newSTYLE += hexCODE;
-								newSTYLE += ';';
-								newTAGs = oHTML.replace(curSTYLE, newSTYLE);
-							} else {
-								newTAGs = curTAGs.slice(0, -1);
-								newTAGs += ' style="';
-								if (document.getElementById("bkg_id").checked) {
-									newTAGs += 'background-color:';
-								} else {
-									newTAGs += 'color:';
-								}
-								newTAGs += hexCODE;
-								newTAGs += ';';
-								newTAGs += '">';
-								newTAGs += mceCONTENT;
-								newTAGs += oHTML.substring(oHTML.lastIndexOf('<'));
-							}
-							mceNODE.remove();
+						if (document.getElementById("bkg_id").checked) {
+							setTag('background-color:' + hexCODE);
 						} else {
-							newTAGs += '<span style="';
-							if (document.getElementById("bkg_id").checked) {
-								newTAGs += 'background-color:';
-							} else {
-								newTAGs += 'color:';
-							}
-							newTAGs += hexCODE;
-							newTAGs += ';';
-							newTAGs += '">';
-							newTAGs += mceCONTENT;
-							newTAGs += '</span>';
+							setTag('color:' + hexCODE);
 						}
-						editor.selection.setContent(newTAGs);
-						editor.undoManager.add();
 					}
 				},
 			});
