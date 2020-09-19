@@ -29,8 +29,8 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 			var nodeTARGET = htmlNODE.substring(0, htmlNODE.indexOf('>') + 1); // selector (ie. <span>...</span>)
 			var htmlUPDATE = ''; // new html
 			var tagTARGET = ''; // tag selector
-			var tagUPDATE = '';
-			var htmlTEMP = '';
+			var tagUPDATE = ''; // updated tag
+			var htmlTEMP = ''; // bucket variable
 			switch (true) {
 				case (argTAG.match(/~/g) !== null):
 					if (nodeTARGET.match(/margin-left:/g) == null) {
@@ -43,7 +43,8 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 							case (nodeTARGET.match(/class/g) !== null):
 								tagTARGET = getTag(nodeTARGET, 'class');
 								tagUPDATE = tagTARGET + ' style="margin-left:2rem;"';
-								htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+								htmlTEMP = htmlNODE.replace(tagTARGET, tagUPDATE);
+								htmlUPDATE = htmlTEMP;
 								break;
 							default:
 								tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
@@ -69,8 +70,7 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 				default:
 					tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
 					tagUPDATE = tagTARGET.slice(0, -1) + ' class="' + argTAG + '">';
-					htmlTEMP = htmlNODE.replace(tagTARGET, tagUPDATE);
-					htmlUPDATE = htmlTEMP;
+					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
 			}
 			// remove mce style data tags
 			htmlTEMP = clrMCE(htmlUPDATE);
