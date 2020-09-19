@@ -29,7 +29,8 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 			var nodeTARGET = htmlNODE.substring(0, htmlNODE.indexOf('>') + 1); // selector (ie. <span>...</span>)
 			var htmlUPDATE = ''; // new html
 			var tagTARGET = ''; // tag selector
-			var tagUPDATE = '';
+			var tagUPDATE = ''; // updated tag
+			var htmlTEMP = ''; // bucket variable
 			switch (true) {
 				case (argTAG.match(/~/g) !== null):
 					htmlUPDATE = htmlNODE.substring(0,htmlNODE.indexOf('>')+1);
@@ -49,7 +50,8 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
 			}
 			// remove mce style data tags
-			htmlUPDATE = clrMCE(htmlUPDATE);
+			htmlTEMP = clrMCE(htmlUPDATE);
+			htmlUPDATE = htmlTEMP;
 			mceNODE.remove();
 		} else {
 			// partical node
