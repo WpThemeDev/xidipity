@@ -30,6 +30,7 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 			var htmlUPDATE = ''; // new html
 			var tagTARGET = ''; // tag selector
 			var tagUPDATE = '';
+			var htmlTEMP = '';
 			switch (true) {
 				case (argTAG.match(/~/g) !== null):
 					if (nodeTARGET.match(/margin-left:/g) == null) {
@@ -47,7 +48,8 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 							default:
 								tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
 								tagUPDATE = tagTARGET.slice(0, -1) + ' style="margin-left:2rem;">';
-								htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+								htmlTEMP = htmlNODE.replace(tagTARGET, tagUPDATE);
+								htmlUPDATE = htmlTEMP;
 						}						
 					} else {
 						tagTARGET = nodeTARGET.substring(nodeTARGET.indexOf('margin-left:'),nodeTARGET.indexOf('rem',idxLT)+3);
@@ -67,11 +69,12 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 				default:
 					tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
 					tagUPDATE = tagTARGET.slice(0, -1) + ' class="' + argTAG + '">';
-					var htmlTEMP = htmlNODE.replace(tagTARGET, tagUPDATE);
+					htmlTEMP = htmlNODE.replace(tagTARGET, tagUPDATE);
 					htmlUPDATE = htmlTEMP;
 			}
 			// remove mce style data tags
-			htmlUPDATE = clrMCE(htmlUPDATE);
+			htmlTEMP = clrMCE(htmlUPDATE);
+			htmlUPDATE = htmlTEMP;
 			mceNODE.remove();
 		} else {
 			// partical node
