@@ -31,14 +31,14 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			var tagTARGET = ''; // tag selector
 			var tagUPDATE = '';
 			switch (true) {
-				case (nodeTARGET.match(/style/g) !== null):
-					tagTARGET = getTag(nodeTARGET, 'style');
-					tagUPDATE = tagTARGET + ' class="' + argTAG + '"';
-					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
-					break;
 				case (nodeTARGET.match(/class/g) !== null):
 					tagTARGET = getTag(nodeTARGET, 'class');
 					tagUPDATE = tagTARGET.slice(0, -1) + ' ' + argTAG + '"';
+					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+					break;
+				case (nodeTARGET.match(/style/g) !== null):
+					tagTARGET = getTag(nodeTARGET, 'style');
+					tagUPDATE = tagTARGET + ' class="' + argTAG + '"';
 					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
 					break;
 				default:
