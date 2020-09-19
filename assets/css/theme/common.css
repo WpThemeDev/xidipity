@@ -1061,6 +1061,24 @@ dd {
 
 /*
 ***
+    * element: idt
+    * dsc: paragraph indentation
+    * ver: 29200901
+    * fnt: add hanging/paragraph indentation
+    * ref: 
+***
+*/
+p.idt\:hang {
+	padding-left: 2rem;
+	text-indent: -2rem;
+}
+
+p.idt\:para {
+	text-indent: 2rem;	
+}
+
+/*
+***
     * property: vs
     * dsc: vertical space
     * ver: 200222
