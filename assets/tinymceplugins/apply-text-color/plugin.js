@@ -28,6 +28,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 			// full node
 			var nodeTARGET = htmlNODE.substring(0, htmlNODE.indexOf('>') + 1); // selector (ie. <span>...</span>)
 			var htmlUPDATE = ''; // new html
+			var htmlTEMP = ''; // bucket variable
 			var tagTARGET = ''; // tag selector
 			var tagUPDATE = '';
 			switch (true) {
@@ -47,7 +48,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
 			}
 			// remove mce style data tags
-			htmlUPDATE = clrMCE(htmlUPDATE);
+			htmlTEMP = clrMCE(htmlUPDATE);
+			htmlUPDATE = htmlTEMP;
 			mceNODE.remove();
 		} else {
 			// partical node
