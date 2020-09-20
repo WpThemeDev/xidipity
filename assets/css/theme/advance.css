@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  assets/css/theme/advance.css
-    * bld:  29200901
+    * bld:  29201001
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -698,6 +698,70 @@ table.bdr\:space\+2 {
 
 .fnt\:siz-1 {
 	font-size: var(--font-size-smaller) !important;
+}
+
+.fnt\:siz-150\% {
+	font-size: 150% !important;
+}
+
+.fnt\:siz-150\% {
+	font-size: 200% !important;
+}
+
+.fnt\:siz-200\% {
+	font-size: 250% !important;
+}
+
+.fnt\:siz-300\% {
+	font-size: 300% !important;
+}
+
+.fnt\:siz-350\% {
+	font-size: 350% !important;
+}
+
+.fnt\:siz-400\% {
+	font-size: 400% !important;
+}
+
+.fnt\:siz-450\% {
+	font-size: 450% !important;
+}
+
+.fnt\:siz-500\% {
+	font-size: 500% !important;
+}
+
+.fnt\:siz-550\% {
+	font-size: 550% !important;
+}
+
+.fnt\:siz-600\% {
+	font-size: 600% !important;
+}
+
+.fnt\:siz-650\% {
+	font-size: 650% !important;
+}
+
+.fnt\:siz-700\% {
+	font-size: 700% !important;
+}
+
+.fnt\:siz-750\% {
+	font-size: 750% !important;
+}
+
+.fnt\:siz-800\% {
+	font-size: 800% !important;
+}
+
+.fnt\:siz-850\% {
+	font-size: 850% !important;
+}
+
+.fnt\:siz-900\% {
+	font-size: 900% !important;
 }
 
 /*
@@ -3907,6 +3971,70 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-smaller) !important;
 	}
 
+	.sm\)fnt\:siz-150\% {
+		font-size: 150% !important;
+	}
+
+	.sm\)fnt\:siz-150\% {
+		font-size: 200% !important;
+	}
+
+	.sm\)fnt\:siz-200\% {
+		font-size: 250% !important;
+	}
+
+	.sm\)fnt\:siz-300\% {
+		font-size: 300% !important;
+	}
+
+	.sm\)fnt\:siz-350\% {
+		font-size: 350% !important;
+	}
+
+	.sm\)fnt\:siz-400\% {
+		font-size: 400% !important;
+	}
+
+	.sm\)fnt\:siz-450\% {
+		font-size: 450% !important;
+	}
+
+	.sm\)fnt\:siz-500\% {
+		font-size: 500% !important;
+	}
+
+	.sm\)fnt\:siz-550\% {
+		font-size: 550% !important;
+	}
+
+	.sm\)fnt\:siz-600\% {
+		font-size: 600% !important;
+	}
+
+	.sm\)fnt\:siz-650\% {
+		font-size: 650% !important;
+	}
+
+	.sm\)fnt\:siz-700\% {
+		font-size: 700% !important;
+	}
+
+	.sm\)fnt\:siz-750\% {
+		font-size: 750% !important;
+	}
+
+	.sm\)fnt\:siz-800\% {
+		font-size: 800% !important;
+	}
+
+	.sm\)fnt\:siz-850\% {
+		font-size: 850% !important;
+	}
+
+	.sm\)fnt\:siz-900\% {
+		font-size: 900% !important;
+	}
+
 	/*
     ***
         * property: fnt:< caps >
@@ -7112,6 +7240,70 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-smaller) !important;
 	}
 
+	.md\)fnt\:siz-150\% {
+		font-size: 150% !important;
+	}
+
+	.md\)fnt\:siz-150\% {
+		font-size: 200% !important;
+	}
+
+	.md\)fnt\:siz-200\% {
+		font-size: 250% !important;
+	}
+
+	.md\)fnt\:siz-300\% {
+		font-size: 300% !important;
+	}
+
+	.md\)fnt\:siz-350\% {
+		font-size: 350% !important;
+	}
+
+	.md\)fnt\:siz-400\% {
+		font-size: 400% !important;
+	}
+
+	.md\)fnt\:siz-450\% {
+		font-size: 450% !important;
+	}
+
+	.md\)fnt\:siz-500\% {
+		font-size: 500% !important;
+	}
+
+	.md\)fnt\:siz-550\% {
+		font-size: 550% !important;
+	}
+
+	.md\)fnt\:siz-600\% {
+		font-size: 600% !important;
+	}
+
+	.md\)fnt\:siz-650\% {
+		font-size: 650% !important;
+	}
+
+	.md\)fnt\:siz-700\% {
+		font-size: 700% !important;
+	}
+
+	.md\)fnt\:siz-750\% {
+		font-size: 750% !important;
+	}
+
+	.md\)fnt\:siz-800\% {
+		font-size: 800% !important;
+	}
+
+	.md\)fnt\:siz-850\% {
+		font-size: 850% !important;
+	}
+
+	.md\)fnt\:siz-900\% {
+		font-size: 900% !important;
+	}
+
 	/*
     ***
         * property: fnt:< caps >
@@ -10309,6 +10501,70 @@ table.bdr\:space\+2 {
 
 	.lg\)fnt\:siz-1 {
 		font-size: var(--font-size-smaller) !important;
+	}
+
+	.lg\)fnt\:siz-150\% {
+		font-size: 150% !important;
+	}
+
+	.lg\)fnt\:siz-150\% {
+		font-size: 200% !important;
+	}
+
+	.lg\)fnt\:siz-200\% {
+		font-size: 250% !important;
+	}
+
+	.lg\)fnt\:siz-300\% {
+		font-size: 300% !important;
+	}
+
+	.lg\)fnt\:siz-350\% {
+		font-size: 350% !important;
+	}
+
+	.lg\)fnt\:siz-400\% {
+		font-size: 400% !important;
+	}
+
+	.lg\)fnt\:siz-450\% {
+		font-size: 450% !important;
+	}
+
+	.lg\)fnt\:siz-500\% {
+		font-size: 500% !important;
+	}
+
+	.lg\)fnt\:siz-550\% {
+		font-size: 550% !important;
+	}
+
+	.lg\)fnt\:siz-600\% {
+		font-size: 600% !important;
+	}
+
+	.lg\)fnt\:siz-650\% {
+		font-size: 650% !important;
+	}
+
+	.lg\)fnt\:siz-700\% {
+		font-size: 700% !important;
+	}
+
+	.lg\)fnt\:siz-750\% {
+		font-size: 750% !important;
+	}
+
+	.lg\)fnt\:siz-800\% {
+		font-size: 800% !important;
+	}
+
+	.lg\)fnt\:siz-850\% {
+		font-size: 850% !important;
+	}
+
+	.lg\)fnt\:siz-900\% {
+		font-size: 900% !important;
 	}
 
 	/*
@@ -13519,6 +13775,70 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-smaller) !important;
 	}
 
+	.xl\)fnt\:siz-150\% {
+		font-size: 150% !important;
+	}
+
+	.xl\)fnt\:siz-150\% {
+		font-size: 200% !important;
+	}
+
+	.xl\)fnt\:siz-200\% {
+		font-size: 250% !important;
+	}
+
+	.xl\)fnt\:siz-300\% {
+		font-size: 300% !important;
+	}
+
+	.xl\)fnt\:siz-350\% {
+		font-size: 350% !important;
+	}
+
+	.xl\)fnt\:siz-400\% {
+		font-size: 400% !important;
+	}
+
+	.xl\)fnt\:siz-450\% {
+		font-size: 450% !important;
+	}
+
+	.xl\)fnt\:siz-500\% {
+		font-size: 500% !important;
+	}
+
+	.xl\)fnt\:siz-550\% {
+		font-size: 550% !important;
+	}
+
+	.xl\)fnt\:siz-600\% {
+		font-size: 600% !important;
+	}
+
+	.xl\)fnt\:siz-650\% {
+		font-size: 650% !important;
+	}
+
+	.xl\)fnt\:siz-700\% {
+		font-size: 700% !important;
+	}
+
+	.xl\)fnt\:siz-750\% {
+		font-size: 750% !important;
+	}
+
+	.xl\)fnt\:siz-800\% {
+		font-size: 800% !important;
+	}
+
+	.xl\)fnt\:siz-850\% {
+		font-size: 850% !important;
+	}
+
+	.xl\)fnt\:siz-900\% {
+		font-size: 900% !important;
+	}
+
 	/*
     ***
         * property: fnt:< caps >
@@ -16034,5 +16354,5 @@ table.bdr\:space\+2 {
 }
 
 /*
- * EOF: assets/css/theme/advance.css / 29200901
+ * EOF: assets/css/theme/advance.css / 29201001
  */
