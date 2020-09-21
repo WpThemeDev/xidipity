@@ -1988,7 +1988,28 @@ button:active {
 
 /*
 ***
-    * property: hvr
+    * property: trn
+    * dsc: transformation effects
+    * ver: 20201001
+    * fnt: text transformations
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-transform
+***
+*/
+.trn\:txt-upper {
+	text-transform: uppercase;
+}
+
+.trn\:txt-lower {
+	text-transform: lowercase;
+}
+
+.trn\:txt-capital {
+	text-transform: capitalize;
+}
+
+/*
+***
+    * property: trn
     * dsc: transformation effects
     * ver: 200308
     * fnt: image/button hover annimations
