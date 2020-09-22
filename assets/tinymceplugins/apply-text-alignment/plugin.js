@@ -13,12 +13,18 @@ tinymce.PluginManager.add('apply_txt_align', function(editor) {
 
 	function setTag(argTAG) {
 		var mceNODE = editor.selection.getNode();
+		var mceNAME = mceNODE.nodeName.toLowerCase();
 		// selected contents
 		var textHTML = editor.selection.getContent({
 			format: 'html'
 		});
 		// node text
 		var textNODE = clrMCE(mceNODE.innerHTML);
+		// alignment should not be assigned to styling tags, use parent
+		if (mceNAME.match(/i|u|s|sup|sub|kbd|em|strong/g) !== null) {
+			var mcePARENT = mceNODE.parentNode;
+			mceNODE = mcePARENT;
+		}		
 		// node html
 		var htmlNODE = mceNODE.outerHTML;
 		if (textHTML == textNODE) {
