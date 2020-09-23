@@ -119,6 +119,61 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
 			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDRWMUw4IDVsNCA0VjZjMy4zMSAwIDYgMi42OSA2IDYgMCAxLjAxLS4yNSAxLjk3LS43IDIuOGwxLjQ2IDEuNDZDMTkuNTQgMTUuMDMgMjAgMTMuNTcgMjAgMTJjMC00LjQyLTMuNTgtOC04LTh6bTAgMTRjLTMuMzEgMC02LTIuNjktNi02IDAtMS4wMS4yNS0xLjk3LjctMi44TDUuMjQgNy43NEM0LjQ2IDguOTcgNCAxMC40MyA0IDEyYzAgNC40MiAzLjU4IDggOCA4djNsNC00LTQtNHYzeiIvPjwvc3ZnPg==',
+			text: '\xa0Chr Substitution',
+			onclick: function() {
+				var mceCHR = editor.selection.getContent({
+					format: 'text'
+				});				
+				switch (mceCHR) {
+					case ('(c)'):
+						editor.selection.setContent('&#169;');
+						break;
+					case ('(C)'):
+						editor.selection.setContent('&#169;');
+						break;
+					case ('(r)'):
+						editor.selection.setContent('&#174;');
+						break;
+					case ('(R)'):
+						editor.selection.setContent('&#174;');
+						break;
+					case ('1/3'):
+						editor.selection.setContent('&#8531;');
+						break;
+					case ('1/4'):
+						editor.selection.setContent('&#188;');
+						break;
+					case ('1/2'):
+						editor.selection.setContent('&#189;');
+						break;
+					case ('2/3'):
+						editor.selection.setContent('&#8532;');
+						break;
+					case ('3/4'):
+						editor.selection.setContent('&#190;');
+						break;
+					case ('...'):
+						editor.selection.setContent('&#8230;');
+						break;
+					case ('<-'):
+						editor.selection.setContent('&#8592;');
+						break;
+					case ('->'):
+						editor.selection.setContent('&#8594;');
+						break;
+					case ('<'):
+						editor.selection.setContent('&#9664;');
+						break;
+					case ('>'):
+						editor.selection.setContent('&#9654;');
+						break;
+					default:
+						alert('Substitution character not found!');
+				}
+			}
 		}],
 	});
 });
