@@ -140,22 +140,22 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					case ('(R)'):
 						editor.selection.setContent('<i class="icon:trade_mark_outline"></i>');
 						break;
-					case ('(#)'):
+					case ('#'):
 						editor.selection.setContent('&#9632;');
 						break;
-					case ('(*)'):
+					case ('*'):
 						editor.selection.setContent('&#9679;');
 						break;
-					case ('(0)'):
+					case ('0'):
 						editor.selection.setContent('&#176;');
 						break;
-					case ('(+/-)'):
+					case ('+/-'):
 						editor.selection.setContent('&#177;');
 						break;
-					case ('(x)'):
+					case ('x'):
 						editor.selection.setContent('&#215;');
 						break;
-					case ('(X)'):
+					case ('X'):
 						editor.selection.setContent('&#215;');
 						break;
 					case ('1/3'):
