@@ -129,19 +129,22 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 				});				
 				switch (mceCHR) {
 					case ('(c)'):
-						editor.selection.setContent('<i class="icon:copyright_outline"></i>');
+						editor.selection.setContent('&#0169;');
 						break;
 					case ('(C)'):
-						editor.selection.setContent('<i class="icon:copyright_outline"></i>');
+						editor.selection.setContent('&#0169;');
 						break;
 					case ('(r)'):
-						editor.selection.setContent('<i class="icon:trade_mark_outline"></i>');
+						editor.selection.setContent('&#0174;');
 						break;
 					case ('(R)'):
-						editor.selection.setContent('<i class="icon:trade_mark_outline"></i>');
+						editor.selection.setContent('&#0174;');
 						break;
 					case ('#'):
 						editor.selection.setContent('&#9632;');
+						break;
+					case ('$'):
+						editor.selection.setContent('&#0167;');
 						break;
 					case ('*'):
 						editor.selection.setContent('&#9679;');
@@ -177,16 +180,16 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 						editor.selection.setContent('&#8230;');
 						break;
 					case ('<-'):
-						editor.selection.setContent('<i class="icon:arrow_lt_solid"></i>');
+						editor.selection.setContent('&#8592;');
 						break;
 					case ('->'):
-						editor.selection.setContent('<i class="icon:arrow_rt_solid"></i>');
+						editor.selection.setContent('&#8594;');
 						break;
 					case ('<'):
-						editor.selection.setContent('<i class="icon:pointer_lt_solid"></i>');
+						editor.selection.setContent('&#9668;');
 						break;
 					case ('>'):
-						editor.selection.setContent('<i class="icon:pointer_rt_solid"></i>');
+						editor.selection.setContent('&#9658;');
 						break;
 					default:
 						alert('Substitution character not found!');
