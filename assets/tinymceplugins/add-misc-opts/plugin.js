@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  29201001
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -129,16 +129,16 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 				});				
 				switch (mceCHR) {
 					case ('(c)'):
-						editor.selection.setContent('&#169;');
+						editor.selection.setContent('<i class="icon:copyright_outline"></i>');
 						break;
 					case ('(C)'):
-						editor.selection.setContent('&#169;');
+						editor.selection.setContent('<i class="icon:copyright_outline"></i>');
 						break;
 					case ('(r)'):
-						editor.selection.setContent('&#174;');
+						editor.selection.setContent('<i class="icon:trade_mark_outline"></i>');
 						break;
 					case ('(R)'):
-						editor.selection.setContent('&#174;');
+						editor.selection.setContent('<i class="icon:trade_mark_outline"></i>');
 						break;
 					case ('1/3'):
 						editor.selection.setContent('&#8531;');
@@ -159,16 +159,16 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 						editor.selection.setContent('&#8230;');
 						break;
 					case ('<-'):
-						editor.selection.setContent('&#8592;');
+						editor.selection.setContent('<i class="icon:arrow_lt_solid"></i>');
 						break;
 					case ('->'):
-						editor.selection.setContent('&#8594;');
+						editor.selection.setContent('<i class="icon:arrow_rt_solid"></i>');
 						break;
 					case ('<'):
-						editor.selection.setContent('&#9664;');
+						editor.selection.setContent('<i class="icon:pointer_lt_solid"></i>');
 						break;
 					case ('>'):
-						editor.selection.setContent('&#9654;');
+						editor.selection.setContent('<i class="icon:pointer_rt_solid"></i>');
 						break;
 					default:
 						alert('Substitution character not found!');
@@ -179,5 +179,5 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 29200901
+ * EOF: add-misc-opts / plugin.js / 29201001
  */
