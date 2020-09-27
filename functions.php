@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  29200901
+ * bld:  30201001
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -1269,6 +1269,43 @@ function register_mce_toggle_fullscreen_button($buttons)
 	return $buttons;
 }
 /**
+ *  plugin: apply style
+ *  build:  30201001
+ *  descr:  duplicate existing style
+ *
+ */
+add_action('admin_head', 'mce_app_txt_style_button');
+function mce_app_txt_style_button()
+{
+	global $typenow;
+	// check user permissions
+	if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+	{
+		return;
+	}
+	// verify the post type
+	if (!in_array($typenow, array(
+		'post',
+		'page'
+	))) return;
+	// check if WYSIWYG is enabled
+	if (get_user_option('rich_editing') == 'true')
+	{
+		add_filter("mce_external_plugins", "add_tinymce_app_txt_style_plugin");
+		add_filter('mce_buttons', 'register_mce_app_txt_style_button');
+	}
+}
+function add_tinymce_app_txt_style_plugin($plugin_array)
+{
+	$plugin_array['app_txt_style'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-text-style/plugin.js';
+	return $plugin_array;
+}
+function register_mce_app_txt_style_button($buttons)
+{
+	array_push($buttons, "app_txt_style");
+	return $buttons;
+}
+/**
  * Change TinyMCE configuration
  *
  */
@@ -1282,7 +1319,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
 	$in['tadv_noautop'] = false;
 	$in['apply_source_formatting'] = true;
 	$in['menubar'] = '';
-	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,apply_txt_color,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,toggle_fullscreen,dfw';
+	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,app_txt_style,apply_txt_color,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,toggle_fullscreen,dfw';
 	$in['toolbar2'] = '';
 	$in['toolbar3'] = '';
 	$in['toolbar4'] = '';
@@ -1603,6 +1640,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 29200901
+ * EOF: functions.php / 30201001
 */
 ?>
