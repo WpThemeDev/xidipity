@@ -18,6 +18,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		});
 		if (textHTML == '') {
 			alert('Source text NOT selected.');
+			sessionStorage.setItem('srcOUTER','');
+			sessionStorage.setItem('srcINNER','');
 		} else {
 			var mceNODE = editor.selection.getNode();
 			var mceNAME = mceNODE.nodeName.toLowerCase();
@@ -41,6 +43,9 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		});
 		if (textHTML == '') {
 			alert('Target text NOT selected.');
+			sessionStorage.setItem('srcOUTER','');
+			sessionStorage.setItem('srcINNER','');
+
 		} else {
 			var srcNODE = sessionStorage.getItem('srcOUTER');
 			var srcTEXT = sessionStorage.getItem('srcINNER');
