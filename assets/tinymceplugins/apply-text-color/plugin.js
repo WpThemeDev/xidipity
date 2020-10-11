@@ -3,7 +3,7 @@
  * Tinymce apply-text-color plugin
  *
  * ###:  plugin.js
- * bld:  30201001
+ * bld:  30201018
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -12,125 +12,204 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 	'use strict';
 
 	function setTag(argTAG) {
-		var mceNODE = editor.selection.getNode();
-		// selected contents
-		var textSELECTED = editor.selection.getContent({
-			format: 'text'
-		});
-		var textHTML = editor.selection.getContent({
-			format: 'html'
-		});
-		// node text
-		var textNODE = clrMCE(mceNODE.innerHTML);
-		// node html
-		var htmlNODE = mceNODE.outerHTML;
-		if (textHTML == textNODE) {
-			// full node
-			var nodeTARGET = htmlNODE.substring(0, htmlNODE.indexOf('>') + 1); // selector (ie. <span>...</span>)
-			var htmlUPDATE = ''; // new html
-			var htmlTEMP = ''; // bucket variable
-			var tagTARGET = ''; // tag selector
-			var tagUPDATE = '';
+		if (argTAG === undefined) {
+			argTAG = '';
+		}
+		if (!isEmpty(argTAG)) {
+			// init ret val
+			var newHTML = '';
+			// sticky string variable
+			// selection html node
+			var htmlNODE = editor.selection.getNode();
+			// get selection node name
+			var selNODE = htmlNODE.nodeName.toLowerCase();
+			// selection content in html format
+			var selTXT = editor.selection.getContent({
+				format : 'html'
+			});
+			var selTMP = '';
+			if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|strong|sub|sup|u/gi))) {
+				selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
+				selTXT = selTMP;
+				// select parent node
+				var tmpNODE = editor.dom.getParent(htmlNODE, 'div,h1,h2,h3,h4,h5,h6,p,span');
+				htmlNODE = tmpNODE;
+				// get new selection node name
+				selNODE = htmlNODE.nodeName.toLowerCase();
+			}
+			selTMP = htmlNODE.innerHTML;
+			var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
+			selTMP = editor.dom.getOuterHTML(htmlNODE);
+			var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
+			// check for multiple paragraphs
+			var tagCNT = (selTXT.match(/<\/.*?>/gi) || []).length;
 			switch (true) {
-				case (nodeTARGET.match(/style/g) !== null):
-					tagTARGET = getTag(nodeTARGET, 'style');
-					tagUPDATE = tagTARGET.slice(0, -1) + ' ' + argTAG + ';"';
-					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+				case (tagCNT > 1):
+					// strip carrage returns
+					var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '');
+					// delimit tags with comma
+					var tagDELIM = selNEW.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g,'$1,$3');
+					// add to array
+					var htmlARRAY = tagDELIM.split(',').filter(function (el) {
+						return el != '';
+						});
+					// loop through array
+					var idx;
+					var itmARRAY;
+					var spanNODE;
+					var tagCOLOR;
+					var tagHTML;
+					var tagNEW;
+					var tagTMP;
+					for (idx in htmlARRAY) {
+						// get span item
+						itmARRAY = htmlARRAY[idx];
+						// node
+						spanNODE = itmARRAY.match(/\bp|h[1-6]|div/)[0];
+						// get tag
+						tagHTML = getTag(itmARRAY,spanNODE);
+						// check tag for style element
+						tagCOLOR = getColor(tagHTML);
+						tagNEW = '';
+						if (isEmpty(tagCOLOR)) {
+							if (isEmpty(tagHTML.match(/style/))) {
+								tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
+
+							} else {
+								tagTMP = tagHTML.substring(0, tagHTML.indexOf('>')-1) + ' ' + argTAG + '">';
+								tagNEW = tidyCss(tagTMP);
+							}
+						} else {
+							tagNEW = tagHTML.replace(tagCOLOR,argTAG);
+						}
+						newHTML += itmARRAY.replace(tagHTML,tagNEW);
+					}
 					break;
-				case (nodeTARGET.match(/class/g) !== null):
-					tagTARGET = getTag(nodeTARGET, 'class');
-					tagUPDATE = tagTARGET + ' style="' + argTAG + ';"';
-					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+				case (selNODE == 'span'):
+					// get span
+					var spanHTML = getSpan(selHTML);
+					// check tag for style element
+					tagCOLOR = getColor(spanHTML);
+					var spanNEW = '';
+					if (isEmpty(tagCOLOR)) {
+						// existing style without color
+						var spanTMP = spanHTML.substring(0, spanHTML.indexOf('>')-1) + ' ' + argTAG + '">';
+						spanNEW = tidyCss(spanTMP);
+					} else {
+						// existing style with color
+						spanNEW = spanHTML.replace(tagCOLOR,argTAG);
+					}
+					newHTML = selHTML.replace(spanHTML,spanNEW);
+					break;
+				case (selTXT == selFULL):
+					// get tag
+					tagHTML = getTag(selHTML,selNODE);
+					// check tag for style element
+					tagCOLOR = getColor(tagHTML);
+					tagNEW = '';
+					if (isEmpty(tagCOLOR)) {
+						if (isEmpty(tagHTML.match(/style/))) {
+							tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
+
+						} else {
+							tagTMP = tagHTML.substring(0, tagHTML.indexOf('>')-1) + ' ' + argTAG + '">';
+							tagNEW = tidyCss(tagTMP);
+						}
+					} else {
+						tagNEW = tagHTML.replace(tagCOLOR,argTAG);
+					}
+					newHTML = selHTML.replace(tagHTML,tagNEW);
 					break;
 				default:
-					tagTARGET = nodeTARGET.substring(0, nodeTARGET.indexOf('>') + 1);
-					tagUPDATE = tagTARGET.slice(0, -1) + ' style="' + argTAG + ';">';
-					htmlUPDATE = htmlNODE.replace(tagTARGET, tagUPDATE);
+					newHTML = '<span style="' + argTAG + '">' + selTXT + '</span>';
 			}
-			// remove mce style data tags
-			htmlTEMP = clrMCE(htmlUPDATE);
-			htmlUPDATE = htmlTEMP;
-			mceNODE.remove();
-		} else {
-			// partical node
-			htmlUPDATE = '<span style="' + argTAG + '">';
-			htmlUPDATE += textSELECTED;
-			htmlUPDATE += '</span>';
+			if (!isEmpty(newHTML)) {
+				editor.execCommand('mceReplaceContent', false, newHTML);
+			}
 		}
-		editor.selection.setContent(htmlUPDATE);
-		editor.undoManager.add();
 		return;
 	}
 
-	function getTag(argTARGET, argSELECTOR) {
-		// arguments
-		// 	argTARGET		nodeTARGET
-		// 	argSELECTOR		node selector (style/class)
-		var retVAL = '';
-		if (argTARGET !== '') {
-			var idxLT = 0; // starting index
-			var idxRT = 0; // ending index
-			var qFLAG = false; // quote flag
-			switch (argSELECTOR) {
-				case ('style'):
-					idxLT = argTARGET.indexOf('style');
-					break;
-				case ('class'):
-					idxLT = argTARGET.indexOf('class');
-					break;
-				default:
-					idxLT = 0;
-			}
-			if (idxLT > 0) {
-				qFLAG = false;
-				for (idxRT = idxLT; idxRT < argTARGET.length; idxRT++) {
-					if (argTARGET.substring(idxRT, idxRT + 1) == '"') {
-						if (qFLAG) {
-							break;
-						} else {
-							qFLAG = true;
-						}
-					}
-				}
-				retVAL = argTARGET.substring(idxLT, idxRT + 1);
-			}
+	function tidyCss(argCSS) {
+		// argCSS = css to tidy
+		if (argCSS === undefined) {
+			argCSS = '';
 		}
-		return retVAL;
+		var htmlVAL = argCSS;
+		if (!isEmpty(argCSS)) {
+			var curCSS = argCSS.substring(argCSS.indexOf('"') + 1, argCSS.lastIndexOf('"'));
+			var arrTMP = curCSS.split(';');
+			var arrNEW = arrTMP.filter(function (el) {
+				return el != '';
+			});
+			arrNEW.sort();
+			var newCSS = (arrNEW.join('; ') + ';').trim();
+			htmlVAL = argCSS.replace(curCSS, newCSS);
+		}
+		// returns tidy css
+		return htmlVAL;
 	}
 
-	function clrMCE(argHTML) {
-		var htmlUPDATE = ''; // updated html
-		if (argHTML !== '') {
-			var idxLT = argHTML.indexOf('data-mce-style'); // starting index
-			var idxRT = 0; // ending index
-			var qFLAG = false; // quote flag
-			var mceTARGET = ''; // mce tag
-			if (idxLT > 0) {
-				qFLAG = false;
-				for (idxRT = idxLT; idxRT < argHTML.length; idxRT++) {
-					if (argHTML.substring(idxRT, idxRT + 1) == '"') {
-						if (qFLAG) {
-							break;
-						} else {
-							qFLAG = true;
-						}
-					}
-				}
-				mceTARGET = argHTML.substring(idxLT - 1, idxRT + 1);
-				htmlUPDATE = argHTML.replace(mceTARGET, '');
-			} else {
-				htmlUPDATE = argHTML;
-			}
-		} else {
-			htmlUPDATE = argHTML;
+	function getSpan(argHTML) {
+		// argHTML = inner/outer HTML
+		if (argHTML === undefined) {
+			argHTML = '';
 		}
-		return htmlUPDATE;
+		var htmlVAL = '';
+		if (!isEmpty(argHTML.match(/span/g))) {
+			var tmpVAL = argHTML.match(/<span\b[^>]*>(?:(?=([^<]+))\1|<(?!span\b[^>]*>))*?<\/span>/gi)[0];
+			htmlVAL = tmpVAL.substring(0, tmpVAL.indexOf('>') + 1);
+		}
+		return htmlVAL;
 	}
+
+	function getColor(argTAG) {
+		// argTAG = tag which may contain style
+		if (argTAG === undefined) {
+			argTAG = '';
+		}
+		var htmlVAL = '';
+		if (!isEmpty(argTAG) && !isEmpty(argTAG.match(/color:/g))) {
+			htmlVAL = argTAG.substring(argTAG.indexOf('color:'), argTAG.indexOf(';', argTAG.indexOf('color:') + 1) + 1);
+		}
+		// return color or ''
+		return htmlVAL;
+	}
+
+	function getTag(argHTML, argTAG) {
+		// argHTML = extHTML
+		if (argHTML === undefined) {
+			argHTML = '';
+		}
+		if (argTAG === undefined) {
+			argTAG = '';
+		}
+		var htmlVAL = '';
+		var regEXP = new RegExp('^<' + argTAG, 'gi');
+		if (!isEmpty(argHTML.match(regEXP)) && !isEmpty(argTAG.match(/div|h[1-6]|\bp\b/gi))) {
+			regEXP = RegExp('^<' + argTAG + '\\b[^>]*>', 'gi');
+			htmlVAL = argHTML.match(regEXP)[0];
+		}
+		// return tag or ''
+		return htmlVAL;
+	}
+
+	function isEmpty(argSTR) {
+		return (!argSTR || 0 === argSTR.length);
+	}
+
 	editor.addButton('apply_txt_color', {
 		title: 'Apply Color',
 		icon: false,
 		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4OS43ODUgNDg5Ljc4NTsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTSA0Ni4wNTMgMS45NDkgTCA0Ni4wNTMgMS45NDkgQyA0My42MjYgLTAuNDgyIDM3LjI4MiAxLjkyNCAzMS44ODQgNy4zMjEgTCAzMS44ODQgNy4zMjEgTCAzMS44ODEgNy4zMjEgQyAzMC45ODkgOC4yMTUgMzAuMTc5IDkuMTMzIDI5LjQ2MiAxMC4wNTcgQyAyOC41NTcgMTUuMjExIDI2LjMwMSAxOC44NjUgMjMuNjYgMTguODY1IEwgMjMuNjYgMTguODY5IEMgMjIuODA0IDE4Ljg2OSAyMS45OSAxOC40ODcgMjEuMjUgMTcuNzk3IEwgMjEuMjQ2IDE3Ljc5NyBMIDE5LjI5MSAxNS44NDMgQyAxOC4xODYgMTQuNzM3IDE2LjM5MyAxNC43MzcgMTUuMjg1IDE1Ljg0MyBMIDcuNjg4IDIzLjQzNiBMIDcuMjkyIDIzLjgzNyBMIDEuODI5IDI5LjI5NiBDIDAuNzI0IDMwLjQwMSAwLjcyNCAzMi4xOTUgMS44MjkgMzMuMzAxIEwgMTQuNjk5IDQ2LjE3MSBDIDE1LjgwNSA0Ny4yNzYgMTcuNTk5IDQ3LjI3NiAxOC43MDUgNDYuMTcxIEwgMjQuMTY2IDQwLjcwOCBMIDI0LjU2NiA0MC4zMTIgTCAzMi4xNiAzMi43MTcgQyAzMy4yNjUgMzEuNjExIDMzLjI2NSAyOS44MTcgMzIuMTYgMjguNzExIEwgMzAuMjAzIDI2Ljc1NSBMIDMwLjIwNSAyNi43NSBDIDI5LjUxMyAyNi4wMTIgMjkuMTM2IDI1LjE5NiAyOS4xMzYgMjQuMzQzIEwgMjkuMTM2IDI0LjM0MyBDIDI5LjEzNiAyNC4zNDMgMjkuMTM2IDI0LjM0MyAyOS4xMzYgMjQuMzQzIEMgMjkuMTM2IDIxLjcgMzIuNzg5IDE5LjQ0MyAzNy45NDQgMTguNTM5IEMgMzguODY3IDE3LjgyNCAzOS43ODUgMTcuMDExIDQwLjY4IDE2LjEyIEwgNDAuNjc3IDE2LjExNyBMIDQwLjY4IDE2LjEyIEMgNDYuMDc4IDEwLjcxOSA0OC40ODMgNC4zNzUgNDYuMDUzIDEuOTQ5IFogTSAyNC4zMjIgMzcuNjY5IEwgMjQuMzIzIDM3LjY3MSBMIDE5LjA0NiA0Mi45NDcgTCAxOS4wNDYgNDIuOTQ3IEwgMTcuNjY2IDQ0LjMyNyBDIDE3LjEwMyA0NC44OSAxNi4xOSA0NC44OSAxNS42MjcgNDQuMzI3IEwgMy42NzIgMzIuMzczIEMgMy4xMSAzMS44MSAzLjExIDMwLjg5OCAzLjY3MiAzMC4zMzYgTCA1LjA1MiAyOC45NTYgTCA1LjA1MiAyOC45NTYgTCAxMC4yNSAyMy43NTggTCAxMC4yNSAyMy43NTggQyAxMS41MTkgMjIuNDg5IDEzLjE2NiAyMi4wODQgMTMuOTMzIDIyLjg1MyBDIDE0LjcwMSAyMy42MjIgMTQuMzExIDI1LjI4NSAxMy4wNDcgMjYuNTUxIEwgMTMuMDQ3IDI2LjU1MSBDIDExLjc3OSAyNy44MTcgMTEuMzkzIDI5LjQ4IDEyLjE2MyAzMC4yNDggQyAxMi45MjUgMzEuMDE3IDE0LjU4MSAzMC42MTkgMTUuOTI2IDI5LjI3OCBMIDE1LjkyOSAyOS4yNzggQyAxNy4xODMgMjguMDcxIDE4Ljc3OSAyNy42OTkgMTkuNTMxIDI4LjQ1MSBDIDIwLjI4MSAyOS4yMDQgMTkuOTI0IDMwLjgxNCAxOC43MiAzMi4wNzEgTCAxOC43MjQgMzIuMDc1IEMgMTcuMzgyIDMzLjQxOSAxNi45OTQgMzUuMDgxIDE3Ljc2IDM1Ljg1MiBDIDE4LjUyNyAzNi42MTUgMjAuMTgzIDM2LjIyMSAyMS40NTIgMzQuOTU0IEwgMjEuNTI2IDM0Ljg3NyBMIDIxLjUyNyAzNC44NzcgQyAyMi43ODYgMzMuNjcgMjQuMzc4IDMzLjI5OSAyNS4xMzQgMzQuMDUzIEMgMjUuODgzIDM0LjgwNSAyNS41MjUgMzYuNDE1IDI0LjMyMiAzNy42NjkgWiBNIDI5LjU0NSAzMC40MTMgQyAzMC4xMDggMzAuOTc3IDMwLjEwOCAzMS44ODkgMjkuNTQ1IDMyLjQ1MyBMIDI3LjkyMSAzNC4wNzIgTCAxMy45MjkgMjAuMDc5IEwgMTUuNTQ3IDE4LjQ1NiBDIDE2LjExNiAxNy44OTIgMTcuMDI1IDE3Ljg5MiAxNy41ODkgMTguNDU2IEwgMjkuNTQ1IDMwLjQxMyBaIE0gMzkuNDc5IDguNTI0IEMgMzguNTk3IDcuNjM1IDM4LjU5NyA2LjIwNSAzOS40NzkgNS4zMjMgQyA0MC4zNjUgNC40NCA0MS43OTYgNC40NCA0Mi42NzggNS4zMjMgQyA0My41NjEgNi4yMDUgNDMuNTYxIDcuNjM1IDQyLjY3OCA4LjUyNCBDIDQxLjc5NiA5LjQwNyA0MC4zNjUgOS40MDcgMzkuNDc5IDguNTI0IFoiIHN0eWxlPSIiLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KPC9zdmc+',
 		onClick: function () {
+			var selTXT = editor.selection.getContent({
+				format : 'text'
+			});
+			if (isEmpty(selTXT)) {
+				alert('SYSTEM MESSAGE\nInvalid or missing text selection.');
+				return;
+			}
 			editor.windowManager.open({
 				title: 'Color Tool',
 				body: [{
@@ -152,12 +231,14 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 				},
 				onSubmit: function () {
 					var hexCODE = document.getElementById("hex_id").value.trim();
-					if (hexCODE !== '') {
+					if (!isEmpty(hexCODE.match(/^#[0-9a-f]{6}$/i))) {
 						if (document.getElementById("bkg_id").checked) {
-							setTag('background-color:' + hexCODE);
+							setTag('background-color: ' + hexCODE + ';');
 						} else {
-							setTag('color:' + hexCODE);
+							setTag('color: ' + hexCODE + ';');
 						}
+					} else {
+						alert('SYSTEM MESSAGE\nInvalid or missing color selection.');
 					}
 				},
 			});
@@ -166,5 +247,5 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 });
 
 /*
- * EOF: apply-text-color / plugin.js / 29200901
+ * EOF: apply-text-color / plugin.js / 30201018
  */
