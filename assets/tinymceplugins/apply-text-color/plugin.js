@@ -136,8 +136,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		var htmlVAL = argCSS;
 		if (!isEmpty(argCSS)) {
 			var curCSS = argCSS.substring(argCSS.indexOf('"') + 1, argCSS.lastIndexOf('"'));
-			var arrTMP = curCSS.split(';');
-			var arrNEW = arrTMP.filter(function (el) {
+			var arrNEW = curCSS.split(';').map(function (item) {
+				return item.trim();
+			}).filter(function (el) {
 				return el != '';
 			});
 			arrNEW.sort();
