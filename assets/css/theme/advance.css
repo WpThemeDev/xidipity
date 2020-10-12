@@ -768,28 +768,28 @@ table.bdr\:space\+2 {
 ***
     * property: fnt:< caps >
     * dsc: display caps
-    * bld: 200513
+    * bld: 30201018
     * fnt: style as variant caps
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
 ***
 */
-.fnt\:caps-small-all {
+.trn\:caps-sm-all {
 	font-variant-caps: all-small-caps !important;
 }
 
-.fnt\:caps-petite {
+.trn\:caps-pet {
 	font-variant-caps: petite-caps !important;
 }
 
-.fnt\:caps-small {
+.trn\:caps-sm {
 	font-variant-caps: small-caps !important;
 }
 
-.fnt\:caps-titling {
+.trn\:caps-tit {
 	font-variant-caps: titling-caps !important;
 }
 
-.fnt\:caps-unicase {
+.trn\:caps-uni {
 	font-variant-caps: unicase !important;
 }
 
@@ -4044,23 +4044,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
     */
-	.sm\)fnt\:caps-small-all {
+	.sm\)trn\:caps-sm-all {
 		font-variant-caps: all-small-caps !important;
 	}
 
-	.sm\)fnt\:caps-petite {
+	.sm\)trn\:caps-pet {
 		font-variant-caps: petite-caps !important;
 	}
 
-	.sm\)fnt\:caps-small {
+	.sm\)trn\:caps-sm {
 		font-variant-caps: small-caps !important;
 	}
 
-	.sm\)fnt\:caps-titling {
+	.sm\)trn\:caps-tit {
 		font-variant-caps: titling-caps !important;
 	}
 
-	.sm\)fnt\:caps-unicase {
+	.sm\)trn\:caps-uni {
 		font-variant-caps: unicase !important;
 	}
 
@@ -7313,23 +7313,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
     */
-	.md\)fnt\:caps-small-all {
+	.md\)trn\:caps-sm-all {
 		font-variant-caps: all-small-caps !important;
 	}
 
-	.md\)fnt\:caps-petite {
+	.md\)trn\:caps-pet {
 		font-variant-caps: petite-caps !important;
 	}
 
-	.sm\)fnt\:caps-small {
+	.sm\)trn\:caps-sm {
 		font-variant-caps: small-caps !important;
 	}
 
-	.md\)fnt\:caps-titling {
+	.md\)trn\:caps-tit {
 		font-variant-caps: titling-caps !important;
 	}
 
-	.md\)fnt\:caps-unicase {
+	.md\)trn\:caps-uni {
 		font-variant-caps: unicase !important;
 	}
 
@@ -10576,23 +10576,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
     */
-	.lg\)fnt\:caps-small-all {
+	.lg\)trn\:caps-sm-all {
 		font-variant-caps: all-small-caps !important;
 	}
 
-	.lg\)fnt\:caps-petite {
+	.lg\)trn\:caps-pet {
 		font-variant-caps: petite-caps !important;
 	}
 
-	.lg\)fnt\:caps-small {
+	.lg\)trn\:caps-sm {
 		font-variant-caps: small-caps !important;
 	}
 
-	.lg\)fnt\:caps-titling {
+	.lg\)trn\:caps-tit {
 		font-variant-caps: titling-caps !important;
 	}
 
-	.lg\)fnt\:caps-unicase {
+	.lg\)trn\:caps-uni {
 		font-variant-caps: unicase !important;
 	}
 
@@ -13848,23 +13848,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps
     ***
     */
-	.xl\)fnt\:caps-small-all {
+	.xl\)trn\:caps-sm-all {
 		font-variant-caps: all-small-caps !important;
 	}
 
-	.xl\)fnt\:caps-petite {
+	.xl\)trn\:caps-pet {
 		font-variant-caps: petite-caps !important;
 	}
 
-	.xl\)fnt\:caps-small {
+	.xl\)trn\:caps-sm {
 		font-variant-caps: small-caps !important;
 	}
 
-	.xl\)fnt\:caps-titling {
+	.xl\)trn\:caps-tit {
 		font-variant-caps: titling-caps !important;
 	}
 
-	.xl\)fnt\:caps-unicase {
+	.xl\)trn\:caps-uni {
 		font-variant-caps: unicase !important;
 	}
 
