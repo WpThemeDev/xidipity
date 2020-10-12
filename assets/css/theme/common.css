@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  30201001
+    * bld:  30201018
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -118,7 +118,7 @@ pre.dsp\:line-nums var::before {
     * dsc: various text tags
     * ver: 28200701
     * fnt: format text
-    * ref: 
+    * ref:
 ***
 */
 code,
@@ -701,7 +701,7 @@ ol.decimal li ol.decimal li::before {
     * dsc: horizontal list
     * ver: 28200701
     * fnt: display list horizontally
-    * ref: 
+    * ref:
 ***
 */
 .dsp\:li-hrz {
@@ -743,7 +743,7 @@ ol.decimal li ol.decimal li::before {
     * dsc: vertical list
     * ver: 28200701
     * fnt: display list virtually
-    * ref: 
+    * ref:
 ***
 */
 .dsp\:li-vrt,
@@ -1075,20 +1075,27 @@ dd {
 
 /*
 ***
-    * element: idt
+    * element: txt-bi (block indent)
+    * element: txt-hi (hang indent)
+    * element: txt-pi (paragraph indent)
     * dsc: paragraph indentation
-    * ver: 29200901
-    * fnt: add hanging/paragraph indentation
-    * ref: 
+    * ver: 30201018
+    * fnt: add paragraph indentation
+    * ref:
 ***
 */
-p.idt\:hang {
+.aln\:txt-bi {
+	display: inline-block;
+	margin-left: 2rem;
+}
+
+.aln\:txt-hi {
 	padding-left: 2rem;
 	text-indent: -2rem;
 }
 
-p.idt\:para {
-	text-indent: 2rem;	
+.aln\:txt-pi {
+	text-indent: 2rem;
 }
 
 /*
@@ -1266,7 +1273,7 @@ table.panelx3>tbody>tr>td {
 		display: block;
 		width: 100% !important;
 	}
-	
+
 	table.panelx2>tbody>tr>td:not(:last-child),
 	table.panelx3>tbody>tr>td:not(:last-child) {
 		margin-bottom: 0.5rem;
@@ -1323,12 +1330,12 @@ table.cols\:fixed-4>tbody>tr>td {
 		padding: 0;
 		width: 100%;
 	}
-	
+
 	table.cols\:fixed-2>tbody>tr>td:not(:last-child),
 	table.cols\:fixed-3>tbody>tr>td:not(:last-child),
 	table.cols\:fixed-4>tbody>tr>td:not(:last-child) {
 		margin-bottom: 0.5rem;
-	}	
+	}
 }
 
 /*: md)media :*/
@@ -1863,7 +1870,7 @@ figure {
 */
 @media (max-width: 599px) {
 	table.frame {
-		width: 100% !important;		
+		width: 100% !important;
 	}
 	table.frame>tbody>tr>td {
 		border: solid thin var(--hue-bas-up3);
@@ -2252,7 +2259,7 @@ button:active {
     * property: icon
     * dsc: svg icons
     * ver: 28200715
-    * fnt: 24x24 scaleable icons 
+    * fnt: 24x24 scaleable icons
     * ref: materialdesignicons.com
 ***
 */
@@ -2531,7 +2538,7 @@ button:active {
     * property: icon
     * dsc: toolbar svg icons
     * ver: 28200715
-    * fnt: 24x24 scaleable icons 
+    * fnt: 24x24 scaleable icons
     * ref: materialdesignicons.com
 ***
 */
@@ -2630,5 +2637,5 @@ button:active {
 }
 
 /*
- * EOF: assets/css/theme/common.css / 30201001
+ * EOF: assets/css/theme/common.css / 30201018
  */
