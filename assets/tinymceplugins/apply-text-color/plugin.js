@@ -48,9 +48,10 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 				// delimit tags with comma
 				var tagDELIM = selNEW.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g,'$1,$3');
 				// add to array
-				var htmlARRAY = tagDELIM.split(',').filter(function (el) {
+				var tmpARRAY = tagDELIM.split(',');
+				var htmlARRAY = tmpARRAY.filter(function (el) {
 					return el != '';
-					});
+				});
 				// loop through array
 				var idx;
 				var itmARRAY;
