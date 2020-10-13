@@ -48,7 +48,8 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				// delimit tags with comma
 				var tagDELIM = selNEW.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g, '$1,$3');
 				// add to array
-				var htmlARRAY = tagDELIM.split(',').filter(function (el) {
+				var tmpARRAY = tagDELIM.split(',');
+				var htmlARRAY = tmpARRAY.filter(function (el) {
 					return el != '';
 				});
 				// loop through array
@@ -195,7 +196,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 	function isEmpty(argSTR) {
 		return (!argSTR || 0 === argSTR.length);
 	}
-	
+
 	function isReady() {
 		var blnVAL = true;
 		var selTXT = editor.selection.getContent({
@@ -204,10 +205,10 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		if (isEmpty(selTXT)) {
 			alert('SYSTEM MESSAGE\nInvalid or missing text selection.');
 			blnVAL = false;
-		}			
+		}
 		return blnVAL;
 	}
-	
+
 	editor.addButton('apply_txt_size', {
 		type: 'splitbutton',
 		title: 'Text Size',
