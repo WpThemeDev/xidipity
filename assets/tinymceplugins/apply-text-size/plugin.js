@@ -3,7 +3,7 @@
  * Tinymce apply-text-size plugin
  *
  * ###:  plugin.js
- * bld:  30201018
+ * bld:  30201101
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -11,7 +11,7 @@
 tinymce.PluginManager.add('apply_txt_size', function(editor) {
 	'use strict';
 
-	function setTag(argTAG) {
+	function setClass(argTAG) {
 		if (argTAG === undefined) {
 			argTAG = '';
 		}
@@ -26,11 +26,12 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			format: 'html'
 		});
 		var selTMP = '';
-		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|strong|sub|sup|u/gi))) {
+		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|strong|sub|sup|\bu\b/i))) {
 			selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
 			selTXT = selTMP;
 			// select parent node
-			var tmpNODE = editor.dom.getParent(htmlNODE, 'div,h1,h2,h3,h4,h5,h6,p,span');
+			var tmpNODE;
+			tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p,span');
 			htmlNODE = tmpNODE;
 			// get new selection node name
 			selNODE = htmlNODE.nodeName.toLowerCase();
@@ -39,88 +40,39 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
 		selTMP = editor.dom.getOuterHTML(htmlNODE);
 		var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		// check for multiple paragraphs
-		var tagCNT = (selTXT.match(/<\/.*?>/gi) || []).length;
+		var curTAG;
+		var newTAG;
 		switch (true) {
-			case (tagCNT > 1):
-				// strip carrage returns
+			case (selNODE == 'body'):
+				// strip cr/lf
 				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '');
-				// delimit tags with comma
-				var tagDELIM = selNEW.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g, '$1,$3');
-				// add to array
-				var tmpARRAY = tagDELIM.split(',');
-				var htmlARRAY = tmpARRAY.filter(function (el) {
-					return el != '';
-				});
+				// delimit html string
+				var tagDELIM = selNEW.replace(/(\/(?!span>).*?>)(<.)/g, '$1,$2');
+				// create array from delimited string
+				var htmlARRAY = tagDELIM.split(',');
+				var lstREC = lastRec(htmlARRAY);
+				var idx = 0;
 				// loop through array
-				var idx;
-				var itmARRAY;
-				var spanNODE;
-				var tagSIZ;
-				var tagHTML;
-				var tagNEW;
-				var tagTMP;
-				for (idx in htmlARRAY) {
-					// get span item
-					itmARRAY = htmlARRAY[idx];
-					// node
-					spanNODE = itmARRAY.match(/\bp|h[1-6]|div/)[0];
-					// get tag
-					tagHTML = getTag(itmARRAY, spanNODE);
-					// check tag for style element
-					tagSIZ = getSize(tagHTML);
-					tagNEW = '';
-					if (isEmpty(tagSIZ)) {
-						if (isEmpty(tagHTML.match(/style/))) {
-							tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
-
-						} else {
-							tagTMP = tagHTML.substring(0, tagHTML.indexOf('>') - 1) + ' ' + argTAG + '">';
-							tagNEW = tidyCss(tagTMP);
-						}
-					} else {
-						tagNEW = tagHTML.replace(tagSIZ, argTAG);
+				for (;htmlARRAY[idx];) {
+					if (idx > lstREC) {
+						newHTML += '<p>&nbsp;</p>';
+						break;
 					}
-					newHTML += itmARRAY.replace(tagHTML, tagNEW);
+					// save array item to var
+					selHTML = htmlARRAY[idx];
+					curTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')[0]);
+					newTAG = getClass(selHTML, argTAG);
+					newHTML += selHTML.replace(curTAG,newTAG);
+					idx++;
 				}
 				break;
-			case (selNODE == 'span'):
-				// get span
-				var spanHTML = getSpan(selHTML);
-				// check tag for style element
-				tagSIZ = getSize(spanHTML);
-				var spanNEW = '';
-				if (isEmpty(tagSIZ)) {
-					// existing style without weight
-					var spanTMP = spanHTML.substring(0, spanHTML.indexOf('>') - 1) + ' ' + argTAG + '">';
-					spanNEW = tidyCss(spanTMP);
-				} else {
-					// existing style with weight
-					spanNEW = spanHTML.replace(tagSIZ, argTAG);
-				}
-				newHTML = selHTML.replace(spanHTML, spanNEW);
-				break;
-			case (selTXT == selFULL):
-				// get tag
-				tagHTML = getTag(selHTML, selNODE);
-				// check tag for style element
-				tagSIZ = getSize(tagHTML);
-				tagNEW = '';
-				if (isEmpty(tagSIZ)) {
-					if (isEmpty(tagHTML.match(/style/))) {
-						tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
-
-					} else {
-						tagTMP = tagHTML.substring(0, tagHTML.indexOf('>') - 1) + ' ' + argTAG + '">';
-						tagNEW = tidyCss(tagTMP);
-					}
-				} else {
-					tagNEW = tagHTML.replace(tagSIZ, argTAG);
-				}
-				newHTML = selHTML.replace(tagHTML, tagNEW);
+			case (selTXT == selFULL || selNODE == 'span'):
+				curTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')[0]);
+				newTAG = getClass(selHTML, argTAG);
+				newHTML = selHTML.replace(curTAG,newTAG);
 				break;
 			default:
-				newHTML = '<span style="' + argTAG + '">' + selTXT + '</span>';
+				newHTML = '<span class="' + argTAG + '">' + selTXT + '</span>';
 		}
 		if (!isEmpty(newHTML)) {
 			editor.execCommand('mceReplaceContent', false, newHTML);
@@ -128,69 +80,110 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		return;
 	}
 
-	function tidyCss(argCSS) {
-		// argCSS = css to tidy
-		if (argCSS === undefined) {
-			argCSS = '';
-		}
-		var htmlVAL = argCSS;
-		if (!isEmpty(argCSS)) {
-			var curCSS = argCSS.substring(argCSS.indexOf('"') + 1, argCSS.lastIndexOf('"'));
-			var arrNEW = curCSS.split(';').map(function (item) {
-				return item.trim();
-			}).filter(function (el) {
-				return el != '';
-			});
-			arrNEW.sort();
-			var newCSS = (arrNEW.join('; ') + ';').trim();
-			htmlVAL = argCSS.replace(curCSS, newCSS);
-		}
-		// returns tidy css
-		return htmlVAL;
-	}
-
-	function getSpan(argHTML) {
-		// argHTML = inner/outer HTML
-		if (argHTML === undefined) {
-			argHTML = '';
-		}
-		var htmlVAL = '';
-		if (!isEmpty(argHTML.match(/span/g))) {
-			var tmpVAL = argHTML.match(/<span\b[^>]*>(?:(?=([^<]+))\1|<(?!span\b[^>]*>))*?<\/span>/gi)[0];
-			htmlVAL = tmpVAL.substring(0, tmpVAL.indexOf('>') + 1);
-		}
-		return htmlVAL;
-	}
-
-	function getSize(argTAG) {
-		// argTAG = tag which may contain style
-		if (argTAG === undefined) {
-			argTAG = '';
-		}
-		var htmlVAL = '';
-		if (!isEmpty(argTAG) && !isEmpty(argTAG.match(/font-size:/g))) {
-			htmlVAL = argTAG.substring(argTAG.indexOf('font-size:'), argTAG.indexOf(';', argTAG.indexOf('font-size:') + 1) + 1);
-		}
-		// return weight or ''
-		return htmlVAL;
-	}
-
-	function getTag(argHTML, argTAG) {
-		// argHTML = extHTML
+	function getClass(argHTML, argTAG) {
+		// argHTML = (selHTML) current style
+		// argTAG = update
 		if (argHTML === undefined) {
 			argHTML = '';
 		}
 		if (argTAG === undefined) {
 			argTAG = '';
 		}
-		var htmlVAL = '';
-		var regEXP = new RegExp('^<' + argTAG, 'gi');
-		if (!isEmpty(argHTML.match(regEXP)) && !isEmpty(argTAG.match(/div|h[1-6]|\bp\b/gi))) {
-			regEXP = RegExp('^<' + argTAG + '\\b[^>]*>', 'gi');
-			htmlVAL = argHTML.match(regEXP)[0];
+		var htmlVAL = argHTML;
+		if (!isEmpty(argHTML) && !isEmpty(argTAG)) {
+			// pull key
+			var argKEY = argTAG.match(/^(.*?)-|^(.*?)\+/)[0].replace(/.$/, '');
+			// pull tag
+			var tagHTML = (isEmpty(argHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : argHTML.match(/^<(.|\n)*?>/, 'si')[0]);
+			var tmpVAL1;
+			var tmpVAL2;
+			if (isEmpty(tagHTML.match(/class/))) {
+				tmpVAL1 = tagHTML.match(/^<p.*?>|^<h[1-6].*?>|<span.*?>|^<div.*?>/)[0].replace(/>$/, '') + ' class="' + argTAG + '">';
+				htmlVAL = tidyTag(tmpVAL1);
+			} else {
+				var regEXP = new RegExp(argKEY, 'gis');
+				if (isEmpty(tagHTML.match(regEXP))) {
+					tmpVAL2 = tagHTML.match(/class(.*?)".*?"/)[0].replace(/"$/, '') + ' ' + argTAG + '"';
+					tmpVAL1 = tidyClass(tmpVAL2);
+					htmlVAL = tagHTML.replace(/class(.*?)".*?"/, tmpVAL1);
+				} else {
+					regEXP = RegExp('(' + argKEY + ')(.*?)"');
+					var curTAG = tagHTML.match(regEXP)[0].replace(/"/, '');
+					htmlVAL = tagHTML.replace(curTAG, argTAG);
+				}
+			}
 		}
-		// return tag or ''
 		return htmlVAL;
+	}
+
+	function hasContent(argHTML) {
+		// argHTML = HTML to validate
+		if (argHTML === undefined) {
+			argHTML = '';
+		}
+		var htmlDIV = document.createElement('htmlDIV');
+		htmlDIV.innerHTML = argHTML;
+		// strip html to see what's left
+		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
+		return (htmlVAL.length > 0);
+	}
+
+	function tidyTag(argTAG) {
+		// argTAG = elements to order
+		if (argTAG === undefined) {
+			argTAG = '';
+		}
+		var htmlVAL = argTAG;
+		if (!isEmpty(argTAG)) {
+			var curTAG = argTAG.match(/\s.*"/)[0].replace(/^\s/, '');
+			var tagDELIM = curTAG.replace(/"\s/, '",');
+			var arrTAG = tagDELIM.split(',');
+			arrTAG.sort();
+			var newTAG = (arrTAG.join(' '));
+			htmlVAL = argTAG.replace(curTAG, newTAG);
+		}
+		// return html
+		return htmlVAL;
+	}
+
+	function tidyClass(argCLS) {
+		// argCLS = classes to tidy
+		if (argCLS === undefined) {
+			argCLS = '';
+		}
+		var htmlVAL = argCLS;
+		if (!isEmpty(argCLS)) {
+			var selCLS = argCLS.match(/"(.*?)"/, 'gi')[0];
+			var curCLS = selCLS.replace(/"/g, '');
+			var arrCLS = curCLS.split(' ');
+			arrCLS.sort();
+			var newCLS = (arrCLS.join(' '));
+			htmlVAL = argCLS.replace(curCLS, newCLS);
+		}
+		// returns tidy classes
+		return htmlVAL;
+	}
+
+	function lastRec(argARRAY) {
+		if (argARRAY === undefined) {
+			argARRAY = [''];
+		}
+		var cntITM;
+		// 0 based
+		var idx = argARRAY.length - 1;
+		for (;argARRAY[idx];) {
+			// save array item to var
+			cntITM = argARRAY[idx];
+			if (hasContent(cntITM)) {
+				break;
+			} else {
+				idx--;
+			}
+		}
+		if (idx < 1) {
+			idx = argARRAY.length - 1;
+		}
+		return idx;
 	}
 
 	function isEmpty(argSTR) {
@@ -216,7 +209,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0gNi4wMzUgMTQgTCA4LjQzNSA3LjcgTCAxMC44MzUgMTQgTSA3LjQzNSA1IEwgMS45MzUgMTkgTCA0LjEzNSAxOSBMIDUuMjM1IDE2IEwgMTEuNDM1IDE2IEwgMTIuNTM1IDE5IEwgMTQuNzM1IDE5IEwgOS40MzUgNSBMIDcuNDM1IDUgWiIvPgogIDxwYXRoIGQ9Ik0gMTguNzUgNy41NDUgTCAyMS4wNCA5LjgzNSBMIDIyLjA1OSA4LjgxNSBMIDE4Ljc1IDUuNSBMIDE1LjQzNSA4LjgxNSBMIDE2LjQ2IDkuODM1IEwgMTguNzUgNy41NDUgWiBNIDE4Ljc1IDE2LjQ1NSBMIDE2LjQ2IDE0LjE2NSBMIDE1LjQ0MiAxNS4xODUgTCAxOC43NSAxOC41IEwgMjIuMDY1IDE1LjE4NSBMIDIxLjA0IDE0LjE2NSBMIDE4Ljc1IDE2LjQ1NSBaIi8+Cjwvc3ZnPg==',
 		onclick: function () {
 			if (isReady()) {
-				setTag('font-size: var(--font-size-larger);');
+				setClass('fnt:siz+1');
 			}
 		},
 		menu: [{
@@ -224,7 +217,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa06',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h1);')
+					setClass('fnt:siz-lg-5x')
 				}
 			}
 		}, {
@@ -232,7 +225,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa05',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h2);');
+					setClass('fnt:siz-lg-5x');
 				}
 			}
 		}, {
@@ -240,7 +233,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa04',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h3);');
+					setClass('fnt:siz-lg-3x');
 				}
 			}
 		}, {
@@ -248,7 +241,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa03',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h4);');
+					setClass('fnt:siz-lg-2x');
 				}
 			}
 		}, {
@@ -256,7 +249,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa02',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h5);');
+					setClass('fnt:siz-lg-1x');
 				}
 			}
 		}, {
@@ -264,7 +257,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa01',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-h6);');
+					setClass('fnt:siz-lg');
 				}
 			}
 		}, {
@@ -272,7 +265,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '+\xa0½',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-xm);');
+					setClass('fnt:siz-md-1x');
 				}
 			}
 		}, {
@@ -281,7 +274,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuNiwxNEwxMiw3LjdMMTQuNCwxNE0xMSw1TDUuNSwxOUg3LjdMOC44LDE2SDE1TDE2LjEsMTlIMTguM0wxMyw1SDExWiIgLz48L3N2Zz4=',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-md);');
+					setClass('fnt:siz-md');
 				}
 			}
 		}, {
@@ -289,7 +282,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '-\xa01',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-sm);');
+					setClass('fnt:siz-sm');
 				}
 			}
 		}, {
@@ -297,7 +290,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '-\xa02',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-xs);');
+					setClass('fnt:siz-sm-1x');
 				}
 			}
 		}, {
@@ -305,7 +298,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			text: '-\xa03',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-2xs);');
+					setClass('fnt:siz-sm-2x');
 				}
 			}
 		}, {
@@ -314,7 +307,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUuMTIsMTRMNy41LDcuNjdMOS44NywxNE02LjUsNUwxLDE5SDMuMjVMNC4zNywxNkgxMC42MkwxMS43NSwxOUgxNEw4LjUsNUg2LjVNMTgsN0wxMywxMi4wN0wxNC40MSwxMy41TDE3LDEwLjlWMTdIMTlWMTAuOUwyMS41OSwxMy41TDIzLDEyLjA3TDE4LDdaIiAvPjwvc3ZnPg==',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-larger);');
+					setClass('fnt:siz+1');
 				}
 			}
 		}, {
@@ -323,7 +316,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 			image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUuMTIsMTRMNy41LDcuNjdMOS44NywxNE02LjUsNUwxLDE5SDMuMjVMNC4zNywxNkgxMC42MkwxMS43NSwxOUgxNEw4LjUsNUg2LjVNMTgsMTdMMjMsMTEuOTNMMjEuNTksMTAuNUwxOSwxMy4xVjdIMTdWMTMuMUwxNC40MSwxMC41TDEzLDExLjkzTDE4LDE3WiIgLz48L3N2Zz4=',
 			onclick: function() {
 				if (isReady()) {
-					setTag('font-size: var(--font-size-smaller);');
+					setClass('fnt:siz-1');
 				}
 			}
 		}, ],
@@ -331,5 +324,5 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 });
 
 /*
- * EOF: apply-text-size / plugin.js / 30201018
+ * EOF: apply-text-size / plugin.js / 30201101
  */
