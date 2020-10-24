@@ -3,7 +3,7 @@
  * Tinymce apply-text-color plugin
  *
  * ###:  plugin.js
- * bld:  30201018
+ * bld:  30201101
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -11,7 +11,7 @@
 tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 	'use strict';
 
-	function setTag(argTAG) {
+	function setStyle(argTAG) {
 		if (argTAG === undefined) {
 			argTAG = '';
 		}
@@ -23,14 +23,19 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		var selNODE = htmlNODE.nodeName.toLowerCase();
 		// selection content in html format
 		var selTXT = editor.selection.getContent({
-			format : 'html'
+			format: 'html'
 		});
 		var selTMP = '';
-		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|strong|sub|sup|u/gi))) {
+		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|span|strong|sub|sup|\bu\b/i))) {
 			selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
 			selTXT = selTMP;
 			// select parent node
-			var tmpNODE = editor.dom.getParent(htmlNODE, 'div,h1,h2,h3,h4,h5,h6,p,span');
+			var tmpNODE;
+			if (selNODE == 'span') {
+				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p');
+			} else {
+				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p,span');
+			}
 			htmlNODE = tmpNODE;
 			// get new selection node name
 			selNODE = htmlNODE.nodeName.toLowerCase();
@@ -39,85 +44,51 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
 		selTMP = editor.dom.getOuterHTML(htmlNODE);
 		var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		// check for multiple paragraphs
-		var tagCNT = (selTXT.match(/<\/.*?>/gi) || []).length;
+		var preTAG;
+		var pstTAG;
 		switch (true) {
-			case (tagCNT > 1):
-				// strip carrage returns
-				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '');
+			case (selNODE == 'body'):
+				// strip cr/lf & replace junk with &nbsp;
+				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '').replace(/<[^/>][^>]*><\/[^>]+>/g,'<p>&nbsp;</p>');
 				// delimit tags with comma
-				var tagDELIM = selNEW.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g,'$1,$3');
-				// add to array
-				var tmpARRAY = tagDELIM.split(',');
-				var htmlARRAY = tmpARRAY.filter(function (el) {
-					return el != '';
-				});
+				var tagDELIM = selNEW.replace(/(\/(?!span>).*?>)(<.)/g, '$1,$2');
+				// create array from delimited string
+				var htmlARRAY = tagDELIM.split(',');
+				var lstREC = lastRec(htmlARRAY);
+				var idx = 0;
+				var tmpHTML;
 				// loop through array
-				var idx;
-				var itmARRAY;
-				var spanNODE;
-				var tagCOLOR;
-				var tagHTML;
-				var tagNEW;
-				var tagTMP;
-				for (idx in htmlARRAY) {
-					// get span item
-					itmARRAY = htmlARRAY[idx];
-					// node
-					spanNODE = itmARRAY.match(/\bp|h[1-6]|div/)[0];
-					// get tag
-					tagHTML = getTag(itmARRAY,spanNODE);
-					// check tag for style element
-					tagCOLOR = getColor(tagHTML);
-					tagNEW = '';
-					if (isEmpty(tagCOLOR)) {
-						if (isEmpty(tagHTML.match(/style/))) {
-							tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
-
-						} else {
-							tagTMP = tagHTML.substring(0, tagHTML.indexOf('>')-1) + ' ' + argTAG + '">';
-							tagNEW = tidyCss(tagTMP);
-						}
-					} else {
-						tagNEW = tagHTML.replace(tagCOLOR,argTAG);
+				for (;htmlARRAY[idx];) {
+					if (idx > lstREC) {
+						newHTML += '<p>&nbsp;</p>';
+						break;
 					}
-					newHTML += itmARRAY.replace(tagHTML,tagNEW);
+					// save array item to var
+					selHTML = htmlARRAY[idx];
+					preTAG = (isEmpty(selHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : selHTML.match(/^<(.|\n)*?>/, 'si')[0]);
+					pstTAG = (isEmpty(selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')) ? '' : selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')[0]);
+					tmpHTML = selHTML.replace(preTAG,'<span>').replace(pstTAG,'</span>');
+					// ie. <p><span ...>...</span></p>
+					newHTML += selHTML.replace(preTAG,preTAG + getStyle(tmpHTML, argTAG)).replace(pstTAG,'</span>' + pstTAG);
+					idx++;
 				}
 				break;
 			case (selNODE == 'span'):
-				// get span
-				var spanHTML = getSpan(selHTML);
-				// check tag for style element
-				tagCOLOR = getColor(spanHTML);
-				var spanNEW = '';
-				if (isEmpty(tagCOLOR)) {
-					// existing style without color
-					var spanTMP = spanHTML.substring(0, spanHTML.indexOf('>')-1) + ' ' + argTAG + '">';
-					spanNEW = tidyCss(spanTMP);
-				} else {
-					// existing style with color
-					spanNEW = spanHTML.replace(tagCOLOR,argTAG);
-				}
-				newHTML = selHTML.replace(spanHTML,spanNEW);
+				preTAG = getStyle(selHTML, argTAG);
+				pstTAG = '</span>';
+				newHTML = preTAG + selTXT + pstTAG;
 				break;
 			case (selTXT == selFULL):
-				// get tag
-				tagHTML = getTag(selHTML,selNODE);
-				// check tag for style element
-				tagCOLOR = getColor(tagHTML);
-				tagNEW = '';
-				if (isEmpty(tagCOLOR)) {
-					if (isEmpty(tagHTML.match(/style/))) {
-						tagNEW = tagHTML.substring(0, tagHTML.indexOf('>')) + ' style="' + argTAG + '">' + tagHTML.substring(tagHTML.indexOf('>') + 1);
-
-					} else {
-						tagTMP = tagHTML.substring(0, tagHTML.indexOf('>')-1) + ' ' + argTAG + '">';
-						tagNEW = tidyCss(tagTMP);
-					}
-				} else {
-					tagNEW = tagHTML.replace(tagCOLOR,argTAG);
-				}
-				newHTML = selHTML.replace(tagHTML,tagNEW);
+				//
+				// in this circumstance the text must be
+				// wrapped in a <span> to achieve the
+				// desired result.
+				//
+				preTAG = (isEmpty(selHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : selHTML.match(/^<(.|\n)*?>/, 'si')[0]);
+				pstTAG = (isEmpty(selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')) ? '' : selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')[0]);
+				tmpHTML = selHTML.replace(preTAG,'<span>').replace(pstTAG,'</span>');
+				// ie. <p><span ...>...</span></p>
+				newHTML = preTAG + getStyle(tmpHTML, argTAG) + selTXT + pstTAG + '</span>' + pstTAG;
 				break;
 			default:
 				newHTML = '<span style="' + argTAG + '">' + selTXT + '</span>';
@@ -128,55 +99,43 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		return;
 	}
 
-	function tidyCss(argCSS) {
-		// argCSS = css to tidy
-		if (argCSS === undefined) {
-			argCSS = '';
+	function lastRec(argARRAY) {
+		if (argARRAY === undefined) {
+			argARRAY = [''];
 		}
-		var htmlVAL = argCSS;
-		if (!isEmpty(argCSS)) {
-			var curCSS = argCSS.substring(argCSS.indexOf('"') + 1, argCSS.lastIndexOf('"'));
-			var arrNEW = curCSS.split(';').map(function (item) {
-				return item.trim();
-			}).filter(function (el) {
-				return el != '';
-			});
-			arrNEW.sort();
-			var newCSS = (arrNEW.join('; ') + ';').trim();
-			htmlVAL = argCSS.replace(curCSS, newCSS);
+		var cntITM;
+		// 0 based
+		var idx = argARRAY.length - 1;
+		for (;argARRAY[idx];) {
+			// save array item to var
+			cntITM = argARRAY[idx];
+			if (hasContent(cntITM)) {
+				break;
+			} else {
+				idx--;
+			}
 		}
-		// returns tidy css
-		return htmlVAL;
+		if (idx < 1) {
+			idx = argARRAY.length - 1;
+		}
+		return idx;
 	}
 
-	function getSpan(argHTML) {
-		// argHTML = inner/outer HTML
+	function hasContent(argHTML) {
+		// argHTML = HTML to validate
 		if (argHTML === undefined) {
 			argHTML = '';
 		}
-		var htmlVAL = '';
-		if (!isEmpty(argHTML.match(/span/g))) {
-			var tmpVAL = argHTML.match(/<span\b[^>]*>(?:(?=([^<]+))\1|<(?!span\b[^>]*>))*?<\/span>/gi)[0];
-			htmlVAL = tmpVAL.substring(0, tmpVAL.indexOf('>') + 1);
-		}
-		return htmlVAL;
+		var htmlDIV = document.createElement('htmlDIV');
+		htmlDIV.innerHTML = argHTML;
+		// strip html to see what's left
+		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
+		return (htmlVAL.length > 0);
 	}
 
-	function getColor(argTAG) {
-		// argTAG = tag which may contain style
-		if (argTAG === undefined) {
-			argTAG = '';
-		}
-		var htmlVAL = '';
-		if (!isEmpty(argTAG) && !isEmpty(argTAG.match(/color:/g))) {
-			htmlVAL = argTAG.substring(argTAG.indexOf('color:'), argTAG.indexOf(';', argTAG.indexOf('color:') + 1) + 1);
-		}
-		// return color or ''
-		return htmlVAL;
-	}
-
-	function getTag(argHTML, argTAG) {
-		// argHTML = extHTML
+	function getStyle(argHTML, argTAG) {
+		// argHTML = (selHTML) current style
+		// argTAG = update
 		if (argHTML === undefined) {
 			argHTML = '';
 		}
@@ -184,12 +143,55 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 			argTAG = '';
 		}
 		var htmlVAL = '';
-		var regEXP = new RegExp('^<' + argTAG, 'gi');
-		if (!isEmpty(argHTML.match(regEXP)) && !isEmpty(argTAG.match(/div|h[1-6]|\bp\b/gi))) {
-			regEXP = RegExp('^<' + argTAG + '\\b[^>]*>', 'gi');
-			htmlVAL = argHTML.match(regEXP)[0];
+		if (!isEmpty(argHTML) && !isEmpty(argTAG)) {
+			var argKEY = (isEmpty(argTAG.match(/color|((?:background+-)+\w+)/, 'gis')) ? '' : argTAG.match(/color|((?:background+-)+\w+)/, 'gis')[0]);
+			// pull tag
+			var tagHTML = (isEmpty(argHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : argHTML.match(/^<(.|\n)*?>/, 'si')[0]);
+			// add/update color style
+			var tmpHTML1;
+			var tmpHTML2;
+			switch (true) {
+				case (isEmpty(tagHTML.match(/style/))):
+					htmlVAL = tagHTML.match(/^<p|^<h[1-6]|<span|^<div/)[0] + ' style="' + argTAG + '">';
+					break;
+				case (argKEY == 'color'):
+					if (isEmpty(tagHTML.match(/([^-])(color)/, 'gis'))) {
+						tmpHTML2 = tagHTML.match(/style.*?;"/)[0].replace(/;"/, ';') + ' ' + argTAG + '"';
+						tmpHTML1 = tidyStyle(tmpHTML2);
+						htmlVAL = tagHTML.replace(/style.*?;"/, tmpHTML1);
+					} else {
+						htmlVAL = tagHTML.replace(/(color)(.*?;)/, argTAG);
+					}
+					break;
+				case (argKEY == 'background-color'):
+					if (isEmpty(tagHTML.match(/(background)([-])(color)/, 'gis'))) {
+						tmpHTML2 = tagHTML.match(/style.*?;"/)[0].replace(/;"/, ';') + ' ' + argTAG + '"';
+						tmpHTML1 = tidyStyle(tmpHTML2);
+						htmlVAL = tagHTML.replace(/style.*?;"/, tmpHTML1);
+					} else {
+						htmlVAL = tagHTML.replace(/(background)([-])(color)(.*?;)/, argTAG);
+					}
+			}
 		}
-		// return tag or ''
+		return htmlVAL;
+	}
+
+	function tidyStyle(argSTY) {
+		// argSTY = class(s) to tidy
+		if (argSTY === undefined) {
+			argSTY = '';
+		}
+		var htmlVAL = argSTY;
+		if (!isEmpty(argSTY)) {
+			var regEXP = new RegExp(/"(.*?)"/, 'gi');
+			var selSTY = argSTY.match(regEXP)[0];
+			var curSTY = selSTY.replace(/"/g, '').replace(/;[ ]{1,}/g, ',').replace(/;/g, '');
+			var arrSTY = curSTY.split(',');
+			arrSTY.sort();
+			var newSTY = '"' + (arrSTY.join('; ')) + ';"';
+			htmlVAL = argSTY.replace(regEXP, newSTY);
+		}
+		// returns tidy style
 		return htmlVAL;
 	}
 
@@ -240,9 +242,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 					var hexCODE = document.getElementById("hex_id").value.trim();
 					if (!isEmpty(hexCODE.match(/^#[0-9a-f]{6}$/i))) {
 						if (document.getElementById("bkg_id").checked) {
-							setTag('background-color: ' + hexCODE + ';');
+							setStyle('background-color: ' + hexCODE + ';');
 						} else {
-							setTag('color: ' + hexCODE + ';');
+							setStyle('color: ' + hexCODE + ';');
 						}
 					} else {
 						alert('SYSTEM MESSAGE\nInvalid or missing color selection.\nFor example, red is #ff0000.');
@@ -254,5 +256,5 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 });
 
 /*
- * EOF: apply-text-color / plugin.js / 30201018
+ * EOF: apply-text-color / plugin.js / 30201101
  */
