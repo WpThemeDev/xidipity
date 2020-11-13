@@ -10,198 +10,450 @@
  */
 tinymce.PluginManager.add('apply_txt_size', function(editor) {
 	'use strict';
-
-	function setClass(argTAG) {
-		if (argTAG === undefined) {
-			argTAG = '';
+	// selection object
+	var selectionObject = {
+		html: '', // selection as html
+		icon: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.outerHtml)) {
+				var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+				if (!isEmpty(this.outerHtml.match(regExp))) {
+					switch (true) {
+						case (!isEmpty(this.outerHtml.match(/<img.*\/>/))):
+							htmlValue = getRegExpValue(this.outerHtml, '\\[caption.*caption\\]', 'is');
+							if (isEmpty(htmlValue)) {
+								htmlValue = getRegExpValue(this.outerHtml, '<img.*\/>', 'is');
+							}
+							break;
+						case (!isEmpty(this.outerHtml.match(/"material-icons"/))):
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*"material-icons".*span>', 'is');
+							break;
+						default:
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+					}
+				}
+			}
+			return htmlValue;
+		}, // icon tag
+		innerHtml: '', // expanded selection as html
+		innerText: '', // expanded selection as text
+		innerTextKey: function () {
+			var htmlValue = this.innerText;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.innerText.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // inner text without whitespace
+		node: undefined, //	node object
+		parentNode: undefined, //	node object
+		nodeName: '', // node name
+		parentNodeName: '', // node name
+		outerHtml: '', // full selection will tags as html
+		prefixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '^<(p|h[1-6]|div|li|span).*?>|^<(em|i|kbd|s|strong|sub|sup|u)>').replace(/\sdata-mce-style.+"/, '');
+			}
+			return htmlValue;
+		}, // prefix tag with any classes/styles
+		suffixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '<\/(p|h[1-6]|div|li|span|em|i|kbd|s|strong|sub|sup|u)>$');
+			}
+			return htmlValue;
+		}, // suffix tag
+		text: '', // selection as plain text
+		textKey: function () {
+			var htmlValue = this.text;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.text.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // text without whitespace
+		purgeInnerHtml: function () {
+			var htmlValue = this.innerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
+		},
+		purgeOuterHtml: function () {
+			var htmlValue = this.outerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
 		}
-		// init ret val
-		var newHTML = '';
+	};
+	function setClass(argTag) {
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		// selection object
+		var selObj = Object.create(selectionObject);
 		// selection html node
-		var htmlNODE = editor.selection.getNode();
+		selObj.node = editor.selection.getNode();
 		// get selection node name
-		var selNODE = htmlNODE.nodeName.toLowerCase();
-		// selection content in html format
-		var selTXT = editor.selection.getContent({
+		selObj.nodeName = selObj.node.nodeName.toLowerCase();
+		// selection content
+		selObj.text = editor.selection.getContent({
+			format: 'text'
+		});
+		selObj.html = editor.selection.getContent({
 			format: 'html'
 		});
-		var selTMP = '';
-		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|strong|sub|sup|\bu\b/i))) {
-			selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
-			selTXT = selTMP;
-			// select parent node
-			var tmpNODE;
-			tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p,span');
-			htmlNODE = tmpNODE;
-			// get new selection node name
-			selNODE = htmlNODE.nodeName.toLowerCase();
+		if (selObj.nodeName !== 'body') {
+			selObj.innerHtml = selObj.node.innerHTML;
+			selObj.innerText = getRawHtml(selObj.innerHtml);
+			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
 		}
-		selTMP = htmlNODE.innerHTML;
-		var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		selTMP = editor.dom.getOuterHTML(htmlNODE);
-		var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		var curTAG;
-		var newTAG;
+		var coreTagsExp = new RegExp(/div|h[1-6]|li|p/, 'is');
+		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
+		var newHtml;
+		var newTag;
 		switch (true) {
-			case (selNODE == 'body'):
+			case (!isEmpty(selObj.nodeName.match(mlTagsExp))):
+				//alert('* mark #1 *');
+				var crCharExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
+				var tagListExp = new RegExp(/(<\/(div|h[1-6]|li|p)>)(<(div|h[1-6]|li|p).*?>)/, 'gm');
 				// strip cr/lf
-				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '');
-				// delimit html string
-				var tagDELIM = selNEW.replace(/(\/(?!span>).*?>)(<.)/g, '$1,$2');
+				var tmpValue = selObj.html.replace(crCharExp, '');
+				// remove ol/ul
+				if (!isEmpty(selObj.nodeName.match(/ol|ul/))) {
+					var noHeaders = tmpValue.replace(/^<(ol|ul)>/, '').replace(/<\/(ol|ul)>$/, '');
+					tmpValue = noHeaders;
+				}
+				// delimited ',' string
+				var delimitedList = tmpValue.replace(tagListExp, '$1,$3');
+				// new selection object
+				var idxObj = Object.create(selectionObject);
 				// create array from delimited string
-				var htmlARRAY = tagDELIM.split(',');
-				var lstREC = lastRec(htmlARRAY);
+				var selectArray = delimitedList.split(',');
+				var lastRecord = getLastArrayValue(selectArray);
 				var idx = 0;
+				newHtml = '';
 				// loop through array
-				for (;htmlARRAY[idx];) {
-					if (idx > lstREC) {
-						newHTML += '<p>&nbsp;</p>';
+				for (; selectArray[idx];) {
+					// if > good array values, exit
+					if (idx > lastRecord) {
+						newHtml += '<p>&nbsp;</p>';
 						break;
 					}
-					// save array item to var
-					selHTML = htmlARRAY[idx];
-					curTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')[0]);
-					newTAG = getClass(selHTML, argTAG);
-					newHTML += selHTML.replace(curTAG,newTAG);
+					// save array item to object
+					idxObj.outerHtml = selectArray[idx];
+					newTag = getNewTag(idxObj.purgeOuterHtml(), argTag, 'class');
+					tmpValue = idxObj.purgeOuterHtml().replace(idxObj.prefixTag(), newTag);
+					newHtml += tmpValue;
+					// increment counter
 					idx++;
 				}
 				break;
-			case (selTXT == selFULL || selNODE == 'span'):
-				curTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')[0]);
-				newTAG = getClass(selHTML, argTAG);
-				newHTML = selHTML.replace(curTAG,newTAG);
+			case (isEmpty(selObj.nodeName.match(coreTagsExp))):
+				// lessor tags (ie. <u>)
+				//alert('* mark #2 *');
+				var rollbackHtml = editor.dom.getOuterHTML(selObj.node);
+				selObj.parentNode = editor.dom.getParent(selObj.node, 'div,h1,h2,h3,h4,h5,h6,li,p,span');
+				selObj.parentNodeName = selObj.parentNode.nodeName.toLowerCase();
+				selObj.outerHtml = editor.dom.getOuterHTML(selObj.parentNode);
+				var pairedTags = getRegExpValue(selObj.purgeOuterHtml(), '<span.*?><\\b(em|i|kbd|s|strong|sub|sup|u)\\b>', 'is');
+				if (isEmpty(pairedTags)) {
+					//alert('* mark #2.1 *');
+					selObj.parentNode = undefined;
+					selObj.parentNodeName = '';
+					selObj.outerHtml = '<span>' + rollbackHtml + '</span>';
+				}
+				newTag = getNewTag(selObj.purgeOuterHtml(), argTag, 'class');
+				newHtml = selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag);
 				break;
 			default:
-				newHTML = '<span class="' + argTAG + '">' + selTXT + '</span>';
+				// core tags (ie. <p>)
+				//alert('* default *');
+				selObj.innerHtml = selObj.node.innerHTML;
+				selObj.innerText = getRawHtml(selObj.innerHtml);
+				selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
+				if (selObj.textKey() !== selObj.innerTextKey()) {
+					//alert('** default.1 **');
+					// fragment
+					selObj.nodeName = 'span';
+					selObj.outerHtml = '<span>' + selObj.html + '</span>';
+				}
+				newTag = getNewTag(selObj.purgeOuterHtml(), argTag, 'class');
+				newHtml = selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag);
 		}
-		if (!isEmpty(newHTML)) {
-			editor.execCommand('mceReplaceContent', false, newHTML);
+		if (!isEmpty(newHtml)) {
+			editor.execCommand('mceReplaceContent', false, newHtml);
 		}
 		return;
 	}
-
-	function getClass(argHTML, argTAG) {
-		// argHTML = (selHTML) current style
-		// argTAG = update
-		if (argHTML === undefined) {
-			argHTML = '';
+	// display object parameters
+	function displayObj(argObj) {
+		if (argObj === undefined || argObj === null) {
+			argObj = Object.create(selectionObject);
 		}
-		if (argTAG === undefined) {
-			argTAG = '';
+		//
+		alert('.html - ' + argObj.html);
+		alert('.innerHtml - ' + argObj.innerHtml);
+		alert('.innerText - ' + argObj.innerText);
+		alert('.text - ' + argObj.text);
+		alert('.nodeName - ' + argObj.nodeName);
+		alert('.parentNodeName - ' + argObj.parentNodeName);
+		alert('.outerHtml - ' + argObj.outerHtml);
+		alert('.purgeOuterHtml - ' + argObj.purgeOuterHtml());
+		alert('.prefixTag - ' + argObj.prefixTag());
+		alert('.suffixTag - ' + argObj.suffixTag());
+		alert('.purgeInnerHtml - ' + argObj.purgeInnerHtml());
+		//
+		return;
+	}
+	// build new tags
+	function getNewTag(argHtml, argTag, argElement) {
+		// argHtml = source html
+		// argTag = target html
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
 		}
-		var htmlVAL = argHTML;
-		if (!isEmpty(argHTML) && !isEmpty(argTAG)) {
-			// pull key
-			var argKEY = argTAG.match(/^(.*?)-|^(.*?)\+/)[0].replace(/.$/, '');
-			// pull tag
-			var tagHTML = (isEmpty(argHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : argHTML.match(/^<(.|\n)*?>/, 'si')[0]);
-			var tmpVAL1;
-			var tmpVAL2;
-			if (isEmpty(tagHTML.match(/class/))) {
-				tmpVAL1 = tagHTML.match(/^<p.*?>|^<h[1-6].*?>|<span.*?>|^<div.*?>/)[0].replace(/>$/, '') + ' class="' + argTAG + '">';
-				htmlVAL = tidyTag(tmpVAL1);
-			} else {
-				var regEXP = new RegExp(argKEY, 'gis');
-				if (isEmpty(tagHTML.match(regEXP))) {
-					tmpVAL2 = tagHTML.match(/class(.*?)".*?"/)[0].replace(/"$/, '') + ' ' + argTAG + '"';
-					tmpVAL1 = tidyClass(tmpVAL2);
-					htmlVAL = tagHTML.replace(/class(.*?)".*?"/, tmpVAL1);
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		if (argElement === undefined || argElement === null) {
+			argElement = '';
+		}
+		var curTag;
+		var htmlValue;
+		var keyExp;
+		var keyValue;
+		var tagHtml;
+		var tmpValue1;
+		var tmpValue2;
+		switch (true) {
+			case (argElement.toLowerCase() == 'class'):
+				// pull key
+				keyValue = getRegExpValue(argTag, '^(.*?)-|^(.*?)\+', 'is').replace(/.$/, '');
+				// pull tag
+				tagHtml = getRegExpValue(argHtml, '^<(.|\n)*?>', 'is');
+				if (isEmpty(tagHtml.match(/class/))) {
+					tmpValue1 = tagHtml.match(/^<p.*?>|^<h[1-6].*?>|<span.*?>|^<div.*?>|^<li.*?>/)[0].replace(/>$/, '') + ' class="' + argTag + '">';
+					htmlValue = tidyTag(tmpValue1);
 				} else {
-					regEXP = RegExp('(' + argKEY + ')(.*?)"');
-					var curTAG = tagHTML.match(regEXP)[0].replace(/"/, '');
-					htmlVAL = tagHTML.replace(curTAG, argTAG);
+					keyExp = new RegExp(keyValue, 'is');
+					if (isEmpty(tagHtml.match(keyExp))) {
+						tmpValue2 = getRegExpValue(tagHtml, 'class(.*?)".*?"', 'is').replace(/"$/, '') + ' ' + argTag + '"';
+						tmpValue1 = tidyElements(tmpValue2, 'class');
+						htmlValue = tagHtml.replace(/class(.*?)".*?"/, tmpValue1);
+					} else {
+						keyExp = RegExp('(' + keyValue + ')(.*?)"');
+						curTag = tagHtml.match(keyExp)[0].replace(/"/, '');
+						htmlValue = tagHtml.replace(curTag, argTag);
+					}
 				}
+				break;
+			case (argElement.toLowerCase() == 'style'):
+				// pull key
+				keyValue = getRegExpValue(argTag, '^(.*?)-|^(.*?)\+', 'is').replace(/.$/, '');
+				// pull tag
+				tagHtml = getRegExpValue(argHtml, '^<(.|\n)*?>', 'is');
+				if (isEmpty(tagHtml.match(/style/))) {
+					tmpValue1 = tagHtml.match(/^<p.*?>|^<h[1-6].*?>|<span.*?>|^<div.*?>|^<li.*?>/)[0].replace(/>$/, '') + ' style="' + argTag + '">';
+					htmlValue = tidyTag(tmpValue1);
+				} else {
+					keyExp = new RegExp(keyValue, 'is');
+					if (isEmpty(tagHtml.match(keyExp))) {
+						tmpValue2 = getRegExpValue(tagHtml, 'class(.*?)".*?"', 'is').replace(/"$/, '') + ' ' + argTag + '"';
+						//tmpValue1 = tidyStyle(tmpValue2);
+						tmpValue1 = tidyElements(tmpValue2, 'style');
+						htmlValue = tagHtml.replace(/class(.*?)".*?"/, tmpValue1);
+					} else {
+						keyExp = RegExp('(' + keyValue + ')(.*?)"');
+						curTag = tagHtml.match(keyExp)[0].replace(/"/, '');
+						htmlValue = tagHtml.replace(curTag, argTag);
+					}
+				}
+				break;
+			default:
+				htmlValue = '';
+		}
+		return htmlValue;
+	}
+	// display message
+	function displayMessage(argMessage) {
+		// argMessage = message
+		if (argMessage === undefined || argMessage === null) {
+			argMessage = '';
+		}
+		if (!isEmpty(argMessage)) {
+			alert(argMessage);
+		}
+		return;
+	}
+	// get regular expression value
+	function getRegExpValue(argValue, argRegExp, argRegExpScope) {
+		// argValue = value to evaluate
+		// argRegExp = regular expression
+		// argRegExpScope = regular expression scope
+		if (argValue === undefined || argValue === null) {
+			argValue = '';
+		}
+		if (argRegExp === undefined || argRegExp === null) {
+			argRegExp = '';
+		}
+		if (argRegExpScope === undefined || argRegExpScope === null) {
+			argRegExpScope = 'g';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argValue) && !isEmpty(argRegExp)) {
+			if (isEmpty(argRegExpScope.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
+				argRegExpScope = 'g';
+			}
+			var regExp = new RegExp(argRegExp, argRegExpScope);
+			if (!isEmpty(argValue.match(regExp))) {
+				htmlValue = argValue.match(regExp)[0];
 			}
 		}
-		return htmlVAL;
+		return htmlValue;
 	}
-
-	function hasContent(argHTML) {
-		// argHTML = HTML to validate
-		if (argHTML === undefined) {
-			argHTML = '';
+	// return icon element
+	function getIcon(argHtml) {
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+			if (!isEmpty(argHtml.match(regExp))) {
+				switch (true) {
+					case (!isEmpty(argHtml.match(/<img.*\/>/))):
+						htmlValue = getRegExpValue(argHtml, '\\[caption.*caption\\]', 'is');
+						if (isEmpty(htmlValue)) {
+							htmlValue = getRegExpValue(argHtml, '<img.*\/>', 'is');
+						}
+						break;
+					case (!isEmpty(argHtml.match(/"material-icons"/))):
+						htmlValue = getRegExpValue(argHtml, '<span.*"material-icons".*span>', 'is');
+						break;
+					default:
+						htmlValue = getRegExpValue(argHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+				}
+			}
+			return htmlValue;
+		}
+	}
+	function validContent(argHtml) {
+		// argHtml = HTML to validate
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
 		}
 		var htmlDIV = document.createElement('htmlDIV');
-		htmlDIV.innerHTML = argHTML;
+		htmlDIV.innerHTML = argHtml;
 		// strip html to see what's left
 		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
 		return (htmlVAL.length > 0);
 	}
-
-	function tidyTag(argTAG) {
-		// argTAG = elements to order
-		if (argTAG === undefined) {
-			argTAG = '';
+	function tidyTag(argTag) {
+		// argTag = elements to order
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
 		}
-		var htmlVAL = argTAG;
-		if (!isEmpty(argTAG)) {
-			var curTAG = argTAG.match(/\s.*"/)[0].replace(/^\s/, '');
-			var tagDELIM = curTAG.replace(/"\s/, '",');
+		var htmlVAL = argTag;
+		if (!isEmpty(argTag)) {
+			var currentTag = argTag.match(/\s.*"/)[0].replace(/^\s/, '');
+			var tagDELIM = currentTag.replace(/"\s/, '",');
 			var arrTAG = tagDELIM.split(',');
 			arrTAG.sort();
-			var newTAG = (arrTAG.join(' '));
-			htmlVAL = argTAG.replace(curTAG, newTAG);
+			var newTag = (arrTAG.join(' '));
+			htmlVAL = argTag.replace(currentTag, newTag);
 		}
 		// return html
 		return htmlVAL;
 	}
-
-	function tidyClass(argCLS) {
-		// argCLS = classes to tidy
-		if (argCLS === undefined) {
-			argCLS = '';
+	function tidyElements(argHtml, argGroup) {
+		// argHtml = html to tidy
+		// argGroup = element group (ie. class/style)
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
 		}
-		var htmlVAL = argCLS;
-		if (!isEmpty(argCLS)) {
-			var selCLS = argCLS.match(/"(.*?)"/, 'gi')[0];
-			var curCLS = selCLS.replace(/"/g, '');
-			var arrCLS = curCLS.split(' ');
-			arrCLS.sort();
-			var newCLS = (arrCLS.join(' '));
-			htmlVAL = argCLS.replace(curCLS, newCLS);
+		if (argGroup === undefined || argGroup === null) {
+			argGroup = 'style';
 		}
-		// returns tidy classes
-		return htmlVAL;
+		var htmlValue = '';
+		// class="fnt:wgt-500 fnt:family-serif"
+		if (!isEmpty(argHtml) && !isEmpty(argGroup.match(/class|style/i))) {
+			var tidyArray;
+			var tidyItems = argHtml.match(/"(.+)"/)[1];
+			switch (argGroup.toLowerCase()) {
+				case ('class'):
+					tidyArray = tidyItems.split(' ');
+					break;
+				case ('style'):
+					tidyArray = tidyItems.replace(/;\s/, ';,').split(',');
+					break;
+			}
+			tidyArray.sort();
+			var sortedItems = (tidyArray.join(' '));
+			htmlValue = argHtml.replace(tidyItems, sortedItems);
+		}
+		return htmlValue;
 	}
-
-	function lastRec(argARRAY) {
-		if (argARRAY === undefined) {
-			argARRAY = [''];
+	function getLastArrayValue(argArray) {
+		if (argArray === undefined || argArray === null) {
+			argArray = [''];
 		}
-		var cntITM;
+		var idxItem;
 		// 0 based
-		var idx = argARRAY.length - 1;
-		for (;argARRAY[idx];) {
+		var idx = argArray.length - 1;
+		for (; argArray[idx];) {
 			// save array item to var
-			cntITM = argARRAY[idx];
-			if (hasContent(cntITM)) {
+			idxItem = argArray[idx];
+			if (validContent(idxItem)) {
 				break;
 			} else {
 				idx--;
 			}
 		}
 		if (idx < 1) {
-			idx = argARRAY.length - 1;
+			idx = argArray.length - 1;
 		}
 		return idx;
 	}
-
 	function isEmpty(argSTR) {
 		return (!argSTR || 0 === argSTR.length);
 	}
-
 	function isReady() {
 		var blnVAL = true;
 		var selTXT = editor.selection.getContent({
-			format : 'text'
+			format: 'text'
 		});
 		if (isEmpty(selTXT)) {
-			alert('SYSTEM MESSAGE\nInvalid or missing text selection.');
+			displayMessage('SYSTEM MESSAGE\nInvalid or missing text selection.');
 			blnVAL = false;
 		}
 		return blnVAL;
 	}
-
+	// strip html
+	function getRawHtml(argHtml) {
+		// argHtml = HTML to process
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var iconTag = getIcon(argHtml);
+			if (!isEmpty(iconTag)) {
+				var tmpValue = argHtml.replace(iconTag, '');
+				argHtml = tmpValue;
+			}
+			var htmlDIV = document.createElement('htmlDIV');
+			htmlDIV.innerHTML = argHtml;
+			htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
+		}
+		return htmlValue;
+	}
 	editor.addButton('apply_txt_size', {
 		type: 'splitbutton',
 		title: 'Text Size',
@@ -322,7 +574,6 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		}, ],
 	});
 });
-
 /*
  * EOF: apply-text-size / plugin.js / 30201101
  */
