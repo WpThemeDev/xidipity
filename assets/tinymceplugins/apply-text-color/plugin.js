@@ -10,207 +10,468 @@
  */
 tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 	'use strict';
-
-	function setStyle(argTAG) {
-		if (argTAG === undefined) {
-			argTAG = '';
+	// selection object
+	var selectionObject = {
+		html: '', // selection as html
+		icon: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.outerHtml)) {
+				var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+				if (!isEmpty(this.outerHtml.match(regExp))) {
+					switch (true) {
+						case (!isEmpty(this.outerHtml.match(/<img.*\/>/))):
+							htmlValue = getRegExpValue(this.outerHtml, '\\[caption.*caption\\]', 'is');
+							if (isEmpty(htmlValue)) {
+								htmlValue = getRegExpValue(this.outerHtml, '<img.*\/>', 'is');
+							}
+							break;
+						case (!isEmpty(this.outerHtml.match(/"material-icons"/))):
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*"material-icons".*span>', 'is');
+							break;
+						default:
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+					}
+				}
+			}
+			return htmlValue;
+		}, // icon tag
+		innerHtml: '', // expanded selection as html
+		innerText: '', // expanded selection as text
+		innerTextKey: function () {
+			var htmlValue = this.innerText;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.innerText.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // inner text without whitespace
+		node: undefined, //	node object
+		parentNode: undefined, //	node object
+		nodeName: '', // node name
+		parentNodeName: '', // node name
+		outerHtml: '', // full selection will tags as html
+		prefixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '^<(p|h[1-6]|div|li|span).*?>|^<(em|i|kbd|s|strong|sub|sup|u)>').replace(/\sdata-mce-style.+"/, '');
+			}
+			return htmlValue;
+		}, // prefix tag with any classes/styles
+		suffixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '<\/(p|h[1-6]|div|li|span|em|i|kbd|s|strong|sub|sup|u)>$');
+			}
+			return htmlValue;
+		}, // suffix tag
+		text: '', // selection as plain text
+		textKey: function () {
+			var htmlValue = this.text;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.text.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // text without whitespace
+		purgeInnerHtml: function () {
+			var htmlValue = this.innerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
+		},
+		purgeOuterHtml: function () {
+			var htmlValue = this.outerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
 		}
-		// init ret val
-		var newHTML = '';
+	};
+	function setStyle(argTag) {
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		// selection object
+		var selObj = Object.create(selectionObject);
 		// selection html node
-		var htmlNODE = editor.selection.getNode();
+		selObj.node = editor.selection.getNode();
 		// get selection node name
-		var selNODE = htmlNODE.nodeName.toLowerCase();
-		// selection content in html format
-		var selTXT = editor.selection.getContent({
+		selObj.nodeName = selObj.node.nodeName.toLowerCase();
+		// selection content
+		selObj.text = editor.selection.getContent({
+			format: 'text'
+		});
+		selObj.html = editor.selection.getContent({
 			format: 'html'
 		});
-		var selTMP = '';
-		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|span|strong|sub|sup|\bu\b/i))) {
-			selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
-			selTXT = selTMP;
-			// select parent node
-			var tmpNODE;
-			if (selNODE == 'span') {
-				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p');
-			} else {
-				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p,span');
-			}
-			htmlNODE = tmpNODE;
-			// get new selection node name
-			selNODE = htmlNODE.nodeName.toLowerCase();
+		if (selObj.nodeName !== 'body') {
+			selObj.innerHtml = selObj.node.innerHTML;
+			selObj.innerText = getRawHtml(selObj.innerHtml);
+			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
 		}
-		selTMP = htmlNODE.innerHTML;
-		var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		selTMP = editor.dom.getOuterHTML(htmlNODE);
-		var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		var preTAG;
-		var pstTAG;
+		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
+		var newHtml;
+		var newTag;
+		var preTag;
+		var pstTag;
 		switch (true) {
-			case (selNODE == 'body'):
-				// strip cr/lf & replace junk with &nbsp;
-				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '').replace(/<[^/>][^>]*><\/[^>]+>/g,'<p>&nbsp;</p>');
-				// delimit tags with comma
-				var tagDELIM = selNEW.replace(/(\/(?!span>).*?>)(<.)/g, '$1,$2');
+			case (!isEmpty(selObj.nodeName.match(mlTagsExp))):
+				//alert('* mark #1 *');
+				var crCharExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
+				var tagListExp = new RegExp(/(<\/(div|h[1-6]|li|p)>)(<(div|h[1-6]|li|p).*?>)/, 'gm');
+				// strip cr/lf
+				var tmpValue = selObj.html.replace(crCharExp, '');
+				// remove ol/ul
+				if (!isEmpty(selObj.nodeName.match(/ol|ul/))) {
+					var noHeaders = tmpValue.replace(/^<(ol|ul)>/, '').replace(/<\/(ol|ul)>$/, '');
+					tmpValue = noHeaders;
+				}
+				// delimited ',' string
+				var delimitedList = tmpValue.replace(tagListExp, '$1,$3');
 				// create array from delimited string
-				var htmlARRAY = tagDELIM.split(',');
-				var lstREC = lastRec(htmlARRAY);
+				var selectArray = delimitedList.split(',');
+				var lastRecord = getLastArrayValue(selectArray);
+				var idxObj;
 				var idx = 0;
-				var tmpHTML;
+				newHtml = '';
 				// loop through array
-				for (;htmlARRAY[idx];) {
-					if (idx > lstREC) {
-						newHTML += '<p>&nbsp;</p>';
+				for (; selectArray[idx];) {
+					// if > good array values, exit
+					if (idx > lastRecord) {
+						newHtml += '<p>&nbsp;</p>';
 						break;
 					}
-					// save array item to var
-					selHTML = htmlARRAY[idx];
-					preTAG = (isEmpty(selHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : selHTML.match(/^<(.|\n)*?>/, 'si')[0]);
-					pstTAG = (isEmpty(selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')) ? '' : selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')[0]);
-					tmpHTML = selHTML.replace(preTAG,'<span>').replace(pstTAG,'</span>');
-					// ie. <p><span ...>...</span></p>
-					newHTML += selHTML.replace(preTAG,preTAG + getStyle(tmpHTML, argTAG)).replace(pstTAG,'</span>' + pstTAG);
+					// save array item to selection object
+					idxObj = textToObj(selectArray[idx]);
+					newTag = getNewTag(idxObj.prefixTag(), argTag);
+					preTag = getRegExpValue(selectArray[idx], '^<(div|h[1-6]|li|p).*?>', 'is');
+					pstTag = getRegExpValue(selectArray[idx], '<\/(div|h[1-6]|li|p)>$', 'is');
+					newHtml += preTag + idxObj.purgeOuterHtml().replace(idxObj.prefixTag(), newTag) + pstTag;
+					// release object
+					idxObj = undefined;
+					// increment counter
 					idx++;
 				}
 				break;
-			case (selNODE == 'span'):
-				preTAG = getStyle(selHTML, argTAG);
-				pstTAG = '</span>';
-				newHTML = preTAG + selTXT + pstTAG;
-				break;
-			case (selTXT == selFULL):
-				//
-				// in this circumstance the text must be
-				// wrapped in a <span> to achieve the
-				// desired result.
-				//
-				preTAG = (isEmpty(selHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : selHTML.match(/^<(.|\n)*?>/, 'si')[0]);
-				pstTAG = (isEmpty(selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')) ? '' : selHTML.match(/<\/(p|h[1-6]|div|\n)*?>$/, 'si')[0]);
-				tmpHTML = selHTML.replace(preTAG,'<span>').replace(pstTAG,'</span>');
-				// ie. <p><span ...>...</span></p>
-				newHTML = preTAG + getStyle(tmpHTML, argTAG) + selTXT + pstTAG + '</span>' + pstTAG;
+			case (selObj.nodeName == 'span'):
+				// lessor tags (ie. <u>)
+				//alert('* mark #2 *');
+				newTag = getNewTag(selObj.prefixTag(), argTag);
+				newHtml = selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag);
 				break;
 			default:
-				newHTML = '<span style="' + argTAG + '">' + selTXT + '</span>';
+				//alert('* default #1 *');
+				// create new span
+				var sourceText = selObj.purgeOuterHtml();
+				preTag = getRegExpValue(sourceText, '^<(div|h[1-6]|li|p).*?>', 'is');
+				pstTag = getRegExpValue(sourceText, '<\/(div|h[1-6]|li|p)>$', 'is');
+				selObj.outerHtml = '<span>' + selObj.purgeInnerHtml() + '</span>';
+				newTag = getNewTag(selObj.prefixTag(), argTag);
+				newHtml = preTag + selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag) + pstTag;
 		}
-		if (!isEmpty(newHTML)) {
-			editor.execCommand('mceReplaceContent', false, newHTML);
+		if (!isEmpty(newHtml)) {
+			editor.execCommand('mceReplaceContent', false, newHtml);
 		}
 		return;
 	}
-
-	function lastRec(argARRAY) {
-		if (argARRAY === undefined) {
-			argARRAY = [''];
+	// move html to selection object
+	function textToObj(argText) {
+		if (argText === undefined || argText === null) {
+			argText = '';
 		}
-		var cntITM;
+		var textObj = Object.create(selectionObject);
+		if (!isEmpty(argText)) {
+			textObj.text = getRawHtml(argText);
+			textObj.innerText = textObj.text;
+			textObj.html = argText.replace(/^<(div|h[1-6]|li|p).*?>/, '').replace(/<\/(div|h[1-6]|li|p)>$/, '');
+			textObj.innerHtml = textObj.html;
+			var prePair = getRegExpValue(argText, '^<(div|h[1-6]|li|p).*?><(span)', 'is', 2);
+			var pstPair = getRegExpValue(argText, '<\/(span)><\/(div|h[1-6]|li|p)>$', 'is', 1);
+			if (prePair == 'span' && pstPair == 'span') {
+				// save exiting span
+				textObj.nodeName = 'span';
+				textObj.outerHtml = getRegExpValue(argText, '>(<span.+span>)<', 'is', 1);
+			} else {
+				// create new span
+				textObj.nodeName = getRegExpValue(argText, '^<(div|h[1-6]|li|p).*?>', 'is', 1);
+				textObj.outerHtml = '<span>' + textObj.html + '</span>';
+			}
+		}
+		return textObj;
+	}
+	// display object parameters
+	function displayObj(argObj) {
+		if (argObj === undefined || argObj === null) {
+			argObj = Object.create(selectionObject);
+		}
+		//
+		alert('.html - ' + argObj.html);
+		alert('.innerHtml - ' + argObj.innerHtml);
+		alert('.innerText - ' + argObj.innerText);
+		alert('.text - ' + argObj.text);
+		alert('.nodeName - ' + argObj.nodeName);
+		alert('.parentNodeName - ' + argObj.parentNodeName);
+		alert('.outerHtml - ' + argObj.outerHtml);
+		alert('.purgeOuterHtml - ' + argObj.purgeOuterHtml());
+		alert('.prefixTag - ' + argObj.prefixTag());
+		alert('.suffixTag - ' + argObj.suffixTag());
+		alert('.purgeInnerHtml - ' + argObj.purgeInnerHtml());
+		//
+		return;
+	}
+	// build new tags
+	function getNewTag(argHtml, argTag) {
+		// argHtml = source html
+		// argTag = target html
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		var htmlValue = '';
+		var keyValue;
+		var oldTag;
+		var preTidy;
+		var pstTidy;
+		var tagId;
+		switch (true) {
+			case (isEmpty(argHtml) || isEmpty(argTag)):
+				tagId = '';
+				break;
+			case (!isEmpty(argTag.match(/;/))):
+				tagId = 'style';
+				break;
+			default:
+				tagId = 'class';
+		}
+		switch (tagId) {
+			case ('class'):
+				keyValue = getRegExpValue(argTag, '^(.*?)(-|\\+)', 'is', 1);
+				switch (true) {
+					case (!isEmpty(argHtml.match(keyValue))):
+						oldTag = getRegExpValue(argHtml, '(' + keyValue + '.*?)(\\s|")', 'is', 1);
+						preTidy = getRegExpValue(argHtml, 'class.+"(.*?)"', 'is', 1);
+						pstTidy = tidyElements(preTidy.replace(oldTag, argTag));
+						htmlValue = tidyTag(argHtml.replace(preTidy, pstTidy));
+						break;
+					case (!isEmpty(argHtml.match(/class/))):
+						preTidy = getRegExpValue(argHtml, 'class.+"(.+)"', 'is', 1);
+						pstTidy = tidyElements(preTidy + ' ' + argTag);
+						htmlValue = tidyTag(argHtml.replace(preTidy, pstTidy));
+						break;
+					default:
+						htmlValue = tidyTag(argHtml.replace(/>$/, ' class="') + argTag + '">');
+				}
+				break;
+			case ('style'):
+				keyValue = getRegExpValue(argTag, '^(.*?)\\s', 'is', 1);
+				switch (true) {
+					case (!isEmpty(argHtml.match(keyValue))):
+						oldTag = getRegExpValue(argHtml, keyValue + '.*?;', 'is');
+						preTidy = getRegExpValue(argHtml, 'style.+"(.*?)"', 'is', 1);
+						pstTidy = tidyElements(preTidy.replace(oldTag, argTag));
+						htmlValue = tidyTag(argHtml.replace(preTidy, pstTidy));
+						break;
+					case (!isEmpty(argHtml.match(/style/))):
+						preTidy = getRegExpValue(argHtml, 'style.*?"(.*?)"', 'is', 1);
+						pstTidy = tidyElements(preTidy + ' ' + argTag);
+						htmlValue = tidyTag(argHtml.replace(preTidy, pstTidy));
+						break;
+					default:
+						htmlValue = tidyTag(argHtml.replace(/>$/, ' style="') + argTag + '">');
+				}
+		}
+		return htmlValue;
+	}
+	// display message
+	function displayMessage(argMessage) {
+		// argMessage = message
+		if (argMessage === undefined || argMessage === null) {
+			argMessage = '';
+		}
+		if (!isEmpty(argMessage)) {
+			alert(argMessage);
+		}
+		return;
+	}
+	// get regular expression value
+	function getRegExpValue(argValue, argRegExp, argRegExpScope, argIdx) {
+		// argValue = value to evaluate
+		// argRegExp = regular expression
+		// argRegExpScope = regular expression scope
+		// argIdx = match array index
+		if (argValue === undefined || argValue === null) {
+			argValue = '';
+		}
+		if (argRegExp === undefined || argRegExp === null) {
+			argRegExp = '';
+		}
+		if (argRegExpScope === undefined || argRegExpScope === null) {
+			argRegExpScope = 'g';
+		}
+		if (argIdx === undefined || argIdx === null) {
+			argIdx = 0;
+		}
+		var htmlValue = '';
+		if (!isEmpty(argValue) && !isEmpty(argRegExp)) {
+			if (isEmpty(argRegExpScope.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
+				argRegExpScope = 'g';
+			}
+			var regExp = new RegExp(argRegExp, argRegExpScope);
+			if (!isEmpty(argValue.match(regExp))) {
+				htmlValue = argValue.match(regExp)[argIdx];
+			}
+		}
+		return htmlValue;
+	}
+	// return icon element
+	function getIcon(argHtml) {
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+			if (!isEmpty(argHtml.match(regExp))) {
+				switch (true) {
+					case (!isEmpty(argHtml.match(/<img.*\/>/))):
+						htmlValue = getRegExpValue(argHtml, '\\[caption.*caption\\]', 'is');
+						if (isEmpty(htmlValue)) {
+							htmlValue = getRegExpValue(argHtml, '<img.*\/>', 'is');
+						}
+						break;
+					case (!isEmpty(argHtml.match(/"material-icons"/))):
+						htmlValue = getRegExpValue(argHtml, '<span.*"material-icons".*span>', 'is');
+						break;
+					default:
+						htmlValue = getRegExpValue(argHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+				}
+			}
+			return htmlValue;
+		}
+	}
+	function validContent(argHtml) {
+		// argHtml = HTML to validate
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlDIV = document.createElement('htmlDIV');
+		htmlDIV.innerHTML = argHtml;
+		// strip html to see what's left
+		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
+		return (htmlVAL.length > 0);
+	}
+	function tidyTag(argTag) {
+		// argTag = elements to order
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		var htmlVAL = argTag;
+		if (!isEmpty(argTag)) {
+			var currentTag = argTag.match(/\s.*"/)[0].replace(/^\s/, '');
+			var tagDELIM = currentTag.replace(/"\s/, '",');
+			var arrTAG = tagDELIM.split(',');
+			arrTAG.sort();
+			var newTag = (arrTAG.join(' '));
+			htmlVAL = argTag.replace(currentTag, newTag);
+		}
+		// return html
+		return htmlVAL;
+	}
+	// organize class/style elements
+	function tidyElements(argElements) {
+		// argElements = html to tidy
+		if (argElements === undefined || argElements === null) {
+			argElements = '';
+		}
+		var tagId;
+		var htmlValue = '';
+		switch (true) {
+			case (isEmpty(argElements)):
+				tagId = '';
+				break;
+			case (!isEmpty(argElements.match(/;/))):
+				tagId = 'style';
+				break;
+			default:
+				tagId = 'class';
+		}
+		if (!isEmpty(argElements)) {
+			var tidyArray;
+			switch (tagId) {
+				case ('class'):
+					tidyArray = argElements.split(' ');
+					break;
+				case ('style'):
+					tidyArray = argElements.replace(/;\s/, ';,').split(',');
+					break;
+			}
+			tidyArray.sort();
+			var sortedItems = (tidyArray.join(' '));
+			htmlValue = argElements.replace(argElements, sortedItems);
+		}
+		return htmlValue;
+	}
+	function getLastArrayValue(argArray) {
+		if (argArray === undefined || argArray === null) {
+			argArray = [''];
+		}
+		var idxItem;
 		// 0 based
-		var idx = argARRAY.length - 1;
-		for (;argARRAY[idx];) {
+		var idx = argArray.length - 1;
+		for (; argArray[idx];) {
 			// save array item to var
-			cntITM = argARRAY[idx];
-			if (hasContent(cntITM)) {
+			idxItem = argArray[idx];
+			if (validContent(idxItem)) {
 				break;
 			} else {
 				idx--;
 			}
 		}
 		if (idx < 1) {
-			idx = argARRAY.length - 1;
+			idx = argArray.length - 1;
 		}
 		return idx;
 	}
-
-	function hasContent(argHTML) {
-		// argHTML = HTML to validate
-		if (argHTML === undefined) {
-			argHTML = '';
-		}
-		var htmlDIV = document.createElement('htmlDIV');
-		htmlDIV.innerHTML = argHTML;
-		// strip html to see what's left
-		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
-		return (htmlVAL.length > 0);
-	}
-
-	function getStyle(argHTML, argTAG) {
-		// argHTML = (selHTML) current style
-		// argTAG = update
-		if (argHTML === undefined) {
-			argHTML = '';
-		}
-		if (argTAG === undefined) {
-			argTAG = '';
-		}
-		var htmlVAL = '';
-		if (!isEmpty(argHTML) && !isEmpty(argTAG)) {
-			var argKEY = (isEmpty(argTAG.match(/color|((?:background+-)+\w+)/, 'gis')) ? '' : argTAG.match(/color|((?:background+-)+\w+)/, 'gis')[0]);
-			// pull tag
-			var tagHTML = (isEmpty(argHTML.match(/^<(.|\n)*?>/, 'si')) ? '' : argHTML.match(/^<(.|\n)*?>/, 'si')[0]);
-			// add/update color style
-			var tmpHTML1;
-			var tmpHTML2;
-			switch (true) {
-				case (isEmpty(tagHTML.match(/style/))):
-					htmlVAL = tagHTML.match(/^<p|^<h[1-6]|<span|^<div/)[0] + ' style="' + argTAG + '">';
-					break;
-				case (argKEY == 'color'):
-					if (isEmpty(tagHTML.match(/([^-])(color)/, 'gis'))) {
-						tmpHTML2 = tagHTML.match(/style.*?;"/)[0].replace(/;"/, ';') + ' ' + argTAG + '"';
-						tmpHTML1 = tidyStyle(tmpHTML2);
-						htmlVAL = tagHTML.replace(/style.*?;"/, tmpHTML1);
-					} else {
-						htmlVAL = tagHTML.replace(/(color)(.*?;)/, argTAG);
-					}
-					break;
-				case (argKEY == 'background-color'):
-					if (isEmpty(tagHTML.match(/(background)([-])(color)/, 'gis'))) {
-						tmpHTML2 = tagHTML.match(/style.*?;"/)[0].replace(/;"/, ';') + ' ' + argTAG + '"';
-						tmpHTML1 = tidyStyle(tmpHTML2);
-						htmlVAL = tagHTML.replace(/style.*?;"/, tmpHTML1);
-					} else {
-						htmlVAL = tagHTML.replace(/(background)([-])(color)(.*?;)/, argTAG);
-					}
-			}
-		}
-		return htmlVAL;
-	}
-
-	function tidyStyle(argSTY) {
-		// argSTY = class(s) to tidy
-		if (argSTY === undefined) {
-			argSTY = '';
-		}
-		var htmlVAL = argSTY;
-		if (!isEmpty(argSTY)) {
-			var regEXP = new RegExp(/"(.*?)"/, 'gi');
-			var selSTY = argSTY.match(regEXP)[0];
-			var curSTY = selSTY.replace(/"/g, '').replace(/;[ ]{1,}/g, ',').replace(/;/g, '');
-			var arrSTY = curSTY.split(',');
-			arrSTY.sort();
-			var newSTY = '"' + (arrSTY.join('; ')) + ';"';
-			htmlVAL = argSTY.replace(regEXP, newSTY);
-		}
-		// returns tidy style
-		return htmlVAL;
-	}
-
 	function isEmpty(argSTR) {
 		return (!argSTR || 0 === argSTR.length);
 	}
-
 	function isReady() {
 		var blnVAL = true;
 		var selTXT = editor.selection.getContent({
-			format : 'text'
+			format: 'text'
 		});
 		if (isEmpty(selTXT)) {
-			alert('SYSTEM MESSAGE\nInvalid or missing text selection.');
+			displayMessage('SYSTEM MESSAGE\nInvalid or missing text selection.');
 			blnVAL = false;
 		}
 		return blnVAL;
 	}
-
+	// strip html
+	function getRawHtml(argHtml) {
+		// argHtml = HTML to process
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var iconTag = getIcon(argHtml);
+			if (!isEmpty(iconTag)) {
+				var tmpValue = argHtml.replace(iconTag, '');
+				argHtml = tmpValue;
+			}
+			var htmlDIV = document.createElement('htmlDIV');
+			htmlDIV.innerHTML = argHtml;
+			htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
+		}
+		return htmlValue;
+	}
 	editor.addButton('apply_txt_color', {
 		title: 'Apply Color',
 		icon: false,
@@ -254,7 +515,6 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		}
 	});
 });
-
 /*
  * EOF: apply-text-color / plugin.js / 30201101
  */
