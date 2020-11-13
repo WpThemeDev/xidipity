@@ -8,138 +8,353 @@
  * (C)   2019-2020 John Baer
  *
  */
-tinymce.PluginManager.add('apply_txt_italic', function(editor) {
+tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 	'use strict';
-
-	function setEmphasis(argTAG) {
-		if (argTAG === undefined) {
-			argTAG = '';
+	// selection object
+	var selectionObject = {
+		html: '', // selection as html
+		icon: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.outerHtml)) {
+				var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+				if (!isEmpty(this.outerHtml.match(regExp))) {
+					switch (true) {
+						case (!isEmpty(this.outerHtml.match(/<img.*\/>/))):
+							htmlValue = getRegExpValue(this.outerHtml, '\\[caption.*caption\\]', 'is');
+							if (isEmpty(htmlValue)) {
+								htmlValue = getRegExpValue(this.outerHtml, '<img.*\/>', 'is');
+							}
+							break;
+						case (!isEmpty(this.outerHtml.match(/"material-icons"/))):
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*"material-icons".*span>', 'is');
+							break;
+						default:
+							htmlValue = getRegExpValue(this.outerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+					}
+				}
+			}
+			return htmlValue;
+		}, // icon tag
+		innerHtml: '', // expanded selection as html
+		innerText: '', // expanded selection as text
+		innerTextKey: function () {
+			var htmlValue = this.innerText;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.innerText.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // inner text without whitespace
+		node: undefined, //	node object
+		parentNode: undefined, //	node object
+		nodeName: '', // node name
+		parentNodeName: '', // node name
+		outerHtml: '', // full selection will tags as html
+		prefixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '^<(p|h[1-6]|div|li|span).*?>|^<(em|i|kbd|s|strong|sub|sup|u)>').replace(/\sdata-mce-style.+"/, '');
+			}
+			return htmlValue;
+		}, // prefix tag with any classes/styles
+		suffixTag: function () {
+			var htmlValue = '';
+			if (!isEmpty(this.purgeOuterHtml())) {
+				htmlValue = getRegExpValue(this.purgeOuterHtml(), '<\/(p|h[1-6]|div|li|span|em|i|kbd|s|strong|sub|sup|u)>$');
+			}
+			return htmlValue;
+		}, // suffix tag
+		text: '', // selection as plain text
+		textKey: function () {
+			var htmlValue = this.text;
+			if (!isEmpty(htmlValue)) {
+				var whiteSpace = new RegExp(/\s/, 'g');
+				htmlValue = this.text.replace(whiteSpace, '')
+			}
+			return htmlValue;
+		}, // text without whitespace
+		purgeInnerHtml: function () {
+			var htmlValue = this.innerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
+		},
+		purgeOuterHtml: function () {
+			var htmlValue = this.outerHtml;
+			if (!isEmpty(htmlValue)) {
+				var mceCodeExp = new RegExp(/\sdata-mce-style.+"/, 'ig');
+				var tmpValue = htmlValue.replace(mceCodeExp, '');
+				htmlValue = tmpValue;
+			}
+			return htmlValue;
 		}
-		// init ret val
-		var newHTML = '';
+	};
+	function setEmphasis(argTag) {
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		// selection object
+		var selObj = Object.create(selectionObject);
 		// selection html node
-		var htmlNODE = editor.selection.getNode();
+		selObj.node = editor.selection.getNode();
 		// get selection node name
-		var selNODE = htmlNODE.nodeName.toLowerCase();
-		// selection content in html format
-		var selTXT = editor.selection.getContent({
+		selObj.nodeName = selObj.node.nodeName.toLowerCase();
+		// selection content
+		selObj.text = editor.selection.getContent({
+			format: 'text'
+		});
+		selObj.html = editor.selection.getContent({
 			format: 'html'
 		});
-		var selTMP = '';
-		if (!isEmpty(selNODE.match(/em|i|kbd|\bs\b|span|strong|sub|sup|\bu\b/i))) {
-			selTMP = '<' + selNODE + '>' + selTXT + '</' + selNODE + '>';
-			selTXT = selTMP;
-			// select parent node
-			var tmpNODE;
-			if (selNODE == 'span') {
-				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p');
-			} else {
-				tmpNODE = editor.dom.getParent(htmlNODE,'div,h1,h2,h3,h4,h5,h6,p,span');
-			}
-			htmlNODE = tmpNODE;
-			// get new selection node name
-			selNODE = htmlNODE.nodeName.toLowerCase();
+		if (selObj.nodeName !== 'body') {
+			selObj.innerHtml = selObj.node.innerHTML;
+			selObj.innerText = getRawHtml(selObj.innerHtml);
+			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
 		}
-		selTMP = htmlNODE.innerHTML;
-		var selFULL = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		selTMP = editor.dom.getOuterHTML(htmlNODE);
-		var selHTML = selTMP.replace(/\sdata-mce-style.+"/g, '');
-		var preTAG;
-		var pstTAG;
+		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
+		var underlineTagExp = new RegExp(/<u>/, 'ig');
+		var newHtml;
+		var tagHtml;
 		switch (true) {
-			case (selNODE == 'body'):
+			case (!isEmpty(selObj.nodeName.match(mlTagsExp))):
+				//alert('* mark #1 *');
+				var crCharExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
+				var tagListExp = new RegExp(/(<\/(div|h[1-6]|li|p)>)(<(div|h[1-6]|li|p).*?>)/, 'gm');
 				// strip cr/lf
-				var selNEW = selTXT.replace(/(\r\n|\n|\r)/gm, '');
-				// delimit html string
-				var tagDELIM = selNEW.replace(/(\/(?!span>).*?>)(<.)/g, '$1,$2');
+				var tmpValue = selObj.html.replace(crCharExp, '');
+				// remove ol/ul
+				if (!isEmpty(selObj.nodeName.match(/ol|ul/))) {
+					var noHeaders = tmpValue.replace(/^<(ol|ul)>/, '').replace(/<\/(ol|ul)>$/, '');
+					tmpValue = noHeaders;
+				}
+				// delimited ',' string
+				var delimitedList = tmpValue.replace(tagListExp, '$1,$3');
+				// new selection object
+				var idxObj = Object.create(selectionObject);
 				// create array from delimited string
-				var htmlARRAY = tagDELIM.split(',');
-				var lstREC = lastRec(htmlARRAY);
+				var selectArray = delimitedList.split(',');
+				var lastRecord = getLastArrayValue(selectArray);
 				var idx = 0;
-				// loop through array
-				for (;htmlARRAY[idx];) {
-					if (idx > lstREC) {
-						newHTML += '<p>&nbsp;</p>';
+				newHtml = '';
+				for (; selectArray[idx];) {
+					if (idx > lastRecord) {
+						newHtml += '<p>&nbsp;</p>';
 						break;
 					}
-					selHTML = htmlARRAY[idx];
-					preTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>/, 'si')[0]);
-					pstTAG = (isEmpty(selHTML.match(/<(\/p.*?)>|<(\/h[1-6].*?)>|<(\/div.*?)>/, 'si')) ? '' : selHTML.match(/<(\/p.*?)>|<(\/h[1-6].*?)>|<(d\/iv.*?)>/, 'si')[0]);
-					newHTML += selHTML.replace(preTAG,preTAG + '<' + argTAG + '>').replace(pstTAG,'</' + argTAG + '>' + pstTAG);
+					idxObj.outerHtml = selectArray[idx];
+					if (!isEmpty(idxObj.purgeOuterHtml().match(underlineTagExp))) {
+						//alert('* mark #2.1 *');
+						// remove underline
+						tagHtml = xTags(idxObj.purgeOuterHtml(), 'u');
+					} else {
+						//alert('* mark #2.2 *');
+						tagHtml = idxObj.purgeOuterHtml();
+					}
+					newHtml += xTags(tagHtml, argTag).replace(idxObj.prefixTag(), idxObj.prefixTag() + '<' + argTag + '>').replace(idxObj.suffixTag(), '</' + argTag + '>' + idxObj.suffixTag());
 					idx++;
 				}
 				break;
-			case (selTXT == selFULL || selNODE == 'span'):
-				preTAG = (isEmpty(selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')) ? '' : selHTML.match(/<(p.*?)>|<(h[1-6].*?)>|<(div.*?)>|<(span.*?)>/, 'si')[0]);
-				pstTAG = (isEmpty(selHTML.match(/<(\/p.*?)>|<(\/h[1-6].*?)>|<(\/div.*?)>|<(\/span.*?)>/, 'si')) ? '' : selHTML.match(/<(\/p.*?)>|<(\/h[1-6].*?)>|<(d\/iv.*?)>|<(\/span.*?)>/, 'si')[0]);
-				newHTML = selHTML.replace(preTAG,preTAG + '<' + argTAG + '>').replace(pstTAG,'</' + argTAG + '>' + pstTAG);
+			case (selObj.textKey() == selObj.innerTextKey() || selObj.nodeName == 'span'):
+				//alert('* mark #2 *');
+				if (!isEmpty(selObj.purgeOuterHtml().match(underlineTagExp))) {
+					//alert('* mark #2.1 *');
+					// remove underline
+					tagHtml = xTags(selObj.purgeOuterHtml(), 'u');
+				} else {
+					//alert('* mark #2.2 *');
+					tagHtml = selObj.purgeOuterHtml();
+				}
+				newHtml = xTags(tagHtml, argTag).replace(selObj.prefixTag(), selObj.prefixTag() + '<' + argTag + '>').replace(selObj.suffixTag(), '</' + argTag + '>' + selObj.suffixTag());
 				break;
 			default:
-				newHTML = '<' + argTAG + '>' + selTXT + '</' + argTAG + '>';
+				//alert('* default *');
+				newHtml = '<' + argTag + '>' + selObj.html + '</' + argTag + '>';
 		}
-		if (!isEmpty(newHTML)) {
-			editor.execCommand('mceReplaceContent', false, newHTML);
+		if (!isEmpty(newHtml)) {
+			editor.execCommand('mceReplaceContent', false, newHtml);
 		}
 		return;
 	}
-
-	function hasContent(argHTML) {
-		// argHTML = HTML to validate
-		if (argHTML === undefined) {
-			argHTML = '';
+	// display object parameters
+	function displayObj(argObj) {
+		if (argObj === undefined || argObj === null) {
+			argObj = Object.create(selectionObject);
+		}
+		//
+		alert('.html - ' + argObj.html);
+		alert('.innerHtml - ' + argObj.innerHtml);
+		alert('.innerText - ' + argObj.innerText);
+		alert('.text - ' + argObj.text);
+		alert('.nodeName - ' + argObj.nodeName);
+		alert('.parentNodeName - ' + argObj.parentNodeName);
+		alert('.outerHtml - ' + argObj.outerHtml);
+		alert('.purgeOuterHtml - ' + argObj.purgeOuterHtml());
+		alert('.prefixTag - ' + argObj.prefixTag());
+		alert('.suffixTag - ' + argObj.suffixTag());
+		alert('.purgeInnerHtml - ' + argObj.purgeInnerHtml());
+		//
+		return;
+	}
+	// display message
+	function displayMessage(argMessage) {
+		// argMessage = message
+		if (argMessage === undefined || argMessage === null) {
+			argMessage = '';
+		}
+		if (!isEmpty(argMessage)) {
+			alert(argMessage);
+		}
+		return;
+	}
+	// get regular expression value
+	function getRegExpValue(argValue, argRegExp, argRegExpScope, argIdx) {
+		// argValue = value to evaluate
+		// argRegExp = regular expression
+		// argRegExpScope = regular expression scope
+		// argIdx = match array index
+		if (argValue === undefined || argValue === null) {
+			argValue = '';
+		}
+		if (argRegExp === undefined || argRegExp === null) {
+			argRegExp = '';
+		}
+		if (argRegExpScope === undefined || argRegExpScope === null) {
+			argRegExpScope = 'g';
+		}
+		if (argIdx === undefined || argIdx === null) {
+			argIdx = 0;
+		}
+		var htmlValue = '';
+		if (!isEmpty(argValue) && !isEmpty(argRegExp)) {
+			if (isEmpty(argRegExpScope.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
+				argRegExpScope = 'g';
+			}
+			var regExp = new RegExp(argRegExp, argRegExpScope);
+			if (!isEmpty(argValue.match(regExp))) {
+				htmlValue = argValue.match(regExp)[argIdx];
+			}
+		}
+		return htmlValue;
+	}
+	// return icon element
+	function getIcon(argHtml) {
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var regExp = new RegExp(/<i.*?class.*?i>|<span.*?"material-icons">.*?>|<img.*\/>/, 'is');
+			if (!isEmpty(argHtml.match(regExp))) {
+				switch (true) {
+					case (!isEmpty(argHtml.match(/<img.*\/>/))):
+						htmlValue = getRegExpValue(argHtml, '\\[caption.*caption\\]', 'is');
+						if (isEmpty(htmlValue)) {
+							htmlValue = getRegExpValue(argHtml, '<img.*\/>', 'is');
+						}
+						break;
+					case (!isEmpty(argHtml.match(/"material-icons"/))):
+						htmlValue = getRegExpValue(argHtml, '<span.*"material-icons".*span>', 'is');
+						break;
+					default:
+						htmlValue = getRegExpValue(argHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+				}
+			}
+			return htmlValue;
+		}
+	}
+	function validContent(argHtml) {
+		// argHtml = HTML to validate
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
 		}
 		var htmlDIV = document.createElement('htmlDIV');
-		htmlDIV.innerHTML = argHTML;
+		htmlDIV.innerHTML = argHtml;
 		// strip html to see what's left
 		var htmlVAL = htmlDIV.textContent || htmlDIV.innerText || '';
 		return (htmlVAL.length > 0);
 	}
-
-	function lastRec(argARRAY) {
-		if (argARRAY === undefined) {
-			argARRAY = [''];
+	function getLastArrayValue(argArray) {
+		if (argArray === undefined || argArray === null) {
+			argArray = [''];
 		}
-		var cntITM;
+		var idxItem;
 		// 0 based
-		var idx = argARRAY.length - 1;
-		for (;argARRAY[idx];) {
+		var idx = argArray.length - 1;
+		for (; argArray[idx];) {
 			// save array item to var
-			cntITM = argARRAY[idx];
-			if (hasContent(cntITM)) {
+			idxItem = argArray[idx];
+			if (validContent(idxItem)) {
 				break;
 			} else {
 				idx--;
 			}
 		}
 		if (idx < 1) {
-			idx = argARRAY.length - 1;
+			idx = argArray.length - 1;
 		}
 		return idx;
 	}
-
 	function isEmpty(argSTR) {
 		return (!argSTR || 0 === argSTR.length);
 	}
-
 	function isReady() {
 		var blnVAL = true;
 		var selTXT = editor.selection.getContent({
-			format : 'text'
+			format: 'text'
 		});
 		if (isEmpty(selTXT)) {
-			alert('SYSTEM MESSAGE\nInvalid or missing text selection.');
+			displayMessage('SYSTEM MESSAGE\nInvalid or missing text selection.');
 			blnVAL = false;
 		}
 		return blnVAL;
 	}
-
+	// strip html
+	function getRawHtml(argHtml) {
+		// argHtml = HTML to process
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		var htmlValue = '';
+		if (!isEmpty(argHtml)) {
+			var iconTag = getIcon(argHtml);
+			if (!isEmpty(iconTag)) {
+				var tmpValue = argHtml.replace(iconTag, '');
+				argHtml = tmpValue;
+			}
+			var htmlDIV = document.createElement('htmlDIV');
+			htmlDIV.innerHTML = argHtml;
+			htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
+		}
+		return htmlValue;
+	}
+	// remove tag pair (ie. <i>)
+	function xTags(argHtml, argTag) {
+		if (argHtml === undefined || argHtml === null) {
+			argHtml = '';
+		}
+		if (argTag === undefined || argTag === null) {
+			argTag = '';
+		}
+		var htmlValue = argHtml;
+		if (!isEmpty(argHtml) && !isEmpty(argTag)) {
+			var preTagExp = new RegExp('<' + argTag + '>', 'ig');
+			var sufTagExp = new RegExp('</' + argTag + '>', 'ig');
+			if (!isEmpty(argHtml.match(preTagExp))) {
+				htmlValue = argHtml.replace(preTagExp, '').replace(sufTagExp, '');
+			}
+		}
+		return htmlValue;
+	}
 	editor.addButton('apply_txt_italic', {
 		type: 'splitbutton',
 		title: 'Italic',
 		shortcut: 'Ctr+I',
 		icon: false,
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDR2M2gyLjIxbC0zLjQyIDhINnYzaDh2LTNoLTIuMjFsMy40Mi04SDE4VjR6Ii8+PC9zdmc+',
-		onclick: function() {
+		onclick: function () {
 			if (isReady()) {
 				setEmphasis('i');
 			}
@@ -148,7 +363,7 @@ tinymce.PluginManager.add('apply_txt_italic', function(editor) {
 			icon: true,
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDR2M2gyLjIxbC0zLjQyIDhINnYzaDh2LTNoLTIuMjFsMy40Mi04SDE4VjR6Ii8+PC9zdmc+',
 			text: '\xa0Italic',
-			onclick: function() {
+			onclick: function () {
 				if (isReady()) {
 					setEmphasis('i');
 				}
@@ -157,17 +372,16 @@ tinymce.PluginManager.add('apply_txt_italic', function(editor) {
 			icon: true,
 			text: '\xa0Emphasis',
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE1LjYgMTAuNzljLjk3LS42NyAxLjY1LTEuNzcgMS42NS0yLjc5IDAtMi4yNi0xLjc1LTQtNC00SDd2MTRoNy4wNGMyLjA5IDAgMy43MS0xLjcgMy43MS0zLjc5IDAtMS41Mi0uODYtMi44Mi0yLjE1LTMuNDJ6TTEwIDYuNWgzYy44MyAwIDEuNS42NyAxLjUgMS41cy0uNjcgMS41LTEuNSAxLjVoLTN2LTN6bTMuNSA5SDEwdi0zaDMuNWMuODMgMCAxLjUuNjcgMS41IDEuNXMtLjY3IDEuNS0xLjUgMS41eiIvPjwvc3ZnPg==',
-			onclick: function() {
+			onclick: function () {
 				if (isReady()) {
 					setEmphasis('em');
 				}
-
 			}
 		}, {
 			icon: true,
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUgMTd2MmgxNHYtMkg1em00LjUtNC4yaDVsLjkgMi4yaDIuMUwxMi43NSA0aC0xLjVMNi41IDE1aDIuMWwuOS0yLjJ6TTEyIDUuOThMMTMuODcgMTFoLTMuNzRMMTIgNS45OHoiLz48L3N2Zz4=',
 			text: '\xa0Strong',
-			onclick: function() {
+			onclick: function () {
 				if (isReady()) {
 					setEmphasis('strong');
 				}
@@ -175,7 +389,6 @@ tinymce.PluginManager.add('apply_txt_italic', function(editor) {
 		}, ],
 	});
 });
-
 /*
  * EOF: apply-text-italic / plugin.js / 30201101
  */
