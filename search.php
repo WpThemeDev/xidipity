@@ -4,7 +4,7 @@
  * The template for displaying searchs results
  *
  * ###:  search.php
- * bld:  29200815
+ * bld:  30201101
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -17,20 +17,26 @@ $wp_data = $wp_query;
 /*
 *** redirect if category
 */
-$cat_id = get_cat_ID(get_query_var('s'));
-if ($cat_id > 0)
-{
-	wp_safe_redirect( get_category_link($cat_id) );
-	exit;
+if (preg_match('/cat:/is', get_query_var('s'))) {
+	$src_item = preg_replace('/cat:/', '', get_query_var('s'));
+	$cat_id = get_cat_ID($src_item);
+	if ($cat_id > 0)
+	{
+		wp_safe_redirect( get_category_link($cat_id) );
+		exit;
+	}
 }
 /*
 *** redirect if tag
 */
-$tag_id = get_tag_ID(get_query_var('s'));
-if ($tag_id > 0)
-{
-	wp_safe_redirect( get_tag_link($tag_id) );
-	exit;
+if (preg_match('/tag:/is', get_query_var('s'))) {
+	$src_item = preg_replace('/tag:/', '', get_query_var('s'));
+	$tag_id = get_tag_ID($src_item);
+	if ($tag_id > 0)
+	{
+		wp_safe_redirect( get_tag_link($tag_id) );
+		exit;
+	}
 }
 /*
 *** redirect if only 1
@@ -41,7 +47,6 @@ if ($cnt == 1)
 	wp_safe_redirect( get_permalink() );
 	exit;
 }
-
 /*
  *** set pagination variables
 */
@@ -92,6 +97,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: search.php / 29200815
+ * EOF: search.php / 30201101
 */
 ?>
