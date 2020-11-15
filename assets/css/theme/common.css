@@ -963,30 +963,37 @@ dd {
 ***
     * property: vs
     * dsc: vertical space
-    * ver: 200222
+    * ver: 30201101
     * fnt: set line height
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
 */
 .vs\:1\/2 {
+	font-size: calc(var(--font-size-md) * 0.5);
 	line-height: calc(var(--dft-line-height) * 0.5);
 }
 .vs\:3\/4 {
+	font-size: calc(var(--font-size-md) * 0.75);
 	line-height: calc(var(--dft-line-height) * 0.75);
 }
 .vs\:1 {
+	font-size: var(--font-size-md);
 	line-height: var(--dft-line-height);
 }
 .vs\:1-1\/2 {
+	font-size: var(--font-size-md);
 	line-height: calc(var(--dft-line-height) * 1.5);
 }
 .vs\:2 {
+	font-size: var(--font-size-md);
 	line-height: calc(var(--dft-line-height) * 2);
 }
 .vs\:2-1\/2 {
+	font-size: var(--font-size-md);
 	line-height: calc(var(--dft-line-height) * 2.5);
 }
 .vs\:3 {
+	font-size: var(--font-size-md);
 	line-height: calc(var(--dft-line-height) * 3);
 }
 /*
