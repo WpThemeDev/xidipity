@@ -196,9 +196,7 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 						iconObj.marginRight = document.getElementById("rt_id").selectedIndex;
 						iconObj.tag = document.getElementById("ic_id").value;
 						if (!isEmpty(iconObj.tag)) {
-							editor.insertContent(iconObj.html(), {
-								format: 'html'
-							});
+							editor.execCommand('mceInsertContent', false, iconObj.html());
 						}
 					}
 				}
