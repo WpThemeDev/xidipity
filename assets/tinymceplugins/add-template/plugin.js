@@ -38,9 +38,7 @@ tinymce.PluginManager.add('add_template', function (editor) {
 						} else {
 							tmpl_content = tmpl_tag.replace("`t\s*`t", "`t");
 						}
-						editor.insertContent(tmpl_content, {
-							format: 'raw'
-						});
+						editor.execCommand('mceInsertContent', false, tmpl_content);
 					}
 				}
 			});
