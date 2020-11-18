@@ -58,7 +58,7 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 					case ('font awesome'):
 						regExp = new RegExp(/></, 'is');
 						tmpValue = htmlValue.replace(regExp, '> <');
-						htmlValue = tmpValue;
+						htmlValue = '&#8203;' + tmpValue + '&#8203;';
 						break;
 					case ('google'):
 						if (isEmpty(htmlValue.match(/span/))) {
@@ -66,9 +66,11 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 						} else {
 							tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<').replace(/span/g, 'i');
 						}
-						htmlValue = tmpValue;
+						htmlValue = '&#8203;' + tmpValue + '&#8203;';
 						break;
 					default:
+						tmpValue = htmlValue;
+						htmlValue = '&#8203;' + tmpValue + '&#8203;';
 				}
 			}
 			return htmlValue;
@@ -185,16 +187,16 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 				title: 'Add Icon',
 				body: [{
 					type: "container",
-					html: '<form method="post" style="font-family:sans-serif;font-size:16px;width:500px;"><table style="border-collapse:separate; border-spacing:16px; padding-right:16px;width:100%"><tbody style="border-color: transparent;"><tr><td style="width:33.3333%"><label for="ico_siz" style="line-height:200%;">Size:</label><br /><select id="sz_id" style="border:1px solid #e9e7e4;"><option>default</option><option>+1/2</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option><option>+6</option></select></td><td style="width:33.3333%"><label for="margin_lt" style="line-height:200%;">Margin left:</label><br /><select id="lt_id" style="border:1px solid #e9e7e4;"><option>none</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option></select></td><td style="width:33.3333%; text-align: right;"><div style="text-align: left;"><label for="margin_rt" style="line-height:200%;">Margin right:</label><br /><select id="rt_id" style="border:1px solid #e9e7e4;"><option>none</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option></select></div></td></tr><tr><td colspan="3"><label for="icon" style="line-height:200%;">Icon Tag:</label><br /><input type="text" id="ic_id" name="ico_tag" value="" style="font-family:monospace; border: 1px solid #e9e7e4; width:100%;"></td></tr></tbody></table></form>'
+					html: '<form method="post" style="font-family:sans-serif;font-size:16px;width:500px;"><table style="border-collapse:separate; border-spacing:16px; padding-right:16px;width:100%"><tbody style="border-color: transparent;"><tr><td style="width:33.3333%"><label for="ico_siz" style="line-height:200%;">Size:</label><br /><select id="sz_id" style="border:1px solid #e9e7e4;"><option>default</option><option>+1/2</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option><option>+6</option></select></td><td style="width:33.3333%"><label for="margin_lt" style="line-height:200%;">Margin left:</label><br /><select id="lt_id" style="border:1px solid #e9e7e4;"><option>none</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option></select></td><td style="width:33.3333%; text-align: right;"><div style="text-align: left;"><label for="margin_rt" style="line-height:200%;">Margin right:</label><br /><select id="rt_id" style="border:1px solid #e9e7e4;"><option>none</option><option>+1</option><option>+2</option><option>+3</option><option>+4</option><option>+5</option></select></div></td></tr><tr><td colspan="3"><label for="icon" style="line-height:200%;">Icon Tag:</label><br /><input type="text" id="tag_id" name="ico_tag" value="" style="font-family:monospace; border: 1px solid #e9e7e4; width:100%;"></td></tr></tbody></table></form>'
 					}],
 				onSubmit: function () {
 					// icon object
-					if (!isEmpty(document.getElementById("ic_id").value)) {
+					if (!isEmpty(document.getElementById("tag_id").value)) {
 						var iconObj = Object.create(iconObject);
 						iconObj.size = document.getElementById("sz_id").selectedIndex;
 						iconObj.marginLeft = document.getElementById("lt_id").selectedIndex;
 						iconObj.marginRight = document.getElementById("rt_id").selectedIndex;
-						iconObj.tag = document.getElementById("ic_id").value;
+						iconObj.tag = document.getElementById("tag_id").value;
 						if (!isEmpty(iconObj.tag)) {
 							editor.execCommand('mceInsertContent', false, iconObj.html());
 						}
