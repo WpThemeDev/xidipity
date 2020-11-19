@@ -11,7 +11,6 @@
 /*
 ***
     * element: <body>
-    * dsc: body
     * ver: 200222
     * fnt: html body (see web.css for other property values)
     * ref: developer.mozilla.org/en-US/docs/Web/API/Body
@@ -31,7 +30,6 @@ body,
 /*
 ***
     * custom tag: <cmt>
-    * dsc: code comment
     * ver: 28200801
     * fnt: alternate to "<!--", allows more options
     * ref: dev.to/jfbrennan/custom-html-tags-4788
@@ -44,7 +42,6 @@ cmt {
 /*
 ***
     * property: cmt:html
-    * dsc: html comments
     * ver: 200513
     * fnt: alternate method to "<!--"
     * ref:
@@ -56,7 +53,6 @@ cmthtml {
 /*
 ***
     * element: <pre>
-    * dsc: preformatted text
     * ver: 200520
     * fnt: preformatted text which is to be presented exactly as written
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
@@ -104,7 +100,6 @@ pre.dsp\:line-nums var::before {
 /*
 ***
     * element: text tags
-    * dsc: various text tags
     * ver: 28200701
     * fnt: format text
     * ref:
@@ -189,7 +184,6 @@ abbr {
 /*
 ***
     * property: adsbygoogle
-    * dsc: set properties
     * ver: 201001
     * fnt: set bkg / bdr to content bkg
     * ref:
@@ -201,30 +195,7 @@ abbr {
 }
 /*
 ***
-    * property: btn:facade
-    * dsc: button appearance
-    * ver: 200429
-    * fnt: simulate the appearance of a button
-    * ref:
-***
-*/
-.btn\:facade {
-	background-color: var(--hue-pri-dn1);
-	color: var(--hue-wht);
-	border-radius: 0.1666rem;
-	display: inline-block;
-	font-size: var(--font-size-xs);
-	font-weight: var(--font-wgt-normal);
-	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
-}
-.btn\:facade\!hover:hover {
-	background-color: var(--hue-pri);
-	cursor: pointer;
-}
-/*
-***
     * element: <hr>
-    * dsc: thematic break
     * ver: 200222
     * fnt: thematic break between paragraph-level elements
     *      default the width is 100% of available space
@@ -290,7 +261,6 @@ hr.rul\:grd {
 ***
     * elements: <audio> / <canvas> / <iframe>
     *           <object> / <progress> / <video>
-    * dsc: wrappers
     * ver: 190910-1
     * fnt: by default, force width to 100%
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
@@ -309,7 +279,6 @@ video {
 /*
 ***
     * element: <a>
-    * dsc: link
     * ver: 190910-1
     * fnt: anchor element creates a hyperlink to other web pages
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/a
@@ -342,7 +311,6 @@ a:focus {
 /*
 ***
     * property: ul
-    * dsc: icon list box
     * ver: 200308
     * fnt: replace ul bullet with icon
     * ref:
@@ -389,7 +357,6 @@ a:focus {
 /*
 ***
     * element: ul
-    * dsc: img list box
     * ver: 200308
     * fnt: setup (responsive) ul for image bullet
     * ref:
@@ -457,7 +424,6 @@ a:focus {
 /*
 ***
     * element: <ol> / <ul>
-    * dsc: space list items
     * ver: 200222
     * fnt: set list item line height as specified by declaration
     * ref:
@@ -478,7 +444,6 @@ a:focus {
 /*
 ***
     * element: <ul>
-    * dsc: unordered list
     * ver: 190910-1
     * fnt: unordered list of items with pre-defined bullets
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
@@ -520,9 +485,8 @@ ul.mixed ul ul ul ul {
 /*
 ***
     * element: <ul>
-    * dsc: paragraph list
     * ver: 200304
-    * fnt: unordered list to be used as a paragraph indent
+    * fnt: unordered list to be used for paragraph
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 ***
 */
@@ -535,7 +499,6 @@ ul.par li>ul {
 /*
 ***
     * element: <ol>
-    * dsc: ordered list
     * ver: 190910-1
     * fnt: ordered list of items with pre-defined bullets
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
@@ -611,7 +574,6 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * property: li-hrz
-    * dsc: horizontal list
     * ver: 28200701
     * fnt: display list horizontally
     * ref:
@@ -648,7 +610,6 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * property: li-vrt
-    * dsc: vertical list
     * ver: 28200701
     * fnt: display list virtually
     * ref:
@@ -826,7 +787,6 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * property: ul-fa
-    * dsc: init list for font awesome icons
     * ver: 200315
     * fnt: hide bullets and adjust margins
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
@@ -847,7 +807,6 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * property: no-bullet(s)
-    * dsc: hide bullets
     * ver: 190910-1
     * fnt: unordered list without bullets
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
@@ -861,7 +820,6 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * element: <dd>
-    * dsc: description list
     * ver: 190910-1
     * fnt: describe a term/name used in conjunction with <dd> for context
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
@@ -883,7 +841,6 @@ dd {
 /*
 ***
     * property: xlst
-    * dsc: excerpt list
     * ver: 200315
     * fnt: to be used in conjunction with excerpt list shortcode
     * ref:
@@ -942,7 +899,6 @@ dd {
     * element: txt-bi (block indent)
     * element: txt-hi (hang indent)
     * element: txt-pi (paragraph indent)
-    * dsc: paragraph indentation
     * ver: 30201018
     * fnt: add paragraph indentation
     * ref:
@@ -962,7 +918,6 @@ dd {
 /*
 ***
     * property: vs
-    * dsc: vertical space
     * ver: 30201101
     * fnt: set line height
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
@@ -999,7 +954,6 @@ dd {
 /*
 ***
     * element: <table>
-    * dsc: html table
     * ver: 26200515
     * fnt: default tic-tac-toe table
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
@@ -1079,7 +1033,6 @@ table>tfoot>tr>td {
 /*
 ***
     * element: <tbody>
-    * dsc: html table tbody
     * ver: 200304
     * fnt: display all borders (spreadsheet style)
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
@@ -1091,7 +1044,6 @@ table>tbody.bdr\:xls>tr>td {
 /*
 ***
     * element: <tbody>
-    * dsc: html table tbody
     * ver: 200304
     * fnt: set all borders to transparent
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/table
@@ -1103,7 +1055,6 @@ table>tbody.bdr\:none>tr>td {
 /*
 ***
     * element: panel
-    * dsc: support panel template
     * ver: 29200901
     * fnt: set table properties as needed
     * ref:
@@ -1135,7 +1086,6 @@ table.panelx3>tbody>tr>td {
 /*
 ***
     property: cols:<type>
-    * dsc: multi-columns
     * ver: 190520
     * fnt: common multi-column classes
     * ref: see web.css
@@ -1236,7 +1186,6 @@ table.cols\:fixed-4 table td:not(:last-child) {
 /*
 ***
     * elements: <h1>–<h6>
-    * dsc: content header
     * ver: 1900910
     * fnt: style headers
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
@@ -1287,7 +1236,6 @@ h6 {
 /*
 ***
     * property: cnt
-    * dsc: counter
     * ver: 190910-1
     * fnt: add counter to header
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
@@ -1318,7 +1266,6 @@ h6.cnt\!alt::before {
 /*
 ***
     * element: <p>
-    * dsc: paragraph
     * ver: 190910-1
     * fnt: present content as paragraph
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/p
@@ -1330,7 +1277,6 @@ p {
 /*
 ***
     * element: <blockquote>
-    * dsc: block quote
     * ver: 29200815
     * fnt: present content as block quote
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
@@ -1357,7 +1303,6 @@ cite {
 /*
 ***
     * elements: <button> / <input> / <select> / <textarea>
-    * dsc: form elements
     * ver: 190910-1
     * fnt: form elements
     * ref:
@@ -1485,7 +1430,6 @@ td .ratio-container {
 /*
 ***
     * property: material-icons
-    * dsc: adjust icon
     * ver: 30201101
     * fnt: material icon hack to align icons to font size
     *
@@ -1519,7 +1463,6 @@ td .ratio-container {
 /*
 ***
     * property: drp
-    * dsc: drop shadow
     * ver: 200308
     * fnt: add drop shadow
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
@@ -1538,7 +1481,6 @@ td .ratio-container {
 /*
 ***
     * element: figure
-    * dsc: wrapper for image with caption
     * ver: 200318
     * fnt: wraps image with caption
     * ref:
@@ -1550,7 +1492,6 @@ figure {
 /*
 ***
     property: wp-caption
-    * dsc: image caption
     * ver: 190520
     * fnt: center image caption
     * ref:
@@ -1564,7 +1505,6 @@ figure {
 /*
 ***
     * property: clearfix
-    * dsc: floats hack
     * ver: 29200815
     * fnt: clear floats
     * ref: css-tricks.com/snippets/css/clear-fix/
@@ -1578,7 +1518,6 @@ figure {
 /*
 ***
     * property: alignleft/center/right
-    * dsc: alignment for image/figure
     * ver: 200318
     * fnt: floats left/right or centers
     * ref:
@@ -1656,7 +1595,6 @@ figure {
 /*
 ***
     * property: frame
-    * dsc: table frame
     * ver: 200527
     * fnt: create a content frame using table element
     * ref: same design as pre element
@@ -1695,7 +1633,6 @@ figure {
 /*
 ***
     * property: svg:<size>
-    * dsc: size svg
     * ver: 200422
     * fnt: size svg images to fnt sizes
     * ref:
@@ -1758,7 +1695,6 @@ figure {
 /*
 ***
     * element: <button>
-    * dsc: default button styles
     * ver: 30201101
     * fnt: style button
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/button
@@ -1831,8 +1767,64 @@ button.bas:active {
 }
 /*
 ***
+    * property: btn:facade
+    * ver: 30201101
+    * fnt: simulate the appearance of a button
+***
+*/
+.btn\:facade,
+.btn\:pri-facade {
+	background-color: var(--hue-pri-up4);
+	border: thin solid var(--hue-pri-up5);
+	color: var(--hue-blk);
+	border-radius: 0.1666rem;
+	display: inline-block;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-wgt-normal);
+	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
+}
+.btn\:facade\!hover:hover,
+.btn\:pri-facade\!hover:hover {
+	background-color: var(--hue-pri);
+	border: thin solid var(--hue-pri-up1);
+	color: var(--hue-wht);
+	cursor: pointer;
+}
+.btn\:sec-facade {
+	background-color: var(--hue-sec-up4);
+	border: thin solid var(--hue-sec-up5);
+	color: var(--hue-blk);
+	border-radius: 0.1666rem;
+	display: inline-block;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-wgt-normal);
+	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
+}
+.btn\:sec-facade\!hover:hover {
+	background-color: var(--hue-sec);
+	border: thin solid var(--hue-sec-up1);
+	color: var(--hue-wht);
+	cursor: pointer;
+}
+.btn\:bas-facade {
+	background-color: var(--hue-bas-up3);
+	border: thin solid var(--hue-bas-up2);
+	color: var(--hue-blk);
+	border-radius: 0.1666rem;
+	display: inline-block;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-wgt-normal);
+	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
+}
+.btn\:bas-facade\!hover:hover {
+	background-color: var(--hue-bas-dn3);
+	border: thin solid var(--hue-bas-dn2);
+	color: var(--hue-wht);
+	cursor: pointer;
+}
+/*
+***
     * property: trn
-    * dsc: transformation effects
     * ver: 20201001
     * fnt: text transformations
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-transform
@@ -1850,7 +1842,6 @@ button.bas:active {
 /*
 ***
     * property: trn
-    * dsc: transformation effects
     * ver: 200308
     * fnt: image/button hover annimations
     * ref: ianlunn.github.io/Hover/
@@ -2052,7 +2043,6 @@ button.bas:active {
 /*
 ***
     * property: icon
-    * dsc: svg icons
     * ver: 28200715
     * fnt: 24x24 scaleable icons
     * ref: materialdesignicons.com
@@ -2265,7 +2255,6 @@ button.bas:active {
 /*
 ***
     * property: icon
-    * dsc: toolbar svg icons
     * ver: 28200715
     * fnt: 24x24 scaleable icons
     * ref: materialdesignicons.com
