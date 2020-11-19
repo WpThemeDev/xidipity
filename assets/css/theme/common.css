@@ -1758,32 +1758,70 @@ figure {
 /*
 ***
     * element: <button>
-    * dsc: default button
-    * ver: 28200701
+    * dsc: default button styles
+    * ver: 30201101
     * fnt: style button
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 ***
 */
-button {
-	background-color: var(--hue-pri-dn2);
-	border: thin solid var(--hue-pri-dn2);
-	border-radius: 0.3333rem;
-	color: var(--hue-wht);
-	padding: 0.5rem 1.5rem;
-	text-align: center;
-}
 button:focus,
 button a:focus {
 	outline: 0;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-button:hover {
-	background-color: var(--hue-pri-dn1);
+button,
+button.pri {
+	background-color: var(--hue-pri-up4);
+	border: thin solid var(--hue-pri-up5);
+	border-radius: 0.1666rem;
+	color: var(--hue-blk);
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+}
+button:hover,
+button.pri:hover {
+	background-color: var(--hue-pri);
+	border: thin solid var(--hue-pri-up1);
+	color: var(--hue-wht);
+}
+button:active,
+button.pri:active {
+	background-color: var(--hue-pri-dn2);
 	border: thin solid var(--hue-pri-dn1);
 }
-button:active {
-	background-color: var(--hue-pri-dn3);
-	border: thin solid var(--hue-pri-dn3);
+button.sec {
+	background-color: var(--hue-sec-up4);
+	border: thin solid var(--hue-sec-up5);
+	border-radius: 0.1666rem;
+	color: var(--hue-blk);
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+}
+button.sec:hover {
+	background-color: var(--hue-sec);
+	border: thin solid var(--hue-sec-up1);
+	color: var(--hue-wht);
+}
+button.sec:active {
+	background-color: var(--hue-sec-dn2);
+	border: thin solid var(--hue-sec-dn1);
+}
+button.bas {
+	background-color: var(--hue-bas-up3);
+	border: thin solid var(--hue-bas-up4);
+	border-radius: 0.1666rem;
+	color: var(--hue-blk);
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+}
+button.bas:hover {
+	background-color: var(--hue-bas-dn3);
+	border: thin solid var(--hue-bas-dn2);
+	color: var(--hue-wht);
+}
+button.bas:active {
+	background-color: var(--hue-bas-dn4);
+	border: thin solid var(--hue-bas-dn3);
 }
 /*
 ***
