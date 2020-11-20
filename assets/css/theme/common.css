@@ -1707,14 +1707,15 @@ button a:focus {
 }
 button,
 button.pri {
+	align-items: center;
 	background-color: var(--hue-pri-up4);
 	border: thin solid var(--hue-pri-up5);
 	border-radius: 0.1666rem;
 	color: var(--hue-blk);
-	display: table-cell;
+	display: inline-flex;
+	justify-content: center;
 	padding: 0.5rem 1.5rem;
 	text-align: center;
-	vertical-align: middle;
 }
 button:hover,
 button.pri:hover {
@@ -1728,14 +1729,15 @@ button.pri:active {
 	border: thin solid var(--hue-pri-dn1);
 }
 button.sec {
+	align-items: center;
 	background-color: var(--hue-sec-up4);
 	border: thin solid var(--hue-sec-up5);
 	border-radius: 0.1666rem;
 	color: var(--hue-blk);
-	display: table-cell;
+	display: inline-flex;
+	justify-content: center;
 	padding: 0.5rem 1.5rem;
 	text-align: center;
-	vertical-align: middle;
 }
 button.sec:hover {
 	background-color: var(--hue-sec);
@@ -1747,14 +1749,15 @@ button.sec:active {
 	border: thin solid var(--hue-sec-dn1);
 }
 button.bas {
+	align-items: center;
 	background-color: var(--hue-bas-up3);
 	border: thin solid var(--hue-bas-up4);
 	border-radius: 0.1666rem;
 	color: var(--hue-blk);
-	display: table-cell;
+	display: inline-flex;
+	justify-content: center;
 	padding: 0.5rem 1.5rem;
 	text-align: center;
-	vertical-align: middle;
 }
 button.bas:hover {
 	background-color: var(--hue-bas-dn3);
