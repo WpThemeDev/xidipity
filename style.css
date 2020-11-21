@@ -10,23 +10,22 @@
  Text Domain: xidipity
         Tags: blog,custom-colors,custom-header,custom-logo,custom-menu,editor-style,featured-images,front-page-post-form,full-width-template,grid-layout,one column,two columns,post-formats,left-sidebar,right-sidebar,sticky-post,theme-options,threaded-comments
 
--- Suggested Plugins       ----------------------------------------------------
-    Akismet Anti-Spam		wordpress.org/plugins/akismet/
-    Classic Editor			wordpress.org/plugins/classic-editor/
-    Native Lazyload			wordpress.org/plugins/native-lazyload/
-    Smart Slider 3			smartslider3.com/
-    Yoast SEO				yoast.com/
+-- Suggested Plugins		----------------------------------------------------
+	Akismet Anti-Spam		wordpress.org/plugins/akismet/
+	Classic Editor			wordpress.org/plugins/classic-editor/
+	Native Lazyload			wordpress.org/plugins/native-lazyload/
+	Smart Slider 3			smartslider3.com/
+	Yoast SEO				yoast.com/
 
--- Attribution             ----------------------------------------------------
-    Font Awesome Icons		fontawesome.com//
-    Google Material Design	material.io/
-    Underscores theme		Automattic, Inc. | underscores.me/
-    WordPress				Automattic, Inc. | automattic.com/
+-- Attribution				----------------------------------------------------
+	Font Awesome Icons		fontawesome.com//
+	Google Material Design	material.io/
+	Underscores theme		Automattic, Inc. | underscores.me/
+	WordPress				Automattic, Inc. | automattic.com/
 
--- CSS File Directory      ----------------------------------------------------
-The following CSS files are loaded from "functions.php"
+-- Asset File Directory		----------------------------------------------------
 
-	Source/Files                        	Comment
+	CSS/Files                        		Comment
     -------------------------------------- 	-----------------------------------
     /assets/css/theme/advance.css       	framework
     /assets/css/theme/common.css        	shared by all environments
@@ -44,6 +43,27 @@ The following CSS files are loaded from "functions.php"
 	Image/Files                      		Comment
     -------------------------------------- 	-----------------------------------
     /assets/img/s_favoriteIcon_512x512.png	default icon
+
+	Classic Editor Plugins
+    ---------------------------------------------------------------------------
+	/assets/tinymceplugins/add-horizontalrule
+	/assets/tinymceplugins/add-icon
+	/assets/tinymceplugins/add-list-ordered
+	/assets/tinymceplugins/add-list-unordered
+	/assets/tinymceplugins/add-misc-opts
+	/assets/tinymceplugins/add-multiple-columns
+	/assets/tinymceplugins/add-table
+	/assets/tinymceplugins/add-template
+	/assets/tinymceplugins/add-verticle-space
+	/assets/tinymceplugins/apply-text-alignment
+	/assets/tinymceplugins/apply-text-color
+	/assets/tinymceplugins/apply-text-format
+	/assets/tinymceplugins/apply-text-italic
+	/assets/tinymceplugins/apply-size
+	/assets/tinymceplugins/apply-style
+	/assets/tinymceplugins/apply-weight
+	/assets/tinymceplugins/clear-format
+	/assets/tinymceplugins/toggle-fullscreen
 
 -- Normalize CSS           ----------------------------------------------------
     # v8.0.1
