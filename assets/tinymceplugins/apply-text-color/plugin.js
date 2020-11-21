@@ -113,7 +113,10 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 			selObj.innerHtml = selObj.node.innerHTML;
 			selObj.innerText = getRawHtml(selObj.innerHtml);
 			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
+
+			//
 		}
+		var coreTagsExp = new RegExp(/div|h[1-6]|li|p/, 'is');
 		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
 		var newHtml;
 		var newTag;
@@ -159,20 +162,47 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 				}
 				break;
 			case (selObj.nodeName == 'span'):
-				// lessor tags (ie. <u>)
 				//alert('* mark #2 *');
+				// lessor tags (ie. <u>)
+				newTag = getNewTag(selObj.prefixTag(), argTag);
+				newHtml = selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag);
+				break;
+			case (isEmpty(selObj.nodeName.match(coreTagsExp))):
+				//alert('* mark #3 *');
+				// lessor tags (ie. <u>)
+				var rollbackHtml = editor.dom.getOuterHTML(selObj.node);
+				selObj.parentNode = editor.dom.getParent(selObj.node, 'div,h1,h2,h3,h4,h5,h6,li,p,span');
+				selObj.parentNodeName = selObj.parentNode.nodeName.toLowerCase();
+				selObj.outerHtml = editor.dom.getOuterHTML(selObj.parentNode);
+				var pairedTags = getRegExpValue(selObj.purgeOuterHtml(), '<span.*?><\\b(em|i|kbd|s|strong|sub|sup|u)\\b>', 'is');
+				if (isEmpty(pairedTags)) {
+					//alert('* mark #3.1 *');
+					selObj.parentNode = undefined;
+					selObj.parentNodeName = '';
+					selObj.outerHtml = '<span>' + rollbackHtml + '</span>';
+				}
 				newTag = getNewTag(selObj.prefixTag(), argTag);
 				newHtml = selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag);
 				break;
 			default:
 				//alert('* default #1 *');
 				// create new span
-				var sourceText = selObj.purgeOuterHtml();
-				preTag = getRegExpValue(sourceText, '^<(div|h[1-6]|li|p).*?>', 'is');
-				pstTag = getRegExpValue(sourceText, '<\/(div|h[1-6]|li|p)>$', 'is');
-				selObj.outerHtml = '<span>' + selObj.purgeInnerHtml() + '</span>';
-				newTag = getNewTag(selObj.prefixTag(), argTag);
-				newHtml = preTag + selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag) + pstTag;
+				if (selObj.textKey() !== selObj.innerTextKey()) {
+					//alert('* default #1.1 *');
+					newHtml = '<span style="' + argTag + '">' + selObj.html + '</span>';
+				} else {
+					//alert('* default #1.2 *');
+					var sourceText = selObj.purgeOuterHtml();
+					preTag = getRegExpValue(sourceText, '^<(div|h[1-6]|li|p).*?>', 'is');
+					pstTag = getRegExpValue(sourceText, '<\/(div|h[1-6]|li|p)>$', 'is');
+					if (isEmpty(preTag)) {
+						selObj.outerHtml = '<span>' + sourceText + '</span>';						
+					} else {
+						selObj.outerHtml = '<span>' + selObj.purgeInnerHtml() + '</span>';						
+					}
+					newTag = getNewTag(selObj.prefixTag(), argTag);
+					newHtml = preTag + selObj.purgeOuterHtml().replace(selObj.prefixTag(), newTag) + pstTag;					
+				}
 		}
 		if (!isEmpty(newHtml)) {
 			editor.execCommand('mceReplaceContent', false, newHtml);
@@ -213,7 +243,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		alert('.html - ' + argObj.html);
 		alert('.innerHtml - ' + argObj.innerHtml);
 		alert('.innerText - ' + argObj.innerText);
+		alert('.innerTextKey - ' + argObj.innerTextKey());
 		alert('.text - ' + argObj.text);
+		alert('.textKey - ' + argObj.textKey());
 		alert('.nodeName - ' + argObj.nodeName);
 		alert('.parentNodeName - ' + argObj.parentNodeName);
 		alert('.outerHtml - ' + argObj.outerHtml);
