@@ -3,7 +3,7 @@
  * Tinymce add-icon plugin
  *
  * ###:  plugin.js
- * bld:  30201101
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -54,23 +54,16 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 					htmlValue = this.tag.replace(this.class(), newClass);
 				}
 				// cleanup
-				switch (this.brand()) {
-					case ('font awesome'):
-						regExp = new RegExp(/></, 'is');
-						tmpValue = htmlValue.replace(regExp, '> <');
-						htmlValue = '&#8203;' + tmpValue + '&#8203;';
-						break;
-					case ('google'):
-						if (isEmpty(htmlValue.match(/span/))) {
-							tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<');
-						} else {
-							tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<').replace(/span/g, 'i');
-						}
-						htmlValue = '&#8203;' + tmpValue + '&#8203;';
-						break;
-					default:
-						tmpValue = htmlValue;
-						htmlValue = '&#8203;' + tmpValue + '&#8203;';
+				if (this.brand() == 'google') {
+					if (isEmpty(htmlValue.match(/span/))) {
+						tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<');
+					} else {
+						tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<').replace(/span/g, 'i');
+					}
+					htmlValue = '&#8203;' + tmpValue + '&#8203;';
+				} else {
+					tmpValue = htmlValue;
+					htmlValue = '&#8203;' + tmpValue + '&#8203;';
 				}
 			}
 			return htmlValue;
@@ -207,5 +200,5 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 	});
 });
 /*
- * EOF: add-icon / plugin.js / 30201101
+ * EOF: add-icon / plugin.js / 30201115
  */
