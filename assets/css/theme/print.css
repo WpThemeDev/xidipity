@@ -1,14 +1,13 @@
 /**
     * WordPress Xidipity Theme
-    * Print specific css classes 
+    * Print specific css classes
     *
     * ###:  assets/css/theme/print.css
-    * bld:  28200801
+    * bld:  30201115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
 */
-
 /*
 ***
     * element: body
@@ -27,7 +26,6 @@ body {
 	font-weight: var(--dft-font-weight);
 	line-height: var(--dft-line-height);
 }
-
 /*
 ***
     * rule: @page
@@ -42,7 +40,6 @@ body {
 	size: auto;
 	margin: 8%;
 }
-
 /*
 ***
     * id: excerpt, nav, sidebar, ...
@@ -60,7 +57,6 @@ body {
 .do-not-print {
 	display: none;
 }
-
 /*
 ***
     * element: <a>
@@ -76,7 +72,6 @@ a:visited {
 	font-weight: var(--dft-pri-lnk-wgt);
 	text-decoration: var(--dft-pri-lnk-decor);
 }
-
 a:active,
 a:focus,
 a:hover {
@@ -84,16 +79,13 @@ a:hover {
 	background-color: var(--transparent);
 	font-weight: var(--dft-pri-lnk-wgt);
 }
-
 table {
 	break-inside: auto
 }
-
 tr {
 	break-inside: avoid;
 	break-after: auto
 }
-
 /*
 ***
     * elements: <h1>–<h6>
@@ -110,7 +102,6 @@ h1 {
 	font-style: var(--h1-style);
 	font-weight: var(--h1-weight);
 }
-
 h2 {
 	color: var(--h2-color);
 	font-family: var(--h2-font);
@@ -118,7 +109,6 @@ h2 {
 	font-style: var(--h2-style);
 	font-weight: var(--h2-weight);
 }
-
 h3 {
 	color: var(--h3-color);
 	font-family: var(--h3-font);
@@ -126,7 +116,6 @@ h3 {
 	font-style: var(--h3-style);
 	font-weight: var(--h3-weight);
 }
-
 h4 {
 	color: var(--h4-color);
 	font-family: var(--h4-font);
@@ -134,7 +123,6 @@ h4 {
 	font-style: var(--h4-style);
 	font-weight: var(--h4-weight);
 }
-
 h5 {
 	color: var(--h5-color);
 	font-family: var(--h5-font);
@@ -142,7 +130,6 @@ h5 {
 	font-style: var(--h5-style);
 	font-weight: var(--h5-weight);
 }
-
 h6 {
 	color: var(--h6-color);
 	font-family: var(--h6-font);
@@ -150,7 +137,6 @@ h6 {
 	font-style: var(--h6-style);
 	font-weight: var(--h6-weight);
 }
-
 /*
 ***
     * element: table
@@ -167,24 +153,20 @@ table.cols\:4 {
 	border: none !important;
 	width: 100%;
 }
-
 .cols\:auto td,
 .cols\:2 td {
 	column-count: 2;
 	column-gap: 2%;
 	break-inside: avoid;
 }
-
 .cols\:3 td {
 	column-count: 3;
 	column-gap: 2%;
 }
-
 .cols\:4 td {
 	column-count: 4;
 	column-gap: 2%;
 }
-
 /*
 ***
     * environment: prt
@@ -197,34 +179,27 @@ table.cols\:4 {
 .prt\[dsp\:none\] {
 	display: none !important;
 }
-
 .prt\[dsp\:hidden\] {
 	visibility: hidden !important;
 }
-
 .prt\[dsp\:inline\] {
 	display: inline !important;
 }
-
 .prt\[dsp\:inline-block\] {
 	display: inline-block !important;
 }
-
 .prt\[pg-break\:after\] {
 	break-after: always;
 }
-
 .prt\[pg-break\:after\] {
 	break-after: always;
 }
-
 .prt\[box\:noshadow\] {
 	border-top: none !important;
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
-
 /*
 ***
     * environment: prt
@@ -237,91 +212,69 @@ table.cols\:4 {
 .prt\[fg-blk\] {
 	color: var(--hue-blk) !important;
 }
-
 .prt\[fg-wht\] {
 	color: var(--hue-wht) !important;
 }
-
 .prt\[fg-bas-900\] {
 	color: var(--hue-bas-900) !important;
 }
-
 .prt\[fg-bas-800\] {
 	color: var(--hue-bas-800) !important;
 }
-
 .prt\[fg-bas-700\] {
 	color: var(--hue-bas-700) !important;
 }
-
 .prt\[fg-bas-600\] {
 	color: var(--hue-bas-600) !important;
 }
-
 .prt\[fg-bas-500\] {
 	color: var(--hue-bas-500) !important;
 }
-
 .prt\[fg-bas-400\] {
 	color: var(--hue-bas-400) !important;
 }
-
 .prt\[fg-bas-300\] {
 	color: var(--hue-bas-300) !important;
 }
-
 .prt\[fg-bas-200\] {
 	color: var(--hue-bas-200) !important;
 }
-
 .prt\[fg-bas-100\] {
 	color: var(--hue-bas-100) !important;
 }
-
 .prt\[fg-bas-050\] {
 	color: var(--hue-bas-050) !important;
 }
-
 .prt\[bg-bas-900\] {
 	background-color: var(--hue-bas-900) !important;
 }
-
 .prt\[bg-bas-800\] {
 	background-color: var(--hue-bas-800) !important;
 }
-
 .prt\[bg-bas-700\] {
 	background-color: var(--hue-bas-700) !important;
 }
-
 .prt\[bg-bas-600\] {
 	background-color: var(--hue-bas-600) !important;
 }
-
 .prt\[bg-bas-500\] {
 	background-color: var(--hue-bas-500) !important;
 }
-
 .prt\[bg-bas-400\] {
 	background-color: var(--hue-bas-400) !important;
 }
-
 .prt\[bg-bas-300\] {
 	background-color: var(--hue-bas-300) !important;
 }
-
 .prt\[bg-bas-200\] {
 	background-color: var(--hue-bas-200) !important;
 }
-
 .prt\[bg-bas-100\] {
 	background-color: var(--hue-bas-100) !important;
 }
-
 .prt\[bg-bas-050\] {
 	background-color: var(--hue-bas-050) !important;
 }
-
 /*
 ***
     * property: box:shadow
@@ -337,7 +290,6 @@ table.cols\:4 {
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
 }
-
 /*
 ***
     * id: breadcrumbs
@@ -350,7 +302,6 @@ table.cols\:4 {
 #breadcrumbs {
 	display: none;
 }
-
 /*
- * EOF: assets/css/theme/print.css / 28200801
+ * EOF: assets/css/theme/print.css / 30201115
  */
