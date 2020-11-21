@@ -4,7 +4,7 @@
  * The template for displaying page header
  *
  * ###:  header.php
- * bld:  29200815
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -27,10 +27,10 @@ do_action('wp_head');
 */
 if (xty('fav-ico') == 'default')
 {
-	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
-	echo '<link rel="apple-touch-icon-precomposed" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="32x32" />' . "\n";
-	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" sizes="192x192" />' . "\n";
-	echo '<meta name="msapplication-TileImage" content="' . get_stylesheet_directory_uri() . '/assets/img/FavoriteIcon-IAR1.png" />' . "\n";
+	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/s_favoriteIcon_512x512.png" sizes="32x32" />' . "\n";
+	echo '<link rel="apple-touch-icon-precomposed" href="' . get_stylesheet_directory_uri() . '/assets/img/s_favoriteIcon_512x512.png" sizes="32x32" />' . "\n";
+	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/assets/img/s_favoriteIcon_512x512.png" sizes="192x192" />' . "\n";
+	echo '<meta name="msapplication-TileImage" content="' . get_stylesheet_directory_uri() . '/assets/img/s_favoriteIcon_512x512.png" />' . "\n";
 }
 else
 {
@@ -232,6 +232,6 @@ echo '</div>' . "\n";
 echo '<cmt name="end">HEADER/MENU</cmt>' . "\n";
 echo '<cmt name="end">HEADER/PHP</cmt>' . "\n";
 /*
- * EOF: header.php / 29200815
+ * EOF: header.php / 30201115
 */
 ?>
