@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  30201001
+ * bld:  30201015
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -1426,7 +1426,7 @@ function dsp_err($arg = '')
 	{
 		$msg = $arg;
 	}
-	$fn_retval = '<!--  TMPL:ALERT --><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:bas-2 bkg:tint-bas-1 cnr:arch-small mar:vrt+0.5"><div class="fnt:siz-lg-3x pad:hrz+0.75"><i class="icon:error_solid"></i></div><div class="pad:vrt+0.5 txt:bas-3">' . __($msg) . '</div></div><!-- /TMPL:ALERT -->';
+	$fn_retval = '<!-- TMPL:ALERT --><div class="bdr:bas-2 bdr:lt-so-3x bkg:tint-bas-1 cnr:arch-sm fx:r fxa:1 fxc:3 pad:hrz+1 pad:vrt+0.25"><div class="mar:rt+0.75 txt:red">​<i class="icon:error_solid fnt:siz-lg-1x"></i>​</div><div class="fnt:siz-sm-1x"><p>' . __($msg) . '</p></div></div><!-- /TMPL:ALERT -->';
 	// return html
 	return $fn_retval;
 }
@@ -1640,6 +1640,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 30201001
+ * EOF: functions.php / 30201015
 */
 ?>
