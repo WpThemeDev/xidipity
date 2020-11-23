@@ -4,7 +4,7 @@
  * The template for displaying media library image
  *
  * ###:  image.php
- * bld:  29200901
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -73,7 +73,7 @@ if ($wp_query->have_posts())
 	echo '</div>' . "\n";
 	if (!empty($caption))
 	{
-		echo '<div class="aln:text-center fnt:siz-1 mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
+		echo '<div class="aln:txt-ct fnt:siz-1 mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
 	}
 	if (!empty($content))
 	{
@@ -140,6 +140,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: image.php / 29200901
+ * EOF: image.php / 30201115
 */
 ?>
