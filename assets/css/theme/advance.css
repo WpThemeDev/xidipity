@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  assets/css/theme/advance.css
-    * bld:  30201101
+    * bld:  30201115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -2630,28 +2630,43 @@ table.bdr\:space\+2 {
 	width: 100%;
 }
 .ar\:1x1 {
-	padding-top: 100%;
+	padding-bottom: 100%;
 }
 .ar\:3x2 {
-	padding-top: 66.6666%;
+	padding-bottom: 66.6666%;
 }
 .ar\:4x3 {
-	padding-top: 75%;
+	padding-bottom: 75%;
 }
 .ar\:7x5 {
-	padding-top: 71.4286%;
+	padding-bottom: 71.4286%;
 }
 .ar\:16x9 {
-	padding-top: 56.25%;
+	padding-bottom: 56.25%;
 }
 .ar\:16x10 {
-	padding-top: 62.5%;
+	padding-bottom: 62.5%;
 }
 .ar\:17x9 {
-	padding-top: 52.9412%;
+	padding-bottom: 52.9412%;
 }
 .ar\:21x9 {
-	padding-top: 42.8571%;
+	padding-bottom: 42.8571%;
+}
+.ar\:container {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+.ar\:container iframe,
+.ar\:container object,
+.ar\:container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .ar\:content {
 	position: absolute;
@@ -5261,60 +5276,6 @@ table.bdr\:space\+2 {
 	.sm\)vw\:100 {
 		width: 100vw !important;
 	}
-	/*
-    ***
-        * property: @XxX
-        * dsc: set aspect ratio
-        * bld: 200318
-        * fnt: set aspect ratio of images / videos
-        * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
-    ***
-    */
-	.sm)ar\:1x1,
-	.sm)ar\:3x2,
-	.sm)ar\:4x3,
-	.sm)ar\:7x5,
-	.sm)ar\:16x9,
-	.sm)ar\:16x10,
-	.sm)ar\:17x9,
-	.sm)ar\:21x9 {
-		height: 0;
-		position: relative;
-		width: 100%;
-	}
-	.sm)ar\:1x1 {
-		padding-top: 100%;
-	}
-	.sm)ar\:3x2 {
-		padding-top: 66.6666%;
-	}
-	.sm)ar\:4x3 {
-		padding-top: 75%;
-	}
-	.sm)ar\:7x5 {
-		padding-top: 71.4286%;
-	}
-	.sm)ar\:16x9 {
-		padding-top: 56.25%;
-	}
-	.sm)ar\:16x10 {
-		padding-top: 62.5%;
-	}
-	.sm)ar\:17x9 {
-		padding-top: 52.9412%;
-	}
-	.sm)ar\:21x9 {
-		padding-top: 42.8571%;
-	}
-	.sm)ar\:content {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-	}
 }
 /*
 ***
@@ -7906,60 +7867,6 @@ table.bdr\:space\+2 {
 	}
 	.md\)vw\:100 {
 		width: 100vw !important;
-	}
-	/*
-    ***
-        * property: @XxX
-        * dsc: set aspect ratio
-        * bld: 200318
-        * fnt: set aspect ratio of images / videos
-        * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
-    ***
-    */
-	.md)ar\:1x1,
-	.md)ar\:3x2,
-	.md)ar\:4x3,
-	.md)ar\:7x5,
-	.md)ar\:16x9,
-	.md)ar\:16x10,
-	.md)ar\:17x9,
-	.md)ar\:21x9 {
-		height: 0;
-		position: relative;
-		width: 100%;
-	}
-	.md)ar\:1x1 {
-		padding-top: 100%;
-	}
-	.md)ar\:3x2 {
-		padding-top: 66.6666%;
-	}
-	.md)ar\:4x3 {
-		padding-top: 75%;
-	}
-	.md)ar\:7x5 {
-		padding-top: 71.4286%;
-	}
-	.md)ar\:16x9 {
-		padding-top: 56.25%;
-	}
-	.md)ar\:16x10 {
-		padding-top: 62.5%;
-	}
-	.md)ar\:17x9 {
-		padding-top: 52.9412%;
-	}
-	.md)ar\:21x9 {
-		padding-top: 42.8571%;
-	}
-	.md)ar\:content {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
 	}
 }
 /*
@@ -10564,60 +10471,6 @@ table.bdr\:space\+2 {
 	.lg\)vw\:100 {
 		width: 100vw !important;
 	}
-	/*
-    ***
-        * property: @XxX
-        * dsc: set aspect ratio
-        * bld: 200318
-        * fnt: set aspect ratio of images / videos
-        * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
-    ***
-    */
-	.lg)ar\:1x1,
-	.lg)ar\:3x2,
-	.lg)ar\:4x3,
-	.lg)ar\:7x5,
-	.lg)ar\:16x9,
-	.lg)ar\:16x10,
-	.lg)ar\:17x9,
-	.lg)ar\:21x9 {
-		height: 0;
-		position: relative;
-		width: 100%;
-	}
-	.lg)ar\:1x1 {
-		padding-top: 100%;
-	}
-	.lg)ar\:3x2 {
-		padding-top: 66.6666%;
-	}
-	.lg)ar\:4x3 {
-		padding-top: 75%;
-	}
-	.lg)ar\:7x5 {
-		padding-top: 71.4286%;
-	}
-	.lg)ar\:16x9 {
-		padding-top: 56.25%;
-	}
-	.lg)ar\:16x10 {
-		padding-top: 62.5%;
-	}
-	.lg)ar\:17x9 {
-		padding-top: 52.9412%;
-	}
-	.lg)ar\:21x9 {
-		padding-top: 42.8571%;
-	}
-	.lg)ar\:content {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-	}
 }
 /*
 ***
@@ -13221,61 +13074,7 @@ table.bdr\:space\+2 {
 	.xl\)vw\:100 {
 		width: 100vw !important;
 	}
-	/*
-    ***
-        * property: @XxX
-        * dsc: set aspect ratio
-        * bld: 200318
-        * fnt: set aspect ratio of images / videos
-        * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
-    ***
-    */
-	.xl)ar\:1x1,
-	.xl)ar\:3x2,
-	.xl)ar\:4x3,
-	.xl)ar\:7x5,
-	.xl)ar\:16x9,
-	.xl)ar\:16x10,
-	.xl)ar\:17x9,
-	.xl)ar\:21x9 {
-		height: 0;
-		position: relative;
-		width: 100%;
-	}
-	.xl)ar\:1x1 {
-		padding-top: 100%;
-	}
-	.xl)ar\:3x2 {
-		padding-top: 66.6666%;
-	}
-	.xl)ar\:4x3 {
-		padding-top: 75%;
-	}
-	.xl)ar\:7x5 {
-		padding-top: 71.4286%;
-	}
-	.xl)ar\:16x9 {
-		padding-top: 56.25%;
-	}
-	.xl)ar\:16x10 {
-		padding-top: 62.5%;
-	}
-	.xl)ar\:17x9 {
-		padding-top: 52.9412%;
-	}
-	.xl)ar\:21x9 {
-		padding-top: 42.8571%;
-	}
-	.xl)ar\:content {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-	}
 }
 /*
- * EOF: assets/css/theme/advance.css / 30201101
+ * EOF: assets/css/theme/advance.css / 30201115
  */
