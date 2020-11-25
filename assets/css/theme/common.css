@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  30201101
+    * bld:  30201115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -275,6 +275,30 @@ progress,
 video {
 	height: auto;
 	width: auto;
+}
+/*
+***
+    * elements: embed
+    * ver: 30201115
+    * video wrapper
+    * ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+***
+*/
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 /*
 ***
@@ -2335,5 +2359,5 @@ button.bas:active {
 	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNIDguOTk2IDEzLjIyNiBDIDkuMDU2IDEzLjIyNiA4LjkzNiAxMy4yMjggOC45OTYgMTMuMjI2IEMgOS4wMTkgMTMuMjI4IDkuMjIzIDEzLjIyNiA5LjI0NiAxMy4yMjYgTCAxMy42MzkgMTMuMjI2IEwgMTEuMzcxIDE1LjQ5NCBDIDExLjA3OSAxNS43ODcgMTEuMDc5IDE2LjI2MSAxMS4zNzEgMTYuNTU0IEMgMTEuNjY0IDE2Ljg0NyAxMi4xMzkgMTYuODQ3IDEyLjQzMiAxNi41NTQgTCAxNS43ODUgMTMuMjAxIEMgMTUuOTU5IDEzLjAyNyAxNi4wMyAxMi43ODkgMTUuOTk3IDEyLjU2MyBDIDE1Ljk3OCAxMi40MDEgMTUuOTA3IDEyLjI0NCAxNS43ODIgMTIuMTE5IEwgMTIuNTM1IDguODcyIEMgMTIuMjQyIDguNTc5IDExLjc2NyA4LjU3OSAxMS40NzUgOC44NzIgQyAxMS4xODIgOS4xNjUgMTEuMTgyIDkuNjQgMTEuNDc1IDkuOTMzIEwgMTMuMjY3IDExLjcyNiBMIDguOTk2IDExLjcyNiBDIDcuMDYzIDExLjcyNiA1LjQ5NiAxMC4xNTkgNS40OTYgOC4yMjYgQyA1LjQ5NiA2LjI5MyA3LjA2MyA0LjcyNiA4Ljk5NiA0LjcyNiBMIDEzLjI0NiA0LjcyNiBDIDEzLjY2IDQuNzI2IDEzLjk5NiA0LjM5IDEzLjk5NiAzLjk3NiBDIDEzLjk5NiAzLjU2MiAxMy42NiAzLjIyNiAxMy4yNDYgMy4yMjYgTCA5LjI0NiAzLjIyNiBDIDkuMjIzIDMuMjI2IDguOTk2IDMuMjI2IDguOTk2IDMuMjI2IEMgNi4yMzUgMy4yMjYgMy45OTYgNS40NjQgMy45OTYgOC4yMjYgQyAzLjk5NiAxMC45ODcgNi4yMzUgMTMuMjI2IDguOTk2IDEzLjIyNiBaIiBmaWxsPSIjMjEyMTIxIiB0cmFuc2Zvcm09Im1hdHJpeCgtMSwgMCwgMCwgLTEsIDIwLjAwMDg1OCwgMTkuOTk5NzUxKSIvPgo8L3N2Zz4=");
 }
 /*
- * EOF: assets/css/theme/common.css / 30201101
+ * EOF: assets/css/theme/common.css / 30201115
  */
