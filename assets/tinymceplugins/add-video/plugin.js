@@ -74,7 +74,7 @@ tinymce.PluginManager.add('add_video', function (editor, url) {
 					idValue = getRegExpValue(idValue,'\/(?!.*\/)(.+)','is',1);
 					break;
 				case (!isEmpty(idValue.match(/youtube/))):
-					idValue = getRegExpValue(idValue,'=(.+)','is',1);
+					idValue = getRegExpValue(idValue,'=(.*?)(&|$)','is',1);
 					break;
 			}
 			return idValue;
