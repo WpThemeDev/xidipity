@@ -1,9 +1,9 @@
 /**
  * WordPress Xidipity Theme
- * Tinymce add-list-unordered plugin 
+ * Tinymce add-list-unordered plugin
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -18,11 +18,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 		onclick: function() {
 			var dom = editor.dom;
 			var uniqueID = 'tag';
-			uniqueID += Math.floor(Math.random() * 1000);				
+			uniqueID += Math.floor(Math.random() * 1000);
 			var html = '<ul><li id="';
 			html += uniqueID;
 			html += '"></li></ul>';
-			editor.insertContent(html);
+			editor.execCommand('mceInsertContent', false, html);
 			var newListItem = dom.select('li#' + uniqueID)[0];
 			editor.selection.setCursorLocation(newListItem);
 		},
@@ -32,11 +32,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<ul><li id="';
 				html += uniqueID;
 				html += '"></li></ul>';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
@@ -46,11 +46,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<ul class="circle"><li id="';
 				html += uniqueID;
 				html += '"></li></ul>';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
@@ -60,11 +60,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<ul class="dash"><li id="';
 				html += uniqueID;
 				html += '"></li></ul>';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
@@ -74,11 +74,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<ul class="square"><li id="';
 				html += uniqueID;
 				html += '"></li></ul>';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
@@ -88,11 +88,11 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<ul class="mixed"><li id="';
 				html += uniqueID;
 				html += '"></li></ul>';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
 			}
@@ -101,5 +101,5 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 });
 
 /*
- * EOF: add-list-unordered / plugin.js / 29200901
+ * EOF: add-list-unordered / plugin.js / 30201115
  */
