@@ -3,7 +3,7 @@
  * Tinymce add-multiple-columns plugin
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -20,13 +20,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-2"><tr><td id="';
 				html += uniqueID;
 				html += '"></td></tr></table>'
 				html += '<!-- /TMPL:AUTO/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -36,13 +36,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-3"><tr><td id="';
 				html += uniqueID;
 				html += '"></td></tr></table>'
 				html += '<!-- /TMPL:AUTO/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -52,13 +52,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-4"><tr><td id="';
 				html += uniqueID;
 				html += '"></td></tr></table>';
 				html += '<!-- /TMPL:AUTO/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -68,13 +68,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-2"><tr><td id="';
 				html += uniqueID;
 				html += '"></td><td></td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -84,13 +84,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-3"><tr><td id="';
 				html += uniqueID;
 				html += '"></td><td></td><td></td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -100,13 +100,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-4"><tr><td id="';
 				html += uniqueID;
 				html += '"></td><td></td><td></td><td></td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -116,13 +116,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:PANEL/COL -->';
 				html += '<table class="panelx2" style="width:100%;"><tbody><tr><td id="';
 				html += uniqueID;
 				html += '" style="width:50%;"></td><td style="width:50%;"></td></tr></tbody></table>';
 				html += '<!-- /TMPL:PANEL/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -132,13 +132,13 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:PANEL/COL -->';
 				html += '<table class="panelx3" style="width:100%;"><tbody><tr><td id="';
 				html += uniqueID;
 				html += '" style="width:33.3333%;"></td><td style="width:33.3333%;"></td><td style="width:33.3333%;"></td></tr></tbody></table>';
 				html += '<!-- /TMPL:PANEL/COL -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -147,5 +147,5 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 });
 
 /*
- * EOF: add-multiple-columns / plugin.js / 29200901
+ * EOF: add-multiple-columns / plugin.js / 30201115
  */
