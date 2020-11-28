@@ -386,48 +386,65 @@ a.comment-reply-link:hover {
 /*
 ***
     property: cols:<type>
-    * ver: 190520
+    * ver: 30201115
     * fnt: web multi-column classes
     * ref: see common.css
 ***
 */
 @media (min-width: 600px) {
+	table.sm\)cols\:auto-1>tbody>tr>td {
+		column-count: initial !important;
+		column-gap: initial !important;
+	}
+	table.sm\)cols\:auto-2>tbody>tr>td,
 	table.cols\:auto-2>tbody>tr>td {
 		column-count: 2;
 		column-gap: 2%;
 	}
+	table.sm\)cols\:auto-3>tbody>tr>td,
 	table.cols\:auto-3>tbody>tr>td {
 		column-count: 2;
 		column-gap: 2%;
 	}
+	table.sm\)cols\:auto-4>tbody>tr>td,
 	table.cols\:auto-4>tbody>tr>td {
 		column-count: 2;
 		column-gap: 2%;
 	}
 }
 @media (min-width: 900px) {
+	table.md\)cols\:auto-1>tbody>tr>td {
+		column-count: initial !important;
+		column-gap: initial !important;
+	}
+	table.md\)cols\:auto-2>tbody>tr>td,
 	table.cols\:auto-2>tbody>tr>td {
 		column-count: 2;
 		column-gap: 2%;
 	}
+	table.md\)cols\:auto-3>tbody>tr>td,
 	table.cols\:auto-3>tbody>tr>td {
 		column-count: 3;
 		column-gap: 2%;
 	}
+	table.md\)cols\:auto-4>tbody>tr>td,
 	table.cols\:auto-4>tbody>tr>td {
 		column-count: 3;
 		column-gap: 2%;
 	}
 }
 @media (min-width: 1024px) {
+	table.lg\)cols\:auto-2>tbody>tr>td,
 	table.cols\:auto-2>tbody>tr>td {
 		column-count: 2;
 		column-gap: 2%;
 	}
+	table.lg\)cols\:auto-3>tbody>tr>td,
 	table.cols\:auto-3>tbody>tr>td {
 		column-count: 3;
 		column-gap: 2%;
 	}
+	table.lg\)cols\:auto-4>tbody>tr>td,
 	table.cols\:auto-4>tbody>tr>td {
 		column-count: 4;
 		column-gap: 2%;
