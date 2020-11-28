@@ -1115,6 +1115,7 @@ table.panelx3>tbody>tr>td {
     * ref: see web.css
 ***
 */
+table.cols\:auto-1,
 table.cols\:auto-2,
 table.cols\:auto-3,
 table.cols\:auto-4,
@@ -1125,6 +1126,7 @@ table.cols\:fixed-4 {
 	table-layout: fixed;
 	width: 100%;
 }
+table.cols\:auto-1>tbody>tr>td,
 table.cols\:auto-2>tbody>tr>td,
 table.cols\:auto-3>tbody>tr>td,
 table.cols\:auto-4>tbody>tr>td,
@@ -1135,6 +1137,7 @@ table.cols\:fixed-4>tbody>tr>td {
 	vertical-align: top;
 }
 @media (max-width: 599px) {
+	table.cols\:auto-1>tbody>tr>td,
 	table.cols\:auto-2>tbody>tr>td,
 	table.cols\:auto-3>tbody>tr>td,
 	table.cols\:auto-4>tbody>tr>td,
@@ -1152,11 +1155,16 @@ table.cols\:fixed-4>tbody>tr>td {
 		margin-bottom: 0.5rem;
 	}
 }
-/*: md)media :*/
+/*: sm)media :*/
 @media (min-width: 600px) {
+	table.cols\:auto-1,
+	table.sm\)cols\:auto-1,
 	table.cols\:auto-2,
+	table.sm\)cols\:auto-2,
 	table.cols\:auto-3,
+	table.sm\)cols\:auto-2,
 	table.cols\:auto-4,
+	table.sm\)cols\:auto-4,
 	table.cols\:fixed-2,
 	table.cols\:fixed-3,
 	table.cols\:fixed-4 {
@@ -1181,6 +1189,16 @@ table.cols\:fixed-4>tbody>tr>td {
 	}
 	table.cols\:fixed-4>tbody>tr>td {
 		width: 25%;
+	}
+}
+/*: md)media :*/
+@media (min-width: 900px) {
+	table.md\)cols\:auto-1,
+	table.md\)cols\:auto-2,
+	table.md\)cols\:auto-3,
+	table.md\)cols\:auto-4 {
+		border-collapse: collapse;
+		table-layout: fixed;
 	}
 }
 /*: embedded table :*/
