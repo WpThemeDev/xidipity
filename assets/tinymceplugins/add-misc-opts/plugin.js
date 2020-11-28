@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  29201001
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -28,13 +28,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 				} else {
 					var dom = editor.dom;
 					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);				
+					uniqueID += Math.floor(Math.random() * 1000);
 					var html = '<!--  TMPL:BLOCKQUOTE -->';
 					html += '<blockquote><p id="';
 					html += uniqueID;
 					html += '"></p></blockquote>';
 					html += '<!-- /TMPL:BLOCKQUOTE -->';
-					editor.insertContent(html);
+					editor.execCommand('mceInsertContent', false, html);
 					var newTag = dom.select('p#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
 				}
@@ -59,13 +59,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 				} else {
 					var dom = editor.dom;
 					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);				
+					uniqueID += Math.floor(Math.random() * 1000);
 					var html = '<!--  TMPL:FRAME -->';
 					html += '<table class="frame"><tr><td id="';
 					html += uniqueID;
 					html += '"></td></tr></table>';
 					html += '<!-- /TMPL:FRAME -->';
-					editor.insertContent(html);
+					editor.execCommand('mceInsertContent', false, html);
 					var newTag = dom.select('td#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
 				}
@@ -77,13 +77,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				uniqueID += Math.floor(Math.random() * 1000);
 				var html = '<!--  TMPL:EXCERPT -->';
 				html += '<table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tbody class="fnt:siz-1"><tr><td class="bdr:so-1x bdr:bas+3 bkg:tint-bas+1 cnr:arch-x-small pad:+0.5" id="';
 				html += uniqueID;
 				html += '"></td><td class="mce[dsp:none]"><!--more--></td></tr></tbody></table>';
 				html += '<!-- /TMPL:EXCERPT -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -126,7 +126,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				var mceCHR = editor.selection.getContent({
 					format: 'text'
-				});				
+				});
 				switch (mceCHR) {
 					case ('(c)'):
 						editor.selection.setContent('&#0169;');
@@ -200,5 +200,5 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 });
 
 /*
- * EOF: add-misc-opts / plugin.js / 29201001
+ * EOF: add-misc-opts / plugin.js / 30201115
  */
