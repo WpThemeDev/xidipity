@@ -4,7 +4,7 @@
  * Theme Extended Functionality
  *
  * ###:  inc/extras.php
- * bld:  29200815
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -14,7 +14,7 @@
  *  xlst    200429    excerpt list
  *  blst    200322    unordered list of linked blog titles
  *  clst    200322    unordered list of linked category titles
- *  imgg    200322    image gallary
+ *  imgg    30201115  image gallary
  *  plst    200322    unordered list of linked page titles
  *
  *  Utility
@@ -506,10 +506,10 @@ function clst_shortcode($args = array() , $prm = '')
 }
 /**
  *  name: imgg
- *  build: 28200801
+ *  build: 30201115
  *  description: Gallery images by category
  *  attributes ($args - array):
- *      class	- string
+ *      css		- string
  *      caption	- string (l/c/r)
  *      content	- string (y/n)
  *      orderby	- string
@@ -518,7 +518,7 @@ function clst_shortcode($args = array() , $prm = '')
  *  parameter ($prm - string):
  *      category/s - string
  *
- * [imgg class="" cnt=0  caption="" content="" orderby="" order=""]category/s[/imgg]
+ * [imgg css="" cnt=0  caption="" content="" orderby="" order=""]category/s[/imgg]
  *
  */
 add_shortcode('imgg', 'imgg_shortcode');
@@ -540,13 +540,13 @@ function imgg_shortcode($args = array() , $prm = '')
 			$caption = $result;
 		}
 	}
-	$class = '';
-	if (array_key_exists('class', $args))
+	$css = '';
+	if (array_key_exists('css', $args))
 	{
-		$result = purge_tmpl_mrker($args['class']);
+		$result = purge_tmpl_mrker($args['css']);
 		if (!empty($result))
 		{
-			$class = $result;
+			$css = $result;
 		}
 	}
 	$content = 'n';
@@ -644,9 +644,20 @@ function imgg_shortcode($args = array() , $prm = '')
 			/*
 			 *** display image
 			*/
+			$class = '';
+			$style = '';
+			$exp = '/class.*?=.*?"(.*?)"/i';
+			if (preg_match($exp, $css, $matches)) {
+				$class = $matches[1];
+			}
+			$exp = '/style.*?=.*?"(.*?)"/i';
+			if (preg_match($exp, $css, $matches)) {
+				$style = $matches[1];
+			}
 			$html .= '<div class="fxd:1 fxe:1">';
 			$html .= wp_get_attachment_link(get_the_ID() , 'full', true, false, false, array(
 				'class' => $class,
+				'style' => $style,
 				'alt' => xty('seo')
 			));
 			$html .= '</div>';
@@ -950,6 +961,6 @@ function xidipity_shortcode($atts = array())
 	}
 }
 /*
- * EOF: inc/extras.php / 29200815
+ * EOF: inc/extras.php / 30201115
 */
 ?>
