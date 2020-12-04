@@ -4,20 +4,19 @@
  * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
- * bld:  29200815
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
  */
 /*  # xty_excerpt
-    # 28200801
+    # 30201115
     # return html excerpt
 **/
 if (!function_exists('xty_excerpt'))
 {
-	function xty_excerpt()
+	function xty_excerpt($argCnt = 0)
 	{
-		$cnt++;
 		$html = '';
 		$post_thumbnail_id = get_post_thumbnail_id();
 		$wp_img = get_the_post_thumbnail(null, 'FULL', array(
@@ -30,7 +29,7 @@ if (!function_exists('xty_excerpt'))
 			$attachment_page_url = wp_get_attachment_url();
 		}
 		$post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $cnt . '/</cmt>';
+		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $argCnt . '/</cmt>';
 		if (xty('fea-img') == 'right')
 		{
 			$html .= '<div class="fx:rw sm)fx:r-rev fxa:1 fxb:1 fxc:1 mar:vrt+1">';
@@ -41,7 +40,7 @@ if (!function_exists('xty_excerpt'))
 		}
 		if (!empty($wp_img) && xty('fea-img') !== 'none')
 		{
-			$html .= '<div class="fxd:3 fxe:6 fb:100% sm)fb:30% lg)fb:20% sm)pad:rt+0.75">';
+			$html .= '<div class="fxd:3 fxe:6 fb:100% sm)fb:40% sm)pad:rt+0.75 wd:0">';
 			$html .= '<a href="' . $attachment_page_url . '">' . $wp_img . '</a>';
 			$html .= '</div>';
 			$html .= '<div class="fxd:2 fxe:6 pad:tp+0.5 sm)pad:tp+0 fb:100% sm)fb:70% lg)fb:80%">';
@@ -99,7 +98,7 @@ if (!function_exists('xty_excerpt'))
 		$html .= '</div>';
 		$html .= '</div>';
 		$html .= '</div>';
-		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $cnt . '/</cmt>';
+		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $argCnt . '/</cmt>';
 		/*
 		 *** return html
 		*/
