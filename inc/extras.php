@@ -13,9 +13,9 @@
  *  bexc    200513    blog excerpt
  *  xlst    200429    excerpt list
  *  blst    30201115  unordered list of linked blog titles
- *  clst    200322    unordered list of linked category titles
+ *  clst    30201115  unordered list of linked category titles
  *  imgg    30201115  image gallary
- *  plst    200322    unordered list of linked page titles
+ *  plst    30201115  unordered list of linked page titles
  *
  *  Utility
  *  ---------------  ---------------------------------------------------------
@@ -26,7 +26,6 @@
  *
  */
 /*
- *
  *  name:   excerpt
  *  build:  200513
  *  descrp: display blog excerpt
@@ -85,7 +84,7 @@ function excerpt_shortcode($args = array() , $prm = '')
 /*
  *
  *  name:   xlst
- *  build:  28200801
+ *  build:  30201115
  *  descrp: display list of blog excerpts by category
  *  arguments ($args - array):
  *      align_img - string (l/r/x) x=no image
@@ -193,8 +192,9 @@ function xlst_shortcode($args = array() , $prm = '')
 			/*
 			 *** inc/template-tags/xty_excerpt
 			*/
+			$cnt++;
 			$html .= '<div class="mar:bt+2">' . "\n";
-			$html .= xty_excerpt();
+			$html .= xty_excerpt($cnt);
 			$html .= '</div>' . "\n";
 		}
 	}
@@ -370,10 +370,10 @@ function blst_shortcode($args = array() , $prms = '')
 }
 /**
  *  name:   clst
- *  build:  28200801
+ *  build:  3020115
  *  descrp: display unordered list of linked category titles
  *  attributes ($args - array):
- *      class - string
+ *      css - string
  *      bullet - string (font awesome)
  *      depth - numeric
  *      active - string (y/n)
@@ -412,13 +412,13 @@ function clst_shortcode($args = array() , $prm = '')
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
-	$class = '';
-	if (array_key_exists('class', $args))
+	$css = '';
+	if (array_key_exists('css', $args))
 	{
-		$tmp_str = purge_tmpl_mrker($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['css']);
 		if (!empty($tmp_str))
 		{
-			$class = $tmp_str;
+			$css = $tmp_str;
 		}
 	}
 	$depth = 0;
@@ -431,8 +431,29 @@ function clst_shortcode($args = array() , $prm = '')
 	*/
 	if (!empty($bullet))
 	{
-		$tmp_str = $class;
-		$class = 'ul-fa ' . $tmp_str;
+		$css_class = '';
+		$css_style = '';
+		$exp = '/class.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_class = $matches[1];
+		}
+		$exp = '/style.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_style = $matches[1];
+		}
+		switch (true) {
+			case (empty($css_class) && empty($css_style)):
+				$css = 'class="ul-fa"';
+				break;
+			case (empty($css_class)):
+				$css = 'class="ul-fa" ' . 'style="' . $css_style . '"';
+				break;
+			case (empty($css_style)):
+				$css = 'class="ul-fa ' . $css_class . '"';
+				break;
+			default:
+				$css = 'class="ul-fa ' . $css_class . '" style="' . $css_style . '"';
+		}
 		$pre_itm = '<span class="li-fa">' . $bullet . '</span>';
 		$pst_itm = '';
 	}
@@ -474,7 +495,7 @@ function clst_shortcode($args = array() , $prm = '')
 		*/
 		$wp_data = array(
 			'child_of' => $include_ids,
-			'class' => $class,
+			'class' => '',
 			'current_category' => 0,
 			'depth' => $depth,
 			'echo' => false,
@@ -503,11 +524,10 @@ function clst_shortcode($args = array() , $prm = '')
 		/*
 		 *** build html
 		*/
-		$html = '';
-		$html .= '<ul>';
-		if (!empty($class))
+		$html = '<ul>';
+		if (!empty($css))
 		{
-			$html .= '<ul class="' . $class . '">';
+			$html = '<ul ' . $css . '>';
 		}
 		$html .= wp_list_categories($wp_data);
 		$html .= '</ul>';
