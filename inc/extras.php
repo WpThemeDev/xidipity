@@ -12,7 +12,7 @@
  *  ------  --------  ---------------------------------------------------------
  *  bexc    200513    blog excerpt
  *  xlst    200429    excerpt list
- *  blst    200322    unordered list of linked blog titles
+ *  blst    30201115  unordered list of linked blog titles
  *  clst    200322    unordered list of linked category titles
  *  imgg    30201115  image gallary
  *  plst    200322    unordered list of linked page titles
@@ -216,10 +216,10 @@ function xlst_shortcode($args = array() , $prm = '')
 }
 /**
  *  name:   blst
- *  build:  28200801
+ *  build:  30201115
  *  descrp: display unordered list of linked blog titles
  *  attributes ($args - array):
- *      class - string
+ *      css - string
  *      bullet - string (font awesome)
  *      orderby - string
  *      order - string (A/D)
@@ -238,7 +238,7 @@ function blst_shortcode($args = array() , $prms = '')
 	 *** variables defaults
 	*/
 	$bullet = '';
-	$class = '';
+	$css = '';
 	$cnt = - 1;
 	$html = '';
 	$order = 'ASC';
@@ -250,12 +250,12 @@ function blst_shortcode($args = array() , $prms = '')
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
-	if (array_key_exists('class', $args))
+	if (array_key_exists('css', $args))
 	{
-		$tmp_str = purge_tmpl_mrker($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['css']);
 		if (!empty($tmp_str))
 		{
-			$class = $tmp_str;
+			$css = $tmp_str;
 		}
 	}
 	if (array_key_exists('cnt', $args))
@@ -286,9 +286,30 @@ function blst_shortcode($args = array() , $prms = '')
 	 *** font awesome bullet
 	*/
 	if (!empty($bullet))
-	{
-		$tmp_str = $class;
-		$class = 'ul-fa ' . $tmp_str;
+	{	
+		$css_class = '';
+		$css_style = '';
+		$exp = '/class.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_class = $matches[1];
+		}
+		$exp = '/style.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_style = $matches[1];
+		}
+		switch (true) {
+			case (empty($css_class) && empty($css_style)):
+				$css = 'class="ul-fa"';
+				break;
+			case (empty($css_class)):
+				$css = 'class="ul-fa" ' . 'style="' . $css_style . '"';
+				break;
+			case (empty($css_style)):
+				$css = 'class="ul-fa ' . $css_class . '"';
+				break;
+			default:
+				$css = 'class="ul-fa ' . $css_class . '" style="' . $css_style . '"';
+		}
 		$pre_itm = '<span class="li-fa">' . $bullet . '</span>';
 		$pst_itm = '';
 	}
@@ -320,9 +341,9 @@ function blst_shortcode($args = array() , $prms = '')
 			 *** build html
 			*/
 			$html = '<ul>';
-			if (!empty($class))
+			if (!empty($css))
 			{
-				$html = '<ul class="' . $class . '">';
+				$html = '<ul ' . $css . '>';
 			}
 			while ($wp_data->have_posts())
 			{
@@ -624,6 +645,16 @@ function imgg_shortcode($args = array() , $prm = '')
 	{
 		$cnt = 0;
 		$tot_paged = $wp_data->max_num_pages;
+		$class = '';
+		$style = '';
+		$exp = '/class.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$class = $matches[1];
+		}
+		$exp = '/style.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$style = $matches[1];
+		}
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:1 wd:100%">';
 		while ($wp_data->have_posts())
 		{
@@ -644,16 +675,6 @@ function imgg_shortcode($args = array() , $prm = '')
 			/*
 			 *** display image
 			*/
-			$class = '';
-			$style = '';
-			$exp = '/class.*?=.*?"(.*?)"/i';
-			if (preg_match($exp, $css, $matches)) {
-				$class = $matches[1];
-			}
-			$exp = '/style.*?=.*?"(.*?)"/i';
-			if (preg_match($exp, $css, $matches)) {
-				$style = $matches[1];
-			}
 			$html .= '<div class="fxd:1 fxe:1">';
 			$html .= wp_get_attachment_link(get_the_ID() , 'full', true, false, false, array(
 				'class' => $class,
@@ -725,17 +746,17 @@ function imgg_shortcode($args = array() , $prm = '')
 /*
  *
  *  name:   plst
- *  build:  200322
+ *  build:  30201115
  *  descrp: display unordered list of linked page titles
  *  attributes ($args - array):
- *      class - string
+ *      css - string
  *      bullet - string (font awesome/google)
  *      depth - numeric
  *
  *  parameters ($prm - string):
  *      page title(s) - string
  *
- *  [plst class='' bullet='' depth=0]titles[/plst]
+ *  [plst css='' bullet='' depth=0]titles[/plst]
  *
  *  developer.wordpress.org/reference/functions/wp_list_pages/
  *
@@ -747,7 +768,7 @@ function plst_shortcode($args = array() , $prm = string)
 	 *** variables defaults
 	*/
 	$bullet = '';
-	$class = '';
+	$css = '';
 	$depth = 0;
 	$html = '';
 	$pre_itm = '';
@@ -756,20 +777,16 @@ function plst_shortcode($args = array() , $prm = string)
 	/*
 	 *** save args to local variables
 	*/
-	if (array_key_exists('class', $args))
-	{
-		$class = purge_tmpl_mrker($args['class']);
-	}
 	if (array_key_exists('bullet', $args))
 	{
 		$bullet = purge_tmpl_mrker($args['bullet']);
 	}
-	if (isset($args['class']))
+	if (array_key_exists('css', $args))
 	{
-		$tmp_str = purge_tmpl_mrker($args['class']);
+		$tmp_str = purge_tmpl_mrker($args['css']);
 		if (!empty($tmp_str))
 		{
-			$class = $tmp_str;
+			$css = $tmp_str;
 		}
 	}
 	if (array_key_exists('depth', $args))
@@ -781,13 +798,31 @@ function plst_shortcode($args = array() , $prm = string)
 	*/
 	if (!empty($bullet))
 	{
-		$tmp_str = $class;
-		$class = 'ul-fa';
-		if (!empty($tmp_str))
-		{
-			$class .= ' ' . $tmp_str;
+		$css_class = '';
+		$css_style = '';
+		$exp = '/class.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_class = $matches[1];
+		}
+		$exp = '/style.*?=.*?"(.*?)"/i';
+		if (preg_match($exp, $css, $matches)) {
+			$css_style = $matches[1];
+		}
+		switch (true) {
+			case (empty($css_class) && empty($css_style)):
+				$css = 'class="ul-fa"';
+				break;
+			case (empty($css_class)):
+				$css = 'class="ul-fa" ' . 'style="' . $css_style . '"';
+				break;
+			case (empty($css_style)):
+				$css = 'class="ul-fa ' . $css_class . '"';
+				break;
+			default:
+				$css = 'class="ul-fa ' . $css_class . '" style="' . $css_style . '"';
 		}
 		$pre_itm = '<span class="li-fa">' . $bullet . '</span>';
+		$pst_itm = '';
 	}
 	// build list of include / exclude page ids
 	$include_ids = '';
@@ -849,9 +884,9 @@ function plst_shortcode($args = array() , $prm = string)
 		 *** build return html
 		*/
 		$html = '<ul>';
-		if (!empty($class))
+		if (!empty($css))
 		{
-			$html = '<ul class="' . $class . '">';
+			$html = '<ul ' . $css . '>';
 		}
 		$html .= wp_list_pages($wp_data);
 		$html .= '</ul>';
