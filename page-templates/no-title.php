@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Name: NoTitle
+ * Template Name: No Title
  *
  * WordPress Xidipity Theme
  * The template for displaying page without page title
  *
  * ###:  page-templates/no-title.php
- * bld:  29200901
+ * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -107,6 +107,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/no-title.php / 29200901
+ * EOF: page-templates/no-title.php / 30201115
 */
 ?>
