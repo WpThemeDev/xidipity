@@ -87,23 +87,28 @@ echo '<body class="' . implode(' ', get_body_class()) . '">' . "\n";
  *** open page flex container here / close in footer
 */
 echo '<cmt name="begin">HEADER/PHP</cmt>' . "\n";
-echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 pad:hrz+0.5">' . "\n";
+echo '<div class="fx:rw fxa:1 fxb:1 fxc:1 pad:hrz+0.5-deprecate">' . "\n";
 /*
  *** display header as configured
 */
+if (xty('hdr-img') !== 'none') {
+	$hdr_ht = xty('hdr-ht');
+} else {
+	$hdr_ht = '8rem';
+}
 echo '<cmt name="begin">PAGE/HEADER</cmt>' . "\n";
-echo '<div class="fxd:1 fxe:2 fb:100% wd:0">' . "\n";
+echo '<div class="fxd:1 fxe:2 fb:100% mar:bt-1.5 wd:0">' . "\n";
 if (xty('hdr-aln') == 'left')
 {
-	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100%" style="min-height:' . $hdr_ht . ';">' . "\n";
 }
 elseif (xty('hdr-aln') == 'right')
 {
-	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:2 fxc:3 hdr:bg-img fb:100%" style="min-height:' . $hdr_ht . ';">' . "\n";
 }
 else
 {
-	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img fb:100%" style="min-height:' . xty('hdr-ht') . ';">' . "\n";
+	echo '<header class="fx:r fxa:3 fxc:3 hdr:bg-img fb:100%" style="min-height:' . $hdr_ht . ';">' . "\n";
 }
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 if (xty('hdr-logo') == 'none')
@@ -159,16 +164,16 @@ if (xty('hdr-logo') == 'none')
 }
 else
 {
-	echo '<div class="dsp:block">' . "\n";
+	//echo '<div class="dsp:block">' . "\n";
 	if (is_front_page() || is_home())
 	{
-		echo '<img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Theme">' . "\n";
+		echo '<img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Blog">' . "\n";
 	}
 	else
 	{
-		echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . '"></a>' . "\n";
+		echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Blog"></a>' . "\n";
 	}
-	echo '</div>' . "\n";
+	//echo '</div>' . "\n";
 }
 echo '</header>' . "\n";
 echo '</div>' . "\n";
