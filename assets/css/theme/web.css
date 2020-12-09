@@ -954,8 +954,8 @@ a.page-numbers:focus {
 	display: block !important;
 }
 #nav input.trigger:checked+label {
-	box-shadow: 0 0 1px 1px var(--hue-bas-up4);
-	color: var(--hue-sec);
+	/*box-shadow: 0 0 1px 1px var(--hue-bas-up4);
+	color: var(--hue-sec-dn1);*/
 	margin-bottom: 0.25rem;
 }
 /*: sm) media :*/
