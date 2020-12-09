@@ -44,13 +44,13 @@ else
 */
 if (xty('hdr-img') !== 'none')
 {
-	echo '<!--  img:HEADER/BACKGROUND -->' . "\n";
+	echo '<!--  style:HEADER/BACKGROUND -->' . "\n";
 	echo '<style type="text/css">' . "\n";
 	echo '.hdr\:bg-img {' . "\n";
 	echo 'background-image: url("' . xty('hdr-img') . '");' . "\n";
 	echo '}' . "\n";
 	echo '</style>' . "\n";
-	echo '<!-- /img:HEADER/BACKGROUND -->' . "\n";
+	echo '<!-- /style:HEADER/BACKGROUND -->' . "\n";
 }
 /*
  *** create emoji styles
@@ -97,7 +97,7 @@ if (xty('hdr-img') !== 'none') {
 	$hdr_ht = '8rem';
 }
 echo '<cmt name="begin">PAGE/HEADER</cmt>' . "\n";
-echo '<div class="fxd:1 fxe:2 fb:100% mar:bt-1.5 wd:0">' . "\n";
+echo '<div class="fxd:1 fxe:2 fb:100% wd:0">' . "\n";
 if (xty('hdr-aln') == 'left')
 {
 	echo '<header class="fx:r fxa:1 fxc:3 hdr:bg-img fb:100%" style="min-height:' . $hdr_ht . ';">' . "\n";
@@ -191,7 +191,7 @@ if (xty('mnu-dsp') == 'no')
 }
 else
 {
-	echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]">' . "\n";
+	echo '<div class="fxd:1 fxe:2 fb:100% mar:tp-1.5 prt[dsp:none]">' . "\n";
 }
 if (xty('mnu-aln') == 'left')
 {
@@ -213,17 +213,17 @@ if ($wp_menu || $wp_page)
 		/*: xidipity toc page :*/
 		if ($wp_page->ID == get_queried_object_id())
 		{
-			echo '<a class="toc:btn led:wide" href="' . home_url('/') . '"><i class="fas fa-bars"></i></a>' . "\n";
+			echo '<a class="toc:btn led:wide" href="' . home_url('/') . '"><i class="icon:sys_menu_bar"></i></a>' . "\n";
 		}
 		else
 		{
-			echo '<a class="toc:btn led:wide" href="' . get_permalink($wp_page->ID) . '"><i class="fas fa-bars"></i></a>' . "\n";
+			echo '<a class="toc:btn led:wide" href="' . get_permalink($wp_page->ID) . '"><i class="icon:sys_menu_bar"></i></a>' . "\n";
 		}
 	}
 	else
 	{
 		echo '<input class="trigger" type="checkbox" id="mainNavButton" name="hm">' . "\n";
-		echo '<label for="mainNavButton" class="led:wide toc:hamburger" onclick><i class="fas fa-bars"></i></label>' . "\n";
+		echo '<label for="mainNavButton" onclick><i class="material-icons bkg:pri-3!hover cnr:arch-sm pad:hrz+0.5 txt:wht!hover">menu</i></label>' . "\n";
 		wp_nav_menu(array(
 			'theme_location' => 'primary',
 			'menu_id' => 'primary-menu',
