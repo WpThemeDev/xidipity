@@ -8,7 +8,7 @@ define('FooterAlignment', 'center');
 define('HeaderAlignment', 'center');
 define('HeaderHeight', '12rem');
 define('HeaderImage', 'none');
-define('HeaderLogo', 'https://doc.xidipity.com/wp-content/uploads/2020/12/s_xidipity_logo_320x137.png');
+define('HeaderLogo', 'none');
 define('MenuAlignment', 'center');
 define('MenuDisplay', 'yes');
 define('MenuWidth', '80%');
