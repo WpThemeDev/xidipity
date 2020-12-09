@@ -15,22 +15,12 @@
  *
  */
 $xty = array();
-define('CopyRightHolder', get_bloginfo( 'name' ));
-define('EmojiDisplay', 'yes');
-define('FontAwesomeVersion', '5.12.1');
-define('FavoriteIcon', 'default');
-define('FooterAlignment', 'center');
-define('HeaderAlignment', 'center');
-define('HeaderHeight', '12rem');
-define('HeaderLogo', 'none');
-define('HeaderImage', 'none');
-define('MenuAlignment', 'center');
-define('MenuDisplay', 'yes');
-define('MenuWidth', '80%');
-define('MessageDefault', 'Hello :)');
-define('SidebarAlignment', 'right');
-define('FeaturedImage', 'left');
-define('ThemeSEO', 'Xidipity WordPress Theme');
+/**
+ *  theme configuration constants
+ *  are here to keep folks out of
+ *  this file :)
+ */
+include (locate_template('cfg.php', false, false));
 /**
  *  name: xty
  *  build: 28200801
