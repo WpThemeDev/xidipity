@@ -406,11 +406,11 @@ table.cols\:auto-2>tbody>tr>td {
 	column-gap: 2%;
 }
 table.cols\:auto-3>tbody>tr>td {
-	column-count: 3;
+	column-count: 2;
 	column-gap: 2%;
 }
 table.cols\:auto-4>tbody>tr>td {
-	column-count: 4;
+	column-count: 2;
 	column-gap: 2%;
 }
 /* max 2 columns */
