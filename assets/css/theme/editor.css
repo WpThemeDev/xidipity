@@ -3,7 +3,7 @@
     * Editor specific css classes
     *
     * ###:  assets/css/theme/editor.css
-    * bld:  30201115
+    * bld:  30201201
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -105,15 +105,20 @@ ul.par li>ul {
 	margin-left: 1.25rem;
 	padding-left: 0.5rem !important;
 }
+*/
 /*
 ***
-    property: cols:<type>
-    * dsc: multi-columns
-    * ver: 190520
-    * fnt: common multi-column classes
+    element: <table>
+    * ver: 30201201
+    * fnt: multi columns
     * ref: see common.css
 ***
 */
+table.cols\:auto-2,
+table.cols\:auto-3,
+table.cols\:auto-4 {
+	border-color: transparent !important;
+}
 table.cols\:auto-2>tbody>tr>td,
 table.cols\:auto-3>tbody>tr>td,
 table.cols\:auto-4>tbody>tr>td,
@@ -121,30 +126,13 @@ table.cols\:fixed-2>tbody>tr>td,
 table.cols\:fixed-3>tbody>tr>td,
 table.cols\:fixed-4>tbody>tr>td {
 	background-color: var(--hue-bas-tint);
+	border-color: transparent !important;
 }
 table.cols\:fixed-2>tbody>tr>td:not(:last-child),
 table.cols\:fixed-3>tbody>tr>td:not(:last-child),
 table.cols\:fixed-4>tbody>tr>td:not(:last-child) {
-	border-right: solid 4px var(--content-bg-color) !important;
-}
-*/
-/*
-***
-    * element: panel
-    * dsc: support panel template
-    * ver: 29200901
-    * fnt: set table properties as needed
-    * ref:
-***
-*/
-table.panelx2>tbody>tr>td,
-table.panelx3>tbody>tr>td {
-	background-color: var(--hue-bas-tint);
-}
-table.panelx2>tbody>tr>td:not(:last-child),
-table.panelx3>tbody>tr>td:not(:last-child) {
-	border-right: solid 4px var(--content-bg-color) !important;
+	border-right: solid 1px var(--hue-sec-up3) !important;
 }
 /*
- * EOF: assets/css/theme/editor.css / 30201115
+ * EOF: assets/css/theme/editor.css / 30201201
  */
