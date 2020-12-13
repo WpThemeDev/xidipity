@@ -3,7 +3,7 @@
  * Tinymce add-list-ordered plugin
  *
  * ###:  plugin.js
- * bld:  30201115
+ * bld:  30201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -17,8 +17,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIgMTdoMnYuNUgzdjFoMXYuNUgydjFoM3YtNEgydjF6bTEtOWgxVjRIMnYxaDF2M3ptLTEgM2gxLjhMMiAxMy4xdi45aDN2LTFIMy4yTDUgMTAuOVYxMEgydjF6bTUtNnYyaDE0VjVIN3ptMCAxNGgxNHYtMkg3djJ6bTAtNmgxNHYtMkg3djJ6Ii8+PC9zdmc+',
 		onclick: function() {
 			var dom = editor.dom;
-			var uniqueID = 'tag';
-			uniqueID += Math.floor(Math.random() * 1000);
+			var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 			var html = '<ol><li id="';
 			html += uniqueID;
 			html += '"></li></ol>';
@@ -31,8 +30,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Standard',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ol><li id="';
 				html += uniqueID;
 				html += '"></li></ol>';
@@ -45,8 +43,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Decimal',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ol class="decimal"><li id="';
 				html += uniqueID;
 				html += '"></li></ol>';
@@ -59,8 +56,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Alpha',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ol class="alpha"><li id="';
 				html += uniqueID;
 				html += '"></li></ol>';
@@ -73,8 +69,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Roman',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ol class="roman"><li id="';
 				html += uniqueID;
 				html += '"></li></ol>';
@@ -87,8 +82,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			text: '•\xa0Outline',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ol class="outline"><li id="';
 				html += uniqueID;
 				html += '"></li></ol>';
@@ -101,5 +95,5 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 });
 
 /*
- * EOF: add-list-ordered / plugin.js / 30201115
+ * EOF: add-list-ordered / plugin.js / 30201201
  */
