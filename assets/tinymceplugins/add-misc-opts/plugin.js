@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  30201115
+ * bld:  30201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -27,8 +27,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<blockquote><p>{$selection}</p></blockquote>')
 				} else {
 					var dom = editor.dom;
-					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);
+					var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 					var html = '<!--  TMPL:BLOCKQUOTE -->';
 					html += '<blockquote><p id="';
 					html += uniqueID;
@@ -58,8 +57,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<table class="frame"><tr><td>{$selection}</td></tr></table>');
 				} else {
 					var dom = editor.dom;
-					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);
+					var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 					var html = '<!--  TMPL:FRAME -->';
 					html += '<table class="frame"><tr><td id="';
 					html += uniqueID;
@@ -76,8 +74,7 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			text: '\xa0Insert Excerpt',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:EXCERPT -->';
 				html += '<table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tbody class="fnt:siz-1"><tr><td class="bdr:so-1x bdr:bas+3 bkg:tint-bas+1 cnr:arch-x-small pad:+0.5" id="';
 				html += uniqueID;
@@ -198,7 +195,6 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 		}],
 	});
 });
-
 /*
- * EOF: add-misc-opts / plugin.js / 30201115
+ * EOF: add-misc-opts / plugin.js / 30201201
  */
