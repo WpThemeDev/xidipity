@@ -3,7 +3,7 @@
  * Tinymce add-multiple-columns plugin
  *
  * ###:  plugin.js
- * bld:  30201115
+ * bld:  30201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -19,8 +19,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Auto 2 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-2"><tr><td id="';
 				html += uniqueID;
@@ -35,8 +34,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Auto 3 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-3"><tr><td id="';
 				html += uniqueID;
@@ -51,8 +49,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Auto 4 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:AUTO/COL -->';
 				html += '<table class="cols:auto-4"><tr><td id="';
 				html += uniqueID;
@@ -67,8 +64,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Fixed 2 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-2"><tr><td id="';
 				html += uniqueID;
@@ -83,8 +79,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Fixed 3 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-3"><tr><td id="';
 				html += uniqueID;
@@ -99,8 +94,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 			text: '•\xa0Fixed 4 Column',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-4"><tr><td id="';
 				html += uniqueID;
@@ -110,42 +104,9 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
-		}, {
-			icon: false,
-			text: '•\xa0Panel 2 Column',
-			onclick: function() {
-				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
-				var html = '<!--  TMPL:PANEL/COL -->';
-				html += '<table class="panelx2" style="width:100%;"><tbody><tr><td id="';
-				html += uniqueID;
-				html += '" style="width:50%;"></td><td style="width:50%;"></td></tr></tbody></table>';
-				html += '<!-- /TMPL:PANEL/COL -->';
-				editor.execCommand('mceInsertContent', false, html);
-				var newTag = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTag);
-			}
-		}, {
-			icon: false,
-			text: '•\xa0Panel 3 Column',
-			onclick: function() {
-				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);
-				var html = '<!--  TMPL:PANEL/COL -->';
-				html += '<table class="panelx3" style="width:100%;"><tbody><tr><td id="';
-				html += uniqueID;
-				html += '" style="width:33.3333%;"></td><td style="width:33.3333%;"></td><td style="width:33.3333%;"></td></tr></tbody></table>';
-				html += '<!-- /TMPL:PANEL/COL -->';
-				editor.execCommand('mceInsertContent', false, html);
-				var newTag = dom.select('td#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newTag);
-			}
 		}, ],
 	});
 });
-
 /*
- * EOF: add-multiple-columns / plugin.js / 30201115
+ * EOF: add-multiple-columns / plugin.js / 30201201
  */
