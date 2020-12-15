@@ -27,7 +27,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 		},
 		menu: [{
 			icon: false,
-			text: '•\xa0Standard',
+			text: 'Standard',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -40,7 +40,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Decimal',
+			text: 'Decimal',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -53,7 +53,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Alpha',
+			text: 'Alpha',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -66,7 +66,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Roman',
+			text: 'Roman',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -79,7 +79,7 @@ tinymce.PluginManager.add('add_lst_order', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Outline',
+			text: 'Outline',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
