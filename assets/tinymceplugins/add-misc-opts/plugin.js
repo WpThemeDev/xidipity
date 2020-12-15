@@ -3,7 +3,7 @@
  * Tinymce add-misc-opts plugin
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  30201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -27,14 +27,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<blockquote><p>{$selection}</p></blockquote>')
 				} else {
 					var dom = editor.dom;
-					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);				
+					var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 					var html = '<!--  TMPL:BLOCKQUOTE -->';
 					html += '<blockquote><p id="';
 					html += uniqueID;
 					html += '"></p></blockquote>';
 					html += '<!-- /TMPL:BLOCKQUOTE -->';
-					editor.insertContent(html);
+					editor.execCommand('mceInsertContent', false, html);
 					var newTag = dom.select('p#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
 				}
@@ -58,14 +57,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 					editor.execCommand('mceReplaceContent', false, '<table class="frame"><tr><td>{$selection}</td></tr></table>');
 				} else {
 					var dom = editor.dom;
-					var uniqueID = 'tag';
-					uniqueID += Math.floor(Math.random() * 1000);				
+					var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 					var html = '<!--  TMPL:FRAME -->';
 					html += '<table class="frame"><tr><td id="';
 					html += uniqueID;
 					html += '"></td></tr></table>';
 					html += '<!-- /TMPL:FRAME -->';
-					editor.insertContent(html);
+					editor.execCommand('mceInsertContent', false, html);
 					var newTag = dom.select('td#' + uniqueID)[0];
 					editor.selection.setCursorLocation(newTag);
 				}
@@ -76,14 +74,13 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			text: '\xa0Insert Excerpt',
 			onclick: function() {
 				var dom = editor.dom;
-				var uniqueID = 'tag';
-				uniqueID += Math.floor(Math.random() * 1000);				
+				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<!--  TMPL:EXCERPT -->';
 				html += '<table class="bdr:collapse mar:tp-0 mar:bt+0.5 wd:100% web[dsp:none]"><tbody class="fnt:siz-1"><tr><td class="bdr:so-1x bdr:bas+3 bkg:tint-bas+1 cnr:arch-x-small pad:+0.5" id="';
 				html += uniqueID;
 				html += '"></td><td class="mce[dsp:none]"><!--more--></td></tr></tbody></table>';
 				html += '<!-- /TMPL:EXCERPT -->';
-				editor.insertContent(html);
+				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newTag);
 			}
@@ -119,10 +116,85 @@ tinymce.PluginManager.add('add_misc_opts', function(editor) {
 			onclick: function() {
 				editor.execCommand('mceReplaceContent', false, '<abbr>{$selection}</abbr>');
 			}
+		}, {
+			icon: true,
+			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEyIDRWMUw4IDVsNCA0VjZjMy4zMSAwIDYgMi42OSA2IDYgMCAxLjAxLS4yNSAxLjk3LS43IDIuOGwxLjQ2IDEuNDZDMTkuNTQgMTUuMDMgMjAgMTMuNTcgMjAgMTJjMC00LjQyLTMuNTgtOC04LTh6bTAgMTRjLTMuMzEgMC02LTIuNjktNi02IDAtMS4wMS4yNS0xLjk3LjctMi44TDUuMjQgNy43NEM0LjQ2IDguOTcgNCAxMC40MyA0IDEyYzAgNC40MiAzLjU4IDggOCA4djNsNC00LTQtNHYzeiIvPjwvc3ZnPg==',
+			text: '\xa0Chr Substitution',
+			onclick: function() {
+				var mceCHR = editor.selection.getContent({
+					format: 'text'
+				});
+				switch (mceCHR) {
+					case ('(c)'):
+						editor.selection.setContent('&#0169;');
+						break;
+					case ('(C)'):
+						editor.selection.setContent('&#0169;');
+						break;
+					case ('(r)'):
+						editor.selection.setContent('&#0174;');
+						break;
+					case ('(R)'):
+						editor.selection.setContent('&#0174;');
+						break;
+					case ('#'):
+						editor.selection.setContent('&#9632;');
+						break;
+					case ('$'):
+						editor.selection.setContent('&#0167;');
+						break;
+					case ('*'):
+						editor.selection.setContent('&#9679;');
+						break;
+					case ('0'):
+						editor.selection.setContent('&#176;');
+						break;
+					case ('+/-'):
+						editor.selection.setContent('&#177;');
+						break;
+					case ('x'):
+						editor.selection.setContent('&#215;');
+						break;
+					case ('X'):
+						editor.selection.setContent('&#215;');
+						break;
+					case ('1/3'):
+						editor.selection.setContent('&#8531;');
+						break;
+					case ('1/4'):
+						editor.selection.setContent('&#188;');
+						break;
+					case ('1/2'):
+						editor.selection.setContent('&#189;');
+						break;
+					case ('2/3'):
+						editor.selection.setContent('&#8532;');
+						break;
+					case ('3/4'):
+						editor.selection.setContent('&#190;');
+						break;
+					case ('...'):
+						editor.selection.setContent('&#8230;');
+						break;
+					case ('<-'):
+						editor.selection.setContent('&#8592;');
+						break;
+					case ('->'):
+						editor.selection.setContent('&#8594;');
+						break;
+					case ('<'):
+						editor.selection.setContent('&#9668;');
+						break;
+					case ('>'):
+						editor.selection.setContent('&#9658;');
+						break;
+					default:
+						alert('Substitution character not found!');
+				}
+			}
 		}],
 	});
 });
-
 /*
- * EOF: add-misc-opts / plugin.js / 29200901
+ * EOF: add-misc-opts / plugin.js / 30201201
  */
