@@ -157,6 +157,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		targetSelObj.html = editor.selection.getContent({
 			format: 'html'
 		});
+		var isMultiLine = true;
 		if (targetSelObj.nodeName !== 'body') {
 			var tmpValue = '';
 			// if wrapped in a span, set new node
@@ -175,11 +176,13 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			targetSelObj.innerHtml = targetSelObj.node.innerHTML;
 			targetSelObj.innerText = getRawHtml(targetSelObj.innerHtml);
 			targetSelObj.outerHtml = editor.dom.getOuterHTML(targetSelObj.node);
+			// count end tags of p,h?,div
+			isMultiLine = (!targetSelObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi) ? 0 : targetSelObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi).length) > 1;
 		}
 		var newHtml = '';
 		var newTag;
 		switch (true) {
-			case (targetSelObj.nodeName == 'body'):
+			case (isMultiLine):
 				// multi paragraph
 				// 1. strip carrage returns
 				regExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
@@ -223,7 +226,9 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		}
 		// save new html
 		if (!isEmpty(newHtml)) {
-			editor.execCommand('mceReplaceContent', false, newHtml);
+			editor.selection.setContent(newHtml);
+			editor.focus();
+			editor.undoManager.add();				
 		}
 		sessionStorage.setItem('soureOuterHtml', '');
 		return;
