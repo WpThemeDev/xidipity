@@ -27,7 +27,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 		},
 		menu: [{
 			icon: false,
-			text: '•\xa0Standard',
+			text: 'Standard',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -40,7 +40,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Circle',
+			text: 'Circle',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -53,7 +53,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Dash',
+			text: 'Dash',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -66,7 +66,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Square',
+			text: 'Square',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
@@ -79,7 +79,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: '•\xa0Mixed',
+			text: 'Mixed',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
