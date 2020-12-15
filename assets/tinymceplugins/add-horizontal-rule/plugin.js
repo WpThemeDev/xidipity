@@ -16,7 +16,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 		icon: false,
 		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMiA5Ljc1QzIgOS4zMzU3OSAyLjMzNTc5IDkgMi43NSA5SDE3LjI1QzE3LjY2NDIgOSAxOCA5LjMzNTc5IDE4IDkuNzVDMTggMTAuMTY0MiAxNy42NjQyIDEwLjUgMTcuMjUgMTAuNUgyLjc1QzIuMzM1NzkgMTAuNSAyIDEwLjE2NDIgMiA5Ljc1WiIgZmlsbD0iIzIxMjEyMSIvPgo8L3N2Zz4=',
 		menu: [{
-			text: '•\xa0Single Narrow',
+			text: 'Single Narrow',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -25,7 +25,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Single Wide',
+			text: 'Single Wide',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -34,7 +34,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Double Narrow',
+			text: 'Double Narrow',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -43,7 +43,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Double Wide',
+			text: 'Double Wide',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -52,7 +52,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Gradient Narrow',
+			text: 'Gradient Narrow',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -61,7 +61,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Gradient Wide',
+			text: 'Gradient Wide',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -70,7 +70,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Emblem Narrow',
+			text: 'Emblem Narrow',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
@@ -79,7 +79,7 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Emblem Wide',
+			text: 'Emblem Wide',
 			icon: false,
 			onclick: function() {
 				var html = '<!--  TMPL:HR -->';
