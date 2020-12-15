@@ -109,21 +109,21 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 		selObj.html = editor.selection.getContent({
 			format: 'html'
 		});
+		var isMultiLine = true;
 		if (selObj.nodeName !== 'body') {
 			selObj.innerHtml = selObj.node.innerHTML;
 			selObj.innerText = getRawHtml(selObj.innerHtml);
 			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
-
-			//
+			// count end tags of p,h?,div
+			isMultiLine = (!selObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi) ? 0 : selObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi).length) > 1;
 		}
-		var coreTagsExp = new RegExp(/div|h[1-6]|li|p/, 'is');
-		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
+		var coreTagsExp = new RegExp(/div|h[1-6]|li|p|td/, 'is');
 		var newHtml;
 		var newTag;
 		var preTag;
 		var pstTag;
 		switch (true) {
-			case (!isEmpty(selObj.nodeName.match(mlTagsExp))):
+			case (isMultiLine):
 				//alert('* mark #1 *');
 				var crCharExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
 				var tagListExp = new RegExp(/(<\/(div|h[1-6]|li|p)>)(<(div|h[1-6]|li|p).*?>)/, 'gm');
@@ -187,7 +187,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 			default:
 				//alert('* default #1 *');
 				// create new span
-				if (selObj.textKey() !== selObj.innerTextKey()) {
+				if (selObj.textKey() !== selObj.innerTextKey() || !isEmpty(selObj.nodeName.match(/li|td/gi))) {
 					//alert('* default #1.1 *');
 					newHtml = '<span style="' + argTag + '">' + selObj.html + '</span>';
 				} else {
@@ -205,7 +205,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 				}
 		}
 		if (!isEmpty(newHtml)) {
-			editor.execCommand('mceReplaceContent', false, newHtml);
+			editor.selection.setContent(newHtml);
+			editor.focus();
+			editor.undoManager.add();				
 		}
 		return;
 	}
@@ -233,28 +235,6 @@ tinymce.PluginManager.add('apply_txt_color', function (editor, url) {
 			}
 		}
 		return textObj;
-	}
-	// display object parameters
-	function displayObj(argObj) {
-		if (argObj === undefined || argObj === null) {
-			argObj = Object.create(selectionObject);
-		}
-		//
-		alert('.html - ' + argObj.html);
-		alert('.innerHtml - ' + argObj.innerHtml);
-		alert('.innerText - ' + argObj.innerText);
-		alert('.innerTextKey - ' + argObj.innerTextKey());
-		alert('.text - ' + argObj.text);
-		alert('.textKey - ' + argObj.textKey());
-		alert('.nodeName - ' + argObj.nodeName);
-		alert('.parentNodeName - ' + argObj.parentNodeName);
-		alert('.outerHtml - ' + argObj.outerHtml);
-		alert('.purgeOuterHtml - ' + argObj.purgeOuterHtml());
-		alert('.prefixTag - ' + argObj.prefixTag());
-		alert('.suffixTag - ' + argObj.suffixTag());
-		alert('.purgeInnerHtml - ' + argObj.purgeInnerHtml());
-		//
-		return;
 	}
 	// build new tags
 	function getNewTag(argHtml, argTag) {
