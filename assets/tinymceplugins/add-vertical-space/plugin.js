@@ -3,7 +3,7 @@
  * Tinymce add-vertical-space plugin 
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  30201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -62,5 +62,5 @@ tinymce.PluginManager.add('add_vert_space', function(editor) {
 });
 
 /*
- * EOF: add-vertical-space / plugin.js / 29200901
+ * EOF: add-vertical-space / plugin.js / 30201201
  */
