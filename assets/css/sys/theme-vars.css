@@ -2,8 +2,8 @@
 	* WordPress Xidipity Theme
 	* Xidipity css variables
 	*
-	* ###:	theme-vars.css
-	* bld:	28200701
+	* ###:	assets/css/sys/theme-vars.css
+	* bld:	29200901
 	* src:	github.com/WpThemeDev/xidipity/
 	* (C) 	2019-2020 John Baer
 	*
@@ -16,9 +16,7 @@
 
 :root {
 /*
-***
-base, primary, secondary hue / shade
-***
+*** base, primary, secondary hue / shade
 */
 	/*: no color :*/
 	--transparent: transparent;
@@ -67,19 +65,15 @@ base, primary, secondary hue / shade
 	--hue-sec-tint-up1: #fef7f6;
 	--hue-sec-tint: #fef0ed;
 	--hue-sec-tint-dn1: #fde8e3;
-	/*
-***
-text colors
-***
+/*
+*** text colors
 */
 	--hue-red: #b30000;
 	--hue-purple: #800080;
 	--hue-blue: #0000ff;
 	--hue-green: #006600;
-	/*
-***
-highlight colors
-***
+/*
+*** highlight colors
 */
 	--hue-highlight-yellow: #ffff66;
 	--hue-highlight-cyan: #ccffff;
@@ -87,10 +81,8 @@ highlight colors
 	--hue-highlight-green: #99ff99;
 	--hue-highlight-orange: #ffd280;
 	--hue-highlight-red: #ffc7c7;
-	/*
-***
-content attributes
-***
+/*
+*** content attributes
 */
 	/*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
@@ -98,7 +90,7 @@ content attributes
 	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-serif: "Roboto Slab", serif;
 	--font-family-cursive: "Kalam", cursive;
-	--font-family-fancy: "Kaushan Script", cursive;
+	--font-family-fantasy: "Kaushan Script", cursive;
 	/*: font sizes :*/
 	--font-size-7x: 5rem;
 	--font-size-6x: 3.875rem;
@@ -160,15 +152,13 @@ content attributes
 	--h6-size: var(--font-size-h6);
 	--h6-style: var(--font-style-normal);
 	--h6-weight: var(--font-wgt-normal);
-	/*
-***
-theme attributes
-***
+/*
+*** theme attributes
 */
 	/*: blog header :*/
 	--blog-hdr-bg-color: var(--hue-bas-up5);
 	/*: blog title & tagline :*/
-	--title-font-family: var(--font-family-fancy);
+	--title-font-family: var(--font-family-fantasy);
 	--title-font-color: var(--hue-pri-dn2);
 	--title-font-size: 3rem;
 	--title-font-spacing: 0.0625rem;
@@ -215,10 +205,8 @@ theme attributes
 	--lnk-dft-decor: none;
 	--lnk-vst-decor: none;
 	--lnk-hvr-decor: none;
-	/*
-***
-plugin attributes
-***
+/*
+*** plugin attributes
 */
 	/*: yoast :*/
 	--pag-breadcrumb-dsp: block;
@@ -226,5 +214,5 @@ plugin attributes
 }
 
 /*
-* EOF: theme-vars.css / 28200701
+* EOF: assets/css/sys/theme-vars.css / 29200901
 */

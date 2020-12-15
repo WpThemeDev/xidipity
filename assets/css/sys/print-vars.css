@@ -2,31 +2,27 @@
 * WordPress Xidipity Theme
 * Xidipity css print variables
 *
-* ###:  print-vars.css
-* bld:  28200701
+* ###:  assets/css/sys/print-vars.css
+* bld:  29200901
 * src:  github.com/WpThemeDev/xidipity/
 * (C)   2019-2020 John Baer
 *
 */
 
 :root {
-	/*
-***
-set base font size for rem calculations
-***
+/*
+*** set base font size for rem calculations
 */
 	font-size: 13px;
-	/*
-***
-base, primary, secondary hue / shade
-***
+/*
+*** base, primary, secondary hue / shade
 */
-	/*: no color :*/
+/*: no color :*/
 	--transparent: transparent;
-	/*: black & white :*/
+/*: black & white :*/
 	--hue-blk: #000000;
 	--hue-wht: #ffffff;
-	/*: base hue :*/
+/*: base hue :*/
 	--hue-bas-up5: #faf9f8;
 	--hue-bas-up4: #f4f3f2;
 	--hue-bas-up3: #e9e7e4;
@@ -40,7 +36,7 @@ base, primary, secondary hue / shade
 	--hue-bas-tint-up1: #fdfdfc;
 	--hue-bas-tint: #fbfafa;
 	--hue-bas-tint-dn1: #f8f8f7;
-	/*: primary hue :*/
+/*: primary hue :*/
 	--hue-pri-up5: #efefef;
 	--hue-pri-up4: #dedede;
 	--hue-pri-up3: #bebebe;
@@ -54,7 +50,7 @@ base, primary, secondary hue / shade
 	--hue-pri-tint-up1: #f9f9f9;
 	--hue-pri-tint: #f2f2f2;
 	--hue-pri-tint-dn1: #ebebeb;
-	/*: secondary hue :*/
+/*: secondary hue :*/
 	--hue-sec-up5: #f1f1f1;
 	--hue-sec-up4: #e3e3e3;
 	--hue-sec-up3: #c7c7c7;
@@ -68,19 +64,15 @@ base, primary, secondary hue / shade
 	--hue-sec-tint-up1: #f9f9f9;
 	--hue-sec-tint: #f4f4f4;
 	--hue-sec-tint-dn1: #eeeeee;
-	/*
-***
-text colors
-***
+/*
+*** text colors
 */
 	--hue-red: #363636;
 	--hue-purple: #343434;
 	--hue-blue: #1c1c1c;
 	--hue-green: #3c3c3c;
-	/*
-***
-highlight colors
-***
+/*
+*** highlight colors
 */
 	--hue-highlight-yellow: #eeeeee;
 	--hue-highlight-cyan: #f0f0f0;
@@ -88,19 +80,17 @@ highlight colors
 	--hue-highlight-green: #d5d5d5;
 	--hue-highlight-orange: #d6d6d6;
 	--hue-highlight-red: #d8d8d8;
-	/*
-***
-content attributes
-***
+/*
+*** content attributes
 */
-	/*: font families :*/
+/*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
 	--font-family-condensed: "Roboto Condensed", sans-serif;
 	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-serif: "Roboto Slab", serif;
 	--font-family-cursive: "Kalam", cursive;
-	--font-family-fancy: "Kaushan Script", cursive;
-	/*: font sizes :*/
+	--font-family-fantasy: "Kaushan Script", cursive;
+/*: font sizes :*/
 	--font-size-7x: 5rem;
 	--font-size-6x: 3.875rem;
 	--font-size-h1: 2.75rem;
@@ -116,7 +106,7 @@ content attributes
 	--font-size-2xs: 0.75rem;
 	--font-size-larger: 106.25%;
 	--font-size-smaller: 93.75%;
-	/*: font weight :*/
+/*: font weight :*/
 	--font-wgt-thin: 100;
 	--font-wgt-xtralight: 200;
 	--font-wgt-light: 300;
@@ -126,11 +116,11 @@ content attributes
 	--font-wgt-bold: 700;
 	--font-wgt-xtrabold: 800;
 	--font-wgt-black: 900;
-	/*: font styles :*/
+/*: font styles :*/
 	--font-style-italic: italic;
 	--font-style-normal: normal;
 	--font-style-oblique: oblique;
-	/*: headers :*/
+/*: headers :*/
 	--h1-color: var(--hue-bas-dn3);
 	--h1-font: var(--font-family-serif);
 	--h1-size: var(--font-size-h1);
@@ -161,16 +151,14 @@ content attributes
 	--h6-size: var(--font-size-h6);
 	--h6-style: var(--font-style-normal);
 	--h6-weight: var(--font-wgt-normal);
-	/*
-***
-theme attributes
-***
+/*
+*** theme attributes
 */
-	/*: blog header :*/
+/*: blog header :*/
 	--blog-hdr-bg-color: var(--hue-bas-up5);
-	/*: blog title & tagline :*/
+/*: blog title & tagline :*/
 	--title-font-color: var(--hue-pri-dn2);
-	--title-font-family: var(--font-family-fancy);
+	--title-font-family: var(--font-family-fantasy);
 	--title-font-size: 3rem;
 	--title-font-spacing: 0.0625rem;
 	--title-font-style: normal;
@@ -181,15 +169,15 @@ theme attributes
 	--desc-font-spacing: 0.5rem;
 	--desc-font-style: normal;
 	--desc-font-weight: var(--font-wgt-normal);
-	/*: blog footer :*/
+/*: blog footer :*/
 	--blog-ft-bg-color: var(--hue-bas-up5);
-	/*: sys content :*/
+/*: sys content :*/
 	--content-bg-color: var(--hue-wht);
 	--content-fg-color: var(--hue-blk);
 	--content-tp-border-color: var(--hue-bas-up2);
 	--content-bt-border-color: var(--hue-bas-up2);
 	--content-counter-color: var(--hue-bas-dn2);
-	/*: system :*/
+/*: system :*/
 	--dft-fg-color: var(--hue-blk);
 	--dft-bg-color: var(--hue-wht);
 	--dft-line-height: 1.5;
@@ -198,7 +186,7 @@ theme attributes
 	--dft-font-size: 1rem;
 	--dft-font-weight: var(--font-wgt-light);
 	--dft-font-spacing: normal;
-	/*: link attributes :*/
+/*: link attributes :*/
 	--lnk-dft-fg-hue: var(--hue-pri-dn1);
 	--lnk-dft-bg-hue: var(--transparent);
 	--lnk-vst-fg-hue: var(--hue-pri-up2);
@@ -211,16 +199,14 @@ theme attributes
 	--lnk-dft-decor: none;
 	--lnk-vst-decor: none;
 	--lnk-hvr-decor: none;
-	/*
-***
-plugin attributes
-***
+/*
+*** plugin attributes
 */
-	/*: yoast :*/
+/*: yoast :*/
 	--pag-breadcrumb-dsp: none;
 	--pst-breadcrumb-dsp: none;
 }
 
 /*
-* EOF: print-vars.css / 28200701
+* EOF: assets/css/sys/print-vars.css / 29200901
 */

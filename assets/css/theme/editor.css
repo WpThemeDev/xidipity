@@ -2,13 +2,12 @@
     * WordPress Xidipity Theme
     * Editor specific css classes
     *
-    * ###:  editor.css
-    * bld:  28200701
+    * ###:  assets/css/theme/editor.css
+    * bld:  30201201
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
 */
-
 /*
 ***
     * element: <body>
@@ -24,12 +23,10 @@
 	margin: 1rem;
 	-webkit-font-smoothing: antialiased !important;
 }
-
 body.webkit strong,
 body.webkit b {
 	font-weight: bolder !important;
 }
-
 /*
 ***
     property: mce
@@ -42,25 +39,19 @@ body.webkit b {
 .mce\[dsp\:none\] {
 	display: none;
 }
-
 .mce\[dsp\:hidden\] {
 	visibility: hidden;
 }
-
 .mce\[dsp\:block\] {
 	display: block;
 }
-
 .mce\[dsp\:inline\] {
 	display: inline;
 }
-
 .mce\[dsp\:inline-block\] {
 	display: inline-block;
 }
-
 img {}
-
 /*
 ***
     * element: pre:dot
@@ -81,7 +72,6 @@ img {}
 	position: absolute;
 	z-index: 1;
 }
-
 /*
 ***
     * property: vs
@@ -93,50 +83,56 @@ img {}
 */
 .vs\:1\/2,
 .vs\:3\/4,
+.vs\:1,
 .vs\:1-1\/2,
 .vs\:2,
 .vs\:2-1\/2,
 .vs\:3 {
-	background-color: var(--hue-bas-up4);
+	background-color: var(--hue-bas-tint);
 }
-
 /*
 ***
     * element: <ul>
     * dsc: paragraph list
     * ver: 200531
     * fnt: use list for block indentation
-    * ref: 
+    * ref:
 ***
 */
 ul.par,
-ul.par li > ul {
+ul.par li>ul {
 	border-left: thin dashed var(--hue-pri-up3);
 	margin-left: 1.25rem;
 	padding-left: 0.5rem !important;
 }
-
+*/
 /*
 ***
-    property: cols:<type>
-    * dsc: multi-columns
-    * ver: 190520
-    * fnt: common multi-column classes
+    element: <table>
+    * ver: 30201201
+    * fnt: multi columns
     * ref: see common.css
 ***
 */
-.cols\:fixed-2>tbody>tr>td:not(:last-child),
-.cols\:fixed-3>tbody>tr>td:not(:last-child),
-.cols\:fixed-4>tbody>tr>td:not(:last-child) {
-	border-right: dashed 1px var(--hue-bas-up1) !important;
+table.cols\:auto-2,
+table.cols\:auto-3,
+table.cols\:auto-4 {
+	border-color: transparent !important;
 }
-
-.cols\:fixed-2>tbody>tr>td:not(:first-child),
-.cols\:fixed-3>tbody>tr>td:not(:first-child),
-.cols\:fixed-4>tbody>tr>td:not(:first-child) {
-	border-left: dashed 1px var(--hue-bas-up1) !important;
+table.cols\:auto-2>tbody>tr>td,
+table.cols\:auto-3>tbody>tr>td,
+table.cols\:auto-4>tbody>tr>td,
+table.cols\:fixed-2>tbody>tr>td,
+table.cols\:fixed-3>tbody>tr>td,
+table.cols\:fixed-4>tbody>tr>td {
+	background-color: var(--hue-bas-tint);
+	border-color: transparent !important;
 }
-
+table.cols\:fixed-2>tbody>tr>td:not(:last-child),
+table.cols\:fixed-3>tbody>tr>td:not(:last-child),
+table.cols\:fixed-4>tbody>tr>td:not(:last-child) {
+	border-right: solid 1px var(--hue-sec-up3) !important;
+}
 /*
- * EOF: editor.css / 28200701
+ * EOF: assets/css/theme/editor.css / 30201201
  */

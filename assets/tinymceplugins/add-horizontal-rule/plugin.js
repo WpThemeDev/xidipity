@@ -3,7 +3,7 @@
  * Tinymce add-horizontal-rule plugin
  *
  * ###:  plugin.js
- * bld:  27200615
+ * bld:  29200901
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -14,63 +14,83 @@ tinymce.PluginManager.add('add_horz_rule', function(editor) {
 		type: 'splitbutton',
 		title: 'Horizontal Rule',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTIwIDE5Ljg4VjIyTDE4LjIgMjAuODNMMTMuNDEgMTEuODNBNC45NCA0Ljk0IDAgMCAwIDE1LjE5IDEwLjgzTTE1IDdBMyAzIDAgMCAxIDEyIDEwQTMuMjcgMy4yNyAwIDAgMSAxMS41NiAxMEw1LjggMjAuODNMNCAyMlYxOS44OEw5Ljc5IDlBMyAzIDAgMCAxIDEyIDRWMkExIDEgMCAwIDEgMTMgM1Y0LjE4QTMgMyAwIDAgMSAxNSA3TTEzIDdBMSAxIDAgMSAwIDEyIDhBMSAxIDAgMCAwIDEzIDdNNC4yMiAxMEw2IDExLjhMNC41NiAxNC41NkwyLjEgMTIuMU0xMiAxNy43NkwxMC41IDE2LjI1TDkgMTlMMTIgMjJMMTUgMTlMMTMuNTMgMTYuMjNNMTkuNzggMTBMMTggMTEuOEwxOS41IDE0LjU2TDIxLjkgMTIuMVoiIC8+PC9zdmc+',
+		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMiA5Ljc1QzIgOS4zMzU3OSAyLjMzNTc5IDkgMi43NSA5SDE3LjI1QzE3LjY2NDIgOSAxOCA5LjMzNTc5IDE4IDkuNzVDMTggMTAuMTY0MiAxNy42NjQyIDEwLjUgMTcuMjUgMTAuNUgyLjc1QzIuMzM1NzkgMTAuNSAyIDEwLjE2NDIgMiA5Ljc1WiIgZmlsbD0iIzIxMjEyMSIvPgo8L3N2Zz4=',
 		menu: [{
-			text: '•\xa0Single Narrow',
+			text: 'Single Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:solid-thin wd:70%" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="aln:ct rul:1x wd:70%" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Single Wide',
+			text: 'Single Wide',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:solid-thin" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="rul:1x" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Double Narrow',
+			text: 'Double Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:double wd:70%" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="aln:ct rul:dbl wd:70%" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Double Wide',
+			text: 'Double Wide',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:double" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="rul:dbl" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Gradient Narrow',
+			text: 'Gradient Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:gradient wd:70%" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="aln:ct rul:grd wd:70%" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Gradient Wide',
+			text: 'Gradient Wide',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<hr class="rul:gradient" />');
+				var html = '<!--  TMPL:HR -->';
+				html += '<hr class="rul:grd" />';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Emblem Narrow',
+			text: 'Emblem Narrow',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<div class="fx:r fxa:3 fxc:3 wd:100%"><div class="fx:r fxa:2 fxc:3 wd:25% sm)wd:30%"><div class="bkg:bas-400 ln wd:100%">&#8203;</div></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 txt:bas-500 fnt:weight-bold wd:3">/<span style="width:1px;">&#8203;</span>/</div><div class="fx:r fxa:1 fxc:3 wd:25% sm)wd:30%"><div class="bkg:bas-400 ln wd:100%">&#8203;</div></div></div>');
+				var html = '<!--  TMPL:HR -->';
+				html += '<div class="fx:r fxa:3 fxc:3 fb:100%"><div class="fx:r fxa:2 fxc:3 fb:25% sm)fb:30%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 txt:bas-500 fnt:wgt-700 wd:3">/<span style="width:1px;"></span>/</div><div class="fx:r fxa:1 fxc:3 fb:25% sm)fb:30%"><hr class="wd:100%" /></div></div>';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}, {
-			text: '•\xa0Emblem Wide',
+			text: 'Emblem Wide',
 			icon: false,
 			onclick: function() {
-				editor.insertContent('<div class="fx:r fxa:3 fxc:3 wd:100%"><div class="fx:r fxa:2 fxc:3 wd:50%"><div class="bkg:bas-400 ln wd:100%">&#8203;</div></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 txt:bas-500 fnt:weight-bold wd:3">/<span style="width:1px;">&#8203;</span>/</div><div class="fx:r fxa:1 fxc:3 wd:50%"><div class="bkg:bas-400 ln wd:100%">&#8203;</div></div></div>');
+				var html = '<!--  TMPL:HR -->';
+				html += '<div class="fx:r fxa:3 fxc:3 fb:100%"><div class="fx:r fxa:2 fxc:3 fb:50%"><hr class="wd:100%" /></div><div class="fx:r fxa:3 fxc:3 mar:hrz+1.5 txt:bas-500 fnt:wgt-700 wd:3">/<span style="width:1px;"></span>/</div><div class="fx:r fxa:1 fxc:3 fb:50%"><hr class="wd:100%" /></div></div>';
+				html += '<!-- /TMPL:HR -->';
+				editor.insertContent(html);
 			}
 		}],
-		onPostRender: function() {
-			// default
-			this.value = '<hr class="rul:solid-medium" />';
-		}
 	});
 });
 
 /*
- * EOF: add-horizontal-rule / plugin.js / 27200615
+ * EOF: add-horizontal-rule / plugin.js / 29200901
  */
