@@ -109,17 +109,18 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		selObj.html = editor.selection.getContent({
 			format: 'html'
 		});
+		var isMultiLine = true;
 		if (selObj.nodeName !== 'body') {
 			selObj.innerHtml = selObj.node.innerHTML;
 			selObj.innerText = getRawHtml(selObj.innerHtml);
 			selObj.outerHtml = editor.dom.getOuterHTML(selObj.node);
+			// count end tags of p,h?,div
+			isMultiLine = (!selObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi) ? 0 : selObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi).length) > 1;
 		}
-		var mlTagsExp = new RegExp(/body|ol|ul/, 'is');
-		var underlineTagExp = new RegExp(/<u>/, 'ig');
+		var uTagExp = new RegExp(/(<u>|<\/u>)/, 'gi');
 		var newHtml;
-		var tagHtml;
 		switch (true) {
-			case (!isEmpty(selObj.nodeName.match(mlTagsExp))):
+			case (isMultiLine):
 				//alert('* mark #1 *');
 				var crCharExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
 				var tagListExp = new RegExp(/(<\/(div|h[1-6]|li|p)>)(<(div|h[1-6]|li|p).*?>)/, 'gm');
@@ -139,63 +140,36 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				var lastRecord = getLastArrayValue(selectArray);
 				var idx = 0;
 				newHtml = '';
-				for (; selectArray[idx];) {
+				for (;selectArray[idx];) {
 					if (idx > lastRecord) {
 						newHtml += '<p>&nbsp;</p>';
 						break;
 					}
 					idxObj.outerHtml = selectArray[idx];
-					if (!isEmpty(idxObj.purgeOuterHtml().match(underlineTagExp))) {
-						//alert('* mark #2.1 *');
-						// remove underline
-						tagHtml = xTags(idxObj.purgeOuterHtml(), 'u');
+					if (!isEmpty(idxObj.purgeOuterHtml().match(/<u>/g)) && argTag == 'strong') {
+						// if there are any underline tags, remove them
+						tmpValue = idxObj.purgeOuterHtml().replace(uTagExp,'');
 					} else {
-						//alert('* mark #2.2 *');
-						tagHtml = idxObj.purgeOuterHtml();
+						tmpValue = idxObj.purgeOuterHtml();
 					}
-					newHtml += xTags(tagHtml, argTag).replace(idxObj.prefixTag(), idxObj.prefixTag() + '<' + argTag + '>').replace(idxObj.suffixTag(), '</' + argTag + '>' + idxObj.suffixTag());
+					newHtml += tmpValue.replace(idxObj.prefixTag(),idxObj.prefixTag() + '<' + argTag + '>').replace(idxObj.suffixTag(),'</' + argTag + '>' + idxObj.suffixTag());
 					idx++;
 				}
 				break;
-			case (selObj.textKey() == selObj.innerTextKey() || selObj.nodeName == 'span'):
+			case (!isEmpty(selObj.html.match(/<u>/g)) && argTag == 'strong'):
 				//alert('* mark #2 *');
-				if (!isEmpty(selObj.purgeOuterHtml().match(underlineTagExp))) {
-					//alert('* mark #2.1 *');
-					// remove underline
-					tagHtml = xTags(selObj.purgeOuterHtml(), 'u');
-				} else {
-					//alert('* mark #2.2 *');
-					tagHtml = selObj.purgeOuterHtml();
-				}
-				newHtml = xTags(tagHtml, argTag).replace(selObj.prefixTag(), selObj.prefixTag() + '<' + argTag + '>').replace(selObj.suffixTag(), '</' + argTag + '>' + selObj.suffixTag());
+				// if there are any underline tags, remove them
+				newHtml = '<' + argTag + '>' + selObj.html.replace(uTagExp,'') + '</' + argTag + '>';
 				break;
 			default:
 				//alert('* default *');
 				newHtml = '<' + argTag + '>' + selObj.html + '</' + argTag + '>';
 		}
 		if (!isEmpty(newHtml)) {
-			editor.execCommand('mceReplaceContent', false, newHtml);
+			editor.selection.setContent(newHtml);
+			editor.focus();
+			editor.undoManager.add();				
 		}
-		return;
-	}
-	// display object parameters
-	function displayObj(argObj) {
-		if (argObj === undefined || argObj === null) {
-			argObj = Object.create(selectionObject);
-		}
-		//
-		alert('.html - ' + argObj.html);
-		alert('.innerHtml - ' + argObj.innerHtml);
-		alert('.innerText - ' + argObj.innerText);
-		alert('.text - ' + argObj.text);
-		alert('.nodeName - ' + argObj.nodeName);
-		alert('.parentNodeName - ' + argObj.parentNodeName);
-		alert('.outerHtml - ' + argObj.outerHtml);
-		alert('.purgeOuterHtml - ' + argObj.purgeOuterHtml());
-		alert('.prefixTag - ' + argObj.prefixTag());
-		alert('.suffixTag - ' + argObj.suffixTag());
-		alert('.purgeInnerHtml - ' + argObj.purgeInnerHtml());
-		//
 		return;
 	}
 	// display message
@@ -327,24 +301,6 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			var htmlDIV = document.createElement('htmlDIV');
 			htmlDIV.innerHTML = argHtml;
 			htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
-		}
-		return htmlValue;
-	}
-	// remove tag pair (ie. <i>)
-	function xTags(argHtml, argTag) {
-		if (argHtml === undefined || argHtml === null) {
-			argHtml = '';
-		}
-		if (argTag === undefined || argTag === null) {
-			argTag = '';
-		}
-		var htmlValue = argHtml;
-		if (!isEmpty(argHtml) && !isEmpty(argTag)) {
-			var preTagExp = new RegExp('<' + argTag + '>', 'ig');
-			var sufTagExp = new RegExp('</' + argTag + '>', 'ig');
-			if (!isEmpty(argHtml.match(preTagExp))) {
-				htmlValue = argHtml.replace(preTagExp, '').replace(sufTagExp, '');
-			}
 		}
 		return htmlValue;
 	}
