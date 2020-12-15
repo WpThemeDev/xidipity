@@ -456,7 +456,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		},
 		menu: [{
 				icon: false,
-				text: '100\xa0-\xa0Thin',
+				text: '100 - Thin',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 100;');
@@ -465,7 +465,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '200\xa0-\xa0Xtra Light',
+				text: '200 - Xtra Light',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 200;');
@@ -474,7 +474,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '300\xa0-\xa0Light',
+				text: '300 - Light',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 300;');
@@ -483,7 +483,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '400\xa0-\xa0Normal',
+				text: '400 - Normal',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 400;');
@@ -492,7 +492,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '500\xa0-\xa0Medium',
+				text: '500 - Medium',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 500;');
@@ -501,7 +501,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '600\xa0-\xa0Semi Bold',
+				text: '600 - Semi Bold',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 600;');
@@ -510,7 +510,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '700\xa0-\xa0Bold',
+				text: '700 - Bold',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 700;');
@@ -519,7 +519,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '800\xa0-\xa0Xtra Bold',
+				text: '800 - Xtra Bold',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 800;');
@@ -528,7 +528,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			},
 			{
 				icon: false,
-				text: '900\xa0-\xa0Black',
+				text: '900 - Black',
 				onclick: function () {
 					if (isReady()) {
 						setStyle('font-weight: 900;');
