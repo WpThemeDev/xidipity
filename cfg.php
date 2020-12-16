@@ -2,7 +2,7 @@
 // xidipity configuration constants
 define('CopyRightHolder', get_bloginfo( 'name' ));
 define('EmojiDisplay', 'yes');
-define('FontAwesomeVersion', '5.12.1');
+define('FontAwesomeVersion', '5.15.1');
 define('FavoriteIcon', 'default');
 define('FooterAlignment', 'center');
 define('HeaderAlignment', 'center');
