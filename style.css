@@ -3,7 +3,7 @@
    Theme URI: https://xidipity.com
       Author: John Baer
   Author URI: github.com/WpThemeDev
- Description: Xidipity is a meticulously crafted WordPress theme which brings new power to the classic editor and offers a beautiful sophisticated design supporting a wide range of solutions. Content in the new classic editor is created visually the way it will be displayed on the web and supports many popular features such as an extensive color palette, font awesome icons, two columns, a robust table design, expanded HR designs, extensive video support, and Google adsense ads. To ensure a positive user experience Xidipity leverages the latest web technologies to deliver fast performance which includes the use of Content Delivery Networks and compressed local resources. For those who like to customize the details of their content design Xidity supports advance css classes. See this exciting theme at "https://xidipity.com/" or view the knowledge base at "https://doc.xidipity.com/".
+ Description: Xidipity is a meticulously crafted WordPress theme which brings new power to the classic editor and offers a beautiful sophisticated design supporting a wide range of solutions. Core to the theme is a robust editing solution containing twenty five drop down menu choices presenting over ninety editing options. Additional power is provided by the use of templates. Some of the more popular features include support of Font Awesome and Google material design icons - inclusion of Youtube, Vimeo, and HTML5 videos - and support for Google Adsense. Xidipity is designed to be responsive which ensures a positive user experience across many different devices. See this exciting theme in action at "https://xidipity.com/" or view the knowledge base at "https://doc.xidipity.com/".
      Version: 1.0.0
      License: GNU General Public License v2 or later
  License URI: www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@
 	Yoast SEO				yoast.com/
 
 -- Attribution				----------------------------------------------------
-	Font Awesome Icons		fontawesome.com/
+	Font Awesome Icons		fontawesome.com//
 	Google Material Design	material.io/
 	Underscores theme		Automattic, Inc. | underscores.me/
 	WordPress				Automattic, Inc. | automattic.com/
@@ -37,7 +37,8 @@
 
 	Variable/Files                      	Comment
     -------------------------------------- 	-----------------------------------
-    /assets/css/sys/print-vars.css      	print
+	cfg.php									configuration
+	/assets/css/sys/print-vars.css      	print
     /assets/css/sys/theme-vars.css      	theme
 
 	Image/Files                      		Comment
@@ -614,7 +615,7 @@ html {
 	}
 }
 /*
- * EOF:     style.css
- * Build:   30 201115 0
+ * EOF:		style.css
+ * Version:	1.0.0
  *
  */
