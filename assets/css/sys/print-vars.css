@@ -3,7 +3,7 @@
 * Xidipity css print variables
 *
 * ###:  assets/css/sys/print-vars.css
-* bld:  29200901
+* bld:  31201201
 * src:  github.com/WpThemeDev/xidipity/
 * (C)   2019-2020 John Baer
 *
@@ -85,7 +85,6 @@
 */
 /*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
-	--font-family-condensed: "Roboto Condensed", sans-serif;
 	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-serif: "Roboto Slab", serif;
 	--font-family-cursive: "Kalam", cursive;
@@ -208,5 +207,5 @@
 }
 
 /*
-* EOF: assets/css/sys/print-vars.css / 29200901
+* EOF: assets/css/sys/print-vars.css / 31201201
 */
