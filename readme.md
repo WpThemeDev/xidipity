@@ -18,7 +18,7 @@
 [![Issues][issues-shield]][issues-url]
 [![GNU License][license-shield]][license-url]
 
-![Xidipity GitHub Readme Screenshot](images/screenshot.png)
+![Xidipity GitHub Readme Screenshot](screenshot.png)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
