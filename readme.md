@@ -146,8 +146,7 @@ Download the latest release to your device.
 9. Configure other WordPress options as desired
 10. Create Something Great :)
 
-
-<span style="color:grey">*Although the block editor can be used with Xidipity, doing so eliminates many of the features.*</span>
+<h6>Although the block editor can be used with Xidipity, doing so eliminates many of the features.</h6>
 
 <!-- Copyright -->
 ## Copyright
