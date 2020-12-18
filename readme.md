@@ -141,12 +141,12 @@ Download the latest release to your device.
 2. Search for 'Classic Editor' - install & activate
 3. In the WordPress admin panel, go to Settings -> Writing
 4. Set default editor for all users to classic editor
-5. Optionally [^1] set 'Allow users to switch editors' to no
+5. Optionally<sup>*</sup> set 'Allow users to switch editors' to no
 6. Click 'Save Changes'
 9. Configure other WordPress options as desired
 10. Create Something Great :)
 
-[^1]: Although the block can be used with Xidipity, many of the features will be unavailable.
+<i style="font-size: 50%;">* Although the block editor can be used with Xidipity, doing so eliminates many of the features.</i>
 
 <!-- Copyright -->
 ## Copyright
