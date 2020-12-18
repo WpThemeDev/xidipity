@@ -133,6 +133,7 @@ Download the latest release to your device.
 4. Select the Xidipity theme download zip file
 5. Click 'Install Now'
 6. Upon completion, click 'activate' to use
+7. Click visit site
 
 <!-- Configuration -->
 ## Configuration
@@ -140,7 +141,7 @@ Download the latest release to your device.
 2. Search for 'Classic Editor' - install & activate
 3. In the WordPress admin panel, go to Settings -> Writing
 4. Set default editor for all users to classic editor
-5. Optionally[^1] set 'Allow users to switch editors' to no
+5. Optionally [^1] set 'Allow users to switch editors' to no
 6. Click 'Save Changes'
 9. Configure other WordPress options as desired
 10. Create Something Great :)
