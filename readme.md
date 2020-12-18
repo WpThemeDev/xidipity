@@ -35,6 +35,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#configuration">Configuration</a></li>
       </ul>
     </li>
     <li><a href="#copyright">Copyright</a></li>
@@ -132,12 +133,19 @@ Download the latest release to your device.
 4. Select the Xidipity theme download zip file
 5. Click 'Install Now'
 6. Upon completion, click 'activate' to use
-7. In the WordPress admin panel, go to Plugins and click 'Add New'
-8. Search for 'Classic Editor', install, activate
-    - In the WordPress admin panel, go to Settings -> Writing
-    - Make classic editor the default
-9. Configure as desired
+
+<!-- Configuration -->
+## Configuration
+1. In the WordPress admin panel, go to Plugins and click 'Add New'
+2. Search for 'Classic Editor' - install & activate
+3. In the WordPress admin panel, go to Settings -> Writing
+4. Set default editor for all users to classic editor
+5. Optionally[^1] set 'Allow users to switch editors' to no
+6. Click 'Save Changes'
+9. Configure other WordPress options as desired
 10. Create Something Great :)
+
+[^1]: Although the block can be used with Xidipity, many of the features will be unavailable.
 
 <!-- Copyright -->
 ## Copyright
