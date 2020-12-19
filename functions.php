@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  30201115
+ * bld:  31201201
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -477,7 +477,9 @@ function xidipity_scripts()
 		->get('Version') , 'all');
 	/*: wordpress dash icons :*/
 	wp_enqueue_style( 'dashicons' );
-	//wp_enqueue_style('dashicons-style', get_stylesheet_uri(), array('dashicons'), '1.0');	
+	/*: animxyz :*/
+	wp_enqueue_style('animxyz','https://cdn.jsdelivr.net/npm/@animxyz/core@0.1.1/dist/animxyz.min.css', array() , wp_get_theme()
+		->get('Version') , 'all');
 	/*: comment reply ? :*/
 	if (is_singular() && comments_open() && get_option('thread_comments'))
 	{
@@ -1666,6 +1668,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 30201115
+ * EOF: functions.php / 31201201
 */
 ?>
