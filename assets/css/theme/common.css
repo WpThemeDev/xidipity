@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  30201201
+    * bld:  31201201
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2019-2020 John Baer
     *
@@ -1109,19 +1109,18 @@ table.cols\:auto-4 {
 */
 @media (max-width: 599px) {
 	table.cols\:fixed-2,
-	table.cols\:fixed-3,
-	table.cols\:fixed-4 {
-		display: block;
+	table.cols\:fixed-2 tbody,
+	table.cols\:fixed-2 tbody tr,
+	table.cols\:fixed-2 tbody tr td	{
+		display: block !important;
 		width: 100% !important;
 	}
-	table.cols\:fixed-2>tbody>tr>td,
-	table.cols\:fixed-3>tbody>tr>td,
-	table.cols\:fixed-4>tbody>tr>td {
+	table.cols\:fixed-2 tbody tr td,
+	table.cols\:fixed-3 tbody tr td,
+	table.cols\:fixed-4 tbody tr td {
 		border-color: transparent !important;
-		display: block;
-		margin-bottom: 0.5rem;
-		width: 100% !important;
-	}	
+		margin: 0 0 0.5rem 0;
+	}
 }
 @media (min-width: 600px) {
 	table.cols\:fixed-2,
@@ -1133,20 +1132,20 @@ table.cols\:auto-4 {
 		table-layout: auto;
 		width: 100%;
 	}
-	table.cols\:fixed-2>tbody>tr>td,
-	table.cols\:fixed-3>tbody>tr>td,
-	table.cols\:fixed-4>tbody>tr>td {
+	table.cols\:fixed-2 tbody tr td,
+	table.cols\:fixed-3 tbody tr td,
+	table.cols\:fixed-4 tbody tr td {
 		border-color: transparent !important;
 		display: table-cell;
 		vertical-align: top;
 	}
-	table.cols\:fixed-2>tbody>tr>td {
+	table.cols\:fixed-2 tbody tr td {
 		width: 50%;
 	}
-	table.cols\:fixed-3>tbody>tr>td {
+	table.cols\:fixed-3 tbody tr td {
 		width: 33.3333%;
 	}
-	table.cols\:fixed-4>tbody>tr>td {
+	table.cols\:fixed-4 tbody tr td {
 		width: 25%;
 	}
 }
@@ -1735,6 +1734,16 @@ button.bas:active {
 	background-color: var(--hue-bas-dn4);
 	border: thin solid var(--hue-bas-dn3);
 }
+button.img {
+	align-items: center;
+	background-color: transparent;
+	border: thin solid transparent;
+	border-radius: 0.1666rem;
+	display: inline-flex;
+	justify-content: center;
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+}
 /*
 ***
     * property: btn:facade
@@ -2316,5 +2325,5 @@ button.bas:active {
 	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+bWVudS0yNHB4X2NsaWNrZWQ8L3RpdGxlPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9Im1lbnUtMjRweF9jbGlja2VkIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhdGgiIHBvaW50cz0iMCAwIDI0IDAgMjQgMjQgMCAyNCI+PC9wb2x5Z29uPgogICAgICAgICAgICA8cGF0aCBkPSJNMywxOCBMMjEsMTggTDIxLDE2IEwzLDE2IEwzLDE4IFogTTMsMTMgTDIxLDEzIEwyMSwxMSBMMywxMSBMMywxMyBaIE0zLDYgTDMsOCBMMjEsOCBMMjEsNiBMMyw2IFoiIGlkPSJTaGFwZSIgZmlsbD0iI0YwNDMxOCIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
 }
 /*
- * EOF: assets/css/theme/common.css / 30201201
+ * EOF: assets/css/theme/common.css / 31201201
  */
