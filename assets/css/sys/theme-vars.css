@@ -66,26 +66,11 @@
 	--hue-sec-tint: #fef0ed;
 	--hue-sec-tint-dn1: #fde8e3;
 /*
-*** text colors
-*/
-	--hue-red: #b30000;
-	--hue-purple: #800080;
-	--hue-blue: #0000ff;
-	--hue-green: #006600;
-/*
-*** highlight colors
-*/
-	--hue-highlight-yellow: #ffff66;
-	--hue-highlight-cyan: #ccffff;
-	--hue-highlight-magenta: #ffccff;
-	--hue-highlight-green: #99ff99;
-	--hue-highlight-orange: #ffd280;
-	--hue-highlight-red: #ffc7c7;
-/*
 *** content attributes
 */
 	/*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
+	--font-family-condensed: "Roboto Condensed", sans-serif;
 	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-serif: "Roboto Slab", serif;
 	--font-family-cursive: "Kalam", cursive;
