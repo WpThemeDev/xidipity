@@ -1111,7 +1111,15 @@ table.cols\:auto-4 {
 	table.cols\:fixed-2,
 	table.cols\:fixed-2 tbody,
 	table.cols\:fixed-2 tbody tr,
-	table.cols\:fixed-2 tbody tr td	{
+	table.cols\:fixed-2 tbody tr td,
+	table.cols\:fixed-3,
+	table.cols\:fixed-3 tbody,
+	table.cols\:fixed-3 tbody tr,
+	table.cols\:fixed-3 tbody tr td,
+	table.cols\:fixed-4,
+	table.cols\:fixed-4 tbody,
+	table.cols\:fixed-4 tbody tr,
+	table.cols\:fixed-4 tbody tr td	{
 		display: block !important;
 		width: 100% !important;
 	}
