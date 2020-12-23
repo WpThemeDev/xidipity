@@ -2,7 +2,7 @@
 // xidipity configuration constants
 define('CopyRightHolder', get_bloginfo( 'name' ));
 define('EmojiDisplay', 'yes');
-define('FontAwesomeVersion', '5.15.1');
+define('FontAwesomeVersion', '5.12.1');
 define('FavoriteIcon', 'default');
 define('FooterAlignment', 'center');
 define('HeaderAlignment', 'center');
@@ -16,4 +16,9 @@ define('MessageDefault', 'Hello :)');
 define('SidebarAlignment', 'right');
 define('FeaturedImage', 'left');
 define('ThemeSEO', get_bloginfo( 'name' ) . ' WordPress Theme');
+define('FontSans', 'Roboto');
+define('FontSerif', 'Roboto Slab');
+define('FontMono', 'Roboto Mono');
+define('FontCursive', 'Kalam');
+define('FontFantasy', 'Kaushan Script');
 ?>
