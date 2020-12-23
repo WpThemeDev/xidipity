@@ -96,6 +96,21 @@ function xty($key = '', $value = '')
 					case ('seo'):
 						$xty[$key] = ThemeSEO;
 					break;
+					case ('sans'):
+						$xty[$key] = FontSans;
+					break;
+					case ('serif'):
+						$xty[$key] = FontSerif;
+					break;
+					case ('mono'):
+						$xty[$key] = FontMono;
+					break;
+					case ('cursive'):
+						$xty[$key] = FontCursive;
+					break;
+					case ('fantasy'):
+						$xty[$key] = FontFantasy;
+					break;
 					default:
 						$xty[$key] = '';
 				}
@@ -448,8 +463,22 @@ add_action('widgets_init', 'xidipity_widgets_init');
  */
 function xidipity_scripts()
 {
-	/*: googlefonts.css :*/
-	wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900,&display=swap', array() , wp_get_theme()->get('Version') , 'all');
+	/*: xidipity fonts :*/
+	// sans
+	$font = str_replace(' ','+',xty('sans'));
+	wp_enqueue_style('google-sans', 'https://fonts.googleapis.com/css?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	// serif
+	$font = str_replace(' ','+',xty('serif'));
+	wp_enqueue_style('google-serif', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	// mono
+	$font = str_replace(' ','+',xty('mono'));
+	wp_enqueue_style('google-mono', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	// cursive
+	$font = str_replace(' ','+',xty('cursive'));
+	wp_enqueue_style('google-cursive', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	// fantasy
+	$font = str_replace(' ','+',xty('fantasy'));
+	wp_enqueue_style('google-fantasy', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
 	/*: style.css :*/
 	wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 	/*: xidipity css :*/
