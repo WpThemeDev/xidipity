@@ -70,9 +70,8 @@
 */
 	/*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
-	--font-family-condensed: "Roboto Condensed", sans-serif;
-	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-serif: "Roboto Slab", serif;
+	--font-family-mono: "Roboto Mono", monospace;
 	--font-family-cursive: "Kalam", cursive;
 	--font-family-fantasy: "Kaushan Script", cursive;
 	/*: font sizes :*/
