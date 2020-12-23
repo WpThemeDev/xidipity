@@ -97,19 +97,34 @@ function xty($key = '', $value = '')
 						$xty[$key] = ThemeSEO;
 					break;
 					case ('sans'):
-						$xty[$key] = FontSans;
+						$font = FontSans;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					case ('serif'):
-						$xty[$key] = FontSerif;
+						$font = FontSerif;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					case ('mono'):
-						$xty[$key] = FontMono;
+						$font = FontMono;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					case ('cursive'):
-						$xty[$key] = FontCursive;
+						$font = FontCursive;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					case ('fantasy'):
-						$xty[$key] = FontFantasy;
+						$font = FontFantasy;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					default:
 						$xty[$key] = '';
@@ -464,21 +479,18 @@ add_action('widgets_init', 'xidipity_widgets_init');
 function xidipity_scripts()
 {
 	/*: xidipity fonts :*/
+	// preconnect
+	wp_enqueue_style('google-preconnect', 'https://fonts.gstatic.com', array() , wp_get_theme()->get('Version') , 'all');
 	// sans
-	$font = str_replace(' ','+',xty('sans'));
-	wp_enqueue_style('google-sans', 'https://fonts.googleapis.com/css?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	wp_enqueue_style('google-sans', xty('sans'), array() , wp_get_theme()->get('Version') , 'all');
 	// serif
-	$font = str_replace(' ','+',xty('serif'));
-	wp_enqueue_style('google-serif', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	wp_enqueue_style('google-serif', xty('serif'), array() , wp_get_theme()->get('Version') , 'all');
 	// mono
-	$font = str_replace(' ','+',xty('mono'));
-	wp_enqueue_style('google-mono', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	wp_enqueue_style('google-mono', xty('mono'), array() , wp_get_theme()->get('Version') , 'all');
 	// cursive
-	$font = str_replace(' ','+',xty('cursive'));
-	wp_enqueue_style('google-cursive', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	wp_enqueue_style('google-cursive', xty('cursive'), array() , wp_get_theme()->get('Version') , 'all');
 	// fantasy
-	$font = str_replace(' ','+',xty('fantasy'));
-	wp_enqueue_style('google-fantasy', 'https://fonts.googleapis.com/css2?family=' . $font, array() , wp_get_theme()->get('Version') , 'all');
+	wp_enqueue_style('google-fantasy', xty('fantasy'), array() , wp_get_theme()->get('Version') , 'all');
 	/*: style.css :*/
 	wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 	/*: xidipity css :*/
