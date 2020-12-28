@@ -92,7 +92,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 			}
 		}, {
 			icon: false,
-			text: 'No Bullet',
+			text: 'Unmarked',
 			onclick: function() {
 				var dom = editor.dom;
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
