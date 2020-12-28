@@ -98,7 +98,7 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ul class="no-bullets"><li id="';
 				html += uniqueID;
-				html += '">&nbsp;</li></ul>';
+				html += '">Item 1</li></ul>';
 				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				editor.selection.setCursorLocation(newListItem);
