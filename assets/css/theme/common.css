@@ -831,14 +831,15 @@ ol.decimal li ol.decimal li::before {
 /*
 ***
     * property: no-bullet(s)
-    * ver: 190910-1
+    * ver: 31201201
     * fnt: unordered list without bullets
     * ref: developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+	.no-bullets li>ul
 ***
 */
 .no-bullet,
-.no-bullets,
-.no-bullets li>ul {
+ul.no-bullets,
+ul.no-bullets ul:nth-of-type(1) {
 	list-style-type: none;
 }
 /*
