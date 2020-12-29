@@ -1437,24 +1437,6 @@ td .ratio-container {
 }
 /*
 ***
-    * property: drp
-    * ver: 200308
-    * fnt: add drop shadow
-    * ref: developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
-***
-*/
-.drp\:shadow-light {
-	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-up1));
-}
-.drp\:shadow,
-.drp\:shadow-medium {
-	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
-}
-.drp\:shadow-dark {
-	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-dn1));
-}
-/*
-***
     * element: figure
     * ver: 200318
     * fnt: wraps image with caption
@@ -1826,6 +1808,24 @@ button.img {
 }
 .trn\:txt-capital {
 	text-transform: capitalize;
+}
+/*
+***
+    * property: drp
+    * ver: 31201215
+    * fnt: add (light/medium/dark) drop shadow
+    * ref: developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
+***
+*/
+.trn\:shadow-lt {
+	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-up1));
+}
+.trn\:shadow,
+.trn\:shadow-md {
+	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas));
+}
+.trn\:shadow-dk {
+	filter: drop-shadow(0.25rem 0.25rem 0.25rem var(--hue-bas-dn1));
 }
 /*
 ***
