@@ -3,7 +3,7 @@
  * Tinymce add-list-unordered plugin
  *
  * ###:  plugin.js
- * bld:  31201201
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -101,11 +101,15 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 				html += '">Item 1</li></ul>';
 				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
-				editor.selection.setCursorLocation(newListItem);
+				var range = editor.selection.getRng();
+				range.setStart(newListItem, 0);
+				range.setEnd(newListItem, 5);
+				editor.selection.setRng(range);
+				editor.selection.setCursorLocation(newListItem,0);
 			}
 		}]
 	});
 });
 /*
- * EOF: add-list-unordered / plugin.js / 31201201
+ * EOF: add-list-unordered / plugin.js / 31201215
  */
