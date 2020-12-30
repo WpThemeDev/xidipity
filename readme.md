@@ -180,13 +180,13 @@ GNU General Public License for more details.
 
 [staff@xidipity.com](mailto:staff@xidipity.com)
 
-**Project Link**
+**Project Links**
 
-[Blog](https://xidipity)
+[Blog](https://xidipity.com)
 
 [GitHub](https://github.com/WpThemeDev/xidipity)
 
-[Knowledge Base](https://doc.xidipity) 
+[Knowledge Base](https://doc.xidipity.com) 
 
 [Twitter](https://twitter.com/xidipity)
 
