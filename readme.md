@@ -182,7 +182,13 @@ GNU General Public License for more details.
 
 **Project Link**
 
-[Xidipity WordPress Theme](https://github.com/WpThemeDev/xidipity)
+[Blog](https://xidipity)
+
+[GitHub](https://github.com/WpThemeDev/xidipity)
+
+[Knowledge Base](https://doc.xidipity) 
+
+[Twitter](https://twitter.com/xidipity)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
