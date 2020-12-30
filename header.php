@@ -4,7 +4,7 @@
  * The template for displaying page header
  *
  * ###:  header.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2019-2020 John Baer
  *
@@ -113,7 +113,8 @@ else
 echo '<a class="skip-link screen-reader-text" href="#content">' . __('Skip to content') . '</a>' . "\n";
 if (xty('hdr-logo') == 'none')
 {
-	if (is_front_page() || is_home())
+	// @ home page?
+	if (get_queried_object_id() == get_option('page_on_front'))
 	{
 		if (xty('hdr-aln') == 'left')
 		{
@@ -164,7 +165,6 @@ if (xty('hdr-logo') == 'none')
 }
 else
 {
-	//echo '<div class="dsp:block">' . "\n";
 	if (is_front_page() || is_home())
 	{
 		echo '<img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Blog">' . "\n";
@@ -173,7 +173,6 @@ else
 	{
 		echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="' . xty('hdr-logo') . '" alt="' . get_bloginfo('name') . ' Blog"></a>' . "\n";
 	}
-	//echo '</div>' . "\n";
 }
 echo '</header>' . "\n";
 echo '</div>' . "\n";
@@ -237,6 +236,6 @@ echo '</div>' . "\n";
 echo '<cmt name="end">HEADER/MENU</cmt>' . "\n";
 echo '<cmt name="end">HEADER/PHP</cmt>' . "\n";
 /*
- * EOF: header.php / 30201115
+ * EOF: header.php / 31201215
 */
 ?>
