@@ -1,6 +1,8 @@
 <?php
 // xidipity configuration constants
 define('CopyRightHolder', get_bloginfo( 'name' ));
+define('CopyRightYear1', 'default');
+define('CopyRightYear2', 'default');
 define('EmojiDisplay', 'yes');
 define('FontAwesomeVersion', '5.12.1');
 define('FavoriteIcon', 'default');
