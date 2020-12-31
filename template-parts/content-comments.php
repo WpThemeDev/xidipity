@@ -6,7 +6,7 @@
  * ###:  template-parts/content-comments.php
  * bld:  29200815
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 global $wp_query, $comment_alt, $comment_depth, $comment_thread_alt, $overridden_cpage, $in_comment_loop;
