@@ -1,9 +1,18 @@
-=== Xidipity ===
-Contributors:       john baer
+ #     #                                 
+  #   #  # #####  # #####  # ##### #   # 
+   # #   # #    # # #    # #   #    # #  
+    #    # #    # # #    # #   #     #   
+   # #   # #    # # #####  #   #     #   
+  #   #  # #    # # #      #   #     #   
+ #     # # #####  # #      #   #     #   
+                                         
+----------------------------------------
+
 Requires at least:  WordPress 4.7.9
 Tested up to:       WordPress 5.6
 License:            GPLv2 or later
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html
+(C):                2018-2021 John Baer
 Tags:               blog,custom-background,custom-colors,custom-header,custom-logo,custom-menu,editor-style,featured-images,footer-widgets,front-page-post-form,full-width-template,grid-layout,news,one column,post-formats,right-sidebar,sticky-post,theme-options,threaded-comments,two-columns
 
 == Description ==
