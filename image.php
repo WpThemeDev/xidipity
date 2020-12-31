@@ -4,7 +4,7 @@
  * The template for displaying media library image
  *
  * ###:  image.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -23,32 +23,32 @@ xty('mnu-dsp', 'yes');
 get_header();
 /*
  ***/
-echo '<cmt>### FILE/IMAGE/PHP ###</cmt>' . "\n";
+echo '<!-- xty:file/image/php -->' . "\n";
 /***
 */
-echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+echo '<!-- xty:page/body -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
 */
 if (xty('sb-aln') == 'left')
 {
-	echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+	echo '<!-- xty:page/body -->' . "\n";
 	echo '<main class="fx:rw md)fx:r-rev fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- xty:PAGE/BODY/CONTENT -->' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:lt+0.5">' . "\n";
 }
 else
 {
-	echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+	echo '<!-- xty:page/body -->' . "\n";
 	echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- xty:page/body/content -->' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:rt+0.5">' . "\n";
 }
 echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_query->have_posts())
 {
-	echo '<cmt name="begin">PAGE/BODY/HEADER</cmt>' . "\n";
+	echo '<!-- xty:page/body/header -->' . "\n";
 	echo '<header class="mar:tp+1 wd:100%">' . "\n";
 	/*
 	 *** developer.wordpress.org/reference/functions/the_title/
@@ -56,8 +56,8 @@ if ($wp_query->have_posts())
 	the_title('<div class="pg:title">', '</div>');
 	echo '<div class="bkg:bas+2 ln mce[dsp:none]"></div>' . "\n";
 	echo '</header>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/IMAGE</cmt>' . "\n";
+	echo '<!-- /xty:page/body/header -->' . "\n";
+	echo '<!-- xty:page/body/image -->' . "\n";
 	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** display image
@@ -83,7 +83,7 @@ if ($wp_query->have_posts())
 	}
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/IMAGE</cmt>' . "\n";
+	echo '<!-- /xty:page/body/image -->' . "\n";
 }
 else
 {
@@ -120,17 +120,17 @@ else
 }
 echo '</article>' . "\n";
 echo '</section>' . "\n";
-echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
+echo '<!-- /xty:page/body/content -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_sidebar/
 */
-echo '<cmt name="begin">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- xty:page/body/sidebar -->' . "\n";
 get_sidebar();
-echo '<cmt name="end">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- /xty:page/body/sidebar -->' . "\n";
 echo '</main>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
+echo '<!-- /xty:page/body -->' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
+echo '<!-- /xty:page/body -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -140,6 +140,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: image.php / 30201115
+ * EOF: image.php / 31201215
 */
 ?>
