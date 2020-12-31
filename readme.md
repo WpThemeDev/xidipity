@@ -172,12 +172,6 @@ GNU General Public License for more details.
 <!-- CONTACT -->
 ## Contact
 
-**Twitter**
-
-[Xidipity](https://twitter.com/xidipity)
-
-**Email**
-
 [staff@xidipity.com](mailto:staff@xidipity.com)
 
 **Project Links**
