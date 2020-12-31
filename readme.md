@@ -120,6 +120,10 @@ Xidipity uses an enhanced version of the classic editor. The benefit of this dec
 
 * [Classic Editor](https://wordpress.org/plugins/classic-editor/) plugin by WordPress
 
+### WordPress Versions
+* Minimum: 4.7.9
+* Tested To: 5.6
+
 ## Getting Started
 
 Download the latest release to your device.
