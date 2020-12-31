@@ -98,12 +98,12 @@ tinymce.PluginManager.add('add_lst_unorder', function(editor) {
 				var uniqueID = (Math.random().toString(16)+"000000000").substr(4,5);
 				var html = '<ul class="no-bullets"><li id="';
 				html += uniqueID;
-				html += '">Item 1</li></ul>';
+				html += '">&#182;</li></ul>';
 				editor.execCommand('mceInsertContent', false, html);
 				var newListItem = dom.select('li#' + uniqueID)[0];
 				var range = editor.selection.getRng();
 				range.setStart(newListItem, 0);
-				range.setEnd(newListItem, 5);
+				range.setEnd(newListItem, 2);
 				editor.selection.setRng(range);
 				editor.selection.setCursorLocation(newListItem,0);
 			}
