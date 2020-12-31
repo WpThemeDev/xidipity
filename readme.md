@@ -116,13 +116,13 @@ Xidipity uses an enhanced version of the classic editor. The benefit of this dec
 * [CSS](https://www.w3.org/Style/CSS/specs.en.html)
 * [JavaScript](https://www.w3.org/wiki/JavaScript_best_practices)
 
+## WordPress Versions
+* Minimum: 4.7.9
+* Tested To: 5.6
+
 ## Dependencies
 
 * [Classic Editor](https://wordpress.org/plugins/classic-editor/) plugin by WordPress
-
-### WordPress Versions
-* Minimum: 4.7.9
-* Tested To: 5.6
 
 ## Getting Started
 
