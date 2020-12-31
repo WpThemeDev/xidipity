@@ -4,7 +4,7 @@
  * The template for displaying author info
  *
  * ###:  author.php
- * bld:  29200901
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -19,11 +19,11 @@ xty('mnu-dsp','yes');
 get_header();
 /*
  ***/
-echo '<cmt>### FILE/AUTHOR/PHP ###</cmt>' . "\n";
+echo '<!-- xty:file/author/php -->' . "\n";
 /***
 
 */
-echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+echo '<!-- xty:page/body -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -59,13 +59,13 @@ if (have_posts())
 	/*
 	 *** developer.wordpress.org/reference/functions/the_title/
 	*/
-	echo '<cmt name="begin">PAGE/BODY/HEADER</cmt>' . "\n";
+	echo '<!-- xty:page/body/header -->' . "\n";
 	echo '<header class="mar:bt+1 wd:100%">' . "\n";
 	echo '<div class="pg:title">Author: ' . __(get_the_author_meta('nickname')) . '</div>';
 	echo '<div class="bkg:bas+2 ln mar:bt+0.75">&#8203;</div>' . "\n";
 	echo '</header>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/header -->' . "\n";
+	echo '<!-- xty:page/body/content -->' . "\n";
 	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** content
@@ -109,7 +109,7 @@ if (have_posts())
 	echo '</section>' . "\n";
 	echo '</div>' . "\n";
 	echo '</div>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/content -->' . "\n";
 }
 else
 {
@@ -141,13 +141,12 @@ echo '</section>' . "\n";
 /*
  *** SIDEBAR/PHP ***
 */
-echo '<cmt name="begin">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- xty:page/body/sidebar -->' . "\n";
 get_sidebar();
-echo '<cmt name="end">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- /xty:page/body/sidebar -->' . "\n";
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
+echo '<!-- /xty:page/body -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -157,6 +156,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: author.php / 29200901
+ * EOF: author.php / 31201215
 */
 ?>
