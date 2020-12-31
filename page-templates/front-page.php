@@ -6,7 +6,7 @@
  * The template for displaying font page
  *
  * ###:  page-templates/font-page.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -21,10 +21,10 @@ xty('mnu-dsp', 'yes');
 get_header();
 /*
  ***/
-echo '<cmt>### PAGE-TEMPLATE/FRONT-PAGE/PHP ###</cmt>' . "\n";
+echo '<!-- xty:page-template/front-page/php -->' . "\n";
 /***
 */
-echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+echo '<!-- xty:page/body -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -43,12 +43,12 @@ echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:
 if (have_posts())
 {
 	the_post();
-	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/header -->' . "\n";
+	echo '<!-- xty:page/body/content -->' . "\n";
 	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	echo xty_dsp_content();
 	echo '</div>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/content -->' . "\n";
 }
 else
 {
@@ -80,12 +80,12 @@ echo '</section>' . "\n";
 /*
  *** SIDEBAR/PHP ***
 */
-echo '<cmt name="begin">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- xty:page/body/sidebar -->' . "\n";
 get_sidebar();
-echo '<cmt name="end">PAGE/BODY/SIDEBAR</cmt>' . "\n";
+echo '<!-- /xty:page/body/sidebar -->' . "\n";
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
+echo '<!-- /xty:page/body -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -95,6 +95,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/font-page.php / 30201115
+ * EOF: page-templates/font-page.php / 31201215
 */
 ?>
