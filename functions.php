@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  31201201
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -388,11 +388,12 @@ if (!function_exists('xty_setup')):
 		$ed_css3 = '/assets/css/theme/palette.css';
 		$ed_css4 = '/assets/css/theme/common.css';
 		$ed_css5 = '/assets/css/theme/advance.css';
-		$ed_css6 = '/assets/css/theme/flexbox.css';
-		$ed_css7 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-		$ed_css8 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
-		$ed_css9 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
-		$ed_css10 = '/assets/css/theme/editor.css';
+		$ed_css6 = '/assets/css/theme/icons.css';
+		$ed_css7 = '/assets/css/theme/flexbox.css';
+		$ed_css8 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+		$ed_css9 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
+		$ed_css10 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
+		$ed_css11 = '/assets/css/theme/editor.css';
 		$ed_styles = array(
 			$ed_css1,
 			$ed_css2,
@@ -403,7 +404,8 @@ if (!function_exists('xty_setup')):
 			$ed_css7,
 			$ed_css8,
 			$ed_css9,
-			$ed_css10
+			$ed_css10,
+			$ed_css11
 		);
 		add_editor_style($ed_styles);
 		/*
@@ -505,6 +507,8 @@ function xidipity_scripts()
 	wp_enqueue_style('xidipity-print', get_stylesheet_directory_uri() . '/assets/css/theme/print.css', array() , wp_get_theme()
 		->get('Version') , 'print');
 	wp_enqueue_style('xidipity-advance', get_stylesheet_directory_uri() . '/assets/css/theme/advance.css', array() , wp_get_theme()
+		->get('Version') , 'all');
+	wp_enqueue_style('xidipity-icons', get_stylesheet_directory_uri() . '/assets/css/theme/icons.css', array() , wp_get_theme()
 		->get('Version') , 'all');
 	wp_enqueue_style('xidipity-flexbox', get_stylesheet_directory_uri() . '/assets/css/theme/flexbox.css', array() , wp_get_theme()
 		->get('Version') , 'all');
@@ -1709,6 +1713,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 31201201
+ * EOF: functions.php / 31201215
 */
 ?>
