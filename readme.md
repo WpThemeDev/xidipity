@@ -151,7 +151,7 @@ Download the latest release to your device.
 <!-- Copyright -->
 ## Copyright
 
-Xidipity WordPress Theme, Copyright 2018 - 2020 John Baer
+Xidipity WordPress Theme, Copyright 2018 - 2021 John Baer
 
 <!-- LICENSE -->
 ## License
