@@ -4,7 +4,7 @@
  * The template for displaying archive blog posts
  *
  * ###:  archive.php
- * bld:  29200815
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -30,7 +30,7 @@ xty('msg','Archive/php was unable to load the requested template.');
  *** developer.wordpress.org/reference/functions/get_header/
 */
 get_header();
-echo '<cmt name="begin">ARCHIVE/PHP</cmt>' . "\n";
+echo '<!-- xty:archive/php -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -55,7 +55,7 @@ include (locate_template('template-parts/content-precis.php', false, false));
 get_sidebar();
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">ARCHIVE/PHP</cmt>' . "\n";
+echo '<!-- /xty:archive/php -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -65,6 +65,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: archive.php / 29200815
+ * EOF: archive.php / 31201215
 */
 ?>
