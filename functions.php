@@ -51,6 +51,12 @@ function xty($key = '', $value = '')
 					case ('copyrightholder'):
 						$xty[$key] = CopyRightHolder;
 					break;
+					case ('copyrightyear1'):
+						$xty[$key] = CopyRightYear1;
+					break;
+					case ('copyrightyear2'):
+						$xty[$key] = CopyRightYear2;
+					break;
 					case ('emoji-dsp'):
 						$xty[$key] = EmojiDisplay;
 					break;
@@ -233,7 +239,7 @@ function scrub_list($arg = '', $case = '')
 }
 /**
  *  name: blog_copyright
- *  build: 29200815
+ *  build: 31201215
  *  description: return copyright
  *  url: www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
@@ -241,24 +247,36 @@ function scrub_list($arg = '', $case = '')
 function blog_copyright()
 {
 	global $wpdb;
-	$db_val = $wpdb->get_results("
-    SELECT
-        YEAR(min(post_date_gmt)) AS firstdate,
-        YEAR(max(post_date_gmt)) AS lastdate
-        FROM
-        $wpdb->posts
-    WHERE
-        post_status = 'publish'
-    ");
 	$ret_val = '';
-	if ($db_val)
-	{
-		$fn_copyright = "&copy; " . $db_val[0]->firstdate;
-		if ($db_val[0]->firstdate != $db_val[0]->lastdate)
-		{
-			$fn_copyright .= '-' . $db_val[0]->lastdate;
-		}
-		$ret_val = '<span class="pad:rt+0.5">' . $fn_copyright . '</span>' . xty('copyrightholder');
+	switch(true) {
+		case (xty('copyrightyear1') !== 'default' && xty('copyrightyear2') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear1') . '-' . xty('copyrightyear2') . '</span>' . xty('copyrightholder');
+			break;
+		case (xty('copyrightyear2') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear2') . '</span>' . xty('copyrightholder');
+			break;
+		case (xty('copyrightyear1') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear1') . '</span>' . xty('copyrightholder');
+			break;
+		default:
+			$db_val = $wpdb->get_results("
+			SELECT
+				YEAR(min(post_date_gmt)) AS firstdate,
+				YEAR(max(post_date_gmt)) AS lastdate
+				FROM
+				$wpdb->posts
+			WHERE
+				post_status = 'publish'
+			");
+			if ($db_val)
+			{
+				$fn_copyright = "&copy; " . $db_val[0]->firstdate;
+				if ($db_val[0]->firstdate != $db_val[0]->lastdate)
+				{
+					$fn_copyright .= '-' . $db_val[0]->lastdate;
+				}
+				$ret_val = '<span class="pad:rt+0.5">' . $fn_copyright . '</span>' . xty('copyrightholder');
+			}
 	}
 	return $ret_val;
 }
