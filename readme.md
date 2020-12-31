@@ -116,7 +116,7 @@ Xidipity uses an enhanced version of the classic editor. The benefit of this dec
 * [CSS](https://www.w3.org/Style/CSS/specs.en.html)
 * [JavaScript](https://www.w3.org/wiki/JavaScript_best_practices)
 
-## WordPress Versions
+### WordPress Versions
 * Minimum: 4.7.9
 * Tested To: 5.6
 
