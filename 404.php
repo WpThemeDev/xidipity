@@ -4,7 +4,7 @@
  * The template for displaying the 404 error
  *
  * ###:  404.php
- * bld:  29200815
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -17,7 +17,7 @@ xty('mnu-dsp', 'yes');
  *** developer.wordpress.org/reference/functions/get_header/
 */
 get_header();
-echo '<cmt name="begin">404/PHP</cmt>' . "\n";
+echo '<!-- xty:404/php -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -60,12 +60,12 @@ echo '</section>' . "\n";
 /*
  *** SIDEBAR/PHP ***
 */
-echo '<cmt name="begin">SIDEBAR/PHP</cmt>' . "\n";
+echo '<!-- xty:sidebar/php -->' . "\n";
 get_sidebar();
-echo '<cmt name="end">SIDEBAR/PHP</cmt>' . "\n";
+echo '<!-- /xty:sidebar/php -->' . "\n";
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">404/PHP</cmt>' . "\n";
+echo '<!-- /xty:404/php -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -75,6 +75,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: 404.php / 29200815
+ * EOF: 404.php / 31201215
 */
 ?>
