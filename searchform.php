@@ -6,10 +6,10 @@
     * ###:  searchform.php
     * bld:  28200801
     * src:  github.com/WpThemeDev/xidipity/
-    * (C)   2019-2020 John Baer
+    * (C)   2018-2021 John Baer
     *
 */
-echo '<cmt name="begin">SEARCHFORM/PHP</cmt>' . "\n";
+echo '<!-- SEARCHFORM/PHP -->' . "\n";
 echo '<div class="search-frm-container">' . "\n";
 echo '<form role="search" method="get" class="search-frm" action="' . esc_url( home_url( '/' ) ) . '">' . "\n";
 echo '<label>' . "\n";
@@ -19,7 +19,7 @@ echo '</label>' . "\n";
 echo '<button type="submit" class="search-sub"><span class="screen-reader-text">' . esc_html_x( 'Search', 'submit button', 'xidipity' ) . '</span><i class="fas fa-search"></i></button>' . "\n";
 echo '</form>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">SEARCHFORM/PHP</cmt>' . "\n";
+echo '<!-- /SEARCHFORM/PHP -->' . "\n";
 /*
  * EOF: searchform.php / 28200801
  */
