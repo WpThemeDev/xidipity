@@ -28,6 +28,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#wordpress versions">WordPress Versions</a></li>
       </ul>
     </li>
     <li><a href="#dependencies">Dependencies</a></li>
