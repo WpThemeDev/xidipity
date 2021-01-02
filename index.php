@@ -66,7 +66,7 @@ else
 	/*
 	 *** setup database query
 	*/
-	$category_ids = get_cat_IDs('-archive,-special group 1,-special group 2,-special group 3');
+	$category_ids = get_cat_IDs('-archive,-specialgroup1,-specialgroup2,-specialgroup3');
 	$qry_prms = array(
 		'cat' => $category_ids,
 		'orderby' => 'date',
