@@ -73,10 +73,11 @@ if ($wp_query->have_posts())
 	echo '</div>' . "\n";
 	if (!empty($caption))
 	{
-		echo '<div class="aln:txt-ct fnt:siz-1 mar:bt+0.25 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
+		echo '<div class="aln:txt-ct fnt:siz-1 wd:100%">' . wp_get_attachment_caption(get_the_ID()) . '</div>' . "\n";
 	}
 	if (!empty($content))
 	{
+		echo '<p>&nbsp;</p>' . "\n";
 		$content = apply_filters('the_content', $content);
 		$content = str_replace(']]>', ']]&gt;', $content);
 		echo $content . "\n";
