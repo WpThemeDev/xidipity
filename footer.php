@@ -4,12 +4,12 @@
  * The template for displaying page footer
  *
  * ###:  footer.php
- * bld:  29200815
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
-echo '<cmt name="begin">FOOTER/PHP</cmt>' . "\n";
+echo '<!-- xty:footer/php -->' . "\n";
 echo '<div class="fxd:1 fxe:2 fb:100%">' . "\n";
 if (xty('ftr-aln') == 'left')
 {
@@ -31,14 +31,14 @@ echo '<p><a href="https://xidipity.com/">Xidipity Theme</a> &sdot; Powered by <a
 echo '</div>' . "\n";
 echo '</footer>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">FOOTER/PHP</cmt>' . "\n";
+echo '<!-- /xty:footer/php -->' . "\n";
 /*
  ***
  * close htm/flex/container here / open in header
  ***
 */
 echo '</div>' . "\n";
-echo '<cmt name="end">PAGE</cmt>' . "\n";
+echo '<!-- /xty:page -->' . "\n";
 /*
  *** ref: developer.wordpress.org/reference/functions/wp_footer/
 */
@@ -46,6 +46,6 @@ wp_footer();
 echo '</body>' . "\n";
 echo '</html>' . "\n";
 /*
- * EOF: footer.php / 29200815
+ * EOF: footer.php / 31201215
 */
 ?>

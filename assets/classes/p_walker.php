@@ -6,7 +6,7 @@
  * ###:  p_walker.php
  * bld:  30201115
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *  doc: developer.wordpress.org/reference/classes/walker/
  *
  */

@@ -4,9 +4,9 @@
  * The template for displaying pages assigned to category
  *
  * ###:  category.php
- * bld:  29200815
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 /*
@@ -29,7 +29,7 @@ xty('msg','Catgory/php was unable to load the requested template.');
  *** developer.wordpress.org/reference/functions/get_header/
 */
 get_header();
-echo '<cmt name="begin">CATEGORY/PHP</cmt>' . "\n";
+echo '<!-- xty:category/php -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -54,7 +54,7 @@ include (locate_template('template-parts/content-precis.php', false, false));
 get_sidebar();
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">CATEGORY/PHP</cmt>' . "\n";
+echo '<!-- /xty:category/php -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -64,6 +64,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: category.php / 29200815
+ * EOF: category.php / 31201215
 */
 ?>

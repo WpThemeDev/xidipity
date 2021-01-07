@@ -3,9 +3,9 @@
  * Tinymce apply-text-format plugin
  *
  * ###:  plugin.js
- * bld:  30201101
+ * bld:  31201101
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 tinymce.PluginManager.add('apply_txt_formats', function (editor) {
@@ -596,14 +596,13 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 },
 			{
 				icon: true,
-				image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PGc+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Ik0yLjUsNHYzaDV2MTJoM1Y3aDVWNEgyLjV6IE0yMS41LDloLTl2M2gzdjdoM3YtN2gzVjl6Ii8+PC9nPjwvZz48L2c+PC9zdmc+',
+				image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+Y2FwaXRhbGl6ZTwvdGl0bGU+CiAgICA8ZyBpZD0iY2FwaXRhbGl6ZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iIzUwNEU0QiIgeD0iNSIgeT0iNCIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIHJ4PSIzIj48L3JlY3Q+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS1Db3B5IiBmaWxsPSIjNTA0RTRCIiB4PSIxNSIgeT0iNCIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIHJ4PSIzIj48L3JlY3Q+CiAgICA8L2c+Cjwvc3ZnPg==',
 				text: '\xa0Upper Case',
 				onclick: function () {
 					var selHtml = editor.selection.getContent({
 						format: 'html'
 					});
 					var upHtml = selHtml.toUpperCase().replace(/(<.+?>)/g, function(tag) { return tag.toLowerCase(); });
-					//selHtml = upHtml.replace(/(<.+?>)/g, function(tag) { return tag.toLowerCase(); });
 					editor.selection.setContent(upHtml);
 					editor.focus();
 					editor.undoManager.add();				
@@ -611,7 +610,7 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 },
 			{
 				icon: true,
-				image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PGc+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Ik0yLjUsNHYzaDV2MTJoM1Y3aDVWNEgyLjV6IE0yMS41LDloLTl2M2gzdjdoM3YtN2gzVjl6Ii8+PC9nPjwvZz48L2c+PC9zdmc+',
+				image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+Y2FwaXRhbGl6ZTwvdGl0bGU+CiAgICA8ZyBpZD0iY2FwaXRhbGl6ZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iIzUwNEU0QiIgeD0iNSIgeT0iMTMiIHdpZHRoPSI2IiBoZWlnaHQ9IjkiIHJ4PSIzIj48L3JlY3Q+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS1Db3B5IiBmaWxsPSIjNTA0RTRCIiB4PSIxNSIgeT0iMTMiIHdpZHRoPSI2IiBoZWlnaHQ9IjkiIHJ4PSIzIj48L3JlY3Q+CiAgICA8L2c+Cjwvc3ZnPg==',
 				text: '\xa0Lower Case',
 				onclick: function () {
 					var selHtml = editor.selection.getContent({
@@ -624,7 +623,23 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 },
 			{
 				icon: true,
-				image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PGc+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PC9nPjxnPjxnPjxnPjxwYXRoIGQ9Ik0yLjUsNHYzaDV2MTJoM1Y3aDVWNEgyLjV6IE0yMS41LDloLTl2M2gzdjdoM3YtN2gzVjl6Ii8+PC9nPjwvZz48L2c+PC9zdmc+',
+				image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+Y2FwaXRhbGl6ZTwvdGl0bGU+CiAgICA8ZyBpZD0iY2FwaXRhbGl6ZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iIzUwNEU0QiIgeD0iNSIgeT0iNCIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIHJ4PSIzIj48L3JlY3Q+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS1Db3B5IiBmaWxsPSIjNTA0RTRCIiB4PSIxNSIgeT0iMTMiIHdpZHRoPSI2IiBoZWlnaHQ9IjkiIHJ4PSIzIj48L3JlY3Q+CiAgICA8L2c+Cjwvc3ZnPg==',
+				text: '\xa0Capitalize',
+				onclick: function () {
+					var selHtml = editor.selection.getContent({
+						format: 'html'
+					});
+					var rstHtml = selHtml.toLowerCase();
+					selHtml = rstHtml.replace(/\b([a-zA-Z])/g, function(arg) { return arg.toUpperCase(); });
+					rstHtml = selHtml.replace(/(<.+?>)/g, function(tag) { return tag.toLowerCase(); });
+					editor.selection.setContent(rstHtml);
+					editor.focus();
+					editor.undoManager.add();				
+				}
+},
+			{
+				icon: true,
+				image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+c21hbGxfY2FwczwvdGl0bGU+CiAgICA8ZyBpZD0ic21hbGxfY2FwcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgc3Ryb2tlPSIjNTA0RTRCIiBzdHJva2Utd2lkdGg9IjQiIGN4PSIxMyIgY3k9IjEzIiByPSI5Ij48L2NpcmNsZT4KICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjNTA0RTRCIiBjeD0iMTkiIGN5PSIxMyIgcj0iNSI+PC9jaXJjbGU+CiAgICA8L2c+Cjwvc3ZnPg==',
 				text: '\xa0Small Caps',
 				onclick: function () {
 					setClass('trn:caps-sm');
@@ -652,5 +667,5 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-format / plugin.js / 30201101
+ * EOF: apply-text-format / plugin.js / 31201101
  */

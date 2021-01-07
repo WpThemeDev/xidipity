@@ -6,9 +6,9 @@
  * The template for displaying page without sidebar
  *
  * ###:  page-templates/no-sidebar.php
- * bld:  30201151
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 /*
@@ -21,10 +21,10 @@ xty('mnu-dsp', 'yes');
 get_header();
 /*
  ***/
-echo '<cmt>### PAGE-TEMPLATE/NO-SIDEBAR/PHP ###</cmt>' . "\n";
+echo '<!-- xty:page-template/no-sidebar/php -->' . "\n";
 /***
 */
-echo '<cmt name="begin">PAGE/BODY</cmt>' . "\n";
+echo '<!-- xty:page/body -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5">' . "\n";
@@ -35,13 +35,13 @@ if (have_posts())
 	/*
 	 *** developer.wordpress.org/reference/functions/the_title/
 	*/
-	echo '<cmt name="begin">PAGE/BODY/HEADER</cmt>' . "\n";
+	echo '<!-- xty:page/body/header -->' . "\n";
 	echo '<header class="mar:tp+1 wd:100%">' . "\n";
 	the_title('<div class="pg:title">', '</div>');
 	echo '<div class="bkg:bas+2 ln mar:bt+0.75"></div>' . "\n";
 	echo '</header>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/HEADER</cmt>' . "\n";
-	echo '<cmt name="begin">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/header -->' . "\n";
+	echo '<!-- xty:page/body/content -->' . "\n";
 	echo '<div class="bkg:content dsp:flw-rt ht:min10 mar:bt+0.5 wd:100%">' . "\n";
 	/*
 	 *** yoast breadcrumbs plugin
@@ -55,7 +55,7 @@ if (have_posts())
 	}
 	echo xty_dsp_content();
 	echo '</div>' . "\n";
-	echo '<cmt name="end">PAGE/BODY/CONTENT</cmt>' . "\n";
+	echo '<!-- /xty:page/body/content -->' . "\n";
 }
 else
 {
@@ -86,7 +86,7 @@ echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">PAGE/BODY</cmt>' . "\n";
+echo '<!-- /xty:page/body -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -96,6 +96,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: page-templates/no-sidebar.php / 30201151
+ * EOF: page-templates/no-sidebar.php / 31201215
 */
 ?>

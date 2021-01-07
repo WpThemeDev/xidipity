@@ -4,9 +4,9 @@
  * Theme Extended Functionality
  *
  * ###:  inc/extras.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  *  PRG     Build     Description
  *  ------  --------  ---------------------------------------------------------
@@ -15,7 +15,7 @@
  *  blst    30201115  unordered list of linked blog titles
  *  clst    30201115  unordered list of linked category titles
  *  imgg    30201115  image gallary
- *  plst    30201115  unordered list of linked page titles
+ *  plst    31201215  unordered list of linked page titles
  *
  *  Utility
  *  ---------------  ---------------------------------------------------------
@@ -680,7 +680,7 @@ function imgg_shortcode($args = array() , $prm = '')
 		{
 			$wp_data->the_post();
 			$cnt++;
-			$html .= '<cmt name="begin">INC/EXTRAS/IMGG/' . $cnt . '/</cmt>';
+			$html .= '<!-- xty:inc/extras/imgg/' . $cnt . '/ -->';
 			/*
 			 *** get post object
 			*/
@@ -739,7 +739,7 @@ function imgg_shortcode($args = array() , $prm = '')
 			}
 			$html .= '</div>';
 			$html .= '</div>';
-			$html .= '<cmt name="end">INC/EXTRAS/IMGG/' . $cnt . '/</cmt>';
+			$html .= '<!-- /xty:inc/extras/imgg/' . $cnt . '/ -->';
 		}
 		$html .= '</div>';
 	}
@@ -766,7 +766,7 @@ function imgg_shortcode($args = array() , $prm = '')
 /*
  *
  *  name:   plst
- *  build:  30201115
+ *  build:  31201215
  *  descrp: display unordered list of linked page titles
  *  attributes ($args - array):
  *      css - string
@@ -1016,6 +1016,6 @@ function xidipity_shortcode($atts = array())
 	}
 }
 /*
- * EOF: inc/extras.php / 30201115
+ * EOF: inc/extras.php / 31201215
 */
 ?>

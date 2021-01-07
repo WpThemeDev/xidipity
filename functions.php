@@ -4,9 +4,9 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 /**
@@ -50,6 +50,12 @@ function xty($key = '', $value = '')
 				{
 					case ('copyrightholder'):
 						$xty[$key] = CopyRightHolder;
+					break;
+					case ('copyrightyear1'):
+						$xty[$key] = CopyRightYear1;
+					break;
+					case ('copyrightyear2'):
+						$xty[$key] = CopyRightYear2;
 					break;
 					case ('emoji-dsp'):
 						$xty[$key] = EmojiDisplay;
@@ -95,6 +101,36 @@ function xty($key = '', $value = '')
 					break;
 					case ('seo'):
 						$xty[$key] = ThemeSEO;
+					break;
+					case ('sans'):
+						$font = FontSans;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
+					break;
+					case ('serif'):
+						$font = FontSerif;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
+					break;
+					case ('mono'):
+						$font = FontMono;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
+					break;
+					case ('cursive'):
+						$font = FontCursive;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
+					break;
+					case ('fantasy'):
+						$font = FontFantasy;
+						$font = str_replace('<link href="','',$font);
+						$font = str_replace('" rel="stylesheet">','',$font);
+						$xty[$key] = $font;
 					break;
 					default:
 						$xty[$key] = '';
@@ -203,7 +239,7 @@ function scrub_list($arg = '', $case = '')
 }
 /**
  *  name: blog_copyright
- *  build: 29200815
+ *  build: 31201215
  *  description: return copyright
  *  url: www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
  *
@@ -211,24 +247,36 @@ function scrub_list($arg = '', $case = '')
 function blog_copyright()
 {
 	global $wpdb;
-	$db_val = $wpdb->get_results("
-    SELECT
-        YEAR(min(post_date_gmt)) AS firstdate,
-        YEAR(max(post_date_gmt)) AS lastdate
-        FROM
-        $wpdb->posts
-    WHERE
-        post_status = 'publish'
-    ");
 	$ret_val = '';
-	if ($db_val)
-	{
-		$fn_copyright = "&copy; " . $db_val[0]->firstdate;
-		if ($db_val[0]->firstdate != $db_val[0]->lastdate)
-		{
-			$fn_copyright .= '-' . $db_val[0]->lastdate;
-		}
-		$ret_val = '<span class="pad:rt+0.5">' . $fn_copyright . '</span>' . xty('copyrightholder');
+	switch(true) {
+		case (xty('copyrightyear1') !== 'default' && xty('copyrightyear2') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear1') . '-' . xty('copyrightyear2') . '</span>' . xty('copyrightholder');
+			break;
+		case (xty('copyrightyear2') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear2') . '</span>' . xty('copyrightholder');
+			break;
+		case (xty('copyrightyear1') !== 'default'):	
+			$ret_val = '<span class="pad:rt+0.5">' . "&copy; " . xty('copyrightyear1') . '</span>' . xty('copyrightholder');
+			break;
+		default:
+			$db_val = $wpdb->get_results("
+			SELECT
+				YEAR(min(post_date_gmt)) AS firstdate,
+				YEAR(max(post_date_gmt)) AS lastdate
+				FROM
+				$wpdb->posts
+			WHERE
+				post_status = 'publish'
+			");
+			if ($db_val)
+			{
+				$fn_copyright = "&copy; " . $db_val[0]->firstdate;
+				if ($db_val[0]->firstdate != $db_val[0]->lastdate)
+				{
+					$fn_copyright .= '-' . $db_val[0]->lastdate;
+				}
+				$ret_val = '<span class="pad:rt+0.5">' . $fn_copyright . '</span>' . xty('copyrightholder');
+			}
 	}
 	return $ret_val;
 }
@@ -358,11 +406,12 @@ if (!function_exists('xty_setup')):
 		$ed_css3 = '/assets/css/theme/palette.css';
 		$ed_css4 = '/assets/css/theme/common.css';
 		$ed_css5 = '/assets/css/theme/advance.css';
-		$ed_css6 = '/assets/css/theme/flexbox.css';
-		$ed_css7 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-		$ed_css8 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
-		$ed_css9 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
-		$ed_css10 = '/assets/css/theme/editor.css';
+		$ed_css6 = '/assets/css/theme/icons.css';
+		$ed_css7 = '/assets/css/theme/flexbox.css';
+		$ed_css8 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+		$ed_css9 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
+		$ed_css10 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
+		$ed_css11 = '/assets/css/theme/editor.css';
 		$ed_styles = array(
 			$ed_css1,
 			$ed_css2,
@@ -373,7 +422,8 @@ if (!function_exists('xty_setup')):
 			$ed_css7,
 			$ed_css8,
 			$ed_css9,
-			$ed_css10
+			$ed_css10,
+			$ed_css11
 		);
 		add_editor_style($ed_styles);
 		/*
@@ -448,8 +498,19 @@ add_action('widgets_init', 'xidipity_widgets_init');
  */
 function xidipity_scripts()
 {
-	/*: googlefonts.css :*/
-	wp_enqueue_style('xidipity-googlefonts', 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900,&display=swap', array() , wp_get_theme()->get('Version') , 'all');
+	/*: xidipity fonts :*/
+	// preconnect
+	wp_enqueue_style('google-preconnect', 'https://fonts.gstatic.com', array() , wp_get_theme()->get('Version') , 'all');
+	// sans
+	wp_enqueue_style('google-sans', xty('sans'), array() , wp_get_theme()->get('Version') , 'all');
+	// serif
+	wp_enqueue_style('google-serif', xty('serif'), array() , wp_get_theme()->get('Version') , 'all');
+	// mono
+	wp_enqueue_style('google-mono', xty('mono'), array() , wp_get_theme()->get('Version') , 'all');
+	// cursive
+	wp_enqueue_style('google-cursive', xty('cursive'), array() , wp_get_theme()->get('Version') , 'all');
+	// fantasy
+	wp_enqueue_style('google-fantasy', xty('fantasy'), array() , wp_get_theme()->get('Version') , 'all');
 	/*: style.css :*/
 	wp_enqueue_style('xidipity-style', get_stylesheet_uri());
 	/*: xidipity css :*/
@@ -465,6 +526,8 @@ function xidipity_scripts()
 		->get('Version') , 'print');
 	wp_enqueue_style('xidipity-advance', get_stylesheet_directory_uri() . '/assets/css/theme/advance.css', array() , wp_get_theme()
 		->get('Version') , 'all');
+	wp_enqueue_style('xidipity-icons', get_stylesheet_directory_uri() . '/assets/css/theme/icons.css', array() , wp_get_theme()
+		->get('Version') , 'all');
 	wp_enqueue_style('xidipity-flexbox', get_stylesheet_directory_uri() . '/assets/css/theme/flexbox.css', array() , wp_get_theme()
 		->get('Version') , 'all');
 	wp_enqueue_style('xidipity-web', get_stylesheet_directory_uri() . '/assets/css/theme/web.css', array() , wp_get_theme()
@@ -475,10 +538,11 @@ function xidipity_scripts()
 	/*: google material design icons :*/
 	wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
 		->get('Version') , 'all');
-	/*: clipboard js :*/
-	//wp_enqueue_script('xidipity-clipboardjs', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js', array() , '2.0.1', false);
-	/*: sweet alert js :*/
-	//wp_enqueue_script('xidipity-sweetalert', 'https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js', array() , '2.1.2', false);
+	/*: wordpress dash icons :*/
+	wp_enqueue_style( 'dashicons' );
+	/*: animxyz :*/
+	wp_enqueue_style('animxyz','https://cdn.jsdelivr.net/npm/@animxyz/core@0.1.1/dist/animxyz.min.css', array() , wp_get_theme()
+		->get('Version') , 'all');
 	/*: comment reply ? :*/
 	if (is_singular() && comments_open() && get_option('thread_comments'))
 	{
@@ -1667,6 +1731,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 30201115
+ * EOF: functions.php / 31201215
 */
 ?>

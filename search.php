@@ -4,9 +4,9 @@
  * The template for displaying searchs results
  *
  * ###:  search.php
- * bld:  30201101
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 /*
@@ -62,7 +62,7 @@ xty('msg','Unable to find the requested informaton.');
  *** developer.wordpress.org/reference/functions/get_header/
 */
 get_header();
-echo '<cmt name="begin">SEARCH/PHP</cmt>' . "\n";
+echo '<!-- xty:search/php -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -87,7 +87,7 @@ include (locate_template('template-parts/content-precis.php', false, false));
 get_sidebar();
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">SEARCH/PHP</cmt>' . "\n";
+echo '<!-- /xty:search/php -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -97,6 +97,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: search.php / 30201101
+ * EOF: search.php / 31201215
 */
 ?>

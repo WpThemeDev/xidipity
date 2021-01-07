@@ -3,9 +3,9 @@
 * Xidipity css print variables
 *
 * ###:  assets/css/sys/print-vars.css
-* bld:  29200901
+* bld:  31201201
 * src:  github.com/WpThemeDev/xidipity/
-* (C)   2019-2020 John Baer
+* (C)   2018-2021 John Baer
 *
 */
 
@@ -65,29 +65,12 @@
 	--hue-sec-tint: #f4f4f4;
 	--hue-sec-tint-dn1: #eeeeee;
 /*
-*** text colors
-*/
-	--hue-red: #363636;
-	--hue-purple: #343434;
-	--hue-blue: #1c1c1c;
-	--hue-green: #3c3c3c;
-/*
-*** highlight colors
-*/
-	--hue-highlight-yellow: #eeeeee;
-	--hue-highlight-cyan: #f0f0f0;
-	--hue-highlight-magenta: #e1e1e1;
-	--hue-highlight-green: #d5d5d5;
-	--hue-highlight-orange: #d6d6d6;
-	--hue-highlight-red: #d8d8d8;
-/*
 *** content attributes
 */
 /*: font families :*/
 	--font-family-sans: "Roboto", sans-serif;
-	--font-family-condensed: "Roboto Condensed", sans-serif;
+	--font-family-serif: "Playfair Display", serif;
 	--font-family-mono: "Roboto Mono", monospace;
-	--font-family-serif: "Roboto Slab", serif;
 	--font-family-cursive: "Kalam", cursive;
 	--font-family-fantasy: "Kaushan Script", cursive;
 /*: font sizes :*/
@@ -208,5 +191,5 @@
 }
 
 /*
-* EOF: assets/css/sys/print-vars.css / 29200901
+* EOF: assets/css/sys/print-vars.css / 31201201
 */

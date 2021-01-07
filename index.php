@@ -4,9 +4,9 @@
  * The template for displaying blog excerpts
  *
  * ###:  index.php
- * bld:  29200815
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 global $wp_query;
@@ -18,7 +18,7 @@ xty('mnu-dsp', 'yes');
  *** developer.wordpress.org/reference/functions/get_header/
 */
 get_header();
-echo '<cmt name="begin">INDEX/PHP</cmt>' . "\n";
+echo '<!-- xty:index/php -->' . "\n";
 echo '<div class="fxd:3 fxe:2 fb:100%">' . "\n";
 /*
  *** align sidebar
@@ -66,7 +66,7 @@ else
 	/*
 	 *** setup database query
 	*/
-	$category_ids = get_cat_IDs('-archive,-special group 1,-special group 2,-special group 3');
+	$category_ids = get_cat_IDs('-archive,-specialgroup1,-specialgroup2,-specialgroup3');
 	$qry_prms = array(
 		'cat' => $category_ids,
 		'orderby' => 'date',
@@ -90,7 +90,7 @@ else
 get_sidebar();
 echo '</main>' . "\n";
 echo '</div>' . "\n";
-echo '<cmt name="end">INDEX/PHP</cmt>' . "\n";
+echo '<!-- xty:index/php -->' . "\n";
 /*
  *** developer.wordpress.org/reference/functions/get_footer/
 */
@@ -100,6 +100,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: index.php / 29200815
+ * EOF: index.php / 31201215
 */
 ?>

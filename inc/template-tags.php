@@ -4,9 +4,9 @@
  * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
- * bld:  30201115
+ * bld:  31201215
  * src:  github.com/WpThemeDev/xidipity/
- * (C)   2019-2020 John Baer
+ * (C)   2018-2021 John Baer
  *
  */
 /*  # xty_excerpt
@@ -29,7 +29,7 @@ if (!function_exists('xty_excerpt'))
 			$attachment_page_url = wp_get_attachment_url();
 		}
 		$post_link = esc_url(apply_filters('xidipity_the_permalink', get_permalink()));
-		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $argCnt . '/</cmt>';
+		$html .= '<!-- xty:inc/template-tags/xty_excerpt' . $argCnt . '/ -->';
 		if (xty('fea-img') == 'right')
 		{
 			$html .= '<div class="fx:rw sm)fx:r-rev fxa:1 fxb:1 fxc:1 mar:vrt+1">';
@@ -98,7 +98,7 @@ if (!function_exists('xty_excerpt'))
 		$html .= '</div>';
 		$html .= '</div>';
 		$html .= '</div>';
-		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_EXCERPT' . $argCnt . '/</cmt>';
+		$html .= '<!-- /xty:inc/template-tags/xty_excerpt' . $argCnt . '/ -->';
 		/*
 		 *** return html
 		*/
@@ -134,11 +134,11 @@ if (!function_exists('xty_pagination'))
 				'after_page_number' => ''
 			);
 			$html .= '<div class="mar:vrt+0.25 prt[dsp:none]">';
-			$html .= '<cmt name="begin">TEMPLATE-TAGS/XTY_PAGINATION</cmt>';
+			$html .= '<!-- xty:template-tags/xty_pagination -->';
 			$html .= '<div class="fx:r fxa:4 fxb:6 fxc:3 bkg:bas+4 cnr:arch-x-small pad:vrt+0.25">';
 			$html .= paginate_links($args);
 			$html .= '</div>';
-			$html .= '<cmt name="end">TEMPLATE-TAGS/XTY_PAGINATION</cmt>';
+			$html .= '<!-- /xty:template-tags/xty_pagination -->';
 			$html .= '</div>';
 		}
 		return $html;
@@ -152,12 +152,11 @@ if (!function_exists('xty_content_footer'))
 {
 	function xty_content_footer($items = array())
 	{
-		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>';
+		$html .= '<!-- xty:inc/template-tags/xty_content_footer -->';
 		$html .= '<div class="mar:vrt+0.25">';
-		//$html .= '<hr class="bdr:bas+3 mar:bt-0 rul:1x wd:100%" />';
 		$html .= xty_info_bar($items);
 		$html .= '</div>';
-		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_CONTENT_FOOTER</cmt>' . "\n";
+		$html .= '<!-- /xty:inc/template-tags/xty_content_footer -->' . "\n";
 		/*
 		 *** return html
 		*/
@@ -345,7 +344,7 @@ if (!function_exists('xty_info_pole'))
 		$ico_pst = '</div></div>';
 		$txt_pre = '<div class="fnt:siz-sm-1x fxd:1 fxe:1 pad:lt+0.5">';
 		$txt_pst = '</div>';
-		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_POLE</cmt>';
+		$html .= '<!-- xty:inc/template-tags/xty_info_pole -->';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
 		$end_item = end($items);
 		foreach ($items as $item)
@@ -448,7 +447,7 @@ if (!function_exists('xty_info_pole'))
 			}
 		}
 		$html .= '</div>';
-		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_INFO_POLE</cmt>' . "\n";
+		$html .= '<!-- /xty:inc/template-tags/xty_info_pole -->' . "\n";
 		/*
 		 *** return html
 		*/
@@ -463,6 +462,7 @@ if (!function_exists('xty_info_bar'))
 {
 	function xty_info_bar($items = array())
 	{
+		global $post;
 		$ico_pre = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2"><div class="fnt:siz-md-1x">';
 		$ico_pst = '</div></div>';
 		$ico_prt = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2 prt[dsp:none]"><div class="fnt:siz-md-1x">';
@@ -471,7 +471,7 @@ if (!function_exists('xty_info_bar'))
 		$txt_prt = '<div class="fnt:siz-sm-2x pad:lt+0.5 prt[dsp:none]">';
 		$div_pre = '<div class="aln:txt-ct dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
 		$div_pst = '</div>';
-		$html .= '<cmt name="begin">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>';
+		$html .= '<!-- xty:inc/template-tags/xty_info_bar -->';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
 		$end_item = end($items);
 		foreach ($items as $item)
@@ -534,33 +534,35 @@ if (!function_exists('xty_info_bar'))
 				break;
 				case ('img_ratio'):
 					$aspect_ratio = '';
-					$att_metadata = wp_get_attachment_metadata();
+					$att_metadata = wp_get_attachment_metadata($post->ID);
 					if (!empty($att_metadata))
 					{
 						$ratio = round(absint($att_metadata['height']) / absint($att_metadata['width']) , 4);
 						switch ($ratio)
 						{
-							case 1:
+							case (1):
 								$aspect_ratio = '1x1';
 							break;
-							case 0.75:
+							case (0.75):
 								$aspect_ratio = '4x3';
 							break;
-							case 0.6667:
-								$aspect_ratio = '6x4 (classic film)';
+							case (0.6667):
+								$aspect_ratio = '3x2 (classic film)';
 							break;
-							case 0.7146:
+							case (0.7146):
 								$aspect_ratio = '7x5';
 							break;
-							case 0.625:
+							case (0.625):
 								$aspect_ratio = '16x10';
 							break;
-							case 0.5625:
+							case (0.5625):
 								$aspect_ratio = '16x9 (high definition)';
 							break;
-							case 0.4281:
+							case (0.4281):
 								$aspect_ratio = '21x9 (cinemascope)';
 							break;
+							default:
+								$aspect_ratio = 'Unknown';								
 						}
 					}
 					if (empty($aspect_ratio))
@@ -574,7 +576,7 @@ if (!function_exists('xty_info_bar'))
 					}
 				break;
 				case ('img_size'):
-					$att_metadata = wp_get_attachment_metadata();
+					$att_metadata = wp_get_attachment_metadata($post->ID);
 					if (empty($att_metadata))
 					{
 						$add_divider = false;
@@ -643,7 +645,7 @@ if (!function_exists('xty_info_bar'))
 			}
 		}
 		$html .= '</div>';
-		$html .= '<cmt name="end">INC/TEMPLATE-TAGS/XTY_INFO_BAR</cmt>' . "\n";
+		$html .= '<!-- /xty:inc/template-tags/xty_info_bar -->' . "\n";
 		/*
 		 *** return html
 		*/
@@ -834,6 +836,6 @@ function xidipity_has_excerpt()
 	return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
 /*
- * EOF: inc/template-tags.php / 29200815
+ * EOF: inc/template-tags.php / 31201215
 */
 ?>
