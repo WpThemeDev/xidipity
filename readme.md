@@ -28,6 +28,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#wordpress-versions">WordPress Versions</a></li>
       </ul>
     </li>
     <li><a href="#dependencies">Dependencies</a></li>
@@ -35,6 +36,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#configuration">Configuration</a></li>
       </ul>
     </li>
     <li><a href="#copyright">Copyright</a></li>
@@ -115,6 +117,10 @@ Xidipity uses an enhanced version of the classic editor. The benefit of this dec
 * [CSS](https://www.w3.org/Style/CSS/specs.en.html)
 * [JavaScript](https://www.w3.org/wiki/JavaScript_best_practices)
 
+### WordPress Versions
+* Minimum: 4.7.9
+* Tested To: 5.6
+
 ## Dependencies
 
 * [Classic Editor](https://wordpress.org/plugins/classic-editor/) plugin by WordPress
@@ -132,17 +138,25 @@ Download the latest release to your device.
 4. Select the Xidipity theme download zip file
 5. Click 'Install Now'
 6. Upon completion, click 'activate' to use
-7. In the WordPress admin panel, go to Plugins and click 'Add New'
-8. Search for 'Classic Editor', install, activate
-    - In the WordPress admin panel, go to Settings -> Writing
-    - Make classic editor the default
-9. Configure as desired
+7. Click visit site
+
+<!-- Configuration -->
+## Configuration
+1. In the WordPress admin panel, go to Plugins and click 'Add New'
+2. Search for 'Classic Editor' - install & activate
+3. In the WordPress admin panel, go to Settings -> Writing
+4. Set default editor for all users to classic editor
+5. Optionally<sup>*</sup> set 'Allow users to switch editors' to no
+6. Click 'Save Changes'
+9. Configure other WordPress options as desired
 10. Create Something Great :)
+
+<h6>Although the block editor can be used with Xidipity, doing so eliminates many of the features.</h6>
 
 <!-- Copyright -->
 ## Copyright
 
-Xidipity WordPress Theme, Copyright 2018 - 2020 John Baer
+Xidipity WordPress Theme, Copyright 2018 - 2021 John Baer
 
 <!-- LICENSE -->
 ## License
@@ -163,17 +177,17 @@ GNU General Public License for more details.
 <!-- CONTACT -->
 ## Contact
 
-**Twitter**
-
-[Xidipity](https://twitter.com/xidipity)
-
-**Email**
-
 [staff@xidipity.com](mailto:staff@xidipity.com)
 
-**Project Link**
+**Project Links**
 
-[Xidipity WordPress Theme](https://github.com/WpThemeDev/xidipity)
+[Blog](https://xidipity.com)
+
+[GitHub](https://github.com/WpThemeDev/xidipity)
+
+[Knowledge Base](https://doc.xidipity.com) 
+
+[Twitter](https://twitter.com/xidipity)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
