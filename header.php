@@ -209,20 +209,22 @@ if ($wp_menu || $wp_page)
 {
 	if ($wp_page)
 	{
+		echo '<div class="aln:txt-ct mar:tp+0.5 wd:100%">' . "\n";
 		/*: xidipity toc page :*/
 		if ($wp_page->ID == get_queried_object_id())
 		{
-			echo '<a class="toc:btn led:wide" href="' . home_url('/') . '"><i class="icon:sys_menu_bar"></i></a>' . "\n";
+			echo '<a class="toc:btn" href="' . home_url('/') . '"><i class="material-icons pad:hrz+0.5 pad:vrt+0.125">menu</i></a>' . "\n";
 		}
 		else
 		{
-			echo '<a class="toc:btn led:wide" href="' . get_permalink($wp_page->ID) . '"><i class="icon:sys_menu_bar"></i></a>' . "\n";
+			echo '<a class="toc:btn" href="' . get_permalink($wp_page->ID) . '"><i class="material-icons pad:hrz+0.5 pad:vrt+0.125">menu</i></a>' . "\n";
 		}
+		echo '</div>' . "\n";
 	}
 	else
 	{
 		echo '<input class="trigger" type="checkbox" id="mainNavButton" name="hm">' . "\n";
-		echo '<label for="mainNavButton" onclick><i class="material-icons bkg:pri-3!hover cnr:arch-sm pad:hrz+0.5 txt:wht!hover">menu</i></label>' . "\n";
+		echo '<label for="mainNavButton" onclick><i class="material-icons pad:hrz+0.5">menu</i></label>' . "\n";
 		wp_nav_menu(array(
 			'theme_location' => 'primary',
 			'menu_id' => 'primary-menu',
