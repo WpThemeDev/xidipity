@@ -547,7 +547,7 @@ if (!function_exists('xty_info_bar'))
 								$aspect_ratio = '4x3';
 							break;
 							case (0.6667):
-								$aspect_ratio = '6x4 (classic film)';
+								$aspect_ratio = '3x2 (classic film)';
 							break;
 							case (0.7146):
 								$aspect_ratio = '7x5';
