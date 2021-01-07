@@ -154,7 +154,6 @@ if (!function_exists('xty_content_footer'))
 	{
 		$html .= '<!-- xty:inc/template-tags/xty_content_footer -->';
 		$html .= '<div class="mar:vrt+0.25">';
-		//$html .= '<hr class="bdr:bas+3 mar:bt-0 rul:1x wd:100%" />';
 		$html .= xty_info_bar($items);
 		$html .= '</div>';
 		$html .= '<!-- /xty:inc/template-tags/xty_content_footer -->' . "\n";
@@ -463,6 +462,7 @@ if (!function_exists('xty_info_bar'))
 {
 	function xty_info_bar($items = array())
 	{
+		global $post;
 		$ico_pre = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2"><div class="fnt:siz-md-1x">';
 		$ico_pst = '</div></div>';
 		$ico_prt = '<div class="fx:r fxa:1 fxb:1 fxc:3 ht:2 prt[dsp:none]"><div class="fnt:siz-md-1x">';
@@ -534,33 +534,35 @@ if (!function_exists('xty_info_bar'))
 				break;
 				case ('img_ratio'):
 					$aspect_ratio = '';
-					$att_metadata = wp_get_attachment_metadata();
+					$att_metadata = wp_get_attachment_metadata($post->ID);
 					if (!empty($att_metadata))
 					{
 						$ratio = round(absint($att_metadata['height']) / absint($att_metadata['width']) , 4);
 						switch ($ratio)
 						{
-							case 1:
+							case (1):
 								$aspect_ratio = '1x1';
 							break;
-							case 0.75:
+							case (0.75):
 								$aspect_ratio = '4x3';
 							break;
-							case 0.6667:
+							case (0.6667):
 								$aspect_ratio = '6x4 (classic film)';
 							break;
-							case 0.7146:
+							case (0.7146):
 								$aspect_ratio = '7x5';
 							break;
-							case 0.625:
+							case (0.625):
 								$aspect_ratio = '16x10';
 							break;
-							case 0.5625:
+							case (0.5625):
 								$aspect_ratio = '16x9 (high definition)';
 							break;
-							case 0.4281:
+							case (0.4281):
 								$aspect_ratio = '21x9 (cinemascope)';
 							break;
+							default:
+								$aspect_ratio = 'Unknown';								
 						}
 					}
 					if (empty($aspect_ratio))
@@ -574,7 +576,7 @@ if (!function_exists('xty_info_bar'))
 					}
 				break;
 				case ('img_size'):
-					$att_metadata = wp_get_attachment_metadata();
+					$att_metadata = wp_get_attachment_metadata($post->ID);
 					if (empty($att_metadata))
 					{
 						$add_divider = false;
