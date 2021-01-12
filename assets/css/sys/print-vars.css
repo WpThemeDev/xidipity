@@ -3,7 +3,7 @@
 * Xidipity css print variables
 *
 * ###:  assets/css/sys/print-vars.css
-* bld:  31201201
+* bld:  01210115
 * src:  github.com/WpThemeDev/xidipity/
 * (C)   2018-2021 John Baer
 *
@@ -74,19 +74,19 @@
 	--font-family-cursive: "Kalam", cursive;
 	--font-family-fantasy: "Kaushan Script", cursive;
 /*: font sizes :*/
-	--font-size-7x: 5rem;
-	--font-size-6x: 3.875rem;
+	--font-size-lg-7x: 5rem;
+	--font-size-lg-6x: 3.875rem;
 	--font-size-h1: 2.75rem;
 	--font-size-h2: 2.4375rem;
 	--font-size-h3: 2.125rem;
 	--font-size-h4: 1.8125rem;
 	--font-size-h5: 1.5rem;
 	--font-size-h6: 1.375rem;
-	--font-size-xm: 1.125rem;
+	--font-size-md-1x: 1.125rem;
 	--font-size-md: 1rem;
 	--font-size-sm: 0.875rem;
-	--font-size-xs: 0.8125rem;
-	--font-size-2xs: 0.75rem;
+	--font-size-sm-1x: 0.8125rem;
+	--font-size-sm-2x: 0.75rem;
 	--font-size-larger: 106.25%;
 	--font-size-smaller: 93.75%;
 /*: font weight :*/
@@ -191,5 +191,5 @@
 }
 
 /*
-* EOF: assets/css/sys/print-vars.css / 31201201
+* EOF: assets/css/sys/print-vars.css / 01210115
 */
