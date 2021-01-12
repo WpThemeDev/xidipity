@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  31201215
+    * bld:  01210115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -1011,7 +1011,7 @@ table {
 }
 table caption {
 	caption-side: bottom;
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-sm-1x);
 	text-align: center;
 }
 /*: sm)media :*/
@@ -1415,7 +1415,7 @@ td .ratio-container {
 	vertical-align: -10%;
 }
 .material-icons.fnt\:siz-md-1x {
-	font-size: var(--font-size-xm);
+	font-size: var(--font-size-md-1x);
 }
 .material-icons.fnt\:siz-lg {
 	font-size: var(--font-size-h6);
@@ -1749,7 +1749,7 @@ button.img {
 	color: var(--hue-blk);
 	border-radius: 0.1666rem;
 	display: inline-block;
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-sm-1x);
 	font-weight: var(--font-wgt-normal);
 	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
 }
@@ -1766,7 +1766,7 @@ button.img {
 	color: var(--hue-blk);
 	border-radius: 0.1666rem;
 	display: inline-block;
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-sm-1x);
 	font-weight: var(--font-wgt-normal);
 	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
 }
@@ -1782,7 +1782,7 @@ button.img {
 	color: var(--hue-blk);
 	border-radius: 0.1666rem;
 	display: inline-block;
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-sm-1x);
 	font-weight: var(--font-wgt-normal);
 	padding: 0.0625rem 0.125rem 0.0625rem 0.125rem;
 }
@@ -2007,5 +2007,5 @@ button.img {
 	/* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 /*
- * EOF: assets/css/theme/common.css / 31201215
+ * EOF: assets/css/theme/common.css / 01210115
  */
