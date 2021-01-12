@@ -701,7 +701,7 @@ table.bdr\:space\+2 {
 .fnt\:wgt-900,
 .fnt\:wgt-900\!hover:hover,
 .fnt\:wgt-900\!focus:focus {
-	font-weight: var(--font-wgt-bold) !important;
+	font-weight: var(--font-wgt-black) !important;
 }
 /*
 ***
@@ -3313,7 +3313,7 @@ table.bdr\:space\+2 {
 	.sm\)fnt\:wgt-900,
 	.sm\)fnt\:wgt-900\!hover:hover,
 	.sm\)fnt\:wgt-900\!focus:focus {
-		font-weight: var(--font-wgt-bold) !important;
+		font-weight: var(--font-wgt-black) !important;
 	}
 	/*
     ***
@@ -5854,7 +5854,7 @@ table.bdr\:space\+2 {
 	.md\)fnt\:wgt-900,
 	.md\)fnt\:wgt-900\!hover:hover,
 	.md\)fnt\:wgt-900\!focus:focus {
-		font-weight: var(--font-wgt-bold) !important;
+		font-weight: var(--font-wgt-black) !important;
 	}
 	/*
     ***
@@ -8387,7 +8387,7 @@ table.bdr\:space\+2 {
 	.lg\)fnt\:wgt-900,
 	.lg\)fnt\:wgt-900\!hover:hover,
 	.lg\)fnt\:wgt-900\!focus:focus {
-		font-weight: var(--font-wgt-bold) !important;
+		font-weight: var(--font-wgt-black) !important;
 	}
 	/*
     ***
@@ -10928,7 +10928,7 @@ table.bdr\:space\+2 {
 	.xl\)fnt\:wgt-900,
 	.xl\)fnt\:wgt-900\!hover:hover,
 	.xl\)fnt\:wgt-900\!focus:focus {
-		font-weight: var(--font-wgt-bold) !important;
+		font-weight: var(--font-wgt-black) !important;
 	}
 	/*
     ***
