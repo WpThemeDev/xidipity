@@ -4,7 +4,7 @@
  * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
- * bld:  31201215
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -20,7 +20,7 @@ if (!function_exists('xty_excerpt'))
 		$html = '';
 		$post_thumbnail_id = get_post_thumbnail_id();
 		$wp_img = get_the_post_thumbnail(null, 'FULL', array(
-			'class' => 'cnr:arch-x-small ht:auto wd:100%',
+			'class' => 'cnr:arch-x-sm ht:auto wd:100%',
 			'alt' => xty('seo')
 		));
 		$attachment_page_url = get_attachment_link($post_thumbnail_id);
@@ -135,7 +135,7 @@ if (!function_exists('xty_pagination'))
 			);
 			$html .= '<div class="mar:vrt+0.25 prt[dsp:none]">';
 			$html .= '<!-- xty:template-tags/xty_pagination -->';
-			$html .= '<div class="fx:r fxa:4 fxb:6 fxc:3 bkg:bas+4 cnr:arch-x-small pad:vrt+0.25">';
+			$html .= '<div class="fx:r fxa:4 fxb:6 fxc:3 bkg:bas+4 cnr:arch-x-sm pad:vrt+0.25">';
 			$html .= paginate_links($args);
 			$html .= '</div>';
 			$html .= '<!-- /xty:template-tags/xty_pagination -->';
@@ -225,7 +225,7 @@ if (!function_exists('xty_support_agent'))
 {
 	function xty_support_agent($msg = '')
 	{
-		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:pri-2 bkg:tint-bas-1 cnr:arch-small"><div class="fnt:siz-lg-7x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:rt+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:siz-lg-2x sm)fnt:siz-lg-3x fnt:wgt-500 wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  TMPL:BUTTON --><button class="aln:txt-ct fnt:siz-sm-1x sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /TMPL:BUTTON --></div></div></div></div>' . "\n";
+		return '<div class="mar:vrt+1"><div class="fx:r fxa:1 fxc:3 bdr:lt-so-3x bdr:pri-2 bkg:tint-bas-1 cnr:arch-sm"><div class="fnt:siz-lg-7x pad:hrz+0.5"><i class="icon:support_agent_solid"></i></div><div class="pad:rt+0.5 pad:vrt+0.5 txt:bas-3"><p class="fnt:family-serif fnt:siz-lg-2x sm)fnt:siz-lg-3x fnt:wgt-500 wd:100%">' . get_bloginfo('name') . ' Support</p><p>' . $msg . '</p><div class="mar:vrt+0.5 pad:vrt+0.5"><!--  TMPL:BUTTON --><button class="aln:txt-ct fnt:siz-sm-1x sm)fnt-size-medium" onclick="javascript:history.back()">Previous page</button><!-- /TMPL:BUTTON --></div></div></div></div>' . "\n";
 	}
 }
 /*  # xty_author
@@ -306,7 +306,7 @@ if (!function_exists('xty_readmore'))
 	{
 		$html = '';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
-		$html .= '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+5 cnr:arch-x-small">';
+		$html .= '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+5 cnr:arch-x-sm">';
 		$html .= '<div class="fnt:siz-md-1x fxd:1 fxe:1">';
 		if (empty($arg))
 		{
@@ -340,7 +340,7 @@ if (!function_exists('xty_info_pole'))
 {
 	function xty_info_pole($items = array())
 	{
-		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+3 cnr:arch-x-small"><div class="fnt:siz-md-1x fxd:1 fxe:1">';
+		$ico_pre = '<div class="fx:r fxa:3 fxb:1 fxc:3 ht:2 wd:2 bkg:bas+3 cnr:arch-x-sm"><div class="fnt:siz-md-1x fxd:1 fxe:1">';
 		$ico_pst = '</div></div>';
 		$txt_pre = '<div class="fnt:siz-sm-1x fxd:1 fxe:1 pad:lt+0.5">';
 		$txt_pst = '</div>';
@@ -836,6 +836,6 @@ function xidipity_has_excerpt()
 	return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
 /*
- * EOF: inc/template-tags.php / 31201215
+ * EOF: inc/template-tags.php / 01210115
 */
 ?>
