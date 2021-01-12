@@ -3,7 +3,7 @@
     * Web specific css classes
     *
     * ###:  assets/css/theme/web.css
-    * bld:  30201201
+    * bld:  01210115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -774,7 +774,7 @@ body .gist .blob-wrapper {
 body .gist .highlight {
 	background-color: var(--content-bg-color);
 	font-family: var(--font-family-mono);
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-sm-1x);
 }
 body .gist .highlight td {
 	border: solid 2px var(--content-bg-color) !important;
@@ -1083,5 +1083,5 @@ a.page-numbers:focus {
 	}
 }
 /*
- * EOF: assets/css/theme/web.css / 30201201
+ * EOF: assets/css/theme/web.css / 01210115
  */
