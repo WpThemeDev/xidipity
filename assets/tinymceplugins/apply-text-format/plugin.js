@@ -3,7 +3,7 @@
  * Tinymce apply-text-format plugin
  *
  * ###:  plugin.js
- * bld:  31201101
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -642,7 +642,7 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 				image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+c21hbGxfY2FwczwvdGl0bGU+CiAgICA8ZyBpZD0ic21hbGxfY2FwcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgc3Ryb2tlPSIjNTA0RTRCIiBzdHJva2Utd2lkdGg9IjQiIGN4PSIxMyIgY3k9IjEzIiByPSI5Ij48L2NpcmNsZT4KICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjNTA0RTRCIiBjeD0iMTkiIGN5PSIxMyIgcj0iNSI+PC9jaXJjbGU+CiAgICA8L2c+Cjwvc3ZnPg==',
 				text: '\xa0Small Caps',
 				onclick: function () {
-					setClass('trn:caps-sm');
+					setClass('fnt:caps-sm');
 				}
 },
 			{
@@ -667,5 +667,5 @@ tinymce.PluginManager.add('apply_txt_formats', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-format / plugin.js / 31201101
+ * EOF: apply-text-format / plugin.js / 01210115
  */
