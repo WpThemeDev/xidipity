@@ -3,7 +3,7 @@
     * Xidipity css framework
     *
     * ###:  assets/css/theme/advance.css
-    * bld:  30201115
+    * bld:  01210115
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -228,6 +228,10 @@
 .bdr\:lt-so-3x {
 	border-left-width: thick !important;
 }
+/* default color  */
+div[class*='bdr\:'] {
+	border-color: var(--hue-bas-up3) !important;
+}
 /*
 ***
     * property: bdr
@@ -339,84 +343,84 @@ table.bdr\:space\+2 {
 ***
     * property: cnr
     * dsc: left box corner
-    * bld: 200120
+    * bld: 01210115
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.cnr\:arch-left-x-small {
+.cnr\:arch-lt-x-sm {
 	border-radius: 0.1666rem 0 0 0.1666rem !important;
 }
-.cnr\:arch-left-small {
+.cnr\:arch-lt-sm {
 	border-radius: 0.3333rem 0 0 0.3333rem !important;
 }
-.cnr\:arch-left-medium {
+.cnr\:arch-lt-md {
 	border-radius: 0.6666rem 0 0 0.6666rem !important;
 }
-.cnr\:arch-left-large {
+.cnr\:arch-lt-lg {
 	border-radius: 1rem 0 0 1rem !important;
 }
 /*
 ***
     * property: cnr
     * dsc: right box corner
-    * bld: 200120
+    * bld: 01210115
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.cnr\:arch-right-x-small {
+.cnr\:arch-rt-x-sm {
 	border-radius: 0 0.1666rem 0.1666rem 0 !important;
 }
-.cnr\:arch-right-small {
+.cnr\:arch-rt-sm {
 	border-radius: 0 0.3333rem 0.3333rem 0 !important;
 }
-.cnr\:arch-right-medium {
+.cnr\:arch-rt-md {
 	border-radius: 0 0.6666rem 0.6666rem 0 !important;
 }
-.cnr\:arch-right-large {
+.cnr\:arch-rt-lg {
 	border-radius: 0 1rem 1rem 0 !important;
 }
 /*
 ***
     * property: cnr
     * dsc: top box corner
-    * bld: 200120
+    * bld: 01210115
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.cnr\:arch-top-x-small {
+.cnr\:arch-tp-x-sm {
 	border-radius: 0.1666rem 0.1666rem 0 0 !important;
 }
-.cnr\:arch-top-small {
+.cnr\:arch-tp-sm {
 	border-radius: 0.3333rem 0.3333rem 0 0 !important;
 }
-.cnr\:arch-top-medium {
+.cnr\:arch-tp-md {
 	border-radius: 0.6666rem 0.6666rem 0 0 !important;
 }
-.cnr\:arch-top-large {
+.cnr\:arch-tp-lg {
 	border-radius: 1rem 1rem 0 0 !important;
 }
 /*
 ***
     * property: cnr
     * dsc: bottom box corner
-    * bld: 200120
+    * bld: 01210115
     * fnt: control curvature of corners
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 ***
 */
-.cnr\:arch-bottom-x-small {
+.cnr\:arch-bt-x-sm {
 	border-radius: 0 0 0.1666rem 0.1666rem !important;
 }
-.cnr\:arch-bottom-small {
+.cnr\:arch-bt-sm {
 	border-radius: 0 0 0.3333rem 0.3333rem !important;
 }
-.cnr\:arch-bottom-medium {
+.cnr\:arch-bt-md {
 	border-radius: 0 0 0.6666rem 0.6666rem !important;
 }
-.cnr\:arch-bottom-large {
+.cnr\:arch-bt-lg {
 	border-radius: 0 0 1rem 1rem !important;
 }
 /*
@@ -462,38 +466,25 @@ table.bdr\:space\+2 {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
 ***
 */
+.dsp\:x,
 .dsp\:none {
 	display: none !important;
 }
+.dsp\:hid,
 .dsp\:hidden {
 	visibility: hidden !important;
 }
+.dsp\:blk,
 .dsp\:block {
 	display: block !important;
 }
+.dsp\:inl,
 .dsp\:inline {
 	display: inline !important;
 }
+.dsp\:inl-blk,
 .dsp\:inline-block {
 	display: inline-block !important;
-}
-.dsp\:tbl {
-	display: table;
-}
-.dsp\:tbl-hdr-grp {
-	display: table-header-group;
-}
-.dsp\:tbl-rw-grp {
-	display: table-row-group;
-}
-.dsp\:tbl-ftr-grp {
-	display: table-footer-group;
-}
-.dsp\:tbl-rw {
-	display: table-row;
-}
-.dsp\:tbl-td {
-	display: table-cell;
 }
 .dsp\:flw-rt {
 	display: flow-root;
@@ -502,26 +493,28 @@ table.bdr\:space\+2 {
 ***
     * property: fnt
     * dsc: font family
-    * bld: 200107
+    * bld: 01210115
     * fnt: font attributes
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
 ***
 */
+.fnt\:sans,
 .fnt\:family-sans {
 	font-family: var(--font-family-sans) !important;
 }
+.fnt\:serif,
 .fnt\:family-serif {
 	font-family: var(--font-family-serif) !important;
 }
+.fnt\:mono,
 .fnt\:family-mono {
 	font-family: var(--font-family-mono) !important;
 }
-.fnt\:family-condensed {
-	font-family: var(--font-family-condensed) !important;
-}
+.fnt\:cursive,
 .fnt\:family-cursive {
 	font-family: var(--font-family-cursive) !important;
 }
+.fnt\:fantasy,
 .fnt\:family-fantasy {
 	font-family: var(--font-family-fantasy) !important;
 }
@@ -535,10 +528,10 @@ table.bdr\:space\+2 {
 ***
 */
 .fnt\:siz-lg-7x {
-	font-size: var(--font-size-7x) !important;
+	font-size: var(--font-size-lg-7x) !important;
 }
 .fnt\:siz-lg-6x {
-	font-size: var(--font-size-6x) !important;
+	font-size: var(--font-size-lg-6x) !important;
 }
 .fnt\:siz-lg-5x {
 	font-size: var(--font-size-h1) !important;
@@ -559,7 +552,7 @@ table.bdr\:space\+2 {
 	font-size: var(--font-size-h6) !important;
 }
 .fnt\:siz-md-1x {
-	font-size: var(--font-size-xm) !important;
+	font-size: var(--font-size-md-1x) !important;
 }
 .fnt\:siz-md,
 .fnt\:siz-dft {
@@ -569,64 +562,16 @@ table.bdr\:space\+2 {
 	font-size: var(--font-size-sm) !important;
 }
 .fnt\:siz-sm-1x {
-	font-size: var(--font-size-xs) !important;
+	font-size: var(--font-size-sm-1x) !important;
 }
 .fnt\:siz-sm-2x {
-	font-size: var(--font-size-2xs) !important;
+	font-size: var(--font-size-sm-2x) !important;
 }
 .fnt\:siz\+1 {
 	font-size: var(--font-size-larger) !important;
 }
 .fnt\:siz-1 {
 	font-size: var(--font-size-smaller) !important;
-}
-.fnt\:siz-150\% {
-	font-size: 150% !important;
-}
-.fnt\:siz-150\% {
-	font-size: 200% !important;
-}
-.fnt\:siz-200\% {
-	font-size: 250% !important;
-}
-.fnt\:siz-300\% {
-	font-size: 300% !important;
-}
-.fnt\:siz-350\% {
-	font-size: 350% !important;
-}
-.fnt\:siz-400\% {
-	font-size: 400% !important;
-}
-.fnt\:siz-450\% {
-	font-size: 450% !important;
-}
-.fnt\:siz-500\% {
-	font-size: 500% !important;
-}
-.fnt\:siz-550\% {
-	font-size: 550% !important;
-}
-.fnt\:siz-600\% {
-	font-size: 600% !important;
-}
-.fnt\:siz-650\% {
-	font-size: 650% !important;
-}
-.fnt\:siz-700\% {
-	font-size: 700% !important;
-}
-.fnt\:siz-750\% {
-	font-size: 750% !important;
-}
-.fnt\:siz-800\% {
-	font-size: 800% !important;
-}
-.fnt\:siz-850\% {
-	font-size: 850% !important;
-}
-.fnt\:siz-900\% {
-	font-size: 900% !important;
 }
 /*
 ***
@@ -3014,16 +2959,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.sm\)cnr\:arch-left-x-small {
+	.sm\)cnr\:arch-lt-x-sm {
 		border-radius: 0.1666rem 0 0 0.1666rem !important;
 	}
-	.sm\)cnr\:arch-left-small {
+	.sm\)cnr\:arch-lt-sm {
 		border-radius: 0.3333rem 0 0 0.3333rem !important;
 	}
-	.sm\)cnr\:arch-left-medium {
+	.sm\)cnr\:arch-lt-md {
 		border-radius: 0.6666rem 0 0 0.6666rem !important;
 	}
-	.sm\)cnr\:arch-left-large {
+	.sm\)cnr\:arch-lt-lg {
 		border-radius: 1rem 0 0 1rem !important;
 	}
 	/*
@@ -3035,16 +2980,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.sm\)cnr\:arch-right-x-small {
+	.sm\)cnr\:arch-rt-x-sm {
 		border-radius: 0 0.1666rem 0.1666rem 0 !important;
 	}
-	.sm\)cnr\:arch-right-small {
+	.sm\)cnr\:arch-rt-sm {
 		border-radius: 0 0.3333rem 0.3333rem 0 !important;
 	}
-	.sm\)cnr\:arch-right-medium {
+	.sm\)cnr\:arch-rt-md {
 		border-radius: 0 0.6666rem 0.6666rem 0 !important;
 	}
-	.sm\)cnr\:arch-right-large {
+	.sm\)cnr\:arch-rt-lg {
 		border-radius: 0 1rem 1rem 0 !important;
 	}
 	/*
@@ -3056,16 +3001,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.sm\)cnr\:arch-top-x-small {
+	.sm\)cnr\:arch-tp-x-sm {
 		border-radius: 0.1666rem 0.1666rem 0 0 !important;
 	}
-	.sm\)cnr\:arch-top-small {
+	.sm\)cnr\:arch-tp-sm {
 		border-radius: 0.3333rem 0.3333rem 0 0 !important;
 	}
-	.sm\)cnr\:arch-top-medium {
+	.sm\)cnr\:arch-tp-md {
 		border-radius: 0.6666rem 0.6666rem 0 0 !important;
 	}
-	.sm\)cnr\:arch-top-large {
+	.sm\)cnr\:arch-tp-lg {
 		border-radius: 1rem 1rem 0 0 !important;
 	}
 	/*
@@ -3077,16 +3022,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.sm\)cnr\:arch-bottom-x-small {
+	.sm\)cnr\:arch-bt-x-sm {
 		border-radius: 0 0 0.1666rem 0.1666rem !important;
 	}
-	.sm\)cnr\:arch-bottom-small {
+	.sm\)cnr\:arch-bt-sm {
 		border-radius: 0 0 0.3333rem 0.3333rem !important;
 	}
-	.sm\)cnr\:arch-bottom-medium {
+	.sm\)cnr\:arch-bt-md {
 		border-radius: 0 0 0.6666rem 0.6666rem !important;
 	}
-	.sm\)cnr\:arch-bottom-large {
+	.sm\)cnr\:arch-bt-lg {
 		border-radius: 0 0 1rem 1rem !important;
 	}
 	/*
@@ -3132,38 +3077,25 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
     */
+	.sm\)dsp\:x,
 	.sm\)dsp\:none {
 		display: none !important;
 	}
+	.sm\)dsp\:hid,
 	.sm\)dsp\:hidden {
 		visibility: hidden !important;
 	}
+	.sm\)dsp\:blk,
 	.sm\)dsp\:block {
 		display: block !important;
 	}
+	.sm\)dsp\:inl,
 	.sm\)dsp\:inline {
 		display: inline !important;
 	}
+	.sm\)dsp\:inl-blk,
 	.sm\)dsp\:inline-block {
 		display: inline-block !important;
-	}
-	.sm\)dsp\:tbl {
-		display: table;
-	}
-	.sm\)dsp\:tbl-hdr-grp {
-		display: table-header-group;
-	}
-	.sm\)dsp\:tbl-rw-grp {
-		display: table-row-group;
-	}
-	.sm\)dsp\:tbl-ftr-grp {
-		display: table-footer-group;
-	}
-	.sm\)dsp\:tbl-rw {
-		display: table-row;
-	}
-	.sm\)dsp\:tbl-td {
-		display: table-cell;
 	}
 	.sm\)dsp\:flw-rt {
 		display: flow-root;
@@ -3177,21 +3109,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
     */
+	.sm\)fnt\:sans,
 	.sm\)fnt\:family-sans {
 		font-family: var(--font-family-sans) !important;
 	}
+	.sm\)fnt\:serif,
 	.sm\)fnt\:family-serif {
 		font-family: var(--font-family-serif) !important;
 	}
+	.sm\)fnt\:mono,
 	.sm\)fnt\:family-mono {
 		font-family: var(--font-family-mono) !important;
 	}
-	.sm\)fnt\:family-condensed {
-		font-family: var(--font-family-condensed) !important;
-	}
+	.sm\)fnt\:cursive,
 	.sm\)fnt\:family-cursive {
 		font-family: var(--font-family-cursive) !important;
 	}
+	.sm\)fnt\:fantasy,
 	.sm\)fnt\:family-fantasy {
 		font-family: var(--font-family-fantasy) !important;
 	}
@@ -3205,10 +3139,10 @@ table.bdr\:space\+2 {
     ***
     */
 	.sm\)fnt\:siz-lg-7x {
-		font-size: var(--font-size-7x) !important;
+		font-size: var(--font-size-lg-7x) !important;
 	}
 	.sm\)fnt\:siz-lg-6x {
-		font-size: var(--font-size-6x) !important;
+		font-size: var(--font-size-lg-6x) !important;
 	}
 	.sm\)fnt\:siz-lg-5x {
 		font-size: var(--font-size-h1) !important;
@@ -3229,7 +3163,7 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-h6) !important;
 	}
 	.sm\)fnt\:siz-md-1x {
-		font-size: var(--font-size-xm) !important;
+		font-size: var(--font-size-md-1x) !important;
 	}
 	.sm\)fnt\:siz-md,
 	.sm\)fnt\:size-normal,
@@ -3240,64 +3174,16 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-sm) !important;
 	}
 	.sm\)fnt\:siz-sm-1x {
-		font-size: var(--font-size-xs) !important;
+		font-size: var(--font-size-sm-1x) !important;
 	}
 	.sm\)fnt\:siz-sm-2x {
-		font-size: var(--font-size-2xs) !important;
+		font-size: var(--font-size-sm-2x) !important;
 	}
 	.sm\)fnt\:siz\+1 {
 		font-size: var(--font-size-larger) !important;
 	}
 	.sm\)fnt\:siz-1 {
 		font-size: var(--font-size-smaller) !important;
-	}
-	.sm\)fnt\:siz-150\% {
-		font-size: 150% !important;
-	}
-	.sm\)fnt\:siz-150\% {
-		font-size: 200% !important;
-	}
-	.sm\)fnt\:siz-200\% {
-		font-size: 250% !important;
-	}
-	.sm\)fnt\:siz-300\% {
-		font-size: 300% !important;
-	}
-	.sm\)fnt\:siz-350\% {
-		font-size: 350% !important;
-	}
-	.sm\)fnt\:siz-400\% {
-		font-size: 400% !important;
-	}
-	.sm\)fnt\:siz-450\% {
-		font-size: 450% !important;
-	}
-	.sm\)fnt\:siz-500\% {
-		font-size: 500% !important;
-	}
-	.sm\)fnt\:siz-550\% {
-		font-size: 550% !important;
-	}
-	.sm\)fnt\:siz-600\% {
-		font-size: 600% !important;
-	}
-	.sm\)fnt\:siz-650\% {
-		font-size: 650% !important;
-	}
-	.sm\)fnt\:siz-700\% {
-		font-size: 700% !important;
-	}
-	.sm\)fnt\:siz-750\% {
-		font-size: 750% !important;
-	}
-	.sm\)fnt\:siz-800\% {
-		font-size: 800% !important;
-	}
-	.sm\)fnt\:siz-850\% {
-		font-size: 850% !important;
-	}
-	.sm\)fnt\:siz-900\% {
-		font-size: 900% !important;
 	}
 	/*
     ***
@@ -5614,16 +5500,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.md\)cnr\:arch-left-x-small {
+	.md\)cnr\:arch-lt-x-sm {
 		border-radius: 0.1666rem 0 0 0.1666rem !important;
 	}
-	.md\)cnr\:arch-left-small {
+	.md\)cnr\:arch-lt-sm {
 		border-radius: 0.3333rem 0 0 0.3333rem !important;
 	}
-	.md\)cnr\:arch-left-medium {
+	.md\)cnr\:arch-lt-md {
 		border-radius: 0.6666rem 0 0 0.6666rem !important;
 	}
-	.md\)cnr\:arch-left-large {
+	.md\)cnr\:arch-lt-lg {
 		border-radius: 1rem 0 0 1rem !important;
 	}
 	/*
@@ -5635,16 +5521,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.md\)cnr\:arch-right-x-small {
+	.md\)cnr\:arch-rt-x-sm {
 		border-radius: 0 0.1666rem 0.1666rem 0 !important;
 	}
-	.md\)cnr\:arch-right-small {
+	.md\)cnr\:arch-rt-sm {
 		border-radius: 0 0.3333rem 0.3333rem 0 !important;
 	}
-	.md\)cnr\:arch-right-medium {
+	.md\)cnr\:arch-rt-md {
 		border-radius: 0 0.6666rem 0.6666rem 0 !important;
 	}
-	.md\)cnr\:arch-right-large {
+	.md\)cnr\:arch-rt-lg {
 		border-radius: 0 1rem 1rem 0 !important;
 	}
 	/*
@@ -5656,16 +5542,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.md\)cnr\:arch-top-x-small {
+	.md\)cnr\:arch-tp-x-sm {
 		border-radius: 0.1666rem 0.1666rem 0 0 !important;
 	}
-	.md\)cnr\:arch-top-small {
+	.md\)cnr\:arch-tp-sm {
 		border-radius: 0.3333rem 0.3333rem 0 0 !important;
 	}
-	.md\)cnr\:arch-top-medium {
+	.md\)cnr\:arch-tp-md {
 		border-radius: 0.6666rem 0.6666rem 0 0 !important;
 	}
-	.md\)cnr\:arch-top-large {
+	.md\)cnr\:arch-tp-lg {
 		border-radius: 1rem 1rem 0 0 !important;
 	}
 	/*
@@ -5677,16 +5563,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.md\)cnr\:arch-bottom-x-small {
+	.md\)cnr\:arch-bt-x-sm {
 		border-radius: 0 0 0.1666rem 0.1666rem !important;
 	}
-	.md\)cnr\:arch-bottom-small {
+	.md\)cnr\:arch-bt-sm {
 		border-radius: 0 0 0.3333rem 0.3333rem !important;
 	}
-	.md\)cnr\:arch-bottom-medium {
+	.md\)cnr\:arch-bt-md {
 		border-radius: 0 0 0.6666rem 0.6666rem !important;
 	}
-	.md\)cnr\:arch-bottom-large {
+	.md\)cnr\:arch-bt-lg {
 		border-radius: 0 0 1rem 1rem !important;
 	}
 	/*
@@ -5732,38 +5618,25 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
     */
+	.md\)dsp\:x,
 	.md\)dsp\:none {
 		display: none !important;
 	}
+	.md\)dsp\:hid,
 	.md\)dsp\:hidden {
 		visibility: hidden !important;
 	}
+	.md\)dsp\:blk,
 	.md\)dsp\:block {
 		display: block !important;
 	}
+	.md\)dsp\:inl,
 	.md\)dsp\:inline {
 		display: inline !important;
 	}
+	.md\)dsp\:inl-blk,
 	.md\)dsp\:inline-block {
 		display: inline-block !important;
-	}
-	.md\)dsp\:tbl {
-		display: table;
-	}
-	.md\)dsp\:tbl-hdr-grp {
-		display: table-header-group;
-	}
-	.md\)dsp\:tbl-rw-grp {
-		display: table-row-group;
-	}
-	.md\)dsp\:tbl-ftr-grp {
-		display: table-footer-group;
-	}
-	.md\)dsp\:tbl-rw {
-		display: table-row;
-	}
-	.md\)dsp\:tbl-td {
-		display: table-cell;
 	}
 	.md\)dsp\:flw-rt {
 		display: flow-root;
@@ -5777,21 +5650,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
     */
+	.md\)fnt\:sans,
 	.md\)fnt\:family-sans {
 		font-family: var(--font-family-sans) !important;
 	}
+	.md\)fnt\:serif,
 	.md\)fnt\:family-serif {
 		font-family: var(--font-family-serif) !important;
 	}
+	.md\)fnt\:mono,
 	.md\)fnt\:family-mono {
 		font-family: var(--font-family-mono) !important;
 	}
-	.md\)fnt\:family-condensed {
-		font-family: var(--font-family-condensed) !important;
-	}
+	.md\)fnt\:cursive,
 	.md\)fnt\:family-cursive {
 		font-family: var(--font-family-cursive) !important;
 	}
+	.md\)fnt\:fantasy,
 	.md\)fnt\:family-fantasy {
 		font-family: var(--font-family-fantasy) !important;
 	}
@@ -5805,10 +5680,10 @@ table.bdr\:space\+2 {
     ***
     */
 	.md\)fnt\:siz-lg-7x {
-		font-size: var(--font-size-7x) !important;
+		font-size: var(--font-size-lg-7x) !important;
 	}
 	.md\)fnt\:siz-lg-6x {
-		font-size: var(--font-size-6x) !important;
+		font-size: var(--font-size-lg-6x) !important;
 	}
 	.md\)fnt\:siz-lg-5x {
 		font-size: var(--font-size-h1) !important;
@@ -5829,7 +5704,7 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-h6) !important;
 	}
 	.md\)fnt\:siz-md-1x {
-		font-size: var(--font-size-xm) !important;
+		font-size: var(--font-size-md-1x) !important;
 	}
 	.md\)fnt\:siz-md,
 	.md\)fnt\:size-normal,
@@ -5840,64 +5715,16 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-sm) !important;
 	}
 	.md\)fnt\:siz-sm-1x {
-		font-size: var(--font-size-xs) !important;
+		font-size: var(--font-size-sm-1x) !important;
 	}
 	.md\)fnt\:siz-sm-2x {
-		font-size: var(--font-size-2xs) !important;
+		font-size: var(--font-size-sm-2x) !important;
 	}
 	.md\)fnt\:siz\+1 {
 		font-size: var(--font-size-larger) !important;
 	}
 	.md\)fnt\:siz-1 {
 		font-size: var(--font-size-smaller) !important;
-	}
-	.md\)fnt\:siz-150\% {
-		font-size: 150% !important;
-	}
-	.md\)fnt\:siz-150\% {
-		font-size: 200% !important;
-	}
-	.md\)fnt\:siz-200\% {
-		font-size: 250% !important;
-	}
-	.md\)fnt\:siz-300\% {
-		font-size: 300% !important;
-	}
-	.md\)fnt\:siz-350\% {
-		font-size: 350% !important;
-	}
-	.md\)fnt\:siz-400\% {
-		font-size: 400% !important;
-	}
-	.md\)fnt\:siz-450\% {
-		font-size: 450% !important;
-	}
-	.md\)fnt\:siz-500\% {
-		font-size: 500% !important;
-	}
-	.md\)fnt\:siz-550\% {
-		font-size: 550% !important;
-	}
-	.md\)fnt\:siz-600\% {
-		font-size: 600% !important;
-	}
-	.md\)fnt\:siz-650\% {
-		font-size: 650% !important;
-	}
-	.md\)fnt\:siz-700\% {
-		font-size: 700% !important;
-	}
-	.md\)fnt\:siz-750\% {
-		font-size: 750% !important;
-	}
-	.md\)fnt\:siz-800\% {
-		font-size: 800% !important;
-	}
-	.md\)fnt\:siz-850\% {
-		font-size: 850% !important;
-	}
-	.md\)fnt\:siz-900\% {
-		font-size: 900% !important;
 	}
 	/*
     ***
@@ -8206,16 +8033,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.lg\)cnr\:arch-left-x-small {
+	.lg\)cnr\:arch-lt-x-sm {
 		border-radius: 0.1666rem 0 0 0.1666rem !important;
 	}
-	.lg\)cnr\:arch-left-small {
+	.lg\)cnr\:arch-lt-sm {
 		border-radius: 0.3333rem 0 0 0.3333rem !important;
 	}
-	.lg\)cnr\:arch-left-medium {
+	.lg\)cnr\:arch-lt-md {
 		border-radius: 0.6666rem 0 0 0.6666rem !important;
 	}
-	.lg\)cnr\:arch-left-large {
+	.lg\)cnr\:arch-lt-lg {
 		border-radius: 1rem 0 0 1rem !important;
 	}
 	/*
@@ -8227,16 +8054,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.lg\)cnr\:arch-right-x-small {
+	.lg\)cnr\:arch-rt-x-sm {
 		border-radius: 0 0.1666rem 0.1666rem 0 !important;
 	}
-	.lg\)cnr\:arch-right-small {
+	.lg\)cnr\:arch-rt-sm {
 		border-radius: 0 0.3333rem 0.3333rem 0 !important;
 	}
-	.lg\)cnr\:arch-right-medium {
+	.lg\)cnr\:arch-rt-md {
 		border-radius: 0 0.6666rem 0.6666rem 0 !important;
 	}
-	.lg\)cnr\:arch-right-large {
+	.lg\)cnr\:arch-rt-lg {
 		border-radius: 0 1rem 1rem 0 !important;
 	}
 	/*
@@ -8248,16 +8075,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.lg\)cnr\:arch-top-x-small {
+	.lg\)cnr\:arch-tp-x-sm {
 		border-radius: 0.1666rem 0.1666rem 0 0 !important;
 	}
-	.lg\)cnr\:arch-top-small {
+	.lg\)cnr\:arch-tp-sm {
 		border-radius: 0.3333rem 0.3333rem 0 0 !important;
 	}
-	.lg\)cnr\:arch-top-medium {
+	.lg\)cnr\:arch-tp-md {
 		border-radius: 0.6666rem 0.6666rem 0 0 !important;
 	}
-	.lg\)cnr\:arch-top-large {
+	.lg\)cnr\:arch-tp-lg {
 		border-radius: 1rem 1rem 0 0 !important;
 	}
 	/*
@@ -8269,16 +8096,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.lg\)cnr\:arch-bottom-x-small {
+	.lg\)cnr\:arch-bt-x-sm {
 		border-radius: 0 0 0.1666rem 0.1666rem !important;
 	}
-	.lg\)cnr\:arch-bottom-small {
+	.lg\)cnr\:arch-bt-sm {
 		border-radius: 0 0 0.3333rem 0.3333rem !important;
 	}
-	.lg\)cnr\:arch-bottom-medium {
+	.lg\)cnr\:arch-bt-md {
 		border-radius: 0 0 0.6666rem 0.6666rem !important;
 	}
-	.lg\)cnr\:arch-bottom-large {
+	.lg\)cnr\:arch-bt-lg {
 		border-radius: 0 0 1rem 1rem !important;
 	}
 	/*
@@ -8324,38 +8151,25 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
     */
+	.lg\)dsp\:x,
 	.lg\)dsp\:none {
 		display: none !important;
 	}
+	.lg\)dsp\:hid,
 	.lg\)dsp\:hidden {
 		visibility: hidden !important;
 	}
+	.lg\)dsp\:blk,
 	.lg\)dsp\:block {
 		display: block !important;
 	}
+	.lg\)dsp\:inl,
 	.lg\)dsp\:inline {
 		display: inline !important;
 	}
+	.lg\)dsp\:inl-blk,
 	.lg\)dsp\:inline-block {
 		display: inline-block !important;
-	}
-	.lg\)dsp\:tbl {
-		display: table;
-	}
-	.lg\)dsp\:tbl-hdr-grp {
-		display: table-header-group;
-	}
-	.lg\)dsp\:tbl-rw-grp {
-		display: table-row-group;
-	}
-	.lg\)dsp\:tbl-ftr-grp {
-		display: table-footer-group;
-	}
-	.lg\)dsp\:tbl-rw {
-		display: table-row;
-	}
-	.lg\)dsp\:tbl-td {
-		display: table-cell;
 	}
 	.lg\)dsp\:flw-rt {
 		display: flow-root;
@@ -8369,21 +8183,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
     */
+	.lg\)fnt\:sans,
 	.lg\)fnt\:family-sans {
 		font-family: var(--font-family-sans) !important;
 	}
+	.lg\)fnt\:serif,
 	.lg\)fnt\:family-serif {
 		font-family: var(--font-family-serif) !important;
 	}
+	.lg\)fnt\:mono,
 	.lg\)fnt\:family-mono {
 		font-family: var(--font-family-mono) !important;
 	}
-	.lg\)fnt\:family-condensed {
-		font-family: var(--font-family-condensed) !important;
-	}
+	.lg\)fnt\:cursive,
 	.lg\)fnt\:family-cursive {
 		font-family: var(--font-family-cursive) !important;
 	}
+	.lg\)fnt\:fantasy,
 	.lg\)fnt\:family-fantasy {
 		font-family: var(--font-family-fantasy) !important;
 	}
@@ -8397,10 +8213,10 @@ table.bdr\:space\+2 {
     ***
     */
 	.lg\)fnt\:siz-lg-7x {
-		font-size: var(--font-size-7x) !important;
+		font-size: var(--font-size-lg-7x) !important;
 	}
 	.lg\)fnt\:siz-lg-6x {
-		font-size: var(--font-size-6x) !important;
+		font-size: var(--font-size-lg-6x) !important;
 	}
 	.lg\)fnt\:siz-lg-5x {
 		font-size: var(--font-size-h1) !important;
@@ -8421,7 +8237,7 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-h6) !important;
 	}
 	.lg\)fnt\:siz-md-1x {
-		font-size: var(--font-size-xm) !important;
+		font-size: var(--font-size-md-1x) !important;
 	}
 	.lg\)fnt\:siz-md,
 	.lg\)fnt\:size-normal,
@@ -8432,64 +8248,16 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-sm) !important;
 	}
 	.lg\)fnt\:siz-sm-1x {
-		font-size: var(--font-size-xs) !important;
+		font-size: var(--font-size-sm-1x) !important;
 	}
 	.lg\)fnt\:siz-sm-2x {
-		font-size: var(--font-size-2xs) !important;
+		font-size: var(--font-size-sm-2x) !important;
 	}
 	.lg\)fnt\:siz\+1 {
 		font-size: var(--font-size-larger) !important;
 	}
 	.lg\)fnt\:siz-1 {
 		font-size: var(--font-size-smaller) !important;
-	}
-	.lg\)fnt\:siz-150\% {
-		font-size: 150% !important;
-	}
-	.lg\)fnt\:siz-150\% {
-		font-size: 200% !important;
-	}
-	.lg\)fnt\:siz-200\% {
-		font-size: 250% !important;
-	}
-	.lg\)fnt\:siz-300\% {
-		font-size: 300% !important;
-	}
-	.lg\)fnt\:siz-350\% {
-		font-size: 350% !important;
-	}
-	.lg\)fnt\:siz-400\% {
-		font-size: 400% !important;
-	}
-	.lg\)fnt\:siz-450\% {
-		font-size: 450% !important;
-	}
-	.lg\)fnt\:siz-500\% {
-		font-size: 500% !important;
-	}
-	.lg\)fnt\:siz-550\% {
-		font-size: 550% !important;
-	}
-	.lg\)fnt\:siz-600\% {
-		font-size: 600% !important;
-	}
-	.lg\)fnt\:siz-650\% {
-		font-size: 650% !important;
-	}
-	.lg\)fnt\:siz-700\% {
-		font-size: 700% !important;
-	}
-	.lg\)fnt\:siz-750\% {
-		font-size: 750% !important;
-	}
-	.lg\)fnt\:siz-800\% {
-		font-size: 800% !important;
-	}
-	.lg\)fnt\:siz-850\% {
-		font-size: 850% !important;
-	}
-	.lg\)fnt\:siz-900\% {
-		font-size: 900% !important;
 	}
 	/*
     ***
@@ -10809,16 +10577,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.xl\)cnr\:arch-left-x-small {
+	.xl\)cnr\:arch-lt-x-sm {
 		border-radius: 0.1666rem 0 0 0.1666rem !important;
 	}
-	.xl\)cnr\:arch-left-small {
+	.xl\)cnr\:arch-lt-sm {
 		border-radius: 0.3333rem 0 0 0.3333rem !important;
 	}
-	.xl\)cnr\:arch-left-medium {
+	.xl\)cnr\:arch-lt-md {
 		border-radius: 0.6666rem 0 0 0.6666rem !important;
 	}
-	.xl\)cnr\:arch-left-large {
+	.xl\)cnr\:arch-lt-lg {
 		border-radius: 1rem 0 0 1rem !important;
 	}
 	/*
@@ -10830,16 +10598,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.xl\)cnr\:arch-right-x-small {
+	.xl\)cnr\:arch-rt-x-sm {
 		border-radius: 0 0.1666rem 0.1666rem 0 !important;
 	}
-	.xl\)cnr\:arch-right-small {
+	.xl\)cnr\:arch-rt-sm {
 		border-radius: 0 0.3333rem 0.3333rem 0 !important;
 	}
-	.xl\)cnr\:arch-right-medium {
+	.xl\)cnr\:arch-rt-md {
 		border-radius: 0 0.6666rem 0.6666rem 0 !important;
 	}
-	.xl\)cnr\:arch-right-large {
+	.xl\)cnr\:arch-rt-lg {
 		border-radius: 0 1rem 1rem 0 !important;
 	}
 	/*
@@ -10851,16 +10619,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.xl\)cnr\:arch-top-x-small {
+	.xl\)cnr\:arch-tp-x-sm {
 		border-radius: 0.1666rem 0.1666rem 0 0 !important;
 	}
-	.xl\)cnr\:arch-top-small {
+	.xl\)cnr\:arch-tp-sm {
 		border-radius: 0.3333rem 0.3333rem 0 0 !important;
 	}
-	.xl\)cnr\:arch-top-medium {
+	.xl\)cnr\:arch-tp-md {
 		border-radius: 0.6666rem 0.6666rem 0 0 !important;
 	}
-	.xl\)cnr\:arch-top-large {
+	.xl\)cnr\:arch-tp-lg {
 		border-radius: 1rem 1rem 0 0 !important;
 	}
 	/*
@@ -10872,16 +10640,16 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/border-radius
     ***
     */
-	.xl\)cnr\:arch-bottom-x-small {
+	.xl\)cnr\:arch-bt-x-sm {
 		border-radius: 0 0 0.1666rem 0.1666rem !important;
 	}
-	.xl\)cnr\:arch-bottom-small {
+	.xl\)cnr\:arch-bt-sm {
 		border-radius: 0 0 0.3333rem 0.3333rem !important;
 	}
-	.xl\)cnr\:arch-bottom-medium {
+	.xl\)cnr\:arch-bt-md {
 		border-radius: 0 0 0.6666rem 0.6666rem !important;
 	}
-	.xl\)cnr\:arch-bottom-large {
+	.xl\)cnr\:arch-bt-lg {
 		border-radius: 0 0 1rem 1rem !important;
 	}
 	/*
@@ -10927,41 +10695,25 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/display
     ***
     */
+	.xl\)dsp\:x,
 	.xl\)dsp\:none {
 		display: none !important;
 	}
+	.xl\)dsp\:hid,
 	.xl\)dsp\:hidden {
 		visibility: hidden !important;
 	}
+	.xl\)dsp\:blk,
 	.xl\)dsp\:block {
 		display: block !important;
 	}
+	.xl\)dsp\:inl,
 	.xl\)dsp\:inline {
 		display: inline !important;
 	}
+	.xl\)dsp\:inl-blk,
 	.xl\)dsp\:inline-block {
 		display: inline-block !important;
-	}
-	.xl\)dsp\:tbl {
-		display: table;
-	}
-	.xl\)dsp\:tbl-hdr-grp {
-		display: table-header-group;
-	}
-	.xl\)dsp\:tbl-rw-grp {
-		display: table-row-group;
-	}
-	.xl\)dsp\:tbl-ftr-grp {
-		display: table-footer-group;
-	}
-	.xl\)dsp\:tbl-rw {
-		display: table-row;
-	}
-	.xl\)dsp\:tbl-td {
-		display: table-cell;
-	}
-	.xl\)dsp\:flw-rt {
-		display: flow-root;
 	}
 	/*
     ***
@@ -10972,21 +10724,23 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/font-family
     ***
     */
+	.xl\)fnt\:sans,
 	.xl\)fnt\:family-sans {
 		font-family: var(--font-family-sans) !important;
 	}
+	.xl\)fnt\:serif,
 	.xl\)fnt\:family-serif {
 		font-family: var(--font-family-serif) !important;
 	}
+	.xl\)fnt\:mono,
 	.xl\)fnt\:family-mono {
 		font-family: var(--font-family-mono) !important;
 	}
-	.xl\)fnt\:family-condensed {
-		font-family: var(--font-family-condensed) !important;
-	}
+	.xl\)fnt\:cursive,
 	.xl\)fnt\:family-cursive {
 		font-family: var(--font-family-cursive) !important;
 	}
+	.xl\)fnt\:fantasy,
 	.xl\)fnt\:family-fantasy {
 		font-family: var(--font-family-fantasy) !important;
 	}
@@ -11000,10 +10754,10 @@ table.bdr\:space\+2 {
     ***
     */
 	.xl\)fnt\:siz-lg-7x {
-		font-size: var(--font-size-7x) !important;
+		font-size: var(--font-size-lg-7x) !important;
 	}
 	.xl\)fnt\:siz-lg-6x {
-		font-size: var(--font-size-6x) !important;
+		font-size: var(--font-size-lg-6x) !important;
 	}
 	.xl\)fnt\:siz-lg-5x {
 		font-size: var(--font-size-h1) !important;
@@ -11024,7 +10778,7 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-h6) !important;
 	}
 	.xl\)fnt\:siz-md-1x {
-		font-size: var(--font-size-xm) !important;
+		font-size: var(--font-size-md-1x) !important;
 	}
 	.xl\)fnt\:siz-md,
 	.xl\)fnt\:size-normal,
@@ -11035,64 +10789,16 @@ table.bdr\:space\+2 {
 		font-size: var(--font-size-sm) !important;
 	}
 	.xl\)fnt\:siz-sm-1x {
-		font-size: var(--font-size-xs) !important;
+		font-size: var(--font-size-sm-1x) !important;
 	}
 	.xl\)fnt\:siz-sm-2x {
-		font-size: var(--font-size-2xs) !important;
+		font-size: var(--font-size-sm-2x) !important;
 	}
 	.xl\)fnt\:siz\+1 {
 		font-size: var(--font-size-larger) !important;
 	}
 	.xl\)fnt\:siz-1 {
 		font-size: var(--font-size-smaller) !important;
-	}
-	.xl\)fnt\:siz-150\% {
-		font-size: 150% !important;
-	}
-	.xl\)fnt\:siz-150\% {
-		font-size: 200% !important;
-	}
-	.xl\)fnt\:siz-200\% {
-		font-size: 250% !important;
-	}
-	.xl\)fnt\:siz-300\% {
-		font-size: 300% !important;
-	}
-	.xl\)fnt\:siz-350\% {
-		font-size: 350% !important;
-	}
-	.xl\)fnt\:siz-400\% {
-		font-size: 400% !important;
-	}
-	.xl\)fnt\:siz-450\% {
-		font-size: 450% !important;
-	}
-	.xl\)fnt\:siz-500\% {
-		font-size: 500% !important;
-	}
-	.xl\)fnt\:siz-550\% {
-		font-size: 550% !important;
-	}
-	.xl\)fnt\:siz-600\% {
-		font-size: 600% !important;
-	}
-	.xl\)fnt\:siz-650\% {
-		font-size: 650% !important;
-	}
-	.xl\)fnt\:siz-700\% {
-		font-size: 700% !important;
-	}
-	.xl\)fnt\:siz-750\% {
-		font-size: 750% !important;
-	}
-	.xl\)fnt\:siz-800\% {
-		font-size: 800% !important;
-	}
-	.xl\)fnt\:siz-850\% {
-		font-size: 850% !important;
-	}
-	.xl\)fnt\:siz-900\% {
-		font-size: 900% !important;
 	}
 	/*
     ***
@@ -13076,5 +12782,5 @@ table.bdr\:space\+2 {
 	}
 }
 /*
- * EOF: assets/css/theme/advance.css / 30201115
+ * EOF: assets/css/theme/advance.css / 01210115
  */
