@@ -4,7 +4,7 @@ define('CopyRightHolder', get_bloginfo( 'name' ));
 define('CopyRightYear1', 'default');
 define('CopyRightYear2', 'default');
 define('EmojiDisplay', 'yes');
-define('FontAwesomeVersion', '5.12.1');
+define('FontAwesomeVersion', '5.15.1');
 define('FavoriteIcon', 'default');
 define('FooterAlignment', 'center');
 define('HeaderAlignment', 'center');
