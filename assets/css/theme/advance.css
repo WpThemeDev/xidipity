@@ -1197,6 +1197,9 @@ table.bdr\:space\+2 {
 ***
 */
 /*: add margin :*/
+.mar\:\auto {
+	margin: auto !important;
+}
 .mar\:\+0\.125 {
 	margin: 0.125rem !important;
 }
@@ -3809,6 +3812,9 @@ table.bdr\:space\+2 {
     ***
     */
 	/*: add margin :*/
+	.sm)mar\:\auto {
+		margin: auto !important;
+	}
 	.sm\)mar\:\+0\.125 {
 		margin: 0.125rem !important;
 	}
@@ -6350,8 +6356,11 @@ table.bdr\:space\+2 {
     ***
     */
 	/*: add margin :*/
-	.md\)mar\:\+0\.25 {
-		margin: 0.25rem !important;
+	.md)mar\:\auto {
+		margin: auto !important;
+	}
+	.md\)mar\:\+0\.125 {
+		margin: 0.125rem !important;
 	}
 	.md\)mar\:\+0\.5 {
 		margin: 0.5rem !important;
@@ -8883,6 +8892,9 @@ table.bdr\:space\+2 {
     ***
     */
 	/*: add margin :*/
+	.lg)mar\:\auto {
+		margin: auto !important;
+	}
 	.lg\)mar\:\+0\.125 {
 		margin: 0.125rem !important;
 	}
@@ -11424,6 +11436,9 @@ table.bdr\:space\+2 {
     ***
     */
 	/*: add margin :*/
+	.xl)mar\:\auto {
+		margin: auto !important;
+	}
 	.xl\)mar\:\+0\.125 {
 		margin: 0.125rem !important;
 	}
