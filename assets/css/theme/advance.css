@@ -1175,7 +1175,7 @@ table.bdr\:space\+2 {
 .led\:wide {
 	line-height: calc(var(--dft-line-height) * 120%) !important;
 }
-.led\:x-wide {
+.led\:1x-wide {
 	line-height: calc(var(--dft-line-height) * 140%) !important;
 }
 .led\:2x-wide {
@@ -3787,7 +3787,7 @@ table.bdr\:space\+2 {
 	.sm\)led\:wide {
 		line-height: calc(var(--dft-line-height) * 120%) !important;
 	}
-	.sm\)led\:x-wide {
+	.sm\)led\:1x-wide {
 		line-height: calc(var(--dft-line-height) * 140%) !important;
 	}
 	.sm\)led\:2x-wide {
@@ -6328,7 +6328,7 @@ table.bdr\:space\+2 {
 	.md\)led\:wide {
 		line-height: calc(var(--dft-line-height) * 120%) !important;
 	}
-	.md\)led\:x-wide {
+	.md\)led\:1x-wide {
 		line-height: calc(var(--dft-line-height) * 140%) !important;
 	}
 	.md\)led\:2x-wide {
@@ -8861,7 +8861,7 @@ table.bdr\:space\+2 {
 	.lg\)led\:wide {
 		line-height: calc(var(--dft-line-height) * 120%) !important;
 	}
-	.lg\)led\:x-wide {
+	.lg\)led\:1x-wide {
 		line-height: calc(var(--dft-line-height) * 140%) !important;
 	}
 	.lg\)led\:2x-wide {
@@ -11402,7 +11402,7 @@ table.bdr\:space\+2 {
 	.xl\)led\:wide {
 		line-height: calc(var(--dft-line-height) * 120%) !important;
 	}
-	.xl\)led\:x-wide {
+	.xl\)led\:1x-wide {
 		line-height: calc(var(--dft-line-height) * 140%) !important;
 	}
 	.xl\)led\:2x-wide {
