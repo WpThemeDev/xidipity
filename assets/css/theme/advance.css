@@ -1162,7 +1162,7 @@ table.bdr\:space\+2 {
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
 ***
 */
-.led\:x-narrow {
+.led\:1x-narrow {
 	line-height: calc(var(--dft-line-height) * 80%) !important;
 }
 .led\:narrow {
@@ -3774,7 +3774,7 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
     */
-	.sm\)led\:x-narrow {
+	.sm\)led\:1x-narrow {
 		line-height: calc(var(--dft-line-height) * 80%) !important;
 	}
 	.sm\)led\:narrow {
@@ -6315,7 +6315,7 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
     */
-	.md\)led\:x-narrow {
+	.md\)led\:1x-narrow {
 		line-height: calc(var(--dft-line-height) * 80%) !important;
 	}
 	.md\)led\:narrow {
@@ -8848,7 +8848,7 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
     */
-	.lg\)led\:x-narrow {
+	.lg\)led\:1x-narrow {
 		line-height: calc(var(--dft-line-height) * 80%) !important;
 	}
 	.lg\)led\:narrow {
@@ -11389,7 +11389,7 @@ table.bdr\:space\+2 {
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/line-height
     ***
     */
-	.xl\)led\:x-narrow {
+	.xl\)led\:1x-narrow {
 		line-height: calc(var(--dft-line-height) * 80%) !important;
 	}
 	.xl\)led\:narrow {
