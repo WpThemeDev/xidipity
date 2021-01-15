@@ -131,17 +131,17 @@ mark {
 	text-decoration: none;
 }
 ins {
-	border-bottom: solid thin var(--hue-blue);
-	color: var(--hue-blue);
+	border-bottom: solid thin #0000FF;
+	color: #0000FF;
 	text-decoration: none;
 }
 del,
 s {
 	text-decoration: line-through;
-	text-decoration-color: var(--hue-red);
+	text-decoration-color: #CC0000;
 }
 del {
-	color: var(--hue-red);
+	color: #CC0000;
 }
 small {
 	font-size: var(--font-size-smaller);
