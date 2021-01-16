@@ -2073,10 +2073,6 @@ table.bdr\:space\+2 {
 	* ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 ***
 */
-/*: auto padding :*/
-.pad\:auto {
-	padding: auto !important;
-}
 /*: positive padding :*/
 .pad\:\+0\.125 {
 	padding: 0.125rem !important;
@@ -5231,10 +5227,6 @@ table.bdr\:space\+2 {
 		* ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 	***
 	*/
-	/*: auto padding :*/
-	.sm\)pad\:auto {
-		padding: auto !important;
-	}
 	/*: positive padding :*/
 	.sm\)pad\:\+0\.125 {
 		padding: 0.125rem !important;
@@ -8322,10 +8314,6 @@ table.bdr\:space\+2 {
 		* ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 	***
 	*/
-	/*: auto padding :*/
-	.md\)pad\:auto {
-		padding: auto !important;
-	}
 	/*: positive padding :*/
 	.md\)pad\:\+0\.125 {
 		padding: 0.125rem !important;
@@ -11413,10 +11401,6 @@ table.bdr\:space\+2 {
 		* ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 	***
 	*/
-	/*: auto padding :*/
-	.lg\)pad\:auto {
-		padding: auto !important;
-	}
 	/*: positive padding :*/
 	.lg\)pad\:\+0\.125 {
 		padding: 0.125rem !important;
@@ -14501,10 +14485,6 @@ table.bdr\:space\+2 {
 		* ref: developer.mozilla.org/en-US/docs/Web/CSS/padding
 	***
 	*/
-	/*: auto padding :*/
-	.xl\)pad\:auto {
-		padding: auto !important;
-	}
 	/*: positive padding :*/
 	.xl\)pad\:\+0\.125 {
 		padding: 0.125rem !important;
