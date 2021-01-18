@@ -69,7 +69,7 @@ if (!function_exists('xty_excerpt'))
 		$ico_pst = '</div></div>';
 		$txt_pre = '<div class="fnt:siz-sm-2x pad:lt+0.25 pad:tp+0.25">';
 		$txt_pst = '</div>';
-		$div_pre = '<div class="txt:bas dsp:none sm)dsp:block aln:txt-ct pad:hrz+0.25">';
+		$div_pre = '<div class="txt:bas dsp:none sm)dsp:blk aln:txt-ct pad:hrz+0.25">';
 		$div_pst = '</div>';
 		$bar_items = array();
 		if ($post_type == 'post')
@@ -469,7 +469,7 @@ if (!function_exists('xty_info_bar'))
 		$txt_pre = '<div class="fnt:siz-sm-2x pad:lt+0.5">';
 		$txt_pst = '</div>';
 		$txt_prt = '<div class="fnt:siz-sm-2x pad:lt+0.5 prt[dsp:none]">';
-		$div_pre = '<div class="aln:txt-ct dsp:none sm)dsp:block pad:hrz+0.25 txt:bas">';
+		$div_pre = '<div class="aln:txt-ct dsp:none sm)dsp:blk pad:hrz+0.25 txt:bas">';
 		$div_pst = '</div>';
 		$html .= '<!-- xty:inc/template-tags/xty_info_bar -->';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
