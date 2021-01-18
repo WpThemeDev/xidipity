@@ -926,6 +926,17 @@ a.page-numbers:focus {
 }
 /*
 ***
+    * property: menu
+    * ver: 01210115
+    * fnt: menu ul
+    * ref:
+***
+.menu {
+}
+*/
+
+/*
+***
     * property: nav
     * ver: 200322
     * fnt: set menu attributes
