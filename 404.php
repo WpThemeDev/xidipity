@@ -4,7 +4,7 @@
  * The template for displaying the 404 error
  *
  * ###:  404.php
- * bld:  31201215
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -32,7 +32,7 @@ else
 	echo '<main class="fx:rw md)fx:r fxa:1 fxc:1 sm)mar:hrz+0.5">' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:rt+0.5">' . "\n";
 }
-echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:blk pad:hrz+1 ht:min10 wd:100%">' . "\n";
 /*
  *** inc/templage-tags/xty_support_agent
 */
@@ -75,6 +75,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: 404.php / 31201215
+ * EOF: 404.php / 01210115
 */
 ?>
