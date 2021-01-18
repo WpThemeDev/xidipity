@@ -4,13 +4,13 @@
  * The template for displaying blog excerpts
  *
  * ###:  template-parts/content-precis.php
- * bld:  29200901
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
  */
 echo '<cmt name="begin">TEMPLATE-PARTS/CONTENT-PRECIS/PHP</cmt>' . "\n";
-echo '<article class="box:shadow bkg:content txt:content dsp:block pad:hrz+1 ht:min10 wd:100%">' . "\n";
+echo '<article class="box:shadow bkg:content txt:content dsp:blk pad:hrz+1 ht:min10 wd:100%">' . "\n";
 if ($wp_data->have_posts())
 {
 	/*
@@ -68,6 +68,6 @@ echo '</article>' . "\n";
 echo '</section>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-PRECIS/PHP</cmt>' . "\n";
 /*
- * EOF: template-parts/content-precis.php / 29200901
+ * EOF: template-parts/content-precis.php / 01210115
 */
 ?>
