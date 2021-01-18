@@ -190,7 +190,7 @@ if (xty('mnu-dsp') == 'no')
 }
 else
 {
-	echo '<div class="fxd:1 fxe:2 fb:100% mar:tp-1.5 prt[dsp:none]">' . "\n";
+	echo '<div class="fxd:1 fxe:2 fb:100% mar:tp+0.5 prt[dsp:none]">' . "\n";
 }
 if (xty('mnu-aln') == 'left')
 {
@@ -228,7 +228,7 @@ if ($wp_menu || $wp_page)
 		wp_nav_menu(array(
 			'theme_location' => 'primary',
 			'menu_id' => 'primary-menu',
-			'container' => ''
+			'container_id' => 'xty_menu'
 		));
 	}
 }
