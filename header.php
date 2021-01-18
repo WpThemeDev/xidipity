@@ -190,7 +190,7 @@ if (xty('mnu-dsp') == 'no')
 }
 else
 {
-	echo '<div class="fxd:1 fxe:2 fb:100% mar:tp+0.5 prt[dsp:none]">' . "\n";
+		echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]" style="margin-top: -40px;">' . "\n";
 }
 if (xty('mnu-aln') == 'left')
 {
@@ -204,7 +204,7 @@ else
 {
 	echo '<nav class="fx:r fxa:3 fxc:3 ht:auto sm)mar:vrt+0.25 fb:100%">' . "\n";
 }
-echo '<div role="navigation" id="nav" class="dsp:block" style="width: ' . xty('mnu-wd') . '">' . "\n";
+echo '<div role="navigation" id="nav" class="dsp:blk" style="width: ' . xty('mnu-wd') . ';">' . "\n";
 if ($wp_menu || $wp_page)
 {
 	if ($wp_page)
