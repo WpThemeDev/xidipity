@@ -4,14 +4,14 @@
  * The template for displaying comments
  *
  * ###:  template-parts/content-comments.php
- * bld:  29200815
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
  */
 global $wp_query, $comment_alt, $comment_depth, $comment_thread_alt, $overridden_cpage, $in_comment_loop;
 echo '<cmt name="begin">TEMPLATE-PARTS/CONTENT-COMMENTS/PHP</cmt>' . "\n";
-echo '<div class="bkg:content txt:content dsp:block pad:hrz+1 mar:bt+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
+echo '<div class="bkg:content txt:content dsp:blk pad:hrz+1 mar:bt+1 ht:min10 wd:100% prt[dsp:none]">' . "\n";
 $comments_args = array(
 	'status'  => 'approved',
 	'number' => '10',
@@ -288,6 +288,6 @@ comment_form(array(
 echo '</div>' . "\n";
 echo '<cmt name="end">TEMPLATE-PARTS/CONTENT-COMMENTS/PHP</cmt>' . "\n";
 /*
- * EOF: template-parts/content-comments.php / 29200815
+ * EOF: template-parts/content-comments.php / 01210115
 */
 ?>
