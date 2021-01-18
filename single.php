@@ -4,7 +4,7 @@
  * The template for displaying blog post
  *
  * ###:  single.php
- * bld:  31201215
+ * bld:  01210115
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -40,7 +40,7 @@ else
 	echo '<!-- xty:page/body/post/content -->' . "\n";
 	echo '<section class="fxd:4 fxe:6 wd:0 fb:100% mar:bt+0.5 md)mar:rt+0.5">' . "\n";
 }
-echo '<article class="bkg:content box:shadow dsp:block ht:min10 pad:hrz+1 txt:content wd:100%">' . "\n";
+echo '<article class="bkg:content box:shadow dsp:blk ht:min10 pad:hrz+1 txt:content wd:100%">' . "\n";
 if (have_posts())
 {
 	the_post();
@@ -151,6 +151,6 @@ get_footer();
 */
 wp_reset_postdata();
 /*
- * EOF: single.php / 31201215
+ * EOF: single.php / 01210115
 */
 ?>
