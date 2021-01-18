@@ -190,7 +190,11 @@ if (xty('mnu-dsp') == 'no')
 }
 else
 {
+	if (xty('hdr-img') !== 'none') {
+		echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]" style="margin-top: -24px;">' . "\n";
+	} else {
 		echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]" style="margin-top: -40px;">' . "\n";
+	}
 }
 if (xty('mnu-aln') == 'left')
 {
