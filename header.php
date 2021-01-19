@@ -191,9 +191,9 @@ if (xty('mnu-dsp') == 'no')
 else
 {
 	if (xty('hdr-img') !== 'none') {
-		echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]" style="margin-top: -24px;">' . "\n";
+		echo '<div class="fxd:1 fxe:2 fb:100% mnu:mar-txt-tp prt[dsp:none]">' . "\n";
 	} else {
-		echo '<div class="fxd:1 fxe:2 fb:100% prt[dsp:none]" style="margin-top: -40px;">' . "\n";
+		echo '<div class="fxd:1 fxe:2 fb:100% mnu:mar-img-tp prt[dsp:none]">' . "\n";
 	}
 }
 if (xty('mnu-aln') == 'left')
@@ -208,12 +208,16 @@ else
 {
 	echo '<nav class="fx:r fxa:3 fxc:3 ht:auto sm)mar:vrt+0.25 fb:100%">' . "\n";
 }
-echo '<div role="navigation" id="nav" class="dsp:blk" style="width: ' . xty('mnu-wd') . ';">' . "\n";
+echo '<div role="navigation" id="nav" class="dsp:block" style="width: ' . xty('mnu-wd') . '">' . "\n";
 if ($wp_menu || $wp_page)
 {
 	if ($wp_page)
 	{
-		echo '<div class="aln:txt-ct mar:tp+0.5 wd:100%">' . "\n";
+		if (xty('hdr-img') !== 'none') {
+			echo '<div class="aln:txt-ct toc:mar-img-tp wd:100%">' . "\n";
+		} else {
+			echo '<div class="aln:txt-ct toc:mar-txt-tp wd:100%">' . "\n";
+		}
 		/*: xidipity toc page :*/
 		if ($wp_page->ID == get_queried_object_id())
 		{
@@ -232,7 +236,7 @@ if ($wp_menu || $wp_page)
 		wp_nav_menu(array(
 			'theme_location' => 'primary',
 			'menu_id' => 'primary-menu',
-			'container_id' => 'xty_menu'
+			'container' => ''
 		));
 	}
 }
