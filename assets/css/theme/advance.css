@@ -1842,7 +1842,6 @@ table.bdr\:space\+2 {
 	margin-right: 2rem !important;
 }
 /*: no margin :*/
-
 .mar\:hrz0,
 .mar\:hrz-0,
 .mar\:hrz\+0 {
@@ -1993,7 +1992,6 @@ table.bdr\:space\+2 {
 	margin-top: 2rem !important;
 }
 /*: no margin :*/
-
 .mar\:vrt0,
 .mar\:vrt-0,
 .mar\:vrt\+0 {
@@ -2554,60 +2552,80 @@ table.bdr\:space\+2 {
 ***
     * property: tdc
     * dsc: text decoration
-    * bld: 200229
+    * bld: 01210115
     * fnt: set predefined text decoration
     * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
 ***
 */
-.tdc\:underline,
-.tdc\:underline\!hover:hover,
-.tdc\:underline\!focus:focus {
-	text-decoration: underline solid;
+.tdc\:un-ln,
+.tdc\:un-ln\!hover:hover,
+.tdc\:un-ln\!focus:focus {
+	text-decoration-color: inherit; 
+	text-decoration-line: underline; 
+	text-decoration-style: solid;
 }
-.tdc\:underline-red,
-.tdc\:underline-red\!hover:hover,
-.tdc\:underline-red\!focus:focus {
-	text-decoration: underline solid #CC0000;
+.tdc\:un-ln-red,
+.tdc\:un-ln-red\!hover:hover,
+.tdc\:un-ln-red\!focus:focus {
+	text-decoration-color: #CC0000; 
+	text-decoration-line: underline; 
+	text-decoration-style: solid;
 }
-.tdc\:line-through,
-.tdc\:line-through\!hover:hover,
-.tdc\:line-through\!focus:focus {
-	text-decoration: line-through solid;
+.tdc\:ln-thr,
+.tdc\:ln-thr\!hover:hover,
+.tdc\:ln-thr\!focus:focus {
+	text-decoration-color: inherit; 
+	text-decoration-line: line-through;
+	text-decoration-style: solid;
 }
-.tdc\:line-through-red,
-.tdc\:line-through-red\!hover:hover,
-.tdc\:line-through-red\!focus:focus {
-	text-decoration: line-through #CC0000;
+.tdc\:ln-thr-red,
+.tdc\:ln-thr-red\!hover:hover,
+.tdc\:ln-thr-red\!focus:focus {
+	text-decoration-color: #CC0000; 
+	text-decoration-line: line-through;
+	text-decoration-style: solid;
 }
-.tdc\:underline-double,
-.tdc\:underline-double\!hover:hover,
-.tdc\:underline-double\!focus:focus {
-	text-decoration: underline double;
+.tdc\:un-ln-dbl,
+.tdc\:un-ln-dbl\!hover:hover,
+.tdc\:un-ln-dbl\!focus:focus {
+	text-decoration-color: inherit; 
+	text-decoration-line: underline;
+	text-decoration-style: double;
 }
-.tdc\:underline-double-red,
-.tdc\:underline-double-red\!hover:hover,
-.tdc\:underline-double-red\!focus:focus {
-	text-decoration: underline double #CC0000;
+.tdc\:un-ln-dbl-red,
+.tdc\:un-ln-dbl-red\!hover:hover,
+.tdc\:un-ln-dbl-red\!focus:focus {
+	text-decoration-color: #CC0000; 
+	text-decoration-line: underline;
+	text-decoration-style: double;
 }
-.tdc\:underline-dotted,
-.tdc\:underline-dotted\!hover:hover,
-.tdc\:underline-dotted\!focus:focus {
-	text-decoration: underline dotted;
+.tdc\:un-ln-dot,
+.tdc\:un-ln-dot\!hover:hover,
+.tdc\:un-ln-dot\!focus:focus {
+	text-decoration-color: inherit; 
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
 }
-.tdc\:underline-dotted-red,
-.tdc\:underline-dotted-red\!hover:hover,
-.tdc\:underline-dotted-red\!focus:focus {
-	text-decoration: underline dotted #CC0000;
+.tdc\:un-ln-dot-red,
+.tdc\:un-ln-dot-red\!hover:hover,
+.tdc\:un-ln-dot-red\!focus:focus {
+	text-decoration-color: #CC0000; 
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
 }
-.tdc\:underline-wavy,
-.tdc\:underline-wavy\!hover:hover,
-.tdc\:underline-wavy\!focus:focus {
-	text-decoration: underline wavy;
+.tdc\:un-ln-wav,
+.tdc\:un-ln-wav\!hover:hover,
+.tdc\:un-ln-wav\!focus:focus {
+	text-decoration-color: inherit; 
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
 }
-.tdc\:underline-wavy-red,
-.tdc\:underline-wavy-red\!hover:hover,
-.tdc\:underline-wavy-red\!focus:focus {
-	text-decoration: underline wavy #CC0000;
+.tdc\:un-ln-wav-red,
+.tdc\:un-ln-wav-red\!hover:hover,
+.tdc\:un-ln-wav-red\!focus:focus {
+	text-decoration-color: #CC0000; 
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
 }
 /*
 ***
@@ -4980,7 +4998,6 @@ table.bdr\:space\+2 {
 		margin-right: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.sm\)mar\:hrz0,
 	.sm\)mar\:hrz-0,
 	.sm\)mar\:hrz\+0 {
@@ -5131,7 +5148,6 @@ table.bdr\:space\+2 {
 		margin-top: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.sm\)mar\:vrt0,
 	.sm\)mar\:vrt-0,
 	.sm\)mar\:vrt\+0 {
@@ -5691,61 +5707,80 @@ table.bdr\:space\+2 {
 	/*
     ***
         * property: tdc
-        * dsc: text decoration
-        * bld: 200229
+        * bld: 01210115
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
     */
-	.sm\)tdc\:underline,
-	.sm\)tdc\:underline\!hover:hover,
-	.sm\)tdc\:underline\!focus:focus {
-		text-decoration: underline solid;
+	.sm\)tdc\:un-ln,
+	.sm\)tdc\:un-ln\!hover:hover,
+	.sm\)tdc\:un-ln\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.sm\)tdc\:underline-red,
-	.sm\)tdc\:underline-red\!hover:hover,
-	.sm\)tdc\:underline-red\!focus:focus {
-		text-decoration: underline solid #CC0000;
+	.sm\)tdc\:un-ln-red,
+	.sm\)tdc\:un-ln-red\!hover:hover,
+	.sm\)tdc\:un-ln-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.sm\)tdc\:line-through,
-	.sm\)tdc\:line-through\!hover:hover,
-	.sm\)tdc\:line-through\!focus:focus {
-		text-decoration: line-through solid;
+	.sm\)tdc\:ln-thr,
+	.sm\)tdc\:ln-thr\!hover:hover,
+	.sm\)tdc\:ln-thr\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.sm\)tdc\:line-through-red,
-	.sm\)tdc\:line-through-red\!hover:hover,
-	.sm\)tdc\:line-through-red\!focus:focus {
-		text-decoration: line-through solid #CC0000;
+	.sm\)tdc\:ln-thr-red,
+	.sm\)tdc\:ln-thr-red\!hover:hover,
+	.sm\)tdc\:ln-thr-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.sm\)tdc\:underline-double,
-	.sm\)tdc\:underline-double\!hover:hover,
-	.sm\)tdc\:underline-double\!focus:focus {
-		text-decoration: underline double;
+	.sm\)tdc\:un-ln-dbl,
+	.sm\)tdc\:un-ln-dbl\!hover:hover,
+	.sm\)tdc\:un-ln-dbl\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.sm\)tdc\:underline-double-red,
-	.sm\)tdc\:underline-double-red\!hover:hover,
-	.sm\)tdc\:underline-double-red\!focus:focus {
-		text-decoration: underline double #CC0000;
+	.sm\)tdc\:un-ln-dbl-red,
+	.sm\)tdc\:un-ln-dbl-red\!hover:hover,
+	.sm\)tdc\:un-ln-dbl-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.sm\)tdc\:underline-dotted,
-	.sm\)tdc\:underline-dotted\!hover:hover,
-	.sm\)tdc\:underline-dotted\!focus:focus {
-		text-decoration: underline dotted;
+	.sm\)tdc\:un-ln-dot,
+	.sm\)tdc\:un-ln-dot\!hover:hover,
+	.sm\)tdc\:un-ln-dot\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.sm\)tdc\:underline-dotted-red,
-	.sm\)tdc\:underline-dotted-red\!hover:hover,
-	.sm\)tdc\:underline-dotted-red\!focus:focus {
-		text-decoration: underline dotted #CC0000;
+	.sm\)tdc\:un-ln-dot-red,
+	.sm\)tdc\:un-ln-dot-red\!hover:hover,
+	.sm\)tdc\:un-ln-dot-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.sm\)tdc\:underline-wavy,
-	.sm\)tdc\:underline-wavy\!hover:hover,
-	.sm\)tdc\:underline-wavy\!focus:focus {
-		text-decoration: underline wavy;
+	.sm\)tdc\:un-ln-wav,
+	.sm\)tdc\:un-ln-wav\!hover:hover,
+	.sm\)tdc\:un-ln-wav\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
-	.sm\)tdc\:underline-wavy-red,
-	.sm\)tdc\:underline-wavy-red\!hover:hover,
-	.sm\)tdc\:underline-wavy-red\!focus:focus {
-		text-decoration: underline wavy #CC0000;
+	.sm\)tdc\:un-ln-wav-red,
+	.sm\)tdc\:un-ln-wav-red\!hover:hover,
+	.sm\)tdc\:un-ln-wav-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
 	/*
     ***
@@ -8051,7 +8086,6 @@ table.bdr\:space\+2 {
 		margin-right: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.md\)mar\:hrz0,
 	.md\)mar\:hrz-0,
 	.md\)mar\:hrz\+0 {
@@ -8202,7 +8236,6 @@ table.bdr\:space\+2 {
 		margin-top: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.md\)mar\:vrt0,
 	.md\)mar\:vrt-0,
 	.md\)mar\:vrt\+0 {
@@ -8762,61 +8795,80 @@ table.bdr\:space\+2 {
 	/*
     ***
         * property: tdc
-        * dsc: text decoration
-        * bld: 200229
+        * bld: 01210115
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
     */
-	.md\)tdc\:underline,
-	.md\)tdc\:underline\!hover:hover,
-	.md\)tdc\:underline\!focus:focus {
-		text-decoration: underline solid;
+	.md\)tdc\:un-ln,
+	.md\)tdc\:un-ln\!hover:hover,
+	.md\)tdc\:un-ln\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.md\)tdc\:underline-red,
-	.md\)tdc\:underline-red\!hover:hover,
-	.md\)tdc\:underline-red\!focus:focus {
-		text-decoration: underline solid #CC0000;
+	.md\)tdc\:un-ln-red,
+	.md\)tdc\:un-ln-red\!hover:hover,
+	.md\)tdc\:un-ln-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.md\)tdc\:line-through,
-	.md\)tdc\:line-through\!hover:hover,
-	.md\)tdc\:line-through\!focus:focus {
-		text-decoration: line-through solid;
+	.md\)tdc\:ln-thr,
+	.md\)tdc\:ln-thr\!hover:hover,
+	.md\)tdc\:ln-thr\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.md\)tdc\:line-through-red,
-	.md\)tdc\:line-through-red\!hover:hover,
-	.md\)tdc\:line-through-red\!focus:focus {
-		text-decoration: line-through solid #CC0000;
+	.md\)tdc\:ln-thr-red,
+	.md\)tdc\:ln-thr-red\!hover:hover,
+	.md\)tdc\:ln-thr-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.md\)tdc\:underline-double,
-	.md\)tdc\:underline-double\!hover:hover,
-	.md\)tdc\:underline-double\!focus:focus {
-		text-decoration: underline double;
+	.md\)tdc\:un-ln-dbl,
+	.md\)tdc\:un-ln-dbl\!hover:hover,
+	.md\)tdc\:un-ln-dbl\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.md\)tdc\:underline-double-red,
-	.md\)tdc\:underline-double-red\!hover:hover,
-	.md\)tdc\:underline-double-red\!focus:focus {
-		text-decoration: underline double #CC0000;
+	.md\)tdc\:un-ln-dbl-red,
+	.md\)tdc\:un-ln-dbl-red\!hover:hover,
+	.md\)tdc\:un-ln-dbl-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.md\)tdc\:underline-dotted,
-	.md\)tdc\:underline-dotted\!hover:hover,
-	.md\)tdc\:underline-dotted\!focus:focus {
-		text-decoration: underline dotted;
+	.md\)tdc\:un-ln-dot,
+	.md\)tdc\:un-ln-dot\!hover:hover,
+	.md\)tdc\:un-ln-dot\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.md\)tdc\:underline-dotted-red,
-	.md\)tdc\:underline-dotted-red\!hover:hover,
-	.md\)tdc\:underline-dotted-red\!focus:focus {
-		text-decoration: underline dotted #CC0000;
+	.md\)tdc\:un-ln-dot-red,
+	.md\)tdc\:un-ln-dot-red\!hover:hover,
+	.md\)tdc\:un-ln-dot-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.md\)tdc\:underline-wavy,
-	.md\)tdc\:underline-wavy\!hover:hover,
-	.md\)tdc\:underline-wavy\!focus:focus {
-		text-decoration: underline wavy;
+	.md\)tdc\:un-ln-wav,
+	.md\)tdc\:un-ln-wav\!hover:hover,
+	.md\)tdc\:un-ln-wav\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
-	.md\)tdc\:underline-wavy-red,
-	.md\)tdc\:underline-wavy-red\!hover:hover,
-	.md\)tdc\:underline-wavy-red\!focus:focus {
-		text-decoration: underline wavy #CC0000;
+	.md\)tdc\:un-ln-wav-red,
+	.md\)tdc\:un-ln-wav-red\!hover:hover,
+	.md\)tdc\:un-ln-wav-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
 	/*
     ***
@@ -11122,7 +11174,6 @@ table.bdr\:space\+2 {
 		margin-right: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.lg\)mar\:hrz0,
 	.lg\)mar\:hrz-0,
 	.lg\)mar\:hrz\+0 {
@@ -11273,7 +11324,6 @@ table.bdr\:space\+2 {
 		margin-top: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.lg\)mar\:vrt0,
 	.lg\)mar\:vrt-0,
 	.lg\)mar\:vrt\+0 {
@@ -11833,61 +11883,80 @@ table.bdr\:space\+2 {
 	/*
     ***
         * property: tdc
-        * dsc: text decoration
-        * bld: 200229
+        * bld: 01210115
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
     */
-	.lg\)tdc\:underline,
-	.lg\)tdc\:underline\!hover:hover,
-	.lg\)tdc\:underline\!focus:focus {
-		text-decoration: underline solid;
+	.lg\)tdc\:un-ln,
+	.lg\)tdc\:un-ln\!hover:hover,
+	.lg\)tdc\:un-ln\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.lg\)tdc\:underline-red,
-	.lg\)tdc\:underline-red\!hover:hover,
-	.lg\)tdc\:underline-red\!focus:focus {
-		text-decoration: underline solid #CC0000;
+	.lg\)tdc\:un-ln-red,
+	.lg\)tdc\:un-ln-red\!hover:hover,
+	.lg\)tdc\:un-ln-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.lg\)tdc\:line-through,
-	.lg\)tdc\:line-through\!hover:hover,
-	.lg\)tdc\:line-through\!focus:focus {
-		text-decoration: line-through solid;
+	.lg\)tdc\:ln-thr,
+	.lg\)tdc\:ln-thr\!hover:hover,
+	.lg\)tdc\:ln-thr\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.lg\)tdc\:line-through-red,
-	.lg\)tdc\:line-through-red\!hover:hover,
-	.lg\)tdc\:line-through-red\!focus:focus {
-		text-decoration: line-through solid #CC0000;
+	.lg\)tdc\:ln-thr-red,
+	.lg\)tdc\:ln-thr-red\!hover:hover,
+	.lg\)tdc\:ln-thr-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.lg\)tdc\:underline-double,
-	.lg\)tdc\:underline-double\!hover:hover,
-	.lg\)tdc\:underline-double\!focus:focus {
-		text-decoration: underline double;
+	.lg\)tdc\:un-ln-dbl,
+	.lg\)tdc\:un-ln-dbl\!hover:hover,
+	.lg\)tdc\:un-ln-dbl\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.lg\)tdc\:underline-double-red,
-	.lg\)tdc\:underline-double-red\!hover:hover,
-	.lg\)tdc\:underline-double-red\!focus:focus {
-		text-decoration: underline double #CC0000;
+	.lg\)tdc\:un-ln-dbl-red,
+	.lg\)tdc\:un-ln-dbl-red\!hover:hover,
+	.lg\)tdc\:un-ln-dbl-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.lg\)tdc\:underline-dotted,
-	.lg\)tdc\:underline-dotted\!hover:hover,
-	.lg\)tdc\:underline-dotted\!focus:focus {
-		text-decoration: underline dotted;
+	.lg\)tdc\:un-ln-dot,
+	.lg\)tdc\:un-ln-dot\!hover:hover,
+	.lg\)tdc\:un-ln-dot\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.lg\)tdc\:underline-dotted-red,
-	.lg\)tdc\:underline-dotted-red\!hover:hover,
-	.lg\)tdc\:underline-dotted-red\!focus:focus {
-		text-decoration: underline dotted #CC0000;
+	.lg\)tdc\:un-ln-dot-red,
+	.lg\)tdc\:un-ln-dot-red\!hover:hover,
+	.lg\)tdc\:un-ln-dot-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.lg\)tdc\:underline-wavy,
-	.lg\)tdc\:underline-wavy\!hover:hover,
-	.lg\)tdc\:underline-wavy\!focus:focus {
-		text-decoration: underline wavy;
+	.lg\)tdc\:un-ln-wav,
+	.lg\)tdc\:un-ln-wav\!hover:hover,
+	.lg\)tdc\:un-ln-wav\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
-	.lg\)tdc\:underline-wavy-red,
-	.lg\)tdc\:underline-wavy-red\!hover:hover,
-	.lg\)tdc\:underline-wavy-red\!focus:focus {
-		text-decoration: underline wavy #CC0000;
+	.lg\)tdc\:un-ln-wav-red,
+	.lg\)tdc\:un-ln-wav-red\!hover:hover,
+	.lg\)tdc\:un-ln-wav-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
 	/*
     ***
@@ -14190,7 +14259,6 @@ table.bdr\:space\+2 {
 		margin-right: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.xl\)mar\:hrz0,
 	.xl\)mar\:hrz-0,
 	.xl\)mar\:hrz\+0 {
@@ -14341,7 +14409,6 @@ table.bdr\:space\+2 {
 		margin-top: 2rem !important;
 	}
 	/*: no margin :*/
-
 	.xl\)mar\:vrt0,
 	.xl\)mar\:vrt-0,
 	.xl\)mar\:vrt\+0 {
@@ -14901,61 +14968,80 @@ table.bdr\:space\+2 {
 	/*
     ***
         * property: tdc
-        * dsc: text decoration
-        * bld: 200229
+        * bld: 01210115
         * fnt: set predefined text decoration
         * ref: developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
     ***
     */
-	.xl\)tdc\:underline,
-	.xl\)tdc\:underline\!hover:hover,
-	.xl\)tdc\:underline\!focus:focus {
-		text-decoration: underline solid;
+	.xl\)tdc\:un-ln,
+	.xl\)tdc\:un-ln\!hover:hover,
+	.xl\)tdc\:un-ln\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.xl\)tdc\:underline-red,
-	.xl\)tdc\:underline-red\!hover:hover,
-	.xl\)tdc\:underline-red\!focus:focus {
-		text-decoration: underline solid #CC0000;
+	.xl\)tdc\:un-ln-red,
+	.xl\)tdc\:un-ln-red\!hover:hover,
+	.xl\)tdc\:un-ln-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline; 
+		text-decoration-style: solid;
 	}
-	.xl\)tdc\:line-through,
-	.xl\)tdc\:line-through\!hover:hover,
-	.xl\)tdc\:line-through\!focus:focus {
-		text-decoration: line-through solid;
+	.xl\)tdc\:ln-thr,
+	.xl\)tdc\:ln-thr\!hover:hover,
+	.xl\)tdc\:ln-thr\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.xl\)tdc\:line-through-red,
-	.xl\)tdc\:line-through-red\!hover:hover,
-	.xl\)tdc\:line-through-red\!focus:focus {
-		text-decoration: line-through solid #CC0000;
+	.xl\)tdc\:ln-thr-red,
+	.xl\)tdc\:ln-thr-red\!hover:hover,
+	.xl\)tdc\:ln-thr-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: line-through;
+		text-decoration-style: solid;
 	}
-	.xl\)tdc\:underline-double,
-	.xl\)tdc\:underline-double\!hover:hover,
-	.xl\)tdc\:underline-double\!focus:focus {
-		text-decoration: underline double;
+	.xl\)tdc\:un-ln-dbl,
+	.xl\)tdc\:un-ln-dbl\!hover:hover,
+	.xl\)tdc\:un-ln-dbl\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.xl\)tdc\:underline-double-red,
-	.xl\)tdc\:underline-double-red\!hover:hover,
-	.xl\)tdc\:underline-double-red\!focus:focus {
-		text-decoration: underline double #CC0000;
+	.xl\)tdc\:un-ln-dbl-red,
+	.xl\)tdc\:un-ln-dbl-red\!hover:hover,
+	.xl\)tdc\:un-ln-dbl-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: double;
 	}
-	.xl\)tdc\:underline-dotted,
-	.xl\)tdc\:underline-dotted\!hover:hover,
-	.xl\)tdc\:underline-dotted\!focus:focus {
-		text-decoration: underline dotted;
+	.xl\)tdc\:un-ln-dot,
+	.xl\)tdc\:un-ln-dot\!hover:hover,
+	.xl\)tdc\:un-ln-dot\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.xl\)tdc\:underline-dotted-red,
-	.xl\)tdc\:underline-dotted-red\!hover:hover,
-	.xl\)tdc\:underline-dotted-red\!focus:focus {
-		text-decoration: underline dotted #CC0000;
+	.xl\)tdc\:un-ln-dot-red,
+	.xl\)tdc\:un-ln-dot-red\!hover:hover,
+	.xl\)tdc\:un-ln-dot-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: dotted;
 	}
-	.xl\)tdc\:underline-wavy,
-	.xl\)tdc\:underline-wavy\!hover:hover,
-	.xl\)tdc\:underline-wavy\!focus:focus {
-		text-decoration: underline wavy;
+	.xl\)tdc\:un-ln-wav,
+	.xl\)tdc\:un-ln-wav\!hover:hover,
+	.xl\)tdc\:un-ln-wav\!focus:focus {
+		text-decoration-color: inherit; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
-	.xl\)tdc\:underline-wavy-red,
-	.xl\)tdc\:underline-wavy-red\!hover:hover,
-	.xl\)tdc\:underline-wavy-red\!focus:focus {
-		text-decoration: underline wavy #CC0000;
+	.xl\)tdc\:un-ln-wav-red,
+	.xl\)tdc\:un-ln-wav-red\!hover:hover,
+	.xl\)tdc\:un-ln-wav-red\!focus:focus {
+		text-decoration-color: #CC0000; 
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
 	}
 	/*
     ***
