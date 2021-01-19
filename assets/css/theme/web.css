@@ -926,15 +926,68 @@ a.page-numbers:focus {
 }
 /*
 ***
-    * property: menu
+    * property: mnu:mar-txt-tp
     * ver: 01210115
-    * fnt: menu ul
+    * fnt: set menu top margin with text header
     * ref:
 ***
-.menu {
-}
 */
-
+.mnu\:mar-txt-tp {
+	margin-top: -20px;
+}
+@media (min-width: 600px) {
+	.mnu\:mar-txt-tp {
+		margin-top: -24px;
+	}
+}
+/*
+***
+    * property: mnu:mar-img-tp
+    * ver: 01210115
+    * fnt: set menu top margin with image header
+    * ref:
+***
+*/
+.mnu\:mar-img-tp {
+	margin-top: -36px;
+}
+@media (min-width: 600px) {
+	.mnu\:mar-img-tp {
+		margin-top: -40px;
+	}
+}
+/*
+***
+    * property: toc:mar-txt-tp
+    * ver: 01210115
+    * fnt: set toc menu top margin with text header
+    * ref:
+***
+*/
+.toc\:mar-txt-tp {
+	margin-top: 24px;
+}
+@media (min-width: 600px) {
+	.toc\:mar-txt-tp {
+		margin-top: 28px;
+	}
+}
+/*
+***
+    * property: toc:mar-img-tp
+    * ver: 01210115
+    * fnt: set toc menu top margin with image header
+    * ref:
+***
+*/
+.toc\:mar-img-tp {
+	margin-top: 29px;
+}
+@media (min-width: 600px) {
+	.toc\:mar-img-tp {
+		margin-top: 34px;
+	}
+}
 /*
 ***
     * property: nav
