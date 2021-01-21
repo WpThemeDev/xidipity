@@ -13,10 +13,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![GNU License][license-shield]][license-url]
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/wpthemedev/xidipity?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/wpthemedev/xidipity?color=cc0000&style=for-the-badge)
+![GNU License](https://img.shields.io/static/v1?label=GNU-GPL&message=3&color=007fa3&style=for-the-badge)
 
 ![Xidipity GitHub Readme Screenshot](screenshot.png)
 
@@ -189,14 +188,3 @@ GNU General Public License for more details.
 
 [Twitter](https://twitter.com/xidipity)
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[forks-shield]: https://img.shields.io/github/forks/wpthemedev/readme.svg?style=for-the-badge&color=38761d
-[forks-url]: https://github.com/wpthemedev/xidipity/network/members
-[stars-shield]: https://img.shields.io/github/stars/wpthemedev/readme.svg?style=for-the-badge&color=741b47
-[stars-url]: https://github.com/wpthemedev/xidipity/stargazers
-[issues-shield]: https://img.shields.io/github/issues/wpthemedev/readme.svg?style=for-the-badge&color=cc0000
-[issues-url]: https://github.com/wpthemedev/xidipity/issues
-[license-shield]: https://img.shields.io/static/v1?label=GNU-GPL&message=3&color=007fa3&style=for-the-badge
-[license-url]: https://opensource.org/licenses/GPL-3.0
-[product-screenshot]: screenshot.png
