@@ -2007,5 +2007,61 @@ button.img {
 	/* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 /*
+***
+    * property: @XxX
+    * dsc: set aspect ratio
+    * bld: 01210115
+    * fnt: set aspect ratio of images / videos
+    * ref: <div class="width"><div class="@ratio">img/vid tags</div></div>
+***
+*/
+.ar\:1x1,
+.ar\:3x2,
+.ar\:4x3,
+.ar\:7x5,
+.ar\:16x9,
+.ar\:16x10,
+.ar\:17x9,
+.ar\:21x9 {
+	position: relative;
+	width: 100%;
+}
+.ar\:1x1 {
+	padding-bottom: 100%;
+}
+.ar\:3x2 {
+	padding-bottom: 66.6666%;
+}
+.ar\:4x3 {
+	padding-bottom: 75%;
+}
+.ar\:7x5 {
+	padding-bottom: 71.4286%;
+}
+.ar\:16x9 {
+	padding-bottom: 56.25%;
+}
+.ar\:16x10 {
+	padding-bottom: 62.5%;
+}
+.ar\:17x9 {
+	padding-bottom: 52.9412%;
+}
+.ar\:21x9 {
+	padding-bottom: 42.8571%;
+}
+.ar\:content,
+.ar\:container iframe,
+.ar\:container object,
+.ar\:container embed {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*
  * EOF: assets/css/theme/common.css / 01210115
  */
