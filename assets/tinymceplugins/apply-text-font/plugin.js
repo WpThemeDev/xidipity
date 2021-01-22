@@ -3,7 +3,7 @@
  * Tinymce apply-text-font plugin
  *
  * ###:  plugin.js
- * bld:  01210115
+ * bld:  30201101
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -224,7 +224,11 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 		}
 		switch (tagId) {
 			case ('class'):
-				keyValue = getRegExpValue(argTag, '^(.*?)(-|\\+)', 'is', 1);
+				if (!isEmpty(argTag.match(/-/))) {
+					keyValue = getRegExpValue(argTag, '^(.*?)(-|\\+)', 'is', 1);
+				} else {
+					keyValue = 'NoMatch';
+				}
 				switch (true) {
 					case (!isEmpty(argHtml.match(keyValue))):
 						oldTag = getRegExpValue(argHtml, '(' + keyValue + '.*?)(\\s|")', 'is', 1);
@@ -498,5 +502,5 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-font / plugin.js / 01210115
+ * EOF: apply-text-font / plugin.js / 30201101
  */
