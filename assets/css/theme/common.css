@@ -453,16 +453,22 @@ a:focus {
     * ref:
 ***
 */
-ul\:qtr-spaced li:not(:last-child),
-ol\:qtr-spaced li:not(:last-child) {
+ul.li\:1x-spaced li:not(:last-child),
+ol.li\:1x-spaced li:not(:last-child),
+ul.li\:qtr-spaced li:not(:last-child),
+ol.li\:qtr-spaced li:not(:last-child) {
 	margin-bottom: 0.375rem;
 } 
-ul\:dbl-spaced li:not(:last-child),
-ol\:dbl-spaced li:not(:last-child) {
+ul.li\:2x-spaced li:not(:last-child),
+ol.li\:2x-spaced li:not(:last-child),
+ul.li\:dbl-spaced li:not(:last-child),
+ol.li\:dbl-spaced li:not(:last-child) {
 	margin-bottom: 0.75rem;
 } 
-ul\:tpl-spaced li:not(:last-child),
-ol\:tpl-spaced li:not(:last-child) {
+ul.li\:3x-spaced li:not(:last-child),
+ol.li\:3x-spaced li:not(:last-child),
+ul.li\:tpl-spaced li:not(:last-child),
+ol.li\:tpl-spaced li:not(:last-child) {
 	margin-bottom: 1.125rem;
 } 
 /*
