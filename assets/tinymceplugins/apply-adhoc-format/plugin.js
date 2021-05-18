@@ -3,7 +3,7 @@
  * Tinymce apply-adhoc-format plugin
  *
  * ###:	plugin.js
- * bld:	200518-1
+ * bld:	210518-1
  * src:	github.com/WpThemeDev/xidipity/
  * (C)	https://doc.xidipity.com/license/
  *
@@ -205,15 +205,16 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						console.log(' OBJ > htmlFull - New');
 						//
+						var domNode = this.mceNode;
+						var domNodeName = this.mceNodeName();
+						var outerHtml = this.outerHTML();
 						switch (true) {
 							case (domNodeName == 'body'):
 								// body
 								this.htmlFullCache = this.mceHtml();
 								break;
-							case (isEmpty(this.outerHTML().match(/div|h[1-6]|li|p(?!a)|td|th/))):
+							case (isEmpty(outerHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
 								// marker ie. <u>, etc
-								var domNode = this.mceNode;
-								var domNodeName = this.mceNodeName();
 								var nodeExp = new RegExp('div|h[1-6]|li|p(?!a)|td|th', 'i');
 								while (isEmpty(domNodeName.match(nodeExp))) {
 									if (isNull(domNode.previousSibling)) {
@@ -940,9 +941,14 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
 						throw new Error('ERROR (#919)\nRequired argument/s missing.');
 					}
-					if (!isEmpty(strArg1)) {
+					if (!isEmpty(strArg1.match(/-mce-/g))) {
+						var expMceTags = new RegExp(/.data-mce-style.*?".*?"|<br data-mce-bogus.*?".*?">/, 'g');
 						//
-						retValue = strArg1.replace(/\sdata-mce-style.*?".*?"/gi, '').replace(/<br data-mce-bogus.*?".*?">/gi, '');
+						retValue = strArg1.replace(expMceTags, '');
+						//						
+					} else {
+						//
+						retValue = strArg1;
 						//
 					}
 				} catch (e) {
@@ -1057,7 +1063,13 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					}
 					var newUpdate = this.htmlFull();
 					var mceTag = getRegExpValue(this.htmlFull(), '^<(p|h[1-6]|div|li|td|th).*?>');
+					//
+					console.log('@   > htmlFull: ' + this.htmlFull());
+					//
 					var mceElements = getRegExpValue(mceTag, '"(.*?)"', 's', 1);
+					//
+					console.log('@   > mceElements: ' + mceElements);
+					//
 					var newTag;
 					if (this.datAction == 'replace') {
 						switch (true) {
@@ -1155,11 +1167,11 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			console.log('    - numArg4: ' + numArg4);
 			//
 			try {
-				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1037)\nMissing required argument/s.'); // value to evaluate
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('ERROR (#1164)\nMissing required argument/s.'); // value to evaluate
 				}
-				if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-					throw new Error('ERROR (#1040)\nMissing required argument/s.'); // regular expression
+				if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
+					throw new Error('ERROR (#1167)\nMissing required argument/s.'); // regular expression
 				}
 				if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
 					strArg3 = ''; // regular expression scope
@@ -1604,7 +1616,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		onclick: function () {
 			if (isReady()) {
 				editor.windowManager.open({
-					title: 'Custom Format',
+					title: 'Ad Hoc Format',
 					body: [{
 						type: "container",
 						html: '<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet"><div style="min-width:360px;padding-bottom:8px;padding-top:8px;width:360px;"><form method="post" style="font-family:&#39Roboto&#39,sans-serif;font-size:16px;"><table style="width: 100%;"><tbody><tr style="height: 28px;"><td style="width: 100%;" colspan="2">Class/Style:</td></tr><tr><td style="padding-right:10px;width:100%;" colspan="2"><input type="text" id="prop_id" name="input_tag" value="" style="border:1px solid #cccccc;font-family:&#39Roboto Mono&#39,monospace;font-size:12px;padding:4px;width:100%;"></td></tr><tr style="font-size: 2px; height: 4px;"><td>&nbsp;</td></tr><tr style="height: 28px;"><td style="width: 100px;">Element</td><td>Action</td></tr><tr><td><select id="attr_id" style="border:1px solid #e9e7e4;width:120px;"><option>Style</option><option>Class</option></select></td><td><select id="act_id" style="border:1px solid #e9e7e4;width:120px;"><option>None</option></select></td></tr><tr style="font-size: 2px; height: 4px;"><td>&nbsp;</td></tr><tr style="height: 28px;"><td style="width:100%;" colspan="2">Selected HTML</td></tr><tr><td style="width:100%;" colspan="2"><textarea id="ta_id" name="txt_area" rows="6" value="" style="font-family:&#39Roboto Mono&#39,monospace;font-size:12px;width:100%;white-space: normal;">&nbsp;</textarea></td></tr></tbody></table></form></div>'
@@ -1619,8 +1631,11 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				console.clear();
 
 				formInit();
-
+				
 				if (!oDoc.hasError) {
+					//
+					console.log('*** MARK ***');
+					//
 					document.getElementById('prop_id').focus();
 					var frmAttribute = document.getElementById('attr_id');
 					// set attr to class if found in tag
@@ -1632,18 +1647,32 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					var frmElementData = document.getElementById("ta_id").value;
 					var frmAction = document.getElementById('act_id');
 					var frmActionCnt = frmAction.length;
-					if (isEmpty(oDoc.htmlFull().match(/class|style/))) {
-						if (frmActionCnt > 1) {
-							document.getElementById('act_id').remove(0);
-						}
-						document.getElementById('act_id')[0].text = 'Apply';
-					} else {
-						frmAction[0].text = 'Blend';
-						if (frmActionCnt < 2) {
-							var optOne = document.createElement('option');
-							optOne.text = 'Replace';
-							frmAction.add(optOne);
-						}
+					var htmlMce = oDoc.htmlFull();
+					var optOne;
+					
+					switch (true) {
+						case (isEmpty(htmlMce.match(/(class|style).*?"(.*?)"/g))):
+							if (frmActionCnt > 1) {
+								document.getElementById('act_id').remove(0);
+							}
+							document.getElementById('act_id')[0].text = 'Apply';
+							break;
+						case (!isEmpty(htmlMce.match(/(class).*?"(.*?)"/g))):
+							frmAction[0].text = 'Blend';
+							if (frmActionCnt < 2) {
+								optOne = document.createElement('option');
+								optOne.text = 'Replace';
+								frmAction.add(optOne);
+							}
+							document.getElementById('attr_id').selectedIndex = '1';
+							break;
+						default:
+							frmAction[0].text = 'Blend';
+							if (frmActionCnt < 2) {
+								optOne = document.createElement('option');
+								optOne.text = 'Replace';
+								frmAction.add(optOne);
+							}
 					}
 				}
 			}
@@ -1651,5 +1680,5 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 	});
 });
 /*
- * EOF: apply-adhoc-format / plugin.js / 200518-1
+ * EOF: apply-adhoc-format / plugin.js / 210518-1
  */
