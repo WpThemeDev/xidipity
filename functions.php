@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  31201215
+ * bld:  210518-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -500,7 +500,7 @@ function xidipity_scripts()
 {
 	/*: xidipity fonts :*/
 	// preconnect
-	wp_enqueue_style('google-preconnect', 'https://fonts.gstatic.com', array() , wp_get_theme()->get('Version') , 'all');
+	// wp_enqueue_style('google-preconnect', 'https://fonts.gstatic.com', array() , wp_get_theme()->get('Version') , 'all');
 	// sans
 	wp_enqueue_style('google-sans', xty('sans'), array() , wp_get_theme()->get('Version') , 'all');
 	// serif
@@ -1396,6 +1396,45 @@ function register_mce_app_txt_style_button($buttons)
 	array_push($buttons, "app_txt_style");
 	return $buttons;
 }
+
+/**
+ *  plugin: mce_app_adhoc_fmt_button
+ *  build:  01210115
+ *  descr:  apply adhoc format
+ *
+ */
+add_action('admin_head', 'mce_app_adhoc_fmt_button');
+function mce_app_adhoc_fmt_button()
+{
+	global $typenow;
+	// check user permissions
+	if (!current_user_can('edit_posts') && !current_user_can('edit_pages'))
+	{
+		return;
+	}
+	// verify the post type
+	if (!in_array($typenow, array(
+		'post',
+		'page'
+	))) return;
+	// check if WYSIWYG is enabled
+	if (get_user_option('rich_editing') == 'true')
+	{
+		add_filter("mce_external_plugins", "add_tinymce_app_adhoc_fmt_plugin");
+		add_filter('mce_buttons', 'register_mce_app_adhoc_fmt_button');
+	}
+}
+function add_tinymce_app_adhoc_fmt_plugin($plugin_array)
+{
+	$plugin_array['app_adhoc_fmt'] = get_template_directory_uri() . '/assets/tinymceplugins/apply-adhoc-format/plugin.js';
+	return $plugin_array;
+}
+function register_mce_app_adhoc_fmt_button($buttons)
+{
+	array_push($buttons, "app_adhoc_fmt");
+	return $buttons;
+}
+
 /**
  * Change TinyMCE configuration
  *
@@ -1410,7 +1449,7 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
 	$in['tadv_noautop'] = false;
 	$in['apply_source_formatting'] = true;
 	$in['menubar'] = '';
-	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,app_txt_style,apply_txt_color,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,add_video,toggle_fullscreen,dfw';
+	$in['toolbar1'] = 'undo,redo,|,apply_txt_font,formatselect,apply_txt_size,|,apply_txt_weight,apply_txt_italic,apply_txt_formats,app_txt_style,apply_txt_color,clear_format,link,|,apply_txt_align,|,add_lst_order,add_lst_unorder,|,app_adhoc_fmt,add_misc_opts,add_vert_space,add_horz_rule,|,table,add_multi_cols,add_template,add_icon,add_video,toggle_fullscreen,dfw';
 	$in['toolbar2'] = '';
 	$in['toolbar3'] = '';
 	$in['toolbar4'] = '';
@@ -1418,7 +1457,6 @@ add_filter("tiny_mce_before_init", function ($in, $editor_id)
 	$in['table_toolbar'] = '';
 	$in['min_height'] = '375';
 	$in['max_height'] = '450';
-	$in['formats'] = "{wgt100: {inline: 'span',styles: {'font-weight': '100'}},wgt200: {inline: 'span',styles: {'font-weight': '200'}},wgt300: {inline: 'span',styles: {'font-weight': '300'}},wgt400: {inline: 'span',styles: {'font-weight': '400'}},wgt500: {inline: 'span',styles: {'font-weight': '500'}},wgt600: {inline: 'span',styles: {'font-weight': '600'}},wgt700: {inline: 'span',styles: {'font-weight': '700'}}}";
 	$in['verify_html'] = false;
 	return $in;
 }
@@ -1731,6 +1769,6 @@ function post_category($arg = '')
 	}
 }
 /*
- * EOF: functions.php / 31201215
+ * EOF: functions.php / 210518-1
 */
 ?>
