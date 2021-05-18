@@ -1647,17 +1647,16 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					var frmElementData = document.getElementById("ta_id").value;
 					var frmAction = document.getElementById('act_id');
 					var frmActionCnt = frmAction.length;
-					var htmlMce = oDoc.htmlFull();
+					var mceTag = getRegExpValue(oDoc.htmlFull(),'(^<(p|h[1-6]|div|li|td|th).*?>)|(<span.*?>)');
 					var optOne;
-					
 					switch (true) {
-						case (isEmpty(htmlMce.match(/(class|style).*?"(.*?)"/g))):
+						case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/g))):
 							if (frmActionCnt > 1) {
 								document.getElementById('act_id').remove(0);
 							}
 							document.getElementById('act_id')[0].text = 'Apply';
 							break;
-						case (!isEmpty(htmlMce.match(/(class).*?"(.*?)"/g))):
+						case (!isEmpty(mceTag.match(/(class).*?"(.*?)"/g)) && isEmpty(mceTag.match(/(style).*?"(.*?)"/g))):
 							frmAction[0].text = 'Blend';
 							if (frmActionCnt < 2) {
 								optOne = document.createElement('option');
