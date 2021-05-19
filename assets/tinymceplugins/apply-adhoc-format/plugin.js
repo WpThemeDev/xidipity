@@ -3,7 +3,7 @@
  * Tinymce apply-adhoc-format plugin
  *
  * ###:	plugin.js
- * bld:	210518-1
+ * bld:	210519-1
  * src:	github.com/WpThemeDev/xidipity/
  * (C)	https://doc.xidipity.com/license/
  *
@@ -211,7 +211,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						switch (true) {
 							case (domNodeName == 'body'):
 								// body
-								this.htmlFullCache = this.mceHtml();
+								this.htmlFullCache = regEncode(this.mceHtml());
 								break;
 							case (isEmpty(outerHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
 								// marker ie. <u>, etc
@@ -224,11 +224,11 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 									}
 									domNodeName = domNode.nodeName.toLowerCase();
 								}
-								this.htmlFullCache = this.proMceTags(domNode.outerHTML);
+								this.htmlFullCache = regEncode(this.proMceTags(domNode.outerHTML));
 								break;
 							default:
 								// everything else
-								this.htmlFullCache = this.outerHTML();
+								this.htmlFullCache = regEncode(this.outerHTML());
 						}
 						//
 						retValue = this.htmlFullCache;
@@ -319,9 +319,9 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						console.log(' OBJ > innerHTML - New');
 						//
 						if (this.mceNodeName() == 'body') {
-							this.innerHTMLCache = this.mceHtml();
+							this.innerHTMLCache = regEncode(this.mceHtml());
 						} else {
-							this.innerHTMLCache = this.proMceTags(this.mceNode.innerHTML);
+							this.innerHTMLCache = regEncode(this.proMceTags(this.mceNode.innerHTML));
 						}
 						//
 						retValue = this.innerHTMLCache;
@@ -387,9 +387,9 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						console.log(' OBJ > mceHtml - New');
 						//
-						this.mceHtmlCache = editor.selection.getContent({
+						this.mceHtmlCache = regEncode(editor.selection.getContent({
 							format: 'html'
-						});
+						}));
 						//
 						retValue = this.mceHtmlCache;
 						//
@@ -483,9 +483,9 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						console.log(' OBJ > outerHTML - New');
 						//
 						if (this.mceNodeName() == 'body') {
-							this.outerHTMLCache = this.mceHtml();
+							this.outerHTMLCache = regEncode(this.mceHtml());
 						} else {
-							this.outerHTMLCache = this.proMceTags(editor.dom.getOuterHTML(this.mceNode));
+							this.outerHTMLCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
 						}
 						//
 						retValue = this.outerHTMLCache;
@@ -1200,6 +1200,44 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		return retValue;
 	}
 
+	function regDecode(strArg1) {
+		//
+		// decode brackets/parentheses for regex
+		//
+		var retValue = '';
+		try {
+			if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+				throw new Error('ERROR (#1237)\nMissing required argument.'); // value to evaluate
+			}
+			//
+			retValue = strArg1.replace('#sb_','[').replace('_eb#',']').replace('#sp_','(').replace('_ep#',')');
+			//
+		} catch (e) {
+			alert(e.message);
+		}
+		//
+		return retValue;
+	}
+		
+	function regEncode(strArg1) {
+		//
+		// encode brackets/parentheses for regex
+		//
+		var retValue = '';
+		try {
+			if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+				throw new Error('ERROR (#1237)\nMissing required argument.'); // value to evaluate
+			}
+			//
+			retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
+			//
+		} catch (e) {
+			alert(e.message);
+		}
+		//
+		return retValue;
+	}
+	
 	function getRawHtml(strArg1) {
 		//
 		// strip html from arg
@@ -1490,7 +1528,11 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				console.log('    # Process Single Line');
 				//
 				htmlFull = oDoc.htmlFull();
-
+				//
+				console.log('### STATS ###');
+				console.log('- isFragment:  ' + oDoc.isFragment());
+				console.log('- hasDatColor: ' + oDoc.hasDatColor());				
+				//
 				switch (true) {
 					case (oDoc.hasError):
 						//
@@ -1498,24 +1540,27 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						break;
 					case (oDoc.isFragment()):
-						htmlUpdate = oDoc.proFragment();
+						htmlUpdate = regDecode(oDoc.proFragment());
 						break;
 					case (oDoc.hasDatColor()):
-						htmlUpdate = oDoc.proColorElements();
+						htmlUpdate = regDecode(oDoc.proColorElements());
 
 						if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
-							htmlUpdate = oDoc.proStdElements();
+							htmlUpdate = regDecode(oDoc.proStdElements());
 						}
 						break;
 					default:
-						htmlUpdate = oDoc.proStdElements();
+						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
 				//
 				if (!oDoc.hasError) {
-					htmlExp = new RegExp(htmlFull, 'g');
-					htmlDoc = htmlDoc.replace(htmlExp, htmlUpdate);
+					var expHtmlFull = regDecode(htmlFull);
+					htmlExp = new RegExp(expHtmlFull, 'g');
+					htmlDoc = htmlDoc.replace(expHtmlFull, htmlUpdate);
 					//
+					console.log('EXP > ' + expHtmlFull);
 					console.log('RST > ' + htmlUpdate);
+					//console.log(htmlDoc);
 					//
 				}
 			} else {
@@ -1633,9 +1678,6 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				formInit();
 				
 				if (!oDoc.hasError) {
-					//
-					console.log('*** MARK ***');
-					//
 					document.getElementById('prop_id').focus();
 					var frmAttribute = document.getElementById('attr_id');
 					// set attr to class if found in tag
@@ -1679,5 +1721,5 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 	});
 });
 /*
- * EOF: apply-adhoc-format / plugin.js / 210518-1
+ * EOF: apply-adhoc-format / plugin.js / 210519-1
  */
