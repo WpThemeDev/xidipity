@@ -38,11 +38,8 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 								break;
 							case (!isEmpty(this.mceHtml().match(/(^<table)|(table>$)/g))):
 								// multi line full table
-								//htmlTable = this.mceHtml().replace(/(\r\n|\n|\r)/gm, '');
 								htmlTable = this.mceHtml().replace(/(\s*)(\r\n|\n|\r)(\s*)/g, '');
-								//htmlTable = htmlTable.replace(/(<(table|tbody|thead|tr).*?>|<\/(table|tbody|thead|tr)>)/gm, '');
 								htmlTable = htmlTable.replace(/(<(table|tbody|thead|tr).*?>|<\/(table|tbody|thead|tr)>)/g, '');
-								//htmlTable = htmlTable.replace(/(<\/th>)<|(<\/td>)</g, '$1 $2\n<');
 								htmlTable = htmlTable.replace(/(<\/th>)<|(<\/td>)</g, '$1$2\n<');
 								this.blkContentCache = htmlTable;
 								break;
@@ -65,8 +62,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 								this.blkContentCache = htmlTable.replace(/></, '>\n<');
 								break;
 							default:
-								// multi line
-								// remove empty tags ie. <p></p> / <p>&nbsp;</p>
+								// multi line, remove empty tags ie. <p></p> / <p>&nbsp;</p>
 								this.blkContentCache = this.mceHtml().replace(/<.\d><\/.\d>|<.><\/.>|<.{1,3}><\/.{1,3}>|<.>\u00a0<\/.>/g, '');
 								break;
 						}
@@ -1641,144 +1637,151 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 
 		try {
 			// validate selection
-			switch (true) {
-				case (isEmpty(oDoc.datElements)):
-					throw new Error('MESSAGE (#1640)\nMissing element class/style data.');
-				case (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))):
-					throw new Error('MESSAGE (#1642)\nThe element says class, but the input is incorrectly formatted.');
-				case (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))):
-					throw new Error('MESSAGE (#1644)\nThe element says style, but the input is incorrectly formatted.');
-				default:
-					// check for mixed style & class elements
-					if (!isEmpty(oDoc.datElements.match(/;/))) {
-						if (oDoc.datElements.match(/:/g).length !== oDoc.datElements.match(/;/g).length) {
-							throw new Error('MESSAGE (#1649)\nA mixture of class and style data elements detected.');
-						}
-					}
-			}
 			//
 			var decodeHtml = '';
 			var htmlExp = '';
 			var htmlFull;
 			var htmlUpdate = '';
 			//
-			if (oDoc.lineCnt == 1) {
-				//
-				console.log('    # Process Single Line');
-				//
-				htmlFull = oDoc.htmlFull();
-				//
-				switch (true) {
-					case (oDoc.hasError):
-						//
-						// error
-						//
-						break;
-					case (oDoc.isFragment()):
-						htmlUpdate = regDecode(oDoc.proFragment());
-						break;
-					case (oDoc.hasDatColor()):
-						htmlUpdate = regDecode(oDoc.proColorElements());
-
-						if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
-							htmlUpdate = regDecode(oDoc.proStdElements());
-						}
-						break;
-					default:
-						htmlUpdate = regDecode(oDoc.proStdElements());
-				}
-				//
-				if (!oDoc.hasError) {
-					decodeHtml = regDecode(htmlFull);
-					htmlDoc = htmlDoc.replace(decodeHtml, htmlUpdate);
+			switch (true) {
+				case (isEmpty(oDoc.datElements)):
+					alert('MESSAGE (#1652)\nMissing element class/style data.');
+				case (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))):
+					alert('MESSAGE (#1654)\nThe element says class, but the input is incorrectly formatted.');
+				case (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))):
+					alert('MESSAGE (#1656)\nThe element says style, but the input is incorrectly formatted.');
+				case (oDoc.datElements.match(/:/g).length !== oDoc.datElements.match(/;/g).length):
+					alert('MESSAGE (#1658)\nA mixture of class and style data elements detected.');
+				case (oDoc.lineCnt == 1):
 					//
-					console.log('SRC > ' + decodeHtml);
-					console.log('UPD > ' + htmlUpdate);
+					console.log('    # Process Single Line #');
 					//
-				}
-			} else {
-				//
-				console.log('    # Process Multi Line');
-				//
-				// load block content into array
-				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
-				var blkNode;
-				var blkHtmlItem;
-				var datActionCache = oDoc.datAction;
-				var datAttributeCache = oDoc.datAttribute;
-				var datElementsCache = oDoc.datElements;
-				var idx = 0;
-				for (; blkArray[idx];) {
-					blkHtmlItem = blkArray[idx];
+					htmlFull = oDoc.htmlFull();
+					//
 					switch (true) {
 						case (oDoc.hasError):
+							//
 							// error
-							idx = 9999;
+							//
 							break;
-						case (!isEmpty(blkHtmlItem.match(/<.{1,3}><\/.{1,3}>/))):
-							// skip tags with no content ie <p></p>
+						case (oDoc.isFragment()):
+							htmlUpdate = regDecode(oDoc.proFragment());
 							break;
-						case (!isEmpty(blkHtmlItem.match(/<.?ul|ol>/))):
-							// skip ordered/unordered list
-							break;
-						case (!isEmpty(blkHtmlItem.match(/^<\/.*?>/))):
-							// skip end tags </?>
-							break;
-						case (isEmpty(blkHtmlItem.match(/(class|style).*?"(.*?)"/i)) && datActionCache == 'replace'):
-							// skip replace with empty doc element
-							break;
-						case (!isEmpty(blkHtmlItem.match(/<(table|tbody|thead|tfoot|tr)/))):
-							// skip all table elements but th & td
+						case (oDoc.hasDatColor()):
+							htmlUpdate = regDecode(oDoc.proColorElements());
+
+							if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+								htmlUpdate = regDecode(oDoc.proStdElements());
+							}
 							break;
 						default:
-							htmlFull = blkHtmlItem;
-							blkNode = strToNode(blkHtmlItem);
-							oDoc.initNode(blkNode, 'm');
-							oDoc.datElements = datElementsCache;
-							oDoc.htmlFullCache = blkHtmlItem;
-							oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
-							oDoc.innerHTMLCache = oDoc.mceHtmlCache;
-							switch (true) {
-								case (oDoc.hasDatColor()):
-									htmlUpdate = oDoc.proColorElements();
-									if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
-										htmlUpdate = oDoc.proStdElements();
-									}
-									break;
-								default:
-									htmlUpdate = oDoc.proStdElements();
-							}
+							htmlUpdate = regDecode(oDoc.proStdElements());
 					}
-					if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
+					//
+					if (!oDoc.hasError) {
 						decodeHtml = regDecode(htmlFull);
 						htmlDoc = htmlDoc.replace(decodeHtml, htmlUpdate);
 						//
-						console.log(padNum(idx,3) + ' > -');
 						console.log('SRC > ' + decodeHtml);
 						console.log('UPD > ' + htmlUpdate);
 						//
+						// write content back
+						//
+						try {
+							//
+							console.log('    - Multi Line Complete -');
+							//
+							editor.setContent(htmlDoc);
+							editor.undoManager.add();
+						} catch (e) {
+							alert(e.message);
+							oDoc.hasError = true;
+						}
+					}
+					break;
+				default:
+					//
+					console.log('    # Process Multi Line #');
+					//
+					// load block content into array
+					var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
+					var blkNode;
+					var blkHtmlItem;
+					var datActionCache = oDoc.datAction;
+					var datAttributeCache = oDoc.datAttribute;
+					var datElementsCache = oDoc.datElements;
+					var idx = 0;
+					for (; blkArray[idx];) {
+						blkHtmlItem = blkArray[idx];
+						switch (true) {
+							case (oDoc.hasError):
+								// error
+								idx = 9999;
+								break;
+							case (!isEmpty(blkHtmlItem.match(/<.{1,3}><\/.{1,3}>/))):
+								// skip tags with no content ie <p></p>
+								break;
+							case (!isEmpty(blkHtmlItem.match(/<.?ul|ol>/))):
+								// skip ordered/unordered list
+								break;
+							case (!isEmpty(blkHtmlItem.match(/^<\/.*?>/))):
+								// skip end tags </?>
+								break;
+							case (isEmpty(blkHtmlItem.match(/(class|style).*?"(.*?)"/i)) && datActionCache == 'replace'):
+								// skip replace with empty doc element
+								break;
+							case (!isEmpty(blkHtmlItem.match(/<(table|tbody|thead|tfoot|tr)/))):
+								// skip all table elements but th & td
+								break;
+							default:
+								htmlFull = blkHtmlItem;
+								blkNode = strToNode(blkHtmlItem);
+								oDoc.initNode(blkNode, 'm');
+								oDoc.datElements = datElementsCache;
+								oDoc.htmlFullCache = blkHtmlItem;
+								oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
+								oDoc.innerHTMLCache = oDoc.mceHtmlCache;
+								switch (true) {
+									case (oDoc.hasDatColor()):
+										htmlUpdate = oDoc.proColorElements();
+										if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+											htmlUpdate = oDoc.proStdElements();
+										}
+										break;
+									default:
+										htmlUpdate = oDoc.proStdElements();
+								}
+						}
+						if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
+							decodeHtml = regDecode(htmlFull);
+							htmlDoc = htmlDoc.replace(decodeHtml, htmlUpdate);
+							//
+							console.log(padNum(idx, 3) + ' > -');
+							console.log('SRC > ' + decodeHtml);
+							console.log('UPD > ' + htmlUpdate);
+							//
+						}
+						//
+						idx++;
+						//
 					}
 					//
-					idx++;
+					// write content back
 					//
-				}
+					if (!oDoc.hasError) {
+						//
+						try {
+							editor.setContent(htmlDoc);
+							editor.undoManager.add();
+							//
+							console.log('    - Multi Line Complete -');
+							//
+						} catch (e) {
+							alert(e.message);
+							oDoc.hasError = true;
+						}
+					}
 			}
-			//
-			// write content back
-			//
-			if (!oDoc.hasError) {
-				//
-				try {
-					//
-					console.log('    - Process Complete -');
-					//
-					editor.setContent(htmlDoc);
-					editor.undoManager.add();
-				} catch (e) {
-					alert(e.message);
-					oDoc.hasError = true;
-				}
-			} 
 		} catch (e) {
 			alert(e.message);
 			oDoc.hasError = true;
