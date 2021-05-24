@@ -891,13 +891,16 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 							//
 							var htmlExp;
 							htmlExp = new RegExp('(>|\\b)' + (this.mceHtml()).trim() + '(<|\\b)','gi');
+							newUpdate = regDecode(newUpdate);
 							//
 							console.log(' - newUpdate: ' + newUpdate);
-							console.log(' - htmExp:    ' + htmlExp);
-							console.log(' - htmlNew:   ' + htmlNew);
+							console.log(' -    htmExp: ' + htmlExp);
+							console.log(' -   htmlNew: ' + htmlNew);
 							//
 							retValue = newUpdate.replace(htmlExp, '$1' + htmlNew + '$2');
 							//															
+							console.log(' -  retValue: ' + htmlNew);
+							//
 						}
 					}
 				} catch (e) {
@@ -1638,8 +1641,8 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		try {
 			// validate selection
 			//
-			var decodeHtml = '';
-			var htmlExp = '';
+			var decodeFullHtml = '';
+			var decodeUpdateHtml = '';
 			var htmlFull;
 			var htmlUpdate = '';
 			//
@@ -1679,11 +1682,12 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					}
 					//
 					if (!oDoc.hasError) {
-						decodeHtml = regDecode(htmlFull);
-						htmlDoc = htmlDoc.replace(decodeHtml, htmlUpdate);
+						decodeFullHtml = regDecode(htmlFull);
+						decodeUpdateHtml = regDecode(htmlUpdate);
+						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 						//
-						console.log('SRC > ' + decodeHtml);
-						console.log('UPD > ' + htmlUpdate);
+						console.log('SRC > ' + decodeFullHtml);
+						console.log('UPD > ' + decodeUpdateHtml);
 						//
 						// write content back
 						//
@@ -1753,13 +1757,13 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 								}
 						}
 						if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
-							decodeHtml = regDecode(htmlFull);
-							htmlDoc = htmlDoc.replace(decodeHtml, htmlUpdate);
+							decodeFullHtml = regDecode(htmlFull);
+							decodeUpdateHtml = regDecode(htmlUpdate);
+							htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 							//
-							console.log(padNum(idx, 3) + ' > -');
-							console.log('SRC > ' + decodeHtml);
-							console.log('UPD > ' + htmlUpdate);
-							//
+							console.log(padNum(idx, 3) + ' > IDX');
+							console.log('SRC > ' + decodeFullHtml);
+							console.log('UPD > ' + decodeUpdateHtml);
 						}
 						//
 						idx++;
