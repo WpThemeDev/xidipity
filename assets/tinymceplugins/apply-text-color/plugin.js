@@ -1771,7 +1771,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						var swatch = document.getElementById('swatch');
 						var hex_input = document.getElementById('hex_id');
 						var hex_val = event.target.id;
-						if (!isEmpty(hex_val)) {
+						if (!isEmpty(hex_val) && !isEmpty(hex_input)) {
 							if (hex_val.substring(0, 1) == '#' && hex_val.length == 7) {
 								hex_input.value = hex_val;
 							}
@@ -1796,7 +1796,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 							formSubmit();
 							//
 						} else {
-							alert('MESSAGE (#1802)\nInvalid or missing color selection.\nFor example, red is #ff0000.');
+							alert('MESSAGE (#1799)\nInvalid or missing color selection.\nFor example, red is #ff0000.');
 						}
 					},
 				});
