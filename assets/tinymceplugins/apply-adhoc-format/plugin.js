@@ -3,7 +3,7 @@
  * Tinymce apply-adhoc-format plugin
  *
  * ###:	plugin.js
- * bld:	210523-1
+ * bld:	210524-1
  * src:	github.com/WpThemeDev/xidipity/
  * (C)	https://doc.xidipity.com/license/
  *
@@ -1689,7 +1689,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						try {
 							//
-							console.log('    - Multi Line Complete -');
+							console.log('    - Single Line Complete -');
 							//
 							editor.setContent(htmlDoc);
 							editor.undoManager.add();
@@ -1788,8 +1788,6 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		}
 		if (oDoc.hasError) {
 			//
-			//alert('MESSAGE (#1691)\nPress the Update button to clear error condition.');
-			//
 			console.log('    - Post Error Message -');
 			//
 			location.reload();
@@ -1797,7 +1795,6 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		editor.focus();					
 		return;
 	}
-
 	//
 	// button
 	//
@@ -1903,5 +1900,5 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 	});
 });
 /*
- * EOF: apply-adhoc-format / plugin.js / 210523-1
+ * EOF: apply-adhoc-format / plugin.js / 210524-1
  */
