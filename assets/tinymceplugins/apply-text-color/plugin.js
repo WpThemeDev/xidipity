@@ -919,7 +919,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#925)\nRequired argument/s missing.');
+						throw new Error('ERROR (#922)\nRequired argument/s missing.');
 					}
 					var bgClassColor = getRegExpValue(strArg1, '(bkg.*?)(\\s|")', 's', 1);
 					var fgClassColor = getRegExpValue(strArg1, '(txt.*?)(\\s|")', 's', 1);
@@ -984,7 +984,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#990)\nRequired argument/s missing.');
+						throw new Error('ERROR (#987)\nRequired argument/s missing.');
 					}
 					if (!isEmpty(strArg1.match(/-mce-/g))) {
 						var expMceTags = new RegExp(/.data-mce-style.*?".*?"|<br data-mce-bogus.*?".*?">/, 'g');
@@ -1017,7 +1017,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1023)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1020)\nRequired argument/s missing.');
 					}
 					//
 					retValue = strArg1;
@@ -1062,7 +1062,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#1068)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1065)\nRequired argument/s missing.');
 					}
 					var datItem;
 					var idx = 0;
@@ -1105,7 +1105,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				try {
 					//
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1111)\nRequired argument missing.');
+						throw new Error('ERROR (#1108)\nRequired argument missing.');
 					}
 					var cboArray = strToArray(strArg1);
 					cboArray.sort();
@@ -1140,7 +1140,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					if (this.isFragment()) {
-						throw new Error('ERROR (#1146)\nContent identifid as a fragment and can not be processed.');
+						throw new Error('ERROR (#1143)\nContent identifid as a fragment and can not be processed.');
 					}
 					var newAttr;
 					if (!isEmpty(this.datElements.match(/;/))) {
@@ -1158,7 +1158,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 						switch (true) {
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i)) && this.lineCnt == 1):
-								throw new Error('MESSAGE (#1164)\nThe ' + mceTag + ' tag does not have elements to replace.');
+								throw new Error('MESSAGE (#1161)\nThe ' + mceTag + ' tag does not have elements to replace.');
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i))):
 								// skip
 								break;
@@ -1250,6 +1250,486 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		},
 	};
 
+	//
+	//	SPECIFIC FUNCTIONS TO THIS PLUGIN	-----------------------------------
+	//	
+	function namedColor(strArg1) {
+
+		var retValue = '';
+
+		if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
+			//
+			console.log('FN  > namedColor');
+			console.log('    - strArg1: ' + strArg1);
+			//
+			try {
+				var colorArray = [{
+					'color': 'aliceblue',
+					'hex': '#F0F8FF'
+				}, {
+					'color': 'antiquewhite',
+					'hex': '#FAEBD7'
+				}, {
+					'color': 'aqua',
+					'hex': '#00FFFF'
+				}, {
+					'color': 'aquamarine',
+					'hex': '#7FFFD4'
+				}, {
+					'color': 'azure',
+					'hex': '#F0FFFF'
+				}, {
+					'color': 'beige',
+					'hex': '#F5F5DC'
+				}, {
+					'color': 'bisque',
+					'hex': '#FFE4C4'
+				}, {
+					'color': 'black',
+					'hex': '#000000'
+				}, {
+					'color': 'blanchedalmond',
+					'hex': '#FFEBCD'
+				}, {
+					'color': 'blue',
+					'hex': '#0000FF'
+				}, {
+					'color': 'blueviolet',
+					'hex': '#8A2BE2'
+				}, {
+					'color': 'brown',
+					'hex': '#A52A2A'
+				}, {
+					'color': 'burlywood',
+					'hex': '#DEB887'
+				}, {
+					'color': 'cadetblue',
+					'hex': '#5F9EA0'
+				}, {
+					'color': 'chartreuse',
+					'hex': '#7FFF00'
+				}, {
+					'color': 'chocolate',
+					'hex': '#D2691E'
+				}, {
+					'color': 'coral',
+					'hex': '#FF7F50'
+				}, {
+					'color': 'cornflowerblue',
+					'hex': '#6495ED'
+				}, {
+					'color': 'cornsilk',
+					'hex': '#FFF8DC'
+				}, {
+					'color': 'crimson',
+					'hex': '#DC143C'
+				}, {
+					'color': 'cyan',
+					'hex': '#00FFFF'
+				}, {
+					'color': 'darkblue',
+					'hex': '#00008B'
+				}, {
+					'color': 'darkcyan',
+					'hex': '#008B8B'
+				}, {
+					'color': 'darkgoldenrod',
+					'hex': '#B8860B'
+				}, {
+					'color': 'darkgray',
+					'hex': '#A9A9A9'
+				}, {
+					'color': 'darkgreen',
+					'hex': '#006400'
+				}, {
+					'color': 'darkgrey',
+					'hex': '#A9A9A9'
+				}, {
+					'color': 'darkkhaki',
+					'hex': '#BDB76B'
+				}, {
+					'color': 'darkmagenta',
+					'hex': '#8B008B'
+				}, {
+					'color': 'darkolivegreen',
+					'hex': '#556B2F'
+				}, {
+					'color': 'darkorange',
+					'hex': '#FF8C00'
+				}, {
+					'color': 'darkorchid',
+					'hex': '#9932CC'
+				}, {
+					'color': 'darkred',
+					'hex': '#8B0000'
+				}, {
+					'color': 'darksalmon',
+					'hex': '#E9967A'
+				}, {
+					'color': 'darkseagreen',
+					'hex': '#8FBC8F'
+				}, {
+					'color': 'darkslateblue',
+					'hex': '#483D8B'
+				}, {
+					'color': 'darkslategray',
+					'hex': '#2F4F4F'
+				}, {
+					'color': 'darkslategrey',
+					'hex': '#2F4F4F'
+				}, {
+					'color': 'darkturquoise',
+					'hex': '#00CED1'
+				}, {
+					'color': 'darkviolet',
+					'hex': '#9400D3'
+				}, {
+					'color': 'deeppink',
+					'hex': '#FF1493'
+				}, {
+					'color': 'deepskyblue',
+					'hex': '#00BFFF'
+				}, {
+					'color': 'dimgray',
+					'hex': '#696969'
+				}, {
+					'color': 'dimgrey',
+					'hex': '#696969'
+				}, {
+					'color': 'dodgerblue',
+					'hex': '#1E90FF'
+				}, {
+					'color': 'firebrick',
+					'hex': '#B22222'
+				}, {
+					'color': 'floralwhite',
+					'hex': '#FFFAF0'
+				}, {
+					'color': 'forestgreen',
+					'hex': '#228B22'
+				}, {
+					'color': 'fuchsia',
+					'hex': '#FF00FF'
+				}, {
+					'color': 'gainsboro',
+					'hex': '#DCDCDC'
+				}, {
+					'color': 'ghostwhite',
+					'hex': '#F8F8FF'
+				}, {
+					'color': 'gold',
+					'hex': '#FFD700'
+				}, {
+					'color': 'goldenrod',
+					'hex': '#DAA520'
+				}, {
+					'color': 'gray',
+					'hex': '#808080'
+				}, {
+					'color': 'green',
+					'hex': '#008000'
+				}, {
+					'color': 'greenyellow',
+					'hex': '#ADFF2F'
+				}, {
+					'color': 'grey',
+					'hex': '#808080'
+				}, {
+					'color': 'honeydew',
+					'hex': '#F0FFF0'
+				}, {
+					'color': 'hotpink',
+					'hex': '#FF69B4'
+				}, {
+					'color': 'indianred',
+					'hex': '#CD5C5C'
+				}, {
+					'color': 'indigo',
+					'hex': '#4B0082'
+				}, {
+					'color': 'ivory',
+					'hex': '#FFFFF0'
+				}, {
+					'color': 'khaki',
+					'hex': '#F0E68C'
+				}, {
+					'color': 'lavender',
+					'hex': '#E6E6FA'
+				}, {
+					'color': 'lavenderblush',
+					'hex': '#FFF0F5'
+				}, {
+					'color': 'lawngreen',
+					'hex': '#7CFC00'
+				}, {
+					'color': 'lemonchiffon',
+					'hex': '#FFFACD'
+				}, {
+					'color': 'lightblue',
+					'hex': '#ADD8E6'
+				}, {
+					'color': 'lightcoral',
+					'hex': '#F08080'
+				}, {
+					'color': 'lightcyan',
+					'hex': '#E0FFFF'
+				}, {
+					'color': 'lightgoldenrodyellow',
+					'hex': '#FAFAD2'
+				}, {
+					'color': 'lightgray',
+					'hex': '#D3D3D3'
+				}, {
+					'color': 'lightgreen',
+					'hex': '#90EE90'
+				}, {
+					'color': 'lightgrey',
+					'hex': '#D3D3D3'
+				}, {
+					'color': 'lightpink',
+					'hex': '#FFB6C1'
+				}, {
+					'color': 'lightsalmon',
+					'hex': '#FFA07A'
+				}, {
+					'color': 'lightseagreen',
+					'hex': '#20B2AA'
+				}, {
+					'color': 'lightskyblue',
+					'hex': '#87CEFA'
+				}, {
+					'color': 'lightslategray',
+					'hex': '#778899'
+				}, {
+					'color': 'lightslategrey',
+					'hex': '#778899'
+				}, {
+					'color': 'lightsteelblue',
+					'hex': '#B0C4DE'
+				}, {
+					'color': 'lightyellow',
+					'hex': '#FFFFE0'
+				}, {
+					'color': 'lime',
+					'hex': '#00FF00'
+				}, {
+					'color': 'limegreen',
+					'hex': '#32CD32'
+				}, {
+					'color': 'linen',
+					'hex': '#FAF0E6'
+				}, {
+					'color': 'magenta',
+					'hex': '#FF00FF'
+				}, {
+					'color': 'maroon',
+					'hex': '#800000'
+				}, {
+					'color': 'mediumaquamarine',
+					'hex': '#66CDAA'
+				}, {
+					'color': 'mediumblue',
+					'hex': '#0000CD'
+				}, {
+					'color': 'mediumorchid',
+					'hex': '#BA55D3'
+				}, {
+					'color': 'mediumpurple',
+					'hex': '#9370DB'
+				}, {
+					'color': 'mediumseagreen',
+					'hex': '#3CB371'
+				}, {
+					'color': 'mediumslateblue',
+					'hex': '#7B68EE'
+				}, {
+					'color': 'mediumspringgreen',
+					'hex': '#00FA9A'
+				}, {
+					'color': 'mediumturquoise',
+					'hex': '#48D1CC'
+				}, {
+					'color': 'mediumvioletred',
+					'hex': '#C71585'
+				}, {
+					'color': 'midnightblue',
+					'hex': '#191970'
+				}, {
+					'color': 'mintcream',
+					'hex': '#F5FFFA'
+				}, {
+					'color': 'mistyrose',
+					'hex': '#FFE4E1'
+				}, {
+					'color': 'moccasin',
+					'hex': '#FFE4B5'
+				}, {
+					'color': 'navajowhite',
+					'hex': '#FFDEAD'
+				}, {
+					'color': 'navy',
+					'hex': '#000080'
+				}, {
+					'color': 'oldlace',
+					'hex': '#FDF5E6'
+				}, {
+					'color': 'olive',
+					'hex': '#808000'
+				}, {
+					'color': 'olivedrab',
+					'hex': '#6B8E23'
+				}, {
+					'color': 'orange',
+					'hex': '#FFA500'
+				}, {
+					'color': 'orangered',
+					'hex': '#FF4500'
+				}, {
+					'color': 'orchid',
+					'hex': '#DA70D6'
+				}, {
+					'color': 'palegoldenrod',
+					'hex': '#EEE8AA'
+				}, {
+					'color': 'palegreen',
+					'hex': '#98FB98'
+				}, {
+					'color': 'paleturquoise',
+					'hex': '#AFEEEE'
+				}, {
+					'color': 'palevioletred',
+					'hex': '#DB7093'
+				}, {
+					'color': 'papayawhip',
+					'hex': '#FFEFD5'
+				}, {
+					'color': 'peachpuff',
+					'hex': '#FFDAB9'
+				}, {
+					'color': 'peru',
+					'hex': '#CD853F'
+				}, {
+					'color': 'pink',
+					'hex': '#FFC0CB'
+				}, {
+					'color': 'plum',
+					'hex': '#DDA0DD'
+				}, {
+					'color': 'powderblue',
+					'hex': '#B0E0E6'
+				}, {
+					'color': 'purple',
+					'hex': '#800080'
+				}, {
+					'color': 'rebeccapurple',
+					'hex': '#663399'
+				}, {
+					'color': 'red',
+					'hex': '#FF0000'
+				}, {
+					'color': 'rosybrown',
+					'hex': '#BC8F8F'
+				}, {
+					'color': 'royalblue',
+					'hex': '#4169E1'
+				}, {
+					'color': 'saddlebrown',
+					'hex': '#8B4513'
+				}, {
+					'color': 'salmon',
+					'hex': '#FA8072'
+				}, {
+					'color': 'sandybrown',
+					'hex': '#F4A460'
+				}, {
+					'color': 'seagreen',
+					'hex': '#2E8B57'
+				}, {
+					'color': 'seashell',
+					'hex': '#FFF5EE'
+				}, {
+					'color': 'sienna',
+					'hex': '#A0522D'
+				}, {
+					'color': 'silver',
+					'hex': '#C0C0C0'
+				}, {
+					'color': 'skyblue',
+					'hex': '#87CEEB'
+				}, {
+					'color': 'slateblue',
+					'hex': '#6A5ACD'
+				}, {
+					'color': 'slategray',
+					'hex': '#708090'
+				}, {
+					'color': 'slategrey',
+					'hex': '#708090'
+				}, {
+					'color': 'snow',
+					'hex': '#FFFAFA'
+				}, {
+					'color': 'springgreen',
+					'hex': '#00FF7F'
+				}, {
+					'color': 'steelblue',
+					'hex': '#4682B4'
+				}, {
+					'color': 'tan',
+					'hex': '#D2B48C'
+				}, {
+					'color': 'teal',
+					'hex': '#008080'
+				}, {
+					'color': 'thistle',
+					'hex': '#D8BFD8'
+				}, {
+					'color': 'tomato',
+					'hex': '#FF6347'
+				}, {
+					'color': 'turquoise',
+					'hex': '#40E0D0'
+				}, {
+					'color': 'violet',
+					'hex': '#EE82EE'
+				}, {
+					'color': 'wheat',
+					'hex': '#F5DEB3'
+				}, {
+					'color': 'white',
+					'hex': '#FFFFFF'
+				}, {
+					'color': 'whitesmoke',
+					'hex': '#F5F5F5'
+				}, {
+					'color': 'yellow',
+					'hex': '#FFFF00'
+				}, {
+					'color': 'yellowgreen',
+					'hex': '#9ACD32'
+				}];
+				var idx = 0;
+				for (; colorArray[idx];) {
+					if (colorArray[idx]['color'] == strArg1) {
+						retValue = colorArray[idx]['hex'];
+						break;
+					}
+					idx++
+				}
+			} catch (e) {
+				oDoc.hasError = true;
+				alert('MESSAGE (#1721)\nNamed color not found.');
+			}
+		}
+		//
+		return retValue;
+		//
+	}
+
+	//
+	//	-----------------------------------------------------------------------
+	//
+	
 	function getRegExpValue(strArg1, strArg2, strArg3, numArg4) {
 		//
 		// Return RegExp value
@@ -1271,7 +1751,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			try {
 				if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
 					if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
-						throw new Error('ERROR (#1277)\nMissing required argument/s.'); // regular expression
+						throw new Error('ERROR (#1754)\nMissing required argument/s.'); // regular expression
 					}
 					if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
 						strArg3 = ''; // regular expression scope
@@ -1312,7 +1792,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1318)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1795)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('#sb_','[').replace('_eb#',']').replace('#sp_','(').replace('_ep#',')');
@@ -1334,7 +1814,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1340)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1817)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
@@ -1360,7 +1840,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1366)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1843)\nMissing required argument.'); // value to evaluate
 				}
 				if (!isEmpty(strArg1)) {
 					var htmlDIV = document.createElement('htmlDIV');
@@ -1402,7 +1882,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			if (isEmpty(editor.selection.getContent({
 					format: 'text'
 				}))) {
-				throw new Error('MESSAGE (#1408)\nInvalid or missing selection.');
+				throw new Error('MESSAGE (#1885)\nInvalid or missing selection.');
 			}
 			//
 			retValue = true;
@@ -1461,7 +1941,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1467)\nMissing required argument.');
+					throw new Error('ERROR (#1944)\nMissing required argument.');
 				}
 				if (expArg2 === undefined || expArg2 === null || typeof expArg2 !== 'string') {
 					expArg2 = '\\s+';
@@ -1495,11 +1975,11 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1501)\nMissing required argument.');
+					throw new Error('ERROR (#1978)\nMissing required argument.');
 				}
 				var blkTag = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i');
 				if (isEmpty(blkTag)) {
-					throw new Error('ERROR (#1505)\nInvalid HTML argument.');
+					throw new Error('ERROR (#1982)\nInvalid HTML argument.');
 				}
 				var blkTagName = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i', 1);
 				var blkNode = document.createElement(blkTagName);
@@ -1547,7 +2027,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1553)\nMissing required argument.');
+					throw new Error('ERROR (#2030)\nMissing required argument.');
 				}
 				//
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
@@ -1784,7 +2264,11 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					},
 					onSubmit: function () {
 						var hexCODE = document.getElementById("hex_id").value.trim();
-						if (!isEmpty(hexCODE.match(/^#[0-9a-f]{6}$/i))) {
+						
+						if (isEmpty(hexCODE.match(/^#[0-9a-f]{6}$/i))) {
+							hexCODE = namedColor(hexCODE);
+						}
+						if (!isEmpty(hexCODE.match(/^#[0-9a-f]{6}$/i))) {							
 							if (document.getElementById("bkg_id").checked) {
 								oDoc.datElements = 'background-color: ' + hexCODE + ';';
 							} else {
@@ -1796,7 +2280,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 							formSubmit();
 							//
 						} else {
-							alert('MESSAGE (#1799)\nInvalid or missing color selection.\nFor example, red is #ff0000.');
+							alert('MESSAGE (#2283)\nSelect from grid, use a valid hex code,\nor named color.');
 						}
 					},
 				});
