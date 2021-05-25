@@ -255,7 +255,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (nodeArg1 === undefined || nodeArg1 === null) {
-						throw new Error('ERROR (#262)\nMissing required argument.'); // editor node
+						throw new Error('ERROR (#258)\nMissing required argument.'); // editor node
 					}
 					// set node
 					this.mceNode = nodeArg1;
@@ -514,7 +514,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#521)\nRequired argument/s missing.');
+						throw new Error('ERROR (#517)\nRequired argument/s missing.');
 					}
 					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
 					var datArray = datArrayData.split('*');
@@ -571,7 +571,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#578)\nRequired argument/s missing.');
+						throw new Error('ERROR (#574)\nRequired argument/s missing.');
 					}
 					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
 					var datArray = datArrayData.split('*');
@@ -608,10 +608,10 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (!this.hasDatColor()) {
-						throw new Error('ERROR (#615)\nMissing required color data elements.');
+						throw new Error('ERROR (#611)\nMissing required color data elements.');
 					}
 					if (this.isFragment()) {
-						throw new Error('ERROR (#618)\nContent incorrectly identifid as a fragment.');
+						throw new Error('ERROR (#614)\nContent incorrectly identifid as a fragment.');
 					}
 					var newAttr;
 					if (!isEmpty(this.datElements.match(/;/))) {
@@ -627,7 +627,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					switch (true) {
 						case (isEmpty(htmlContent.match(spanExp)) && this.datAction == 'replace' && this.lineCnt == 1):
 							//
-							throw new Error('MESSAGE (#634)\nThe selection is NOT bound by a tag containing color elements.');
+							throw new Error('MESSAGE (#630)\nThe selection is NOT bound by a tag containing color elements.');
 							//
 						case (isEmpty(htmlContent.match(spanExp)) && this.datAction == 'replace'):
 							//
@@ -763,7 +763,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				try {
 					//
 					if (!this.isFragment()) {
-						throw new Error('ERROR (#770)\nContent must be less than a full sentence/line.');
+						throw new Error('ERROR (#766)\nContent must be less than a full sentence/line.');
 					}
 					//
 					// derive attribute from data
@@ -875,7 +875,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 					} else {
 						switch (true) {
 						case (this.datAction == 'replace' && this.lineCnt == 1):
-							throw new Error('MESSAGE (#882)\nThe selection is NOT bound by a tag containing color elements.');
+							throw new Error('MESSAGE (#878)\nThe selection is NOT bound by a tag containing color elements.');
 						case (this.datAction == 'replace'):
 							//
 							// skip in multi line
@@ -925,7 +925,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#923)\nRequired argument/s missing.');
+						throw new Error('ERROR (#928)\nRequired argument/s missing.');
 					}
 					var bgClassColor = getRegExpValue(strArg1, '(bkg.*?)(\\s|")', 's', 1);
 					var fgClassColor = getRegExpValue(strArg1, '(txt.*?)(\\s|")', 's', 1);
@@ -990,7 +990,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#988)\nRequired argument/s missing.');
+						throw new Error('ERROR (#993)\nRequired argument/s missing.');
 					}
 					if (!isEmpty(strArg1.match(/-mce-/g))) {
 						var expMceTags = new RegExp(/.data-mce-style.*?".*?"|<br data-mce-bogus.*?".*?">/, 'g');
@@ -1023,7 +1023,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1021)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1026)\nRequired argument/s missing.');
 					}
 					//
 					retValue = strArg1;
@@ -1068,7 +1068,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#1065)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1071)\nRequired argument/s missing.');
 					}
 					var datItem;
 					var idx = 0;
@@ -1111,7 +1111,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				try {
 					//
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1199)\nRequired argument missing.');
+						throw new Error('ERROR (#1114)\nRequired argument missing.');
 					}
 					var cboArray = strToArray(strArg1);
 					cboArray.sort();
@@ -1146,7 +1146,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					if (this.isFragment()) {
-						throw new Error('ERROR (#1144)\nContent identifid as a fragment and can not be processed.');
+						throw new Error('ERROR (#1149)\nContent identifid as a fragment and can not be processed.');
 					}
 					var newAttr;
 					if (!isEmpty(this.datElements.match(/;/))) {
@@ -1164,7 +1164,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						switch (true) {
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i)) && this.lineCnt == 1):
-								throw new Error('MESSAGE (#1162)\nThe ' + mceTag + ' tag does not have elements to replace.');
+								throw new Error('MESSAGE (#1167)\nThe ' + mceTag + ' tag does not have elements to replace.');
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i))):
 								// skip
 								break;
@@ -1277,7 +1277,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			try {
 				if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
 					if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
-						throw new Error('ERROR (#1275)\nMissing required argument/s.'); // regular expression
+						throw new Error('ERROR (#1280)\nMissing required argument/s.'); // regular expression
 					}
 					if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
 						strArg3 = ''; // regular expression scope
@@ -1318,7 +1318,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1316)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1321)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('#sb_','[').replace('_eb#',']').replace('#sp_','(').replace('_ep#',')');
@@ -1340,7 +1340,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1338)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1343)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
@@ -1366,7 +1366,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1364)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1369)\nMissing required argument.'); // value to evaluate
 				}
 				if (!isEmpty(strArg1)) {
 					var htmlDIV = document.createElement('htmlDIV');
@@ -1408,7 +1408,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			if (isEmpty(editor.selection.getContent({
 					format: 'text'
 				}))) {
-				throw new Error('MESSAGE (#1406)\nInvalid or missing selection.');
+				throw new Error('MESSAGE (#1411)\nInvalid or missing selection.');
 			}
 			//
 			retValue = true;
@@ -1467,7 +1467,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1465)\nMissing required argument.');
+					throw new Error('ERROR (#1470)\nMissing required argument.');
 				}
 				if (expArg2 === undefined || expArg2 === null || typeof expArg2 !== 'string') {
 					expArg2 = '\\s+';
@@ -1501,11 +1501,11 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1499)\nMissing required argument.');
+					throw new Error('ERROR (#1504)\nMissing required argument.');
 				}
 				var blkTag = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i');
 				if (isEmpty(blkTag)) {
-					throw new Error('ERROR (#1502)\nInvalid HTML argument.');
+					throw new Error('ERROR (#1508)\nInvalid HTML argument.');
 				}
 				var blkTagName = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i', 1);
 				var blkNode = document.createElement(blkTagName);
@@ -1553,7 +1553,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1551)\nMissing required argument.');
+					throw new Error('ERROR (#1556)\nMissing required argument.');
 				}
 				//
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
