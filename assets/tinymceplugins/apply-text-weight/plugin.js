@@ -500,6 +500,36 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			return retValue;
 		},
 		outerHtmlCache: null,
+		proAddMark: function() {
+			//
+			// add mark to selected content
+			//
+			var retValue = '';
+			//
+			if (!this.hasError) {
+				//
+				console.log(' OBJ > proAddMark');
+				//
+				try {
+					var preTag = this.datElements.substring(0,this.datElements.indexOf(','));
+					var pstTag = this.datElements.substring(this.datElements.indexOf(',')+1);
+					if (!isEmpty(this.outerHtml().match(/^<(em|i|kbd|strong|sub|sup|s\b|u)>/))) {
+						//
+						retValue = preTag + this.outerHtml().trim() + pstTag;
+						//
+					} else {
+						//
+						retValue = preTag + this.mceHtml().trim() + pstTag;
+						//
+					}
+				} catch (e) {
+					alert(e.message);
+					this.hasError = true;
+				}
+			}
+			//
+			return retValue;
+		},
 		proBldClassElements: function (strArg1, strArg2) {
 			//
 			// build class elements process
@@ -514,7 +544,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#517)\nRequired argument/s missing.');
+						throw new Error('ERROR (#547)\nRequired argument/s missing.');
 					}
 					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
 					var datArray = datArrayData.split('*');
@@ -571,7 +601,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#574)\nRequired argument/s missing.');
+						throw new Error('ERROR (#604)\nRequired argument/s missing.');
 					}
 					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
 					var datArray = datArrayData.split('*');
@@ -608,10 +638,10 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (!this.hasDatColor()) {
-						throw new Error('ERROR (#611)\nMissing required color data elements.');
+						throw new Error('ERROR (#641)\nMissing required color data elements.');
 					}
 					if (this.isFragment()) {
-						throw new Error('ERROR (#614)\nContent incorrectly identifid as a fragment.');
+						throw new Error('ERROR (#644)\nContent incorrectly identifid as a fragment.');
 					}
 					var newAttr;
 					if (!isEmpty(this.datElements.match(/;/))) {
@@ -627,7 +657,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 					switch (true) {
 						case (isEmpty(htmlContent.match(spanExp)) && this.datAction == 'replace' && this.lineCnt == 1):
 							//
-							throw new Error('MESSAGE (#630)\nThe selection is NOT bound by a tag containing color elements.');
+							throw new Error('MESSAGE (#660)\nThe selection is NOT bound by a tag containing color elements.');
 							//
 						case (isEmpty(htmlContent.match(spanExp)) && this.datAction == 'replace'):
 							//
@@ -763,7 +793,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				try {
 					//
 					if (!this.isFragment()) {
-						throw new Error('ERROR (#766)\nContent must be less than a full sentence/line.');
+						throw new Error('ERROR (#796)\nContent must be less than a full sentence/line.');
 					}
 					//
 					// derive attribute from data
@@ -783,7 +813,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 					var mceElement = getRegExpValue(spanTag, '(class|style).*?"(.*?)"', 'i');
 					var newElement = newAttr + '="' + datElements + '"';
 					var newUpdate = this.htmlFull();
-					//						
+					//
 					if (!isEmpty(spanTag)) {
 						//
 						// content fragment has span tag
@@ -875,7 +905,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 					} else {
 						switch (true) {
 						case (this.datAction == 'replace' && this.lineCnt == 1):
-							throw new Error('MESSAGE (#878)\nThe selection is NOT bound by a tag containing color elements.');
+							throw new Error('MESSAGE (#908)\nThe selection is NOT bound by a tag containing color elements.');
 						case (this.datAction == 'replace'):
 							//
 							// skip in multi line
@@ -898,7 +928,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 							console.log(' -   htmlNew: ' + htmlNew);
 							//
 							retValue = newUpdate.replace(htmlExp, '$1' + htmlNew + '$2');
-							//															
+							//
 							console.log(' -  retValue: ' + htmlNew);
 							//
 						}
@@ -925,7 +955,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#928)\nRequired argument/s missing.');
+						throw new Error('ERROR (#958)\nRequired argument/s missing.');
 					}
 					var bgClassColor = getRegExpValue(strArg1, '(bkg.*?)(\\s|")', 's', 1);
 					var fgClassColor = getRegExpValue(strArg1, '(txt.*?)(\\s|")', 's', 1);
@@ -990,13 +1020,13 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#993)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1023)\nRequired argument/s missing.');
 					}
 					if (!isEmpty(strArg1.match(/-mce-/g))) {
 						var expMceTags = new RegExp(/.data-mce-style.*?".*?"|<br data-mce-bogus.*?".*?">/, 'g');
 						//
 						retValue = strArg1.replace(expMceTags, '');
-						//						
+						//
 					} else {
 						//
 						retValue = strArg1;
@@ -1023,7 +1053,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1026)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1056)\nRequired argument/s missing.');
 					}
 					//
 					retValue = strArg1;
@@ -1068,7 +1098,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
-						throw new Error('ERROR (#1071)\nRequired argument/s missing.');
+						throw new Error('ERROR (#1101)\nRequired argument/s missing.');
 					}
 					var datItem;
 					var idx = 0;
@@ -1111,7 +1141,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				try {
 					//
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-						throw new Error('ERROR (#1114)\nRequired argument missing.');
+						throw new Error('ERROR (#1144)\nRequired argument missing.');
 					}
 					var cboArray = strToArray(strArg1);
 					cboArray.sort();
@@ -1146,7 +1176,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					if (this.isFragment()) {
-						throw new Error('ERROR (#1149)\nContent identifid as a fragment and can not be processed.');
+						throw new Error('ERROR (#1179)\nContent identifid as a fragment and can not be processed.');
 					}
 					var newAttr;
 					if (!isEmpty(this.datElements.match(/;/))) {
@@ -1164,7 +1194,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 						//
 						switch (true) {
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i)) && this.lineCnt == 1):
-								throw new Error('MESSAGE (#1167)\nThe ' + mceTag + ' tag does not have elements to replace.');
+								throw new Error('MESSAGE (#1197)\nThe ' + mceTag + ' tag does not have elements to replace.');
 							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i))):
 								// skip
 								break;
@@ -1277,7 +1307,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			try {
 				if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
 					if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
-						throw new Error('ERROR (#1280)\nMissing required argument/s.'); // regular expression
+						throw new Error('ERROR (#1310)\nMissing required argument/s.'); // regular expression
 					}
 					if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
 						strArg3 = ''; // regular expression scope
@@ -1318,7 +1348,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1321)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1351)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('#sb_','[').replace('_eb#',']').replace('#sp_','(').replace('_ep#',')');
@@ -1330,7 +1360,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		//
 		return retValue;
 	}
-		
+
 	function regEncode(strArg1) {
 		//
 		// encode brackets/parentheses for regex
@@ -1340,7 +1370,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		if (!oDoc.hasError) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('ERROR (#1343)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1373)\nMissing required argument.'); // value to evaluate
 				}
 				//
 				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
@@ -1352,7 +1382,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		//
 		return retValue;
 	}
-	
+
 	function getRawHtml(strArg1) {
 		//
 		// strip html from arg
@@ -1366,7 +1396,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1369)\nMissing required argument.'); // value to evaluate
+					throw new Error('ERROR (#1399)\nMissing required argument.'); // value to evaluate
 				}
 				if (!isEmpty(strArg1)) {
 					var htmlDIV = document.createElement('htmlDIV');
@@ -1408,7 +1438,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			if (isEmpty(editor.selection.getContent({
 					format: 'text'
 				}))) {
-				throw new Error('MESSAGE (#1411)\nInvalid or missing selection.');
+				throw new Error('MESSAGE (#1441)\nInvalid or missing selection.');
 			}
 			//
 			retValue = true;
@@ -1438,7 +1468,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 		}
 		return rtnValue;
 	}
-		
+
 	function randomID(numArg1) {
 		//
 		// generate / return radom ID string
@@ -1467,7 +1497,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1470)\nMissing required argument.');
+					throw new Error('ERROR (#1500)\nMissing required argument.');
 				}
 				if (expArg2 === undefined || expArg2 === null || typeof expArg2 !== 'string') {
 					expArg2 = '\\s+';
@@ -1501,11 +1531,11 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1504)\nMissing required argument.');
+					throw new Error('ERROR (#1534)\nMissing required argument.');
 				}
 				var blkTag = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i');
 				if (isEmpty(blkTag)) {
-					throw new Error('ERROR (#1508)\nInvalid HTML argument.');
+					throw new Error('ERROR (#1538)\nInvalid HTML argument.');
 				}
 				var blkTagName = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i', 1);
 				var blkNode = document.createElement(blkTagName);
@@ -1553,7 +1583,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			//
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
-					throw new Error('ERROR (#1556)\nMissing required argument.');
+					throw new Error('ERROR (#1586)\nMissing required argument.');
 				}
 				//
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
@@ -1578,8 +1608,8 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			retValue = arrArg1.length;
 		}
 		return retValue;
-	}	
-	
+	}
+
 	function formInit() {
 		//
 		// init object
@@ -1642,6 +1672,9 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 							//
 							// error
 							//
+							break;
+						case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+							htmlUpdate = oDoc.proAddMark();
 							break;
 						case (oDoc.isFragment()):
 							htmlUpdate = regDecode(oDoc.proFragment());
@@ -1772,7 +1805,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 			//
 			location.reload();
 		}
-		editor.focus();					
+		editor.focus();
 		return;
 	}
 	//
