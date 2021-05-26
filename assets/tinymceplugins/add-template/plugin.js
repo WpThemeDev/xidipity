@@ -3,7 +3,7 @@
  * Tinymce add-template plugin 
  *
  * ###:  plugin.js
- * bld:  29200901
+ * bld:  210526-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -42,10 +42,12 @@ tinymce.PluginManager.add('add_template', function (editor) {
 					}
 				}
 			});
+			console.clear();
+			document.getElementById('tmpl_id').focus();
 		}
 	});
 });
 
 /*
- * EOF: add-template / plugin.js / 29200901
+ * EOF: add-template / plugin.js / 210526-1
  */
