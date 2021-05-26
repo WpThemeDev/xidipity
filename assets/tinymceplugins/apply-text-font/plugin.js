@@ -1567,6 +1567,19 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 		return retValue;
 	}
 
+	function matchCnt(arrArg1) {
+		//
+		// check for null
+		//
+		var retValue;
+		if (arrArg1 === undefined || arrArg1 === null || !Array.isArray(arrArg1)) {
+			retValue = 0;
+		} else {
+			retValue = arrArg1.length;
+		}
+		return retValue;
+	}	
+	
 	function formInit() {
 		//
 		// init object
@@ -1606,14 +1619,18 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 			var htmlUpdate = '';
 			//
 			switch (true) {
+				case (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0):
+					alert('MESSAGE (#1664)\nA mixture of class and style data elements detected.');
+					break;
 				case (isEmpty(oDoc.datElements)):
-					alert('MESSAGE (#1652)\nMissing element class/style data.');
+					alert('MESSAGE (#1667)\nMissing element class/style data.');
+					break;
 				case (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))):
-					alert('MESSAGE (#1654)\nThe element says class, but the input is incorrectly formatted.');
+					alert('MESSAGE (#1670)\nThe element says class, but the input is incorrectly formatted.');
+					break;
 				case (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))):
-					alert('MESSAGE (#1656)\nThe element says style, but the input is incorrectly formatted.');
-				case (oDoc.datElements.match(/:/g).length !== oDoc.datElements.match(/;/g).length):
-					alert('MESSAGE (#1658)\nA mixture of class and style data elements detected.');
+					alert('MESSAGE (#1673)\nThe element says style, but the input is incorrectly formatted.');
+					break;
 				case (oDoc.lineCnt == 1):
 					//
 					console.log('    # Process Single Line #');
@@ -1765,14 +1782,14 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 		type: 'splitbutton',
 		title: 'Fonts',
 		icon: false,
-		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTUgMTd2MmgxNHYtMkg1em00LjUtNC4yaDVsLjkgMi4yaDIuMUwxMi43NSA0aC0xLjVMNi41IDE1aDIuMWwuOS0yLjJ6TTEyIDUuOThMMTMuODcgMTFoLTMuNzRMMTIgNS45OHoiLz48L3N2Zz4=',
+		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgwVjB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTkuMTcgMTUuNWg1LjY0bDEuMTQgM2gyLjA5bC01LjExLTEzaC0xLjg2bC01LjExIDEzaDIuMDlsMS4xMi0zek0xMiA3Ljk4bDIuMDcgNS41Mkg5LjkzTDEyIDcuOTh6TTIwIDJINGMtMS4xIDAtMiAuOS0yIDJ2MTZjMCAxLjEuOSAyIDIgMmgxNmMxLjEgMCAyLS45IDItMlY0YzAtMS4xLS45LTItMi0yem0wIDE4SDRWNGgxNnYxNnoiLz48L3N2Zz4=',
 		onclick: function () {
 			if (isReady()) {
 				console.clear();
 				formInit();		
-				oDoc.datElements = 'font-family: serif;';
+				oDoc.datElements = 'fnt:serif';
 				oDoc.datAction = 'blend';
-				oDoc.datAttribute = 'style';
+				oDoc.datAttribute = 'class';
 				//
 				formSubmit();
 				//
@@ -1785,9 +1802,9 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 				if (isReady()) {
 					console.clear();
 					formInit();		
-					oDoc.datElements = 'font-family: sans;';
+					oDoc.datElements = 'fnt:sans';
 					oDoc.datAction = 'blend';
-					oDoc.datAttribute = 'style';
+					oDoc.datAttribute = 'class';
 					//
 					formSubmit();
 					//
@@ -1800,9 +1817,9 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 				if (isReady()) {
 					console.clear();
 					formInit();		
-					oDoc.datElements = 'font-family: serif;';
+					oDoc.datElements = 'fnt:serif';
 					oDoc.datAction = 'blend';
-					oDoc.datAttribute = 'style';
+					oDoc.datAttribute = 'class';
 					//
 					formSubmit();
 					//
@@ -1815,9 +1832,9 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 				if (isReady()) {
 					console.clear();
 					formInit();		
-					oDoc.datElements = 'font-family: mono;';
+					oDoc.datElements = 'fnt:mono';
 					oDoc.datAction = 'blend';
-					oDoc.datAttribute = 'style';
+					oDoc.datAttribute = 'class';
 					//
 					formSubmit();
 					//
@@ -1830,9 +1847,9 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 				if (isReady()) {
 					console.clear();
 					formInit();		
-					oDoc.datElements = 'font-family: cursive;';
+					oDoc.datElements = 'fnt:cursive';
 					oDoc.datAction = 'blend';
-					oDoc.datAttribute = 'style';
+					oDoc.datAttribute = 'class';
 					//
 					formSubmit();
 					//
@@ -1845,9 +1862,9 @@ tinymce.PluginManager.add('apply_txt_font', function (editor) {
 				if (isReady()) {
 					console.clear();
 					formInit();		
-					oDoc.datElements = 'font-family: fantasy;';
+					oDoc.datElements = 'fnt:fantasy';
 					oDoc.datAction = 'blend';
-					oDoc.datAttribute = 'style';
+					oDoc.datAttribute = 'class';
 					//
 					formSubmit();
 					//
