@@ -3,7 +3,7 @@
  * Tinymce add-icon plugin
  *
  * ###:  plugin.js
- * bld:  30201115
+ * bld:  210526-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -196,9 +196,11 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 					}
 				}
 			});
+			console.clear();
+			document.getElementById('tag_id').focus();
 		}
 	});
 });
 /*
- * EOF: add-icon / plugin.js / 30201115
+ * EOF: add-icon / plugin.js / 210526-1
  */
