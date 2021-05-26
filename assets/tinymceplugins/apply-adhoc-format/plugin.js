@@ -1567,6 +1567,19 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 		return retValue;
 	}
 
+	function matchCnt(arrArg1) {
+		//
+		// check for null
+		//
+		var retValue;
+		if (arrArg1 === undefined || arrArg1 === null || !Array.isArray(arrArg1)) {
+			retValue = 0;
+		} else {
+			retValue = arrArg1.length;
+		}
+		return retValue;
+	}	
+
 	function formInit() {
 		//
 		// init object
@@ -1647,14 +1660,18 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 			var htmlUpdate = '';
 			//
 			switch (true) {
+				case (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0):
+					alert('MESSAGE (#1664)\nA mixture of class and style data elements detected.');
+					break;
 				case (isEmpty(oDoc.datElements)):
-					alert('MESSAGE (#1652)\nMissing element class/style data.');
+					alert('MESSAGE (#1667)\nMissing element class/style data.');
+					break;
 				case (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))):
-					alert('MESSAGE (#1654)\nThe element says class, but the input is incorrectly formatted.');
+					alert('MESSAGE (#1670)\nThe element says class, but the input is incorrectly formatted.');
+					break;
 				case (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))):
-					alert('MESSAGE (#1656)\nThe element says style, but the input is incorrectly formatted.');
-				case (oDoc.datElements.match(/:/g).length !== oDoc.datElements.match(/;/g).length):
-					alert('MESSAGE (#1658)\nA mixture of class and style data elements detected.');
+					alert('MESSAGE (#1673)\nThe element says style, but the input is incorrectly formatted.');
+					break;
 				case (oDoc.lineCnt == 1):
 					//
 					console.log('    # Process Single Line #');
