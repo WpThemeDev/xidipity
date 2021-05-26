@@ -3,7 +3,7 @@
  * Tinymce add-video plugin
  *
  * ###:  plugin.js
- * bld:  30201115
+ * bld:  210526-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -154,9 +154,11 @@ tinymce.PluginManager.add('add_video', function (editor, url) {
 					}
 				}
 			});
+			console.clear();
+			document.getElementById('id_tag').focus();
 		}
 	});
 });
 /*
- * EOF: add-video / plugin.js / 30201115
+ * EOF: add-video / plugin.js / 210526-1
  */
