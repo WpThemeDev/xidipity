@@ -1759,6 +1759,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		var retValue = '';
 		if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
 			//
+			strArg1 = strArg1.toLowerCase();
+			//
 			console.log('FN  > namedColor');
 			console.log('    - strArg1: ' + strArg1);
 			//
