@@ -3,7 +3,7 @@
  * Tinymce apply-adhoc-format plugin
  *
  * ###:	plugin.js
- * bld:	210602-1
+ * bld:	210606-1
  * src:	github.com/WpThemeDev/xidipity/
  * (C)	https://doc.xidipity.com/license/
  *
@@ -1818,10 +1818,10 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				editor.focus();
 			} else {
 				editor.windowManager.open({
-					title: 'Ad Hoc Format',
+					title: 'Adhoc Style Tool',
 					body: [{
 						type: "container",
-						html: '<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet"><div style="min-width:360px;padding-bottom:8px;padding-top:8px;width:360px;"><form method="post" style="font-family:&#39Roboto&#39,sans-serif;font-size:16px;"><table style="width: 100%;"><tbody><tr style="height: 28px;"><td style="width: 100%;" colspan="2">Class/Style:</td></tr><tr><td style="padding-right:10px;width:100%;" colspan="2"><input type="text" id="prop_id" name="input_tag" value="" style="border:1px solid #cccccc;font-family:&#39Roboto Mono&#39,monospace;font-size:12px;padding:4px;width:100%;"></td></tr><tr style="font-size: 2px; height: 4px;"><td>&nbsp;</td></tr><tr style="height: 28px;"><td style="width: 100px;">Element</td><td>Action</td></tr><tr><td><select id="attr_id" style="border:1px solid #e9e7e4;width:120px;"><option>Style</option><option>Class</option></select></td><td><select id="act_id" style="border:1px solid #e9e7e4;width:120px;"><option>None</option></select></td></tr><tr style="font-size: 2px; height: 4px;"><td>&nbsp;</td></tr><tr style="height: 28px;"><td style="width:100%;" colspan="2">Selected HTML</td></tr><tr><td style="width:100%;" colspan="2"><textarea id="ta_id" name="txt_area" rows="6" value="" style="font-family:&#39Roboto Mono&#39,monospace;font-size:12px;width:100%;white-space: normal;">&nbsp;</textarea></td></tr></tbody></table></form></div>'
+						html: '<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet"><div style="min-width:360px;padding-bottom:8px;padding-top:8px;width:360px;"><form method="post" style="font-family:&#39Roboto&#39,sans-serif;font-size:16px;"><table style="width: 100%;"><tbody><tr style="height: 28px;"><td colspan="2">Class/Style:</td></tr><tr><td style="padding-right:10px;width:100%;" colspan="2"><input type="text" id="prop_id" name="input_tag" value="" style="border:1px solid #cccccc;font-family:&#39Roboto Mono&#39,monospace;font-size:12px;padding:4px;width:100%;"></td></tr><tr style="height: 40px;"><td style="vertical-align: middle;">Element</td><td style="vertical-align: middle;">Action</td></tr><tr><td><select id="attr_id" style="border:1px solid #e9e7e4;width:120px;"><option>Style</option><option>Class</option></select></td><td><select id="act_id" style="border:1px solid #e9e7e4;width:120px;"><option>None</option></select></td></tr><tr style="height: 40px;"><td style="vertical-align: middle;" colspan="2">Selected HTML:</td></tr><tr><td style="width:100%;" colspan="2"><textarea id="ta_id" name="txt_area" rows="6" value="" style="font-family:&#39Roboto Mono&#39,monospace;font-size:12px;width:100%;white-space: normal;">&nbsp;</textarea></td></tr></tbody></table></form></div>'
 						}],
 					onSubmit: function () {
 						frmSubmit();
@@ -1916,5 +1916,5 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 	});
 });
 /*
- * EOF: apply-adhoc-format / plugin.js / 210602-1
+ * EOF: apply-adhoc-format / plugin.js / 210606-1
  */
