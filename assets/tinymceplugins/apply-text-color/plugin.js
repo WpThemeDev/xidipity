@@ -1768,6 +1768,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 							oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
 							oDoc.innerHtmlCache = oDoc.mceHtmlCache;
 							switch (true) {
+								case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+									htmlUpdate = oDoc.proAddMark();
+									break;
 								case (oDoc.hasDatColor()):
 									htmlUpdate = oDoc.proColorElements();
 									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
@@ -1809,13 +1812,13 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1812';
+						_js.ln = '1815';
 					}
 				}
 			}
 		} catch (e) {
 			_js.ms = e.message;
-			_js.ln = '1818';
+			_js.ln = '1821';
 		}
 		if (_js.hasError()) {
 			//
