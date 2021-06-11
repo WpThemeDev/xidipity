@@ -3,7 +3,7 @@
  * Tinymce apply-text-italic plugin
  *
  * ###:  plugin.js
- * bld:  210602-1
+ * bld:  210611-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -13,7 +13,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 	//
 	// error object
 	//
-	var _err = {
+	var _js = {
 		hd: 'ERROR',
 		ms: null,
 		ln: null,
@@ -37,7 +37,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.blkContentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (this.lineCnt < 2) {
 						throw new Error('Multi line content must contain more than 1 line.');
@@ -91,8 +91,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '95';
+					_js.ms = e.message;
+					_js.ln = '95';
 				}
 			}
 			//
@@ -107,7 +107,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.datBgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -133,8 +133,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '137';
+					_js.ms = e.message;
+					_js.ln = '137';
 				}
 			}
 			//
@@ -148,7 +148,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.datFgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -174,8 +174,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '178';
+					_js.ms = e.message;
+					_js.ln = '178';
 				}
 			}
 			//
@@ -188,7 +188,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = false;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > hasDatColor');
 				//
@@ -197,8 +197,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					retValue = (!isEmpty(this.datBgColor()) || !isEmpty(this.datFgColor()));
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '201';
+					_js.ms = e.message;
+					_js.ln = '201';
 				}
 			}
 			//
@@ -210,7 +210,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.fullHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -218,13 +218,14 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 						var domNode = this.mceNode;
 						var domNodeName = this.mceNodeName();
-						var outerHtml = this.outerHtml();
+						var enOuterHtml = this.outerHtml();
 						switch (true) {
 							case (domNodeName == 'body'):
 								// body
-								this.fullHtmlCache = regEncode(this.mceHtml());
+								this.fullHtmlRaw = this.mceHtml(true);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
-							case (isEmpty(outerHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
+							case (isEmpty(enOuterHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
 								// marker ie. <u>, etc
 								var nodeExp = new RegExp('div|h[1-6]|li|p(?!a)|td|th', 'i');
 								while (isEmpty(domNodeName.match(nodeExp))) {
@@ -235,11 +236,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 									}
 									domNodeName = domNode.nodeName.toLowerCase();
 								}
-								this.fullHtmlCache = regEncode(this.proMceTags(domNode.outerHTML));
+								this.fullHtmlRaw = this.proMceTags(domNode.outerHTML);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
 							default:
 								// everything else
-								this.fullHtmlCache = regEncode(this.outerHtml());
+								this.fullHtmlRaw = this.outerHtml(true);
+								this.fullHtmlCache = enOuterHtml;
 						}
 						//
 						retValue = this.fullHtmlCache;
@@ -250,21 +253,22 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '254';
+					_js.ms = e.message;
+					_js.ln = '257';
 				}
 			}
 			//
 			return retValue;
 		},
 		fullHtmlCache: null,
+		fullHtmlRaw: null,
 		initNode: function (nodeArg1) {
 			//
 			// init doc object
 			//
 			var retValue = this.initNodeCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > initNode');
 				//
@@ -281,6 +285,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					this.datElements = '';
 					this.datFgColorCache = null;
 					this.fullHtmlCache = null;
+					this.fullHtmlRaw = null;
 					this.innerHtmlCache = null;
 					this.isFragmentCache = null;
 					this.mceHtmlCache = null;
@@ -309,8 +314,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 							break;
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '313';
+					_js.ms = e.message;
+					_js.ln = '318';
 				}
 			}
 			//
@@ -322,7 +327,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.innerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -342,8 +347,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '346';
+					_js.ms = e.message;
+					_js.ln = '351';
 				}
 			}
 			//
@@ -356,7 +361,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.isFragmentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -379,8 +384,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '383';
+					_js.ms = e.message;
+					_js.ln = '388';
 				}
 			}
 			return retValue;
@@ -389,32 +394,47 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		hasMark: false,
 		hasMarkPair: false,
 		lineCnt: 0, // number of nodes
-		mceHtml: function () {
+		mceHtml: function (blnArg1) {
 			//
 			// editor selection as html
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.mceHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > mceHtml - New');
-						//
-						this.mceHtmlCache = regEncode(editor.selection.getContent({
-							format: 'html'
-						}));
-						//
-						retValue = this.mceHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > mceHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Encoded');
+							//
+							this.mceHtmlCache = regEncode(editor.selection.getContent({
+								format: 'html'
+							}));
+							//
+							retValue = this.mceHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Raw');
+							//
+							retValue = editor.selection.getContent({
+								format: 'html'
+							});
+							//
+							break;
+						default:
+							//
+							console.log(' OBJ > mceHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '417';
+					_js.ms = e.message;
+					_js.ln = '437';
 				}
 			}
 			//
@@ -428,7 +448,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.mceNodeNameCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -444,8 +464,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '448';
+					_js.ms = e.message;
+					_js.ln = '468';
 				}
 			}
 			//
@@ -458,7 +478,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = this.mceTextCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -476,42 +496,58 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '480';
+					_js.ms = e.message;
+					_js.ln = '500';
 				}
 			}
 			//
 			return retValue;
 		},
 		mceTextCache: null,
-		outerHtml: function () {
+		outerHtml: function (blnArg1) {
 			//
 			// html node name
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.outerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > outerHtml - New');
-						//
-						if (this.mceNodeName() == 'body') {
-							this.outerHtmlCache = regEncode(this.mceHtml());
-						} else {
-							this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
-						}
-						//
-						retValue = this.outerHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > outerHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Encoded');
+							//
+							if (this.mceNodeName() == 'body') {
+								this.outerHtmlCache = regEncode(this.mceHtml());
+							} else {
+								this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
+							}							
+							//
+							retValue = this.outerHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Raw');
+							//
+							if (this.mceNodeName() == 'body') {
+								retValue = this.mceHtml();
+							} else {
+								retValue = this.proMceTags(editor.dom.getOuterHTML(this.mceNode));
+							}
+							break;
+						default:
+							//
+							console.log(' OBJ > outerHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '514';
+					_js.ms = e.message;
+					_js.ln = '550';
 				}
 			}
 			//
@@ -524,9 +560,12 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proAddMark');
+				//
+				//
+				console.log('*** * fullHtml: ' + this.fullHtml());
 				//
 				try {
 					var mrkExp;
@@ -548,8 +587,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//						
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '540';
+					_js.ms = e.message;
+					_js.ln = '588';
 				}
 			}
 			//
@@ -561,7 +600,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldClassElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -605,8 +644,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '597';
+					_js.ms = e.message;
+					_js.ln = '645';
 				}
 			}
 			//
@@ -618,7 +657,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldStyleElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -644,8 +683,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '636';
+					_js.ms = e.message;
+					_js.ln = '684';
 				}
 			}
 			//
@@ -657,7 +696,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proColorElements');
 				//
@@ -772,8 +811,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					this.datFgColorCache = null;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '764';
+					_js.ms = e.message;
+					_js.ln = '812';
 				}
 			}
 			//
@@ -785,7 +824,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proFragment');
 				//
@@ -927,8 +966,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '919';
+					_js.ms = e.message;
+					_js.ln = '967';
 				}
 			}
 			//
@@ -942,7 +981,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proJoinElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -995,8 +1034,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '987';
+					_js.ms = e.message;
+					_js.ln = '1035';
 				}
 			}
 			//
@@ -1008,10 +1047,10 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
-				console.log(' OBJ > proMceTags');
-				console.log('     - strArg1: ' + strArg1);
+				console.log('OBJ > proMceTags');
+				console.log('    - strArg1: ' + strArg1);
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
@@ -1028,8 +1067,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1020';
+					_js.ms = e.message;
+					_js.ln = '1068';
 				}
 			}
 			//
@@ -1041,7 +1080,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proOrderClassStyle');
 				console.log('    - strArg1: ' + strArg1);
@@ -1070,8 +1109,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1062';
+					_js.ms = e.message;
+					_js.ln = '1110';
 				}
 			}
 			//
@@ -1085,7 +1124,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proPurgeElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1119,8 +1158,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					retValue = strArg1;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1111';
+					_js.ms = e.message;
+					_js.ln = '1159';
 				}
 			}
 			//
@@ -1132,7 +1171,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proSrtElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1156,8 +1195,8 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1148';
+					_js.ms = e.message;
+					_js.ln = '1196';
 				}
 			}
 			//
@@ -1169,7 +1208,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proStdElements');
 				//
@@ -1232,16 +1271,15 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.hd = 'MESSAGE';
-					_err.ms = e.message;
-					_err.ln = '1225';
+					_js.hd = 'MESSAGE';
+					_js.ms = e.message;
+					_js.ln = '1273';
 				}
 			}
 			//
 			return retValue;
 		}
 	};
-
 	function getRegExpValue(strArg1, strArg2, strArg3, numArg4) {
 		//
 		// Return RegExp value
@@ -1252,7 +1290,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > getRegExpValue');
 			console.log('    - strArg1: ' + strArg1);
@@ -1287,67 +1325,92 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				}
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1278';
+				_js.ms = e.message;
+				_js.ln = '1326';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function regDecode(strArg1) {
 		//
-		// decode brackets/parentheses for regex
+		// decode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('#sb_', '[').replace('_eb#', ']').replace('#sp_', '(').replace('_ep#', ')');
-				//
+				var decodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/~#A0~/))) {
+					decodeVal = decodeVal.replace(/~#A0~/g, '&nbsp;');
+				}
+				if (!isEmpty(strArg1.match(/#5B~/))) {
+					decodeVal = decodeVal.replace(/#5B~/g, '[');
+				}
+				if (!isEmpty(strArg1.match(/~#5D/))) {
+					decodeVal = decodeVal.replace(/~#5D/g, ']');
+				}
+				if (!isEmpty(strArg1.match(/#28~/))) {
+					decodeVal = decodeVal.replace(/#28~/g, '(');
+				}
+				if (!isEmpty(strArg1.match(/~#29/))) {
+					decodeVal = decodeVal.replace(/~#29/g, ')');
+				}
+				retValue = decodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1300';
+				_js.ms = e.message;
+				_js.ln = '1362';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function regEncode(strArg1) {
 		//
-		// encode brackets/parentheses for regex
+		// encode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
-				//
+				var encodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/[\u00A0]|\&nbsp;/))) {
+					encodeVal = encodeVal.replace(/[\u00A0]|\&nbsp;/g, '~#A0~');
+				}
+				if (!isEmpty(strArg1.match(/\[/))) {
+					encodeVal = encodeVal.replace('[', '#5B~');
+				}
+				if (!isEmpty(strArg1.match(/\]/))) {
+					encodeVal = encodeVal.replace(']', '~#5D');
+				}
+				if (!isEmpty(strArg1.match(/\(/))) {
+					encodeVal = encodeVal.replace('(', '#28~');
+				}
+				if (!isEmpty(strArg1.match(/\)/))) {
+					encodeVal = encodeVal.replace(')', '~#29');
+				}
+				retValue = encodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1322';
+				_js.ms = e.message;
+				_js.ln = '1398';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function noHtmlTags(strArg1) {
 		//
 		// strip html from arg
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > noHtmlTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1360,28 +1423,25 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				retValue = strArg1.replace(/(<([^>]+)>)/ig, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1348';
+				_js.ms = e.message;
+				_js.ln = '1424';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function isEmpty(strArg1) {
 		//
 		// check for empty string
 		//
 		return (!strArg1 || 0 === strArg1.length);
 	}
-
 	function isNull(strArg1) {
 		//
 		// check for null
 		//
 		return (strArg1 === null);
 	}
-
 	function mceReady() {
 		//
 		// validate content is selected
@@ -1400,14 +1460,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			retValue = true;
 			//
 		} catch (e) {
-			_err.hd = 'MESSAGE';
-			_err.ms = e.message;
-			_err.ln = '1386';
+			_js.hd = 'MESSAGE';
+			_js.ms = e.message;
+			_js.ln = '1462';
 		}
 		//
 		return retValue;
 	}
-
 	function padNum(numArg1, numArg2) {
 		switch (true) {
 			case (numArg1 === undefined || numArg1 === null || typeof numArg1 !== 'number'):
@@ -1426,7 +1485,6 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		}
 		return rtnValue;
 	}
-
 	function randomID(numArg1) {
 		//
 		// generate / return radom ID string
@@ -1438,7 +1496,6 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		//
 		return (Math.random().toString(26) + "000000000").substr(4, numArg1);
 	}
-
 	function strToArray(strArg1, expArg2) {
 		//
 		// load string items into array
@@ -1447,7 +1504,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToArray');
 			console.log('    - strArg1: ' + strArg1);
@@ -1467,14 +1524,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				retValue = datArrayData.split('*');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1449';
+				_js.ms = e.message;
+				_js.ln = '1525';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function strToNode(strArg1) {
 		//
 		// build node from html string
@@ -1482,7 +1538,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToNode');
 			console.log('    - strArg1: ' + strArg1);
@@ -1519,14 +1575,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				retValue = blkNode;
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1500';
+				_js.ms = e.message;
+				_js.ln = '1576';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function stripOuterTags(strArg1) {
 		//
 		// strip html outer tags
@@ -1534,7 +1589,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > stripOuterTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1547,14 +1602,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1527';
+				_js.ms = e.message;
+				_js.ln = '1603';
 			}
 		}
 		//
 		return retValue;
 	}
-
 	function matchCnt(arrArg1) {
 		//
 		// check for null
@@ -1567,12 +1621,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		}
 		return retValue;
 	}
-
 	function frmInit() {
 		//
 		// init object
 		//
+		console.log(' ');
 		console.log('FN  > frmInit');
+		console.log(' ');
 		//
 		var edSelect = editor.selection.getContent({
 			format: 'html'
@@ -1594,10 +1649,10 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		// process request
 		//
 		console.log(' ');
-		console.log('      * * *');
-		console.log(' ');
 		console.log('FN  > frmSubmit');
-		var htmlDoc = editor.getContent();
+		console.log(' ');
+		//
+		var htmlDoc = editor.getContent().replace(/[\u00A0]/g, '&nbsp;');
 		try {
 			// validate selection
 			//
@@ -1607,26 +1662,26 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			var htmlUpdate = '';
 			//
 			if (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('A mixture of class and style input data detected.');
 			} else if (isEmpty(oDoc.datElements)) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('Missing input data.');
 			} else if (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is class, but the input is formatted as a style.');
 			} else if (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is style, but the input is formatted as a class.');
 			}
 			if (oDoc.lineCnt == 1) {
 				//
-				console.log('***** Process Single Line *****');
+				console.log('*** * Process Single Line * ***');
 				//
 				fullHtml = oDoc.fullHtml();
 				//
 				switch (true) {
-					case (oDoc.hasError):
+					case (_js.hasError()):
 						//
 						// error
 						//
@@ -1641,7 +1696,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 					case (oDoc.hasDatColor()):
 						console.log('    - Mark -');
 						htmlUpdate = regDecode(oDoc.proColorElements());
-						if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
 							htmlUpdate = regDecode(oDoc.proStdElements());
 						}
 						break;
@@ -1650,15 +1705,17 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
+					//
 					decodeFullHtml = regDecode(fullHtml);
 					decodeUpdateHtml = regDecode(htmlUpdate);
-					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					console.log('SRC > ' + decodeFullHtml);
 					console.log('UPD > ' + decodeUpdateHtml);
 					//
 					// write content back
+					//
+					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					try {
 						//
@@ -1667,13 +1724,13 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						editor.setContent(htmlDoc);
 						editor.undoManager.add();
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1645';
+						_js.ms = e.message;
+						_js.ln = '1725';
 					}
 				}
 			} else {
 				//
-				console.log('***** Process Multi Line *****');
+				console.log('*** * Process Multi Line * ***');
 				//
 				// load block content into array
 				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
@@ -1686,7 +1743,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				for (; blkArray[idx];) {
 					blkHtmlItem = blkArray[idx];
 					switch (true) {
-						case (oDoc.hasError):
+						case (_js.hasError()):
 							// error
 							idx = 9999;
 							break;
@@ -1714,27 +1771,32 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 							oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
 							oDoc.innerHtmlCache = oDoc.mceHtmlCache;
 							switch (true) {
-								case (oDoc.hasDatColor()):
-									htmlUpdate = oDoc.proColorElements();
-									if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
-										htmlUpdate = oDoc.proStdElements();
-									}
-									break;
 								case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
 									htmlUpdate = oDoc.proAddMark();
+									break;
+								case (oDoc.hasDatColor()):
+									htmlUpdate = oDoc.proColorElements();
+									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+										htmlUpdate = oDoc.proStdElements();
+									}
 									break;
 								default:
 									htmlUpdate = oDoc.proStdElements();
 							}
 					}
-					if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
+					if (!_js.hasError() && !isEmpty(htmlUpdate)) {
+						//
 						decodeFullHtml = regDecode(fullHtml);
 						decodeUpdateHtml = regDecode(htmlUpdate);
-						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 						//
 						console.log(padNum(idx, 3) + ' > IDX');
 						console.log('SRC > ' + decodeFullHtml);
 						console.log('UPD > ' + decodeUpdateHtml);
+						//
+						// write content back
+						//
+						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
+						//
 					}
 					//
 					idx++;
@@ -1743,7 +1805,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 				//
 				// write content back
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
 					//
 					try {
 						editor.setContent(htmlDoc);
@@ -1752,18 +1814,18 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 						console.log('    - Multi Line Complete -');
 						//
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1727';
+						_js.ms = e.message;
+						_js.ln = '1818';
 					}
 				}
 			}
 		} catch (e) {
-			_err.ms = e.message;
-			_err.ln = '1733';
+			_js.ms = e.message;
+			_js.ln = '1824';
 		}
-		if (_err.hasError()) {
+		if (_js.hasError()) {
 			//
-			_err.display();
+			_js.display();
 			//
 		}
 		editor.focus();
@@ -1780,7 +1842,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTEwIDR2M2gyLjIxbC0zLjQyIDhINnYzaDh2LTNoLTIuMjFsMy40Mi04SDE4VjR6Ii8+PC9zdmc+',
 		onclick: function () {
 			if (!mceReady()) {
-				_err.display();
+				_js.display();
 				editor.focus();
 			} else {
 				console.clear();
@@ -1799,7 +1861,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			text: '\xa0Italic',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();
 				} else {
 					console.clear();
@@ -1818,7 +1880,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE1LjYgMTAuNzljLjk3LS42NyAxLjY1LTEuNzcgMS42NS0yLjc5IDAtMi4yNi0xLjc1LTQtNC00SDd2MTRoNy4wNGMyLjA5IDAgMy43MS0xLjcgMy43MS0zLjc5IDAtMS41Mi0uODYtMi44Mi0yLjE1LTMuNDJ6TTEwIDYuNWgzYy44MyAwIDEuNS42NyAxLjUgMS41cy0uNjcgMS41LTEuNSAxLjVoLTN2LTN6bTMuNSA5SDEwdi0zaDMuNWMuODMgMCAxLjUuNjcgMS41IDEuNXMtLjY3IDEuNS0xLjUgMS41eiIvPjwvc3ZnPg==',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();
 				} else {
 					console.clear();
@@ -1837,7 +1899,7 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 			text: '\xa0Strong',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();
 				} else {
 					console.clear();
@@ -1854,5 +1916,5 @@ tinymce.PluginManager.add('apply_txt_italic', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-italic / plugin.js / 210602-1
+ * EOF: apply-text-italic / plugin.js / 210611-1
  */
