@@ -3,7 +3,7 @@
  * Tinymce apply-text-alignment plugin
  *
  * ###:  plugin.js
- * bld:  210602-1
+ * bld:  210611-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -13,7 +13,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 	//
 	// error object
 	//
-	var _err = {
+	var _js = {
 		hd: 'ERROR',
 		ms: null,
 		ln: null,
@@ -37,7 +37,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.blkContentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (this.lineCnt < 2) {
 						throw new Error('Multi line content must contain more than 1 line.');
@@ -91,8 +91,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '95';
+					_js.ms = e.message;
+					_js.ln = '95';
 				}
 			}
 			//
@@ -107,7 +107,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.datBgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -133,8 +133,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '137';
+					_js.ms = e.message;
+					_js.ln = '137';
 				}
 			}
 			//
@@ -148,7 +148,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.datFgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -174,8 +174,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '178';
+					_js.ms = e.message;
+					_js.ln = '178';
 				}
 			}
 			//
@@ -188,7 +188,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = false;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > hasDatColor');
 				//
@@ -197,8 +197,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					retValue = (!isEmpty(this.datBgColor()) || !isEmpty(this.datFgColor()));
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '201';
+					_js.ms = e.message;
+					_js.ln = '201';
 				}
 			}
 			//
@@ -210,7 +210,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.fullHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -218,13 +218,14 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 						var domNode = this.mceNode;
 						var domNodeName = this.mceNodeName();
-						var outerHtml = this.outerHtml();
+						var enOuterHtml = this.outerHtml();
 						switch (true) {
 							case (domNodeName == 'body'):
 								// body
-								this.fullHtmlCache = regEncode(this.mceHtml());
+								this.fullHtmlRaw = this.mceHtml(true);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
-							case (isEmpty(outerHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
+							case (isEmpty(enOuterHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
 								// marker ie. <u>, etc
 								var nodeExp = new RegExp('div|h[1-6]|li|p(?!a)|td|th', 'i');
 								while (isEmpty(domNodeName.match(nodeExp))) {
@@ -235,11 +236,13 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 									}
 									domNodeName = domNode.nodeName.toLowerCase();
 								}
-								this.fullHtmlCache = regEncode(this.proMceTags(domNode.outerHTML));
+								this.fullHtmlRaw = this.proMceTags(domNode.outerHTML);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
 							default:
 								// everything else
-								this.fullHtmlCache = regEncode(this.outerHtml());
+								this.fullHtmlRaw = this.outerHtml(true);
+								this.fullHtmlCache = enOuterHtml;
 						}
 						//
 						retValue = this.fullHtmlCache;
@@ -250,21 +253,22 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '254';
+					_js.ms = e.message;
+					_js.ln = '257';
 				}
 			}
 			//
 			return retValue;
 		},
 		fullHtmlCache: null,
+		fullHtmlRaw: null,
 		initNode: function (nodeArg1) {
 			//
 			// init doc object
 			//
 			var retValue = this.initNodeCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > initNode');
 				//
@@ -281,6 +285,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					this.datElements = '';
 					this.datFgColorCache = null;
 					this.fullHtmlCache = null;
+					this.fullHtmlRaw = null;
 					this.innerHtmlCache = null;
 					this.isFragmentCache = null;
 					this.mceHtmlCache = null;
@@ -309,8 +314,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 							break;
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '313';
+					_js.ms = e.message;
+					_js.ln = '318';
 				}
 			}
 			//
@@ -322,7 +327,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.innerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -342,8 +347,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '346';
+					_js.ms = e.message;
+					_js.ln = '351';
 				}
 			}
 			//
@@ -356,7 +361,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.isFragmentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -379,8 +384,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '383';
+					_js.ms = e.message;
+					_js.ln = '388';
 				}
 			}
 			return retValue;
@@ -389,32 +394,47 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		hasMark: false,
 		hasMarkPair: false,
 		lineCnt: 0, // number of nodes
-		mceHtml: function () {
+		mceHtml: function (blnArg1) {
 			//
 			// editor selection as html
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.mceHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > mceHtml - New');
-						//
-						this.mceHtmlCache = regEncode(editor.selection.getContent({
-							format: 'html'
-						}));
-						//
-						retValue = this.mceHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > mceHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Encoded');
+							//
+							this.mceHtmlCache = regEncode(editor.selection.getContent({
+								format: 'html'
+							}));
+							//
+							retValue = this.mceHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Raw');
+							//
+							retValue = editor.selection.getContent({
+								format: 'html'
+							});
+							//
+							break;
+						default:
+							//
+							console.log(' OBJ > mceHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '417';
+					_js.ms = e.message;
+					_js.ln = '437';
 				}
 			}
 			//
@@ -428,7 +448,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.mceNodeNameCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -444,8 +464,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '448';
+					_js.ms = e.message;
+					_js.ln = '468';
 				}
 			}
 			//
@@ -458,7 +478,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = this.mceTextCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -476,42 +496,58 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '480';
+					_js.ms = e.message;
+					_js.ln = '500';
 				}
 			}
 			//
 			return retValue;
 		},
 		mceTextCache: null,
-		outerHtml: function () {
+		outerHtml: function (blnArg1) {
 			//
 			// html node name
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.outerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > outerHtml - New');
-						//
-						if (this.mceNodeName() == 'body') {
-							this.outerHtmlCache = regEncode(this.mceHtml());
-						} else {
-							this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
-						}
-						//
-						retValue = this.outerHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > outerHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Encoded');
+							//
+							if (this.mceNodeName() == 'body') {
+								this.outerHtmlCache = regEncode(this.mceHtml());
+							} else {
+								this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
+							}							
+							//
+							retValue = this.outerHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Raw');
+							//
+							if (this.mceNodeName() == 'body') {
+								retValue = this.mceHtml();
+							} else {
+								retValue = this.proMceTags(editor.dom.getOuterHTML(this.mceNode));
+							}
+							break;
+						default:
+							//
+							console.log(' OBJ > outerHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '514';
+					_js.ms = e.message;
+					_js.ln = '550';
 				}
 			}
 			//
@@ -524,7 +560,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proAddMark');
 				//
@@ -548,8 +584,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//						
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '552';
+					_js.ms = e.message;
+					_js.ln = '588';
 				}
 			}
 			//
@@ -561,7 +597,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldClassElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -605,8 +641,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '609';
+					_js.ms = e.message;
+					_js.ln = '645';
 				}
 			}
 			//
@@ -618,7 +654,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldStyleElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -644,8 +680,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '648';
+					_js.ms = e.message;
+					_js.ln = '684';
 				}
 			}
 			//
@@ -657,7 +693,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proColorElements');
 				//
@@ -772,8 +808,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					this.datFgColorCache = null;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '776';
+					_js.ms = e.message;
+					_js.ln = '812';
 				}
 			}
 			//
@@ -785,7 +821,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proFragment');
 				//
@@ -927,8 +963,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '931';
+					_js.ms = e.message;
+					_js.ln = '967';
 				}
 			}
 			//
@@ -942,7 +978,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proJoinElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -995,8 +1031,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '999';
+					_js.ms = e.message;
+					_js.ln = '1035';
 				}
 			}
 			//
@@ -1008,10 +1044,10 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
-				console.log(' OBJ > proMceTags');
-				console.log('     - strArg1: ' + strArg1);
+				console.log('OBJ > proMceTags');
+				console.log('    - strArg1: ' + strArg1);
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
@@ -1028,8 +1064,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1032';
+					_js.ms = e.message;
+					_js.ln = '1068';
 				}
 			}
 			//
@@ -1041,7 +1077,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proOrderClassStyle');
 				console.log('    - strArg1: ' + strArg1);
@@ -1070,8 +1106,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1074';
+					_js.ms = e.message;
+					_js.ln = '1110';
 				}
 			}
 			//
@@ -1085,7 +1121,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proPurgeElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1119,8 +1155,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					retValue = strArg1;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1123';
+					_js.ms = e.message;
+					_js.ln = '1159';
 				}
 			}
 			//
@@ -1132,7 +1168,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proSrtElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1156,8 +1192,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1160';
+					_js.ms = e.message;
+					_js.ln = '1196';
 				}
 			}
 			//
@@ -1169,7 +1205,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proStdElements');
 				//
@@ -1232,9 +1268,9 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.hd = 'MESSAGE';
-					_err.ms = e.message;
-					_err.ln = '1237';
+					_js.hd = 'MESSAGE';
+					_js.ms = e.message;
+					_js.ln = '1273';
 				}
 			}
 			//
@@ -1251,7 +1287,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > getRegExpValue');
 			console.log('    - strArg1: ' + strArg1);
@@ -1286,8 +1322,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				}
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1290';
+				_js.ms = e.message;
+				_js.ln = '1326';
 			}
 		}
 		//
@@ -1295,21 +1331,35 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 	}
 	function regDecode(strArg1) {
 		//
-		// decode brackets/parentheses for regex
+		// decode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('#sb_', '[').replace('_eb#', ']').replace('#sp_', '(').replace('_ep#', ')');
-				//
+				var decodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/~#A0~/))) {
+					decodeVal = decodeVal.replace(/~#A0~/g, '&nbsp;');
+				}
+				if (!isEmpty(strArg1.match(/#5B~/))) {
+					decodeVal = decodeVal.replace(/#5B~/g, '[');
+				}
+				if (!isEmpty(strArg1.match(/~#5D/))) {
+					decodeVal = decodeVal.replace(/~#5D/g, ']');
+				}
+				if (!isEmpty(strArg1.match(/#28~/))) {
+					decodeVal = decodeVal.replace(/#28~/g, '(');
+				}
+				if (!isEmpty(strArg1.match(/~#29/))) {
+					decodeVal = decodeVal.replace(/~#29/g, ')');
+				}
+				retValue = decodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1312';
+				_js.ms = e.message;
+				_js.ln = '1362';
 			}
 		}
 		//
@@ -1317,21 +1367,35 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 	}
 	function regEncode(strArg1) {
 		//
-		// encode brackets/parentheses for regex
+		// encode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
-				//
+				var encodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/[\u00A0]|\&nbsp;/))) {
+					encodeVal = encodeVal.replace(/[\u00A0]|\&nbsp;/g, '~#A0~');
+				}
+				if (!isEmpty(strArg1.match(/\[/))) {
+					encodeVal = encodeVal.replace('[', '#5B~');
+				}
+				if (!isEmpty(strArg1.match(/\]/))) {
+					encodeVal = encodeVal.replace(']', '~#5D');
+				}
+				if (!isEmpty(strArg1.match(/\(/))) {
+					encodeVal = encodeVal.replace('(', '#28~');
+				}
+				if (!isEmpty(strArg1.match(/\)/))) {
+					encodeVal = encodeVal.replace(')', '~#29');
+				}
+				retValue = encodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1334';
+				_js.ms = e.message;
+				_js.ln = '1398';
 			}
 		}
 		//
@@ -1343,7 +1407,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > noHtmlTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1356,8 +1420,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				retValue = strArg1.replace(/(<([^>]+)>)/ig, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1360';
+				_js.ms = e.message;
+				_js.ln = '1424';
 			}
 		}
 		//
@@ -1393,9 +1457,9 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			retValue = true;
 			//
 		} catch (e) {
-			_err.hd = 'MESSAGE';
-			_err.ms = e.message;
-			_err.ln = '1398';
+			_js.hd = 'MESSAGE';
+			_js.ms = e.message;
+			_js.ln = '1462';
 		}
 		//
 		return retValue;
@@ -1437,7 +1501,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToArray');
 			console.log('    - strArg1: ' + strArg1);
@@ -1457,8 +1521,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				retValue = datArrayData.split('*');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1461';
+				_js.ms = e.message;
+				_js.ln = '1525';
 			}
 		}
 		//
@@ -1471,7 +1535,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToNode');
 			console.log('    - strArg1: ' + strArg1);
@@ -1508,8 +1572,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				retValue = blkNode;
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1512';
+				_js.ms = e.message;
+				_js.ln = '1576';
 			}
 		}
 		//
@@ -1522,7 +1586,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > stripOuterTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1535,8 +1599,8 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1539';
+				_js.ms = e.message;
+				_js.ln = '1603';
 			}
 		}
 		//
@@ -1558,7 +1622,9 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		//
 		// init object
 		//
+		console.log(' ');
 		console.log('FN  > frmInit');
+		console.log(' ');
 		//
 		var edSelect = editor.selection.getContent({
 			format: 'html'
@@ -1580,10 +1646,10 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		// process request
 		//
 		console.log(' ');
-		console.log('      * * *');
-		console.log(' ');
 		console.log('FN  > frmSubmit');
-		var htmlDoc = editor.getContent();
+		console.log(' ');
+		//
+		var htmlDoc = editor.getContent().replace(/[\u00A0]/g, '&nbsp;');
 		try {
 			// validate selection
 			//
@@ -1593,26 +1659,26 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			var htmlUpdate = '';
 			//
 			if (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('A mixture of class and style input data detected.');
 			} else if (isEmpty(oDoc.datElements)) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('Missing input data.');
 			} else if (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is class, but the input is formatted as a style.');
 			} else if (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is style, but the input is formatted as a class.');
 			}
 			if (oDoc.lineCnt == 1) {
 				//
-				console.log('***** Process Single Line *****');
+				console.log('*** * Process Single Line * ***');
 				//
 				fullHtml = oDoc.fullHtml();
 				//
 				switch (true) {
-					case (oDoc.hasError):
+					case (_js.hasError()):
 						//
 						// error
 						//
@@ -1627,7 +1693,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 					case (oDoc.hasDatColor()):
 						console.log('    - Mark -');
 						htmlUpdate = regDecode(oDoc.proColorElements());
-						if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
 							htmlUpdate = regDecode(oDoc.proStdElements());
 						}
 						break;
@@ -1636,15 +1702,17 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
+					//
 					decodeFullHtml = regDecode(fullHtml);
 					decodeUpdateHtml = regDecode(htmlUpdate);
-					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					console.log('SRC > ' + decodeFullHtml);
 					console.log('UPD > ' + decodeUpdateHtml);
 					//
 					// write content back
+					//
+					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					try {
 						//
@@ -1653,13 +1721,13 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						editor.setContent(htmlDoc);
 						editor.undoManager.add();
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1657';
+						_js.ms = e.message;
+						_js.ln = '1725';
 					}
 				}
 			} else {
 				//
-				console.log('***** Process Multi Line *****');
+				console.log('*** * Process Multi Line * ***');
 				//
 				// load block content into array
 				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
@@ -1672,7 +1740,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				for (; blkArray[idx];) {
 					blkHtmlItem = blkArray[idx];
 					switch (true) {
-						case (oDoc.hasError):
+						case (_js.hasError()):
 							// error
 							idx = 9999;
 							break;
@@ -1700,9 +1768,12 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 							oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
 							oDoc.innerHtmlCache = oDoc.mceHtmlCache;
 							switch (true) {
+								case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+									htmlUpdate = oDoc.proAddMark();
+									break;
 								case (oDoc.hasDatColor()):
 									htmlUpdate = oDoc.proColorElements();
-									if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
 										htmlUpdate = oDoc.proStdElements();
 									}
 									break;
@@ -1710,14 +1781,19 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 									htmlUpdate = oDoc.proStdElements();
 							}
 					}
-					if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
+					if (!_js.hasError() && !isEmpty(htmlUpdate)) {
+						//
 						decodeFullHtml = regDecode(fullHtml);
 						decodeUpdateHtml = regDecode(htmlUpdate);
-						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 						//
 						console.log(padNum(idx, 3) + ' > IDX');
 						console.log('SRC > ' + decodeFullHtml);
 						console.log('UPD > ' + decodeUpdateHtml);
+						//
+						// write content back
+						//
+						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
+						//
 					}
 					//
 					idx++;
@@ -1726,7 +1802,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 				//
 				// write content back
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
 					//
 					try {
 						editor.setContent(htmlDoc);
@@ -1735,18 +1811,18 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						console.log('    - Multi Line Complete -');
 						//
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1739';
+						_js.ms = e.message;
+						_js.ln = '1815';
 					}
 				}
 			}
 		} catch (e) {
-			_err.ms = e.message;
-			_err.ln = '1745';
+			_js.ms = e.message;
+			_js.ln = '1821';
 		}
-		if (_err.hasError()) {
+		if (_js.hasError()) {
 			//
-			_err.display();
+			_js.display();
 			//
 		}
 		editor.focus();
@@ -1762,7 +1838,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTcgMTV2MmgxMHYtMkg3em0tNCA2aDE4di0ySDN2MnptMC04aDE4di0ySDN2MnptNC02djJoMTBWN0g3ek0zIDN2MmgxOFYzSDN6Ii8+PC9zdmc+',
 		onclick: function () {
 			if (!mceReady()) {
-				_err.display();
+				_js.display();
 				editor.focus();				
 			} else {
 				console.clear();
@@ -1781,7 +1857,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Align left',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1800,7 +1876,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Align Center',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1819,7 +1895,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Align Right',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1838,7 +1914,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Justify',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1857,7 +1933,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Indent',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1876,7 +1952,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Hanging Indent',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1895,7 +1971,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 			text: '\xa0Paragraph Indent',
 			onclick: function () {
 				if (!mceReady()) {
-					_err.display();
+					_js.display();
 					editor.focus();				
 				} else {
 					console.clear();
@@ -1912,5 +1988,5 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-alignment / plugin.js / 210602-1
+ * EOF: apply-text-alignment / plugin.js / 210611-1
  */
