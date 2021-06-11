@@ -3,17 +3,17 @@
  * Tinymce apply-text-color plugin
  *
  * ###:  plugin.js
- * bld:  210604-1
+ * bld:  210611-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
  */
 tinymce.PluginManager.add('apply_txt_color', function (editor) {
-	'use strict';
+'use strict';
 	//
 	// error object
 	//
-	var _err = {
+	var _js = {
 		hd: 'ERROR',
 		ms: null,
 		ln: null,
@@ -37,7 +37,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.blkContentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (this.lineCnt < 2) {
 						throw new Error('Multi line content must contain more than 1 line.');
@@ -91,8 +91,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '95';
+					_js.ms = e.message;
+					_js.ln = '95';
 				}
 			}
 			//
@@ -107,7 +107,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.datBgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -133,8 +133,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '137';
+					_js.ms = e.message;
+					_js.ln = '137';
 				}
 			}
 			//
@@ -148,7 +148,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.datFgColorCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -174,8 +174,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '178';
+					_js.ms = e.message;
+					_js.ln = '178';
 				}
 			}
 			//
@@ -188,7 +188,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = false;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > hasDatColor');
 				//
@@ -197,8 +197,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					retValue = (!isEmpty(this.datBgColor()) || !isEmpty(this.datFgColor()));
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '201';
+					_js.ms = e.message;
+					_js.ln = '201';
 				}
 			}
 			//
@@ -210,7 +210,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.fullHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -218,13 +218,14 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 						var domNode = this.mceNode;
 						var domNodeName = this.mceNodeName();
-						var outerHtml = this.outerHtml();
+						var enOuterHtml = this.outerHtml();
 						switch (true) {
 							case (domNodeName == 'body'):
 								// body
-								this.fullHtmlCache = regEncode(this.mceHtml());
+								this.fullHtmlRaw = this.mceHtml(true);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
-							case (isEmpty(outerHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
+							case (isEmpty(enOuterHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
 								// marker ie. <u>, etc
 								var nodeExp = new RegExp('div|h[1-6]|li|p(?!a)|td|th', 'i');
 								while (isEmpty(domNodeName.match(nodeExp))) {
@@ -235,11 +236,13 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 									}
 									domNodeName = domNode.nodeName.toLowerCase();
 								}
-								this.fullHtmlCache = regEncode(this.proMceTags(domNode.outerHTML));
+								this.fullHtmlRaw = this.proMceTags(domNode.outerHTML);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
 								break;
 							default:
 								// everything else
-								this.fullHtmlCache = regEncode(this.outerHtml());
+								this.fullHtmlRaw = this.outerHtml(true);
+								this.fullHtmlCache = enOuterHtml;
 						}
 						//
 						retValue = this.fullHtmlCache;
@@ -250,21 +253,22 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '254';
+					_js.ms = e.message;
+					_js.ln = '257';
 				}
 			}
 			//
 			return retValue;
 		},
 		fullHtmlCache: null,
+		fullHtmlRaw: null,
 		initNode: function (nodeArg1) {
 			//
 			// init doc object
 			//
 			var retValue = this.initNodeCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > initNode');
 				//
@@ -281,6 +285,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					this.datElements = '';
 					this.datFgColorCache = null;
 					this.fullHtmlCache = null;
+					this.fullHtmlRaw = null;
 					this.innerHtmlCache = null;
 					this.isFragmentCache = null;
 					this.mceHtmlCache = null;
@@ -309,8 +314,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 							break;
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '313';
+					_js.ms = e.message;
+					_js.ln = '318';
 				}
 			}
 			//
@@ -322,7 +327,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.innerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -342,8 +347,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '346';
+					_js.ms = e.message;
+					_js.ln = '351';
 				}
 			}
 			//
@@ -356,7 +361,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.isFragmentCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -379,8 +384,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '383';
+					_js.ms = e.message;
+					_js.ln = '388';
 				}
 			}
 			return retValue;
@@ -389,32 +394,47 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		hasMark: false,
 		hasMarkPair: false,
 		lineCnt: 0, // number of nodes
-		mceHtml: function () {
+		mceHtml: function (blnArg1) {
 			//
 			// editor selection as html
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.mceHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > mceHtml - New');
-						//
-						this.mceHtmlCache = regEncode(editor.selection.getContent({
-							format: 'html'
-						}));
-						//
-						retValue = this.mceHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > mceHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Encoded');
+							//
+							this.mceHtmlCache = regEncode(editor.selection.getContent({
+								format: 'html'
+							}));
+							//
+							retValue = this.mceHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Raw');
+							//
+							retValue = editor.selection.getContent({
+								format: 'html'
+							});
+							//
+							break;
+						default:
+							//
+							console.log(' OBJ > mceHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '417';
+					_js.ms = e.message;
+					_js.ln = '437';
 				}
 			}
 			//
@@ -428,7 +448,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.mceNodeNameCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -444,8 +464,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '448';
+					_js.ms = e.message;
+					_js.ln = '468';
 				}
 			}
 			//
@@ -458,7 +478,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = this.mceTextCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -476,42 +496,58 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '480';
+					_js.ms = e.message;
+					_js.ln = '500';
 				}
 			}
 			//
 			return retValue;
 		},
 		mceTextCache: null,
-		outerHtml: function () {
+		outerHtml: function (blnArg1) {
 			//
 			// html node name
+			//	- blnArg1: raw version flag / do not update cache
 			//
 			var retValue = this.outerHtmlCache;
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
 				try {
-					if (isNull(retValue)) {
-						//
-						console.log(' OBJ > outerHtml - New');
-						//
-						if (this.mceNodeName() == 'body') {
-							this.outerHtmlCache = regEncode(this.mceHtml());
-						} else {
-							this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
-						}
-						//
-						retValue = this.outerHtmlCache;
-						//
-					} else {
-						//
-						console.log(' OBJ > outerHtml - Cache');
-						//
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Encoded');
+							//
+							if (this.mceNodeName() == 'body') {
+								this.outerHtmlCache = regEncode(this.mceHtml());
+							} else {
+								this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
+							}							
+							//
+							retValue = this.outerHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Raw');
+							//
+							if (this.mceNodeName() == 'body') {
+								retValue = this.mceHtml();
+							} else {
+								retValue = this.proMceTags(editor.dom.getOuterHTML(this.mceNode));
+							}
+							break;
+						default:
+							//
+							console.log(' OBJ > outerHtml - Cache');
+							//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '514';
+					_js.ms = e.message;
+					_js.ln = '550';
 				}
 			}
 			//
@@ -524,7 +560,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proAddMark');
 				//
@@ -548,8 +584,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//						
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '552';
+					_js.ms = e.message;
+					_js.ln = '588';
 				}
 			}
 			//
@@ -561,7 +597,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldClassElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -605,8 +641,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '609';
+					_js.ms = e.message;
+					_js.ln = '645';
 				}
 			}
 			//
@@ -618,7 +654,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proBldStyleElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -644,8 +680,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '648';
+					_js.ms = e.message;
+					_js.ln = '684';
 				}
 			}
 			//
@@ -657,7 +693,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proColorElements');
 				//
@@ -772,8 +808,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					this.datFgColorCache = null;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '776';
+					_js.ms = e.message;
+					_js.ln = '812';
 				}
 			}
 			//
@@ -785,7 +821,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proFragment');
 				//
@@ -927,8 +963,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '931';
+					_js.ms = e.message;
+					_js.ln = '967';
 				}
 			}
 			//
@@ -942,7 +978,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log(' OBJ > proJoinElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -995,8 +1031,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '999';
+					_js.ms = e.message;
+					_js.ln = '1035';
 				}
 			}
 			//
@@ -1008,10 +1044,10 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
-				console.log(' OBJ > proMceTags');
-				console.log('     - strArg1: ' + strArg1);
+				console.log('OBJ > proMceTags');
+				console.log('    - strArg1: ' + strArg1);
 				//
 				try {
 					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
@@ -1028,8 +1064,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1032';
+					_js.ms = e.message;
+					_js.ln = '1068';
 				}
 			}
 			//
@@ -1041,7 +1077,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proOrderClassStyle');
 				console.log('    - strArg1: ' + strArg1);
@@ -1070,8 +1106,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						}
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1074';
+					_js.ms = e.message;
+					_js.ln = '1110';
 				}
 			}
 			//
@@ -1085,7 +1121,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proPurgeElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1119,8 +1155,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					retValue = strArg1;
 					//
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1123';
+					_js.ms = e.message;
+					_js.ln = '1159';
 				}
 			}
 			//
@@ -1132,7 +1168,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proSrtElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1156,8 +1192,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.ms = e.message;
-					_err.ln = '1160';
+					_js.ms = e.message;
+					_js.ln = '1196';
 				}
 			}
 			//
@@ -1169,7 +1205,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_err.hasError()) {
+			if (!_js.hasError()) {
 				//
 				console.log('OBJ > proStdElements');
 				//
@@ -1232,9 +1268,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					}
 				} catch (e) {
-					_err.hd = 'MESSAGE';
-					_err.ms = e.message;
-					_err.ln = '1237';
+					_js.hd = 'MESSAGE';
+					_js.ms = e.message;
+					_js.ln = '1273';
 				}
 			}
 			//
@@ -1251,7 +1287,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > getRegExpValue');
 			console.log('    - strArg1: ' + strArg1);
@@ -1286,8 +1322,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				}
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1290';
+				_js.ms = e.message;
+				_js.ln = '1326';
 			}
 		}
 		//
@@ -1295,21 +1331,35 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 	}
 	function regDecode(strArg1) {
 		//
-		// decode brackets/parentheses for regex
+		// decode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('#sb_', '[').replace('_eb#', ']').replace('#sp_', '(').replace('_ep#', ')');
-				//
+				var decodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/~#A0~/))) {
+					decodeVal = decodeVal.replace(/~#A0~/g, '&nbsp;');
+				}
+				if (!isEmpty(strArg1.match(/#5B~/))) {
+					decodeVal = decodeVal.replace(/#5B~/g, '[');
+				}
+				if (!isEmpty(strArg1.match(/~#5D/))) {
+					decodeVal = decodeVal.replace(/~#5D/g, ']');
+				}
+				if (!isEmpty(strArg1.match(/#28~/))) {
+					decodeVal = decodeVal.replace(/#28~/g, '(');
+				}
+				if (!isEmpty(strArg1.match(/~#29/))) {
+					decodeVal = decodeVal.replace(/~#29/g, ')');
+				}
+				retValue = decodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1312';
+				_js.ms = e.message;
+				_js.ln = '1362';
 			}
 		}
 		//
@@ -1317,21 +1367,35 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 	}
 	function regEncode(strArg1) {
 		//
-		// encode brackets/parentheses for regex
+		// encode brackets, parentheses, &nbsp; for regex
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
-					throw new Error('Missing required argument.'); // value to evaluate
+					throw new Error('Missing required argument.');
 				}
-				//
-				retValue = strArg1.replace('[', '#sb_').replace(']', '_eb#').replace('(', '#sp_').replace(')', '_ep#');
-				//
+				var encodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/[\u00A0]|\&nbsp;/))) {
+					encodeVal = encodeVal.replace(/[\u00A0]|\&nbsp;/g, '~#A0~');
+				}
+				if (!isEmpty(strArg1.match(/\[/))) {
+					encodeVal = encodeVal.replace('[', '#5B~');
+				}
+				if (!isEmpty(strArg1.match(/\]/))) {
+					encodeVal = encodeVal.replace(']', '~#5D');
+				}
+				if (!isEmpty(strArg1.match(/\(/))) {
+					encodeVal = encodeVal.replace('(', '#28~');
+				}
+				if (!isEmpty(strArg1.match(/\)/))) {
+					encodeVal = encodeVal.replace(')', '~#29');
+				}
+				retValue = encodeVal;
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1334';
+				_js.ms = e.message;
+				_js.ln = '1398';
 			}
 		}
 		//
@@ -1343,7 +1407,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > noHtmlTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1356,8 +1420,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				retValue = strArg1.replace(/(<([^>]+)>)/ig, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1360';
+				_js.ms = e.message;
+				_js.ln = '1424';
 			}
 		}
 		//
@@ -1393,9 +1457,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			retValue = true;
 			//
 		} catch (e) {
-			_err.hd = 'MESSAGE';
-			_err.ms = e.message;
-			_err.ln = '1398';
+			_js.hd = 'MESSAGE';
+			_js.ms = e.message;
+			_js.ln = '1462';
 		}
 		//
 		return retValue;
@@ -1437,7 +1501,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToArray');
 			console.log('    - strArg1: ' + strArg1);
@@ -1457,8 +1521,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				retValue = datArrayData.split('*');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1461';
+				_js.ms = e.message;
+				_js.ln = '1525';
 			}
 		}
 		//
@@ -1471,7 +1535,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > strToNode');
 			console.log('    - strArg1: ' + strArg1);
@@ -1508,8 +1572,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				retValue = blkNode;
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1512';
+				_js.ms = e.message;
+				_js.ln = '1576';
 			}
 		}
 		//
@@ -1522,7 +1586,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!oDoc.hasError) {
+		if (!_js.hasError()) {
 			//
 			console.log('FN  > stripOuterTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1535,8 +1599,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
 				//
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '1539';
+				_js.ms = e.message;
+				_js.ln = '1603';
 			}
 		}
 		//
@@ -1558,7 +1622,9 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		//
 		// init object
 		//
+		console.log(' ');
 		console.log('FN  > frmInit');
+		console.log(' ');
 		//
 		var edSelect = editor.selection.getContent({
 			format: 'html'
@@ -1580,10 +1646,10 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		// process request
 		//
 		console.log(' ');
-		console.log('      * * *');
-		console.log(' ');
 		console.log('FN  > frmSubmit');
-		var htmlDoc = editor.getContent();
+		console.log(' ');
+		//
+		var htmlDoc = editor.getContent().replace(/[\u00A0]/g, '&nbsp;');
 		try {
 			// validate selection
 			//
@@ -1593,26 +1659,26 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			var htmlUpdate = '';
 			//
 			if (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('A mixture of class and style input data detected.');
 			} else if (isEmpty(oDoc.datElements)) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('Missing input data.');
 			} else if (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is class, but the input is formatted as a style.');
 			} else if (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))) {
-				_err.hd = 'MESSAGE';
+				_js.hd = 'MESSAGE';
 				throw new Error('The selected element is style, but the input is formatted as a class.');
 			}
 			if (oDoc.lineCnt == 1) {
 				//
-				console.log('***** Process Single Line *****');
+				console.log('*** * Process Single Line * ***');
 				//
 				fullHtml = oDoc.fullHtml();
 				//
 				switch (true) {
-					case (oDoc.hasError):
+					case (_js.hasError()):
 						//
 						// error
 						//
@@ -1627,7 +1693,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					case (oDoc.hasDatColor()):
 						console.log('    - Mark -');
 						htmlUpdate = regDecode(oDoc.proColorElements());
-						if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
 							htmlUpdate = regDecode(oDoc.proStdElements());
 						}
 						break;
@@ -1636,15 +1702,17 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
+					//
 					decodeFullHtml = regDecode(fullHtml);
 					decodeUpdateHtml = regDecode(htmlUpdate);
-					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					console.log('SRC > ' + decodeFullHtml);
 					console.log('UPD > ' + decodeUpdateHtml);
 					//
 					// write content back
+					//
+					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 					//
 					try {
 						//
@@ -1653,13 +1721,13 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						editor.setContent(htmlDoc);
 						editor.undoManager.add();
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1657';
+						_js.ms = e.message;
+						_js.ln = '1725';
 					}
 				}
 			} else {
 				//
-				console.log('***** Process Multi Line *****');
+				console.log('*** * Process Multi Line * ***');
 				//
 				// load block content into array
 				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
@@ -1672,7 +1740,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				for (; blkArray[idx];) {
 					blkHtmlItem = blkArray[idx];
 					switch (true) {
-						case (oDoc.hasError):
+						case (_js.hasError()):
 							// error
 							idx = 9999;
 							break;
@@ -1702,7 +1770,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 							switch (true) {
 								case (oDoc.hasDatColor()):
 									htmlUpdate = oDoc.proColorElements();
-									if (!isEmpty(oDoc.datElements) && !oDoc.hasError) {
+									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
 										htmlUpdate = oDoc.proStdElements();
 									}
 									break;
@@ -1710,14 +1778,19 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 									htmlUpdate = oDoc.proStdElements();
 							}
 					}
-					if (!oDoc.hasError && !isEmpty(htmlUpdate)) {
+					if (!_js.hasError() && !isEmpty(htmlUpdate)) {
+						//
 						decodeFullHtml = regDecode(fullHtml);
 						decodeUpdateHtml = regDecode(htmlUpdate);
-						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
 						//
 						console.log(padNum(idx, 3) + ' > IDX');
 						console.log('SRC > ' + decodeFullHtml);
 						console.log('UPD > ' + decodeUpdateHtml);
+						//
+						// write content back
+						//
+						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
+						//
 					}
 					//
 					idx++;
@@ -1726,7 +1799,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				// write content back
 				//
-				if (!_err.hasError()) {
+				if (!_js.hasError()) {
 					//
 					try {
 						editor.setContent(htmlDoc);
@@ -1735,18 +1808,18 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						console.log('    - Multi Line Complete -');
 						//
 					} catch (e) {
-						_err.ms = e.message;
-						_err.ln = '1739';
+						_js.ms = e.message;
+						_js.ln = '1812';
 					}
 				}
 			}
 		} catch (e) {
-			_err.ms = e.message;
-			_err.ln = '1745';
+			_js.ms = e.message;
+			_js.ln = '1818';
 		}
-		if (_err.hasError()) {
+		if (_js.hasError()) {
 			//
-			_err.display();
+			_js.display();
 			//
 		}
 		editor.focus();
@@ -1767,130 +1840,130 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 			try {
 				var colorArray = [{
 					'color': 'aliceblue',
-					'hex': '#F0F8FF'
+					'hex': '#f0f8ff'
 				}, {
 					'color': 'antiquewhite',
-					'hex': '#FAEBD7'
+					'hex': '#faebd7'
 				}, {
 					'color': 'aqua',
-					'hex': '#00FFFF'
+					'hex': '#00ffff'
 				}, {
 					'color': 'aquamarine',
-					'hex': '#7FFFD4'
+					'hex': '#7fffd4'
 				}, {
 					'color': 'azure',
-					'hex': '#F0FFFF'
+					'hex': '#f0ffff'
 				}, {
 					'color': 'beige',
-					'hex': '#F5F5DC'
+					'hex': '#f5f5dc'
 				}, {
 					'color': 'bisque',
-					'hex': '#FFE4C4'
+					'hex': '#ffe4c4'
 				}, {
 					'color': 'black',
 					'hex': '#000000'
 				}, {
 					'color': 'blanchedalmond',
-					'hex': '#FFEBCD'
+					'hex': '#ffebcd'
 				}, {
 					'color': 'blue',
-					'hex': '#0000FF'
+					'hex': '#0000ff'
 				}, {
 					'color': 'blueviolet',
-					'hex': '#8A2BE2'
+					'hex': '#8a2be2'
 				}, {
 					'color': 'brown',
-					'hex': '#A52A2A'
+					'hex': '#a52a2a'
 				}, {
 					'color': 'burlywood',
-					'hex': '#DEB887'
+					'hex': '#deb887'
 				}, {
 					'color': 'cadetblue',
-					'hex': '#5F9EA0'
+					'hex': '#5f9ea0'
 				}, {
 					'color': 'chartreuse',
-					'hex': '#7FFF00'
+					'hex': '#7fff00'
 				}, {
 					'color': 'chocolate',
-					'hex': '#D2691E'
+					'hex': '#d2691e'
 				}, {
 					'color': 'coral',
-					'hex': '#FF7F50'
+					'hex': '#ff7f50'
 				}, {
 					'color': 'cornflowerblue',
-					'hex': '#6495ED'
+					'hex': '#6495ed'
 				}, {
 					'color': 'cornsilk',
-					'hex': '#FFF8DC'
+					'hex': '#fff8dc'
 				}, {
 					'color': 'crimson',
-					'hex': '#DC143C'
+					'hex': '#dc143c'
 				}, {
 					'color': 'cyan',
-					'hex': '#00FFFF'
+					'hex': '#00ffff'
 				}, {
 					'color': 'darkblue',
-					'hex': '#00008B'
+					'hex': '#00008b'
 				}, {
 					'color': 'darkcyan',
-					'hex': '#008B8B'
+					'hex': '#008b8b'
 				}, {
 					'color': 'darkgoldenrod',
-					'hex': '#B8860B'
+					'hex': '#b8860b'
 				}, {
 					'color': 'darkgray',
-					'hex': '#A9A9A9'
+					'hex': '#a9a9a9'
 				}, {
 					'color': 'darkgreen',
 					'hex': '#006400'
 				}, {
 					'color': 'darkgrey',
-					'hex': '#A9A9A9'
+					'hex': '#a9a9a9'
 				}, {
 					'color': 'darkkhaki',
-					'hex': '#BDB76B'
+					'hex': '#bdb76b'
 				}, {
 					'color': 'darkmagenta',
-					'hex': '#8B008B'
+					'hex': '#8b008b'
 				}, {
 					'color': 'darkolivegreen',
-					'hex': '#556B2F'
+					'hex': '#556b2f'
 				}, {
 					'color': 'darkorange',
-					'hex': '#FF8C00'
+					'hex': '#ff8c00'
 				}, {
 					'color': 'darkorchid',
-					'hex': '#9932CC'
+					'hex': '#9932cc'
 				}, {
 					'color': 'darkred',
-					'hex': '#8B0000'
+					'hex': '#8b0000'
 				}, {
 					'color': 'darksalmon',
-					'hex': '#E9967A'
+					'hex': '#e9967a'
 				}, {
 					'color': 'darkseagreen',
-					'hex': '#8FBC8F'
+					'hex': '#8fbc8f'
 				}, {
 					'color': 'darkslateblue',
-					'hex': '#483D8B'
+					'hex': '#483d8b'
 				}, {
 					'color': 'darkslategray',
-					'hex': '#2F4F4F'
+					'hex': '#2f4f4f'
 				}, {
 					'color': 'darkslategrey',
-					'hex': '#2F4F4F'
+					'hex': '#2f4f4f'
 				}, {
 					'color': 'darkturquoise',
-					'hex': '#00CED1'
+					'hex': '#00ced1'
 				}, {
 					'color': 'darkviolet',
-					'hex': '#9400D3'
+					'hex': '#9400d3'
 				}, {
 					'color': 'deeppink',
-					'hex': '#FF1493'
+					'hex': '#ff1493'
 				}, {
 					'color': 'deepskyblue',
-					'hex': '#00BFFF'
+					'hex': '#00bfff'
 				}, {
 					'color': 'dimgray',
 					'hex': '#696969'
@@ -1899,31 +1972,31 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					'hex': '#696969'
 				}, {
 					'color': 'dodgerblue',
-					'hex': '#1E90FF'
+					'hex': '#1e90ff'
 				}, {
 					'color': 'firebrick',
-					'hex': '#B22222'
+					'hex': '#b22222'
 				}, {
 					'color': 'floralwhite',
-					'hex': '#FFFAF0'
+					'hex': '#fffaf0'
 				}, {
 					'color': 'forestgreen',
-					'hex': '#228B22'
+					'hex': '#228b22'
 				}, {
 					'color': 'fuchsia',
-					'hex': '#FF00FF'
+					'hex': '#ff00ff'
 				}, {
 					'color': 'gainsboro',
-					'hex': '#DCDCDC'
+					'hex': '#dcdcdc'
 				}, {
 					'color': 'ghostwhite',
-					'hex': '#F8F8FF'
+					'hex': '#f8f8ff'
 				}, {
 					'color': 'gold',
-					'hex': '#FFD700'
+					'hex': '#ffd700'
 				}, {
 					'color': 'goldenrod',
-					'hex': '#DAA520'
+					'hex': '#daa520'
 				}, {
 					'color': 'gray',
 					'hex': '#808080'
@@ -1932,73 +2005,73 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					'hex': '#008000'
 				}, {
 					'color': 'greenyellow',
-					'hex': '#ADFF2F'
+					'hex': '#adff2f'
 				}, {
 					'color': 'grey',
 					'hex': '#808080'
 				}, {
 					'color': 'honeydew',
-					'hex': '#F0FFF0'
+					'hex': '#f0fff0'
 				}, {
 					'color': 'hotpink',
-					'hex': '#FF69B4'
+					'hex': '#ff69b4'
 				}, {
 					'color': 'indianred',
-					'hex': '#CD5C5C'
+					'hex': '#cd5c5c'
 				}, {
 					'color': 'indigo',
-					'hex': '#4B0082'
+					'hex': '#4b0082'
 				}, {
 					'color': 'ivory',
-					'hex': '#FFFFF0'
+					'hex': '#fffff0'
 				}, {
 					'color': 'khaki',
-					'hex': '#F0E68C'
+					'hex': '#f0e68c'
 				}, {
 					'color': 'lavender',
-					'hex': '#E6E6FA'
+					'hex': '#e6e6fa'
 				}, {
 					'color': 'lavenderblush',
-					'hex': '#FFF0F5'
+					'hex': '#fff0f5'
 				}, {
 					'color': 'lawngreen',
-					'hex': '#7CFC00'
+					'hex': '#7cfc00'
 				}, {
 					'color': 'lemonchiffon',
-					'hex': '#FFFACD'
+					'hex': '#fffacd'
 				}, {
 					'color': 'lightblue',
-					'hex': '#ADD8E6'
+					'hex': '#add8e6'
 				}, {
 					'color': 'lightcoral',
-					'hex': '#F08080'
+					'hex': '#f08080'
 				}, {
 					'color': 'lightcyan',
-					'hex': '#E0FFFF'
+					'hex': '#e0ffff'
 				}, {
 					'color': 'lightgoldenrodyellow',
-					'hex': '#FAFAD2'
+					'hex': '#fafad2'
 				}, {
 					'color': 'lightgray',
-					'hex': '#D3D3D3'
+					'hex': '#d3d3d3'
 				}, {
 					'color': 'lightgreen',
-					'hex': '#90EE90'
+					'hex': '#90ee90'
 				}, {
 					'color': 'lightgrey',
-					'hex': '#D3D3D3'
+					'hex': '#d3d3d3'
 				}, {
 					'color': 'lightpink',
-					'hex': '#FFB6C1'
+					'hex': '#ffb6c1'
 				}, {
 					'color': 'lightsalmon',
-					'hex': '#FFA07A'
+					'hex': '#ffa07a'
 				}, {
 					'color': 'lightseagreen',
-					'hex': '#20B2AA'
+					'hex': '#20b2aa'
 				}, {
 					'color': 'lightskyblue',
-					'hex': '#87CEFA'
+					'hex': '#87cefa'
 				}, {
 					'color': 'lightslategray',
 					'hex': '#778899'
@@ -2007,118 +2080,118 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					'hex': '#778899'
 				}, {
 					'color': 'lightsteelblue',
-					'hex': '#B0C4DE'
+					'hex': '#b0c4de'
 				}, {
 					'color': 'lightyellow',
-					'hex': '#FFFFE0'
+					'hex': '#ffffe0'
 				}, {
 					'color': 'lime',
-					'hex': '#00FF00'
+					'hex': '#00ff00'
 				}, {
 					'color': 'limegreen',
-					'hex': '#32CD32'
+					'hex': '#32cd32'
 				}, {
 					'color': 'linen',
-					'hex': '#FAF0E6'
+					'hex': '#faf0e6'
 				}, {
 					'color': 'magenta',
-					'hex': '#FF00FF'
+					'hex': '#ff00ff'
 				}, {
 					'color': 'maroon',
 					'hex': '#800000'
 				}, {
 					'color': 'mediumaquamarine',
-					'hex': '#66CDAA'
+					'hex': '#66cdaa'
 				}, {
 					'color': 'mediumblue',
-					'hex': '#0000CD'
+					'hex': '#0000cd'
 				}, {
 					'color': 'mediumorchid',
-					'hex': '#BA55D3'
+					'hex': '#ba55d3'
 				}, {
 					'color': 'mediumpurple',
-					'hex': '#9370DB'
+					'hex': '#9370db'
 				}, {
 					'color': 'mediumseagreen',
-					'hex': '#3CB371'
+					'hex': '#3cb371'
 				}, {
 					'color': 'mediumslateblue',
-					'hex': '#7B68EE'
+					'hex': '#7b68ee'
 				}, {
 					'color': 'mediumspringgreen',
-					'hex': '#00FA9A'
+					'hex': '#00fa9a'
 				}, {
 					'color': 'mediumturquoise',
-					'hex': '#48D1CC'
+					'hex': '#48d1cc'
 				}, {
 					'color': 'mediumvioletred',
-					'hex': '#C71585'
+					'hex': '#c71585'
 				}, {
 					'color': 'midnightblue',
 					'hex': '#191970'
 				}, {
 					'color': 'mintcream',
-					'hex': '#F5FFFA'
+					'hex': '#f5fffa'
 				}, {
 					'color': 'mistyrose',
-					'hex': '#FFE4E1'
+					'hex': '#ffe4e1'
 				}, {
 					'color': 'moccasin',
-					'hex': '#FFE4B5'
+					'hex': '#ffe4b5'
 				}, {
 					'color': 'navajowhite',
-					'hex': '#FFDEAD'
+					'hex': '#ffdead'
 				}, {
 					'color': 'navy',
 					'hex': '#000080'
 				}, {
 					'color': 'oldlace',
-					'hex': '#FDF5E6'
+					'hex': '#fdf5e6'
 				}, {
 					'color': 'olive',
 					'hex': '#808000'
 				}, {
 					'color': 'olivedrab',
-					'hex': '#6B8E23'
+					'hex': '#6b8e23'
 				}, {
 					'color': 'orange',
-					'hex': '#FFA500'
+					'hex': '#ffa500'
 				}, {
 					'color': 'orangered',
-					'hex': '#FF4500'
+					'hex': '#ff4500'
 				}, {
 					'color': 'orchid',
-					'hex': '#DA70D6'
+					'hex': '#da70d6'
 				}, {
 					'color': 'palegoldenrod',
-					'hex': '#EEE8AA'
+					'hex': '#eee8aa'
 				}, {
 					'color': 'palegreen',
-					'hex': '#98FB98'
+					'hex': '#98fb98'
 				}, {
 					'color': 'paleturquoise',
-					'hex': '#AFEEEE'
+					'hex': '#afeeee'
 				}, {
 					'color': 'palevioletred',
-					'hex': '#DB7093'
+					'hex': '#db7093'
 				}, {
 					'color': 'papayawhip',
-					'hex': '#FFEFD5'
+					'hex': '#ffefd5'
 				}, {
 					'color': 'peachpuff',
-					'hex': '#FFDAB9'
+					'hex': '#ffdab9'
 				}, {
 					'color': 'peru',
-					'hex': '#CD853F'
+					'hex': '#cd853f'
 				}, {
 					'color': 'pink',
-					'hex': '#FFC0CB'
+					'hex': '#ffc0cb'
 				}, {
 					'color': 'plum',
-					'hex': '#DDA0DD'
+					'hex': '#dda0dd'
 				}, {
 					'color': 'powderblue',
-					'hex': '#B0E0E6'
+					'hex': '#b0e0e6'
 				}, {
 					'color': 'purple',
 					'hex': '#800080'
@@ -2127,40 +2200,40 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					'hex': '#663399'
 				}, {
 					'color': 'red',
-					'hex': '#FF0000'
+					'hex': '#ff0000'
 				}, {
 					'color': 'rosybrown',
-					'hex': '#BC8F8F'
+					'hex': '#bc8f8f'
 				}, {
 					'color': 'royalblue',
-					'hex': '#4169E1'
+					'hex': '#4169e1'
 				}, {
 					'color': 'saddlebrown',
-					'hex': '#8B4513'
+					'hex': '#8b4513'
 				}, {
 					'color': 'salmon',
-					'hex': '#FA8072'
+					'hex': '#fa8072'
 				}, {
 					'color': 'sandybrown',
-					'hex': '#F4A460'
+					'hex': '#f4a460'
 				}, {
 					'color': 'seagreen',
-					'hex': '#2E8B57'
+					'hex': '#2e8b57'
 				}, {
 					'color': 'seashell',
-					'hex': '#FFF5EE'
+					'hex': '#fff5ee'
 				}, {
 					'color': 'sienna',
-					'hex': '#A0522D'
+					'hex': '#a0522d'
 				}, {
 					'color': 'silver',
-					'hex': '#C0C0C0'
+					'hex': '#c0c0c0'
 				}, {
 					'color': 'skyblue',
-					'hex': '#87CEEB'
+					'hex': '#87ceeb'
 				}, {
 					'color': 'slateblue',
-					'hex': '#6A5ACD'
+					'hex': '#6a5acd'
 				}, {
 					'color': 'slategray',
 					'hex': '#708090'
@@ -2169,46 +2242,46 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					'hex': '#708090'
 				}, {
 					'color': 'snow',
-					'hex': '#FFFAFA'
+					'hex': '#fffafa'
 				}, {
 					'color': 'springgreen',
-					'hex': '#00FF7F'
+					'hex': '#00ff7f'
 				}, {
 					'color': 'steelblue',
-					'hex': '#4682B4'
+					'hex': '#4682b4'
 				}, {
 					'color': 'tan',
-					'hex': '#D2B48C'
+					'hex': '#d2b48c'
 				}, {
 					'color': 'teal',
 					'hex': '#008080'
 				}, {
 					'color': 'thistle',
-					'hex': '#D8BFD8'
+					'hex': '#d8bfd8'
 				}, {
 					'color': 'tomato',
-					'hex': '#FF6347'
+					'hex': '#ff6347'
 				}, {
 					'color': 'turquoise',
-					'hex': '#40E0D0'
+					'hex': '#40e0d0'
 				}, {
 					'color': 'violet',
-					'hex': '#EE82EE'
+					'hex': '#ee82ee'
 				}, {
 					'color': 'wheat',
-					'hex': '#F5DEB3'
+					'hex': '#f5deb3'
 				}, {
 					'color': 'white',
-					'hex': '#FFFFFF'
+					'hex': '#ffffff'
 				}, {
 					'color': 'whitesmoke',
-					'hex': '#F5F5F5'
+					'hex': '#f5f5f5'
 				}, {
 					'color': 'yellow',
-					'hex': '#FFFF00'
+					'hex': '#ffff00'
 				}, {
 					'color': 'yellowgreen',
-					'hex': '#9ACD32'
+					'hex': '#9acd32'
 				}];
 				var idx = 0;
 				for (; colorArray[idx];) {
@@ -2219,8 +2292,8 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 					idx++
 				}
 			} catch (e) {
-				_err.ms = e.message;
-				_err.ln = '2221';
+				_js.ms = e.message;
+				_js.ln = '2296';
 			}
 		}
 		//
@@ -2238,119 +2311,132 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 		image: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ4OS43ODUgNDg5Ljc4NTsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTSA0Ni4wNTMgMS45NDkgTCA0Ni4wNTMgMS45NDkgQyA0My42MjYgLTAuNDgyIDM3LjI4MiAxLjkyNCAzMS44ODQgNy4zMjEgTCAzMS44ODQgNy4zMjEgTCAzMS44ODEgNy4zMjEgQyAzMC45ODkgOC4yMTUgMzAuMTc5IDkuMTMzIDI5LjQ2MiAxMC4wNTcgQyAyOC41NTcgMTUuMjExIDI2LjMwMSAxOC44NjUgMjMuNjYgMTguODY1IEwgMjMuNjYgMTguODY5IEMgMjIuODA0IDE4Ljg2OSAyMS45OSAxOC40ODcgMjEuMjUgMTcuNzk3IEwgMjEuMjQ2IDE3Ljc5NyBMIDE5LjI5MSAxNS44NDMgQyAxOC4xODYgMTQuNzM3IDE2LjM5MyAxNC43MzcgMTUuMjg1IDE1Ljg0MyBMIDcuNjg4IDIzLjQzNiBMIDcuMjkyIDIzLjgzNyBMIDEuODI5IDI5LjI5NiBDIDAuNzI0IDMwLjQwMSAwLjcyNCAzMi4xOTUgMS44MjkgMzMuMzAxIEwgMTQuNjk5IDQ2LjE3MSBDIDE1LjgwNSA0Ny4yNzYgMTcuNTk5IDQ3LjI3NiAxOC43MDUgNDYuMTcxIEwgMjQuMTY2IDQwLjcwOCBMIDI0LjU2NiA0MC4zMTIgTCAzMi4xNiAzMi43MTcgQyAzMy4yNjUgMzEuNjExIDMzLjI2NSAyOS44MTcgMzIuMTYgMjguNzExIEwgMzAuMjAzIDI2Ljc1NSBMIDMwLjIwNSAyNi43NSBDIDI5LjUxMyAyNi4wMTIgMjkuMTM2IDI1LjE5NiAyOS4xMzYgMjQuMzQzIEwgMjkuMTM2IDI0LjM0MyBDIDI5LjEzNiAyNC4zNDMgMjkuMTM2IDI0LjM0MyAyOS4xMzYgMjQuMzQzIEMgMjkuMTM2IDIxLjcgMzIuNzg5IDE5LjQ0MyAzNy45NDQgMTguNTM5IEMgMzguODY3IDE3LjgyNCAzOS43ODUgMTcuMDExIDQwLjY4IDE2LjEyIEwgNDAuNjc3IDE2LjExNyBMIDQwLjY4IDE2LjEyIEMgNDYuMDc4IDEwLjcxOSA0OC40ODMgNC4zNzUgNDYuMDUzIDEuOTQ5IFogTSAyNC4zMjIgMzcuNjY5IEwgMjQuMzIzIDM3LjY3MSBMIDE5LjA0NiA0Mi45NDcgTCAxOS4wNDYgNDIuOTQ3IEwgMTcuNjY2IDQ0LjMyNyBDIDE3LjEwMyA0NC44OSAxNi4xOSA0NC44OSAxNS42MjcgNDQuMzI3IEwgMy42NzIgMzIuMzczIEMgMy4xMSAzMS44MSAzLjExIDMwLjg5OCAzLjY3MiAzMC4zMzYgTCA1LjA1MiAyOC45NTYgTCA1LjA1MiAyOC45NTYgTCAxMC4yNSAyMy43NTggTCAxMC4yNSAyMy43NTggQyAxMS41MTkgMjIuNDg5IDEzLjE2NiAyMi4wODQgMTMuOTMzIDIyLjg1MyBDIDE0LjcwMSAyMy42MjIgMTQuMzExIDI1LjI4NSAxMy4wNDcgMjYuNTUxIEwgMTMuMDQ3IDI2LjU1MSBDIDExLjc3OSAyNy44MTcgMTEuMzkzIDI5LjQ4IDEyLjE2MyAzMC4yNDggQyAxMi45MjUgMzEuMDE3IDE0LjU4MSAzMC42MTkgMTUuOTI2IDI5LjI3OCBMIDE1LjkyOSAyOS4yNzggQyAxNy4xODMgMjguMDcxIDE4Ljc3OSAyNy42OTkgMTkuNTMxIDI4LjQ1MSBDIDIwLjI4MSAyOS4yMDQgMTkuOTI0IDMwLjgxNCAxOC43MiAzMi4wNzEgTCAxOC43MjQgMzIuMDc1IEMgMTcuMzgyIDMzLjQxOSAxNi45OTQgMzUuMDgxIDE3Ljc2IDM1Ljg1MiBDIDE4LjUyNyAzNi42MTUgMjAuMTgzIDM2LjIyMSAyMS40NTIgMzQuOTU0IEwgMjEuNTI2IDM0Ljg3NyBMIDIxLjUyNyAzNC44NzcgQyAyMi43ODYgMzMuNjcgMjQuMzc4IDMzLjI5OSAyNS4xMzQgMzQuMDUzIEMgMjUuODgzIDM0LjgwNSAyNS41MjUgMzYuNDE1IDI0LjMyMiAzNy42NjkgWiBNIDI5LjU0NSAzMC40MTMgQyAzMC4xMDggMzAuOTc3IDMwLjEwOCAzMS44ODkgMjkuNTQ1IDMyLjQ1MyBMIDI3LjkyMSAzNC4wNzIgTCAxMy45MjkgMjAuMDc5IEwgMTUuNTQ3IDE4LjQ1NiBDIDE2LjExNiAxNy44OTIgMTcuMDI1IDE3Ljg5MiAxNy41ODkgMTguNDU2IEwgMjkuNTQ1IDMwLjQxMyBaIE0gMzkuNDc5IDguNTI0IEMgMzguNTk3IDcuNjM1IDM4LjU5NyA2LjIwNSAzOS40NzkgNS4zMjMgQyA0MC4zNjUgNC40NCA0MS43OTYgNC40NCA0Mi42NzggNS4zMjMgQyA0My41NjEgNi4yMDUgNDMuNTYxIDcuNjM1IDQyLjY3OCA4LjUyNCBDIDQxLjc5NiA5LjQwNyA0MC4zNjUgOS40MDcgMzkuNDc5IDguNTI0IFoiIHN0eWxlPSIiLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KICA8Zy8+CiAgPGcvPgogIDxnLz4KPC9zdmc+',
 		onClick: function () {
 			if (!mceReady()) {
-				_err.display();
-				editor.focus();								
+				_js.display();
+				editor.focus();
 			} else {
-				//
-				// form variables
-				//
-				var frmHexValue = '';
 				editor.windowManager.open({
 					title: 'Color Tool',
 					body: [{
 						type: 'container',
-						html: '<table style="border-collapse: collapse; table-layout:fixed; width:400px;"><tbody><tr><td><button id="#282726" style="background-color:#282726; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#504e4b" style="background-color:#504e4b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#797571" style="background-color:#797571; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a19c96" style="background-color:#a19c96; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c9c3bc" style="background-color:#c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d4cfc9" style="background-color:#d4cfc9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#dfdbd7" style="background-color:#dfdbd7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e9e7e4" style="background-color:#e9e7e4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f4f3f2" style="background-color:#f4f3f2; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#faf9f8" style="background-color:#faf9f8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#980000" style="background-color:#980000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff0000" style="background-color:#ff0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff9900" style="background-color:#ff9900; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffff00" style="background-color:#ffff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#00ff00" style="background-color:#00ff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#00ffff" style="background-color:#00ffff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#4a86e8" style="background-color:#4a86e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0000ff" style="background-color:#0000ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#9900ff" style="background-color:#9900ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ff00ff" style="background-color:#ff00ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#e6b8af" style="background-color:#e6b8af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f4cccc" style="background-color:#f4cccc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#fce5cd" style="background-color:#fce5cd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#fff2cc" style="background-color:#fff2cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d9ead3" style="background-color:#d9ead3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d0e0e3" style="background-color:#d0e0e3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c9daf8" style="background-color:#c9daf8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#cfe2f3" style="background-color:#cfe2f3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d9d2e9" style="background-color:#d9d2e9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ead1dc" style="background-color:#ead1dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#dd7e6b" style="background-color:#dd7e6b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ea9999" style="background-color:#ea9999; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f9cb9c" style="background-color:#f9cb9c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffe599" style="background-color:#ffe599; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b6d7a8" style="background-color:#b6d7a8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a2c4c9" style="background-color:#a2c4c9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a4c2f4" style="background-color:#a4c2f4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#9fc5e8" style="background-color:#9fc5e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b4a7d6" style="background-color:#b4a7d6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#d5a6bd" style="background-color:#d5a6bd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#cc4125" style="background-color:#cc4125; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e06666" style="background-color:#e06666; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f6b26b" style="background-color:#f6b26b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffd966" style="background-color:#ffd966; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#93c47d" style="background-color:#93c47d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#76a5af" style="background-color:#76a5af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6d9eeb" style="background-color:#6d9eeb; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6fa8dc" style="background-color:#6fa8dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#8e7cc3" style="background-color:#8e7cc3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c27ba0" style="background-color:#c27ba0; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#a61c00" style="background-color:#a61c00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#cc0000" style="background-color:#cc0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#e69138" style="background-color:#e69138; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f1c232" style="background-color:#f1c232; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#6aa84f" style="background-color:#6aa84f; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#45818e" style="background-color:#45818e; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3c78d8" style="background-color:#3c78d8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3d85c6" style="background-color:#3d85c6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#674ea7" style="background-color:#674ea7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#a64d79" style="background-color:#a64d79; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#85200c" style="background-color:#85200c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#990000" style="background-color:#990000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#b45f06" style="background-color:#b45f06; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#bf9000" style="background-color:#bf9000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#38761d" style="background-color:#38761d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#134f5c" style="background-color:#134f5c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#1155cc" style="background-color:#1155cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0b5394" style="background-color:#0b5394; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#351c75" style="background-color:#351c75; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#741b47" style="background-color:#741b47; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#5b0f00" style="background-color:#5b0f00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#660000" style="background-color:#660000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#783f04" style="background-color:#783f04; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#7f6000" style="background-color:#7f6000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#274e13" style="background-color:#274e13; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#0c343d" style="background-color:#0c343d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#1c4587" style="background-color:#1c4587; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#073763" style="background-color:#073763; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#20124d" style="background-color:#20124d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#4c1130" style="background-color:#4c1130; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td><button id="#000000" style="background-color:#000000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#ffffff" style="background-color:#ffffff; border:solid 1px #c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#006682" style="background-color:#006682; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#007fa3" style="background-color:#007fa3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#3399b5" style="background-color:#3399b5; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#66b2c8" style="background-color:#66b2c8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#c03613" style="background-color:#c03613; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f04318" style="background-color:#f04318; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f36946" style="background-color:#f36946; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td><td><button id="#f68e74" style="background-color:#f68e74; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="submit">&nbsp;</button></td></tr><tr><td colspan="10">&nbsp;</td></tr><tr><td style="vertical-align:middle;" colspan="6"><label for="icon" style="line-height:200%; margin-right: 8px;"><button id="swatch" style="background-color:#ffffff; border: 1px solid #c9c3bc; border-radius: 10%; height:30px; width:30px;" type="submit">&nbsp;</button></label><input type="text" id="hex_id" name="ico_tag" value="" style="font-family:monospace; border: 1px solid #c9c3bc; width:125px;"></td><td style="vertical-align:middle;" colspan="4"><input type="checkbox" id="bkg_id" name="bkg" value=""><label for="bkg" style="margin-left:6px;">Background color</label></tr><tr style="height:60px;"><td style="font-size: 75%; vertical-align:middle;" colspan="6"><a href="https://doc.xidipity.com/reference/palette/named-colors/" target="_blank" rel="noopener noreferrer">Supported named colors</a></td></tr></tbody></table>'
+						html: '<table style="border-collapse: collapse; table-layout:fixed; width:400px;"><tbody><tr><td><button id="#282726" style="background-color:#282726; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#504e4b" style="background-color:#504e4b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#797571" style="background-color:#797571; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#a19c96" style="background-color:#a19c96; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#c9c3bc" style="background-color:#c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#d4cfc9" style="background-color:#d4cfc9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#dfdbd7" style="background-color:#dfdbd7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#e9e7e4" style="background-color:#e9e7e4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f4f3f2" style="background-color:#f4f3f2; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#faf9f8" style="background-color:#faf9f8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#980000" style="background-color:#980000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ff0000" style="background-color:#ff0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ff9900" style="background-color:#ff9900; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ffff00" style="background-color:#ffff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#00ff00" style="background-color:#00ff00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#00ffff" style="background-color:#00ffff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#4a86e8" style="background-color:#4a86e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#0000ff" style="background-color:#0000ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#9900ff" style="background-color:#9900ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ff00ff" style="background-color:#ff00ff; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#e6b8af" style="background-color:#e6b8af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f4cccc" style="background-color:#f4cccc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#fce5cd" style="background-color:#fce5cd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#fff2cc" style="background-color:#fff2cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#d9ead3" style="background-color:#d9ead3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#d0e0e3" style="background-color:#d0e0e3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#c9daf8" style="background-color:#c9daf8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#cfe2f3" style="background-color:#cfe2f3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#d9d2e9" style="background-color:#d9d2e9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ead1dc" style="background-color:#ead1dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#dd7e6b" style="background-color:#dd7e6b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ea9999" style="background-color:#ea9999; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f9cb9c" style="background-color:#f9cb9c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ffe599" style="background-color:#ffe599; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#b6d7a8" style="background-color:#b6d7a8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#a2c4c9" style="background-color:#a2c4c9; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#a4c2f4" style="background-color:#a4c2f4; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#9fc5e8" style="background-color:#9fc5e8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#b4a7d6" style="background-color:#b4a7d6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#d5a6bd" style="background-color:#d5a6bd; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#cc4125" style="background-color:#cc4125; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#e06666" style="background-color:#e06666; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f6b26b" style="background-color:#f6b26b; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ffd966" style="background-color:#ffd966; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#93c47d" style="background-color:#93c47d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#76a5af" style="background-color:#76a5af; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#6d9eeb" style="background-color:#6d9eeb; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#6fa8dc" style="background-color:#6fa8dc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#8e7cc3" style="background-color:#8e7cc3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#c27ba0" style="background-color:#c27ba0; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#a61c00" style="background-color:#a61c00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#cc0000" style="background-color:#cc0000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#e69138" style="background-color:#e69138; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f1c232" style="background-color:#f1c232; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#6aa84f" style="background-color:#6aa84f; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#45818e" style="background-color:#45818e; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#3c78d8" style="background-color:#3c78d8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#3d85c6" style="background-color:#3d85c6; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#674ea7" style="background-color:#674ea7; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#a64d79" style="background-color:#a64d79; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#85200c" style="background-color:#85200c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#990000" style="background-color:#990000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#b45f06" style="background-color:#b45f06; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#bf9000" style="background-color:#bf9000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#38761d" style="background-color:#38761d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#134f5c" style="background-color:#134f5c; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#1155cc" style="background-color:#1155cc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#0b5394" style="background-color:#0b5394; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#351c75" style="background-color:#351c75; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#741b47" style="background-color:#741b47; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#5b0f00" style="background-color:#5b0f00; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#660000" style="background-color:#660000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#783f04" style="background-color:#783f04; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#7f6000" style="background-color:#7f6000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#274e13" style="background-color:#274e13; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#0c343d" style="background-color:#0c343d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#1c4587" style="background-color:#1c4587; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#073763" style="background-color:#073763; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#20124d" style="background-color:#20124d; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#4c1130" style="background-color:#4c1130; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr><td><button id="#000000" style="background-color:#000000; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#ffffff" style="background-color:#ffffff; border:solid 1px #c9c3bc; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#006682" style="background-color:#006682; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#007fa3" style="background-color:#007fa3; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#3399b5" style="background-color:#3399b5; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#66b2c8" style="background-color:#66b2c8; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#c03613" style="background-color:#c03613; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f04318" style="background-color:#f04318; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f36946" style="background-color:#f36946; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td><td><button id="#f68e74" style="background-color:#f68e74; border-radius: 50%; cursor:pointer; margin:2px; height:25px; width:25px;" type="button">&nbsp;</button></td></tr><tr style="height:80px;"><td style="vertical-align:middle;" colspan="1"><button id="swatch_id" style="background-color:#ffffff; border: 1px solid #c9c3bc; border-radius: 10%; height:30px; width:30px;" type="button">&nbsp;</button></td><td style="vertical-align:middle;" colspan="5"><input type="text" id="input_id" name="ico_tag" value="" style="font-family:monospace; border: 1px solid #c9c3bc; width:90%;"></td><td style="padding-left: 6px; vertical-align:middle;" colspan="4"><input type="checkbox" id="checkbox_id" name="background_color" value=""><label for="checkbox_id">Background color</label></tr><tr style="height:20px;"><td style="font-size: 75%; vertical-align:middle;" colspan="10"><a href="https://doc.xidipity.com/reference/palette/named-colors/" target="_blank" rel="noopener noreferrer">Named colors</a></td></tr></tbody></table>'
 					}],
-					onClick: function (event) {												
-						// from grid
-						var frmGrdValue = event.target.id;
-						// from input
-						var frmHexInput = document.getElementById('hex_id');
-						if (!isNull(frmHexInput)) {
-							frmHexValue = frmHexInput.value;
-						} else {
-							frmHexValue = '';
+					onClick: function (event) {
+						//
+						console.log('     - onClick Event -');
+						//
+						var evtSrc = event.target.id;
+						//
+						console.log('***** evtSrc: ' + evtSrc);
+						//
+						if (!isEmpty(evtSrc)) {
+							try {
+								var frmSwatch = document.getElementById('swatch_id');
+								var frmHexInput = document.getElementById('input_id');
+								if (isNull(frmHexInput.value)) {
+									frmHexInput.value
+								}
+								switch (evtSrc) {
+									case ('swatch_id'):
+										//
+										console.log('Swatch clicked');
+										var frmHexValue = frmHexInput.value.toLowerCase().trim();
+										if (!isEmpty(frmHexValue) && isEmpty(frmHexValue.match(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i))) {
+											oDoc.datElements = namedColor(frmHexInput.value);
+											console.log('***** datElements: ' + oDoc.datElements);
+											if (isEmpty(oDoc.datElements)) {
+												frmSwatch.style.backgroundColor = '#ffffff';
+												alert('ALERT #2330\nInvalid named color.');
+											} else {
+												frmSwatch.style.backgroundColor = frmHexValue;
+											}
+										}
+										break;
+									case ('checkbox_id'):
+										//
+										console.log('Checkbox clicked');
+										break;
+									case ('input_id'):
+										//
+										console.log('Input clicked');
+										break;
+									default:
+										//
+										console.log('Grid clicked');
+										//
+										frmHexInput.value = evtSrc;
+										frmSwatch.style.backgroundColor = evtSrc;
+										oDoc.datElements = evtSrc;
+										break;
+								}
+							} catch (e) {
+								//
+								console.log('     - onError Event -');
+								//
+								_js.ms = e.message;
+								_js.ln = '2376';
+								_js.display();
+							}							
 						}
-						
-						if (!isEmpty(frmHexValue) || !isEmpty(frmGrdValue)) {
-							// color swatch
-							var frmSwatch = document.getElementById('swatch');
-							
-							switch (true) {
-								case (!isEmpty(frmGrdValue.match(/hex_id|bkg_id|mce/))):
-									//
-									console.log('     - Mark -');
-									//
-									break;
-								case (!isEmpty(frmGrdValue) && frmGrdValue !== 'swatch'):
-									//
-									console.log('     - Mark -');
-									//
-									frmHexValue = frmGrdValue;
-									frmHexInput.value = frmHexValue;
-									frmSwatch.style.backgroundColor = frmGrdValue;
-									break;
-								case (!isEmpty(frmHexValue.match(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i))):
-									//
-									console.log('     - Mark -');
-									//
-									frmHexInput.value = frmHexValue;
-									frmSwatch.style.backgroundColor = frmHexValue;
-									break;
-								case (!isEmpty(frmHexValue)):
-									//
-									console.log('     - Mark -');
-									//
-									frmHexValue = namedColor(frmHexValue);
-									if (isEmpty(frmHexValue)) {
-										frmHexInput.value = '';
-										frmSwatch.style.backgroundColor = '#ffffff';
-									} else {
-										frmSwatch.style.backgroundColor = frmHexValue;
-									}
-								default:
-									//
-									console.log('     - Mark -');
-									//
-							}
-
-							console.log('***** frmHexValue: ' + frmHexValue);
-							
-						}
-						
 					},
 					onSubmit: function () {
 						//
-						console.log('     - Mark -');
+						var frmHexValue = oDoc.datElements;
 						//
-						var frmBkgColor = document.getElementById("bkg_id");
-						try {
-							if (isEmpty(frmHexValue.match(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i))) {
-								throw new Error('Color value is either missing or malformed.');
+						if (isEmpty(frmHexValue)) {
+							try {
+								var frmHexInput = document.getElementById('input_id');							
+								frmHexValue = frmHexInput.value.toLowerCase().trim();
+								if (!isEmpty(frmHexValue) && isEmpty(frmHexValue.match(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/i))) {
+									oDoc.datElements = namedColor(frmHexInput.value);
+									frmHexValue = oDoc.datElements;
+									if (isEmpty(frmHexValue)) {
+										throw new Error('Invalid named color.');
+									}
+								}								
+							} catch(e) {
+								//
+								console.log('     - onError Submit-');
+								//
+								_js.ms = e.message;
+								_js.ln = '2401';
+								_js.display();
 							}
-							if (frmBkgColor.checked) {
-								oDoc.datElements = 'background-color: ' + frmHexValue + ';';
-							} else {
-								oDoc.datElements = 'color: ' + frmHexValue + ';';
+						}
+						if (!isEmpty(frmHexValue)) {
+							//
+							console.log('     - onSubmit -');
+							//
+							try {
+								//
+								frmInit();
+								//
+								var frmBkgColor = document.getElementById('checkbox_id');
+								//
+								if (frmBkgColor.checked) {
+									oDoc.datElements = 'background-color: ' + frmHexValue + ';';
+								} else {
+									oDoc.datElements = 'color: ' + frmHexValue + ';';
+								}
+								oDoc.datAction = 'blend';
+								oDoc.datAttribute = 'style';
+								//
+								frmSubmit();
+								//
+							} catch (e) {
+								//
+								console.log('     - onError Submit-');
+								//
+								_js.ms = e.message;
+								_js.ln = '2430';
+								_js.display();
 							}
-							oDoc.datAction = 'blend';
-							oDoc.datAttribute = 'style';
-							//
-							frmSubmit();
-							//
-						} catch(e) {
-							_err.ms = e.message;
-							_err.ln = '2327';
-							_err.display();
 						}
 					},
 				});
-				if (_err.hasError()) {
-					_err.display();
-					editor.focus();
-				} else {
-					console.clear();
-					document.getElementById('hex_id').focus();
-					frmInit();					
-				}
 			}
-			if (_err.hasError()) {
-				_err.display();
-				editor.focus();
-			}			
 		}
 	});
 });
 /*
- * EOF: apply-text-color / plugin.js / 210604-1
+ * EOF: apply-text-color / plugin.js / 210611-1
  */
