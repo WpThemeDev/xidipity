@@ -3,7 +3,7 @@
  * Tinymce apply-text-size plugin
  *
  * ###:  plugin.js
- * bld:  210611-1
+ * bld:  210612-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -18,7 +18,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		ms: null,
 		ln: null,
 		display: function () {
-			alert(this.hd + ' #' + this.ln + '\n' + this.ms);
+			editor.windowManager.alert(this.hd + ' #' + this.ln + ' - ' + this.ms);
 			this.hd = 'ERROR';
 			this.ms = null;
 			this.ln = null;
@@ -733,9 +733,10 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 								//
 								console.log('     - Mark -');
 								//
-								var htmlNew = '<span ' + newAttr + '="' + this.proSrtElements(this.datElements) + '">' + this.mceHtml() + '</span>';
+								//var newHtml = '<span ' + newAttr + '="' + this.proSrtElements(this.datElements) + '">' + this.mceHtml() + '</span>';
+								var newHtml = '<span ' + newAttr + '="' + this.proSrtElements(datElements) + '">' + this.mceHtml() + '</span>';
 								//
-								retValue = newUpdate.replace(this.mceHtml(), htmlNew);
+								retValue = newUpdate.replace(this.mceHtml(), newHtml);
 								//
 								break;
 							case (isEmpty(mceTag.match(newAttr))):
@@ -804,12 +805,13 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					var purgeItems = datElements;
 					var purgeList = this.proSrtElements(this.datElements);
 					this.datElements = this.proPurgeElements(purgeList, purgeItems);
+					//
 					this.datBgColorCache = null;
 					this.datFgColorCache = null;
 					//
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '812';
+					_js.ln = '814';
 				}
 			}
 			//
@@ -946,7 +948,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 								//
 								console.log('     - Mark -');
 								//
-								var htmlNew = '<span ' + newAttr + '="' + datElements + '">' + this.mceHtml() + '</span>';
+								var newHtml = '<span ' + newAttr + '="' + datElements + '">' + this.mceHtml() + '</span>';
 								//
 								var htmlExp;
 								htmlExp = new RegExp('(>|\\b)' + (this.mceHtml()).trim() + '(<|\\b)', 'gi');
@@ -954,17 +956,17 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 								//
 								console.log(' - newUpdate: ' + newUpdate);
 								console.log(' -    htmExp: ' + htmlExp);
-								console.log(' -   htmlNew: ' + htmlNew);
+								console.log(' -   newHtml: ' + newHtml);
 								//
-								retValue = newUpdate.replace(htmlExp, '$1' + htmlNew + '$2');
+								retValue = newUpdate.replace(htmlExp, '$1' + newHtml + '$2');
 								//
-								console.log(' -  retValue: ' + htmlNew);
+								console.log(' -  retValue: ' + newHtml);
 								//
 						}
 					}
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '967';
+					_js.ln = '969';
 				}
 			}
 			//
@@ -1032,7 +1034,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					}
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '1035';
+					_js.ln = '1037';
 				}
 			}
 			//
@@ -1065,7 +1067,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					}
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '1068';
+					_js.ln = '1070';
 				}
 			}
 			//
@@ -1107,7 +1109,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					}
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '1110';
+					_js.ln = '1112';
 				}
 			}
 			//
@@ -1156,7 +1158,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					//
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '1159';
+					_js.ln = '1161';
 				}
 			}
 			//
@@ -1193,7 +1195,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 					}
 				} catch (e) {
 					_js.ms = e.message;
-					_js.ln = '1196';
+					_js.ln = '1198';
 				}
 			}
 			//
@@ -1270,7 +1272,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				} catch (e) {
 					_js.hd = 'MESSAGE';
 					_js.ms = e.message;
-					_js.ln = '1273';
+					_js.ln = '1275';
 				}
 			}
 			//
@@ -1323,7 +1325,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				//
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1326';
+				_js.ln = '1328';
 			}
 		}
 		//
@@ -1359,7 +1361,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				retValue = decodeVal;
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1362';
+				_js.ln = '1364';
 			}
 		}
 		//
@@ -1395,7 +1397,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				retValue = encodeVal;
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1398';
+				_js.ln = '1400';
 			}
 		}
 		//
@@ -1421,7 +1423,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				//
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1424';
+				_js.ln = '1426';
 			}
 		}
 		//
@@ -1459,7 +1461,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		} catch (e) {
 			_js.hd = 'MESSAGE';
 			_js.ms = e.message;
-			_js.ln = '1462';
+			_js.ln = '1464';
 		}
 		//
 		return retValue;
@@ -1522,7 +1524,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				//
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1525';
+				_js.ln = '1527';
 			}
 		}
 		//
@@ -1573,7 +1575,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				//
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1576';
+				_js.ln = '1578';
 			}
 		}
 		//
@@ -1600,7 +1602,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 				//
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '1603';
+				_js.ln = '1605';
 			}
 		}
 		//
@@ -1649,6 +1651,8 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 		console.log('FN  > frmSubmit');
 		console.log(' ');
 		//
+		// copy doc to var, expose all &nbsp;
+		//
 		var htmlDoc = editor.getContent().replace(/[\u00A0]/g, '&nbsp;');
 		try {
 			// validate selection
@@ -1692,9 +1696,12 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 						break;
 					case (oDoc.hasDatColor()):
 						console.log('    - Mark -');
-						htmlUpdate = regDecode(oDoc.proColorElements());
+						htmlUpdate = oDoc.proColorElements();
 						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+							oDoc.fullHtmlCache = htmlUpdate;
 							htmlUpdate = regDecode(oDoc.proStdElements());
+						} else {
+							htmlUpdate = regDecode(htmlUpdate);
 						}
 						break;
 					default:
@@ -1722,7 +1729,7 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 						editor.undoManager.add();
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1725';
+						_js.ln = '1732';
 					}
 				}
 			} else {
@@ -1774,7 +1781,10 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 								case (oDoc.hasDatColor()):
 									htmlUpdate = oDoc.proColorElements();
 									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
-										htmlUpdate = oDoc.proStdElements();
+										oDoc.fullHtmlCache = htmlUpdate;
+										htmlUpdate = regDecode(oDoc.proStdElements());
+									} else {
+										htmlUpdate = regDecode(htmlUpdate);
 									}
 									break;
 								default:
@@ -1812,13 +1822,13 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 						//
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1815';
+						_js.ln = '1825';
 					}
 				}
 			}
 		} catch (e) {
 			_js.ms = e.message;
-			_js.ln = '1821';
+			_js.ln = '1831';
 		}
 		if (_js.hasError()) {
 			//
@@ -2092,5 +2102,5 @@ tinymce.PluginManager.add('apply_txt_size', function(editor) {
 	});
 });
 /*
- * EOF: apply-text-size / plugin.js / 210611-1
+ * EOF: apply-text-size / plugin.js / 210612-1
  */
