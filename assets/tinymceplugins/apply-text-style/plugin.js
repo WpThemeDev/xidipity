@@ -2006,7 +2006,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 	// button
 	//
 	editor.addButton('app_txt_style', {
-		title: 'Duplicate Style',
+		title: 'Paint Format',
 		icon: false,
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE4IDRWM2MwLS41NS0uNDUtMS0xLTFINWMtLjU1IDAtMSAuNDUtMSAxdjRjMCAuNTUuNDUgMSAxIDFoMTJjLjU1IDAgMS0uNDUgMS0xVjZoMXY0SDl2MTFjMCAuNTUuNDUgMSAxIDFoMmMuNTUgMCAxLS40NSAxLTF2LTloOFY0aC0zeiIvPjwvc3ZnPg==',
 		onclick: function () {
@@ -2043,7 +2043,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							throw new Error(_js.ms);
 						} else {
 							editor.notificationManager.open({
-								text: 'Styling elements saved.',
+								text: 'Selected elements saved.',
 								type: 'success',
 								timeout: 3000
 							});							
