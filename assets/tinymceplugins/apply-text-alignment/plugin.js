@@ -3,7 +3,7 @@
  * Tinymce apply-text-alignment plugin
  *
  * ###:  plugin.js
- * bld:  210612-1
+ * bld:  210613-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -1688,6 +1688,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 						break;
 					case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+						console.log('    - Mark -');
 						htmlUpdate = oDoc.proAddMark();
 						break;
 					case (oDoc.isFragment()):
@@ -1729,7 +1730,7 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						editor.undoManager.add();
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1732';
+						_js.ln = '1733';
 					}
 				}
 			} else {
@@ -1822,13 +1823,13 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 						//
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1825';
+						_js.ln = '1826';
 					}
 				}
 			}
 		} catch (e) {
 			_js.ms = e.message;
-			_js.ln = '1831';
+			_js.ln = '1832';
 		}
 		if (_js.hasError()) {
 			//
@@ -1998,5 +1999,5 @@ tinymce.PluginManager.add('apply_txt_align', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-alignment / plugin.js / 210612-1
+ * EOF: apply-text-alignment / plugin.js / 210613-1
  */
