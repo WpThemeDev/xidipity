@@ -3,577 +3,2111 @@
  * Tinymce apply-text-style plugin
  *
  * ###:  plugin.js
- * bld:  30201101
+ * bld:  210613-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
  */
 tinymce.PluginManager.add('app_txt_style', function (editor) {
 	'use strict';
-	// selection object
-	var selectionObject = {
-		html: '', // selection as html
-		icon: function () {
-			var htmlValue = '';
-			if (!isEmpty(this.outerHtml)) {
-				var regExp = new RegExp(/<i.*?i>|"material-icons"|<img.*\/>/, 'is');
-				if (!isEmpty(this.outerHtml.match(regExp))) {
-					switch (true) {
-						case (!isEmpty(this.outerHtml.match(/<img.*\/>/))):
-							htmlValue = getRegExpValue(this.outerHtml, '\\[caption.*caption\\]', 'is');
-							if (isEmpty(htmlValue)) {
-								htmlValue = getRegExpValue(this.outerHtml, '<img.*\/>', 'is');
-							}
-							break;
-						case (!isEmpty(this.outerHtml.match(/"material-icons"/))):
-							htmlValue = getRegExpValue(this.outerHtml, '<span.*"material-icons".*span>', 'is');
-							break;
-						default:
-							htmlValue = getRegExpValue(this.outerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
-					}
-				}
-			}
-			return htmlValue;
-		}, // icon tag
-		innerHtml: '', // expanded selection as html
-		innerText: '', // expanded selection as text
-		node: undefined, //	node object
-		nodeName: '', // node name
-		outerHtml: '', // full selection will tags as html
-		preTag: function () {
-			return getRegExpValue(this.outerHtml, '^<(p|h[1-6]|div|li|span).*?>|^<(em|i|kbd|s|strong|sub|sup|u)>').replace(/\sdata-mce-style.+"/, '');
-		}, // prefix tag with any classes/styles
-		sufTag: function () {
-			return getRegExpValue(this.outerHtml, '<\/(p|h[1-6]|div|li|span|em|i|kbd|s|strong|sub|sup|u)>$');
-		}, // suffix tag
-		text: '', // selection as plain text
-		purgeInnerHtml: function () {
-			var htmlValue = this.innerHtml;
-			if (!isEmpty(this.innerHtml)) {
-				var regExp = new RegExp(/<i.*?i>|"material-icons"|<img.*\/>/, 'is');
-				if (!isEmpty(this.innerHtml.match(regExp))) {
-					var htmlIcon = '';
-					switch (true) {
-						case (!isEmpty(this.innerHtml.match(/<img.*\/>/))):
-							htmlIcon = getRegExpValue(this.innerHtml, '\\[caption.*caption\\]', 'is');
-							if (isEmpty(htmlIcon)) {
-								htmlIcon = getRegExpValue(this.innerHtml, '<img.*\/>', 'is');
-							}
-							break;
-						case (!isEmpty(this.innerHtml.match(/"material-icons"/))):
-							htmlIcon = getRegExpValue(this.innerHtml, '<span.*"material-icons".*span>', 'is');
-							break;
-						default:
-							htmlIcon = getRegExpValue(this.innerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
-					}
-					if (!isEmpty(htmlIcon)) {
-						htmlValue = this.innerHtml.replace(htmlIcon, '');
-					}
-				}
-			}
-			return htmlValue.replace(/\sdata-mce-style.+"/, '');
+	//
+	// error object
+	//
+	var _js = {
+		hd: 'ERROR',
+		ms: null,
+		ln: null,
+		display: function () {
+			editor.windowManager.alert(this.hd + ' #' + this.ln + ' - ' + this.ms);
+			this.hd = 'ERROR';
+			this.ms = null;
+			this.ln = null;
 		},
-		purgeOuterHtml: function () {
-			var htmlValue = this.outerHtml;
-			if (!isEmpty(this.outerHtml)) {
-				var regExp = new RegExp(/<i.*?i>|"material-icons"|<img.*\/>/, 'is');
-				if (!isEmpty(this.outerHtml.match(regExp))) {
-					var htmlIcon = '';
-					switch (true) {
-						case (!isEmpty(this.outerHtml.match(/<img.*\/>/))):
-							htmlIcon = getRegExpValue(this.outerHtml, '\\[caption.*caption\\]', 'is');
-							if (isEmpty(htmlIcon)) {
-								htmlIcon = getRegExpValue(this.outerHtml, '<img.*\/>', 'is');
-							}
-							break;
-						case (!isEmpty(this.outerHtml.match(/"material-icons"/))):
-							htmlIcon = getRegExpValue(this.outerHtml, '<span.*"material-icons".*span>', 'is');
-							break;
-						default:
-							htmlIcon = getRegExpValue(this.outerHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+		hasError: function () {
+			return (this.ms !== null);
+		}
+	}
+	//
+	// document object
+	//
+	var oDoc = {
+		blkContent: function () {
+			//
+			// multi line block content
+			//
+			var retValue = this.blkContentCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (this.lineCnt < 2) {
+						throw new Error('Multi line content must contain more than 1 line.');
 					}
-					if (!isEmpty(htmlIcon)) {
-						htmlValue = this.outerHtml.replace(htmlIcon, '');
+					if (isNull(retValue)) {
+						//
+						console.log('  OBJ > blkContent - New');
+						//
+						var htmlTable;
+						switch (true) {
+							case (this.mceNodeName() == 'body'):
+								// body content
+								this.blkContentCache = this.mceHtml().replace(/<.\d><\/.\d>|<.><\/.>|<.{1,3}><\/.{1,3}>|<.>\u00a0<\/.>/g, '');
+								break;
+							case (!isEmpty(this.mceHtml().match(/(^<table)|(table>$)/g))):
+								// multi line full table
+								htmlTable = this.mceHtml().replace(/(\s*)(\r\n|\n|\r)(\s*)/g, '');
+								htmlTable = htmlTable.replace(/(<(table|tbody|thead|tr).*?>|<\/(table|tbody|thead|tr)>)/g, '');
+								htmlTable = htmlTable.replace(/(<\/th>)<|(<\/td>)</g, '$1$2\n<');
+								this.blkContentCache = htmlTable;
+								break;
+							case (!isEmpty(this.mceNodeName().match(/ul|ol/i))):
+								// multi line list
+								var listHtml = this.mceHtml().replace(/(<li.*?>.*?<\/li>)|[\S\s]/gm, '$1');
+								listHtml = listHtml.replace(/(\r\n|\n|\r)/gm, '');
+								this.blkContentCache = listHtml.replace(/<\/li><li/, '<\/li>\n<li');
+								break;
+							case (this.mceNodeName() == 'th'):
+								// multi line table header
+								htmlTable = this.mceHtml().replace(/(<th.*?>.*?<\/th>)|[\S\s]/gm, '$1');
+								htmlTable = htmlTable.replace(/(\r\n|\n|\r)/gm, '');
+								this.blkContentCache = htmlTable.replace(/></, '>\n<');
+								break;
+							case (this.mceNodeName() == 'td'):
+								// multi line table cell
+								htmlTable = this.mceHtml().replace(/(<td.*?>.*?<\/td>)|[\S\s]/gm, '$1');
+								htmlTable = htmlTable.replace(/(\r\n|\n|\r)/gm, '');
+								this.blkContentCache = htmlTable.replace(/></, '>\n<');
+								break;
+							default:
+								// multi line, remove empty tags ie. <p></p> / <p>&nbsp;</p>
+								this.blkContentCache = this.mceHtml().replace(/<.\d><\/.\d>|<.><\/.>|<.{1,3}><\/.{1,3}>|<.>\u00a0<\/.>/g, '');
+								break;
+						}
+						//
+						retValue = this.blkContentCache;
+						//
+					} else {
+						//
+						console.log('  OBJ > blkContent - Cache');
+						//
 					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '95';
 				}
 			}
-			return htmlValue.replace(/\sdata-mce-style.+"/, '');
+			//
+			return retValue;
+		},
+		blkContentCache: null,
+		datAction: '',
+		datAttribute: '',
+		datBgColor: function () {
+			//
+			// data background color
+			//
+			var retValue = this.datBgColorCache;
+			//
+			if (!_js.hasError()) {
+				var datElements = '';
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > datBgColor - New');
+						//
+						if (isEmpty(this.datElements.match(/;/))) {
+							// class elements
+							datElements = this.datElements.replace(/\s+/g, ' ').trim();
+							this.datBgColorCache = getRegExpValue(datElements, 'bkg:.*?(\\s|$)');
+						} else {
+							// style elements
+							datElements = this.datElements.replace(/:/g, ': ').replace(/;/g, '; ');
+							datElements = datElements.replace(/\s+/g, ' ').trim();
+							this.datBgColorCache = getRegExpValue(datElements, 'background-color:.*?;');
+						}
+						//
+						retValue = this.datBgColorCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > datBgColor - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '137';
+				}
+			}
+			//
+			return retValue;
+		},
+		datBgColorCache: null,
+		datElements: '',
+		datFgColor: function () {
+			//
+			// data foreground color
+			//
+			var retValue = this.datFgColorCache;
+			//
+			if (!_js.hasError()) {
+				var datElements = '';
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > datFgColor - New');
+						//
+						if (isEmpty(this.datElements.match(/;/))) {
+							// class elements
+							datElements = this.datElements.replace(/\s+/g, ' ').trim();
+							this.datFgColorCache = getRegExpValue(datElements, 'txt:.*?(\\s|$)');
+						} else {
+							// style elements
+							datElements = this.datElements.replace(/:/g, ': ').replace(/;/g, '; ');
+							datElements = datElements.replace(/\s+/g, ' ').trim();
+							this.datFgColorCache = getRegExpValue(datElements, '(?<!-)color:.*?;');
+						}
+						//
+						retValue = this.datFgColorCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > datFgColor - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '178';
+				}
+			}
+			//
+			return retValue;
+		},
+		datFgColorCache: null,
+		hasDatColor: function () {
+			//
+			// datElements contains color element
+			//
+			var retValue = false;
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > hasDatColor');
+				//
+				try {
+					//
+					retValue = (!isEmpty(this.datBgColor()) || !isEmpty(this.datFgColor()));
+					//
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '201';
+				}
+			}
+			//
+			return retValue;
+		},
+		fullHtml: function () {
+			//
+			// display complete html with tags
+			//
+			var retValue = this.fullHtmlCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > fullHtml - New');
+						//
+						var domNode = this.mceNode;
+						var domNodeName = this.mceNodeName();
+						var enOuterHtml = this.outerHtml();
+						switch (true) {
+							case (domNodeName == 'body'):
+								// body
+								this.fullHtmlRaw = this.mceHtml(true);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
+								break;
+							case (isEmpty(enOuterHtml.match(/<(div|h[1-6]|li|p(?!a)|td|th).*?>/g))):
+								// marker ie. <u>, etc
+								var nodeExp = new RegExp('div|h[1-6]|li|p(?!a)|td|th', 'i');
+								while (isEmpty(domNodeName.match(nodeExp))) {
+									if (isNull(domNode.previousSibling)) {
+										domNode = domNode.parentNode;
+									} else {
+										domNode = domNode.previousSibling;
+									}
+									domNodeName = domNode.nodeName.toLowerCase();
+								}
+								this.fullHtmlRaw = this.proMceTags(domNode.outerHTML);
+								this.fullHtmlCache = regEncode(this.fullHtmlRaw);
+								break;
+							default:
+								// everything else
+								this.fullHtmlRaw = this.outerHtml(true);
+								this.fullHtmlCache = enOuterHtml;
+						}
+						//
+						retValue = this.fullHtmlCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > fullHtml - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '257';
+				}
+			}
+			//
+			return retValue;
+		},
+		fullHtmlCache: null,
+		fullHtmlRaw: null,
+		initNode: function (nodeArg1) {
+			//
+			// init doc object
+			//
+			var retValue = this.initNodeCache;
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > initNode');
+				//
+				try {
+					if (nodeArg1 === undefined || nodeArg1 === null) {
+						throw new Error('Missing required argument.'); // editor node
+					}
+					// set node
+					this.mceNode = nodeArg1;
+					//
+					// reset properties
+					this.blkContentCache = null;
+					this.datBgColorCache = null;
+					this.datElements = '';
+					this.datFgColorCache = null;
+					this.fullHtmlCache = null;
+					this.fullHtmlRaw = null;
+					this.innerHtmlCache = null;
+					this.isFragmentCache = null;
+					this.mceHtmlCache = null;
+					this.mceNodeNameCache = null;
+					this.mceTextCache = null;
+					this.outerHtmlCache = null;
+					//
+					// set flags
+					this.hasMark = false;
+					this.hasMarkPair = false;
+					//
+					// variables
+					var fullHtml;
+					var mrkExp = new RegExp('<(em|i|kbd|strong|sub|sup|s\b|u)>' + this.mceHtml() + '<\/(em|i|kbd|strong|sub|sup|s\b|u)>', 'g');
+					switch (true) {
+						case (this.mceNodeName() == 'span'):
+							fullHtml = this.proMceTags(this.mceNode.parentNode.outerHTML);
+							if (!isEmpty(fullHtml.match(/^<(p|h[1-6]|div|li|td|th).*?><span.*?>.*?<\/span><\/(p|h[1-6]|div|li|td|th).*?>/i))) {
+								this.mceNode = this.mceNode.parentNode;
+							}
+							break;
+						case (!isEmpty(this.fullHtml().match(mrkExp))):
+							this.hasMark = true;
+							fullHtml = this.proMceTags(this.mceNode.parentNode.outerHTML);
+							this.hasMarkPair = !isEmpty(fullHtml.match(/^<(p|h[1-6]|div|li|td|th).*?><(em|i|kbd|s|strong|sub|sup|u)>/));
+							break;
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '318';
+				}
+			}
+			//
+			return;
+		},
+		innerHtml: function () {
+			//
+			// cleaned inner html
+			//
+			var retValue = this.innerHtmlCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > innerHtml - New');
+						//
+						if (this.mceNodeName() == 'body') {
+							this.innerHtmlCache = regEncode(this.mceHtml());
+						} else {
+							this.innerHtmlCache = regEncode(this.proMceTags(this.mceNode.innerHTML));
+						}
+						//
+						retValue = this.innerHtmlCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > innerHtml - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '351';
+				}
+			}
+			//
+			return retValue;
+		},
+		innerHtmlCache: null,
+		isFragment: function () {
+			//
+			// less than full content between tags
+			//
+			var retValue = this.isFragmentCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > isFragment - New');
+						//
+						if (this.lineCnt == 1) {
+							var mceHtml = noHtmlTags(this.mceHtml());
+							var outerHtml = noHtmlTags(this.outerHtml());
+							var fullHtml = noHtmlTags(this.fullHtml());
+							this.isFragmentCache = (mceHtml !== outerHtml || outerHtml !== fullHtml);
+						} else {
+							this.isFragmentCache = false;
+						}
+						//
+						var retValue = this.isFragmentCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > isFragment - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '388';
+				}
+			}
+			return retValue;
+		},
+		isFragmentCache: null,
+		hasMark: false,
+		hasMarkPair: false,
+		lineCnt: 0, // number of nodes
+		mceHtml: function (blnArg1) {
+			//
+			// editor selection as html
+			//	- blnArg1: raw version flag / do not update cache
+			//
+			var retValue = this.mceHtmlCache;
+			//
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
+				try {
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Encoded');
+							//
+							this.mceHtmlCache = regEncode(editor.selection.getContent({
+								format: 'html'
+							}));
+							//
+							retValue = this.mceHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > mceHtml - Raw');
+							//
+							retValue = editor.selection.getContent({
+								format: 'html'
+							});
+							//
+							break;
+						default:
+							//
+							console.log(' OBJ > mceHtml - Cache');
+							//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '437';
+				}
+			}
+			//
+			return retValue;
+		},
+		mceHtmlCache: null,
+		mceNode: undefined, //	selection node
+		mceNodeName: function () {
+			//
+			// html node name
+			//
+			var retValue = this.mceNodeNameCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > mceNodeName - New');
+						//
+						this.mceNodeNameCache = this.mceNode.nodeName.toLowerCase();
+						//
+						retValue = this.mceNodeNameCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > mceNodeName - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '468';
+				}
+			}
+			//
+			return retValue;
+		},
+		mceNodeNameCache: null,
+		mceText: function () {
+			//
+			// html node name
+			//
+			var retValue = this.mceTextCache;
+			//
+			if (!_js.hasError()) {
+				try {
+					if (isNull(retValue)) {
+						//
+						console.log(' OBJ > mceText - New');
+						//
+						this.mceTextCache = editor.selection.getContent({
+							format: 'text'
+						});
+						//
+						retValue = this.mceTextCache;
+						//
+					} else {
+						//
+						console.log(' OBJ > mceText - Cache');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '500';
+				}
+			}
+			//
+			return retValue;
+		},
+		mceTextCache: null,
+		outerHtml: function (blnArg1) {
+			//
+			// html node name
+			//	- blnArg1: raw version flag / do not update cache
+			//
+			var retValue = this.outerHtmlCache;
+			//
+			if (!_js.hasError()) {
+				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
+					blnArg1 = false;
+				}
+				try {
+					switch (true) {
+						case (isNull(retValue) && !blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Encoded');
+							//
+							if (this.mceNodeName() == 'body') {
+								this.outerHtmlCache = regEncode(this.mceHtml());
+							} else {
+								this.outerHtmlCache = regEncode(this.proMceTags(editor.dom.getOuterHTML(this.mceNode)));
+							}							
+							//
+							retValue = this.outerHtmlCache;
+							//
+							break;
+						case (blnArg1):
+							//
+							console.log(' OBJ > outerHtml - Raw');
+							//
+							if (this.mceNodeName() == 'body') {
+								retValue = this.mceHtml();
+							} else {
+								retValue = this.proMceTags(editor.dom.getOuterHTML(this.mceNode));
+							}
+							break;
+						default:
+							//
+							console.log(' OBJ > outerHtml - Cache');
+							//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '550';
+				}
+			}
+			//
+			return retValue;
+		},
+		outerHtmlCache: null,
+		proAddMark: function () {
+			//
+			// add mark to selected content
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proAddMark');
+				//
+				try {
+					var mrkExp;
+					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/))) {
+						console.log('     - Mark -');
+						var mceTag = getRegExpValue(this.fullHtml(), '<(em|i|kbd|strong|sub|sup|s\b|u)>', 's', 1);
+						var mrkTag = getRegExpValue(this.datElements, '^<(.*?)>', 's', 1);
+						mrkExp = new RegExp('(<|<\/)' + mceTag + '(>)', 'g');						
+						//
+						retValue = this.fullHtml().replace(mrkExp, '$1' + mrkTag + '$2');
+						//
+					} else {
+						console.log('     - Mark -');
+						var preTag = this.datElements.substring(0, this.datElements.indexOf(','));
+						var pstTag = this.datElements.substring(this.datElements.indexOf(',') + 1);
+						mrkExp = new RegExp('(' + this.mceHtml().trim() + ')', 'g');						
+						//
+						retValue = this.fullHtml().replace(mrkExp, preTag + '$1' + pstTag);
+						//						
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '588';
+				}
+			}
+			//
+			return retValue;
+		},
+		proBldClassElements: function (strArg1, strArg2) {
+			//
+			// build class elements process
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proBldClassElements');
+				console.log('     - strArg1: ' + strArg1);
+				console.log('     - strArg2: ' + strArg2);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
+					var datArray = datArrayData.split('*');
+					var datArrayItem;
+					var datExp;
+					var idx = 0;
+					for (; datArray[idx];) {
+						datArrayItem = (datArray[idx].substring(0, datArray[idx].indexOf(':') + 1)).trim();
+						switch (true) {
+							case (!isEmpty(datArrayItem.match(/txt:|bkg:/g))):
+								// txt:/bkg: in the element syntax
+								datArrayItem = (datArrayItem.substring(0, datArrayItem.indexOf(':') + 1));
+								datExp = new RegExp('(' + datArrayItem + '.*?)(\\s|$)', 'g');
+								break;
+							case (!isEmpty(datArrayItem.match(/-|\+/g))):
+								// - / + in the element syntax
+								datArrayItem = datArrayItem.replace(/(-|\+).*$/, '');
+								datExp = new RegExp(datArrayItem + '*?[\\s\\S]*?\\s|' + datArrayItem + '*?[\\s\\S]*?$', 'g');
+								break;
+							case (!isEmpty(datArrayItem.match(/fnt:(sans|serif|mono|cursive|fantasy)/g))):
+								// element is a font
+								datExp = new RegExp(/(fnt:sans|fnt:serif|fnt:mono|fnt:cursive|fnt:fantasy)(\s|$)/, 'g');
+								break;
+							default:
+								// element is a single word
+								datArrayItem = (datArrayItem.substring(0, datArrayItem.indexOf(':') + 1));
+								datExp = new RegExp(datArrayItem + '...(?!(-|\\+)).*?(\\s|$)', 'g');
+						}
+						strArg1 = strArg1.replace(datExp, '').trim();
+						idx++;
+					}
+					//
+					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
+					//
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '645';
+				}
+			}
+			//
+			return retValue;
+		},
+		proBldStyleElements: function (strArg1, strArg2) {
+			//
+			// build style elements process
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proBldStyleElements');
+				console.log('     - strArg1: ' + strArg1);
+				console.log('     - strArg1: ' + strArg2);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					var datArrayData = strArg2.replace(/:\s+/g, ':').replace(/\s+/g, '*');
+					var datArray = datArrayData.split('*');
+					var datArrayItem;
+					var datExp;
+					var idx = 0;
+					for (; datArray[idx];) {
+						datArrayItem = (datArray[idx].substring(0, datArray[idx].indexOf(':') + 1)).trim();
+						datExp = new RegExp('(?<!-)' + datArrayItem + '.*?;', 'g');
+						//
+						strArg1 = strArg1.replace(datExp, '').trim();
+						idx++;
+					}
+					//
+					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
+					//
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '684';
+				}
+			}
+			//
+			return retValue;
+		},
+		proColorElements: function () {
+			//
+			// process color elements
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proColorElements');
+				//
+				try {
+					if (!this.hasDatColor()) {
+						throw new Error('Missing required color data elements.');
+					}
+					if (this.isFragment()) {
+						throw new Error('Content incorrectly identifid as a fragment.');
+					}
+					var newAttr;
+					if (!isEmpty(this.datElements.match(/;/))) {
+						newAttr = 'style';
+					} else {
+						newAttr = 'class';
+					}
+					var datElements = (this.datBgColor() + ' ' + this.datFgColor()).trim();
+					var mceTag = getRegExpValue(this.outerHtml(), '^<span.*?>', 's');
+					if (isEmpty(mceTag)) {
+						mceTag = getRegExpValue(this.innerHtml(), '^<span.*?>', 's');
+					}
+					if (isEmpty(mceTag)) {
+						mceTag = getRegExpValue(this.fullHtml(), '^<(p|h[1-6]|div|li|td|th).*?>', 's');
+					}
+					//
+					var mceElements = getRegExpValue(mceTag, newAttr + '.*?"(.*?)"', 's', 1);
+					var newElements = '';
+					var newTag = '';
+					var newUpdate = this.fullHtml();
+					if (this.datAction !== 'replace') {
+						//
+						console.log('     - Mark -');
+						//
+						var spanKey = new RegExp('<span.*?>' + this.mceHtml() + '<\/span>', 'g');
+						switch (true) {
+							case (isEmpty(newUpdate.match(spanKey))):
+								//
+								console.log('     - Mark -');
+								//
+								//var newHtml = '<span ' + newAttr + '="' + this.proSrtElements(this.datElements) + '">' + this.mceHtml() + '</span>';
+								var newHtml = '<span ' + newAttr + '="' + this.proSrtElements(datElements) + '">' + this.mceHtml() + '</span>';
+								//
+								retValue = newUpdate.replace(this.mceHtml(), newHtml);
+								//
+								break;
+							case (isEmpty(mceTag.match(newAttr))):
+								//
+								console.log('     - Mark -');
+								//
+								newTag = mceTag.replace('>', ' ' + newAttr + '="' + datElements + '">');
+								newTag = this.proOrderClassStyle(newTag);
+								if (!isEmpty(newTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+									newTag = this.proJoinElements(newTag, newAttr);
+								}
+								//
+								retValue = newUpdate.replace(mceTag, newTag);
+								//
+								break;
+							default:
+								//
+								console.log('     - Mark -');
+								//
+								var purgeList = this.proSrtElements(mceElements);
+								var purgedElements = this.proPurgeElements(purgeList, datElements);
+								newElements = this.proSrtElements(purgedElements + ' ' + datElements);
+								newTag = mceTag.replace(mceElements, newElements);
+								newTag = this.proOrderClassStyle(newTag);
+								if (!isEmpty(newTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+									newTag = this.proJoinElements(newTag, newAttr);
+								}
+								//
+								retValue = newUpdate.replace(mceTag, newTag);
+								//
+						}
+					} else {
+						//
+						console.log('     - Mark -');
+						//
+						var spanKey = new RegExp(newAttr + '.*?"(.*?)"', 'g');
+						switch (true) {
+							case (isEmpty(mceTag.match(spanKey)) && this.lineCnt == 1):
+								throw new Error('The tag does not have ' + newAttr + ' elements to replace.');
+							case (isEmpty(mceTag.match(spanKey))):
+								//
+								console.log('     - Mark -');
+								//
+								retValue = newUpdate;
+								//
+								break;
+							default:
+								//
+								console.log('     - Mark -');
+								//
+								mceElements = getRegExpValue(mceTag, newAttr + '.*?"(.*?)"', 'i', 1);
+								newTag = mceTag.replace(mceElements, datElements);
+								newTag = this.proOrderClassStyle(newTag);
+								if (!isEmpty(newTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+									newTag = this.proJoinElements(newTag, newAttr);
+								}
+								//
+								retValue = newUpdate.replace(mceTag, newTag);
+								//
+						}
+						//
+					}
+					//
+					// purge color element/s from datElements
+					//
+					var purgeItems = datElements;
+					var purgeList = this.proSrtElements(this.datElements);
+					this.datElements = this.proPurgeElements(purgeList, purgeItems);
+					//
+					this.datBgColorCache = null;
+					this.datFgColorCache = null;
+					//
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '814';
+				}
+			}
+			//
+			return retValue;
+		},
+		proFragment: function () {
+			//
+			// process html fragment
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proFragment');
+				//
+				try {
+					//
+					if (!this.isFragment()) {
+						throw new Error('Content must be less than a full sentence/line.');
+					}
+					//
+					// derive attribute from data
+					//
+					var newAttr;
+					if (!isEmpty(this.datElements.match(/;/))) {
+						newAttr = 'style';
+					} else {
+						newAttr = 'class';
+					}
+					//
+					console.log('    - Mark -');
+					//
+					var datElements = this.proSrtElements(this.datElements)
+					var expKey = '<span.*?>' + this.mceHtml() + '</span>';
+					var spanTag = getRegExpValue(this.outerHtml(), expKey, 'g');
+					var mceElement = getRegExpValue(spanTag, '(class|style).*?"(.*?)"', 'i');
+					var newElement = newAttr + '="' + datElements + '"';
+					var newUpdate = this.fullHtml();
+					//
+					if (!isEmpty(spanTag)) {
+						//
+						// content fragment has span tag
+						//
+						if (this.datAction == 'replace') {
+							//
+							console.log('    - Mark -');
+							//
+							// replace action
+							//
+							retValue = newUpdate.replace(mceElement, newElement);
+							//
+						} else {
+							//
+							// apply/blend action
+							//
+							var bldElements;
+							var newSpanTag;
+							var classTag;
+							var styleTag;
+							switch (true) {
+								case (newAttr == 'style' && isEmpty(spanTag.match(/style/))):
+									//
+									console.log('    - Mark -');
+									//
+									// existing element is class, new is style
+									//
+									classTag = getRegExpValue(spanTag, 'class.*?".*?"', 'i');
+									newSpanTag = spanTag.replace(classTag, (classTag + ' style="' + datElements + '"'));
+									//
+									// on sucess, resolve any dups
+									//
+									if (!isEmpty(newSpanTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+										newSpanTag = this.proJoinElements(newSpanTag, newAttr);
+									}
+									//
+									retValue = newUpdate.replace(spanTag, newSpanTag);
+									//
+									break;
+								case (newAttr == 'style'):
+									//
+									console.log('      - Mark -');
+									//
+									mceElement = getRegExpValue(spanTag, '(class|style).*?"(.*?)"', 'i', 2);
+									bldElements = this.proBldStyleElements(mceElement, datElements);
+									newSpanTag = spanTag.replace(mceElement, bldElements);
+									if (!isEmpty(newSpanTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+										newSpanTag = this.proJoinElements(newSpanTag, newAttr);
+									}
+									//
+									retValue = newUpdate.replace(spanTag, newSpanTag);
+									//
+									break;
+								case (newAttr == 'class' && isEmpty(spanTag.match(/class/))):
+									//
+									console.log('    - Mark -');
+									//
+									styleTag = getRegExpValue(spanTag, 'style.*?".*?"', 'i');
+									newSpanTag = spanTag.replace(styleTag, ('class="' + datElements + '" ' + styleTag));
+									if (!isEmpty(newSpanTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+										newSpanTag = this.proJoinElements(newSpanTag, newAttr);
+									}
+									//
+									retValue = newUpdate.replace(spanTag, newSpanTag);
+									//
+									break;
+								case (newAttr == 'class'):
+									//
+									console.log('    - Mark -');
+									//
+									mceElement = getRegExpValue(spanTag, '(class|style).*?"(.*?)"', 'i', 2);
+									bldElements = this.proBldClassElements(mceElement, datElements);
+									newSpanTag = spanTag.replace(mceElement, bldElements);
+									if (!isEmpty(newSpanTag.match(/(class.*?".*?").*(style.*?".*?")/g))) {
+										newSpanTag = this.proJoinElements(newSpanTag, newAttr);
+									}
+									//
+									retValue = newUpdate.replace(spanTag, newSpanTag);
+									//
+									break;
+							}
+						}
+					} else {
+						switch (true) {
+							case (this.datAction == 'replace' && this.lineCnt == 1):
+								throw new Error('The selection is NOT bound by a tag containing color elements.');
+							case (this.datAction == 'replace'):
+								//
+								// skip in multi line
+								//
+								console.log('    - Mark -');
+								//
+								break;
+							default:
+								//
+								console.log('     - Mark -');
+								//
+								var newHtml = '<span ' + newAttr + '="' + datElements + '">' + this.mceHtml() + '</span>';
+								//
+								var htmlExp;
+								htmlExp = new RegExp('(>|\\b)' + (this.mceHtml()).trim() + '(<|\\b)', 'gi');
+								newUpdate = regDecode(newUpdate);
+								//
+								console.log(' - newUpdate: ' + newUpdate);
+								console.log(' -    htmExp: ' + htmlExp);
+								console.log(' -   newHtml: ' + newHtml);
+								//
+								retValue = newUpdate.replace(htmlExp, '$1' + newHtml + '$2');
+								//
+								console.log(' -  retValue: ' + newHtml);
+								//
+						}
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '969';
+				}
+			}
+			//
+			return retValue;
+		},
+		proJoinElements: function (strArg1, strArg2) {
+			//
+			// join elements
+			//	- strArg1: tag containing mixed elements (class & style)
+			//	- strArg2: element to keep (class|style)
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log(' OBJ > proJoinElements');
+				console.log('     - strArg1: ' + strArg1);
+				console.log('     - strArg2: ' + strArg2);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					var bgClassColor = getRegExpValue(strArg1, '(bkg.*?)(\\s|")', 's', 1);
+					var fgClassColor = getRegExpValue(strArg1, '(txt.*?)(\\s|")', 's', 1);
+					var bgStyleColor = getRegExpValue(strArg1, 'background-color:\\s(.*?)(\\s|")', 's', 1);
+					var fgStyleColor = getRegExpValue(strArg1, '(\\s|")color:\\s(.*?)(\\s|")', 's', 2);
+					var newElements = '';
+					if (strArg2 == 'class') {
+						//
+						console.log('     - Mark -');
+						//
+						var styleElements = getRegExpValue(strArg1, 'style="(.*?)"', 's', 1);
+						var styleBgElement = getRegExpValue(strArg1, 'background-color.*?;', 's');
+						var styleFgElement = getRegExpValue(strArg1, '(?<!-)color:.*?;', 's');
+						newElements = styleElements;
+						if (!isEmpty(bgClassColor) && !isEmpty(bgStyleColor)) {
+							newElements = newElements.replace(styleBgElement, '').replace(/\s+/g, ' ').trim();
+						}
+						if (!isEmpty(fgClassColor) && !isEmpty(fgStyleColor)) {
+							newElements = newElements.replace(styleFgElement, '').replace(/\s+/g, ' ').trim();
+						}
+						retValue = strArg1.replace(styleElements, newElements);
+						//
+						retValue = retValue.replace(/\sstyle=""/, '');
+						//
+					} else {
+						//
+						console.log('    - Mark -');
+						//
+						var classElements = getRegExpValue(strArg1, 'class="(.*?)"', 's', 1);
+						var classBgElement = getRegExpValue(strArg1, '(bkg:.*?)(\\s|")', 's', 1);
+						var classFgElement = getRegExpValue(strArg1, '(txt:.*?)(\\s|")', 's', 1);
+						newElements = classElements;
+						if (!isEmpty(bgClassColor) && !isEmpty(bgStyleColor)) {
+							newElements = newElements.replace(classBgElement, '').replace(/\s+/g, ' ').trim();
+						}
+						if (!isEmpty(fgClassColor) && !isEmpty(fgStyleColor)) {
+							newElements = newElements.replace(classFgElement, '').replace(/\s+/g, ' ').trim();
+						}
+						retValue = strArg1.replace(classElements, newElements);
+						//
+						retValue = retValue.replace(/\sclass=""/, '');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '1037';
+				}
+			}
+			//
+			return retValue;
+		},
+		proMceTags: function (strArg1) {
+			//
+			// parce html for mce tags
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log('OBJ > proMceTags');
+				console.log('    - strArg1: ' + strArg1);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					if (!isEmpty(strArg1.match(/-mce-/g))) {
+						var expMceTags = new RegExp(/.data-mce-style.*?".*?"|<br data-mce-bogus.*?".*?">/, 'g');
+						//
+						retValue = strArg1.replace(expMceTags, '');
+						//
+					} else {
+						//
+						retValue = strArg1;
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '1070';
+				}
+			}
+			//
+			return retValue;
+		},
+		proOrderClassStyle: function (strArg1) {
+			//
+			// order elements as class="" style=""
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log('OBJ > proOrderClassStyle');
+				console.log('    - strArg1: ' + strArg1);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					//
+					retValue = strArg1;
+					//
+					var tagElements = getRegExpValue(strArg1, '^<.*?>', 'i');
+					var cntElements = 0;
+					if (!isEmpty(tagElements.match(/(class|style).*?"(.*?)"/g))) {
+						cntElements = tagElements.match(/(class|style).*?"(.*?)"/g).length;
+					}
+					if (cntElements == 2) {
+						if (tagElements.indexOf('class') > tagElements.indexOf('style')) {
+							var tagClass = getRegExpValue(tagElements, 'class.*?(".*?")', 'i');
+							var tagStyle = getRegExpValue(tagElements, 'style.*?(".*?")', 'i');
+							var tagElementsUpdate = tagElements.replace(tagClass, '###2###').replace(tagStyle, '###1###');
+							tagElementsUpdate = tagElementsUpdate.replace('###1###', tagClass).replace('###2###', tagStyle);
+							//
+							retValue = strArg1.replace(tagElements, tagElementsUpdate);
+							//
+						}
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '1112';
+				}
+			}
+			//
+			return retValue;
+		},
+		proPurgeElements: function (strArg1, strArg2) {
+			//
+			// removed selected items from strArg1
+			//	- strArg1: existing elements
+			//  - strArg2: new elements (new replaces existing on core match)
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log('OBJ > proPurgeElements');
+				console.log('    - strArg1: ' + strArg1);
+				console.log('    - strArg2: ' + strArg2);
+				//
+				try {
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string') {
+						throw new Error('Required argument/s missing.');
+					}
+					var datItem;
+					var idx = 0;
+					var itmArray = strToArray(strArg2);
+					var itmExp;
+					var itmKey;
+					for (; itmArray[idx];) {
+						datItem = itmArray[idx];
+						itmKey = datItem.substring(0, datItem.indexOf(':') + 1);
+						if (isEmpty(datItem.match(/;/))) {
+							itmExp = new RegExp(itmKey + '.*?(\\s|$)', 'g');
+						} else {
+							if (itmKey == 'color:') {
+								itmExp = new RegExp('(?<!-)' + itmKey + '.*?\\s.*?(\\s|$)', 'g');
+							} else {
+								itmExp = new RegExp(itmKey + '.*?\\s.*?(\\s|$)', 'g');
+							}
+						}
+						strArg1 = strArg1.replace(itmExp, '');
+						idx++;
+					}
+					//
+					retValue = strArg1;
+					//
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '1161';
+				}
+			}
+			//
+			return retValue;
+		},
+		proSrtElements: function (strArg1) {
+			//
+			// sort style elements provided as argument
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log('OBJ > proSrtElements');
+				console.log('    - strArg1: ' + strArg1);
+				//
+				try {
+					//
+					if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+						throw new Error('Required argument missing.');
+					}
+					var cboArray = strToArray(strArg1);
+					cboArray.sort();
+					var uniArray = cboArray.filter(function onlyUnique(value, index, self) {
+						return self.indexOf(value) === index;
+					});
+					//
+					retValue = (uniArray.join(' ')).trim();
+					//
+					if (!isEmpty(retValue.match(/;/))) {
+						//
+						retValue = retValue.replace(/:(\S)/g, ': $1');
+						//
+					}
+				} catch (e) {
+					_js.ms = e.message;
+					_js.ln = '1198';
+				}
+			}
+			//
+			return retValue;
+		},
+		proStdElements: function () {
+			//
+			// process standard elements
+			//
+			var retValue = '';
+			//
+			if (!_js.hasError()) {
+				//
+				console.log('OBJ > proStdElements');
+				//
+				try {
+					if (this.isFragment()) {
+						throw new Error('Content identifid as a fragment and can not be processed.');
+					}
+					var newAttr;
+					if (!isEmpty(this.datElements.match(/;/))) {
+						newAttr = 'style';
+					} else {
+						newAttr = 'class';
+					}
+					var datElements = this.datElements.trim();
+					var mceTag = getRegExpValue(this.fullHtml(), '^<(p|h[1-6]|div|li|td|th).*?>', 's');
+					var mceElements = getRegExpValue(mceTag, newAttr + '.*?"(.*?)"', 's', 1);
+					var newElements;
+					var newTag;
+					var newUpdate = this.fullHtml();
+					if (this.datAction !== 'replace') {
+						//
+						console.log('    - Mark -');
+						//
+						if (isEmpty(mceTag.match(newAttr))) {
+							newTag = mceTag.replace('>', ' ' + newAttr + '="' + datElements + '">');
+						} else {
+							var proList = this.proPurgeElements(mceElements, datElements) + ' ' + datElements;
+							newElements = this.proSrtElements(proList);
+							newTag = mceTag.replace(mceElements, newElements);
+						}
+						//
+						newTag = this.proOrderClassStyle(newTag);
+						//
+						retValue = newUpdate.replace(mceTag, newTag);
+						//
+					} else {
+						//
+						console.log('    - Mark -');
+						//
+						switch (true) {
+							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i)) && this.lineCnt == 1):
+								throw new Error('The tag does not have elements to replace.');
+							case (isEmpty(mceTag.match(newAttr)) && this.lineCnt == 1):
+								throw new Error('The tag does not have ' + newAttr + ' elements to replace.');
+							case (isEmpty(mceTag.match(/(class|style).*?"(.*?)"/i))):
+								// skip
+								break;
+							case (isEmpty(mceTag.match(newAttr))):
+								// skip
+								break;
+							default:
+								mceElements = getRegExpValue(mceTag, newAttr + '.*?"(.*?)"', 'i', 1);
+								newElements = this.proSrtElements(this.datElements);
+								newTag = mceTag.replace(mceElements, newElements);
+								newTag = this.proOrderClassStyle(newTag);
+								//
+								retValue = newUpdate.replace(mceTag, newTag);
+								//
+						}
+						//
+					}
+				} catch (e) {
+					_js.hd = 'MESSAGE';
+					_js.ms = e.message;
+					_js.ln = '1275';
+				}
+			}
+			//
+			return retValue;
 		}
 	};
-	function getSource() {
-		// selection object
-		var sourceSelObj = selectionObject;
-		// selection html node
-		sourceSelObj.node = editor.selection.getNode();
-		// get selection node name
-		sourceSelObj.nodeName = sourceSelObj.node.nodeName.toLowerCase();
-		// selection content
-		sourceSelObj.text = editor.selection.getContent({
-			format: 'text'
-		});
-		sourceSelObj.html = editor.selection.getContent({
-			format: 'html'
-		});
-		// if wrapped in a span, set new node
-		var regExp = new RegExp(/\b(em|i|kbd|s|strong|sub|sup|u)\b/, 'is');
-		if (!isEmpty(sourceSelObj.nodeName.match(regExp))) {
-			// select parent node
-			var tmpNODE;
-			tmpNODE = editor.dom.getParent(sourceSelObj.node, 'span');
-			if (!isEmpty(tmpNODE)) {
-				sourceSelObj.node = tmpNODE;
-				// get new node name
-				sourceSelObj.nodeName = sourceSelObj.node.nodeName.toLowerCase();
-			}
-		}
-		regExp = new RegExp(/\sdata-mce-style.+"/, 's');
-		sourceSelObj.innerHtml = sourceSelObj.node.innerHTML;
-		sourceSelObj.innerText = getRawHtml(sourceSelObj.innerHtml);
-		sourceSelObj.outerHtml = editor.dom.getOuterHTML(sourceSelObj.node);
-		switch (true) {
-			case (sourceSelObj.nodeName == 'body'):
-				displayMessage('SYSTEM MESSAGE\nInvalid or too broad of a selection.');
-				break;
-			case (isEmpty(sourceSelObj.purgeOuterHtml().match(/class|style|span|<em>|<i>|<kbd>|<s>|<strong>|<sub>|<sup>|<u>/))):
-				displayMessage('SYSTEM MESSAGE\nSelection missing style elements.');
-				break;
-			default:
-				sessionStorage.setItem('soureOuterHtml', sourceSelObj.purgeOuterHtml());
-				editor.selection.collapse();
-		}
-		return;
-	}
-	function setTarget() {
-		// selection object
-		var targetSelObj = selectionObject;
-		// selection html node
-		targetSelObj.node = editor.selection.getNode();
-		// get selection node name
-		targetSelObj.nodeName = targetSelObj.node.nodeName.toLowerCase();
-		// selection content
-		targetSelObj.text = editor.selection.getContent({
-			format: 'text'
-		});
-		targetSelObj.html = editor.selection.getContent({
-			format: 'html'
-		});
-		var isMultiLine = true;
-		if (targetSelObj.nodeName !== 'body') {
-			var tmpValue = '';
-			// if wrapped in a span, set new node
-			var regExp = new RegExp(/\b(em|i|kbd|s|strong|sub|sup|u)\b/, 'is');
-			if (!isEmpty(targetSelObj.nodeName.match(regExp))) {
-				// select parent node
-				var tmpNODE;
-				tmpNODE = editor.dom.getParent(targetSelObj.node, 'span');
-				if (!isEmpty(tmpNODE)) {
-					targetSelObj.node = tmpNODE;
-					// get new node name
-					targetSelObj.nodeName = targetSelObj.node.nodeName.toLowerCase();
-				}
-			}
-			regExp = new RegExp(/\sdata-mce-style.+"/, 's');
-			targetSelObj.innerHtml = targetSelObj.node.innerHTML;
-			targetSelObj.innerText = getRawHtml(targetSelObj.innerHtml);
-			targetSelObj.outerHtml = editor.dom.getOuterHTML(targetSelObj.node);
-			// count end tags of p,h?,div
-			isMultiLine = (!targetSelObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi) ? 0 : targetSelObj.purgeOuterHtml().match(/<\/h[1-6]|\/p>|\/div|\/li>/gi).length) > 1;
-		}
-		var newHtml = '';
-		var newTag;
-		switch (true) {
-			case (isMultiLine):
-				// multi paragraph
-				// 1. strip carrage returns
-				regExp = new RegExp(/(\r\n|\n|\r)/, 'gm');
-				tmpValue = targetSelObj.html.replace(regExp, '');
-				// 2. delimit tags with comma
-				regExp = new RegExp(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/, 'gm');
-				var delimitedInput = tmpValue.replace(/(<\/(div|h[1-6]|p)>)(<(div|h[1-6]|p)>)/g, '$1,$3');
-				// 3. add to array
-				var idxSelObj = selectionObject;
-				var selectArray = delimitedInput.split(',');
-				var lastRecord = lastRec(selectArray);
-				var idx = 0;
-				// 4. loop through array
-				for (;selectArray[idx];) {
-					if (idx > lastRecord) {
-						newHtml += '<p>&nbsp;</p>';
-						break;
+	function getRegExpValue(strArg1, strArg2, strArg3, numArg4) {
+		//
+		// Return RegExp value
+		//	strArg1 - content
+		//	strArg2	- expression
+		//	strArg3 - scope
+		//	numArg4	- group
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > getRegExpValue');
+			console.log('    - strArg1: ' + strArg1);
+			console.log('    - strArg2: ' + strArg2);
+			console.log('    - strArg3: ' + strArg3);
+			console.log('    - numArg4: ' + numArg4);
+			//
+			try {
+				if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
+					if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
+						throw new Error('Missing required argument/s.'); // regular expression
 					}
-					idxSelObj.outerHtml = selectArray[idx];
-					newTag = getNewTag(sessionStorage.getItem('soureOuterHtml'), idxSelObj.purgeOuterHtml());
-					newHtml += idxSelObj.purgeOuterHtml().replace(idxSelObj.preTag(), newTag[0]).replace(idxSelObj.sufTag(), newTag[1]);
-					idx++;
+					if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
+						strArg3 = ''; // regular expression scope
+					}
+					if (numArg4 === undefined || numArg4 === null || typeof numArg4 !== 'number') {
+						numArg4 = 0; // group #
+					}
+					if (isEmpty(strArg3.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
+						numArg4 = 0;
+						strArg3 = 'g';
+					}
+					if (numArg4 > 0 && strArg3 == 'g') {
+						strArg3 = 'i';
+					}
+					var regExp = new RegExp(strArg2, strArg3);
+					if (!isEmpty(strArg1.match(regExp))) {
+						//
+						retValue = strArg1.match(regExp)[numArg4];
+						//
+					}
 				}
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1328';
+			}
+		}
+		//
+		return retValue;
+	}
+	function regDecode(strArg1) {
+		//
+		// decode brackets, parentheses, &nbsp; for regex
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('Missing required argument.');
+				}
+				var decodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/~#A0~/))) {
+					decodeVal = decodeVal.replace(/~#A0~/g, '&nbsp;');
+				}
+				if (!isEmpty(strArg1.match(/#5B~/))) {
+					decodeVal = decodeVal.replace(/#5B~/g, '[');
+				}
+				if (!isEmpty(strArg1.match(/~#5D/))) {
+					decodeVal = decodeVal.replace(/~#5D/g, ']');
+				}
+				if (!isEmpty(strArg1.match(/#28~/))) {
+					decodeVal = decodeVal.replace(/#28~/g, '(');
+				}
+				if (!isEmpty(strArg1.match(/~#29/))) {
+					decodeVal = decodeVal.replace(/~#29/g, ')');
+				}
+				retValue = decodeVal;
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1364';
+			}
+		}
+		//
+		return retValue;
+	}
+	function regEncode(strArg1) {
+		//
+		// encode brackets, parentheses, &nbsp; for regex
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('Missing required argument.');
+				}
+				var encodeVal = strArg1;
+				if (!isEmpty(strArg1.match(/[\u00A0]|\&nbsp;/))) {
+					encodeVal = encodeVal.replace(/[\u00A0]|\&nbsp;/g, '~#A0~');
+				}
+				if (!isEmpty(strArg1.match(/\[/))) {
+					encodeVal = encodeVal.replace('[', '#5B~');
+				}
+				if (!isEmpty(strArg1.match(/\]/))) {
+					encodeVal = encodeVal.replace(']', '~#5D');
+				}
+				if (!isEmpty(strArg1.match(/\(/))) {
+					encodeVal = encodeVal.replace('(', '#28~');
+				}
+				if (!isEmpty(strArg1.match(/\)/))) {
+					encodeVal = encodeVal.replace(')', '~#29');
+				}
+				retValue = encodeVal;
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1400';
+			}
+		}
+		//
+		return retValue;
+	}
+	function noHtmlTags(strArg1) {
+		//
+		// strip html from arg
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > noHtmlTags');
+			console.log('    - strArg1: ' + strArg1);
+			//
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1 == '') {
+					throw new Error('Missing required argument.'); // value to evaluate
+				}
+				//
+				retValue = strArg1.replace(/(<([^>]+)>)/ig, '');
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1426';
+			}
+		}
+		//
+		return retValue;
+	}
+	function isEmpty(strArg1) {
+		//
+		// check for empty string
+		//
+		return (!strArg1 || 0 === strArg1.length);
+	}
+	function isNull(strArg1) {
+		//
+		// check for null
+		//
+		return (strArg1 === null);
+	}
+	function mceReady() {
+		//
+		// validate content is selected
+		//
+		var retValue = false;
+		try {
+			//
+			console.log('FN  > mceReady');
+			//
+			if (isEmpty(editor.selection.getContent({
+					format: 'text'
+				}))) {
+				throw new Error('Content to modify is not selected.');
+			}
+			//
+			retValue = true;
+			//
+		} catch (e) {
+			_js.hd = 'MESSAGE';
+			_js.ms = e.message;
+			_js.ln = '1464';
+		}
+		//
+		return retValue;
+	}
+	function padNum(numArg1, numArg2) {
+		switch (true) {
+			case (numArg1 === undefined || numArg1 === null || typeof numArg1 !== 'number'):
+				rtnValue = '0';
 				break;
-			case (targetSelObj.text !== targetSelObj.innerText):
-				newTag = getNewTag(sessionStorage.getItem('soureOuterHtml'), targetSelObj.html);
-				if (newTag[2] == 0) {
-					displayMessage('SYSTEM MESSAGE\nStyle could not be duplicated.');
-				} else {
-					newHtml = newTag[0] + targetSelObj.html + newTag[1];
-				}
+			case (numArg2 === undefined || numArg2 === null || typeof numArg2 !== 'number'):
+				rtnValue = numArg1.toString();
 				break;
 			default:
-				newHtml='';
-				newTag = getNewTag(sessionStorage.getItem('soureOuterHtml'), targetSelObj.purgeOuterHtml());
-				if (newTag[2] == 0) {
-					displayMessage('SYSTEM MESSAGE\nStyle could not be duplicated.');
-				} else {
-					newHtml = targetSelObj.purgeOuterHtml().replace(targetSelObj.preTag(), newTag[0]).replace(targetSelObj.sufTag(), newTag[1]);
+				var strNum = numArg1.toString();
+				var rtnValue = strNum;
+				if (strNum.length < numArg2) {
+					var pad = '0'.repeat(numArg2);
+					rtnValue = (pad + strNum).slice(-numArg2);
 				}
 		}
-		// save new html
-		if (!isEmpty(newHtml)) {
-			editor.selection.setContent(newHtml);
-			editor.focus();
-			editor.undoManager.add();				
+		return rtnValue;
+	}
+	function randomID(numArg1) {
+		//
+		// generate / return radom ID string
+		// 	numArg1 - length of ID
+		//
+		if (numArg1 === undefined || numArg1 === null || typeof numArg1 !== 'number' || numArg1 < 1 || numArg1 > 20) {
+			numArg1 = 5;
 		}
-		sessionStorage.setItem('soureOuterHtml', '');
+		//
+		return (Math.random().toString(26) + "000000000").substr(4, numArg1);
+	}
+	function strToArray(strArg1, expArg2) {
+		//
+		// load string items into array
+		//	strArg1 - string list
+		//	expArg2 - regular expression to split list
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > strToArray');
+			console.log('    - strArg1: ' + strArg1);
+			console.log('    - expArg2: ' + expArg2);
+			//
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+					throw new Error('Missing required argument.');
+				}
+				if (expArg2 === undefined || expArg2 === null || typeof expArg2 !== 'string') {
+					expArg2 = '\\s+';
+				}
+				var expArray = new RegExp(expArg2, 'g');
+				var datArrayData = strArg1.trim().replace(expArray, '*');
+				datArrayData = datArrayData.replace(/:\*/g, ': ').trim();
+				//
+				retValue = datArrayData.split('*');
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1527';
+			}
+		}
+		//
+		return retValue;
+	}
+	function strToNode(strArg1) {
+		//
+		// build node from html string
+		//	strArg1 - full html string
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > strToNode');
+			console.log('    - strArg1: ' + strArg1);
+			//
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+					throw new Error('Missing required argument.');
+				}
+				var blkTag = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i');
+				if (isEmpty(blkTag)) {
+					throw new Error('Invalid HTML argument.');
+				}
+				var blkTagName = getRegExpValue(strArg1, '^<(div|h[1-6]|li|p|td|th).*?>', 'i', 1);
+				var blkNode = document.createElement(blkTagName);
+				var blkAttr;
+				if (!isEmpty(blkTag.match(/id/i))) {
+					blkAttr = document.createAttribute('id');
+					blkAttr.value = getRegExpValue(blkTag, 'id.*?"(.*?)"', 'i', 1);
+					blkNode.setAttributeNode(blkAttr);
+				}
+				if (!isEmpty(blkTag.match(/style/))) {
+					blkAttr = document.createAttribute('style');
+					blkAttr.value = getRegExpValue(blkTag, 'style.*?"(.*?)"', 'i', 1);
+					blkNode.setAttributeNode(blkAttr);
+				}
+				if (!isEmpty(blkTag.match(/class/))) {
+					blkAttr = document.createAttribute('class');
+					blkAttr.value = getRegExpValue(blkTag, 'class.*?"(.*?)"', 'i', 1);
+					blkNode.setAttributeNode(blkAttr);
+				}
+				var blkEndTag = new RegExp('<\/' + blkTagName + '>$', 'g');
+				blkNode.innerHtml = strArg1.replace(blkTag, '').replace(blkEndTag, '');
+				//
+				retValue = blkNode;
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1578';
+			}
+		}
+		//
+		return retValue;
+	}
+	function stripOuterTags(strArg1) {
+		//
+		// strip html outer tags
+		// 	strArg1 - html string
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > stripOuterTags');
+			console.log('    - strArg1: ' + strArg1);
+			//
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string') {
+					throw new Error('Missing required argument.');
+				}
+				//
+				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1605';
+			}
+		}
+		//
+		return retValue;
+	}
+	function matchCnt(arrArg1) {
+		//
+		// check for null
+		//
+		var retValue;
+		if (arrArg1 === undefined || arrArg1 === null || !Array.isArray(arrArg1)) {
+			retValue = 0;
+		} else {
+			retValue = arrArg1.length;
+		}
+		return retValue;
+	}
+	function frmInit() {
+		//
+		// init object
+		//
+		console.log(' ');
+		console.log('FN  > frmInit');
+		console.log(' ');
+		//
+		var edSelect = editor.selection.getContent({
+			format: 'html'
+		});
+		oDoc.lineCnt = 1;
+		// count selected end tags
+		if (!isEmpty(edSelect.match(/<\/(?!ol|span|table|thead|tbody|tfoot|tr|ul|em|i|kbd|strong|sub|sup|s\b|u).*?>/g))) {
+			oDoc.lineCnt = edSelect.match(/<\/(?!ol|span|table|thead|tbody|tfoot|tr|ul|em|i|kbd|strong|sub|sup|s\b|u).*?>/g).length;
+		}
+		oDoc.initNode(editor.selection.getNode());
+		//
 		return;
 	}
-	// display message
-	function displayMessage(argMessage) {
-		// argMessage = message
-		if (argMessage === undefined || argMessage === null) {
-			argMessage = '';
-		}
-		if (!isEmpty(argMessage)) {
-			alert(argMessage);
-		}
-		return;
-	}
-	// get regular expression value
-	function getRegExpValue(argValue, argRegExp, argRegExpScope) {
-		// argValue = value to evaluate
-		// argRegExp = regular expression
-		// argRegExpScope = regular expression scope
-		if (argValue === undefined || argValue === null) {
-			argValue = '';
-		}
-		if (argRegExp === undefined || argRegExp === null) {
-			argRegExp = '';
-		}
-		if (argRegExpScope === undefined || argRegExpScope === null) {
-			argRegExpScope = 'g';
-		}
-		var htmlValue = '';
-		if (!isEmpty(argValue) && !isEmpty(argRegExp)) {
-			if (isEmpty(argRegExpScope.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
-				argRegExpScope = 'g';
+	//
+	// controlling function
+	//
+	function frmSubmit() {
+		//
+		// process request
+		//
+		console.log(' ');
+		console.log('FN  > frmSubmit');
+		console.log(' ');
+		//
+		// copy doc to var, expose all &nbsp;
+		//
+		var htmlDoc = editor.getContent().replace(/[\u00A0]/g, '&nbsp;');
+		try {
+			// validate selection
+			//
+			var decodeFullHtml = '';
+			var decodeUpdateHtml = '';
+			var fullHtml;
+			var htmlUpdate = '';
+			//
+			if (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0) {
+				_js.hd = 'MESSAGE';
+				throw new Error('A mixture of class and style input data detected.');
+			} else if (isEmpty(oDoc.datElements)) {
+				_js.hd = 'MESSAGE';
+				throw new Error('Missing input data.');
+			} else if (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))) {
+				_js.hd = 'MESSAGE';
+				throw new Error('The selected element is class, but the input is formatted as a style.');
+			} else if (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))) {
+				_js.hd = 'MESSAGE';
+				throw new Error('The selected element is style, but the input is formatted as a class.');
 			}
-			var regExp = new RegExp(argRegExp, argRegExpScope);
-			if (!isEmpty(argValue.match(regExp))) {
-				htmlValue = argValue.match(regExp)[0];
-			}
-		}
-		return htmlValue;
-	}
-	// get element value
-	function getElement(argHtml, argElement) {
-		// argHtml = html
-		// argElement = element (style/class/tag)
-		if (argHtml === undefined || argHtml === null) {
-			argHtml = '';
-		}
-		if (argElement === undefined || argElement === null) {
-			argElement = '';
-		}
-		var htmlValue = '';
-		if (!isEmpty(argHtml) && !isEmpty(argElement.match(/class|style|tag/))) {
-			var regExp;
-			var tmpValue;
-			if (argElement == 'tag') {
-				tmpValue = getRegExpValue(argHtml, '<em>|<i>|<kbd>|<s>|<strong>|<sub>|<sup>|<u>');
-				if (!isEmpty(tmpValue)) {
-					htmlValue = tmpValue.replace('<', '').replace('>', '');
-				}
-			} else if (argElement == 'class' || argElement == 'style') {
-				tmpValue = getRegExpValue(argHtml, argElement + '.*?".*?"');
-				if (!isEmpty(tmpValue)) {
-					regExp = new RegExp(argElement);
-					htmlValue = tmpValue.replace(regExp, '').replace(/=/, '').replace(/"/g, '');
-				}
-			}
-		}
-		return htmlValue;
-	}
-	// return icon element
-	function getIcon(argHtml) {
-		if (argHtml === undefined || argHtml === null) {
-			argHtml = '';
-		}
-		var htmlValue = '';
-		if (!isEmpty(argHtml)) {
-			var regExp = new RegExp(/<i.*?i>|"material-icons"|<img.*\/>/, 'is');
-			if (!isEmpty(argHtml.match(regExp))) {
+			if (oDoc.lineCnt == 1) {
+				//
+				console.log('*** * Process Single Line * ***');
+				//
+				fullHtml = oDoc.fullHtml();
+				//
 				switch (true) {
-					case (!isEmpty(argHtml.match(/<img.*\/>/))):
-						htmlValue = getRegExpValue(argHtml, '\\[caption.*caption\\]', 'is');
-						if (isEmpty(htmlValue)) {
-							htmlValue = getRegExpValue(argHtml, '<img.*\/>', 'is');
+					case (_js.hasError()):
+						//
+						// error
+						//
+						break;
+					case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+						console.log('    - Mark -');
+						htmlUpdate = oDoc.proAddMark();
+						break;
+					case (oDoc.isFragment()):
+						console.log('    - Mark -');
+						htmlUpdate = regDecode(oDoc.proFragment());
+						break;
+					case (oDoc.hasDatColor()):
+						console.log('    - Mark -');
+						htmlUpdate = oDoc.proColorElements();
+						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+							oDoc.fullHtmlCache = htmlUpdate;
+							htmlUpdate = regDecode(oDoc.proStdElements());
+						} else {
+							htmlUpdate = regDecode(htmlUpdate);
 						}
 						break;
-					case (!isEmpty(argHtml.match(/"material-icons"/))):
-						htmlValue = getRegExpValue(argHtml, '<span.*"material-icons".*span>', 'is');
-						break;
 					default:
-						htmlValue = getRegExpValue(argHtml, '<span.*?><i.*?><\/span>|<i.*?i>', 'is');
+						console.log('    - Mark -');
+						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
-			}
-			return htmlValue;
-		}
-	}
-	// strip html to check for content
-	function hasContent(argHtml) {
-		// argHtml = HTML to validate
-		if (argHtml === undefined || argHtml === null) {
-			argHtml = '';
-		}
-		var htmlDIV = document.createElement('htmlDIV');
-		htmlDIV.innerHTML = argHtml;
-		// strip html to see what's left
-		var htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
-		return (htmlValue.length > 0);
-	}
-	// check for '' or null
-	function isEmpty(argSTR) {
-		return (!argSTR || 0 === argSTR.length);
-	}
-	// check for selection
-	function isReady() {
-		var blnValue = true;
-		var selectedText = editor.selection.getContent({
-			format: 'text'
-		});
-		if (isEmpty(selectedText)) {
-			displayMessage('SYSTEM MESSAGE\nInvalid or missing text selection.');
-			blnValue = false;
-			sessionStorage.setItem('soureOuterHtml', '');
-		}
-		return blnValue;
-	}
-	// find last "good" array value
-	function lastRec(argArray) {
-		if (argArray === undefined || argArray === null) {
-			argArray = [''];
-		}
-		var idxItem;
-		// 0 based
-		var idx = argArray.length - 1;
-		for (;argArray[idx];) {
-			// save array item to var
-			idxItem = argArray[idx];
-			if (hasContent(idxItem)) {
-				break;
-			} else {
-				idx--;
-			}
-		}
-		if (idx < 1) {
-			idx = argArray.length - 1;
-		}
-		return idx;
-	}
-	// build new tags
-	function getNewTag(argSource, argTarget) {
-		// argSource = source html
-		// argTarget = target html
-		if (argSource === undefined || argSource === null) {
-			argSource = '';
-		}
-		if (argTarget === undefined || argTarget === null) {
-			argTarget = '';
-		}
-		var selectArray = new Array(3);
-		selectArray[2] = 0;
-		if (isEmpty(argSource.match(/class|style|<em>|<i>|<kbd>|<s>|<strong>|<sub>|<sup>|<u>/))) {
-			argSource = '';
-			argTarget = '';
-		}
-		var tmpValue;
-		var regExp;
-		if (!isEmpty(argSource) && !isEmpty(argTarget)) {
-			regExp = new RegExp(/<span.*?><i.*?><\/span>|<i.*?i>/, 'is');
-			// remove/discard icon from source
-			if (!isEmpty(argSource.match(/<i.*?i>/))) {
-				tmpValue = argSource.replace(regExp, '');
-				argSource = tmpValue;
-			}
-			// remove/save icon from target
-			var iconTag = getIcon(argTarget);
-			if (!isEmpty(iconTag)) {
-				tmpValue = argTarget.replace(iconTag, '');
-				argTarget = tmpValue;
-			}
-			// vars
-			var targetPrefix;
-			var targetSuffix;
-			var newPrefix;
-			var newSuffix;
-			var sourceClass = getElement(argSource, 'class');
-			var sourceStyle = getElement(argSource, 'style');
-			var sourceTag = getElement(argSource, 'tag');
-			targetPrefix = getRegExpValue(argTarget, '(^<p.*?span.*?>|^<h[1-6].*?span.*?>|^<li.*?span.*?>|^<div.*?span.*?>)|(^<p.*?>|^<h[1-6].*?|^<li.*?>|^<div.*?>)');
-			targetSuffix = getRegExpValue(argTarget, '(<\/span.*?\/p.*?>$|<\/span.*?\/h[1-6].*?>$|<\/span.*?\/li.*?>$)|(<\/span.*?\/div.*?>$)|(<\/p>$)|(<\/h[1-6]>$)|(<\/li>$)|(<\/div.*?>$)');
-			// alignment
-			var alnEXP = new RegExp(/(aln:txt-)(lt|ct|rt|jt|bi|hi|pi)/, 'g');
-			if (isEmpty(targetPrefix)) {
-				// x alignment on paragraph fragment
-				selectArray[2] = 1;
-				tmpValue = sourceClass.replace(alnEXP, '').trim();
-				sourceClass = tmpValue;
-				switch (true) {
-					// has class & style
-					case (!isEmpty(sourceClass) && !isEmpty(sourceStyle)):
-						selectArray[2] = 1.1;
-						newPrefix = iconTag + '<span class="' + sourceClass + '" style="' + sourceStyle + '">';
-						newSuffix = '</span>';
-						break;
-						// has class & no style
-					case (!isEmpty(sourceClass)):
-						selectArray[2] = 1.2;
-						newPrefix = iconTag + '<span class="' + sourceClass + '">';
-						newSuffix = '</span>';
-						break;
-						// has style & no class
-					case (!isEmpty(sourceStyle)):
-						selectArray[2] = 1.3;
-						newPrefix = iconTag + '<span style="' + sourceStyle + '">';
-						newSuffix = '</span>';
-						break;
-					default:
-						selectArray[2] = 1.4;
-						newPrefix = iconTag;
-						newSuffix = '';
-						selectArray[2] = 0;
-				}
-				if (!isEmpty(sourceTag)) {
-					tmpValue = newPrefix;
-					newPrefix = tmpValue + '<' + sourceTag + '>';
-					tmpValue = newSuffix;
-					newSuffix = '</' + sourceTag + '>' + tmpValue;
-					selectArray[2] = 1.5;
+				//
+				if (!_js.hasError()) {
+					//
+					decodeFullHtml = regDecode(fullHtml);
+					decodeUpdateHtml = regDecode(htmlUpdate);
+					//
+					console.log('SRC > ' + decodeFullHtml);
+					console.log('UPD > ' + decodeUpdateHtml);
+					//
+					// write content back
+					//
+					htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
+					//
+					try {
+						//
+						console.log('    - Single Line Complete -');
+						//
+						editor.setContent(htmlDoc);
+						editor.undoManager.add();
+					} catch (e) {
+						_js.ms = e.message;
+						_js.ln = '1733';
+					}
 				}
 			} else {
-				selectArray[2] = 2;
-				switch (true) {
-					// alignment & color style
-					case (!isEmpty(sourceClass.match(alnEXP)) && !isEmpty(sourceStyle.match(/color:.*?;/))):
-						selectArray[2] = 2.1;
-						newPrefix = '<p class="' + sourceClass + '">' + iconTag + '<span style="' + sourceStyle + '">';
-						newSuffix = '</span></p>';
-						break;
-						// alignment & some other style
-					case (!isEmpty(sourceClass.match(alnEXP)) && !isEmpty(sourceStyle)):
-						selectArray[2] = 2.2;
-						newPrefix = '<p class="' + sourceClass + '" style="' + sourceStyle + '">' + iconTag;
-						newSuffix = '</p>';
-						break;
-						// alignment & no style
-					case (!isEmpty(sourceClass.match(alnEXP))):
-						selectArray[2] = 2.3;
-						newPrefix = '<p class="' + sourceClass + '">' + iconTag;
-						newSuffix = '</p>';
-						break;
-						// class & style
-					case (!isEmpty(sourceClass) && !isEmpty(sourceStyle)):
-						selectArray[2] = 2.4;
-						newPrefix = targetPrefix + iconTag + '<span class="' + sourceClass + '" style="' + sourceStyle + '">';
-						newSuffix = '</span>' + targetSuffix;
-						break;
-						// class & no style
-					case (!isEmpty(sourceClass)):
-						selectArray[2] = 2.5;
-						tmpValue = targetPrefix.replace(/>/, '');
-						newPrefix = iconTag + tmpValue + ' class="' + sourceClass + '">';
-						newSuffix = targetSuffix;
-						break;
-						// color style
-					case (!isEmpty(sourceStyle.match(/color:.*?;/))):
-						selectArray[2] = 2.6;
-						newPrefix = targetPrefix + iconTag + '<span style="' + sourceStyle + '">';
-						newSuffix = '</span>' + targetSuffix;
-						break;
-						// style & no class
-					case (!isEmpty(sourceStyle)):
-						selectArray[2] = 2.7;
-						tmpValue = targetPrefix.replace(/>/, '');
-						newPrefix = iconTag + tmpValue + ' style="' + sourceStyle + '">';
-						newSuffix = targetSuffix;
-						break;
-						// none of the above
-					default:
-						selectArray[2] = 2.8;
-						newPrefix = iconTag;
-						newSuffix = '';
-						selectArray[2] = 0;
+				//
+				console.log('*** * Process Multi Line * ***');
+				//
+				// load block content into array
+				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
+				var blkNode;
+				var blkHtmlItem;
+				var datActionCache = oDoc.datAction;
+				var datAttributeCache = oDoc.datAttribute;
+				var datElementsCache = oDoc.datElements;
+				var idx = 0;
+				for (; blkArray[idx];) {
+					blkHtmlItem = blkArray[idx];
+					switch (true) {
+						case (_js.hasError()):
+							// error
+							idx = 9999;
+							break;
+						case (!isEmpty(blkHtmlItem.match(/<.{1,3}><\/.{1,3}>/))):
+							// skip tags with no content ie <p></p>
+							break;
+						case (!isEmpty(blkHtmlItem.match(/<.?ul|ol>/))):
+							// skip ordered/unordered list
+							break;
+						case (!isEmpty(blkHtmlItem.match(/^<\/.*?>/))):
+							// skip end tags </?>
+							break;
+						case (isEmpty(blkHtmlItem.match(/(class|style).*?"(.*?)"/i)) && datActionCache == 'replace'):
+							// skip replace with empty doc element
+							break;
+						case (!isEmpty(blkHtmlItem.match(/<(table|tbody|thead|tfoot|tr)/))):
+							// skip all table elements but th & td
+							break;
+						default:
+							fullHtml = blkHtmlItem;
+							blkNode = strToNode(blkHtmlItem);
+							oDoc.initNode(blkNode, 'm');
+							oDoc.datElements = datElementsCache;
+							oDoc.fullHtmlCache = blkHtmlItem;
+							oDoc.mceHtmlCache = stripOuterTags(blkHtmlItem);
+							oDoc.innerHtmlCache = oDoc.mceHtmlCache;
+							switch (true) {
+								case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+									htmlUpdate = oDoc.proAddMark();
+									break;
+								case (oDoc.hasDatColor()):
+									htmlUpdate = oDoc.proColorElements();
+									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+										oDoc.fullHtmlCache = htmlUpdate;
+										htmlUpdate = regDecode(oDoc.proStdElements());
+									} else {
+										htmlUpdate = regDecode(htmlUpdate);
+									}
+									break;
+								default:
+									htmlUpdate = oDoc.proStdElements();
+							}
+					}
+					if (!_js.hasError() && !isEmpty(htmlUpdate)) {
+						//
+						decodeFullHtml = regDecode(fullHtml);
+						decodeUpdateHtml = regDecode(htmlUpdate);
+						//
+						console.log(padNum(idx, 3) + ' > IDX');
+						console.log('SRC > ' + decodeFullHtml);
+						console.log('UPD > ' + decodeUpdateHtml);
+						//
+						// write content back
+						//
+						htmlDoc = htmlDoc.replace(decodeFullHtml, decodeUpdateHtml);
+						//
+					}
+					//
+					idx++;
+					//
 				}
-				if (!isEmpty(sourceTag)) {
-					if (isEmpty(newPrefix)) {
-						tmpValue = targetPrefix;
-					} else {
-						tmpValue = newPrefix;
+				//
+				// write content back
+				//
+				if (!_js.hasError()) {
+					//
+					try {
+						editor.setContent(htmlDoc);
+						editor.undoManager.add();
+						//
+						console.log('    - Multi Line Complete -');
+						//
+					} catch (e) {
+						_js.ms = e.message;
+						_js.ln = '1826';
 					}
-					newPrefix = tmpValue + '<' + sourceTag + '>';
-					if (isEmpty(newSuffix)) {
-						tmpValue = targetSuffix;
-					} else {
-						tmpValue = newSuffix;
-					}
-					newSuffix = '</' + sourceTag + '>' + tmpValue;
-					selectArray[2] = 2;
 				}
 			}
-			selectArray[0] = newPrefix;
-			selectArray[1] = newSuffix;
+		} catch (e) {
+			_js.ms = e.message;
+			_js.ln = '1832';
 		}
-		return selectArray;
+		if (_js.hasError()) {
+			//
+			_js.display();
+			//
+		}
+		editor.focus();
+		return;
 	}
-	// strip html
-	function getRawHtml(argHtml) {
-		// argHtml = HTML to process
-		if (argHtml === undefined || argHtml === null) {
-			argHtml = '';
+	//
+	//	SPECIFIC TO THIS PLUGIN		---------------------------------------
+	//
+	function frmAcquire() {
+		//
+		// acquire data elements
+		//
+		console.log(' ');
+		console.log('FN  > frmAcquire');
+		console.log(' ');
+
+		try {
+			//
+			console.log('*** * fullHtml: ' + oDoc.fullHtml());
+			//
+			var datClass = getClass(oDoc.fullHtml());
+			var datMark = getMark(oDoc.fullHtml());
+			var datStyle = getStyle(oDoc.fullHtml());
+			//
+			sessionStorage.setItem('datClass', datClass);
+			sessionStorage.setItem('datMark', datMark);
+			sessionStorage.setItem('datStyle', datStyle);
+			//
+		} catch(e) {
+			_js.ms = e.message;
+			_js.ln = '1867';			
 		}
-		var htmlValue = '';
-		if (!isEmpty(argHtml)) {
-			var iconTag = getIcon(argHtml);
-			if (!isEmpty(iconTag)) {
-				var tmpValue = argHtml.replace(iconTag, '');
-				argHtml = tmpValue;
+		//
+		return;
+	}
+	function getClass(strArg1) {
+		//
+		// get/return class elements from html string (strArg1)
+		//  - strArg1: fullHtml
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			console.log(' ');
+			console.log('FN  > getClass');
+			console.log('    - strArg1: ' + strArg1);
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('Missing required argument.');
+				}
+				if (!isEmpty(strArg1.match(/class.*?"(.*?)"/g))) {
+					console.log('     - Mark -');
+					// pull tag
+					var tagDat = getRegExpValue(strArg1, '^<(p|h[1-6]|div|li|td|th).*?><span.*?>');
+					if (isEmpty(tagDat)) {
+						tagDat = getRegExpValue(strArg1, '^<(p|h[1-6]|div|li|td|th).*?>');
+					}
+					if (!isEmpty(tagDat)) {
+						if (!isEmpty(tagDat)) {
+							var rstDat = tagDat.match(/class.*?"(.*?)"/g);
+							var idx = 0;
+							var rstItm = '';
+							for (; rstDat[idx];) {
+								rstItm = rstDat[idx];
+								retValue += rstItm.match(/"(.*?)"/)[1] + ' ';
+								idx++;
+							}
+							retValue = retValue.trim();
+						}
+					}
+				}
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1910';
 			}
-			var htmlDIV = document.createElement('htmlDIV');
-			htmlDIV.innerHTML = argHtml;
-			htmlValue = htmlDIV.textContent || htmlDIV.innerText || '';
 		}
-		return htmlValue;
+		//
+		return retValue;
 	}
+	function getMark(strArg1) {
+		//
+		// get/return mark elements from html string (strArg1)
+		//  - strArg1: fullHtml
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			console.log(' ');
+			console.log('FN  > getMark');
+			console.log('    - strArg1: ' + strArg1);
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('Missing required argument.');
+				}
+				if (!isEmpty(strArg1.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/g))) {
+					console.log('     - Mark -');
+					// pull marks ie. <i><u><kbd>...
+					var mrkDat = strArg1.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/g);
+					if (Array.isArray(mrkDat)) {
+						var idx = 0;
+						var mrkItm = '';
+						var preMrk = '';
+						var pstMrk = '';
+						for (; mrkDat[idx];) {
+							mrkItm = mrkDat[idx];
+							preMrk = preMrk + mrkItm;
+							pstMrk = mrkItm.replace('<', '</') + pstMrk;
+							idx++;
+						}
+						//
+						retValue = preMrk + ',' + pstMrk;
+						//
+					}
+				}
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1953';
+			}
+		}
+		//
+		return retValue;
+	}	
+	function getStyle(strArg1) {
+		//
+		// get/return style elements from html string (strArg1)
+		//  - strArg1: fullHtml
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			console.log(' ');
+			console.log('FN  > getStyle');
+			console.log('    - strArg1: ' + strArg1);
+			try {
+				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
+					throw new Error('Missing required argument.');
+				}
+				if (!isEmpty(strArg1.match(/style.*?"(.*?)"/g))) {
+					// pull tag
+					console.log('     - Mark -');
+					var tagDat = getRegExpValue(strArg1, '^<(p|h[1-6]|div|li|td|th).*?><span.*?>');
+					if (isEmpty(tagDat)) {
+						tagDat = getRegExpValue(strArg1, '^<(p|h[1-6]|div|li|td|th).*?>');
+					}
+					if (!isEmpty(tagDat)) {
+						if (!isEmpty(tagDat)) {
+							var rstDat = tagDat.match(/style.*?"(.*?)"/g);
+							var idx = 0;
+							var rstItm = '';
+							for (; rstDat[idx];) {
+								rstItm = rstDat[idx];
+								retValue += rstItm.match(/"(.*?)"/)[1] + ' ';
+								idx++;
+							}
+							retValue = retValue.trim();
+						}
+					}
+				}
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '1997';
+			}
+		}
+		//
+		return retValue;
+	}
+	//
+	//	SPECIFIC TO THIS PLUGIN		---------------------------------------
+	//
+	// button
+	//
 	editor.addButton('app_txt_style', {
 		title: 'Duplicate Style',
 		icon: false,
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE4IDRWM2MwLS41NS0uNDUtMS0xLTFINWMtLjU1IDAtMSAuNDUtMSAxdjRjMCAuNTUuNDUgMSAxIDFoMTJjLjU1IDAgMS0uNDUgMS0xVjZoMXY0SDl2MTFjMCAuNTUuNDUgMSAxIDFoMmMuNTUgMCAxLS40NSAxLTF2LTloOFY0aC0zeiIvPjwvc3ZnPg==',
 		onclick: function () {
-			if (sessionStorage.getItem('soureOuterHtml') == null) {
-				sessionStorage.setItem('soureOuterHtml', '');
-			}
-			if (isEmpty(sessionStorage.getItem('soureOuterHtml'))) {
-				if (isReady()) {
-					getSource();
-				}
+			if (!mceReady()) {
+				_js.display();
+				sessionStorage.removeItem('datClass');
+				sessionStorage.removeItem('datMark');
+				sessionStorage.removeItem('datStyle');							
+				editor.focus();
 			} else {
-				if (isReady()) {
-					if (isEmpty(sessionStorage.getItem('soureOuterHtml'))) {
-						displayMessage('SYSTEM MESSAGE\nInvalid or missing style elements.');
-					} else {
-						setTarget();
+				try {
+					if (typeof(Storage) === "undefined") {
+						throw new Error('This functionality is not supported by this browser.');						
 					}
+					//
+					console.clear();
+					//
+					var datClass = sessionStorage.getItem('datClass');
+					var datMark = sessionStorage.getItem('datMark');
+					var datStyle = sessionStorage.getItem('datStyle');
+					//
+					frmInit()
+					if (isEmpty(datClass) && isEmpty(datMark) && isEmpty(datStyle)) {
+						//
+						console.log('     - Mark -');
+						//
+						if (oDoc.lineCnt > 1) {
+							throw new Error('Selected source exceeds one line.');	
+						}
+						//
+						frmAcquire()							
+						//
+						if (_js.hasError()) {
+							throw new Error(_js.ms);
+						} else {
+							editor.notificationManager.open({
+								text: 'Styling elements saved.',
+								type: 'success',
+								timeout: 3000
+							});							
+						}
+					} else {
+						//
+						if (isEmpty(sessionStorage.getItem('datClass')) && isEmpty(sessionStorage.getItem('datMark')) && isEmpty(sessionStorage.getItem('datStyle'))) {
+							sessionStorage.removeItem('datClass');
+							sessionStorage.removeItem('datMark');
+							sessionStorage.removeItem('datStyle');							
+							throw new Error('Hum? I was unable to retrieve your selected choices.');	
+						}
+						oDoc.datAction = 'blend';
+						if (!isEmpty(datClass)) {
+							//
+							console.log('     - Mark -');
+							//
+							oDoc.datAttribute = 'class';
+							oDoc.datElements = datClass;								
+							frmSubmit();
+							//
+							if (_js.hasError()) {
+								throw new Error(_js.ms);
+							}
+						}
+						if (!isEmpty(datMark)) {
+							//
+							console.log('     - Mark -');
+							//
+							oDoc.datAttribute = 'class';
+							oDoc.datElements = datMark;								
+							frmSubmit();
+							//
+							if (_js.hasError()) {
+								throw new Error(_js.ms);
+							}
+						}
+						if (!isEmpty(datStyle)) {
+							//
+							console.log('     - Mark -');
+							//
+							oDoc.datAttribute = 'style';
+							oDoc.datElements = datStyle;								
+							frmSubmit();
+							//
+							if (_js.hasError()) {
+								throw new Error(_js.ms);
+							}
+						}
+						sessionStorage.removeItem('datClass');
+						sessionStorage.removeItem('datMark');
+						sessionStorage.removeItem('datStyle');							
+					}
+				} catch(e) {
+					_js.ms = e.message;
+					if (isNull(_js.ln)) {
+						_js.ln = '2103';
+					}
+					_js.display();
 				}
 			}
 		}
 	});
 });
 /*
- * EOF: apply-text-style / plugin.js / 30201101
+ * EOF: apply-text-style / plugin.js / 210613-1
  */
