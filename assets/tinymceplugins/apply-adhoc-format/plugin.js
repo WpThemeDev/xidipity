@@ -3,7 +3,7 @@
  * Tinymce apply-adhoc-format plugin
  *
  * ###:	plugin.js
- * bld:	210612-1
+ * bld:	210614-1
  * src:	github.com/WpThemeDev/xidipity/
  * (C)	https://doc.xidipity.com/license/
  *
@@ -566,7 +566,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				//
 				try {
 					var mrkExp;
-					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/))) {
+					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/)) && !isEmpty(this.datElements.match(/<(em|i|strong)>/))) {
 						console.log('     - Mark -');
 						var mceTag = getRegExpValue(this.fullHtml(), '<(em|i|kbd|strong|sub|sup|s\b|u)>', 's', 1);
 						var mrkTag = getRegExpValue(this.datElements, '^<(.*?)>', 's', 1);
@@ -1740,6 +1740,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 						break;
 					case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+						console.log('     - Mark -');
 						htmlUpdate = oDoc.proAddMark();
 						break;
 					case (oDoc.isFragment()):
@@ -1781,7 +1782,7 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						editor.undoManager.add();
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1784';
+						_js.ln = '1785';
 					}
 				}
 			} else {
@@ -1874,13 +1875,13 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 						//
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1877';
+						_js.ln = '1878';
 					}
 				}
 			}
 		} catch (e) {
 			_js.ms = e.message;
-			_js.ln = '1883';
+			_js.ln = '1884';
 		}
 		if (_js.hasError()) {
 			//
@@ -1916,6 +1917,9 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 				// form load init
 				//
 				console.clear();
+				//
+				console.log('### # Path: ' + window.location.pathname);
+				//
 				frmInit();
 				if (!_js.hasError()) {
 					document.getElementById('prop_id').focus();
@@ -2001,5 +2005,5 @@ tinymce.PluginManager.add('app_adhoc_fmt', function (editor) {
 	});
 });
 /*
- * EOF: apply-adhoc-format / plugin.js / 210612-1
+ * EOF: apply-adhoc-format / plugin.js / 210614-1
  */
