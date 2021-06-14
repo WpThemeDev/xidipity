@@ -3,7 +3,7 @@
  * Tinymce apply-text-color plugin
  *
  * ###:  plugin.js
- * bld:  210612-1
+ * bld:  210614-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -566,7 +566,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				//
 				try {
 					var mrkExp;
-					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/))) {
+					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/)) && !isEmpty(this.datElements.match(/<(em|i|strong)>/))) {
 						console.log('     - Mark -');
 						var mceTag = getRegExpValue(this.fullHtml(), '<(em|i|kbd|strong|sub|sup|s\b|u)>', 's', 1);
 						var mrkTag = getRegExpValue(this.datElements, '^<(.*?)>', 's', 1);
@@ -1688,6 +1688,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 						break;
 					case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+						console.log('     - Mark -');
 						htmlUpdate = oDoc.proAddMark();
 						break;
 					case (oDoc.isFragment()):
@@ -1729,7 +1730,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						editor.undoManager.add();
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1732';
+						_js.ln = '1733';
 					}
 				}
 			} else {
@@ -1822,13 +1823,13 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 						//
 					} catch (e) {
 						_js.ms = e.message;
-						_js.ln = '1825';
+						_js.ln = '1826';
 					}
 				}
 			}
 		} catch (e) {
 			_js.ms = e.message;
-			_js.ln = '1831';
+			_js.ln = '1832';
 		}
 		if (_js.hasError()) {
 			//
@@ -2306,7 +2307,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 				}
 			} catch (e) {
 				_js.ms = e.message;
-				_js.ln = '2296';
+				_js.ln = '2310';
 			}
 		}
 		//
@@ -2386,7 +2387,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 								console.log('     - onError Event -');
 								//
 								_js.ms = e.message;
-								_js.ln = '2376';
+								_js.ln = '2390';
 								_js.display();
 							}							
 						}
@@ -2411,7 +2412,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 								console.log('     - onError Submit-');
 								//
 								_js.ms = e.message;
-								_js.ln = '2401';
+								_js.ln = '2415';
 								_js.display();
 							}
 						}
@@ -2440,7 +2441,7 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 								console.log('     - onError Submit-');
 								//
 								_js.ms = e.message;
-								_js.ln = '2430';
+								_js.ln = '2444';
 								_js.display();
 							}
 						}
@@ -2451,5 +2452,5 @@ tinymce.PluginManager.add('apply_txt_color', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-color / plugin.js / 210612-1
+ * EOF: apply-text-color / plugin.js / 210614-1
  */
