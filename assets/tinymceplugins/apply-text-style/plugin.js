@@ -3,7 +3,7 @@
  * Tinymce apply-text-style plugin
  *
  * ###:  plugin.js
- * bld:  210613-1
+ * bld:  210614-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -566,7 +566,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				//
 				try {
 					var mrkExp;
-					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/))) {
+					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/)) && !isEmpty(this.datElements.match(/<(em|i|strong)>/))) {
 						console.log('     - Mark -');
 						var mceTag = getRegExpValue(this.fullHtml(), '<(em|i|kbd|strong|sub|sup|s\b|u)>', 's', 1);
 						var mrkTag = getRegExpValue(this.datElements, '^<(.*?)>', 's', 1);
@@ -2109,5 +2109,5 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-style / plugin.js / 210613-1
+ * EOF: apply-text-style / plugin.js / 210614-1
  */
