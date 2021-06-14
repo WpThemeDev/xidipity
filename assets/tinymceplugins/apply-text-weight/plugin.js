@@ -3,7 +3,7 @@
  * Tinymce apply-text-weight plugin
  *
  * ###:  plugin.js
- * bld:  210612-1
+ * bld:  210614-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -566,7 +566,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 				//
 				try {
 					var mrkExp;
-					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/))) {
+					if (!isEmpty(this.fullHtml().match(/<(em|i|strong)>/)) && !isEmpty(this.datElements.match(/<(em|i|strong)>/))) {
 						console.log('     - Mark -');
 						var mceTag = getRegExpValue(this.fullHtml(), '<(em|i|kbd|strong|sub|sup|s\b|u)>', 's', 1);
 						var mrkTag = getRegExpValue(this.datElements, '^<(.*?)>', 's', 1);
@@ -1688,6 +1688,7 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 						//
 						break;
 					case (!isEmpty(oDoc.datElements.match(/<(em|i|kbd|strong|sub|sup|s\b|u)>/))):
+						console.log('     - Mark -');
 						htmlUpdate = oDoc.proAddMark();
 						break;
 					case (oDoc.isFragment()):
@@ -2036,5 +2037,5 @@ tinymce.PluginManager.add('apply_txt_weight', function (editor) {
 	});
 });
 /*
- * EOF: apply-text-weight / plugin.js / 210612-1
+ * EOF: apply-text-weight / plugin.js / 210614-1
  */
