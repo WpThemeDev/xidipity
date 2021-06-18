@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  210518-1
+ * bld:  210618-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -1768,7 +1768,14 @@ function post_category($arg = '')
 		return $html_retval;
 	}
 }
+/*  # post_category
+    # 210618
+    # return current year XXXX
+**/
+function currentYear() {
+	return date('Y');
+}
 /*
- * EOF: functions.php / 210518-1
+ * EOF: functions.php / 210618-1
 */
 ?>
