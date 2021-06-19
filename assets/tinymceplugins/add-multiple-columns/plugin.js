@@ -3,7 +3,7 @@
  * Tinymce add-multiple-columns plugin
  *
  * ###:  plugin.js
- * bld:  30201201
+ * bld:  210619-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -68,7 +68,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-2"><tr><td id="';
 				html += uniqueID;
-				html += '"></td><td></td></tr></table>';
+				html += '">&nbsp;</td><td>&nbsp;</td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
 				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
@@ -83,7 +83,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-3"><tr><td id="';
 				html += uniqueID;
-				html += '"></td><td></td><td></td></tr></table>';
+				html += '">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
 				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
@@ -98,7 +98,7 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 				var html = '<!--  TMPL:FIXED/COL -->';
 				html += '<table class="cols:fixed-4"><tr><td id="';
 				html += uniqueID;
-				html += '"></td><td></td><td></td><td></td></tr></table>';
+				html += '">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>';
 				html += '<!-- /TMPL:FIXED/COL -->';
 				editor.execCommand('mceInsertContent', false, html);
 				var newTag = dom.select('td#' + uniqueID)[0];
@@ -108,5 +108,5 @@ tinymce.PluginManager.add('add_multi_cols', function(editor) {
 	});
 });
 /*
- * EOF: add-multiple-columns / plugin.js / 30201201
+ * EOF: add-multiple-columns / plugin.js / 210619-1
  */
