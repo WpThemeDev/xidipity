@@ -3,170 +3,247 @@
  * Tinymce add-icon plugin
  *
  * ###:  plugin.js
- * bld:  210526-1
+ * bld:  210619-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
  */
 tinymce.PluginManager.add('add_icon', function (editor, url) {
 	'use strict';
-	var iconObject = {
+	var _js = {
+		hd: 'ERROR',
+		ms: null,
+		ln: null,
+		display: function () {
+			editor.windowManager.alert(this.hd + ' #' + this.ln + ' - ' + this.ms);
+			this.hd = 'ERROR';
+			this.ms = null;
+			this.ln = null;
+		},
+		hasError: function () {
+			return (this.ms !== null);
+		}
+	}
+	var icoObj = {
 		brand: function () {
-			var htmlValue = '';
+			//
+			console.log(' OBJ > brand');
+			//
+			var retValue = '';
 			if (!isEmpty(this.tag)) {
 				switch (true) {
-					case (!isEmpty(this.tag.match(/<i.+"fa.+\/i>/))):
-						htmlValue = 'font awesome';
+					case (!isEmpty(this.tag.match(/".*?fa.*?"/))):
+						console.log('     - Mark -');
+						retValue = 'font awesome';
 						break;
-					case (!isEmpty(this.tag.match(/<.+"material-icons".+>/))):
-						htmlValue = 'google';
+					case (!isEmpty(this.tag.match(/"material-icons.*?"/))):
+						console.log('     - Mark -');
+						retValue = 'google';
 						break;
 					default:
-						htmlValue = 'xidipity';
+						console.log('     - Mark -');
+						retValue = 'xidipity';
 				}
+				//
+				console.log('     - brand: ' + retValue);
+				//
 			}
-			return htmlValue;
+			return retValue;
 		}, // font awesome/google/xidipity
 		class: function () {
-			var htmlValue = '';
+			//
+			console.log(' OBJ > class');
+			//
+			var retValue = '';
 			switch (this.brand()) {
 				case ('font awesome'):
-					htmlValue = getRegExpValue(this.tag, '".+"', 'is').replace(/"/g, '');
+					console.log('     - Mark -');
+					retValue = getRegExpValue(this.tag, '"(.*?fa.*?)"', 'is',1);
 					break;
 				case ('google'):
-					htmlValue = 'material-icons';
+					console.log('     - Mark -');
+					retValue = getRegExpValue(this.tag, '"(material-icons.*?)"', 'is',1);
 					break;
 				case ('xidipity'):
-					htmlValue = getRegExpValue(this.tag, '".+"', 'is').replace(/"/g, '');
+					console.log('     - Mark -');
+					retValue = getRegExpValue(this.tag, '"(icon.*?)"', 'is', 1);
 			}
-			return htmlValue;
+			//
+			console.log('     - class: ' + retValue);
+			//
+			return retValue;
 		},
 		html: function () {
-			var htmlValue = '';
-			if (!isEmpty(this.tag)) {
-				var newClass = this.class() + ' ' + this.sizeHtml() + ' ' + this.marginLeftHtml() + ' ' + this.marginRightHtml();
-				var regExp = new RegExp(/\s\s+/, 'ig');
+			//
+			console.log(' OBJ > html');
+			//
+			var retValue = '';
+			try {
+				if (isEmpty(this.tag)) {
+					throw new Error('Missing required icon tag.');
+				}				
+				var curClass = this.class();
+				var icoTag = this.tag;
+				var icoBrand = this.brand();
+				var newClass = curClass + ' ' + this.sizeHtml() + ' ' + this.marginLeftHtml() + ' ' + this.marginRightHtml();
+				var regExp = new RegExp(/\s\s+/, 'g');
 				var tmpValue = newClass.replace(regExp, ' ');
 				newClass = tmpValue.trim();
-				if (this.class == newClass) {
-					htmlValue = this.tag;
+				if (curClass == newClass) {
+					console.log('     - Mark -');
+					tmpValue = icoTag;
 				} else {
-					htmlValue = this.tag.replace(this.class(), newClass);
-				}
-				// cleanup
-				if (this.brand() == 'google') {
-					if (isEmpty(htmlValue.match(/span/))) {
-						tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<');
-					} else {
-						tmpValue = htmlValue.replace(/>\s/, '>').replace(/\s</, '<').replace(/span/g, 'i');
+					console.log('     - Mark -');
+					tmpValue = icoTag.replace(curClass, newClass);
+					if (icoBrand == 'google') {
+						tmpValue = tmpValue.replace(/span/g, 'i');					
 					}
-					htmlValue = '&#8203;' + tmpValue + '&#8203;';
-				} else {
-					tmpValue = htmlValue;
-					htmlValue = '&#8203;' + tmpValue + '&#8203;';
 				}
+				//
+				retValue = '&#8203;' + tmpValue + '&#8203;';
+				//
+			} catch(e) {
+				_js.ms = e.message;
+				_js.ln = '107';				
 			}
-			return htmlValue;
+			//
+			return retValue;
 		}, // font awesome/google/xidipity
 		marginLeft: 0,
 		marginLeftHtml: function () {
-			var htmlValue = '';
+			//
+			console.log('OBJ > marginLeftHtml');
+			//
+			var retValue = '';
 			switch (this.marginLeft) {
 				case 1:
-					htmlValue = 'mar:lt+0.125';
+					retValue = 'mar:lt+0.125';
 					break;
 				case 2:
-					htmlValue = 'mar:lt+0.25';
+					retValue = 'mar:lt+0.25';
 					break;
 				case 3:
-					htmlValue = 'mar:lt+0.5';
+					retValue = 'mar:lt+0.5';
 					break;
 				case 4:
-					htmlValue = 'mar:lt+0.75';
+					retValue = 'mar:lt+0.75';
 					break;
 				case 5:
-					htmlValue = 'mar:lt+1';
+					retValue = 'mar:lt+1';
 					break;
 			}
-			return htmlValue;
+			return retValue;
 		},
 		marginRight: 0,
 		marginRightHtml: function () {
-			var htmlValue = '';
+			//
+			console.log('OBJ > marginRightHtml');
+			//
+			var retValue = '';
 			switch (this.marginRight) {
 				case 1:
-					htmlValue = 'mar:rt+0.125';
+					retValue = 'mar:rt+0.125';
 					break;
 				case 2:
-					htmlValue = 'mar:rt+0.25';
+					retValue = 'mar:rt+0.25';
 					break;
 				case 3:
-					htmlValue = 'mar:rt+0.5';
+					retValue = 'mar:rt+0.5';
 					break;
 				case 4:
-					htmlValue = 'mar:rt+0.75';
+					retValue = 'mar:rt+0.75';
 					break;
 				case 5:
-					htmlValue = 'mar:rt+1';
+					retValue = 'mar:rt+1';
 					break;
 			}
-			return htmlValue;
+			return retValue;
 		},
 		size: 0,
 		sizeHtml: function () {
-			var htmlValue = '';
+			//
+			console.log('OBJ > sizeHtml');
+			//
+			var retValue = '';
 			switch (this.size) {
 				case 1:
-					htmlValue = 'fnt:siz-md-1x';
+					retValue = 'fnt:siz-md-1x';
 					break;
 				case 2:
-					htmlValue = 'fnt:siz-lg';
+					retValue = 'fnt:siz-lg';
 					break;
 				case 3:
-					htmlValue = 'fnt:siz-lg-1x';
+					retValue = 'fnt:siz-lg-1x';
 					break;
 				case 4:
-					htmlValue = 'fnt:siz-lg-2x';
+					retValue = 'fnt:siz-lg-2x';
 					break;
 				case 5:
-					htmlValue = 'fnt:siz-lg-3x';
+					retValue = 'fnt:siz-lg-3x';
 					break;
 				case 6:
-					htmlValue = 'fnt:siz-lg-4x';
+					retValue = 'fnt:siz-lg-4x';
 					break;
 				case 7:
-					htmlValue = 'fnt:siz-lg-5x';
+					retValue = 'fnt:siz-lg-5x';
 					break;
 			}
-			return htmlValue;
+			return retValue;
 		},
 		tag: '' // icon tag
 	}
 	// get regular expression value
-	function getRegExpValue(argValue, argRegExp, argRegExpScope) {
-		// argValue = value to evaluate
-		// argRegExp = regular expression
-		// argRegExpScope = regular expression scope
-		if (argValue === undefined || argValue === null) {
-			argValue = '';
-		}
-		if (argRegExp === undefined || argRegExp === null) {
-			argRegExp = '';
-		}
-		if (argRegExpScope === undefined || argRegExpScope === null) {
-			argRegExpScope = 'g';
-		}
-		var htmlValue = '';
-		if (!isEmpty(argValue) && !isEmpty(argRegExp)) {
-			if (isEmpty(argRegExpScope.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
-				argRegExpScope = 'g';
+	function getRegExpValue(strArg1, strArg2, strArg3, numArg4) {
+		//
+		// Return RegExp value
+		//	strArg1 - content
+		//	strArg2	- expression
+		//	strArg3 - scope
+		//	numArg4	- group
+		//
+		var retValue = '';
+		//
+		if (!_js.hasError()) {
+			//
+			console.log('FN  > getRegExpValue');
+			console.log('    - strArg1: ' + strArg1);
+			console.log('    - strArg2: ' + strArg2);
+			console.log('    - strArg3: ' + strArg3);
+			console.log('    - numArg4: ' + numArg4);
+			//
+			try {
+				if (strArg1 !== undefined || strArg1 !== null || typeof strArg1 === 'string' || strArg1.trim() !== '') {
+					if (strArg2 === undefined || strArg2 === null || typeof strArg2 !== 'string' || strArg2.trim() == '') {
+						throw new Error('Missing required argument/s.'); // regular expression
+					}
+					if (strArg3 === undefined || strArg3 === null || typeof strArg3 !== 'string') {
+						strArg3 = ''; // regular expression scope
+					}
+					if (numArg4 === undefined || numArg4 === null || typeof numArg4 !== 'number') {
+						numArg4 = 0; // group #
+					}
+					if (isEmpty(strArg3.match(/g|m|i|x|X|s|u|U|A|j|D/g))) {
+						numArg4 = 0;
+						strArg3 = 'g';
+					}
+					if (numArg4 > 0 && strArg3 == 'g') {
+						strArg3 = 'i';
+					}
+					var regExp = new RegExp(strArg2, strArg3);
+					if (!isEmpty(strArg1.match(regExp))) {
+						//
+						retValue = strArg1.match(regExp)[numArg4];
+						//
+					}
+				}
+				//
+			} catch (e) {
+				_js.ms = e.message;
+				_js.ln = '242';
 			}
-			var regExp = new RegExp(argRegExp, argRegExpScope);
-			if (!isEmpty(argValue.match(regExp))) {
-				htmlValue = argValue.match(regExp)[0];
-			}
 		}
-		return htmlValue;
+		//
+		return retValue;
 	}
 	function isEmpty(argSTR) {
 		return (!argSTR || 0 === argSTR.length);
@@ -184,15 +261,25 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 					}],
 				onSubmit: function () {
 					// icon object
-					if (!isEmpty(document.getElementById("tag_id").value)) {
-						var iconObj = Object.create(iconObject);
-						iconObj.size = document.getElementById("sz_id").selectedIndex;
-						iconObj.marginLeft = document.getElementById("lt_id").selectedIndex;
-						iconObj.marginRight = document.getElementById("rt_id").selectedIndex;
-						iconObj.tag = document.getElementById("tag_id").value;
-						if (!isEmpty(iconObj.tag)) {
-							editor.execCommand('mceInsertContent', false, iconObj.html());
+					try {
+						if (isEmpty(document.getElementById("tag_id").value)) {
+							throw new Error('Missing required icon tag.');
 						}
+						icoObj.size = document.getElementById("sz_id").selectedIndex;
+						icoObj.marginLeft = document.getElementById("lt_id").selectedIndex;
+						icoObj.marginRight = document.getElementById("rt_id").selectedIndex;
+						icoObj.tag = document.getElementById("tag_id").value;
+						if (_js.hasError()) {
+							_js.display();
+							editor.focus();
+						} else {
+							editor.execCommand('mceInsertContent', false, icoObj.html());							
+						}
+					} catch(e) {
+						_js.ms = e.message;
+						_js.ln = '281';										
+						_js.display();						
+						editor.focus();
 					}
 				}
 			});
@@ -202,5 +289,5 @@ tinymce.PluginManager.add('add_icon', function (editor, url) {
 	});
 });
 /*
- * EOF: add-icon / plugin.js / 210526-1
+ * EOF: add-icon / plugin.js / 210619-1
  */
