@@ -408,7 +408,7 @@ if (!function_exists('xty_setup')):
 		$ed_css5 = '/assets/css/theme/advance.css';
 		$ed_css6 = '/assets/css/theme/icons.css';
 		$ed_css7 = '/assets/css/theme/flexbox.css';
-		$ed_css8 = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+		$ed_css8 = 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp';
 		$ed_css9 = 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css';
 		$ed_css10 = 'https://fonts.googleapis.com/css?family=Kalam:300,400,700|Kaushan+Script|Roboto+Condensed:300,400,700,|Roboto+Mono|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900,&display=swap';
 		$ed_css11 = '/assets/css/theme/editor.css';
@@ -536,7 +536,7 @@ function xidipity_scripts()
 	// version set @ fa_ver
 	wp_enqueue_style('xidipity-font-awesome', 'https://use.fontawesome.com/releases/v' . xty('fa-ver') . '/css/all.css', array() , xty('fa-ver') , 'all');
 	/*: google material design icons :*/
-	wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , wp_get_theme()
+	wp_enqueue_style('xidipity-md-icons', 'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp', array() , wp_get_theme()
 		->get('Version') , 'all');
 	/*: wordpress dash icons :*/
 	wp_enqueue_style( 'dashicons' );
