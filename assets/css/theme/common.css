@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  01210115
+    * bld:  210619-1
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -374,7 +374,11 @@ a:focus {
 	font-size: inherit;
 }
 /*: Google icon adjustments :*/
-.ul\:icon-itm>.material-icons {
+.ul\:icon-itm>.material-icons,
+.ul\:icon-itm>.material-icons-outlined,
+.ul\:icon-itm>.material-icons-round,
+.ul\:icon-itm>.material-icons-sharp,
+.ul\:icon-itm>.material-icons-two-tone {
 	font-size: 1.125rem;
 	vertical-align: middle;
 }
@@ -1416,29 +1420,61 @@ td .ratio-container {
     *
 ***
 */
-.material-icons {
+.material-icons,
+.material-icons-outlined,
+.material-icons-round,
+.material-icons-sharp,
+.material-icons-two-tone {
 	font-size: var(--font-size-md);
 	vertical-align: -10%;
 }
-.material-icons.fnt\:siz-md-1x {
+.material-icons.fnt\:siz-md-1x,
+.material-icons-outlined.fnt\:siz-md-1x,
+.material-icons-round.fnt\:siz-md-1x,
+.material-icons-sharp.fnt\:siz-md-1x,
+.material-icons-two-tone.fnt\:siz-md-1x {
 	font-size: var(--font-size-md-1x);
 }
-.material-icons.fnt\:siz-lg {
+.material-icons.fnt\:siz-lg,
+.material-icons-outlined.fnt\:siz-lg,
+.material-icons-round.fnt\:siz-lg,
+.material-icons-sharp.fnt\:siz-lg,
+.material-icons-two-tone.fnt\:siz-lg {
 	font-size: var(--font-size-h6);
 }
-.material-icons.fnt\:siz-lg-1x {
+.material-icons.fnt\:siz-lg-1x,
+.material-icons-outlined.fnt\:siz-lg-1x,
+.material-icons-round.fnt\:siz-lg-1x,
+.material-icons-sharp.fnt\:siz-lg-1x,
+.material-icons-two-tone.fnt\:siz-lg-1x {
 	font-size: var(--font-size-h5);
 }
-.material-icons.fnt\:siz-lg-2x {
+.material-icons.fnt\:siz-lg-2x,
+.material-icons-outlined.fnt\:siz-lg-2x,
+.material-icons-round.fnt\:siz-lg-2x,
+.material-icons-sharp.fnt\:siz-lg-2x,
+.material-icons-two-tone.fnt\:siz-lg-2x {
 	font-size: var(--font-size-h4);
 }
-.material-icons.fnt\:siz-lg-3x {
+.material-icons.fnt\:siz-lg-3x,
+.material-icons-outlined.fnt\:siz-lg-3x,
+.material-icons-round.fnt\:siz-lg-3x,
+.material-icons-sharp.fnt\:siz-lg-3x,
+.material-icons-two-tone.fnt\:siz-lg-3x {
 	font-size: var(--font-size-h3);
 }
-.material-icons.fnt\:siz-lg-4x {
+.material-icons.fnt\:siz-lg-4x,
+.material-icons-outlined.fnt\:siz-lg-4x,
+.material-icons-round.fnt\:siz-lg-4x,
+.material-icons-sharp.fnt\:siz-lg-4x,
+.material-icons-two-tone.fnt\:siz-lg-4x {
 	font-size: var(--font-size-h2);
 }
-.material-icons.fnt\:siz-lg-5x {
+.material-icons.fnt\:siz-lg-5x,
+.material-icons-outlined.fnt\:siz-lg-5x,
+.material-icons-round.fnt\:siz-lg-5x,
+.material-icons-sharp.fnt\:siz-lg-5x,
+.material-icons-two-tone.fnt\:siz-lg-5x {
 	font-size: var(--font-size-h1);
 }
 /*
@@ -2069,5 +2105,5 @@ button.img {
 	height: 100%;
 }
 /*
- * EOF: assets/css/theme/common.css / 01210115
+ * EOF: assets/css/theme/common.css / 210619-1
  */
