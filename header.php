@@ -4,7 +4,7 @@
  * The template for displaying page header
  *
  * ###:  header.php
- * bld:  31201215
+ * bld:  210623-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -180,9 +180,12 @@ echo '<!-- /xty:page/header -->' . "\n";
 /*
  *** display menu as configured
 */
-$wp_page  = get_page_by_path('xidipity-toc');
+$wp_page = get_page_by_path('xidipity-toc');
 $wp_menus = get_nav_menu_locations();
-$wp_menu  = (abs($wp_menus['primary']) !== 0);
+$wp_menu = false;
+if (!empty($wp_menus)) {
+	$wp_menu  = (abs($wp_menus['primary']) !== 0);
+}
 echo '<!-- xty:header/menu -->' . "\n";
 if (xty('mnu-dsp') == 'no')
 {
@@ -246,6 +249,6 @@ echo '</div>' . "\n";
 echo '<!-- /xty:header/menu -->' . "\n";
 echo '<!-- /xty:header/php -->' . "\n";
 /*
- * EOF: header.php / 31201215
+ * EOF: header.php / 210623-1
 */
 ?>
