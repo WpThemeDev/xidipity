@@ -238,12 +238,12 @@ if (!function_exists('xty_author'))
 	{
 		// Global Post
 		global $post;
+		$post_author_id = get_post_field('post_author', $post->ID);
 		$author = esc_html(get_the_author_meta('display_name', $post_author_id));
 		if (empty($author))
 		{
 			$author = esc_html(get_the_author_meta('nickname', $post_author_id));
 		}
-		$post_author_id = get_post_field('post_author', $post->ID);
 		return '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID', $post_author_id))) . '">' . $author . '</a>';
 	}
 }
