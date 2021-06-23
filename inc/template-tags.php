@@ -4,7 +4,7 @@
  * Theme Extended Functionality
  *
  * ###:  inc/template-tags.php
- * bld:  01210115
+ * bld:  210623-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -152,7 +152,7 @@ if (!function_exists('xty_content_footer'))
 {
 	function xty_content_footer($items = array())
 	{
-		$html .= '<!-- xty:inc/template-tags/xty_content_footer -->';
+		$html = '<!-- xty:inc/template-tags/xty_content_footer -->';
 		$html .= '<div class="mar:vrt+0.25">';
 		$html .= xty_info_bar($items);
 		$html .= '</div>';
@@ -471,7 +471,7 @@ if (!function_exists('xty_info_bar'))
 		$txt_prt = '<div class="fnt:siz-sm-2x pad:lt+0.5 prt[dsp:none]">';
 		$div_pre = '<div class="aln:txt-ct dsp:none sm)dsp:blk pad:hrz+0.25 txt:bas">';
 		$div_pst = '</div>';
-		$html .= '<!-- xty:inc/template-tags/xty_info_bar -->';
+		$html = '<!-- xty:inc/template-tags/xty_info_bar -->';
 		$html .= '<div class="fx:rw fxa:1 fxb:1 fxc:3">';
 		$end_item = end($items);
 		foreach ($items as $item)
@@ -836,6 +836,6 @@ function xidipity_has_excerpt()
 	return apply_filters('xidipity_has_excerpt', !empty($post_excerpt));
 }
 /*
- * EOF: inc/template-tags.php / 01210115
+ * EOF: inc/template-tags.php / 210623-1
 */
 ?>
