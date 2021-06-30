@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  210619-1
+    * bld:  210630-1
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -76,7 +76,6 @@ pre.wrap {
 }
 pre.dsp\:line-nums {
 	font-family: var(--font-family-mono);
-	font-size: var(--font-size-smaller);
 	font-weight: var(--dft-font-weight);
 }
 pre.dsp\:line-nums:before {
@@ -2105,5 +2104,5 @@ button.img {
 	height: 100%;
 }
 /*
- * EOF: assets/css/theme/common.css / 210619-1
+ * EOF: assets/css/theme/common.css / 210630-1
  */
