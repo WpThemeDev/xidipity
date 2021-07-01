@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  210630-1
+ * bld:  210701-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -416,7 +416,7 @@ function xty($key = '', $value = '') {
                         break;
                         default:
                             // default
-                            $xty[$key] = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">';
+                            $xty[$key] = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">';
                             update_option('_xtyFontMono', $xty[$key]);
                             $retValue = $xty[$key];
                     }
@@ -2319,6 +2319,6 @@ function dns_prefetch_to_preconnect( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'dns_prefetch_to_preconnect', 0, 2 );
 
 /*
- * EOF: functions.php / 210630-1
+ * EOF: functions.php / 210701-1
 */
 ?>
