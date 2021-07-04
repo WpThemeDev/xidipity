@@ -3,7 +3,7 @@
  * Tinymce apply-text-style plugin
  *
  * ###:  plugin.js
- * bld:  210614-1
+ * bld:  210704-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -13,7 +13,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 	//
 	// error object
 	//
-	var _js = {
+	var _err = {
 		hd: 'ERROR',
 		ms: null,
 		ln: null,
@@ -37,7 +37,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.blkContentCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (this.lineCnt < 2) {
 						throw new Error('Multi line content must contain more than 1 line.');
@@ -91,8 +91,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '95';
+					_err.ms = e.message;
+					_err.ln = '95';
 				}
 			}
 			//
@@ -107,7 +107,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.datBgColorCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -133,8 +133,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '137';
+					_err.ms = e.message;
+					_err.ln = '137';
 				}
 			}
 			//
@@ -148,7 +148,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.datFgColorCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				var datElements = '';
 				try {
 					if (isNull(retValue)) {
@@ -174,8 +174,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '178';
+					_err.ms = e.message;
+					_err.ln = '178';
 				}
 			}
 			//
@@ -188,7 +188,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = false;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > hasDatColor');
 				//
@@ -197,8 +197,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					retValue = (!isEmpty(this.datBgColor()) || !isEmpty(this.datFgColor()));
 					//
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '201';
+					_err.ms = e.message;
+					_err.ln = '201';
 				}
 			}
 			//
@@ -210,7 +210,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.fullHtmlCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -253,8 +253,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '257';
+					_err.ms = e.message;
+					_err.ln = '257';
 				}
 			}
 			//
@@ -268,7 +268,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.initNodeCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > initNode');
 				//
@@ -314,8 +314,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							break;
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '318';
+					_err.ms = e.message;
+					_err.ln = '318';
 				}
 			}
 			//
@@ -327,7 +327,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.innerHtmlCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -347,8 +347,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '351';
+					_err.ms = e.message;
+					_err.ln = '351';
 				}
 			}
 			//
@@ -361,7 +361,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.isFragmentCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -384,8 +384,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '388';
+					_err.ms = e.message;
+					_err.ln = '388';
 				}
 			}
 			return retValue;
@@ -401,7 +401,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.mceHtmlCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
 					blnArg1 = false;
 				}
@@ -433,8 +433,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '437';
+					_err.ms = e.message;
+					_err.ln = '437';
 				}
 			}
 			//
@@ -448,7 +448,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.mceNodeNameCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -464,8 +464,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '468';
+					_err.ms = e.message;
+					_err.ln = '468';
 				}
 			}
 			//
@@ -478,7 +478,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.mceTextCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				try {
 					if (isNull(retValue)) {
 						//
@@ -496,8 +496,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '500';
+					_err.ms = e.message;
+					_err.ln = '500';
 				}
 			}
 			//
@@ -511,7 +511,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = this.outerHtmlCache;
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				if (blnArg1 === undefined || blnArg1 === null || typeof blnArg1 !== 'boolean') {
 					blnArg1 = false;
 				}
@@ -546,8 +546,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '550';
+					_err.ms = e.message;
+					_err.ln = '550';
 				}
 			}
 			//
@@ -560,7 +560,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proAddMark');
 				//
@@ -584,8 +584,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//						
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '588';
+					_err.ms = e.message;
+					_err.ln = '588';
 				}
 			}
 			//
@@ -597,7 +597,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proBldClassElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -641,8 +641,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '645';
+					_err.ms = e.message;
+					_err.ln = '645';
 				}
 			}
 			//
@@ -654,7 +654,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proBldStyleElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -680,8 +680,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					retValue = this.proSrtElements(strArg1 + ' ' + strArg2);
 					//
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '684';
+					_err.ms = e.message;
+					_err.ln = '684';
 				}
 			}
 			//
@@ -693,7 +693,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proColorElements');
 				//
@@ -810,8 +810,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					this.datFgColorCache = null;
 					//
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '814';
+					_err.ms = e.message;
+					_err.ln = '814';
 				}
 			}
 			//
@@ -823,7 +823,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proFragment');
 				//
@@ -965,8 +965,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						}
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '969';
+					_err.ms = e.message;
+					_err.ln = '969';
 				}
 			}
 			//
@@ -980,7 +980,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log(' OBJ > proJoinElements');
 				console.log('     - strArg1: ' + strArg1);
@@ -1033,8 +1033,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '1037';
+					_err.ms = e.message;
+					_err.ln = '1037';
 				}
 			}
 			//
@@ -1046,7 +1046,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log('OBJ > proMceTags');
 				console.log('    - strArg1: ' + strArg1);
@@ -1066,8 +1066,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '1070';
+					_err.ms = e.message;
+					_err.ln = '1070';
 				}
 			}
 			//
@@ -1079,7 +1079,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log('OBJ > proOrderClassStyle');
 				console.log('    - strArg1: ' + strArg1);
@@ -1108,8 +1108,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						}
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '1112';
+					_err.ms = e.message;
+					_err.ln = '1112';
 				}
 			}
 			//
@@ -1123,7 +1123,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log('OBJ > proPurgeElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1157,8 +1157,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					retValue = strArg1;
 					//
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '1161';
+					_err.ms = e.message;
+					_err.ln = '1161';
 				}
 			}
 			//
@@ -1170,7 +1170,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log('OBJ > proSrtElements');
 				console.log('    - strArg1: ' + strArg1);
@@ -1194,8 +1194,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.ms = e.message;
-					_js.ln = '1198';
+					_err.ms = e.message;
+					_err.ln = '1198';
 				}
 			}
 			//
@@ -1207,7 +1207,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			//
 			var retValue = '';
 			//
-			if (!_js.hasError()) {
+			if (!_err.hasError()) {
 				//
 				console.log('OBJ > proStdElements');
 				//
@@ -1270,9 +1270,9 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 					}
 				} catch (e) {
-					_js.hd = 'MESSAGE';
-					_js.ms = e.message;
-					_js.ln = '1275';
+					_err.hd = 'MESSAGE';
+					_err.ms = e.message;
+					_err.ln = '1275';
 				}
 			}
 			//
@@ -1289,7 +1289,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			//
 			console.log('FN  > getRegExpValue');
 			console.log('    - strArg1: ' + strArg1);
@@ -1324,8 +1324,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				}
 				//
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1328';
+				_err.ms = e.message;
+				_err.ln = '1328';
 			}
 		}
 		//
@@ -1337,7 +1337,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
 					throw new Error('Missing required argument.');
@@ -1360,8 +1360,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				}
 				retValue = decodeVal;
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1364';
+				_err.ms = e.message;
+				_err.ln = '1364';
 			}
 		}
 		//
@@ -1373,7 +1373,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			try {
 				if (strArg1 === undefined || strArg1 === null || typeof strArg1 !== 'string' || strArg1.trim() == '') {
 					throw new Error('Missing required argument.');
@@ -1396,8 +1396,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				}
 				retValue = encodeVal;
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1400';
+				_err.ms = e.message;
+				_err.ln = '1400';
 			}
 		}
 		//
@@ -1409,7 +1409,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			//
 			console.log('FN  > noHtmlTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1422,8 +1422,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				retValue = strArg1.replace(/(<([^>]+)>)/ig, '');
 				//
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1426';
+				_err.ms = e.message;
+				_err.ln = '1426';
 			}
 		}
 		//
@@ -1459,9 +1459,9 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			retValue = true;
 			//
 		} catch (e) {
-			_js.hd = 'MESSAGE';
-			_js.ms = e.message;
-			_js.ln = '1464';
+			_err.hd = 'MESSAGE';
+			_err.ms = e.message;
+			_err.ln = '1464';
 		}
 		//
 		return retValue;
@@ -1503,7 +1503,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			//
 			console.log('FN  > strToArray');
 			console.log('    - strArg1: ' + strArg1);
@@ -1514,17 +1514,24 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					throw new Error('Missing required argument.');
 				}
 				if (expArg2 === undefined || expArg2 === null || typeof expArg2 !== 'string') {
-					expArg2 = '\\s+';
+					expArg2 = '';
 				}
-				var expArray = new RegExp(expArg2, 'g');
-				var datArrayData = strArg1.trim().replace(expArray, '*');
-				datArrayData = datArrayData.replace(/:\*/g, ': ').trim();
-				//
+				var cleanArg;
+				var expArray;
+				if (isEmpty(expArg2)) {
+					cleanArg = strArg1;
+					expArray = new RegExp(/[\r\n]+/, 'gmi');
+				} else {
+					cleanArg = strArg1.replace(/[^\x20-\x7E]/gmi, '');	
+					expArray = new RegExp(expArg2, 'g');
+				}
+				var datArrayData = cleanArg.replace(expArray, '$1*');
+
 				retValue = datArrayData.split('*');
 				//
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1527';
+				_err.ms = e.message;
+				_err.ln = '1534';
 			}
 		}
 		//
@@ -1537,7 +1544,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			//
 			console.log('FN  > strToNode');
 			console.log('    - strArg1: ' + strArg1);
@@ -1574,8 +1581,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				retValue = blkNode;
 				//
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1578';
+				_err.ms = e.message;
+				_err.ln = '1585';
 			}
 		}
 		//
@@ -1588,7 +1595,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			//
 			console.log('FN  > stripOuterTags');
 			console.log('    - strArg1: ' + strArg1);
@@ -1601,8 +1608,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				retValue = strArg1.replace(/^<(p|h[1-6]|div|li|td|th).*?>|<\/(p|h[1-6]|div|li|td|th)>/g, '');
 				//
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1605';
+				_err.ms = e.message;
+				_err.ln = '1612';
 			}
 		}
 		//
@@ -1663,16 +1670,16 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			var htmlUpdate = '';
 			//
 			if (matchCnt(oDoc.datElements.match(/:/g)) !== matchCnt(oDoc.datElements.match(/;/g)) && matchCnt(oDoc.datElements.match(/;/g)) > 0) {
-				_js.hd = 'MESSAGE';
+				_err.hd = 'MESSAGE';
 				throw new Error('A mixture of class and style input data detected.');
 			} else if (isEmpty(oDoc.datElements)) {
-				_js.hd = 'MESSAGE';
+				_err.hd = 'MESSAGE';
 				throw new Error('Missing input data.');
 			} else if (oDoc.datAttribute == 'class' && !isEmpty(oDoc.datElements.match(/;/g))) {
-				_js.hd = 'MESSAGE';
+				_err.hd = 'MESSAGE';
 				throw new Error('The selected element is class, but the input is formatted as a style.');
 			} else if (oDoc.datAttribute == 'style' && isEmpty(oDoc.datElements.match(/;/g))) {
-				_js.hd = 'MESSAGE';
+				_err.hd = 'MESSAGE';
 				throw new Error('The selected element is style, but the input is formatted as a class.');
 			}
 			if (oDoc.lineCnt == 1) {
@@ -1682,7 +1689,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				fullHtml = oDoc.fullHtml();
 				//
 				switch (true) {
-					case (_js.hasError()):
+					case (_err.hasError()):
 						//
 						// error
 						//
@@ -1698,7 +1705,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					case (oDoc.hasDatColor()):
 						console.log('    - Mark -');
 						htmlUpdate = oDoc.proColorElements();
-						if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+						if (!isEmpty(oDoc.datElements) && !_err.hasError()) {
 							oDoc.fullHtmlCache = htmlUpdate;
 							htmlUpdate = regDecode(oDoc.proStdElements());
 						} else {
@@ -1710,7 +1717,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						htmlUpdate = regDecode(oDoc.proStdElements());
 				}
 				//
-				if (!_js.hasError()) {
+				if (!_err.hasError()) {
 					//
 					decodeFullHtml = regDecode(fullHtml);
 					decodeUpdateHtml = regDecode(htmlUpdate);
@@ -1729,8 +1736,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						editor.setContent(htmlDoc);
 						editor.undoManager.add();
 					} catch (e) {
-						_js.ms = e.message;
-						_js.ln = '1733';
+						_err.ms = e.message;
+						_err.ln = '1740';
 					}
 				}
 			} else {
@@ -1738,17 +1745,16 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				console.log('*** * Process Multi Line * ***');
 				//
 				// load block content into array
-				var blkArray = strToArray(oDoc.blkContent(), '(\\s*)(\\r\\n|\\n|\\r)(\\s*)');
+				var blkArray = strToArray(oDoc.blkContent(), '(<\/(p|h[1-6]|div|li|td|th)>)(?!$)');
 				var blkNode;
 				var blkHtmlItem;
 				var datActionCache = oDoc.datAction;
-				var datAttributeCache = oDoc.datAttribute;
 				var datElementsCache = oDoc.datElements;
 				var idx = 0;
 				for (; blkArray[idx];) {
 					blkHtmlItem = blkArray[idx];
 					switch (true) {
-						case (_js.hasError()):
+						case (_err.hasError()):
 							// error
 							idx = 9999;
 							break;
@@ -1781,7 +1787,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 									break;
 								case (oDoc.hasDatColor()):
 									htmlUpdate = oDoc.proColorElements();
-									if (!isEmpty(oDoc.datElements) && !_js.hasError()) {
+									if (!isEmpty(oDoc.datElements) && !_err.hasError()) {
 										oDoc.fullHtmlCache = htmlUpdate;
 										htmlUpdate = regDecode(oDoc.proStdElements());
 									} else {
@@ -1792,7 +1798,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 									htmlUpdate = oDoc.proStdElements();
 							}
 					}
-					if (!_js.hasError() && !isEmpty(htmlUpdate)) {
+					if (!_err.hasError() && !isEmpty(htmlUpdate)) {
 						//
 						decodeFullHtml = regDecode(fullHtml);
 						decodeUpdateHtml = regDecode(htmlUpdate);
@@ -1813,7 +1819,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 				//
 				// write content back
 				//
-				if (!_js.hasError()) {
+				if (!_err.hasError()) {
 					//
 					try {
 						editor.setContent(htmlDoc);
@@ -1822,18 +1828,18 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						console.log('    - Multi Line Complete -');
 						//
 					} catch (e) {
-						_js.ms = e.message;
-						_js.ln = '1826';
+						_err.ms = e.message;
+						_err.ln = '1832';
 					}
 				}
 			}
 		} catch (e) {
-			_js.ms = e.message;
-			_js.ln = '1832';
+			_err.ms = e.message;
+			_err.ln = '1838';
 		}
-		if (_js.hasError()) {
+		if (_err.hasError()) {
 			//
-			_js.display();
+			_err.display();
 			//
 		}
 		editor.focus();
@@ -1863,8 +1869,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 			sessionStorage.setItem('datStyle', datStyle);
 			//
 		} catch(e) {
-			_js.ms = e.message;
-			_js.ln = '1867';			
+			_err.ms = e.message;
+			_err.ln = '1873';			
 		}
 		//
 		return;
@@ -1876,7 +1882,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			console.log(' ');
 			console.log('FN  > getClass');
 			console.log('    - strArg1: ' + strArg1);
@@ -1906,8 +1912,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					}
 				}
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1910';
+				_err.ms = e.message;
+				_err.ln = '1916';
 			}
 		}
 		//
@@ -1920,7 +1926,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			console.log(' ');
 			console.log('FN  > getMark');
 			console.log('    - strArg1: ' + strArg1);
@@ -1949,8 +1955,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					}
 				}
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1953';
+				_err.ms = e.message;
+				_err.ln = '1959';
 			}
 		}
 		//
@@ -1963,7 +1969,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		//
 		var retValue = '';
 		//
-		if (!_js.hasError()) {
+		if (!_err.hasError()) {
 			console.log(' ');
 			console.log('FN  > getStyle');
 			console.log('    - strArg1: ' + strArg1);
@@ -1993,8 +1999,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 					}
 				}
 			} catch (e) {
-				_js.ms = e.message;
-				_js.ln = '1997';
+				_err.ms = e.message;
+				_err.ln = '2003';
 			}
 		}
 		//
@@ -2011,7 +2017,7 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 		image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTE4IDRWM2MwLS41NS0uNDUtMS0xLTFINWMtLjU1IDAtMSAuNDUtMSAxdjRjMCAuNTUuNDUgMSAxIDFoMTJjLjU1IDAgMS0uNDUgMS0xVjZoMXY0SDl2MTFjMCAuNTUuNDUgMSAxIDFoMmMuNTUgMCAxLS40NSAxLTF2LTloOFY0aC0zeiIvPjwvc3ZnPg==',
 		onclick: function () {
 			if (!mceReady()) {
-				_js.display();
+				_err.display();
 				sessionStorage.removeItem('datClass');
 				sessionStorage.removeItem('datMark');
 				sessionStorage.removeItem('datStyle');							
@@ -2039,8 +2045,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						//
 						frmAcquire()							
 						//
-						if (_js.hasError()) {
-							throw new Error(_js.ms);
+						if (_err.hasError()) {
+							throw new Error(_err.ms);
 						} else {
 							editor.notificationManager.open({
 								text: 'Selected elements saved.',
@@ -2065,8 +2071,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							oDoc.datElements = datClass;								
 							frmSubmit();
 							//
-							if (_js.hasError()) {
-								throw new Error(_js.ms);
+							if (_err.hasError()) {
+								throw new Error(_err.ms);
 							}
 						}
 						if (!isEmpty(datMark)) {
@@ -2077,8 +2083,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							oDoc.datElements = datMark;								
 							frmSubmit();
 							//
-							if (_js.hasError()) {
-								throw new Error(_js.ms);
+							if (_err.hasError()) {
+								throw new Error(_err.ms);
 							}
 						}
 						if (!isEmpty(datStyle)) {
@@ -2089,8 +2095,8 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 							oDoc.datElements = datStyle;								
 							frmSubmit();
 							//
-							if (_js.hasError()) {
-								throw new Error(_js.ms);
+							if (_err.hasError()) {
+								throw new Error(_err.ms);
 							}
 						}
 						sessionStorage.removeItem('datClass');
@@ -2098,16 +2104,16 @@ tinymce.PluginManager.add('app_txt_style', function (editor) {
 						sessionStorage.removeItem('datStyle');							
 					}
 				} catch(e) {
-					_js.ms = e.message;
-					if (isNull(_js.ln)) {
-						_js.ln = '2103';
+					_err.ms = e.message;
+					if (isNull(_err.ln)) {
+						_err.ln = '2109';
 					}
-					_js.display();
+					_err.display();
 				}
 			}
 		}
 	});
 });
 /*
- * EOF: apply-text-style / plugin.js / 210614-1
+ * EOF: apply-text-style / plugin.js / 210704-1
  */
