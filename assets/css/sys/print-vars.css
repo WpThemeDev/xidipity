@@ -70,7 +70,7 @@ font-size: 13px;
 /*: font families :*/
 --font-family-sans: Raleway, sans-serif;
 --font-family-serif: "Roboto Slab", serif;
---font-family-mono: Inconsolata, mono;
+--font-family-mono: "Roboto Mono", monospace;
 --font-family-cursive: "Sansita Swashed", cursive;
 --font-family-fantasy: "Viaoda Libre", fantasy;
 /*: font sizes :*/
