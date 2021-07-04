@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  210701-1
+ * bld:  210704-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -362,7 +362,7 @@ function xty($key = '', $value = '') {
                         break;
                         default:
                             // default
-                            $xty[$key] = get_option('blogname') . ' WordPress Theme';
+                            $xty[$key] = get_option('blogname') . ' WordPress Blog';
                             update_option('_xtyThemeSEO', $xty[$key]);
                             $retValue = $xty[$key];
                     }
@@ -2319,6 +2319,6 @@ function dns_prefetch_to_preconnect( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'dns_prefetch_to_preconnect', 0, 2 );
 
 /*
- * EOF: functions.php / 210701-1
+ * EOF: functions.php / 210704-1
 */
 ?>
