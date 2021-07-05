@@ -4,7 +4,7 @@
  * Theme functions
  *
  * ###:  functions.php
- * bld:  210704-1
+ * bld:  210705-1
  * src:  github.com/WpThemeDev/xidipity/
  * (C)   2018-2021 John Baer
  *
@@ -2146,7 +2146,7 @@ function prefix_admin_cfg_theme() {
 
 	// sans
 	if (substr_count($_POST['sans'],'family') > 1) {
-		$_SESSION['xtyStat'] = 'Unable to apply sans font. The selection contains multiple font families..';
+		$_SESSION['xtyStat'] = 'Unable to apply sans font. The selection contains multiple font families.';
 	}
 	else {
 		if (proFnt('sans', $cssTheme, $cssPrint, $cssUpdate)) {
@@ -2158,7 +2158,7 @@ function prefix_admin_cfg_theme() {
 	}
 	// serif
 	if (substr_count($_POST['serif'],'family') > 1) {
-		$_SESSION['xtyStat'] = 'Unable to apply serif font. The selection contains multiple font families..';
+		$_SESSION['xtyStat'] = 'Unable to apply serif font. The selection contains multiple font families.';
 	}
 	else {
 		if (proFnt('serif', $cssTheme, $cssPrint, $cssUpdate)) {
@@ -2170,7 +2170,7 @@ function prefix_admin_cfg_theme() {
 	}
 	// mono
 	if (substr_count($_POST['mono'],'family') > 1) {
-		$_SESSION['xtyStat'] = 'Unable to apply mono font. The selection contains multiple font families..';
+		$_SESSION['xtyStat'] = 'Unable to apply mono font. The selection contains multiple font families.';
 	}
 	else {
 		if (proFnt('mono', $cssTheme, $cssPrint, $cssUpdate)) {
@@ -2182,7 +2182,7 @@ function prefix_admin_cfg_theme() {
 	}
 	// cursive
 	if (substr_count($_POST['cursive'],'family') > 1) {
-		$_SESSION['xtyStat'] = 'Unable to apply cursive font. The selection contains multiple font families..';
+		$_SESSION['xtyStat'] = 'Unable to apply cursive font. The selection contains multiple font families.';
 	}
 	else {
 		if (proFnt('cursive', $cssTheme, $cssPrint, $cssUpdate)) {
@@ -2194,7 +2194,7 @@ function prefix_admin_cfg_theme() {
 	}
 	// fantasy
 	if (substr_count($_POST['fantasy'],'family') > 1) {
-		$_SESSION['xtyStat'] = 'Unable to apply fantasy font. The selection contains multiple font families..';
+		$_SESSION['xtyStat'] = 'Unable to apply fantasy font. The selection contains multiple font families.';
 	}
 	else {
 		if (proFnt('fantasy', $cssTheme, $cssPrint, $cssUpdate)) {
@@ -2319,6 +2319,6 @@ function dns_prefetch_to_preconnect( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'dns_prefetch_to_preconnect', 0, 2 );
 
 /*
- * EOF: functions.php / 210704-1
+ * EOF: functions.php / 210705-1
 */
 ?>
