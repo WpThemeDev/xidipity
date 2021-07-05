@@ -3,7 +3,7 @@
     * Shared css clases
     *
     * ###:  assets/css/theme/common.css
-    * bld:  210630-1
+    * bld:  210705-1
     * src:  github.com/WpThemeDev/xidipity/
     * (C)   2018-2021 John Baer
     *
@@ -62,9 +62,8 @@ pre,
 pre.wrap {
 	background-color: var(--content-bg-color);
 	border-radius: 0.3333rem;
-	color: var(--dft-fg-color);
+	color: var(--dft-code-color);
 	font-family: var(--font-family-mono);
-	font-size: var(--font-size-smaller);
 	padding: 0.5rem 0 0.5rem 0;
 	width: 100%;
 }
@@ -99,7 +98,7 @@ pre.dsp\:line-nums var::before {
 /*
 ***
     * element: text tags
-    * ver: 28200701
+    * ver: 210705
     * fnt: format text
     * ref:
 ***
@@ -108,7 +107,6 @@ code,
 kbd,
 var {
 	font-family: var(--font-family-mono);
-	font-size: var(--font-size-smaller);
 	font-style: var(--font-style-normal);
 }
 pre var {
@@ -116,7 +114,7 @@ pre var {
 }
 code {
 	background-color: transparent !important;
-	color: var(--hue-pri) !important;
+	color: var(--dft-code-color) !important;
 	margin: 0 !important;
 	padding: 0 !important;
 }
@@ -160,7 +158,7 @@ samp {
 strong {
 	border-bottom: solid thin var(--hue-pri);
 	font-style: oblique;
-	font-weight: var(--lnk-dft-wgt);
+	font-weight: var(--font-wgt-medium);
 }
 strong:hover {
 	border-bottom-color: var(--lnk-hvr-fg-hue);
@@ -174,7 +172,7 @@ i {
 }
 em {
 	font-style: oblique;
-	font-weight: bolder;
+	font-weight: var(--font-wgt-medium);
 }
 abbr {
 	font-weight: bolder !important;
@@ -2104,5 +2102,5 @@ button.img {
 	height: 100%;
 }
 /*
- * EOF: assets/css/theme/common.css / 210630-1
+ * EOF: assets/css/theme/common.css / 210705-1
  */
