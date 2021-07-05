@@ -3,7 +3,7 @@
 * Xidipity css print variables
 *
 * ###:  assets/css/sys/print-vars.css
-* bld:  210630-1
+* bld:  210705-1
 * src:  github.com/WpThemeDev/xidipity/
 * (C)   2018-2021 John Baer
 *
@@ -164,6 +164,7 @@ font-size: 13px;
 --dft-fg-color: var(--hue-blk);
 --dft-bg-color: var(--hue-wht);
 --dft-line-height: 1.5;
+--dft-code-color: var(--hue-bas-dn4);
 --dft-font-family: var(--font-family-sans);
 --dft-font-color: var(--hue-blk);
 --dft-font-size: 1rem;
@@ -191,5 +192,5 @@ font-size: 13px;
 }
 
 /*
-* EOF: assets/css/sys/print-vars.css / 210630-1
+* EOF: assets/css/sys/print-vars.css / 210705-1
 */
